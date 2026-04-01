@@ -44,7 +44,7 @@
 | Класс | Влияние | Пример |
 |-------|---------|--------|
 | `w-20 h-20` | Размер 80x80px | `width: 80px; height: 80px` |
-| `bg-red-500/60` | **Фон красный 60%** | `background: rgba(239,68,68,0.6)` |
+| `bg-red-500/60` | **Фон красный 50%** | `background: rgba(239,68,68,0.6)` |
 | `rounded-full` | Круг | `border-radius: 50%` |
 | `flex items-center justify-center` | Центровка | `display: flex` |
 | `text-white` | **Иконка белая** | `color: white` |
@@ -82,7 +82,7 @@
 
 ## 🎨 ЦВЕТА ИКОНОК
 
-| Оборудование | Класс | HEX (60%) |
+| Оборудование | Класс | HEX (50%) |
 |-------------|-------|-----------|
 | Пароконвектоматы | `bg-brand-orange/60` | rgba(249,115,22,0.6) |
 | Плиты | `bg-red-500/60` | rgba(239,68,68,0.6) |
@@ -177,7 +177,7 @@ style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
 grep -n 'linear-gradient' /tmp/Mospochin_site/uslugi.html
 ```
 
-### Найти все иконки 60%:
+### Найти все иконки 50%:
 ```bash
 grep -n 'bg-[a-z]*-500/60' /tmp/Mospochin_site/index.html
 ```
