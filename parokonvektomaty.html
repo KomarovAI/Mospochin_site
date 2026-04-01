@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Ремонт пароконвектоматов в Москве. Rational, Unox, Electrolux. Выезд за 20 минут. Гарантия до 2 лет.">
-    <title>Ремонт пароконвектоматов | Rational, Unox, Electrolux | MosPochin</title>
+    <meta name="description" content="Ремонт пароконвектоматов на дому в Москве. Выезд за 60 минут. Диагностика 0₽. Гарантия на работы.">
+    <title>Ремонт пароконвектоматов на дому | Москва | MosPochin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,274 +13,822 @@
     <script src="main.js"></script>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <!-- 🔴 ЭКСТРЕННЫЙ БАННЕР -->
-    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg emergency-pulse">
-        <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
-            <i class="fa-solid fa-bolt text-yellow-300 icon-pulse"></i>
-            <span class="font-bold">🚨 АВАРИЙНЫЙ ВЫЕЗД</span>
-            <span class="hidden sm:inline">•</span>
-            <span class="hidden sm:inline font-semibold">Мастер будет через 20 минут</span>
-            <span class="hidden md:inline">•</span>
-            <a href="tel:89990057172" class="hidden md:inline font-bold hover:text-yellow-300 transition">
-                <i class="fa-solid fa-phone mr-1"></i>8 (999) 005-71-72
-            </a>
-        </div>
+    <!-- 🔴 TOP BAR -->
+    <div class="bg-red-600 text-white py-2 text-center text-sm font-semibold fixed top-0 w-full z-[60]">
+        <i class="fa-solid fa-bolt mr-2"></i>
+        СРОЧНЫЙ ВЫЕЗД НА ДОМ — Мастер свободен через 15 минут
+        <span class="ml-4 hidden sm:inline">|</span>
+        <span class="ml-4 hidden sm:inline"><i class="fa-solid fa-phone mr-1"></i>8 (999) 005-71-72</span>
     </div>
     
-    <div id="header-container" class="mt-12"></div>
+    <div id="header-container" class="mt-8"></div>
     
     <!-- 🎯 HERO SECTION -->
-    <header class="hero-bg-enhanced relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+    <header class="hero-gradient relative pt-16 pb-20 lg:pt-24 lg:pb-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-8 fade-in-section">
-                <span class="inline-flex items-center gap-2 bg-red-500/90 backdrop-blur-md border-2 border-red-400/50 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg emergency-pulse">
-                    <i class="fa-solid fa-fire-burner"></i>
-                    <span>ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ</span>
-                </span>
-            </div>
-            
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight text-center fade-in-section">
-                Ремонт <span class="text-brand-orange">пароконвектоматов</span>
-            </h1>
-            
-            <p class="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed text-center mb-12 fade-in-section">
-                Профессиональный ремонт пароконвектоматов <span class="text-white font-bold">Rational, Unox, Electrolux</span>. 
-                Выезд за <span class="text-white font-bold">20 минут</span>. Гарантия до <span class="text-white font-bold">2 лет</span>.
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
-                <div class="feature-box glass-card p-6 text-center fade-in-section">
-                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-3 mx-auto">
-                        <i class="fa-solid fa-ruble-sign"></i>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left fade-in-section">
+                    <!-- СРОЧНОСТЬ -->
+                    <div class="bg-red-100 border-2 border-red-300 rounded-xl p-4 mb-6 inline-block">
+                        <p class="text-red-700 font-bold text-sm mb-1">
+                            <i class="fa-solid fa-fire mr-2"></i>
+                            🔥 Сегодня свободно только 3 мастера
+                        </p>
+                        <p class="text-red-600 text-xs">
+                            <i class="fa-solid fa-clock mr-1"></i>Последний выезд в 21:45
+                        </p>
                     </div>
-                    <p class="text-2xl font-display font-extrabold text-white mb-1">от 1 990₽</p>
-                    <p class="text-slate-300 text-sm">Диагностика</p>
+                    
+                    <div class="inline-flex items-center gap-2 bg-green-500/90 backdrop-blur-md border border-green-400/50 rounded-full px-4 py-2 text-white text-sm font-bold mb-6 pulse-red">
+                        <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>ВЫЕЗД НА ДОМ ЗА 60 МИНУТ</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+                        Ремонт <span class="text-brand-orange">пароконвектоматов</span> на дому
+                    </h1>
+                    
+                    <p class="text-lg lg:text-xl text-slate-300 mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Диагностика <span class="text-white font-bold line-through decoration-brand-orange">1 500₽</span> 
+                        <span class="text-brand-orange font-bold text-3xl">0₽</span> при ремонте. 
+                        <span class="text-white font-bold">Гарантия на работы</span>.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 text-white text-sm">
+                            <i class="fa-solid fa-ruble-sign text-brand-orange mr-1"></i>от 790₽
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 text-white text-sm">
+                            <i class="fa-solid fa-clock text-brand-orange mr-1"></i>60 мин выезд
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 text-white text-sm">
+                            <i class="fa-solid fa-shield-halved text-brand-orange mr-1"></i>Гарантия
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-6">
+                        <a href="tel:89990057172" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-2xl cta-pulse">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>ВЫЗВАТЬ МАСТЕРА</span>
+                        </a>
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20пароконвектомата" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 text-white/80 text-sm justify-center lg:justify-start">
+                        <div class="flex items-center gap-1">
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <span class="ml-2 text-white font-bold">4.9/5</span>
+                        </div>
+                        <span class="text-white/60">|</span>
+                        <span>1200+ отзывов</span>
+                    </div>
                 </div>
                 
-                <div class="feature-box glass-card p-6 text-center fade-in-section">
-                    <div class="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto">
-                        <i class="fa-solid fa-clock"></i>
+                <!-- СТАТИСТИКА -->
+                <div class="hidden lg:block fade-in-section">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 shadow-2xl">
+                        <div class="grid grid-cols-2 gap-6 mb-6">
+                            <div class="stat-card text-center p-4 rounded-2xl">
+                                <div class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-3 mx-auto icon-bounce">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <p class="text-3xl font-extrabold text-brand-orange mb-1">60 мин</p>
+                                <p class="text-white/80 text-sm">Время прибытия</p>
+                            </div>
+                            <div class="stat-card text-center p-4 rounded-2xl">
+                                <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto icon-bounce">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <p class="text-3xl font-extrabold text-green-400 mb-1">98%</p>
+                                <p class="text-white/80 text-sm">С 1-го раза</p>
+                            </div>
+                            <div class="stat-card text-center p-4 rounded-2xl">
+                                <div class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-3 mx-auto icon-bounce">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <p class="text-3xl font-extrabold text-brand-orange mb-1">Гарантия</p>
+                                <p class="text-white/80 text-sm">На работы</p>
+                            </div>
+                            <div class="stat-card text-center p-4 rounded-2xl">
+                                <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto icon-bounce">
+                                    <i class="fa-solid fa-ruble-sign"></i>
+                                </div>
+                                <p class="text-3xl font-extrabold text-green-400 mb-1">0₽</p>
+                                <p class="text-white/80 text-sm">Диагностика</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl p-5">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="font-bold text-brand-blue">4.9/5</span>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-3">«Мастер приехал через 50 минут, пароконвектомат починили за 2 часа. Всё работает!»</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-sm">МК</div>
+                                <div>
+                                    <p class="font-semibold text-brand-blue text-sm">Марина К.</p>
+                                    <p class="text-slate-500 text-xs">Москва</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-2xl font-display font-extrabold text-white mb-1">20 мин</p>
-                    <p class="text-slate-300 text-sm">Выезд мастера</p>
                 </div>
-                
-                <div class="feature-box glass-card p-6 text-center fade-in-section">
-                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-3 mx-auto">
-                        <i class="fa-solid fa-wrench"></i>
-                    </div>
-                    <p class="text-2xl font-display font-extrabold text-white mb-1">2-4 часа</p>
-                    <p class="text-slate-300 text-sm">Время ремонта</p>
-                </div>
-                
-                <div class="feature-box glass-card p-6 text-center fade-in-section">
-                    <div class="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <p class="text-2xl font-display font-extrabold text-white mb-1">24 мес</p>
-                    <p class="text-slate-300 text-sm">Гарантия</p>
-                </div>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-section">
-                <a href="tel:89990057172" class="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition shadow-2xl hover:shadow-orange-500/50 transform hover:-translate-y-1 btn-glow">
-                    <i class="fa-solid fa-phone animate-pulse"></i>
-                    <span>Вызвать мастера</span>
-                </a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20пароконвектомата" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-xl transform hover:-translate-y-1">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </a>
             </div>
         </div>
     </header>
 
-    <!-- 🔧 ЧТО РЕМОНТИРУЕМ -->
-    <section class="py-20 bg-white">
+    <!-- 🏆 TRUST BADGES -->
+    <section class="py-12 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-in-section">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 УСЛУГИ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Что ремонтируем</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Полный спектр работ по ремонту пароконвектоматов</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                <div class="service-card bg-gradient-to-br from-red-100 to-red-100 p-8 rounded-2xl border-2 border-red-200 fade-in-section stat-card-hover">
-                    <div class="w-16 h-16 bg-red-200 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-6">
-                        <i class="fa-solid fa-microchip"></i>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="trust-card bg-gradient-to-br from-blue-100 to-cyan-50 p-6 rounded-2xl border border-blue-100 text-center fade-in-section">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-award"></i>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Ремонт электроники</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Платы управления</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Дисплеи, кнопки</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Датчики температуры</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Программное обеспечение</li>
-                    </ul>
-                    <p class="text-brand-orange font-bold text-lg mt-4">от 3 990₽</p>
+                    <p class="font-bold text-brand-blue text-lg">12 лет</p>
+                    <p class="text-slate-600 text-sm">Опыта работы</p>
                 </div>
-                
-                <div class="service-card bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl border-2 border-orange-200 fade-in-section stat-card-hover">
-                    <div class="w-16 h-16 bg-orange-200 rounded-2xl flex items-center justify-center text-orange-600 text-2xl mb-6">
-                        <i class="fa-solid fa-fire-burner"></i>
+                <div class="trust-card bg-gradient-to-br from-green-100 to-emerald-50 p-6 rounded-2xl border border-green-100 text-center fade-in-section">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-file-contract"></i>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Замена ТЭНов</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>ТЭНы парогенератора</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>ТЭНы рабочей камеры</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Термопредохранители</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Контакторы</li>
-                    </ul>
-                    <p class="text-brand-orange font-bold text-lg mt-4">от 2 490₽</p>
+                    <p class="font-bold text-brand-blue text-lg">Официально</p>
+                    <p class="text-slate-600 text-sm">Договор и чек</p>
                 </div>
-                
-                <div class="service-card bg-gradient-to-br from-blue-100 to-blue-100 p-8 rounded-2xl border-2 border-blue-200 fade-in-section stat-card-hover">
-                    <div class="w-16 h-16 bg-blue-200 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6">
-                        <i class="fa-solid fa-cloud"></i>
+                <div class="trust-card bg-gradient-to-br from-purple-100 to-pink-50 p-6 rounded-2xl border border-purple-100 text-center fade-in-section">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-certificate"></i>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Парогенераторы</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Ремонт парогенератора</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Замена клапанов</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Удаление накипи</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Проверка давления</li>
-                    </ul>
-                    <p class="text-brand-orange font-bold text-lg mt-4">от 4 990₽</p>
+                    <p class="font-bold text-brand-blue text-lg">Сертифицировано</p>
+                    <p class="text-slate-600 text-sm">Мастера с опытом</p>
                 </div>
-                
-                <div class="service-card bg-gradient-to-br from-green-100 to-green-100 p-8 rounded-2xl border-2 border-green-200 fade-in-section stat-card-hover">
-                    <div class="w-16 h-16 bg-green-200 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-6">
-                        <i class="fa-solid fa-fan"></i>
+                <div class="trust-card bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-2xl border border-orange-100 text-center fade-in-section">
+                    <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-wallet"></i>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Вентиляторы</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Моторы конвекции</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Подшипники</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Крыльчатки</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Система обдува</li>
-                    </ul>
-                    <p class="text-brand-orange font-bold text-lg mt-4">от 2 990₽</p>
-                </div>
-                
-                <div class="service-card bg-gradient-to-br from-purple-100 to-purple-100 p-8 rounded-2xl border-2 border-purple-200 fade-in-section stat-card-hover">
-                    <div class="w-16 h-16 bg-purple-200 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6">
-                        <i class="fa-solid fa-door-closed"></i>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Двери и уплотнители</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Уплотнители двери</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Петли, замки</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Стекло двери</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Механизмы закрывания</li>
-                    </ul>
-                    <p class="text-brand-orange font-bold text-lg mt-4">от 1 990₽</p>
-                </div>
-                
-                <div class="service-card bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-2xl border-2 border-amber-200 fade-in-section stat-card-hover">
-                    <div class="w-16 h-16 bg-amber-200 rounded-2xl flex items-center justify-center text-amber-600 text-2xl mb-6">
-                        <i class="fa-solid fa-droplet"></i>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Водоподготовка</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Системы очистки воды</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Фильтры, картриджи</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Насосы подачи воды</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Сливная система</li>
-                    </ul>
-                    <p class="text-brand-orange font-bold text-lg mt-4">от 2 490₽</p>
+                    <p class="font-bold text-brand-blue text-lg">Оплата после</p>
+                    <p class="text-slate-600 text-sm">Проверки работы</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 🏭 БРЕНДЫ -->
+    <!-- 📞 QUICK CONTACT BAR -->
+    <section class="py-6 bg-brand-orange relative overflow-hidden -mt-8 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 pulse-red">
+                        <i class="fa-solid fa-phone-volume text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold text-lg">Пароконвектомат сломалась?</p>
+                        <p class="text-white/90 text-sm">Мастер приедет на дом через час</p>
+                    </div>
+                </div>
+                <a href="tel:89990057172" class="bg-white text-brand-orange hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>8 (999) 005-71-72</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⚡ PROBLEMS SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 ПРОБЛЕМЫ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Что случилось со стиральной машиной?</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Узнали свою проблему? Звоните — решим за 1 визит!</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="fade-in-section card-gradient-1 p-6 rounded-2xl border-2 border-red-100 hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:scale-105">
+                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-xl mb-4 group-hover:bg-brand-orange group-hover:text-white transition">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-2">Нет пара</h3>
+                    <p class="text-slate-600 text-sm mb-3">Забился фильтр или насос</p>
+                    <p class="text-brand-orange font-bold text-lg">от 890₽</p>
+                </div>
+                
+                <div class="fade-in-section card-gradient-2 p-6 rounded-2xl border-2 border-orange-100 hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:scale-105">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-xl mb-4 group-hover:bg-brand-orange group-hover:text-white transition">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-2">Сильно шумит</h3>
+                    <p class="text-slate-600 text-sm mb-3">Износ подшипников или амортизаторов</p>
+                    <p class="text-brand-orange font-bold text-lg">от 1 290₽</p>
+                </div>
+                
+                <div class="fade-in-section card-gradient-3 p-6 rounded-2xl border-2 border-blue-100 hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:scale-105">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-blue text-xl mb-4 group-hover:bg-brand-orange group-hover:text-white transition">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-2">Протекает</h3>
+                    <p class="text-slate-600 text-sm mb-3">Повреждён патрубок или манжета</p>
+                    <p class="text-brand-orange font-bold text-lg">от 690₽</p>
+                </div>
+                
+                <div class="fade-in-section card-gradient-4 p-6 rounded-2xl border-2 border-purple-100 hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:scale-105">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl mb-4 group-hover:bg-brand-orange group-hover:text-white transition">
+                        <i class="fa-solid fa-power-off"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-2">Не включается</h3>
+                    <p class="text-slate-600 text-sm mb-3">Проблемы с платой или блокировкой</p>
+                    <p class="text-brand-orange font-bold text-lg">от 1 190₽</p>
+                </div>
+                
+                <div class="fade-in-section card-gradient-5 p-6 rounded-2xl border-2 border-green-100 hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:scale-105">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl mb-4 group-hover:bg-brand-orange group-hover:text-white transition">
+                        <i class="fa-solid fa-temperature-arrow-down"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-2">Не греет</h3>
+                    <p class="text-slate-600 text-sm mb-3">Неисправен ТЭН или термостат</p>
+                    <p class="text-brand-orange font-bold text-lg">от 2 490₽</p>
+                </div>
+                
+                <div class="fade-in-section card-gradient-6 p-6 rounded-2xl border-2 border-cyan-100 hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:scale-105">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center text-cyan-600 text-xl mb-4 group-hover:bg-brand-orange group-hover:text-white transition">
+                        <i class="fa-solid fa-rotate"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-2">Не крутит барабан</h3>
+                    <p class="text-slate-600 text-sm mb-3">Износ ремня или двигателя</p>
+                    <p class="text-brand-orange font-bold text-lg">от 790₽</p>
+                </div>
+            </div>
+            
+            <div class="text-center fade-in-section">
+                <a href="tel:89990057172" class="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-10 py-5 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cta-pulse">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Бесплатная консультация</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📋 PROCESS SECTION -->
     <section class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏭 БРЕНДЫ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Работаем со всеми производителями</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Оригинальные запчасти и сертификаты на все бренды</p>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">📋 КАК МЫ РАБОТАЕМ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Процесс ремонта</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Просто и прозрачно — 4 шага к исправной стиральной машине</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="fade-in-section bg-white p-8 rounded-2xl border-2 border-amber-200 stat-card-hover text-center">
-                    <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white text-3xl mb-4 mx-auto">
-                        <i class="fa-solid fa-crown"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="process-step text-center fade-in-section">
+                    <div class="w-20 h-20 bg-brand-orange rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4 shadow-lg">
+                        <i class="fa-solid fa-phone"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold text-brand-blue mb-2">Rational</h3>
-                    <p class="text-slate-500 text-sm mb-4">🇩🇪 Германия</p>
-                    <ul class="text-slate-600 text-sm space-y-2">
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>SelfCookingCenter</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>CombiMaster</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>VarioCookingCenter</li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">1. Заявка</h3>
+                    <p class="text-slate-600 text-sm">Звоните или оставляете заявку на сайте</p>
+                    <p class="text-brand-orange font-semibold text-xs mt-2">5 минут</p>
                 </div>
                 
-                <div class="fade-in-section bg-white p-8 rounded-2xl border-2 border-amber-200 stat-card-hover text-center">
-                    <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white text-3xl mb-4 mx-auto">
-                        <i class="fa-solid fa-crown"></i>
+                <div class="process-step text-center fade-in-section">
+                    <div class="w-20 h-20 bg-brand-orange rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4 shadow-lg">
+                        <i class="fa-solid fa-car"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold text-brand-blue mb-2">Unox</h3>
-                    <p class="text-slate-500 text-sm mb-4">🇮🇹 Италия</p>
-                    <ul class="text-slate-600 text-sm space-y-2">
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>ChefTop</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>BakerTop</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>LineChef</li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">2. Выезд</h3>
+                    <p class="text-slate-600 text-sm">Мастер приезжает в удобное время</p>
+                    <p class="text-brand-orange font-semibold text-xs mt-2">60 минут</p>
                 </div>
                 
-                <div class="fade-in-section bg-white p-8 rounded-2xl border-2 border-amber-200 stat-card-hover text-center">
-                    <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white text-3xl mb-4 mx-auto">
-                        <i class="fa-solid fa-crown"></i>
+                <div class="process-step text-center fade-in-section">
+                    <div class="w-20 h-20 bg-brand-orange rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4 shadow-lg">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold text-brand-blue mb-2">Electrolux</h3>
-                    <p class="text-slate-500 text-sm mb-4">🇸🇪 Швеция</p>
-                    <ul class="text-slate-600 text-sm space-y-2">
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>GrandChef</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>ProCook</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Thermaline</li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">3. Ремонт</h3>
+                    <p class="text-slate-600 text-sm">Диагностика и устранение неисправности</p>
+                    <p class="text-brand-orange font-semibold text-xs mt-2">1-3 часа</p>
+                </div>
+                
+                <div class="process-step text-center fade-in-section">
+                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4 shadow-lg">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">4. Гарантия</h3>
+                    <p class="text-slate-600 text-sm">Оплата после проверки и гарантия</p>
+                    <p class="text-brand-orange font-semibold text-xs mt-2">На работы</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ⭐ ПОЧЕМУ МЫ -->
+    <!-- 💰 PRICING SECTION -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⭐ ПРЕИМУЩЕСТВА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Почему выбирают нас</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Профессиональный подход к ремонту пароконвектоматов</p>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">💰 ЦЕНЫ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Стоимость ремонта</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Прозрачные цены без скрытых платежей</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center fade-in-section">
-                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
-                        <i class="fa-solid fa-certificate"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-2xl border-2 border-slate-100 fade-in-section hover:shadow-lg transition hover:border-brand-orange">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold text-brand-blue">Диагностика</h3>
+                        <span class="text-3xl font-extrabold text-green-600">0₽*</span>
                     </div>
-                    <p class="text-4xl font-display font-extrabold text-brand-blue mb-2">Сертифицировано</p>
-                    <p class="text-slate-600">Мастера с опытом</p>
+                    <p class="text-slate-600 text-sm">При условии ремонта</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <span class="inline-flex items-center gap-2 text-green-600 text-sm font-semibold">
+                            <i class="fa-solid fa-check-circle"></i>Бесплатно
+                        </span>
+                    </div>
                 </div>
-                <div class="text-center fade-in-section">
-                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
-                        <i class="fa-solid fa-box-open"></i>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-brand-orange fade-in-section hover:shadow-lg transition relative">
+                    <div class="absolute top-0 right-0 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-bl-lg">ПОПУЛЯРНОЕ</div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold text-brand-blue">Замена ТЭНа</h3>
+                        <span class="text-3xl font-extrabold text-brand-orange">от 2 490₽</span>
                     </div>
-                    <p class="text-4xl font-display font-extrabold text-brand-blue mb-2">Оригинал</p>
-                    <p class="text-slate-600">Запчасти от производителей</p>
+                    <p class="text-slate-600 text-sm">Работа + запчасти</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <span class="inline-flex items-center gap-2 text-brand-orange text-sm font-semibold">
+                            <i class="fa-solid fa-clock"></i>1-2 часа
+                        </span>
+                    </div>
                 </div>
-                <div class="text-center fade-in-section">
-                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
-                        <i class="fa-solid fa-clock"></i>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-slate-100 fade-in-section hover:shadow-lg transition hover:border-brand-orange">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold text-brand-blue">Замена подшипников</h3>
+                        <span class="text-3xl font-extrabold text-brand-orange">от 2 490₽</span>
                     </div>
-                    <p class="text-4xl font-display font-extrabold text-brand-blue mb-2">20 мин</p>
-                    <p class="text-slate-600">Средний выезд</p>
+                    <p class="text-slate-600 text-sm">Самая частая поломка</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <span class="inline-flex items-center gap-2 text-brand-orange text-sm font-semibold">
+                            <i class="fa-solid fa-clock"></i>3-5 часов
+                        </span>
+                    </div>
                 </div>
-                <div class="text-center fade-in-section">
-                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
-                        <i class="fa-solid fa-shield-halved"></i>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-slate-100 fade-in-section hover:shadow-lg transition hover:border-brand-orange">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold text-brand-blue">Ремонт насоса</h3>
+                        <span class="text-3xl font-extrabold text-brand-orange">от 890₽</span>
                     </div>
-                    <p class="text-4xl font-display font-extrabold text-brand-blue mb-2">24 мес</p>
-                    <p class="text-slate-600">Гарантия на работы</p>
+                    <p class="text-slate-600 text-sm">Сливная помпа</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <span class="inline-flex items-center gap-2 text-brand-orange text-sm font-semibold">
+                            <i class="fa-solid fa-clock"></i>1 час
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-slate-100 fade-in-section hover:shadow-lg transition hover:border-brand-orange">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold text-brand-blue">Замена ремня</h3>
+                        <span class="text-3xl font-extrabold text-brand-orange">от 790₽</span>
+                    </div>
+                    <p class="text-slate-600 text-sm">Приводной ремень</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <span class="inline-flex items-center gap-2 text-brand-orange text-sm font-semibold">
+                            <i class="fa-solid fa-clock"></i>30 мин</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-slate-100 fade-in-section hover:shadow-lg transition hover:border-brand-orange">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold text-brand-blue">Ремонт платы</h3>
+                        <span class="text-3xl font-extrabold text-brand-orange">от 1 890₽</span>
+                    </div>
+                    <p class="text-slate-600 text-sm">Электронный модуль</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <span class="inline-flex items-center gap-2 text-brand-orange text-sm font-semibold">
+                            <i class="fa-solid fa-clock"></i>2-4 часа
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-brand-orange/10 to-orange-100 border-2 border-brand-orange/20 rounded-2xl p-6 text-center fade-in-section">
+                <p class="text-brand-blue font-bold mb-2">
+                    <i class="fa-solid fa-gift text-brand-orange mr-2"></i>
+                    Акция месяца: Скидка 10% пенсионерам!
+                </p>
+                <p class="text-slate-600 text-sm">При предъявлении пенсионного удостоверения</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⚖️ COMPARISON SECTION -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⚖️ СРАВНЕНИЕ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Почему выбирают нас</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Сравните наши преимущества с другими сервисами</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden fade-in-section">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-brand-orange to-orange-600 text-white">
+                                <th class="py-4 px-6 text-left font-bold">Параметр</th>
+                                <th class="py-4 px-6 text-center font-bold text-lg">🏆 MosPochin</th>
+                                <th class="py-4 px-6 text-center font-bold text-white/80">Другие</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                <td class="py-4 px-6 font-semibold text-brand-blue">Выезд мастера</td>
+                                <td class="py-4 px-6 text-center"><span class="comparison-check font-bold"><i class="fa-solid fa-check mr-2"></i>60 минут</span></td>
+                                <td class="py-4 px-6 text-center"><span class="text-slate-500">2-4 часа</span></td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                <td class="py-4 px-6 font-semibold text-brand-blue">Диагностика</td>
+                                <td class="py-4 px-6 text-center"><span class="comparison-check font-bold"><i class="fa-solid fa-check mr-2"></i>0₽</span></td>
+                                <td class="py-4 px-6 text-center"><span class="text-slate-500">1 500₽</span></td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                <td class="py-4 px-6 font-semibold text-brand-blue">Гарантия</td>
+                                <td class="py-4 px-6 text-center"><span class="comparison-check font-bold"><i class="fa-solid fa-check mr-2"></i>На работы</span></td>
+                                <td class="py-4 px-6 text-center"><span class="text-slate-500">3-6 месяцев</span></td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                <td class="py-4 px-6 font-semibold text-brand-blue">Запчасти</td>
+                                <td class="py-4 px-6 text-center"><span class="comparison-check font-bold"><i class="fa-solid fa-check mr-2"></i>С собой</span></td>
+                                <td class="py-4 px-6 text-center"><span class="text-slate-500">Под заказ</span></td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50">
+                                <td class="py-4 px-6 font-semibold text-brand-blue">Оплата</td>
+                                <td class="py-4 px-6 text-center"><span class="comparison-check font-bold"><i class="fa-solid fa-check mr-2"></i>После ремонта</span></td>
+                                <td class="py-4 px-6 text-center"><span class="text-slate-500">Предоплата</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="py-4 px-6 font-semibold text-brand-blue">Документы</td>
+                                <td class="py-4 px-6 text-center"><span class="comparison-check font-bold"><i class="fa-solid fa-check mr-2"></i>Договор + чек</span></td>
+                                <td class="py-4 px-6 text-center"><span class="text-slate-500">Не всегда</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🏭 BRANDS SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏭 БРЕНДЫ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Ремонтируем все марки</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Оригинальные запчасти для любых производителей</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+                <!-- Premium сегмент -->
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Miele</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Германия</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Bosch</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Германия</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Siemens</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Германия</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Electrolux</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Швеция</p>
+                </div>
+                
+                <!-- Средний сегмент -->
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-green-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Samsung</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Южная Корея</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-green-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">LG</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Южная Корея</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-green-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Whirlpool</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>США</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-green-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Haier</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Китай</p>
+                </div>
+                
+                <!-- Бюджетный сегмент -->
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-orange-100 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Indesit</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Италия</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-orange-100 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Ariston</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Италия</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-orange-100 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Beko</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Турция</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-orange-100 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Candy</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Италия</p>
+                </div>
+                
+                <!-- СНГ -->
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-purple-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Atlant</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Беларусь</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-purple-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Vyatka</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Россия</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-purple-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Elenberg</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Россия</p>
+                </div>
+                <div class="fade-in-section bg-gradient-to-br from-slate-50 to-purple-50 p-6 rounded-xl border-2 border-slate-100 text-center hover:shadow-lg transition brand-card">
+                    <p class="font-bold text-brand-blue text-lg mb-1">Zanussi</p>
+                    <p class="text-xs text-slate-500"><i class="fa-solid fa-flag mr-1"></i>Италия</p>
+                </div>
+            </div>
+            
+            <!-- Информация о брендах -->
+            <div class="bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20 rounded-2xl p-8 fade-in-section">
+                <h3 class="text-2xl font-bold text-brand-blue mb-6 text-center">📊 Особенности ремонта разных брендов</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-brand-blue mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-medal text-brand-orange"></i>
+                            Премиум (Германия, Швеция)
+                        </h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Высокая надёжность</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Дорогие запчасти</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Сложная электроника</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Срок службы 15+ лет</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-brand-blue mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-brand-orange"></i>
+                            Средний (Корея, США, Китай)
+                        </h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Оптимальное качество</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Доступные запчасти</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Много электроники</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Срок службы 10-12 лет</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-brand-blue mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-tag text-brand-orange"></i>
+                            Бюджет (СНГ, Турция)
+                        </h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Простая конструкция</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Дешёвые запчасти</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Легко ремонтировать</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Срок службы 7-10 лет</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⭐ WHY US + REVIEWS SECTION -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-section">
+                    <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⚡ ПОЧЕМУ МЫ</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-6">Ремонт на дому за 1 визит</h2>
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">Мастер приедет со всеми запчастями и инструментами. 98% ремонтов завершаем за один визит.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border-2 border-slate-100 hover:border-brand-orange transition">
+                            <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange flex-shrink-0">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-brand-blue text-lg">Выезд за 60 минут</p>
+                                <p class="text-slate-600 text-sm">В любой район Москвы</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border-2 border-slate-100 hover:border-brand-orange transition">
+                            <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange flex-shrink-0">
+                                <i class="fa-solid fa-toolbox text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-brand-blue text-lg">Запчасти с собой</p>
+                                <p class="text-slate-600 text-sm">98% поломок чиним сразу</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border-2 border-slate-100 hover:border-brand-orange transition">
+                            <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange flex-shrink-0">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-brand-blue text-lg">Гарантия на работы</p>
+                                <p class="text-slate-600 text-sm">Официальный договор</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="tel:89990057172" class="inline-block bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-10 py-5 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cta-pulse">
+                        <i class="fa-solid fa-phone mr-2"></i>Вызвать мастера на дом
+                    </a>
+                </div>
+                
+                <!-- ОТЗЫВЫ -->
+                <div class="fade-in-section">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-2 border-slate-100">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="flex text-yellow-400">
+                                <i class="fa-solid fa-star text-xl"></i>
+                                <i class="fa-solid fa-star text-xl"></i>
+                                <i class="fa-solid fa-star text-xl"></i>
+                                <i class="fa-solid fa-star text-xl"></i>
+                                <i class="fa-solid fa-star text-xl"></i>
+                            </div>
+                            <span class="font-bold text-brand-blue text-2xl">4.9/5</span>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                                <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">МК</div>
+                                <div>
+                                    <p class="text-slate-600 italic mb-2">«Мастер приехал через 50 минут, пароконвектомат починили за 2 часа. Всё работает!»</p>
+                                    <p class="text-slate-500 text-sm font-semibold">Марина К., Москва</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">АС</div>
+                                <div>
+                                    <p class="text-slate-600 italic mb-2">«Цена не изменилась в процессе ремонта. Честно и профессионально.»</p>
+                                    <p class="text-slate-500 text-sm font-semibold">Андрей С., Химки</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">ЕВ</div>
+                                <div>
+                                    <p class="text-slate-600 italic mb-2">«Уже второй раз обращаюсь. Всегда быстро и качественно.»</p>
+                                    <p class="text-slate-500 text-sm font-semibold">Елена В., Мытищи</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-6 border-t-2 border-slate-100 text-center">
+                            <p class="text-slate-600 font-bold">
+                                <i class="fa-solid fa-users text-brand-orange mr-2"></i>
+                                1200+ довольных клиентов
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ❓ FAQ SECTION -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">❓ FAQ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Частые вопросы</h2>
+                <p class="text-slate-600 text-lg">Ответы на популярные вопросы</p>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer fade-in-section">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span><i class="fa-solid fa-circle-question text-brand-orange mr-3"></i>Сколько стоит диагностика?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-600 ml-8">Диагностика <strong>0₽</strong> при условии дальнейшего ремонта. Если вы отказываетесь от ремонта — диагностика стоит 1 500₽.</p>
+                </details>
+                
+                <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer fade-in-section">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span><i class="fa-solid fa-circle-question text-brand-orange mr-3"></i>Какая гарантия на ремонт?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-600 ml-8">Мы предоставляем <strong>гарантию на выполненные работы</strong>. Условия гарантии обсуждаются с мастером и указываются в договоре.</p>
+                </details>
+                
+                <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer fade-in-section">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span><i class="fa-solid fa-circle-question text-brand-orange mr-3"></i>Как быстро приедет мастер?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-600 ml-8">Мастер приедет в течение <strong>60 минут</strong> после заявки. Работаем во всех округах Москвы и ближайшем Подмосковье.</p>
+                </details>
+                
+                <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer fade-in-section">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span><i class="fa-solid fa-circle-question text-brand-orange mr-3"></i>Можно ли оплатить картой?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-600 ml-8">Да, принимаем оплату наличными, банковской картой, через СБП. Для юридических лиц предоставляем полный пакет документов.</p>
+                </details>
+                
+                <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer fade-in-section">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span><i class="fa-solid fa-circle-question text-brand-orange mr-3"></i>Работаете ли в выходные?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-slate-600 ml-8">Да, мы работаем <strong>ежедневно без выходных</strong> с 8:00 до 22:00. В экстренных случаях возможен выезд в ночное время.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💳 PAYMENT METHODS -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">💳 ОПЛАТА</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Удобные способы оплаты</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="payment-card bg-white p-6 rounded-2xl border-2 border-slate-100 text-center fade-in-section">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <p class="font-bold text-brand-blue">Банковская карта</p>
+                    <p class="text-slate-500 text-sm">Visa, Mastercard, МИР</p>
+                </div>
+                
+                <div class="payment-card bg-white p-6 rounded-2xl border-2 border-slate-100 text-center fade-in-section">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <p class="font-bold text-brand-blue">Наличные</p>
+                    <p class="text-slate-500 text-sm">Мастеру после ремонта</p>
+                </div>
+                
+                <div class="payment-card bg-white p-6 rounded-2xl border-2 border-slate-100 text-center fade-in-section">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <p class="font-bold text-brand-blue">СБП</p>
+                    <p class="text-slate-500 text-sm">Быстрый перевод</p>
+                </div>
+                
+                <div class="payment-card bg-white p-6 rounded-2xl border-2 border-slate-100 text-center fade-in-section">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <p class="font-bold text-brand-blue">Для юрлиц</p>
+                    <p class="text-slate-500 text-sm">С документами</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📍 SERVICE AREA -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">📍 ЗОНА ОБСЛУЖИВАНИЯ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Работаем по всей Москве</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-4 text-center fade-in-section">
+                <div class="bg-gradient-to-br from-blue-100 to-cyan-50 p-6 rounded-2xl border-2 border-blue-100">
+                    <i class="fa-solid fa-location-dot text-brand-orange text-3xl mb-3"></i>
+                    <p class="font-bold text-brand-blue">Центральный АО</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-100 to-emerald-50 p-6 rounded-2xl border-2 border-green-100">
+                    <i class="fa-solid fa-location-dot text-brand-orange text-3xl mb-3"></i>
+                    <p class="font-bold text-brand-blue">Северный АО</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-2xl border-2 border-orange-100">
+                    <i class="fa-solid fa-location-dot text-brand-orange text-3xl mb-3"></i>
+                    <p class="font-bold text-brand-blue">Южный АО</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-100 to-pink-50 p-6 rounded-2xl border-2 border-purple-100">
+                    <i class="fa-solid fa-location-dot text-brand-orange text-3xl mb-3"></i>
+                    <p class="font-bold text-brand-blue">Все округа Москвы</p>
                 </div>
             </div>
         </div>
@@ -290,23 +838,26 @@
     <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
-            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6 emergency-pulse">
-                <span class="font-medium"><i class="fa-solid fa-bolt mr-2"></i>АВАРИЙНАЯ СЛУЖБА</span>
+            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+                <span class="font-medium"><i class="fa-solid fa-bolt mr-2"></i>СРОЧНЫЙ РЕМОНТ</span>
             </div>
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight">Пароконвектомат сломался? Не теряйте прибыль!</h2>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Пароконвектомат сломалась? Не ждите!</h2>
             <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">
-                Мастер приедет за <span class="font-bold text-white">20 минут</span>. 
-                Диагностика <span class="font-bold text-white">0₽</span> при ремонте. 
-                <span class="font-bold text-white">Гарантия до 2 лет</span>.
+                Мастер приедет за <span class="font-bold text-white">60 минут</span>. 
+                Диагностика <span class="font-bold text-white">0₽</span>. 
+                <span class="font-bold text-white">Гарантия на работы</span>.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-2xl transform hover:scale-105 btn-glow">
-                    <i class="fa-solid fa-phone-volume mr-2 animate-pulse"></i>+7 (999) 005-71-72
+                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-10 py-5 rounded-full font-bold transition shadow-xl transform hover:scale-105 cta-pulse">
+                    <i class="fa-solid fa-phone mr-2"></i>+7 (999) 005-71-72
                 </a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20пароконвектомата" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-10 py-6 rounded-full font-display font-bold transition shadow-xl">
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20пароконвектомата" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-5 rounded-full font-bold transition shadow-xl">
                     <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
                 </a>
             </div>
+            <p class="text-white/80 text-sm mt-6">
+                <i class="fa-solid fa-clock mr-1"></i>Среднее время ответа — 30 секунд
+            </p>
         </div>
     </section>
 
