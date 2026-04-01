@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Ремонт грилей и мангалов для ресторанов в Москве. Угольные, газовые, электрические. Выезд за 20 минут.">
+    <title>Ремонт грилей и мангалов | Ресторанное оборудование | MosPochin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white">
+    <!-- 🔴 ЭКСТРЕННЫЙ БАННЕР -->
+    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg emergency-pulse">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
+            <i class="fa-solid fa-bolt text-yellow-300 icon-pulse"></i>
+            <span class="font-bold">🚨 АВАРИЙНЫЙ ВЫЕЗД</span>
+            <span class="hidden sm:inline">•</span>
+            <span class="hidden sm:inline font-semibold">Мастер будет через 20 минут</span>
+            <span class="hidden md:inline">•</span>
+            <a href="tel:89990057172" class="hidden md:inline font-bold hover:text-yellow-300 transition">
+                <i class="fa-solid fa-phone mr-1"></i>8 (999) 005-71-72
+            </a>
+        </div>
+    </div>
+    
+    <div id="header-container" class="mt-12"></div>
+    
+    <!-- 🎯 HERO SECTION -->
+    <header class="hero-bg-enhanced relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-8 fade-in-section">
+                <span class="inline-flex items-center gap-2 bg-amber-500/90 backdrop-blur-md border-2 border-amber-400/50 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg emergency-pulse">
+                    <i class="fa-solid fa-drumstick-bite"></i>
+                    <span>ЖАРОЧНОЕ ОБОРУДОВАНИЕ</span>
+                </span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight text-center fade-in-section">
+                Ремонт <span class="text-brand-orange">грилей и мангалов</span>
+            </h1>
+            
+            <p class="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed text-center mb-12 fade-in-section">
+                Профессиональный ремонт <span class="text-white font-bold">угольных, газовых, электрических грилей</span>. 
+                Выезд за <span class="text-white font-bold">20 минут</span>. Гарантия до <span class="text-white font-bold">2 лет</span>.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
+                <div class="feature-box glass-card p-6 text-center fade-in-section">
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-ruble-sign"></i>
+                    </div>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1">от 1 390₽</p>
+                    <p class="text-slate-300 text-sm">Диагностика</p>
+                </div>
+                
+                <div class="feature-box glass-card p-6 text-center fade-in-section">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1">20 мин</p>
+                    <p class="text-slate-300 text-sm">Выезд мастера</p>
+                </div>
+                
+                <div class="feature-box glass-card p-6 text-center fade-in-section">
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1">1-2 часа</p>
+                    <p class="text-slate-300 text-sm">Время ремонта</p>
+                </div>
+                
+                <div class="feature-box glass-card p-6 text-center fade-in-section">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1">24 мес</p>
+                    <p class="text-slate-300 text-sm">Гарантия</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-section">
+                <a href="tel:89990057172" class="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition shadow-2xl hover:shadow-orange-500/50 transform hover:-translate-y-1 btn-glow">
+                    <i class="fa-solid fa-phone animate-pulse"></i>
+                    <span>Вызвать мастера</span>
+                </a>
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20гриля%20или%20мангала" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-xl transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🔧 ЧТО РЕМОНТИРУЕМ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🍗 УСЛУГИ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Что ремонтируем</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Полный спектр работ по ремонту грилей и мангалов</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div class="service-card bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl border-2 border-orange-200 fade-in-section stat-card-hover">
+                    <div class="w-16 h-16 bg-orange-200 rounded-2xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Горелки и ТЭНы</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Газовые горелки</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Электрические ТЭНы</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Инфракрасные элементы</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Керамические горелки</li>
+                    </ul>
+                    <p class="text-brand-orange font-bold text-lg mt-4">от 1 990₽</p>
+                </div>
+                
+                <div class="service-card bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl border-2 border-red-200 fade-in-section stat-card-hover">
+                    <div class="w-16 h-16 bg-red-200 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-6">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Системы розжига</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Пьезорозжиг</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Электроподжиг</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Свечи розжига</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Трансформаторы</li>
+                    </ul>
+                    <p class="text-brand-orange font-bold text-lg mt-4">от 1 390₽</p>
+                </div>
+                
+                <div class="service-card bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-2xl border-2 border-amber-200 fade-in-section stat-card-hover">
+                    <div class="w-16 h-16 bg-amber-200 rounded-2xl flex items-center justify-center text-amber-600 text-2xl mb-6">
+                        <i class="fa-solid fa-gauge"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Термостаты</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Датчики температуры</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Терморегуляторы</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Капиллярные термостаты</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Калибровка</li>
+                    </ul>
+                    <p class="text-brand-orange font-bold text-lg mt-4">от 1 790₽</p>
+                </div>
+                
+                <div class="service-card bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border-2 border-blue-200 fade-in-section stat-card-hover">
+                    <div class="w-16 h-16 bg-blue-200 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6">
+                        <i class="fa-solid fa-shield-gas"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Газ-контроль</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Датчики пламени</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Электромагнитные клапаны</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Термопары</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Системы безопасности</li>
+                    </ul>
+                    <p class="text-brand-orange font-bold text-lg mt-4">от 1 990₽</p>
+                </div>
+                
+                <div class="service-card bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border-2 border-purple-200 fade-in-section stat-card-hover">
+                    <div class="w-16 h-16 bg-purple-200 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Решётки и камни</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Чугунные решётки</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Нержавеющие решётки</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Керамические камни</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Лавовые камни</li>
+                    </ul>
+                    <p class="text-brand-orange font-bold text-lg mt-4">от 2 490₽</p>
+                </div>
+                
+                <div class="service-card bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl border-2 border-green-200 fade-in-section stat-card-hover">
+                    <div class="w-16 h-16 bg-green-200 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-6">
+                        <i class="fa-solid fa-droplet-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Жироуловители</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Ёмкости для жира</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Сливные системы</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Поддоны</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i>Желоба</li>
+                    </ul>
+                    <p class="text-brand-orange font-bold text-lg mt-4">от 1 190₽</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎯 ТИПЫ ГРИЛЕЙ -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🍗 ТИПЫ ОБОРУДОВАНИЯ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Ремонтируем все типы</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Любые грили и мангалы для ресторанов</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="fade-in-section bg-white p-8 rounded-2xl border-2 border-orange-200 stat-card-hover text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-2">Угольные грили</h3>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Хосперы</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Мангалы</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Аргентинские грили</li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in-section bg-white p-8 rounded-2xl border-2 border-red-200 stat-card-hover text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center text-white text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-shield-gas"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-2">Газовые грили</h3>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Контактные грили</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Гриль-барбекю</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Саламандры</li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in-section bg-white p-8 rounded-2xl border-2 border-amber-200 stat-card-hover text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-2">Электрические грили</h3>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Панорамные</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Рифлёные</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Гладкие</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⭐ ПОЧЕМУ МЫ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⭐ ПРЕИМУЩЕСТВА</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Почему выбирают нас</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Профессиональный подход к ремонту жарочного оборудования</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center fade-in-section">
+                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <p class="text-4xl font-display font-extrabold text-brand-blue mb-2">Сертифицировано</p>
+                    <p class="text-slate-600">Мастера с опытом</p>
+                </div>
+                <div class="text-center fade-in-section">
+                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <p class="text-4xl font-display font-extrabold text-brand-blue mb-2">Оригинал</p>
+                    <p class="text-slate-600">Запчасти от производителей</p>
+                </div>
+                <div class="text-center fade-in-section">
+                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <p class="text-4xl font-display font-extrabold text-brand-blue mb-2">20 мин</p>
+                    <p class="text-slate-600">Средний выезд</p>
+                </div>
+                <div class="text-center fade-in-section">
+                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <p class="text-4xl font-display font-extrabold text-brand-blue mb-2">24 мес</p>
+                    <p class="text-slate-600">Гарантия на работы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎯 FINAL CTA -->
+    <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
+            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6 emergency-pulse">
+                <span class="font-medium"><i class="fa-solid fa-bolt mr-2"></i>АВАРИЙНАЯ СЛУЖБА</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight">Гриль сломался? Мясо не дожарится!</h2>
+            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">
+                Мастер приедет за <span class="font-bold text-white">20 минут</span>. 
+                Диагностика <span class="font-bold text-white">0₽</span> при ремонте. 
+                <span class="font-bold text-white">Гарантия до 2 лет</span>.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-2xl transform hover:scale-105 btn-glow">
+                    <i class="fa-solid fa-phone-volume mr-2 animate-pulse"></i>+7 (999) 005-71-72
+                </a>
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20гриля%20или%20мангала" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-10 py-6 rounded-full font-display font-bold transition shadow-xl">
+                    <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📱 STICKY MOBILE CTA -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-2xl">
+        <div class="grid grid-cols-2 gap-3">
+            <a href="tel:89990057172" class="bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>Позвонить</span>
+            </a>
+            <a href="https://wa.me/79990057172" class="bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+</body>
+</html>

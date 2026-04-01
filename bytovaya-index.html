@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Ремонт бытовой техники в Москве. Выезд на дом за 60 минут. Диагностика 0₽. Гарантия на работы.">
+    <title>Ремонт бытовой техники на дому | Москва | MosPochin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white">
+    <!-- 🔴 TOP BAR -->
+    <div class="bg-red-600 text-white py-2 text-center text-sm font-semibold fixed top-0 w-full z-[60]">
+        <i class="fa-solid fa-bolt mr-2"></i>
+        СРОЧНЫЙ ВЫЕЗД НА ДОМ — Мастер свободен через 15 минут
+        <span class="ml-4 hidden sm:inline">|</span>
+        <span class="ml-4 hidden sm:inline"><i class="fa-solid fa-phone mr-1"></i>8 (999) 005-71-72</span>
+    </div>
+    
+    <div id="header-container" class="mt-8"></div>
+    
+    <!-- 🎯 HERO SECTION -->
+    <header class="hero-bg relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left fade-in-section">
+                    <div class="inline-flex items-center gap-2 bg-green-500/90 backdrop-blur-md border border-green-400/50 rounded-full px-4 py-2 text-white text-sm font-bold mb-6 pulse-red">
+                        <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>ВЫЕЗД НА ДОМ ЗА 60 МИНУТ</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+                        Ремонт <span class="text-brand-orange">бытовой техники</span> на дому
+                    </h1>
+                    
+                    <p class="text-lg lg:text-xl text-slate-300 mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Диагностика <span class="text-white font-bold line-through decoration-brand-orange">1 500₽</span> 
+                        <span class="text-brand-orange font-bold text-2xl">0₽</span> при ремонте. 
+                        Гарантия <span class="text-white font-bold">12 месяцев</span>.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 text-white text-sm">
+                            <i class="fa-solid fa-ruble-sign text-brand-orange mr-1"></i>
+                            от 490₽
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 text-white text-sm">
+                            <i class="fa-solid fa-clock text-brand-orange mr-1"></i>
+                            60 мин выезд
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 text-white text-sm">
+                            <i class="fa-solid fa-shield-halved text-brand-orange mr-1"></i>
+                            12 мес гарантия
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 text-white text-sm">
+                            <i class="fa-solid fa-house text-brand-orange mr-1"></i>
+                            Выезд на дом
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-6">
+                        <a href="tel:89990057172" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition cta-glow transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-2xl pulse-glow">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>ВЫЗВАТЬ МАСТЕРА</span>
+                        </a>
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20бытовой%20техники" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                    
+                    <p class="text-slate-400 text-sm mb-4">Или оставьте заявку — перезвоним за 30 секунд</p>
+                </div>
+                
+                <div class="hidden lg:block fade-in-section relative">
+                    <img src="https://images.unsplash.com/photo-1556911073-38141963c9e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ремонт бытовой техники" loading="lazy" decoding="async" class="rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+                    
+                    <div class="absolute -top-4 -left-4 bg-white p-4 rounded-xl shadow-xl z-20 max-w-xs">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fa-solid fa-check text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-brand-blue text-lg">98%</p>
+                                <p class="text-slate-500 text-xs">ремонта за 1 визит</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-xl z-20">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="font-bold text-brand-blue">4.9</span>
+                        </div>
+                        <p class="text-slate-600 text-xs">5000+ клиентов</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 📞 QUICK CONTACT BAR -->
+    <section class="py-6 bg-brand-orange relative overflow-hidden -mt-8 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 pulse-red">
+                        <i class="fa-solid fa-phone-volume text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold text-lg">Техника сломалась?</p>
+                        <p class="text-white/90 text-sm">Мастер приедет на дом через час</p>
+                    </div>
+                </div>
+                <a href="tel:89990057172" class="bg-white text-brand-orange hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>8 (999) 005-71-72</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔧 SERVICES GRID -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 ЧТО МЫ РЕМОНТИРУЕМ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Ремонт любой техники</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Все популярные бренды и модели</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
+                <a href="holodilniki.html" class="service-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 fade-in-section text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-3xl mb-4 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-1">Холодильники</h3>
+                    <p class="text-slate-500 text-sm">от 890₽</p>
+                </a>
+                <a href="stiralnye-mashiny.html" class="service-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 fade-in-section text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-3xl mb-4 mx-auto group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-soap"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-1">Стиральные машины</h3>
+                    <p class="text-slate-500 text-sm">от 790₽</p>
+                </a>
+                <a href="posudomoyki.html" class="service-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 fade-in-section text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto group-hover:bg-green-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-sink"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-1">Посудомойки</h3>
+                    <p class="text-slate-500 text-sm">от 690₽</p>
+                </a>
+                <a href="plity.html" class="service-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 fade-in-section text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 text-3xl mb-4 mx-auto group-hover:bg-red-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-1">Плиты</h3>
+                    <p class="text-slate-500 text-sm">от 590₽</p>
+                </a>
+                <a href="kompyutery.html" class="service-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 fade-in-section text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 text-3xl mb-4 mx-auto group-hover:bg-gray-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-1">Компьютеры</h3>
+                    <p class="text-slate-500 text-sm">от 690₽</p>
+                </a>
+                <a href="routery.html" class="service-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 fade-in-section text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-3xl mb-4 mx-auto group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-blue mb-1">Роутеры</h3>
+                    <p class="text-slate-500 text-sm">от 490₽</p>
+                </a>
+            </div>
+
+            <div class="text-center fade-in-section">
+                <a href="uslugi.html" class="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold px-8 py-4 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    <span>Все услуги и цены</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⚡ WHY US -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⭐ ПОЧЕМУ МЫ</span>
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">5000+ клиентов</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="fade-in-section text-center p-6">
+                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Выезд за 60 минут</h3>
+                    <p class="text-slate-600">В удобное время</p>
+                </div>
+                <div class="fade-in-section text-center p-6">
+                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Гарантия 12 мес</h3>
+                    <p class="text-slate-600">Официальный договор</p>
+                </div>
+                <div class="fade-in-section text-center p-6">
+                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-ruble-sign"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Честные цены</h3>
+                    <p class="text-slate-600">Без скрытых платежей</p>
+                </div>
+                <div class="fade-in-section text-center p-6">
+                    <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Запчасти с собой</h3>
+                    <p class="text-slate-600">95% за 1 визит</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎯 FINAL CTA -->
+    <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
+            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+                <span class="font-medium"><i class="fa-solid fa-bolt mr-2"></i>Срочный ремонт</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Техника сломалась? Решим за визит!</h2>
+            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Диагностика бесплатно. Гарантия 12 месяцев.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-10 py-5 rounded-full font-bold transition shadow-xl transform hover:scale-105 cta-glow">
+                    <i class="fa-solid fa-phone mr-2"></i>+7 (999) 005-71-72
+                </a>
+                <a href="https://wa.me/79990057172" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-5 rounded-full font-bold transition shadow-xl">
+                    <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+</body>
+</html>
