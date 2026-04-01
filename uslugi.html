@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Ремонт ресторанного оборудования в Москве. Выезд за 20 минут. Диагностика 0₽. Гарантия до 2 лет. Работаем с ресторанами, столовыми, кафе.">
+    <title>Услуги и цены | Ремонт ресторанного оборудования | MosPochin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <style>
+        /* 🔥 АНИМАЦИИ ДЛЯ УСЛУГ */
+        @keyframes float { 0%, 100% { transform: translateY(0px) } 50% { transform: translateY(-10px) } }
+        @keyframes float-delayed { 0%, 100% { transform: translateY(0px) } 50% { transform: translateY(-8px) } }
+        @keyframes shine { 0% { background-position: -200% center } 100% { background-position: 200% center } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4) } 50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.8) } }
+        @keyframes bounce-in { 0% { opacity: 0; transform: scale(0.9) } 50% { transform: scale(1.05) } 100% { opacity: 1; transform: scale(1) } }
+        @keyframes slide-up { 0% { opacity: 0; transform: translateY(30px) } 100% { opacity: 1; transform: translateY(0) } }
+        @keyframes rotate-icon { 0% { transform: rotate(0deg) } 100% { transform: rotate(360deg) } }
+        @keyframes gradient-shift { 0% { background-position: 0% 50% } 50% { background-position: 100% 50% } 100% { background-position: 0% 50% } }
+        
+        .float-animation { animation: float 3s ease-in-out infinite; }
+        .float-animation-delayed { animation: float-delayed 3s ease-in-out infinite 0.5s; }
+        .shine-effect { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); background-size: 200% 100%; animation: shine 2s infinite; }
+        .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        .bounce-in { animation: bounce-in 0.6s ease-out; }
+        .slide-up { animation: slide-up 0.6s ease-out; }
+        .gradient-animated { background: linear-gradient(-45deg, #f97316, #ea580c, #dc2626, #f97316); background-size: 400% 400%; animation: gradient-shift 15s ease infinite; }
+        
+        .equipment-card .icon-wrapper { transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        .equipment-card:hover .icon-wrapper { transform: scale(1.2) rotate(5deg); }
+        .equipment-card:hover .check-item { animation: slide-up 0.3s ease-out forwards; opacity: 0; }
+        .equipment-card:hover .check-item:nth-child(1) { animation-delay: 0.1s; }
+        .equipment-card:hover .check-item:nth-child(2) { animation-delay: 0.2s; }
+        .equipment-card:hover .check-item:nth-child(3) { animation-delay: 0.3s; }
+        .equipment-card:hover .check-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .stat-card-hover { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .stat-card-hover:hover { transform: translateY(-10px) scale(1.02); }
+        
+        .client-card { transition: all 0.4s ease; }
+        .client-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .client-card .icon-circle { transition: all 0.4s ease; }
+        .client-card:hover .icon-circle { transform: scale(1.15) rotate(10deg); }
+        
+        .feature-box { transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        .feature-box:hover { transform: translateY(-8px) scale(1.05); }
+        .feature-box .icon-wrapper { transition: all 0.4s ease; }
+        .feature-box:hover .icon-wrapper { animation: rotate-icon 0.6s ease-out; }
+        
+        .btn-glow-enhanced { position: relative; overflow: hidden; }
+        .btn-glow-enhanced::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: left 0.5s; }
+        .btn-glow-enhanced:hover::before { left: 100%; }
+        
+        .bg-animated { background-size: 200% 200%; animation: gradient-shift 10s ease infinite; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white">
+    <!-- 🔴 ЭКСТРЕННЫЙ БАННЕР -->
+    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg emergency-pulse">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
+            <i class="fa-solid fa-bolt text-yellow-300 icon-pulse"></i>
+            <span class="font-bold">🚨 АВАРИЙНЫЙ ВЫЕЗД</span>
+            <span class="hidden sm:inline">•</span>
+            <span class="hidden sm:inline font-semibold">Мастер будет через 20 минут</span>
+            <span class="hidden md:inline">•</span>
+            <a href="tel:89990057172" class="hidden md:inline font-bold hover:text-yellow-300 transition">
+                <i class="fa-solid fa-phone mr-1"></i>8 (999) 005-71-72
+            </a>
+        </div>
+    </div>
+    
+    <div id="header-container" class="mt-12"></div>
+    
+    <!-- 🎯 HERO SECTION — ДЛЯ РЕСТОРАНОВ -->
+    <header class="hero-bg-enhanced relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-animated">
+        <!-- Плавающие элементы -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/10 rounded-full blur-2xl float-animation"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-brand-orange/10 rounded-full blur-3xl float-animation-delayed"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-red-500/10 rounded-full blur-xl float-animation"></div>
+        <div class="absolute bottom-40 left-20 w-24 h-24 bg-orange-500/10 rounded-full blur-xl float-animation-delayed"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-8 fade-in-section">
+                <span class="inline-flex items-center gap-2 bg-red-500/90 backdrop-blur-md border-2 border-red-400/50 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg emergency-pulse pulse-glow">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>ВЫЕЗД ЗА 20 МИНУТ</span>
+                </span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight text-center fade-in-section">
+                Услуги и <span class="text-brand-orange">цены</span> для ресторанов
+            </h1>
+            
+            <p class="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed text-center mb-12 fade-in-section">
+                Профессиональный ремонт <span class="text-white font-bold">ресторанного оборудования</span>. 
+                Работаем с <span class="text-white font-bold">ресторанами, столовыми, кафе</span>. 
+                Минимизируем простой вашей кухни.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
+                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation">
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-3 mx-auto icon-wrapper">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1">20 мин</p>
+                    <p class="text-slate-300 text-sm">Выезд мастера</p>
+                </div>
+                
+                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation-delayed">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto icon-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1">0₽</p>
+                    <p class="text-slate-300 text-sm">Диагностика*</p>
+                </div>
+                
+                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation">
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-3 mx-auto icon-wrapper">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1">98%</p>
+                    <p class="text-slate-300 text-sm">За 1 визит</p>
+                </div>
+                
+                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation-delayed">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto icon-wrapper">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1">24 мес</p>
+                    <p class="text-slate-300 text-sm">Гарантия</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-section">
+                <a href="tel:89990057172" class="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition shadow-2xl hover:shadow-orange-500/50 transform hover:-translate-y-1 btn-glow btn-glow-enhanced pulse-glow">
+                    <i class="fa-solid fa-phone animate-pulse"></i>
+                    <span>Вызвать мастера</span>
+                </a>
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-xl transform hover:-translate-y-1 btn-glow-enhanced">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-center gap-6 mt-12 text-white/80 text-sm fade-in-section">
+                <div class="flex items-center gap-2">
+                    <div class="flex text-yellow-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="font-bold text-white">4.9/5</span>
+                </div>
+                <span class="text-white/40">|</span>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-utensils text-brand-orange"></i>
+                    <span>500+ ресторанов</span>
+                </div>
+                <span class="text-white/40">|</span>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-file-contract text-green-400"></i>
+                    <span>Работа по договору</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 💰 QUICK INFO BAR -->
+    <section class="py-6 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden -mt-8 relative z-20 shadow-xl bg-animated">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 emergency-pulse">
+                        <i class="fa-solid fa-phone-volume text-white text-2xl icon-pulse"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-display font-bold text-lg">Оборудование сломалось?</p>
+                        <p class="text-white/90 text-sm">Мастер приедет через 20 минут</p>
+                    </div>
+                </div>
+                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105 btn-glow-enhanced">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>8 (999) 005-71-72</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⚠️ ПОЧЕМУ НЕЛЬЗЯ ОТКЛАДЫВАТЬ -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                    <i class="fa-solid fa-triangle-exclamation mr-2"></i>ВАЖНО
+                </span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4">Каждая минута простоя = потеря денег</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Для ресторана простой техники критичен. Вот что происходит при задержке ремонта:</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="scroll-reveal-left bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl border-2 border-red-200 stat-card-hover">
+                    <div class="w-16 h-16 bg-red-200 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-6">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Потеря дохода</h3>
+                    <p class="text-slate-600 mb-4">Средний ресторан теряет от <span class="font-bold text-red-600 text-lg">₽10,000-50,000 в час</span> при простое кухни</p>
+                    <div class="bg-red-200/50 rounded-lg p-3">
+                        <p class="text-red-700 text-sm font-semibold"><i class="fa-solid fa-calculator mr-2"></i>За 8 часов: до ₽400,000</p>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl border-2 border-orange-200 stat-card-hover">
+                    <div class="w-16 h-16 bg-orange-200 rounded-2xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-users-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Недовольные гости</h3>
+                    <p class="text-slate-600 mb-4">Невыполненные заказы = <span class="font-bold text-orange-600">потеря лояльности</span> и негативные отзывы</p>
+                    <div class="bg-orange-200/50 rounded-lg p-3">
+                        <p class="text-orange-700 text-sm font-semibold"><i class="fa-solid fa-star mr-2"></i>1 негатив = 10 потерянных клиентов</p>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal-right bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border-2 border-blue-200 stat-card-hover">
+                    <div class="w-16 h-16 bg-blue-200 rounded-2xl flex items-center justify-center text-brand-blue text-2xl mb-6">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Дороже ремонт</h3>
+                    <p class="text-slate-600 mb-4">Мелкая поломка за 2-3 дня превращается в <span class="font-bold text-brand-blue">серьёзную аварию</span></p>
+                    <div class="bg-blue-200/50 rounded-lg p-3">
+                        <p class="text-blue-700 text-sm font-semibold"><i class="fa-solid fa-percent mr-2"></i>Цена растёт в 3-5 раз</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔧 ОБОРУДОВАНИЕ — ПРОФЕССИОНАЛЬНОЕ -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 ОБОРУДОВАНИЕ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Ремонт ресторанного оборудования</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Всё профессиональное кухонное оборудование для ресторанов, столовых и кафе</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <!-- Пароконвектоматы -->
+                <a href="parokonvektomaty.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl icon-wrapper">
+                            <i class="fa-solid fa-fire-burner"></i>
+                        </div>
+                        <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold shine-effect">от 1 990₽</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3 group-hover:text-brand-orange transition">Пароконвектоматы</h3>
+                    <ul class="space-y-2 mb-5">
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Rational, Unox, Electrolux</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Ремонт электроники</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Замена ТЭНов</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Парогенераторы</li>
+                    </ul>
+                    <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-xl transition font-medium text-sm">
+                        <span><i class="fa-solid fa-clock mr-2 text-brand-orange group-hover:text-white"></i>2-4 часа</span>
+                        <span>Подробнее <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <!-- Плиты и печи -->
+                <a href="plity-pechi.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl icon-wrapper">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold shine-effect">от 1 490₽</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3 group-hover:text-brand-orange transition">Плиты и печи</h3>
+                    <ul class="space-y-2 mb-5">
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Газовые, электрические</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Конфорки, горелки</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Духовые шкафы</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Газ-контроль</li>
+                    </ul>
+                    <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-xl transition font-medium text-sm">
+                        <span><i class="fa-solid fa-clock mr-2 text-brand-orange group-hover:text-white"></i>1-3 часа</span>
+                        <span>Подробнее <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <!-- Холодильники -->
+                <a href="holodilnoe-oborudovanie.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl icon-wrapper">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </div>
+                        <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold shine-effect">от 1 290₽</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3 group-hover:text-brand-orange transition">Холодильное оборудование</h3>
+                    <ul class="space-y-2 mb-5">
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Шкафы, столы, витрины</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Компрессоры</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Заправка фреоном</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Терморегуляторы</li>
+                    </ul>
+                    <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-xl transition font-medium text-sm">
+                        <span><i class="fa-solid fa-clock mr-2 text-brand-orange group-hover:text-white"></i>2-4 часа</span>
+                        <span>Подробнее <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <!-- Посудомойки -->
+                <a href="posudomoechnye-mashiny.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-2xl icon-wrapper">
+                            <i class="fa-solid fa-sink"></i>
+                        </div>
+                        <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold shine-effect">от 1 190₽</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3 group-hover:text-brand-orange transition">Посудомоечные машины</h3>
+                    <ul class="space-y-2 mb-5">
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Промышленные, туннельные</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Насосы, моторы</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>ТЭНы, бойлеры</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Электроника</li>
+                    </ul>
+                    <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-xl transition font-medium text-sm">
+                        <span><i class="fa-solid fa-clock mr-2 text-brand-orange group-hover:text-white"></i>2-3 часа</span>
+                        <span>Подробнее <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <!-- Грили и мангалы -->
+                <a href="grili-mangaly.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl icon-wrapper">
+                            <i class="fa-solid fa-drumstick-bite"></i>
+                        </div>
+                        <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold shine-effect">от 1 390₽</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3 group-hover:text-brand-orange transition">Грили и мангалы</h3>
+                    <ul class="space-y-2 mb-5">
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Угольные, газовые, электро</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Горелки, решётки</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Системы розжига</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Термостаты</li>
+                    </ul>
+                    <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-xl transition font-medium text-sm">
+                        <span><i class="fa-solid fa-clock mr-2 text-brand-orange group-hover:text-white"></i>1-2 часа</span>
+                        <span>Подробнее <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <!-- Фритюрницы -->
+                <a href="friturennitsy.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 text-2xl icon-wrapper">
+                            <i class="fa-solid fa-bottle-droplet"></i>
+                        </div>
+                        <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold shine-effect">от 990₽</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3 group-hover:text-brand-orange transition">Фритюрницы</h3>
+                    <ul class="space-y-2 mb-5">
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Промышленные, настольные</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>ТЭНы, термостаты</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Сливные краны</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Электроника</li>
+                    </ul>
+                    <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-xl transition font-medium text-sm">
+                        <span><i class="fa-solid fa-clock mr-2 text-brand-orange group-hover:text-white"></i>1-2 часа</span>
+                        <span>Подробнее <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <!-- Миксеры -->
+                <a href="small-appliances.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl icon-wrapper">
+                            <i class="fa-solid fa-blender"></i>
+                        </div>
+                        <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold shine-effect">от 890₽</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3 group-hover:text-brand-orange transition">Миксеры и куттеры</h3>
+                    <ul class="space-y-2 mb-5">
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Планетарные, спиральные</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Двигатели, редукторы</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Насадки, венчики</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Электроника</li>
+                    </ul>
+                    <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-xl transition font-medium text-sm">
+                        <span><i class="fa-solid fa-clock mr-2 text-brand-orange group-hover:text-white"></i>1-2 часа</span>
+                        <span>Подробнее <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <!-- Кофемашины -->
+                <a href="small-appliances.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl icon-wrapper">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold shine-effect">от 1 590₽</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-3 group-hover:text-brand-orange transition">Кофемашины</h3>
+                    <ul class="space-y-2 mb-5">
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Профессиональные, автомат</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Помпы, бойлеры</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Диспенсеры, жернова</li>
+                        <li class="flex items-center gap-2 text-slate-600 text-sm check-item"><i class="fa-solid fa-check text-green-500"></i>Электроника</li>
+                    </ul>
+                    <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-xl transition font-medium text-sm">
+                        <span><i class="fa-solid fa-clock mr-2 text-brand-orange group-hover:text-white"></i>2-4 часа</span>
+                        <span>Подробнее <i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📋 ДЛЯ КОГО РАБОТАЕМ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏢 КЛИЕНТЫ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Работаем со всеми форматами</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Обслуживаем любые заведения общественного питания</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-200">
+                    <div class="w-20 h-20 bg-red-200 rounded-full flex items-center justify-center text-red-600 text-3xl mb-4 mx-auto icon-circle">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-2">Рестораны</h3>
+                    <p class="text-slate-600 text-sm mb-4">Премиум и средний сегмент</p>
+                    <div class="bg-red-200/50 rounded-lg p-3">
+                        <p class="text-red-700 text-sm font-semibold"><i class="fa-solid fa-check mr-2"></i>Пароконвектоматы</p>
+                        <p class="text-red-700 text-sm font-semibold"><i class="fa-solid fa-check mr-2"></i>Грили, печи</p>
+                    </div>
+                </div>
+                
+                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200">
+                    <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 text-3xl mb-4 mx-auto icon-circle">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-2">Столовые</h3>
+                    <p class="text-slate-600 text-sm mb-4">Корпоративные, учебные</p>
+                    <div class="bg-blue-200/50 rounded-lg p-3">
+                        <p class="text-blue-700 text-sm font-semibold"><i class="fa-solid fa-check mr-2"></i>Плиты, котлы</p>
+                        <p class="text-blue-700 text-sm font-semibold"><i class="fa-solid fa-check mr-2"></i>Посудомойки</p>
+                    </div>
+                </div>
+                
+                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-200">
+                    <div class="w-20 h-20 bg-green-200 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-circle">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-2">Кафе</h3>
+                    <p class="text-slate-600 text-sm mb-4">Кофейни, закусочные</p>
+                    <div class="bg-green-200/50 rounded-lg p-3">
+                        <p class="text-green-700 text-sm font-semibold"><i class="fa-solid fa-check mr-2"></i>Кофемашины</p>
+                        <p class="text-green-700 text-sm font-semibold"><i class="fa-solid fa-check mr-2"></i>Холодильники</p>
+                    </div>
+                </div>
+                
+                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-200">
+                    <div class="w-20 h-20 bg-orange-200 rounded-full flex items-center justify-center text-orange-600 text-3xl mb-4 mx-auto icon-circle">
+                        <i class="fa-solid fa-burger"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-brand-blue mb-2">Фастфуд</h3>
+                    <p class="text-slate-600 text-sm mb-4">Бургерные, пиццерии</p>
+                    <div class="bg-orange-200/50 rounded-lg p-3">
+                        <p class="text-orange-700 text-sm font-semibold"><i class="fa-solid fa-check mr-2"></i>Фритюрницы</p>
+                        <p class="text-orange-700 text-sm font-semibold"><i class="fa-solid fa-check mr-2"></i>Грили</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⭐ ПОЧЕМУ РЕСТОРАНЫ ВЫБИРАЮТ НАС -->
+    <section class="py-20 bg-gradient-to-br from-brand-blue to-slate-800 text-white bg-animated">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="inline-block bg-brand-orange/20 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⭐ ПРЕИМУЩЕСТВА</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4">Почему 500+ ресторанов работают с нами</h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">Понимаем специфику ресторанного бизнеса</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="scroll-reveal-left glass-card p-8 rounded-2xl stat-card-hover float-animation">
+                    <div class="w-16 h-16 bg-brand-orange/20 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-6 icon-wrapper">
+                        <i class="fa-solid fa-stopwatch"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-white mb-3">⚡ Выезд за 20 минут</h3>
+                    <p class="text-slate-300 mb-4">Мастера во всех округах Москвы. Приезжаем быстрее конкурентов.</p>
+                    <div class="flex items-center gap-2 text-green-400 font-semibold text-sm">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Среднее время: 18 минут</span>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal glass-card p-8 rounded-2xl stat-card-hover float-animation-delayed">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-400 text-2xl mb-6 icon-wrapper">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-white mb-3">🔧 Запчасти с собой</h3>
+                    <p class="text-slate-300 mb-4">98% поломок чиним за 1 визит. Склад запчастей в Москве.</p>
+                    <div class="flex items-center gap-2 text-green-400 font-semibold text-sm">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>98% ремонтов за 1 визит</span>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal-right glass-card p-8 rounded-2xl stat-card-hover float-animation">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-400 text-2xl mb-6 icon-wrapper">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-white mb-3">📄 Работа по договору</h3>
+                    <p class="text-slate-300 mb-4">Официальный договор с юрлицами. Полный пакет документов.</p>
+                    <div class="flex items-center gap-2 text-green-400 font-semibold text-sm">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>НДС, акты, гарантии</span>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal-left glass-card p-8 rounded-2xl stat-card-hover float-animation-delayed">
+                    <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center text-purple-400 text-2xl mb-6 icon-wrapper">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-white mb-3">🕐 Работаем 24/7</h3>
+                    <p class="text-slate-300 mb-4">Без выходных и праздников. Аварийный выезд ночью.</p>
+                    <div class="flex items-center gap-2 text-green-400 font-semibold text-sm">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Круглосуточная поддержка</span>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal glass-card p-8 rounded-2xl stat-card-hover float-animation">
+                    <div class="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center text-red-400 text-2xl mb-6 icon-wrapper">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-white mb-3">🛡️ Гарантия до 2 лет</h3>
+                    <p class="text-slate-300 mb-4">Официальная гарантия на работы и запчасти. Сервисные книжки.</p>
+                    <div class="flex items-center gap-2 text-green-400 font-semibold text-sm">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Гарантия 12-24 месяца</span>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal-right glass-card p-8 rounded-2xl stat-card-hover float-animation-delayed">
+                    <div class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center text-amber-400 text-2xl mb-6 icon-wrapper">
+                        <i class="fa-solid fa-ruble-sign"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-extrabold text-white mb-3">💰 Фиксированные цены</h3>
+                    <p class="text-slate-300 mb-4">Цена не меняется в процессе. Согласуем до начала работ.</p>
+                    <div class="flex items-center gap-2 text-green-400 font-semibold text-sm">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Без скрытых платежей</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📊 СТАТИСТИКА -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Нам доверяют</h2>
+                <p class="text-slate-600 text-lg">Цифры говорят сами за себя</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/5 to-orange-50 border-2 border-brand-orange/20 float-animation">
+                    <div class="w-20 h-20 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto icon-wrapper">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2">500+</p>
+                    <p class="text-slate-600">Ресторанов и кафе</p>
+                </div>
+                
+                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 float-animation-delayed">
+                    <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-wrapper">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <p class="text-5xl font-display font-extrabold text-green-600 mb-2">15,000+</p>
+                    <p class="text-slate-600">Ремонтов выполнено</p>
+                </div>
+                
+                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/5 to-orange-50 border-2 border-brand-orange/20 float-animation">
+                    <div class="w-20 h-20 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto icon-wrapper">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2">15+</p>
+                    <p class="text-slate-600">Лет опыта</p>
+                </div>
+                
+                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 float-animation-delayed">
+                    <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-wrapper">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-5xl font-display font-extrabold text-green-600 mb-2">4.9</p>
+                    <p class="text-slate-600">Рейтинг из 5</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎯 FINAL CTA -->
+    <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden bg-animated">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
+            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6 emergency-pulse">
+                <span class="font-medium"><i class="fa-solid fa-bolt mr-2"></i>АВАРИЙНАЯ СЛУЖБА</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight">Оборудование сломалось? Не теряйте прибыль!</h2>
+            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">
+                Мастер приедет за <span class="font-bold text-white">20 минут</span>. 
+                Диагностика <span class="font-bold text-white">0₽</span> при ремонте. 
+                <span class="font-bold text-white">Гарантия до 2 лет</span>.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-2xl transform hover:scale-105 btn-glow btn-glow-enhanced pulse-glow">
+                    <i class="fa-solid fa-phone-volume mr-2 animate-pulse"></i>+7 (999) 005-71-72
+                </a>
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-10 py-6 rounded-full font-display font-bold transition shadow-xl btn-glow-enhanced">
+                    <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-6 mt-8 text-white/80 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-yellow-300"></i>
+                    <span>Ответ за 30 секунд</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-file-contract text-green-300"></i>
+                    <span>Договор с юрлицами</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-credit-card text-blue-300"></i>
+                    <span>Любая форма оплаты</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📱 STICKY MOBILE CTA -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-2xl">
+        <div class="grid grid-cols-2 gap-3">
+            <a href="tel:89990057172" class="bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>Позвонить</span>
+            </a>
+            <a href="https://wa.me/79990057172" class="bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+</body>
+</html>
