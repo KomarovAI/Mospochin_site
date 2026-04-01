@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
+    <style>
+        /* Иконки оборудования — поворот при наведении */
+        .icon-hover-rotate { transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+        .equipment-card:hover .icon-hover-rotate { transform: scale(1.2) rotate(15deg); }
+    </style>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
     <!-- 🔴 ЭКСТРЕННЫЙ БАННЕР -->
