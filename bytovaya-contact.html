@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="Контакты MosPochin. Ремонт бытовой техники в Москве. Телефон, форма заявки.">
-    <title>Контакты | MosPochin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Контакты | Ремонт бытовой техники | MosPochin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-built.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:site_name" content="MosPochin — Ремонт бытовой техники">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Контакты | MosPochin">
+    <meta property="og:description" content="Контакты MosPochin. Ремонт бытовой техники в Москве. Телефон, форма заявки.">
+    <meta property="og:url" content="https://mspochin.ru/bytovaya-contact.html">
+    <meta property="og:image" content="https://mspochin.ru/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
     <div id="header-container"></div>
@@ -20,7 +30,7 @@
             <span class="inline-block bg-brand-orange/20 backdrop-blur-sm border border-brand-orange/30 text-brand-orange px-5 py-2 rounded-full text-sm font-semibold mb-6 fade-in-section">
                 <i class="fa-solid fa-phone mr-2"></i>СВЯЗАТЬСЯ С НАМИ
             </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight fade-in-section">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight fade-in-section">
                 Кон<span class="text-brand-orange">такты</span>
             </h1>
             <p class="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed fade-in-section">
@@ -45,7 +55,7 @@
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-blue mb-2">WhatsApp</h3>
-                    <a href="https://wa.me/79990057172" class="text-lg font-bold text-green-600 hover:underline">Написать в WhatsApp</a>
+                    <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="text-lg font-bold text-green-600 hover:underline">Написать в WhatsApp</a>
                     <p class="text-slate-600 text-sm mt-2">Быстрый ответ</p>
                 </div>
                 <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
@@ -57,74 +67,40 @@
                     <p class="text-slate-600 text-sm mt-2">Выезд на дом</p>
                 </div>
             </div>
-
-            <div class="max-w-2xl mx-auto fade-in-section">
-                <div class="bg-slate-50 rounded-2xl p-8">
-                    <h2 class="text-2xl font-extrabold text-brand-blue mb-6 text-center">Оставить заявку</h2>
-                    <form id="contactForm" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Ваше имя</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition" placeholder="Иван">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Телефон</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition" placeholder="+7 (___) ___-__-__">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Тип техники</label>
-                            <select id="type" name="type" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition">
-                                <option>Холодильник</option>
-                                <option>Стиральная машина</option>
-                                <option>Посудомойка</option>
-                                <option>Плита</option>
-                                <option>Компьютер</option>
-                                <option>Роутер</option>
-                                <option>Другое</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Описание проблемы</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition" placeholder="Опишите проблему..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-4 rounded-lg transition shadow-lg">
-                            <i class="fa-solid fa-paper-plane mr-2"></i>Отправить заявку
-                        </button>
-                    </form>
-                    <p class="text-slate-500 text-sm text-center mt-4">
-                        <i class="fa-solid fa-lock mr-1"></i>Ваши данные в безопасности
-                    </p>
-                </div>
-            </div>
         </div>
     </section>
 
     <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Сломалась техника?</h2>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight heading-reveal">Сломалась техника?</h2>
             <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Мастер будет у вас через 60 минут</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:89990057172" class="bg-white text-brand-orange hover:bg-slate-100 px-10 py-5 rounded-full font-bold transition shadow-xl">
                     <i class="fa-solid fa-phone mr-2"></i>+7 (999) 005-71-72
                 </a>
-                <a href="https://wa.me/79990057172" class="bg-green-600 hover:bg-green-700 px-8 py-5 rounded-full font-bold transition shadow-xl">
+                <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 px-8 py-5 rounded-full font-bold transition shadow-xl">
                     <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
                 </a>
             </div>
         </div>
     </section>
 
+    
+    <!-- 📱 STICKY MOBILE CTA -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-2xl">
+        <div class="grid grid-cols-2 gap-3">
+            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>Вызвать мастера</span>
+            </a>
+            <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
     <div id="footer-container"></div>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            if(name && phone) {
-                alert(`Спасибо, ${name}! Перезвоним на ${phone} в течение 5 минут!`);
-                this.reset();
-            }
-        });
-    </script>
 </body>
 </html>

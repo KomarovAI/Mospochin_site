@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="О компании MosPochin. Ремонт бытовой техники в Москве.">
-    <title>О нас | MosPochin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>О нас | Ремонт бытовой техники | MosPochin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-built.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:site_name" content="MosPochin — Ремонт бытовой техники">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="О нас | MosPochin">
+    <meta property="og:description" content="О компании MosPochin. Ремонт бытовой техники в Москве.">
+    <meta property="og:url" content="https://mspochin.ru/bytovaya-about.html">
+    <meta property="og:image" content="https://mspochin.ru/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
     <div id="header-container"></div>
@@ -20,7 +30,7 @@
             <span class="inline-block bg-brand-orange/20 backdrop-blur-sm border border-brand-orange/30 text-brand-orange px-5 py-2 rounded-full text-sm font-semibold mb-6 fade-in-section">
                 <i class="fa-solid fa-star mr-2"></i>О КОМПАНИИ
             </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight fade-in-section">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight fade-in-section">
                 О компании <span class="text-brand-orange">MosPochin</span>
             </h1>
             <p class="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed fade-in-section">
@@ -33,7 +43,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
                 <div class="fade-in-section">
-                    <h2 class="text-3xl font-extrabold text-brand-blue mb-6">Надежный сервис с гарантией</h2>
+                    <h2 class="text-3xl font-display font-extrabold text-brand-blue mb-6 heading-reveal">Надежный сервис с гарантией</h2>
                     <p class="text-slate-600 mb-4 leading-relaxed">
                         Компания «MosPochin» занимается ремонтом бытовой техники в Москве и Московской области с 2015 года. За это время мы выполнили более 5000 успешных ремонтов.
                     </p>
@@ -48,7 +58,7 @@
                     <div class="bg-slate-50 rounded-2xl p-8">
                         <div class="grid grid-cols-2 gap-6">
                             <div class="text-center">
-                                <p class="text-4xl font-extrabold text-brand-orange mb-2">5000+</p>
+                                <p class="text-4xl font-extrabold text-brand-orange mb-2"><span class="counter" data-target="500" data-suffix="+">0</span><0+</p>
                                 <p class="text-slate-600 text-sm">Довольных клиентов</p>
                             </div>
                             <div class="text-center">
@@ -69,7 +79,7 @@
             </div>
 
             <div class="text-center mb-12 fade-in-section">
-                <h2 class="text-3xl font-extrabold text-brand-blue mb-4">Наши преимущества</h2>
+                <h2 class="text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Наши преимущества</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
@@ -120,18 +130,33 @@
 
     <section class="py-20 bg-gradient-to-br from-brand-orange to-orange-600">
         <div class="max-w-4xl mx-auto px-4 text-center text-white fade-in-section">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Нужен ремонт техники?</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 heading-reveal">Нужен ремонт техники?</h2>
             <p class="text-xl mb-8 text-white/90">Свяжитесь с нами прямо сейчас</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:89990057172" class="bg-white text-brand-orange hover:bg-slate-100 px-10 py-5 rounded-full font-bold transition shadow-xl">
                     <i class="fa-solid fa-phone mr-2"></i>+7 (999) 005-71-72
                 </a>
-                <a href="https://wa.me/79990057172" class="bg-green-600 hover:bg-green-700 px-8 py-5 rounded-full font-bold transition shadow-xl">
+                <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 px-8 py-5 rounded-full font-bold transition shadow-xl">
                     <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
                 </a>
             </div>
         </div>
     </section>
+
+    
+    <!-- 📱 STICKY MOBILE CTA -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-2xl">
+        <div class="grid grid-cols-2 gap-3">
+            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>Вызвать мастера</span>
+            </a>
+            <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
 
     <div id="footer-container"></div>
 </body>
