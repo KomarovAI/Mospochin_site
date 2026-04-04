@@ -37,13 +37,17 @@ const CONFIG = {
 const Components = {
   isBytovaya() {
     const path = window.location.pathname.split('/').pop().replace('.html', '');
-    const restaurantPrefixes = ['parokonvektomaty', 'plity-pechi', 'holodilnoe', 'posudomoechnye', 'grili', 'friturennitsy', 'uslugi'];
-    const bytovayaPrefixes = ['bytovaya', 'holodilniki', 'stiralnye', 'posudomoyki', 'plity', 'microwaves', 'airconditioners', 'tvs', 'vacuums', 'small', 'kompyutery', 'routery'];
-    
-    // Если ресторанная страница — возвращаем false
-    if (restaurantPrefixes.some(p => path.includes(p))) return false;
-    
-    return bytovayaPrefixes.some(p => path.includes(p));
+    const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity-pechi', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy'];
+    const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'plity', 'microwaves', 'airconditioners', 'tvs', 'vacuums', 'small-appliances', 'kompyutery', 'routery'];
+
+    // Сначала проверяем бытовую (точное совпадение)
+    if (bytovayaPages.includes(path)) return true;
+
+    // Потом ресторанную
+    if (restaurantPages.includes(path)) return false;
+
+    // По умолчанию — ресторанная (index.html)
+    return false;
   },
   
   getHeader() {
@@ -58,21 +62,21 @@ const Components = {
     return `
       <nav class="fixed w-full z-50 bg-white/98 backdrop-blur-md border-b border-slate-200 shadow-sm" id="navbar">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between items-center h-20">
-            <a href="${homeLink}" class="flex items-center gap-3">
-              <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-orange-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">
+          <div class="flex justify-between items-center h-16 lg:h-20">
+            <a href="${homeLink}" class="flex items-center gap-2 lg:gap-3 flex-shrink-0">
+              <div class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-orange to-orange-600 rounded-xl flex items-center justify-center text-white text-lg lg:text-xl shadow-lg flex-shrink-0">
                 <i class="fa-solid fa-wrench"></i>
               </div>
-              <div class="hidden sm:block">
-                <span class="font-extrabold text-2xl text-brand-blue tracking-tight block">MosPochin</span>
-                <span class="text-xs text-slate-500 block font-medium">${subtitle}</span>
+              <div class="hidden md:block">
+                <span class="font-extrabold text-xl lg:text-2xl text-brand-blue tracking-tight block leading-tight">MosPochin</span>
+                <span class="text-xs text-slate-500 block font-medium leading-tight">${subtitle}</span>
               </div>
             </a>
-            
+
             <!-- ✅ ПРОСТОЕ МЕНЮ С ВЫПАДАЮЩИМ СПИСКОМ -->
             <div class="hidden lg:flex items-center gap-6">
               <a href="${homeLink}" class="nav-link ${window.location.pathname.includes('index') ? 'active' : ''}">Главная</a>
-              
+
               <!-- ВЫПАДАЮЩЕЕ МЕНЮ УСЛУГИ -->
               <div class="dropdown">
                 <button class="nav-link dropdown-toggle ${window.location.pathname.includes('uslugi') ? 'active' : ''}">
@@ -82,11 +86,11 @@ const Components = {
                   ${serviceItems}
                 </div>
               </div>
-              
+
               <a href="${isByt ? 'bytovaya-about.html' : 'about.html'}" class="nav-link ${window.location.pathname.includes('about') ? 'active' : ''}">О нас</a>
               <a href="${isByt ? 'bytovaya-contact.html' : 'contact.html'}" class="nav-link ${window.location.pathname.includes('contact') ? 'active' : ''}">Контакты</a>
             </div>
-            
+
             <div class="hidden lg:flex items-center gap-4">
               <div class="text-right">
                 <p class="text-xs text-slate-500 font-medium">${isByt ? '🏠 Выезд на дом' : '⚡ Работаем 24/7'}</p>
@@ -96,13 +100,18 @@ const Components = {
                 </a>
               </div>
             </div>
-            
-            <button id="mobile-menu-btn" class="lg:hidden text-slate-600 hover:text-brand-orange p-2">
-              <i class="fa-solid fa-bars text-2xl"></i>
+
+            <button id="mobile-menu-btn" class="lg:hidden bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg transition-all shadow-md text-sm flex-shrink-0"
+                    aria-label="Открыть меню"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                    aria-haspopup="true"
+                    role="button">
+              <i class="fa-solid fa-bars mr-2"></i>Меню
             </button>
           </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 shadow-xl">
           <div class="px-4 py-4 space-y-3" id="mobile-menu-items"></div>
         </div>
       </nav>`;
@@ -142,9 +151,20 @@ const Components = {
               <h5 class="text-white font-bold mb-4">🏠 Бытовая техника</h5>
               <ul class="space-y-2 text-sm">
                 <li><a href="bytovaya-index.html" class="hover:text-white transition">Главная</a></li>
+                <li><a href="bytovaya-uslugi.html" class="hover:text-white transition">Услуги</a></li>
                 <li><a href="holodilniki.html" class="hover:text-white transition">Холодильники</a></li>
                 <li><a href="stiralnye-mashiny.html" class="hover:text-white transition">Стиральные машины</a></li>
                 <li><a href="posudomoyki.html" class="hover:text-white transition">Посудомойки</a></li>
+                <li><a href="plity.html" class="hover:text-white transition">Плиты</a></li>
+                <li><a href="kompyutery.html" class="hover:text-white transition">Компьютеры</a></li>
+                <li><a href="routery.html" class="hover:text-white transition">Роутеры</a></li>
+                <li><a href="tvs.html" class="hover:text-white transition">Телевизоры</a></li>
+                <li><a href="vacuums.html" class="hover:text-white transition">Пылесосы</a></li>
+                <li><a href="microwaves.html" class="hover:text-white transition">Микроволновки</a></li>
+                <li><a href="airconditioners.html" class="hover:text-white transition">Кондиционеры</a></li>
+                <li><a href="small-appliances.html" class="hover:text-white transition">Мелкая техника</a></li>
+                <li><a href="bytovaya-about.html" class="hover:text-white transition">О компании</a></li>
+                <li><a href="bytovaya-contact.html" class="hover:text-white transition">Контакты</a></li>
               </ul>
             </div>
             <div>
@@ -223,8 +243,14 @@ const Components = {
       });
     }
     
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    }));
   },
   
   initScrollEffect() {
@@ -244,7 +270,9 @@ const Components = {
         }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+
+    // Наблюдаем за ВСЕМИ анимационными классами
+    document.querySelectorAll('.fade-in-section, .scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-scale').forEach(el => observer.observe(el));
   },
   
   initSmoothScroll() {
@@ -272,6 +300,42 @@ const Components = {
       });
     });
   },
+
+  // ✅ COUNTER ANIMATION для статистики
+  initCounters() {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const duration = 2000;
+        const start = performance.now();
+        const update = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => observer.observe(el));
+  },
+
+  // ✅ HEADING REVEAL с blur эффектом
+  initHeadingReveal() {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.heading-reveal').forEach(el => observer.observe(el));
+  },
   
   // ✅ Helper to get phone number
   getPhone() {
@@ -294,32 +358,9 @@ const Components = {
       this.initFadeIn();
       this.initSmoothScroll();
       this.initRipple();
+      this.initCounters();
+      this.initHeadingReveal();
     }, 50);
-  }
-};
-
-// ✅ ТАЙЛВИНД КОНФИГ
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Montserrat', 'sans-serif']
-      },
-      colors: {
-        brand: {
-          orange: '#f97316',
-          orangeHover: '#ea580c',
-          blue: '#0f172a',
-          lightBlue: '#1e293b',
-          green: '#22c55e',
-          gray: '#f8fafc',
-          primary: '#f97316',
-          primaryHover: '#ea580c',
-          accent: '#ea580c'
-        }
-      }
-    }
   }
 };
 

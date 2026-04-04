@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="О компании MosPochin. 15 лет опыта в ремонте ресторанной техники.">
     <title>О нас | MosPochin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-built.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:site_name" content="MosPochin — Ремонт ресторанной техники">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="О нас | MosPochin">
+    <meta property="og:description" content="О компании MosPochin. 15 лет опыта в ремонте ресторанной техники.">
+    <meta property="og:url" content="https://mspochin.ru/about.html">
+    <meta property="og:image" content="https://mspochin.ru/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
     <div id="header-container"></div>
@@ -28,7 +38,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="fade-in-section">
-                    <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-6">Надёжный ремонт</h2>
+                    <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-6 heading-reveal">Надёжный ремонт</h2>
                     <p class="text-slate-600 text-lg mb-6 leading-relaxed">Профессиональный сервис для бизнеса, который не может ждать.</p>
                     <div class="border-l-4 border-brand-primary pl-6 py-2 bg-slate-50 rounded-r-lg">
                         <p class="text-brand-blue font-semibold italic">«На все работы даём гарантию.»</p>
@@ -45,11 +55,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="fade-in-section p-4">
-                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2">10+</p>
+                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="15" data-suffix="+">0</span><</p>
                     <p class="text-slate-300 font-medium">Лет опыта</p>
                 </div>
                 <div class="fade-in-section p-4">
-                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2">500+</p>
+                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="500" data-suffix="+">0</span><</p>
                     <p class="text-slate-300 font-medium">Отремонтированных аппаратов</p>
                 </div>
                 <div class="fade-in-section p-4">
@@ -63,7 +73,7 @@
     <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight">Оборудование сломалось?<br>Приедем за 2 часа</h2>
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Оборудование сломалось?<br>Приедем за 2 часа</h2>
             <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Устраняем 90% поломок на месте в день обращения.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="tel:89990057172" class="inline-block bg-white text-brand-primary hover:bg-slate-100 text-xl px-10 py-5 rounded-full font-display font-bold transition shadow-xl transform hover:scale-105 cta-glow">
@@ -72,6 +82,21 @@
             </div>
         </div>
     </section>
+
+    
+    <!-- 📱 STICKY MOBILE CTA -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-2xl">
+        <div class="grid grid-cols-2 gap-3">
+            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>Вызвать мастера</span>
+            </a>
+            <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
 
     <div id="footer-container"></div>
 </body>

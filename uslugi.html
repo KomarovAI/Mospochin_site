@@ -5,61 +5,27 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="Ремонт ресторанного оборудования в Москве. Выезд за 20 минут. Диагностика 0₽. Гарантия до 2 лет. Работаем с ресторанами, столовыми, кафе.">
     <title>Услуги и цены | Ремонт ресторанного оборудования | MosPochin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-built.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
-    <style>
-        /* 🔥 АНИМАЦИИ ДЛЯ УСЛУГ */
-        @keyframes float { 0%, 100% { transform: translateY(0px) } 50% { transform: translateY(-10px) } }
-        @keyframes float-delayed { 0%, 100% { transform: translateY(0px) } 50% { transform: translateY(-8px) } }
-        @keyframes shine { 0% { background-position: -200% center } 100% { background-position: 200% center } }
-        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4) } 50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.8) } }
-        @keyframes bounce-in { 0% { opacity: 0; transform: scale(0.9) } 50% { transform: scale(1.05) } 100% { opacity: 1; transform: scale(1) } }
-        @keyframes slide-up { 0% { opacity: 0; transform: translateY(30px) } 100% { opacity: 1; transform: translateY(0) } }
-        @keyframes rotate-icon { 0% { transform: rotate(0deg) } 100% { transform: rotate(360deg) } }
-        @keyframes gradient-shift { 0% { background-position: 0% 50% } 50% { background-position: 100% 50% } 100% { background-position: 0% 50% } }
-        
-        .float-animation { animation: float 3s ease-in-out infinite; }
-        .float-animation-delayed { animation: float-delayed 3s ease-in-out infinite 0.5s; }
-        .shine-effect { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); background-size: 200% 100%; animation: shine 2s infinite; }
-        .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
-        .bounce-in { animation: bounce-in 0.6s ease-out; }
-        .slide-up { animation: slide-up 0.6s ease-out; }
-        .gradient-animated { background: linear-gradient(-45deg, #f97316, #ea580c, #dc2626, #f97316); background-size: 400% 400%; animation: gradient-shift 15s ease infinite; }
-        
-        .equipment-card .icon-wrapper { transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-        .equipment-card:hover .icon-wrapper { transform: scale(1.2) rotate(5deg); }
-        .equipment-card:hover .check-item { animation: slide-up 0.3s ease-out forwards; opacity: 0; }
-        .equipment-card:hover .check-item:nth-child(1) { animation-delay: 0.1s; }
-        .equipment-card:hover .check-item:nth-child(2) { animation-delay: 0.2s; }
-        .equipment-card:hover .check-item:nth-child(3) { animation-delay: 0.3s; }
-        .equipment-card:hover .check-item:nth-child(4) { animation-delay: 0.4s; }
-        
-        .stat-card-hover { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); } .stat-card-hover:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        
-        .client-card { transition: all 0.4s ease; }
-        .client-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .client-card .icon-circle { transition: all 0.4s ease; }
-        .client-card:hover .icon-circle { transform: scale(1.15) rotate(10deg); }
-        
-        .feature-box { transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-        .feature-box:hover { transform: translateY(-8px) scale(1.05); }
-        .feature-box .icon-wrapper { transition: all 0.4s ease; }
-        .feature-box:hover .icon-wrapper { animation: rotate-icon 0.6s ease-out; }
-        
-        .btn-glow-enhanced { position: relative; overflow: hidden; }
-        .btn-glow-enhanced::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: left 0.5s; }
-        .btn-glow-enhanced:hover::before { left: 100%; }
-        
-        .bg-animated { background-size: 200% 200%; animation: gradient-shift 10s ease infinite; }
-    </style>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:site_name" content="MosPochin — Ремонт ресторанной техники">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Услуги и цены | Ремонт ресторанного оборудования | MosPochin">
+    <meta property="og:description" content="Ремонт ресторанного оборудования в Москве. Выезд за 20 минут. Диагностика 0₽. Гарантия до 2 лет. Работаем с ресторанами, столовыми, кафе.">
+    <meta property="og:url" content="https://mspochin.ru/uslugi.html">
+    <meta property="og:image" content="https://mspochin.ru/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
     <!-- 🔴 ЭКСТРЕННЫЙ БАННЕР -->
     <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg emergency-pulse">
+        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
             <i class="fa-solid fa-bolt text-yellow-300 icon-pulse"></i>
             <span class="font-bold">🚨 АВАРИЙНЫЙ ВЫЕЗД</span>
@@ -75,13 +41,14 @@
     <div id="header-container" class="mt-12"></div>
     
     <!-- 🎯 HERO SECTION — ДЛЯ РЕСТОРАНОВ -->
-    <header class="hero-bg-enhanced relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-animated">
+    <header class="hero-mesh  relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-animated">
         <!-- Плавающие элементы -->
         <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/10 rounded-full blur-2xl float-animation"></div>
         <div class="absolute bottom-20 right-10 w-32 h-32 bg-brand-orange/10 rounded-full blur-3xl float-animation-delayed"></div>
         <div class="absolute top-40 right-20 w-16 h-16 bg-red-500/10 rounded-full blur-xl float-animation"></div>
         <div class="absolute bottom-40 left-20 w-24 h-24 bg-orange-500/10 rounded-full blur-xl float-animation-delayed"></div>
         
+        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-8 fade-in-section">
                 <span class="inline-flex items-center gap-2 bg-red-500/90 backdrop-blur-md border-2 border-red-400/50 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg emergency-pulse pulse-glow">
@@ -105,7 +72,7 @@
                     <div class="w-14 h-14 bg-brand-orange/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-truck"></i>
                     </div>
-                    <p class="text-2xl font-display font-extrabold text-white mb-1">20 мин</p>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1"><span class="counter" data-target="20" data-suffix=" мин">0</span></p>
                     <p class="text-slate-300 text-sm">Выезд мастера</p>
                 </div>
                 
@@ -121,7 +88,7 @@
                     <div class="w-14 h-14 bg-brand-orange/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-wrench"></i>
                     </div>
-                    <p class="text-2xl font-display font-extrabold text-white mb-1">98%</p>
+                    <p class="text-2xl font-display font-extrabold text-white mb-1"><span class="counter" data-target="98" data-suffix="%">0</span></p>
                     <p class="text-slate-300 text-sm">За 1 визит</p>
                 </div>
                 
@@ -139,7 +106,7 @@
                     <i class="fa-solid fa-phone animate-pulse"></i>
                     <span>Вызвать мастера</span>
                 </a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-xl transform hover:-translate-y-1 btn-glow-enhanced">
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-xl transform hover:-translate-y-1 btn-glow-enhanced">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
@@ -159,7 +126,7 @@
                 <span class="text-white/40">|</span>
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-utensils text-brand-orange"></i>
-                    <span>500+ ресторанов</span>
+                    <span><span class="counter" data-target="500" data-suffix="+">0</span>< ресторанов</span>
                 </div>
                 <span class="text-white/40">|</span>
                 <div class="flex items-center gap-2">
@@ -173,6 +140,7 @@
     <!-- 💰 QUICK INFO BAR -->
     <section class="py-6 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden -mt-8 relative z-20 shadow-xl bg-animated">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
                 <div class="flex items-center gap-4">
@@ -194,45 +162,52 @@
 
     <!-- ⚠️ ПОЧЕМУ НЕЛЬЗЯ ОТКЛАДЫВАТЬ -->
     <section class="py-16 bg-white">
+        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold mb-4">
                     <i class="fa-solid fa-triangle-exclamation mr-2"></i>ВАЖНО
                 </span>
-                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-slate-700 mb-4">Каждая минута простоя = потеря денег</h2>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-slate-700 mb-4 heading-reveal">Каждая минута простоя = потеря денег</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Для ресторана простой техники критичен. Вот что происходит при задержке ремонта:</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="scroll-reveal-left p-8 rounded-2xl border-2 border-red-200 stat-card-hover" style="background: linear-gradient(135deg, #f87171 0%, #fb7185 100%)">
-                    <div class="w-16 h-16 bg-red-200 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-6">
-                        <i class="fa-solid fa-money-bill-trend-up"></i>
-                    </div>
-                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Потеря дохода</h3>
-                    <p class="text-slate-600 mb-4">Средний ресторан теряет от <span class="font-bold text-red-600 text-lg">₽10,000-50,000 в час</span> при простое кухни</p>
-                    <div class="bg-red-200/50 rounded-lg p-3">
-                        <p class="text-red-700 text-sm font-semibold"><i class="fa-solid fa-calculator mr-2"></i>За 8 часов: до ₽400,000</p>
-                    </div>
-                </div>
-                
-                <div class="scroll-reveal p-8 rounded-2xl border-2 border-orange-200 stat-card-hover" style="background: linear-gradient(135deg, #fb923c 0%, #f97316 100%)">
-                    <div class="w-16 h-16 bg-orange-200 rounded-2xl flex items-center justify-center text-orange-600 text-2xl mb-6">
-                        <i class="fa-solid fa-users-slash"></i>
-                    </div>
-                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Недовольные гости</h3>
-                    <p class="text-slate-600 mb-4">Невыполненные заказы = <span class="font-bold text-orange-600">потеря лояльности</span> и негативные отзывы</p>
-                    <div class="bg-orange-200/50 rounded-lg p-3">
-                        <p class="text-orange-700 text-sm font-semibold"><i class="fa-solid fa-star mr-2"></i>1 негатив = 10 потерянных клиентов</p>
+                <div class="scroll-reveal" data-delay="1">
+                    <div class="card-tilt bg-white p-8 rounded-2xl border-2 border-red-100 shadow-sm hover:shadow-xl hover:border-red-300 transition-all h-full group">
+                        <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-500 text-2xl mb-6 group-hover:bg-red-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-money-bill-trend-up"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Потеря дохода</h3>
+                        <p class="text-slate-600 mb-4">Средний ресторан теряет от <span class="font-bold text-red-500 text-lg">₽10,000-50,000 в час</span> при простое кухни</p>
+                        <div class="bg-red-50 rounded-lg p-3 border border-red-100">
+                            <p class="text-red-600 text-sm font-semibold"><i class="fa-solid fa-calculator mr-2"></i>За 8 часов: до ₽400,000</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="scroll-reveal-right p-8 rounded-2xl border-2 border-blue-200 stat-card-hover" style="background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)">
-                    <div class="w-16 h-16 bg-blue-200 rounded-2xl flex items-center justify-center text-brand-blue text-2xl mb-6">
-                        <i class="fa-solid fa-wrench"></i>
+
+                <div class="scroll-reveal" data-delay="2">
+                    <div class="card-tilt bg-white p-8 rounded-2xl border-2 border-orange-100 shadow-sm hover:shadow-xl hover:border-orange-300 transition-all h-full group">
+                        <div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-users-slash"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Недовольные гости</h3>
+                        <p class="text-slate-600 mb-4">Невыполненные заказы = <span class="font-bold text-orange-500">потеря лояльности</span> и негативные отзывы</p>
+                        <div class="bg-orange-50 rounded-lg p-3 border border-orange-100">
+                            <p class="text-orange-600 text-sm font-semibold"><i class="fa-solid fa-star mr-2"></i>1 негатив = 10 потерянных клиентов</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Дороже ремонт</h3>
-                    <p class="text-slate-600 mb-4">Мелкая поломка за 2-3 дня превращается в <span class="font-bold text-brand-blue">серьёзную аварию</span></p>
-                    <div class="bg-blue-200/50 rounded-lg p-3">
-                        <p class="text-blue-700 text-sm font-semibold"><i class="fa-solid fa-percent mr-2"></i>Цена растёт в 3-5 раз</p>
+                </div>
+
+                <div class="scroll-reveal" data-delay="3">
+                    <div class="card-tilt bg-white p-8 rounded-2xl border-2 border-blue-100 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all h-full group">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-500 text-2xl mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Дороже ремонт</h3>
+                        <p class="text-slate-600 mb-4">Мелкая поломка за 2-3 дня превращается в <span class="font-bold text-blue-500">серьёзную аварию</span></p>
+                        <div class="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                            <p class="text-blue-600 text-sm font-semibold"><i class="fa-solid fa-percent mr-2"></i>Цена растёт в 3-5 раз</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -241,16 +216,17 @@
 
     <!-- 🔧 ОБОРУДОВАНИЕ — ПРОФЕССИОНАЛЬНОЕ -->
     <section class="py-20 bg-slate-50">
+        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 ОБОРУДОВАНИЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Ремонт ресторанного оборудования</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонт ресторанного оборудования</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Всё профессиональное кухонное оборудование для ресторанов, столовых и кафе</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 <!-- Пароконвектоматы -->
-                <a href="parokonvektomaty.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                <a href="parokonvektomaty.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-fire-burner"></i>
@@ -271,7 +247,7 @@
                 </a>
 
                 <!-- Плиты и печи -->
-                <a href="plity-pechi.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                <a href="plity-pechi.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-fire"></i>
@@ -292,7 +268,7 @@
                 </a>
 
                 <!-- Холодильники -->
-                <a href="holodilnoe-oborudovanie.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                <a href="holodilnoe-oborudovanie.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-snowflake"></i>
@@ -313,7 +289,7 @@
                 </a>
 
                 <!-- Посудомойки -->
-                <a href="posudomoechnye-mashiny.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                <a href="posudomoechnye-mashiny.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-sink"></i>
@@ -334,7 +310,7 @@
                 </a>
 
                 <!-- Грили и мангалы -->
-                <a href="grili-mangaly.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                <a href="grili-mangaly.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-drumstick-bite"></i>
@@ -355,7 +331,7 @@
                 </a>
 
                 <!-- Фритюрницы -->
-                <a href="friturennitsy.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                <a href="friturennitsy.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-bottle-droplet"></i>
@@ -376,7 +352,7 @@
                 </a>
 
                 <!-- Миксеры -->
-                <a href="small-appliances.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                <a href="small-appliances.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-blender"></i>
@@ -397,7 +373,7 @@
                 </a>
 
                 <!-- Кофемашины -->
-                <a href="small-appliances.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
+                <a href="small-appliances.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-mug-hot"></i>
@@ -422,15 +398,16 @@
 
     <!-- 📋 ДЛЯ КОГО РАБОТАЕМ -->
     <section class="py-20 bg-white">
+        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏢 КЛИЕНТЫ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Работаем со всеми форматами</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Работаем со всеми форматами</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Обслуживаем любые заведения общественного питания</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-red-300 to-red-400 border-2 border-red-200">
+                <div class="client-card text-center fade-in-section card-tilt stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-red-300 to-red-400 border-2 border-red-200">
                     <div class="w-20 h-20 bg-red-200 rounded-full flex items-center justify-center text-red-600 text-3xl mb-4 mx-auto icon-circle">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
@@ -442,7 +419,7 @@
                     </div>
                 </div>
                 
-                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-blue-300 to-blue-400 border-2 border-blue-200">
+                <div class="client-card text-center fade-in-section card-tilt stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-blue-300 to-blue-400 border-2 border-blue-200">
                     <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 text-3xl mb-4 mx-auto icon-circle">
                         <i class="fa-solid fa-building"></i>
                     </div>
@@ -454,7 +431,7 @@
                     </div>
                 </div>
                 
-                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-green-100 to-green-100 border-2 border-green-200">
+                <div class="client-card text-center fade-in-section card-tilt stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-green-100 to-green-100 border-2 border-green-200">
                     <div class="w-20 h-20 bg-green-200 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-circle">
                         <i class="fa-solid fa-mug-saucer"></i>
                     </div>
@@ -466,7 +443,7 @@
                     </div>
                 </div>
                 
-                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-orange-300 to-orange-400 border-2 border-orange-200">
+                <div class="client-card text-center fade-in-section card-tilt stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-orange-300 to-orange-400 border-2 border-orange-200">
                     <div class="w-20 h-20 bg-orange-200 rounded-full flex items-center justify-center text-orange-600 text-3xl mb-4 mx-auto icon-circle">
                         <i class="fa-solid fa-burger"></i>
                     </div>
@@ -483,15 +460,16 @@
 
     <!-- ⭐ ПОЧЕМУ РЕСТОРАНЫ ВЫБИРАЮТ НАС -->
     <section class="py-20 bg-gradient-to-br from-brand-blue to-slate-800 text-white bg-animated">
+        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/20 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⭐ ПРЕИМУЩЕСТВА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4">Почему 500+ ресторанов работают с нами</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Почему 500+ ресторанов работают с нами</h2>
                 <p class="text-slate-300 text-lg max-w-2xl mx-auto">Понимаем специфику ресторанного бизнеса</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="scroll-reveal-left p-8 rounded-2xl stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 border-2 border-red-200" style="background: linear-gradient(135deg, #f87171 0%, #ef4444 100%)">
+                <div class="scroll-reveal" data-delay="4" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-red-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-stopwatch"></i>
                     </div>
@@ -503,7 +481,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal p-8 rounded-2xl stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 border-2 border-blue-200" style="background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)">
+                <div class="scroll-reveal" data-delay="5" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-blue-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
@@ -515,7 +493,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal-right p-8 rounded-2xl stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 border-2 border-green-200" style="background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%)">
+                <div class="scroll-reveal" data-delay="6" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-green-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-file-contract"></i>
                     </div>
@@ -527,7 +505,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal-left p-8 rounded-2xl stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 border-2 border-purple-200" style="background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%)">
+                <div class="scroll-reveal" data-delay="7" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-purple-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-clock"></i>
                     </div>
@@ -539,7 +517,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal p-8 rounded-2xl stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 border-2 border-orange-200" style="background: linear-gradient(135deg, #fb923c 0%, #f97316 100%)">
+                <div class="scroll-reveal" data-delay="8" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-orange-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
@@ -551,7 +529,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal-right p-8 rounded-2xl stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-gradient-to-br from-amber-500 to-amber-600 border-2 border-amber-200 ">
+                <div class="scroll-reveal" data-delay="1" p-8 rounded-2xl card-tilt stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-gradient-to-br from-amber-500 to-amber-600 border-2 border-amber-200 ">
                     <div class="w-16 h-16 bg-amber-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-ruble-sign"></i>
                     </div>
@@ -568,38 +546,39 @@
 
     <!-- 📊 СТАТИСТИКА -->
     <section class="py-20 bg-white">
+        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Нам доверяют</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Нам доверяют</h2>
                 <p class="text-slate-600 text-lg">Цифры говорят сами за себя</p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20 float-animation">
+                <div class="scroll-scale text-center card-tilt stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20 float-animation">
                     <div class="w-20 h-20 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto icon-wrapper">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
-                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2">500+</p>
+                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="500" data-suffix="+">0</span><</p>
                     <p class="text-slate-600">Ресторанов и кафе</p>
                 </div>
                 
-                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-50 border-2 border-green-200 float-animation-delayed">
+                <div class="scroll-scale text-center card-tilt stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-50 border-2 border-green-200 float-animation-delayed">
                     <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-wrapper">
                         <i class="fa-solid fa-wrench"></i>
                     </div>
-                    <p class="text-5xl font-display font-extrabold text-green-600 mb-2">15,000+</p>
+                    <p class="text-5xl font-display font-extrabold text-green-600 mb-2"><span class="counter" data-target="15" data-suffix="+">0</span><,000+</p>
                     <p class="text-slate-600">Ремонтов выполнено</p>
                 </div>
                 
-                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20 float-animation">
+                <div class="scroll-scale text-center card-tilt stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20 float-animation">
                     <div class="w-20 h-20 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto icon-wrapper">
                         <i class="fa-solid fa-clock"></i>
                     </div>
-                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2">15+</p>
+                    <p class="text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="15" data-suffix="+">0</span><</p>
                     <p class="text-slate-600">Лет опыта</p>
                 </div>
                 
-                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-50 border-2 border-green-200 float-animation-delayed">
+                <div class="scroll-scale text-center card-tilt stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-50 border-2 border-green-200 float-animation-delayed">
                     <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-wrapper">
                         <i class="fa-solid fa-star"></i>
                     </div>
@@ -617,7 +596,7 @@
             <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6 emergency-pulse">
                 <span class="font-medium"><i class="fa-solid fa-bolt mr-2"></i>АВАРИЙНАЯ СЛУЖБА</span>
             </div>
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight">Оборудование сломалось? Не теряйте прибыль!</h2>
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Оборудование сломалось? Не теряйте прибыль!</h2>
             <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">
                 Мастер приедет за <span class="font-bold text-white">20 минут</span>. 
                 Диагностика <span class="font-bold text-white">0₽</span> при ремонте. 
@@ -627,7 +606,7 @@
                 <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-2xl transform hover:scale-105 btn-glow btn-glow-enhanced pulse-glow">
                     <i class="fa-solid fa-phone-volume mr-2 animate-pulse"></i>+7 (999) 005-71-72
                 </a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-10 py-6 rounded-full font-display font-bold transition shadow-xl btn-glow-enhanced">
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" rel="noopener noreferrer" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-10 py-6 rounded-full font-display font-bold transition shadow-xl btn-glow-enhanced">
                     <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
                 </a>
             </div>
@@ -651,11 +630,11 @@
     <!-- 📱 STICKY MOBILE CTA -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-2xl">
         <div class="grid grid-cols-2 gap-3">
-            <a href="tel:89990057172" class="bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i>
                 <span>Позвонить</span>
             </a>
-            <a href="https://wa.me/79990057172" class="bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+            <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
                 <i class="fa-brands fa-whatsapp"></i>
                 <span>WhatsApp</span>
             </a>

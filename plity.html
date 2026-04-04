@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="Ремонт плит и духовок на дому в Москве. Выезд за 60 минут. Диагностика 0₽. Гарантия на работы.">
     <title>Ремонт плит и духовок на дому | Москва | MosPochin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-built.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:site_name" content="MosPochin — Ремонт бытовой техники">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ремонт плит и духовок на дому | Москва | MosPochin">
+    <meta property="og:description" content="Ремонт плит и духовок на дому в Москве. Выезд за 60 минут. Диагностика 0₽. Гарантия на работы.">
+    <meta property="og:url" content="https://mspochin.ru/plity.html">
+    <meta property="og:image" content="https://mspochin.ru/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
     <!-- 🔴 TOP BAR -->
@@ -45,7 +55,7 @@
                         <span>ВЫЕЗД НА ДОМ ЗА 60 МИНУТ</span>
                     </div>
                     
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold text-white tracking-tight mb-4 leading-tight">
                         Ремонт <span class="text-brand-orange">плит и духовок</span> на дому
                     </h1>
                     
@@ -68,11 +78,11 @@
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-6">
-                        <a href="tel:89990057172" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-2xl cta-pulse">
+                        <a href="tel:89990057172" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-2xl btn-glow">
                             <i class="fa-solid fa-phone"></i>
                             <span>ВЫЗВАТЬ МАСТЕРА</span>
                         </a>
-                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20плиты%20или%20духовки" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2">
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20плиты%20или%20духовки" rel="noopener noreferrer" target="_blank" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp"></i>
                             <span>WhatsApp</span>
                         </a>
@@ -107,7 +117,7 @@
                                 <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-2xl mb-3 mx-auto icon-bounce">
                                     <i class="fa-solid fa-check"></i>
                                 </div>
-                                <p class="text-3xl font-extrabold text-green-400 mb-1">98%</p>
+                                <p class="text-3xl font-extrabold text-green-400 mb-1"><span class="counter" data-target="98" data-suffix="%">0</span></p>
                                 <p class="text-white/80 text-sm">С 1-го раза</p>
                             </div>
                             <div class="stat-card text-center p-4 rounded-2xl">
@@ -159,7 +169,7 @@
                     <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-3 mx-auto">
                         <i class="fa-solid fa-award"></i>
                     </div>
-                    <p class="font-bold text-brand-blue text-lg">12 лет</p>
+                    <p class="font-bold text-brand-blue text-lg"><span class="counter" data-target="12" data-suffix=" лет">0</span></p>
                     <p class="text-slate-600 text-sm">Опыта работы</p>
                 </div>
                 <div class="trust-card bg-gradient-to-br from-green-100 to-emerald-50 p-6 rounded-2xl border border-green-100 text-center fade-in-section">
@@ -213,7 +223,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 ПРОБЛЕМЫ</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Что случилось с плитой?</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что случилось с плитой?</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Узнали свою проблему? Звоните — решим за 1 визит!</p>
             </div>
             
@@ -274,7 +284,7 @@
             </div>
             
             <div class="text-center fade-in-section">
-                <a href="tel:89990057172" class="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-10 py-5 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cta-pulse">
+                <a href="tel:89990057172" class="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-10 py-5 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 btn-glow">
                     <i class="fa-solid fa-phone"></i>
                     <span>Бесплатная консультация</span>
                 </a>
@@ -287,7 +297,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">📋 КАК МЫ РАБОТАЕМ</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Процесс ремонта</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Процесс ремонта</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Просто и прозрачно — 4 шага к исправной плите</p>
             </div>
             
@@ -307,7 +317,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-brand-blue mb-2">2. Выезд</h3>
                     <p class="text-slate-600 text-sm">Мастер приезжает в удобное время</p>
-                    <p class="text-brand-orange font-semibold text-xs mt-2">60 минут</p>
+                    <p class="text-brand-orange font-semibold text-xs mt-2"><span class="counter" data-target="60" data-suffix=" мин">0</span></p>
                 </div>
                 
                 <div class="process-step text-center fade-in-section">
@@ -336,7 +346,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">💰 ЦЕНЫ</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Стоимость ремонта</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Стоимость ремонта</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Прозрачные цены без скрытых платежей</p>
             </div>
             
@@ -436,7 +446,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⚖️ СРАВНЕНИЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Почему выбирают нас</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему выбирают нас</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Сравните наши преимущества с другими сервисами</p>
             </div>
             
@@ -453,7 +463,7 @@
                         <tbody>
                             <tr class="border-b border-slate-100 hover:bg-slate-50">
                                 <td class="py-4 px-6 font-semibold text-brand-blue">Выезд мастера</td>
-                                <td class="py-4 px-6 text-center"><span class="comparison-check font-bold"><i class="fa-solid fa-check mr-2"></i>60 минут</span></td>
+                                <td class="py-4 px-6 text-center"><span class="comparison-check font-bold"><i class="fa-solid fa-check mr-2"></i><span class="counter" data-target="60" data-suffix=" мин">0</span></span></td>
                                 <td class="py-4 px-6 text-center"><span class="text-slate-500">2-4 часа</span></td>
                             </tr>
                             <tr class="border-b border-slate-100 hover:bg-slate-50">
@@ -493,7 +503,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏭 БРЕНДЫ</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Ремонтируем все марки</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонтируем все марки</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Оригинальные запчасти для любых производителей</p>
             </div>
             
@@ -712,7 +722,7 @@
                             <tr class="border-b border-slate-200">
                                 <td class="py-3 px-4 font-medium">Время диагностики</td>
                                 <td class="py-3 px-4 text-center text-red-500">40-60 мин</td>
-                                <td class="py-3 px-4 text-center text-green-500">15-20 мин</td>
+                                <td class="py-3 px-4 text-center text-green-500"><span class="counter" data-target="15" data-suffix="+">0</span><-20 мин</td>
                             </tr>
                             <tr class="border-b border-slate-200">
                                 <td class="py-3 px-4 font-medium">Стоимость ремонта</td>
@@ -742,7 +752,7 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="fade-in-section">
                     <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⚡ ПОЧЕМУ МЫ</span>
-                    <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-6">Ремонт на дому за 1 визит</h2>
+                    <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-6 heading-reveal">Ремонт на дому за 1 визит</h2>
                     <p class="text-slate-600 text-lg mb-8 leading-relaxed">Мастер приедет со всеми запчастями и инструментами. 98% ремонтов завершаем за один визит.</p>
                     
                     <div class="space-y-4 mb-8">
@@ -775,7 +785,7 @@
                         </div>
                     </div>
                     
-                    <a href="tel:89990057172" class="inline-block bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-10 py-5 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cta-pulse">
+                    <a href="tel:89990057172" class="inline-block bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-10 py-5 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 btn-glow">
                         <i class="fa-solid fa-phone mr-2"></i>Вызвать мастера на дом
                     </a>
                 </div>
@@ -833,7 +843,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">❓ FAQ</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Частые вопросы</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Частые вопросы</h2>
                 <p class="text-slate-600 text-lg">Ответы на популярные вопросы</p>
             </div>
             
@@ -859,7 +869,7 @@
                         <span><i class="fa-solid fa-circle-question text-brand-orange mr-3"></i>Как быстро приедет мастер?</span>
                         <i class="fa-solid fa-chevron-down transition-transform"></i>
                     </summary>
-                    <p class="mt-4 text-slate-600 ml-8">Мастер приедет в течение <strong>60 минут</strong> после заявки. Работаем во всех округах Москвы и ближайшем Подмосковье.</p>
+                    <p class="mt-4 text-slate-600 ml-8">Мастер приедет в течение <strong><span class="counter" data-target="60" data-suffix=" мин">0</span></strong> после заявки. Работаем во всех округах Москвы и ближайшем Подмосковье.</p>
                 </details>
                 
                 <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer fade-in-section">
@@ -886,7 +896,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">💳 ОПЛАТА</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Удобные способы оплаты</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Удобные способы оплаты</h2>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -930,7 +940,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">📍 ЗОНА ОБСЛУЖИВАНИЯ</span>
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-brand-blue mb-4">Работаем по всей Москве</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Работаем по всей Москве</h2>
             </div>
             
             <div class="grid md:grid-cols-4 gap-4 text-center fade-in-section">
@@ -961,17 +971,17 @@
             <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
                 <span class="font-medium"><i class="fa-solid fa-bolt mr-2"></i>СРОЧНЫЙ РЕМОНТ</span>
             </div>
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Плита или духовка сломалась? Не ждите!</h2>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight heading-reveal">Плита или духовка сломалась? Не ждите!</h2>
             <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">
-                Мастер приедет за <span class="font-bold text-white">60 минут</span>. 
+                Мастер приедет за <span class="font-bold text-white"><span class="counter" data-target="60" data-suffix=" мин">0</span></span>. 
                 Диагностика <span class="font-bold text-white">0₽</span>. 
                 <span class="font-bold text-white">Гарантия на работы</span>.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-10 py-5 rounded-full font-bold transition shadow-xl transform hover:scale-105 cta-pulse">
+                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-2xl transform hover:scale-105 btn-glow btn-glow">
                     <i class="fa-solid fa-phone mr-2"></i>+7 (999) 005-71-72
                 </a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20плиты%20или%20духовки" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-5 rounded-full font-bold transition shadow-xl">
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20плиты%20или%20духовки" rel="noopener noreferrer" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-5 rounded-full font-bold transition shadow-xl">
                     <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
                 </a>
             </div>
@@ -984,11 +994,11 @@
     <!-- 📱 STICKY MOBILE CTA -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-2xl">
         <div class="grid grid-cols-2 gap-3">
-            <a href="tel:89990057172" class="bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
                 <i class="fa-solid fa-phone"></i>
                 <span>Позвонить</span>
             </a>
-            <a href="https://wa.me/79990057172" class="bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+            <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
                 <i class="fa-brands fa-whatsapp"></i>
                 <span>WhatsApp</span>
             </a>
