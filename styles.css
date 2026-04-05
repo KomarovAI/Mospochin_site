@@ -575,3 +575,54 @@ a[href^="tel:"]:active, a[href^="https://wa.me"]:active {
     }
 }
 
+
+/* ============================================
+   🚀 ПРЕЛОАД И ПРОИЗВОДИТЕЛЬНОСТЬ
+   ============================================ */
+
+/* Lazy loading для изображений */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Hover эффекты для карточек брендов */
+.card-brand {
+    @apply transition-all duration-300;
+}
+.card-brand:hover {
+    @apply shadow-xl;
+    transform: translateY(-4px);
+}
+
+/* Micro-interactions для кнопок */
+.btn-click {
+    @apply relative overflow-hidden transition-transform duration-150;
+}
+.btn-click:active {
+    transform: scale(0.97);
+}
+
+/* Улучшенный hover для иконок */
+.group:hover .icon-wrapper {
+    @apply scale-110;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Плавное появление изображений */
+@keyframes imgFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+img.loaded {
+    animation: imgFadeIn 0.3s ease-out;
+}
+
+/* Улучшенные тени для карточек */
+.card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
