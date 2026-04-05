@@ -39,8 +39,8 @@ const CONFIG = {
 const Components = {
   isBytovaya() {
     const path = window.location.pathname.split('/').pop().replace('.html', '');
-    const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity-pechi', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy'];
-    const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'plity', 'microwaves', 'airconditioners', 'tvs', 'vacuums', 'small-appliances', 'kompyutery', 'routery'];
+    const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity-pechi', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy', 'ice-machines'];
+    const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'plity', 'microwaves', 'airconditioners', 'tvs', 'vacuums', 'small-appliances', 'kompyutery', 'routery', 'water-heaters'];
 
     // Сначала проверяем бытовую (точное совпадение)
     if (bytovayaPages.includes(path)) return true;
