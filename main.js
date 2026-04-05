@@ -435,24 +435,20 @@ function initStaggerAnimations() {
 
 // 3. Улучшенный scroll-reveal с задержками
 function initScrollReveal() {
-    const elements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-scale, .fade-in-section, .heading-reveal');
+    const elements = document.querySelectorAll('.scroll-reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const delay = parseInt(entry.target.dataset.delay) || 0;
+                const delay = entry.target.dataset.delay || 0;
                 setTimeout(() => {
                     entry.target.classList.add('revealed');
                 }, delay * 100);
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     
-    elements.forEach(el => {
-        if (!el.classList.contains('revealed')) {
-            observer.observe(el);
-        }
-    });
+    elements.forEach(el => observer.observe(el));
 }
 
 // 4. B2B vs B2C — добавление класса к body
