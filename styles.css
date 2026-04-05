@@ -728,3 +728,35 @@ a {
     border-color: rgba(249,115,22,0.2) !important;
 }
 
+
+/* ============================================
+   🎨 ЭТАП 3: ПЛАВНЫЙ СКРОЛЛ
+   ============================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Плавная прокрутка для якорных ссылок */
+a[href^="#"] {
+    scroll-behavior: smooth;
+}
+
+/* Улучшенный скроллбар */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #F97316 0%, #EA580C 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FB923C 0%, #F97316 100%);
+}
+
