@@ -644,3 +644,87 @@ img.loaded {
     box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
 }
 
+
+/* ============================================
+   🎨 ЭТАП 2: УЛУЧШЕННЫЕ HOVER-КАРТОЧКИ
+   ============================================ */
+
+/* Glow-эффект для карточек */
+.card-brand {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-brand::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(249,115,22,0.05) 0%, transparent 50%, rgba(249,115,22,0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.card-brand:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.08),
+        0 8px 16px rgba(0,0,0,0.04),
+        0 0 0 1px rgba(249,115,22,0.15),
+        0 0 30px rgba(249,115,22,0.08);
+    border-color: rgba(249,115,22,0.3) !important;
+}
+
+.card-brand:hover::before {
+    opacity: 1;
+}
+
+/* Улучшенный hover для иконок */
+.card-brand .icon-wrapper,
+.card-brand [class*="bg-"][class*="-100"] {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-brand:hover .icon-wrapper,
+.card-brand:hover [class*="bg-"][class*="-100"] {
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Glow для CTA-кнопок */
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.btn-glow:hover::after {
+    transform: translateX(100%);
+}
+
+/* Плавный hover для всех ссылок */
+a {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Улучшенный hover для карточек с border */
+.border-slate-100:hover,
+.border-slate-200:hover {
+    border-color: rgba(249,115,22,0.2) !important;
+}
+
