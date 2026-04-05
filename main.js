@@ -7,7 +7,7 @@ const CONFIG = {
     name: 'MosPochin',
     phoneDisplay: '8 (999) 005-71-72',
     phoneLink: '79990057172',
-    whatsapp: 'https://wa.me/79990057172',
+    whatsapp: 'https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
     email: 'info@mspochin.ru',
     experience: '15+ лет',
     responseTime: '60 минут'
@@ -20,7 +20,8 @@ const CONFIG = {
       {href:'holodilnoe-oborudovanie.html', icon:'❄️', name:'Холодильное оборудование'},
       {href:'posudomoechnye-mashiny.html', icon:'🍽️', name:'Посудомойки'},
       {href:'grili-mangaly.html', icon:'🍖', name:'Грили и мангалы'},
-      {href:'friturennitsy.html', icon:'🍟', name:'Фритюрницы'}
+      {href:'friturennitsy.html', icon:'🍟', name:'Фритюрницы'},
+      {href:'ice-machines.html', icon:'🧊', name:'Льдогенераторы'}
     ],
     bytovaya: [
       {href:'bytovaya-uslugi.html', icon:'🏠', name:'Все услуги'},
@@ -29,7 +30,8 @@ const CONFIG = {
       {href:'posudomoyki.html', icon:'🍽️', name:'Посудомойки'},
       {href:'plity.html', icon:'🔥', name:'Плиты'},
       {href:'kompyutery.html', icon:'💻', name:'Компьютеры'},
-      {href:'routery.html', icon:'📶', name:'Роутеры'}
+      {href:'routery.html', icon:'📶', name:'Роутеры'},
+      {href:'water-heaters.html', icon:'🚿', name:'Водонагреватели'}
     ]
   }
 };
