@@ -149,6 +149,7 @@ const Components = {
                 <li><a href="posudomoechnye-mashiny.html" class="hover:text-white transition">Посудомойки</a></li>
                 <li><a href="grili-mangaly.html" class="hover:text-white transition">Грили и мангалы</a></li>
                 <li><a href="friturennitsy.html" class="hover:text-white transition">Фритюрницы</a></li>
+                <li><a href="ice-machines.html" class="hover:text-white transition">Льдогенераторы</a></li>
                 <li><a href="about.html" class="hover:text-white transition">О компании</a></li>
                 <li><a href="contact.html" class="hover:text-white transition">Контакты</a></li>
               </ul>
@@ -161,6 +162,7 @@ const Components = {
                 <li><a href="holodilniki.html" class="hover:text-white transition">Холодильники</a></li>
                 <li><a href="stiralnye-mashiny.html" class="hover:text-white transition">Стиральные машины</a></li>
                 <li><a href="posudomoyki.html" class="hover:text-white transition">Посудомойки</a></li>
+                <li><a href="pliti.html" class="hover:text-white transition">Плиты</a></li>
                 <li><a href="plity.html" class="hover:text-white transition">Плиты</a></li>
                 <li><a href="kompyutery.html" class="hover:text-white transition">Компьютеры</a></li>
                 <li><a href="routery.html" class="hover:text-white transition">Роутеры</a></li>
@@ -169,6 +171,7 @@ const Components = {
                 <li><a href="microwaves.html" class="hover:text-white transition">Микроволновки</a></li>
                 <li><a href="airconditioners.html" class="hover:text-white transition">Кондиционеры</a></li>
                 <li><a href="small-appliances.html" class="hover:text-white transition">Мелкая техника</a></li>
+                <li><a href="water-heaters.html" class="hover:text-white transition">Водонагреватели</a></li>
                 <li><a href="bytovaya-about.html" class="hover:text-white transition">О компании</a></li>
                 <li><a href="bytovaya-contact.html" class="hover:text-white transition">Контакты</a></li>
               </ul>
