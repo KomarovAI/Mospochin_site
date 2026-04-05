@@ -369,7 +369,10 @@ const Components = {
       this.initRipple();
       this.initCounters();
       this.initHeadingReveal();
-    }, 50);
+         this.initStaggerAnimations();
+         this.initScrollReveal();
+         this.initBranchStyling();
+       }, 50);
   }
 };
 
@@ -455,10 +458,3 @@ function initBranchStyling() {
     }
 }
 
-// Инициализация при загрузке
-document.addEventListener('DOMContentLoaded', () => {
-    initCounters();
-    initStaggerAnimations();
-    initScrollReveal();
-    initBranchStyling();
-});
