@@ -62,7 +62,7 @@ const Components = {
     ).join('');
     
     return `
-      <nav class="fixed w-full z-50 bg-white/98 backdrop-blur-md border-b border-slate-200 shadow-sm" id="navbar">
+      <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-lg glass-navbar" id="navbar">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16 lg:h-20">
             <a href="${homeLink}" class="flex items-center gap-2 lg:gap-3 flex-shrink-0">
