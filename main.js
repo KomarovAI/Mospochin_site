@@ -379,12 +379,12 @@ document.addEventListener('DOMContentLoaded', () => Components.init());
 
 // 1. Number Counter для статистики
 function initCounters() {
-    const counters = document.querySelectorAll('[data-count]');
+    const counters = document.querySelectorAll('[data-target]');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
-                const target = parseInt(el.dataset.count);
+                const target = parseInt(el.dataset.target);
                 const suffix = el.dataset.suffix || '';
                 let current = 0;
                 const duration = 1500;
