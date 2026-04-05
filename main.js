@@ -370,3 +370,90 @@ const Components = {
 
 // ✅ АВТОЗАПУСК
 document.addEventListener('DOMContentLoaded', () => Components.init());
+
+// ============================================
+// 🎨 ДИЗАЙН-АПГРЕЙД — АНИМАЦИИ
+// ============================================
+
+// 1. Number Counter для статистики
+function initCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.count);
+                const suffix = el.dataset.suffix || '';
+                let current = 0;
+                const duration = 1500;
+                const stepTime = duration / 50;
+                const increment = target / 50;
+                
+                const step = () => {
+                    current += increment;
+                    if (current < target) {
+                        el.textContent = Math.ceil(current) + suffix;
+                        setTimeout(step, stepTime);
+                    } else {
+                        el.textContent = target + suffix;
+                    }
+                };
+                step();
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(c => observer.observe(c));
+}
+
+// 2. Stagger-анимация для карточек
+function initStaggerAnimations() {
+    const containers = document.querySelectorAll('.grid, .space-y-4');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    containers.forEach(c => {
+        c.classList.add('stagger-container');
+        observer.observe(c);
+    });
+}
+
+// 3. Улучшенный scroll-reveal с задержками
+function initScrollReveal() {
+    const elements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.dataset.delay || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('revealed');
+                }, delay * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    
+    elements.forEach(el => observer.observe(el));
+}
+
+// 4. B2B vs B2C — добавление класса к body
+function initBranchStyling() {
+    if (typeof isBytovaya === 'function') {
+        document.body.classList.add(isBytovaya() ? 'branch-household' : 'branch-restaurant');
+    }
+}
+
+// Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+    initCounters();
+    initStaggerAnimations();
+    initScrollReveal();
+    initBranchStyling();
+});
