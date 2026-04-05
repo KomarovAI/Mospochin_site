@@ -114,6 +114,10 @@ const Components = {
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 shadow-xl">
           <div class="px-4 py-4 space-y-3" id="mobile-menu-items"></div>
         </div>
+          <div class="branch-switcher flex items-center gap-2 ml-4">
+              <a href="index.html" class="text-xs font-semibold px-3 py-1.5 rounded-full transition ${isByt ? 'bg-slate-200 text-slate-600 hover:bg-brand-orange hover:text-white' : 'bg-brand-orange text-white'}">🔧 Ресторан</a>
+              <a href="bytovaya-index.html" class="text-xs font-semibold px-3 py-1.5 rounded-full transition ${!isByt ? 'bg-slate-200 text-slate-600 hover:bg-brand-orange hover:text-white' : 'bg-brand-orange text-white'}">🏠 Бытовая</a>
+          </div>
       </nav>`;
   },
   
