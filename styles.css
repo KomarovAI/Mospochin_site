@@ -453,3 +453,125 @@ body.branch-household {
     @apply scale-110;
 }
 
+
+/* ============================================
+   🎨 ДОПОЛНИТЕЛЬНЫЕ ДИЗАЙН-УЛУЧШЕНИЯ
+   ============================================ */
+
+/* 13. Таблицы — градиент справа на мобильном */
+.table-wrapper {
+    @apply overflow-x-auto relative;
+}
+.table-wrapper::after {
+    content: '';
+    @apply absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none;
+}
+
+/* 14. Улучшенный accordion FAQ */
+details.faq-item {
+    @apply transition-all duration-300;
+}
+details.faq-item[open] {
+    @apply shadow-md;
+}
+details.faq-item summary {
+    @apply list-none;
+}
+details.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+details.faq-item summary::after {
+    content: '+';
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F97316;
+    transition: transform 0.3s ease;
+}
+details.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+details.faq-item[open] summary ~ * {
+    animation: fadeInDown 0.3s ease-out;
+}
+ @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 15. Hover-эффект для кнопок CTA */
+a[href^="tel:"], a[href^="https://wa.me"] {
+    @apply transition-all duration-300;
+}
+a[href^="tel:"]:hover, a[href^="https://wa.me"]:hover {
+    @apply scale-105 shadow-xl;
+}
+a[href^="tel:"]:active, a[href^="https://wa.me"]:active {
+    @apply scale-95;
+}
+
+/* 16. Улучшенные карточки неисправностей */
+.card-brand {
+    @apply transition-all duration-300 hover:-translate-y-2;
+}
+.card-brand:hover {
+    @apply shadow-xl;
+}
+.card-brand:hover .icon-wrapper {
+    @apply scale-110;
+}
+
+/* 17. Inline CTA градиент */
+.inline-cta {
+    @apply bg-gradient-to-r from-brand-orange/10 to-brand-orange/5 border-y-2 border-brand-orange/20;
+}
+
+/* 18. Плавный parallax для hero */
+@media (min-width: 1024px) {
+    .hero-parallax {
+        background-attachment: fixed;
+    }
+}
+
+/* 19. Скрытие sticky CTA при скролле вниз */
+.navbar-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+.navbar-visible {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* 20. Улучшенные бейджи для брендов */
+.brand-badge {
+    @apply inline-block px-2 py-1 rounded-full text-xs font-semibold transition-colors;
+}
+.badge-premium {
+    @apply bg-yellow-100 text-yellow-800;
+}
+.badge-standard {
+    @apply bg-blue-100 text-blue-800;
+}
+.badge-budget {
+    @apply bg-green-100 text-green-800;
+}
+
+/* 21. Мобильная адаптация sticky CTA */
+@media (max-width: 640px) {
+    .sticky-mobile-cta {
+        padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+    }
+    body {
+        padding-bottom: 5rem;
+    }
+}
+
+/* 22. Градиент-маска для таблиц */
+@media (max-width: 768px) {
+    .overflow-x-auto {
+        mask-image: linear-gradient(to right, transparent, black 8px, black calc(100% - 8px), transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 8px, black calc(100% - 8px), transparent);
+    }
+}
+
