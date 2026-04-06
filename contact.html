@@ -125,8 +125,53 @@
         </div>
     </section>
 
+    <!-- 📝 ФОРМА ЗАЯВКИ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">📝 ЗАЯВКА</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставить заявку на ремонт</h2>
+                <p class="text-slate-600 text-lg">Заполните форму — перезвоним за 5 минут</p>
+            </div>
+            <form class="scroll-reveal bg-slate-50 p-8 rounded-2xl border-2 border-slate-100" onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-center py-12\'><i class=\'fa-solid fa-check-circle text-green-500 text-6xl mb-4\'></i><h3 class=\'text-2xl font-bold text-brand-blue mb-2\'>Заявка отправлена!</h3><p class=\'text-slate-600\'>Перезвоним за 5 минут</p></div>';">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-bold text-brand-blue mb-2">Ваше имя</label>
+                        <input type="text" placeholder="Иван" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-brand-blue mb-2">Телефон</label>
+                        <input type="tel" placeholder="+7 (___) ___-__-__" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-brand-blue mb-2">Что сломалось?</label>
+                    <select class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition bg-white">
+                        <option value="">Выберите технику</option>
+                        <option>Холодильник</option>
+                        <option>Стиральная машина</option>
+                        <option>Посудомоечная машина</option>
+                        <option>Микроволновка</option>
+                        <option>Плита / духовка</option>
+                        <option>Пылесос</option>
+                        <option>Телевизор</option>
+                        <option>Компьютер / ноутбук</option>
+                        <option>Другое</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-brand-blue mb-2">Опишите проблему</label>
+                    <textarea rows="4" placeholder="Например: не включается, течёт, шумит..." class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold py-4 rounded-xl transition shadow-lg btn-glow transform hover:-translate-y-1">
+                    <i class="fa-solid fa-paper-plane mr-2"></i>Отправить заявку
+                </button>
+                <p class="text-center text-slate-500 text-xs mt-4"><i class="fa-solid fa-lock mr-1"></i> Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+            </form>
+        </div>
+    </section>
+
     <!-- ❓ FAQ -->
-    <section class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">FAQ</span>
