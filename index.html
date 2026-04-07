@@ -86,7 +86,7 @@
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="scroll-reveal" data-delay="1" text-center lg:text-left">
+                <div class="scroll-reveal text-center lg:text-left" data-delay="1">
                     <!-- СРОЧНОСТЬ -->
                     <div class="inline-flex items-center gap-2 bg-red-500/90 backdrop-blur-md border-2 border-red-400/50 rounded-full px-5 py-3 text-white text-sm font-bold mb-6 emergency-pulse">
                         <span class="w-3 h-3 bg-white rounded-full animate-pulse"></span>
@@ -157,13 +157,10 @@
                 </div>
                 
                 <!-- ИЗОБРАЖЕНИЕ -->
-                <div class="hidden lg:block scroll-reveal relative">
-                    <div class="rounded-2xl shadow-lg w-full h-[500px] glass-card bg-gradient-to-br from-brand-orange to-orange-600 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-                        <div class="text-center relative z-10">
-                            <i class="fa-solid fa-utensils text-white text-8xl mb-4 drop-shadow-lg"></i>
-                            <p class="text-white/90 text-2xl font-display font-bold">🍽️ MosPochin</p>
-                        </div>
+                <div class="hidden lg:block relative" style="min-height:500px;">
+                    <div class="rounded-2xl shadow-lg w-full h-[500px] overflow-hidden relative" style="position:relative;opacity:1 !important;">
+                        <img src="hero-restaurant.jpg" alt="Ресторанная кухня — ремонт профессионального оборудования" style="width:100%;height:100%;object-fit:cover;display:block;opacity:1 !important;" loading="lazy">
+                        <div class="absolute bottom-4 right-4 bg-brand-orange/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold z-10">🍽️ MosPochin</div>
                     </div>
                     
                     <!-- ПЛАВАЮЩАЯ КАРТОЧКА -->
@@ -531,7 +528,7 @@
                             <i class="fa-solid fa-chevron-right text-amber-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/de.png" alt="Германия" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm flex-shrink-0" viewBox="0 0 60 40"><rect fill="#000" width="60" height="13.3"/><rect fill="#DD0000" y="13.3" width="60" height="13.4"/><rect fill="#FFCC00" y="26.7" width="60" height="13.3"/></svg>
                             <p class="text-slate-500 text-sm">Германия</p>
                         </div>
                         <p class="text-xs text-slate-400">Пароконвектоматы</p>
@@ -550,7 +547,7 @@
                             <i class="fa-solid fa-chevron-right text-amber-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/it.png" alt="Италия" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#009246" width="20" height="40"/><rect fill="#fff" x="20" width="20" height="40"/><rect fill="#CE2B37" x="40" width="20" height="40"/></svg>
                             <p class="text-slate-500 text-sm">Италия</p>
                         </div>
                         <p class="text-xs text-slate-400">Пароконвектоматы</p>
@@ -569,7 +566,7 @@
                             <i class="fa-solid fa-chevron-right text-amber-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/se.png" alt="Швеция" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#006AA7" width="60" height="40"/><rect fill="#FECC00" x="17.5" width="7.5" height="40"/><rect fill="#FECC00" y="16.25" width="60" height="7.5"/></svg>
                             <p class="text-slate-500 text-sm">Швеция</p>
                         </div>
                         <p class="text-xs text-slate-400">Полный спектр</p>
@@ -588,7 +585,7 @@
                             <i class="fa-solid fa-chevron-right text-amber-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/de.png" alt="Германия" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm flex-shrink-0" viewBox="0 0 60 40"><rect fill="#000" width="60" height="13.3"/><rect fill="#DD0000" y="13.3" width="60" height="13.4"/><rect fill="#FFCC00" y="26.7" width="60" height="13.3"/></svg>
                             <p class="text-slate-500 text-sm">Германия</p>
                         </div>
                         <p class="text-xs text-slate-400">Посудомойки</p>
@@ -622,7 +619,7 @@
                             <i class="fa-solid fa-chevron-right text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/nl.png" alt="Нидерланды" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#AE1C28" width="60" height="13.3"/><rect fill="#fff" y="13.3" width="60" height="13.4"/><rect fill="#21468B" y="26.7" width="60" height="13.3"/></svg>
                             <p class="text-slate-500 text-sm">Нидерланды</p>
                         </div>
                         <p class="text-xs text-slate-400">Кухонное оборудование</p>
@@ -641,7 +638,7 @@
                             <i class="fa-solid fa-chevron-right text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/us.png" alt="США" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#B31942" width="60" height="40"/><g fill="#fff"><rect y="0" width="60" height="3.08"/><rect y="6.15" width="60" height="3.08"/><rect y="12.3" width="60" height="3.08"/><rect y="18.46" width="60" height="3.08"/><rect y="24.62" width="60" height="3.08"/><rect y="30.77" width="60" height="3.08"/><rect y="36.92" width="60" height="3.08"/></g><rect fill="#0A3161" width="27" height="21.54"/></svg>
                             <p class="text-slate-500 text-sm">США</p>
                         </div>
                         <p class="text-xs text-slate-400">Миксеры, техника</p>
@@ -660,7 +657,7 @@
                             <i class="fa-solid fa-chevron-right text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/de.png" alt="Германия" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm flex-shrink-0" viewBox="0 0 60 40"><rect fill="#000" width="60" height="13.3"/><rect fill="#DD0000" y="13.3" width="60" height="13.4"/><rect fill="#FFCC00" y="26.7" width="60" height="13.3"/></svg>
                             <p class="text-slate-500 text-sm">Германия</p>
                         </div>
                         <p class="text-xs text-slate-400">Посудомойки, плиты</p>
@@ -679,7 +676,7 @@
                             <i class="fa-solid fa-chevron-right text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/it.png" alt="Италия" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#009246" width="20" height="40"/><rect fill="#fff" x="20" width="20" height="40"/><rect fill="#CE2B37" x="40" width="20" height="40"/></svg>
                             <p class="text-slate-500 text-sm">Италия</p>
                         </div>
                         <p class="text-xs text-slate-400">Холодильники, плиты</p>
@@ -713,7 +710,7 @@
                             <i class="fa-solid fa-chevron-right text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/ru.png" alt="Россия" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#fff" width="60" height="13.3"/><rect fill="#0039A6" y="13.3" width="60" height="13.4"/><rect fill="#D52B1E" y="26.7" width="60" height="13.3"/></svg>
                             <p class="text-slate-500 text-sm">Россия</p>
                         </div>
                         <p class="text-xs text-slate-400">Тепловое оборудование</p>
@@ -732,7 +729,7 @@
                             <i class="fa-solid fa-chevron-right text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/cn.png" alt="Китай" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm flex-shrink-0" viewBox="0 0 60 40"><rect fill="#DE2910" width="60" height="40"/><circle fill="#FFDE00" cx="15" cy="10" r="5"/><circle fill="#FFDE00" cx="28" cy="6" r="1.5"/><circle fill="#FFDE00" cx="33" cy="10" r="1.5"/><circle fill="#FFDE00" cx="33" cy="17" r="1.5"/><circle fill="#FFDE00" cx="28" cy="21" r="1.5"/></svg>
                             <p class="text-slate-500 text-sm">Китай</p>
                         </div>
                         <p class="text-xs text-slate-400">Полный спектр</p>
@@ -751,7 +748,7 @@
                             <i class="fa-solid fa-chevron-right text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/cn.png" alt="Китай" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm flex-shrink-0" viewBox="0 0 60 40"><rect fill="#DE2910" width="60" height="40"/><circle fill="#FFDE00" cx="15" cy="10" r="5"/><circle fill="#FFDE00" cx="28" cy="6" r="1.5"/><circle fill="#FFDE00" cx="33" cy="10" r="1.5"/><circle fill="#FFDE00" cx="33" cy="17" r="1.5"/><circle fill="#FFDE00" cx="28" cy="21" r="1.5"/></svg>
                             <p class="text-slate-500 text-sm">Китай</p>
                         </div>
                         <p class="text-xs text-slate-400">Тепловое, холодильное</p>
@@ -770,7 +767,7 @@
                             <i class="fa-solid fa-chevron-right text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <img loading="lazy" src="https://flagcdn.com/w40/cn.png" alt="Китай" class="w-6 h-4 object-cover rounded">
+                            <svg class="w-7 h-5 rounded shadow-sm flex-shrink-0" viewBox="0 0 60 40"><rect fill="#DE2910" width="60" height="40"/><circle fill="#FFDE00" cx="15" cy="10" r="5"/><circle fill="#FFDE00" cx="28" cy="6" r="1.5"/><circle fill="#FFDE00" cx="33" cy="10" r="1.5"/><circle fill="#FFDE00" cx="33" cy="17" r="1.5"/><circle fill="#FFDE00" cx="28" cy="21" r="1.5"/></svg>
                             <p class="text-slate-500 text-sm">Китай</p>
                         </div>
                         <p class="text-xs text-slate-400">Нейтральное оборудование</p>
@@ -790,31 +787,31 @@
                 <h3 class="text-xl font-display font-extrabold text-brand-blue mb-6 text-center">🌍 Оборудование по странам производства</h3>
                 <div class="grid md:grid-cols-5 gap-4">
                     <div class="text-center p-4 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-200">
-                        <img loading="lazy" src="https://flagcdn.com/w80/de.png" alt="Германия" class="w-12 h-8 object-cover rounded mx-auto mb-2">
+                        <svg class="w-16 h-10 rounded shadow-sm mx-auto mb-2" viewBox="0 0 60 40"><rect fill="#000" width="60" height="13.3"/><rect fill="#DD0000" y="13.3" width="60" height="13.4"/><rect fill="#FFCC00" y="26.7" width="60" height="13.3"/></svg>
                         <p class="font-bold text-brand-blue">Германия</p>
                         <p class="text-xs text-slate-500">Rational, Miele, Bosch</p>
                         <p class="text-xs text-amber-600 font-semibold mt-1">🏆 Премиум</p>
                     </div>
                     <div class="text-center p-4 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-100 border-2 border-blue-200">
-                        <img loading="lazy" src="https://flagcdn.com/w80/it.png" alt="Италия" class="w-12 h-8 object-cover rounded mx-auto mb-2">
+                        <svg class="w-16 h-10 mx-auto rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#009246" width="20" height="40"/><rect fill="#fff" x="20" width="20" height="40"/><rect fill="#CE2B37" x="40" width="20" height="40"/></svg>
                         <p class="font-bold text-brand-blue">Италия</p>
                         <p class="text-xs text-slate-500">Unox, Smeg</p>
                         <p class="text-xs text-blue-600 font-semibold mt-1">⭐ Премиум/Средний</p>
                     </div>
                     <div class="text-center p-4 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-100 border-2 border-purple-200">
-                        <img loading="lazy" src="https://flagcdn.com/w80/se.png" alt="Швеция" class="w-12 h-8 object-cover rounded mx-auto mb-2">
+                        <svg class="w-16 h-10 mx-auto rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#006AA7" width="60" height="40"/><rect fill="#FECC00" x="17.5" width="7.5" height="40"/><rect fill="#FECC00" y="16.25" width="60" height="7.5"/></svg>
                         <p class="font-bold text-brand-blue">Швеция</p>
                         <p class="text-xs text-slate-500">Electrolux</p>
                         <p class="text-xs text-purple-600 font-semibold mt-1">🏆 Премиум</p>
                     </div>
                     <div class="text-center p-4 rounded-2xl bg-gradient-to-br from-green-100 to-green-100 border-2 border-green-200">
-                        <img loading="lazy" src="https://flagcdn.com/w80/ru.png" alt="Россия" class="w-12 h-8 object-cover rounded mx-auto mb-2">
+                        <svg class="w-16 h-10 mx-auto rounded shadow-sm" viewBox="0 0 60 40"><rect fill="#fff" width="60" height="13.3"/><rect fill="#0039A6" y="13.3" width="60" height="13.4"/><rect fill="#D52B1E" y="26.7" width="60" height="13.3"/></svg>
                         <p class="font-bold text-brand-blue">Россия</p>
                         <p class="text-xs text-slate-500">Abat, Чувашторгтехника</p>
                         <p class="text-xs text-green-600 font-semibold mt-1">💰 Бюджет</p>
                     </div>
                     <div class="text-center p-4 rounded-2xl bg-gradient-to-br from-red-100 to-red-100 border-2 border-red-200">
-                        <img loading="lazy" src="https://flagcdn.com/w80/cn.png" alt="Китай" class="w-12 h-8 object-cover rounded mx-auto mb-2">
+                        <span class="text-3xl block mb-2">🇨🇳</span>
                         <p class="font-bold text-brand-blue">Китай</p>
                         <p class="text-xs text-slate-500">Viatto, Airhot, Hurakan</p>
                         <p class="text-xs text-red-600 font-semibold mt-1">💰 Бюджет</p>
