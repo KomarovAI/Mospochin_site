@@ -16,7 +16,7 @@ const CONFIG = {
     restaurant: [
       {href:'uslugi.html', icon:'🔧', name:'Все услуги'},
       {href:'parokonvektomaty.html', icon:'🔥', name:'Пароконвектоматы'},
-      {href:'plity-pechi.html', icon:'🍳', name:'Плиты и печи'},
+      {href:'plity.html', icon:'🍳', name:'Плиты и печи'},
       {href:'holodilnoe-oborudovanie.html', icon:'❄️', name:'Холодильное оборудование'},
       {href:'posudomoechnye-mashiny.html', icon:'🍽️', name:'Посудомойки'},
       {href:'grili-mangaly.html', icon:'🍖', name:'Грили и мангалы'},
@@ -28,7 +28,7 @@ const CONFIG = {
       {href:'holodilniki.html', icon:'❄️', name:'Холодильники'},
       {href:'stiralnye-mashiny.html', icon:'🧺', name:'Стиральные машины'},
       {href:'posudomoyki.html', icon:'🍽️', name:'Посудомойки'},
-      {href:'plity.html', icon:'🔥', name:'Плиты'},
+      {href:'microwaves.html', icon:'🔥', name:'Плиты и микроволновки'},
       {href:'kompyutery.html', icon:'💻', name:'Компьютеры'},
       {href:'routery.html', icon:'📶', name:'Роутеры'},
       {href:'water-heaters.html', icon:'🚿', name:'Водонагреватели'}
@@ -39,8 +39,8 @@ const CONFIG = {
 const Components = {
   isBytovaya() {
     const path = window.location.pathname.split('/').pop().replace('.html', '');
-    const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity-pechi', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy', 'ice-machines'];
-    const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'plity', 'microwaves', 'airconditioners', 'tvs', 'vacuums', 'small-appliances', 'kompyutery', 'routery', 'water-heaters'];
+    const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy', 'ice-machines'];
+    const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'microwaves', 'airconditioners', 'tvs', 'vacuums', 'small-appliances', 'kompyutery', 'routery', 'water-heaters'];
 
     // Сначала проверяем бытовую (точное совпадение)
     if (bytovayaPages.includes(path)) return true;
@@ -144,7 +144,7 @@ const Components = {
                 <li><a href="index.html" class="hover:text-white transition">Главная</a></li>
                 <li><a href="uslugi.html" class="hover:text-white transition">Услуги</a></li>
                 <li><a href="parokonvektomaty.html" class="hover:text-white transition">Пароконвектоматы</a></li>
-                <li><a href="plity-pechi.html" class="hover:text-white transition">Плиты и печи</a></li>
+                <li><a href="plity.html" class="hover:text-white transition">Плиты и печи</a></li>
                 <li><a href="holodilnoe-oborudovanie.html" class="hover:text-white transition">Холодильное оборудование</a></li>
                 <li><a href="posudomoechnye-mashiny.html" class="hover:text-white transition">Посудомойки</a></li>
                 <li><a href="grili-mangaly.html" class="hover:text-white transition">Грили и мангалы</a></li>
@@ -162,8 +162,7 @@ const Components = {
                 <li><a href="holodilniki.html" class="hover:text-white transition">Холодильники</a></li>
                 <li><a href="stiralnye-mashiny.html" class="hover:text-white transition">Стиральные машины</a></li>
                 <li><a href="posudomoyki.html" class="hover:text-white transition">Посудомойки</a></li>
-                <li><a href="pliti.html" class="hover:text-white transition">Плиты</a></li>
-                <li><a href="plity.html" class="hover:text-white transition">Плиты</a></li>
+                <li><a href="microwaves.html" class="hover:text-white transition">Плиты и микроволновки</a></li>
                 <li><a href="kompyutery.html" class="hover:text-white transition">Компьютеры</a></li>
                 <li><a href="routery.html" class="hover:text-white transition">Роутеры</a></li>
                 <li><a href="tvs.html" class="hover:text-white transition">Телевизоры</a></li>
@@ -361,6 +360,9 @@ const Components = {
     if (hdr) hdr.innerHTML = this.getHeader();
     if (ftr) ftr.innerHTML = this.getFooter();
     
+    // Apply branch styling to body immediately
+    document.body.classList.add(this.isBytovaya() ? 'branch-household' : 'branch-restaurant');
+    
     setTimeout(() => {
       this.initMobileMenu();
       this.initScrollEffect();
@@ -369,51 +371,15 @@ const Components = {
       this.initRipple();
       this.initCounters();
       this.initHeadingReveal();
-         this.initStaggerAnimations();
-         this.initScrollReveal();
-         this.initBranchStyling();
-       }, 50);
+      initStaggerAnimations();
+      initScrollReveal();
+    }, 50);
   }
 };
-
-// ✅ АВТОЗАПУСК
-document.addEventListener('DOMContentLoaded', () => Components.init());
 
 // ============================================
 // 🎨 ДИЗАЙН-АПГРЕЙД — АНИМАЦИИ
 // ============================================
-
-// 1. Number Counter для статистики
-function initCounters() {
-    const counters = document.querySelectorAll('[data-target]');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.dataset.target);
-                const suffix = el.dataset.suffix || '';
-                let current = 0;
-                const duration = 1500;
-                const stepTime = duration / 50;
-                const increment = target / 50;
-                
-                const step = () => {
-                    current += increment;
-                    if (current < target) {
-                        el.textContent = Math.ceil(current) + suffix;
-                        setTimeout(step, stepTime);
-                    } else {
-                        el.textContent = target + suffix;
-                    }
-                };
-                step();
-                observer.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    counters.forEach(c => observer.observe(c));
-}
 
 // 2. Stagger-анимация для карточек
 function initStaggerAnimations() {
@@ -451,10 +417,6 @@ function initScrollReveal() {
     elements.forEach(el => observer.observe(el));
 }
 
-// 4. B2B vs B2C — добавление класса к body
-function initBranchStyling() {
-    if (typeof isBytovaya === 'function') {
-        document.body.classList.add(isBytovaya() ? 'branch-household' : 'branch-restaurant');
-    }
-}
+// ✅ АВТОЗАПУСК
+document.addEventListener('DOMContentLoaded', () => Components.init());
 
