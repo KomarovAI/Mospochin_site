@@ -117,8 +117,10 @@ const Components = {
           <div class="px-4 py-4 space-y-3" id="mobile-menu-items"></div>
         </div>
           <div class="branch-switcher flex items-center gap-2 ml-4">
-              <a href="index.html" class="text-xs font-semibold px-3 py-1.5 rounded-full transition ${isByt ? 'bg-slate-200 text-slate-600 hover:bg-brand-orange hover:text-white' : 'bg-brand-orange text-white'}">🔧 Ресторан</a>
-              <a href="bytovaya-index.html" class="text-xs font-semibold px-3 py-1.5 rounded-full transition ${!isByt ? 'bg-slate-200 text-slate-600 hover:bg-brand-orange hover:text-white' : 'bg-brand-orange text-white'}">🏠 Бытовая</a>
+              ${isByt
+                ? '<a href="index.html" class="text-xs font-semibold px-4 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-brand-orange hover:text-white transition border border-slate-200">🔧 Ресторанное оборудование</a>'
+                : '<a href="bytovaya-index.html" class="text-xs font-semibold px-4 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-brand-orange hover:text-white transition border border-slate-200">🏠 Бытовая техника</a>'
+              }
           </div>
       </nav>`;
   },
@@ -233,8 +235,9 @@ const Components = {
       
       <div class="border-t border-slate-200 my-3"></div>
       <a href="tel:${CONFIG.company.phoneLink}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="fa-solid fa-phone mr-2"></i>Позвонить</a>
-      <a href="${isByt ? 'index.html' : 'bytovaya-index.html'}" class="block w-full text-center bg-slate-100 text-slate-700 px-4 py-3 rounded-lg font-semibold text-sm mt-2">
-        ${isByt ? '🔧 Ресторанное оборудование' : '🏠 Бытовая техника'}
+      <div class="border-t border-slate-200 my-2"></div>
+      <a href="${isByt ? 'index.html' : 'bytovaya-index.html'}" class="block w-full text-center bg-brand-orange/10 text-brand-orange px-4 py-3 rounded-lg font-bold text-sm border-2 border-brand-orange/30">
+        ${isByt ? '🔧 Перейти: Ресторанное оборудование' : '🏠 Перейти: Бытовая техника'}
       </a>
     `;
     
