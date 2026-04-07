@@ -1141,3 +1141,9 @@ body.branch-household .hero-bg {
 .equip-card, .equipment-card {
     transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
 }
+
+/* STEP 3: Icon hover — scale + rotate */
+.icon-wrapper:hover, .service-card:hover .icon-wrapper, .equip-card:hover .ri-\* {
+    transform: scale(1.15) rotate(5deg);
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
