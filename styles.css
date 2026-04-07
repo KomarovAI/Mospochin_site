@@ -935,3 +935,51 @@ a[href^="#"] {
     left: 100%;
 }
 
+
+
+/* B2C Typography — Nunito (мягкий, округлый, дружелюбный) */
+body.branch-household {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    line-height: 1.85;
+}
+body.branch-household h1,
+body.branch-household h2,
+body.branch-household h3,
+body.branch-household .font-display {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+body.branch-household h1 {
+    font-size: clamp(1.75rem, 5vw, 3.5rem);
+    line-height: 1.15;
+}
+body.branch-household h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.25;
+}
+body.branch-household h3 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    line-height: 1.35;
+}
+body.branch-household p,
+body.branch-household li,
+body.branch-household label,
+body.branch-household input,
+body.branch-household select,
+body.branch-household textarea {
+    font-size: 1.0625rem;
+    line-height: 1.85;
+}
+body.branch-household .text-sm {
+    font-size: 0.9375rem;
+}
+body.branch-household .text-xs {
+    font-size: 0.8125rem;
+}
+body.branch-household .font-bold {
+    font-weight: 700;
+}
+body.branch-household .font-extrabold {
+    font-weight: 800;
+}

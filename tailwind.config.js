@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Manrope', 'sans-serif'],
-        display: ['Manrope', 'sans-serif']
+        nunito: ['Nunito', 'sans-serif'],
+        display: ['Manrope', 'sans-serif'],
+        nunitoDisplay: ['Nunito', 'sans-serif']
       },
       letterSpacing: {
         tighter: '-0.035em',
