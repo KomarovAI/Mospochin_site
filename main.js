@@ -61,7 +61,25 @@ const Components = {
       `<a href="${s.href}" class="dropdown-item"><span class="icon">${s.icon}</span>${s.name}</a>`
     ).join('');
     
+    const topBarText = isByt 
+      ? { icon: 'ri-flashlight-fill', text: '🚨 СРОЧНЫЙ ВЫЕЗД НА ДОМ', sub: 'Мастер будет через 60 минут' }
+      : { icon: 'ri-flashlight-fill', text: '🚨 АВАРИЙНЫЙ ВЫЕЗД', sub: 'Мастер будет через 20 минут' };
+    
     return `
+    <!-- 🔴 TOP BAR -->
+    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
+            <i class="${topBarText.icon} text-yellow-300"></i>
+            <span class="font-bold">${topBarText.text}</span>
+            <span class="hidden sm:inline">•</span>
+            <span class="hidden sm:inline font-semibold">${topBarText.sub}</span>
+            <span class="hidden md:inline">•</span>
+            <a href="tel:${CONFIG.company.phoneLink}" class="hidden md:inline font-bold hover:text-yellow-300 transition">
+                <i class="ri-phone-line mr-1"></i>${CONFIG.company.phoneDisplay}
+            </a>
+        </div>
+    </div>
+    
       <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-lg glass-navbar" id="navbar">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16 lg:h-20">
