@@ -49,14 +49,14 @@ h4{letter-spacing:-0.01em;line-height:1.4}
 @keyframes gradientText{to{background-position:200% center}}
 
 /* 🔹 FADE-IN ANIMATIONS */
-.fade-in-section{opacity:1;transform:none;transition:opacity .8s ease-out,transform .8s ease-out;will-change:opacity,visibility}
+.fade-in-section{opacity:1;transform:none;transition:opacity .6s cubic-bezier(0.4,0,0.2,1),transform .6s cubic-bezier(0.4,0,0.2,1);will-change:opacity,visibility}
 .fade-in-section.is-visible{opacity:1;transform:none}
 
 /* ✅ SCROLL-DRIVEN ANIMATIONS (Нативный CSS 2026) */
-.scroll-reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
-.scroll-reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .8s ease-out,transform .8s ease-out}
-.scroll-reveal-right{opacity:0;transform:translateX(30px);transition:opacity .8s ease-out,transform .8s ease-out}
-.scroll-scale{opacity:0;transform:scale(0.9);transition:opacity .8s ease-out,transform .8s ease-out}
+.scroll-reveal{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(0.4,0,0.2,1),transform .6s cubic-bezier(0.4,0,0.2,1)}
+.scroll-reveal-left{opacity:0;transform:translateX(-20px);transition:opacity .6s cubic-bezier(0.4,0,0.2,1),transform .6s cubic-bezier(0.4,0,0.2,1)}
+.scroll-reveal-right{opacity:0;transform:translateX(20px);transition:opacity .6s cubic-bezier(0.4,0,0.2,1),transform .6s cubic-bezier(0.4,0,0.2,1)}
+.scroll-scale{opacity:0;transform:scale(0.9);transition:opacity .6s cubic-bezier(0.4,0,0.2,1),transform .6s cubic-bezier(0.4,0,0.2,1)}
 .scroll-reveal.is-visible,.scroll-reveal-left.is-visible,.scroll-reveal-right.is-visible,.scroll-scale.is-visible{opacity:1;transform:translateY(0) translateX(0) scale(1)}
 
 /* Staggered delays */
@@ -225,7 +225,7 @@ h4{letter-spacing:-0.01em;line-height:1.4}
 @keyframes float-delayed{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes shine{0%{background-position:-200% center}100%{background-position:200% center}}
 @keyframes bounce-in{0%{opacity:0;transform:scale(0.9)}50%{transform:scale(1.05)}100%{opacity:1;transform:scale(1)}}
-@keyframes slide-up{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes slide-up{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
 @keyframes rotate-icon{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
 @keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
@@ -291,7 +291,7 @@ details.faq-item summary i{transition:transform 0.3s ease}
 .btn-click:active{transform:scale(0.97);box-shadow:0 2px 8px rgba(0,0,0,0.1)}
 
 /* 🔹 HEADING REVEAL с blur */
-@keyframes revealHeading{from{opacity:0;transform:translateY(30px) scaleY(0.9);filter:blur(4px)}to{opacity:1;transform:translateY(0) scaleY(1);filter:blur(0)}}
+@keyframes revealHeading{from{opacity:0;transform:translateY(20px) scaleY(0.9);filter:blur(4px)}to{opacity:1;transform:translateY(0) scaleY(1);filter:blur(0)}}
 .heading-reveal{opacity:0}
 .heading-reveal.is-visible{animation:revealHeading 0.8s cubic-bezier(0.23,1,0.32,1) forwards}
 
@@ -306,7 +306,7 @@ details.faq-item summary i{transition:transform 0.3s ease}
 
 
 /* 🔹 HERO ANIMATION — автоматическая при загрузке */
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero-animate{animation:fadeInUp 0.8s ease-out forwards}
 .hero-animate-delay-1{animation:fadeInUp 0.8s ease-out 0.15s forwards;opacity:0}
 .hero-animate-delay-2{animation:fadeInUp 0.8s ease-out 0.3s forwards;opacity:0}
@@ -427,7 +427,7 @@ details[open] summary::after {
 /* 10. Улучшенный scroll-reveal */
 .scroll-reveal {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .scroll-reveal.revealed {
