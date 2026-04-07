@@ -2441,3 +2441,12 @@ body.branch-household .hero-bg {
     padding-right: 0.75rem;
   }
 }
+
+/* Phase 8: Minimum tap targets */
+
+@media (max-width: 425px) {
+  a, button, [role="button"], input[type="submit"], select, .btn-click {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
