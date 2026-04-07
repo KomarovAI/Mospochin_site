@@ -1147,3 +1147,14 @@ body.branch-household .hero-bg {
     transform: scale(1.15) rotate(5deg);
     transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
 }
+
+/* STEP 4: Floating CTA visible on desktop too */
+@media (min-width: 768px) {
+    .fixed.bottom-24.right-4.z-50.md\:hidden {
+        display: flex !important;
+        opacity: 0.85;
+    }
+    .fixed.bottom-24.right-4.z-50.md\:hidden:hover {
+        opacity: 1;
+    }
+}
