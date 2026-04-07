@@ -287,7 +287,7 @@ details.faq-item summary i{transition:transform 0.3s ease}
 .hero-shape-3{width:60px;height:60px;border:2px solid #f59e0b;border-radius:12px;top:30%;right:15%;animation:floatShape 10s ease-in-out infinite 2s}
 
 /* 🔹 BUTTON CLICK MICRO-INTERACTION */
-.btn-click{transition:transform 0.1s ease,box-shadow 0.1s ease}
+.btn-click{transition:transform 0.2s cubic-bezier(0.4,0,0.2,1),box-shadow 0.2s cubic-bezier(0.4,0,0.2,1)}
 .btn-click:active{transform:scale(0.97);box-shadow:0 2px 8px rgba(0,0,0,0.1)}
 
 /* 🔹 HEADING REVEAL с blur */
