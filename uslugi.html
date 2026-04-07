@@ -48,10 +48,9 @@
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
     <!-- 🔴 ЭКСТРЕННЫЙ БАННЕР -->
-    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg emergency-pulse">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
+    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg">
         <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
-            <i class="fa-solid fa-bolt text-yellow-300 icon-pulse"></i>
+            <i class="fa-solid fa-bolt text-yellow-300"></i>
             <span class="font-bold">🚨 АВАРИЙНЫЙ ВЫЕЗД</span>
             <span class="hidden sm:inline">•</span>
             <span class="hidden sm:inline font-semibold">Мастер будет через 20 минут</span>
@@ -67,15 +66,14 @@
     <!-- 🎯 HERO SECTION — ДЛЯ РЕСТОРАНОВ -->
     <header class="hero-mesh  relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-animated">
         <!-- Плавающие элементы -->
-        <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/10 rounded-full blur-2xl float-animation"></div>
-        <div class="absolute bottom-20 right-10 w-32 h-32 bg-brand-orange/10 rounded-full blur-3xl float-animation-delayed"></div>
-        <div class="absolute top-40 right-20 w-16 h-16 bg-red-500/10 rounded-full blur-xl float-animation"></div>
-        <div class="absolute bottom-40 left-20 w-24 h-24 bg-orange-500/10 rounded-full blur-xl float-animation-delayed"></div>
+        <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/10 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-brand-orange/10 rounded-full blur-3xl-delayed"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-red-500/10 rounded-full blur-xl"></div>
+        <div class="absolute bottom-40 left-20 w-24 h-24 bg-orange-500/10 rounded-full blur-xl-delayed"></div>
         
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-8 fade-in-section">
-                <span class="inline-flex items-center gap-2 bg-red-500/90 backdrop-blur-md border-2 border-red-400/50 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg emergency-pulse pulse-glow">
+                <span class="inline-flex items-center gap-2 bg-red-500/90 backdrop-blur-md border-2 border-red-400/50 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg">
                     <i class="fa-solid fa-clock"></i>
                     <span>ВЫЕЗД ЗА 20 МИНУТ</span>
                 </span>
@@ -92,7 +90,7 @@
             </p>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
-                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation">
+                <div class="feature-box glass-card p-6 text-center fade-in-section">
                     <div class="w-14 h-14 bg-brand-orange/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-truck"></i>
                     </div>
@@ -100,7 +98,7 @@
                     <p class="text-slate-300 text-sm">Выезд мастера</p>
                 </div>
                 
-                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation-delayed">
+                <div class="feature-box glass-card p-6 text-center fade-in-section-delayed">
                     <div class="w-14 h-14 bg-green-500/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
@@ -108,7 +106,7 @@
                     <p class="text-slate-300 text-sm">Диагностика*</p>
                 </div>
                 
-                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation">
+                <div class="feature-box glass-card p-6 text-center fade-in-section">
                     <div class="w-14 h-14 bg-brand-orange/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-wrench"></i>
                     </div>
@@ -116,7 +114,7 @@
                     <p class="text-slate-300 text-sm">За 1 визит</p>
                 </div>
                 
-                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation-delayed">
+                <div class="feature-box glass-card p-6 text-center fade-in-section-delayed">
                     <div class="w-14 h-14 bg-green-500/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
@@ -126,11 +124,11 @@
             </div>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-section">
-                <a href="tel:89990057172" class="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition shadow-lg hover:shadow-orange-500/50 transform hover:-translate-y-1 btn-glow btn-glow-enhanced pulse-glow">
+                <a href="tel:89990057172" class="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition shadow-lg hover:shadow-orange-500/50 transform hover:-translate-y-1-enhanced">
                     <i class="fa-solid fa-phone animate-pulse"></i>
                     <span>Вызвать мастера</span>
                 </a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-xl transform hover:-translate-y-1 btn-glow-enhanced">
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" rel="noopener noreferrer" target="_blank" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-xl transform hover:-translate-y-1-enhanced">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
@@ -165,19 +163,18 @@
 
 <section class="py-6 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden -mt-8 relative z-20 shadow-xl bg-animated">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
                 <div class="flex items-center gap-4">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 emergency-pulse">
-                        <i class="fa-solid fa-phone-volume text-white text-2xl icon-pulse"></i>
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-phone-volume text-white text-2xl"></i>
                     </div>
                     <div>
                         <p class="text-white font-display font-bold text-lg">Оборудование сломалось?</p>
                         <p class="text-white/90 text-sm">Мастер приедет через 20 минут</p>
                     </div>
                 </div>
-                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105 btn-glow-enhanced">
+                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105-enhanced">
                     <i class="fa-solid fa-phone"></i>
                     <span>8 (999) 005-71-72</span>
                 </a>
@@ -187,7 +184,6 @@
 
     <!-- ⚠️ ПОЧЕМУ НЕЛЬЗЯ ОТКЛАДЫВАТЬ -->
     <section class="py-16 bg-white">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold mb-4">
@@ -241,7 +237,6 @@
 
     <!-- 🔧 ОБОРУДОВАНИЕ — ПРОФЕССИОНАЛЬНОЕ -->
     <section class="py-20 bg-slate-50">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 ОБОРУДОВАНИЕ</span>
@@ -251,7 +246,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 <!-- Пароконвектоматы -->
-                <a href="parokonvektomaty.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="parokonvektomaty.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-fire-burner"></i>
@@ -272,7 +267,7 @@
                 </a>
 
                 <!-- Плиты и печи -->
-                <a href="plity-pechi.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="plity-pechi.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-fire"></i>
@@ -293,7 +288,7 @@
                 </a>
 
                 <!-- Холодильники -->
-                <a href="holodilnoe-oborudovanie.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="holodilnoe-oborudovanie.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-snowflake"></i>
@@ -314,7 +309,7 @@
                 </a>
 
                 <!-- Посудомойки -->
-                <a href="posudomoechnye-mashiny.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="posudomoechnye-mashiny.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-sink"></i>
@@ -335,7 +330,7 @@
                 </a>
 
                 <!-- Грили и мангалы -->
-                <a href="grili-mangaly.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="grili-mangaly.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-drumstick-bite"></i>
@@ -356,7 +351,7 @@
                 </a>
 
                 <!-- Фритюрницы -->
-                <a href="friturennitsy.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="friturennitsy.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center text-yellow-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-bottle-droplet"></i>
@@ -377,7 +372,7 @@
                 </a>
 
                 <!-- Миксеры -->
-                <a href="ice-machines.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="ice-machines.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-blender"></i>
@@ -398,7 +393,7 @@
                 </a>
 
                 <!-- Кофемашины -->
-                <a href="ice-machines.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="ice-machines.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-mug-hot"></i>
@@ -419,7 +414,7 @@
                 </a>
 
                 <!-- Льдогенераторы -->
-                <a href="ice-machines.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 card-tilt stat-card-hover">
+                <a href="ice-machines.html" class="equipment-card bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-100 fade-in-section hover:shadow-lg hover:border-brand-orange transition cursor-pointer group transform hover:-translate-y-1 stat-card-hover">
                     <div class="flex items-center justify-between mb-4">
                         <div class="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center text-cyan-600 text-2xl icon-wrapper">
                             <i class="fa-solid fa-cube"></i>
@@ -444,7 +439,6 @@
 
     <!-- 📋 ДЛЯ КОГО РАБОТАЕМ -->
     <section class="py-28 lg:py-32 bg-white">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏢 КЛИЕНТЫ</span>
@@ -453,7 +447,7 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="client-card text-center fade-in-section card-tilt stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-red-300 to-red-400 border-2 border-red-200">
+                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-red-300 to-red-400 border-2 border-red-200">
                     <div class="w-20 h-20 bg-red-200 rounded-full flex items-center justify-center text-red-600 text-3xl mb-4 mx-auto icon-circle">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
@@ -465,7 +459,7 @@
                     </div>
                 </div>
                 
-                <div class="client-card text-center fade-in-section card-tilt stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-blue-300 to-blue-400 border-2 border-blue-200">
+                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-blue-300 to-blue-400 border-2 border-blue-200">
                     <div class="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 text-3xl mb-4 mx-auto icon-circle">
                         <i class="fa-solid fa-building"></i>
                     </div>
@@ -477,7 +471,7 @@
                     </div>
                 </div>
                 
-                <div class="client-card text-center fade-in-section card-tilt stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-green-100 to-green-100 border-2 border-green-200">
+                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-green-100 to-green-100 border-2 border-green-200">
                     <div class="w-20 h-20 bg-green-200 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-circle">
                         <i class="fa-solid fa-mug-saucer"></i>
                     </div>
@@ -489,7 +483,7 @@
                     </div>
                 </div>
                 
-                <div class="client-card text-center fade-in-section card-tilt stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-orange-300 to-orange-400 border-2 border-orange-200">
+                <div class="client-card text-center fade-in-section stat-card-hover p-8 rounded-2xl bg-gradient-to-br from-orange-300 to-orange-400 border-2 border-orange-200">
                     <div class="w-20 h-20 bg-orange-200 rounded-full flex items-center justify-center text-orange-600 text-3xl mb-4 mx-auto icon-circle">
                         <i class="fa-solid fa-burger"></i>
                     </div>
@@ -506,7 +500,6 @@
 
     <!-- ⭐ ПОЧЕМУ РЕСТОРАНЫ ВЫБИРАЮТ НАС -->
     <section class="py-20 bg-gradient-to-br from-brand-blue to-slate-800 text-white bg-animated">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/20 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⭐ ПРЕИМУЩЕСТВА</span>
@@ -515,7 +508,7 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="scroll-reveal" data-delay="4" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
+                <div class="scroll-reveal" data-delay="4" glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-red-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-stopwatch"></i>
                     </div>
@@ -527,7 +520,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal" data-delay="5" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
+                <div class="scroll-reveal" data-delay="5" glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-blue-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
@@ -539,7 +532,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal" data-delay="6" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
+                <div class="scroll-reveal" data-delay="6" glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-green-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-file-contract"></i>
                     </div>
@@ -551,7 +544,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal" data-delay="7" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
+                <div class="scroll-reveal" data-delay="7" glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-purple-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-clock"></i>
                     </div>
@@ -563,7 +556,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal" data-delay="8" glass-card p-8 rounded-2xl card-tilt hover:scale-105 transition-all duration-300 border border-white/10>
+                <div class="scroll-reveal" data-delay="8" glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border border-white/10>
                     <div class="w-16 h-16 bg-orange-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
@@ -575,7 +568,7 @@
                     </div>
                 </div>
                 
-                <div class="scroll-reveal" data-delay="1" p-8 rounded-2xl card-tilt stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-gradient-to-br from-amber-500 to-amber-600 border-2 border-amber-200 ">
+                <div class="scroll-reveal" data-delay="1" p-8 rounded-2xl stat-card-hover hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-gradient-to-br from-amber-500 to-amber-600 border-2 border-amber-200 ">
                     <div class="w-16 h-16 bg-amber-500/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 icon-wrapper">
                         <i class="fa-solid fa-ruble-sign"></i>
                     </div>
@@ -592,7 +585,6 @@
 
     <!-- 📊 СТАТИСТИКА -->
     <section class="py-28 lg:py-32 bg-white">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Нам доверяют</h2>
@@ -600,7 +592,7 @@
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="scroll-scale text-center card-tilt stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20 float-animation">
+                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20">
                     <div class="w-20 h-20 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto icon-wrapper">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
@@ -608,7 +600,7 @@
                     <p class="text-slate-600">Ресторанов и кафе</p>
                 </div>
                 
-                <div class="scroll-scale text-center card-tilt stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-50 border-2 border-green-200 float-animation-delayed">
+                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-50 border-2 border-green-200-delayed">
                     <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-wrapper">
                         <i class="fa-solid fa-wrench"></i>
                     </div>
@@ -616,7 +608,7 @@
                     <p class="text-slate-600">Ремонтов выполнено</p>
                 </div>
                 
-                <div class="scroll-scale text-center card-tilt stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20 float-animation">
+                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-orange-100 border-2 border-brand-orange/20">
                     <div class="w-20 h-20 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-4 mx-auto icon-wrapper">
                         <i class="fa-solid fa-clock"></i>
                     </div>
@@ -624,7 +616,7 @@
                     <p class="text-slate-600">Лет опыта</p>
                 </div>
                 
-                <div class="scroll-scale text-center card-tilt stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-50 border-2 border-green-200 float-animation-delayed">
+                <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-50 border-2 border-green-200-delayed">
                     <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 text-3xl mb-4 mx-auto icon-wrapper">
                         <i class="fa-solid fa-star"></i>
                     </div>
@@ -639,7 +631,7 @@
     <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden bg-animated">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
-            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6 emergency-pulse">
+            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
                 <span class="font-medium"><i class="fa-solid fa-bolt mr-2"></i>АВАРИЙНАЯ СЛУЖБА</span>
             </div>
             <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Оборудование сломалось? Не теряйте прибыль!</h2>
@@ -649,10 +641,10 @@
                 <span class="font-bold text-white">Гарантия до 2 лет</span>.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-lg transform hover:scale-105 btn-glow btn-glow-enhanced pulse-glow">
+                <a href="tel:89990057172" class="inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-lg transform hover:scale-105-enhanced">
                     <i class="fa-solid fa-phone-volume mr-2 animate-pulse"></i>+7 (999) 005-71-72
                 </a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" rel="noopener noreferrer" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-10 py-6 rounded-full font-display font-bold transition shadow-xl btn-glow-enhanced">
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" rel="noopener noreferrer" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-10 py-6 rounded-full font-display font-bold transition shadow-xl-enhanced">
                     <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
                 </a>
             </div>
@@ -712,7 +704,6 @@
 
     <!-- 📞 FINAL CTA -->
     <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h2 class="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 heading-reveal">Нужен срочный ремонт техники?</h2>
             <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Позвоните — мастер приедет за 20 минут</p>
