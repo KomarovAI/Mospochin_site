@@ -1124,3 +1124,11 @@ body.branch-household .hero-bg {
     body, html { overflow-x: hidden; max-width: 100vw; }
     .max-w-7xl { padding-left: 0.75rem; padding-right: 0.75rem; }
 }
+
+/* Phase 8: Minimum tap targets */
+@media (max-width: 425px) {
+    a, button, [role="button"], input[type="submit"], select, .btn-click {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
