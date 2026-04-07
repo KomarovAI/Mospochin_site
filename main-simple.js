@@ -1,5 +1,7 @@
 // ============================================
-// 📦 MOSPOCHIN — ЕДИНЫЙ JS ФАЙЛ (config + components)
+// MOSPOCHIN — УПРОЩЁННЫЙ JS (ФАЗА 1)
+// Убраны: ripple, 3D tilt инициализация
+// Оставлены: scroll-reveal, counters, stagger, heading reveal
 // ============================================
 
 const CONFIG = {
@@ -39,17 +41,11 @@ const CONFIG = {
 const Components = {
   isBytovaya() {
     const path = window.location.pathname.split('/').pop().replace('.html', '');
-    const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy', 'ice-machines'];
     const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'microwaves', 'airconditioners', 'tvs', 'vacuums', 'small-appliances', 'kompyutery', 'routery', 'water-heaters'];
-
-    // Сначала проверяем бытовую (точное совпадение)
+    const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy', 'ice-machines'];
     if (bytovayaPages.includes(path)) return true;
-
-    // Потом ресторанную
     if (restaurantPages.includes(path)) return false;
-
-    // По умолчанию — ресторанная (index.html)
-    return false;
+    return false; // index.html = restaurant
   },
   
   getHeader() {
@@ -75,20 +71,14 @@ const Components = {
               </div>
             </a>
 
-            <!-- ✅ ПРОСТОЕ МЕНЮ С ВЫПАДАЮЩИМ СПИСКОМ -->
             <div class="hidden lg:flex items-center gap-6">
               <a href="${homeLink}" class="nav-link ${window.location.pathname.includes('index') ? 'active' : ''}">Главная</a>
-
-              <!-- ВЫПАДАЮЩЕЕ МЕНЮ УСЛУГИ -->
               <div class="dropdown">
                 <button class="nav-link dropdown-toggle ${window.location.pathname.includes('uslugi') ? 'active' : ''}">
                   Услуги <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
                 </button>
-                <div class="dropdown-menu">
-                  ${serviceItems}
-                </div>
+                <div class="dropdown-menu">${serviceItems}</div>
               </div>
-
               <a href="${isByt ? 'bytovaya-about.html' : 'about.html'}" class="nav-link ${window.location.pathname.includes('about') ? 'active' : ''}">О нас</a>
               <a href="${isByt ? 'bytovaya-contact.html' : 'contact.html'}" class="nav-link ${window.location.pathname.includes('contact') ? 'active' : ''}">Контакты</a>
             </div>
@@ -97,18 +87,14 @@ const Components = {
               <div class="text-right">
                 <p class="text-xs text-slate-500 font-medium">${isByt ? '🏠 Выезд на дом' : '⚡ Работаем 24/7'}</p>
                 <a href="tel:${CONFIG.company.phoneLink}" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg px-5 py-2.5 rounded-full transition-all shadow-lg">
-                <i class="fa-solid fa-phone animate-pulse"></i>
-                <span>${CONFIG.company.phoneDisplay}</span>
+                  <i class="fa-solid fa-phone"></i>
+                  <span>${CONFIG.company.phoneDisplay}</span>
                 </a>
               </div>
             </div>
 
             <button id="mobile-menu-btn" class="lg:hidden bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg transition-all shadow-md text-sm flex-shrink-0"
-                    aria-label="Открыть меню"
-                    aria-expanded="false"
-                    aria-controls="mobile-menu"
-                    aria-haspopup="true"
-                    role="button">
+                    aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu" aria-haspopup="true" role="button">
               <i class="fa-solid fa-bars mr-2"></i>Меню
             </button>
           </div>
@@ -116,10 +102,10 @@ const Components = {
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 shadow-xl">
           <div class="px-4 py-4 space-y-3" id="mobile-menu-items"></div>
         </div>
-          <div class="branch-switcher flex items-center gap-2 ml-4">
-              <a href="index.html" class="text-xs font-semibold px-3 py-1.5 rounded-full transition ${isByt ? 'bg-slate-200 text-slate-600 hover:bg-brand-orange hover:text-white' : 'bg-brand-orange text-white'}">🔧 Ресторан</a>
-              <a href="bytovaya-index.html" class="text-xs font-semibold px-3 py-1.5 rounded-full transition ${!isByt ? 'bg-slate-200 text-slate-600 hover:bg-brand-orange hover:text-white' : 'bg-brand-orange text-white'}">🏠 Бытовая</a>
-          </div>
+        <div class="branch-switcher flex items-center gap-2 ml-4">
+          <a href="index.html" class="text-xs font-semibold px-3 py-1.5 rounded-full transition ${isByt ? 'bg-slate-200 text-slate-600 hover:bg-brand-orange hover:text-white' : 'bg-brand-orange text-white'}">🔧 Ресторан</a>
+          <a href="bytovaya-index.html" class="text-xs font-semibold px-3 py-1.5 rounded-full transition ${!isByt ? 'bg-slate-200 text-slate-600 hover:bg-brand-orange hover:text-white' : 'bg-brand-orange text-white'}">🏠 Бытовая</a>
+        </div>
       </nav>`;
   },
   
@@ -167,7 +153,6 @@ const Components = {
                 <li><a href="routery.html" class="hover:text-white transition">Роутеры</a></li>
                 <li><a href="tvs.html" class="hover:text-white transition">Телевизоры</a></li>
                 <li><a href="vacuums.html" class="hover:text-white transition">Пылесосы</a></li>
-                <li><a href="microwaves.html" class="hover:text-white transition">Микроволновки</a></li>
                 <li><a href="airconditioners.html" class="hover:text-white transition">Кондиционеры</a></li>
                 <li><a href="small-appliances.html" class="hover:text-white transition">Мелкая техника</a></li>
                 <li><a href="water-heaters.html" class="hover:text-white transition">Водонагреватели</a></li>
@@ -178,18 +163,9 @@ const Components = {
             <div>
               <h5 class="text-white font-bold mb-4">📞 Контакты</h5>
               <ul class="space-y-3 text-sm">
-                <li class="flex items-center gap-2">
-                  <i class="fa-solid fa-phone text-brand-orange"></i>
-                  <a href="tel:${CONFIG.company.phoneLink}" class="hover:text-white transition font-bold">${CONFIG.company.phoneDisplay}</a>
-                </li>
-                <li class="flex items-center gap-2">
-                  <i class="fa-solid fa-clock text-brand-orange"></i>
-                  <span>24/7 Без выходных</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <i class="fa-solid fa-location-dot text-brand-orange"></i>
-                  <span>Москва и МО</span>
-                </li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-orange"></i><a href="tel:${CONFIG.company.phoneLink}" class="hover:text-white transition font-bold">${CONFIG.company.phoneDisplay}</a></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-brand-orange"></i><span>24/7 Без выходных</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-orange"></i><span>Москва и МО</span></li>
               </ul>
             </div>
           </div>
@@ -199,48 +175,37 @@ const Components = {
         </div>
       </footer>`;
   },
-  
+
   initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     const items = document.getElementById('mobile-menu-items');
     if (!btn || !menu || !items) return;
-    
     const isByt = this.isBytovaya();
     const homeLink = isByt ? 'bytovaya-index.html' : 'index.html';
     const aboutLink = isByt ? 'bytovaya-about.html' : 'about.html';
     const contactLink = isByt ? 'bytovaya-contact.html' : 'contact.html';
     const services = isByt ? CONFIG.services.bytovaya : CONFIG.services.restaurant;
-    const serviceLinks = services.map(s => 
+    const serviceLinks = services.map(s =>
       `<a href="${s.href}" class="block pl-8 py-2 text-sm text-slate-600 hover:text-brand-orange hover:bg-orange-50 rounded-lg">${s.name}</a>`
     ).join('');
-    
-    let html = `
+
+    items.innerHTML = `
       <a href="${homeLink}" class="block px-3 py-2 text-base font-medium ${window.location.pathname.includes('index') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg">🏠 Главная</a>
-      
       <div class="mt-3">
         <button class="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg" id="mobile-services-toggle">
-          <span>🔧 Услуги</span>
-          <i class="fa-solid fa-chevron-down text-xs transition-transform" id="mobile-services-icon"></i>
+          <span>🔧 Услуги</span><i class="fa-solid fa-chevron-down text-xs transition-transform" id="mobile-services-icon"></i>
         </button>
-        <div class="mt-2 space-y-1 hidden" id="mobile-services-list">
-          ${serviceLinks}
-        </div>
+        <div class="mt-2 space-y-1 hidden" id="mobile-services-list">${serviceLinks}</div>
       </div>
-      
       <a href="${aboutLink}" class="block px-3 py-2 text-base font-medium ${window.location.pathname.includes('about') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg mt-3">ℹ️ О нас</a>
       <a href="${contactLink}" class="block px-3 py-2 text-base font-medium ${window.location.pathname.includes('contact') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg">📞 Контакты</a>
-      
       <div class="border-t border-slate-200 my-3"></div>
       <a href="tel:${CONFIG.company.phoneLink}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="fa-solid fa-phone mr-2"></i>Позвонить</a>
       <a href="${isByt ? 'index.html' : 'bytovaya-index.html'}" class="block w-full text-center bg-slate-100 text-slate-700 px-4 py-3 rounded-lg font-semibold text-sm mt-2">
         ${isByt ? '🔧 Ресторанное оборудование' : '🏠 Бытовая техника'}
-      </a>
-    `;
-    
-    items.innerHTML = html;
-    
-    // Mobile services dropdown
+      </a>`;
+
     const servicesToggle = document.getElementById('mobile-services-toggle');
     const servicesList = document.getElementById('mobile-services-list');
     const servicesIcon = document.getElementById('mobile-services-icon');
@@ -250,66 +215,34 @@ const Components = {
         servicesIcon.style.transform = servicesList.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
       });
     }
-    
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
-    });
-    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-    }));
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); btn.setAttribute('aria-expanded', !menu.classList.contains('hidden')); });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.classList.add('hidden'); btn.setAttribute('aria-expanded', 'false'); }));
   },
-  
+
   initScrollEffect() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('shadow-md', window.scrollY > 50);
-    });
+    window.addEventListener('scroll', () => { navbar.classList.toggle('shadow-md', window.scrollY > 50); });
   },
-  
+
   initFadeIn() {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
       });
     }, { threshold: 0.1 });
-
-    // Наблюдаем за ВСЕМИ анимационными классами
     document.querySelectorAll('.fade-in-section, .scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-scale').forEach(el => observer.observe(el));
   },
-  
+
   initSmoothScroll() {
     document.addEventListener('click', e => {
       const anchor = e.target.closest('a[href^="#"]');
       if (!anchor || anchor.getAttribute('href') === '#') return;
       const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  },
-  
-  initRipple() {
-    document.querySelectorAll('.btn, .cta-glow, .btn-glow, a[href^="tel:"]').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        const rect = this.getBoundingClientRect();
-        const ripple = document.createElement('span');
-        ripple.classList.add('ripple');
-        ripple.style.left = `${e.clientX - rect.left}px`;
-        ripple.style.top = `${e.clientY - rect.top}px`;
-        this.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
-      });
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   },
 
-  // ✅ COUNTER ANIMATION для статистики
   initCounters() {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -332,43 +265,26 @@ const Components = {
     document.querySelectorAll('.counter').forEach(el => observer.observe(el));
   },
 
-  // ✅ HEADING REVEAL с blur эффектом
   initHeadingReveal() {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
       });
     }, { threshold: 0.2 });
     document.querySelectorAll('.heading-reveal').forEach(el => observer.observe(el));
   },
-  
-  // ✅ Helper to get phone number
-  getPhone() {
-    return CONFIG.company.phoneDisplay;
-  },
-  
-  getPhoneLink() {
-    return CONFIG.company.phoneLink;
-  },
-  
+
   init() {
     const hdr = document.getElementById('header-container');
     const ftr = document.getElementById('footer-container');
     if (hdr) hdr.innerHTML = this.getHeader();
     if (ftr) ftr.innerHTML = this.getFooter();
-    
-    // Apply branch styling to body immediately
     document.body.classList.add(this.isBytovaya() ? 'branch-household' : 'branch-restaurant');
-    
     setTimeout(() => {
       this.initMobileMenu();
       this.initScrollEffect();
       this.initFadeIn();
       this.initSmoothScroll();
-      // this.initRipple(); // REMOVED
       this.initCounters();
       this.initHeadingReveal();
       initStaggerAnimations();
@@ -377,46 +293,31 @@ const Components = {
   }
 };
 
-// ============================================
-// 🎨 ДИЗАЙН-АПГРЕЙД — АНИМАЦИИ
-// ============================================
-
-// 2. Stagger-анимация для карточек
+// Stagger animations
 function initStaggerAnimations() {
-    const containers = document.querySelectorAll('.grid, .space-y-4');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    containers.forEach(c => {
-        c.classList.add('stagger-container');
-        observer.observe(c);
+  const containers = document.querySelectorAll('.grid, .space-y-4');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
     });
+  }, { threshold: 0.1 });
+  containers.forEach(c => { c.classList.add('stagger-container'); observer.observe(c); });
 }
 
-// 3. Улучшенный scroll-reveal с задержками
+// Scroll reveal
 function initScrollReveal() {
-    const elements = document.querySelectorAll('.scroll-reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = entry.target.dataset.delay || 0;
-                setTimeout(() => {
-                    entry.target.classList.add('revealed');
-                }, delay * 100);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    
-    elements.forEach(el => observer.observe(el));
+  const elements = document.querySelectorAll('.scroll-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => { entry.target.classList.add('revealed'); }, delay * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  elements.forEach(el => observer.observe(el));
 }
 
-// ✅ АВТОЗАПУСК
+// AUTO INIT
 document.addEventListener('DOMContentLoaded', () => Components.init());
-
