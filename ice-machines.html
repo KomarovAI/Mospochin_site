@@ -47,10 +47,9 @@
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
     <!-- 🔴 ЭКСТРЕННЫЙ БАННЕР -->
-    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg emergency-pulse">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
+    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg">
         <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
-            <i class="fa-solid fa-bolt text-yellow-300 icon-pulse"></i>
+            <i class="fa-solid fa-bolt text-yellow-300"></i>
             <span class="font-bold">🚨 СРОЧНЫЙ РЕМОНТ</span>
             <span class="hidden sm:inline">•</span>
             <span class="hidden sm:inline font-semibold">Мастер будет через 45 минут</span>
@@ -65,12 +64,11 @@
 
     <!-- 🎯 HERO SECTION -->
     <header class="hero-mesh  relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-animated">
-        <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/10 rounded-full blur-2xl float-animation"></div>
-        <div class="absolute bottom-20 right-10 w-32 h-32 bg-brand-orange/10 rounded-full blur-3xl float-animation-delayed"></div>
-        <div class="absolute top-40 right-20 w-16 h-16 bg-red-500/10 rounded-full blur-xl float-animation"></div>
-        <div class="absolute bottom-40 left-20 w-24 h-24 bg-orange-500/10 rounded-full blur-xl float-animation-delayed"></div>
+        <div class="absolute top-20 left-10 w-20 h-20 bg-brand-orange/10 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-brand-orange/10 rounded-full blur-3xl-delayed"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-red-500/10 rounded-full blur-xl"></div>
+        <div class="absolute bottom-40 left-20 w-24 h-24 bg-orange-500/10 rounded-full blur-xl-delayed"></div>
 
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-8 fade-in-section">
                 <span class="inline-flex items-center gap-2 bg-brand-orange/20 backdrop-blur-md border-2 border-brand-orange/40 text-brand-orange px-6 py-3 rounded-full text-sm font-bold shadow-lg">
@@ -90,7 +88,7 @@
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-12">
-                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation">
+                <div class="feature-box glass-card p-6 text-center fade-in-section">
                     <div class="w-14 h-14 bg-brand-orange/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-clock"></i>
                     </div>
@@ -98,7 +96,7 @@
                     <p class="text-slate-300 text-sm">Выезд мастера</p>
                 </div>
 
-                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation-delayed">
+                <div class="feature-box glass-card p-6 text-center fade-in-section-delayed">
                     <div class="w-14 h-14 bg-green-500/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-file-contract"></i>
                     </div>
@@ -106,7 +104,7 @@
                     <p class="text-slate-300 text-sm">Работа с НДС</p>
                 </div>
 
-                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation">
+                <div class="feature-box glass-card p-6 text-center fade-in-section">
                     <div class="w-14 h-14 bg-brand-orange/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
@@ -114,7 +112,7 @@
                     <p class="text-slate-300 text-sm">Гарантия</p>
                 </div>
 
-                <div class="feature-box glass-card p-6 text-center fade-in-section float-animation-delayed">
+                <div class="feature-box glass-card p-6 text-center fade-in-section-delayed">
                     <div class="w-14 h-14 bg-green-500/40 rounded-full flex items-center justify-center text-white text-2xl mb-3 mx-auto icon-wrapper">
                         <i class="fa-solid fa-check-circle"></i>
                     </div>
@@ -124,7 +122,7 @@
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-section">
-                <a href="tel:89990057172" class="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition shadow-lg hover:shadow-orange-500/50 transform hover:-translate-y-1 btn-glow btn-glow-enhanced pulse-glow">
+                <a href="tel:89990057172" class="inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition shadow-lg hover:shadow-orange-500/50 transform hover:-translate-y-1-enhanced">
                     <i class="fa-solid fa-phone-volume animate-pulse"></i>
                     <span>СРОЧНЫЙ ВЫЕЗД</span>
                 </a>
@@ -163,19 +161,18 @@
 
 <section class="py-6 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden -mt-8 relative z-20 shadow-xl bg-animated">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
                 <div class="flex items-center gap-4">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 emergency-pulse">
-                        <i class="fa-solid fa-phone-volume text-white text-2xl icon-pulse"></i>
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-phone-volume text-white text-2xl"></i>
                     </div>
                     <div>
                         <p class="text-white font-display font-bold text-lg">Льдогенератор сломался?</p>
                         <p class="text-white/90 text-sm">Мастер приедет через 45 минут</p>
                     </div>
                 </div>
-                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105 btn-glow-enhanced">
+                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105-enhanced">
                     <i class="fa-solid fa-phone"></i>
                     <span>8 (999) 005-71-72</span>
                 </a>
@@ -185,7 +182,6 @@
 
     <!-- 🏆 TRUST BADGES -->
     <section class="py-10 bg-white border-b border-slate-100">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="text-center p-4 fade-in-section">
@@ -218,7 +214,6 @@
 
     <!-- ⚠️ PROBLEMS SECTION -->
     <section id="problems" class="py-20 bg-slate-50">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">ДИАГНОСТИКА</span>
@@ -344,7 +339,6 @@
 
     <!-- 🛠️ КАК МЫ РАБОТАЕМ -->
     <section class="py-20 bg-slate-700 text-white relative overflow-hidden">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ПРОЦЕСС</span>
@@ -500,7 +494,7 @@
                 Гарантия до <span class="font-bold text-white">2 лет</span>.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="tel:89990057172" class="inline-block bg-white text-slate-700 hover:bg-slate-100 text-xl px-10 py-5 rounded-full font-bold transition shadow-xl transform hover:scale-105 cta-pulse">
+                <a href="tel:89990057172" class="inline-block bg-white text-slate-700 hover:bg-slate-100 text-xl px-10 py-5 rounded-full font-bold transition shadow-xl transform hover:scale-105">
                     <i class="fa-solid fa-phone mr-2"></i>+7 (999) 005-71-72
                 </a>
                 <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-5 rounded-full font-bold transition shadow-xl">
@@ -512,7 +506,6 @@
 
         <!-- 📞 FINAL CTA -->
     <section class="py-24 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
-        <div class="hero-shape hero-shape-1"></div><div class="hero-shape hero-shape-2"></div><div class="hero-shape hero-shape-3"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h2 class="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 heading-reveal">Нужен срочный ремонт льдогенераторов?</h2>
             <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Позвоните — мастер приедет за 20 минут</p>
