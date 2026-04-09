@@ -40,7 +40,7 @@ const Components = {
   isBytovaya() {
     const path = window.location.pathname.split('/').pop().replace('.html', '');
     const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy', 'ice-machines'];
-    const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'microwaves', 'airconditioners', 'tvs', 'vacuums', 'small-appliances', 'kompyutery', 'routery', 'water-heaters'];
+    const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'microwaves', 'airconditioners', 'tvs', 'kompyutery', 'routery', 'water-heaters'];
 
     // Сначала проверяем бытовую (точное совпадение)
     if (bytovayaPages.includes(path)) return true;
@@ -85,7 +85,7 @@ const Components = {
           <div class="flex justify-between items-center h-16 lg:h-20">
             <a href="${homeLink}" class="flex items-center gap-2 lg:gap-3 flex-shrink-0">
               <div class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-orange to-orange-600 rounded-xl flex items-center justify-center text-white text-lg lg:text-xl shadow-lg flex-shrink-0">
-                <i class="fa-solid fa-wrench"></i>
+                <i class="ri-tools-line"></i>
               </div>
               <div class="hidden md:block">
                 <span class="font-extrabold text-xl lg:text-2xl text-brand-blue tracking-tight block leading-tight">MosPochin</span>
@@ -100,7 +100,7 @@ const Components = {
               <!-- ВЫПАДАЮЩЕЕ МЕНЮ УСЛУГИ -->
               <div class="dropdown">
                 <button class="nav-link dropdown-toggle ${window.location.pathname.includes('uslugi') ? 'active' : ''}">
-                  Услуги <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                  Услуги <i class="ri-arrow-down-s-line text-xs ml-1"></i>
                 </button>
                 <div class="dropdown-menu">
                   ${serviceItems}
@@ -115,7 +115,7 @@ const Components = {
               <div class="text-right">
                 <p class="text-xs text-slate-500 font-medium">${isByt ? '🏠 Выезд на дом' : '⚡ Работаем 24/7'}</p>
                 <a href="tel:${CONFIG.company.phoneLink}" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg px-5 py-2.5 rounded-full transition-all shadow-lg">
-                <i class="fa-solid fa-phone animate-pulse"></i>
+                <i class="ri-phone-line animate-pulse"></i>
                 <span>${CONFIG.company.phoneDisplay}</span>
                 </a>
               </div>
@@ -127,7 +127,7 @@ const Components = {
                     aria-controls="mobile-menu"
                     aria-haspopup="true"
                     role="button">
-              <i class="fa-solid fa-bars mr-2"></i>Меню
+              <i class="ri-menu-line mr-2"></i>Меню
             </button>
           </div>
         </div>
@@ -152,7 +152,7 @@ const Components = {
             <div>
               <div class="flex items-center gap-3 mb-4">
                 <div class="w-10 h-10 bg-gradient-to-br from-brand-orange to-orange-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-                  <i class="fa-solid fa-wrench"></i>
+                  <i class="ri-tools-line"></i>
                 </div>
                 <span class="font-extrabold text-xl text-white">MosPochin</span>
               </div>
@@ -199,15 +199,15 @@ const Components = {
               <h5 class="text-white font-bold mb-4">📞 Контакты</h5>
               <ul class="space-y-3 text-sm">
                 <li class="flex items-center gap-2">
-                  <i class="fa-solid fa-phone text-brand-orange"></i>
+                  <i class="ri-phone-line text-brand-orange"></i>
                   <a href="tel:${CONFIG.company.phoneLink}" class="hover:text-white transition font-bold">${CONFIG.company.phoneDisplay}</a>
                 </li>
                 <li class="flex items-center gap-2">
-                  <i class="fa-solid fa-clock text-brand-orange"></i>
+                  <i class="ri-time-line text-brand-orange"></i>
                   <span>24/7 Без выходных</span>
                 </li>
                 <li class="flex items-center gap-2">
-                  <i class="fa-solid fa-location-dot text-brand-orange"></i>
+                  <i class="ri-map-pin-line text-brand-orange"></i>
                   <span>Москва и МО</span>
                 </li>
               </ul>
@@ -241,7 +241,7 @@ const Components = {
       <div class="mt-3">
         <button class="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg" id="mobile-services-toggle">
           <span>🔧 Услуги</span>
-          <i class="fa-solid fa-chevron-down text-xs transition-transform" id="mobile-services-icon"></i>
+          <i class="ri-arrow-down-s-line text-xs transition-transform" id="mobile-services-icon"></i>
         </button>
         <div class="mt-2 space-y-1 hidden" id="mobile-services-list">
           ${serviceLinks}
@@ -252,7 +252,7 @@ const Components = {
       <a href="${contactLink}" class="block px-3 py-2 text-base font-medium ${window.location.pathname.includes('contact') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg">📞 Контакты</a>
       
       <div class="border-t border-slate-200 my-3"></div>
-      <a href="tel:${CONFIG.company.phoneLink}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="fa-solid fa-phone mr-2"></i>Позвонить</a>
+      <a href="tel:${CONFIG.company.phoneLink}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="ri-phone-line mr-2"></i>Позвонить</a>
       <div class="border-t border-slate-200 my-2"></div>
       <a href="${isByt ? 'index.html' : 'bytovaya-index.html'}" class="block w-full text-center bg-brand-orange/10 text-brand-orange px-4 py-3 rounded-lg font-bold text-sm border-2 border-brand-orange/30">
         ${isByt ? '🔧 Перейти: Ресторанное оборудование' : '🏠 Перейти: Бытовая техника'}
