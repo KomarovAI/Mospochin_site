@@ -82,9 +82,9 @@ return `
 <a href="${homeLink}" class="nav-link ${window.location.pathname.includes('index') ? 'active' : ''}">Главная</a>
 <!-- ВЫПАДАЮЩЕЕ МЕНЮ УСЛУГИ -->
 <div class="dropdown">
-<button class="nav-link dropdown-toggle ${window.location.pathname.includes('uslugi') ? 'active' : ''}">
+<a href="${isByt ? 'bytovaya-uslugi.html' : 'uslugi.html'}" class="nav-link dropdown-toggle ${window.location.pathname.includes('uslugi') ? 'active' : ''}">
 Услуги <i class="ri-arrow-down-s-line text-xs ml-1"></i>
-</button>
+</a>
 <div class="dropdown-menu">
 ${serviceItems}
 </div>
