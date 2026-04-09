@@ -35,7 +35,7 @@ function initTelegramForms() {
             const btn = form.querySelector('button[type="submit"]');
             const origText = btn.innerHTML;
             btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Отправляю...';
+            btn.innerHTML = '<i class="ri-loader-4-line mr-2"></i>Отправляю...';
             
             const formData = {
                 name: form.querySelector('[name="name"]')?.value || '',
@@ -47,7 +47,7 @@ function initTelegramForms() {
             try {
                 const response = await sendToTelegram(formData);
                 if (response.ok) {
-                    btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i>Отправлено! ✓';
+                    btn.innerHTML = '<i class="ri-check-line mr-2"></i>Отправлено! ✓';
                     btn.classList.remove('bg-brand-orange', 'bg-green-600');
                     btn.classList.add('bg-green-500');
                     form.reset();
@@ -65,7 +65,7 @@ function initTelegramForms() {
                     throw new Error('Failed');
                 }
             } catch (err) {
-                btn.innerHTML = '<i class="fa-solid fa-phone mr-2"></i>Позвоните нам!';
+                btn.innerHTML = '<i class="ri-phone-line mr-2"></i>Позвоните нам!';
                 btn.classList.remove('bg-brand-orange');
                 btn.classList.add('bg-red-500');
                 setTimeout(() => {
