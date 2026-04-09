@@ -1,5 +1,4 @@
 
-// Telegram Form Handler for MosPochin
 function sendToTelegram(formData) {
     const BOT_TOKEN = '8577579636:AAF6ZZvJvr1GCcgZw_10IQLfFEFzJLh8aL8';
     const CHAT_ID = '6145257749';
@@ -26,7 +25,6 @@ function sendToTelegram(formData) {
     });
 }
 
-// Initialize all forms on the page
 function initTelegramForms() {
     const forms = document.querySelectorAll('.telegram-form');
     forms.forEach(form => {
@@ -79,7 +77,6 @@ function initTelegramForms() {
     });
 }
 
-// Run after DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(initTelegramForms, 200);
 });
