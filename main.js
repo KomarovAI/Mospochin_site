@@ -35,7 +35,7 @@ const Components = {
 isBytovaya() {
 const path = window.location.pathname.split('/').pop().replace('.html', '');
 const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy', 'ice-machines'];
-const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'microwaves', 'airconditioners', 'tvs', 'kompyutery', 'routery', 'water-heaters'];
+const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'microwaves', 'airconditioners', 'kompyutery', 'routery', 'water-heaters'];
 if (bytovayaPages.includes(path)) return true;
 if (restaurantPages.includes(path)) return false;
 return false;
@@ -164,11 +164,8 @@ return `
 <li><a href="microwaves.html" class="hover:text-white transition">Плиты и микроволновки</a></li>
 <li><a href="kompyutery.html" class="hover:text-white transition">Компьютеры</a></li>
 <li><a href="routery.html" class="hover:text-white transition">Роутеры</a></li>
-<li><a href="tvs.html" class="hover:text-white transition">Телевизоры</a></li>
-<li><a href="vacuums.html" class="hover:text-white transition">Пылесосы</a></li>
 <li><a href="microwaves.html" class="hover:text-white transition">Микроволновки</a></li>
 <li><a href="airconditioners.html" class="hover:text-white transition">Кондиционеры</a></li>
-<li><a href="small-appliances.html" class="hover:text-white transition">Мелкая техника</a></li>
 <li><a href="water-heaters.html" class="hover:text-white transition">Водонагреватели</a></li>
 <li><a href="bytovaya-about.html" class="hover:text-white transition">О компании</a></li>
 <li><a href="bytovaya-contact.html" class="hover:text-white transition">Контакты</a></li>
