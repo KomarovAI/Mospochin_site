@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>404 — Страница не найдена | MosPochin</title>
+    <meta name="description" content="Страница не найдена. Вернитесь на главную MosPochin — ремонт техники в Москве.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { orange: '#f97316', orangeHover: '#ea580c', blue: '#0f172a' }
+            },
+            fontFamily: { sans: ['Manrope', 'sans-serif'], display: ['Manrope', 'sans-serif'] }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white min-h-screen flex items-center justify-center">
+    <div class="text-center px-4">
+        <div class="text-8xl font-display font-extrabold text-brand-orange mb-4">404</div>
+        <h1 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Страница не найдена</h1>
+        <p class="text-slate-600 text-lg max-w-md mx-auto mb-8">
+            Запрашиваемая страница не существует. Возможно, она была удалена или перемещена.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold px-8 py-4 rounded-full transition shadow-lg">
+                <i class="ri-home-8-line"></i>На главную
+            </a>
+            <a href="tel:89990057172" class="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-full transition shadow-lg">
+                <i class="ri-phone-line"></i>8 (999) 005-71-72
+            </a>
+        </div>
+    </div>
+</body>
+</html>

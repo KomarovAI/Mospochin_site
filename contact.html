@@ -33,11 +33,12 @@
     <link rel="stylesheet" href="/assets/fonts/remixicon.css">
     <link rel="preload" href="main.js" as="script">
     <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
     <link rel="preconnect" href="https://flagcdn.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Контакты MosPochin — телефон, WhatsApp, адрес в Москве</title>
+    <title>Контакты MosPochin — телефон, WhatsApp, адрес в Москве</title>
     <meta name="description" content="MosPochin: ☎ 8 (999) 005-71-72, WhatsApp. Ремонт ресторанного оборудования в Москве и МО. Работаем 24/7.">
     <meta property="og:title" content="Контакты MosPochin — телефон, WhatsApp, адрес в Москве">
     <meta property="og:description" content="MosPochin: ☎ 8 (999) 005-71-72, WhatsApp. Ремонт ресторанного оборудования в Москве и МО. Работаем 24/7.">
@@ -74,7 +75,9 @@
             <li class="text-brand-blue font-medium">Контакты</li>
         </ol>
     </nav>
-    <header class="hero-mesh relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-animated">
+
+    <!-- HERO -->
+    <header class="hero-mesh relative pt-16 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-8 fade-in-section">
                 <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border-2 border-white/30 rounded-full px-5 py-3 text-white text-sm font-bold">
@@ -89,6 +92,29 @@
             </p>
         </div>
     </header>
+
+    <!-- CTA BAR -->
+    <section class="py-6 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden z-20 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="ri-customer-service-2-line text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-display font-bold text-lg">Оборудование сломалось?</p>
+                        <p class="text-white/90 text-sm">Мастер приедет через 20 минут</p>
+                    </div>
+                </div>
+                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap">
+                    <i class="ri-phone-line"></i>
+                    <span>8 (999) 005-71-72</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- СВЯЗЬ -->
     <section class="py-32 lg:py-40 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
@@ -97,11 +123,27 @@
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Выберите удобный способ связи</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="scroll-reveal" data-delay="1"><div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-100 text-center hover:border-brand-orange hover:shadow-xl transition-all h-full"><div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto"><i class="ri-phone-line"></i></div><h3 class="text-2xl font-display font-bold text-brand-blue mb-3">Телефон</h3><a href="tel:89990057172" class="text-3xl font-display font-extrabold text-brand-orange hover:text-brand-orangeHover transition">8 (999) 005-71-72</a><p class="text-slate-500 mt-3">Звоните круглосуточно</p></div></div>
-                <div class="scroll-reveal" data-delay="2"><div class="bg-green-50 rounded-2xl p-8 border-2 border-green-100 text-center hover:border-green-300 hover:shadow-xl transition-all h-full"><div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto"><i class="ri-whatsapp-line"></i></div><h3 class="text-2xl font-display font-bold text-brand-blue mb-3">WhatsApp</h3><a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="text-2xl font-display font-extrabold text-green-600 hover:text-green-700 transition">Написать в WhatsApp</a><p class="text-slate-500 mt-3">Ответим за 5 минут</p></div></div>
+                <div class="scroll-reveal" data-delay="1">
+                    <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-100 text-center hover:border-brand-orange hover:shadow-xl transition-all h-full">
+                        <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto"><i class="ri-phone-line"></i></div>
+                        <h3 class="text-2xl font-display font-bold text-brand-blue mb-3">Телефон</h3>
+                        <a href="tel:89990057172" class="text-3xl font-display font-extrabold text-brand-orange hover:text-brand-orangeHover transition">8 (999) 005-71-72</a>
+                        <p class="text-slate-500 mt-3">Звоните круглосуточно</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal" data-delay="2">
+                    <div class="bg-green-50 rounded-2xl p-8 border-2 border-green-100 text-center hover:border-green-300 hover:shadow-xl transition-all h-full">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto"><i class="ri-whatsapp-line"></i></div>
+                        <h3 class="text-2xl font-display font-bold text-brand-blue mb-3">WhatsApp</h3>
+                        <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="text-2xl font-display font-extrabold text-green-600 hover:text-green-700 transition">Написать в WhatsApp</a>
+                        <p class="text-slate-500 mt-3">Ответим за 5 минут</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- РЕЖИМ РАБОТЫ -->
     <section class="py-24 lg:py-32 bg-slate-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
@@ -109,8 +151,32 @@
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Режим работы</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-                <div class="scroll-reveal" data-delay="1"><div class="bg-white rounded-2xl p-8 border-2 border-slate-100 text-center hover:border-brand-orange transition-all"><div class="w-14 h-14 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-4 mx-auto"><i class="ri-time-line"></i></div><h3 class="text-xl font-display font-bold text-brand-blue mb-2">24/7</h3><p class="text-slate-600">Аварийный выезд — круглосуточно, без выходных</p></div></div>
-                <div class="scroll-reveal" data-delay="2"><div class="bg-white rounded-2xl p-8 border-2 border-slate-100 text-center hover:border-brand-orange transition-all"><div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-2xl mb-4 mx-auto"><i class="ri-truck-line"></i></div><h3 class="text-xl font-display font-bold text-brand-blue mb-2">20 мин</h3><p class="text-slate-600">Среднее время выезда мастера по Москве</p></div></div>
+                <div class="scroll-reveal" data-delay="1">
+                    <div class="bg-white rounded-2xl p-8 border-2 border-slate-100 text-center hover:border-brand-orange transition-all">
+                        <div class="w-14 h-14 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-4 mx-auto"><i class="ri-time-line"></i></div>
+                        <h3 class="text-xl font-display font-bold text-brand-blue mb-2">24/7</h3>
+                        <p class="text-slate-600">Аварийный выезд — круглосуточно, без выходных</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal" data-delay="2">
+                    <div class="bg-white rounded-2xl p-8 border-2 border-slate-100 text-center hover:border-brand-orange transition-all">
+                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-2xl mb-4 mx-auto"><i class="ri-truck-line"></i></div>
+                        <h3 class="text-xl font-display font-bold text-brand-blue mb-2">20 мин</h3>
+                        <p class="text-slate-600">Среднее время выезда мастера по Москве</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal" data-delay="3">
+                    <div class="bg-white rounded-2xl p-8 border-2 border-slate-100 text-center hover:border-brand-orange transition-all">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4 mx-auto"><i class="ri-map-2-line"></i></div>
+                        <h3 class="text-xl font-display font-bold text-brand-blue mb-2">Москва + МО</h3>
+                        <p class="text-slate-600">Работаем по всей Москве и ближнему Подмосковью</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЮРЛИЦА -->
     <section class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
@@ -137,73 +203,8 @@
             </div>
         </div>
     </section>
-<div class="scroll-reveal" data-delay="3"><div class="bg-white rounded-2xl p-8 border-2 border-slate-100 text-center hover:border-brand-orange transition-all"><div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4 mx-auto"><i class="ri-map-2-line"></i></div><h3 class="text-xl font-display font-bold text-brand-blue mb-2">Москва + МО</h3><p class="text-slate-600">Работаем по всей Москве и ближнему Подмосковью</p></div></div>
-            </div>
-        </div>
-    </section>
-    <section class="py-32 lg:py-40 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ГЕОГРАФИЯ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Зона обслуживания</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Выезжаем по всей Москве и ближайшему Подмосковью</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="scroll-reveal" data-delay="1"><div class="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100"><i class="ri-map-pin-line text-brand-orange mb-2"></i><p class="font-bold text-slate-700">Центр</p></div></div>
-                <div class="scroll-reveal" data-delay="2"><div class="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100"><i class="ri-map-pin-line text-brand-orange mb-2"></i><p class="font-bold text-slate-700">Север</p></div></div>
-                <div class="scroll-reveal" data-delay="3"><div class="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100"><i class="ri-map-pin-line text-brand-orange mb-2"></i><p class="font-bold text-slate-700">Юг</p></div></div>
-                <div class="scroll-reveal" data-delay="4"><div class="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100"><i class="ri-map-pin-line text-brand-orange mb-2"></i><p class="font-bold text-slate-700">Запад</p></div></div>
-                <div class="scroll-reveal" data-delay="5"><div class="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100"><i class="ri-map-pin-line text-brand-orange mb-2"></i><p class="font-bold text-slate-700">Восток</p></div></div>
-                <div class="scroll-reveal" data-delay="6"><div class="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100"><i class="ri-map-pin-line text-brand-orange mb-2"></i><p class="font-bold text-slate-700">Подмосковье</p></div></div>
-            </div>
-        </div>
-    </section>
-    <section class="py-24 lg:py-32 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">📝 ЗАЯВКА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставить заявку на ремонт</h2>
-                <p class="text-slate-600 text-lg">Заполните форму — перезвоним за 5 минут</p>
-            </div>
-            <form class="scroll-reveal bg-slate-50 p-8 rounded-2xl border-2 border-slate-100" onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-center py-12\'><i class=\'ri-checkbox-circle-line text-green-500 text-6xl mb-4\'></i><h3 class=\'text-2xl font-bold text-brand-blue mb-2\'>Заявка отправлена!</h3><p class=\'text-slate-600\'>Перезвоним за 5 минут</p></div>';">
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-bold text-brand-blue mb-2">Ваше имя</label>
-                        <input type="text" placeholder="Иван" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-brand-blue mb-2">Телефон</label>
-                        <input type="tel" placeholder="+7 (___) ___-__-__" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition">
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-bold text-brand-blue mb-2">Что сломалось?</label>
-                    <select class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition bg-white">
-                        <option value="">Выберите технику</option>
-                        <option>Холодильник</option>
-                        <option>Стиральная машина</option>
-                        <option>Посудомоечная машина</option>
-                        <option>Микроволновка</option>
-                        <option>Плита / духовка</option>
-                        <option>Пылесос</option>
-                                                <option>Компьютер / ноутбук</option>
-                        <option>Другое</option>
-                    </select>
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-bold text-brand-blue mb-2">Опишите проблему</label>
-                    <textarea rows="4" placeholder="Например: не включается, течёт, шумит.." class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:border-brand-orange focus:outline-none transition resize-none"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold py-4 rounded-xl transition shadow-lg transform hover:-translate-y-1">
-                    <i class="ri-send-plane-line mr-2"></i>Отправить заявку
-                </button>
-                <p class="text-center text-slate-500 text-xs mt-4"><i class="ri-lock-line mr-1"></i> Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
-            </form>
-        </div>
-    </section>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">FAQ</span>
+
+    <!-- ГЕОГРАФИЯ -->
     <section class="py-20 lg:py-28 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
@@ -233,6 +234,8 @@
             </div>
         </div>
     </section>
+
+    <!-- ФОРМА ЗАЯВКИ -->
     <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
@@ -253,6 +256,10 @@
                 </div>
                 <div class="mb-6">
                     <label class="block text-sm font-medium text-slate-700 mb-2">Что сломалось?</label>
+                    <input type="text" name="type" placeholder="Холодильник, плита..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Опишите проблему</label>
                     <input type="text" name="problem" placeholder="Опишите проблему.." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700">
                 </div>
                 <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg">
@@ -262,16 +269,36 @@
             </form>
         </div>
     </section>
+
+    <!-- FAQ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">FAQ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Частые вопросы</h2>
             </div>
             <div class="space-y-4">
-                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="1"><summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Как быстро приедет мастер?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Среднее время — <strong>20 минут</strong> по Москве. По МО — 30-60 минут.</p></details>
-                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="2"><summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Работаете ли в выходные и ночью?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Да, <strong>24/7</strong>, включая праздники. Аварийный выезд — круглосуточно.</p></details>
-                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3"><summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Сколько стоит выезд?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Выезд по Москве — <strong>бесплатно</strong>. Диагностика — 0₽ при заказе ремонта.</p></details>
-                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="4"><summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Какая гарантия?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600"><strong>До 24 месяцев</strong> на работы и запчасти. Акт + гарантийный талон.</p></details>
+                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="1">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Как быстро приедет мастер?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary>
+                    <p class="mt-4 text-slate-600">Среднее время — <strong>20 минут</strong> по Москве. По МО — 30-60 минут.</p>
+                </details>
+                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="2">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Работаете ли в выходные и ночью?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary>
+                    <p class="mt-4 text-slate-600">Да, <strong>24/7</strong>, включая праздники. Аварийный выезд — круглосуточно.</p>
+                </details>
+                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Сколько стоит выезд?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary>
+                    <p class="mt-4 text-slate-600">Выезд по Москве — <strong>бесплатно</strong>. Диагностика — 0₽ при заказе ремонта.</p>
+                </details>
+                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="4">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Какая гарантия?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary>
+                    <p class="mt-4 text-slate-600"><strong>До 24 месяцев</strong> на работы и запчасти. Акт + гарантийный талон.</p>
+                </details>
             </div>
         </div>
     </section>
+
+    <!-- CTA -->
     <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h2 class="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 heading-reveal">Сломалось оборудование?</h2>
@@ -282,19 +309,15 @@
             </div>
         </div>
     </section>
+
+    <!-- MOBILE BOTTOM BAR -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
             <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i>Позвонить</a>
             <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i>WhatsApp</a>
         </div>
     </div>
+
     <div id="footer-container"></div>
-<div class="fixed bottom-24 right-4 z-50 md:hidden">
-  <a href="tel:+79990057172"
-     class="flex items-center justify-center w-14 h-14 bg-brand-orange hover:bg-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95">
-    <i class="ri-phone-line text-xl"></i>
-  </a>
-</div>
-    <script src="telegram-form.js"></script>
 </body>
 </html>
