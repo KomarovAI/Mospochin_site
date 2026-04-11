@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+<!--
+  ============================================================
+  MosPochin — Ремонт бытовой техники на дому в Москве
+  Page: Главная (bytovaya-index)
+  Branch: Household (бытовая техника)
+  ============================================================
+
+  ASSETS: Все ресурсы локальные из /assets/
+    CSS: /assets/css/styles-built.css (Tailwind) + /assets/css/styles.css (custom)
+    JS: /assets/js/main.js (компоненты) + /assets/js/telegram-form.js (форма)
+    Fonts: /assets/fonts/manrope.css + /assets/fonts/remixicon.css
+    Icons: RemixIcon woff2 — /assets/fonts/remixicon.woff2
+    Images: /assets/images/*
+
+  CDN DEPS: Tailwind CSS CDN (для JIT классов)
+  ============================================================
+-->
 <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                orange: '#f97316',
-                orangeHover: '#ea580c',
-                blue: '#0f172a',
-                lightBlue: '#1e293b',
-                green: '#22c55e',
-                gray: '#f8fafc',
-                primary: '#f97316',
-                primaryHover: '#ea580c',
-                accent: '#ea580c'
-              }
-            },
-            fontFamily: {
-              sans: ['Manrope', 'sans-serif'],
-              display: ['Manrope', 'sans-serif']
-            }
-          }
-        }
-      }
-    </script>
-    <link rel="preload" href="styles-built.css" as="style">
-    <link rel="stylesheet" href="styles-built.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
-    <script src="main.js" defer></script>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Ремонт бытовой техники на дому в Москве — MosPochin | Бесплатная диагностика</title>
+
+    <!-- SEO -->
+    <title>Ремонт бытовой техники на дому в Москве — MosPochin | Бесплатная диагностика</title>
     <meta name="description" content="Ремонт холодильников, стиральных машин, посудомоек на дому в Москве. Бесплатная диагностика. Фиксированная цена. Гарантия 12 мес. ☎ 8 (999) 005-71-72">
+    <link rel="canonical" href="https://mspochin.ru/bytovaya-index.html">
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Ремонт бытовой техники на дому в Москве — MosPochin | Бесплатная диагностика">
     <meta property="og:description" content="Ремонт холодильников, стиральных машин, посудомоек на дому в Москве. Бесплатная диагностика. Фиксированная цена. Гарантия 12 мес. ☎ 8 (999) 005-71-72">
     <meta property="og:image" content="https://mspochin.ru/og-image.svg">
     <meta property="og:url" content="https://mspochin.ru/bytovaya-index.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts (Local) -->
+    <link rel="preload" href="/assets/fonts/manrope.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/manrope.css">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+
+    <!-- CSS (Local) -->
+    <link rel="preload" href="/assets/css/styles-built.css" as="style">
+    <link rel="stylesheet" href="/assets/css/styles-built.css">
+    <link rel="preload" href="/assets/css/styles.css" as="style">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- JS (Local, deferred) -->
+    <script src="/assets/js/main.js" defer></script>
+
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -80,14 +92,26 @@
       "description": "Ремонт бытовой техники на дому в Москве. Выезд за 60 минут. Диагностика 0₽. Гарантия на работы."
     }
     </script>
-    <link rel="canonical" href="https://mspochin.ru/bytovaya-index.html">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
+
+    <!-- ============================================================
+         HEADER (injected by main.js → Components.getHeader())
+         Top Bar: срочный выезд + навигация + телефон
+         ============================================================ -->
     <div id="header-container" class="mt-12"></div>
+
+    <!-- ============================================================
+         SECTION 1: HERO
+         - Заголовок с УТП (ремонт за 1 час, бесплатная диагностика)
+         - Статистика (98% за 1 визит, 15+ лет опыта, 24/7)
+         - CTA: позвонить + WhatsApp
+         - Hero-изображение: /assets/images/hero-05.jpg
+         ============================================================ -->
     <header class="relative pt-32 pb-24 lg:pt-44 lg:pb-36 overflow-hidden" style="background: linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(30,41,59,0.88) 100%), url('/assets/images/hero-bg-19.jpg') center/cover no-repeat;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero text -->
                 <div class="scroll-reveal-left text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 bg-brand-orange/90 backdrop-blur-md border-2 border-orange-400/50 rounded-full px-5 py-3 text-white text-sm font-bold mb-4">
                         <i class="ri-time-line"></i>
@@ -102,9 +126,10 @@
                         Сломалась техника? <span class="text-brand-orange">Приедем за 1 час</span>
                     </h1>
                     <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        <span class="text-white font-bold">Бесплатная диагностика</span> у вас на дому. 
+                        <span class="text-white font-bold">Бесплатная диагностика</span> у вас на дому.
                         Ремонт по <span class="text-white font-bold">фиксированной цене</span>.
                     </p>
+                    <!-- Stats -->
                     <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8">
                         <div class="glass-card p-2 sm:p-4 text-center">
                             <p class="text-2xl sm:text-3xl font-display font-extrabold text-brand-orange mb-1"><span class="counter" data-target="98" data-suffix="%">0</span></p>
@@ -119,6 +144,7 @@
                             <p class="text-slate-300 text-xs">Без выходных</p>
                         </div>
                     </div>
+                    <!-- CTA buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
                         <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-10 sm:py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg">
                             <i class="ri-phone-line"></i>
@@ -129,6 +155,7 @@
                             <span>WhatsApp (Быстро)</span>
                         </a>
                     </div>
+                    <!-- Trust badges -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
                         <div class="flex items-center gap-2">
                             <i class="ri-checkbox-circle-line text-green-400"></i>
@@ -146,15 +173,17 @@
                         </div>
                     </div>
                 </div>
+                <!-- Hero image -->
                 <div class="hidden lg:block scroll-reveal relative">
                     <div class="rounded-2xl shadow-lg w-full h-[500px] overflow-hidden relative bg-slate-800">
-                        <img src="/assets/images/hero-05.jpg" alt="Стиральная машина не работает — ремонт бытовой техники" class="w-full h-full object-cover" loading="lazy" width="800" height="500">
+                        <img src="/assets/images/hero-05.jpg" alt="Стиральная машина не работает — ремонт бытовой техники" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="800" height="500">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/70 via-brand-blue/30 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6 text-white">
-                            <span class="inline-block bg-brand-orange/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-bold mb-2">🔧 Ремонт</span>
+                            <span class="inline-block bg-brand-orange/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-bold mb-2"><span role="img" aria-label="ремонт">🔧</span> Ремонт</span>
                             <p class="text-white/90 text-lg font-display font-bold">Починим любую технику</p>
                         </div>
                     </div>
+                    <!-- Floating stats cards -->
                     <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-lg z-20 max-w-xs">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
@@ -181,6 +210,10 @@
             </div>
         </div>
     </header>
+
+    <!-- ============================================================
+         SECTION 2: CTA BAR (оранжевая полоса с телефоном)
+         ============================================================ -->
     <section class="py-6 bg-brand-orange relative overflow-hidden z-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
@@ -200,6 +233,11 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         SECTION 3: УГРОЗА (почему нельзя откладывать ремонт)
+         3 карточки: Рост стоимости, Порча имущества, Безопасность
+         ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
@@ -249,10 +287,18 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         SECTION 4: УСЛУГИ (4 основных категории)
+         - Холодильники → holodilniki.html (от 890₽)
+         - Стиралки → stiralnye-mashiny.html (от 790₽)
+         - Посудомойки → posudomoyki.html (от 690₽)
+         - Плиты → plity.html (от 590₽)
+         ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 УСЛУГИ</span>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><span role="img" aria-label="инструмент">🔧</span> УСЛУГИ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонт любой бытовой техники</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Все популярные бренды — Samsung, LG, Bosch, Indesit, Beko, Electrolux</p>
             </div>
@@ -303,6 +349,14 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         SECTION 5: ПРЕИМУЩЕСТВА (4 карточки, glass-card)
+         - Выезд за 60 минут
+         - Запчасти с собой (95% за 1 визит)
+         - Официальный договор (гарантия 12 мес)
+         - Честные цены (диагностика 0₽)
+         ============================================================ -->
     <section class="py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-brand-blue via-blue-900 to-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
@@ -362,10 +416,14 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         SECTION 6: ОТЗЫВЫ (3 карточки)
+         ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">💬 ОТЗЫВЫ</span>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><span role="img" aria-label="комментарий">💬</span> ОТЗЫВЫ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Истории наших клиентов</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">500+ отзывов за 15 лет. Средний рейтинг 4.9/5</p>
             </div>
@@ -403,10 +461,15 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         SECTION 7: ПРОЦЕСС РАБОТЫ (4 шага)
+         1. Заявка → 2. Выезд мастера → 3. Диагностика + ремонт → 4. Гарантия
+         ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🛠️ ПРОЦЕСС</span>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><span role="img" aria-label="инструменты">🛠️</span> ПРОЦЕСС</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Как мы работаем — 4 простых шага</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Прозрачный процесс от заявки до гарантии</p>
             </div>
@@ -442,10 +505,14 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         SECTION 8: ЦЕНЫ (3 карточки с ценами по категориям)
+         ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">💰 ЦЕНЫ</span>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><span role="img" aria-label="деньги">💰</span> ЦЕНЫ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Прозрачные цены без сюрпризов</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Фиксированная стоимость после диагностики</p>
             </div>
@@ -504,13 +571,22 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         SECTION 9: БРЕНДЫ (3 сегмента: Премиум, Средний, Бюджетный)
+         Премиум: Miele, Liebherr, Smeg, Siemens
+         Средний: Bosch, Samsung, LG, Electrolux, AEG, Whirlpool
+         Бюджетный: Indesit, Beko, Candy, Ariston, Atlant, Hansa
+         ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏆 БРЕНДЫ</span>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><span role="img" aria-label="трофей">🏆</span> БРЕНДЫ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонтируем все марки</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Оригинальные запчасти. Любой бренд — от бюджетного до премиум</p>
             </div>
+
+            <!-- Премиум сегмент -->
             <div class="scroll-reveal mb-16">
                 <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center text-white text-lg sm:text-xl shadow-lg">
@@ -528,7 +604,8 @@
                             <i class="ri-arrow-right-s-line text-purple-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#000" width="5" height="1"/><rect fill="#DD0000" y="1" width="5" height="1"/><rect fill="#FFCE00" y="2" width="5" height="1"/></svg>>Германия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#000" width="5" height="1"/><rect fill="#DD0000" y="1" width="5" height="1"/><rect fill="#FFCE00" y="2" width="5" height="1"/></svg>
+                            <p class="text-xs text-slate-400">🇩🇪Германия</p>
                         </div>
                         <p class="text-xs text-slate-400">Стиралки, посудомойки</p>
                         <div class="mt-3 flex gap-1">
@@ -545,7 +622,8 @@
                             <i class="ri-arrow-right-s-line text-purple-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#ED2939" width="5" height="1"/><rect fill="#FFF" y="1" width="5" height="1"/><rect fill="#ED2939" y="2" width="5" height="1"/></svg>>Австрия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#ED2939" width="5" height="1"/><rect fill="#FFF" y="1" width="5" height="1"/><rect fill="#ED2939" y="2" width="5" height="1"/></svg>
+                            <p class="text-xs text-slate-400">🇦🇹Австрия</p>
                         </div>
                         <p class="text-xs text-slate-400">Холодильники</p>
                         <div class="mt-3 flex gap-1">
@@ -562,7 +640,8 @@
                             <i class="ri-arrow-right-s-line text-purple-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#008C45" width="1.67" height="3"/><rect fill="#FFF" x="1.67" width="1.66" height="3"/><rect fill="#CD212A" x="3.33" width="1.67" height="3"/></svg>>Италия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#008C45" width="1.67" height="3"/><rect fill="#FFF" x="1.67" width="1.66" height="3"/><rect fill="#CD212A" x="3.33" width="1.67" height="3"/></svg>
+                            <p class="text-xs text-slate-400">🇮🇹Италия</p>
                         </div>
                         <p class="text-xs text-slate-400">Холодильники, плиты</p>
                         <div class="mt-3 flex gap-1">
@@ -579,7 +658,8 @@
                             <i class="ri-arrow-right-s-line text-purple-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-3">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#000" width="5" height="1"/><rect fill="#DD0000" y="1" width="5" height="1"/><rect fill="#FFCE00" y="2" width="5" height="1"/></svg>>Германия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#000" width="5" height="1"/><rect fill="#DD0000" y="1" width="5" height="1"/><rect fill="#FFCE00" y="2" width="5" height="1"/></svg>
+                            <p class="text-xs text-slate-400">🇩🇪Германия</p>
                         </div>
                         <p class="text-xs text-slate-400">Посудомойки, стиралки</p>
                         <div class="mt-3 flex gap-1">
@@ -592,6 +672,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Средний сегмент -->
             <div class="scroll-reveal mb-16">
                 <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center text-white text-lg sm:text-xl shadow-lg">
@@ -609,7 +691,8 @@
                             <i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#000" width="5" height="1"/><rect fill="#DD0000" y="1" width="5" height="1"/><rect fill="#FFCE00" y="2" width="5" height="1"/></svg>>Германия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#000" width="5" height="1"/><rect fill="#DD0000" y="1" width="5" height="1"/><rect fill="#FFCE00" y="2" width="5" height="1"/></svg>
+                            <p class="text-xs text-slate-400">🇩🇪Германия</p>
                         </div>
                         <p class="text-xs text-slate-400">Всё</p>
                         <div class="mt-2 flex gap-1">
@@ -626,7 +709,8 @@
                             <i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#FFF" width="5" height="3"/><rect fill="#C60C30" x="1.5" y="0.5" width="2" height="2" rx="1"/><circle fill="#C60C30" cx="2" cy="1.1" r="0.3"/><circle fill="#003478" cx="3" cy="1.9" r="0.3"/></svg>>Корея</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#FFF" width="5" height="3"/><rect fill="#C60C30" x="1.5" y="0.5" width="2" height="2" rx="1"/><circle fill="#C60C30" cx="2" cy="1.1" r="0.3"/><circle fill="#003478" cx="3" cy="1.9" r="0.3"/></svg>
+                            <p class="text-xs text-slate-400">🇰🇷Корея</p>
                         </div>
                         <p class="text-xs text-slate-400">Всё</p>
                         <div class="mt-2 flex gap-1">
@@ -643,7 +727,8 @@
                             <i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#FFF" width="5" height="3"/><rect fill="#C60C30" x="1.5" y="0.5" width="2" height="2" rx="1"/><circle fill="#C60C30" cx="2" cy="1.1" r="0.3"/><circle fill="#003478" cx="3" cy="1.9" r="0.3"/></svg>>Корея</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#FFF" width="5" height="3"/><rect fill="#C60C30" x="1.5" y="0.5" width="2" height="2" rx="1"/><circle fill="#C60C30" cx="2" cy="1.1" r="0.3"/><circle fill="#003478" cx="3" cy="1.9" r="0.3"/></svg>
+                            <p class="text-xs text-slate-400">🇰🇷Корея</p>
                         </div>
                         <p class="text-xs text-slate-400">Всё</p>
                         <div class="mt-2 flex gap-1">
@@ -660,7 +745,8 @@
                             <i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#006AA7" width="5" height="3"/><rect fill="#FECC00" x="1.5" width="0.8" height="3"/><rect fill="#FECC00" y="1.1" width="5" height="0.8"/></svg>>Швеция</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#006AA7" width="5" height="3"/><rect fill="#FECC00" x="1.5" width="0.8" height="3"/><rect fill="#FECC00" y="1.1" width="5" height="0.8"/></svg>
+                            <p class="text-xs text-slate-400">🇸🇪Швеция</p>
                         </div>
                         <p class="text-xs text-slate-400">Всё</p>
                         <div class="mt-2 flex gap-1">
@@ -677,7 +763,8 @@
                             <i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#000" width="5" height="1"/><rect fill="#DD0000" y="1" width="5" height="1"/><rect fill="#FFCE00" y="2" width="5" height="1"/></svg>>Германия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#000" width="5" height="1"/><rect fill="#DD0000" y="1" width="5" height="1"/><rect fill="#FFCE00" y="2" width="5" height="1"/></svg>
+                            <p class="text-xs text-slate-400">🇩🇪Германия</p>
                         </div>
                         <p class="text-xs text-slate-400">Всё</p>
                         <div class="mt-2 flex gap-1">
@@ -694,7 +781,8 @@
                             <i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#B22234" width="5" height="3"/><rect fill="#FFF" y="0.23" width="5" height="0.23"/><rect fill="#FFF" y="0.69" width="5" height="0.23"/><rect fill="#FFF" y="1.15" width="5" height="0.23"/><rect fill="#FFF" y="1.62" width="5" height="0.23"/><rect fill="#FFF" y="2.08" width="5" height="0.23"/><rect fill="#FFF" y="2.54" width="5" height="0.23"/><rect fill="#3C3B6E" width="2" height="1.62"/></svg>>США</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#B22234" width="5" height="3"/><rect fill="#FFF" y="0.23" width="5" height="0.23"/><rect fill="#FFF" y="0.69" width="5" height="0.23"/><rect fill="#FFF" y="1.15" width="5" height="0.23"/><rect fill="#FFF" y="1.62" width="5" height="0.23"/><rect fill="#FFF" y="2.08" width="5" height="0.23"/><rect fill="#FFF" y="2.54" width="5" height="0.23"/><rect fill="#3C3B6E" width="2" height="1.62"/></svg>
+                            <p class="text-xs text-slate-400">🇺🇸США</p>
                         </div>
                         <p class="text-xs text-slate-400">Стиралки, холодильники</p>
                         <div class="mt-2 flex gap-1">
@@ -707,6 +795,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Бюджетный сегмент -->
             <div class="scroll-reveal">
                 <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center text-white text-lg sm:text-xl shadow-lg">
@@ -724,7 +814,8 @@
                             <i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#008C45" width="1.67" height="3"/><rect fill="#FFF" x="1.67" width="1.66" height="3"/><rect fill="#CD212A" x="3.33" width="1.67" height="3"/></svg>>Италия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#008C45" width="1.67" height="3"/><rect fill="#FFF" x="1.67" width="1.66" height="3"/><rect fill="#CD212A" x="3.33" width="1.67" height="3"/></svg>
+                            <p class="text-xs text-slate-400">🇮🇹Италия</p>
                         </div>
                         <p class="text-xs text-slate-400">Стиралки, холодильники</p>
                         <div class="mt-2 flex gap-1">
@@ -741,7 +832,8 @@
                             <i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#E30A17" width="5" height="3"/><circle fill="#FFF" cx="2" cy="1.5" r="0.8"/><circle fill="#E30A17" cx="2.15" cy="1.5" r="0.6"/><polygon fill="#FFF" points="3.5,1.05 3.15,1.5 3.5,1.95 3.05,1.7 2.65,1.95 3,1.5 2.65,1.05 3.05,1.3 3.5,0.85 3.15,1.3" transform="scale(0.5) translate(1.5,1)"/></svg>>Турция</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#E30A17" width="5" height="3"/><circle fill="#FFF" cx="2" cy="1.5" r="0.8"/><circle fill="#E30A17" cx="2.15" cy="1.5" r="0.6"/><polygon fill="#FFF" points="3.5,1.05 3.15,1.5 3.5,1.95 3.05,1.7 2.65,1.95 3,1.5 2.65,1.05 3.05,1.3 3.5,0.85 3.15,1.3" transform="scale(0.5) translate(1.5,1)"/></svg>
+                            <p class="text-xs text-slate-400">🇹🇷Турция</p>
                         </div>
                         <p class="text-xs text-slate-400">Всё</p>
                         <div class="mt-2 flex gap-1">
@@ -758,7 +850,8 @@
                             <i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#008C45" width="1.67" height="3"/><rect fill="#FFF" x="1.67" width="1.66" height="3"/><rect fill="#CD212A" x="3.33" width="1.67" height="3"/></svg>>Италия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#008C45" width="1.67" height="3"/><rect fill="#FFF" x="1.67" width="1.66" height="3"/><rect fill="#CD212A" x="3.33" width="1.67" height="3"/></svg>
+                            <p class="text-xs text-slate-400">🇮🇹Италия</p>
                         </div>
                         <p class="text-xs text-slate-400">Стиралки, холодильники</p>
                         <div class="mt-2 flex gap-1">
@@ -775,7 +868,8 @@
                             <i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#008C45" width="1.67" height="3"/><rect fill="#FFF" x="1.67" width="1.66" height="3"/><rect fill="#CD212A" x="3.33" width="1.67" height="3"/></svg>>Италия</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#008C45" width="1.67" height="3"/><rect fill="#FFF" x="1.67" width="1.66" height="3"/><rect fill="#CD212A" x="3.33" width="1.67" height="3"/></svg>
+                            <p class="text-xs text-slate-400">🇮🇹Италия</p>
                         </div>
                         <p class="text-xs text-slate-400">Стиралки, водонагреватели</p>
                         <div class="mt-2 flex gap-1">
@@ -792,7 +886,8 @@
                             <i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#CF101A" width="5" height="2"/><rect fill="#007C30" y="2" width="5" height="1"/><rect fill="#FFF" x="0" y="0" width="0.5" height="3"/></svg>>Беларусь</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#CF101A" width="5" height="2"/><rect fill="#007C30" y="2" width="5" height="1"/><rect fill="#FFF" x="0" y="0" width="0.5" height="3"/></svg>
+                            <p class="text-xs text-slate-400">🇧🇾Беларусь</p>
                         </div>
                         <p class="text-xs text-slate-400">Холодильники, стиралки</p>
                         <div class="mt-2 flex gap-1">
@@ -809,7 +904,8 @@
                             <i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i>
                         </div>
                         <div class="flex items-center gap-2 mb-2">
-                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#FFF" width="5" height="1.5"/><rect fill="#DC143C" y="1.5" width="5" height="1.5"/></svg>>Польша</p>
+                            <svg viewBox="0 0 5 3" class="w-6 h-4 rounded" role="img"><rect fill="#FFF" width="5" height="1.5"/><rect fill="#DC143C" y="1.5" width="5" height="1.5"/></svg>
+                            <p class="text-xs text-slate-400">🇵🇱Польша</p>
                         </div>
                         <p class="text-xs text-slate-400">Плиты, духовки</p>
                         <div class="mt-2 flex gap-1">
@@ -824,6 +920,10 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================================
+         SECTION 10: СРАВНЕНИЕ (таблица MosPochin vs Другие)
+         ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-24 bg-slate-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
@@ -834,11 +934,11 @@
             <div class="card-brand bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden scroll-reveal">
                 <div class="overflow-x-auto">
                     <table class="w-full">
-                        <thead><tr class="bg-brand-blue text-white"><th class="text-left py-3 sm:py-4 px-3 sm:px-6 font-display font-bold text-xs sm:text-sm">Критерий</th><th class="text-center py-3 sm:py-4 px-3 sm:px-6 font-display font-bold text-brand-orange text-xs sm:text-sm">MosPochin</th><th class="text-center py-3 sm:py-4 px-3 sm:px-6 font-display font-bold text-xs sm:text-sm">Другие</th></tr></thead>
+                        <thead><tr class="bg-brand-blue text-white"><th scope="col" class="text-left py-3 sm:py-4 px-3 sm:px-6 font-display font-bold text-xs sm:text-sm">Критерий</th><th scope="col" class="text-center py-3 sm:py-4 px-3 sm:px-6 font-display font-bold text-brand-orange text-xs sm:text-sm">MosPochin</th><th scope="col" class="text-center py-3 sm:py-4 px-3 sm:px-6 font-display font-bold text-xs sm:text-sm">Другие</th></tr></thead>
                         <tbody>
                             <tr class="border-b border-slate-100"><td class="py-3 px-3 sm:py-4 sm:px-6 text-slate-600 text-xs sm:text-sm">Выезд мастера</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center font-bold text-green-600 text-xs sm:text-sm">60 мин</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center text-slate-500 text-xs sm:text-sm">1-3 часа</td></tr>
                             <tr class="border-b border-slate-100 bg-slate-50"><td class="py-3 px-3 sm:py-4 sm:px-6 text-slate-600 text-xs sm:text-sm">Диагностика</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center font-bold text-green-600 text-xs sm:text-sm">0₽*</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center text-slate-500 text-xs sm:text-sm">500-1500₽</td></tr>
-                            <tr class="border-b border-slate-100"><td class="py-3 px-3 sm:py-4 sm:px-6 text-slate-600 text-xs sm:text-sm">Гарантия</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center font-bold text-green-600 text-xs sm:text-sm">До 24 мес</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center text-slate-500 text-xs sm:text-sm">3-6 мес</td></tr>
+                            <tr class="border-b border-slate-100"><td class="py-3 px-3 sm:py-4 sm:px-6 text-slate-600 text-xs sm:text-sm">Гарантия</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center font-bold text-green-600 text-xs sm:text-sm">12 мес</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center text-slate-500 text-xs sm:text-sm">3-6 мес</td></tr>
                             <tr class="border-b border-slate-100 bg-slate-50"><td class="py-3 px-3 sm:py-4 sm:px-6 text-slate-600 text-xs sm:text-sm">Запчасти с собой</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center font-bold text-green-600 text-xs sm:text-sm">✅ 90%</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center text-slate-500 text-xs sm:text-sm">❌ Под заказ</td></tr>
                             <tr class="border-b border-slate-100"><td class="py-3 px-3 sm:py-4 sm:px-6 text-slate-600 text-xs sm:text-sm">Работа в выходные</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center font-bold text-green-600 text-xs sm:text-sm">✅ 24/7</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center text-slate-500 text-xs sm:text-sm">Пн-Пт</td></tr>
                             <tr class="border-b border-slate-100 bg-slate-50"><td class="py-3 px-3 sm:py-4 sm:px-6 text-slate-600 text-xs sm:text-sm">Фиксированная цена</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center font-bold text-green-600 text-xs sm:text-sm">✅</td><td class="py-3 px-3 sm:py-4 sm:px-6 text-center text-slate-500 text-xs sm:text-sm">⚠️ Может вырасти</td></tr>
@@ -850,50 +950,10 @@
             </div>
         </div>
     </section>
-    <section class="py-12 sm:py-16 lg:py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
-                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4">ЦЕНЫ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Прозрачные цены на ремонт</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Фиксируем стоимость в смете до начала работ. Никаких скрытых наценок.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-                <div class="bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 shadow-sm hover:border-green-500 transition-all stat-card-hover">
-                    <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-lg sm:text-xl"><i class="ri-search-eye-line"></i></div>
-                        <h3 class="font-bold text-brand-blue text-base sm:text-lg">Диагностика</h3>
-                    </div>
-                    <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-green-600 mb-1 sm:mb-2">0 ₽</p>
-                    <p class="text-slate-500 text-sm">При заказе ремонта. Отдельно — 500 ₽.</p>
-                </div>
-                <div class="bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 shadow-sm hover:border-green-500 transition-all stat-card-hover">
-                    <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-lg sm:text-xl"><i class="ri-snowy-line"></i></div>
-                        <h3 class="font-bold text-brand-blue text-base sm:text-lg">Холодильник</h3>
-                    </div>
-                    <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1 sm:mb-2">от 890 ₽</p>
-                    <p class="text-slate-500 text-sm">Заправка фреона, замена ТЭНа.</p>
-                </div>
-                <div class="bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 shadow-sm hover:border-green-500 transition-all stat-card-hover">
-                    <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-lg sm:text-xl"><i class="ri-refresh-line"></i></div>
-                        <h3 class="font-bold text-brand-blue text-base sm:text-lg">Стиральная машина</h3>
-                    </div>
-                    <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1 sm:mb-2">от 790 ₽</p>
-                    <p class="text-slate-500 text-sm">Замена подшипников, насоса.</p>
-                </div>
-                <div class="bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 shadow-sm hover:border-green-500 transition-all stat-card-hover">
-                    <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-lg sm:text-xl"><i class="ri-water-flash-line"></i></div>
-                        <h3 class="font-bold text-brand-blue text-base sm:text-lg">Посудомойка</h3>
-                    </div>
-                    <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-blue mb-1 sm:mb-2">от 690 ₽</p>
-                    <p class="text-slate-500 text-sm">Чистка фильтров, ремонт насоса.</p>
-                </div>
-            </div>
-            <p class="text-center text-slate-400 text-sm mt-8"><i class="ri-information-line mr-2"></i>Окончательная цена зависит от модели техники и сложности поломки.</p>
-        </div>
-    </section>
+
+    <!-- ============================================================
+         SECTION 12: FAQ (3 вопроса)
+         ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-32 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
@@ -903,11 +963,16 @@
             <div class="space-y-4">
                 <details class="faq-item bg-slate-50 p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="1"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>Как быстро приедет мастер?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Выезд в течение <strong>1 часа</strong> по Москве.</p></details>
                 <details class="faq-item bg-slate-50 p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="2"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>Сколько стоит диагностика?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Диагностика — <strong>0₽</strong> при ремонте.</p></details>
-                <details class="faq-item bg-slate-50 p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>Гарантия?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600"><strong>До 24 месяцев</strong> на работы и запчасти.</p></details>
+                <details class="faq-item bg-slate-50 p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>Гарантия?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600"><strong>12 месяцев</strong> на работы и запчасти.</p></details>
             </div>
         </div>
     </section>
 
+    <!-- ============================================================
+         SECTION 13: ФОРМА ЗАЯВКИ (бесплатная диагностика)
+         Поля: имя, телефон, тип техники, описание проблемы
+         Отправка через telegram-form.js
+         ============================================================ -->
     <section class="py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-green-50 to-blue-50 relative overflow-hidden">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
@@ -939,7 +1004,7 @@
                             <option value="Кондиционер">Кондиционер</option>
                             <option value="Водонагреватель">Водонагреватель</option>
                             <option value="Пылесос">Пылесос</option>
-                                                        <option value="Компьютер">Компьютер / Ноутбук</option>
+                            <option value="Компьютер">Компьютер / Ноутбук</option>
                             <option value="Другое">Другое</option>
                         </select>
                     </div>
@@ -955,11 +1020,15 @@
             </form>
         </div>
     </section>
+
+    <!-- ============================================================
+         MOBILE STICKY FOOTER (CTA: позвонить + WhatsApp)
+         ============================================================ -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
             <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
                 <i class="ri-phone-line"></i>
-                <span class="text-sm">Оставить заявку</span>
+                <span class="text-sm">Позвонить</span>
             </a>
             <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
                 <i class="ri-whatsapp-line"></i>
@@ -967,13 +1036,42 @@
             </a>
         </div>
     </div>
+
+    <!-- WhatsApp floating button (mobile) -->
+    <div class="fixed bottom-24 right-4 z-50 md:hidden">
+        <a href="https://wa.me/79990057172" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95">
+            <i class="ri-whatsapp-line text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer (injected by main.js → Components.getFooter()) -->
     <div id="footer-container"></div>
-<div class="fixed bottom-24 right-4 z-50 md:hidden">
-  <a href="https://wa.me/79990057172" target="_blank" rel="noopener noreferrer"
-     class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95">
-    <i class="ri-whatsapp-line text-2xl"></i>
-  </a>
-</div>
-    <script src="telegram-form.js"></script>
+
+    <!-- Noscript fallback — visible only when JS is disabled -->
+    <noscript>
+        <style>
+            .noscript-fallback{position:fixed;top:0;left:0;right:0;z-index:9999;background:#0f172a;color:#fff;padding:12px 16px;text-align:center;font-family:sans-serif}
+            .noscript-fallback a{color:#f97316;font-weight:bold;text-decoration:none;margin:0 8px}
+            .noscript-fallback .ns-phone{font-size:1.2em}
+            body{padding-top:0}
+            #header-container{display:block}
+        </style>
+        <div class="noscript-fallback">
+            <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px">
+                <strong style="font-size:1.3em">🔧 MosPochin</strong>
+                <span style="opacity:0.5">|</span>
+                <a href="bytovaya-index.html">Главная</a>
+                <a href="bytovaya-uslugi.html">Услуги</a>
+                <a href="bytovaya-about.html">О нас</a>
+                <a href="bytovaya-contact.html">Контакты</a>
+                <span style="opacity:0.5">|</span>
+                <a href="tel:89990057172" class="ns-phone">☎ 8 (999) 005-71-72</a>
+            </div>
+        </div>
+    </noscript>
+
+    <!-- Telegram form handler -->
+    <script src="/assets/js/telegram-form.js"></script>
 </body>
 </html>
