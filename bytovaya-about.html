@@ -33,14 +33,15 @@
     <link rel="preload" href="/assets/fonts/manrope.css" as="style">
     <link rel="stylesheet" href="/assets/fonts/manrope.css">
     <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
+    <link rel="preload" href="/assets/js/main.js" as="script">
     <script src="/assets/js/main.js" defer></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>О компании MosPochin — ремонт бытовой техники в Москве</title>
-    <meta name="description" content="MosPochin — ремонт бытовой техники на дому в Москве. 15 лет опыта, 500+ довольных клиентов. Гарантия 12 мес. Бесплатная диагностика.">
-    <meta property="og:title" content="О компании MosPochin — ремонт бытовой техники в Москве">
-    <meta property="og:description" content="MosPochin — ремонт бытовой техники на дому в Москве. 15 лет опыта, 500+ довольных клиентов. Гарантия 12 мес. Бесплатная диагностика.">
+    <title>О компании MosPochin — ремонт бытовой техники на дому в Москве | с 2010</title>
+    <meta name="description" content="MosPochin — ремонт холодильников, стиралок, посудомоек на дому. Выезд за 60 мин. Гарантия 12 мес. 5000+ ремонтов. Бесплатная диагностика.">
+    <meta property="og:title" content="О компании MosPochin — ремонт бытовой техники на дому в Москве">
+    <meta property="og:description" content="MosPochin — ремонт холодильников, стиралок, посудомоек на дому. Выезд за 60 мин. Гарантия 12 мес. 5000+ ремонтов. Бесплатная диагностика.">
     <meta property="og:image" content="https://mspochin.ru/og-image.svg">
     <meta property="og:url" content="https://mspochin.ru/bytovaya-about.html">
     <meta property="og:type" content="website">
@@ -50,8 +51,8 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "MosPochin",
-      "description": "Профессиональный ремонт техники в Москве",
+      "name": "MosPochin — ремонт бытовой техники",
+      "description": "Ремонт бытовой техники на дому в Москве. Холодильники, стиральные машины, посудомойки, кондиционеры. Выезд за 60 минут.",
       "telephone": "+79990057172",
       "url": "https://mspochin.ru",
       "address": {
@@ -60,233 +61,722 @@
         "addressCountry": "RU"
       },
       "openingHours": "Mo-Su 00:00-24:00",
-      "priceRange": "₽₽"
+      "priceRange": "₽₽",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500"
+      }
     }
     </script>
     <link rel="canonical" href="https://mspochin.ru/bytovaya-about.html">
+    <script src="/assets/js/telegram-form.js" defer></script>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container"></div>
-    <nav class="bg-slate-50 border-b border-slate-200 py-3">
+    <div id="header-container" class="mt-12"></div>
+
+    <!-- BREADCRUMB -->
+    <nav class="bg-slate-50 border-b border-slate-100 py-3" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-orange transition"><i class="ri-home-4-line mr-1"></i>Главная</a></li>
                 <li><i class="ri-arrow-right-s-line text-xs text-slate-300"></i></li>
-                <li><a href="/bytovaya-index.html" class="hover:text-brand-orange transition">Бытовая техника</a></li>
+                <li><a href="bytovaya-index.html" class="hover:text-brand-orange transition">Бытовая техника</a></li>
                 <li><i class="ri-arrow-right-s-line text-xs text-slate-300"></i></li>
                 <li class="text-brand-orange font-semibold">О компании</li>
             </ol>
         </div>
     </nav>
-    <header class="page-header-bg relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-block bg-brand-orange/20 backdrop-blur-sm border border-brand-orange/30 text-brand-orange px-5 py-2 rounded-full text-sm font-semibold mb-6 fade-in-section">
-                <i class="ri-star-fill mr-2"></i>О КОМПАНИИ
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight fade-in-section">
-                О компании <span class="text-brand-orange">MosPochin</span>
-            </h1>
-            <p class="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed fade-in-section">
-                Профессиональный ремонт бытовой техники в Москве с 2010 года
-            </p>
-        </div>
-    </header>
-    <header class="hero-bg relative pt-32 pb-24 lg:pt-44 lg:pb-36 overflow-hidden hero-gradient">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border-2 border-white/30 rounded-full px-5 py-3 text-white text-sm font-bold mb-6">
-                <span class="w-3 h-3 bg-white rounded-full animate-pulse"></span>
-                <span>🏠 РЕМОНТ БЫТОВОЙ ТЕХНИКИ НА ДОМУ</span>
-            </div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">
-                О бытовом направлении
-            </h1>
-            <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Профессиональное оборудование и сервис от MosPochin
-            </p>
-            <div class="max-w-md mx-auto">
-                <div class="rounded-2xl shadow-lg w-full h-[400px] glass-card bg-gradient-to-br from-purple-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-                    <div class="text-center relative z-10">
-                        <i class="ri-home-4-line text-white text-8xl mb-4 drop-shadow-lg"></i>
-                        <p class="text-white/90 text-2xl font-display font-bold">🏠 О бытовом направлении</p>
+
+    <!-- SECTION 1: HERO — trust-building hero for B2C -->
+    <header class="relative pt-32 pb-24 lg:pt-44 lg:pb-36 overflow-hidden" style="background: linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(30,41,59,0.88) 100%), url('/assets/images/hero-bg-a1.jpg') center/cover no-repeat;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal-left text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-orange-500/90 backdrop-blur-md border-2 border-orange-400/50 rounded-full px-5 py-3 text-white text-sm font-bold mb-6">
+                        <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                        <i class="ri-star-fill"></i>
+                        <span>РЕМОНТ БЫТОВОЙ ТЕХНИКИ С 2010 ГОДА</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">
+                        Чиним технику на дому. <span class="text-orange-400">Быстро. С гарантией.</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Мастер приедет за <span class="text-white font-bold">60 минут</span>.
+                        <span class="text-white font-bold">Бесплатная диагностика</span> при ремонте.
+                        Гарантия <span class="text-white font-bold">12 месяцев</span> на всё.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mb-8 max-w-xl mx-auto lg:mx-0">
+                        <div class="glass-card p-3 sm:p-4 text-center">
+                            <p class="text-xl sm:text-2xl font-display font-extrabold text-orange-400"><span class="counter" data-target="5000" data-suffix="+">0</span></p>
+                            <p class="text-slate-300 text-xs">Ремонтов</p>
+                        </div>
+                        <div class="glass-card p-3 sm:p-4 text-center">
+                            <p class="text-xl sm:text-2xl font-display font-extrabold text-orange-400">15+ лет</p>
+                            <p class="text-slate-300 text-xs">Опыта</p>
+                        </div>
+                        <div class="glass-card p-3 sm:p-4 text-center">
+                            <p class="text-xl sm:text-2xl font-display font-extrabold text-orange-400"><span class="counter" data-target="95" data-suffix="%">0</span></p>
+                            <p class="text-slate-300 text-xs">За 1 визит</p>
+                        </div>
+                        <div class="glass-card p-3 sm:p-4 text-center">
+                            <p class="text-xl sm:text-2xl font-display font-extrabold text-orange-400">12 мес</p>
+                            <p class="text-slate-300 text-xs">Гарантия</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
+                        <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-10 sm:py-5 rounded-full font-bold transition shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <i class="ri-phone-line"></i>
+                            <span>Вызвать мастера (0₽)</span>
+                        </a>
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20бытовой%20техники" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2">
+                            <i class="ri-whatsapp-line"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
+                        <div class="flex items-center gap-2"><i class="ri-star-fill text-yellow-400"></i><span>Рейтинг 4.9/5</span></div>
+                        <span class="text-white/40">|</span>
+                        <div class="flex items-center gap-2"><i class="ri-user-smile-line text-brand-orange"></i><span>500+ клиентов</span></div>
+                        <span class="text-white/40">|</span>
+                        <div class="flex items-center gap-2"><i class="ri-shield-check-line text-green-400"></i><span>Гарантия 12 мес</span></div>
+                    </div>
+                </div>
+                <div class="hidden lg:block scroll-reveal relative">
+                    <div class="rounded-2xl shadow-lg w-full h-[500px] overflow-hidden relative bg-slate-800">
+                        <img src="/assets/images/hero-bg-a1.jpg" alt="Мастер по ремонту бытовой техники MosPochin" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="800" height="500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/70 via-brand-blue/30 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <span class="inline-block bg-orange-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-bold mb-2">🛠️ Выезд на дом</span>
+                            <p class="text-white/90 text-lg font-display font-bold">Ремонт холодильников, стиралок, посудомоек</p>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-lg z-20 max-w-xs">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"><i class="ri-checkbox-circle-line text-green-600 text-xl"></i></div>
+                            <div>
+                                <p class="font-display font-extrabold text-brand-blue text-2xl"><span class="counter" data-target="95" data-suffix="%">0</span></p>
+                                <p class="text-slate-500 text-xs">ремонтов за 1 визит</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-white p-4 rounded-2xl shadow-lg z-20 max-w-xs">
+                        <div class="flex text-yellow-400 text-xs mb-2"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                        <p class="text-slate-600 text-xs italic">«Холодильник Samsung перестал морозить. Мастер приехал через 50 мин, заменил термостат. Работает как новый!»</p>
+                        <p class="text-slate-500 text-xs font-semibold mt-2">— Елена, Бутово</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-<section class="py-32 lg:py-40 bg-white">
+
+    <!-- SECTION 2: CTA BAR -->
+    <section class="py-6 bg-brand-orange relative overflow-hidden z-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-                <div class="fade-in-section">
-                    <h2 class="text-3xl font-display font-extrabold text-brand-blue mb-6 heading-reveal">Надежный сервис с гарантией</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0"><i class="ri-tools-line text-white text-2xl"></i></div>
+                    <div>
+                        <p class="text-white font-bold text-lg">Техника сломалась?</p>
+                        <p class="text-white/90 text-sm">Мастер приедет через 60 минут</p>
+                    </div>
+                </div>
+                <a href="tel:89990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-6 py-3 sm:px-10 sm:py-4 rounded-full font-bold text-sm sm:text-base transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
+                    <i class="ri-phone-line"></i><span>8 (999) 005-71-72</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ДОСТУПНОСТЬ -->
+    <section class="py-4 bg-green-50 border-y-2 border-green-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center sm:text-left">
+                <div class="flex items-center gap-2 justify-center sm:justify-start"><span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span><span class="text-green-700 text-sm font-medium">3 мастера свободны</span></div>
+                <div class="flex items-center gap-2 justify-center sm:justify-start"><i class="ri-time-line text-green-600"></i><span class="text-green-700 text-sm font-medium">Ближайший выезд — через 50 минут</span></div>
+                <div class="flex items-center gap-2 justify-center sm:justify-start"><i class="ri-calendar-line text-green-600"></i><span class="text-green-700 text-sm font-medium">Работаем сегодня до 22:00</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: НАША ИСТОРИЯ + STATS -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="scroll-reveal">
+                    <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-history-line mr-2"></i>НАША ИСТОРИЯ</span>
+                    <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-6 heading-reveal">От 2 мастеров до крупной сервисной службы</h2>
                     <p class="text-slate-600 mb-4 leading-relaxed">
-                        Компания «MosPochin» занимается ремонтом бытовой техники в Москве и Московской области с 2010 года. За это время мы выполнили более 5000 успешных ремонтов.
+                        Компания «MosPochin» основана <strong>в 2010 году</strong> двумя инженерами, которые устали от плохого сервиса: мастера опаздывали, ставили китайские запчасти, не давали гарантий.
                     </p>
                     <p class="text-slate-600 mb-4 leading-relaxed">
-                        Наши мастера проходят регулярное обучение и имеют сертификаты от ведущих производителей техники. Мы используем только оригинальные запчасти и предоставляем официальную гарантию.
+                        <strong>Наша цель:</strong> чтобы у каждого жителя Москвы был надёжный мастер, который приедет быстро, поставит оригинальную запчасть и даст честную гарантию.
                     </p>
                     <p class="text-slate-600 leading-relaxed">
-                        Работаем без выходных и праздников. Выезд мастера в течение 60 минут после заявки. Диагностика бесплатна при условии дальнейшего ремонта.
+                        Сегодня мы — <strong>15 сертифицированных специалистов</strong>. Более <strong>5000 успешных ремонтов</strong>. Обслуживаем все районы Москвы и ближнюю область.
                     </p>
                 </div>
-                <div class="fade-in-section">
-                    <div class="bg-slate-50 rounded-2xl p-8">
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="text-center">
-                                <p class="text-4xl font-extrabold text-brand-orange mb-2"><span class="counter" data-target="500" data-suffix="+">0</span></p>
-                                <p class="text-slate-600 text-sm">Довольных клиентов</p>
+                <div class="scroll-reveal">
+                    <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-100">
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-xl flex-shrink-0"><i class="ri-calendar-line"></i></div>
+                                <div>
+                                    <p class="font-bold text-brand-blue text-lg">2010</p>
+                                    <p class="text-slate-600 text-sm">Основание. 2 мастера. Ремонт холодильников и стиралок.</p>
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <p class="text-4xl font-extrabold text-brand-orange mb-2">15+ лет</p>
-                                <p class="text-slate-600 text-sm">Опыта работы</p>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl flex-shrink-0"><i class="ri-team-line"></i></div>
+                                <div>
+                                    <p class="font-bold text-brand-blue text-lg">2014</p>
+                                    <p class="text-slate-600 text-sm">5 инженеров. Добавили посудомойки и кондиционеры.</p>
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <p class="text-4xl font-extrabold text-brand-orange mb-2">95%</p>
-                                <p class="text-slate-600 text-sm">Ремонт за 1 визит</p>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl flex-shrink-0"><i class="ri-building-line"></i></div>
+                                <div>
+                                    <p class="font-bold text-brand-blue text-lg">2018</p>
+                                    <p class="text-slate-600 text-sm">Собственный склад запчастей. 1000+ позиций в наличии.</p>
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <p class="text-4xl font-extrabold text-brand-orange mb-2">12 мес</p>
-                                <p class="text-slate-600 text-sm">Гарантия на работы</p>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl flex-shrink-0"><i class="ri-trophy-line"></i></div>
+                                <div>
+                                    <p class="font-bold text-brand-blue text-lg">2026</p>
+                                    <p class="text-slate-600 text-sm">15 мастеров. 5000+ ремонтов. Рейтинг 4.9/5.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mb-12 fade-in-section">
-                <h2 class="text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Наши преимущества</h2>
+        </div>
+    </section>
+
+    <!-- SECTION 5: СТАТИСТИКА -->
+    <section class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Цифры говорят сами за себя</h2>
             </div>
-            <div class="grid md:grid-cols-3 gap-6 lg:gap-10">
-                <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
-                    <div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-4 mx-auto">
-                        <i class="ri-time-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Быстрый выезд</h3>
-                    <p class="text-slate-600 text-sm">Мастер приедет в течение 60 минут после вашей заявки в любое удобное время</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+                <div class="scroll-reveal text-center" data-delay="1">
+                    <p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="5000" data-suffix="+">0</span></p>
+                    <p class="text-slate-600 font-medium">Ремонтов выполнено</p>
                 </div>
-                <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
-                    <div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-4 mx-auto">
-                        <i class="ri-award-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Опытные мастера</h3>
-                    <p class="text-slate-600 text-sm">Все специалисты имеют сертификаты и стаж работы от 5 лет</p>
+                <div class="scroll-reveal text-center" data-delay="2">
+                    <p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2">15+</p>
+                    <p class="text-slate-600 font-medium">Лет на рынке</p>
                 </div>
-                <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
-                    <div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-4 mx-auto">
-                        <i class="ri-file-list-3-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Официальный договор</h3>
-                    <p class="text-slate-600 text-sm">Заключаем договор на все виды работ с гарантией до 12 месяцев</p>
+                <div class="scroll-reveal text-center" data-delay="3">
+                    <p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="95" data-suffix="%">0</span></p>
+                    <p class="text-slate-600 font-medium">Ремонт за 1 визит</p>
                 </div>
-                <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
-                    <div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-4 mx-auto">
-                        <i class="ri-wallet-3-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Честные цены</h3>
-                    <p class="text-slate-600 text-sm">Фиксированная стоимость после диагностики, без скрытых платежей</p>
-                </div>
-                <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
-                    <div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-4 mx-auto">
-                        <i class="ri-tools-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Запчасти в наличии</h3>
-                    <p class="text-slate-600 text-sm">Все необходимые запчасти у мастера с собой, ремонт за 1 визит</p>
-                </div>
-                <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
-                    <div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mb-4 mx-auto">
-                        <i class="ri-customer-service-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Поддержка 24/7</h3>
-                    <p class="text-slate-600 text-sm">Консультируем по телефону в любое время, работаем без выходных</p>
+                <div class="scroll-reveal text-center" data-delay="4">
+                    <p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2">4.9/5</p>
+                    <p class="text-slate-600 font-medium">Рейтинг из 500 отзывов</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-24 lg:py-32 bg-gradient-to-br from-brand-orange to-orange-600">
-        <div class="max-w-4xl mx-auto px-4 text-center text-white fade-in-section">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 heading-reveal">Нужен ремонт техники?</h2>
-            <p class="text-xl mb-8 text-white/90">Свяжитесь с нами прямо сейчас</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:89990057172" class="bg-white text-brand-orange hover:bg-slate-100 px-10 py-5 rounded-full font-bold transition shadow-xl">
-                    <i class="ri-phone-line mr-2"></i>+7 (999) 005-71-72
+
+    <!-- SECTION 6: ЧТО РЕМОНТИРУЕМ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-wrench-line mr-2"></i>УСЛУГИ</span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонтируем любую бытовую технику на дому</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Мастер приедет к вам домой с запчастями и инструментами</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+                <a href="holodilniki.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="1">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-snowy-line"></i></div>
+                    <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Холодильники</h3>
+                    <p class="text-slate-500 text-xs">от 590₽</p>
                 </a>
-                <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 px-8 py-5 rounded-full font-bold transition shadow-xl">
-                    <i class="ri-whatsapp-line mr-2"></i>WhatsApp
+                <a href="stiralnye-mashiny.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="2">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-loader-2-line"></i></div>
+                    <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Стиральные машины</h3>
+                    <p class="text-slate-500 text-xs">от 590₽</p>
+                </a>
+                <a href="posudomoyki.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="3">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-drop-line"></i></div>
+                    <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Посудомойки</h3>
+                    <p class="text-slate-500 text-xs">от 590₽</p>
+                </a>
+                <a href="water-heaters.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="4">
+                    <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-temp-hot-line"></i></div>
+                    <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Водонагреватели</h3>
+                    <p class="text-slate-500 text-xs">от 890₽</p>
+                </a>
+                <a href="microwaves.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="1">
+                    <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-microwave-line"></i></div>
+                    <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Микроволновки</h3>
+                    <p class="text-slate-500 text-xs">от 490₽</p>
+                </a>
+                <a href="kompyutery.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="2">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center text-cyan-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-computer-line"></i></div>
+                    <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Компьютеры</h3>
+                    <p class="text-slate-500 text-xs">от 690₽</p>
+                </a>
+                <a href="routery.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="3">
+                    <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-wifi-line"></i></div>
+                    <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Роутеры</h3>
+                    <p class="text-slate-500 text-xs">от 490₽</p>
+                </a>
+                <a href="airconditioners.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="4">
+                    <div class="w-14 h-14 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-temp-cold-line"></i></div>
+                    <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Кондиционеры</h3>
+                    <p class="text-slate-500 text-xs">от 990₽</p>
                 </a>
             </div>
         </div>
     </section>
-    <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 heading-reveal">Нужен ремонт бытовой техники?</h2>
-            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Позвоните — мастер приедет в удобное время</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:89990057172" class="inline-flex items-center justify-center gap-3 bg-white text-brand-orange hover:bg-slate-100 text-xl font-bold px-10 py-5 rounded-full transition shadow-lg"><i class="ri-phone-line"></i>8 (999) 005-71-72</a>
-                <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white text-xl font-bold px-10 py-5 rounded-full transition shadow-lg"><i class="ri-whatsapp-line"></i>WhatsApp</a>
+
+    <!-- SECTION 7: СРОЧНОСТЬ + ТАЙМЕР -->
+    <section class="bg-gradient-to-r from-red-600 to-red-700 text-white py-12 lg:py-16 relative overflow-hidden" id="countdown-section">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>'); background-size: 80px; background-repeat: repeat;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="scroll-reveal-left">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"><i class="ri-alarm-warning-line text-white text-2xl"></i></div>
+                        <div>
+                            <p class="text-white font-bold text-lg">Сломанная техника мешает жить</p>
+                            <p class="text-white/90 text-sm">Тёплый холодильник = испорченные продукты</p>
+                        </div>
+                    </div>
+                    <p class="text-white/90 text-base">Мастер приедет за 60 минут. 95% ремонтов — за 1 визит. Запчасти с собой.</p>
+                </div>
+                <div class="scroll-reveal text-center">
+                    <p class="text-white/80 text-sm mb-2 font-semibold">БЕСПЛАТНАЯ ДИАГНОСТИКА ЕЩЁ:</p>
+                    <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 border-2 border-white/30">
+                        <span class="text-4xl font-display font-extrabold" id="cd-min">59</span>
+                        <span class="text-3xl font-display font-extrabold text-white/60">:</span>
+                        <span class="text-4xl font-display font-extrabold" id="cd-sec">59</span>
+                    </div>
+                    <p class="text-white/70 text-xs mt-2">Диагностика 0₽ при заявке сейчас</p>
+                    <a href="tel:89990057172" class="mt-4 inline-block bg-white text-red-600 hover:bg-slate-100 px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                        <i class="ri-phone-line mr-2"></i>Позвонить сейчас
+                    </a>
+                </div>
             </div>
         </div>
     </section>
-    <section class="py-32 lg:py-40 bg-white">
+
+    <!-- SECTION 8: ПОЧЕМУ МЫ (сравнение) -->
+    <section class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-trophy-line mr-2"></i>СРАВНЕНИЕ</span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему 500+ клиентов выбрали MosPochin</h2>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden scroll-reveal">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead><tr class="bg-brand-orange text-white">
+                            <th scope="col" class="py-4 px-6 text-left font-display font-bold">Параметр</th>
+                            <th scope="col" class="py-4 px-6 text-center font-display font-bold">MosPochin</th>
+                            <th scope="col" class="py-4 px-6 text-center font-display font-bold text-orange-100">Частные мастера</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr class="border-b border-slate-100"><td class="py-4 px-6 text-slate-600 font-medium">Выезд мастера</td><td class="py-4 px-6 text-center text-green-600 font-bold">✅ 60 мин</td><td class="py-4 px-6 text-center text-red-500">❌ 2-4 часа</td></tr>
+                            <tr class="border-b border-slate-100 bg-slate-50"><td class="py-4 px-6 text-slate-600 font-medium">Диагностика</td><td class="py-4 px-6 text-center text-green-600 font-bold">✅ 0₽*</td><td class="py-4 px-6 text-center text-red-500">❌ 500-1500₽</td></tr>
+                            <tr class="border-b border-slate-100"><td class="py-4 px-6 text-slate-600 font-medium">Гарантия</td><td class="py-4 px-6 text-center text-green-600 font-bold">✅ 12 мес</td><td class="py-4 px-6 text-center text-red-500">❌ 1-3 мес</td></tr>
+                            <tr class="border-b border-slate-100 bg-slate-50"><td class="py-4 px-6 text-slate-600 font-medium">Запчасти с собой</td><td class="py-4 px-6 text-center text-green-600 font-bold">✅ 95%</td><td class="py-4 px-6 text-center text-red-500">❌ Под заказ</td></tr>
+                            <tr class="border-b border-slate-100"><td class="py-4 px-6 text-slate-600 font-medium">Оригинальные запчасти</td><td class="py-4 px-6 text-center text-green-600 font-bold">✅ Всегда</td><td class="py-4 px-6 text-center text-red-500">❌ Китай</td></tr>
+                            <tr class="border-b border-slate-100 bg-slate-50"><td class="py-4 px-6 text-slate-600 font-medium">Договор</td><td class="py-4 px-6 text-center text-green-600 font-bold">✅ Полный пакет</td><td class="py-4 px-6 text-center text-red-500">❌ На словах</td></tr>
+                            <tr class="border-b border-slate-100"><td class="py-4 px-6 text-slate-600 font-medium">Ремонт за 1 визит</td><td class="py-4 px-6 text-center text-green-600 font-bold">✅ 95%</td><td class="py-4 px-6 text-center text-red-500">❌ 60%</td></tr>
+                            <tr><td class="py-4 px-6 text-slate-600 font-medium">Работаем без выходных</td><td class="py-4 px-6 text-center text-green-600 font-bold">✅ 7/7</td><td class="py-4 px-6 text-center text-red-500">❌ Пн-Пт</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-slate-50 py-3 px-6"><p class="text-slate-500 text-sm"><i class="ri-information-line text-brand-orange mr-2"></i>* Бесплатно при ремонте.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: 6 ПРИНЦИПОВ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-lightbulb-line mr-2"></i>ПРИНЦИПЫ</span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">6 причин доверить нам свою технику</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="scroll-reveal bg-gradient-to-br from-blue-50 to-indigo-50 p-6 lg:p-8 rounded-2xl border-2 border-blue-100" data-delay="1">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-4"><i class="ri-time-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Выезд за 60 минут</h3>
+                    <p class="text-slate-600 text-sm">Мастера во всех районах Москвы. Приедет ближайший свободный.</p>
+                </div>
+                <div class="scroll-reveal bg-gradient-to-br from-green-50 to-emerald-50 p-6 lg:p-8 rounded-2xl border-2 border-green-100" data-delay="2">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-4"><i class="ri-box-3-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Оригинальные запчасти</h3>
+                    <p class="text-slate-600 text-sm">Используем только оригинальные комплектующие. Никаких подделок.</p>
+                </div>
+                <div class="scroll-reveal bg-gradient-to-br from-purple-50 to-violet-50 p-6 lg:p-8 rounded-2xl border-2 border-purple-100" data-delay="3">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-4"><i class="ri-shield-check-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Гарантия 12 месяцев</h3>
+                    <p class="text-slate-600 text-sm">Выдаём гарантийный талон. Повторный выезд — бесплатно.</p>
+                </div>
+                <div class="scroll-reveal bg-gradient-to-br from-amber-50 to-yellow-50 p-6 lg:p-8 rounded-2xl border-2 border-amber-100" data-delay="4">
+                    <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl mb-4"><i class="ri-money-cny-circle-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Фиксированные цены</h3>
+                    <p class="text-slate-600 text-sm">Цена не меняется в процессе. Согласуем до начала работ.</p>
+                </div>
+                <div class="scroll-reveal bg-gradient-to-br from-cyan-50 to-sky-50 p-6 lg:p-8 rounded-2xl border-2 border-cyan-100" data-delay="5">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center text-cyan-600 text-2xl mb-4"><i class="ri-calendar-schedule-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Без выходных</h3>
+                    <p class="text-slate-600 text-sm">Работаем 7 дней в неделю. Выезд в удобное для вас время.</p>
+                </div>
+                <div class="scroll-reveal bg-gradient-to-br from-rose-50 to-pink-50 p-6 lg:p-8 rounded-2xl border-2 border-rose-100" data-delay="6">
+                    <div class="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center text-rose-600 text-2xl mb-4"><i class="ri-chat-3-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Честная консультация</h3>
+                    <p class="text-slate-600 text-sm">Скажем честно, если дешевле купить новую технику.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: БРЕНДЫ -->
+    <section class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-verified-badge-line mr-2"></i>БРЕНДЫ</span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонтируем все марки бытовой техники</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Samsung, Bosch, LG, Electrolux, Indesit, Beko, Haier — любой бренд</p>
+            </div>
+            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 scroll-reveal">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Samsung</p><p class="text-xs text-slate-400">🇰🇷 Корея</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Bosch</p><p class="text-xs text-slate-400">🇩🇪 Германия</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">LG</p><p class="text-xs text-slate-400">🇰🇷 Корея</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Electrolux</p><p class="text-xs text-slate-400">🇸🇪 Швеция</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Indesit</p><p class="text-xs text-slate-400">🇮🇹 Италия</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Beko</p><p class="text-xs text-slate-400">🇹🇷 Турция</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Haier</p><p class="text-xs text-slate-400">🇨🇳 Китай</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Whirlpool</p><p class="text-xs text-slate-400">🇺🇸 США</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Ariston</p><p class="text-xs text-slate-400">🇮🇹 Италия</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Liebherr</p><p class="text-xs text-slate-400">🇩🇪 Германия</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Candy</p><p class="text-xs text-slate-400">🇮🇹 Италия</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:border-brand-orange hover:shadow-md transition-all">
+                    <p class="font-bold text-brand-blue text-sm mb-1">Любой</p><p class="text-xs text-slate-400">🌍 Всё чиним</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: ОТЗЫВЫ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-yellow-400/10 text-yellow-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-star-fill mr-2"></i>ОТЗЫВЫ</span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что говорят клиенты</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="1">
+                    <div class="flex text-yellow-400 text-sm mb-3"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="text-slate-600 text-sm mb-4 italic">«Холодильник Samsung перестал морозить. Мастер приехал через 50 мин, заменил термостат. Работает как новый!»</p>
+                    <p class="text-slate-500 text-xs font-semibold">— Елена, Бутово</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="2">
+                    <div class="flex text-yellow-400 text-sm mb-3"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="text-slate-600 text-sm mb-4 italic">«Стиралка Bosch начала течь. Мастер заменил манжету люка за 40 минут. Цена адекватная, рекомендую.»</p>
+                    <p class="text-slate-500 text-xs font-semibold">— Андрей, Тёплый Стан</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="3">
+                    <div class="flex text-yellow-400 text-sm mb-3"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i></div>
+                    <p class="text-slate-600 text-sm mb-4 italic">«Посудомойка Electrolux не сливала воду. Мастер прочистил насос за 30 минут. Теперь работает идеально.»</p>
+                    <p class="text-slate-500 text-xs font-semibold">— Ольга, Митино</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="1">
+                    <div class="flex text-yellow-400 text-sm mb-3"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="text-slate-600 text-sm mb-4 italic">«Кондиционер LG не холодил. Мастер заправил фреон, проверил утечки. Всё чисто, аккуратно.»</p>
+                    <p class="text-slate-500 text-xs font-semibold">— Дмитрий, Ясенево</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="2">
+                    <div class="flex text-yellow-400 text-sm mb-3"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="text-slate-600 text-sm mb-4 italic">«Водонагреватель Ariston перестал греть. Мастер заменил ТЭН на месте. Горячая вода через час!»</p>
+                    <p class="text-slate-500 text-xs font-semibold">— Марина, Перово</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="3">
+                    <div class="flex text-yellow-400 text-sm mb-3"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                    <p class="text-slate-600 text-sm mb-4 italic">«Микроволновка не включалась. Мастер заменил предохранитель за 20 минут. Быстро и недорого!»</p>
+                    <p class="text-slate-500 text-xs font-semibold">— Сергей, Выхино</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: ПРОЦЕСС -->
+    <section class="py-20 bg-slate-700 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-route-line mr-2"></i>ПРОЦЕСС</span>
+                <h2 class="text-2xl lg:text-3xl font-extrabold mb-4 heading-reveal">5 шагов до работающей техники</h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">Просто и быстро — без визитов в сервис</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="bg-white/10 rounded-2xl p-6 border border-white/10 scroll-reveal" data-delay="1">
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-xl font-extrabold mb-4">1</div>
+                    <h3 class="text-lg font-bold mb-2">Заявка</h3>
+                    <p class="text-slate-400 text-sm">Звоните — опишите проблему. Скажем примерную цену.</p>
+                </div>
+                <div class="bg-white/10 rounded-2xl p-6 border border-white/10 scroll-reveal" data-delay="2">
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-xl font-extrabold mb-4">2</div>
+                    <h3 class="text-lg font-bold mb-2">Выезд</h3>
+                    <p class="text-slate-400 text-sm">Мастер приедет за 60 минут к вам домой.</p>
+                </div>
+                <div class="bg-white/10 rounded-2xl p-6 border border-white/10 scroll-reveal" data-delay="3">
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-xl font-extrabold mb-4">3</div>
+                    <h3 class="text-lg font-bold mb-2">Диагностика</h3>
+                    <p class="text-slate-400 text-sm">Определяем поломку. Называем точную цену. 0₽.</p>
+                </div>
+                <div class="bg-white/10 rounded-2xl p-6 border border-white/10 scroll-reveal" data-delay="4">
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-xl font-extrabold mb-4">4</div>
+                    <h3 class="text-lg font-bold mb-2">Ремонт</h3>
+                    <p class="text-slate-400 text-sm">95% за 1 визит. Запчасти у мастера с собой.</p>
+                </div>
+                <div class="bg-green-500/20 rounded-2xl p-6 border border-green-400/30 scroll-reveal" data-delay="5">
+                    <div class="w-14 h-14 bg-green-400/20 rounded-full flex items-center justify-center text-green-400 text-xl font-extrabold mb-4">✓</div>
+                    <h3 class="text-lg font-bold mb-2">Гарантия</h3>
+                    <p class="text-slate-400 text-sm">До 12 мес. Талон. Повторный выезд — 0₽.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: ГАРАНТИИ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-shield-check-line mr-2"></i>ГАРАНТИИ</span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">3 гарантии MosPochin</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <div class="scroll-reveal bg-gradient-to-br from-green-50 to-emerald-50 p-6 lg:p-8 rounded-2xl border-2 border-green-200 text-center" data-delay="1">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mx-auto mb-4"><i class="ri-file-search-line"></i></div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Диагностика 0₽</h3>
+                    <p class="text-slate-600">Бесплатная диагностика при заказе ремонта.</p>
+                </div>
+                <div class="scroll-reveal bg-gradient-to-br from-blue-50 to-indigo-50 p-6 lg:p-8 rounded-2xl border-2 border-blue-200 text-center" data-delay="2">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mx-auto mb-4"><i class="ri-shield-check-line"></i></div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Гарантия 12 мес</h3>
+                    <p class="text-slate-600">На работы и запчасти. Гарантийный талон.</p>
+                </div>
+                <div class="scroll-reveal bg-gradient-to-br from-orange-50 to-amber-50 p-6 lg:p-8 rounded-2xl border-2 border-orange-200 text-center" data-delay="3">
+                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600 text-2xl mx-auto mb-4"><i class="ri-refresh-line"></i></div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Повторный выезд 0₽</h3>
+                    <p class="text-slate-600">Проблема вернулась — приедем бесплатно.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 14: ГЕОГРАФИЯ -->
+    <section class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">📍 ГЕОГРАФИЯ</span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Выезжаем по всей Москве и МО</h2>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 scroll-reveal">
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Центр</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Тверская</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Арбат</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Бутово</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Север</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Юг</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Запад</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Восток</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Юго-Запад</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Северо-Восток</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">Митино</span></div>
+                <div class="flex items-center gap-2 bg-white p-3 rounded-xl border border-slate-100"><i class="ri-checkbox-circle-fill text-green-500"></i><span class="text-sm text-slate-700">МО (до 30 км)</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 15: ЧТО ДЕЛАТЬ / ЧТО НЕЛЬЗЯ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что делать при поломке бытовой техники</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="scroll-reveal-left">
+                    <div class="bg-green-50 p-6 lg:p-8 rounded-2xl border-2 border-green-200">
+                        <h3 class="text-xl font-display font-extrabold text-green-700 mb-4 flex items-center gap-2"><i class="ri-checkbox-circle-fill"></i> СДЕЛАЙТЕ</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-check-line text-green-600 mt-1"></i><span><strong>Выключите</strong> технику из розетки</span></li>
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-check-line text-green-600 mt-1"></i><span><strong>Перекройте</strong> воду (если течёт)</span></li>
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-check-line text-green-600 mt-1"></i><span><strong>Сфотографируйте</strong> ошибку на дисплее</span></li>
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-check-line text-green-600 mt-1"></i><span><strong>Запишите</strong> модель техники</span></li>
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-check-line text-green-600 mt-1"></i><span><strong>Позвоните</strong> — опишите проблему</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="scroll-reveal-right">
+                    <div class="bg-red-50 p-6 lg:p-8 rounded-2xl border-2 border-red-200">
+                        <h3 class="text-xl font-display font-extrabold text-red-700 mb-4 flex items-center gap-2"><i class="ri-close-circle-fill"></i> НЕЛЬЗЯ</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-close-line text-red-600 mt-1"></i><span><strong>НЕ включайте</strong> повторно</span></li>
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-close-line text-red-600 mt-1"></i><span><strong>НЕ разбирайте</strong> корпус сами</span></li>
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-close-line text-red-600 mt-1"></i><span><strong>НЕ стучите</strong> по технике</span></li>
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-close-line text-red-600 mt-1"></i><span><strong>НЕ игнорируйте</strong> запах гари</span></li>
+                            <li class="flex items-start gap-3 text-slate-700"><i class="ri-close-line text-red-600 mt-1"></i><span><strong>НЕ оставляйте</strong> воду внутри — протрите</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 16: FAQ -->
+    <section class="py-20 lg:py-28 bg-slate-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-reveal">
+            <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-question-line mr-2"></i>FAQ</span>
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-green-50 to-blue-50">
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Частые вопросы</h2>
+            </div>
+            <div class="space-y-4">
+                <details class="faq-item bg-white p-5 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="1"><summary class="font-bold text-brand-blue flex items-center justify-between"><span>Как быстро приедет мастер?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">В течение <strong>60 минут</strong> по Москве. В выходные может быть чуть дольше.</p></details>
+                <details class="faq-item bg-white p-5 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="2"><summary class="font-bold text-brand-blue flex items-center justify-between"><span>Диагностика бесплатная?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Да, <strong>0₽</strong> при ремонте. Без ремонта — 500₽.</p></details>
+                <details class="faq-item bg-white p-5 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3"><summary class="font-bold text-brand-blue flex items-center justify-between"><span>Какую гарантию даёте?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600"><strong>12 месяцев</strong> на работы и запчасти. Выдаём гарантийный талон.</p></details>
+                <details class="faq-item bg-white p-5 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="4"><summary class="font-bold text-brand-blue flex items-center justify-between"><span>Ремонтируете Samsung, Bosch, LG?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Да, <strong>все бренды</strong>: Samsung, Bosch, LG, Electrolux, Indesit, Beko, Haier, Ariston и другие.</p></details>
+                <details class="faq-item bg-white p-5 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="5"><summary class="font-bold text-brand-blue flex items-center justify-between"><span>Работаете в выходные?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Да, <strong>7 дней в неделю</strong> без выходных.</p></details>
+                <details class="faq-item bg-white p-5 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="6"><summary class="font-bold text-brand-blue flex items-center justify-between"><span>Сколько стоит ремонт?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">От <strong>490₽</strong> (микроволновки) до <strong>2 500₽</strong> (сложный ремонт). Точная цена после диагностики.</p></details>
+                <details class="faq-item bg-white p-5 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="7"><summary class="font-bold text-brand-blue flex items-center justify-between"><span>Сломанную технику лучше починить или купить новую?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">До 7 лет — <strong>однозначно ремонт</strong>. Скажем честно, если ремонт нецелесообразен.</p></details>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 17: ФИНАЛЬНЫЙ CTA -->
+    <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+            <h2 class="text-3xl lg:text-5xl font-display font-extrabold mb-6 leading-tight">Техника сломалась? Починим за 1 час!</h2>
+            <p class="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">Бесплатная диагностика. Оригинальные запчасти. Гарантия 12 месяцев.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="tel:89990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl transform hover:-translate-y-1 flex items-center gap-2">
+                    <i class="ri-phone-line"></i><span>8 (999) 005-71-72</span>
+                </a>
+                <a href="https://wa.me/79990057172?text=Нужен%20ремонт%20бытовой%20техники" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl flex items-center gap-2">
+                    <i class="ri-whatsapp-line"></i><span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 18: ФОРМА -->
+    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
-                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4">БЕСПЛАТНАЯ ДИАГНОСТИКА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Диагностика бесплатно при ремонте</p>
+                <span class="inline-block bg-green-100 text-green-700 px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">БЕСПЛАТНАЯ ДИАГНОСТИКА</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-3 sm:mb-4 heading-reveal">Оставьте заявку на ремонт</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Укажите что сломалось — перезвоним за 5 минут</p>
             </div>
-            <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label>
-                        <input type="text" name="name" required placeholder="Елена" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Телефон *</label>
-                        <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700">
-                    </div>
+            <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
+                <div class="grid md:grid-cols-2 gap-4 mb-4 sm:gap-6 sm:mb-6">
+                    <div><label class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label><input type="text" name="name" required placeholder="Елена" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
+                    <div><label class="block text-sm font-medium text-slate-700 mb-2">Телефон *</label><input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
                 </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-medium text-slate-700 mb-2">Что сломалось?</label>
-                    <input type="text" name="problem" placeholder="Не морозит, шумит.." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700">
+                <div class="grid md:grid-cols-2 gap-4 mb-4 sm:gap-6 sm:mb-6">
+                    <div><label class="block text-sm font-medium text-slate-700 mb-2">Что сломалось?</label><input type="text" name="problem" placeholder="Холодильник Samsung, не морозит" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
+                    <div><label class="block text-sm font-medium text-slate-700 mb-2">Район</label><input type="text" name="district" placeholder="Бутово" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
                 </div>
-                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg">
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
                     <i class="ri-send-plane-line mr-2"></i>Оставить заявку — диагностика 0₽
                 </button>
-                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Диагностика бесплатно при ремонте</p>
+                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
             </form>
         </div>
     </section>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Частые вопросы</h2>
-            </div>
-            <div class="space-y-4">
-                <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="1"><summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Как быстро приедет мастер?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Выезд в течение <strong>1 часа</strong> по Москве.</p></details>
-                <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="2"><summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Сколько стоит диагностика?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">Диагностика — <strong>0₽</strong> при ремонте.</p></details>
-                <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3"><summary class="font-bold text-brand-blue text-lg flex items-center justify-between"><span>Гарантия?</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600"><strong>До 24 месяцев</strong> на работы и запчасти.</p></details>
-            </div>
-        </div>
-    </section>
+
+    <!-- Mobile sticky footer -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
             <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
-                <i class="ri-phone-line"></i>
-                <span>Вызвать мастера</span>
+                <i class="ri-phone-line"></i><span class="text-sm">Позвонить</span>
             </a>
             <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
-                <i class="ri-whatsapp-line"></i>
-                <span>WhatsApp</span>
+                <i class="ri-whatsapp-line"></i><span class="text-sm">WhatsApp</span>
             </a>
         </div>
     </div>
+
+    <!-- WhatsApp floating button -->
+    <div class="fixed bottom-24 right-4 z-50 md:hidden">
+        <a href="https://wa.me/79990057172" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95">
+            <i class="ri-whatsapp-line text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
     <div id="footer-container"></div>
-<div class="fixed bottom-24 right-4 z-50 md:hidden">
-  <a href="https://wa.me/79990057172" target="_blank" rel="noopener noreferrer"
-     class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95">
-    <i class="ri-whatsapp-line text-2xl"></i>
-  </a>
-</div>
-    <script src="/assets/js/telegram-form.js"></script>
+
+    <!-- Noscript -->
+    <noscript>
+        <style>.noscript-fallback{position:fixed;top:0;left:0;right:0;z-index:9999;background:#0f172a;color:#fff;padding:12px 16px;text-align:center;font-family:sans-serif}.noscript-fallback a{color:#f97316;font-weight:bold;text-decoration:none;margin:0 8px}.noscript-fallback .ns-phone{font-size:1.2em}</style>
+        <div class="noscript-fallback">
+            <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px">
+                <strong style="font-size:1.3em">🔧 MosPochin — ремонт бытовой техники</strong>
+                <span style="opacity:0.5">|</span>
+                <a href="bytovaya-index.html">Главная</a>
+                <a href="bytovaya-uslugi.html">Услуги</a>
+                <a href="bytovaya-contact.html">Контакты</a>
+                <span style="opacity:0.5">|</span>
+                <a href="tel:89990057172" class="ns-phone">☎ 8 (999) 005-71-72</a>
+            </div>
+        </div>
+    </noscript>
+
+    <!-- Countdown Timer -->
+    <script>
+    (function() {
+        const TIMER_KEY = 'bytovaya_about_timer_end';
+        const DURATION = 60 * 60 * 1000;
+        let endTime = localStorage.getItem(TIMER_KEY);
+        if (!endTime || parseInt(endTime) <= Date.now()) {
+            endTime = Date.now() + DURATION;
+            localStorage.setItem(TIMER_KEY, endTime);
+        }
+        endTime = parseInt(endTime);
+        const minEl = document.getElementById('cd-min');
+        const secEl = document.getElementById('cd-sec');
+        if (!minEl || !secEl) return;
+        const tick = () => {
+            const remaining = Math.max(0, endTime - Date.now());
+            const min = Math.floor(remaining / 60000);
+            const sec = Math.floor((remaining % 60000) / 1000);
+            minEl.textContent = String(min).padStart(2, '0');
+            secEl.textContent = String(sec).padStart(2, '0');
+            if (remaining <= 0) return;
+            requestAnimationFrame(() => setTimeout(tick, 1000));
+        };
+        tick();
+    })();
+    </script>
 </body>
 </html>
