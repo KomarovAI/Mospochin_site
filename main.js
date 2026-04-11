@@ -15,8 +15,7 @@ restaurant: [
 {href:'plity.html', icon:'🍳', name:'Плиты и печи'},
 {href:'holodilnoe-oborudovanie.html', icon:'❄️', name:'Холодильное оборудование'},
 {href:'posudomoechnye-mashiny.html', icon:'🍽️', name:'Посудомойки'},
-{href:'grili-mangaly.html', icon:'🍖', name:'Грили и мангалы'},
-{href:'friturennitsy.html', icon:'🍟', name:'Фритюрницы'},
+{href:'grili-mangaly.html', icon:'🍳', name:'Грили, фритюрницы, мелочёвка'},
 {href:'ice-machines.html', icon:'🧊', name:'Льдогенераторы'}
 ],
 bytovaya: [
@@ -34,7 +33,7 @@ bytovaya: [
 const Components = {
 isBytovaya() {
 const path = window.location.pathname.split('/').pop().replace('.html', '');
-const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'friturennitsy', 'ice-machines'];
+const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'ice-machines'];
 const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'microwaves', 'airconditioners', 'kompyutery', 'routery', 'water-heaters'];
 if (bytovayaPages.includes(path)) return true;
 if (restaurantPages.includes(path)) return false;
@@ -146,8 +145,7 @@ return `
 <li><a href="plity.html" class="hover:text-white transition">Плиты и печи</a></li>
 <li><a href="holodilnoe-oborudovanie.html" class="hover:text-white transition">Холодильное оборудование</a></li>
 <li><a href="posudomoechnye-mashiny.html" class="hover:text-white transition">Посудомойки</a></li>
-<li><a href="grili-mangaly.html" class="hover:text-white transition">Грили и мангалы</a></li>
-<li><a href="friturennitsy.html" class="hover:text-white transition">Фритюрницы</a></li>
+<li><a href="grili-mangaly.html" class="hover:text-white transition">Грили, фритюрницы</a></li>
 <li><a href="ice-machines.html" class="hover:text-white transition">Льдогенераторы</a></li>
 <li><a href="about.html" class="hover:text-white transition">О компании</a></li>
 <li><a href="contact.html" class="hover:text-white transition">Контакты</a></li>
