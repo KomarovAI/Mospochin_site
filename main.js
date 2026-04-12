@@ -273,19 +273,6 @@ target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 });
 },
-initRipple() {
-document.querySelectorAll('.btn, .cta-glow, .btn-glow, a[href^="tel:"]').forEach(btn => {
-btn.addEventListener('click', function(e) {
-const rect = this.getBoundingClientRect();
-const ripple = document.createElement('span');
-ripple.classList.add('ripple');
-ripple.style.left = `${e.clientX - rect.left}px`;
-ripple.style.top = `${e.clientY - rect.top}px`;
-this.appendChild(ripple);
-setTimeout(() => ripple.remove(), 600);
-});
-});
-},
 initCounters() {
 const observer = new IntersectionObserver(entries => {
 entries.forEach(entry => {
