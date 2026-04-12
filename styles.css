@@ -28,17 +28,13 @@ h3{letter-spacing:-0.015em;line-height:1.3}
 .heading-reveal{opacity:0;filter:blur(10px);transition:opacity .6s ease,filter .6s ease}
 .heading-reveal.is-visible{opacity:1;filter:blur(0)}
 
-/* Counter Animation */
-@keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.counter-animate{animation:countUp .6s ease forwards}
-
 /* Hide counters until JS initializes them (prevents FOUC with "0") */
 .counter{opacity:0;transition:opacity 0.4s ease}
 .counter.is-visible{opacity:1}
 
 /* Card Hovers */
-.card-brand,.equipment-card,.stat-card-hover,.brand-card{transition:all .3s ease}
-.card-brand:hover,.equipment-card:hover,.stat-card-hover:hover,.brand-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.15)}
+.card-brand,.equipment-card,.stat-card-hover{transition:all .3s ease}
+.card-brand:hover,.equipment-card:hover,.stat-card-hover:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.15)}
 
 /* Icon Spring */
 .icon-spring{transition:transform .3s cubic-bezier(0.4,0,0.2,1)}
@@ -48,21 +44,12 @@ h3{letter-spacing:-0.015em;line-height:1.3}
 .icon-wrapper{transition:transform .3s ease}
 .icon-wrapper:hover{transform:scale(1.15)}
 
-/* Feature Box */
-.feature-box{transition:all .3s ease}
-.feature-box:hover{transform:translateY(-5px)}
-
 /* Glass Navbar */
 .glass-navbar{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(255,255,255,0.95)}
 
 /* Hero Backgrounds */
 .hero-bg-restaurant{background:linear-gradient(135deg,rgba(15,23,42,0.95),rgba(30,41,59,0.9)),url('/assets/images/hero-restaurant.jpg') center/cover no-repeat}
 .hero-bg{background:linear-gradient(135deg,rgba(15,23,42,0.88) 0%,rgba(30,41,59,0.82) 100%),url('/assets/images/hero-bg-a7.jpg') center/cover no-repeat}
-
-/* Hero Mesh */
-.hero-mesh{background:linear-gradient(135deg,rgba(15,23,42,0.9),rgba(30,41,59,0.85))}
-@keyframes meshMove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.hero-mesh-animated{background-size:200% 200%;animation:meshMove 15s ease infinite}
 
 /* Glass Card */
 .glass-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2)}
@@ -86,10 +73,6 @@ details summary::-webkit-details-marker{display:none}
 /* Fade In */
 .fade-in-section{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .fade-in-section.is-visible{opacity:1;transform:none}
-
-/* Process Step */
-.process-step::after{content:'';position:absolute;top:50%;right:-2rem;width:2rem;height:2px;background:#e2e8f0}
-.process-step:last-child::after{display:none}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar{width:8px}
