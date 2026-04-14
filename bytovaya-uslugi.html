@@ -1,39 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                orange: '#f97316',
-                orangeHover: '#ea580c',
-                blue: '#0f172a',
-                lightBlue: '#1e293b',
-                green: '#22c55e',
-                gray: '#f8fafc',
-                primary: '#f97316',
-                primaryHover: '#ea580c',
-                accent: '#ea580c'
-              }
-            },
-            fontFamily: {
-              sans: ['Manrope', 'sans-serif'],
-              display: ['Manrope', 'sans-serif']
-            }
-          }
-        }
-      }
-    </script>
-    <link rel="preload" href="/assets/css/styles-built.css" as="style">
+<link rel="preload" href="/assets/css/styles-built.css" as="style">
     <link rel="stylesheet" href="/assets/css/styles-built.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="preload" href="/assets/fonts/manrope.css" as="style">
     <link rel="stylesheet" href="/assets/fonts/manrope.css">
     <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
+    <link rel="preload" href="/assets/js/main.js" as="script">
     <script src="/assets/js/main.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -75,7 +49,7 @@
         </ol>
     </nav>
     <header class="relative pt-32 pb-24 lg:pt-44 lg:pb-36 overflow-hidden" style="background:linear-gradient(135deg,rgba(15,23,42,0.88) 0%,rgba(30,41,59,0.82) 100%),url('/assets/images/hero-bg-19.jpg') center/cover no-repeat;">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        <div class="absolute inset-0 texture-carbon opacity-10"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left">
@@ -86,7 +60,7 @@
                     </span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight hero-animate hero-animate-delay-2">
-                    Ремонт <span class="text-brand-orangetext-gradient">бытовой техники</span> на дому
+                    Ремонт <span class="text-brand-orange">бытовой техники</span> на дому
                 </h1>
                 <p class="text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed mb-12 hero-animate hero-animate-delay-2">
                     Бесплатная диагностика. <span class="text-white font-bold">Выезд за 60 минут</span>. 
@@ -179,7 +153,7 @@
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="scroll-reveal" data-delay="1"><div class="card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-time-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Выезд за 60 минут</h3><p class="text-slate-300 mb-4">Мастера во всех районах Москвы.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Среднее: 45 мин</p></div></div></div>
-                <div class="scroll-reveal" data-delay="2"><div class="card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-3xl mb-6 mx-auto group-hover:bg-green-500 group-hover:text-white transition-all"><i class="ri-settings-3-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Запчасти с собой</h3><p class="text-slate-300 mb-4">95% поломок чиним за 1 визит.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>95% за 1 визит</p></div></div></div>
+                <div class="scroll-reveal" data-delay="2"><div class="card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-3xl mb-6 mx-auto group-hover:bg-green-500 group-hover:text-white transition-all"><i class="ri-settings-3-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Запчасти с собой</h3><p class="text-slate-300 mb-4">До 95% поломок устраняем за 1 визит.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>До 95% заявок за 1 визит</p></div></div></div>
                 <div class="scroll-reveal" data-delay="3"><div class="card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-3xl mb-6 mx-auto group-hover:bg-blue-500 group-hover:text-white transition-all"><i class="ri-file-list-3-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Официальный договор</h3><p class="text-slate-300 mb-4">Гарантия 12 месяцев на работы.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Акт + гарантия</p></div></div></div>
                 <div class="scroll-reveal" data-delay="4"><div class="card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 text-3xl mb-6 mx-auto group-hover:bg-purple-500 group-hover:text-white transition-all"><i class="ri-money-cny-circle-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Честные цены</h3><p class="text-slate-300 mb-4">Фиксированная цена после диагностики.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Диагностика 0₽</p></div></div></div>
             </div>
@@ -282,7 +256,7 @@
                 </div>
                 <div class="mb-6">
                     <label class="block text-sm font-medium text-slate-700 mb-2">Что сломалось?</label>
-                    <input type="text" name="problem" placeholder="Не морозит, шумит.." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700">
+                    <input type="text" name="problem" placeholder="Опишите проблему, например: не сливает воду, шумит" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700">
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg">
                     <i class="ri-send-plane-line mr-2"></i>Оставить заявку — диагностика 0₽
