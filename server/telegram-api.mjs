@@ -1,5 +1,6 @@
 import http from 'http';
 import dns from 'dns';
+import https from 'https';
 
 dns.setDefaultResultOrder('ipv4first');
 
@@ -39,34 +40,50 @@ async function deliverToTelegram(message) {
     throw new Error('telegram_credentials_missing');
   }
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  const requestBody = JSON.stringify({
+    chat_id: CHAT_ID,
+    text: message,
+    parse_mode: 'Markdown',
+    disable_web_page_preview: true,
+  });
 
-  try {
-    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+  const payload = await new Promise((resolve, reject) => {
+    const req = https.request(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(requestBody),
       },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: message,
-        parse_mode: 'Markdown',
-        disable_web_page_preview: true,
-      }),
-      signal: controller.signal,
+      family: 4,
+      timeout: REQUEST_TIMEOUT_MS,
+    }, (res) => {
+      const chunks = [];
+      res.on('data', (chunk) => chunks.push(chunk));
+      res.on('end', () => {
+        const raw = Buffer.concat(chunks).toString('utf8');
+        try {
+          const parsed = raw ? JSON.parse(raw) : null;
+          if (res.statusCode !== 200 || !parsed?.ok) {
+            const detail = parsed?.description || `telegram_http_${res.statusCode || 0}`;
+            reject(new Error(detail));
+            return;
+          }
+          resolve(parsed);
+        } catch (error) {
+          reject(error);
+        }
+      });
     });
 
-    const payload = await response.json().catch(() => null);
-    if (!response.ok || !payload?.ok) {
-      const detail = payload?.description || `telegram_http_${response.status}`;
-      throw new Error(detail);
-    }
+    req.on('timeout', () => {
+      req.destroy(new Error('telegram_request_timeout'));
+    });
+    req.on('error', reject);
+    req.write(requestBody);
+    req.end();
+  });
 
-    return payload.result?.message_id ?? null;
-  } finally {
-    clearTimeout(timeout);
-  }
+  return payload.result?.message_id ?? null;
 }
 
 const server = http.createServer(async (req, res) => {
