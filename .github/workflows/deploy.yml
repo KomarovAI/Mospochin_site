@@ -59,9 +59,13 @@ jobs:
             "cat /var/www/mospochin-shared/current-content.sha256 2>/dev/null || true")"
           if [ "$local_hash" = "$remote_hash" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "local_hash=${local_hash}" >> "$GITHUB_OUTPUT"
+            echo "remote_hash=${remote_hash}" >> "$GITHUB_OUTPUT"
             echo "Deploy skipped: published content hash is unchanged."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "local_hash=${local_hash}" >> "$GITHUB_OUTPUT"
+            echo "remote_hash=${remote_hash:-none}" >> "$GITHUB_OUTPUT"
             echo "Deploy required: content hash changed."
           fi
 
@@ -92,3 +96,20 @@ jobs:
           grep -E '^(assets/.*|styles.*\.css|main\.js|telegram-form\.js)$' .deploy/include-files.txt | head -20 | while IFS= read -r asset; do
             curl -fsSI --max-time 10 "https://mospochin.ru/${asset}" >/dev/null
           done
+
+      - name: Write deploy summary
+        if: always()
+        run: |
+          {
+            echo "## Mospochin deploy"
+            echo
+            echo "| Field | Value |"
+            echo "| --- | --- |"
+            echo "| Commit | \`${GITHUB_SHA}\` |"
+            echo "| Run | \`${GITHUB_RUN_ID}\` / \`${GITHUB_RUN_NUMBER}\` |"
+            echo "| Deploy skipped | \`${{ steps.deploy_hash.outputs.skip || 'unknown' }}\` |"
+            echo "| Local content hash | \`${{ steps.deploy_hash.outputs.local_hash || 'unknown' }}\` |"
+            echo "| Remote content hash | \`${{ steps.deploy_hash.outputs.remote_hash || 'unknown' }}\` |"
+            echo "| Manifest files | \`$(wc -l < .deploy/include-files.txt)\` |"
+            echo "| Manifest assets | \`$(grep -c '^assets/' .deploy/include-files.txt || true)\` |"
+          } >> "$GITHUB_STEP_SUMMARY"
