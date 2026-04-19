@@ -47,9 +47,28 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p "${{ secrets.DEPLOY_PORT }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
 
+      - name: Prepare release
+        run: |
+          release_name="${GITHUB_SHA}-${GITHUB_RUN_ID}"
+          release_path="${{ secrets.DEPLOY_PATH }}/${release_name}"
+          mkdir -p .deploy
+          printf '%s\n' "${release_path}" > .deploy/release_path
+          cat > version.json <<JSON
+          {
+            "commit": "${GITHUB_SHA}",
+            "run_id": "${GITHUB_RUN_ID}",
+            "run_number": "${GITHUB_RUN_NUMBER}",
+            "deployed_at": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          }
+          JSON
+          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "mkdir -p '${release_path}'"
+
       - name: Deploy files
         timeout-minutes: 5
         run: |
+          release_path="$(cat .deploy/release_path)"
           rsync -az --delete \
             --exclude '.git/' \
             --exclude '.github/' \
@@ -59,11 +78,29 @@ jobs:
             --exclude '.env.*' \
             --exclude '*.log' \
             -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.DEPLOY_PORT }} -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=2" \
-            ./ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/"
+            ./ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${release_path}/"
 
-      - name: Verify deployed site
+      - name: Activate release
         timeout-minutes: 2
         run: |
+          release_path="$(cat .deploy/release_path)"
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "nginx -t && curl -fsSI --max-time 10 https://mospochin.ru/ >/dev/null"
+            "sudo /usr/local/sbin/mospochin-activate-release '${release_path}' && sudo /usr/local/sbin/mospochin-prune-releases 5"
+
+      - name: Smoke test public pages
+        timeout-minutes: 2
+        run: |
+          pages=(
+            "/"
+            "/uslugi.html"
+            "/contact.html"
+            "/about.html"
+            "/bytovaya-index.html"
+            "/bytovaya-uslugi.html"
+            "/holodilnoe-oborudovanie.html"
+            "/version.json"
+          )
+          for page in "${pages[@]}"; do
+            curl -fsSI --max-time 10 "https://mospochin.ru${page}" >/dev/null
+          done
