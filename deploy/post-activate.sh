@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+RELEASE_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+cd "${RELEASE_ROOT}"
+
 SERVICE_NAME="mospochin-telegram-api.service"
 UNIT_SOURCE="deploy/systemd/${SERVICE_NAME}"
 UNIT_TARGET="/etc/systemd/system/${SERVICE_NAME}"
