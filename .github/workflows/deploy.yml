@@ -87,7 +87,7 @@ jobs:
             tar -xzf '${upload_path}/release.tar.gz' -C \"\$unpacked\"
             current=\$(readlink -f /var/www/mospochin-current || true)
             if [ -n \"\$current\" ] && [ -d \"\$current\" ]; then
-              rsync -a --delete --link-dest=\"\$current\" \"\$unpacked\"/ '${release_path}'/
+              rsync -a --checksum --delete --link-dest=\"\$current\" \"\$unpacked\"/ '${release_path}'/
             else
               rsync -a --delete \"\$unpacked\"/ '${release_path}'/
             fi
