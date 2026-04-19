@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 const SITE_ROOT = path.resolve(__dirname, '..');
 const DEPLOY_DIR = path.join(SITE_ROOT, '.deploy');
 const MANIFEST_PATH = path.join(DEPLOY_DIR, 'include-files.txt');
+const allowGeneratedVersion = process.argv.includes('--allow-generated-version');
 
 const SOURCE_EXTENSIONS = new Set(['.html', '.css', '.js']);
 const ALWAYS_INCLUDE = [
@@ -91,6 +92,10 @@ function addFile(relativePath, reason) {
   }
 
   if (!exists(normalized)) {
+    if (normalized === 'version.json' && allowGeneratedVersion) {
+      included.add(normalized);
+      return;
+    }
     errors.push(`${reason}: referenced file is missing: ${normalized}`);
     return;
   }

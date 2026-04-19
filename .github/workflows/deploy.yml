@@ -61,28 +61,21 @@ jobs:
             "deployed_at": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
           }
           JSON
+          node tools/generate-deploy-manifest.mjs --allow-generated-version
+          rm -rf .deploy/package
+          mkdir -p .deploy/package
+          rsync -a --files-from=.deploy/include-files.txt ./ .deploy/package/
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "current=\$(readlink -f /var/www/mospochin-current || true); if [ -n \"\$current\" ] && [ -d \"\$current\" ]; then cp -al \"\$current\" '${release_path}'; else mkdir -p '${release_path}'; fi"
+            "rm -rf '${release_path}' && mkdir -p '${release_path}'"
 
       - name: Deploy files
         timeout-minutes: 5
         run: |
           release_path="$(cat .deploy/release_path)"
-          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
-            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "find '${release_path}/assets' -type f -delete 2>/dev/null || true"
           rsync -az --delete \
-            --files-from=.deploy/include-files.txt \
-            --exclude '.git/' \
-            --exclude '.github/' \
-            --exclude '.qwen/' \
-            --exclude 'node_modules/' \
-            --exclude '.env' \
-            --exclude '.env.*' \
-            --exclude '*.log' \
             -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.DEPLOY_PORT }} -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=2" \
-            ./ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${release_path}/"
+            .deploy/package/ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${release_path}/"
 
       - name: Activate release
         timeout-minutes: 2
