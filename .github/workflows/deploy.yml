@@ -3,6 +3,18 @@ name: Deploy to VPS
 on:
   push:
     branches: [main]
+    paths:
+      - "**/*.html"
+      - "assets/**"
+      - "data/**"
+      - "tools/**"
+      - "main.js"
+      - "telegram-form.js"
+      - "styles.css"
+      - "sitemap.xml"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 concurrency:
