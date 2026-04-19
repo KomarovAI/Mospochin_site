@@ -70,10 +70,10 @@ jobs:
             "rm -rf '${release_path}' && mkdir -p '${release_path}'"
 
       - name: Deploy files
-        timeout-minutes: 5
+        timeout-minutes: 15
         run: |
           release_path="$(cat .deploy/release_path)"
-          rsync -az --delete \
+          rsync -a --delete --info=stats2,progress2 \
             -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.DEPLOY_PORT }} -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=2" \
             .deploy/package/ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${release_path}/"
 
