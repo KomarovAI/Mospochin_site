@@ -67,6 +67,17 @@ jobs:
           rm -rf .deploy/package
           mkdir -p .deploy/package
           rsync -a --files-from=.deploy/include-files.txt ./ .deploy/package/
+          while IFS= read -r file; do
+            [ -f ".deploy/package/$file" ] || continue
+            if [ "$file" = "version.json" ]; then
+              touch -d "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" ".deploy/package/$file"
+            else
+              timestamp="$(git log -1 --format=%cI -- "$file" 2>/dev/null || true)"
+              if [ -n "$timestamp" ]; then
+                touch -d "$timestamp" ".deploy/package/$file"
+              fi
+            fi
+          done < .deploy/include-files.txt
           tar -C .deploy/package -czf .deploy/release.tar.gz .
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
@@ -87,7 +98,7 @@ jobs:
             tar -xzf '${upload_path}/release.tar.gz' -C \"\$unpacked\"
             current=\$(readlink -f /var/www/mospochin-current || true)
             if [ -n \"\$current\" ] && [ -d \"\$current\" ]; then
-              rsync -a --checksum --delete --link-dest=\"\$current\" \"\$unpacked\"/ '${release_path}'/
+              rsync -a --delete --link-dest=\"\$current\" \"\$unpacked\"/ '${release_path}'/
             else
               rsync -a --delete \"\$unpacked\"/ '${release_path}'/
             fi
