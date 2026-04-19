@@ -4,7 +4,10 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const SITE_ROOT = path.resolve(__dirname, '..');
+const rootArgIndex = process.argv.indexOf('--root');
+const SITE_ROOT = rootArgIndex >= 0
+  ? path.resolve(process.argv[rootArgIndex + 1] ?? '.')
+  : path.resolve(__dirname, '..');
 const DEPLOY_DIR = path.join(SITE_ROOT, '.deploy');
 const MANIFEST_PATH = path.join(DEPLOY_DIR, 'include-files.txt');
 const allowGeneratedVersion = process.argv.includes('--allow-generated-version');

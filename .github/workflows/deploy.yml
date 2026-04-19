@@ -47,70 +47,12 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p "${{ secrets.DEPLOY_PORT }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Prepare release
-        run: |
-          release_name="${GITHUB_SHA}-${GITHUB_RUN_ID}"
-          release_path="${{ secrets.DEPLOY_PATH }}/${release_name}"
-          upload_path="${{ secrets.DEPLOY_PATH }}/.upload-${release_name}"
-          mkdir -p .deploy
-          printf '%s\n' "${release_path}" > .deploy/release_path
-          printf '%s\n' "${upload_path}" > .deploy/upload_path
-          cat > version.json <<JSON
-          {
-            "commit": "${GITHUB_SHA}",
-            "run_id": "${GITHUB_RUN_ID}",
-            "run_number": "${GITHUB_RUN_NUMBER}",
-            "deployed_at": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          }
-          JSON
-          node tools/generate-deploy-manifest.mjs --allow-generated-version
-          rm -rf .deploy/package
-          mkdir -p .deploy/package
-          rsync -a --files-from=.deploy/include-files.txt ./ .deploy/package/
-          while IFS= read -r file; do
-            [ -f ".deploy/package/$file" ] || continue
-            if [ "$file" = "version.json" ]; then
-              touch -d "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" ".deploy/package/$file"
-            else
-              timestamp="$(git log -1 --format=%cI -- "$file" 2>/dev/null || true)"
-              if [ -n "$timestamp" ]; then
-                touch -d "$timestamp" ".deploy/package/$file"
-              fi
-            fi
-          done < .deploy/include-files.txt
-          tar -C .deploy/package -czf .deploy/release.tar.gz .
-          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
-            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "rm -rf '${release_path}' '${upload_path}' && mkdir -p '${upload_path}'"
-
-      - name: Deploy files
-        timeout-minutes: 5
-        run: |
-          release_path="$(cat .deploy/release_path)"
-          upload_path="$(cat .deploy/upload_path)"
-          scp -i ~/.ssh/deploy_key -P "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=2 \
-            .deploy/release.tar.gz "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${upload_path}/release.tar.gz"
-          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
-            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "set -eu
-            unpacked='${upload_path}/unpacked'
-            mkdir -p \"\$unpacked\" '${release_path}'
-            tar -xzf '${upload_path}/release.tar.gz' -C \"\$unpacked\"
-            current=\$(readlink -f /var/www/mospochin-current || true)
-            if [ -n \"\$current\" ] && [ -d \"\$current\" ]; then
-              rsync -a --delete --link-dest=\"\$current\" \"\$unpacked\"/ '${release_path}'/
-            else
-              rsync -a --delete \"\$unpacked\"/ '${release_path}'/
-            fi
-            rm -rf '${upload_path}'"
-
-      - name: Activate release
+      - name: Deploy on VPS
         timeout-minutes: 2
         run: |
-          release_path="$(cat .deploy/release_path)"
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "sudo /usr/local/sbin/mospochin-activate-release '${release_path}' && sudo /usr/local/sbin/mospochin-prune-releases 2"
+            "sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}'"
 
       - name: Smoke test public pages
         timeout-minutes: 2
