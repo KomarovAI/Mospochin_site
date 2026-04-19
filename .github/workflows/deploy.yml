@@ -37,7 +37,7 @@ jobs:
           node-version: 24
 
       - name: Validate site
-        run: npm run validate:site
+        run: npm run lint
 
       - name: Setup SSH
         run: |
@@ -69,7 +69,11 @@ jobs:
         timeout-minutes: 5
         run: |
           release_path="$(cat .deploy/release_path)"
+          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "find '${release_path}/assets' -type f -delete 2>/dev/null || true"
           rsync -az --delete \
+            --files-from=.deploy/include-files.txt \
             --exclude '.git/' \
             --exclude '.github/' \
             --exclude '.qwen/' \

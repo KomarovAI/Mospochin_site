@@ -8,7 +8,8 @@
     "normalize:html": "node tools/normalize-html.mjs",
     "sync:metadata": "node tools/sync-page-metadata.mjs",
     "generate:sitemap": "node tools/generate-sitemap.mjs",
+    "generate:deploy-manifest": "node tools/generate-deploy-manifest.mjs",
     "validate:site": "node tools/validate-site.mjs",
-    "lint": "npm run validate:site"
+    "lint": "npm run validate:site && npm run generate:deploy-manifest"
   }
 }
