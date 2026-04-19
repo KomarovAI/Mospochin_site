@@ -3,10 +3,52 @@
 const FORM_MIN_FILL_MS = 1500;
 const FORM_RATE_LIMIT_MS = 60000;
 const FORM_MAX_PROBLEM_LENGTH = 500;
+let runtimeConfigPromise = null;
+
+function getRuntimeConfigSource() {
+    const endpointMeta = document.querySelector('meta[name="mospochin:telegram-endpoint"]')?.content?.trim() || '';
+    const endpointWindow = window.__MOSPOCHIN_RUNTIME__?.telegramFormEndpoint?.trim() || '';
+    return {
+        telegramFormEndpoint: endpointWindow || endpointMeta || ''
+    };
+}
+
+async function loadRuntimeConfig() {
+    if (!runtimeConfigPromise) {
+        runtimeConfigPromise = (async () => {
+            const source = getRuntimeConfigSource();
+            if (source.telegramFormEndpoint) return source;
+
+            try {
+                const response = await fetch('/data/runtime-config.json', {
+                    cache: 'no-store'
+                });
+                if (!response.ok) {
+                    throw new Error(`runtime-config ${response.status}`);
+                }
+                const json = await response.json();
+                return {
+                    telegramFormEndpoint: String(json.telegramFormEndpoint || '').trim()
+                };
+            } catch (error) {
+                console.error('Runtime config unavailable:', error.message);
+                return source;
+            }
+        })();
+    }
+
+    return runtimeConfigPromise;
+}
 
 async function sendToTelegram(formData) {
     const page = window.location.pathname.split('/').pop() || 'index.html';
     const source = page.includes('bytovaya') ? 'B2C (Бытовая)' : 'B2B (Рестораны)';
+    const runtimeConfig = await loadRuntimeConfig();
+    const endpoint = runtimeConfig.telegramFormEndpoint;
+
+    if (!endpoint) {
+        throw new Error('Telegram form endpoint is not configured');
+    }
 
     let message = `🔔 *НОВАЯ ЗАЯВКА с сайта MosPochin*\n\n`;
     message += `📄 *Источник:* ${source} (${page})\n`;
@@ -17,7 +59,7 @@ async function sendToTelegram(formData) {
     message += `🕐 *Время:* ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}`;
 
     try {
-        const resp = await fetch('/api/send-telegram', {
+        const resp = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message })
@@ -224,5 +266,6 @@ function initTelegramForms() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    loadRuntimeConfig();
     setTimeout(initTelegramForms, 200);
 });

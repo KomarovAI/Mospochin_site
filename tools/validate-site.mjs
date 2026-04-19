@@ -7,8 +7,15 @@ const __dirname = path.dirname(__filename);
 const SITE_ROOT = path.resolve(__dirname, '..');
 const CANONICAL_FORM_SCRIPT = 'telegram-form.js';
 const LEGACY_FORM_SCRIPT = 'assets/js/telegram-form.js';
+const TELEGRAM_API_SCRIPT = 'server/telegram-api.mjs';
+const TELEGRAM_API_UNIT = 'deploy/systemd/mospochin-telegram-api.service';
+const TELEGRAM_API_ENV_TEMPLATE = 'deploy/env/telegram.env.example';
+const TELEGRAM_API_HOOK = 'deploy/post-activate.sh';
 const metadata = JSON.parse(
   fs.readFileSync(path.join(SITE_ROOT, 'data/page-metadata.json'), 'utf8')
+);
+const runtimeConfig = JSON.parse(
+  fs.readFileSync(path.join(SITE_ROOT, 'data/runtime-config.json'), 'utf8')
 );
 const sitemapXml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
 
@@ -125,15 +132,59 @@ for (const fileName of htmlFiles) {
 
 const canonicalFormScriptPath = path.join(SITE_ROOT, CANONICAL_FORM_SCRIPT);
 const legacyFormScriptPath = path.join(SITE_ROOT, LEGACY_FORM_SCRIPT);
+const runtimeConfigPath = path.join(SITE_ROOT, 'data/runtime-config.json');
+const telegramApiScriptPath = path.join(SITE_ROOT, TELEGRAM_API_SCRIPT);
+const telegramApiUnitPath = path.join(SITE_ROOT, TELEGRAM_API_UNIT);
+const telegramApiEnvTemplatePath = path.join(SITE_ROOT, TELEGRAM_API_ENV_TEMPLATE);
+const telegramApiHookPath = path.join(SITE_ROOT, TELEGRAM_API_HOOK);
 
 if (!fs.existsSync(canonicalFormScriptPath)) {
   errors.push(`${CANONICAL_FORM_SCRIPT}: canonical form script missing`);
+}
+
+if (!fs.existsSync(runtimeConfigPath)) {
+  errors.push('data/runtime-config.json: runtime config missing');
+}
+
+if (typeof runtimeConfig.telegramFormEndpoint !== 'string' || !runtimeConfig.telegramFormEndpoint.trim()) {
+  errors.push('data/runtime-config.json: telegramFormEndpoint must be a non-empty string');
+}
+
+if (!runtimeConfig.telegramFormEndpoint.startsWith('/')) {
+  errors.push('data/runtime-config.json: telegramFormEndpoint must be an absolute site path');
+}
+
+if (runtimeConfig.telegramFormEndpoint !== '/api/send-telegram') {
+  errors.push('data/runtime-config.json: telegramFormEndpoint must stay aligned with repo backend route /api/send-telegram');
 }
 
 if (fs.existsSync(legacyFormScriptPath)) {
   errors.push(
     `${LEGACY_FORM_SCRIPT}: legacy duplicate exists; keep a single source of truth at ${CANONICAL_FORM_SCRIPT}`
   );
+}
+
+if (!fs.existsSync(telegramApiScriptPath)) {
+  errors.push(`${TELEGRAM_API_SCRIPT}: production telegram API script missing`);
+}
+
+if (!fs.existsSync(telegramApiUnitPath)) {
+  errors.push(`${TELEGRAM_API_UNIT}: systemd unit missing`);
+}
+
+if (!fs.existsSync(telegramApiEnvTemplatePath)) {
+  errors.push(`${TELEGRAM_API_ENV_TEMPLATE}: environment template missing`);
+}
+
+if (!fs.existsSync(telegramApiHookPath)) {
+  errors.push(`${TELEGRAM_API_HOOK}: post-activate hook missing`);
+}
+
+if (fs.existsSync(telegramApiHookPath)) {
+  const hookMode = fs.statSync(telegramApiHookPath).mode & 0o777;
+  if ((hookMode & 0o111) === 0) {
+    errors.push(`${TELEGRAM_API_HOOK}: must be executable`);
+  }
 }
 
 if (errors.length) {

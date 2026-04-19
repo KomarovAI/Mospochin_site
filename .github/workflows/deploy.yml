@@ -88,13 +88,31 @@ jobs:
             "/bytovaya-index.html"
             "/bytovaya-uslugi.html"
             "/holodilnoe-oborudovanie.html"
+            "/data/runtime-config.json"
             "/version.json"
           )
           for page in "${pages[@]}"; do
             curl -fsSI --max-time 10 "https://mospochin.ru${page}" >/dev/null
           done
+          endpoint="$(node -e "const fs=require('fs');const cfg=JSON.parse(fs.readFileSync('data/runtime-config.json','utf8'));if(!cfg.telegramFormEndpoint)process.exit(1);process.stdout.write(cfg.telegramFormEndpoint)")"
+          curl -fsS --max-time 10 -X POST \
+            -H 'Content-Type: application/json' \
+            -d '{"message":"mospochin deploy smoke test"}' \
+            "https://mospochin.ru${endpoint}" >/dev/null
           grep -E '^(assets/.*|styles.*\.css|main\.js|telegram-form\.js)$' .deploy/include-files.txt | head -20 | while IFS= read -r asset; do
             curl -fsSI --max-time 10 "https://mospochin.ru/${asset}" >/dev/null
+          done
+
+      - name: Verify backend deploy artifacts are present in manifest
+        run: |
+          required=(
+            "server/telegram-api.mjs"
+            "deploy/post-activate.sh"
+            "deploy/systemd/mospochin-telegram-api.service"
+            "deploy/env/telegram.env.example"
+          )
+          for path in "${required[@]}"; do
+            grep -Fx "$path" .deploy/include-files.txt >/dev/null
           done
 
       - name: Write deploy summary

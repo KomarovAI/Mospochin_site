@@ -5,6 +5,7 @@
   "description": "Static marketing site for MosPochin",
   "scripts": {
     "dev": "node tools/dev-server.mjs",
+    "dev:api": "node server/telegram-api.mjs",
     "normalize:html": "node tools/normalize-html.mjs",
     "sync:metadata": "node tools/sync-page-metadata.mjs",
     "generate:sitemap": "node tools/generate-sitemap.mjs",
