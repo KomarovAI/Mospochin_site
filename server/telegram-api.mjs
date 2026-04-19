@@ -1,4 +1,7 @@
 import http from 'http';
+import dns from 'dns';
+
+dns.setDefaultResultOrder('ipv4first');
 
 const PORT = Number(process.env.PORT || 3010);
 const HOST = process.env.HOST || '127.0.0.1';
