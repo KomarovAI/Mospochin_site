@@ -9,6 +9,7 @@
     "sync:metadata": "node tools/sync-page-metadata.mjs",
     "generate:sitemap": "node tools/generate-sitemap.mjs",
     "generate:deploy-manifest": "node tools/generate-deploy-manifest.mjs",
+    "hash:deploy-content": "node tools/hash-deploy-content.mjs",
     "validate:site": "node tools/validate-site.mjs",
     "lint": "npm run validate:site && npm run generate:deploy-manifest"
   }
