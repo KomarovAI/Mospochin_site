@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
-<link rel="preload" href="styles-built.css" as="style">
-    <link rel="stylesheet" href="styles-built.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
-    <script src="main.js" defer></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Услуги по ремонту ресторанного оборудования — MosPochin | Цены</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
+
+    <title>Услуги по ремонту ресторанного оборудования — MosPochin | Цены</title>
     <meta name="description" content="Ремонт пароконвектоматов, плит, холодильного оборудования, посудомоек, грилей, фритюрниц, льдогенераторов. Гарантия 24 мес. Диагностика бесплатно при ремонте.">
     <meta property="og:title" content="Услуги по ремонту ресторанного оборудования — MosPochin | Цены">
     <meta property="og:description" content="Ремонт пароконвектоматов, плит, холодильного оборудования, посудомоек, грилей, фритюрниц, льдогенераторов. Гарантия 24 мес. Диагностика бесплатно при ремонте.">
@@ -37,8 +42,10 @@
     </script>
     <link rel="canonical" href="https://mspochin.ru/uslugi.html">
 </head>
+
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container" class="mt-12"></div>
+    <!-- Normalized layout shell: uslugi.html -->
+<div id="header-container" class="mt-12"></div>
     <nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-sm text-slate-500">
         <ol class="flex items-center gap-2">
             <li><a href="index.html" class="hover:text-brand-orange transition">Главная</a></li>
@@ -58,12 +65,13 @@
                     </span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight hero-animate hero-animate-delay-2">
-                    Услуги и <span class="text-brand-orange">цены</span> для ресторанов
+                    Услуги и <span class="text-brand-orange">цены</span> на ремонт ресторанного оборудования
                 </h1>
                 <p class="text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed mb-12 hero-animate hero-animate-delay-2">
-                    Профессиональный ремонт <span class="text-white font-bold">ресторанного оборудования</span>.
-                    Работаем с <span class="text-white font-bold">ресторанами, столовыми, кафе</span>.
-                    Минимизируем простой вашей кухни.
+                    Страница для тех, кому нужен не “мастер когда-нибудь”, а понятный сервис:
+                    <span class="text-white font-bold">быстрый выезд</span>,
+                    <span class="text-white font-bold">согласование стоимости до ремонта</span>,
+                    <span class="text-white font-bold">документы и гарантия</span>.
                 </p>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
                     <div class="glass-card p-6 text-center hero-animate hero-animate-delay-2">
@@ -88,8 +96,8 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 hero-animate hero-animate-delay-4">
-                    <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Вызвать мастера</span></a>
-                    <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>WhatsApp</span></a>
+                    <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Получить срочный выезд</span></a>
+                    <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20ресторанного%20оборудования" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>Описать проблему в WhatsApp</span></a>
                 </div>
                 <div class="flex flex-wrap items-center justify-center gap-6 text-white/80 text-sm hero-animate hero-animate-delay-4">
                     <div class="flex items-center gap-2"><div class="flex text-yellow-400"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><span class="font-bold text-white">4.9/5</span></div>
@@ -367,7 +375,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
                 <span class="inline-block bg-brand-orange/20 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">⭐ ПРЕИМУЩЕСТВА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Почему 500+ ресторанов работают с нами за 15 лет</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Почему Быстрый выезд, договор и понятная ответственность</h2>
                 <p class="text-slate-300 text-lg max-w-2xl mx-auto">Понимаем специфику ресторанного бизнеса</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -533,10 +541,37 @@
             </div>
         </div>
     </section>
-    <section class="py-32 lg:py-40 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-question-line mr-2"></i>FAQ</span>
+    <section class="py-24 lg:py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">БЫСТРЫЙ ВЫБОР</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Не знаете, какую услугу выбрать?</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Начните с симптома. Так проще понять срочность выезда и сразу перейти на нужную страницу или в заявку.</p>
+            </div>
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <a href="parokonvektomaty.html#request" class="card-brand bg-white p-6 rounded-2xl border-2 border-slate-100 hover:border-brand-orange transition-all scroll-reveal" data-delay="1">
+                    <div class="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-4"><i class="ri-fire-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Пароконвектомат выдает ошибку</h3>
+                    <p class="text-slate-600 text-sm">Rational, Unox, Electrolux: не греет, не набирает пар, останавливает программу.</p>
+                </a>
+                <a href="holodilnoe-oborudovanie.html#request" class="card-brand bg-white p-6 rounded-2xl border-2 border-slate-100 hover:border-brand-orange transition-all scroll-reveal" data-delay="2">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-4"><i class="ri-snowy-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Температура уходит вверх</h3>
+                    <p class="text-slate-600 text-sm">Шкаф, стол, витрина или камера плохо держит холод, обмерзает или течет.</p>
+                </a>
+                <a href="posudomoechnye-mashiny.html#request" class="card-brand bg-white p-6 rounded-2xl border-2 border-slate-100 hover:border-brand-orange transition-all scroll-reveal" data-delay="3">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-4"><i class="ri-drop-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Посудомойка встала в смену</h3>
+                    <p class="text-slate-600 text-sm">Не сливает, не греет воду, оставляет налет или останавливает цикл мойки.</p>
+                </a>
+                <a href="#request" class="card-brand bg-white p-6 rounded-2xl border-2 border-slate-100 hover:border-brand-orange transition-all scroll-reveal" data-delay="4">
+                    <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl mb-4"><i class="ri-tools-line"></i></div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Не уверены в типе поломки</h3>
+                    <p class="text-slate-600 text-sm">Опишите оборудование и симптом. Подскажем, какой инженер нужен и что подготовить.</p>
+                </a>
+            </div>
+        </div>
+    </section>
     <section class="py-24 lg:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
@@ -564,17 +599,17 @@
                         <i class="ri-bill-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-bold text-brand-blue mb-3">Честная цена</h3>
-                    <p class="text-slate-600">Никаких скрытых платежей. Диагностика бесплатно при ремонте. Согласуем стоимость до начала работ.</p>
+                    <p class="text-slate-600">Никаких скрытых платежей. Сначала диагностика и объяснение причины, потом согласование стоимости, и только после этого — ремонт.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
+    <section id="request" class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ЗАЯВКА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Перезвоним за 5 минут</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Получите консультацию по поломке</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Оставьте номер и коротко опишите проблему. Мы перезвоним, сориентируем по порядку действий и подскажем, какой выезд нужен.</p>
             </div>
             <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -592,9 +627,9 @@
                     <input type="text" name="problem" placeholder="Опишите проблему..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700">
                 </div>
                 <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg">
-                    <i class="ri-send-plane-line mr-2"></i>Отправить заявку
+                    <i class="ri-send-plane-line mr-2"></i>Получить консультацию
                 </button>
-                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
+                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Используем контакты только для связи по этой заявке</p>
             </form>
         </div>
     </section>
@@ -636,6 +671,6 @@
     <i class="ri-phone-line text-xl"></i>
   </a>
 </div>
-    <script src="telegram-form.js"></script>
 </body>
+
 </html>

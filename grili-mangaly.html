@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
-<link rel="preload" href="styles-built.css" as="style">
-    <link rel="stylesheet" href="styles-built.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
-    <script src="main.js" defer></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
+
     <title>Ремонт грилей, фритюрниц и кухонной мелочёвки — MosPochin | от 500₽</title>
     <meta name="description" content="Ремонт фритюрниц, контактных грилей, угольных грилей, саламандр, мармитов, миксеров, блендеров. Выезд за 45 мин. Гарантия 24 мес.">
     <meta property="og:title" content="Ремонт грилей, фритюрниц и кухонной мелочёвки — MosPochin | от 500₽">
@@ -55,10 +60,11 @@
       }
     }
     </script>
-    <script src="telegram-form.js" defer></script>
 </head>
+
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container" class="mt-12"></div>
+    <!-- Normalized layout shell: grili-mangaly.html -->
+<div id="header-container" class="mt-12"></div>
 
     <!-- BREADCRUMB -->
     <nav class="bg-slate-50 border-b border-slate-100 py-3" aria-label="Breadcrumb">
@@ -87,7 +93,7 @@
                         Кухонное оборудование сломалось? <span class="text-orange-400">Починим за 1-3 часа</span>
                     </h1>
                     <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        <span class="text-white font-bold">Бесплатная диагностика</span> на территории клиента.
+                        <span class="text-white font-bold">Диагностика при ремонте</span> на территории клиента.
                         Ремонт по <span class="text-white font-bold">фиксированной цене</span>. Оригинальные запчасти.
                     </p>
                     <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8">
@@ -237,7 +243,7 @@
                 <div class="scroll-reveal" data-delay="2">
                     <div class="card-brand bg-gradient-to-br from-red-50 to-orange-50 p-6 lg:p-8 rounded-2xl border-2 border-red-100 shadow-sm hover:shadow-xl hover:border-red-300 transition-all h-full">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl icon-spring"><i class="ri-fire-line"></i></div>
+                            <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-orange-600 text-2xl icon-spring"><i class="ri-fire-line"></i></div>
                             <h3 class="text-xl font-display font-extrabold text-brand-blue">Контактные грили</h3>
                         </div>
                         <p class="text-slate-600 mb-4">Двусторонний нагрев для сэндвичей, стейков, бургеров. Рифлёные плиты. 200-300°C. Быстрый прогрев 5-10 мин.</p>
@@ -416,15 +422,15 @@
                     <p class="text-white/90 text-base">Мастер приедет за 45 минут. 97% ремонтов — за 1 визит. Запчасти с собой.</p>
                 </div>
                 <div class="scroll-reveal text-center">
-                    <p class="text-white/80 text-sm mb-2 font-semibold">СКИДКА ДЕЙСТВУЕТ ЕЩЁ:</p>
+                    <p class="text-white/80 text-sm mb-2 font-semibold">Горячее окно выезда ещё:</p>
                     <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 border-2 border-white/30">
                         <span class="text-4xl font-display font-extrabold" id="cd-min">59</span>
                         <span class="text-3xl font-display font-extrabold text-white/60">:</span>
                         <span class="text-4xl font-display font-extrabold" id="cd-sec">59</span>
                     </div>
-                    <p class="text-white/70 text-xs mt-2">Бесплатная диагностика при заявке сейчас</p>
-                    <a href="tel:89990057172" class="mt-4 inline-block bg-white text-red-600 hover:bg-slate-100 px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105">
-                        <i class="ri-phone-line mr-2"></i>Позвонить сейчас
+                    <p class="text-white/70 text-xs mt-2">Диагностика при ремонте при заявке сейчас</p>
+                    <a href="tel:89990057172" class="mt-4 inline-block bg-white text-brand-blue hover:bg-slate-100 px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                        <i class="ri-phone-line mr-2"></i>Поднять горячий цех
                     </a>
                 </div>
             </div>
@@ -562,7 +568,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-trophy-line mr-2"></i>СРАВНЕНИЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему рестораны выбирают MosPochin</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему рестораны возвращаются к MosPochin</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Объективное сравнение с другими сервисами</p>
             </div>
             <div class="card-brand bg-white rounded-2xl shadow-lg overflow-hidden scroll-reveal">
@@ -714,8 +720,8 @@
             <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
                 <div class="scroll-reveal bg-gradient-to-br from-green-50 to-emerald-50 p-6 lg:p-8 rounded-2xl border-2 border-green-200 text-center" data-delay="1">
                     <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mx-auto mb-4"><i class="ri-file-search-line"></i></div>
-                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Диагностика 0₽</h3>
-                    <p class="text-slate-600">Бесплатная диагностика при заказе ремонта.</p>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Диагностика при ремонте</h3>
+                    <p class="text-slate-600">Диагностика при ремонте при заказе ремонта.</p>
                 </div>
                 <div class="scroll-reveal bg-gradient-to-br from-blue-50 to-indigo-50 p-6 lg:p-8 rounded-2xl border-2 border-blue-200 text-center" data-delay="2">
                     <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mx-auto mb-4"><i class="ri-shield-check-line"></i></div>
@@ -814,7 +820,7 @@
     <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
             <h2 class="text-3xl lg:text-5xl font-display font-extrabold mb-6 leading-tight">Восстановим кухню за 1-3 часа</h2>
-            <p class="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">Бесплатная диагностика. Оригинальные запчасти. Гарантия 24 месяца.</p>
+            <p class="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">Диагностика при ремонте. Оригинальные запчасти. Гарантия 24 месяца.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="tel:89990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl transform hover:-translate-y-1 flex items-center gap-2">
                     <i class="ri-phone-line"></i><span>8 (999) 005-71-72</span>
@@ -827,7 +833,7 @@
     </section>
 
     <!-- SECTION 19: ФОРМА -->
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
+    <section id="request" class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-green-100 text-green-700 px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">БЕСПЛАТНАЯ ДИАГНОСТИКА</span>
@@ -844,7 +850,7 @@
                     <div><label class="block text-sm font-medium text-slate-700 mb-2">Что случилось?</label><input type="text" name="problem" placeholder="Не греет, ошибка E03" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
-                    <i class="ri-send-plane-line mr-2"></i>Отправить заявку — диагностика 0₽
+                    <i class="ri-send-plane-line mr-2"></i>Отправить заявку — диагностика при ремонте
                 </button>
                 <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
             </form>
@@ -916,4 +922,5 @@
     })();
     </script>
 </body>
+
 </html>

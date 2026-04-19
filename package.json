@@ -1,0 +1,14 @@
+{
+  "name": "mospochin-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static marketing site for MosPochin",
+  "scripts": {
+    "dev": "node tools/dev-server.mjs",
+    "normalize:html": "node tools/normalize-html.mjs",
+    "sync:metadata": "node tools/sync-page-metadata.mjs",
+    "generate:sitemap": "node tools/generate-sitemap.mjs",
+    "validate:site": "node tools/validate-site.mjs",
+    "lint": "npm run validate:site"
+  }
+}

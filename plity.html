@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
-<link rel="preload" href="styles-built.css" as="style">
-    <link rel="stylesheet" href="styles-built.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
-    <script src="main.js" defer></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Ремонт плит и духовок в Москве — MosPochin | от 890₽</title>
-    <meta name="description" content="Ремонт газовых, электрических и индукционных плит и духовок на дому. Bosch, Gorenje, Electrolux. Бесплатная диагностика. Гарантия 12 мес.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
+
+    <title>Ремонт плит и духовок в Москве — MosPochin | от 890₽</title>
+    <meta name="description" content="Ремонт газовых, электрических и индукционных плит и духовок на дому. Bosch, Gorenje, Electrolux. Диагностика при ремонте. Гарантия 12 мес.">
     <meta property="og:title" content="Ремонт плит и духовок в Москве — MosPochin | от 890₽">
-    <meta property="og:description" content="Ремонт газовых, электрических и индукционных плит и духовок на дому. Bosch, Gorenje, Electrolux. Бесплатная диагностика. Гарантия 12 мес.">
+    <meta property="og:description" content="Ремонт газовых, электрических и индукционных плит и духовок на дому. Bosch, Gorenje, Electrolux. Диагностика при ремонте. Гарантия 12 мес.">
     <meta property="og:image" content="https://mspochin.ru/og-image.svg">
     <meta property="og:url" content="https://mspochin.ru/plity.html">
     <meta property="og:type" content="website">
@@ -23,7 +28,7 @@
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Ремонт плит и духовок",
-      "description": "Профессиональный ремонт газовых, электрических и индукционных плит и духовок на дому в Москве. Выезд за 60 минут, диагностика 0₽.",
+      "description": "Профессиональный ремонт газовых, электрических и индукционных плит и духовок на дому в Москве. Выезд за 60 минут, диагностика при ремонте.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "MosPochin",
@@ -49,17 +54,77 @@
         "@type": "Offer",
         "priceCurrency": "RUB",
         "price": "890",
-        "priceCurrency": "RUB",
         "availability": "https://schema.org/InStock"
       }
     }
     </script>
     <link rel="canonical" href="https://mspochin.ru/plity.html">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="telegram-form.js" defer></script>
+    <style>
+    body.page-plity h1 {
+      font-size: clamp(3rem, 4.7vw, 5rem);
+      line-height: 0.97;
+      letter-spacing: -0.07em;
+      max-width: 11.2ch;
+      text-wrap: balance;
+    }
+
+    body.page-plity h2.heading-reveal,
+    body.page-plity section h2 {
+      letter-spacing: -0.055em;
+      line-height: 1.04;
+    }
+
+    body.page-plity .font-display {
+      letter-spacing: -0.04em;
+    }
+
+    body.page-plity .btn-click {
+      letter-spacing: -0.02em;
+      font-size: 1.01rem;
+    }
+
+    body.page-plity .inline-flex.items-center.gap-2.bg-white\/10,
+    body.page-plity .inline-flex.items-center.gap-2.bg-slate-100,
+    body.page-plity .inline-block.bg-brand-orange\/10,
+    body.page-plity .inline-block.bg-green-100,
+    body.page-plity .inline-block.bg-red-100 {
+      letter-spacing: 0.035em;
+      font-size: 0.74rem;
+    }
+
+    body.page-plity .card-brand h3,
+    body.page-plity details summary,
+    body.page-plity .faq-item summary {
+      font-family: var(--font-display);
+      letter-spacing: -0.04em;
+      line-height: 1.12;
+    }
+
+    body.page-plity details p,
+    body.page-plity .card-brand p.text-slate-600,
+    body.page-plity .card-brand p.text-slate-500 {
+      letter-spacing: -0.01em;
+    }
+
+    body.page-plity .text-4xl.font-display,
+    body.page-plity .text-5xl.font-display,
+    body.page-plity .text-3xl.font-display {
+      letter-spacing: -0.06em;
+    }
+
+    @media (max-width: 768px) {
+      body.page-plity h1 {
+        font-size: clamp(2.35rem, 8.2vw, 3.5rem);
+        max-width: none;
+        line-height: 0.99;
+      }
+    }
+    </style>
 </head>
+
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container" class="mt-12"></div>
+    <!-- Normalized layout shell: plity.html -->
+<div id="header-container" class="mt-12"></div>
     <nav class="bg-slate-50 border-b border-slate-100 py-3" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
@@ -80,26 +145,16 @@
                         <i class="ri-fire-line"></i>
                         <span>РЕМОНТ БЫТОВЫХ ПЛИТ НА ДОМУ</span>
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">Ремонт плит и духовок в Москве — от 890₽</h1>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">Плита не греет, искрит или пахнет газом? Починим дома без навязанных замен</h1>
                     <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Бесплатная диагностика. <span class="text-white font-bold">Выезд за 60 минут</span>.
-                        <span class="text-white font-bold"><span class="counter" data-target="95" data-suffix="%">0</span></span> ремонтов за один визит.
+                        Когда плита не греет, выбивает автомат или появляется запах газа, нужна не лотерея, а понятный мастер. Сначала находим причину, согласовываем стоимость до ремонта и только потом начинаем работы.
                     </p>
-                    <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 mb-8">
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1">0₽</p><p class="text-slate-300 text-xs">Выезд</p></div>
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1"><span class="counter" data-target="95" data-suffix="%">0</span></p><p class="text-slate-300 text-xs">За 1 визит</p></div>
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1">12 мес</p><p class="text-slate-300 text-xs">Гарантия</p></div>
-                    </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
-                        <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Решим проблему быстро</span></a>
-                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20плиты" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>WhatsApp</span></a>
+                        <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Срочно вызвать мастера</span></a>
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20плиты" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>Описать проблему в WhatsApp</span></a>
                     </div>
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-white/80 text-sm">
-                        <div class="flex items-center gap-2"><div class="flex text-yellow-400"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><span class="font-bold text-white">4.9/5</span></div>
-                        <span class="text-white/40">|</span>
-                        <div class="flex items-center gap-2"><i class="ri-team-line text-brand-orange"></i><span><span class="counter" data-target="500" data-suffix="+">0</span> отзывов</span></div>
-                        <span class="text-white/40">|</span>
-                        <div class="flex items-center gap-2"><i class="ri-calendar-check-line text-brand-orange"></i><span>15+ лет опыта</span></div>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
+                        <div class="inline-flex items-center gap-2"><i class="ri-shield-check-line text-brand-orange"></i><span>Без вашего согласия ничего не меняем и не ремонтируем</span></div>
                     </div>
                 </div>
                 <div class="hidden lg:block scroll-reveal relative">
@@ -110,30 +165,10 @@
                         </div>
                     </div>
                     <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-lg z-20 max-w-xs card-brand"><div class="flex items-center gap-3"><div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"><i class="ri-checkbox-circle-line text-green-600 text-xl icon-spring"></i></div><div><p class="font-display font-extrabold text-brand-blue text-2xl">98%</p><p class="text-slate-500 text-xs">довольных клиентов</p></div></div></div>
-                    <div class="absolute -top-4 -right-4 bg-white p-4 rounded-2xl shadow-lg z-20 max-w-xs card-brand"><div class="flex text-yellow-400 text-xs mb-2"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><p class="text-slate-600 text-xs italic">«Заменили конфорку за 40 минут. Плита работает как новая!»</p><p class="text-slate-500 text-xs font-semibold mt-2">— Ольга, Бутово</p></div>
                 </div>
             </div>
         </div>
     </header>
-    <section class="py-6 bg-brand-orange relative overflow-hidden z-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
-                <div class="flex items-center gap-4"><div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0"><i class="ri-customer-service-2-line text-white text-2xl"></i></div><div><p class="text-white font-bold text-lg">Плита сломалась?</p><p class="text-white/90 text-sm">Мастер приедет через час</p></div></div>
-                <a href="tel:89990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105"><i class="ri-phone-line"></i><span>8 (999) 005-71-72</span></a>
-            </div>
-        </div>
-    </section>
-    <section class="py-6 bg-green-50 border-y-2 border-green-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white text-lg"><i class="ri-team-fill"></i></div><p class="text-slate-700 font-medium"><strong class="text-green-600">Мастера</strong> на выезде сегодня</p></div>
-                <span class="hidden md:inline text-slate-300 text-2xl">|</span>
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"><i class="ri-time-line"></i></div><p class="text-slate-700 font-medium">Выезжаем <strong class="text-green-600">сегодня</strong>, подберём ближайшее окно</p></div>
-                <span class="hidden md:inline text-slate-300 text-2xl">|</span>
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"><i class="ri-calendar-event-line"></i></div><p class="text-slate-700 font-medium">Работаем <strong class="text-green-600">ежедневно, без выходных</strong></p></div>
-            </div>
-        </div>
-    </section>
     <section class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -141,6 +176,37 @@
                 <div class="scroll-reveal text-center" data-delay="2"><p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="5000" data-suffix="+">0</span></p><p class="text-slate-600 font-medium">Ремонтов</p></div>
                 <div class="scroll-reveal text-center" data-delay="3"><p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="95" data-suffix="%">0</span></p><p class="text-slate-600 font-medium">За 1 визит</p></div>
                 <div class="scroll-reveal text-center" data-delay="4"><p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="12" data-suffix="">0</span></p><p class="text-slate-600 font-medium">Месяцев гарантия</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-white border-y border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ПОСЛЕ ВЫЕЗДА МАСТЕРА</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что вы получаете, кроме самого ремонта</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">С плитой и духовкой людям важен не только результат, но и ощущение безопасности, понятного процесса и нормального контроля цены.</p>
+            </div>
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
+                <div class="card-brand bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-4"><i class="ri-search-eye-line"></i></div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Понятную причину поломки</h3>
+                    <p class="text-slate-600">Не “тут всё серьёзно”, а нормальное объяснение, почему не греет, искрит или пахнет газом и что именно вышло из строя.</p>
+                </div>
+                <div class="card-brand bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-4"><i class="ri-price-tag-3-line"></i></div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Стоимость до начала работ</h3>
+                    <p class="text-slate-600">Сначала причина и сумма, потом ваше решение. Без навязанных замен и без внезапных доплат уже после разбора.</p>
+                </div>
+                <div class="card-brand bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-4"><i class="ri-file-text-line"></i></div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Акт и гарантию</h3>
+                    <p class="text-slate-600">После ремонта выдаём документы и фиксируем, что именно сделали, чтобы у вас на руках осталась не только рабочая техника, но и понятные бумаги.</p>
+                </div>
+                <div class="card-brand bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center text-cyan-600 text-2xl mb-4"><i class="ri-check-double-line"></i></div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Проверку результата</h3>
+                    <p class="text-slate-600">После работ мастер проверяет, что конфорки или духовка действительно работают штатно, а не просто меняет деталь и уезжает.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -235,7 +301,55 @@
     </section>
     <section class="py-16 lg:py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-slate-700 text-lg leading-relaxed">Ремонт газовых, электрических и индукционных плит и духовок Bosch, Gorenje, Electrolux, Gefest, Hansa на дому. Не греет, не включается, искрит — устраняем любые поломки. Бесплатная диагностика при ремонте.</p>
+            <p class="text-slate-700 text-lg leading-relaxed">Ремонт газовых, электрических и индукционных плит и духовок Bosch, Gorenje, Electrolux, Gefest, Hansa на дому. Если не греет, не включается, искрит или ведёт себя небезопасно, быстро находим причину, согласовываем стоимость и устраняем поломку без лишних замен.</p>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 scroll-reveal">
+                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4">МИНИ-КЕЙСЫ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Если хочется, можно быстро посмотреть похожие истории</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Это не обязательное чтение перед заявкой. Просто короткие бытовые случаи, чтобы понять, как похожие поломки выглядят в жизни.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 sm:gap-6">
+                <details class="bg-slate-50 rounded-3xl border border-slate-200 p-5 sm:p-6">
+                    <summary class="font-display font-extrabold text-brand-blue text-lg cursor-pointer">Газовая конфорка зажигалась через раз</summary>
+                    <p class="mt-4 text-slate-600">Сначала это выглядит как мелочь, но потом люди начинают щёлкать поджигом по много раз, а кухня превращается в нервную историю. Обычно это как раз тот случай, который лучше закрыть быстро и спокойно.</p>
+                </details>
+                <details class="bg-slate-50 rounded-3xl border border-slate-200 p-5 sm:p-6">
+                    <summary class="font-display font-extrabold text-brand-blue text-lg cursor-pointer">Духовка перестала держать температуру</summary>
+                    <p class="mt-4 text-slate-600">На старте кажется, что “просто дольше готовит”, а потом блюда уже откровенно не пропекаются. В таких случаях проблема часто уходит в нагрев или датчики, и тянуть обычно бессмысленно.</p>
+                </details>
+                <details class="bg-slate-50 rounded-3xl border border-slate-200 p-5 sm:p-6">
+                    <summary class="font-display font-extrabold text-brand-blue text-lg cursor-pointer">Плита выбивала автомат не каждый раз</summary>
+                    <p class="mt-4 text-slate-600">Самая неприятная история: “вроде работает, но иногда выбивает”. Это как раз тот случай, когда лучше не экспериментировать и не добивать узел лишними включениями.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-white border-y border-slate-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ЕСЛИ ХОТИТЕ РАЗОБРАТЬСЯ ПОДРОБНЕЕ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что обычно происходит до более дорогого ремонта плиты</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Основной путь до заявки мы не усложняем. Но если хотите понять ситуацию глубже, вот три сценария, которые люди чаще всего дотягивают до лишних трат или рисков.</p>
+            </div>
+            <div class="space-y-4 max-w-4xl mx-auto">
+                <details class="bg-white rounded-3xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+                    <summary class="font-display font-extrabold text-brand-blue text-lg cursor-pointer">Сначала одна конфорка грела хуже, потом перестала работать совсем</summary>
+                    <p class="mt-4 text-slate-600">Это очень типичный бытовой сценарий. Пока плита ещё как-то готовит, многие откладывают. Но часто на этой стадии ремонт проще, чем после окончательного отказа или попыток “дожать” конфорку повторными включениями.</p>
+                </details>
+                <details class="bg-white rounded-3xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+                    <summary class="font-display font-extrabold text-brand-blue text-lg cursor-pointer">Появился запах газа, но он не постоянный</summary>
+                    <p class="mt-4 text-slate-600">Самый опасный сценарий как раз тот, который люди называют “иногда пахнет”. Здесь не вопрос удобства, а вопрос безопасности. Если запах есть, лучше не тянуть и не превращать это в домашний эксперимент.</p>
+                </details>
+                <details class="bg-white rounded-3xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+                    <summary class="font-display font-extrabold text-brand-blue text-lg cursor-pointer">Когда уже честнее не чинить плиту или духовку</summary>
+                    <p class="mt-4 text-slate-600">Если технике много лет, внутри сильный износ, пошло несколько узлов сразу или восстановление уже спорно относительно цены и безопасности, честный мастер должен это сказать прямо до начала работ.</p>
+                </details>
+            </div>
         </div>
     </section>
 
@@ -265,14 +379,14 @@
                             <span class="text-2xl font-display font-extrabold" id="cd-min">59</span>
                             <span class="text-xs text-white/70 block">мин</span>
                         </div>
-                        <div class="text-2xl font-bold self-center">:</div>
+                        <div class="text-2xl sm:text-3xl font-bold self-center leading-none">:</div>
                         <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[50px]">
                             <span class="text-2xl font-display font-extrabold" id="cd-sec">59</span>
                             <span class="text-xs text-white/70 block">сек</span>
                         </div>
                     </div>
                 </div>
-                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-8 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
+                <a href="tel:89990057172" class="bg-white text-brand-blue hover:bg-slate-100 px-8 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
                     <i class="ri-phone-line"></i>
                     <span>Вызвать мастера (0₽)</span>
                 </a>
@@ -520,7 +634,7 @@
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">💰 ПРАЙС-ЛИСТ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Цены на ремонт плит и духовок</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Фиксированная стоимость после бесплатной диагностики</p>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Показываем ориентиры по типовым работам. Точную сумму называем только после диагностики на месте, чтобы не гадать по телефону и не навязывать лишние замены.</p>
             </div>
             <div class="max-w-3xl mx-auto">
                 <div class="card-brand bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden">
@@ -541,7 +655,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="bg-slate-50 py-3 px-6"><p class="text-slate-500 text-sm"><i class="ri-information-line text-brand-orange mr-2"></i>* Бесплатно при ремонте. Цена включает запчасти и работу.</p></div>
+                    <div class="bg-slate-50 py-3 px-6"><p class="text-slate-500 text-sm"><i class="ri-information-line text-brand-orange mr-2"></i>* Диагностика бесплатна при ремонте. До начала работ мастер объясняет причину поломки, итоговую стоимость и только потом приступает к ремонту.</p></div>
                 </div>
             </div>
         </div>
@@ -556,7 +670,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="scroll-reveal" data-delay="1"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-settings-3-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Запчасти с собой</h3><p class="text-slate-300 mb-4">До 95% поломок устраняем за 1 визит. Ходовые запчасти в наличии.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>До 95% заявок за 1 визит</p></div></div></div>
                 <div class="scroll-reveal" data-delay="2"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-3xl mb-6 mx-auto group-hover:bg-green-500 group-hover:text-white transition-all"><i class="ri-shield-check-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Гарантия 12 мес</h3><p class="text-slate-300 mb-4">Официальный акт + гарантийный талон. Приедем бесплатно.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Акт + гарантия</p></div></div></div>
-                <div class="scroll-reveal" data-delay="3"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-3xl mb-6 mx-auto group-hover:bg-blue-500 group-hover:text-white transition-all"><i class="ri-money-cny-circle-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Честные цены</h3><p class="text-slate-300 mb-4">Фиксированная цена после диагностики. Без скрытых платежей.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Диагностика 0₽</p></div></div></div>
+                <div class="scroll-reveal" data-delay="3"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-3xl mb-6 mx-auto group-hover:bg-blue-500 group-hover:text-white transition-all"><i class="ri-money-cny-circle-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Честные цены</h3><p class="text-slate-300 mb-4">Фиксированная цена после диагностики. Без скрытых платежей.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Диагностика при ремонте</p></div></div></div>
                 <div class="scroll-reveal" data-delay="4"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 text-3xl mb-6 mx-auto group-hover:bg-purple-500 group-hover:text-white transition-all"><i class="ri-award-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">15+ лет опыта</h3><p class="text-slate-300 mb-4">Ремонтируем все марки — от Gefest до Miele.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Все марки</p></div></div></div>
             </div>
         </div>
@@ -566,7 +680,7 @@
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-chat-3-line mr-2"></i>ОТЗЫВЫ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что говорят наши клиенты</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">500+ отзывов за 15 лет. Средний рейтинг 4.9/5</p>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">500+ отзывов за с 2010 года. Средний рейтинг 4.9/5</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="scroll-reveal" data-delay="1">
@@ -610,7 +724,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="scroll-reveal" data-delay="1"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">1</div><h3 class="text-lg font-bold text-brand-blue mb-2">Заявка</h3><p class="text-slate-600 text-sm">Звоните или пишите в WhatsApp. Опишите проблему — назовём примерную стоимость.</p></div></div>
                 <div class="scroll-reveal" data-delay="2"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">2</div><h3 class="text-lg font-bold text-brand-blue mb-2">Выезд мастера</h3><p class="text-slate-600 text-sm">Инженер приедет за 60 минут с полным набором запчастей и инструментов.</p></div></div>
-                <div class="scroll-reveal" data-delay="3"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">3</div><h3 class="text-lg font-bold text-brand-blue mb-2">Диагностика + ремонт</h3><p class="text-slate-600 text-sm">Бесплатная диагностика. Называем точную цену — чиним при вас за 1-3 часа.</p></div></div>
+                <div class="scroll-reveal" data-delay="3"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">3</div><h3 class="text-lg font-bold text-brand-blue mb-2">Диагностика + ремонт</h3><p class="text-slate-600 text-sm">Диагностика при ремонте. Называем точную цену — чиним при вас за 1-3 часа.</p></div></div>
                 <div class="scroll-reveal" data-delay="4"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-2xl font-extrabold mb-4 mx-auto group-hover:bg-green-500 group-hover:text-white transition-all">✓</div><h3 class="text-lg font-bold text-brand-blue mb-2">Гарантия 12 мес</h3><p class="text-slate-600 text-sm">Выдаём акт + гарантийный талон. Если что — приедем бесплатно.</p></div></div>
             </div>
         </div>
@@ -667,7 +781,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-scales-3-line mr-2"></i>СРАВНЕНИЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему выбирают нас, а не других</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему нам доверяют</h2>
             </div>
             <div class="card-brand bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden scroll-reveal">
                 <div class="overflow-x-auto">
@@ -741,11 +855,40 @@
             </div>
         </div>
     </section>
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 scroll-reveal">
+                <span class="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-fire-line mr-2"></i>РЕАЛЬНЫЕ СЦЕНАРИИ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Как обычно проходит ремонт плиты на дому</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Показываем не абстрактные “работы”, а понятные ситуации: что заметил клиент, что нашел мастер и чем закончился выезд.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-brand bg-gradient-to-br from-red-50 to-white p-6 rounded-3xl border-2 border-red-100 scroll-reveal" data-delay="1">
+                    <div class="text-sm font-bold text-red-600 mb-3">Симптом: конфорка не греет</div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Перегорел нагревательный элемент</h3>
+                    <p class="text-slate-600 text-sm mb-4">Мастер проверил питание, переключатель и спираль. Согласовал замену, поставил подходящий элемент и проверил нагрев по режимам.</p>
+                    <div class="bg-white rounded-2xl p-4 border border-red-100 text-sm text-slate-700"><strong>Результат:</strong> плита снова греет ровно, без запаха и перегрева панели.</div>
+                </div>
+                <div class="card-brand bg-gradient-to-br from-orange-50 to-white p-6 rounded-3xl border-2 border-orange-100 scroll-reveal" data-delay="2">
+                    <div class="text-sm font-bold text-brand-orange mb-3">Симптом: духовка выключается</div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Сбой термостата или датчика</h3>
+                    <p class="text-slate-600 text-sm mb-4">Проверили датчик температуры, клеммы и режимы. Нашли нестабильный контакт, восстановили соединение и откалибровали нагрев.</p>
+                    <div class="bg-white rounded-2xl p-4 border border-orange-100 text-sm text-slate-700"><strong>Результат:</strong> духовка держит температуру и не портит выпечку.</div>
+                </div>
+                <div class="card-brand bg-gradient-to-br from-slate-50 to-white p-6 rounded-3xl border-2 border-slate-200 scroll-reveal" data-delay="3">
+                    <div class="text-sm font-bold text-slate-600 mb-3">Симптом: искрит или выбивает автомат</div>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Проблема в проводке или модуле</h3>
+                    <p class="text-slate-600 text-sm mb-4">Отключили питание, проверили клеммник, изоляцию и плату. Убрали поврежденный контакт и объяснили, когда нужна замена проводки.</p>
+                    <div class="bg-white rounded-2xl p-4 border border-slate-200 text-sm text-slate-700"><strong>Результат:</strong> безопасное включение без повторного срабатывания автомата.</div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="py-24 lg:py-32 bg-slate-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">❓ FAQ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Частые вопросы</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что обычно спрашивают перед ремонтом плиты</h2>
             </div>
             <div class="space-y-4">
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="1">
@@ -760,7 +903,7 @@
                         <span>Диагностика действительно бесплатная?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Да, <strong>0₽</strong> при заказе ремонта. Мастер приедет, определит неисправность и назовёт точную цену. Если не устраивает — оплата только за выезд.</p>
+                    <p class="mt-4 text-slate-600">Да, <strong>0₽</strong> при заказе ремонта. Мастер приедет, найдёт причину, объяснит что вышло из строя и назовёт точную сумму до начала работ. Без согласования ничего не делаем.</p>
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
@@ -774,14 +917,14 @@
                         <span>Стоит ли ремонтировать старую плиту?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Если стоимость ремонта <strong>менее 50% от цены новой</strong> — да, ремонтируем. Если нет — честно скажем и посоветуем замену.</p>
+                    <p class="mt-4 text-slate-600">Смотрим на возраст, тип поломки и стоимость узла. Если ремонт <strong>разумнее покупки новой плиты</strong>, чиним. Если нет, прямо скажем, чтобы вы не тратили деньги впустую.</p>
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="5">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
                         <span>Работаете ли по выходным и праздникам?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Да, работаем <strong>7 дней в неделю</strong>, включая праздники. Выезд в удобное время — утром, днём или вечером.</p>
+                    <p class="mt-4 text-slate-600">Да, работаем <strong>7 дней в неделю</strong>, включая праздники. Можно выбрать удобное окно, а при опасных симптомах вроде запаха газа стараемся поставить выезд как можно быстрее.</p>
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="6">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
@@ -824,21 +967,48 @@
     <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
             <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6"><span class="font-medium"><i class="ri-fire-line mr-2"></i>Плита сломалась?</span></div>
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Починим за 1-3 часа на дому</h2>
-            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Диагностика 0₽. Гарантия 12 месяцев. Оригинальные запчасти.</p>
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Плиту или духовку лучше вернуть в работу сегодня</h2>
+            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Чем раньше заняться поломкой, тем меньше шанс получить кухню без готовки, опасный запах газа или более дорогой ремонт по нагреву и электронике.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="tel:89990057172" class="btn-click inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-lg transform hover:scale-105"><i class="ri-phone-line mr-2"></i>8 (999) 005-71-72</a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20плиты" rel="noopener noreferrer" target="_blank" class="btn-click inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-6 rounded-full font-bold transition shadow-xl"><i class="ri-whatsapp-line mr-2"></i>WhatsApp</a>
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20плиты" rel="noopener noreferrer" target="_blank" class="btn-click inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-6 rounded-full font-bold transition shadow-xl"><i class="ri-whatsapp-line mr-2"></i>Описать проблему в WhatsApp</a>
             </div>
         </div>
     </section>
     <!-- Форма заявки -->
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
+    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div class="scroll-reveal">
+                    <div class="inline-flex items-center gap-3 bg-brand-orange/10 rounded-full px-5 py-3 border border-brand-orange/20 mb-6 text-brand-orange">
+                        <i class="ri-restaurant-2-line text-2xl"></i>
+                        <span class="font-bold">🍳 СРОЧНЫЙ РЕМОНТ</span>
+                    </div>
+                    <h2 class="text-3xl lg:text-5xl font-display font-extrabold mb-5 leading-tight text-brand-blue">Плита или духовка не греет?</h2>
+                    <p class="text-slate-700 text-lg mb-4">Дома это быстро превращается в кухню без готовки и лишний стресс.</p>
+                    <p class="text-slate-600 text-base">Мастер приедет срочно. Большинство бытовых неисправностей закрываем за один выезд, если не затягивать.</p>
+                </div>
+                <div class="scroll-reveal text-center">
+                    <p class="text-slate-600 text-sm mb-2 font-semibold">Срочный слот держится ещё:</p>
+                    <div class="inline-flex items-center gap-2 bg-brand-blue text-white rounded-2xl px-6 py-4 border-2 border-brand-blue/20 shadow-lg">
+                        <span class="text-4xl font-display font-extrabold" id="cd-min">59</span>
+                        <span class="text-3xl font-display font-extrabold text-white/60">:</span>
+                        <span class="text-4xl font-display font-extrabold" id="cd-sec">59</span>
+                    </div>
+                    <p class="text-slate-500 text-xs mt-2">Диагностика при ремонте при заявке сейчас</p>
+                    <a href="tel:89990057172" class="mt-4 inline-block bg-white text-brand-blue hover:bg-slate-100 px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                        <i class="ri-phone-line mr-2"></i>Вернуть готовку
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="request" class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">📝 ЗАЯВКА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Перезвоним за 5 минут</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Получите понятный сценарий ремонта плиты</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Быстро подскажем, насколько срочна ситуация, что вероятнее всего вышло из строя и как будет устроен выезд мастера.</p>
             </div>
             <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -860,9 +1030,9 @@
                     <input type="text" name="problem" placeholder="Не греет, не включается, запах газа..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700">
                 </div>
                 <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg">
-                    <i class="ri-send-plane-line mr-2"></i>Отправить заявку
+                    <i class="ri-send-plane-line mr-2"></i>Получить понятный сценарий ремонта
                 </button>
-                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
+                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Контакты используем только для связи по этой заявке</p>
             </form>
         </div>
     </section>
@@ -877,10 +1047,11 @@
     <!-- Мобильная нижняя панель -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
-            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i><span>Решим проблему быстро</span></a>
+            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i><span>Вернуть готовку</span></a>
             <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>WhatsApp</span></a>
         </div>
     </div>
+    <div id="footer-container"></div>
 
     <!-- JS: Таймер обратного отсчёта -->
     <script>
@@ -917,6 +1088,6 @@
         setInterval(updateTimer, 1000);
     })();
     </script>
-
 </body>
+
 </html>

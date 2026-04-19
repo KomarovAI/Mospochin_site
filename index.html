@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
-<link rel="preload" href="styles-built.css" as="style">
-    <link rel="stylesheet" href="styles-built.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
-    <script src="main.js" defer></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Ремонт ресторанного оборудования в Москве — MosPochin | Выезд за 20 мин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
+
+    <title>Ремонт ресторанного оборудования в Москве — MosPochin | Выезд за 20 мин</title>
     <meta name="description" content="Срочный ремонт пароконвектоматов, плит, холодильников для ресторанов и кафе. Выезд мастера за 20 минут. Гарантия 24 мес. Работаем по договору. ☎ 8 (999) 005-71-72">
     <meta property="og:title" content="Ремонт ресторанного оборудования в Москве — MosPochin | Выезд за 20 мин">
     <meta property="og:description" content="Срочный ремонт пароконвектоматов, плит, холодильников для ресторанов и кафе. Выезд мастера за 20 минут. Гарантия 24 мес. Работаем по договору. ☎ 8 (999) 005-71-72">
@@ -55,8 +60,10 @@
     </script>
     <link rel="canonical" href="https://mspochin.ru/">
 </head>
+
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container" class="mt-12"></div>
+    <!-- Normalized layout shell: index.html -->
+<div id="header-container" class="mt-12"></div>
     <header class="hero-bg-restaurant relative pt-32 pb-24 lg:pt-44 lg:pb-36 overflow-hidden hero-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -67,57 +74,48 @@
                         <span>АВАРИЙНЫЙ ВЫЕЗД 24/7</span>
                     </div>
                     <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">
-                        Оборудование сломалось? <span class="text-brand-orange">Вернем работу за 20 минут</span>
+                        Ремонт ресторанного оборудования в Москве <span class="text-brand-orange">без простоя и сюрпризов по цене</span>
                     </h1>
                     <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Простой пароконвектомата — <span class="text-white font-bold">₽15 000–50 000 в час</span>. 
-                        Выезд мастера <span class="text-white font-bold">за 20 минут</span>. Работаем <span class="text-white font-bold">по договору</span>.
+                        Если встала кухня, терять время нельзя. <span class="text-white font-bold">Приезжаем за 20 минут</span>,
+                        на месте определяем причину поломки, <span class="text-white font-bold">согласовываем стоимость до ремонта</span>
+                        и в большинстве случаев <span class="text-white font-bold">закрываем проблему за один визит</span>.
                     </p>
-                    <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 mb-8">
-                        <div class="glass-card p-4 text-center">
-                            <p class="text-3xl font-display font-extrabold text-brand-orange mb-1"><span class="counter" data-target="20" data-suffix=" мин">0</span></p>
+                    <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-xl mx-auto lg:mx-0 mb-8">
+                        <div class="glass-card p-2 sm:p-4 text-center">
+                            <p class="text-2xl sm:text-3xl font-display font-extrabold text-brand-orange mb-1"><span class="counter" data-target="20" data-suffix=" мин">0</span></p>
                             <p class="text-slate-300 text-xs">Приезд мастера</p>
                         </div>
-                        <div class="glass-card p-4 text-center">
-                            <p class="text-3xl font-display font-extrabold text-brand-orange mb-1"><span class="counter" data-target="98" data-suffix="%">0</span></p>
-                            <p class="text-slate-300 text-xs">С 1-го раза</p>
+                        <div class="glass-card p-2 sm:p-4 text-center">
+                            <p class="text-2xl sm:text-3xl font-display font-extrabold text-brand-orange mb-1"><span class="counter" data-target="500" data-suffix="+">0</span></p>
+                            <p class="text-slate-300 text-xs">Ресторанов</p>
                         </div>
-                        <div class="glass-card p-4 text-center">
-                            <p class="text-3xl font-display font-extrabold text-brand-orange mb-1">24/7</p>
+                        <div class="glass-card p-2 sm:p-4 text-center">
+                            <p class="text-2xl sm:text-3xl font-display font-extrabold text-brand-orange mb-1">24/7</p>
                             <p class="text-slate-300 text-xs">Без выходных</p>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center mb-8">
                         <a href="tel:89990057172" class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-12 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg">
                             <i class="ri-customer-service-2-line animate-pulse"></i>
-                            <span>Вызвать мастера</span>
+                            <span>Срочно вызвать мастера</span>
                         </a>
                         <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20срочный%20ремонт%20ресторанной%20техники" rel="noopener noreferrer" target="_blank" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-12 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2">
                             <i class="ri-whatsapp-line"></i>
-                            <span>WhatsApp (Договор)</span>
+                            <span>Написать в WhatsApp</span>
                         </a>
                     </div>
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-white/80 text-sm">
-                        <div class="flex items-center gap-2">
-                            <div class="flex text-yellow-400">
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i>
-                            </div>
-                            <span class="font-bold text-white">4.9/5</span>
-                        </div>
-                        <span class="text-white/40">|</span>
-                        <div class="flex items-center gap-2">
-                            <i class="ri-restaurant-2-line text-brand-orange"></i>
-                            <span><span class="counter" data-target="500" data-suffix="+">0</span> ресторанов</span>
-                        </div>
-                        <span class="text-white/40">|</span>
-                        <div class="flex items-center gap-2">
-                            <i class="ri-file-list-3-line text-green-400"></i>
-                            <span>Договор</span>
-                        </div>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-white/80 text-sm mb-8">
+                        <div class="flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-4 py-2"><i class="ri-shield-check-line text-green-300"></i><span>Стоимость до начала работ</span></div>
+                        <div class="flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-4 py-2"><i class="ri-building-2-line text-brand-orange"></i><span>Работаем с юрлицами</span></div>
+                        <div class="flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-4 py-2"><i class="ri-timer-line text-yellow-300"></i><span>Договор, акт, гарантия</span></div>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
+                        <div class="flex items-center gap-2"><i class="ri-star-fill text-yellow-400"></i><span class="font-bold text-white">4.9/5</span></div>
+                        <span class="text-white/40 hidden sm:inline">|</span>
+                        <div class="flex items-center gap-2"><i class="ri-file-list-3-line text-green-400"></i><span>Договор</span></div>
+                        <span class="text-white/40 hidden sm:inline">|</span>
+                        <div class="flex items-center gap-2"><i class="ri-shield-check-line text-brand-orange"></i><span>Гарантия до 24 мес</span></div>
                     </div>
                 </div>
                 <div class="hidden lg:block relative" style="min-height:500px;">
@@ -127,23 +125,12 @@
                     </div>
                     <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-lg z-20 max-w-xs stat-card-hover">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                                <i class="ri-checkbox-circle-line text-green-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-display font-extrabold text-brand-blue text-2xl"><span class="counter" data-target="98" data-suffix="%">0</span></p>
-                                <p class="text-slate-500 text-xs">поломок чиним за 1 визит</p>
-                            </div>
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"><i class="ri-checkbox-circle-line text-green-600 text-xl"></i></div>
+                            <div><p class="font-display font-extrabold text-brand-blue text-2xl"><span class="counter" data-target="98" data-suffix="%">0</span></p><p class="text-slate-500 text-xs">поломок чиним за 1 визит</p></div>
                         </div>
                     </div>
                     <div class="absolute -top-4 -right-4 bg-white p-4 rounded-2xl shadow-lg z-20 max-w-xs stat-card-hover">
-                        <div class="flex text-yellow-400 text-xs mb-2">
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                        </div>
+                        <div class="flex text-yellow-400 text-xs mb-2"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
                         <p class="text-slate-600 text-xs italic">«Приехали через 15 минут, починили пароконвектомат за час. Спасли наш вечер!»</p>
                         <p class="text-slate-500 text-xs font-semibold mt-2">— Ресторан «Прага»</p>
                     </div>
@@ -157,8 +144,8 @@
                 <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold mb-4">
                     <i class="ri-alert-fill mr-2"></i>ВАЖНО
                 </span>
-                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-slate-700 mb-4 heading-reveal">Каждая минута простоя = потеря денег</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Для ресторана простой техники критичен. Вот что происходит при задержке ремонта:</p>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-slate-700 mb-4 heading-reveal">Каждая минута простоя = потеря денег и смены</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Для управляющего это не бытовая поломка, а сорванная смена и прямой убыток.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6 lg:gap-10">
                 <div class="scroll-reveal" data-delay="2">
@@ -179,7 +166,7 @@
                             <i class="ri-user-unfollow-line"></i>
                         </div>
                         <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Недовольные гости</h3>
-                        <p class="text-slate-600 mb-4">Невыполненные заказы = <span class="font-bold text-orange-500">потеря лояльности</span> и негативные отзывы</p>
+                        <p class="text-slate-600 mb-4">Срыв заказов = <span class="font-bold text-orange-500">потеря лояльности</span> и негативные отзывы</p>
                         <div class="bg-orange-50 rounded-lg p-3 border border-orange-100">
                             <p class="text-orange-600 text-sm font-semibold"><i class="ri-star-fill mr-2"></i>1 негатив = 10 потерянных клиентов</p>
                         </div>
@@ -303,8 +290,8 @@
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">
                     <i class="ri-medal-line mr-2"></i>ПРЕИМУЩЕСТВА
                 </span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему 500+ ресторанов работают с нами за 15 лет</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Понимаем специфику ресторанного бизнеса</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему рестораны возвращаются к MosPochin</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Снимаем простой, даём документы и отвечаем за результат</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="scroll-reveal bg-gradient-to-br from-brand-orange/30 to-orange-100 p-8 rounded-2xl border-2 border-brand-orange/20 stat-card-hover" data-delay="5">
@@ -312,7 +299,7 @@
                         <i class="ri-timer-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">⚡ Выезд за 20 минут</h3>
-                    <p class="text-slate-600 mb-4">Мастера во всех округах Москвы. Приезжаем быстрее конкурентов.</p>
+                    <p class="text-slate-600 mb-4">Мастера во всех округах Москвы. Приезжаем быстро, чтобы кухня не простаивала.</p>
                     <div class="flex items-center gap-2 text-green-600 font-semibold text-sm">
                         <i class="ri-checkbox-circle-line"></i>
                         <span>Среднее время: 18 минут</span>
@@ -323,10 +310,10 @@
                         <i class="ri-settings-3-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">🔧 Запчасти с собой</h3>
-                    <p class="text-slate-600 mb-4">98% поломок чиним за 1 визит. Склад запчастей в Москве.</p>
+                    <p class="text-slate-600 mb-4">Частые неисправности закрываем на месте, без повторного простоя кухни.</p>
                     <div class="flex items-center gap-2 text-green-600 font-semibold text-sm">
                         <i class="ri-checkbox-circle-line"></i>
-                        <span>98% ремонтов за 1 визит</span>
+                        <span>Ходовые детали в наличии</span>
                     </div>
                 </div>
                 <div class="scroll-reveal bg-gradient-to-br from-green-100 to-green-100 p-8 rounded-2xl border-2 border-green-200 stat-card-hover" data-delay="7">
@@ -334,7 +321,7 @@
                         <i class="ri-file-list-3-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">📄 Работа по договору</h3>
-                    <p class="text-slate-600 mb-4">Официальный договор с юрлицами. Полный пакет документов.</p>
+                    <p class="text-slate-600 mb-4">Официальный договор с юрлицами, закрывающие документы, прозрачные условия.</p>
                     <div class="flex items-center gap-2 text-green-600 font-semibold text-sm">
                         <i class="ri-checkbox-circle-line"></i>
                         <span>НДС, акты, гарантии</span>
@@ -345,7 +332,7 @@
                         <i class="ri-time-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">🕐 Работаем 24/7</h3>
-                    <p class="text-slate-600 mb-4">Без выходных и праздников. Аварийный выезд ночью.</p>
+                    <p class="text-slate-600 mb-4">Ночью, в выходные и в праздники. Когда кухня встала, ждем без пауз.</p>
                     <div class="flex items-center gap-2 text-green-600 font-semibold text-sm">
                         <i class="ri-checkbox-circle-line"></i>
                         <span>Круглосуточная поддержка</span>
@@ -356,7 +343,7 @@
                         <i class="ri-shield-check-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">🛡️ Гарантия до 2 лет</h3>
-                    <p class="text-slate-600 mb-4">Официальная гарантия на работы и запчасти. Сервисные книжки.</p>
+                    <p class="text-slate-600 mb-4">Официальная гарантия на работы и запчасти, без лишней бюрократии.</p>
                     <div class="flex items-center gap-2 text-green-600 font-semibold text-sm">
                         <i class="ri-checkbox-circle-line"></i>
                         <span>Гарантия 12-24 месяца</span>
@@ -367,7 +354,7 @@
                         <i class="ri-money-cny-circle-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">💰 Фиксированные цены</h3>
-                    <p class="text-slate-600 mb-4">Цена не меняется в процессе. Согласуем до начала работ.</p>
+                    <p class="text-slate-600 mb-4">Согласуем стоимость до начала работ, без сюрпризов и доплат.</p>
                     <div class="flex items-center gap-2 text-green-600 font-semibold text-sm">
                         <i class="ri-checkbox-circle-line"></i>
                         <span>Без скрытых платежей</span>
@@ -376,11 +363,21 @@
             </div>
         </div>
     </section>
+        <section class="py-8 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"><p class="font-bold text-brand-blue mb-1">Юр.данные</p><p class="text-sm text-slate-600">ИП / ООО, ИНН, ОГРН, договор и акт. Подставить реальные реквизиты.</p></div>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"><p class="font-bold text-brand-blue mb-1">Документы</p><p class="text-sm text-slate-600">Счёт, акт и гарантия после ремонта.</p></div>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"><p class="font-bold text-brand-blue mb-1">Ответственность</p><p class="text-sm text-slate-600">Фиксируем условия до начала работ.</p></div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-4">ПРОЦЕСС</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Как мы работаем — 4 шага</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Как работаем аккуратно и по делу — 4 шага</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">От звонка до работающего оборудования за 1 визит</p>
             </div>
             <div class="grid md:grid-cols-4 gap-6">
@@ -397,7 +394,7 @@
                 <div class="text-center scroll-reveal" data-delay="3">
                     <div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mx-auto mb-4 font-bold border-2 border-brand-orange/20">3</div>
                     <h3 class="font-bold text-brand-blue mb-2">Ремонт</h3>
-                    <p class="text-slate-600 text-sm">Диагностика 0₽. Ремонтируем на месте. 98% поломок чиним за 1 визит.</p>
+                    <p class="text-slate-600 text-sm">Диагностика при ремонте. Ремонтируем на месте. Закрываем типовые поломки за один выезд.</p>
                 </div>
                 <div class="text-center scroll-reveal" data-delay="4">
                     <div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl mx-auto mb-4 font-bold border-2 border-brand-orange/20">4</div>
@@ -411,7 +408,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Нам доверяют</h2>
-                <p class="text-slate-300 text-lg">Цифры говорят сами за себя</p>
+                <p class="text-slate-300 text-lg">Опыт, скорость и договорная работа</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="scroll-scale text-center stat-card-hover glass-card p-8 rounded-2xl">
@@ -450,7 +447,7 @@
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ОТЗЫВЫ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Истории наших клиентов</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Реальные случаи из практики ремонта в Москве</p>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Коротко, по делу, без приукрашивания</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6 lg:gap-10">
                 <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all scroll-reveal" data-delay="1">
@@ -897,6 +894,45 @@
             </div>
         </div>
     </section>
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4">ДОВЕРИЕ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что получает заказчик после выезда</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Не устные обещания, а понятный комплект: согласованная стоимость, документы и ответственность за восстановленный узел.</p>
+            </div>
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="1">
+                    <div class="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-4">
+                        <i class="ri-file-list-3-line"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Смета до ремонта</h3>
+                    <p class="text-slate-600 text-sm">До начала работ фиксируем, что именно сломано, сколько стоит ремонт и есть ли смысл его делать.</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="2">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-brand-blue text-2xl mb-4">
+                        <i class="ri-file-paper-2-line"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Акт и документы</h3>
+                    <p class="text-slate-600 text-sm">Для юрлиц оформляем договор, акт, УПД и закрывающие документы. Для частных клиентов выдаём акт выполненных работ.</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="3">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-4">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Гарантия на узел и работу</h3>
+                    <p class="text-slate-600 text-sm">Оформляем гарантию до 24 месяцев на работу и установленные запчасти. Если проблема вернулась по гарантии, повторный выезд бесплатный.</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm" data-delay="4">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-4">
+                        <i class="ri-check-double-line"></i>
+                    </div>
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Проверка результата</h3>
+                    <p class="text-slate-600 text-sm">После ремонта запускаем оборудование, проверяем ключевой режим работы и только потом закрываем заявку.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="py-32 lg:py-40 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
@@ -912,12 +948,12 @@
             </div>
         </div>
     </section>
-    <section class="py-28 lg:py-40 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+    <section id="request" class="py-28 lg:py-40 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ЗАЯВКА</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку на ремонт</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Заполните форму — мы перезвоним за 5 минут. Или позвоните сами: <a href="tel:89990057172" class="text-brand-orange font-bold">8 (999) 005-71-72</a></p>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Опишите поломку и оставьте номер. Мы быстро свяжемся, уточним симптомы, сориентируем по срокам, объясним порядок работ и заранее проговорим, как формируется стоимость. Или позвоните сами: <a href="tel:89990057172" class="text-brand-orange font-bold">8 (999) 005-71-72</a></p>
             </div>
             <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -951,16 +987,16 @@
                     </div>
                 </div>
                 <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
-                    <i class="ri-send-plane-line mr-2"></i>Отправить заявку
+                    <i class="ri-send-plane-line mr-2"></i>Получить звонок по ремонту
                 </button>
-                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Мы не передаём ваши данные третьим лицам</p>
+                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Никакого спама: используем данные только для связи по заявке</p>
             </form>
         </div>
     </section>
     <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 heading-reveal">Сломалась техника? <span class="text-brand-blue">Звоните!</span></h2>
-            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Позвоните — мастер приедет за 20 минут</p>
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 heading-reveal">Нужен ремонт <span class="text-brand-blue">без срыва смены?</span></h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Позвоните сейчас: мастер приедет, определит причину и согласует стоимость до начала работ.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:89990057172" class="inline-flex items-center justify-center gap-3 bg-white text-brand-orange hover:bg-slate-100 text-xl font-bold px-10 py-5 rounded-full transition shadow-lg"><i class="ri-phone-line"></i>8 (999) 005-71-72</a>
                 <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white text-xl font-bold px-10 py-5 rounded-full transition shadow-lg"><i class="ri-whatsapp-line"></i>WhatsApp</a>
@@ -986,6 +1022,6 @@
     <i class="ri-phone-line text-xl"></i>
   </a>
 </div>
-    <script src="telegram-form.js"></script>
 </body>
+
 </html>

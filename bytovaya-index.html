@@ -1,62 +1,34 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
-<!--
-  ============================================================
-  MosPochin — Ремонт бытовой техники на дому в Москве
-  Page: Главная (bytovaya-index)
-  Branch: Household (бытовая техника)
-  ============================================================
 
-  ASSETS: Все ресурсы локальные из /assets/
-    CSS: /assets/css/styles-built.css (Tailwind) + /assets/css/styles.css (custom)
-    JS: /assets/js/main.js (компоненты) + /assets/js/telegram-form.js (форма)
-    Fonts: /assets/fonts/manrope.css + /assets/fonts/remixicon.css
-    Icons: RemixIcon woff2 — /assets/fonts/remixicon.woff2
-    Images: /assets/images/*
-
-  CDN DEPS: Tailwind CSS CDN (для JIT классов)
-  ============================================================
--->
 <head>
-    <!-- Meta -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/manrope.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/manrope.css">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
 
-    <!-- SEO -->
-    <title>Ремонт бытовой техники на дому в Москве — MosPochin | Бесплатная диагностика</title>
-    <meta name="description" content="Ремонт холодильников, стиральных машин, посудомоек на дому в Москве. Бесплатная диагностика. Фиксированная цена. Гарантия 12 мес. ☎ 8 (999) 005-71-72">
+    <title>Ремонт бытовой техники на дому в Москве — MosPochin | Диагностика при ремонте</title>
+    <meta name="description" content="Ремонт холодильников, стиральных машин, посудомоек на дому в Москве. Диагностика при ремонте. Фиксированная цена. Гарантия 12 мес. ☎ 8 (999) 005-71-72">
     <link rel="canonical" href="https://mspochin.ru/bytovaya-index.html">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Ремонт бытовой техники на дому в Москве — MosPochin | Бесплатная диагностика">
-    <meta property="og:description" content="Ремонт холодильников, стиральных машин, посудомоек на дому в Москве. Бесплатная диагностика. Фиксированная цена. Гарантия 12 мес. ☎ 8 (999) 005-71-72">
+    <meta property="og:title" content="Ремонт бытовой техники на дому в Москве — MosPochin | Диагностика при ремонте">
+    <meta property="og:description" content="Ремонт холодильников, стиральных машин, посудомоек на дому в Москве. Диагностика при ремонте. Фиксированная цена. Гарантия 12 мес. ☎ 8 (999) 005-71-72">
     <meta property="og:image" content="https://mspochin.ru/og-image.svg">
     <meta property="og:url" content="https://mspochin.ru/bytovaya-index.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
-    <!-- Fonts (Local) -->
-    <link rel="preload" href="/assets/fonts/manrope.css" as="style">
-    <link rel="stylesheet" href="/assets/fonts/manrope.css">
-    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
-    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-
-    <!-- CSS (Local) -->
-    <link rel="preload" href="/assets/css/styles-built.css" as="style">
-    <link rel="stylesheet" href="/assets/css/styles-built.css">
-    <link rel="preload" href="/assets/css/styles.css" as="style">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-
-    <!-- JS (Local, deferred) -->
-    <script src="/assets/js/main.js" defer></script>
-
-    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -89,13 +61,14 @@
         "name": "Москва"
       },
       "serviceType": ["Ремонт бытовой техники", "Ремонт холодильников", "Ремонт стиральных машин", "Ремонт посудомоечных машин"],
-      "description": "Ремонт бытовой техники на дому в Москве. Выезд за 60 минут. Диагностика 0₽. Гарантия на работы."
+      "description": "Ремонт бытовой техники на дому в Москве. Выезд за 60 минут. Диагностика при ремонте. Гарантия на работы."
     }
     </script>
 </head>
-<body class="font-sans text-slate-800 antialiased bg-white">
 
-    <!-- ============================================================
+<body class="font-sans text-slate-800 antialiased bg-white">
+    <!-- Normalized layout shell: bytovaya-index.html -->
+<!-- ============================================================
          HEADER (injected by main.js → Components.getHeader())
          Top Bar: срочный выезд + навигация + телефон
          ============================================================ -->
@@ -103,7 +76,7 @@
 
     <!-- ============================================================
          SECTION 1: HERO
-         - Заголовок с УТП (ремонт за 1 час, бесплатная диагностика)
+         - Заголовок с УТП (ремонт за 1 час, диагностика при ремонте)
          - Статистика (98% за 1 визит, 15+ лет опыта, 24/7)
          - CTA: позвонить + WhatsApp
          - Hero-изображение: /assets/images/hero-05.jpg
@@ -126,7 +99,7 @@
                         Сломалась техника? <span class="text-brand-orange">Приедем за 1 час</span>
                     </h1>
                     <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        <span class="text-white font-bold">Бесплатная диагностика</span> у вас на дому.
+                        <span class="text-white font-bold">Диагностика при ремонте</span> у вас на дому.
                         Ремонт по <span class="text-white font-bold">фиксированной цене</span>.
                     </p>
                     <!-- Stats -->
@@ -145,7 +118,7 @@
                         </div>
                     </div>
                     <!-- CTA buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-6">
                         <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-10 sm:py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg">
                             <i class="ri-phone-line"></i>
                             <span>Вызвать мастера (0₽)</span>
@@ -355,14 +328,14 @@
          - Выезд за 60 минут
          - Запчасти с собой (До 95% заявок за 1 визит)
          - Официальный договор (гарантия 12 мес)
-         - Честные цены (диагностика 0₽)
+         - Честные цены (диагностика при ремонте)
          ============================================================ -->
     <section class="py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-brand-blue via-blue-900 to-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/20 backdrop-blur-md border border-brand-orange/30 text-brand-orange px-5 py-2 rounded-full text-sm font-bold mb-4">⭐ ДОВЕРИЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Почему <span class="text-brand-orange"><span class="counter" data-target="500" data-suffix="+">0</span></span> клиентов выбрали нас</h2>
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto">Надёжный сервис с гарантией и прозрачными ценами</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Почему вызывают нас домой повторно</h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">Спокойный ремонт без перевозки техники, сюрпризов по цене и навязанных работ</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                 <div class="scroll-reveal" data-delay="1">
@@ -394,8 +367,8 @@
                         <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-2xl sm:text-3xl mb-4 sm:mb-6 mx-auto group-hover:bg-blue-500 group-hover:text-white transition-all">
                             <i class="ri-file-list-3-line icon-spring"></i>
                         </div>
-                        <h3 class="text-lg sm:text-xl font-display font-extrabold text-white mb-3">Официальный договор</h3>
-                        <p class="text-slate-300 mb-4">Полный пакет документов. Гарантия 12 месяцев на работы.</p>
+                        <h3 class="text-lg sm:text-xl font-display font-extrabold text-white mb-3">Акт и гарантия</h3>
+                        <p class="text-slate-300 mb-4">После ремонта выдаём акт и гарантию 12 месяцев, чтобы результат был подтверждён не на словах.</p>
                         <div class="bg-white/10 rounded-lg p-3">
                             <p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Акт + гарантия</p>
                         </div>
@@ -407,9 +380,9 @@
                             <i class="ri-money-cny-circle-line icon-spring"></i>
                         </div>
                         <h3 class="text-lg sm:text-xl font-display font-extrabold text-white mb-3">Честные цены</h3>
-                        <p class="text-slate-300 mb-4">Фиксированная цена после диагностики. Без скрытых платежей.</p>
+                        <p class="text-slate-300 mb-4">Сначала осмотр и согласование суммы, потом ремонт. Если чинить невыгодно, скажем прямо.</p>
                         <div class="bg-white/10 rounded-lg p-3">
-                            <p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Диагностика 0₽</p>
+                            <p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Диагностика при ремонте</p>
                         </div>
                     </div>
                 </div>
@@ -425,7 +398,7 @@
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><span role="img" aria-label="комментарий">💬</span> ОТЗЫВЫ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Истории наших клиентов</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">500+ отзывов за 15 лет. Средний рейтинг 4.9/5</p>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Честная цена до ремонта, аккуратный выезд и гарантия на работы</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 <div class="scroll-reveal" data-delay="1">
@@ -470,7 +443,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><span role="img" aria-label="инструменты">🛠️</span> ПРОЦЕСС</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Как мы работаем — 4 простых шага</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Как работаем аккуратно и по делу — 4 простых шага</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Прозрачный процесс от заявки до гарантии</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
@@ -492,7 +465,7 @@
                     <div class="text-center p-4 sm:p-5 lg:p-6 bg-slate-50 rounded-2xl border border-slate-100 h-full group">
                         <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-xl sm:text-2xl font-extrabold mb-3 sm:mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">3</div>
                         <h3 class="text-base sm:text-lg font-bold text-brand-blue mb-2">Диагностика + ремонт</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm">Бесплатная диагностика. Называем точную цену — чиним при вас.</p>
+                        <p class="text-slate-600 text-xs sm:text-sm">Диагностика при ремонте. Называем точную цену — чиним при вас.</p>
                     </div>
                 </div>
                 <div class="scroll-reveal" data-delay="4">
@@ -928,7 +901,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-trophy-line mr-2"></i>СРАВНЕНИЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему выбирают нас</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему нам доверяют</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Объективное сравнение с другими сервисами</p>
             </div>
             <div class="card-brand bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden scroll-reveal">
@@ -969,7 +942,7 @@
     </section>
 
     <!-- ============================================================
-         SECTION 13: ФОРМА ЗАЯВКИ (бесплатная диагностика)
+         SECTION 13: ФОРМА ЗАЯВКИ (диагностика при ремонте)
          Поля: имя, телефон, тип техники, описание проблемы
          Отправка через telegram-form.js
          ============================================================ -->
@@ -977,8 +950,8 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-green-100 text-green-700 px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">БЕСПЛАТНАЯ ДИАГНОСТИКА</span>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-3 sm:mb-4 heading-reveal">Оставьте заявку</h2>
-                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Бесплатная диагностика при ремонте! Заполните форму — перезвоним за 5 минут</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-3 sm:mb-4 heading-reveal">Оставьте заявку на ремонт</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Диагностика при ремонте при ремонте! Заполните форму — перезвоним за 5 минут</p>
             </div>
             <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
                 <div class="grid md:grid-cols-2 gap-4 mb-4 sm:gap-6 sm:mb-6">
@@ -1014,7 +987,7 @@
                     </div>
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
-                    <i class="ri-send-plane-line mr-2"></i>Оставить заявку — диагностика 0₽
+                    <i class="ri-send-plane-line mr-2"></i>Оставить заявку — диагностика при ремонте
                 </button>
                 <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Диагностика бесплатно при ремонте</p>
             </form>
@@ -1072,6 +1045,6 @@
     </noscript>
 
     <!-- Telegram form handler -->
-    <script src="/assets/js/telegram-form.js"></script>
 </body>
+
 </html>

@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
-<link rel="preload" href="/assets/css/styles-built.css" as="style">
-    <link rel="stylesheet" href="/assets/css/styles-built.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preload" href="/assets/fonts/manrope.css" as="style">
     <link rel="stylesheet" href="/assets/fonts/manrope.css">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
     <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="/assets/js/main.js" as="script">
-    <script src="/assets/js/main.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
+
     <title>О компании MosPochin — ремонт бытовой техники на дому в Москве | с 2010</title>
-    <meta name="description" content="MosPochin — ремонт холодильников, стиралок, посудомоек на дому. Выезд за 60 мин. Гарантия 12 мес. 5000+ ремонтов. Бесплатная диагностика.">
+    <meta name="description" content="MosPochin — ремонт холодильников, стиралок, посудомоек на дому. Выезд за 60 мин. Гарантия 12 мес. 5000+ ремонтов. Диагностика при ремонте.">
     <meta property="og:title" content="О компании MosPochin — ремонт бытовой техники на дому в Москве">
-    <meta property="og:description" content="MosPochin — ремонт холодильников, стиралок, посудомоек на дому. Выезд за 60 мин. Гарантия 12 мес. 5000+ ремонтов. Бесплатная диагностика.">
+    <meta property="og:description" content="MosPochin — ремонт холодильников, стиралок, посудомоек на дому. Выезд за 60 мин. Гарантия 12 мес. 5000+ ремонтов. Диагностика при ремонте.">
     <meta property="og:image" content="https://mspochin.ru/og-image.svg">
     <meta property="og:url" content="https://mspochin.ru/bytovaya-about.html">
     <meta property="og:type" content="website">
@@ -43,10 +48,11 @@
     }
     </script>
     <link rel="canonical" href="https://mspochin.ru/bytovaya-about.html">
-    <script src="/assets/js/telegram-form.js" defer></script>
 </head>
+
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container" class="mt-12"></div>
+    <!-- Normalized layout shell: bytovaya-about.html -->
+<div id="header-container" class="mt-12"></div>
 
     <!-- BREADCRUMB -->
     <nav class="bg-slate-50 border-b border-slate-100 py-3" aria-label="Breadcrumb">
@@ -76,7 +82,7 @@
                     </h1>
                     <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
                         Мастер приедет за <span class="text-white font-bold">60 минут</span>.
-                        <span class="text-white font-bold">Бесплатная диагностика</span> при ремонте.
+                        <span class="text-white font-bold">Диагностика при ремонте</span> при ремонте.
                         Гарантия <span class="text-white font-bold">12 месяцев</span> на всё.
                     </p>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mb-8 max-w-xl mx-auto lg:mx-0">
@@ -98,7 +104,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
-                        <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-10 sm:py-5 rounded-full font-bold transition shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <a href="tel:+79990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-10 sm:py-5 rounded-full font-bold transition shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-2">
                             <i class="ri-phone-line"></i>
                             <span>Вызвать мастера (0₽)</span>
                         </a>
@@ -154,7 +160,7 @@
                         <p class="text-white/90 text-sm">Мастер приедет через 60 минут</p>
                     </div>
                 </div>
-                <a href="tel:89990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-6 py-3 sm:px-10 sm:py-4 rounded-full font-bold text-sm sm:text-base transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
+                <a href="tel:+79990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-6 py-3 sm:px-10 sm:py-4 rounded-full font-bold text-sm sm:text-base transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
                     <i class="ri-phone-line"></i><span>8 (999) 005-71-72</span>
                 </a>
             </div>
@@ -329,8 +335,8 @@
                         <span class="text-3xl font-display font-extrabold text-white/60">:</span>
                         <span class="text-4xl font-display font-extrabold" id="cd-sec">59</span>
                     </div>
-                    <p class="text-white/70 text-xs mt-2">Диагностика 0₽ при заявке сейчас</p>
-                    <a href="tel:89990057172" class="mt-4 inline-block bg-white text-red-600 hover:bg-slate-100 px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                    <p class="text-white/70 text-xs mt-2">Диагностика при ремонте при заявке сейчас</p>
+                    <a href="tel:+79990057172" class="mt-4 inline-block bg-white text-red-600 hover:bg-slate-100 px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105">
                         <i class="ri-phone-line mr-2"></i>Позвонить сейчас
                     </a>
                 </div>
@@ -343,11 +349,11 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-trophy-line mr-2"></i>СРАВНЕНИЕ</span>
-                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему 500+ клиентов выбрали MosPochin</h2>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему выбирают MosPochin для дома</h2>
             </div>
             <div class="bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden scroll-reveal">
-                <div class="overflow-x-auto">
-                    <table class="w-full">
+                <div class="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+                    <table class="w-full min-w-[520px] text-sm sm:text-base">
                         <thead><tr class="bg-brand-orange text-white">
                             <th scope="col" class="py-4 px-6 text-left font-display font-bold">Параметр</th>
                             <th scope="col" class="py-4 px-6 text-center font-display font-bold">MosPochin</th>
@@ -551,8 +557,8 @@
             <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
                 <div class="scroll-reveal bg-gradient-to-br from-green-50 to-emerald-50 p-6 lg:p-8 rounded-2xl border-2 border-green-200 text-center" data-delay="1">
                     <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mx-auto mb-4"><i class="ri-file-search-line"></i></div>
-                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Диагностика 0₽</h3>
-                    <p class="text-slate-600">Бесплатная диагностика при заказе ремонта.</p>
+                    <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Диагностика при ремонте</h3>
+                    <p class="text-slate-600">Диагностика при ремонте при заказе ремонта.</p>
                 </div>
                 <div class="scroll-reveal bg-gradient-to-br from-blue-50 to-indigo-50 p-6 lg:p-8 rounded-2xl border-2 border-blue-200 text-center" data-delay="2">
                     <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mx-auto mb-4"><i class="ri-shield-check-line"></i></div>
@@ -650,9 +656,9 @@
     <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
             <h2 class="text-3xl lg:text-5xl font-display font-extrabold mb-6 leading-tight">Техника сломалась? Починим за 1 час!</h2>
-            <p class="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">Бесплатная диагностика. Оригинальные запчасти. Гарантия 12 месяцев.</p>
+            <p class="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">Диагностика при ремонте. Оригинальные запчасти. Гарантия 12 месяцев.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="tel:89990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl transform hover:-translate-y-1 flex items-center gap-2">
+                <a href="tel:+79990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl transform hover:-translate-y-1 flex items-center gap-2">
                     <i class="ri-phone-line"></i><span>8 (999) 005-71-72</span>
                 </a>
                 <a href="https://wa.me/79990057172?text=Нужен%20ремонт%20бытовой%20техники" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl flex items-center gap-2">
@@ -663,7 +669,7 @@
     </section>
 
     <!-- SECTION 18: ФОРМА -->
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
+    <section id="request" class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-green-100 text-green-700 px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">БЕСПЛАТНАЯ ДИАГНОСТИКА</span>
@@ -680,7 +686,7 @@
                     <div><label class="block text-sm font-medium text-slate-700 mb-2">Район</label><input type="text" name="district" placeholder="Бутово" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
-                    <i class="ri-send-plane-line mr-2"></i>Оставить заявку — диагностика 0₽
+                    <i class="ri-send-plane-line mr-2"></i>Оставить заявку — диагностика при ремонте
                 </button>
                 <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
             </form>
@@ -690,7 +696,7 @@
     <!-- Mobile sticky footer -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
-            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+            <a href="tel:+79990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
                 <i class="ri-phone-line"></i><span class="text-sm">Позвонить</span>
             </a>
             <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
@@ -720,7 +726,7 @@
                 <a href="bytovaya-uslugi.html">Услуги</a>
                 <a href="bytovaya-contact.html">Контакты</a>
                 <span style="opacity:0.5">|</span>
-                <a href="tel:89990057172" class="ns-phone">☎ 8 (999) 005-71-72</a>
+                <a href="tel:+79990057172" class="ns-phone">☎ 8 (999) 005-71-72</a>
             </div>
         </div>
     </noscript>
@@ -752,4 +758,5 @@
     })();
     </script>
 </body>
+
 </html>

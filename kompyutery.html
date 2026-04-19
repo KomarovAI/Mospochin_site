@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
-<link rel="preload" href="styles-built.css" as="style">
-    <link rel="stylesheet" href="styles-built.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
-    <script src="main.js" defer></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/manrope.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/manrope.css">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
+
     <title>Ремонт компьютеров и ноутбуков в Москве — MosPochin | от 690₽</title>
-    <meta name="description" content="Ремонт компьютеров и ноутбуков на дому. ASUS, HP, Lenovo, Acer. Бесплатная диагностика. Гарантия 12 мес.">
+    <meta name="description" content="Ремонт компьютеров и ноутбуков на дому. ASUS, HP, Lenovo, Acer. Диагностика при ремонте. Гарантия 12 мес.">
     <meta property="og:title" content="Ремонт компьютеров и ноутбуков в Москве — MosPochin | от 690₽">
-    <meta property="og:description" content="Ремонт компьютеров и ноутбуков на дому. ASUS, HP, Lenovo, Acer. Бесплатная диагностика. Гарантия 12 мес.">
+    <meta property="og:description" content="Ремонт компьютеров и ноутбуков на дому. ASUS, HP, Lenovo, Acer. Диагностика при ремонте. Гарантия 12 мес.">
     <meta property="og:image" content="https://mspochin.ru/og-image.svg">
     <meta property="og:url" content="https://mspochin.ru/kompyutery.html">
     <meta property="og:type" content="website">
@@ -23,7 +30,7 @@
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Ремонт компьютеров и ноутбуков",
-      "description": "Профессиональный ремонт стационарных компьютеров и ноутбуков на дому в Москве. Выезд за 60 минут, диагностика 0₽.",
+      "description": "Профессиональный ремонт стационарных компьютеров и ноутбуков на дому в Москве. Выезд за 60 минут, диагностика при ремонте.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "MosPochin",
@@ -54,11 +61,46 @@
     }
     </script>
     <link rel="canonical" href="https://mspochin.ru/kompyutery.html">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="telegram-form.js" defer></script>
+    <style>
+        body.page-kompyutery h1 {
+            font-size: clamp(3rem, 4.7vw, 5rem);
+            line-height: 0.97;
+            letter-spacing: -0.07em;
+            max-width: 11.5ch;
+            text-wrap: balance;
+        }
+
+        body.page-kompyutery h2 {
+            letter-spacing: -0.05em;
+            text-wrap: balance;
+        }
+
+        body.page-kompyutery .deep-dive details {
+            border: 2px solid rgb(226 232 240);
+            background: linear-gradient(180deg, #fff, #f8fafc);
+            border-radius: 1rem;
+            padding: 1.1rem 1.25rem;
+        }
+
+        body.page-kompyutery .deep-dive details[open] {
+            border-color: rgb(251 146 60 / 0.45);
+            box-shadow: 0 18px 40px -28px rgba(15, 23, 42, 0.4);
+        }
+
+        @media (max-width: 767px) {
+            body.page-kompyutery h1 {
+                font-size: clamp(2.35rem, 9.5vw, 3.3rem);
+                line-height: 1;
+                letter-spacing: -0.06em;
+                max-width: none;
+            }
+        }
+    </style>
 </head>
+
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container" class="mt-12"></div>
+    <!-- Normalized layout shell: kompyutery.html -->
+<div id="header-container" class="mt-12"></div>
     <nav class="bg-slate-50 border-b border-slate-100 py-3" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
@@ -79,26 +121,18 @@
                         <i class="ri-macbook-line"></i>
                         <span>РЕМОНТ КОМПЬЮТЕРОВ И НОУТБУКОВ НА ДОМУ</span>
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">Ремонт компьютеров и ноутбуков в Москве — от 690₽</h1>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен</h1>
                     <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Бесплатная диагностика. <span class="text-white font-bold">Выезд за 60 минут</span>.
-                        <span class="text-white font-bold"><span class="counter" data-target="95" data-suffix="%">0</span></span> ремонтов за один визит.
+                        Приезжаем домой или в офис, быстро находим причину и называем стоимость до работ.
+                        Если ремонт не имеет смысла, честно скажем сразу.
                     </p>
-                    <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 mb-8">
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1">0₽</p><p class="text-slate-300 text-xs">Выезд</p></div>
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1"><span class="counter" data-target="95" data-suffix="%">0</span></p><p class="text-slate-300 text-xs">За 1 визит</p></div>
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1">12 мес</p><p class="text-slate-300 text-xs">Гарантия</p></div>
-                    </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
-                        <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Решим проблему быстро</span></a>
-                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20компьютера" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>WhatsApp</span></a>
+                        <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Вернуть компьютер в строй</span></a>
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20компьютера" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>Описать проблему в WhatsApp</span></a>
                     </div>
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-white/80 text-sm">
-                        <div class="flex items-center gap-2"><div class="flex text-yellow-400"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><span class="font-bold text-white">4.9/5</span></div>
-                        <span class="text-white/40">|</span>
-                        <div class="flex items-center gap-2"><i class="ri-team-line text-brand-orange"></i><span><span class="counter" data-target="500" data-suffix="+">0</span> отзывов</span></div>
-                        <span class="text-white/40">|</span>
-                        <div class="flex items-center gap-2"><i class="ri-calendar-check-line text-brand-orange"></i><span>15+ лет опыта</span></div>
+                    <div class="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm text-white/90">
+                        <i class="ri-shield-check-line text-brand-orange text-lg"></i>
+                        <span>Без вашего согласия ничего не меняем и не ремонтируем</span>
                     </div>
                 </div>
                 <div class="hidden lg:block scroll-reveal relative">
@@ -109,30 +143,10 @@
                         </div>
                     </div>
                     <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-lg z-20 max-w-xs card-brand"><div class="flex items-center gap-3"><div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"><i class="ri-checkbox-circle-line text-green-600 text-xl icon-spring"></i></div><div><p class="font-display font-extrabold text-brand-blue text-2xl">98%</p><p class="text-slate-500 text-xs">довольных клиентов</p></div></div></div>
-                    <div class="absolute -top-4 -right-4 bg-white p-4 rounded-2xl shadow-lg z-20 max-w-xs card-brand"><div class="flex text-yellow-400 text-xs mb-2"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><p class="text-slate-600 text-xs italic">«Почистил от пыли, заменил термопасту. Ноутбук не шумит!»</p><p class="text-slate-500 text-xs font-semibold mt-2">— Артём, Бутово</p></div>
                 </div>
             </div>
         </div>
     </header>
-    <section class="py-6 bg-brand-orange relative overflow-hidden z-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
-                <div class="flex items-center gap-4"><div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0"><i class="ri-customer-service-2-line text-white text-2xl"></i></div><div><p class="text-white font-bold text-lg">Компьютер сломался?</p><p class="text-white/90 text-sm">Мастер приедет через час</p></div></div>
-                <a href="tel:89990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105"><i class="ri-phone-line"></i><span>8 (999) 005-71-72</span></a>
-            </div>
-        </div>
-    </section>
-    <section class="py-6 bg-green-50 border-y-2 border-green-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white text-lg"><i class="ri-team-fill"></i></div><p class="text-slate-700 font-medium"><strong class="text-green-600">Мастера</strong> на выезде сегодня</p></div>
-                <span class="hidden md:inline text-slate-300 text-2xl">|</span>
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"><i class="ri-time-line"></i></div><p class="text-slate-700 font-medium">Выезжаем <strong class="text-green-600">сегодня</strong>, подберём ближайшее окно</p></div>
-                <span class="hidden md:inline text-slate-300 text-2xl">|</span>
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"><i class="ri-calendar-event-line"></i></div><p class="text-slate-700 font-medium">Работаем <strong class="text-green-600">ежедневно, без выходных</strong></p></div>
-            </div>
-        </div>
-    </section>
     <section class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -140,6 +154,21 @@
                 <div class="scroll-reveal text-center" data-delay="2"><p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="5000" data-suffix="+">0</span></p><p class="text-slate-600 font-medium">Ремонтов</p></div>
                 <div class="scroll-reveal text-center" data-delay="3"><p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="95" data-suffix="%">0</span></p><p class="text-slate-600 font-medium">За 1 визит</p></div>
                 <div class="scroll-reveal text-center" data-delay="4"><p class="text-4xl lg:text-5xl font-display font-extrabold text-brand-orange mb-2"><span class="counter" data-target="12" data-suffix="">0</span></p><p class="text-slate-600 font-medium">Месяцев гарантия</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 lg:py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">🛡️ ПОСЛЕ ВЫЕЗДА</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что вы получаете, кроме самого ремонта</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Нормальную диагностику, понятную стоимость и предсказуемый результат без лишней суеты.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="scroll-reveal" data-delay="1"><div class="card-brand bg-white p-6 rounded-2xl border-2 border-slate-100 h-full"><div class="w-12 h-12 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-4"><i class="ri-search-eye-line"></i></div><h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Понятную причину</h3><p class="text-slate-600 text-sm">Скажем, что именно тормозит, греется или мешает запуску, без туманных формулировок.</p></div></div>
+                <div class="scroll-reveal" data-delay="2"><div class="card-brand bg-white p-6 rounded-2xl border-2 border-slate-100 h-full"><div class="w-12 h-12 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-4"><i class="ri-money-ruble-circle-line"></i></div><h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Стоимость до работ</h3><p class="text-slate-600 text-sm">Сначала согласуем цену. Без разрешения ничего не вскрываем и не меняем.</p></div></div>
+                <div class="scroll-reveal" data-delay="3"><div class="card-brand bg-white p-6 rounded-2xl border-2 border-slate-100 h-full"><div class="w-12 h-12 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-4"><i class="ri-file-list-3-line"></i></div><h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Акт и гарантию</h3><p class="text-slate-600 text-sm">После ремонта выдаём документы и фиксируем гарантийные условия без мелкого шрифта.</p></div></div>
+                <div class="scroll-reveal" data-delay="4"><div class="card-brand bg-white p-6 rounded-2xl border-2 border-slate-100 h-full"><div class="w-12 h-12 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-4"><i class="ri-checkbox-multiple-line"></i></div><h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Проверку результата</h3><p class="text-slate-600 text-sm">Покажем, что система загружается, не шумит и работает как должна уже при вас.</p></div></div>
             </div>
         </div>
     </section>
@@ -234,7 +263,7 @@
     </section>
     <section class="py-16 lg:py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-slate-700 text-lg leading-relaxed">Ремонт ноутбуков и стационарных компьютеров ASUS, HP, Lenovo, Acer, Dell, MSI на дому. Не включается, тормозит, синий экран — устраняем любые поломки. Бесплатная диагностика при ремонте.</p>
+            <p class="text-slate-700 text-lg leading-relaxed">Ремонт ноутбуков и стационарных компьютеров ASUS, HP, Lenovo, Acer, Dell, MSI на дому. Если не включается, тормозит, шумит или ловит синий экран, быстро находим причину, согласовываем стоимость и возвращаем устройство в работу без лишних замен.</p>
         </div>
     </section>
 
@@ -264,14 +293,14 @@
                             <span class="text-2xl font-display font-extrabold" id="cd-min">59</span>
                             <span class="text-xs text-white/70 block">мин</span>
                         </div>
-                        <div class="text-2xl font-bold self-center">:</div>
+                        <div class="text-2xl sm:text-3xl font-bold self-center leading-none">:</div>
                         <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[50px]">
                             <span class="text-2xl font-display font-extrabold" id="cd-sec">59</span>
                             <span class="text-xs text-white/70 block">сек</span>
                         </div>
                     </div>
                 </div>
-                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-8 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
+                <a href="tel:89990057172" class="bg-white text-brand-blue hover:bg-slate-100 px-8 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
                     <i class="ri-phone-line"></i>
                     <span>Вызвать мастера (0₽)</span>
                 </a>
@@ -537,7 +566,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="scroll-reveal" data-delay="1"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-settings-3-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Запчасти с собой</h3><p class="text-slate-300 mb-4">До 95% проблем решаем за 1 визит. Ходовые комплектующие берём с собой.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>До 95% заявок за 1 визит</p></div></div></div>
                 <div class="scroll-reveal" data-delay="2"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-3xl mb-6 mx-auto group-hover:bg-green-500 group-hover:text-white transition-all"><i class="ri-shield-check-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Гарантия 12 мес</h3><p class="text-slate-300 mb-4">Официальный акт + гарантийный талон. Приедем бесплатно.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Акт + гарантия</p></div></div></div>
-                <div class="scroll-reveal" data-delay="3"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-3xl mb-6 mx-auto group-hover:bg-blue-500 group-hover:text-white transition-all"><i class="ri-money-cny-circle-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Честные цены</h3><p class="text-slate-300 mb-4">Фиксированная цена после диагностики. Без скрытых платежей.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Диагностика 0₽</p></div></div></div>
+                <div class="scroll-reveal" data-delay="3"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-3xl mb-6 mx-auto group-hover:bg-blue-500 group-hover:text-white transition-all"><i class="ri-money-cny-circle-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Честные цены</h3><p class="text-slate-300 mb-4">Фиксированная цена после диагностики. Без скрытых платежей.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Диагностика при ремонте</p></div></div></div>
                 <div class="scroll-reveal" data-delay="4"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 text-3xl mb-6 mx-auto group-hover:bg-purple-500 group-hover:text-white transition-all"><i class="ri-award-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">15+ лет опыта</h3><p class="text-slate-300 mb-4">Ремонтируем все марки — от ASUS до кастомных сборок.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Все марки</p></div></div></div>
             </div>
         </div>
@@ -549,7 +578,7 @@
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-chat-3-line mr-2"></i>ОТЗЫВЫ</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что говорят наши клиенты</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">500+ отзывов за 15 лет. Средний рейтинг 4.9/5</p>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">500+ отзывов за с 2010 года. Средний рейтинг 4.9/5</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="scroll-reveal" data-delay="1">
@@ -583,6 +612,43 @@
             </div>
         </div>
     </section>
+    <section class="py-20 lg:py-24 bg-white deep-dive">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">📚 ЕСЛИ ХОТИТЕ РАЗОБРАТЬСЯ ПОДРОБНЕЕ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Типовые сценарии по компьютерам и ноутбукам</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Основной путь к заявке остаётся коротким, а здесь можно быстро понять логику самых частых поломок.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-5 mb-5">
+                <details class="scroll-reveal" data-delay="1">
+                    <summary class="font-bold text-brand-blue flex items-center justify-between gap-3"><span>Ноутбук стал шуметь и греться</span><span class="text-brand-orange">+</span></summary>
+                    <p class="mt-4 text-slate-600 text-sm">Обычно всё начинается с шума кулера и просадок по скорости. Если не тянуть, часто хватает чистки и замены термопасты без тяжёлого ремонта платы.</p>
+                </details>
+                <details class="scroll-reveal" data-delay="2">
+                    <summary class="font-bold text-brand-blue flex items-center justify-between gap-3"><span>ПК тормозил всё сильнее</span><span class="text-brand-orange">+</span></summary>
+                    <p class="mt-4 text-slate-600 text-sm">Часто причина в умирающем HDD или забитой системе. Пока компьютер ещё запускается, обычно можно успеть спасти данные и перейти на SSD без больших потерь.</p>
+                </details>
+                <details class="scroll-reveal" data-delay="3">
+                    <summary class="font-bold text-brand-blue flex items-center justify-between gap-3"><span>Когда честнее не чинить</span><span class="text-brand-orange">+</span></summary>
+                    <p class="mt-4 text-slate-600 text-sm">Если ремонт старого ноутбука с заменой платы и батареи уже упирается в цену живого аналога, честнее сказать об этом сразу и помочь сохранить данные перед заменой устройства.</p>
+                </details>
+            </div>
+            <div class="grid md:grid-cols-3 gap-5">
+                <details class="scroll-reveal" data-delay="4">
+                    <summary class="font-bold text-brand-blue flex items-center justify-between gap-3"><span>ASUS не брал зарядку</span><span class="text-brand-orange">+</span></summary>
+                    <p class="mt-4 text-slate-600 text-sm">Кейс из Бутово: ноутбук не реагировал на блок питания. Оказался разъём зарядки, а не материнская плата. Ремонт занял меньше часа.</p>
+                </details>
+                <details class="scroll-reveal" data-delay="5">
+                    <summary class="font-bold text-brand-blue flex items-center justify-between gap-3"><span>HP тормозил из-за диска</span><span class="text-brand-orange">+</span></summary>
+                    <p class="mt-4 text-slate-600 text-sm">Сначала был медленный запуск, потом зависания и 100% загрузка диска. Перешли с HDD на SSD и перенесли систему с файлами в тот же день.</p>
+                </details>
+                <details class="scroll-reveal" data-delay="6">
+                    <summary class="font-bold text-brand-blue flex items-center justify-between gap-3"><span>MSI выключался в играх</span><span class="text-brand-orange">+</span></summary>
+                    <p class="mt-4 text-slate-600 text-sm">Когда игровой ноутбук выключается под нагрузкой, это не всегда “смерть видеокарты”. Часто спасают чистка охлаждения и нормальная термопаста вместо перегретого забитого контура.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
     <!-- Процесс -->
     <section class="py-32 lg:py-40 bg-white">
@@ -595,7 +661,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="scroll-reveal" data-delay="1"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">1</div><h3 class="text-lg font-bold text-brand-blue mb-2">Заявка</h3><p class="text-slate-600 text-sm">Звоните или пишите в WhatsApp. Опишите проблему — назовём примерную стоимость.</p></div></div>
                 <div class="scroll-reveal" data-delay="2"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">2</div><h3 class="text-lg font-bold text-brand-blue mb-2">Выезд мастера</h3><p class="text-slate-600 text-sm">Инженер приедет за 60 минут с набором запчастей и инструментов.</p></div></div>
-                <div class="scroll-reveal" data-delay="3"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">3</div><h3 class="text-lg font-bold text-brand-blue mb-2">Диагностика + ремонт</h3><p class="text-slate-600 text-sm">Бесплатная диагностика. Называем точную цену — чиним при вас за 30-90 мин.</p></div></div>
+                <div class="scroll-reveal" data-delay="3"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">3</div><h3 class="text-lg font-bold text-brand-blue mb-2">Диагностика + ремонт</h3><p class="text-slate-600 text-sm">Диагностика при ремонте. Называем точную цену — чиним при вас за 30-90 мин.</p></div></div>
                 <div class="scroll-reveal" data-delay="4"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-2xl font-extrabold mb-4 mx-auto group-hover:bg-green-500 group-hover:text-white transition-all">✓</div><h3 class="text-lg font-bold text-brand-blue mb-2">Гарантия 12 мес</h3><p class="text-slate-600 text-sm">Выдаём акт + гарантийный талон. Если что — приедем бесплатно.</p></div></div>
             </div>
         </div>
@@ -658,7 +724,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-scales-3-line mr-2"></i>СРАВНЕНИЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему выбирают нас, а не других</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему нам доверяют</h2>
             </div>
             <div class="card-brand bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden scroll-reveal">
                 <div class="overflow-x-auto">
@@ -737,6 +803,43 @@
         </div>
     </section>
 
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
+                <div class="scroll-reveal">
+                    <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-5"><i class="ri-shield-user-line mr-2"></i>ДАННЫЕ ПОД КОНТРОЛЕМ</span>
+                    <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-5 heading-reveal">Сначала сохраняем файлы, потом ремонтируем систему</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">Для компьютеров главный страх клиента — потерять документы, фото, рабочие файлы или доступы. Поэтому мастер не переустанавливает Windows и не форматирует диск без согласования.</p>
+                    <a href="#request" class="btn-click inline-flex items-center gap-2 bg-brand-orange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold shadow-lg transition">
+                        Описать проблему с компьютером <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="card-brand bg-gradient-to-br from-slate-50 to-white p-6 rounded-3xl border-2 border-slate-100 scroll-reveal" data-delay="1">
+                        <div class="w-12 h-12 bg-brand-blue rounded-2xl flex items-center justify-center text-white text-xl mb-4"><i class="ri-folder-shield-2-line"></i></div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Не удаляем без разрешения</h3>
+                        <p class="text-slate-600 text-sm">Перед переустановкой, сбросом или заменой диска отдельно согласуем, что сохранять и куда переносить.</p>
+                    </div>
+                    <div class="card-brand bg-gradient-to-br from-green-50 to-white p-6 rounded-3xl border-2 border-green-100 scroll-reveal" data-delay="2">
+                        <div class="w-12 h-12 bg-green-600 rounded-2xl flex items-center justify-center text-white text-xl mb-4"><i class="ri-hard-drive-3-line"></i></div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Проверяем диск до работ</h3>
+                        <p class="text-slate-600 text-sm">Если HDD или SSD сыпется, сначала копируем важное, а уже потом предлагаем замену и настройку системы.</p>
+                    </div>
+                    <div class="card-brand bg-gradient-to-br from-orange-50 to-white p-6 rounded-3xl border-2 border-orange-100 scroll-reveal" data-delay="3">
+                        <div class="w-12 h-12 bg-brand-orange rounded-2xl flex items-center justify-center text-white text-xl mb-4"><i class="ri-user-voice-line"></i></div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Объясняем простым языком</h3>
+                        <p class="text-slate-600 text-sm">Показываем причину: перегрев, вирусы, битый диск, слабая память, блок питания или конфликт драйверов.</p>
+                    </div>
+                    <div class="card-brand bg-gradient-to-br from-cyan-50 to-white p-6 rounded-3xl border-2 border-cyan-100 scroll-reveal" data-delay="4">
+                        <div class="w-12 h-12 bg-cyan-600 rounded-2xl flex items-center justify-center text-white text-xl mb-4"><i class="ri-lock-password-line"></i></div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Доступы остаются у вас</h3>
+                        <p class="text-slate-600 text-sm">Пароли вводит клиент. Если нужен новый доступ, сразу записываем его и проверяем вход при вас.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
     <section class="py-24 lg:py-32 bg-slate-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -793,22 +896,49 @@
     <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
             <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6"><span class="font-medium"><i class="ri-computer-line mr-2"></i>Компьютер сломался?</span></div>
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Починим за 30-90 минут на дому</h2>
-            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Диагностика 0₽. Гарантия 12 месяцев. Оригинальные запчасти.</p>
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Лучше вернуть компьютер в работу сегодня</h2>
+            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Чем дольше тянуть с перегревом, вирусами или умирающим диском, тем выше риск потерять данные и заплатить за ремонт больше.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="tel:89990057172" class="btn-click inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-lg transform hover:scale-105"><i class="ri-phone-line mr-2"></i>8 (999) 005-71-72</a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20компьютера" rel="noopener noreferrer" target="_blank" class="btn-click inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-6 rounded-full font-bold transition shadow-xl"><i class="ri-whatsapp-line mr-2"></i>WhatsApp</a>
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20компьютера" rel="noopener noreferrer" target="_blank" class="btn-click inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-6 rounded-full font-bold transition shadow-xl"><i class="ri-whatsapp-line mr-2"></i>Описать проблему в WhatsApp</a>
             </div>
         </div>
     </section>
 
     <!-- Форма заявки -->
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
+    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div class="scroll-reveal">
+                    <div class="inline-flex items-center gap-3 bg-brand-orange/10 rounded-full px-5 py-3 border border-brand-orange/20 mb-6 text-brand-orange">
+                        <i class="ri-computer-line text-2xl"></i>
+                        <span class="font-bold">💻 СРОЧНЫЙ РЕМОНТ</span>
+                    </div>
+                    <h2 class="text-3xl lg:text-5xl font-display font-extrabold mb-5 leading-tight text-brand-blue">Компьютер или ноутбук подвис?</h2>
+                    <p class="text-slate-700 text-lg mb-4">Работа встаёт, файлы и задачи не ждут.</p>
+                    <p class="text-slate-600 text-base">Проверим питание, диск, охлаждение и систему, скажем что выгодно делать сейчас, а что нет.</p>
+                </div>
+                <div class="scroll-reveal text-center">
+                    <div class="flex flex-wrap justify-center mb-4"><span class="inline-flex items-center gap-2 bg-white rounded-full px-3 py-1 text-xs mr-2 mb-2 border border-slate-200"><span>💻</span><span>Ноутбук и ПК</span></span><span class="inline-flex items-center gap-2 bg-white rounded-full px-3 py-1 text-xs mr-2 mb-2 border border-slate-200"><span>🧠</span><span>Работа без тормозов</span></span><span class="inline-flex items-center gap-2 bg-white rounded-full px-3 py-1 text-xs mb-2 border border-slate-200"><span>🏠</span><span>Ремонт у вас</span></span></div><p class="text-slate-500 text-sm mb-2 font-semibold">Окно экспресс-ремонта ПК ещё:</p>
+                    <div class="inline-flex items-center gap-2 bg-brand-blue rounded-2xl px-6 py-4 border-2 border-brand-blue text-white">
+                        <span class="text-4xl font-display font-extrabold" id="cd-min">59</span>
+                        <span class="text-3xl font-display font-extrabold text-white/60">:</span>
+                        <span class="text-4xl font-display font-extrabold" id="cd-sec">59</span>
+                    </div>
+                    <p class="text-slate-500 text-xs mt-2">Диагностика при ремонте при заявке сейчас</p>
+                    <a href="tel:89990057172" class="mt-4 inline-block bg-brand-orange text-white hover:bg-brand-orangeHover px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105">
+                        <i class="ri-phone-line mr-2"></i>Вернуть компьютер в строй
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="request" class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">📝 ЗАЯВКА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Перезвоним за 5 минут</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку на ремонт</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Быстро скажем, насколько срочен выезд и какой сценарий ремонта вероятнее всего.</p>
             </div>
             <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -817,8 +947,8 @@
                 </div>
                 <div class="mb-6"><label class="block text-sm font-medium text-slate-700 mb-2">Модель компьютера / ноутбука</label><input type="text" name="type" placeholder="ASUS VivoBook, HP Pavilion..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700"></div>
                 <div class="mb-6"><label class="block text-sm font-medium text-slate-700 mb-2">Что случилось?</label><input type="text" name="problem" placeholder="Не включается, тормозит, синий экран..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700"></div>
-                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg"><i class="ri-send-plane-line mr-2"></i>Отправить заявку</button>
-                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
+                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg"><i class="ri-send-plane-line mr-2"></i>Получить понятный сценарий ремонта</button>
+                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Используем контакты только для связи по этой заявке</p>
             </form>
         </div>
     </section>
@@ -833,10 +963,11 @@
     <!-- Мобильная нижняя панель -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
-            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i><span>Решим проблему быстро</span></a>
+            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i><span>Вернуть компьютер</span></a>
             <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>WhatsApp</span></a>
         </div>
     </div>
+    <div id="footer-container"></div>
 
     <!-- JS: Таймер обратного отсчёта -->
     <script>
@@ -870,6 +1001,6 @@
         setInterval(updateTimer, 1000);
     })();
     </script>
-
 </body>
+
 </html>

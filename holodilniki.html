@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
-<link rel="preload" href="styles-built.css" as="style">
-    <link rel="stylesheet" href="styles-built.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="main.js" as="script">
-    <script src="main.js" defer></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Ремонт холодильников в Москве — MosPochin | от 890₽</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/manrope.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/manrope.css">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="/assets/fonts/remixicon.css">
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
+
+    <title>Ремонт холодильников в Москве — MosPochin | от 890₽</title>
     <meta name="description" content="Ремонт холодильников Bosch, Samsung, LG, Indesit на дому. Бесплатная диагностика. Гарантия 12 мес.">
     <meta property="og:title" content="Ремонт холодильников в Москве — MosPochin | от 890₽">
     <meta property="og:description" content="Ремонт холодильников Bosch, Samsung, LG, Indesit на дому. Бесплатная диагностика. Гарантия 12 мес.">
@@ -48,17 +55,96 @@
       "offers": {
         "@type": "Offer",
         "priceCurrency": "RUB",
-        "price": "от 590₽",
+        "price": "от 890₽",
         "availability": "https://schema.org/InStock"
       }
     }
     </script>
     <link rel="canonical" href="https://mspochin.ru/holodilniki.html">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="telegram-form.js" defer></script>
+    <style>
+    body.page-holodilniki h1 {
+      font-size: clamp(2.7rem, 4.2vw, 4.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+      max-width: 11.5ch;
+      text-wrap: balance;
+    }
+
+    body.page-holodilniki h2.heading-reveal,
+    body.page-holodilniki section h2 {
+      letter-spacing: -0.06em;
+      line-height: 1.04;
+    }
+
+    body.page-holodilniki .font-display {
+      letter-spacing: -0.045em;
+    }
+
+    body.page-holodilniki .inline-block.bg-brand-orange\/10,
+    body.page-holodilniki .inline-block.bg-red-100,
+    body.page-holodilniki .inline-block.bg-green-100,
+    body.page-holodilniki .inline-block.bg-blue-100,
+    body.page-holodilniki .inline-block.bg-yellow-400\/10 {
+      letter-spacing: 0.04em;
+      font-size: 0.74rem;
+    }
+
+    body.page-holodilniki .text-slate-600.text-base,
+    body.page-holodilniki .text-slate-600.text-lg,
+    body.page-holodilniki .text-slate-600.text-base.sm\:text-lg,
+    body.page-holodilniki .text-slate-200,
+    body.page-holodilniki .text-slate-700.text-lg {
+      line-height: 1.72;
+      letter-spacing: -0.015em;
+    }
+
+    body.page-holodilniki .btn-click {
+      letter-spacing: -0.03em;
+      font-size: 1.02rem;
+    }
+
+    body.page-holodilniki .faq-item summary {
+      font-family: var(--font-display);
+      font-size: 1.04rem;
+      letter-spacing: -0.035em;
+    }
+
+    body.page-holodilniki details p,
+    body.page-holodilniki .card-brand p.text-slate-600,
+    body.page-holodilniki .card-brand p.text-slate-500 {
+      letter-spacing: -0.012em;
+    }
+
+    body.page-holodilniki .card-brand h3,
+    body.page-holodilniki .card-brand .font-display.font-extrabold,
+    body.page-holodilniki .card-brand .font-display.font-bold {
+      letter-spacing: -0.045em;
+      line-height: 1.12;
+    }
+
+    body.page-holodilniki .text-4xl.font-display,
+    body.page-holodilniki .text-5xl.font-display,
+    body.page-holodilniki .text-3xl.font-display {
+      letter-spacing: -0.065em;
+    }
+
+    @media (max-width: 768px) {
+      body.page-holodilniki h1 {
+        font-size: clamp(2.2rem, 7.6vw, 3.2rem);
+        line-height: 0.98;
+        max-width: none;
+      }
+
+      body.page-holodilniki .btn-click {
+        font-size: 0.98rem;
+      }
+    }
+    </style>
 </head>
+
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container" class="mt-12"></div>
+    <!-- Normalized layout shell: holodilniki.html -->
+<div id="header-container" class="mt-12"></div>
     <nav class="bg-slate-50 border-b border-slate-100 py-3" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
@@ -79,37 +165,50 @@
                         <i class="ri-snowy-line"></i>
                         <span>РЕМОНТ ХОЛОДИЛЬНИКОВ НА ДОМУ</span>
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">Ремонт холодильников в Москве — от 890₽</h1>
-                    <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Бесплатная диагностика. <span class="text-white font-bold">Выезд за 60 минут</span>. 
-                        <span class="text-white font-bold"><span class="counter" data-target="95" data-suffix="%">0</span></span> ремонтов за один визит.
-                    </p>
-                    <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 mb-8">
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1">0₽</p><p class="text-slate-300 text-xs">Выезд</p></div>
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1"><span class="counter" data-target="95" data-suffix="%">0</span></p><p class="text-slate-300 text-xs">За 1 визит</p></div>
-                        <div class="glass-card p-4 text-center"><p class="text-3xl font-display font-extrabold text-brand-orange mb-1">12 мес</p><p class="text-slate-300 text-xs">Гарантия</p></div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight mb-6 leading-tight">Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене</h1>
+                    <p class="text-lg sm:text-xl text-slate-200 mb-6 max-w-2xl mx-auto lg:mx-0">Приезжаем быстро, проверяем причину поломки, называем стоимость до ремонта и честно говорим, есть ли смысл чинить холодильник прямо сейчас.</p>
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
+                        <span class="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-4 py-2 text-sm text-white/90"><span>💸</span><span>Стоимость согласуем до ремонта</span></span>
+                        <span class="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-4 py-2 text-sm text-white/90"><span>🏠</span><span>Приезжаем домой, технику везти не нужно</span></span>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
-                        <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Решим проблему быстро</span></a>
-                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20холодильника" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>WhatsApp</span></a>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-5">
+                        <a href="tel:89990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Спасти продукты и вернуть холод</span></a>
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20холодильника" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-white/10 hover:bg-white/15 border border-white/15 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>Описать поломку в WhatsApp</span></a>
                     </div>
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-white/80 text-sm">
-                        <div class="flex items-center gap-2"><div class="flex text-yellow-400"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><span class="font-bold text-white">4.9/5</span></div>
-                        <span class="text-white/40">|</span>
-                        <div class="flex items-center gap-2"><i class="ri-team-line text-brand-orange"></i><span><span class="counter" data-target="500" data-suffix="+">0</span> отзывов</span></div>
-                        <span class="text-white/40">|</span>
-                        <div class="flex items-center gap-2"><i class="ri-calendar-check-line text-brand-orange"></i><span>15+ лет опыта</span></div>
-                    </div>
-                </div>
-                <div class="hidden lg:block scroll-reveal relative">
-                    <div class="rounded-2xl shadow-lg w-full h-[500px] relative overflow-hidden" style="background: url('/assets/images/fridge-07.jpg') center/cover no-repeat;">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/60 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-xl">
-                            <p class="text-white/90 text-sm font-display font-bold"><i class="ri-snowy-line mr-2 text-brand-orange"></i>Ремонт холодильников</p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/80 text-sm">
+                        <div class="inline-flex items-center gap-2">
+                            <i class="ri-shield-check-line text-brand-orange"></i>
+                            <span>Без вашего согласия ничего не разбираем и не ремонтируем</span>
                         </div>
                     </div>
-                    <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-lg z-20 max-w-xs card-brand"><div class="flex items-center gap-3"><div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"><i class="ri-checkbox-circle-line text-green-600 text-xl icon-spring"></i></div><div><p class="font-display font-extrabold text-brand-blue text-2xl">98%</p><p class="text-slate-500 text-xs">довольных клиентов</p></div></div></div>
-                    <div class="absolute -top-4 -right-4 bg-white p-4 rounded-2xl shadow-lg z-20 max-w-xs card-brand"><div class="flex text-yellow-400 text-xs mb-2"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div><p class="text-slate-600 text-xs italic">«Приехал через 50 мин, заменил подшипники за 2 часа. Холодильник как новая!»</p><p class="text-slate-500 text-xs font-semibold mt-2">— Марина, Медведково</p></div>
+                </div>
+                <div class="hidden lg:block scroll-reveal">
+                    <div class="space-y-4">
+                        <div class="rounded-2xl shadow-lg w-full h-[500px] relative overflow-hidden" style="background: url('/assets/images/fridge-07.jpg') center/cover no-repeat;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/70 via-brand-blue/20 to-transparent"></div>
+                        <div class="absolute top-6 right-6 max-w-[260px] bg-brand-blue/92 backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-white/10">
+                            <p class="text-white/90 text-xs leading-relaxed">Сначала диагностика причины, потом честно говорим, есть ли смысл ремонтировать.</p>
+                        </div>
+                            <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-xl">
+                                <p class="text-white/90 text-sm font-display font-bold"><i class="ri-snowy-line mr-2 text-brand-orange"></i>Ремонт холодильников на дому без перевозки техники</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/95 backdrop-blur-sm p-5 rounded-2xl shadow-lg card-brand border border-slate-100">
+                            <div class="flex items-center justify-between gap-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"><i class="ri-checkbox-circle-line text-green-600 text-xl icon-spring"></i></div>
+                                    <div>
+                                        <p class="font-display font-extrabold text-brand-blue text-2xl">98%</p>
+                                        <p class="text-slate-500 text-xs">довольных клиентов</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="flex justify-end text-yellow-400 text-xs mb-1"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+                                    <p class="text-slate-600 text-sm font-semibold">4.9/5 по отзывам</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,7 +216,7 @@
     <section class="py-6 bg-brand-orange relative overflow-hidden z-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
-                <div class="flex items-center gap-4"><div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0"><i class="ri-customer-service-2-line text-white text-2xl"></i></div><div><p class="text-white font-bold text-lg">Холодильник сломался?</p><p class="text-white/90 text-sm">Мастер приедет через час</p></div></div>
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto"><div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0"><i class="ri-customer-service-2-line text-white text-2xl"></i></div><div><p class="text-white font-bold text-lg">Холодильник сломался?</p><p class="text-white/90 text-sm">Мастер приедет через час</p></div></div>
                 <a href="tel:89990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105"><i class="ri-phone-line"></i><span>8 (999) 005-71-72</span></a>
             </div>
         </div>
@@ -125,11 +224,11 @@
     <section class="py-6 bg-green-50 border-y-2 border-green-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white text-lg"><i class="ri-team-fill"></i></div><p class="text-slate-700 font-medium"><strong class="text-green-600">Мастера</strong> на выезде сегодня</p></div>
+                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white text-lg"><i class="ri-team-fill"></i></div><p class="text-slate-700 font-medium"><strong class="text-green-600">3 мастера</strong> свободны сегодня</p></div>
                 <span class="hidden md:inline text-slate-300 text-2xl">|</span>
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"><i class="ri-time-line"></i></div><p class="text-slate-700 font-medium">Выезжаем <strong class="text-green-600">сегодня</strong>, подберём ближайшее окно</p></div>
+                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"><i class="ri-time-line"></i></div><p class="text-slate-700 font-medium">Ближайший выезд — <strong class="text-green-600">через 40 минут</strong></p></div>
                 <span class="hidden md:inline text-slate-300 text-2xl">|</span>
-                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"><i class="ri-calendar-event-line"></i></div><p class="text-slate-700 font-medium">Работаем <strong class="text-green-600">ежедневно, без выходных</strong></p></div>
+                <div class="flex items-center gap-3"><div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"><i class="ri-calendar-event-line"></i></div><p class="text-slate-700 font-medium">Работаем <strong class="text-green-600">сегодня до 22:00</strong></p></div>
             </div>
         </div>
     </section>
@@ -143,14 +242,49 @@
             </div>
         </div>
     </section>
+    <section class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-search-eye-line mr-2"></i>УЗНАЛИ СВОЙ СЛУЧАЙ?</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">По каким сценариям люди чаще всего вызывают мастера именно сегодня</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto">Здесь уже обычно не вопрос “надо ли вызывать”, а вопрос “насколько срочно”. Чем точнее узнаёте свою ситуацию, тем выше шанс быстро закрыть её за один визит.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="scroll-reveal bg-white p-6 rounded-3xl border border-slate-200 shadow-sm" data-delay="1">
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Морозилка морозит, а холодильная камера тёплая</h3>
+                    <p class="text-slate-600 text-sm">Часто проблема в No Frost, датчике или циркуляции холода. Это как раз тот случай, где важно не ждать, пока добьётся компрессор.</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-3xl border border-slate-200 shadow-sm" data-delay="2">
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Холодильник работает почти без остановки</h3>
+                    <p class="text-slate-600 text-sm">Он уже уходит в перерасход и износ. Если тянуть, локальная поломка часто превращается в заметно более дорогой ремонт.</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-3xl border border-slate-200 shadow-sm" data-delay="3">
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Щёлкает, гудит и не запускается</h3>
+                    <p class="text-slate-600 text-sm">Так часто проявляются проблемы с запуском, реле или компрессором. Тут лучше не мучить технику повторными включениями.</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-3xl border border-slate-200 shadow-sm" data-delay="4">
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">После разморозки пропал холод</h3>
+                    <p class="text-slate-600 text-sm">Обычно это не “само пройдёт”, а сигнал о реальной неисправности: от системы оттайки до скрытой утечки.</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-3xl border border-slate-200 shadow-sm" data-delay="5">
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Под холодильником вода или внутри лужа</h3>
+                    <p class="text-slate-600 text-sm">Иногда это простой дренаж, а иногда поломка, которую лучше не дотягивать до порчи продуктов и неприятного запаха.</p>
+                </div>
+                <div class="scroll-reveal bg-white p-6 rounded-3xl border border-slate-200 shadow-sm" data-delay="6">
+                    <h3 class="text-lg font-display font-extrabold text-brand-blue mb-2">Продукты уже тёплые, а холод уходит</h3>
+                    <p class="text-slate-600 text-sm">Самый конверсионный и самый срочный сценарий: здесь лучше действовать быстро, пока проблема не стала намного дороже.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="py-32 lg:py-40 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-snowy-line mr-2"></i>ТИПЫ ХОЛОДИЛЬНИКОВ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонтируем все типы холодильников</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Встраиваемые и обычные — нюансы ремонта и цены</p>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4 shadow-sm"><i class="ri-snowy-line mr-2"></i>ТИПЫ ХОЛОДИЛЬНИКОВ</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Какие проблемы холодильника мы закрываем за 1 визит</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Встраиваемые и обычные — нюансы ремонта и цены</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                 <div class="scroll-reveal" data-delay="1">
                     <div class="card-brand bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border-2 border-blue-200 h-full">
                         <div class="flex items-center gap-3 mb-6">
@@ -202,38 +336,43 @@
     <section class="py-6 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNjBWMGg2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjZykiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48L3N2Zz4=')] opacity-20"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left text-white">
-                <div class="flex items-center gap-4">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 animate-pulse">
+            <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 lg:gap-8 text-center lg:text-left text-white">
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 animate-pulse mx-auto sm:mx-0">
                         <i class="ri-alarm-warning-line text-white text-3xl"></i>
                     </div>
                     <div>
-                        <p class="text-white font-display font-bold text-xl">НЕ ОТКЛАДЫВАЙТЕ РЕМОНТ!</p>
-                        <div class="text-white/90 text-sm mt-1">
-                            <p>Каждый час без холодильника:</p>
-                            <p class="font-bold">• Продукты на 2,000₽ портятся</p>
-                            <p class="font-bold">• Налёт льда растёт → дороже ремонт</p>
-                            <p class="font-bold">• Компрессор перегревается → может сгореть</p>
+                        <p class="text-white font-display font-bold text-lg sm:text-xl leading-tight">НЕ ТЯНИТЕ, ПОКА РЕМОНТ ЕЩЁ ВЫГОДЕН</p>
+                        <div class="text-white/90 text-xs sm:text-sm mt-2 space-y-1">
+                            <p>Чем дольше холодильник не морозит, тем выше риск:</p>
+                            <p class="font-bold">• выбросить продукты и потерять деньги уже сегодня</p>
+                            <p class="font-bold">• попасть на более дорогой ремонт вместо быстрой починки</p>
+                            <p class="font-bold">• довести компрессор до перегрева и замены</p>
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-2">
-                    <p class="text-white/80 text-sm font-medium">Мастер приедет через:</p>
-                    <div class="flex gap-2" id="countdown-timer">
-                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[50px]">
-                            <span class="text-2xl font-display font-extrabold" id="cd-min">59</span>
+                <div class="flex flex-col items-center gap-3 w-full lg:w-auto">
+                    <div class="flex flex-wrap justify-center lg:justify-center gap-2 mb-3 max-w-md mx-auto">
+                    <span class="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 text-xs"><span>❄️</span><span>Холодильник дома</span></span>
+                    <span class="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 text-xs"><span>🥛</span><span>Продукты в безопасности</span></span>
+                    <span class="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 text-xs"><span>🏠</span><span>Ремонт на дому</span></span>
+                </div>
+                    <p class="text-white/80 text-xs sm:text-sm font-medium">Ближайший мастер будет через:</p>
+                    <div class="flex gap-2 justify-center" id="countdown-timer">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[58px] sm:min-w-[64px]">
+                            <span class="text-2xl sm:text-3xl font-display font-extrabold" id="cd-min">59</span>
                             <span class="text-xs text-white/70 block">мин</span>
                         </div>
-                        <div class="text-2xl font-bold self-center">:</div>
-                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[50px]">
-                            <span class="text-2xl font-display font-extrabold" id="cd-sec">59</span>
+                        <div class="text-2xl sm:text-3xl font-bold self-center leading-none">:</div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[58px] sm:min-w-[64px]">
+                            <span class="text-2xl sm:text-3xl font-display font-extrabold" id="cd-sec">59</span>
                             <span class="text-xs text-white/70 block">сек</span>
                         </div>
                     </div>
                 </div>
-                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-8 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
+                <a href="tel:89990057172" class="bg-white text-brand-blue hover:bg-slate-100 w-full sm:w-auto justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold transition shadow-xl ring-4 ring-white/20 flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
                     <i class="ri-phone-line"></i>
-                    <span>Вызвать мастера (0₽)</span>
+                    <span>Спасти продукты</span>
                 </a>
             </div>
         </div>
@@ -242,13 +381,13 @@
     <section class="py-24 lg:py-32 bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-lightbulb-line mr-2"></i>НЮАНСЫ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что влияет на стоимость ремонта</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Честно рассказываем, из чего складывается цена</p>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4 shadow-sm"><i class="ri-lightbulb-line mr-2"></i>НЮАНСЫ</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">От чего зависит цена и как не переплатить</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Сначала находим причину, потом называем цену. Без навязанных замен и туманных доплат.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-6 lg:gap-10">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
                 <div class="scroll-reveal" data-delay="1">
-                    <div class="card-brand bg-white p-8 rounded-2xl border-2 border-slate-100 text-center h-full">
+                    <div class="card-brand bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl border-2 border-slate-100 text-center h-full shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
                         <div class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto"><i class="ri-snowy-line"></i></div>
                         <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Тип системы охлаждения</h3>
                         <p class="text-slate-600 text-sm mb-4">No Frost сложнее и дороже — больше датчиков, ТЭНов, вентиляторов.</p>
@@ -260,7 +399,7 @@
                     </div>
                 </div>
                 <div class="scroll-reveal" data-delay="2">
-                    <div class="card-brand bg-white p-8 rounded-2xl border-2 border-slate-100 text-center h-full">
+                    <div class="card-brand bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl border-2 border-slate-100 text-center h-full shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
                         <div class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto"><i class="ri-cpu-line"></i></div>
                         <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Количество компрессоров</h3>
                         <p class="text-slate-600 text-sm mb-4">Два компрессора — дороже ремонт, но надёжнее. Один — дешевле, но чаще ломается.</p>
@@ -272,7 +411,7 @@
                     </div>
                 </div>
                 <div class="scroll-reveal" data-delay="3">
-                    <div class="card-brand bg-white p-8 rounded-2xl border-2 border-slate-100 text-center h-full">
+                    <div class="card-brand bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl border-2 border-slate-100 text-center h-full shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
                         <div class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto"><i class="ri-calendar-event-line"></i></div>
                         <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Возраст холодильника</h3>
                         <p class="text-slate-600 text-sm mb-4">Старые модели — проще ремонт, но запчасти могут быть редкими.</p>
@@ -291,14 +430,14 @@
     <section class="py-6 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNjBWMGg2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IGZpbGw9InVybCgjZykiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48L3N2Zz4=')] opacity-20"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left text-white">
-                <div class="flex items-center gap-4">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 animate-pulse">
+            <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 lg:gap-8 text-center lg:text-left text-white">
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 animate-pulse mx-auto sm:mx-0">
                         <i class="ri-alarm-warning-line text-white text-3xl"></i>
                     </div>
                     <div>
-                        <p class="text-white font-display font-bold text-xl">НЕ ОТКЛАДЫВАЙТЕ РЕМОНТ!</p>
-                        <div class="text-white/90 text-sm mt-1">
+                        <p class="text-white font-display font-bold text-lg sm:text-xl leading-tight">НЕ ОТКЛАДЫВАЙТЕ РЕМОНТ!</p>
+                        <div class="text-white/90 text-xs sm:text-sm mt-2 space-y-1">
                             <p>Каждый час без холодильника:</p>
                             <p class="font-bold">• Продукты на 2,000₽ портятся</p>
                             <p class="font-bold">• Налёт льда растёт → дороже ремонт</p>
@@ -306,23 +445,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-2">
-                    <p class="text-white/80 text-sm font-medium">Мастер приедет через:</p>
-                    <div class="flex gap-2" id="countdown-timer">
-                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[50px]">
-                            <span class="text-2xl font-display font-extrabold" id="cd-min">59</span>
+                <div class="flex flex-col items-center gap-3 w-full lg:w-auto">
+                    <p class="text-white/80 text-xs sm:text-sm font-medium">Мастер приедет через:</p>
+                    <div class="flex gap-2 justify-center" id="countdown-timer">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[58px] sm:min-w-[64px]">
+                            <span class="text-2xl sm:text-3xl font-display font-extrabold" id="cd-min">59</span>
                             <span class="text-xs text-white/70 block">мин</span>
                         </div>
-                        <div class="text-2xl font-bold self-center">:</div>
-                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[50px]">
-                            <span class="text-2xl font-display font-extrabold" id="cd-sec">59</span>
+                        <div class="text-2xl sm:text-3xl font-bold self-center leading-none">:</div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-2 text-center min-w-[58px] sm:min-w-[64px]">
+                            <span class="text-2xl sm:text-3xl font-display font-extrabold" id="cd-sec">59</span>
                             <span class="text-xs text-white/70 block">сек</span>
                         </div>
                     </div>
                 </div>
-                <a href="tel:89990057172" class="bg-white text-red-600 hover:bg-slate-100 px-8 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
+                <a href="tel:89990057172" class="bg-white text-brand-blue hover:bg-slate-100 w-full sm:w-auto justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold transition shadow-xl ring-4 ring-white/20 flex items-center gap-2 whitespace-nowrap transform hover:scale-105">
                     <i class="ri-phone-line"></i>
-                    <span>Вызвать мастера (0₽)</span>
+                    <span>Вернуть холод</span>
                 </a>
             </div>
         </div>
@@ -333,8 +472,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-search-eye-line mr-2"></i>НАЙДИТЕ СВОЮ ПРОБЛЕМУ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что случилось с холодильником?</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Нажмите на иконку — увидите цену и сроки ремонта</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Когда холодильник уже нельзя откладывать</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Если тянуть, можно потерять продукты, получить более дорогой ремонт или добить компрессор.</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 <a href="#prices" class="scroll-reveal" data-delay="1">
@@ -388,8 +527,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-time-line mr-2"></i>СВЕЖИЕ СЛУЧАИ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Реальные ремонты на этой неделе</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Москва и МО — вот что чинили прямо сейчас</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Свежие кейсы по ремонту холодильников</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Москва и МО — вот что чинили прямо сейчас</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="scroll-reveal" data-delay="1">
@@ -502,8 +641,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-alert-fill mr-2"></i>НЕИСПРАВНОСТИ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Частые поломки холодильников</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Узнали свою проблему? Звоните — устраним за один визит</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Какие поломки мы чаще всего чиним на дому</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Узнали свою проблему? Звоните — устраним за один визит</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="scroll-reveal" data-delay="1"><div class="card-brand bg-white p-8 rounded-2xl border-2 border-red-100 shadow-sm hover:shadow-xl hover:border-red-300 transition-all h-full"><div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-500 text-2xl mb-6 hover:bg-red-500 hover:text-white transition-all"><i class="ri-temp-hot-line"></i></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Не морозит</h3><p class="text-slate-600 mb-4">Продукты портятся. Утечка фреона, поломка компрессора, засор капиллярной трубки.</p><div class="bg-red-50 rounded-lg p-3 border border-red-100"><p class="text-red-600 text-sm font-semibold"><i class="ri-money-cny-circle-line mr-2"></i>Ремонт от 1,800₽</p></div></div></div>
@@ -519,8 +658,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">💰 ПРАЙС-ЛИСТ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Цены на ремонт холодильников</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Фиксированная стоимость после бесплатной диагностики</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Сколько обычно стоит ремонт холодильника</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Точную сумму называем после осмотра. Без вашего согласия ничего не ремонтируем и не разбираем “вслепую”.</p>
             </div>
             <div class="max-w-3xl mx-auto">
                 <div class="card-brand bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden">
@@ -545,15 +684,90 @@
             </div>
         </div>
     </section>
+    <section class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-scales-3-line mr-2"></i>ЧЕСТНЫЙ ПОДХОД</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Когда ремонт холодильника уже невыгоден</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Мы не уговариваем чинить технику любой ценой. Если вложение неразумно, скажем об этом прямо до начала работ.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="scroll-reveal" data-delay="1">
+                    <div class="bg-white p-8 rounded-3xl border-2 border-green-200 shadow-sm h-full">
+                        <h3 class="text-xl font-display font-extrabold text-green-700 mb-4">Обычно ремонт имеет смысл</h3>
+                        <div class="space-y-3 text-slate-600">
+                            <p><strong>Если проблема локальная:</strong> термостат, датчик, No Frost, дренаж, уплотнитель, реле запуска.</p>
+                            <p><strong>Если холодильник в нормальном состоянии:</strong> корпус целый, камеры без сильного износа, компрессор не добит окончательно.</p>
+                            <p><strong>Если сумма ремонта заметно ниже замены:</strong> особенно у встраиваемых, премиальных и больших моделей.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-reveal" data-delay="2">
+                    <div class="bg-white p-8 rounded-3xl border-2 border-red-200 shadow-sm h-full">
+                        <h3 class="text-xl font-display font-extrabold text-red-700 mb-4">Чаще советуем не вкладываться</h3>
+                        <div class="space-y-3 text-slate-600">
+                            <p><strong>Если техника очень старая и изношенная:</strong> один дорогой узел тянет за собой следующий ремонт.</p>
+                            <p><strong>Если повреждений несколько сразу:</strong> компрессор, утечка, электроника и сильный износ камеры одновременно.</p>
+                            <p><strong>Если итоговая сумма приближается к цене новой модели:</strong> в таком случае честнее рекомендовать замену.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-book-open-line mr-2"></i>ЕСЛИ ХОТИТЕ РАЗОБРАТЬСЯ ПОДРОБНЕЕ</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что обычно происходит с поломкой холодильника, если тянуть</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Этот блок не обязателен для заявки. Но если хотите спокойно понять логику поломки и ремонта, здесь это можно быстро посмотреть.</p>
+            </div>
+            <div class="space-y-4">
+                <details class="faq-item bg-slate-50 p-6 rounded-3xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="1">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span>Сценарий 1. Холод стал слабее, но холодильник ещё “живой”</span>
+                        <span class="text-brand-orange transition-transform duration-300">+</span>
+                    </summary>
+                    <div class="mt-4 text-slate-600 space-y-3">
+                        <p>Обычно на этом этапе люди замечают, что продукты стали прохладными, но не холодными как раньше. Техника ещё работает, поэтому возникает соблазн подождать.</p>
+                        <p>Именно здесь чаще всего можно закрыть проблему быстрее и дешевле: датчик, термостат, оттайка, дренаж или локальная утечка.</p>
+                        <p><strong>Что важно:</strong> не мучить холодильник повторными перезапусками и не ждать, пока компрессор начнёт работать без остановки.</p>
+                    </div>
+                </details>
+                <details class="faq-item bg-slate-50 p-6 rounded-3xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="2">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span>Сценарий 2. Продукты уже тёплые, а компрессор гудит без паузы</span>
+                        <span class="text-brand-orange transition-transform duration-300">+</span>
+                    </summary>
+                    <div class="mt-4 text-slate-600 space-y-3">
+                        <p>Это уже не просто неудобство, а момент, когда холодильник начинает работать на износ. В такой ситуации люди теряют не только продукты, но и шанс на более дешёвый ремонт.</p>
+                        <p>Если причина локальная, быстрый выезд ещё может спасти ситуацию в рамках одного визита. Если тянуть, нагрузка уходит в дорогие узлы.</p>
+                        <p><strong>Что важно:</strong> лучше сразу понять причину, чем довести дело до перегрева компрессора или добивания электроники.</p>
+                    </div>
+                </details>
+                <details class="faq-item bg-slate-50 p-6 rounded-3xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span>Сценарий 3. Когда мы честно говорим: лучше не ремонтировать</span>
+                        <span class="text-brand-orange transition-transform duration-300">+</span>
+                    </summary>
+                    <div class="mt-4 text-slate-600 space-y-3">
+                        <p>Такое бывает, если холодильник очень старый, а повреждений несколько сразу: например, компрессор, утечка и электроника вместе.</p>
+                        <p>В таком случае мы не уговариваем на “ремонт любой ценой”, а прямо говорим, что вложение уже нерационально относительно покупки новой техники.</p>
+                        <p><strong>Что важно:</strong> для клиента это тоже полезный результат диагностики, потому что он сохраняет деньги и принимает решение без иллюзий.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
     <section class="py-24 lg:py-32 bg-gradient-to-br from-brand-blue to-slate-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/20 backdrop-blur-md border border-brand-orange/30 text-brand-orange px-5 py-2 rounded-full text-sm font-bold mb-4">⭐ ПРЕИМУЩЕСТВА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Почему <span class="text-brand-orange"><span class="counter" data-target="500" data-suffix="+">0</span></span> клиентов выбрали нас</h2>
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto">15+ лет опыта. Оригинальные запчасти. Гарантия на всё.</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Почему нам доверяют и вызывают повторно</h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto">Когда холодильник встаёт, нас вызывают за скорость, честную цену до ремонта и понятный результат без переделок.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="scroll-reveal" data-delay="1"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-settings-3-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Запчасти с собой</h3><p class="text-slate-300 mb-4">До 95% поломок устраняем за 1 визит. Ходовые запчасти в наличии.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>До 95% заявок за 1 визит</p></div></div></div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                <div class="scroll-reveal" data-delay="1"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-3xl mb-6 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-settings-3-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Запчасти с собой</h3><p class="text-slate-300 mb-4">95% ремонтов за 1 визит. Склад запчастей в Москве.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>95% за 1 визит</p></div></div></div>
                 <div class="scroll-reveal" data-delay="2"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-3xl mb-6 mx-auto group-hover:bg-green-500 group-hover:text-white transition-all"><i class="ri-shield-check-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Гарантия 12 мес</h3><p class="text-slate-300 mb-4">Официальный акт + гарантийный талон. Приедем бесплатно.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Акт + гарантия</p></div></div></div>
                 <div class="scroll-reveal" data-delay="3"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-3xl mb-6 mx-auto group-hover:bg-blue-500 group-hover:text-white transition-all"><i class="ri-money-cny-circle-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">Честные цены</h3><p class="text-slate-300 mb-4">Фиксированная цена после диагностики. Без скрытых платежей.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Диагностика 0₽</p></div></div></div>
                 <div class="scroll-reveal" data-delay="4"><div class="equip-card card-brand glass-card p-8 text-center h-full group"><div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 text-3xl mb-6 mx-auto group-hover:bg-purple-500 group-hover:text-white transition-all"><i class="ri-award-line"></i></div><h3 class="text-xl font-display font-extrabold text-white mb-3">15+ лет опыта</h3><p class="text-slate-300 mb-4">Ремонтируем все марки — от Атлант до Miele.</p><div class="bg-white/10 rounded-lg p-3"><p class="text-green-300 text-sm font-semibold"><i class="ri-checkbox-circle-line mr-2"></i>Все марки</p></div></div></div>
@@ -563,34 +777,34 @@
     <section class="py-32 lg:py-40 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-chat-3-line mr-2"></i>ОТЗЫВЫ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что говорят наши клиенты</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">500+ отзывов за 15 лет. Средний рейтинг 4.9/5</p>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4 shadow-sm"><i class="ri-chat-3-line mr-2"></i>ОТЗЫВЫ</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Отзывы по ремонту холодильников</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Главное, за что нас рекомендуют: быстро приезжаем, не навязываем лишнего и честно говорим, стоит ли вообще чинить.</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                 <div class="scroll-reveal" data-delay="1">
-                    <div class="card-brand bg-slate-50 p-8 rounded-2xl border-2 border-slate-100 h-full">
+                    <div class="card-brand bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl border-2 border-slate-100 h-full shadow-sm hover:shadow-xl transition-all">
                         <div class="flex text-yellow-400 text-lg mb-4"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
                         <p class="text-slate-600 mb-6 italic">«Холодильник Bosch начал течь. Мастер приехал через 45 минут, заменил уплотнитель за 40 минут. Всё чисто, аккуратно. Дала гарантию на 12 месяцев.»</p>
                         <div class="flex items-center gap-3"><div class="w-12 h-12 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange font-bold text-lg">Д</div><div><p class="font-bold text-brand-blue">Дмитрий П.</p><p class="text-slate-500 text-sm">Ясенево • Bosch KGN • 12 марта 2026</p></div></div>
                     </div>
                 </div>
                 <div class="scroll-reveal" data-delay="2">
-                    <div class="card-brand bg-slate-50 p-8 rounded-2xl border-2 border-slate-100 h-full">
+                    <div class="card-brand bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl border-2 border-slate-100 h-full shadow-sm hover:shadow-xl transition-all">
                         <div class="flex text-yellow-400 text-lg mb-4"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
                         <p class="text-slate-600 mb-6 italic">«LG не морозил. Позвонил в 10 утра, в 11 мастер уже был. Оказалось — утечка фреона. Заправил за 30 минут, взял 2800₽. Честно и быстро!»</p>
                         <div class="flex items-center gap-3"><div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-600 font-bold text-lg">И</div><div><p class="font-bold text-brand-blue">Ирина В.</p><p class="text-slate-500 text-sm">Митино • LG GC-B • 28 февраля 2026</p></div></div>
                     </div>
                 </div>
                 <div class="scroll-reveal" data-delay="3">
-                    <div class="card-brand bg-slate-50 p-8 rounded-2xl border-2 border-slate-100 h-full">
+                    <div class="card-brand bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl border-2 border-slate-100 h-full shadow-sm hover:shadow-xl transition-all">
                         <div class="flex text-yellow-400 text-lg mb-4"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
                         <p class="text-slate-600 mb-6 italic">«Samsung перестал холодить. Заменили компрессор за 2 часа. Работает тихо, температура стабильная. Рекомендую!»</p>
                         <div class="flex items-center gap-3"><div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 font-bold text-lg">С</div><div><p class="font-bold text-brand-blue">Сергей М.</p><p class="text-slate-500 text-sm">Куркино • Samsung RT • 5 марта 2026</p></div></div>
                     </div>
                 </div>
                 <div class="scroll-reveal" data-delay="4">
-                    <div class="card-brand bg-slate-50 p-8 rounded-2xl border-2 border-slate-100 h-full">
+                    <div class="card-brand bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl border-2 border-slate-100 h-full shadow-sm hover:shadow-xl transition-all">
                         <div class="flex text-yellow-400 text-lg mb-4"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i></div>
                         <p class="text-slate-600 mb-6 italic">«Indesit наморозил шубу. Мастер заменил датчик за час. Цена оказалась ниже, чем в сервисном центре. Спасибо!»</p>
                         <div class="flex items-center gap-3"><div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-600 font-bold text-lg">Д</div><div><p class="font-bold text-brand-blue">Дмитрий П.</p><p class="text-slate-500 text-sm">Ясенево • Indesit DS</p></div></div>
@@ -599,14 +813,52 @@
             </div>
         </div>
     </section>
+    <section class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-yellow-400/10 text-yellow-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-archive-drawer-line mr-2"></i>МИНИ-КЕЙСЫ</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Если хочется посмотреть реальные сценарии ремонта</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Не обязательно читать это перед заявкой. Но такие мини-кейсы помогают быстро понять, что именно обычно ломается и как выглядит нормальный ремонт без тумана.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <details class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm scroll-reveal" data-delay="1">
+                    <summary class="font-bold text-brand-blue cursor-pointer">Bosch начал течь</summary>
+                    <div class="mt-4 space-y-2 text-sm text-slate-600">
+                        <p><strong>Что было:</strong> вода под холодильником, холод при этом ещё держался.</p>
+                        <p><strong>Что нашли:</strong> проблема с уплотнителем и дренажом.</p>
+                        <p><strong>Сколько заняло:</strong> около 40 минут.</p>
+                        <p><strong>Почему не стали тянуть:</strong> дальше могла пойти влага и запах, а ремонт стал бы неприятнее и дороже.</p>
+                    </div>
+                </details>
+                <details class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm scroll-reveal" data-delay="2">
+                    <summary class="font-bold text-brand-blue cursor-pointer">LG не морозил</summary>
+                    <div class="mt-4 space-y-2 text-sm text-slate-600">
+                        <p><strong>Что было:</strong> камера тёплая, продукты уже теряли холод.</p>
+                        <p><strong>Что нашли:</strong> утечка фреона.</p>
+                        <p><strong>Сколько заняло:</strong> примерно 30 минут на работы после диагностики.</p>
+                        <p><strong>Почему это конверсионный кейс:</strong> люди видят, что проблема решаемая, если не ждать до полного отказа.</p>
+                    </div>
+                </details>
+                <details class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm scroll-reveal" data-delay="3">
+                    <summary class="font-bold text-brand-blue cursor-pointer">Indesit намораживал “шубу”</summary>
+                    <div class="mt-4 space-y-2 text-sm text-slate-600">
+                        <p><strong>Что было:</strong> лёд нарастал, холодильник работал всё тяжелее.</p>
+                        <p><strong>Что нашли:</strong> проблема в датчике.</p>
+                        <p><strong>Сколько заняло:</strong> около часа.</p>
+                        <p><strong>Почему это полезно читать:</strong> видно, что не каждая странная поломка = компрессор и огромный чек.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
     <section class="py-32 lg:py-40 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🛠️ ПРОЦЕСС</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">5 шагов до работающего холодильника</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Прозрачный процесс от заявки до гарантии</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Как вернём холодильник в строй без лишних трат</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Быстро связываемся, проверяем причину, согласуем цену и только потом ремонтируем.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                 <div class="scroll-reveal" data-delay="1"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">1</div><h3 class="text-lg font-bold text-brand-blue mb-2">Заявка</h3><p class="text-slate-600 text-sm">Звоните или пишите в WhatsApp. Опишите проблему — назовём примерную стоимость.</p></div></div>
                 <div class="scroll-reveal" data-delay="2"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">2</div><h3 class="text-lg font-bold text-brand-blue mb-2">Выезд мастера</h3><p class="text-slate-600 text-sm">Инженер приедет за 60 минут с полным набором запчастей и инструментов.</p></div></div>
                 <div class="scroll-reveal" data-delay="3"><div class="text-center p-6 card-brand bg-slate-50 rounded-2xl border border-slate-100 h-full group"><div class="w-16 h-16 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange text-2xl font-extrabold mb-4 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">3</div><h3 class="text-lg font-bold text-brand-blue mb-2">Диагностика + ремонт</h3><p class="text-slate-600 text-sm">Бесплатная диагностика. Называем точную цену — чиним при вас за 1-3 часа.</p></div></div>
@@ -618,19 +870,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-shield-check-line mr-2"></i>ГАРАНТИИ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Мы отвечаем за качество</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Если что-то не так — приедем и исправим бесплатно</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что вы получаете после ремонта</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Холодильник снова морозит как надо, не течёт, не шумит лишнего, а вы понимаете, за что заплатили и какая гарантия действует.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="scroll-reveal" data-delay="1"><div class="card-brand bg-white p-8 rounded-2xl border-2 border-green-200 text-center h-full"><div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto"><i class="ri-shield-check-line"></i></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Гарантия 12 месяцев</h3><p class="text-slate-600">На все работы и установленные запчасти. Официальный акт + гарантийный талон.</p></div></div>
-                <div class="scroll-reveal" data-delay="2"><div class="card-brand bg-white p-8 rounded-2xl border-2 border-green-200 text-center h-full"><div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto"><i class="ri-refresh-line"></i></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Бесплатный повторный выезд</h3><p class="text-slate-600">Если проблема вернётся в гарантийный период — приедем и исправим за 0₽.</p></div></div>
-                <div class="scroll-reveal" data-delay="3"><div class="card-brand bg-white p-8 rounded-2xl border-2 border-green-200 text-center h-full"><div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto"><i class="ri-checkbox-multiple-line"></i></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Оригинальные запчасти</h3><p class="text-slate-600">Используем только сертифицированные запчасти от производителей или качественные аналоги.</p></div></div>
+                <div class="scroll-reveal" data-delay="1"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-8 rounded-3xl border-2 border-green-200 text-center h-full shadow-sm hover:shadow-xl transition-all"><div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto"><i class="ri-shield-check-line"></i></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Гарантия 12 месяцев</h3><p class="text-slate-600">На все работы и установленные запчасти. Официальный акт + гарантийный талон.</p></div></div>
+                <div class="scroll-reveal" data-delay="2"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-8 rounded-3xl border-2 border-green-200 text-center h-full shadow-sm hover:shadow-xl transition-all"><div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto"><i class="ri-refresh-line"></i></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Бесплатный повторный выезд</h3><p class="text-slate-600">Если проблема вернётся в гарантийный период — приедем и исправим за 0₽.</p></div></div>
+                <div class="scroll-reveal" data-delay="3"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-8 rounded-3xl border-2 border-green-200 text-center h-full shadow-sm hover:shadow-xl transition-all"><div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto"><i class="ri-checkbox-multiple-line"></i></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Оригинальные запчасти</h3><p class="text-slate-600">Используем только сертифицированные запчасти от производителей или качественные аналоги.</p></div></div>
             </div>
         </div>
     </section>
     <section id="brands" class="py-24 lg:py-32 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-reveal"><span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏆 БРЕНДЫ</span><h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонтируем все марки холодильников</h2><p class="text-slate-600 text-lg max-w-2xl mx-auto">Оригинальные запчасти. Опыт работы с каждым брендом.</p></div>
+            <div class="text-center mb-16 scroll-reveal"><span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🏆 БРЕНДЫ</span><h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Какие бренды и модели берём в работу</h2><p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Работаем с распространёнными бытовыми моделями и не пугаемся сложных симптомов, если нужен выезд домой сегодня.</p></div>
             <div class="scroll-reveal mb-16">
                 <div class="flex items-center gap-4 mb-8"><div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg"><i class="ri-star-smile-fill"></i></div><div><h3 class="text-2xl font-display font-extrabold text-brand-blue">Премиум</h3><p class="text-slate-500 text-sm">Высокое качество и надёжность</p></div></div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -646,7 +898,7 @@
                     <div class="scroll-reveal" data-delay="1"><div class="card-brand bg-gradient-to-br from-white to-blue-50 p-5 rounded-2xl shadow-sm border-2 border-blue-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Samsung</p><i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:#fff;border:1px solid #ddd" title="Корея"><svg viewBox="0 0 30 20" width="20" height="13"><circle cx="15" cy="10" r="5" fill="none" stroke="#c60c30" stroke-width="1"/><path d="M15 7.5A2.5 2.5 0 0 1 15 12.5" fill="#003478"/><path d="M15 7.5A2.5 2.5 0 0 0 15 12.5" fill="#c60c30"/></svg></span><p class="text-slate-500 text-xs">Корея</p></div><p class="text-xs text-slate-400">RB, RT, Top Mount</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
                     <div class="scroll-reveal" data-delay="2"><div class="card-brand bg-gradient-to-br from-white to-blue-50 p-5 rounded-2xl shadow-sm border-2 border-blue-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">LG</p><i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:#fff;border:1px solid #ddd" title="Корея"><svg viewBox="0 0 30 20" width="20" height="13"><circle cx="15" cy="10" r="5" fill="none" stroke="#c60c30" stroke-width="1"/><path d="M15 7.5A2.5 2.5 0 0 1 15 12.5" fill="#003478"/><path d="M15 7.5A2.5 2.5 0 0 0 15 12.5" fill="#c60c30"/></svg></span><p class="text-slate-500 text-xs">Корея</p></div><p class="text-xs text-slate-400">GA, GC, Door-in-Door</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
                     <div class="scroll-reveal" data-delay="3"><div class="card-brand bg-gradient-to-br from-white to-blue-50 p-5 rounded-2xl shadow-sm border-2 border-blue-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Electrolux</p><i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:#006AA7" title="Швеция"><svg viewBox="0 0 16 10" width="20" height="13"><rect width="16" height="10" fill="#006AA7"/><rect x="5" width="2" height="10" fill="#FECC00"/><rect y="4" width="16" height="2" fill="#FECC00"/></svg></span><p class="text-slate-500 text-xs">Швеция</p></div><p class="text-xs text-slate-400">EW, EWS, PerfectCare</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
-                    <div class="scroll-reveal" data-delay="4"><div class="card-brand bg-gradient-to-br from-white to-blue-50 p-5 rounded-2xl shadow-sm border-2 border-blue-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Atlant</p><i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:linear-gradient(to bottom,#CF101A 66%,#007C30 33%)" title="Беларусь"></span><p class="text-slate-500 text-xs">Беларусь</p></div><p class="text-xs text-slate-400">ходовые модели</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
+                    <div class="scroll-reveal" data-delay="4"><div class="card-brand bg-gradient-to-br from-white to-blue-50 p-5 rounded-2xl shadow-sm border-2 border-blue-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Atlant</p><i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:linear-gradient(to bottom,#CF101A 66%,#007C30 33%)" title="Беларусь"></span><p class="text-slate-500 text-xs">Беларусь</p></div><p class="text-xs text-slate-400">ATL, ХА, Zen</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
                     <div class="scroll-reveal" data-delay="5"><div class="card-brand bg-gradient-to-br from-white to-blue-50 p-5 rounded-2xl shadow-sm border-2 border-blue-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Sharp</p><i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:#fff" title="Япония"><svg viewBox="0 0 30 20" width="20" height="13"><rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="5" fill="#BC002D"/></svg></span><p class="text-slate-500 text-xs">Япония</p></div><p class="text-xs text-slate-400">NH, WML, WMSF</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
                     <div class="scroll-reveal" data-delay="6"><div class="card-brand bg-gradient-to-br from-white to-blue-50 p-5 rounded-2xl shadow-sm border-2 border-blue-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Beko</p><i class="ri-arrow-right-s-line text-blue-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:#E30A17" title="Турция"><svg viewBox="0 0 30 20" width="20" height="13"><circle cx="12" cy="10" r="5" fill="#fff"/><circle cx="13.5" cy="10" r="4" fill="#E30A17"/><polygon points="18,7 19.5,9.5 22,9.5 20,11 21,13.5 18,12 15,13.5 16,11 14,9.5 16.5,9.5" fill="#fff"/></svg></span><p class="text-slate-500 text-xs">Турция</p></div><p class="text-xs text-slate-400">CSS, CS, RapidÓ</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
                 </div>
@@ -656,8 +908,8 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="scroll-reveal" data-delay="1"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-5 rounded-2xl shadow-sm border-2 border-green-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Indesit</p><i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:linear-gradient(to right,#009246 33%,#fff 33%,#fff 66%,#CE2B37 66%)" title="Италия"></span><p class="text-slate-500 text-xs">Италия</p></div><p class="text-xs text-slate-400">BW, BWS, IWSD</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
                     <div class="scroll-reveal" data-delay="2"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-5 rounded-2xl shadow-sm border-2 border-green-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Beko</p><i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:#E30A17" title="Турция"><svg viewBox="0 0 30 20" width="20" height="13"><circle cx="12" cy="10" r="5" fill="#fff"/><circle cx="13.5" cy="10" r="4" fill="#E30A17"/><polygon points="18,7 19.5,9.5 22,9.5 20,11 21,13.5 18,12 15,13.5 16,11 14,9.5 16.5,9.5" fill="#fff"/></svg></span><p class="text-slate-500 text-xs">Турция</p></div><p class="text-xs text-slate-400">WS, WRE, WRS</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
-                    <div class="scroll-reveal" data-delay="3"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-5 rounded-2xl shadow-sm border-2 border-green-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Pozis</p><i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:linear-gradient(to bottom,#fff 33%,#0039A6 33%,#0039A6 66%,#D52B1E 66%)" title="Россия"></span><p class="text-slate-500 text-xs">Россия</p></div><p class="text-xs text-slate-400">ходовые модели</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
-                    <div class="scroll-reveal" data-delay="4"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-5 rounded-2xl shadow-sm border-2 border-green-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Atlant</p><i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:linear-gradient(to bottom,#CF101A 66%,#007C30 33%)" title="Беларусь"></span><p class="text-slate-500 text-xs">Беларусь</p></div><p class="text-xs text-slate-400">ходовые модели</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
+                    <div class="scroll-reveal" data-delay="3"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-5 rounded-2xl shadow-sm border-2 border-green-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Pozis</p><i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:linear-gradient(to bottom,#fff 33%,#0039A6 33%,#0039A6 66%,#D52B1E 66%)" title="Россия"></span><p class="text-slate-500 text-xs">Россия</p></div><p class="text-xs text-slate-400">Атлант, ХА, Zen</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
+                    <div class="scroll-reveal" data-delay="4"><div class="card-brand bg-gradient-to-br from-white to-green-50 p-5 rounded-2xl shadow-sm border-2 border-green-200 h-full flex flex-col justify-between group"><div class="flex items-center justify-between mb-2"><p class="font-display font-extrabold text-brand-blue">Atlant</p><i class="ri-arrow-right-s-line text-green-500 opacity-0 group-hover:opacity-100 transition"></i></div><div class="flex items-center gap-2 mb-2"><span class="w-5 h-3 rounded overflow-hidden inline-block flex-shrink-0" style="background:linear-gradient(to bottom,#CF101A 66%,#007C30 33%)" title="Беларусь"></span><p class="text-slate-500 text-xs">Беларусь</p></div><p class="text-xs text-slate-400">СМА, 50У102</p><div class="mt-2 flex gap-1"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span class="w-2 h-2 bg-gray-300 rounded-full"></span></div></div></div>
                 </div>
             </div>
         </div>
@@ -665,8 +917,9 @@
     <section class="py-32 lg:py-40 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-scales-3-line mr-2"></i>СРАВНЕНИЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему выбирают нас, а не других</h2>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4 shadow-sm"><i class="ri-scales-3-line mr-2"></i>СРАВНЕНИЕ</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Почему нам доверяют при ремонте холодильников</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mt-4">Обычно выбирают не самый громкий сервис, а тот, кто приезжает быстро, заранее называет цену и не оставляет клиента с той же поломкой через неделю.</p>
             </div>
             <div class="card-brand bg-white rounded-2xl shadow-sm border-2 border-slate-100 overflow-hidden scroll-reveal">
                 <div class="overflow-x-auto">
@@ -689,9 +942,9 @@
     <section class="py-32 lg:py-40 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-map-pin-line mr-2"></i>ГЕОГРАФИЯ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Работаем по всей Москве и МО</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Мастера во всех районах — приедем за 60 минут</p>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4 shadow-sm"><i class="ri-map-pin-line mr-2"></i>ГЕОГРАФИЯ</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Выезжаем по Москве и МО без долгого ожидания</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Мастера во всех районах — приедем за 60 минут</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 scroll-reveal">
                 <div class="flex items-center gap-2 p-3 bg-slate-50 rounded-2xl"><i class="ri-check-line text-green-500"></i><span class="text-slate-700 text-sm">Центр</span></div>
@@ -713,8 +966,8 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-information-line mr-2"></i>ЧТО ДЕЛАТЬ ПОКА ЖДЁТЕ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Сделайте это до приезда мастера</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Эти простые действия могут спасти холодильник и сэкономить деньги</p>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что сделать до приезда мастера, чтобы не усугубить поломку</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Эти простые действия могут спасти холодильник и сэкономить деньги</p>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="scroll-reveal" data-delay="1">
@@ -744,7 +997,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">❓ FAQ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Частые вопросы</h2>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что обычно спрашивают перед вызовом мастера</h2>
             </div>
             <div class="space-y-4">
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="1">
@@ -752,14 +1005,14 @@
                         <span>Сколько времени занимает ремонт?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Большинство — <strong>1-2 часа</strong>. Замена подшипников — до 3 часов. До 95% поломок устраняем за один визит.</p>
+                    <p class="mt-4 text-slate-600">Большинство холодильников чиним за <strong>1-2 часа</strong>. Если нужен сложный ремонт с утечкой, компрессором или пайкой, времени может понадобиться больше, но это мастер проговорит заранее.</p>
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="2">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
                         <span>Диагностика действительно бесплатная?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Да, <strong>0₽</strong> при заказе ремонта. Мастер приедет, определит неисправность и назовёт точную цену. Если не устраивает — оплата только за выезд.</p>
+                    <p class="mt-4 text-slate-600">Да, <strong>0₽</strong> при заказе ремонта. Мастер приедет, проверит, почему ушёл холод, объяснит причину и назовёт точную сумму до начала работ. Без вашего согласия ничего не ремонтируем.</p>
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="3">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
@@ -770,10 +1023,10 @@
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="4">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
-                        <span>Стоит ли ремонтировать старую машинку?</span>
+                        <span>Стоит ли ремонтировать старый холодильник?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Если стоимость ремонта <strong>менее 50% от цены новой</strong> — да, ремонтируем. Если нет — честно скажем и посоветуем замену.</p>
+                    <p class="mt-4 text-slate-600">Если стоимость ремонта <strong>существенно ниже цены новой модели</strong> и сам холодильник в остальном живой, ремонт обычно оправдан. Если техника уже сильно изношена, честно скажем, что лучше не вкладываться.</p>
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="5">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
@@ -798,17 +1051,17 @@
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="8">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
-                        <span>Можно ли оплатить по безналу?</span>
+                        <span>Можно ли оплатить картой или переводом?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Да, принимаем <strong>наличный и безналичный расчёт</strong>. Для юрлиц — полный пакет документов: договор, акт, УПД, счёт-фактура. Работаем с НДС.</p>
+                    <p class="mt-4 text-slate-600">Да, принимаем <strong>наличные, перевод и безналичную оплату</strong>. Для обычного клиента важно одно: платёж и гарантия фиксируются прозрачно, без серых доплат.</p>
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="9">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
                         <span>Что если холодильник не подлежит ремонту?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Честно скажем. Если ремонт дороже <strong>50% стоимости нового</strong> — посоветуем замену. Не навязываем ненужные услуги.</p>
+                    <p class="mt-4 text-slate-600">Честно скажем сразу. Если ремонт выходит слишком дорогим относительно возраста и состояния холодильника, предложим не вкладываться в него дальше. Наша задача не продать любой ценой, а дать вменяемое решение.</p>
                 </details>
                 <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="10">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
@@ -823,29 +1076,43 @@
     <section class="py-28 lg:py-40 bg-gradient-to-br from-brand-orange to-orange-600 relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
             <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6"><span class="font-medium"><i class="ri-snowy-line mr-2"></i>Холодильник сломался?</span></div>
-            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Починим за 1-3 часа на дому</h2>
-            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Диагностика 0₽. Гарантия 12 месяцев. Оригинальные запчасти.</p>
+            <h2 class="text-3xl md:text-5xl font-display font-extrabold mb-6 leading-tight heading-reveal">Холодильник нужно вернуть в работу сегодня</h2>
+            <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Если тянуть до вечера или завтра, можно потерять продукты, добить компрессор или электронику и превратить простой ремонт в заметно более дорогую историю.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="tel:89990057172" class="btn-click inline-block bg-white text-brand-orange hover:bg-slate-100 text-xl px-12 py-6 rounded-full font-display font-extrabold transition shadow-lg transform hover:scale-105"><i class="ri-phone-line mr-2"></i>8 (999) 005-71-72</a>
-                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20холодильника" rel="noopener noreferrer" target="_blank" class="btn-click inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-6 rounded-full font-bold transition shadow-xl"><i class="ri-whatsapp-line mr-2"></i>WhatsApp</a>
+                <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20холодильника" rel="noopener noreferrer" target="_blank" class="btn-click inline-block bg-green-600 hover:bg-green-700 text-white text-xl px-8 py-6 rounded-full font-bold transition shadow-xl"><i class="ri-whatsapp-line mr-2"></i>Описать проблему в WhatsApp</a>
             </div>
         </div>
     </section>
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
-        <div class="grid grid-cols-2 gap-3">
-            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i><span>Решим проблему быстро</span></a>
-            <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>WhatsApp</span></a>
-        </div>
-    </div>
     <!-- Форма заявки -->
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-red-50 via-orange-50 to-red-100 border-y border-red-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold mb-4">⚠️ НЕ ОТКЛАДЫВАЙТЕ</span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Что вы теряете, если отложить ремонт холодильника до завтра</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">У холодильника поломка редко стоит на месте. Обычно она становится либо дороже, либо неприятнее уже в тот же день.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 sm:gap-6">
+                <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-6 border border-red-100 shadow-lg hover:shadow-xl transition-all"><div class="text-3xl mb-3">🥛</div><h3 class="font-bold text-brand-blue mb-2">Портятся продукты</h3><p class="text-slate-600 text-sm">Даже несколько часов без нормального холода уже бьют по продуктам и деньгам.</p></div>
+                <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-6 border border-red-100 shadow-lg hover:shadow-xl transition-all"><div class="text-3xl mb-3">🔧</div><h3 class="font-bold text-brand-blue mb-2">Ремонт дорожает</h3><p class="text-slate-600 text-sm">Мелкая проблема может дойти до замены дорогого узла, если её дотянуть.</p></div>
+                <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-6 border border-red-100 shadow-lg hover:shadow-xl transition-all"><div class="text-3xl mb-3">😤</div><h3 class="font-bold text-brand-blue mb-2">Комфорт дома падает</h3><p class="text-slate-600 text-sm">Шум, течь, запах и тёплые продукты быстро превращают поломку в бытовой стресс.</p></div>
+            </div>
+        </div>
+    </section>
+
+<section class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">📝 ЗАЯВКА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Перезвоним за 5 минут</p>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4 shadow-sm">📝 ЗАЯВКА</span>
+                <div class="grid sm:grid-cols-3 gap-3 max-w-4xl mx-auto mb-8">
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-3xl border border-slate-200 p-4 text-center shadow-md hover:shadow-lg transition-all"><div class="text-2xl mb-2">📞</div><p class="font-bold text-brand-blue text-sm">Быстрый созвон</p><p class="text-slate-600 text-xs mt-1">Перезвоним и сразу поймём, насколько срочно спасать продукты и технику.</p></div>
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-3xl border border-slate-200 p-4 text-center shadow-md hover:shadow-lg transition-all"><div class="text-2xl mb-2">💸</div><p class="font-bold text-brand-blue text-sm">Контроль цены</p><p class="text-slate-600 text-xs mt-1">Сначала причина и сумма, потом любые работы. Без вашего согласия ничего не делаем.</p></div>
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-3xl border border-slate-200 p-4 text-center shadow-md hover:shadow-lg transition-all"><div class="text-2xl mb-2">🧊</div><p class="font-bold text-brand-blue text-sm">Шанс спасти холод за визит</p><p class="text-slate-600 text-xs mt-1">Чем раньше приедет мастер, тем выше шанс быстро вернуть нормальную температуру без дорогого сценария.</p></div>
+                </div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку, чтобы вернуть холод уже сегодня</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Опишите симптомы, и мы быстро скажем, насколько срочно нужен выезд, есть ли шанс закрыть проблему за один визит и что проверим в первую очередь, чтобы не тратить ваши деньги вслепую.</p>
             </div>
-            <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
+            <form class="telegram-form bg-gradient-to-br from-white to-slate-50 p-8 lg:p-10 rounded-3xl shadow-xl border border-slate-200 scroll-reveal">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label>
@@ -865,9 +1132,9 @@
                     <input type="text" name="problem" placeholder="Не морозит, течёт, шумит..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700">
                 </div>
                 <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg">
-                    <i class="ri-send-plane-line mr-2"></i>Отправить заявку
+                    <i class="ri-send-plane-line mr-2"></i>Получить срочную оценку поломки
                 </button>
-                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
+                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Контакты используем только для связи по этой заявке</p>
             </form>
         </div>
     </section>
@@ -882,7 +1149,7 @@
     <!-- Мобильная нижняя панель -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
-            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i><span>Решим проблему быстро</span></a>
+            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i><span>Вернуть холод</span></a>
             <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>WhatsApp</span></a>
         </div>
     </div>
@@ -924,6 +1191,6 @@
         setInterval(updateTimer, 1000);
     })();
     </script>
-
 </body>
+
 </html>

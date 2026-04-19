@@ -12,7 +12,6 @@
 │   │   └── styles.css          # Custom CSS (animations, glass effects)
 │   ├── js/
 │   │   ├── main.js             # Components (header, footer, mobile menu, scroll, counters)
-│   │   └── telegram-form.js    # Telegram form handler
 │   ├── fonts/
 │   │   ├── manrope.css         # Manrope font faces (400-800)
 │   │   ├── remixicon.css       # RemixIcon icon font
@@ -39,7 +38,7 @@
 ├── about.html                  # О нас (ресторанное)
 ├── contact.html                # Контакты (ресторанное)
 ├── main.js                     # → symlink to /assets/js/main.js
-├── telegram-form.js            # → symlink to /assets/js/telegram-form.js
+├── telegram-form.js            # Telegram form handler (canonical source)
 ├── styles-built.css            # → symlink to /assets/css/styles-built.css
 ├── styles.css                  # → symlink to /assets/css/styles.css
 ├── og-image.svg                # Open Graph image

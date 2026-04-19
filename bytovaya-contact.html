@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
-<link rel="preload" href="/assets/css/styles-built.css" as="style">
-    <link rel="stylesheet" href="/assets/css/styles-built.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preload" href="/assets/fonts/manrope.css" as="style">
     <link rel="stylesheet" href="/assets/fonts/manrope.css">
+    <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
     <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="/assets/js/main.js" as="script">
-    <script src="/assets/js/main.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Контакты MosPochin — ремонт бытовой техники | 8 (999) 005-71-72</title>
+    <link rel="preload" href="styles-built.css" as="style">
+    <link rel="stylesheet" href="styles-built.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="telegram-form.js" defer></script>
+
+    <title>Контакты MosPochin — ремонт бытовой техники | 8 (999) 005-71-72</title>
     <meta name="description" content="MosPochin: ☎ 8 (999) 005-71-72. Ремонт бытовой техники на дому в Москве и МО. WhatsApp. Работаем без выходных.">
     <meta property="og:title" content="Контакты MosPochin — ремонт бытовой техники | 8 (999) 005-71-72">
     <meta property="og:description" content="MosPochin: ☎ 8 (999) 005-71-72. Ремонт бытовой техники на дому в Москве и МО. WhatsApp. Работаем без выходных.">
@@ -39,8 +44,10 @@
     </script>
     <link rel="canonical" href="https://mspochin.ru/bytovaya-contact.html">
 </head>
+
 <body class="font-sans text-slate-800 antialiased bg-white">
-    <div id="header-container"></div>
+    <!-- Normalized layout shell: bytovaya-contact.html -->
+<div id="header-container"></div>
     <nav class="bg-slate-50 border-b border-slate-200 py-3">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
@@ -76,7 +83,17 @@
             </div>
         </div>
     </header>
-<section class="py-32 lg:py-40 bg-white">
+<section class="py-10 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"><p class="font-bold text-brand-blue mb-1">Честная цена</p><p class="text-sm text-slate-600">Согласуем стоимость до ремонта, без сюрпризов.</p></div>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"><p class="font-bold text-brand-blue mb-1">Ремонт на дому</p><p class="text-sm text-slate-600">Не забираем технику без необходимости.</p></div>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100"><p class="font-bold text-brand-blue mb-1">Аккуратный выезд</p><p class="text-sm text-slate-600">Мастер приезжает с расходниками и убирает за собой.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 lg:py-40 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
@@ -84,7 +101,7 @@
                         <i class="ri-phone-line"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-blue mb-2">Телефон</h3>
-                    <a href="tel:89990057172" class="text-2xl font-bold text-brand-orange hover:underline">8 (999) 005-71-72</a>
+                    <a href="tel:+79990057172" class="text-2xl font-bold text-brand-orange hover:underline">8 (999) 005-71-72</a>
                     <p class="text-slate-600 text-sm mt-2">Ежедневно, 24/7</p>
                 </div>
                 <div class="fade-in-section text-center p-8 bg-slate-50 rounded-2xl">
@@ -112,7 +129,7 @@
             <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight heading-reveal">Сломалась техника?</h2>
             <p class="text-xl mb-10 text-white/90 max-w-2xl mx-auto">Мастер будет у вас через 60 минут</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:89990057172" class="bg-white text-brand-orange hover:bg-slate-100 px-10 py-5 rounded-full font-bold transition shadow-xl">
+                <a href="tel:+79990057172" class="bg-white text-brand-orange hover:bg-slate-100 px-10 py-5 rounded-full font-bold transition shadow-xl">
                     <i class="ri-phone-line mr-2"></i>+7 (999) 005-71-72
                 </a>
                 <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 px-8 py-5 rounded-full font-bold transition shadow-xl">
@@ -147,11 +164,11 @@
             </div>
         </div>
     </section>
-    <section class="py-20 lg:py-28 bg-gradient-to-br from-green-50 to-blue-50">
+    <section id="request" class="py-20 lg:py-28 bg-gradient-to-br from-green-50 to-blue-50">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4">БЕСПЛАТНАЯ ДИАГНОСТИКА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку</h2>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку на ремонт</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Диагностика бесплатно при ремонте</p>
             </div>
             <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
@@ -170,7 +187,7 @@
                     <input type="text" name="problem" placeholder="Опишите проблему, например: не сливает воду, шумит" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700">
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg">
-                    <i class="ri-send-plane-line mr-2"></i>Оставить заявку — диагностика 0₽
+                    <i class="ri-send-plane-line mr-2"></i>Оставить заявку — диагностика при ремонте
                 </button>
                 <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Диагностика бесплатно при ремонте</p>
             </form>
@@ -194,14 +211,14 @@
             <h2 class="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 heading-reveal">Нужен ремонт бытовой техники?</h2>
             <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Позвоните — мастер приедет в удобное время</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:89990057172" class="inline-flex items-center justify-center gap-3 bg-white text-brand-orange hover:bg-slate-100 text-xl font-bold px-10 py-5 rounded-full transition shadow-lg"><i class="ri-phone-line"></i>8 (999) 005-71-72</a>
+                <a href="tel:+79990057172" class="inline-flex items-center justify-center gap-3 bg-white text-brand-orange hover:bg-slate-100 text-xl font-bold px-10 py-5 rounded-full transition shadow-lg"><i class="ri-phone-line"></i>8 (999) 005-71-72</a>
                 <a href="https://wa.me/79990057172" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white text-xl font-bold px-10 py-5 rounded-full transition shadow-lg"><i class="ri-whatsapp-line"></i>WhatsApp</a>
             </div>
         </div>
     </section>
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
-            <a href="tel:89990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
+            <a href="tel:+79990057172" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
                 <i class="ri-phone-line"></i>
                 <span>Вызвать мастера</span>
             </a>
@@ -218,6 +235,6 @@
     <i class="ri-whatsapp-line text-2xl"></i>
   </a>
 </div>
-    <script src="/assets/js/telegram-form.js"></script>
 </body>
+
 </html>

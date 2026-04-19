@@ -71,6 +71,7 @@ function enhanceTelegramForm(form) {
     if (form.dataset.telegramEnhanced === '1') return;
     form.dataset.telegramEnhanced = '1';
     form.dataset.startedAt = String(Date.now());
+    form.classList.add('telegram-form-enhanced');
 
     if (!form.querySelector('[name="website"]')) {
         const honeypot = document.createElement('input');
@@ -80,22 +81,28 @@ function enhanceTelegramForm(form) {
         honeypot.autocomplete = 'off';
         honeypot.setAttribute('aria-hidden', 'true');
         honeypot.style.position = 'absolute';
-        honeypot.style.left = '-9999px';
+        honeypot.style.inset = '0 auto auto 0';
+        honeypot.style.width = '1px';
+        honeypot.style.height = '1px';
         honeypot.style.opacity = '0';
+        honeypot.style.pointerEvents = 'none';
         form.prepend(honeypot);
     }
 
-    if (!form.querySelector('[name="consent"]')) {
-        const btn = form.querySelector('button[type="submit"]');
-        if (btn) {
-            const wrap = document.createElement('label');
-            wrap.className = 'flex items-start gap-3 text-sm text-slate-500 mb-4 js-consent-wrap';
-            wrap.innerHTML = `
-                <input type="checkbox" name="consent" required class="mt-1 h-4 w-4 rounded border-slate-300 text-brand-orange focus:ring-brand-orange">
-                <span>Согласен(на) на обработку данных для связи по заявке.</span>
-            `;
-            btn.insertAdjacentElement('beforebegin', wrap);
-        }
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn && !form.querySelector('[name="consent"]')) {
+        const wrap = document.createElement('label');
+        wrap.className = 'telegram-consent flex items-start gap-3 text-sm text-slate-600 mb-4';
+        wrap.innerHTML = `
+            <input
+                type="checkbox"
+                name="consent"
+                class="mt-1 h-4 w-4 rounded border-slate-300 text-brand-orange focus:ring-brand-orange"
+                required
+            >
+            <span>Согласен(на) на обработку данных для связи по заявке.</span>
+        `;
+        btn.insertAdjacentElement('beforebegin', wrap);
     }
 }
 
@@ -123,7 +130,6 @@ function initTelegramForms() {
             };
 
             const honeypotValue = form.querySelector('[name="website"]')?.value.trim() || '';
-            const consentChecked = !!form.querySelector('[name="consent"]')?.checked;
             const startedAt = Number(form.dataset.startedAt || Date.now());
             const fillMs = Date.now() - startedAt;
             const rateLimitKey = `mospochin_form_last_${window.location.pathname}`;
@@ -145,6 +151,7 @@ function initTelegramForms() {
                 return;
             }
 
+            const consentChecked = Boolean(form.querySelector('[name="consent"]')?.checked);
             if (!consentChecked) {
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
