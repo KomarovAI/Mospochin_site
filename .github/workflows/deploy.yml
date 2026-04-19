@@ -63,7 +63,7 @@ jobs:
           JSON
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "mkdir -p '${release_path}'"
+            "current=\$(readlink -f /var/www/mospochin-current || true); if [ -n \"\$current\" ] && [ -d \"\$current\" ]; then cp -al \"\$current\" '${release_path}'; else mkdir -p '${release_path}'; fi"
 
       - name: Deploy files
         timeout-minutes: 5
