@@ -70,7 +70,7 @@ details summary::-webkit-details-marker{display:none}
 /* Dropdown Menu */
 .dropdown{position:relative}
 .dropdown-menu{position:absolute;top:100%;left:0;background:#fff;border:1px solid #e2e8f0;border-radius:0.75rem;box-shadow:0 10px 40px rgba(0,0,0,.15);min-width:280px;opacity:0;visibility:hidden;transform:translateY(10px);transition:all .2s ease;z-index:100}
-.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown:hover .dropdown-menu,.dropdown.is-open .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
 .dropdown-item{display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;border-radius:0.5rem;color:#475569;text-decoration:none;white-space:nowrap}
 .dropdown-item:hover{background:#fff7ed;color:#f97316}
 .dropdown-item .icon{font-size:1.25rem}

@@ -273,6 +273,54 @@ target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 });
 },
+initDesktopDropdowns() {
+const touchMedia = window.matchMedia('(hover: none), (pointer: coarse)');
+const dropdowns = document.querySelectorAll('.dropdown');
+if (!dropdowns.length) return;
+
+const closeDropdown = dropdown => dropdown.classList.remove('is-open');
+const closeAllDropdowns = current => {
+dropdowns.forEach(dropdown => {
+if (dropdown !== current) closeDropdown(dropdown);
+});
+};
+
+dropdowns.forEach(dropdown => {
+const toggle = dropdown.querySelector('.dropdown-toggle');
+const menuLinks = dropdown.querySelectorAll('.dropdown-menu a');
+if (!toggle) return;
+
+toggle.addEventListener('click', event => {
+if (!touchMedia.matches) return;
+
+if (!dropdown.classList.contains('is-open')) {
+event.preventDefault();
+closeAllDropdowns(dropdown);
+dropdown.classList.add('is-open');
+}
+});
+
+menuLinks.forEach(link => link.addEventListener('click', () => closeDropdown(dropdown)));
+});
+
+document.addEventListener('click', event => {
+if (!touchMedia.matches) return;
+
+dropdowns.forEach(dropdown => {
+if (!dropdown.contains(event.target)) closeDropdown(dropdown);
+});
+});
+
+const syncDropdownMode = () => {
+if (!touchMedia.matches) dropdowns.forEach(closeDropdown);
+};
+
+if (typeof touchMedia.addEventListener === 'function') {
+touchMedia.addEventListener('change', syncDropdownMode);
+} else if (typeof touchMedia.addListener === 'function') {
+touchMedia.addListener(syncDropdownMode);
+}
+},
 initCounters() {
 const observer = new IntersectionObserver(entries => {
 entries.forEach(entry => {
@@ -320,6 +368,7 @@ if (ftr) ftr.innerHTML = this.getFooter();
 document.body.classList.add(this.isBytovaya() ? 'branch-household' : 'branch-restaurant');
 setTimeout(() => {
 this.initMobileMenu();
+this.initDesktopDropdowns();
 this.initScrollEffect();
 this.initFadeIn();
 this.initSmoothScroll();
