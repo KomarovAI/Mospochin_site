@@ -17,7 +17,6 @@ const HOUSEHOLD_PAGES = new Set([
   'kompyutery.html',
   'routery.html',
   'microwaves.html',
-  'airconditioners.html',
   'water-heaters.html',
 ]);
 

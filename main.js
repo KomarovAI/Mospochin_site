@@ -28,7 +28,6 @@ const CONFIG = {
       { href: 'holodilniki.html', icon: '❄️', name: 'Холодильники' },
       { href: 'stiralnye-mashiny.html', icon: '🧺', name: 'Стиральные машины' },
       { href: 'posudomoyki.html', icon: '🍽️', name: 'Посудомойки' },
-      { href: 'airconditioners.html', icon: '💨', name: 'Кондиционеры' },
       { href: 'microwaves.html', icon: '🔥', name: 'Плиты и микроволновки' },
       { href: 'kompyutery.html', icon: '💻', name: 'Компьютеры' },
       { href: 'routery.html', icon: '📶', name: 'Роутеры' },
@@ -59,7 +58,6 @@ const HOUSEHOLD_PAGES = new Set([
   'stiralnye-mashiny',
   'posudomoyki',
   'microwaves',
-  'airconditioners',
   'kompyutery',
   'routery',
   'water-heaters',
@@ -122,7 +120,16 @@ const Components = {
   },
 
   isActivePage(fragment) {
-    return window.location.pathname.includes(fragment);
+    const currentPage = getCurrentPageSlug();
+    const branch = this.getBranchMeta();
+    const exactPages = {
+      index: branch.homeLink.replace('.html', ''),
+      uslugi: branch.servicesLink.replace('.html', ''),
+      about: branch.aboutLink.replace('.html', ''),
+      contact: branch.contactLink.replace('.html', ''),
+    };
+
+    return exactPages[fragment] === currentPage;
   },
 
   getHeader() {
@@ -253,7 +260,6 @@ const Components = {
           <li><a href="microwaves.html" class="hover:text-white transition">Плиты и микроволновки</a></li>
           <li><a href="kompyutery.html" class="hover:text-white transition">Компьютеры</a></li>
           <li><a href="routery.html" class="hover:text-white transition">Роутеры</a></li>
-          <li><a href="airconditioners.html" class="hover:text-white transition">Кондиционеры</a></li>
           <li><a href="water-heaters.html" class="hover:text-white transition">Водонагреватели</a></li>
           <li><a href="bytovaya-about.html" class="hover:text-white transition">О компании</a></li>
           <li><a href="bytovaya-contact.html" class="hover:text-white transition">Контакты</a></li>

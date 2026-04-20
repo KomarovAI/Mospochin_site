@@ -21,7 +21,6 @@ function getPageGroup(fileName) {
       'kompyutery.html',
       'routery.html',
       'microwaves.html',
-      'airconditioners.html',
       'water-heaters.html',
     ].includes(fileName)
   ) {
@@ -48,7 +47,7 @@ function getPriority(fileName) {
   if (fileName === 'about.html' || fileName === 'contact.html') return '0.7';
   if (fileName === 'bytovaya-about.html' || fileName === 'bytovaya-contact.html') return '0.7';
   if (group === 'restaurant-service') return '0.8';
-  if (['kompyutery.html', 'routery.html', 'microwaves.html', 'airconditioners.html'].includes(fileName)) {
+  if (['kompyutery.html', 'routery.html', 'microwaves.html'].includes(fileName)) {
     return '0.7';
   }
   return '0.8';

@@ -33,7 +33,6 @@
 | `routery.html` | Роутеры |
 | `vacuums.html` | Пылесосы |
 | `microwaves.html` | Микроволновки |
-| `airconditioners.html` | Кондиционеры |
 | `stiralnye-mashiny.html` | Стиральные машины |
 | `small-appliances.html` | Мелкая бытовая техника |
 
