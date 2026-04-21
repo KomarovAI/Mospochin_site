@@ -35,8 +35,32 @@
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+.border-slate-200\/80 {
+  border-color: rgba(226, 232, 240, 0.8);
+}
+
+.border-green-100\/80 {
+  border-color: rgba(220, 252, 231, 0.8);
+}
+
+.border-white\/70 {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
 .border-white\/15 {
   border-color: rgba(255, 255, 255, 0.15);
+}
+
+.rounded-\[1\.5rem\] {
+  border-radius: 1.5rem;
+}
+
+.rounded-\[2rem\] {
+  border-radius: 2rem;
+}
+
+.scale-\[1\.03\] {
+  transform: scale(1.03);
 }
 
 .text-white\/60 {
@@ -167,6 +191,20 @@ html {
   .telegram-form-enhanced button[type="submit"] {
     scroll-margin-top: 5rem;
     scroll-margin-bottom: var(--mobile-sticky-safe-space);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
+  .lg\:grid-cols-\[1\.05fr_0\.95fr\] {
+    grid-template-columns: 1.05fr 0.95fr;
   }
 }
 
@@ -351,6 +389,38 @@ button,
 .hero-bg-restaurant p,
 header p {
   text-wrap: pretty;
+}
+
+body.page-bytovaya-contact {
+  --mobile-sticky-safe-space: 0rem;
+}
+
+body.page-bytovaya-contact .scroll-reveal,
+body.page-bytovaya-contact .scroll-reveal-left,
+body.page-bytovaya-contact .scroll-reveal-right,
+body.page-bytovaya-contact .scroll-scale,
+body.page-bytovaya-contact .heading-reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+body.page-bytovaya-contact .max-w-7xl {
+  isolation: isolate;
+}
+
+@media (max-width: 767px) {
+  body.page-bytovaya-contact header h1 {
+    max-width: 9ch;
+    font-size: 3.15rem;
+    line-height: 0.98;
+  }
+
+  body.page-bytovaya-contact header p.text-lg,
+  body.page-bytovaya-contact header p.text-xl {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
 }
 
 .hero-bg .text-lg,
