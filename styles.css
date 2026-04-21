@@ -409,6 +409,50 @@ body.page-bytovaya-contact .max-w-7xl {
   isolation: isolate;
 }
 
+body.page-bytovaya-contact .household-contact-wide {
+  max-width: min(96rem, calc(100vw - 1.5rem));
+}
+
+body.page-bytovaya-contact .household-contact-map-shell {
+  box-shadow: 0 34px 80px rgba(15, 23, 42, 0.18);
+}
+
+body.page-bytovaya-contact .household-contact-map-frame {
+  height: clamp(25rem, 52vw, 43rem);
+}
+
+body.page-bytovaya-contact .household-contact-map-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+body.page-bytovaya-contact .household-contact-location-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+body.page-bytovaya-contact .household-contact-location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 45px rgba(15, 23, 42, 0.10);
+}
+
+body.page-bytovaya-contact .household-contact-location-address {
+  line-height: 1.08;
+  max-width: 15ch;
+}
+
+body.page-bytovaya-contact .household-contact-location-copy {
+  max-width: 34ch;
+}
+
+body.page-bytovaya-contact .household-contact-location-link {
+  margin-top: auto;
+}
+
 @media (max-width: 767px) {
   body.page-bytovaya-contact header h1 {
     max-width: 9ch;
@@ -420,6 +464,66 @@ body.page-bytovaya-contact .max-w-7xl {
   body.page-bytovaya-contact header p.text-xl {
     font-size: 1.05rem;
     line-height: 1.7;
+  }
+
+  body.page-bytovaya-contact .household-contact-map-frame {
+    height: 24rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-map-chips {
+    gap: 0.5rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-map-chips > * {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body.page-bytovaya-contact .household-contact-map-shell > div:first-child {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-location-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-location-status {
+    letter-spacing: 0.12em;
+    font-size: 0.68rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-location-address {
+    font-size: 1.75rem;
+    max-width: none;
+  }
+
+  body.page-bytovaya-contact .household-contact-location-copy {
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  body.page-bytovaya-contact .household-contact-map-followup {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  body.page-bytovaya-contact .household-contact-map-frame {
+    height: 31rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  body.page-bytovaya-contact .household-contact-map-followup {
+    grid-template-columns: minmax(0, 1.45fr) minmax(22rem, 0.7fr);
+  }
+
+  body.page-bytovaya-contact .household-contact-map-shell {
+    border-radius: 2.35rem;
   }
 }
 
