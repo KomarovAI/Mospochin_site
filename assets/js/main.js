@@ -4,15 +4,14 @@ name: 'MosPochin',
 phoneDisplay: '8 (999) 005-71-72',
 phoneLink: '79990057172',
 whatsapp: 'https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
-email: 'info@mspochin.ru',
-experience: '15+ лет',
-responseTime: '60 минут'
+email: 'info@mospochin.ru',
+experience: '15+ лет'
 },
 services: {
 restaurant: [
 {href:'uslugi.html', icon:'🔧', name:'Все услуги'},
 {href:'parokonvektomaty.html', icon:'🔥', name:'Пароконвектоматы'},
-{href:'plity.html', icon:'🍳', name:'Плиты и печи'},
+{href:'plity-pechi.html', icon:'🍳', name:'Плиты и печи'},
 {href:'holodilnoe-oborudovanie.html', icon:'❄️', name:'Холодильное оборудование'},
 {href:'posudomoechnye-mashiny.html', icon:'🍽️', name:'Посудомойки'},
 {href:'grili-mangaly.html', icon:'🍳', name:'Грили, фритюрницы, мелочёвка'},
@@ -33,8 +32,8 @@ bytovaya: [
 const Components = {
 isBytovaya() {
 const path = window.location.pathname.split('/').pop().replace('.html', '');
-const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'ice-machines'];
-const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'microwaves', 'kompyutery', 'routery', 'water-heaters'];
+const restaurantPages = ['index', 'uslugi', 'about', 'contact', 'parokonvektomaty', 'plity-pechi', 'holodilnoe-oborudovanie', 'posudomoechnye-mashiny', 'grili-mangaly', 'ice-machines'];
+const bytovayaPages = ['bytovaya-index', 'bytovaya-uslugi', 'bytovaya-about', 'bytovaya-contact', 'holodilniki', 'stiralnye-mashiny', 'posudomoyki', 'plity', 'microwaves', 'kompyutery', 'routery', 'water-heaters'];
 if (bytovayaPages.includes(path)) return true;
 if (restaurantPages.includes(path)) return false;
 return false;
@@ -49,7 +48,7 @@ const serviceItems = services.map(s =>
 ).join('');
 const topBarText = isByt
 ? { icon: 'ri-flashlight-fill', text: '🚨 СРОЧНЫЙ ВЫЕЗД НА ДОМ', sub: 'Мастер будет через 60 минут' }
-: { icon: 'ri-flashlight-fill', text: '🚨 АВАРИЙНЫЙ ВЫЕЗД', sub: 'Мастер будет через 20 минут' };
+: { icon: 'ri-flashlight-fill', text: '🚨 АВАРИЙНЫЙ ВЫЕЗД', sub: 'Мастер будет через 45 минут' };
 return `
 <!-- 🔴 TOP BAR -->
 <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg">
@@ -142,7 +141,7 @@ return `
 <li><a href="index.html" class="hover:text-white transition">Главная</a></li>
 <li><a href="uslugi.html" class="hover:text-white transition">Услуги</a></li>
 <li><a href="parokonvektomaty.html" class="hover:text-white transition">Пароконвектоматы</a></li>
-<li><a href="plity.html" class="hover:text-white transition">Плиты и печи</a></li>
+<li><a href="plity-pechi.html" class="hover:text-white transition">Плиты и печи</a></li>
 <li><a href="holodilnoe-oborudovanie.html" class="hover:text-white transition">Холодильное оборудование</a></li>
 <li><a href="posudomoechnye-mashiny.html" class="hover:text-white transition">Посудомойки</a></li>
 <li><a href="grili-mangaly.html" class="hover:text-white transition">Грили, фритюрницы</a></li>

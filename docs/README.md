@@ -13,8 +13,18 @@
 - Production backend source now lives in `server/telegram-api.mjs`.
 - Server activation artifacts now live in-repo under `deploy/`:
   - `deploy/systemd/mospochin-telegram-api.service`
+  - `deploy/systemd/mospochin-telegram-tunnel.service`
   - `deploy/post-activate.sh`
   - `deploy/env/telegram.env.example`
+
+## Telegram delivery path
+
+- Public form requests hit `https://mospochin.ru/api/send-telegram`.
+- Nginx proxies that path to the local backend on `127.0.0.1:3010`.
+- `server/telegram-api.mjs` sends Telegram Bot API requests through `TELEGRAM_PROXY`.
+- Production default is `socks5h://127.0.0.1:58161`.
+- `mospochin-telegram-tunnel.service` keeps that local SOCKS port open through an SSH tunnel to `primary-vps` (`31.58.58.133`) on port `27016`.
+- Only Telegram traffic uses this tunnel; the site and other VPS traffic stay local to the Mospochin host.
 
 ## Validation and deploy
 

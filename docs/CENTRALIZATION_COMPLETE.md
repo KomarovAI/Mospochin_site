@@ -98,7 +98,7 @@ const CONFIG = {
     phoneDisplay: '8 (999) 005-71-72',
     phoneLink: '79990057172',
     whatsapp: 'https://wa.me/79990057172',
-    email: 'info@mspochin.ru',
+    email: 'info@mospochin.ru',
     experience: '15+ лет',
     responseTime: '60 минут'
   },

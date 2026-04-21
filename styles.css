@@ -18,6 +18,128 @@
   --mobile-sticky-safe-space: 8.5rem;
 }
 
+/* Utility fallbacks for classes used in HTML but absent from styles-built.css */
+.bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.bg-white\/12 {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.bg-white\/15 {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.bg-white\/95 {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.border-white\/15 {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.text-white\/60 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.text-white\/85 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.from-brand-orange\/5 {
+  --tw-gradient-from: rgba(249, 115, 22, 0.05) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(249, 115, 22, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-cyan-50 {
+  --tw-gradient-from: #ecfeff var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(236, 254, 255, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-emerald-50 {
+  --tw-gradient-from: #ecfdf5 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(236, 253, 245, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-lime-50 {
+  --tw-gradient-from: #f7fee7 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(247, 254, 231, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-sky-50 {
+  --tw-gradient-from: #f0f9ff var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(240, 249, 255, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-stone-50 {
+  --tw-gradient-from: #fafaf9 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(250, 250, 249, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-teal-50 {
+  --tw-gradient-from: #f0fdfa var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(240, 253, 250, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-violet-50 {
+  --tw-gradient-from: #f5f3ff var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(245, 243, 255, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-brand-blue\/50 {
+  --tw-gradient-to: rgba(15, 23, 42, 0.5) var(--tw-gradient-to-position);
+}
+
+.to-emerald-50\/30 {
+  --tw-gradient-to: rgba(236, 253, 245, 0.3) var(--tw-gradient-to-position);
+}
+
+.to-gray-50 {
+  --tw-gradient-to: #f9fafb var(--tw-gradient-to-position);
+}
+
+.to-indigo-50 {
+  --tw-gradient-to: #eef2ff var(--tw-gradient-to-position);
+}
+
+.to-indigo-50\/30 {
+  --tw-gradient-to: rgba(238, 242, 255, 0.3) var(--tw-gradient-to-position);
+}
+
+.to-lime-50 {
+  --tw-gradient-to: #f7fee7 var(--tw-gradient-to-position);
+}
+
+.to-orange-100\/30 {
+  --tw-gradient-to: rgba(255, 237, 213, 0.3) var(--tw-gradient-to-position);
+}
+
+.to-purple-800 {
+  --tw-gradient-to: #6b21a8 var(--tw-gradient-to-position);
+}
+
+.to-sky-50 {
+  --tw-gradient-to: #f0f9ff var(--tw-gradient-to-position);
+}
+
+.to-stone-100 {
+  --tw-gradient-to: #f5f5f4 var(--tw-gradient-to-position);
+}
+
+.via-brand-blue\/20 {
+  --tw-gradient-to: rgba(15, 23, 42, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(15, 23, 42, 0.2) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 html {
   scroll-padding-top: 5rem;
   scroll-padding-bottom: var(--mobile-sticky-safe-space);

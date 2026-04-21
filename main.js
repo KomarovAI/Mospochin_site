@@ -5,15 +5,14 @@ const CONFIG = {
     phoneLink: '79990057172',
     whatsapp:
       'https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
-    email: 'info@mspochin.ru',
+    email: 'info@mospochin.ru',
     experience: '15+ лет',
-    responseTime: '60 минут',
   },
   services: {
     restaurant: [
       { href: 'uslugi.html', icon: '🔧', name: 'Все услуги' },
       { href: 'parokonvektomaty.html', icon: '🔥', name: 'Пароконвектоматы' },
-      { href: 'plity.html', icon: '🍳', name: 'Плиты и печи' },
+      { href: 'plity-pechi.html', icon: '🍳', name: 'Плиты и печи' },
       {
         href: 'holodilnoe-oborudovanie.html',
         icon: '❄️',
@@ -42,7 +41,7 @@ const RESTAURANT_PAGES = new Set([
   'about',
   'contact',
   'parokonvektomaty',
-  'plity',
+  'plity-pechi',
   'holodilnoe-oborudovanie',
   'posudomoechnye-mashiny',
   'grili-mangaly',
@@ -57,6 +56,7 @@ const HOUSEHOLD_PAGES = new Set([
   'holodilniki',
   'stiralnye-mashiny',
   'posudomoyki',
+  'plity',
   'microwaves',
   'kompyutery',
   'routery',
@@ -113,7 +113,7 @@ const Components = {
         : {
             icon: 'ri-flashlight-fill',
             text: '🚨 АВАРИЙНЫЙ ВЫЕЗД',
-            sub: 'Мастер будет через 20 минут',
+            sub: 'Мастер будет через 45 минут',
           },
       contactHint: isBytovaya ? '🏠 Выезд на дом' : '⚡ Работаем 24/7',
     };
@@ -239,7 +239,7 @@ const Components = {
           <li><a href="index.html" class="hover:text-white transition">Главная</a></li>
           <li><a href="uslugi.html" class="hover:text-white transition">Услуги</a></li>
           <li><a href="parokonvektomaty.html" class="hover:text-white transition">Пароконвектоматы</a></li>
-          <li><a href="plity.html" class="hover:text-white transition">Плиты и печи</a></li>
+          <li><a href="plity-pechi.html" class="hover:text-white transition">Плиты и печи</a></li>
           <li><a href="holodilnoe-oborudovanie.html" class="hover:text-white transition">Холодильное оборудование</a></li>
           <li><a href="posudomoechnye-mashiny.html" class="hover:text-white transition">Посудомойки</a></li>
           <li><a href="grili-mangaly.html" class="hover:text-white transition">Грили, фритюрницы</a></li>

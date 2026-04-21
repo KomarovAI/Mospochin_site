@@ -9,6 +9,9 @@ cd "${RELEASE_ROOT}"
 SERVICE_NAME="mospochin-telegram-api.service"
 UNIT_SOURCE="deploy/systemd/${SERVICE_NAME}"
 UNIT_TARGET="/etc/systemd/system/${SERVICE_NAME}"
+TUNNEL_SERVICE_NAME="mospochin-telegram-tunnel.service"
+TUNNEL_UNIT_SOURCE="deploy/systemd/${TUNNEL_SERVICE_NAME}"
+TUNNEL_UNIT_TARGET="/etc/systemd/system/${TUNNEL_SERVICE_NAME}"
 ENV_DIR="/etc/mospochin"
 ENV_TARGET="${ENV_DIR}/telegram.env"
 ENV_TEMPLATE="deploy/env/telegram.env.example"
@@ -18,9 +21,15 @@ if [ ! -f "${UNIT_SOURCE}" ]; then
   exit 1
 fi
 
+if [ ! -f "${TUNNEL_UNIT_SOURCE}" ]; then
+  echo "Missing unit file: ${TUNNEL_UNIT_SOURCE}" >&2
+  exit 1
+fi
+
 install -d -m 0755 /etc/systemd/system
 install -d -m 0755 "${ENV_DIR}"
 install -m 0644 "${UNIT_SOURCE}" "${UNIT_TARGET}"
+install -m 0644 "${TUNNEL_UNIT_SOURCE}" "${TUNNEL_UNIT_TARGET}"
 
 if [ ! -f "${ENV_TARGET}" ]; then
   install -m 0600 "${ENV_TEMPLATE}" "${ENV_TARGET}"
@@ -28,5 +37,7 @@ if [ ! -f "${ENV_TARGET}" ]; then
 fi
 
 systemctl daemon-reload
+systemctl enable "${TUNNEL_SERVICE_NAME}" >/dev/null
+systemctl restart "${TUNNEL_SERVICE_NAME}"
 systemctl enable "${SERVICE_NAME}" >/dev/null
 systemctl restart "${SERVICE_NAME}"
