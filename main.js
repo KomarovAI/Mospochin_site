@@ -19,7 +19,7 @@ const CONFIG = {
         name: 'Холодильное оборудование',
       },
       { href: 'posudomoechnye-mashiny.html', icon: '🍽️', name: 'Посудомойки' },
-      { href: 'grili-mangaly.html', icon: '🍳', name: 'Грили, фритюрницы, мелочёвка' },
+      { href: 'grili-mangaly.html', icon: '🍳', name: 'Грили и фритюр' },
       { href: 'ice-machines.html', icon: '🧊', name: 'Льдогенераторы' },
     ],
     bytovaya: [
@@ -271,7 +271,7 @@ const Components = {
           <li><a href="plity-pechi.html" class="hover:text-white transition">Плиты и печи</a></li>
           <li><a href="holodilnoe-oborudovanie.html" class="hover:text-white transition">Холодильное оборудование</a></li>
           <li><a href="posudomoechnye-mashiny.html" class="hover:text-white transition">Посудомойки</a></li>
-          <li><a href="grili-mangaly.html" class="hover:text-white transition">Грили, фритюрницы</a></li>
+          <li><a href="grili-mangaly.html" class="hover:text-white transition">Грили и фритюр</a></li>
           <li><a href="ice-machines.html" class="hover:text-white transition">Льдогенераторы</a></li>
           <li><a href="about.html" class="hover:text-white transition">О компании</a></li>
           <li><a href="contact.html" class="hover:text-white transition">Контакты</a></li>
