@@ -56,14 +56,14 @@
             "Ремонт микроволновок",
             "Ремонт водонагревателей"
           ],
-          "description": "Каталог услуг бытовой ветки MosPochin с переходом по симптомам и отдельными сервисными страницами для каждой категории техники."
+          "description": "Каталог услуг бытовой ветки MosPochin с выбором по типу техники и отдельными сервисными страницами для каждой категории."
         },
         {
           "@type": "CollectionPage",
           "@id": "https://mospochin.ru/bytovaya-uslugi.html#collection",
           "url": "https://mospochin.ru/bytovaya-uslugi.html",
-          "name": "Услуги по ремонту бытовой техники — каталог по симптомам",
-          "description": "Хаб бытовых услуг MosPochin с точными маршрутами по симптомам и по типу техники.",
+          "name": "Услуги по ремонту бытовой техники — каталог по типу техники",
+          "description": "Хаб бытовых услуг MosPochin с понятным выбором по типу техники и переходом в отдельные сервисные страницы.",
           "isPartOf": {
             "@id": "https://mospochin.ru/#household-service"
           },
@@ -265,52 +265,9 @@
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-white">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0"><i class="ri-customer-service-2-line text-white text-2xl"></i></div>
-                    <div><p class="text-white font-bold text-lg">Нужна помощь с техникой?</p><p class="text-white/90 text-sm">Подскажем по симптомам и согласуем удобное время визита мастера</p></div>
+                    <div><p class="text-white font-bold text-lg">Нужна помощь с техникой?</p><p class="text-white/90 text-sm">Подскажем по вашей технике, поломке и согласуем удобное время визита мастера</p></div>
                 </div>
                 <a href="tel:+79990057172" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105"><i class="ri-phone-line"></i><span>Позвонить мастеру</span></a>
-            </div>
-        </div>
-    </section>
-    <section class="py-8 bg-white border-b border-slate-100" data-household-route-strip="uslugi">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 lg:p-8 shadow-sm">
-                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
-                    <div>
-                        <p class="text-sm font-bold tracking-[0.25em] text-brand-orange mb-2" data-route-strip-badge>БЫСТРЫЙ ПЕРЕХОД</p>
-                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue" data-route-strip-title>Если симптом уже понятен, можно перейти сразу</h2>
-                        <p class="text-slate-600 mt-2 max-w-3xl" data-route-strip-description>Основной сценарий этой страницы — каталог техники ниже. Но по частому симптому можно сразу открыть нужную сервисную страницу.</p>
-                    </div>
-                    <a href="#full-services" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orangeHover" data-route-strip-action>
-                        <span data-route-strip-action-label>К каталогу техники</span>
-                        <i class="ri-arrow-down-line" data-route-strip-action-icon></i>
-                    </a>
-                </div>
-                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" data-route-strip-grid>
-                    <a href="stiralnye-mashiny.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Стиралка не сливает</p>
-                        <p class="mt-1 text-sm text-slate-500">Стиральная машина: слив, насос, фильтр, прессостат</p>
-                    </a>
-                    <a href="holodilniki.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Холодильник не морозит</p>
-                        <p class="mt-1 text-sm text-slate-500">Холодильник: компрессор, термостат, датчики, утечка</p>
-                    </a>
-                    <a href="plity.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Плита не греет</p>
-                        <p class="mt-1 text-sm text-slate-500">Плита и духовка: конфорки, ТЭН, силовые элементы</p>
-                    </a>
-                    <a href="stiralnye-mashiny.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Стиралка шумит</p>
-                        <p class="mt-1 text-sm text-slate-500">Стиральная машина: барабан, подшипники, амортизаторы</p>
-                    </a>
-                    <a href="posudomoyki.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Посудомойка течёт</p>
-                        <p class="mt-1 text-sm text-slate-500">Посудомойка: шланги, поддон, насос, уплотнители</p>
-                    </a>
-                    <a href="microwaves.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Микроволновка не включается</p>
-                        <p class="mt-1 text-sm text-slate-500">Микроволновка: питание, дверь, плата, предохранители</p>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -318,8 +275,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 КАТАЛОГ УСЛУГ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Выберите технику без лишних ответвлений</h2>
-                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Каждая карточка ведёт в отдельную сервисную страницу с FAQ, симптомами, формой заявки и понятным бытовым сценарием ремонта.</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Сначала выберите тип техники</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Это основной маршрут каталога: каждая карточка ведёт в отдельную сервисную страницу с понятными симптомами, FAQ и формой заявки.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
                 <a href="holodilniki.html" class="scroll-reveal" data-delay="1">

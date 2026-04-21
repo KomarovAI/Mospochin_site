@@ -98,6 +98,12 @@ function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
+function getBranchConfigForContract(contract) {
+  if (contract.dataFile === RESTAURANT_BRANCH_DATA) return restaurantBranch;
+  if (contract.dataFile === HOUSEHOLD_BRANCH_DATA) return householdBranch;
+  return null;
+}
+
 function isNoindexPage(page) {
   return typeof page.robots === 'string' && page.robots.toLowerCase().includes('noindex');
 }
@@ -233,6 +239,10 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
     const routeKey = contract.pages[fileName];
     if (!routeKey) continue;
 
+    const branchConfig = getBranchConfigForContract(contract);
+    const routeStrip = branchConfig?.routeStrips?.[routeKey];
+    if (!routeStrip) continue;
+
     if (!html.includes(`${contract.selectorPrefix}="${routeKey}"`)) {
       errors.push(`${fileName}: missing ${contract.selectorPrefix}="${routeKey}"`);
     }
@@ -348,14 +358,12 @@ function validateBranchConfig(branchConfig, contract, expectedBranch) {
   }
 
   if (!branchConfig.routeStrips || typeof branchConfig.routeStrips !== 'object') {
-    errors.push(`${contract.dataFile}: routeStrips object is required`);
     return;
   }
 
   for (const [fileName, routeKey] of Object.entries(contract.pages)) {
     const routeStrip = branchConfig.routeStrips[routeKey];
     if (!routeStrip || typeof routeStrip !== 'object') {
-      errors.push(`${contract.dataFile}: routeStrips.${routeKey} is required`);
       continue;
     }
 
