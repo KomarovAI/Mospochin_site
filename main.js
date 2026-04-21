@@ -8,22 +8,11 @@ const SITE_CONFIG = {
     email: 'info@mospochin.ru',
     experience: '15+ лет',
   },
-  services: {
-    bytovaya: [
-      { href: 'bytovaya-uslugi.html', icon: '🏠', name: 'Все услуги' },
-      { href: 'holodilniki.html', icon: '❄️', name: 'Холодильники' },
-      { href: 'stiralnye-mashiny.html', icon: '🧺', name: 'Стиральные машины' },
-      { href: 'posudomoyki.html', icon: '🍽️', name: 'Посудомойки' },
-      { href: 'microwaves.html', icon: '🔥', name: 'Плиты и микроволновки' },
-      { href: 'kompyutery.html', icon: '💻', name: 'Компьютеры' },
-      { href: 'routery.html', icon: '📶', name: 'Роутеры' },
-      { href: 'water-heaters.html', icon: '🚿', name: 'Водонагреватели' },
-    ],
-  },
 };
 
 const PAGE_METADATA_PATH = '/data/page-metadata.json';
 const RESTAURANT_BRANCH_PATH = '/data/restaurant-branch.json';
+const HOUSEHOLD_BRANCH_PATH = '/data/household-branch.json';
 const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
   subtitle: '🔧 Ресторанное оборудование',
   contactHint: '⚡ Работаем 24/7',
@@ -129,6 +118,124 @@ const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
     },
   },
 });
+const DEFAULT_HOUSEHOLD_BRANCH = Object.freeze({
+  subtitle: '🏠 Бытовая техника',
+  contactHint: '🏠 Выезд на дом',
+  topBarText: {
+    icon: 'ri-flashlight-fill',
+    text: '🚨 СРОЧНЫЙ ВЫЕЗД НА ДОМ',
+    sub: 'Мастер будет через 60 минут',
+  },
+  services: [
+    { href: 'bytovaya-uslugi.html', icon: '🏠', name: 'Все услуги' },
+    { href: 'holodilniki.html', icon: '❄️', name: 'Холодильники' },
+    { href: 'stiralnye-mashiny.html', icon: '🧺', name: 'Стиральные машины' },
+    { href: 'posudomoyki.html', icon: '🍽️', name: 'Посудомойки' },
+    { href: 'plity.html', icon: '🍳', name: 'Плиты и духовки' },
+    { href: 'microwaves.html', icon: '📻', name: 'Микроволновки' },
+    { href: 'water-heaters.html', icon: '🚿', name: 'Водонагреватели' },
+  ],
+  footerLinks: [
+    { href: 'bytovaya-index.html', label: 'Главная' },
+    { href: 'bytovaya-uslugi.html', label: 'Услуги' },
+    { href: 'holodilniki.html', label: 'Холодильники' },
+    { href: 'stiralnye-mashiny.html', label: 'Стиральные машины' },
+    { href: 'posudomoyki.html', label: 'Посудомойки' },
+    { href: 'plity.html', label: 'Плиты и духовки' },
+    { href: 'microwaves.html', label: 'Микроволновки' },
+    { href: 'water-heaters.html', label: 'Водонагреватели' },
+    { href: 'bytovaya-about.html', label: 'О компании' },
+    { href: 'bytovaya-contact.html', label: 'Контакты' },
+  ],
+  routeStrips: {
+    index: {
+      badge: 'БЫСТРЫЙ МАРШРУТ',
+      title: 'Если уже знаете симптом, переходите сразу',
+      description:
+        'Этот хаб должен быстро уточнять бытовой сценарий. Каждая карточка ведёт в точную сервисную страницу без смешения разных типов техники.',
+      action: {
+        href: 'bytovaya-uslugi.html',
+        label: 'Полный каталог услуг',
+        icon: 'ri-arrow-right-line',
+      },
+      cards: [
+        {
+          href: 'stiralnye-mashiny.html',
+          title: 'Не сливает',
+          description: 'Стиральная машина: насос, фильтр, слив, отжим',
+        },
+        {
+          href: 'holodilniki.html',
+          title: 'Не морозит',
+          description: 'Холодильник: компрессор, датчики, утечка, оттайка',
+        },
+        {
+          href: 'plity.html',
+          title: 'Не греет',
+          description: 'Плита или духовка: конфорки, ТЭН, переключатели',
+        },
+        {
+          href: 'stiralnye-mashiny.html',
+          title: 'Шумит',
+          description: 'Стиральная машина: подшипники, амортизаторы, вибрация',
+        },
+        {
+          href: 'posudomoyki.html',
+          title: 'Течёт',
+          description: 'Посудомойка: шланги, насос, поддон, уплотнение',
+        },
+        {
+          href: 'microwaves.html',
+          title: 'Не включается',
+          description: 'Микроволновка: питание, предохранители, плата',
+        },
+      ],
+    },
+    uslugi: {
+      badge: 'БЫСТРЫЙ ВЫБОР',
+      title: 'Начните с симптома, если техника уже встала',
+      description:
+        'Сначала симптом, потом точная страница услуги. Ниже только бытовые маршруты без компьютеров, роутеров и размытых объединений.',
+      action: {
+        href: '#full-services',
+        label: 'Открыть полный список',
+        icon: 'ri-arrow-down-line',
+      },
+      cards: [
+        {
+          href: 'stiralnye-mashiny.html',
+          title: 'Не сливает',
+          description: 'Стиральная машина: слив, насос, фильтр, прессостат',
+        },
+        {
+          href: 'holodilniki.html',
+          title: 'Не морозит',
+          description: 'Холодильник: компрессор, термостат, датчики, утечка',
+        },
+        {
+          href: 'plity.html',
+          title: 'Не греет',
+          description: 'Плита и духовка: конфорки, ТЭН, силовые элементы',
+        },
+        {
+          href: 'stiralnye-mashiny.html',
+          title: 'Шумит',
+          description: 'Стиральная машина: барабан, подшипники, амортизаторы',
+        },
+        {
+          href: 'posudomoyki.html',
+          title: 'Течёт',
+          description: 'Посудомойка: шланги, поддон, насос, уплотнители',
+        },
+        {
+          href: 'microwaves.html',
+          title: 'Не включается',
+          description: 'Микроволновка: питание, дверь, плата, предохранители',
+        },
+      ],
+    },
+  },
+});
 const RESTAURANT_PAGES = new Set([
   'index',
   'uslugi',
@@ -167,6 +274,7 @@ function getCurrentPageFile() {
 
 let pageMetadataPromise = null;
 let restaurantBranchPromise = null;
+let householdBranchPromise = null;
 
 async function loadJson(path) {
   const response = await fetch(path, { cache: 'no-store' });
@@ -203,6 +311,21 @@ async function loadRestaurantBranchConfig() {
   return restaurantBranchPromise;
 }
 
+async function loadHouseholdBranchConfig() {
+  if (!householdBranchPromise) {
+    householdBranchPromise = (async () => {
+      try {
+        return await loadJson(HOUSEHOLD_BRANCH_PATH);
+      } catch (error) {
+        console.error('Household branch config unavailable:', error.message);
+        return DEFAULT_HOUSEHOLD_BRANCH;
+      }
+    })();
+  }
+
+  return householdBranchPromise;
+}
+
 function inferBranchFromSlug() {
   const page = getCurrentPageSlug();
   if (HOUSEHOLD_PAGES.has(page)) return 'household';
@@ -227,6 +350,7 @@ function observeElements(selector, options, onIntersect) {
 const Components = {
   currentBranch: null,
   restaurantBranch: DEFAULT_RESTAURANT_BRANCH,
+  householdBranch: DEFAULT_HOUSEHOLD_BRANCH,
 
   isBytovaya() {
     return (this.currentBranch || inferBranchFromSlug()) === 'household';
@@ -236,13 +360,18 @@ const Components = {
     return this.restaurantBranch || DEFAULT_RESTAURANT_BRANCH;
   },
 
+  getHouseholdBranch() {
+    return this.householdBranch || DEFAULT_HOUSEHOLD_BRANCH;
+  },
+
   getBranchMeta() {
     const isBytovaya = this.isBytovaya();
     const restaurantBranch = this.getRestaurantBranch();
+    const householdBranch = this.getHouseholdBranch();
 
     return {
       isBytovaya,
-      subtitle: isBytovaya ? '🏠 Бытовая техника' : restaurantBranch.subtitle,
+      subtitle: isBytovaya ? householdBranch.subtitle : restaurantBranch.subtitle,
       homeLink: isBytovaya ? 'bytovaya-index.html' : 'index.html',
       aboutLink: isBytovaya ? 'bytovaya-about.html' : 'about.html',
       contactLink: isBytovaya ? 'bytovaya-contact.html' : 'contact.html',
@@ -251,15 +380,9 @@ const Components = {
       branchSwitchLabel: isBytovaya
         ? '🔧 Ресторанное оборудование'
         : '🏠 Бытовая техника',
-      services: isBytovaya ? SITE_CONFIG.services.bytovaya : restaurantBranch.services,
-      topBarText: isBytovaya
-        ? {
-            icon: 'ri-flashlight-fill',
-            text: '🚨 СРОЧНЫЙ ВЫЕЗД НА ДОМ',
-            sub: 'Мастер будет через 60 минут',
-          }
-        : restaurantBranch.topBarText,
-      contactHint: isBytovaya ? '🏠 Выезд на дом' : restaurantBranch.contactHint,
+      services: isBytovaya ? householdBranch.services : restaurantBranch.services,
+      topBarText: isBytovaya ? householdBranch.topBarText : restaurantBranch.topBarText,
+      contactHint: isBytovaya ? householdBranch.contactHint : restaurantBranch.contactHint,
     };
   },
 
@@ -368,6 +491,11 @@ const Components = {
         (link) => `<li><a href="${link.href}" class="hover:text-white transition">${link.label}</a></li>`
       )
       .join('');
+    const householdLinks = this.getHouseholdBranch().footerLinks
+      .map(
+        (link) => `<li><a href="${link.href}" class="hover:text-white transition">${link.label}</a></li>`
+      )
+      .join('');
 
     return `
 <footer class="bg-brand-blue text-slate-400 py-12 border-t border-slate-800">
@@ -393,17 +521,7 @@ const Components = {
       <div>
         <h5 class="text-white font-bold mb-4">🏠 Бытовая техника</h5>
         <ul class="space-y-2 text-sm">
-          <li><a href="bytovaya-index.html" class="hover:text-white transition">Главная</a></li>
-          <li><a href="bytovaya-uslugi.html" class="hover:text-white transition">Услуги</a></li>
-          <li><a href="holodilniki.html" class="hover:text-white transition">Холодильники</a></li>
-          <li><a href="stiralnye-mashiny.html" class="hover:text-white transition">Стиральные машины</a></li>
-          <li><a href="posudomoyki.html" class="hover:text-white transition">Посудомойки</a></li>
-          <li><a href="microwaves.html" class="hover:text-white transition">Плиты и микроволновки</a></li>
-          <li><a href="kompyutery.html" class="hover:text-white transition">Компьютеры</a></li>
-          <li><a href="routery.html" class="hover:text-white transition">Роутеры</a></li>
-          <li><a href="water-heaters.html" class="hover:text-white transition">Водонагреватели</a></li>
-          <li><a href="bytovaya-about.html" class="hover:text-white transition">О компании</a></li>
-          <li><a href="bytovaya-contact.html" class="hover:text-white transition">Контакты</a></li>
+          ${householdLinks}
         </ul>
       </div>
 
@@ -584,43 +702,53 @@ const Components = {
     return SITE_CONFIG.company.phoneLink;
   },
 
-  initRestaurantRouteStrips() {
-    if (this.isBytovaya()) return;
+  initBranchRouteStrips() {
+    const routeStripSources = [
+      {
+        sections: document.querySelectorAll('[data-restaurant-route-strip]'),
+        getRouteKey: (section) => section.dataset.restaurantRouteStrip,
+        routeStrips: this.getRestaurantBranch().routeStrips || {},
+      },
+      {
+        sections: document.querySelectorAll('[data-household-route-strip]'),
+        getRouteKey: (section) => section.dataset.householdRouteStrip,
+        routeStrips: this.getHouseholdBranch().routeStrips || {},
+      },
+    ];
 
-    const routeStrips = this.getRestaurantBranch().routeStrips || {};
-    const sections = document.querySelectorAll('[data-restaurant-route-strip]');
+    routeStripSources.forEach(({ sections, getRouteKey, routeStrips }) => {
+      sections.forEach((section) => {
+        const routeKey = getRouteKey(section);
+        const routeStrip = routeStrips[routeKey];
+        if (!routeStrip) return;
 
-    sections.forEach((section) => {
-      const routeKey = section.dataset.restaurantRouteStrip;
-      const routeStrip = routeStrips[routeKey];
-      if (!routeStrip) return;
+        const badge = section.querySelector('[data-route-strip-badge]');
+        const title = section.querySelector('[data-route-strip-title]');
+        const description = section.querySelector('[data-route-strip-description]');
+        const action = section.querySelector('[data-route-strip-action]');
+        const actionLabel = section.querySelector('[data-route-strip-action-label]');
+        const actionIcon = section.querySelector('[data-route-strip-action-icon]');
+        const grid = section.querySelector('[data-route-strip-grid]');
 
-      const badge = section.querySelector('[data-route-strip-badge]');
-      const title = section.querySelector('[data-route-strip-title]');
-      const description = section.querySelector('[data-route-strip-description]');
-      const action = section.querySelector('[data-route-strip-action]');
-      const actionLabel = section.querySelector('[data-route-strip-action-label]');
-      const actionIcon = section.querySelector('[data-route-strip-action-icon]');
-      const grid = section.querySelector('[data-route-strip-grid]');
-
-      if (badge) badge.textContent = routeStrip.badge;
-      if (title) title.textContent = routeStrip.title;
-      if (description) description.textContent = routeStrip.description;
-      if (action) action.setAttribute('href', routeStrip.action.href);
-      if (actionLabel) actionLabel.textContent = routeStrip.action.label;
-      if (actionIcon) actionIcon.className = routeStrip.action.icon;
-      if (grid) {
-        grid.innerHTML = routeStrip.cards
-          .map(
-            (card) => `
-              <a href="${card.href}" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                <p class="text-sm font-bold text-brand-blue">${card.title}</p>
-                <p class="mt-1 text-sm text-slate-500">${card.description}</p>
-              </a>
-            `
-          )
-          .join('');
-      }
+        if (badge) badge.textContent = routeStrip.badge;
+        if (title) title.textContent = routeStrip.title;
+        if (description) description.textContent = routeStrip.description;
+        if (action) action.setAttribute('href', routeStrip.action.href);
+        if (actionLabel) actionLabel.textContent = routeStrip.action.label;
+        if (actionIcon) actionIcon.className = routeStrip.action.icon;
+        if (grid) {
+          grid.innerHTML = routeStrip.cards
+            .map(
+              (card) => `
+                <a href="${card.href}" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                  <p class="text-sm font-bold text-brand-blue">${card.title}</p>
+                  <p class="mt-1 text-sm text-slate-500">${card.description}</p>
+                </a>
+              `
+            )
+            .join('');
+        }
+      });
     });
   },
 
@@ -638,9 +766,12 @@ const Components = {
       this.currentBranch = inferBranchFromSlug();
     }
 
-    if (!this.isBytovaya()) {
-      this.restaurantBranch = await loadRestaurantBranchConfig();
-    }
+    const [restaurantBranch, householdBranch] = await Promise.all([
+      loadRestaurantBranchConfig(),
+      loadHouseholdBranchConfig(),
+    ]);
+    this.restaurantBranch = restaurantBranch;
+    this.householdBranch = householdBranch;
 
     if (header) header.innerHTML = this.getHeader();
     if (footer) footer.innerHTML = this.getFooter();
@@ -650,7 +781,7 @@ const Components = {
     phoneLinks.forEach((node) => {
       node.setAttribute('href', `tel:${SITE_CONFIG.company.phoneLink}`);
     });
-    this.initRestaurantRouteStrips();
+    this.initBranchRouteStrips();
 
     document.body.classList.add(this.isBytovaya() ? 'branch-household' : 'branch-restaurant');
 

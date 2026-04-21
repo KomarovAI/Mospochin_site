@@ -13,12 +13,27 @@ const TELEGRAM_API_UNIT = 'deploy/systemd/mospochin-telegram-api.service';
 const TELEGRAM_API_ENV_TEMPLATE = 'deploy/env/telegram.env.example';
 const TELEGRAM_API_HOOK = 'deploy/post-activate.sh';
 const RESTAURANT_BRANCH_DATA = 'data/restaurant-branch.json';
+const HOUSEHOLD_BRANCH_DATA = 'data/household-branch.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
 const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
 const LEGACY_FORM_FIELDS = ['message'];
-const ROUTER_ROUTE_STRIP_PAGES = {
-  'index.html': 'index',
-  'uslugi.html': 'uslugi',
+const BRANCH_ROUTE_STRIP_CONTRACTS = {
+  restaurant: {
+    dataFile: RESTAURANT_BRANCH_DATA,
+    selectorPrefix: 'data-restaurant-route-strip',
+    pages: {
+      'index.html': 'index',
+      'uslugi.html': 'uslugi',
+    },
+  },
+  household: {
+    dataFile: HOUSEHOLD_BRANCH_DATA,
+    selectorPrefix: 'data-household-route-strip',
+    pages: {
+      'bytovaya-index.html': 'index',
+      'bytovaya-uslugi.html': 'uslugi',
+    },
+  },
 };
 const EXPECTED_BRANCH_BY_PAGE = {
   '404.html': 'neutral',
@@ -55,6 +70,10 @@ const restaurantBranchPath = path.join(SITE_ROOT, RESTAURANT_BRANCH_DATA);
 const restaurantBranch = fs.existsSync(restaurantBranchPath)
   ? JSON.parse(fs.readFileSync(restaurantBranchPath, 'utf8'))
   : null;
+const householdBranchPath = path.join(SITE_ROOT, HOUSEHOLD_BRANCH_DATA);
+const householdBranch = fs.existsSync(householdBranchPath)
+  ? JSON.parse(fs.readFileSync(householdBranchPath, 'utf8'))
+  : null;
 const sitemapXml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
 
 const errors = [];
@@ -79,7 +98,11 @@ function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
-function validateRestaurantHtmlTarget(target, context) {
+function isNoindexPage(page) {
+  return typeof page.robots === 'string' && page.robots.toLowerCase().includes('noindex');
+}
+
+function validateHtmlTarget(target, context, expectedBranch) {
   if (!isNonEmptyString(target)) {
     errors.push(`${context}: target must be a non-empty string`);
     return;
@@ -100,8 +123,8 @@ function validateRestaurantHtmlTarget(target, context) {
     return;
   }
 
-  if (metadata.pages[fileName].branch !== 'restaurant') {
-    errors.push(`${context}: target page must belong to restaurant branch`);
+  if (expectedBranch && metadata.pages[fileName].branch !== expectedBranch) {
+    errors.push(`${context}: target page must belong to ${expectedBranch} branch`);
   }
 }
 
@@ -156,6 +179,10 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
     errors.push(`${fileName}: og:url mismatch`);
   }
 
+  if ((page.robots ?? null) !== robots) {
+    errors.push(`${fileName}: robots mismatch`);
+  }
+
   if (!VALID_BRANCHES.has(page.branch)) {
     errors.push(`${fileName}: branch must be one of ${Array.from(VALID_BRANCHES).join(', ')}`);
   }
@@ -202,11 +229,12 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
     errors.push(`${fileName}: use tel:+79990057172, found legacy tel:79990057172 link`);
   }
 
-  if (ROUTER_ROUTE_STRIP_PAGES[fileName]) {
-    const routeKey = ROUTER_ROUTE_STRIP_PAGES[fileName];
+  for (const contract of Object.values(BRANCH_ROUTE_STRIP_CONTRACTS)) {
+    const routeKey = contract.pages[fileName];
+    if (!routeKey) continue;
 
-    if (!html.includes(`data-restaurant-route-strip="${routeKey}"`)) {
-      errors.push(`${fileName}: missing data-restaurant-route-strip="${routeKey}"`);
+    if (!html.includes(`${contract.selectorPrefix}="${routeKey}"`)) {
+      errors.push(`${fileName}: missing ${contract.selectorPrefix}="${routeKey}"`);
     }
 
     for (const attr of [
@@ -219,7 +247,7 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
       'data-route-strip-grid',
     ]) {
       if (!html.includes(attr)) {
-        errors.push(`${fileName}: missing ${attr} for restaurant router contract`);
+        errors.push(`${fileName}: missing ${attr} for ${contract.dataFile} router contract`);
       }
     }
   }
@@ -245,6 +273,7 @@ const sitemapLocs = new Set(
 
 for (const [fileName, page] of Object.entries(metadata.pages)) {
   if (!page.canonical) continue;
+  if (isNoindexPage(page)) continue;
   if (!sitemapLocs.has(page.canonical)) {
     errors.push(`${fileName}: canonical URL missing from sitemap.xml`);
   }
@@ -257,119 +286,135 @@ for (const fileName of htmlFiles) {
   }
 }
 
-if (restaurantBranch) {
-  if (!isNonEmptyString(restaurantBranch.subtitle)) {
-    errors.push(`${RESTAURANT_BRANCH_DATA}: subtitle must be a non-empty string`);
+function validateBranchConfig(branchConfig, contract, expectedBranch) {
+  if (!branchConfig) return;
+
+  if (!isNonEmptyString(branchConfig.subtitle)) {
+    errors.push(`${contract.dataFile}: subtitle must be a non-empty string`);
   }
 
-  if (!isNonEmptyString(restaurantBranch.contactHint)) {
-    errors.push(`${RESTAURANT_BRANCH_DATA}: contactHint must be a non-empty string`);
+  if (!isNonEmptyString(branchConfig.contactHint)) {
+    errors.push(`${contract.dataFile}: contactHint must be a non-empty string`);
   }
 
-  if (!restaurantBranch.topBarText || typeof restaurantBranch.topBarText !== 'object') {
-    errors.push(`${RESTAURANT_BRANCH_DATA}: topBarText object is required`);
+  if (!branchConfig.topBarText || typeof branchConfig.topBarText !== 'object') {
+    errors.push(`${contract.dataFile}: topBarText object is required`);
   } else {
     for (const fieldName of ['icon', 'text', 'sub']) {
-      if (!isNonEmptyString(restaurantBranch.topBarText[fieldName])) {
-        errors.push(`${RESTAURANT_BRANCH_DATA}: topBarText.${fieldName} must be a non-empty string`);
+      if (!isNonEmptyString(branchConfig.topBarText[fieldName])) {
+        errors.push(`${contract.dataFile}: topBarText.${fieldName} must be a non-empty string`);
       }
     }
   }
 
-  if (!Array.isArray(restaurantBranch.services) || restaurantBranch.services.length === 0) {
-    errors.push(`${RESTAURANT_BRANCH_DATA}: services must be a non-empty array`);
+  if (!Array.isArray(branchConfig.services) || branchConfig.services.length === 0) {
+    errors.push(`${contract.dataFile}: services must be a non-empty array`);
   } else {
-    restaurantBranch.services.forEach((service, index) => {
+    branchConfig.services.forEach((service, index) => {
       if (!service || typeof service !== 'object') {
-        errors.push(`${RESTAURANT_BRANCH_DATA}: services[${index}] must be an object`);
+        errors.push(`${contract.dataFile}: services[${index}] must be an object`);
         return;
       }
 
       if (!isNonEmptyString(service.name) || !isNonEmptyString(service.icon)) {
-        errors.push(`${RESTAURANT_BRANCH_DATA}: services[${index}] must define name and icon`);
+        errors.push(`${contract.dataFile}: services[${index}] must define name and icon`);
       }
-      validateRestaurantHtmlTarget(service.href, `${RESTAURANT_BRANCH_DATA}: services[${index}].href`);
+      validateHtmlTarget(
+        service.href,
+        `${contract.dataFile}: services[${index}].href`,
+        expectedBranch
+      );
     });
   }
 
-  if (!Array.isArray(restaurantBranch.footerLinks) || restaurantBranch.footerLinks.length === 0) {
-    errors.push(`${RESTAURANT_BRANCH_DATA}: footerLinks must be a non-empty array`);
+  if (!Array.isArray(branchConfig.footerLinks) || branchConfig.footerLinks.length === 0) {
+    errors.push(`${contract.dataFile}: footerLinks must be a non-empty array`);
   } else {
-    restaurantBranch.footerLinks.forEach((link, index) => {
+    branchConfig.footerLinks.forEach((link, index) => {
       if (!link || typeof link !== 'object') {
-        errors.push(`${RESTAURANT_BRANCH_DATA}: footerLinks[${index}] must be an object`);
+        errors.push(`${contract.dataFile}: footerLinks[${index}] must be an object`);
         return;
       }
 
       if (!isNonEmptyString(link.label)) {
-        errors.push(`${RESTAURANT_BRANCH_DATA}: footerLinks[${index}].label must be a non-empty string`);
+        errors.push(`${contract.dataFile}: footerLinks[${index}].label must be a non-empty string`);
       }
-      validateRestaurantHtmlTarget(link.href, `${RESTAURANT_BRANCH_DATA}: footerLinks[${index}].href`);
+      validateHtmlTarget(
+        link.href,
+        `${contract.dataFile}: footerLinks[${index}].href`,
+        expectedBranch
+      );
     });
   }
 
-  if (!restaurantBranch.routeStrips || typeof restaurantBranch.routeStrips !== 'object') {
-    errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips object is required`);
-  } else {
-    for (const [fileName, routeKey] of Object.entries(ROUTER_ROUTE_STRIP_PAGES)) {
-      const routeStrip = restaurantBranch.routeStrips[routeKey];
-      if (!routeStrip || typeof routeStrip !== 'object') {
-        errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey} is required`);
-        continue;
-      }
+  if (!branchConfig.routeStrips || typeof branchConfig.routeStrips !== 'object') {
+    errors.push(`${contract.dataFile}: routeStrips object is required`);
+    return;
+  }
 
-      for (const fieldName of ['badge', 'title', 'description']) {
-        if (!isNonEmptyString(routeStrip[fieldName])) {
-          errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.${fieldName} must be a non-empty string`);
-        }
-      }
-
-      if (!routeStrip.action || typeof routeStrip.action !== 'object') {
-        errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.action is required`);
-      } else {
-        if (!isNonEmptyString(routeStrip.action.label) || !isNonEmptyString(routeStrip.action.icon)) {
-          errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.action must define label and icon`);
-        }
-
-        const actionTarget = routeStrip.action.href;
-        if (!isNonEmptyString(actionTarget)) {
-          errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.action.href must be a non-empty string`);
-        } else if (actionTarget.startsWith('#')) {
-          const routerHtml = read(fileName);
-          if (!routerHtml.includes(`id="${actionTarget.slice(1)}"`)) {
-            errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.action.href points to missing anchor ${actionTarget} in ${fileName}`);
-          }
-        } else {
-          validateRestaurantHtmlTarget(
-            actionTarget,
-            `${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.action.href`
-          );
-        }
-      }
-
-      if (!Array.isArray(routeStrip.cards) || routeStrip.cards.length === 0) {
-        errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.cards must be a non-empty array`);
-        continue;
-      }
-
-      routeStrip.cards.forEach((card, index) => {
-        if (!card || typeof card !== 'object') {
-          errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.cards[${index}] must be an object`);
-          return;
-        }
-
-        if (!isNonEmptyString(card.title) || !isNonEmptyString(card.description)) {
-          errors.push(`${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.cards[${index}] must define title and description`);
-        }
-
-        validateRestaurantHtmlTarget(
-          card.href,
-          `${RESTAURANT_BRANCH_DATA}: routeStrips.${routeKey}.cards[${index}].href`
-        );
-      });
+  for (const [fileName, routeKey] of Object.entries(contract.pages)) {
+    const routeStrip = branchConfig.routeStrips[routeKey];
+    if (!routeStrip || typeof routeStrip !== 'object') {
+      errors.push(`${contract.dataFile}: routeStrips.${routeKey} is required`);
+      continue;
     }
+
+    for (const fieldName of ['badge', 'title', 'description']) {
+      if (!isNonEmptyString(routeStrip[fieldName])) {
+        errors.push(`${contract.dataFile}: routeStrips.${routeKey}.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    if (!routeStrip.action || typeof routeStrip.action !== 'object') {
+      errors.push(`${contract.dataFile}: routeStrips.${routeKey}.action is required`);
+    } else {
+      if (!isNonEmptyString(routeStrip.action.label) || !isNonEmptyString(routeStrip.action.icon)) {
+        errors.push(`${contract.dataFile}: routeStrips.${routeKey}.action must define label and icon`);
+      }
+
+      const actionTarget = routeStrip.action.href;
+      if (!isNonEmptyString(actionTarget)) {
+        errors.push(`${contract.dataFile}: routeStrips.${routeKey}.action.href must be a non-empty string`);
+      } else if (actionTarget.startsWith('#')) {
+        const routerHtml = read(fileName);
+        if (!routerHtml.includes(`id="${actionTarget.slice(1)}"`)) {
+          errors.push(`${contract.dataFile}: routeStrips.${routeKey}.action.href points to missing anchor ${actionTarget} in ${fileName}`);
+        }
+      } else {
+        validateHtmlTarget(
+          actionTarget,
+          `${contract.dataFile}: routeStrips.${routeKey}.action.href`,
+          expectedBranch
+        );
+      }
+    }
+
+    if (!Array.isArray(routeStrip.cards) || routeStrip.cards.length === 0) {
+      errors.push(`${contract.dataFile}: routeStrips.${routeKey}.cards must be a non-empty array`);
+      continue;
+    }
+
+    routeStrip.cards.forEach((card, index) => {
+      if (!card || typeof card !== 'object') {
+        errors.push(`${contract.dataFile}: routeStrips.${routeKey}.cards[${index}] must be an object`);
+        return;
+      }
+
+      if (!isNonEmptyString(card.title) || !isNonEmptyString(card.description)) {
+        errors.push(`${contract.dataFile}: routeStrips.${routeKey}.cards[${index}] must define title and description`);
+      }
+
+      validateHtmlTarget(
+        card.href,
+        `${contract.dataFile}: routeStrips.${routeKey}.cards[${index}].href`,
+        expectedBranch
+      );
+    });
   }
 }
+
+validateBranchConfig(restaurantBranch, BRANCH_ROUTE_STRIP_CONTRACTS.restaurant, 'restaurant');
+validateBranchConfig(householdBranch, BRANCH_ROUTE_STRIP_CONTRACTS.household, 'household');
 
 const canonicalFormScriptPath = path.join(SITE_ROOT, CANONICAL_FORM_SCRIPT);
 const legacyFormScriptPath = path.join(SITE_ROOT, LEGACY_FORM_SCRIPT);
@@ -390,6 +435,10 @@ if (!fs.existsSync(runtimeConfigPath)) {
 
 if (!fs.existsSync(restaurantBranchPath)) {
   errors.push(`${RESTAURANT_BRANCH_DATA}: restaurant branch config missing`);
+}
+
+if (!fs.existsSync(householdBranchPath)) {
+  errors.push(`${HOUSEHOLD_BRANCH_DATA}: household branch config missing`);
 }
 
 if (typeof runtimeConfig.telegramFormEndpoint !== 'string' || !runtimeConfig.telegramFormEndpoint.trim()) {

@@ -1,0 +1,134 @@
+{
+  "subtitle": "🏠 Бытовая техника",
+  "contactHint": "🏠 Выезд на дом",
+  "topBarText": {
+    "icon": "ri-flashlight-fill",
+    "text": "🚨 СРОЧНЫЙ ВЫЕЗД НА ДОМ",
+    "sub": "Мастер будет через 60 минут"
+  },
+  "services": [
+    { "href": "bytovaya-uslugi.html", "icon": "🏠", "name": "Все услуги" },
+    { "href": "holodilniki.html", "icon": "❄️", "name": "Холодильники" },
+    { "href": "stiralnye-mashiny.html", "icon": "🧺", "name": "Стиральные машины" },
+    { "href": "posudomoyki.html", "icon": "🍽️", "name": "Посудомойки" },
+    { "href": "plity.html", "icon": "🍳", "name": "Плиты и духовки" },
+    { "href": "microwaves.html", "icon": "📻", "name": "Микроволновки" },
+    { "href": "water-heaters.html", "icon": "🚿", "name": "Водонагреватели" }
+  ],
+  "footerLinks": [
+    { "href": "bytovaya-index.html", "label": "Главная" },
+    { "href": "bytovaya-uslugi.html", "label": "Услуги" },
+    { "href": "holodilniki.html", "label": "Холодильники" },
+    { "href": "stiralnye-mashiny.html", "label": "Стиральные машины" },
+    { "href": "posudomoyki.html", "label": "Посудомойки" },
+    { "href": "plity.html", "label": "Плиты и духовки" },
+    { "href": "microwaves.html", "label": "Микроволновки" },
+    { "href": "water-heaters.html", "label": "Водонагреватели" },
+    { "href": "bytovaya-about.html", "label": "О компании" },
+    { "href": "bytovaya-contact.html", "label": "Контакты" }
+  ],
+  "brandClusters": [
+    {
+      "category": "Холодильники",
+      "brands": ["Bosch", "Samsung", "LG", "Indesit", "Beko"]
+    },
+    {
+      "category": "Стиральные машины",
+      "brands": ["Samsung", "LG", "Bosch", "Indesit", "Electrolux"]
+    },
+    {
+      "category": "Посудомойки",
+      "brands": ["Bosch", "Electrolux", "Beko", "Hotpoint", "Hansa"]
+    },
+    {
+      "category": "Плиты и духовки",
+      "brands": ["Gorenje", "Bosch", "Electrolux", "Gefest", "Hansa"]
+    }
+  ],
+  "routeStrips": {
+    "index": {
+      "badge": "БЫСТРЫЙ МАРШРУТ",
+      "title": "Если уже знаете симптом, переходите сразу",
+      "description": "Этот хаб должен быстро уточнять бытовой сценарий. Каждая карточка ведёт в точную сервисную страницу без смешения разных типов техники.",
+      "action": {
+        "href": "bytovaya-uslugi.html",
+        "label": "Полный каталог услуг",
+        "icon": "ri-arrow-right-line"
+      },
+      "cards": [
+        {
+          "href": "stiralnye-mashiny.html",
+          "title": "Не сливает",
+          "description": "Стиральная машина: насос, фильтр, слив, отжим"
+        },
+        {
+          "href": "holodilniki.html",
+          "title": "Не морозит",
+          "description": "Холодильник: компрессор, датчики, утечка, оттайка"
+        },
+        {
+          "href": "plity.html",
+          "title": "Не греет",
+          "description": "Плита или духовка: конфорки, ТЭН, переключатели"
+        },
+        {
+          "href": "stiralnye-mashiny.html",
+          "title": "Шумит",
+          "description": "Стиральная машина: подшипники, амортизаторы, вибрация"
+        },
+        {
+          "href": "posudomoyki.html",
+          "title": "Течёт",
+          "description": "Посудомойка: шланги, насос, поддон, уплотнение"
+        },
+        {
+          "href": "microwaves.html",
+          "title": "Не включается",
+          "description": "Микроволновка: питание, предохранители, плата"
+        }
+      ]
+    },
+    "uslugi": {
+      "badge": "БЫСТРЫЙ ВЫБОР",
+      "title": "Начните с симптома, если техника уже встала",
+      "description": "Сначала симптом, потом точная страница услуги. Ниже только бытовые маршруты без компьютеров, роутеров и размытых объединений.",
+      "action": {
+        "href": "#full-services",
+        "label": "Открыть полный список",
+        "icon": "ri-arrow-down-line"
+      },
+      "cards": [
+        {
+          "href": "stiralnye-mashiny.html",
+          "title": "Не сливает",
+          "description": "Стиральная машина: слив, насос, фильтр, прессостат"
+        },
+        {
+          "href": "holodilniki.html",
+          "title": "Не морозит",
+          "description": "Холодильник: компрессор, термостат, датчики, утечка"
+        },
+        {
+          "href": "plity.html",
+          "title": "Не греет",
+          "description": "Плита и духовка: конфорки, ТЭН, силовые элементы"
+        },
+        {
+          "href": "stiralnye-mashiny.html",
+          "title": "Шумит",
+          "description": "Стиральная машина: барабан, подшипники, амортизаторы"
+        },
+        {
+          "href": "posudomoyki.html",
+          "title": "Течёт",
+          "description": "Посудомойка: шланги, поддон, насос, уплотнители"
+        },
+        {
+          "href": "microwaves.html",
+          "title": "Не включается",
+          "description": "Микроволновка: питание, дверь, плата, предохранители"
+        }
+      ]
+    }
+  }
+}

@@ -16,8 +16,8 @@
     <script src="main.js" defer></script>
     <script src="telegram-form.js" defer></script>
 
-    <title>Услуги по ремонту бытовой техники — MosPochin | Выезд мастера на дом</title>
-    <meta name="description" content="Ремонт холодильников, стиральных машин, посудомоек, плит и другой бытовой техники на дому в Москве. Помогаем выбрать нужную услугу, согласуем стоимость до начала работ.">
+    <title>Услуги по ремонту бытовой техники — MosPochin | Каталог по симптомам</title>
+    <meta name="description" content="Каталог услуг по ремонту бытовой техники на дому в Москве: холодильники, стиральные машины, посудомойки, плиты, микроволновки и водонагреватели. Быстрый переход по симптомам и типу техники.">
     <meta property="og:title" content="Услуги по ремонту бытовой техники — MosPochin | Выезд мастера на дом">
     <meta property="og:description" content="Ремонт холодильников, стиральных машин, посудомоек, плит и другой бытовой техники на дому в Москве. Помогаем выбрать нужную услугу, согласуем стоимость до начала работ.">
     <meta property="og:image" content="https://mospochin.ru/og-image.svg">
@@ -28,18 +28,159 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "MosPochin",
-      "description": "Профессиональный ремонт техники в Москве",
-      "telephone": "+79990057172",
-      "url": "https://mospochin.ru",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Москва",
-        "addressCountry": "RU"
-      },
-      "openingHours": "Mo-Su 00:00-24:00",
-      "priceRange": "₽₽"
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://mospochin.ru/#household-service",
+          "name": "MosPochin — Ремонт бытовой техники",
+          "telephone": "+79990057172",
+          "email": "info@mospochin.ru",
+          "url": "https://mospochin.ru/bytovaya-uslugi.html",
+          "image": "https://mospochin.ru/og-image.svg",
+          "priceRange": "₽₽",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Москва",
+            "addressCountry": "RU"
+          },
+          "openingHours": "Mo-Su 00:00-24:00",
+          "areaServed": {
+            "@type": "City",
+            "name": "Москва"
+          },
+          "serviceType": [
+            "Ремонт холодильников",
+            "Ремонт стиральных машин",
+            "Ремонт посудомоечных машин",
+            "Ремонт плит и духовок",
+            "Ремонт микроволновок",
+            "Ремонт водонагревателей"
+          ],
+          "description": "Каталог услуг бытовой ветки MosPochin с переходом по симптомам и отдельными сервисными страницами для каждой категории техники."
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://mospochin.ru/bytovaya-uslugi.html#collection",
+          "url": "https://mospochin.ru/bytovaya-uslugi.html",
+          "name": "Услуги по ремонту бытовой техники — каталог по симптомам",
+          "description": "Хаб бытовых услуг MosPochin с точными маршрутами по симптомам и по типу техники.",
+          "isPartOf": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "mainEntity": {
+            "@id": "https://mospochin.ru/bytovaya-uslugi.html#catalog"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://mospochin.ru/bytovaya-uslugi.html#catalog",
+          "name": "Каталог бытовых услуг",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://mospochin.ru/holodilniki.html",
+              "name": "Ремонт холодильников"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://mospochin.ru/stiralnye-mashiny.html",
+              "name": "Ремонт стиральных машин"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "url": "https://mospochin.ru/posudomoyki.html",
+              "name": "Ремонт посудомоечных машин"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "url": "https://mospochin.ru/plity.html",
+              "name": "Ремонт плит и духовок"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "url": "https://mospochin.ru/microwaves.html",
+              "name": "Ремонт микроволновок"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "url": "https://mospochin.ru/water-heaters.html",
+              "name": "Ремонт водонагревателей"
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/holodilniki.html#service",
+          "name": "Ремонт холодильников",
+          "serviceType": "Ремонт холодильников на дому",
+          "url": "https://mospochin.ru/holodilniki.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "keywords": "не морозит, течёт, шумит, Bosch, Samsung, LG, Indesit, Beko"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/stiralnye-mashiny.html#service",
+          "name": "Ремонт стиральных машин",
+          "serviceType": "Ремонт стиральных машин на дому",
+          "url": "https://mospochin.ru/stiralnye-mashiny.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "keywords": "не сливает, шумит, течёт, не отжимает, Samsung, LG, Bosch, Indesit, Electrolux"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/posudomoyki.html#service",
+          "name": "Ремонт посудомоечных машин",
+          "serviceType": "Ремонт посудомоечных машин на дому",
+          "url": "https://mospochin.ru/posudomoyki.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "keywords": "течёт, не моет, не сливает, Bosch, Electrolux, Beko, Hotpoint"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/plity.html#service",
+          "name": "Ремонт плит и духовок",
+          "serviceType": "Ремонт плит и духовок на дому",
+          "url": "https://mospochin.ru/plity.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "keywords": "не греет, конфорки, духовка, Gorenje, Bosch, Electrolux, Gefest"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/microwaves.html#service",
+          "name": "Ремонт микроволновок",
+          "serviceType": "Ремонт микроволновок на дому",
+          "url": "https://mospochin.ru/microwaves.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "keywords": "не включается, искрит, не греет, Samsung, LG, Panasonic"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/water-heaters.html#service",
+          "name": "Ремонт водонагревателей",
+          "serviceType": "Ремонт водонагревателей на дому",
+          "url": "https://mospochin.ru/water-heaters.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "keywords": "не греет воду, течёт, нет горячей воды, Ariston, Thermex, Electrolux"
+        }
+      ]
     }
     </script>
     <link rel="canonical" href="https://mospochin.ru/bytovaya-uslugi.html">
@@ -130,68 +271,171 @@
             </div>
         </div>
     </section>
-    <section class="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-50">
+    <section class="py-8 bg-white border-b border-slate-100" data-household-route-strip="uslugi">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 КАТЕГОРИИ ТЕХНИКИ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Выберите нужную услугу по типу техники</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Работаем с популярными бытовыми брендами и подсказываем по симптомам ещё до выезда мастера.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-8">
-                <a href="holodilniki.html" class="scroll-reveal" data-delay="1"><div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-blue-300 transition-all h-full group block"><div class="flex items-center justify-between mb-4"><div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all"><i class="ri-snowy-line"></i></div><span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По симптомам</span></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Холодильники</h3><ul class="space-y-2 mb-5"><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не морозит</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Течёт</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Шумит</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Скажем, стоит ли чинить</li></ul><div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm"><span><i class="ri-time-line mr-2 text-brand-orange group-hover:text-white"></i>Понять следующий шаг</span><span>Подробнее <i class="ri-arrow-right-line ml-2"></i></span></div></div></a>
-                <a href="stiralnye-mashiny.html" class="scroll-reveal" data-delay="2"><div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-orange-300 transition-all h-full group block"><div class="flex items-center justify-between mb-4"><div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-500 text-2xl group-hover:bg-orange-500 group-hover:text-white transition-all"><i class="ri-water-flash-line"></i></div><span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По симптомам</span></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Стиральные машины</h3><ul class="space-y-2 mb-5"><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не сливает</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Течёт</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Шумит</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не отжимает</li></ul><div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm"><span><i class="ri-time-line mr-2 text-brand-orange group-hover:text-white"></i>Понять следующий шаг</span><span>Подробнее <i class="ri-arrow-right-line ml-2"></i></span></div></div></a>
-                <a href="posudomoyki.html" class="scroll-reveal" data-delay="3"><div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-green-300 transition-all h-full group block"><div class="flex items-center justify-between mb-4"><div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl group-hover:bg-green-600 group-hover:text-white transition-all"><i class="ri-drop-line"></i></div><span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По симптомам</span></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Посудомойки</h3><ul class="space-y-2 mb-5"><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не моет</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не сливает</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Подтекает</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Покажем, что проверит мастер</li></ul><div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm"><span><i class="ri-time-line mr-2 text-brand-orange group-hover:text-white"></i>Понять следующий шаг</span><span>Подробнее <i class="ri-arrow-right-line ml-2"></i></span></div></div></a>
-                <a href="plity.html" class="scroll-reveal" data-delay="4"><div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-red-300 transition-all h-full group block"><div class="flex items-center justify-between mb-4"><div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl group-hover:bg-red-600 group-hover:text-white transition-all"><i class="ri-fire-line"></i></div><span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По симптомам</span></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Плиты и духовки</h3><ul class="space-y-2 mb-5"><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не греет</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Выбивает автомат</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не держит температуру</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Сразу объясним безопасный следующий шаг</li></ul><div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm"><span><i class="ri-time-line mr-2 text-brand-orange group-hover:text-white"></i>Понять следующий шаг</span><span>Подробнее <i class="ri-arrow-right-line ml-2"></i></span></div></div></a>
-                <a href="kompyutery.html" class="scroll-reveal" data-delay="5"><div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-indigo-300 transition-all h-full group block"><div class="flex items-center justify-between mb-4"><div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 text-2xl group-hover:bg-indigo-600 group-hover:text-white transition-all"><i class="ri-macbook-line"></i></div><span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По симптомам</span></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Компьютеры</h3><ul class="space-y-2 mb-5"><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Материнские платы</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Экраны</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Чистка от пыли</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Windows/драйверы</li></ul><div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm"><span><i class="ri-time-line mr-2 text-brand-orange group-hover:text-white"></i>Сначала звонок</span><span>Подробнее <i class="ri-arrow-right-line ml-2"></i></span></div></div></a>
-                <a href="routery.html" class="scroll-reveal" data-delay="11"><div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-purple-300 transition-all h-full group block"><div class="flex items-center justify-between mb-4"><div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl group-hover:bg-purple-600 group-hover:text-white transition-all"><i class="ri-wifi-line"></i></div><span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По симптомам</span></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Роутеры</h3><ul class="space-y-2 mb-5"><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Настройка Wi-Fi</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Прошивка</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Блок питания</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Замена антенн</li></ul><div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm"><span><i class="ri-time-line mr-2 text-brand-orange group-hover:text-white"></i>30-60 мин</span><span>Подробнее <i class="ri-arrow-right-line ml-2"></i></span></div></div></a>
-                <a href="water-heaters.html" class="scroll-reveal" data-delay="10"><div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-brand-orange hover:border-brand-orange transition-all h-full group block relative overflow-hidden"><div class="flex items-center justify-between mb-4"><div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl group-hover:bg-red-600 group-hover:text-white transition-all"><i class="ri-fire-line"></i></div><span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По симптомам</span></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Водонагреватели</h3><ul class="space-y-2 mb-5"><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Замена ТЭНа</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Ремонт термостата</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Замена анода</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Чистка бака</li></ul><div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm"><span><i class="ri-time-line mr-2 text-brand-orange group-hover:text-white"></i>Сначала звонок</span><span>Подробнее <i class="ri-arrow-right-line ml-2"></i></span></div></div></a>
-                
-                <a href="microwaves.html" class="scroll-reveal" data-delay="5"><div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-purple-300 transition-all h-full group block"><div class="flex items-center justify-between mb-4"><div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl group-hover:bg-purple-600 group-hover:text-white transition-all"><i class="ri-cpu-line"></i></div><span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По симптомам</span></div><h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Микроволновки</h3><ul class="space-y-2 mb-5"><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Магнетрон</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Слюдяная пластина</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Плата управления</li><li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Двигатель тарелки</li></ul><div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm"><span><i class="ri-time-line mr-2 text-brand-orange group-hover:text-white"></i>Сначала звонок</span><span>Подробнее <i class="ri-arrow-right-line ml-2"></i></span></div></div></a>
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 lg:p-8 shadow-sm">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
+                    <div>
+                        <p class="text-sm font-bold tracking-[0.25em] text-brand-orange mb-2" data-route-strip-badge>БЫСТРЫЙ ВЫБОР</p>
+                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue" data-route-strip-title>Начните с симптома, если техника уже встала</h2>
+                        <p class="text-slate-600 mt-2 max-w-3xl" data-route-strip-description>Маршрут ниже ведёт только в точные бытовые страницы. Без компьютеров, роутеров и ложных объединений разных классов техники.</p>
+                    </div>
+                    <a href="#full-services" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orangeHover" data-route-strip-action>
+                        <span data-route-strip-action-label>Открыть полный список</span>
+                        <i class="ri-arrow-down-line" data-route-strip-action-icon></i>
+                    </a>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" data-route-strip-grid>
+                    <a href="stiralnye-mashiny.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Не сливает</p>
+                        <p class="mt-1 text-sm text-slate-500">Стиральная машина: слив, насос, фильтр, прессостат</p>
+                    </a>
+                    <a href="holodilniki.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Не морозит</p>
+                        <p class="mt-1 text-sm text-slate-500">Холодильник: компрессор, термостат, датчики, утечка</p>
+                    </a>
+                    <a href="plity.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Не греет</p>
+                        <p class="mt-1 text-sm text-slate-500">Плита и духовка: конфорки, ТЭН, силовые элементы</p>
+                    </a>
+                    <a href="stiralnye-mashiny.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Шумит</p>
+                        <p class="mt-1 text-sm text-slate-500">Стиральная машина: барабан, подшипники, амортизаторы</p>
+                    </a>
+                    <a href="posudomoyki.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Течёт</p>
+                        <p class="mt-1 text-sm text-slate-500">Посудомойка: шланги, поддон, насос, уплотнители</p>
+                    </a>
+                    <a href="microwaves.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Не включается</p>
+                        <p class="mt-1 text-sm text-slate-500">Микроволновка: питание, дверь, плата, предохранители</p>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
-    <section id="services-grid" class="py-20 lg:py-28 bg-white">
+    <section id="full-services" class="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-start">
-                <div class="scroll-reveal">
-                    <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-5"><i class="ri-flashlight-line mr-2"></i>БЫСТРЫЙ ВЫБОР</span>
-                    <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-5 heading-reveal">Не знаете, какую услугу выбрать? Начните с симптома</h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-8">Клиент чаще всего описывает не деталь, а проблему: течёт, не греет, шумит, выбивает автомат. Поэтому сделали короткий маршрут: выберите симптом, перейдите на подходящую страницу или сразу оставьте заявку.</p>
-                    <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200">
-                        <p class="font-bold text-brand-blue mb-3">Что лучше написать в заявке:</p>
-                        <ul class="space-y-2 text-slate-600">
-                            <li class="flex gap-2"><i class="ri-check-line text-green-500 mt-1"></i><span>модель техники или фото шильдика;</span></li>
-                            <li class="flex gap-2"><i class="ri-check-line text-green-500 mt-1"></i><span>что именно происходит и когда началось;</span></li>
-                            <li class="flex gap-2"><i class="ri-check-line text-green-500 mt-1"></i><span>есть ли ошибка на дисплее, запах, шум или протечка.</span></li>
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 КАТАЛОГ УСЛУГ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Выберите технику без лишних ответвлений</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Каждая карточка ведёт в отдельную сервисную страницу с FAQ, симптомами, формой заявки и понятным бытовым сценарием ремонта.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
+                <a href="holodilniki.html" class="scroll-reveal" data-delay="1">
+                    <div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-blue-300 transition-all h-full group block">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all"><i class="ri-snowy-line"></i></div>
+                            <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По холоду</span>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Холодильники</h3>
+                        <ul class="space-y-2 mb-5">
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не морозит</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Течёт</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Шумит</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Bosch, Samsung, LG</li>
                         </ul>
+                        <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm">
+                            <span><i class="ri-arrow-right-line mr-2 text-brand-orange group-hover:text-white"></i>Открыть страницу</span>
+                            <span>Подробнее</span>
+                        </div>
                     </div>
-                </div>
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <a href="stiralnye-mashiny.html#request" class="card-brand bg-gradient-to-br from-orange-50 to-white p-6 rounded-3xl border-2 border-orange-100 hover:border-brand-orange hover:shadow-xl transition-all scroll-reveal" data-delay="1">
-                        <div class="w-12 h-12 bg-brand-orange rounded-2xl flex items-center justify-center text-white text-xl mb-4"><i class="ri-drop-line"></i></div>
-                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Течёт или не сливает</h3>
-                        <p class="text-slate-600 text-sm mb-4">Стиралка, посудомойка или водонагреватель: проверим насос, шланги, клапан, бак и подключение.</p>
-                        <span class="font-bold text-brand-orange">Перейти к ремонту воды <i class="ri-arrow-right-line"></i></span>
-                    </a>
-                    <a href="holodilniki.html#request" class="card-brand bg-gradient-to-br from-blue-50 to-white p-6 rounded-3xl border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all scroll-reveal" data-delay="2">
-                        <div class="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center text-white text-xl mb-4"><i class="ri-snowy-line"></i></div>
-                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Не холодит или намерзает</h3>
-                        <p class="text-slate-600 text-sm mb-4">Холодильник, морозилка или кондиционер: найдем утечку, проверим компрессор, датчики и вентилятор.</p>
-                        <span class="font-bold text-blue-600">Разобраться с холодом <i class="ri-arrow-right-line"></i></span>
-                    </a>
-                    <a href="plity.html#request" class="card-brand bg-gradient-to-br from-red-50 to-white p-6 rounded-3xl border-2 border-red-100 hover:border-red-300 hover:shadow-xl transition-all scroll-reveal" data-delay="3">
-                        <div class="w-12 h-12 bg-red-500 rounded-2xl flex items-center justify-center text-white text-xl mb-4"><i class="ri-fire-line"></i></div>
-                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Не греет или выбивает автомат</h3>
-                        <p class="text-slate-600 text-sm mb-4">Плита, духовка, микроволновка или бойлер: проверим ТЭН, магнетрон, проводку и модуль управления.</p>
-                        <span class="font-bold text-red-600">Проверить нагрев <i class="ri-arrow-right-line"></i></span>
-                    </a>
-                    <a href="routery.html#request" class="card-brand bg-gradient-to-br from-cyan-50 to-white p-6 rounded-3xl border-2 border-cyan-100 hover:border-cyan-300 hover:shadow-xl transition-all scroll-reveal" data-delay="4">
-                        <div class="w-12 h-12 bg-cyan-500 rounded-2xl flex items-center justify-center text-white text-xl mb-4"><i class="ri-wifi-line"></i></div>
-                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Интернет пропадает или тормозит</h3>
-                        <p class="text-slate-600 text-sm mb-4">Настроим роутер, Mesh, Wi-Fi 5/6, защиту сети и стабильное покрытие по квартире или офису.</p>
-                        <span class="font-bold text-cyan-600">Подробнее <i class="ri-arrow-right-line"></i></span>
-                    </a>
-                </div>
+                </a>
+                <a href="stiralnye-mashiny.html" class="scroll-reveal" data-delay="2">
+                    <div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-orange-300 transition-all h-full group block">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-500 text-2xl group-hover:bg-orange-500 group-hover:text-white transition-all"><i class="ri-water-flash-line"></i></div>
+                            <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По сливу</span>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Стиральные машины</h3>
+                        <ul class="space-y-2 mb-5">
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не сливает</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Шумит</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Течёт</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Samsung, LG, Bosch</li>
+                        </ul>
+                        <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm">
+                            <span><i class="ri-arrow-right-line mr-2 text-brand-orange group-hover:text-white"></i>Открыть страницу</span>
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="posudomoyki.html" class="scroll-reveal" data-delay="3">
+                    <div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-green-300 transition-all h-full group block">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl group-hover:bg-green-600 group-hover:text-white transition-all"><i class="ri-drop-line"></i></div>
+                            <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По протечке</span>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Посудомойки</h3>
+                        <ul class="space-y-2 mb-5">
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Течёт</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не моет</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не сливает воду</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Bosch, Electrolux, Beko</li>
+                        </ul>
+                        <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm">
+                            <span><i class="ri-arrow-right-line mr-2 text-brand-orange group-hover:text-white"></i>Открыть страницу</span>
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="plity.html" class="scroll-reveal" data-delay="4">
+                    <div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-red-300 transition-all h-full group block">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl group-hover:bg-red-600 group-hover:text-white transition-all"><i class="ri-fire-line"></i></div>
+                            <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По нагреву</span>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Плиты и духовки</h3>
+                        <ul class="space-y-2 mb-5">
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не греет</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Выбивает автомат</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Духовка не держит температуру</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Gorenje, Bosch, Gefest</li>
+                        </ul>
+                        <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm">
+                            <span><i class="ri-arrow-right-line mr-2 text-brand-orange group-hover:text-white"></i>Открыть страницу</span>
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="microwaves.html" class="scroll-reveal" data-delay="5">
+                    <div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-purple-300 transition-all h-full group block">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl group-hover:bg-purple-600 group-hover:text-white transition-all"><i class="ri-cpu-line"></i></div>
+                            <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По запуску</span>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Микроволновки</h3>
+                        <ul class="space-y-2 mb-5">
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не включается</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Искрит</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не греет</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Samsung, LG, Panasonic</li>
+                        </ul>
+                        <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm">
+                            <span><i class="ri-arrow-right-line mr-2 text-brand-orange group-hover:text-white"></i>Открыть страницу</span>
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="water-heaters.html" class="scroll-reveal" data-delay="6">
+                    <div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-cyan-300 transition-all h-full group block">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center text-cyan-600 text-2xl group-hover:bg-cyan-600 group-hover:text-white transition-all"><i class="ri-shower-line"></i></div>
+                            <span class="bg-brand-orange text-white px-4 py-1.5 rounded-full text-sm font-bold">По воде</span>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3 group-hover:text-brand-orange transition">Водонагреватели</h3>
+                        <ul class="space-y-2 mb-5">
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Не греет воду</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Течёт бак</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Отключается</li>
+                            <li class="flex items-center gap-2 text-slate-600 text-sm"><i class="ri-check-line text-green-500"></i>Ariston, Thermex, Electrolux</li>
+                        </ul>
+                        <div class="flex items-center justify-between bg-slate-50 group-hover:bg-brand-orange group-hover:text-white text-slate-700 px-4 py-3 rounded-2xl transition font-medium text-sm">
+                            <span><i class="ri-arrow-right-line mr-2 text-brand-orange group-hover:text-white"></i>Открыть страницу</span>
+                            <span>Подробнее</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -331,10 +575,7 @@
                             <option value="Посудомоечная машина">Посудомоечная машина</option>
                             <option value="Плита/Духовка">Плита / Духовка</option>
                             <option value="Микроволновка">Микроволновка</option>
-                            <option value="Кондиционер">Кондиционер</option>
                             <option value="Водонагреватель">Водонагреватель</option>
-                            <option value="Пылесос">Пылесос</option>
-                            <option value="Компьютер">Компьютер / Ноутбук</option>
                             <option value="Другое">Другое</option>
                         </select>
                     </div>

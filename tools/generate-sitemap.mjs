@@ -11,6 +11,10 @@ const SITEMAP_PATH = path.join(SITE_ROOT, 'sitemap.xml');
 const metadata = JSON.parse(fs.readFileSync(METADATA_PATH, 'utf8'));
 const today = new Date().toISOString().slice(0, 10);
 
+function isNoindex(page) {
+  return typeof page.robots === 'string' && page.robots.toLowerCase().includes('noindex');
+}
+
 function getPageGroup(fileName) {
   if (fileName.startsWith('bytovaya-')) return 'household-root';
   if (
@@ -54,7 +58,7 @@ function getPriority(fileName) {
 }
 
 const urlEntries = Object.entries(metadata.pages)
-  .filter(([, page]) => Boolean(page.canonical))
+  .filter(([, page]) => Boolean(page.canonical) && !isNoindex(page))
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([fileName, page]) => ({
     fileName,

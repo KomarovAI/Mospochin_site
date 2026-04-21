@@ -16,8 +16,8 @@
     <script src="main.js" defer></script>
     <script src="telegram-form.js" defer></script>
 
-    <title>Ремонт бытовой техники на дому в Москве — MosPochin | Выезд мастера</title>
-    <meta name="description" content="Ремонт холодильников, стиральных машин и посудомоек на дому в Москве. Диагностика при ремонте, согласование цены до начала работ, гарантия 12 месяцев. ☎ 8 (999) 005-71-72">
+    <title>Ремонт бытовой техники на дому в Москве — MosPochin | Быстрый выбор по симптомам</title>
+    <meta name="description" content="Ремонт бытовой техники на дому в Москве: не сливает, не морозит, не греет, шумит, течёт или не включается. Холодильники, стиральные машины, посудомойки, плиты и микроволновки.">
     <link rel="canonical" href="https://mospochin.ru/bytovaya-index.html">
 
     <meta property="og:title" content="Ремонт бытовой техники на дому в Москве — MosPochin | Выезд мастера">
@@ -32,36 +32,195 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "MosPochin — Ремонт бытовой техники",
-      "image": "https://mospochin.ru/og-image.svg",
-      "telephone": "+79990057172",
-      "email": "info@mospochin.ru",
-      "url": "https://mospochin.ru/bytovaya-index.html",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Москва",
-        "addressRegion": "Московская область",
-        "addressCountry": "RU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 55.7558,
-        "longitude": 37.6173
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "priceRange": "₽₽",
-      "areaServed": {
-        "@type": "City",
-        "name": "Москва"
-      },
-      "serviceType": ["Ремонт бытовой техники", "Ремонт холодильников", "Ремонт стиральных машин", "Ремонт посудомоечных машин"],
-      "description": "Ремонт бытовой техники на дому в Москве. Диагностика при ремонте, согласование стоимости до начала работ и гарантия на выполненный ремонт."
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://mospochin.ru/#household-service",
+          "name": "MosPochin — Ремонт бытовой техники",
+          "image": "https://mospochin.ru/og-image.svg",
+          "telephone": "+79990057172",
+          "email": "info@mospochin.ru",
+          "url": "https://mospochin.ru/bytovaya-index.html",
+          "priceRange": "₽₽",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Москва",
+            "addressRegion": "Московская область",
+            "addressCountry": "RU"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 55.7558,
+            "longitude": 37.6173
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Москва"
+          },
+          "serviceType": [
+            "Ремонт бытовой техники",
+            "Ремонт холодильников",
+            "Ремонт стиральных машин",
+            "Ремонт посудомоечных машин",
+            "Ремонт плит и духовок",
+            "Ремонт микроволновок",
+            "Ремонт водонагревателей"
+          ],
+          "description": "Ремонт бытовой техники на дому в Москве с быстрым выбором по симптомам: не сливает, не морозит, не греет, шумит, течёт, не включается."
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://mospochin.ru/bytovaya-index.html#collection",
+          "url": "https://mospochin.ru/bytovaya-index.html",
+          "name": "Ремонт бытовой техники на дому в Москве — быстрый выбор по симптомам",
+          "description": "Стартовый хаб бытовой ветки MosPochin с быстрыми маршрутами по симптомам и точными переходами в сервисные страницы.",
+          "isPartOf": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "mainEntity": {
+            "@id": "https://mospochin.ru/bytovaya-index.html#services-list"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://mospochin.ru/bytovaya-index.html#services-list",
+          "name": "Основные услуги бытовой ветки",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://mospochin.ru/holodilniki.html",
+              "name": "Ремонт холодильников"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://mospochin.ru/stiralnye-mashiny.html",
+              "name": "Ремонт стиральных машин"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "url": "https://mospochin.ru/posudomoyki.html",
+              "name": "Ремонт посудомоечных машин"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "url": "https://mospochin.ru/plity.html",
+              "name": "Ремонт плит и духовок"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "url": "https://mospochin.ru/microwaves.html",
+              "name": "Ремонт микроволновок"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "url": "https://mospochin.ru/water-heaters.html",
+              "name": "Ремонт водонагревателей"
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/holodilniki.html#service",
+          "name": "Ремонт холодильников",
+          "serviceType": "Ремонт холодильников на дому",
+          "url": "https://mospochin.ru/holodilniki.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Москва"
+          },
+          "keywords": "не морозит, течёт, шумит, Bosch, Samsung, LG, Indesit, Beko"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/stiralnye-mashiny.html#service",
+          "name": "Ремонт стиральных машин",
+          "serviceType": "Ремонт стиральных машин на дому",
+          "url": "https://mospochin.ru/stiralnye-mashiny.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Москва"
+          },
+          "keywords": "не сливает, шумит, течёт, не отжимает, Samsung, LG, Bosch, Indesit, Electrolux"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/posudomoyki.html#service",
+          "name": "Ремонт посудомоечных машин",
+          "serviceType": "Ремонт посудомоечных машин на дому",
+          "url": "https://mospochin.ru/posudomoyki.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Москва"
+          },
+          "keywords": "течёт, не моет, не сливает, Bosch, Electrolux, Beko, Hotpoint"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/plity.html#service",
+          "name": "Ремонт плит и духовок",
+          "serviceType": "Ремонт плит и духовок на дому",
+          "url": "https://mospochin.ru/plity.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Москва"
+          },
+          "keywords": "не греет, не работает конфорка, духовка, Gorenje, Bosch, Electrolux, Gefest"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/microwaves.html#service",
+          "name": "Ремонт микроволновок",
+          "serviceType": "Ремонт микроволновок на дому",
+          "url": "https://mospochin.ru/microwaves.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Москва"
+          },
+          "keywords": "не включается, искрит, не греет, Samsung, LG, Panasonic"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://mospochin.ru/water-heaters.html#service",
+          "name": "Ремонт водонагревателей",
+          "serviceType": "Ремонт водонагревателей на дому",
+          "url": "https://mospochin.ru/water-heaters.html",
+          "provider": {
+            "@id": "https://mospochin.ru/#household-service"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Москва"
+          },
+          "keywords": "не греет воду, течёт, нет горячей воды, Ariston, Thermex, Electrolux"
+        }
+      ]
     }
     </script>
 </head>
@@ -185,6 +344,50 @@
         </div>
     </header>
 
+    <section class="py-8 bg-white border-b border-slate-100" data-household-route-strip="index">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 lg:p-8 shadow-sm">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
+                    <div>
+                        <p class="text-sm font-bold tracking-[0.25em] text-brand-orange mb-2" data-route-strip-badge>БЫСТРЫЙ МАРШРУТ</p>
+                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue" data-route-strip-title>Если уже знаете симптом, переходите сразу</h2>
+                        <p class="text-slate-600 mt-2 max-w-3xl" data-route-strip-description>Каждая карточка ниже ведёт в точную страницу услуги. Без ложных объединений вроде кондиционера с холодильниками или микроволновки с плитой.</p>
+                    </div>
+                    <a href="bytovaya-uslugi.html" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orangeHover" data-route-strip-action>
+                        <span data-route-strip-action-label>Полный каталог услуг</span>
+                        <i class="ri-arrow-right-line" data-route-strip-action-icon></i>
+                    </a>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" data-route-strip-grid>
+                    <a href="stiralnye-mashiny.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Не сливает</p>
+                        <p class="mt-1 text-sm text-slate-500">Стиральная машина: насос, фильтр, слив, отжим</p>
+                    </a>
+                    <a href="holodilniki.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Не морозит</p>
+                        <p class="mt-1 text-sm text-slate-500">Холодильник: компрессор, датчики, утечка, оттайка</p>
+                    </a>
+                    <a href="plity.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Не греет</p>
+                        <p class="mt-1 text-sm text-slate-500">Плита или духовка: конфорки, ТЭН, переключатели</p>
+                    </a>
+                    <a href="stiralnye-mashiny.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Шумит</p>
+                        <p class="mt-1 text-sm text-slate-500">Стиральная машина: подшипники, амортизаторы, вибрация</p>
+                    </a>
+                    <a href="posudomoyki.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Течёт</p>
+                        <p class="mt-1 text-sm text-slate-500">Посудомойка: шланги, насос, поддон, уплотнение</p>
+                    </a>
+                    <a href="microwaves.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                        <p class="text-sm font-bold text-brand-blue">Не включается</p>
+                        <p class="mt-1 text-sm text-slate-500">Микроволновка: питание, предохранители, плата</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ============================================================
          SECTION 2: CTA BAR (оранжевая полоса с телефоном)
          ============================================================ -->
@@ -263,61 +466,81 @@
     </section>
 
     <!-- ============================================================
-         SECTION 4: УСЛУГИ (4 основных категории)
-         - Холодильники → holodilniki.html (от 890₽)
-         - Стиралки → stiralnye-mashiny.html (от 790₽)
-         - Посудомойки → posudomoyki.html (от 690₽)
-         - Плиты → plity.html (от 590₽)
+         SECTION 4: УСЛУГИ ПО ТИПУ ТЕХНИКИ
          ============================================================ -->
     <section class="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><span role="img" aria-label="инструмент">🔧</span> УСЛУГИ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонт любой бытовой техники</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Все популярные бренды — Samsung, LG, Bosch, Indesit, Beko, Electrolux</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Точные маршруты по типу техники</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Если симптом уже понятен, используйте быстрый блок выше. Если сначала хотите выбрать технику, ниже собраны отдельные сервисные страницы без лишних смешений.</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 mb-8">
                 <a href="holodilniki.html" class="scroll-reveal" data-delay="1">
-                    <div class="card-tilt bg-white p-4 lg:p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-xl hover:border-blue-300 transition-all h-full group">
-                        <div class="w-12 h-12 lg:w-16 lg:h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-2xl lg:text-3xl mb-3 lg:mb-4 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-all">
+                    <div class="card-tilt bg-white p-6 lg:p-7 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-blue-300 transition-all h-full group">
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all">
                             <i class="ri-snowy-line icon-spring"></i>
                         </div>
-                        <h3 class="text-base lg:text-lg font-bold text-brand-blue mb-1">Холодильники</h3>
-                        <p class="text-slate-500 text-xs lg:text-sm">Не морозит, течёт, шумит</p>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Холодильники</h3>
+                        <p class="text-slate-600 mb-4">Не морозит, течёт, шумит, отключается или работает без остановки.</p>
+                        <p class="text-slate-500 text-sm">Bosch, Samsung, LG, Indesit, Beko</p>
                     </div>
                 </a>
                 <a href="stiralnye-mashiny.html" class="scroll-reveal" data-delay="2">
-                    <div class="card-tilt bg-white p-4 lg:p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-xl hover:border-orange-300 transition-all h-full group">
-                        <div class="w-12 h-12 lg:w-16 lg:h-16 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 text-2xl lg:text-3xl mb-3 lg:mb-4 mx-auto group-hover:bg-orange-500 group-hover:text-white transition-all">
+                    <div class="card-tilt bg-white p-6 lg:p-7 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-300 transition-all h-full group">
+                        <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-500 text-2xl mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all">
                             <i class="ri-water-flash-line icon-spring"></i>
                         </div>
-                        <h3 class="text-base lg:text-lg font-bold text-brand-blue mb-1">Стиралки</h3>
-                        <p class="text-slate-500 text-xs lg:text-sm">Не сливает, течёт, не отжимает</p>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Стиральные машины</h3>
+                        <p class="text-slate-600 mb-4">Не сливает, шумит, течёт, не отжимает или останавливается в середине цикла.</p>
+                        <p class="text-slate-500 text-sm">Samsung, LG, Bosch, Indesit, Electrolux</p>
                     </div>
                 </a>
                 <a href="posudomoyki.html" class="scroll-reveal" data-delay="3">
-                    <div class="card-tilt bg-white p-4 lg:p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-xl hover:border-green-300 transition-all h-full group">
-                        <div class="w-12 h-12 lg:w-16 lg:h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600 text-2xl lg:text-3xl mb-3 lg:mb-4 mx-auto group-hover:bg-green-600 group-hover:text-white transition-all">
+                    <div class="card-tilt bg-white p-6 lg:p-7 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-green-300 transition-all h-full group">
+                        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-4 group-hover:bg-green-600 group-hover:text-white transition-all">
                             <i class="ri-drop-line icon-spring"></i>
                         </div>
-                        <h3 class="text-base lg:text-lg font-bold text-brand-blue mb-1">Посудомойки</h3>
-                        <p class="text-slate-500 text-xs lg:text-sm">Не моет, не сливает, течёт</p>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Посудомойки</h3>
+                        <p class="text-slate-600 mb-4">Течёт, не моет, не сливает воду, не греет или зависает на программе.</p>
+                        <p class="text-slate-500 text-sm">Bosch, Electrolux, Beko, Hotpoint, Hansa</p>
                     </div>
                 </a>
                 <a href="plity.html" class="scroll-reveal" data-delay="4">
-                    <div class="card-tilt bg-white p-4 lg:p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-xl hover:border-red-300 transition-all h-full group">
-                        <div class="w-12 h-12 lg:w-16 lg:h-16 bg-red-50 rounded-full flex items-center justify-center text-red-600 text-2xl lg:text-3xl mb-3 lg:mb-4 mx-auto group-hover:bg-red-600 group-hover:text-white transition-all">
+                    <div class="card-tilt bg-white p-6 lg:p-7 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-red-300 transition-all h-full group">
+                        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-4 group-hover:bg-red-600 group-hover:text-white transition-all">
                             <i class="ri-fire-line icon-spring"></i>
                         </div>
-                        <h3 class="text-base lg:text-lg font-bold text-brand-blue mb-1">Плиты</h3>
-                        <p class="text-slate-500 text-xs lg:text-sm">Не греет, выбивает автомат, пахнет газом</p>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Плиты и духовки</h3>
+                        <p class="text-slate-600 mb-4">Не греет конфорка, не работает духовка, выбивает автомат или не держит температуру.</p>
+                        <p class="text-slate-500 text-sm">Gorenje, Bosch, Electrolux, Gefest, Hansa</p>
+                    </div>
+                </a>
+                <a href="microwaves.html" class="scroll-reveal" data-delay="5">
+                    <div class="card-tilt bg-white p-6 lg:p-7 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-purple-300 transition-all h-full group">
+                        <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-4 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                            <i class="ri-cpu-line icon-spring"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Микроволновки</h3>
+                        <p class="text-slate-600 mb-4">Не включается, искрит, не греет или отключается сразу после запуска.</p>
+                        <p class="text-slate-500 text-sm">Samsung, LG, Panasonic, Gorenje</p>
+                    </div>
+                </a>
+                <a href="water-heaters.html" class="scroll-reveal" data-delay="6">
+                    <div class="card-tilt bg-white p-6 lg:p-7 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-cyan-300 transition-all h-full group">
+                        <div class="w-14 h-14 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-600 text-2xl mb-4 group-hover:bg-cyan-600 group-hover:text-white transition-all">
+                            <i class="ri-shower-line icon-spring"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-2">Водонагреватели</h3>
+                        <p class="text-slate-600 mb-4">Не греет воду, течёт, шумит бак или выключается после запуска.</p>
+                        <p class="text-slate-500 text-sm">Ariston, Thermex, Electrolux, Zanussi</p>
                     </div>
                 </a>
             </div>
             <div class="text-center scroll-reveal">
-                <p class="text-slate-500 text-sm mb-4">Также ремонтируем кондиционеры, водонагреватели и другую технику</p>
+                <p class="text-slate-500 text-sm mb-4">Нужен полный хаб с категориями и симптомами по бытовой ветке?</p>
                 <a href="bytovaya-uslugi.html" class="btn-click inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold px-6 py-3 lg:px-8 lg:py-4 rounded-full transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto">
-                    <span>Все услуги</span>
+                    <span>Открыть все услуги</span>
                     <i class="ri-arrow-right-line"></i>
                 </a>
             </div>
@@ -975,10 +1198,7 @@
                             <option value="Посудомоечная машина">Посудомоечная машина</option>
                             <option value="Плита/Духовка">Плита / Духовка</option>
                             <option value="Микроволновка">Микроволновка</option>
-                            <option value="Кондиционер">Кондиционер</option>
                             <option value="Водонагреватель">Водонагреватель</option>
-                            <option value="Пылесос">Пылесос</option>
-                            <option value="Компьютер">Компьютер / Ноутбук</option>
                             <option value="Другое">Другое</option>
                         </select>
                     </div>
