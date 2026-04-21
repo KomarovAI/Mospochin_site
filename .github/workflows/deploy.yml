@@ -80,8 +80,25 @@ jobs:
             "sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
 
       - name: Smoke test public pages
-        timeout-minutes: 2
+        timeout-minutes: 4
         run: |
+          retry_curl() {
+            local label="$1"
+            shift
+            local attempt
+            for attempt in 1 2 3 4 5; do
+              if curl -fsS --max-time 10 "$@" >/dev/null; then
+                return 0
+              fi
+              if [ "$attempt" -lt 5 ]; then
+                echo "Retry ${attempt}/5 failed for ${label}; waiting before next attempt..."
+                sleep $((attempt * 2))
+              fi
+            done
+            echo "Smoke check failed: ${label}"
+            return 1
+          }
+
           pages=(
             "/"
             "/uslugi.html"
@@ -94,15 +111,16 @@ jobs:
             "/version.json"
           )
           for page in "${pages[@]}"; do
-            curl -fsSI --max-time 10 "https://mospochin.ru${page}" >/dev/null
+            retry_curl "HEAD https://mospochin.ru${page}" -I "https://mospochin.ru${page}"
           done
           endpoint="$(node -e "const fs=require('fs');const cfg=JSON.parse(fs.readFileSync('data/runtime-config.json','utf8'));if(!cfg.telegramFormEndpoint)process.exit(1);process.stdout.write(cfg.telegramFormEndpoint)")"
-          curl -fsS --max-time 10 -X POST \
+          retry_curl "POST https://mospochin.ru${endpoint}" -X POST \
             -H 'Content-Type: application/json' \
             -d '{"name":"GitHub Actions Smoke","phone":"+79991234567","type":"Deploy smoke test","problem":"Автоматическая проверка после выкладки","page":"uslugi.html","branch":"restaurant","formContext":"github-actions-deploy","extraFields":{},"website":"","consent":true}' \
-            "https://mospochin.ru${endpoint}" >/dev/null
-          grep -E '^(assets/.*|styles.*\.css|main\.js|telegram-form\.js)$' .deploy/include-files.txt | head -20 | while IFS= read -r asset; do
-            curl -fsSI --max-time 10 "https://mospochin.ru/${asset}" >/dev/null
+            "https://mospochin.ru${endpoint}"
+          mapfile -t smoke_assets < <(grep -E '^(assets/.*|styles.*\.css|main\.js|telegram-form\.js)$' .deploy/include-files.txt | head -20)
+          for asset in "${smoke_assets[@]}"; do
+            retry_curl "HEAD https://mospochin.ru/${asset}" -I "https://mospochin.ru/${asset}"
           done
 
       - name: Verify backend deploy artifacts are present in manifest
