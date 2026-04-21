@@ -177,10 +177,20 @@
                         <div class="mb-8">
                             <span class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-flashlight-line"></i><span>Быстрая связь</span></span>
                             <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-3">Оставьте заявку на звонок мастера</h2>
-                            <p class="text-slate-600">Перезвоним, уточним технику, симптом и подскажем, как удобнее оформить выезд без лишней переписки.</p>
+                            <p class="text-slate-600">Перезвоним, уточним технику, симптом и район, а затем подскажем, как быстрее оформить выезд без лишней переписки.</p>
                             <div class="flex flex-wrap gap-3 mt-5">
                                 <span class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-600"><i class="ri-phone-find-line text-brand-orange"></i><span>Перезвон по заявке</span></span>
                                 <span class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-600"><i class="ri-home-smile-line text-sky-600"></i><span>Согласование выезда на дом</span></span>
+                                <span class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-600"><i class="ri-map-pin-time-line text-emerald-600"></i><span>Техника, симптом, район</span></span>
+                            </div>
+                            <div class="household-contact-form-note mt-5 rounded-2xl border border-slate-200/80 bg-slate-50/90 px-4 py-4">
+                                <p class="text-sm font-semibold text-brand-blue mb-2">Для быстрого согласования напишите сразу:</p>
+                                <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+                                    <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 border border-slate-200"><i class="ri-home-gear-line text-brand-orange"></i><span>тип техники</span></span>
+                                    <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 border border-slate-200"><i class="ri-settings-3-line text-sky-600"></i><span>бренд или модель</span></span>
+                                    <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 border border-slate-200"><i class="ri-error-warning-line text-emerald-600"></i><span>симптом</span></span>
+                                    <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 border border-slate-200"><i class="ri-map-pin-line text-brand-orange"></i><span>район выезда</span></span>
+                                </div>
                             </div>
                         </div>
                         <form id="contact-form" class="telegram-form space-y-5 bg-white" data-form-context="B2C contacts">
@@ -195,7 +205,7 @@
                             <input type="hidden" name="type" value="Бытовая техника: общая заявка со страницы контактов">
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-2">Что нужно отремонтировать</label>
-                                <textarea name="problem" rows="4" class="w-full rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange" placeholder="Например: стиральная машина не сливает воду, нужен выезд на дом"></textarea>
+                                <textarea name="problem" rows="4" class="w-full rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange" placeholder="Например: стиральная машина Samsung не сливает воду, район Сокольники, нужен выезд на дом"></textarea>
                             </div>
                             <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-4 rounded-2xl transition shadow-lg shadow-orange-500/20">
                                 Оставить заявку на звонок мастера
@@ -214,45 +224,63 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal relative z-10">
                 <span class="inline-block bg-white text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4 shadow-sm border border-orange-100"><i class="ri-contacts-book-2-line mr-2"></i>Контакты</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Как с нами связаться</h2>
-                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Ниже собрали основные каналы связи по бытовой технике и коротко пояснили, какой из них удобнее в вашей ситуации.</p>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Куда писать и звонить по бытовой технике</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Сначала короткий обзор всех каналов связи, затем ниже более подробный сценарий: когда лучше звонить, когда писать и что отправить сразу для быстрого выезда.</p>
             </div>
-            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 relative z-10">
-                <div class="rounded-3xl p-6 border border-orange-100 shadow-lg shadow-orange-100/40 relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);">
+            <div class="household-contact-overview-strip grid md:grid-cols-3 gap-4 mb-8 scroll-reveal relative z-10">
+                <div class="rounded-3xl border border-orange-100/80 bg-white px-5 py-4 shadow-sm">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">Срочный сценарий</p>
+                    <p class="text-sm text-slate-600 mt-2">Если поломка мешает пользоваться техникой прямо сейчас, первым делом лучше звонить.</p>
+                </div>
+                <div class="rounded-3xl border border-green-100/80 bg-white px-5 py-4 shadow-sm">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">Фото и видео</p>
+                    <p class="text-sm text-slate-600 mt-2">WhatsApp и Telegram удобнее, если у вас уже есть шильдик, модель или видео симптома.</p>
+                </div>
+                <div class="rounded-3xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Документы и детали</p>
+                    <p class="text-sm text-slate-600 mt-2">Email оставляем для документов, согласований и длинных описаний, когда спешки нет.</p>
+                </div>
+            </div>
+            <div class="household-contact-overview-grid grid md:grid-cols-2 xl:grid-cols-4 gap-6 relative z-10">
+                <div class="household-contact-overview-card rounded-3xl p-6 border border-orange-100 shadow-lg shadow-orange-100/40 relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);">
                     <div class="absolute top-0 right-0 w-24 h-24 rounded-full translate-x-1/3 -translate-y-1/3" style="background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, rgba(249,115,22,0) 72%);"></div>
+                    <span class="household-contact-overview-badge inline-flex items-center gap-2 rounded-full bg-brand-orange/10 px-3 py-1.5 text-xs font-semibold text-brand-orange mb-5 relative z-10"><i class="ri-flashlight-line"></i><span>Самый быстрый канал</span></span>
                     <div class="w-14 h-14 bg-brand-orange/10 text-brand-orange rounded-2xl flex items-center justify-center text-2xl mb-5 relative z-10">
                         <i class="ri-phone-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-bold text-brand-blue mb-3 relative z-10">Телефон</h3>
-                    <a href="tel:+79990057172" class="text-lg font-bold text-brand-orange hover:text-brand-orangeHover transition block mb-2 relative z-10" data-company-phone>8 (999) 005-71-72</a>
-                    <p class="text-slate-600 text-sm relative z-10">Для срочных заявок и если нужно быстро согласовать выезд мастера на дом.</p>
+                    <p class="text-slate-600 text-sm relative z-10 mb-5">Для срочных заявок и если нужно быстро согласовать выезд мастера на дом.</p>
+                    <a href="tel:+79990057172" class="household-contact-overview-link inline-flex items-center gap-2 text-base font-bold text-brand-orange hover:text-brand-orangeHover transition mt-auto relative z-10" data-company-phone><i class="ri-phone-line"></i><span>8 (999) 005-71-72</span></a>
                 </div>
-                <div class="rounded-3xl p-6 border border-green-100 shadow-lg shadow-green-100/40 relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);">
+                <div class="household-contact-overview-card rounded-3xl p-6 border border-green-100 shadow-lg shadow-green-100/40 relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);">
                     <div class="absolute top-0 right-0 w-24 h-24 rounded-full translate-x-1/3 -translate-y-1/3" style="background: radial-gradient(circle, rgba(34,197,94,0.18) 0%, rgba(34,197,94,0) 72%);"></div>
+                    <span class="household-contact-overview-badge inline-flex items-center gap-2 rounded-full bg-green-100 px-3 py-1.5 text-xs font-semibold text-green-700 mb-5 relative z-10"><i class="ri-image-add-line"></i><span>Фото и шильдик</span></span>
                     <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-5 relative z-10">
                         <i class="ri-whatsapp-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-bold text-brand-blue mb-3 relative z-10">WhatsApp</h3>
-                    <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin" target="_blank" rel="noopener noreferrer" class="text-lg font-bold text-green-600 hover:text-green-700 transition block mb-2 relative z-10">Написать в WhatsApp</a>
-                    <p class="text-slate-600 text-sm relative z-10">Подходит, если удобнее прислать фото шильдика, модель техники или кратко описать проблему.</p>
+                    <p class="text-slate-600 text-sm relative z-10 mb-5">Подходит, если удобнее прислать фото шильдика, модель техники или кратко описать проблему.</p>
+                    <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin" target="_blank" rel="noopener noreferrer" class="household-contact-overview-link inline-flex items-center gap-2 text-base font-bold text-green-600 hover:text-green-700 transition mt-auto relative z-10"><i class="ri-whatsapp-line"></i><span>Написать в WhatsApp</span></a>
                 </div>
-                <div class="rounded-3xl p-6 border border-sky-100 shadow-lg shadow-sky-100/40 relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);">
+                <div class="household-contact-overview-card rounded-3xl p-6 border border-sky-100 shadow-lg shadow-sky-100/40 relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);">
                     <div class="absolute top-0 right-0 w-24 h-24 rounded-full translate-x-1/3 -translate-y-1/3" style="background: radial-gradient(circle, rgba(14,165,233,0.16) 0%, rgba(14,165,233,0) 72%);"></div>
+                    <span class="household-contact-overview-badge inline-flex items-center gap-2 rounded-full bg-sky-100 px-3 py-1.5 text-xs font-semibold text-sky-700 mb-5 relative z-10"><i class="ri-chat-voice-line"></i><span>Свободный формат</span></span>
                     <div class="w-14 h-14 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-2xl mb-5 relative z-10">
                         <i class="ri-telegram-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-bold text-brand-blue mb-3 relative z-10">Telegram</h3>
-                    <a href="https://t.me/mspochin" target="_blank" rel="noopener noreferrer" class="text-lg font-bold text-sky-600 hover:text-sky-700 transition block mb-2 relative z-10">Открыть Telegram</a>
-                    <p class="text-slate-600 text-sm relative z-10">Удобный канал для сообщений, фото и уточнения деталей по заявке в свободном формате.</p>
+                    <p class="text-slate-600 text-sm relative z-10 mb-5">Удобный канал для сообщений, фото и уточнения деталей по заявке в свободном формате.</p>
+                    <a href="https://t.me/mspochin" target="_blank" rel="noopener noreferrer" class="household-contact-overview-link inline-flex items-center gap-2 text-base font-bold text-sky-600 hover:text-sky-700 transition mt-auto relative z-10"><i class="ri-telegram-line"></i><span>Открыть Telegram</span></a>
                 </div>
-                <div class="rounded-3xl p-6 border border-blue-100 shadow-lg shadow-blue-100/40 relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);">
+                <div class="household-contact-overview-card rounded-3xl p-6 border border-blue-100 shadow-lg shadow-blue-100/40 relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);">
                     <div class="absolute top-0 right-0 w-24 h-24 rounded-full translate-x-1/3 -translate-y-1/3" style="background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0) 72%);"></div>
+                    <span class="household-contact-overview-badge inline-flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1.5 text-xs font-semibold text-blue-700 mb-5 relative z-10"><i class="ri-file-paper-2-line"></i><span>Документы и детали</span></span>
                     <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-5 relative z-10">
                         <i class="ri-mail-line"></i>
                     </div>
                     <h3 class="text-xl font-display font-bold text-brand-blue mb-3 relative z-10">Email</h3>
-                    <a href="mailto:info@mospochin.ru" class="text-lg font-bold text-blue-600 hover:text-blue-700 transition block mb-2 relative z-10">info@mospochin.ru</a>
-                    <p class="text-slate-600 text-sm relative z-10">Для документов, подробных описаний заявки и рабочих вопросов по согласованию.</p>
+                    <p class="text-slate-600 text-sm relative z-10 mb-5">Для документов, подробных описаний заявки и рабочих вопросов по согласованию.</p>
+                    <a href="mailto:info@mospochin.ru" class="household-contact-overview-link inline-flex items-center gap-2 text-base font-bold text-blue-600 hover:text-blue-700 transition mt-auto relative z-10"><i class="ri-mail-send-line"></i><span>info@mospochin.ru</span></a>
                 </div>
             </div>
         </div>
@@ -393,12 +421,12 @@
                     </div>
 
                     <div class="rounded-[2rem] border border-slate-200 bg-white/90 p-6 lg:p-7 shadow-xl scroll-reveal" data-delay="3">
-                        <span class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-xs font-semibold text-slate-600"><i class="ri-route-line text-brand-orange"></i><span>Как используем точки</span></span>
-                        <h3 class="text-2xl font-display font-extrabold text-brand-blue mt-4 mb-4">Что получает клиент по заявке</h3>
+                        <span class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-xs font-semibold text-slate-600"><i class="ri-route-line text-brand-orange"></i><span>География и выезд</span></span>
+                        <h3 class="text-2xl font-display font-extrabold text-brand-blue mt-4 mb-4">Как читать карту и что это даёт</h3>
                         <ul class="space-y-3 text-sm text-slate-600">
-                            <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Понятную географию выезда без размытого обещания “работаем везде”.</span></li>
-                            <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Быстрое согласование района, адреса и удобного окна для визита мастера.</span></li>
-                            <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Один понятный сценарий: звонок или мессенджер, затем выезд по бытовой заявке.</span></li>
+                            <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>На странице показаны сервисные точки логистики, а не офисы ожидания клиентов.</span></li>
+                            <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Работаем по Москве, Балашихе и ближайшему Подмосковью без размытого обещания “работаем везде”.</span></li>
+                            <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Выезд согласовываем по адресу клиента: уточняем район, технику, симптом и удобное окно визита.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -411,7 +439,24 @@
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-phone-find-line mr-2"></i>Удобный сценарий связи</span>
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Когда лучше звонить, а когда писать</h2>
-                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Сделали контактную страницу полезной для клиента. Ниже коротко разложили, какой способ связи лучше работает в каждой ситуации.</p>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">На бытовой ветке лучший контакт зависит не от вкуса, а от ситуации. Если срочно нужен выезд, звонок быстрее; если есть фото, модель и адрес, удобнее мессенджер; если вопрос без спешки, подойдёт форма.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 mb-8 scroll-reveal">
+                <div class="rounded-3xl border border-orange-100 bg-white p-5 shadow-sm">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-brand-orange/10 px-3 py-1 text-xs font-semibold text-brand-orange"><i class="ri-phone-line"></i><span>Самый быстрый канал</span></span>
+                    <p class="text-brand-blue font-display font-bold text-lg mt-4 mb-2">Звонок</p>
+                    <p class="text-sm text-slate-600">Если нужен выезд сегодня или хотите сразу понять следующий шаг по заявке.</p>
+                </div>
+                <div class="rounded-3xl border border-green-100 bg-white p-5 shadow-sm">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700"><i class="ri-image-line"></i><span>Лучше для фото и видео</span></span>
+                    <p class="text-brand-blue font-display font-bold text-lg mt-4 mb-2">WhatsApp или Telegram</p>
+                    <p class="text-sm text-slate-600">Удобно, если хотите сразу прислать шильдик, панель, протечку или короткое видео симптома.</p>
+                </div>
+                <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <span class="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600"><i class="ri-file-list-3-line"></i><span>Если без спешки</span></span>
+                    <p class="text-brand-blue font-display font-bold text-lg mt-4 mb-2">Форма</p>
+                    <p class="text-sm text-slate-600">Подходит, когда удобнее оставить номер и спокойно дождаться обратного звонка без длинной анкеты.</p>
+                </div>
             </div>
             <div class="grid lg:grid-cols-3 gap-6">
                 <div class="card-brand rounded-[2rem] border border-orange-100 p-8 shadow-xl shadow-orange-100/40 flex flex-col h-full relative overflow-hidden" style="background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);">
@@ -424,12 +469,15 @@
                         <i class="ri-phone-line"></i>
                     </div>
                     <h3 class="text-2xl font-display font-extrabold text-brand-blue mb-3">Позвонить</h3>
-                    <p class="text-slate-600 mb-5">Лучший вариант, если техника нужна сегодня, важен быстрый выезд или хочется сразу понять следующий шаг.</p>
+                    <p class="text-slate-600 mb-5">Лучший вариант, если техника нужна сегодня, важен быстрый выезд или хочется сразу понять следующий шаг по заявке.</p>
                     <ul class="space-y-3 text-sm text-slate-600 mb-6 flex-1">
                         <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Сразу уточняем район и тип техники</span></li>
                         <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Подсказываем, что подготовить к визиту</span></li>
-                        <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Самый быстрый сценарий для срочных поломок</span></li>
+                        <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Лучший канал, если нужно быстро согласовать окно выезда</span></li>
                     </ul>
+                    <div class="rounded-2xl px-4 py-4 mb-5 text-sm text-slate-600" style="background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.12);">
+                        Если поломка срочная, звонок остаётся самым коротким маршрутом до выезда мастера.
+                    </div>
                     <a href="tel:+79990057172" class="inline-flex items-center gap-2 font-bold text-brand-orange hover:text-brand-orangeHover transition mt-auto">
                         <i class="ri-phone-line"></i>
                         <span data-company-phone>8 (999) 005-71-72</span>
@@ -445,12 +493,15 @@
                         <i class="ri-whatsapp-line"></i>
                     </div>
                     <h3 class="text-2xl font-display font-extrabold text-brand-blue mb-3">Написать</h3>
-                    <p class="text-slate-600 mb-5">Подходит, если удобнее сначала прислать фото шильдика, модель, серийный номер или видео с симптомом.</p>
+                    <p class="text-slate-600 mb-5">Подходит, если удобнее сначала прислать фото шильдика, модель, серийный номер, район или видео с симптомом.</p>
                     <ul class="space-y-3 text-sm text-slate-600 mb-6 flex-1">
-                        <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Можно приложить фото и адрес</span></li>
+                        <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Можно сразу приложить фото, видео и адрес выезда</span></li>
                         <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Удобно, если не получается говорить по телефону</span></li>
-                        <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Помогает заранее понять сценарий ремонта</span></li>
+                        <li class="flex items-start gap-2"><i class="ri-check-line text-green-500 mt-0.5"></i><span>Помогает быстрее понять сценарий ремонта ещё до звонка</span></li>
                     </ul>
+                    <div class="rounded-2xl px-4 py-4 mb-5 text-sm text-slate-600" style="background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.12);">
+                        Лучший вариант, если у вас уже есть фото шильдика, панели, протечки или короткое видео симптома.
+                    </div>
                     <div class="flex flex-wrap gap-4 mt-auto">
                         <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-bold text-green-600 hover:text-green-700 transition">
                             <i class="ri-whatsapp-line"></i>
@@ -477,10 +528,10 @@
                     <ul class="space-y-3 text-sm text-slate-200 mb-6 flex-1 relative z-10">
                         <li class="flex items-start gap-2"><i class="ri-check-line text-green-400 mt-0.5"></i><span>Хорошо для несрочных обращений</span></li>
                         <li class="flex items-start gap-2"><i class="ri-check-line text-green-400 mt-0.5"></i><span>Можно описать проблему своими словами</span></li>
-                        <li class="flex items-start gap-2"><i class="ri-check-line text-green-400 mt-0.5"></i><span>Перезвоним и согласуем следующий шаг</span></li>
+                        <li class="flex items-start gap-2"><i class="ri-check-line text-green-400 mt-0.5"></i><span>Перезвоним, уточним технику и согласуем следующий шаг</span></li>
                     </ul>
                     <div class="rounded-2xl px-4 py-4 mb-5 text-sm text-slate-200 relative z-10" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.10);">
-                        Перезвоним без длинной анкеты. Достаточно коротко описать поломку и оставить контакт.
+                        Перезвоним без длинной анкеты. Достаточно коротко описать поломку, оставить телефон и по возможности указать район.
                     </div>
                     <a href="#contact-form" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-brand-orange text-white px-5 py-4 font-bold transition hover:bg-brand-orangeHover shadow-lg mt-auto relative z-10">
                         <i class="ri-arrow-up-line"></i>
@@ -498,23 +549,24 @@
             <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-start">
                 <div class="scroll-reveal-left">
                     <span class="inline-block bg-white text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-orange-100 shadow-sm"><i class="ri-list-check-2 mr-2"></i>Перед обращением</span>
-                    <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что лучше подготовить заранее</h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-8">Так разговор получается короче, а специалист быстрее понимает, как помочь без лишних уточнений.</p>
+                    <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что лучше отправить сразу</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">Если в первом сообщении или звонке есть техника, симптом, район и удобное окно для визита, мы быстрее переводим разговор в конкретный следующий шаг.</p>
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div class="rounded-3xl bg-white border border-slate-200/80 p-6 shadow-lg shadow-slate-100/70" style="background: linear-gradient(180deg, #ffffff 0%, #fffaf5 100%);">
-                            <h3 class="font-display font-bold text-brand-blue mb-3">По бытовой технике</h3>
+                            <h3 class="font-display font-bold text-brand-blue mb-3">Базовый набор для заявки</h3>
                             <ul class="space-y-3 text-sm text-slate-600">
-                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Марка и модель, если знаете</span></li>
-                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Короткое описание: не греет, шумит, течёт, не включается</span></li>
-                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Удобное окно для выезда</span></li>
+                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Тип техники: стиральная машина, холодильник, плита и т.д.</span></li>
+                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Бренд и модель, если знаете или можете сфотографировать шильдик</span></li>
+                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Симптом простыми словами: не греет, шумит, течёт, не включается</span></li>
+                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Район, адрес или хотя бы ориентир по выезду</span></li>
                             </ul>
                         </div>
                         <div class="rounded-3xl bg-white border border-slate-200/80 p-6 shadow-lg shadow-slate-100/70" style="background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);">
-                            <h3 class="font-display font-bold text-brand-blue mb-3">Если удобнее писать в WhatsApp</h3>
+                            <h3 class="font-display font-bold text-brand-blue mb-3">Что ускоряет согласование</h3>
                             <ul class="space-y-3 text-sm text-slate-600">
-                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Фото шильдика или панели управления</span></li>
-                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Короткое видео симптома, если это удобно</span></li>
-                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Район и удобное окно для визита</span></li>
+                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Фото шильдика, панели управления или места протечки</span></li>
+                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Короткое видео симптома, если его легко снять</span></li>
+                                <li class="flex items-start gap-2"><i class="ri-checkbox-circle-line text-green-500 mt-0.5"></i><span>Удобное окно для визита и контактный способ: звонок или мессенджер</span></li>
                             </ul>
                         </div>
                     </div>
@@ -523,28 +575,24 @@
                     <div class="rounded-[2rem] text-white p-8 lg:p-10 shadow-2xl relative overflow-hidden" style="background: linear-gradient(155deg, #0f172a 0%, #12315c 52%, #1e293b 100%);">
                         <div class="absolute -top-20 -right-10 w-44 h-44 rounded-full" style="background: radial-gradient(circle, rgba(249,115,22,0.3) 0%, rgba(249,115,22,0) 72%);"></div>
                         <div class="absolute bottom-0 left-0 w-44 h-44 rounded-full -translate-x-1/3 translate-y-1/3" style="background: radial-gradient(circle, rgba(14,165,233,0.18) 0%, rgba(14,165,233,0) 72%);"></div>
-                        <span class="inline-block bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 relative z-10"><i class="ri-shield-check-line mr-2"></i>Спокойный процесс</span>
-                        <h2 class="text-3xl font-display font-extrabold mb-5">Как проходит обращение</h2>
+                        <span class="inline-block bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 relative z-10"><i class="ri-shield-check-line mr-2"></i>После заявки</span>
+                        <h2 class="text-3xl font-display font-extrabold mb-5">Что произойдёт дальше</h2>
                         <div class="space-y-4 relative z-10">
                             <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
-                                <p class="font-bold mb-1">1. Принимаем заявку</p>
-                                <p class="text-sm text-slate-200">Вы описываете проблему удобным способом: звонок, мессенджер или форма.</p>
+                                <p class="font-bold mb-1">1. Получаем обращение</p>
+                                <p class="text-sm text-slate-200">Вы звоните, пишете в мессенджер или оставляете форму. Без длинной анкеты и лишних полей.</p>
                             </div>
                             <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
-                                <p class="font-bold mb-1">2. Уточняем детали</p>
-                                <p class="text-sm text-slate-200">Собираем только важное: техника, адрес, срочность и удобное время.</p>
+                                <p class="font-bold mb-1">2. Уточняем 4 вещи</p>
+                                <p class="text-sm text-slate-200">Тип техники, симптом, район и удобное время. Если есть фото или модель, подключаем их сразу.</p>
                             </div>
                             <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
-                                <p class="font-bold mb-1">3. Направляем специалиста</p>
-                                <p class="text-sm text-slate-200">Согласовываем выезд мастера и заранее проговариваем, что он проверит в первую очередь.</p>
-                            </div>
-                            <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
-                                <p class="font-bold mb-1">4. После ремонта оставляем документы</p>
-                                <p class="text-sm text-slate-200">Если работа выполнена, мастер выдаёт акт и гарантию, а все детали по заявке остаются понятными и зафиксированными.</p>
+                                <p class="font-bold mb-1">3. Согласовываем следующий шаг</p>
+                                <p class="text-sm text-slate-200">Говорим, когда реально можно приехать, и заранее проговариваем, что мастер проверит в первую очередь.</p>
                             </div>
                         </div>
                         <div class="mt-8 rounded-3xl bg-white/10 border border-white/10 p-5 relative z-10">
-                            <p class="text-sm text-slate-200 mb-2">Если нужна именно быстрая реакция, быстрее всего позвонить.</p>
+                            <p class="text-sm text-slate-200 mb-2">После ремонта мастер оставляет акт и гарантию, а если нужна именно быстрая реакция, быстрее всего позвонить.</p>
                             <a href="tel:+79990057172" class="inline-flex items-center gap-2 text-lg font-bold text-white hover:text-orange-200 transition">
                                 <i class="ri-phone-line"></i>
                                 <span data-company-phone>8 (999) 005-71-72</span>
@@ -589,14 +637,14 @@
                         <span>Что будет после отправки формы?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Мы перезвоним, уточним технику, район и удобное время. Дальше подскажем, нужен ли срочный выезд и что лучше подготовить по заявке.</p>
+                    <p class="mt-4 text-slate-600">Мы перезвоним, уточним технику, симптом, район и удобное время. Дальше скажем, какой следующий шаг оптимален: срочный выезд, спокойное согласование через мессенджер или уточнение модели и фото.</p>
                 </details>
                 <details class="faq-item bg-slate-50 p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal">
                     <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
                         <span>Вы работаете только по Москве?</span>
                         <span class="text-brand-orange transition-transform duration-300">+</span>
                     </summary>
-                    <p class="mt-4 text-slate-600">Основная зона работы — Москва, Балашиха и ближайшее Подмосковье. На странице контактов собраны сервисные точки, а если адрес дальше стандартной зоны выезда, условия и окно приезда уточняем заранее по телефону.</p>
+                    <p class="mt-4 text-slate-600">Основная зона работы — Москва, Балашиха и ближайшее Подмосковье. На странице контактов показаны сервисные точки логистики, а сам выезд согласовываем по адресу клиента. Если адрес дальше стандартной зоны, условия и окно приезда уточняем заранее.</p>
                 </details>
             </div>
         </div>

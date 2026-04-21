@@ -428,6 +428,30 @@ body.page-bytovaya-contact .household-contact-map-chips {
   align-items: center;
 }
 
+body.page-bytovaya-contact .household-contact-form-note {
+  box-shadow: 0 18px 35px rgba(148, 163, 184, 0.10);
+}
+
+body.page-bytovaya-contact .household-contact-overview-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+body.page-bytovaya-contact .household-contact-overview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px rgba(15, 23, 42, 0.10);
+}
+
+body.page-bytovaya-contact .household-contact-overview-link {
+  margin-top: auto;
+}
+
+body.page-bytovaya-contact .household-contact-overview-strip > div {
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.05);
+}
+
 body.page-bytovaya-contact .household-contact-location-card {
   min-height: 100%;
   display: flex;
@@ -482,6 +506,26 @@ body.page-bytovaya-contact .household-contact-location-link {
   body.page-bytovaya-contact .household-contact-map-shell > div:first-child {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-overview-strip {
+    gap: 0.85rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-overview-grid {
+    gap: 1rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-overview-card {
+    padding: 1.25rem;
+  }
+
+  body.page-bytovaya-contact .household-contact-overview-badge {
+    align-self: flex-start;
+  }
+
+  body.page-bytovaya-contact .household-contact-form-note {
+    padding: 0.9rem 1rem;
   }
 
   body.page-bytovaya-contact .household-contact-location-card-top {
