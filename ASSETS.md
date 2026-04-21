@@ -10,8 +10,6 @@
 │   ├── css/
 │   │   ├── styles-built.css    # Tailwind CSS (built from input.css)
 │   │   └── styles.css          # Custom CSS (animations, glass effects)
-│   ├── js/
-│   │   ├── main.js             # Components (header, footer, mobile menu, scroll, counters)
 │   ├── fonts/
 │   │   ├── manrope.css         # Manrope font faces (400-800)
 │   │   ├── remixicon.css       # RemixIcon icon font
@@ -37,7 +35,7 @@
 ├── uslugi.html                 # Услуги (ресторанное)
 ├── about.html                  # О нас (ресторанное)
 ├── contact.html                # Контакты (ресторанное)
-├── main.js                     # → symlink to /assets/js/main.js
+├── main.js                     # Canonical runtime JS
 ├── telegram-form.js            # Telegram form handler (canonical source)
 ├── styles-built.css            # → symlink to /assets/css/styles-built.css
 ├── styles.css                  # → symlink to /assets/css/styles.css
@@ -56,7 +54,7 @@
    - `styles.css` → Custom animations, glass effects
 
 3. **JS** (defer)
-   - `main.js` → Header/footer injection, mobile menu, scroll animations, counters
+   - `main.js` → Canonical runtime JS: header/footer injection, mobile menu, branch UI, scroll animations, counters
    - `telegram-form.js` → Form submission to Telegram
 
 ## CDN Dependencies

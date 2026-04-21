@@ -31,3 +31,8 @@
 - `npm run validate:site` now requires `data/runtime-config.json` and a non-empty `telegramFormEndpoint`.
 - Deploy smoke tests call the configured form endpoint after publishing.
 - Deploy manifest must include the backend script and deploy hook assets so the VPS can activate them from the same release tree.
+
+## Restaurant Branch
+
+- Restaurant branch maintenance contract: [docs/RESTAURANT_BRANCH_CONTRACT.md](/home/artikk/Mospochin_site/docs/RESTAURANT_BRANCH_CONTRACT.md)
+- `main.js` is the canonical runtime JavaScript for the restaurant branch.

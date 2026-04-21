@@ -67,7 +67,7 @@
 
     <nav class="bg-slate-50 border-b border-slate-100 py-3" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ol class="flex items-center gap-2 text-sm text-slate-500">
+            <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-orange transition"><i class="ri-home-4-line mr-1"></i>Главная</a></li>
                 <li><i class="ri-arrow-right-s-line text-xs text-slate-300"></i></li>
                 <li><a href="/index.html" class="hover:text-brand-orange transition">Ресторанное оборудование</a></li>
@@ -251,8 +251,8 @@
             <div class="grid lg:grid-cols-[0.85fr,1.15fr] gap-6 items-center">
                 <div class="scroll-reveal text-center lg:text-left">
                     <p class="text-sm uppercase tracking-[0.25em] text-brand-orange mb-3">БЫСТРЫЙ МАРШРУТ</p>
-                    <h2 class="text-2xl lg:text-3xl font-display font-extrabold mb-3">Страница собрана под один сценарий: быстро понять, чиним ли ваш пост, и сразу выйти на заявку</h2>
-                    <p class="text-slate-300">Если кухня уже стоит, можно не читать всё подряд: сначала тип оборудования и цены, потом FAQ, и сразу в заявку или звонок.</p>
+                    <h2 class="text-2xl lg:text-3xl font-display font-extrabold mb-3">Сначала выберите тип оборудования, затем смотрите цены, сроки и сразу переходите к заявке</h2>
+                    <p class="text-slate-300">Если вам нужен быстрый ориентир, начните с нужного раздела и сразу выходите на звонок или заявку.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-3 scroll-reveal" data-delay="1">
                     <a href="#equipment" class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl px-4 py-4 transition">
@@ -380,11 +380,11 @@
             </div>
             <div class="grid lg:grid-cols-2 gap-8">
                 <div class="card-brand bg-white p-8 rounded-3xl border border-slate-200 shadow-sm scroll-reveal" data-delay="1">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl"><i class="ri-layout-grid-line"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-display font-extrabold text-brand-blue">Подкатегории оборудования</h3>
-                            <p class="text-slate-500 text-sm">Что логично искать на этой странице</p>
+                    <div class="flex items-start gap-3 mb-6">
+                        <div class="w-14 h-14 shrink-0 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl"><i class="ri-layout-grid-line"></i></div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-2xl font-display font-extrabold text-brand-blue leading-tight break-words">Что ремонтируем</h3>
+                            <p class="text-slate-500 text-sm leading-tight">Что есть на странице</p>
                         </div>
                     </div>
                     <ul class="space-y-3">
@@ -397,11 +397,11 @@
                     </ul>
                 </div>
                 <div class="card-brand bg-white p-8 rounded-3xl border border-slate-200 shadow-sm scroll-reveal" data-delay="2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl"><i class="ri-tools-line"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-display font-extrabold text-brand-blue">Какие узлы чаще всего восстанавливаем</h3>
-                            <p class="text-slate-500 text-sm">То, на чём чаще всего встаёт горячий цех</p>
+                    <div class="flex items-start gap-3 mb-6">
+                        <div class="w-14 h-14 shrink-0 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl"><i class="ri-tools-line"></i></div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-2xl font-display font-extrabold text-brand-blue leading-tight break-words">Какие узлы чиним чаще всего</h3>
+                            <p class="text-slate-500 text-sm leading-tight">Из-за чего чаще всего встаёт горячий цех</p>
                         </div>
                     </div>
                     <div class="grid sm:grid-cols-2 gap-3">
@@ -601,11 +601,11 @@
             </div>
             <div class="grid lg:grid-cols-2 gap-6">
                 <div class="card-brand bg-white rounded-3xl p-8 border border-slate-200 shadow-sm scroll-reveal" data-delay="1">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl"><i class="ri-user-voice-line"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-display font-extrabold text-brand-blue">Что ценят шефы и управляющие</h3>
-                            <p class="text-slate-500 text-sm">Не обещания “сделаем всё”, а нормальную коммуникацию и контроль сметы</p>
+                    <div class="flex items-start gap-3 mb-6">
+                        <div class="w-14 h-14 shrink-0 bg-brand-orange/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl"><i class="ri-user-voice-line"></i></div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-2xl font-display font-extrabold text-brand-blue leading-tight break-words">Что ценят шефы</h3>
+                            <p class="text-slate-500 text-sm leading-tight">Не обещания “сделаем всё”, а нормальную коммуникацию и контроль сметы</p>
                         </div>
                     </div>
                     <ul class="space-y-4 text-slate-600">
@@ -616,11 +616,11 @@
                     </ul>
                 </div>
                 <div class="card-brand bg-brand-blue text-white rounded-3xl p-8 shadow-xl scroll-reveal" data-delay="2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl"><i class="ri-flashlight-line"></i></div>
-                        <div>
-                            <h3 class="text-2xl font-display font-extrabold">Что усиливает шанс закрыть ремонт за один визит</h3>
-                            <p class="text-white/70 text-sm">Именно это отличает рабочий сервис по горячему цеху от случайного выезда</p>
+                    <div class="flex items-start gap-3 mb-6">
+                        <div class="w-14 h-14 shrink-0 bg-white/10 rounded-2xl flex items-center justify-center text-brand-orange text-2xl"><i class="ri-flashlight-line"></i></div>
+                        <div class="min-w-0 flex-1">
+                            <h3 class="text-2xl font-display font-extrabold leading-tight break-words">Что усиливает шанс закрыть ремонт за один визит</h3>
+                            <p class="text-white/70 text-sm leading-tight">Именно это отличает рабочий сервис по горячему цеху от случайного выезда</p>
                         </div>
                     </div>
                     <ul class="space-y-4 text-white/90">

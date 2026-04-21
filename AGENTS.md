@@ -22,6 +22,12 @@
 - `npm run generate:sitemap` when URLs, canonicals, or indexed pages change
 - `npm run dev` only for targeted preview or smoke checks
 
+## Restaurant Branch Guardrails
+
+- Treat `main.js` as the canonical runtime JS for restaurant branch behavior.
+- Keep shared repeated restaurant UI in `data/restaurant-branch.json`.
+- `index.html` and `uslugi.html` are routers; preserve page-specific copy on vertical restaurant pages.
+
 ## Safety
 
 - Inspect the dirty worktree before editing.

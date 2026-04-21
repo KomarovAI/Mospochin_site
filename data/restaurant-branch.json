@@ -1,0 +1,100 @@
+{
+  "subtitle": "🔧 Ресторанное оборудование",
+  "contactHint": "⚡ Работаем 24/7",
+  "topBarText": {
+    "icon": "ri-flashlight-fill",
+    "text": "🚨 АВАРИЙНЫЙ ВЫЕЗД",
+    "sub": "Мастер будет через 45 минут"
+  },
+  "services": [
+    { "href": "uslugi.html", "icon": "🔧", "name": "Все услуги" },
+    { "href": "parokonvektomaty.html", "icon": "🔥", "name": "Пароконвектоматы" },
+    { "href": "plity-pechi.html", "icon": "🍳", "name": "Плиты и печи" },
+    {
+      "href": "holodilnoe-oborudovanie.html",
+      "icon": "❄️",
+      "name": "Холодильное оборудование"
+    },
+    { "href": "posudomoechnye-mashiny.html", "icon": "🍽️", "name": "Посудомойки" },
+    { "href": "grili-mangaly.html", "icon": "🍳", "name": "Грили и фритюр" },
+    { "href": "ice-machines.html", "icon": "🧊", "name": "Льдогенераторы" }
+  ],
+  "footerLinks": [
+    { "href": "index.html", "label": "Главная" },
+    { "href": "uslugi.html", "label": "Услуги" },
+    { "href": "parokonvektomaty.html", "label": "Пароконвектоматы" },
+    { "href": "plity-pechi.html", "label": "Плиты и печи" },
+    { "href": "holodilnoe-oborudovanie.html", "label": "Холодильное оборудование" },
+    { "href": "posudomoechnye-mashiny.html", "label": "Посудомойки" },
+    { "href": "grili-mangaly.html", "label": "Грили и фритюр" },
+    { "href": "ice-machines.html", "label": "Льдогенераторы" },
+    { "href": "about.html", "label": "О компании" },
+    { "href": "contact.html", "label": "Контакты" }
+  ],
+  "routeStrips": {
+    "index": {
+      "badge": "БЫСТРЫЙ МАРШРУТ",
+      "title": "Если уже знаете симптом, переходите сразу",
+      "description": "Не нужно читать весь лендинг подряд. Выберите, что именно встало на кухне, и попадёте в нужную сервисную страницу.",
+      "action": {
+        "href": "uslugi.html",
+        "label": "Полный каталог услуг",
+        "icon": "ri-arrow-right-line"
+      },
+      "cards": [
+        {
+          "href": "parokonvektomaty.html",
+          "title": "Ошибка у пароконвектомата",
+          "description": "Rational, Unox, Electrolux, Abat"
+        },
+        {
+          "href": "plity-pechi.html",
+          "title": "Не греет горячая линия",
+          "description": "Плиты, печи, шкафы, индукция"
+        },
+        {
+          "href": "holodilnoe-oborudovanie.html",
+          "title": "Не морозит или течёт",
+          "description": "Шкафы, столы, витрины, камеры"
+        },
+        {
+          "href": "posudomoechnye-mashiny.html",
+          "title": "Не моет или не греет воду",
+          "description": "Купольные, фронтальные, туннельные"
+        }
+      ]
+    },
+    "uslugi": {
+      "badge": "БЫСТРЫЙ ВЫБОР",
+      "title": "Начните с симптома, если техника уже встала",
+      "description": "Этот хаб должен вести в нужное направление, а не заставлять читать всё подряд. Ниже быстрые маршруты по типовой проблеме кухни.",
+      "action": {
+        "href": "#full-services",
+        "label": "Открыть полный список",
+        "icon": "ri-arrow-down-line"
+      },
+      "cards": [
+        {
+          "href": "parokonvektomaty.html",
+          "title": "Ошибка у пароконвектомата",
+          "description": "Rational, Unox, Electrolux, Abat"
+        },
+        {
+          "href": "plity-pechi.html",
+          "title": "Не греет горячая линия",
+          "description": "Плиты, печи, шкафы, индукция"
+        },
+        {
+          "href": "holodilnoe-oborudovanie.html",
+          "title": "Не морозит или течёт",
+          "description": "Шкафы, столы, витрины, камеры"
+        },
+        {
+          "href": "posudomoechnye-mashiny.html",
+          "title": "Не моет или не греет воду",
+          "description": "Фронтальные, купольные, туннельные"
+        }
+      ]
+    }
+  }
+}

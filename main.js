@@ -1,27 +1,14 @@
-const CONFIG = {
+const SITE_CONFIG = {
   company: {
     name: 'MosPochin',
     phoneDisplay: '8 (999) 005-71-72',
-    phoneLink: '79990057172',
+    phoneLink: '+79990057172',
     whatsapp:
       'https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
     email: 'info@mospochin.ru',
     experience: '15+ лет',
   },
   services: {
-    restaurant: [
-      { href: 'uslugi.html', icon: '🔧', name: 'Все услуги' },
-      { href: 'parokonvektomaty.html', icon: '🔥', name: 'Пароконвектоматы' },
-      { href: 'plity-pechi.html', icon: '🍳', name: 'Плиты и печи' },
-      {
-        href: 'holodilnoe-oborudovanie.html',
-        icon: '❄️',
-        name: 'Холодильное оборудование',
-      },
-      { href: 'posudomoechnye-mashiny.html', icon: '🍽️', name: 'Посудомойки' },
-      { href: 'grili-mangaly.html', icon: '🍳', name: 'Грили и фритюр' },
-      { href: 'ice-machines.html', icon: '🧊', name: 'Льдогенераторы' },
-    ],
     bytovaya: [
       { href: 'bytovaya-uslugi.html', icon: '🏠', name: 'Все услуги' },
       { href: 'holodilniki.html', icon: '❄️', name: 'Холодильники' },
@@ -36,6 +23,112 @@ const CONFIG = {
 };
 
 const PAGE_METADATA_PATH = '/data/page-metadata.json';
+const RESTAURANT_BRANCH_PATH = '/data/restaurant-branch.json';
+const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
+  subtitle: '🔧 Ресторанное оборудование',
+  contactHint: '⚡ Работаем 24/7',
+  topBarText: {
+    icon: 'ri-flashlight-fill',
+    text: '🚨 АВАРИЙНЫЙ ВЫЕЗД',
+    sub: 'Мастер будет через 45 минут',
+  },
+  services: [
+    { href: 'uslugi.html', icon: '🔧', name: 'Все услуги' },
+    { href: 'parokonvektomaty.html', icon: '🔥', name: 'Пароконвектоматы' },
+    { href: 'plity-pechi.html', icon: '🍳', name: 'Плиты и печи' },
+    {
+      href: 'holodilnoe-oborudovanie.html',
+      icon: '❄️',
+      name: 'Холодильное оборудование',
+    },
+    { href: 'posudomoechnye-mashiny.html', icon: '🍽️', name: 'Посудомойки' },
+    { href: 'grili-mangaly.html', icon: '🍳', name: 'Грили и фритюр' },
+    { href: 'ice-machines.html', icon: '🧊', name: 'Льдогенераторы' },
+  ],
+  footerLinks: [
+    { href: 'index.html', label: 'Главная' },
+    { href: 'uslugi.html', label: 'Услуги' },
+    { href: 'parokonvektomaty.html', label: 'Пароконвектоматы' },
+    { href: 'plity-pechi.html', label: 'Плиты и печи' },
+    {
+      href: 'holodilnoe-oborudovanie.html',
+      label: 'Холодильное оборудование',
+    },
+    { href: 'posudomoechnye-mashiny.html', label: 'Посудомойки' },
+    { href: 'grili-mangaly.html', label: 'Грили и фритюр' },
+    { href: 'ice-machines.html', label: 'Льдогенераторы' },
+    { href: 'about.html', label: 'О компании' },
+    { href: 'contact.html', label: 'Контакты' },
+  ],
+  routeStrips: {
+    index: {
+      badge: 'БЫСТРЫЙ МАРШРУТ',
+      title: 'Если уже знаете симптом, переходите сразу',
+      description:
+        'Не нужно читать весь лендинг подряд. Выберите, что именно встало на кухне, и попадёте в нужную сервисную страницу.',
+      action: {
+        href: 'uslugi.html',
+        label: 'Полный каталог услуг',
+        icon: 'ri-arrow-right-line',
+      },
+      cards: [
+        {
+          href: 'parokonvektomaty.html',
+          title: 'Ошибка у пароконвектомата',
+          description: 'Rational, Unox, Electrolux, Abat',
+        },
+        {
+          href: 'plity-pechi.html',
+          title: 'Не греет горячая линия',
+          description: 'Плиты, печи, шкафы, индукция',
+        },
+        {
+          href: 'holodilnoe-oborudovanie.html',
+          title: 'Не морозит или течёт',
+          description: 'Шкафы, столы, витрины, камеры',
+        },
+        {
+          href: 'posudomoechnye-mashiny.html',
+          title: 'Не моет или не греет воду',
+          description: 'Купольные, фронтальные, туннельные',
+        },
+      ],
+    },
+    uslugi: {
+      badge: 'БЫСТРЫЙ ВЫБОР',
+      title: 'Начните с симптома, если техника уже встала',
+      description:
+        'Этот хаб должен вести в нужное направление, а не заставлять читать всё подряд. Ниже быстрые маршруты по типовой проблеме кухни.',
+      action: {
+        href: '#full-services',
+        label: 'Открыть полный список',
+        icon: 'ri-arrow-down-line',
+      },
+      cards: [
+        {
+          href: 'parokonvektomaty.html',
+          title: 'Ошибка у пароконвектомата',
+          description: 'Rational, Unox, Electrolux, Abat',
+        },
+        {
+          href: 'plity-pechi.html',
+          title: 'Не греет горячая линия',
+          description: 'Плиты, печи, шкафы, индукция',
+        },
+        {
+          href: 'holodilnoe-oborudovanie.html',
+          title: 'Не морозит или течёт',
+          description: 'Шкафы, столы, витрины, камеры',
+        },
+        {
+          href: 'posudomoechnye-mashiny.html',
+          title: 'Не моет или не греет воду',
+          description: 'Фронтальные, купольные, туннельные',
+        },
+      ],
+    },
+  },
+});
 const RESTAURANT_PAGES = new Set([
   'index',
   'uslugi',
@@ -73,21 +166,41 @@ function getCurrentPageFile() {
 }
 
 let pageMetadataPromise = null;
+let restaurantBranchPromise = null;
+
+async function loadJson(path) {
+  const response = await fetch(path, { cache: 'no-store' });
+  if (!response.ok) {
+    throw new Error(`${path} ${response.status}`);
+  }
+
+  return response.json();
+}
 
 async function loadCurrentPageMetadata() {
   if (!pageMetadataPromise) {
     pageMetadataPromise = (async () => {
-      const response = await fetch(PAGE_METADATA_PATH, { cache: 'no-store' });
-      if (!response.ok) {
-        throw new Error(`page-metadata ${response.status}`);
-      }
-
-      const json = await response.json();
+      const json = await loadJson(PAGE_METADATA_PATH);
       return json.pages?.[getCurrentPageFile()] ?? null;
     })();
   }
 
   return pageMetadataPromise;
+}
+
+async function loadRestaurantBranchConfig() {
+  if (!restaurantBranchPromise) {
+    restaurantBranchPromise = (async () => {
+      try {
+        return await loadJson(RESTAURANT_BRANCH_PATH);
+      } catch (error) {
+        console.error('Restaurant branch config unavailable:', error.message);
+        return DEFAULT_RESTAURANT_BRANCH;
+      }
+    })();
+  }
+
+  return restaurantBranchPromise;
 }
 
 function inferBranchFromSlug() {
@@ -113,17 +226,23 @@ function observeElements(selector, options, onIntersect) {
 
 const Components = {
   currentBranch: null,
+  restaurantBranch: DEFAULT_RESTAURANT_BRANCH,
 
   isBytovaya() {
     return (this.currentBranch || inferBranchFromSlug()) === 'household';
   },
 
+  getRestaurantBranch() {
+    return this.restaurantBranch || DEFAULT_RESTAURANT_BRANCH;
+  },
+
   getBranchMeta() {
     const isBytovaya = this.isBytovaya();
+    const restaurantBranch = this.getRestaurantBranch();
 
     return {
       isBytovaya,
-      subtitle: isBytovaya ? '🏠 Бытовая техника' : '🔧 Ресторанное оборудование',
+      subtitle: isBytovaya ? '🏠 Бытовая техника' : restaurantBranch.subtitle,
       homeLink: isBytovaya ? 'bytovaya-index.html' : 'index.html',
       aboutLink: isBytovaya ? 'bytovaya-about.html' : 'about.html',
       contactLink: isBytovaya ? 'bytovaya-contact.html' : 'contact.html',
@@ -132,19 +251,15 @@ const Components = {
       branchSwitchLabel: isBytovaya
         ? '🔧 Ресторанное оборудование'
         : '🏠 Бытовая техника',
-      services: isBytovaya ? CONFIG.services.bytovaya : CONFIG.services.restaurant,
+      services: isBytovaya ? SITE_CONFIG.services.bytovaya : restaurantBranch.services,
       topBarText: isBytovaya
         ? {
             icon: 'ri-flashlight-fill',
             text: '🚨 СРОЧНЫЙ ВЫЕЗД НА ДОМ',
             sub: 'Мастер будет через 60 минут',
           }
-        : {
-            icon: 'ri-flashlight-fill',
-            text: '🚨 АВАРИЙНЫЙ ВЫЕЗД',
-            sub: 'Мастер будет через 45 минут',
-          },
-      contactHint: isBytovaya ? '🏠 Выезд на дом' : '⚡ Работаем 24/7',
+        : restaurantBranch.topBarText,
+      contactHint: isBytovaya ? '🏠 Выезд на дом' : restaurantBranch.contactHint,
     };
   },
 
@@ -179,8 +294,8 @@ const Components = {
     <span class="hidden sm:inline">•</span>
     <span class="hidden sm:inline font-semibold">${branch.topBarText.sub}</span>
     <span class="hidden md:inline">•</span>
-    <a href="tel:${CONFIG.company.phoneLink}" class="hidden md:inline font-bold hover:text-yellow-300 transition">
-      <i class="ri-phone-line mr-1"></i>${CONFIG.company.phoneDisplay}
+    <a href="tel:${SITE_CONFIG.company.phoneLink}" class="hidden md:inline font-bold hover:text-yellow-300 transition">
+      <i class="ri-phone-line mr-1"></i>${SITE_CONFIG.company.phoneDisplay}
     </a>
   </div>
 </div>
@@ -214,9 +329,9 @@ const Components = {
       <div class="hidden lg:flex items-center gap-4">
         <div class="text-right">
           <p class="text-xs text-slate-500 font-medium">${branch.contactHint}</p>
-          <a href="tel:${CONFIG.company.phoneLink}" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg px-5 py-2.5 rounded-full transition-all shadow-lg">
+          <a href="tel:${SITE_CONFIG.company.phoneLink}" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg px-5 py-2.5 rounded-full transition-all shadow-lg">
             <i class="ri-phone-line animate-pulse"></i>
-            <span>${CONFIG.company.phoneDisplay}</span>
+            <span>${SITE_CONFIG.company.phoneDisplay}</span>
           </a>
         </div>
       </div>
@@ -248,6 +363,12 @@ const Components = {
   },
 
   getFooter() {
+    const restaurantLinks = this.getRestaurantBranch().footerLinks
+      .map(
+        (link) => `<li><a href="${link.href}" class="hover:text-white transition">${link.label}</a></li>`
+      )
+      .join('');
+
     return `
 <footer class="bg-brand-blue text-slate-400 py-12 border-t border-slate-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -265,16 +386,7 @@ const Components = {
       <div>
         <h5 class="text-white font-bold mb-4">🔧 Ресторанное</h5>
         <ul class="space-y-2 text-sm">
-          <li><a href="index.html" class="hover:text-white transition">Главная</a></li>
-          <li><a href="uslugi.html" class="hover:text-white transition">Услуги</a></li>
-          <li><a href="parokonvektomaty.html" class="hover:text-white transition">Пароконвектоматы</a></li>
-          <li><a href="plity-pechi.html" class="hover:text-white transition">Плиты и печи</a></li>
-          <li><a href="holodilnoe-oborudovanie.html" class="hover:text-white transition">Холодильное оборудование</a></li>
-          <li><a href="posudomoechnye-mashiny.html" class="hover:text-white transition">Посудомойки</a></li>
-          <li><a href="grili-mangaly.html" class="hover:text-white transition">Грили и фритюр</a></li>
-          <li><a href="ice-machines.html" class="hover:text-white transition">Льдогенераторы</a></li>
-          <li><a href="about.html" class="hover:text-white transition">О компании</a></li>
-          <li><a href="contact.html" class="hover:text-white transition">Контакты</a></li>
+          ${restaurantLinks}
         </ul>
       </div>
 
@@ -300,7 +412,7 @@ const Components = {
         <ul class="space-y-3 text-sm">
           <li class="flex items-center gap-2">
             <i class="ri-phone-line text-brand-orange"></i>
-            <a href="tel:${CONFIG.company.phoneLink}" class="hover:text-white transition font-bold">${CONFIG.company.phoneDisplay}</a>
+            <a href="tel:${SITE_CONFIG.company.phoneLink}" class="hover:text-white transition font-bold">${SITE_CONFIG.company.phoneDisplay}</a>
           </li>
           <li class="flex items-center gap-2">
             <i class="ri-time-line text-brand-orange"></i>
@@ -350,7 +462,7 @@ const Components = {
 <a href="${branch.aboutLink}" class="block px-3 py-2 text-base font-medium ${this.isActivePage('about') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg mt-3">ℹ️ О нас</a>
 <a href="${branch.contactLink}" class="block px-3 py-2 text-base font-medium ${this.isActivePage('contact') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg">📞 Контакты</a>
 <div class="border-t border-slate-200 my-3"></div>
-<a href="tel:${CONFIG.company.phoneLink}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="ri-phone-line mr-2"></i>Позвонить</a>
+<a href="tel:${SITE_CONFIG.company.phoneLink}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="ri-phone-line mr-2"></i>Позвонить</a>
 <div class="border-t border-slate-200 my-2"></div>
 <a href="${branch.branchSwitchLink}" class="block w-full text-center bg-brand-orange/10 text-brand-orange px-4 py-3 rounded-lg font-bold text-sm border-2 border-brand-orange/30">
   ${branch.isBytovaya ? '🔧 Перейти: Ресторанное оборудование' : '🏠 Перейти: Бытовая техника'}
@@ -465,18 +577,58 @@ const Components = {
   },
 
   getPhone() {
-    return CONFIG.company.phoneDisplay;
+    return SITE_CONFIG.company.phoneDisplay;
   },
 
   getPhoneLink() {
-    return CONFIG.company.phoneLink;
+    return SITE_CONFIG.company.phoneLink;
+  },
+
+  initRestaurantRouteStrips() {
+    if (this.isBytovaya()) return;
+
+    const routeStrips = this.getRestaurantBranch().routeStrips || {};
+    const sections = document.querySelectorAll('[data-restaurant-route-strip]');
+
+    sections.forEach((section) => {
+      const routeKey = section.dataset.restaurantRouteStrip;
+      const routeStrip = routeStrips[routeKey];
+      if (!routeStrip) return;
+
+      const badge = section.querySelector('[data-route-strip-badge]');
+      const title = section.querySelector('[data-route-strip-title]');
+      const description = section.querySelector('[data-route-strip-description]');
+      const action = section.querySelector('[data-route-strip-action]');
+      const actionLabel = section.querySelector('[data-route-strip-action-label]');
+      const actionIcon = section.querySelector('[data-route-strip-action-icon]');
+      const grid = section.querySelector('[data-route-strip-grid]');
+
+      if (badge) badge.textContent = routeStrip.badge;
+      if (title) title.textContent = routeStrip.title;
+      if (description) description.textContent = routeStrip.description;
+      if (action) action.setAttribute('href', routeStrip.action.href);
+      if (actionLabel) actionLabel.textContent = routeStrip.action.label;
+      if (actionIcon) actionIcon.className = routeStrip.action.icon;
+      if (grid) {
+        grid.innerHTML = routeStrip.cards
+          .map(
+            (card) => `
+              <a href="${card.href}" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                <p class="text-sm font-bold text-brand-blue">${card.title}</p>
+                <p class="mt-1 text-sm text-slate-500">${card.description}</p>
+              </a>
+            `
+          )
+          .join('');
+      }
+    });
   },
 
   async init() {
     const header = document.getElementById('header-container');
     const footer = document.getElementById('footer-container');
     const phoneTargets = document.querySelectorAll('[data-company-phone]');
-    const phoneLinks = document.querySelectorAll('[href="tel:79990057172"]');
+    const phoneLinks = document.querySelectorAll('[href="tel:79990057172"], [href="tel:+79990057172"]');
 
     try {
       const pageMetadata = await loadCurrentPageMetadata();
@@ -486,14 +638,19 @@ const Components = {
       this.currentBranch = inferBranchFromSlug();
     }
 
+    if (!this.isBytovaya()) {
+      this.restaurantBranch = await loadRestaurantBranchConfig();
+    }
+
     if (header) header.innerHTML = this.getHeader();
     if (footer) footer.innerHTML = this.getFooter();
     phoneTargets.forEach((node) => {
-      node.textContent = CONFIG.company.phoneDisplay;
+      node.textContent = SITE_CONFIG.company.phoneDisplay;
     });
     phoneLinks.forEach((node) => {
-      node.setAttribute('href', `tel:${CONFIG.company.phoneLink}`);
+      node.setAttribute('href', `tel:${SITE_CONFIG.company.phoneLink}`);
     });
+    this.initRestaurantRouteStrips();
 
     document.body.classList.add(this.isBytovaya() ? 'branch-household' : 'branch-restaurant');
 
