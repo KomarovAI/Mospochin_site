@@ -20,6 +20,7 @@ const ALWAYS_INCLUDE = [
   'deploy/env/telegram.env.example',
   'deploy/post-activate.sh',
   'deploy/systemd/mospochin-telegram-api.service',
+  'deploy/systemd/mospochin-telegram-tunnel.service',
   'favicon.svg',
   'main.js',
   'og-image.svg',
