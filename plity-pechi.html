@@ -90,9 +90,8 @@
                         Ремонт плит и печей в Москве <span class="text-brand-orange">без простоя кухни и без хаоса по смете</span>
                     </h1>
                     <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        Если плита, шкаф или индукционная линия встали в смену, тянуть нельзя.
-                        Выезжаем на объект, разводим газ, электро и индукцию по нужному инженеру,
-                        локализуем причину и только после согласования сметы берёмся за ремонт.
+                        Если плита, шкаф или индукционная линия встали в смену, сразу разводим газ, электро и индукцию по нужному инженеру,
+                        локализуем узел и только после согласованной сметы запускаем ремонт.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
                         <a href="tel:+79990057172" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg">
@@ -114,26 +113,18 @@
                             4.9 рейтинга и 500+ отзывов
                         </span>
                         <span class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-2 text-sm font-semibold text-white">
-                            <i class="ri-hotel-service-line text-brand-orange"></i>
-                            Газ, электро и индукция
-                        </span>
-                        <span class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-2 text-sm font-semibold text-white">
                             <i class="ri-file-text-line text-brand-orange"></i>
                             Акт, смета, гарантия
                         </span>
                     </div>
-                    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-3 max-w-4xl">
-                        <div class="glass-card p-4 text-center">
-                            <p class="text-sm text-slate-300">Срочный выезд</p>
-                            <p class="text-xl font-display font-extrabold text-white">до 45 минут</p>
-                        </div>
+                    <div class="grid sm:grid-cols-3 gap-3 max-w-4xl">
                         <div class="glass-card p-4 text-center">
                             <p class="text-sm text-slate-300">Тип линии</p>
                             <p class="text-xl font-display font-extrabold text-white">газ / электро / индукция</p>
                         </div>
                         <div class="glass-card p-4 text-center">
-                            <p class="text-sm text-slate-300">Смета</p>
-                            <p class="text-xl font-display font-extrabold text-white">до ремонта</p>
+                            <p class="text-sm text-slate-300">Формат</p>
+                            <p class="text-xl font-display font-extrabold text-white">ремонт на объекте</p>
                         </div>
                         <div class="glass-card p-4 text-center">
                             <p class="text-sm text-slate-300">Документы</p>
@@ -252,6 +243,36 @@
         </div>
     </section>
 
+    <section class="py-10 bg-slate-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[0.85fr,1.15fr] gap-6 items-center">
+                <div class="scroll-reveal text-center lg:text-left">
+                    <p class="text-sm uppercase tracking-[0.25em] text-brand-orange mb-3">БЫСТРЫЙ МАРШРУТ</p>
+                    <h2 class="text-2xl lg:text-3xl font-display font-extrabold mb-3">Страница собрана под один сценарий: быстро понять, чиним ли ваш пост, и сразу выйти на заявку</h2>
+                    <p class="text-slate-300">Если кухня уже стоит, можно не читать всё подряд: сначала тип оборудования и цены, потом FAQ, и сразу в заявку или звонок.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-3 scroll-reveal" data-delay="1">
+                    <a href="#equipment" class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl px-4 py-4 transition">
+                        <p class="text-xs uppercase tracking-wide text-slate-400 mb-1">Шаг 1</p>
+                        <p class="font-bold">Что ремонтируем</p>
+                    </a>
+                    <a href="#prices" class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl px-4 py-4 transition">
+                        <p class="text-xs uppercase tracking-wide text-slate-400 mb-1">Шаг 2</p>
+                        <p class="font-bold">Цены и выезд</p>
+                    </a>
+                    <a href="#faq" class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl px-4 py-4 transition">
+                        <p class="text-xs uppercase tracking-wide text-slate-400 mb-1">Шаг 3</p>
+                        <p class="font-bold">FAQ и риски</p>
+                    </a>
+                    <a href="#request" class="bg-brand-orange hover:bg-brand-orangeHover rounded-2xl px-4 py-4 transition shadow-lg">
+                        <p class="text-xs uppercase tracking-wide text-orange-100 mb-1">Финиш</p>
+                        <p class="font-bold">Заявка или звонок</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-16 lg:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid xl:grid-cols-[1.15fr,0.85fr] gap-6 items-start">
@@ -305,7 +326,7 @@
         </div>
     </section>
 
-    <section class="py-24 lg:py-32 bg-white">
+    <section class="py-24 lg:py-32 bg-white" id="equipment">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ТИПЫ ОБОРУДОВАНИЯ</span>
@@ -536,7 +557,7 @@
         </div>
     </section>
 
-    <section class="py-24 lg:py-32 bg-white">
+    <section class="py-24 lg:py-32 bg-white" id="faq">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
                 <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-4">КАК ПРОХОДИТ РЕМОНТ</span>
@@ -750,6 +771,23 @@
                 <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-semibold text-slate-700"><i class="ri-image-line text-brand-orange"></i>Можно сразу назвать модель или фото шильдика</span>
                 <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-semibold text-slate-700"><i class="ri-phone-find-line text-brand-orange"></i>Подскажем, безопасно ли включать линию до приезда</span>
                 <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-semibold text-slate-700"><i class="ri-user-voice-line text-brand-orange"></i>Ответ без повторного пересказа разным людям</span>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 mb-8 scroll-reveal" data-delay="2">
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-slate-400 mb-2">Шаг 1</p>
+                    <h3 class="font-display font-extrabold text-brand-blue mb-2">Маршрутизируем заявку</h3>
+                    <p class="text-sm text-slate-600">Понимаем, это газ, электро или индукция, и не гоняем вас по кругу.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-slate-400 mb-2">Шаг 2</p>
+                    <h3 class="font-display font-extrabold text-brand-blue mb-2">Уточняем модель и риск</h3>
+                    <p class="text-sm text-slate-600">Сразу говорим, безопасно ли включать линию до приезда и что подготовить инженеру.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-slate-400 mb-2">Шаг 3</p>
+                    <h3 class="font-display font-extrabold text-brand-blue mb-2">Ставим понятный выезд</h3>
+                    <p class="text-sm text-slate-600">После заявки у вас остаётся не “ожидание”, а понятный сценарий по времени и типу работ.</p>
+                </div>
             </div>
             <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
