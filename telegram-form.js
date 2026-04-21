@@ -3,7 +3,15 @@
 const FORM_MIN_FILL_MS = 1500;
 const FORM_RATE_LIMIT_MS = 60000;
 const FORM_MAX_PROBLEM_LENGTH = 500;
+const PAGE_METADATA_PATH = '/data/page-metadata.json';
+const FORM_BASE_FIELDS = new Set(['name', 'phone', 'type', 'problem', 'website', 'consent']);
+
 let runtimeConfigPromise = null;
+let pageMetadataPromise = null;
+
+function getCurrentPageFile() {
+    return window.location.pathname.split('/').pop() || 'index.html';
+}
 
 function getRuntimeConfigSource() {
     const endpointMeta = document.querySelector('meta[name="mospochin:telegram-endpoint"]')?.content?.trim() || '';
@@ -40,36 +48,27 @@ async function loadRuntimeConfig() {
     return runtimeConfigPromise;
 }
 
-async function sendToTelegram(formData) {
-    const page = window.location.pathname.split('/').pop() || 'index.html';
-    const source = page.includes('bytovaya') ? 'B2C (Бытовая)' : 'B2B (Рестораны)';
-    const runtimeConfig = await loadRuntimeConfig();
-    const endpoint = runtimeConfig.telegramFormEndpoint;
+async function loadCurrentPageMetadata() {
+    if (!pageMetadataPromise) {
+        pageMetadataPromise = (async () => {
+            try {
+                const response = await fetch(PAGE_METADATA_PATH, {
+                    cache: 'no-store'
+                });
+                if (!response.ok) {
+                    throw new Error(`page-metadata ${response.status}`);
+                }
 
-    if (!endpoint) {
-        throw new Error('Telegram form endpoint is not configured');
+                const json = await response.json();
+                return json.pages?.[getCurrentPageFile()] ?? null;
+            } catch (error) {
+                console.error('Page metadata unavailable:', error.message);
+                return null;
+            }
+        })();
     }
 
-    let message = `🔔 *НОВАЯ ЗАЯВКА с сайта MosPochin*\n\n`;
-    message += `📄 *Источник:* ${source} (${page})\n`;
-    message += `📱 *Телефон:* ${formData.phone || 'не указан'}\n`;
-    message += `👤 *Имя:* ${formData.name || 'не указано'}\n`;
-    message += `🔧 *Тип техники:* ${formData.type || 'не указан'}\n`;
-    message += `📝 *Проблема:* ${formData.problem || 'не указана'}\n\n`;
-    message += `🕐 *Время:* ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}`;
-
-    try {
-        const resp = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message })
-        });
-        if (resp.ok) return resp;
-        throw new Error('Proxy returned non-OK status');
-    } catch (e) {
-        console.error('Telegram proxy unavailable:', e.message);
-        throw e;
-    }
+    return pageMetadataPromise;
 }
 
 function normalizePhone(value) {
@@ -79,6 +78,70 @@ function normalizePhone(value) {
 function isValidPhone(value) {
     const digits = (value || '').replace(/\D/g, '');
     return digits.length >= 10 && digits.length <= 11;
+}
+
+function normalizeBranch(branch) {
+    return branch === 'household' ? 'household' : branch === 'restaurant' ? 'restaurant' : 'neutral';
+}
+
+function getSourceLabel(branch) {
+    if (branch === 'household') return 'B2C (Бытовая)';
+    if (branch === 'restaurant') return 'B2B (Рестораны)';
+    return 'Общий сайт';
+}
+
+function collectExtraFields(form) {
+    const formData = new FormData(form);
+    const extraFields = {};
+
+    for (const [name, rawValue] of formData.entries()) {
+        if (FORM_BASE_FIELDS.has(name)) continue;
+
+        const value = String(rawValue || '').trim();
+        if (!value) continue;
+
+        extraFields[name] = value.slice(0, 200);
+    }
+
+    return extraFields;
+}
+
+async function sendToTelegram(formData) {
+    const runtimeConfig = await loadRuntimeConfig();
+    const endpoint = runtimeConfig.telegramFormEndpoint;
+    const pageMetadata = await loadCurrentPageMetadata();
+
+    if (!endpoint) {
+        throw new Error('Telegram form endpoint is not configured');
+    }
+
+    const branch = normalizeBranch(pageMetadata?.branch);
+    const payload = {
+        name: formData.name,
+        phone: formData.phone,
+        type: formData.type,
+        problem: formData.problem,
+        page: getCurrentPageFile(),
+        branch,
+        sourceLabel: getSourceLabel(branch),
+        formContext: formData.formContext,
+        extraFields: formData.extraFields,
+        website: formData.website,
+        consent: true
+    };
+
+    try {
+        const resp = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        if (resp.ok) return resp;
+        throw new Error('Proxy returned non-OK status');
+    } catch (error) {
+        console.error('Telegram proxy unavailable:', error.message);
+        throw error;
+    }
 }
 
 function setTempButtonState(btn, text, removeClasses = [], addClasses = [], timeout = 2500) {
@@ -164,14 +227,18 @@ function initTelegramForms() {
             btn.disabled = true;
             btn.innerHTML = '<i class="ri-loader-4-line mr-2"></i>Отправляю...';
 
+            const honeypotValue = form.querySelector('[name="website"]')?.value.trim() || '';
+            const consentChecked = Boolean(form.querySelector('[name="consent"]')?.checked);
             const formData = {
                 name: form.querySelector('[name="name"]')?.value.trim() || '',
                 phone: normalizePhone(form.querySelector('[name="phone"]')?.value || ''),
                 type: form.querySelector('[name="type"]')?.value.trim() || '',
-                problem: form.querySelector('[name="problem"]')?.value.trim() || ''
+                problem: form.querySelector('[name="problem"]')?.value.trim() || '',
+                formContext: form.dataset.formContext?.trim() || '',
+                extraFields: collectExtraFields(form),
+                website: honeypotValue
             };
 
-            const honeypotValue = form.querySelector('[name="website"]')?.value.trim() || '';
             const startedAt = Number(form.dataset.startedAt || Date.now());
             const fillMs = Date.now() - startedAt;
             const rateLimitKey = `mospochin_form_last_${window.location.pathname}`;
@@ -193,7 +260,6 @@ function initTelegramForms() {
                 return;
             }
 
-            const consentChecked = Boolean(form.querySelector('[name="consent"]')?.checked);
             if (!consentChecked) {
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
@@ -253,7 +319,7 @@ function initTelegramForms() {
                 } else {
                     throw new Error('Failed');
                 }
-            } catch (err) {
+            } catch (error) {
                 btn.innerHTML = '<i class="ri-phone-line mr-2"></i>Позвоните нам!';
                 btn.classList.remove('bg-brand-orange', 'bg-green-600');
                 btn.classList.add('bg-red-500');
@@ -266,6 +332,7 @@ function initTelegramForms() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadRuntimeConfig();
+    void loadRuntimeConfig();
+    void loadCurrentPageMetadata();
     setTimeout(initTelegramForms, 200);
 });

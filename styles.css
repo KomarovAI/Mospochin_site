@@ -678,19 +678,35 @@ details summary::-webkit-details-marker {
   }
 
   table {
-    display: block;
     width: 100%;
     max-width: 100%;
-    overflow-x: auto;
+  }
+
+  .overflow-x-auto {
     -webkit-overflow-scrolling: touch;
   }
 
-  thead,
-  tbody,
-  tr {
+  .overflow-x-auto > table {
     display: table;
     width: 100%;
-    min-width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .overflow-x-auto > table th,
+  .overflow-x-auto > table td {
+    padding: 0.75rem 0.625rem !important;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    vertical-align: top;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .overflow-x-auto > table th:first-child,
+  .overflow-x-auto > table td:first-child {
+    width: 40%;
   }
 
   .grid > *,
@@ -777,6 +793,17 @@ details summary::-webkit-details-marker {
   .card-brand,
   .stat-card-hover {
     border-radius: 1.15rem;
+  }
+
+  .card-brand .flex.items-center.justify-between.bg-slate-50 {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .card-brand .flex.items-center.justify-between.bg-slate-50 > span:last-child {
+    display: inline-flex;
+    align-items: center;
   }
 
   .faq-item {

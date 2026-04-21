@@ -35,6 +35,7 @@ const CONFIG = {
   },
 };
 
+const PAGE_METADATA_PATH = '/data/page-metadata.json';
 const RESTAURANT_PAGES = new Set([
   'index',
   'uslugi',
@@ -67,6 +68,35 @@ function getCurrentPageSlug() {
   return (window.location.pathname.split('/').pop() || 'index.html').replace('.html', '');
 }
 
+function getCurrentPageFile() {
+  return window.location.pathname.split('/').pop() || 'index.html';
+}
+
+let pageMetadataPromise = null;
+
+async function loadCurrentPageMetadata() {
+  if (!pageMetadataPromise) {
+    pageMetadataPromise = (async () => {
+      const response = await fetch(PAGE_METADATA_PATH, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`page-metadata ${response.status}`);
+      }
+
+      const json = await response.json();
+      return json.pages?.[getCurrentPageFile()] ?? null;
+    })();
+  }
+
+  return pageMetadataPromise;
+}
+
+function inferBranchFromSlug() {
+  const page = getCurrentPageSlug();
+  if (HOUSEHOLD_PAGES.has(page)) return 'household';
+  if (RESTAURANT_PAGES.has(page)) return 'restaurant';
+  return 'restaurant';
+}
+
 function observeElements(selector, options, onIntersect) {
   const elements = document.querySelectorAll(selector);
   if (!elements.length) return;
@@ -82,11 +112,10 @@ function observeElements(selector, options, onIntersect) {
 }
 
 const Components = {
+  currentBranch: null,
+
   isBytovaya() {
-    const page = getCurrentPageSlug();
-    if (HOUSEHOLD_PAGES.has(page)) return true;
-    if (RESTAURANT_PAGES.has(page)) return false;
-    return false;
+    return (this.currentBranch || inferBranchFromSlug()) === 'household';
   },
 
   getBranchMeta() {
@@ -443,11 +472,19 @@ const Components = {
     return CONFIG.company.phoneLink;
   },
 
-  init() {
+  async init() {
     const header = document.getElementById('header-container');
     const footer = document.getElementById('footer-container');
     const phoneTargets = document.querySelectorAll('[data-company-phone]');
     const phoneLinks = document.querySelectorAll('[href="tel:79990057172"]');
+
+    try {
+      const pageMetadata = await loadCurrentPageMetadata();
+      this.currentBranch = pageMetadata?.branch || inferBranchFromSlug();
+    } catch (error) {
+      console.error('Page metadata unavailable:', error.message);
+      this.currentBranch = inferBranchFromSlug();
+    }
 
     if (header) header.innerHTML = this.getHeader();
     if (footer) footer.innerHTML = this.getFooter();
@@ -498,4 +535,6 @@ function initScrollReveal() {
   );
 }
 
-document.addEventListener('DOMContentLoaded', () => Components.init());
+document.addEventListener('DOMContentLoaded', () => {
+  void Components.init();
+});

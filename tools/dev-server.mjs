@@ -61,7 +61,12 @@ const server = http.createServer(async (req, res) => {
         ok: true,
         mocked: true,
         receivedAt: new Date().toISOString(),
-        messagePreview: String(body.message || '').slice(0, 200),
+        page: String(body.page || ''),
+        branch: String(body.branch || ''),
+        phone: String(body.phone || ''),
+        type: String(body.type || ''),
+        problemPreview: String(body.problem || '').slice(0, 200),
+        extraFields: body.extraFields && typeof body.extraFields === 'object' ? body.extraFields : {},
       };
       send(res, 200, JSON.stringify(payload, null, 2), 'application/json; charset=utf-8');
       return;

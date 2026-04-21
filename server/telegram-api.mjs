@@ -1,11 +1,21 @@
+import fs from 'fs';
 import http from 'http';
 import dns from 'dns';
 import https from 'https';
 import net from 'net';
+import path from 'path';
 import tls from 'tls';
+import { fileURLToPath } from 'url';
 import { URL } from 'url';
 
 dns.setDefaultResultOrder('ipv4first');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const SITE_ROOT = path.resolve(__dirname, '..');
+const PAGE_METADATA_PATH = path.join(SITE_ROOT, 'data/page-metadata.json');
+const PAGE_METADATA = JSON.parse(fs.readFileSync(PAGE_METADATA_PATH, 'utf8'));
+const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
 
 const PORT = Number(process.env.PORT || 3010);
 const HOST = process.env.HOST || '127.0.0.1';
@@ -14,11 +24,25 @@ const CHAT_ID = String(process.env.TELEGRAM_CHAT_ID || '').trim();
 const REQUEST_TIMEOUT_MS = Number(process.env.TELEGRAM_REQUEST_TIMEOUT_MS || 10000);
 const MAX_BODY_BYTES = Number(process.env.MAX_BODY_BYTES || 16 * 1024);
 const TELEGRAM_PROXY = String(process.env.TELEGRAM_PROXY || 'socks5h://127.0.0.1:58161').trim();
+const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 10 * 60 * 1000);
+const RATE_LIMIT_MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 3);
+const GLOBAL_RATE_LIMIT_WINDOW_MS = Number(process.env.GLOBAL_RATE_LIMIT_WINDOW_MS || 60 * 1000);
+const GLOBAL_RATE_LIMIT_MAX_REQUESTS = Number(process.env.GLOBAL_RATE_LIMIT_MAX_REQUESTS || 20);
+const MAX_NAME_LENGTH = 120;
+const MAX_TYPE_LENGTH = 200;
+const MAX_CONTEXT_LENGTH = 120;
+const MAX_EXTRA_FIELDS = 6;
+const MAX_EXTRA_FIELD_LENGTH = 200;
 
-function sendJson(res, status, payload) {
+const ipRateLimit = new Map();
+const globalRateLimit = new Map();
+
+function sendJson(res, status, payload, extraHeaders = {}) {
   res.writeHead(status, {
     'Content-Type': 'application/json; charset=utf-8',
     'Cache-Control': 'no-store',
+    'X-Content-Type-Options': 'nosniff',
+    ...extraHeaders,
   });
   res.end(JSON.stringify(payload));
 }
@@ -208,7 +232,6 @@ async function deliverToTelegram(message) {
   const requestBody = JSON.stringify({
     chat_id: CHAT_ID,
     text: message,
-    parse_mode: 'Markdown',
     disable_web_page_preview: true,
   });
 
@@ -229,6 +252,150 @@ async function deliverToTelegram(message) {
   return parsed.result?.message_id ?? null;
 }
 
+function isLoopbackAddress(address) {
+  return address === '127.0.0.1' || address === '::1' || address === '::ffff:127.0.0.1';
+}
+
+function getClientIp(req) {
+  const remoteAddress = req.socket.remoteAddress || '';
+  const forwarded = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+  if (forwarded && isLoopbackAddress(remoteAddress)) {
+    return forwarded;
+  }
+  return remoteAddress || 'unknown';
+}
+
+function consumeRateLimit(map, key, limit, windowMs, now) {
+  const recent = (map.get(key) || []).filter((timestamp) => now - timestamp < windowMs);
+  if (recent.length >= limit) {
+    map.set(key, recent);
+    return Math.max(1, Math.ceil((windowMs - (now - recent[0])) / 1000));
+  }
+
+  recent.push(now);
+  map.set(key, recent);
+  return 0;
+}
+
+function normalizePhone(value) {
+  return String(value || '').replace(/[^\d+]/g, '').trim();
+}
+
+function isValidPhone(value) {
+  const digits = String(value || '').replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 11;
+}
+
+function sanitizeString(value, maxLength) {
+  return String(value || '').trim().replace(/\s+/g, ' ').slice(0, maxLength);
+}
+
+function sanitizeExtraFields(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+
+  const entries = Object.entries(value).slice(0, MAX_EXTRA_FIELDS);
+  const sanitized = {};
+
+  for (const [key, rawValue] of entries) {
+    const safeKey = sanitizeString(key, 40);
+    const safeValue = sanitizeString(rawValue, MAX_EXTRA_FIELD_LENGTH);
+    if (!safeKey || !safeValue) continue;
+    sanitized[safeKey] = safeValue;
+  }
+
+  return sanitized;
+}
+
+function getSourceLabel(branch) {
+  if (branch === 'household') return 'B2C (Бытовая)';
+  if (branch === 'restaurant') return 'B2B (Рестораны)';
+  return 'Общий сайт';
+}
+
+function formatExtraFieldLabel(name) {
+  const labels = {
+    district: 'Район',
+  };
+
+  return labels[name] || name.replace(/[_-]+/g, ' ');
+}
+
+function buildTelegramMessage(submission) {
+  const lines = [
+    'Новая заявка с сайта MosPochin',
+    '',
+    `Источник: ${getSourceLabel(submission.branch)} (${submission.page})`,
+    `Телефон: ${submission.phone}`,
+    `Имя: ${submission.name || 'не указано'}`,
+    `Тип техники: ${submission.type || 'не указан'}`,
+    `Проблема: ${submission.problem || 'не указана'}`,
+  ];
+
+  if (submission.formContext) {
+    lines.push(`Контекст формы: ${submission.formContext}`);
+  }
+
+  for (const [name, value] of Object.entries(submission.extraFields)) {
+    lines.push(`${formatExtraFieldLabel(name)}: ${value}`);
+  }
+
+  lines.push('');
+  lines.push(`Время: ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}`);
+
+  return lines.join('\n');
+}
+
+function validateSubmission(body) {
+  const page = sanitizeString(body.page, 80);
+  const pageMetadata = PAGE_METADATA.pages?.[page] || null;
+  const branch = sanitizeString(body.branch, 20);
+  const name = sanitizeString(body.name, MAX_NAME_LENGTH);
+  const phone = normalizePhone(body.phone);
+  const type = sanitizeString(body.type, MAX_TYPE_LENGTH);
+  const problem = sanitizeString(body.problem, 500);
+  const formContext = sanitizeString(body.formContext, MAX_CONTEXT_LENGTH);
+  const website = sanitizeString(body.website, 80);
+  const extraFields = sanitizeExtraFields(body.extraFields);
+  const consent = body.consent === true;
+
+  if (website) {
+    return { error: 'spam_detected' };
+  }
+
+  if (!consent) {
+    return { error: 'consent_required' };
+  }
+
+  if (!page || !pageMetadata || pageMetadata.hasForm !== true) {
+    return { error: 'invalid_page' };
+  }
+
+  if (!VALID_BRANCHES.has(pageMetadata.branch)) {
+    return { error: 'invalid_page_branch' };
+  }
+
+  if (branch && branch !== pageMetadata.branch) {
+    return { error: 'branch_mismatch' };
+  }
+
+  if (!isValidPhone(phone)) {
+    return { error: 'invalid_phone' };
+  }
+
+  return {
+    submission: {
+      page,
+      branch: pageMetadata.branch,
+      name,
+      phone,
+      type,
+      problem,
+      formContext,
+      extraFields,
+    }
+  };
+}
+
 const server = http.createServer(async (req, res) => {
   try {
     if (!req.url) {
@@ -240,28 +407,70 @@ const server = http.createServer(async (req, res) => {
       sendJson(res, 200, {
         ok: true,
         service: 'mospochin-telegram-api',
-        credentialsConfigured: Boolean(BOT_TOKEN && CHAT_ID),
-        telegramProxyConfigured: Boolean(TELEGRAM_PROXY),
       });
       return;
     }
 
     if (req.method === 'POST' && req.url === '/api/send-telegram') {
-      const body = await readJsonBody(req);
-      const message = String(body.message || '').trim();
-
-      if (!message) {
-        sendJson(res, 400, { ok: false, error: 'message_required' });
+      const contentType = String(req.headers['content-type'] || '').toLowerCase();
+      if (!contentType.startsWith('application/json')) {
+        sendJson(res, 415, { ok: false, error: 'content_type_required' });
         return;
       }
 
-      if (message.length > 4000) {
-        sendJson(res, 400, { ok: false, error: 'message_too_long' });
+      const contentLength = Number(req.headers['content-length'] || 0);
+      if (Number.isFinite(contentLength) && contentLength > MAX_BODY_BYTES) {
+        sendJson(res, 413, { ok: false, error: 'payload_too_large' });
+        return;
+      }
+
+      const now = Date.now();
+      const clientIp = getClientIp(req);
+      const globalRetryAfter = consumeRateLimit(
+        globalRateLimit,
+        'global',
+        GLOBAL_RATE_LIMIT_MAX_REQUESTS,
+        GLOBAL_RATE_LIMIT_WINDOW_MS,
+        now
+      );
+
+      if (globalRetryAfter > 0) {
+        sendJson(
+          res,
+          429,
+          { ok: false, error: 'global_rate_limited' },
+          { 'Retry-After': String(globalRetryAfter) }
+        );
+        return;
+      }
+
+      const retryAfter = consumeRateLimit(
+        ipRateLimit,
+        clientIp,
+        RATE_LIMIT_MAX_REQUESTS,
+        RATE_LIMIT_WINDOW_MS,
+        now
+      );
+
+      if (retryAfter > 0) {
+        sendJson(
+          res,
+          429,
+          { ok: false, error: 'rate_limited' },
+          { 'Retry-After': String(retryAfter) }
+        );
+        return;
+      }
+
+      const body = await readJsonBody(req);
+      const validation = validateSubmission(body);
+      if (validation.error) {
+        sendJson(res, 400, { ok: false, error: validation.error });
         return;
       }
 
       try {
-        const messageId = await deliverToTelegram(message);
+        const messageId = await deliverToTelegram(buildTelegramMessage(validation.submission));
         sendJson(res, 200, {
           ok: true,
           delivered: true,
@@ -296,6 +505,11 @@ const server = http.createServer(async (req, res) => {
     });
   }
 });
+
+server.requestTimeout = REQUEST_TIMEOUT_MS;
+server.headersTimeout = REQUEST_TIMEOUT_MS + 1000;
+server.keepAliveTimeout = 5000;
+server.setTimeout(REQUEST_TIMEOUT_MS);
 
 server.listen(PORT, HOST, () => {
   console.log(`Mospochin telegram API listening on http://${HOST}:${PORT}`);

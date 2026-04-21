@@ -11,6 +11,34 @@ const TELEGRAM_API_SCRIPT = 'server/telegram-api.mjs';
 const TELEGRAM_API_UNIT = 'deploy/systemd/mospochin-telegram-api.service';
 const TELEGRAM_API_ENV_TEMPLATE = 'deploy/env/telegram.env.example';
 const TELEGRAM_API_HOOK = 'deploy/post-activate.sh';
+const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
+const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
+const LEGACY_FORM_FIELDS = ['message'];
+const EXPECTED_BRANCH_BY_PAGE = {
+  '404.html': 'neutral',
+  'about.html': 'restaurant',
+  'bytovaya-about.html': 'household',
+  'bytovaya-contact.html': 'household',
+  'bytovaya-index.html': 'household',
+  'bytovaya-uslugi.html': 'household',
+  'contact.html': 'restaurant',
+  'grili-mangaly.html': 'restaurant',
+  'holodilniki.html': 'household',
+  'holodilnoe-oborudovanie.html': 'restaurant',
+  'ice-machines.html': 'restaurant',
+  'index.html': 'restaurant',
+  'kompyutery.html': 'household',
+  'microwaves.html': 'household',
+  'parokonvektomaty.html': 'restaurant',
+  'plity.html': 'household',
+  'plity-pechi.html': 'restaurant',
+  'posudomoechnye-mashiny.html': 'restaurant',
+  'posudomoyki.html': 'household',
+  'routery.html': 'household',
+  'stiralnye-mashiny.html': 'household',
+  'uslugi.html': 'restaurant',
+  'water-heaters.html': 'household',
+};
 const metadata = JSON.parse(
   fs.readFileSync(path.join(SITE_ROOT, 'data/page-metadata.json'), 'utf8')
 );
@@ -31,6 +59,10 @@ function getMatch(html, regex) {
 
 function countNormalizedShellComments(html) {
   return (html.match(/<!--\s*Normalized layout shell:[\s\S]*?-->/gi) || []).length;
+}
+
+function countNamedFields(html, fieldName) {
+  return (html.match(new RegExp(`name="${fieldName}"`, 'g')) || []).length;
 }
 
 for (const [fileName, page] of Object.entries(metadata.pages)) {
@@ -60,6 +92,12 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
     html.match(/<script[^>]+src="(?:telegram-form\.js|assets\/js\/telegram-form\.js|\/assets\/js\/telegram-form\.js)"/g) || []
   ).length;
   const formCount = (html.match(/class="telegram-form\b/g) || []).length;
+  const canonicalFieldCounts = Object.fromEntries(
+    CANONICAL_FORM_FIELDS.map((fieldName) => [fieldName, countNamedFields(html, fieldName)])
+  );
+  const legacyFieldCounts = Object.fromEntries(
+    LEGACY_FORM_FIELDS.map((fieldName) => [fieldName, countNamedFields(html, fieldName)])
+  );
 
   if (title !== page.title) {
     errors.push(`${fileName}: title mismatch`);
@@ -75,6 +113,14 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
 
   if ((page.ogUrl ?? null) !== ogUrl) {
     errors.push(`${fileName}: og:url mismatch`);
+  }
+
+  if (!VALID_BRANCHES.has(page.branch)) {
+    errors.push(`${fileName}: branch must be one of ${Array.from(VALID_BRANCHES).join(', ')}`);
+  }
+
+  if (EXPECTED_BRANCH_BY_PAGE[fileName] && page.branch !== EXPECTED_BRANCH_BY_PAGE[fileName]) {
+    errors.push(`${fileName}: branch mismatch, expected ${EXPECTED_BRANCH_BY_PAGE[fileName]}`);
   }
 
   if (mainScriptCount !== 1) {
@@ -109,6 +155,20 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
 
   if (fileName === '404.html' && hardcodedPhoneLinks.length > 0) {
     errors.push('404.html: should not hardcode tel link, keep phone in shared main.js config');
+  }
+
+  if (page.hasForm) {
+    for (const [fieldName, count] of Object.entries(canonicalFieldCounts)) {
+      if (count === 0) {
+        errors.push(`${fileName}: form contract missing required field "${fieldName}"`);
+      }
+    }
+
+    for (const [fieldName, count] of Object.entries(legacyFieldCounts)) {
+      if (count > 0) {
+        errors.push(`${fileName}: form contract uses legacy field "${fieldName}"`);
+      }
+    }
   }
 }
 
