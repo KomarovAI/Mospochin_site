@@ -16,6 +16,7 @@ const SOURCE_EXTENSIONS = new Set(['.html', '.css', '.js']);
 const ALWAYS_INCLUDE = [
   '404.html',
   'data/page-metadata.json',
+  'data/household-services.json',
   'data/restaurant-branch.json',
   'data/runtime-config.json',
   'deploy/env/telegram.env.example',

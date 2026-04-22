@@ -14,6 +14,7 @@ const TELEGRAM_API_ENV_TEMPLATE = 'deploy/env/telegram.env.example';
 const TELEGRAM_API_HOOK = 'deploy/post-activate.sh';
 const RESTAURANT_BRANCH_DATA = 'data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_DATA = 'data/household-branch.json';
+const HOUSEHOLD_SERVICES_DATA = 'data/household-services.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
 const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
 const LEGACY_FORM_FIELDS = ['message'];
@@ -74,6 +75,10 @@ const householdBranchPath = path.join(SITE_ROOT, HOUSEHOLD_BRANCH_DATA);
 const householdBranch = fs.existsSync(householdBranchPath)
   ? JSON.parse(fs.readFileSync(householdBranchPath, 'utf8'))
   : null;
+const householdServicesPath = path.join(SITE_ROOT, HOUSEHOLD_SERVICES_DATA);
+const householdServicesRegistry = fs.existsSync(householdServicesPath)
+  ? JSON.parse(fs.readFileSync(householdServicesPath, 'utf8'))
+  : null;
 const sitemapXml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
 
 const errors = [];
@@ -96,6 +101,10 @@ function countNamedFields(html, fieldName) {
 
 function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
+}
+
+function isArrayOfNonEmptyStrings(value) {
+  return Array.isArray(value) && value.length > 0 && value.every((item) => isNonEmptyString(item));
 }
 
 function getBranchConfigForContract(contract) {
@@ -296,6 +305,169 @@ for (const fileName of htmlFiles) {
   }
 }
 
+function validateHouseholdServicesRegistry(registry) {
+  if (!registry || typeof registry !== 'object') {
+    errors.push(`${HOUSEHOLD_SERVICES_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!Array.isArray(registry.services) || registry.services.length === 0) {
+    errors.push(`${HOUSEHOLD_SERVICES_DATA}: services must be a non-empty array`);
+    return;
+  }
+
+  const expectedHouseholdServicePages = new Set(
+    Object.entries(metadata.pages)
+      .filter(([fileName, page]) => page.branch === 'household' && !fileName.startsWith('bytovaya-'))
+      .map(([fileName]) => fileName)
+  );
+  const branchVisiblePages = new Set([
+    ...(householdBranch?.services ?? []).map((service) => service.href),
+    ...(householdBranch?.footerLinks ?? []).map((link) => link.href),
+  ].filter((href) => isNonEmptyString(href) && href.endsWith('.html') && !href.startsWith('bytovaya-')));
+
+  const registryByPage = new Map();
+  const slugSet = new Set();
+
+  registry.services.forEach((service, index) => {
+    const context = `${HOUSEHOLD_SERVICES_DATA}: services[${index}]`;
+
+    if (!service || typeof service !== 'object') {
+      errors.push(`${context} must be an object`);
+      return;
+    }
+
+    for (const fieldName of ['page', 'slug', 'uiLabel', 'deviceName', 'serviceName', 'schemaName', 'formExample']) {
+      if (!isNonEmptyString(service[fieldName])) {
+        errors.push(`${context}.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    if (typeof service.isShadow !== 'boolean') {
+      errors.push(`${context}.isShadow must be a boolean`);
+    }
+
+    for (const fieldName of ['primarySymptoms', 'brandCluster', 'sectionIds']) {
+      if (!isArrayOfNonEmptyStrings(service[fieldName])) {
+        errors.push(`${context}.${fieldName} must be a non-empty array of strings`);
+      }
+    }
+
+    if (!Array.isArray(service.relatedPages) || !service.relatedPages.every((page) => isNonEmptyString(page))) {
+      errors.push(`${context}.relatedPages must be an array of non-empty strings`);
+    }
+
+    if (!isNonEmptyString(service.page)) {
+      return;
+    }
+
+    if (registryByPage.has(service.page)) {
+      errors.push(`${context}.page duplicates ${service.page}`);
+    } else {
+      registryByPage.set(service.page, service);
+    }
+
+    if (isNonEmptyString(service.slug)) {
+      if (slugSet.has(service.slug)) {
+        errors.push(`${context}.slug duplicates ${service.slug}`);
+      } else {
+        slugSet.add(service.slug);
+      }
+    }
+
+    if (!expectedHouseholdServicePages.has(service.page)) {
+      errors.push(`${context}.page must map to a household service page in data/page-metadata.json`);
+      return;
+    }
+
+    const pageMeta = metadata.pages[service.page];
+    if (!pageMeta || pageMeta.branch !== 'household') {
+      errors.push(`${context}.page must belong to the household branch`);
+    }
+
+    if (service.isShadow && !isNoindexPage(pageMeta)) {
+      errors.push(`${context}.page is shadow but metadata is not noindex`);
+    }
+
+    if (!service.isShadow && isNoindexPage(pageMeta)) {
+      errors.push(`${context}.page is visible in registry but metadata is noindex`);
+    }
+
+    const html = read(service.page);
+    const schemaName = getMatch(
+      html,
+      /"@type"\s*:\s*"Service"[\s\S]*?"name"\s*:\s*"([^"]+)"/i
+    );
+
+    if (!schemaName) {
+      errors.push(`${context}.page missing top-level Service JSON-LD name`);
+    } else if (schemaName !== service.schemaName) {
+      errors.push(`${context}.schemaName mismatch with ${service.page}`);
+    }
+
+    if (!html.includes('class="telegram-form')) {
+      errors.push(`${context}.page must include a .telegram-form`);
+    }
+
+    if (!html.includes('faq-item')) {
+      errors.push(`${context}.page must include FAQ items`);
+    }
+
+    if (!html.match(/<h1[\s>]/i)) {
+      errors.push(`${context}.page must include an h1`);
+    }
+
+    for (const sectionId of service.sectionIds ?? []) {
+      if (!html.includes(`<section id="${sectionId}"`)) {
+        errors.push(`${context}.sectionIds references missing section "${sectionId}"`);
+      }
+    }
+  });
+
+  for (const page of expectedHouseholdServicePages) {
+    if (!registryByPage.has(page)) {
+      errors.push(`${HOUSEHOLD_SERVICES_DATA}: missing registry entry for ${page}`);
+    }
+  }
+
+  registry.services.forEach((service, index) => {
+    const context = `${HOUSEHOLD_SERVICES_DATA}: services[${index}]`;
+    if (!Array.isArray(service.relatedPages)) return;
+
+    service.relatedPages.forEach((relatedPage, relatedIndex) => {
+      if (!expectedHouseholdServicePages.has(relatedPage)) {
+        errors.push(`${context}.relatedPages[${relatedIndex}] must target a household service page`);
+        return;
+      }
+
+      if (relatedPage === service.page) {
+        errors.push(`${context}.relatedPages[${relatedIndex}] must not point to itself`);
+      }
+
+      const relatedRegistry = registryByPage.get(relatedPage);
+      if (relatedRegistry && !service.isShadow && relatedRegistry.isShadow) {
+        errors.push(`${context}.relatedPages[${relatedIndex}] must not point visible pages to shadow pages`);
+      }
+    });
+
+    if (!service.isShadow && !branchVisiblePages.has(service.page)) {
+      errors.push(`${context}.page must be reachable from the household branch navigation sources`);
+    }
+  });
+
+  branchVisiblePages.forEach((page) => {
+    const registryService = registryByPage.get(page);
+    if (!registryService) {
+      errors.push(`${HOUSEHOLD_SERVICES_DATA}: household branch page ${page} missing in registry`);
+      return;
+    }
+
+    if (registryService.isShadow) {
+      errors.push(`${HOUSEHOLD_SERVICES_DATA}: visible household branch page ${page} must not be marked shadow`);
+    }
+  });
+}
+
 function validateBranchConfig(branchConfig, contract, expectedBranch) {
   if (!branchConfig) return;
 
@@ -423,6 +595,7 @@ function validateBranchConfig(branchConfig, contract, expectedBranch) {
 
 validateBranchConfig(restaurantBranch, BRANCH_ROUTE_STRIP_CONTRACTS.restaurant, 'restaurant');
 validateBranchConfig(householdBranch, BRANCH_ROUTE_STRIP_CONTRACTS.household, 'household');
+validateHouseholdServicesRegistry(householdServicesRegistry);
 
 const canonicalFormScriptPath = path.join(SITE_ROOT, CANONICAL_FORM_SCRIPT);
 const legacyFormScriptPath = path.join(SITE_ROOT, LEGACY_FORM_SCRIPT);
@@ -447,6 +620,10 @@ if (!fs.existsSync(restaurantBranchPath)) {
 
 if (!fs.existsSync(householdBranchPath)) {
   errors.push(`${HOUSEHOLD_BRANCH_DATA}: household branch config missing`);
+}
+
+if (!fs.existsSync(householdServicesPath)) {
+  errors.push(`${HOUSEHOLD_SERVICES_DATA}: household services registry missing`);
 }
 
 if (typeof runtimeConfig.telegramFormEndpoint !== 'string' || !runtimeConfig.telegramFormEndpoint.trim()) {

@@ -6,9 +6,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SITE_ROOT = path.resolve(__dirname, '..');
 const METADATA_PATH = path.join(SITE_ROOT, 'data/page-metadata.json');
+const HOUSEHOLD_SERVICES_PATH = path.join(SITE_ROOT, 'data/household-services.json');
 const SITEMAP_PATH = path.join(SITE_ROOT, 'sitemap.xml');
 
 const metadata = JSON.parse(fs.readFileSync(METADATA_PATH, 'utf8'));
+const householdServicesRegistry = JSON.parse(fs.readFileSync(HOUSEHOLD_SERVICES_PATH, 'utf8'));
+const householdServicePages = new Set(
+  (householdServicesRegistry.services || []).map((service) => service.page).filter(Boolean)
+);
 const today = new Date().toISOString().slice(0, 10);
 
 function isNoindex(page) {
@@ -17,17 +22,7 @@ function isNoindex(page) {
 
 function getPageGroup(fileName) {
   if (fileName.startsWith('bytovaya-')) return 'household-root';
-  if (
-    [
-      'holodilniki.html',
-      'stiralnye-mashiny.html',
-      'posudomoyki.html',
-      'kompyutery.html',
-      'routery.html',
-      'microwaves.html',
-      'water-heaters.html',
-    ].includes(fileName)
-  ) {
+  if (householdServicePages.has(fileName)) {
     return 'household-service';
   }
 
