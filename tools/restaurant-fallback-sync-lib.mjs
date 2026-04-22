@@ -10,7 +10,12 @@ import {
 } from './restaurant-authoring-lib.mjs';
 
 export const POLICY_PATH = path.join(SITE_ROOT, 'data/restaurant-page-policy.json');
-export const RESTAURANT_SYNC_ZONES = ['faq-items'];
+export const RESTAURANT_SYNC_ZONES = [
+  'request-overview',
+  'faq-items',
+  'service-proof',
+  'related-links',
+];
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -28,8 +33,56 @@ function markerEnd(zone) {
   return `<!-- sync:${zone}:end -->`;
 }
 
+function getToneClasses(tone) {
+  return (
+    {
+      orange: {
+        badge: 'bg-brand-orange/10 text-brand-orange',
+        border: 'border-brand-orange/20',
+        icon: 'text-brand-orange',
+      },
+      green: {
+        badge: 'bg-green-100 text-green-700',
+        border: 'border-green-200',
+        icon: 'text-green-600',
+      },
+      blue: {
+        badge: 'bg-brand-blue/10 text-brand-blue',
+        border: 'border-brand-blue/20',
+        icon: 'text-brand-blue',
+      },
+    }[tone] ?? {
+      badge: 'bg-slate-100 text-slate-700',
+      border: 'border-slate-200',
+      icon: 'text-slate-500',
+    }
+  );
+}
+
+function renderBadgeList(items, tone = 'orange') {
+  const toneClass =
+    {
+      orange: 'bg-brand-orange/10 text-brand-orange',
+      green: 'bg-green-100 text-green-700',
+      blue: 'bg-brand-blue/10 text-brand-blue',
+      slate: 'bg-slate-100 text-slate-700',
+    }[tone] ?? 'bg-slate-100 text-slate-700';
+
+  return (items || [])
+    .filter(Boolean)
+    .map(
+      (item) =>
+        `<span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium ${toneClass}">${escapeHtml(item)}</span>`
+    )
+    .join('');
+}
+
 function hasSyncZoneMarker(html, zone) {
   return html.includes(markerStart(zone)) && html.includes(markerEnd(zone));
+}
+
+function hasSyncZoneAttr(html, zone) {
+  return html.includes(`data-sync-zone="${zone}"`);
 }
 
 function extractSyncZoneContent(html, zone) {
@@ -53,11 +106,144 @@ function replaceSyncZoneContent(html, zone, content) {
 }
 
 function buildFaqMarkup(faq) {
-  return faq
-    .map(
-      (item, index) => `                <details class="faq-item bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>${escapeHtml(item.question)}</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p></details>`
-    )
-    .join('\n');
+  return (faq || [])
+  .map(
+    (item, index) => `                <details class="faq-item bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>${escapeHtml(item.question)}</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p></details>`
+  )
+  .join('\n');
+}
+
+function buildRequestOverview(service, slotEntry) {
+  const overview = slotEntry?.requestOverview;
+  const hintChips = Array.isArray(overview?.chips) ? overview.chips.filter(Boolean) : [];
+
+  return `<div data-sync-zone="request-overview" class="mb-6 rounded-3xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5 lg:p-6">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-green-700">${escapeHtml(
+          overview?.badge || 'Что полезно указать сразу'
+        )}</span>
+        ${renderBadgeList((service.primarySymptoms || []).slice(0, 2), 'slate')}
+      </div>
+      <h3 class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-brand-blue">${escapeHtml(
+        overview?.title || 'Чтобы быстрее понять сценарий по объекту'
+      )}</h3>
+      <p class="mt-3 text-slate-600">${escapeHtml(
+        overview?.description || 'Чем точнее описание модели и симптома, тем быстрее можно определить срочность и подготовить выезд.'
+      )}</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        ${renderBadgeList(hintChips, 'orange')}
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Пример описания: ${escapeHtml(service.formExample || '')}</p>
+    </div>`;
+}
+
+function buildSlaStrip(strip) {
+  if (!strip) return '';
+
+  return `<div class="rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm">
+      <div class="text-center">
+        <span class="inline-flex items-center rounded-full bg-green-100 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-green-700">${escapeHtml(
+          strip.badge || 'ПОНЯТНЫЙ СЦЕНАРИЙ'
+        )}</span>
+        <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(strip.title || '')}</h2>
+        <p class="mt-3 text-slate-600">${escapeHtml(strip.description || '')}</p>
+      </div>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        ${(strip.items || [])
+          .map((item) => {
+            const tone = getToneClasses(item.tone);
+            return `<article class="rounded-2xl border ${tone.border} bg-slate-50/80 p-5">
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] ${tone.icon}">${escapeHtml(item.label || '')}</p>
+              <p class="mt-3 text-2xl font-display font-extrabold text-brand-blue">${escapeHtml(item.value || '')}</p>
+              <p class="mt-3 text-sm text-slate-600">${escapeHtml(item.description || '')}</p>
+            </article>`;
+          })
+          .join('')}
+      </div>
+    </div>`;
+}
+
+function buildProofCards(section) {
+  if (!section) return '';
+
+  return `<div class="mt-8 rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm">
+      <div class="text-center">
+        <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-orange">${escapeHtml(
+          section.badge || 'Что важно до ремонта'
+        )}</span>
+        <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(section.title || '')}</h2>
+        <p class="mt-3 text-slate-600">${escapeHtml(section.description || '')}</p>
+      </div>
+      <div class="mt-8 grid gap-4 lg:grid-cols-3">
+        ${(section.cards || [])
+          .map((card) => {
+            const tone = getToneClasses(card.tone);
+            return `<article class="rounded-2xl border ${tone.border} bg-slate-50/80 p-5">
+              <div class="flex items-center justify-between gap-3">
+                <span class="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${tone.badge}">${escapeHtml(
+                  card.badge || 'Важно'
+                )}</span>
+                <i class="${escapeHtml(card.icon || 'ri-tools-line')} text-xl ${tone.icon}"></i>
+              </div>
+              <h3 class="mt-4 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(card.title || '')}</h3>
+              <p class="mt-3 text-slate-600">${escapeHtml(card.description || '')}</p>
+              <p class="mt-4 text-sm font-semibold text-slate-700">${escapeHtml(card.outcome || '')}</p>
+            </article>`;
+          })
+          .join('')}
+      </div>
+    </div>`;
+}
+
+function buildServiceProof(service, proofLayer) {
+  const defaults = proofLayer?.serviceDefaults;
+  if (!defaults) {
+    return '<section data-sync-zone="service-proof" class="py-16 lg:py-20 bg-white"></section>';
+  }
+
+  return `<section data-sync-zone="service-proof" class="py-16 lg:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        ${buildSlaStrip(defaults.slaStrip)}
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+          <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-3 py-1.5 text-sm font-semibold text-brand-blue">По категории ${escapeHtml(
+            service.uiLabel
+          )}</span>
+          ${renderBadgeList((service.primarySymptoms || []).slice(0, 3), 'slate')}
+        </div>
+        ${buildProofCards(defaults.proofCards)}
+      </div>
+    </section>`;
+}
+
+function buildRelatedLinks(service, registry) {
+  const serviceMap = new Map((registry?.services || []).map((entry) => [entry.page, entry]));
+  const related = (service.relatedPages || [])
+    .map((page) => serviceMap.get(page))
+    .filter((entry) => entry && !entry.isShadow);
+
+  return `<section data-sync-zone="related-links" class="py-16 lg:py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8 lg:p-10 shadow-sm">
+          <div class="text-center mb-8">
+            <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-blue">СОСЕДНИЕ КАТЕГОРИИ</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Если проблема в другом ресторанном оборудовании</h2>
+            <p class="mt-3 text-slate-600">Ниже ближайшие категории, которые чаще всего смотрят рядом с этой страницей.</p>
+          </div>
+          <div class="grid gap-4 lg:grid-cols-3">
+            ${related
+              .map(
+                (entry) => `<a href="${entry.page}" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md">
+                  <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По ресторанной категории</p>
+                  <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(entry.uiLabel)}</h3>
+                  <p class="mt-3 text-sm text-slate-600">${escapeHtml((entry.primarySymptoms || []).slice(0, 3).join(', '))}</p>
+                  <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
+                </a>`
+              )
+              .join('')}
+          </div>
+        </div>
+      </div>
+    </section>`;
 }
 
 function replaceInputPlaceholder(html, fieldName, placeholder) {
@@ -104,20 +290,30 @@ function buildServiceSchema({ pageMeta, service }) {
           "@type": "PostalAddress",
           "addressLocality": "Москва",
           "addressCountry": "RU"
-        }
+        },
+        "openingHours": "Mo-Su 00:00-24:00"
       },
       "areaServed": {
-        "@type": "City",
-        "name": "Москва"
+        "@type": "AdministrativeArea",
+        "name": "Москва и Московская область"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "RUB",
+        "price": "По согласованию после диагностики",
+        "availability": "https://schema.org/InStock"
       }
     }`;
 }
 
-function buildSyncPayload({ pageMeta, service, slotEntry }) {
+function buildSyncPayload({ pageMeta, service, slotEntry, registry, proofLayer }) {
   return {
     schema: buildServiceSchema({ pageMeta, service }),
     zones: {
+      'request-overview': buildRequestOverview(service, slotEntry),
       'faq-items': buildFaqMarkup(slotEntry.faq || []),
+      'service-proof': buildServiceProof(service, proofLayer),
+      'related-links': buildRelatedLinks(service, registry),
     },
     placeholders: {
       type: slotEntry.formHints?.typePlaceholder ?? '',
@@ -140,8 +336,8 @@ export function getPublicRestaurantServices(registry) {
   return (registry?.services || []).filter((entry) => !entry.isShadow);
 }
 
-export function analyzeRestaurantSyncState(html, { pageMeta, service, slotEntry }) {
-  const expected = buildSyncPayload({ pageMeta, service, slotEntry });
+export function analyzeRestaurantSyncState(html, { pageMeta, service, slotEntry, registry, proofLayer }) {
+  const expected = buildSyncPayload({ pageMeta, service, slotEntry, registry, proofLayer });
   const issues = [];
 
   const schemaContent = extractServiceSchemaContent(html);
@@ -154,6 +350,10 @@ export function analyzeRestaurantSyncState(html, { pageMeta, service, slotEntry 
   for (const zone of RESTAURANT_SYNC_ZONES) {
     if (!hasSyncZoneMarker(html, zone)) {
       issues.push(`Missing sync marker block for ${zone}`);
+      continue;
+    }
+    if (!hasSyncZoneAttr(html, zone)) {
+      issues.push(`Missing data-sync-zone="${zone}"`);
       continue;
     }
     const actualContent = extractSyncZoneContent(html, zone);
@@ -181,7 +381,9 @@ export function analyzeRestaurantSyncState(html, { pageMeta, service, slotEntry 
 export function syncRestaurantServiceHtml(html, context) {
   const { expected } = analyzeRestaurantSyncState(html, context);
   let nextHtml = replaceServiceSchemaContent(html, expected.schema);
-  nextHtml = replaceSyncZoneContent(nextHtml, 'faq-items', expected.zones['faq-items']);
+  for (const zone of RESTAURANT_SYNC_ZONES) {
+    nextHtml = replaceSyncZoneContent(nextHtml, zone, expected.zones[zone]);
+  }
   nextHtml = replaceInputPlaceholder(nextHtml, 'type', expected.placeholders.type);
   nextHtml = replaceInputPlaceholder(nextHtml, 'problem', expected.placeholders.problem);
   return nextHtml.replace(/[ \t]+$/gm, '');

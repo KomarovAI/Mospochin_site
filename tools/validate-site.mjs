@@ -1904,6 +1904,20 @@ function validateRestaurantPageSlots(slots, registry) {
       });
     }
 
+    if (!isPlainObject(slotEntry.requestOverview)) {
+      errors.push(`${context}.requestOverview must be an object`);
+    } else {
+      for (const fieldName of ['badge', 'title', 'description']) {
+        if (!isNonEmptyString(slotEntry.requestOverview[fieldName])) {
+          errors.push(`${context}.requestOverview.${fieldName} must be a non-empty string`);
+        }
+      }
+
+      if (!isArrayOfNonEmptyStrings(slotEntry.requestOverview.chips)) {
+        errors.push(`${context}.requestOverview.chips must be a non-empty array of strings`);
+      }
+    }
+
     for (const className of restaurantPagePolicy?.publicPage?.requiredBodyClasses ?? []) {
       if (!bodyClasses.has(className)) {
         errors.push(`${service.page}: missing body class ${className}`);
@@ -1966,6 +1980,8 @@ function validateRestaurantPageSlots(slots, registry) {
       pageMeta: metadata.pages[service.page],
       service,
       slotEntry,
+      registry: restaurantServicesRegistry,
+      proofLayer: restaurantProofLayer,
     });
 
     for (const issue of syncState.issues) {

@@ -96,7 +96,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
 
   if (pageType === 'restaurant-service-page' && registryEntry) {
     return {
-      slots: `Edit data/restaurant-page-slots.json for ${page} form hints and future service slots`,
+      slots: `Edit data/restaurant-page-slots.json for ${page} form hints, FAQ, and request overview`,
       registry: `Edit data/restaurant-services.json for ${page} symptoms, brands, related pages, and service identity`,
       proof: 'Edit data/restaurant-proof-layer.json for shared restaurant proof defaults',
       metadata: `Edit data/page-metadata.json for ${page} SEO and canonical metadata`,
@@ -194,6 +194,23 @@ function runRestaurantDoctor(page) {
             }
           }
         }
+      } else if (fieldName === 'faq') {
+        if (!Array.isArray(slotEntry?.faq) || slotEntry.faq.length === 0) {
+          issues.push('Slot entry missing faq');
+        }
+      } else if (fieldName === 'requestOverview') {
+        if (!slotEntry?.requestOverview || typeof slotEntry.requestOverview !== 'object') {
+          issues.push('Slot entry missing requestOverview');
+        } else {
+          for (const overviewFieldName of ['badge', 'title', 'description']) {
+            if (!isNonEmptyString(slotEntry.requestOverview[overviewFieldName])) {
+              issues.push(`requestOverview.${overviewFieldName} must be a non-empty string`);
+            }
+          }
+          if (!Array.isArray(slotEntry.requestOverview.chips) || slotEntry.requestOverview.chips.length === 0) {
+            issues.push('requestOverview.chips must be a non-empty array');
+          }
+        }
       }
     }
 
@@ -206,6 +223,12 @@ function runRestaurantDoctor(page) {
     for (const sectionId of policy.publicPage?.requiredSectionIds ?? []) {
       if (!html.includes(`<section id="${sectionId}"`)) {
         issues.push(`Missing section id ${sectionId}`);
+      }
+    }
+
+    for (const zone of policy.publicPage?.requiredSyncZones ?? []) {
+      if (!html.includes(`data-sync-zone="${zone}"`)) {
+        issues.push(`Missing data-sync-zone="${zone}"`);
       }
     }
 
@@ -259,12 +282,20 @@ function runRestaurantDoctor(page) {
           hasFormHints: Boolean(slotEntry.formHints),
           hasFaq: Array.isArray(slotEntry.faq) && slotEntry.faq.length > 0,
           chipCount: slotEntry.formHints?.chips?.length ?? 0,
+          hasRequestOverview: Boolean(slotEntry.requestOverview),
+          requestOverviewChips: slotEntry.requestOverview?.chips?.length ?? 0,
         }
       : null,
     proofLayer: pageType === 'restaurant-service-page'
       ? {
           hasSlaStrip: Boolean(proof.serviceDefaults?.slaStrip),
           hasProofCards: Boolean(proof.serviceDefaults?.proofCards),
+        }
+      : null,
+    syncCoverage: pageType === 'restaurant-service-page'
+      ? {
+          zones: policy.publicPage?.requiredSyncZones ?? [],
+          ready: (policy.publicPage?.requiredSyncZones ?? []).every((zone) => html.includes(`data-sync-zone="${zone}"`)),
         }
       : null,
     bodyClasses: Array.from(bodyClasses),
@@ -280,7 +311,11 @@ try {
   const branch = metadata.pages?.[page]?.branch ?? null;
 
   if (branch === 'household') {
-    passthroughHouseholdDoctor(page, Boolean(args.json));
+    const summary = passthroughHouseholdDoctor(page, Boolean(args.json));
+    if (args.json) {
+      console.log(JSON.stringify(summary, null, 2));
+    }
+    process.exit(0);
   }
 
   const summary = runRestaurantDoctor(page);
@@ -297,7 +332,9 @@ try {
     console.log(`- taxonomy: ${summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'n/a'}`);
     console.log(
       `- slots: ${
-        summary.slots ? `ok (formHints=${summary.slots.hasFormHints ? 'yes' : 'no'}, faq=${summary.slots.hasFaq ? 'yes' : 'no'}, chips=${summary.slots.chipCount})` : 'n/a'
+        summary.slots
+          ? `ok (formHints=${summary.slots.hasFormHints ? 'yes' : 'no'}, faq=${summary.slots.hasFaq ? 'yes' : 'no'}, requestOverview=${summary.slots.hasRequestOverview ? 'yes' : 'no'}, chips=${summary.slots.chipCount})`
+          : 'n/a'
       }`
     );
     if (summary.proofLayer) {
@@ -308,6 +345,9 @@ try {
             : 'missing service defaults'
         }`
       );
+    }
+    if (summary.syncCoverage) {
+      console.log(`- sync coverage: ${summary.syncCoverage.ready ? 'ok' : 'incomplete'} (${summary.syncCoverage.zones.join(', ')})`);
     }
     if (summary.recommendedEditSurface) {
       console.log('- recommended edit surface:');

@@ -13,6 +13,9 @@ const SITE_CONFIG = {
 const PAGE_METADATA_PATH = '/data/page-metadata.json';
 const RESTAURANT_BRANCH_PATH = '/data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_PATH = '/data/household-branch.json';
+const RESTAURANT_SERVICES_PATH = '/data/restaurant-services.json';
+const RESTAURANT_PAGE_SLOTS_PATH = '/data/restaurant-page-slots.json';
+const RESTAURANT_PROOF_LAYER_PATH = '/data/restaurant-proof-layer.json';
 const HOUSEHOLD_SERVICES_PATH = '/data/household-services.json';
 const HOUSEHOLD_PAGE_SLOTS_PATH = '/data/household-page-slots.json';
 const HOUSEHOLD_CARD_PRESETS_PATH = '/data/household-card-presets.json';
@@ -206,6 +209,9 @@ function toBodyPageClass(value) {
 let pageMetadataPromise = null;
 let restaurantBranchPromise = null;
 let householdBranchPromise = null;
+let restaurantServicesPromise = null;
+let restaurantPageSlotsPromise = null;
+let restaurantProofLayerPromise = null;
 let householdServicesPromise = null;
 let householdPageSlotsPromise = null;
 let householdCardPresetsPromise = null;
@@ -259,6 +265,51 @@ async function loadHouseholdBranchConfig() {
   }
 
   return householdBranchPromise;
+}
+
+async function loadRestaurantServicesRegistry() {
+  if (!restaurantServicesPromise) {
+    restaurantServicesPromise = (async () => {
+      try {
+        return await loadJson(RESTAURANT_SERVICES_PATH);
+      } catch (error) {
+        console.error('Restaurant services registry unavailable:', error.message);
+        return { services: [] };
+      }
+    })();
+  }
+
+  return restaurantServicesPromise;
+}
+
+async function loadRestaurantPageSlots() {
+  if (!restaurantPageSlotsPromise) {
+    restaurantPageSlotsPromise = (async () => {
+      try {
+        return await loadJson(RESTAURANT_PAGE_SLOTS_PATH);
+      } catch (error) {
+        console.error('Restaurant page slots unavailable:', error.message);
+        return { pages: {} };
+      }
+    })();
+  }
+
+  return restaurantPageSlotsPromise;
+}
+
+async function loadRestaurantProofLayer() {
+  if (!restaurantProofLayerPromise) {
+    restaurantProofLayerPromise = (async () => {
+      try {
+        return await loadJson(RESTAURANT_PROOF_LAYER_PATH);
+      } catch (error) {
+        console.error('Restaurant proof layer unavailable:', error.message);
+        return { serviceDefaults: {} };
+      }
+    })();
+  }
+
+  return restaurantProofLayerPromise;
 }
 
 async function loadHouseholdServicesRegistry() {
@@ -1392,6 +1443,305 @@ const Components = {
     `;
   },
 
+  renderRestaurantBadgeList(items, tone = 'orange') {
+    const toneClasses = {
+      orange: 'bg-brand-orange/10 text-brand-orange',
+      green: 'bg-green-100 text-green-700',
+      blue: 'bg-brand-blue/10 text-brand-blue',
+      slate: 'bg-slate-100 text-slate-700',
+    };
+    const className = toneClasses[tone] || toneClasses.slate;
+
+    return (items || [])
+      .filter(Boolean)
+      .map(
+        (item) =>
+          `<span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium ${className}">${escapeHtml(item)}</span>`
+      )
+      .join('');
+  },
+
+  renderRestaurantRequestOverview(service, slotEntry) {
+    const overview = slotEntry?.requestOverview || {};
+    const chips = Array.isArray(overview.chips) ? overview.chips.filter(Boolean) : [];
+
+    return `
+      <div data-sync-zone="request-overview" class="mb-6 rounded-3xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5 lg:p-6">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-green-700">${escapeHtml(
+            overview.badge || 'Что полезно указать сразу'
+          )}</span>
+          ${this.renderRestaurantBadgeList((service.primarySymptoms || []).slice(0, 2), 'slate')}
+        </div>
+        <h3 class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-brand-blue">${escapeHtml(
+          overview.title || 'Чтобы быстрее понять сценарий по объекту'
+        )}</h3>
+        <p class="mt-3 text-slate-600">${escapeHtml(
+          overview.description || 'Чем точнее описание модели и симптома, тем быстрее можно оценить срочность выезда.'
+        )}</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          ${this.renderRestaurantBadgeList(chips, 'orange')}
+        </div>
+        <p class="mt-4 text-xs text-slate-500">Пример описания: ${escapeHtml(service.formExample || '')}</p>
+      </div>
+    `;
+  },
+
+  renderRestaurantSlaStrip(strip) {
+    if (!strip) return '';
+
+    const items = Array.isArray(strip.items) ? strip.items : [];
+    return `
+      <div class="rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm">
+        <div class="text-center">
+          <span class="inline-flex items-center rounded-full bg-green-100 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-green-700">${escapeHtml(
+            strip.badge || 'ПОНЯТНЫЙ СЦЕНАРИЙ'
+          )}</span>
+          <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(strip.title || '')}</h2>
+          <p class="mt-3 text-slate-600">${escapeHtml(strip.description || '')}</p>
+        </div>
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          ${items
+            .map((item) => {
+              const iconClass =
+                {
+                  orange: 'text-brand-orange border-brand-orange/20',
+                  green: 'text-green-600 border-green-200',
+                  blue: 'text-brand-blue border-brand-blue/20',
+                }[item.tone] || 'text-slate-500 border-slate-200';
+              return `
+                <article class="rounded-2xl border ${iconClass.split(' ')[1]} bg-slate-50/80 p-5">
+                  <p class="text-sm font-semibold uppercase tracking-[0.16em] ${iconClass.split(' ')[0]}">${escapeHtml(item.label || '')}</p>
+                  <p class="mt-3 text-2xl font-display font-extrabold text-brand-blue">${escapeHtml(item.value || '')}</p>
+                  <p class="mt-3 text-sm text-slate-600">${escapeHtml(item.description || '')}</p>
+                </article>
+              `;
+            })
+            .join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  renderRestaurantProofCards(cards) {
+    return (cards || [])
+      .map((card) => {
+        const tone =
+          {
+            orange: 'bg-brand-orange/10 text-brand-orange border-brand-orange/20',
+            green: 'bg-green-100 text-green-700 border-green-200',
+            blue: 'bg-brand-blue/10 text-brand-blue border-brand-blue/20',
+          }[card.tone] || 'bg-slate-100 text-slate-700 border-slate-200';
+        const [badgeClass, textClass, borderClass] = tone.split(' ');
+        return `
+          <article class="rounded-2xl border ${borderClass} bg-slate-50/80 p-5">
+            <div class="flex items-center justify-between gap-3">
+              <span class="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${badgeClass} ${textClass}">${escapeHtml(
+                card.badge || 'Важно'
+              )}</span>
+              <i class="${escapeHtml(card.icon || 'ri-tools-line')} text-xl ${textClass}"></i>
+            </div>
+            <h3 class="mt-4 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(card.title || '')}</h3>
+            <p class="mt-3 text-slate-600">${escapeHtml(card.description || '')}</p>
+            <p class="mt-4 text-sm font-semibold text-slate-700">${escapeHtml(card.outcome || '')}</p>
+          </article>
+        `;
+      })
+      .join('');
+  },
+
+  hydrateRestaurantServiceSchema(service, pageMetadata) {
+    const schemaScript = document.querySelector('script[data-slot="service-schema"]');
+    if (!schemaScript || !service) return;
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: service.schemaName,
+      description: pageMetadata?.description || `${service.serviceName} с выездом на объект в Москве и МО.`,
+      provider: {
+        '@type': 'LocalBusiness',
+        name: SITE_CONFIG.company.name,
+        telephone: `+${SITE_CONFIG.company.phoneLink}`,
+        url: 'https://mospochin.ru',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Москва',
+          addressCountry: 'RU',
+        },
+        openingHours: 'Mo-Su 00:00-24:00',
+      },
+      areaServed: {
+        '@type': 'AdministrativeArea',
+        name: 'Москва и Московская область',
+      },
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'RUB',
+        price: 'По согласованию после диагностики',
+        availability: 'https://schema.org/InStock',
+      },
+    };
+
+    schemaScript.textContent = JSON.stringify(schema, null, 2);
+  },
+
+  hydrateRestaurantRequestForm(service, slotEntry) {
+    const form = document.querySelector('form.telegram-form[data-slot="request-form"], form.telegram-form');
+    if (!form || !service || !slotEntry?.formHints) return null;
+
+    const typeInput = form.querySelector('input[name="type"]');
+    const problemInput = form.querySelector('input[name="problem"]');
+
+    if (typeInput && slotEntry.formHints.typePlaceholder) {
+      typeInput.setAttribute('placeholder', slotEntry.formHints.typePlaceholder);
+    }
+
+    if (problemInput && slotEntry.formHints.problemPlaceholder) {
+      problemInput.setAttribute('placeholder', slotEntry.formHints.problemPlaceholder);
+    }
+
+    let slotZone = form.querySelector('[data-sync-zone="request-overview"]');
+    if (!slotZone) {
+      slotZone = document.createElement('div');
+      form.insertBefore(slotZone, form.firstElementChild);
+    }
+
+    slotZone.outerHTML = this.renderRestaurantRequestOverview(service, slotEntry);
+    return form;
+  },
+
+  hydrateRestaurantFaq(slotEntry) {
+    const faqZone = document.querySelector('[data-sync-zone="faq-items"]');
+    if (!faqZone || !Array.isArray(slotEntry?.faq)) return;
+
+    faqZone.innerHTML = slotEntry.faq
+      .map(
+        (item, index) => `
+          <details class="faq-item bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}">
+            <summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between">
+              <span>${escapeHtml(item.question)}</span>
+              <span class="text-brand-orange transition-transform duration-300">+</span>
+            </summary>
+            <p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p>
+          </details>
+        `
+      )
+      .join('');
+  },
+
+  hydrateRestaurantServiceProofLayer(service, proofLayer, anchorForm) {
+    const defaults = proofLayer?.serviceDefaults;
+    if (!defaults || !anchorForm) return;
+
+    let proofSection = document.querySelector('[data-sync-zone="service-proof"]');
+    if (!proofSection) {
+      proofSection = document.createElement('section');
+      anchorForm.closest('section')?.insertAdjacentElement('afterend', proofSection);
+    }
+
+    proofSection.outerHTML = `
+      <section data-sync-zone="service-proof" class="py-16 lg:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          ${this.renderRestaurantSlaStrip(defaults.slaStrip)}
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-3 py-1.5 text-sm font-semibold text-brand-blue">По категории ${escapeHtml(
+              service.uiLabel
+            )}</span>
+            ${this.renderRestaurantBadgeList((service.primarySymptoms || []).slice(0, 3), 'slate')}
+          </div>
+          <div class="mt-8 rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm">
+            <div class="text-center">
+              <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-orange">${escapeHtml(
+                defaults.proofCards?.badge || 'Что важно до ремонта'
+              )}</span>
+              <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(
+                defaults.proofCards?.title || ''
+              )}</h2>
+              <p class="mt-3 text-slate-600">${escapeHtml(defaults.proofCards?.description || '')}</p>
+            </div>
+            <div class="mt-8 grid gap-4 lg:grid-cols-3">
+              ${this.renderRestaurantProofCards(defaults.proofCards?.cards || [])}
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  },
+
+  hydrateRestaurantRelatedLinks(service, serviceMap, anchorForm) {
+    if (!service || !anchorForm) return;
+
+    const relatedServices = (service.relatedPages || [])
+      .map((page) => serviceMap.get(page))
+      .filter((entry) => entry && !entry.isShadow);
+
+    let relatedSection = document.querySelector('[data-sync-zone="related-links"]');
+    if (!relatedSection) {
+      relatedSection = document.createElement('section');
+      const proofSection = document.querySelector('[data-sync-zone="service-proof"]');
+      if (proofSection) {
+        proofSection.insertAdjacentElement('afterend', relatedSection);
+      } else {
+        anchorForm.closest('section')?.insertAdjacentElement('afterend', relatedSection);
+      }
+    }
+
+    relatedSection.outerHTML = `
+      <section data-sync-zone="related-links" class="py-16 lg:py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8 lg:p-10 shadow-sm">
+            <div class="text-center mb-8">
+              <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-blue">СОСЕДНИЕ КАТЕГОРИИ</span>
+              <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Если проблема в другом ресторанном оборудовании</h2>
+              <p class="mt-3 text-slate-600">Ниже ближайшие категории, которые чаще всего смотрят рядом с этой страницей.</p>
+            </div>
+            <div class="grid gap-4 lg:grid-cols-3">
+              ${relatedServices
+                .map(
+                  (entry) => `
+                    <a href="${entry.page}" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md">
+                      <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По ресторанной категории</p>
+                      <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(entry.uiLabel)}</h3>
+                      <p class="mt-3 text-sm text-slate-600">${escapeHtml((entry.primarySymptoms || []).slice(0, 3).join(', '))}</p>
+                      <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
+                    </a>
+                  `
+                )
+                .join('')}
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  },
+
+  async initRestaurantServiceSlots() {
+    const currentPage = getCurrentPageFile();
+    if (this.isBytovaya()) return;
+    if (['index.html', 'uslugi.html', 'about.html', 'contact.html'].includes(currentPage)) return;
+
+    const [pageMetadata, serviceRegistry, pageSlots, proofLayer] = await Promise.all([
+      loadCurrentPageMetadata(),
+      loadRestaurantServicesRegistry(),
+      loadRestaurantPageSlots(),
+      loadRestaurantProofLayer(),
+    ]);
+
+    const services = Array.isArray(serviceRegistry?.services) ? serviceRegistry.services : [];
+    const serviceMap = new Map(services.map((entry) => [entry.page, entry]));
+    const service = services.find((entry) => entry.page === currentPage && !entry.isShadow);
+    const slotEntry = pageSlots?.pages?.[currentPage];
+
+    if (!service || !slotEntry) return;
+
+    const anchorForm = this.hydrateRestaurantRequestForm(service, slotEntry);
+    this.hydrateRestaurantServiceSchema(service, pageMetadata);
+    this.hydrateRestaurantFaq(slotEntry);
+    this.hydrateRestaurantServiceProofLayer(service, proofLayer, anchorForm);
+    this.hydrateRestaurantRelatedLinks(service, serviceMap, anchorForm);
+  },
+
   applyPageIdentityClasses() {
     const currentPage = getCurrentPageFile();
     const currentSlug = toBodyPageClass(getCurrentPageSlug());
@@ -1481,6 +1831,7 @@ const Components = {
     });
     this.initBranchRouteStrips();
     await this.initHouseholdServiceSlots();
+    await this.initRestaurantServiceSlots();
 
     window.setTimeout(() => {
       this.initMobileMenu();

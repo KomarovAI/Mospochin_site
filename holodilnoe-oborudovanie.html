@@ -39,11 +39,18 @@
           "@type": "PostalAddress",
           "addressLocality": "Москва",
           "addressCountry": "RU"
-        }
+        },
+        "openingHours": "Mo-Su 00:00-24:00"
       },
       "areaServed": {
-        "@type": "City",
-        "name": "Москва"
+        "@type": "AdministrativeArea",
+        "name": "Москва и Московская область"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "RUB",
+        "price": "По согласованию после диагностики",
+        "availability": "https://schema.org/InStock"
       }
     }
     </script>
@@ -1060,6 +1067,20 @@
                     <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Укажите тип оборудования и симптом. Мы быстро перезвоним, уточним температуру, ошибку или поведение техники и подскажем ближайший сценарий ремонта.</p>
             </div>
             <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form">
+<!-- sync:request-overview:start -->
+<div data-sync-zone="request-overview" class="mb-6 rounded-3xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5 lg:p-6">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-green-700">ЧТО ПОЛЕЗНО УКАЗАТЬ СРАЗУ</span>
+        <span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">не морозит</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">температура растет</span>
+      </div>
+      <h3 class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-brand-blue">Чтобы быстро понять риск для смены</h3>
+      <p class="mt-3 text-slate-600">По холоду важно сразу назвать тип оборудования, текущую температуру и есть ли уже потеря продукта.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Тип оборудования и температура</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Есть ли риск по продукту</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Нужен ли срочный выезд</span>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Пример описания: Холодильный шкаф Polair ШХ-1.0 не морозит, температура +15°C, кафе на Арбате, нужен срочный выезд</p>
+    </div>
+<!-- sync:request-overview:end -->
                 <div class="grid md:grid-cols-2 gap-4 mb-4 sm:gap-6 sm:mb-6">
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label>
@@ -1087,6 +1108,103 @@
             </form>
         </div>
     </section>
+<!-- sync:service-proof:start -->
+<section data-sync-zone="service-proof" class="py-16 lg:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm">
+      <div class="text-center">
+        <span class="inline-flex items-center rounded-full bg-green-100 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-green-700">ПОНЯТНЫЙ СЦЕНАРИЙ</span>
+        <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Что фиксируем до начала работ на объекте</h2>
+        <p class="mt-3 text-slate-600">Для ресторанной ветки важны не общие обещания, а скорость реакции, решение по смене и понятный порядок работ на кухне.</p>
+      </div>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <article class="rounded-2xl border border-brand-orange/20 bg-slate-50/80 p-5">
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-orange">Средний выезд по Москве</p>
+              <p class="mt-3 text-2xl font-display font-extrabold text-brand-blue">45 мин</p>
+              <p class="mt-3 text-sm text-slate-600">Если задача аварийная и адрес в зоне быстрого покрытия.</p>
+            </article><article class="rounded-2xl border border-brand-blue/20 bg-slate-50/80 p-5">
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-brand-blue">Цена после диагностики</p>
+              <p class="mt-3 text-2xl font-display font-extrabold text-brand-blue">до ремонта</p>
+              <p class="mt-3 text-sm text-slate-600">Сначала причина и смета, потом работы.</p>
+            </article><article class="rounded-2xl border border-green-200 bg-slate-50/80 p-5">
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-green-600">Гарантия на работы</p>
+              <p class="mt-3 text-2xl font-display font-extrabold text-brand-blue">24 мес</p>
+              <p class="mt-3 text-sm text-slate-600">Фиксируем результат документами.</p>
+            </article>
+      </div>
+    </div>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+          <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-3 py-1.5 text-sm font-semibold text-brand-blue">По категории Холодильное оборудование</span>
+          <span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">не морозит</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">температура растет</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">ошибка контроллера</span>
+        </div>
+        <div class="mt-8 rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm">
+      <div class="text-center">
+        <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-orange">ПОЧЕМУ ЭТО СПОКОЙНЕЕ</span>
+        <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Что важно ресторану до ремонта, а не после красивых обещаний</h2>
+        <p class="mt-3 text-slate-600">Нужен не общий маркетинг, а внятный порядок: реакция, диагноз, смета, решение по смене и документы после работ.</p>
+      </div>
+      <div class="mt-8 grid gap-4 lg:grid-cols-3">
+        <article class="rounded-2xl border border-brand-blue/20 bg-slate-50/80 p-5">
+              <div class="flex items-center justify-between gap-3">
+                <span class="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] bg-brand-blue/10 text-brand-blue">По смене</span>
+                <i class="ri-time-line text-xl text-brand-blue"></i>
+              </div>
+              <h3 class="mt-4 text-xl font-display font-extrabold text-brand-blue">Сначала понимаем, критичен ли простой</h3>
+              <p class="mt-3 text-slate-600">Сразу уточняем, что стоит: вся кухня, одна линия или один аппарат, и от этого строим порядок выезда.</p>
+              <p class="mt-4 text-sm font-semibold text-slate-700">Меньше хаоса на объекте</p>
+            </article><article class="rounded-2xl border border-brand-orange/20 bg-slate-50/80 p-5">
+              <div class="flex items-center justify-between gap-3">
+                <span class="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] bg-brand-orange/10 text-brand-orange">По смете</span>
+                <i class="ri-wallet-3-line text-xl text-brand-orange"></i>
+              </div>
+              <h3 class="mt-4 text-xl font-display font-extrabold text-brand-blue">Стоимость до начала работ</h3>
+              <p class="mt-3 text-slate-600">После диагностики называем цену и только потом начинаем ремонт. Без «сейчас вскроем, а дальше посмотрим».</p>
+              <p class="mt-4 text-sm font-semibold text-slate-700">Понятное решение для управляющего</p>
+            </article><article class="rounded-2xl border border-green-200 bg-slate-50/80 p-5">
+              <div class="flex items-center justify-between gap-3">
+                <span class="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] bg-green-100 text-green-700">По документам</span>
+                <i class="ri-file-paper-2-line text-xl text-green-600"></i>
+              </div>
+              <h3 class="mt-4 text-xl font-display font-extrabold text-brand-blue">Акт и гарантия после ремонта</h3>
+              <p class="mt-3 text-slate-600">Закрываем заявку документами и фиксируем результат в том формате, который нужен ресторану.</p>
+              <p class="mt-4 text-sm font-semibold text-slate-700">Не на словах, а по документам</p>
+            </article>
+      </div>
+    </div>
+      </div>
+    </section>
+<!-- sync:service-proof:end -->
+<!-- sync:related-links:start -->
+<section data-sync-zone="related-links" class="py-16 lg:py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8 lg:p-10 shadow-sm">
+          <div class="text-center mb-8">
+            <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-blue">СОСЕДНИЕ КАТЕГОРИИ</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Если проблема в другом ресторанном оборудовании</h2>
+            <p class="mt-3 text-slate-600">Ниже ближайшие категории, которые чаще всего смотрят рядом с этой страницей.</p>
+          </div>
+          <div class="grid gap-4 lg:grid-cols-3">
+            <a href="ice-machines.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md">
+                  <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По ресторанной категории</p>
+                  <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Льдогенераторы</h3>
+                  <p class="mt-3 text-sm text-slate-600">не производит лед, ошибка, не набирает воду</p>
+                  <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
+                </a><a href="plity-pechi.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md">
+                  <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По ресторанной категории</p>
+                  <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Плиты и печи</h3>
+                  <p class="mt-3 text-sm text-slate-600">не греет, ошибка модуля, запах газа</p>
+                  <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
+                </a><a href="parokonvektomaty.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md">
+                  <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По ресторанной категории</p>
+                  <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Пароконвектоматы</h3>
+                  <p class="mt-3 text-sm text-slate-600">не нагревает, ошибка, не подает пар</p>
+                  <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
+                </a>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- sync:related-links:end -->
 
     <!-- Mobile sticky footer -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">

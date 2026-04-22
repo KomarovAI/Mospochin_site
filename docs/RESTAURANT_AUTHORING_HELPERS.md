@@ -5,7 +5,7 @@ These helper commands reduce routine JSON edits for public restaurant service pa
 ## Supported Commands
 
 - `npm run restaurant:sync-fallbacks [-- --page <file.html>]`
-  - syncs fallback HTML for `service-schema`, form placeholders, and FAQ blocks on public restaurant service pages
+  - syncs fallback HTML for `service-schema`, form placeholders, `request-overview`, FAQ, shared proof, and related-links on public restaurant service pages
 - `npm run restaurant:set-faq -- --page <file.html> --faq-json '<json>'`
   - replaces `faq` in `data/restaurant-page-slots.json`
 - `npm run restaurant:set-form-hints -- --page <file.html> --chips "a|b|c" --type-placeholder "..." --problem-placeholder "..."`
@@ -21,6 +21,10 @@ These helper commands reduce routine JSON edits for public restaurant service pa
 
 - Helpers support only public restaurant service pages.
 - Helpers do not edit layout or long-form narrative.
+- Repeatable service content now lives in JSON:
+  - `data/restaurant-page-slots.json` for `formHints`, `faq`, and `requestOverview`
+  - `data/restaurant-proof-layer.json` for shared `slaStrip` and `proofCards`
+  - `data/restaurant-services.json` for `relatedPages`, symptoms, brands, and form example
 - Route strips, branch landing copy, and restaurant branch shells still live in `data/restaurant-branch.json` plus branch HTML.
 - Use `--dry-run` on helpers to preview the resulting payload before writing.
 

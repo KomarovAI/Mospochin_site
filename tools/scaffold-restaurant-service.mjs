@@ -129,6 +129,19 @@ function buildFormHints(primarySymptoms, deviceName) {
   };
 }
 
+function buildRequestOverview(deviceName) {
+  return {
+    badge: 'ЧТО ПОЛЕЗНО УКАЗАТЬ СРАЗУ',
+    title: 'Чтобы быстрее понять сценарий по объекту',
+    description: `Для категории «${deviceName}» важно сразу получить модель, симптом и понять, насколько критичен простой для смены.`,
+    chips: [
+      'Модель и симптом',
+      'Насколько критичен простой',
+      'Окно выезда на объект',
+    ],
+  };
+}
+
 function buildFormExample(deviceName, primarySymptoms) {
   return `${deviceName} ${primarySymptoms[0] ?? 'не работает'}, ресторан в Москве, нужен выезд инженера`;
 }
@@ -152,6 +165,7 @@ function buildHtml({
   schemaName,
   primarySymptoms,
   formHints,
+  requestOverview,
   faq,
 }) {
   return `<!DOCTYPE html>
@@ -227,6 +241,18 @@ function buildHtml({
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Укажите модель и проблему. Сразу скажем, как действовать по смене и насколько срочный выезд нужен.</p>
             </div>
             <form class="telegram-form bg-white p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200" data-slot="request-form">
+<!-- sync:request-overview:start -->
+                <div data-sync-zone="request-overview" class="mb-6 rounded-3xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5 lg:p-6">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-green-700">${escapeHtml(requestOverview.badge)}</span>
+                    </div>
+                    <h3 class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-brand-blue">${escapeHtml(requestOverview.title)}</h3>
+                    <p class="mt-3 text-slate-600">${escapeHtml(requestOverview.description)}</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        ${requestOverview.chips.map((chip) => `<span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">${escapeHtml(chip)}</span>`).join('')}
+                    </div>
+                </div>
+<!-- sync:request-overview:end -->
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div><label class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label><input type="text" name="name" required placeholder="Дмитрий" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
                     <div><label class="block text-sm font-medium text-slate-700 mb-2">Телефон *</label><input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
@@ -241,6 +267,12 @@ function buildHtml({
             </form>
         </div>
     </section>
+<!-- sync:service-proof:start -->
+    <section data-sync-zone="service-proof" class="py-16 lg:py-20 bg-white"></section>
+<!-- sync:service-proof:end -->
+<!-- sync:related-links:start -->
+    <section data-sync-zone="related-links" class="py-16 lg:py-20 bg-slate-50"></section>
+<!-- sync:related-links:end -->
     <section class="py-20 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -314,6 +346,7 @@ try {
   const relatedPages = buildRelatedPages({ family, registry, taxonomy, page });
   const faq = buildGenericFaq(deviceName, brandCluster);
   const formHints = buildFormHints(primarySymptoms, deviceName);
+  const requestOverview = buildRequestOverview(deviceName);
   const formExample = buildFormExample(deviceName, primarySymptoms);
 
   fs.writeFileSync(
@@ -329,6 +362,7 @@ try {
       schemaName,
       primarySymptoms,
       formHints,
+      requestOverview,
       faq,
     })
   );
@@ -359,6 +393,7 @@ try {
 
   slots.pages[page] = {
     formHints,
+    requestOverview,
     faq,
   };
 
