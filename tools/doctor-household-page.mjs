@@ -11,6 +11,7 @@ const POLICY_PATH = path.join(SITE_ROOT, 'data/household-page-policy.json');
 const METADATA_PATH = path.join(SITE_ROOT, 'data/page-metadata.json');
 const REGISTRY_PATH = path.join(SITE_ROOT, 'data/household-services.json');
 const SLOTS_PATH = path.join(SITE_ROOT, 'data/household-page-slots.json');
+const CARD_PRESETS_PATH = path.join(SITE_ROOT, 'data/household-card-presets.json');
 
 function parseArgs(argv) {
   const result = {};
@@ -53,6 +54,7 @@ function runDoctor(page) {
   const slots = readJson(SLOTS_PATH);
   const taxonomy = readJson(TAXONOMY_PATH);
   const policy = readJson(POLICY_PATH);
+  const cardPresets = readJson(CARD_PRESETS_PATH);
 
   const filePath = path.join(SITE_ROOT, page);
   const htmlExists = fs.existsSync(filePath);
@@ -61,14 +63,19 @@ function runDoctor(page) {
   const registryEntry = (registry.services ?? []).find((entry) => entry.page === page) ?? null;
   const taxonomyEntry = (taxonomy.devices ?? []).find((entry) => entry.page === page) ?? null;
   const slotEntry = slots.pages?.[page] ?? null;
+  const sharedCardConfig = policy.sharedCardSlots ?? {};
+  const branchCardPages = new Set(sharedCardConfig.branchPages ?? []);
+  const isBranchCardPage = branchCardPages.has(page);
+  const isServicePage = Boolean(registryEntry);
   const policyKey = registryEntry?.isShadow ? 'shadowPage' : 'publicPage';
-  const contract = policy[policyKey] ?? null;
+  const contract = isServicePage ? policy[policyKey] ?? null : null;
   const issues = [];
 
   if (!htmlExists) issues.push('Missing HTML file');
   if (!pageMeta) issues.push('Missing metadata entry');
-  if (!registryEntry) issues.push('Missing registry entry');
-  if (!taxonomyEntry) issues.push('Missing taxonomy device entry');
+
+  if (!isBranchCardPage && !registryEntry) issues.push('Missing registry entry');
+  if (!isBranchCardPage && !taxonomyEntry) issues.push('Missing taxonomy device entry');
 
   if (pageMeta?.branch && pageMeta.branch !== 'household') {
     issues.push(`Metadata branch is ${pageMeta.branch}, expected household`);
@@ -88,6 +95,26 @@ function runDoctor(page) {
 
   if (registryEntry && !registryEntry.isShadow && !slotEntry) {
     issues.push('Missing slot entry for public household page');
+  }
+
+  if (isBranchCardPage) {
+    if (!slotEntry) {
+      issues.push('Missing slot entry for branch household page');
+    } else if (!slotEntry.cardSections || typeof slotEntry.cardSections !== 'object') {
+      issues.push('Branch household page is missing cardSections');
+    } else {
+      for (const sectionName of Object.keys(slotEntry.cardSections)) {
+        const anchor = sharedCardConfig.anchorMap?.[sectionName];
+        if (!anchor) {
+          issues.push(`Unknown card section ${sectionName}`);
+          continue;
+        }
+
+        if (!html.includes(`data-slot="${anchor}"`)) {
+          issues.push(`Missing data-slot="${anchor}" for ${sectionName}`);
+        }
+      }
+    }
   }
 
   if (registryEntry && contract) {
@@ -136,6 +163,7 @@ function runDoctor(page) {
 
   const summary = {
     page,
+    pageType: isBranchCardPage ? 'branch-card-page' : registryEntry ? 'service-page' : 'unknown',
     htmlExists,
     metadata: pageMeta
       ? { branch: pageMeta.branch, canonical: pageMeta.canonical ?? null, robots: pageMeta.robots ?? null }
@@ -159,6 +187,13 @@ function runDoctor(page) {
       ? {
           faqCount: Array.isArray(slotEntry.faq) ? slotEntry.faq.length : 0,
           hasFormHints: Boolean(slotEntry.formHints),
+          cardSections: Object.keys(slotEntry.cardSections ?? {}),
+        }
+      : null,
+    cardPresets: isServicePage
+      ? {
+          icon: cardPresets.pageIcons?.[page] ?? null,
+          tone: cardPresets.pageTones?.[page] ?? null,
         }
       : null,
     issues,
@@ -176,15 +211,21 @@ try {
     console.log(JSON.stringify(summary, null, 2));
   } else {
     console.log(`Household doctor: ${summary.page}`);
+    console.log(`- page type: ${summary.pageType}`);
     console.log(`- html: ${summary.htmlExists ? 'ok' : 'missing'}`);
     console.log(`- metadata: ${summary.metadata ? 'ok' : 'missing'}`);
-    console.log(`- registry: ${summary.registry ? 'ok' : 'missing'}`);
-    console.log(`- taxonomy: ${summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'missing'}`);
-    console.log(
-      `- slots: ${
-        summary.registry?.isShadow ? 'shadow page, not required' : summary.slots ? `ok (${summary.slots.faqCount} faq)` : 'missing'
-      }`
-    );
+    console.log(`- registry: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.registry ? 'ok' : 'missing'}`);
+    console.log(`- taxonomy: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'missing'}`);
+    console.log(`- slots: ${summary.slots ? `ok (${summary.slots.cardSections.length} card sections)` : 'missing'}`);
+    if (summary.cardPresets) {
+      console.log(
+        `- card presets: ${
+          summary.cardPresets.icon && summary.cardPresets.tone
+            ? `ok (${summary.cardPresets.icon}, ${summary.cardPresets.tone})`
+            : 'missing icon/tone preset'
+        }`
+      );
+    }
     if (summary.issues.length) {
       console.log('- issues:');
       summary.issues.forEach((issue) => console.log(`  - ${issue}`));

@@ -15,6 +15,7 @@ const RESTAURANT_BRANCH_PATH = '/data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_PATH = '/data/household-branch.json';
 const HOUSEHOLD_SERVICES_PATH = '/data/household-services.json';
 const HOUSEHOLD_PAGE_SLOTS_PATH = '/data/household-page-slots.json';
+const HOUSEHOLD_CARD_PRESETS_PATH = '/data/household-card-presets.json';
 const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
   subtitle: '🔧 Ресторанное оборудование',
   contactHint: '⚡ Работаем 24/7',
@@ -191,6 +192,7 @@ let restaurantBranchPromise = null;
 let householdBranchPromise = null;
 let householdServicesPromise = null;
 let householdPageSlotsPromise = null;
+let householdCardPresetsPromise = null;
 
 async function loadJson(path) {
   const response = await fetch(path, { cache: 'no-store' });
@@ -270,6 +272,27 @@ async function loadHouseholdPageSlots() {
   }
 
   return householdPageSlotsPromise;
+}
+
+async function loadHouseholdCardPresets() {
+  if (!householdCardPresetsPromise) {
+    householdCardPresetsPromise = (async () => {
+      try {
+        return await loadJson(HOUSEHOLD_CARD_PRESETS_PATH);
+      } catch (error) {
+        console.error('Household card presets unavailable:', error.message);
+        return {
+          allowedTones: ['slate', 'orange', 'blue', 'green'],
+          ctaVocabulary: [],
+          variants: {},
+          pageIcons: {},
+          pageTones: {},
+        };
+      }
+    })();
+  }
+
+  return householdCardPresetsPromise;
 }
 
 function inferBranchFromSlug() {
@@ -711,6 +734,192 @@ const Components = {
       .join('');
   },
 
+  getHouseholdCardTone(tone) {
+    return {
+      slate: {
+        card: 'household-card--slate',
+        badge: 'bg-slate-100 text-slate-700',
+        button: 'household-card__button--slate',
+      },
+      orange: {
+        card: 'household-card--orange',
+        badge: 'bg-brand-orange/10 text-brand-orange',
+        button: 'household-card__button--orange',
+      },
+      blue: {
+        card: 'household-card--blue',
+        badge: 'bg-brand-blue/10 text-brand-blue',
+        button: 'household-card__button--blue',
+      },
+      green: {
+        card: 'household-card--green',
+        badge: 'bg-green-100 text-green-700',
+        button: 'household-card__button--green',
+      },
+    }[tone] || {
+      card: 'household-card--slate',
+      badge: 'bg-slate-100 text-slate-700',
+      button: 'household-card__button--slate',
+    };
+  },
+
+  updateHouseholdCardSectionCopy(sectionKey, sectionConfig) {
+    if (!sectionConfig) return;
+
+    for (const fieldName of ['badge', 'title', 'description']) {
+      const node = document.querySelector(`[data-slot-copy="${sectionKey}.${fieldName}"]`);
+      if (node && sectionConfig[fieldName]) {
+        node.textContent = sectionConfig[fieldName];
+      }
+    }
+
+    const actionNode = document.querySelector(`[data-slot-action="${sectionKey}.action"]`);
+    if (actionNode && sectionConfig.action?.href) {
+      actionNode.setAttribute('href', sectionConfig.action.href);
+    }
+
+    const actionLabelNode = document.querySelector(`[data-slot-copy="${sectionKey}.action.label"]`);
+    if (actionLabelNode && sectionConfig.action?.label) {
+      actionLabelNode.textContent = sectionConfig.action.label;
+    }
+  },
+
+  renderHouseholdServiceCards(pages, serviceMap, cardPresets, mode = 'full') {
+    const icons = cardPresets?.pageIcons || {};
+    const tones = cardPresets?.pageTones || {};
+
+    return pages
+      .map((page) => serviceMap.get(page))
+      .filter((entry) => entry && !entry.isShadow)
+      .map((entry) => {
+        const toneKey = tones[entry.page] || 'slate';
+        const tone = this.getHouseholdCardTone(toneKey);
+        const icon = icons[entry.page] || 'ri-settings-3-line';
+        const symptomText = (entry.primarySymptoms || []).slice(0, mode === 'compact' ? 3 : 4).join(', ');
+        const brandText = (entry.brandCluster || []).slice(0, 3).join(', ');
+
+        return `
+          <a href="${entry.page}" class="household-card household-card--service ${tone.card}">
+            <div class="household-card__topline">
+              <span class="household-card__eyebrow ${tone.badge}">По бытовой категории</span>
+              <span class="household-card__icon"><i class="${icon}"></i></span>
+            </div>
+            <h3 class="household-card__title">${escapeHtml(entry.uiLabel)}</h3>
+            <p class="household-card__description">${escapeHtml(symptomText)}</p>
+            <p class="household-card__meta">${escapeHtml(brandText)}</p>
+            <span class="household-card__cta">Открыть страницу</span>
+          </a>
+        `;
+      })
+      .join('');
+  },
+
+  renderHouseholdTrustCards(cards) {
+    return cards
+      .map((card) => {
+        const tone = this.getHouseholdCardTone(card.tone || 'slate');
+
+        return `
+          <article class="household-card household-card--trust ${tone.card}">
+            <div class="household-card__topline">
+              <span class="household-card__eyebrow ${tone.badge}">Без лишней суеты</span>
+              <span class="household-card__icon"><i class="${escapeHtml(card.icon || 'ri-checkbox-circle-line')}"></i></span>
+            </div>
+            <h3 class="household-card__title">${escapeHtml(card.title)}</h3>
+            <p class="household-card__description">${escapeHtml(card.description)}</p>
+            ${card.outcome ? `<p class="household-card__meta">${escapeHtml(card.outcome)}</p>` : ''}
+          </article>
+        `;
+      })
+      .join('');
+  },
+
+  renderHouseholdCardActions(actions, inheritedTone = 'slate') {
+    return (actions || [])
+      .map((action) => {
+        const tone = this.getHouseholdCardTone(action.tone || inheritedTone);
+        const isExternal = /^https?:\/\//.test(action.href);
+        return `
+          <a href="${action.href}" class="household-card__button ${tone.button}" ${
+            isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''
+          }>
+            <span>${escapeHtml(action.label)}</span>
+          </a>
+        `;
+      })
+      .join('');
+  },
+
+  renderHouseholdContactCards(cards) {
+    return cards
+      .map((card) => {
+        const toneKey = card.tone || 'slate';
+        const tone = this.getHouseholdCardTone(toneKey);
+        return `
+          <article class="household-card household-card--contact ${tone.card}">
+            <div class="household-card__topline">
+              <span class="household-card__eyebrow ${tone.badge}">${escapeHtml(card.badge)}</span>
+              <span class="household-card__icon"><i class="${escapeHtml(card.icon || 'ri-chat-check-line')}"></i></span>
+            </div>
+            <h3 class="household-card__title">${escapeHtml(card.title)}</h3>
+            <p class="household-card__description">${escapeHtml(card.description)}</p>
+            <ul class="household-card__list">
+              ${(card.bullets || [])
+                .map(
+                  (item) => `
+                    <li><i class="ri-check-line"></i><span>${escapeHtml(item)}</span></li>
+                  `
+                )
+                .join('')}
+            </ul>
+            ${card.note ? `<p class="household-card__note">${escapeHtml(card.note)}</p>` : ''}
+            <div class="household-card__actions">
+              ${this.renderHouseholdCardActions(card.actions, toneKey)}
+            </div>
+          </article>
+        `;
+      })
+      .join('');
+  },
+
+  hydrateHouseholdCardSections(slotEntry, serviceMap, cardPresets) {
+    const sections = slotEntry?.cardSections;
+    if (!sections || typeof sections !== 'object') return;
+
+    if (sections.categoryCards) {
+      this.updateHouseholdCardSectionCopy('category-cards', sections.categoryCards);
+      const container = document.querySelector('[data-slot="category-cards"]');
+      if (container) {
+        container.className = 'household-card-grid household-card-grid--services';
+        container.innerHTML = this.renderHouseholdServiceCards(
+          sections.categoryCards.pages || [],
+          serviceMap,
+          cardPresets
+        );
+      }
+    }
+
+    if (sections.trustCards) {
+      this.updateHouseholdCardSectionCopy('trust-cards', sections.trustCards);
+      const container = document.querySelector('[data-slot="trust-cards"]');
+      if (container) {
+        container.className = 'household-card-grid household-card-grid--trust';
+        container.innerHTML = this.renderHouseholdTrustCards(sections.trustCards.cards || []);
+      }
+    }
+
+    if (sections.contactChannels) {
+      this.updateHouseholdCardSectionCopy('contact-channels', sections.contactChannels);
+      const container = document.querySelector('[data-slot="contact-channels"]');
+      if (container) {
+        container.className = 'household-card-grid household-card-grid--contact';
+        container.innerHTML = this.renderHouseholdContactCards(
+          sections.contactChannels.cards || []
+        );
+      }
+    }
+  },
+
   hydrateHouseholdServiceSchema(service, pageMetadata, slotEntry) {
     const schemaScript = document.querySelector('script[data-slot="service-schema"]');
     if (!schemaScript || !service) return;
@@ -848,7 +1057,7 @@ const Components = {
       .join('');
   },
 
-  hydrateHouseholdRelatedLinks(service, serviceMap, anchorForm) {
+  hydrateHouseholdRelatedLinks(service, serviceMap, cardPresets, anchorForm) {
     const relatedServices = (service.relatedPages || [])
       .map((page) => serviceMap.get(page))
       .filter((entry) => entry && !entry.isShadow);
@@ -873,17 +1082,13 @@ const Components = {
             <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Если проблема в другой технике</h2>
             <p class="mt-3 text-slate-600">Ниже ближайшие бытовые категории, которые чаще всего смотрят рядом с этой страницей.</p>
           </div>
-          <div class="grid gap-4 md:grid-cols-3">
-            ${relatedServices
-              .map(
-                (entry) => `
-                  <a href="${entry.page}" class="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                    <p class="text-base font-bold text-brand-blue">${escapeHtml(entry.uiLabel)}</p>
-                    <p class="mt-1 text-sm text-slate-500">${escapeHtml((entry.primarySymptoms || []).slice(0, 3).join(', '))}</p>
-                  </a>
-                `
-              )
-              .join('')}
+          <div class="household-card-grid household-card-grid--related">
+            ${this.renderHouseholdServiceCards(
+              relatedServices.map((entry) => entry.page),
+              serviceMap,
+              cardPresets,
+              'compact'
+            )}
           </div>
         </div>
       </div>
@@ -892,26 +1097,31 @@ const Components = {
 
   async initHouseholdServiceSlots() {
     const currentPage = getCurrentPageFile();
-    if (!this.isBytovaya() || currentPage.startsWith('bytovaya-')) return;
+    if (!this.isBytovaya()) return;
 
-    const [pageMetadata, serviceRegistry, pageSlots] = await Promise.all([
+    const [pageMetadata, serviceRegistry, pageSlots, cardPresets] = await Promise.all([
       loadCurrentPageMetadata(),
       loadHouseholdServicesRegistry(),
       loadHouseholdPageSlots(),
+      loadHouseholdCardPresets(),
     ]);
 
     const services = Array.isArray(serviceRegistry?.services) ? serviceRegistry.services : [];
-    const service = services.find((entry) => entry.page === currentPage && !entry.isShadow);
+    const serviceMap = new Map(services.map((entry) => [entry.page, entry]));
     const slotEntry = pageSlots?.pages?.[currentPage];
+    this.hydrateHouseholdCardSections(slotEntry, serviceMap, cardPresets);
+
+    if (currentPage.startsWith('bytovaya-')) return;
+
+    const service = services.find((entry) => entry.page === currentPage && !entry.isShadow);
 
     if (!service || !slotEntry) return;
 
-    const serviceMap = new Map(services.map((entry) => [entry.page, entry]));
     const anchorForm = this.hydrateHouseholdRequestForm(service, slotEntry);
 
     this.hydrateHouseholdServiceSchema(service, pageMetadata, slotEntry);
     this.hydrateHouseholdFaq(slotEntry);
-    this.hydrateHouseholdRelatedLinks(service, serviceMap, anchorForm);
+    this.hydrateHouseholdRelatedLinks(service, serviceMap, cardPresets, anchorForm);
   },
 
   async init() {

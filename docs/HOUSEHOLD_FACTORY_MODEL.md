@@ -15,11 +15,13 @@ This document defines the first page-factory layer for household service pages.
 - `data/household-services.json`
   - page identity, symptoms, brand cluster, related pages, section ids, shadow state
 - `data/household-page-slots.json`
-  - FAQ and request-form copy for public household pages
+  - FAQ, request-form copy, and branch-level card sections for household pages
+- `data/household-card-presets.json`
+  - allowed tones, CTA vocabulary, and preset icon/tone mapping for reusable household cards
 - `data/household-taxonomy.json`
   - device families, allowed symptoms, brand pools, semantic related-page rules
 - `data/household-page-policy.json`
-  - required anchors, required form fields, and scaffold defaults for public/shadow pages
+  - required anchors, required form fields, scaffold defaults, and shared card-slot policy
 - HTML page
   - unique layout, unique long-form copy, and page-specific visual treatment
 
@@ -40,6 +42,7 @@ This document defines the first page-factory layer for household service pages.
 - Use the scaffold first when adding a new household page.
 - Edit the registry first for symptoms, brands, related pages, and identity changes.
 - Edit slots first for FAQ or request-form copy changes.
+- Edit branch card sections in `data/household-page-slots.json` and keep them aligned with `data/household-card-presets.json`.
 - Edit HTML only for unique layout or page-specific narrative.
 - Run `npm run validate:site` after changes.
 

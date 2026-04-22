@@ -349,16 +349,16 @@
             <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 lg:p-8 shadow-sm">
                 <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
                     <div>
-                        <p class="text-sm font-bold tracking-[0.25em] text-brand-orange mb-2">ПО ТИПУ ТЕХНИКИ</p>
-                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Сначала выберите, что сломалось</h2>
-                        <p class="text-slate-600 mt-2 max-w-3xl">Для бытовой ветки это главный и самый понятный первый шаг: холодильник, стиралка, посудомойка, плита, микроволновка или водонагреватель.</p>
+                        <p class="text-sm font-bold tracking-[0.25em] text-brand-orange mb-2" data-slot-copy="category-cards.badge">ПО ТИПУ ТЕХНИКИ</p>
+                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue" data-slot-copy="category-cards.title">Сначала выберите, что сломалось</h2>
+                        <p class="text-slate-600 mt-2 max-w-3xl" data-slot-copy="category-cards.description">Для бытовой ветки это главный и самый понятный первый шаг: холодильник, стиралка, посудомойка, плита, микроволновка или водонагреватель.</p>
                     </div>
-                    <a href="bytovaya-uslugi.html" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orangeHover">
-                        <span>Открыть полный каталог</span>
+                    <a href="bytovaya-uslugi.html" data-slot-action="category-cards.action" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orangeHover">
+                        <span data-slot-copy="category-cards.action.label">Открыть полный каталог</span>
                         <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
-                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" data-slot="category-cards">
                     <a href="holodilniki.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
                         <p class="text-sm font-bold text-brand-blue">Холодильники</p>
                         <p class="mt-1 text-sm text-slate-500">Не морозит, течёт, шумит, отключается</p>
@@ -534,11 +534,11 @@
     <section class="py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-brand-blue via-blue-900 to-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/20 backdrop-blur-md border border-brand-orange/30 text-brand-orange px-5 py-2 rounded-full text-sm font-bold mb-4">🏠 ПРЕИМУЩЕСТВА ВЫЕЗДА</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal">Почему бытовую технику чаще чинят дома, а не везут в мастерскую</h2>
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto">Выездной ремонт экономит время и оставляет понятные условия: диагностика, цена, документы и гарантия.</p>
+                <span class="inline-block bg-brand-orange/20 backdrop-blur-md border border-brand-orange/30 text-brand-orange px-5 py-2 rounded-full text-sm font-bold mb-4" data-slot-copy="trust-cards.badge">🏠 ПРЕИМУЩЕСТВА ВЫЕЗДА</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold mb-4 heading-reveal" data-slot-copy="trust-cards.title">Почему бытовую технику чаще чинят дома, а не везут в мастерскую</h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto" data-slot-copy="trust-cards.description">Выездной ремонт экономит время и оставляет понятные условия: диагностика, цена, документы и гарантия.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8" data-slot="trust-cards">
                 <div class="scroll-reveal" data-delay="1">
                     <div class="card-tilt glass-card p-5 sm:p-6 lg:p-8 text-center h-full group">
                         <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange text-2xl sm:text-3xl mb-4 sm:mb-6 mx-auto group-hover:bg-brand-orange group-hover:text-white transition-all">

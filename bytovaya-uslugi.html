@@ -274,11 +274,11 @@
     <section id="full-services" class="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">🔧 КАТАЛОГ УСЛУГ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Сначала выберите тип техники</h2>
-                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Это основной маршрут каталога: каждая карточка ведёт в отдельную сервисную страницу с понятными симптомами, FAQ и формой заявки.</p>
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4" data-slot-copy="category-cards.badge">🔧 КАТАЛОГ УСЛУГ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal" data-slot-copy="category-cards.title">Сначала выберите тип техники</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto" data-slot-copy="category-cards.description">Это основной маршрут каталога: каждая карточка ведёт в отдельную сервисную страницу с понятными симптомами, FAQ и формой заявки.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6" data-slot="category-cards">
                 <a href="holodilniki.html" class="scroll-reveal" data-delay="1">
                     <div class="card-brand bg-white p-8 rounded-2xl shadow-sm border-2 border-slate-100 hover:border-blue-300 transition-all h-full group block">
                         <div class="flex items-center justify-between mb-4">
@@ -423,11 +423,11 @@
     <section class="py-24 lg:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4">ГАРАНТИЯ</span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что остаётся у клиента после ремонта</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">После ремонта у вас остаются не обещания, а понятный результат: гарантия, акт, финальная проверка и прозрачная цена.</p>
+                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4" data-slot-copy="trust-cards.badge">ГАРАНТИЯ</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal" data-slot-copy="trust-cards.title">Что остаётся у клиента после ремонта</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto" data-slot-copy="trust-cards.description">После ремонта у вас остаются не обещания, а понятный результат: гарантия, акт, финальная проверка и прозрачная цена.</p>
             </div>
-            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8" data-slot="trust-cards">
                 <div class="text-center p-8 bg-green-50 rounded-2xl border border-green-200 scroll-reveal" data-delay="1">
                     <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         <i class="ri-shield-check-line"></i>

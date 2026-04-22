@@ -16,6 +16,7 @@ const RESTAURANT_BRANCH_DATA = 'data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_DATA = 'data/household-branch.json';
 const HOUSEHOLD_SERVICES_DATA = 'data/household-services.json';
 const HOUSEHOLD_PAGE_SLOTS_DATA = 'data/household-page-slots.json';
+const HOUSEHOLD_CARD_PRESETS_DATA = 'data/household-card-presets.json';
 const HOUSEHOLD_TAXONOMY_DATA = 'data/household-taxonomy.json';
 const HOUSEHOLD_PAGE_POLICY_DATA = 'data/household-page-policy.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
@@ -76,6 +77,10 @@ const householdPageSlotsPath = path.join(SITE_ROOT, HOUSEHOLD_PAGE_SLOTS_DATA);
 const householdPageSlots = fs.existsSync(householdPageSlotsPath)
   ? JSON.parse(fs.readFileSync(householdPageSlotsPath, 'utf8'))
   : null;
+const householdCardPresetsPath = path.join(SITE_ROOT, HOUSEHOLD_CARD_PRESETS_DATA);
+const householdCardPresets = fs.existsSync(householdCardPresetsPath)
+  ? JSON.parse(fs.readFileSync(householdCardPresetsPath, 'utf8'))
+  : null;
 const householdTaxonomyPath = path.join(SITE_ROOT, HOUSEHOLD_TAXONOMY_DATA);
 const householdTaxonomy = fs.existsSync(householdTaxonomyPath)
   ? JSON.parse(fs.readFileSync(householdTaxonomyPath, 'utf8'))
@@ -119,6 +124,10 @@ function getHouseholdPolicyKey(service) {
 function getHouseholdPolicy(service) {
   const policyKey = getHouseholdPolicyKey(service);
   return householdPagePolicy?.[policyKey] ?? null;
+}
+
+function getHouseholdSharedCardConfig() {
+  return householdPagePolicy?.sharedCardSlots ?? null;
 }
 
 function getBranchConfigForContract(contract) {
@@ -474,6 +483,71 @@ function validateHouseholdPagePolicy(policy) {
       errors.push(`${context}.requiredHtmlMarkers.requireH1 must be a boolean`);
     }
   }
+
+  if (!policy.sharedCardSlots || typeof policy.sharedCardSlots !== 'object') {
+    errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots must be an object`);
+    return;
+  }
+
+  if (!isArrayOfNonEmptyStrings(policy.sharedCardSlots.branchPages)) {
+    errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.branchPages must be a non-empty array of strings`);
+  }
+
+  if (!isArrayOfNonEmptyStrings(policy.sharedCardSlots.allowedSections)) {
+    errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.allowedSections must be a non-empty array of strings`);
+  }
+
+  if (!policy.sharedCardSlots.anchorMap || typeof policy.sharedCardSlots.anchorMap !== 'object') {
+    errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.anchorMap must be an object`);
+    return;
+  }
+
+  for (const sectionName of policy.sharedCardSlots.allowedSections ?? []) {
+    if (!isNonEmptyString(policy.sharedCardSlots.anchorMap[sectionName])) {
+      errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.anchorMap.${sectionName} must be a non-empty string`);
+    }
+  }
+}
+
+function validateHouseholdCardPresets(cardPresets) {
+  if (!cardPresets || typeof cardPresets !== 'object') {
+    errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!isArrayOfNonEmptyStrings(cardPresets.allowedTones)) {
+    errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}.allowedTones must be a non-empty array of strings`);
+  }
+
+  if (!isArrayOfNonEmptyStrings(cardPresets.ctaVocabulary)) {
+    errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}.ctaVocabulary must be a non-empty array of strings`);
+  }
+
+  if (!cardPresets.variants || typeof cardPresets.variants !== 'object') {
+    errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}.variants must be an object`);
+  } else {
+    for (const [variantName, variantConfig] of Object.entries(cardPresets.variants)) {
+      const context = `${HOUSEHOLD_CARD_PRESETS_DATA}.variants.${variantName}`;
+      if (!variantConfig || typeof variantConfig !== 'object') {
+        errors.push(`${context} must be an object`);
+        continue;
+      }
+
+      if (!isNonEmptyString(variantConfig.cardType)) {
+        errors.push(`${context}.cardType must be a non-empty string`);
+      }
+
+      if (!isArrayOfNonEmptyStrings(variantConfig.allowedTones)) {
+        errors.push(`${context}.allowedTones must be a non-empty array of strings`);
+      }
+    }
+  }
+
+  for (const fieldName of ['pageIcons', 'pageTones']) {
+    if (!cardPresets[fieldName] || typeof cardPresets[fieldName] !== 'object' || Array.isArray(cardPresets[fieldName])) {
+      errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}.${fieldName} must be an object`);
+    }
+  }
 }
 
 function validateHouseholdServicesRegistry(registry) {
@@ -718,6 +792,188 @@ function validateHouseholdServicesRegistry(registry) {
   });
 }
 
+function validateCardTone(tone, context, allowedTones) {
+  if (!isNonEmptyString(tone)) {
+    errors.push(`${context}.tone must be a non-empty string`);
+    return;
+  }
+
+  if (!allowedTones.has(tone)) {
+    errors.push(`${context}.tone must be one of ${Array.from(allowedTones).join(', ')}`);
+  }
+}
+
+function validateCardAction(action, context, html, ctaVocabulary) {
+  if (!action || typeof action !== 'object') {
+    errors.push(`${context} must be an object`);
+    return;
+  }
+
+  if (!isNonEmptyString(action.label)) {
+    errors.push(`${context}.label must be a non-empty string`);
+  } else if (!ctaVocabulary.has(action.label)) {
+    errors.push(`${context}.label must belong to household CTA vocabulary`);
+  }
+
+  if (!isNonEmptyString(action.href)) {
+    errors.push(`${context}.href must be a non-empty string`);
+    return;
+  }
+
+  if (action.href.startsWith('#')) {
+    const anchorId = action.href.slice(1);
+    if (!anchorId || !html.includes(`id="${anchorId}"`)) {
+      errors.push(`${context}.href points to missing anchor ${action.href}`);
+    }
+    return;
+  }
+
+  if (action.href.startsWith('tel:')) {
+    return;
+  }
+
+  if (/^https?:\/\//.test(action.href)) {
+    return;
+  }
+
+  validateHtmlTarget(action.href, `${context}.href`, 'household');
+  const fileName = action.href.split('#', 1)[0];
+  if (metadata.pages[fileName] && isNoindexPage(metadata.pages[fileName])) {
+    errors.push(`${context}.href must not point to noindex household pages`);
+  }
+}
+
+function validateHouseholdCardSections(cardSections, page, publicServicePages, html) {
+  const sharedCardConfig = getHouseholdSharedCardConfig();
+  const allowedSections = new Set(sharedCardConfig?.allowedSections ?? []);
+  const anchorMap = sharedCardConfig?.anchorMap ?? {};
+  const allowedTones = new Set(householdCardPresets?.allowedTones ?? []);
+  const ctaVocabulary = new Set(householdCardPresets?.ctaVocabulary ?? []);
+  const pageIcons = householdCardPresets?.pageIcons ?? {};
+  const pageTones = householdCardPresets?.pageTones ?? {};
+  const context = `${HOUSEHOLD_PAGE_SLOTS_DATA}: pages.${page}.cardSections`;
+
+  if (!cardSections || typeof cardSections !== 'object' || Array.isArray(cardSections)) {
+    errors.push(`${context} must be an object`);
+    return;
+  }
+
+  for (const [sectionName, sectionConfig] of Object.entries(cardSections)) {
+    if (!allowedSections.has(sectionName)) {
+      errors.push(`${context}.${sectionName} is not allowed by shared card policy`);
+      continue;
+    }
+
+    const slotAnchor = anchorMap[sectionName];
+    if (slotAnchor && !html.includes(`data-slot="${slotAnchor}"`)) {
+      errors.push(`${page}: missing data-slot="${slotAnchor}" for ${sectionName}`);
+    }
+
+    if (!sectionConfig || typeof sectionConfig !== 'object' || Array.isArray(sectionConfig)) {
+      errors.push(`${context}.${sectionName} must be an object`);
+      continue;
+    }
+
+    for (const fieldName of ['badge', 'title', 'description']) {
+      if (!isNonEmptyString(sectionConfig[fieldName])) {
+        errors.push(`${context}.${sectionName}.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    if (sectionConfig.action) {
+      validateCardAction(
+        sectionConfig.action,
+        `${context}.${sectionName}.action`,
+        html,
+        ctaVocabulary
+      );
+    }
+
+    if (sectionName === 'categoryCards') {
+      if (!Array.isArray(sectionConfig.pages) || sectionConfig.pages.length === 0) {
+        errors.push(`${context}.${sectionName}.pages must be a non-empty array`);
+      } else {
+        sectionConfig.pages.forEach((targetPage, index) => {
+          if (!publicServicePages.has(targetPage)) {
+            errors.push(`${context}.${sectionName}.pages[${index}] must target a visible household service page`);
+            return;
+          }
+
+          if (!isNonEmptyString(pageIcons[targetPage])) {
+            errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}.pageIcons.${targetPage} must exist for category cards`);
+          }
+
+          if (!isNonEmptyString(pageTones[targetPage])) {
+            errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}.pageTones.${targetPage} must exist for category cards`);
+          } else if (!allowedTones.has(pageTones[targetPage])) {
+            errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}.pageTones.${targetPage} must use an allowed tone`);
+          }
+        });
+      }
+    }
+
+    if (sectionName === 'trustCards' || sectionName === 'contactChannels') {
+      if (!Array.isArray(sectionConfig.cards) || sectionConfig.cards.length === 0) {
+        errors.push(`${context}.${sectionName}.cards must be a non-empty array`);
+        continue;
+      }
+
+      sectionConfig.cards.forEach((card, index) => {
+        const cardContext = `${context}.${sectionName}.cards[${index}]`;
+        if (!card || typeof card !== 'object') {
+          errors.push(`${cardContext} must be an object`);
+          return;
+        }
+
+        validateCardTone(card.tone, cardContext, allowedTones);
+
+        for (const fieldName of ['title', 'description']) {
+          if (!isNonEmptyString(card[fieldName])) {
+            errors.push(`${cardContext}.${fieldName} must be a non-empty string`);
+          }
+        }
+
+        if (!isNonEmptyString(card.icon)) {
+          errors.push(`${cardContext}.icon must be a non-empty string`);
+        }
+
+        if (sectionName === 'trustCards') {
+          if (!isNonEmptyString(card.outcome)) {
+            errors.push(`${cardContext}.outcome must be a non-empty string`);
+          }
+        }
+
+        if (sectionName === 'contactChannels') {
+          if (!isNonEmptyString(card.badge)) {
+            errors.push(`${cardContext}.badge must be a non-empty string`);
+          }
+
+          if (!isArrayOfNonEmptyStrings(card.bullets)) {
+            errors.push(`${cardContext}.bullets must be a non-empty array of strings`);
+          }
+
+          if (!isNonEmptyString(card.note)) {
+            errors.push(`${cardContext}.note must be a non-empty string`);
+          }
+
+          if (!Array.isArray(card.actions) || card.actions.length === 0) {
+            errors.push(`${cardContext}.actions must be a non-empty array`);
+          } else {
+            card.actions.forEach((action, actionIndex) => {
+              validateCardAction(
+                action,
+                `${cardContext}.actions[${actionIndex}]`,
+                html,
+                ctaVocabulary
+              );
+            });
+          }
+        }
+      });
+    }
+  }
+}
+
 function validateHouseholdPageSlots(slots, registry) {
   if (!slots || typeof slots !== 'object') {
     errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: top-level object is required`);
@@ -730,7 +986,9 @@ function validateHouseholdPageSlots(slots, registry) {
   }
 
   const publicServices = (registry?.services ?? []).filter((service) => !service.isShadow);
-  const expectedPages = new Set(publicServices.map((service) => service.page));
+  const publicServicePages = new Set(publicServices.map((service) => service.page));
+  const branchCardPages = new Set(getHouseholdSharedCardConfig()?.branchPages ?? []);
+  const expectedPages = new Set([...publicServicePages, ...branchCardPages]);
   const slotPages = new Set(Object.keys(slots.pages));
 
   for (const page of expectedPages) {
@@ -805,6 +1063,29 @@ function validateHouseholdPageSlots(slots, registry) {
         }
       }
     }
+
+    if (slotEntry.cardSections) {
+      validateHouseholdCardSections(slotEntry.cardSections, service.page, publicServicePages, html);
+    }
+  }
+
+  for (const page of branchCardPages) {
+    const slotEntry = slots.pages[page];
+    const context = `${HOUSEHOLD_PAGE_SLOTS_DATA}: pages.${page}`;
+    const pageMeta = metadata.pages[page];
+    const html = metadata.pages[page] ? read(page) : '';
+
+    if (!pageMeta || pageMeta.branch !== 'household') {
+      errors.push(`${context}: branch card page must exist in metadata and belong to household branch`);
+      continue;
+    }
+
+    if (!slotEntry || typeof slotEntry !== 'object') {
+      errors.push(`${context} must be an object`);
+      continue;
+    }
+
+    validateHouseholdCardSections(slotEntry.cardSections, page, publicServicePages, html);
   }
 }
 
@@ -937,6 +1218,7 @@ validateBranchConfig(restaurantBranch, RESTAURANT_ROUTE_STRIP_CONTRACT, 'restaur
 validateBranchConfig(householdBranch, { dataFile: HOUSEHOLD_BRANCH_DATA, pages: {} }, 'household');
 validateHouseholdTaxonomy(householdTaxonomy);
 validateHouseholdPagePolicy(householdPagePolicy);
+validateHouseholdCardPresets(householdCardPresets);
 validateHouseholdServicesRegistry(householdServicesRegistry);
 validateHouseholdPageSlots(householdPageSlots, householdServicesRegistry);
 
@@ -971,6 +1253,10 @@ if (!fs.existsSync(householdServicesPath)) {
 
 if (!fs.existsSync(householdPageSlotsPath)) {
   errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: household page slots missing`);
+}
+
+if (!fs.existsSync(householdCardPresetsPath)) {
+  errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}: household card presets missing`);
 }
 
 if (!fs.existsSync(householdTaxonomyPath)) {

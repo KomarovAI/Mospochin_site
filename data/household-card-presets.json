@@ -1,0 +1,41 @@
+{
+  "allowedTones": ["slate", "orange", "blue", "green"],
+  "ctaVocabulary": [
+    "Открыть страницу",
+    "Открыть полный каталог",
+    "Позвонить сейчас",
+    "Написать в WhatsApp",
+    "Написать в Telegram",
+    "Перейти к форме"
+  ],
+  "variants": {
+    "categoryCards": {
+      "cardType": "service-card",
+      "allowedTones": ["slate", "orange", "blue", "green"]
+    },
+    "trustCards": {
+      "cardType": "trust-card",
+      "allowedTones": ["slate", "orange", "blue", "green"]
+    },
+    "contactChannels": {
+      "cardType": "contact-card",
+      "allowedTones": ["slate", "orange", "blue", "green"]
+    }
+  },
+  "pageIcons": {
+    "holodilniki.html": "ri-snowy-line",
+    "stiralnye-mashiny.html": "ri-loader-4-line",
+    "posudomoyki.html": "ri-drop-line",
+    "plity.html": "ri-fire-line",
+    "microwaves.html": "ri-cpu-line",
+    "water-heaters.html": "ri-temp-hot-line"
+  },
+  "pageTones": {
+    "holodilniki.html": "blue",
+    "stiralnye-mashiny.html": "green",
+    "posudomoyki.html": "slate",
+    "plity.html": "orange",
+    "microwaves.html": "slate",
+    "water-heaters.html": "blue"
+  }
+}

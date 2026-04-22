@@ -48,5 +48,18 @@
       "faqClass": "faq-item",
       "requireH1": true
     }
+  },
+  "sharedCardSlots": {
+    "branchPages": [
+      "bytovaya-index.html",
+      "bytovaya-uslugi.html",
+      "bytovaya-contact.html"
+    ],
+    "allowedSections": ["categoryCards", "trustCards", "contactChannels"],
+    "anchorMap": {
+      "categoryCards": "category-cards",
+      "trustCards": "trust-cards",
+      "contactChannels": "contact-channels"
+    }
   }
 }

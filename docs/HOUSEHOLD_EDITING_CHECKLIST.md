@@ -16,6 +16,12 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 - Keep request hints focused on what the client should send or expect next.
 - Keep placeholders realistic for the actual device page.
 
+## Change Household Card Sections
+
+- Edit `data/household-page-slots.json` first for `categoryCards`, `trustCards`, and `contactChannels`.
+- Keep card tones and CTA labels aligned with `data/household-card-presets.json`.
+- Prefer registry-driven category cards over handwritten HTML service-card copy.
+
 ## Change SEO or Indexing
 
 - Edit `data/page-metadata.json`.
