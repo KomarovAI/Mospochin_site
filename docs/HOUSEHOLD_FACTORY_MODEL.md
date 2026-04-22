@@ -38,6 +38,10 @@ This document defines the first page-factory layer for household service pages.
   - adds public pages to household branch navigation when the page is not shadow
 - `npm run doctor:household-page -- --page <file>`
   - checks whether one household page is aligned across metadata, registry, slots, taxonomy, static body classes, and HTML anchors
+  - prints the recommended edit surface for routine service-page changes
+- `npm run household:set-faq`, `household:set-form-hints`, `household:set-related`, `household:set-proof`, `household:set-metadata`
+  - narrow authoring helpers for public household service pages
+  - update only the source-of-truth JSON layer for the requested change
 
 ## Editing Rule
 
@@ -46,6 +50,7 @@ This document defines the first page-factory layer for household service pages.
 - Edit slots first for FAQ or request-form copy changes.
 - Edit `data/household-proof-layer.json` first for trust, review, SLA, price-clarity, objections, and conversion-confidence blocks.
 - Edit branch card sections in `data/household-page-slots.json` and keep them aligned with `data/household-card-presets.json`.
+- Prefer the narrow helper commands for routine public service-page changes before editing JSON by hand.
 - Edit HTML only for unique layout or page-specific narrative.
 - Run `npm run validate:site` after changes.
 

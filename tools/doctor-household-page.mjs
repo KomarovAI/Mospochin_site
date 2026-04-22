@@ -56,6 +56,36 @@ function getExpectedPageClass(page) {
   return `page-${page.replace(/\.html$/, '')}`;
 }
 
+function getRecommendedEditSurface({ page, pageType, registryEntry }) {
+  if (pageType === 'branch-card-page') {
+    return {
+      cardSections: 'Edit data/household-page-slots.json for branch card sections',
+      proofSections: 'Edit data/household-proof-layer.json for branch proof/review/case sections',
+      shell: `Edit ${page} only for unique layout or narrative copy`,
+    };
+  }
+
+  if (!registryEntry) return null;
+
+  if (registryEntry.isShadow) {
+    return {
+      note: 'Shadow page: public helper commands are disabled',
+      registry: 'Edit data/household-services.json directly for identity/related data',
+      metadata: 'Edit data/page-metadata.json directly for noindex/canonical metadata',
+      html: `Edit ${page} only for unique shadow-page narrative`,
+    };
+  }
+
+  return {
+    faq: `npm run household:set-faq -- --page ${page} ...`,
+    formHints: `npm run household:set-form-hints -- --page ${page} ...`,
+    related: `npm run household:set-related -- --page ${page} ...`,
+    proof: `npm run household:set-proof -- --page ${page} --section <section> ...`,
+    metadata: `npm run household:set-metadata -- --page ${page} ...`,
+    html: `Edit ${page} only for unique layout or long-form narrative`,
+  };
+}
+
 function getPageFromArgs(args) {
   if (args.page && args.page !== true) return String(args.page);
   if (args.slug && args.slug !== true) return `${args.slug}.html`;
@@ -313,6 +343,11 @@ function runDoctor(page) {
           tone: cardPresets.pageTones?.[page] ?? null,
         }
       : null,
+    recommendedEditSurface: getRecommendedEditSurface({
+      page,
+      pageType: isBranchCardPage ? 'branch-card-page' : registryEntry ? 'service-page' : 'unknown',
+      registryEntry,
+    }),
     issues,
   };
 
@@ -370,6 +405,12 @@ try {
             : 'missing icon/tone preset'
         }`
       );
+    }
+    if (summary.recommendedEditSurface) {
+      console.log('- recommended edit surface:');
+      Object.entries(summary.recommendedEditSurface).forEach(([label, value]) => {
+        console.log(`  - ${label}: ${value}`);
+      });
     }
     if (summary.issues.length) {
       console.log('- issues:');

@@ -4,21 +4,26 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 
 ## Change Symptoms, Brands, or Related Pages
 
-- Edit `data/household-services.json` first.
+- Prefer `npm run household:set-related -- --page <file>.html ...` for public service pages.
+- Edit `data/household-services.json` directly for branch pages, shadow pages, or structural registry changes.
 - Keep `primarySymptoms` short and literal.
 - Keep `brandCluster` representative, not exhaustive.
 - Do not point visible pages to `isShadow: true` pages in `relatedPages`.
 
 ## Change FAQ Or Request-Form Copy
 
-- Edit `data/household-page-slots.json` first.
+- Prefer:
+  - `npm run household:set-faq -- --page <file>.html ...`
+  - `npm run household:set-form-hints -- --page <file>.html ...`
+- Edit `data/household-page-slots.json` directly only when the helper flow is not enough.
 - Keep FAQ answers short, literal, and useful on a real call or form submission.
 - Keep request hints focused on what the client should send or expect next.
 - Keep placeholders realistic for the actual device page.
 
 ## Change Trust, Review, Or Conversion Proof
 
-- Edit `data/household-proof-layer.json` first.
+- Prefer `npm run household:set-proof -- --page <file>.html --section <section> ...` for public service-page proof defaults.
+- Edit `data/household-proof-layer.json` directly for branch-level proof/review/case sections.
 - Keep promises concrete: diagnosis, price before work, act, warranty, timing, and next step.
 - Keep review, proof, objection, and case cards focused on one confidence signal each.
 - Keep `priceClarity` items factual: symptom, diagnosis, decision, and explicit repair viability.
@@ -32,7 +37,8 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 
 ## Change SEO or Indexing
 
-- Edit `data/page-metadata.json`.
+- Prefer `npm run household:set-metadata -- --page <file>.html ...` for public service pages.
+- Edit `data/page-metadata.json` directly for branch pages and shadow pages.
 - Keep shadow pages aligned with `robots: noindex,follow`.
 - Do not use the service registry as the source of canonical URLs.
 
@@ -53,5 +59,6 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 
 - Run `npm run validate:site`.
 - Run `npm run doctor:household-page -- --page <file>.html` for a narrow page audit when one service page looks out of sync.
+- Read the `recommended edit surface` block from `doctor` before touching JSON or HTML by hand.
 - Run `npm run generate:sitemap` if metadata or indexing changed.
 - Run `npm run generate:deploy-manifest` if a new deployable file was added.
