@@ -13,6 +13,7 @@ const RESTAURANT_SERVICES_PATH = path.join(SITE_ROOT, 'data/restaurant-services.
 const RESTAURANT_SLOTS_PATH = path.join(SITE_ROOT, 'data/restaurant-page-slots.json');
 const RESTAURANT_PROOF_PATH = path.join(SITE_ROOT, 'data/restaurant-proof-layer.json');
 const RESTAURANT_TAXONOMY_PATH = path.join(SITE_ROOT, 'data/restaurant-taxonomy.json');
+const RESTAURANT_POLICY_SYNC_HINT = 'Run npm run restaurant:sync-fallbacks after slot changes';
 const HOUSEHOLD_DOCTOR_PATH = path.join(SITE_ROOT, 'tools/doctor-household-page.mjs');
 
 function parseArgs(argv) {
@@ -99,6 +100,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
       registry: `Edit data/restaurant-services.json for ${page} symptoms, brands, related pages, and service identity`,
       proof: 'Edit data/restaurant-proof-layer.json for shared restaurant proof defaults',
       metadata: `Edit data/page-metadata.json for ${page} SEO and canonical metadata`,
+      sync: RESTAURANT_POLICY_SYNC_HINT,
       html: `Edit ${page} only for unique layout or long-form narrative`,
     };
   }
@@ -255,6 +257,7 @@ function runRestaurantDoctor(page) {
     slots: slotEntry
       ? {
           hasFormHints: Boolean(slotEntry.formHints),
+          hasFaq: Array.isArray(slotEntry.faq) && slotEntry.faq.length > 0,
           chipCount: slotEntry.formHints?.chips?.length ?? 0,
         }
       : null,
@@ -294,7 +297,7 @@ try {
     console.log(`- taxonomy: ${summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'n/a'}`);
     console.log(
       `- slots: ${
-        summary.slots ? `ok (formHints=${summary.slots.hasFormHints ? 'yes' : 'no'}, chips=${summary.slots.chipCount})` : 'n/a'
+        summary.slots ? `ok (formHints=${summary.slots.hasFormHints ? 'yes' : 'no'}, faq=${summary.slots.hasFaq ? 'yes' : 'no'}, chips=${summary.slots.chipCount})` : 'n/a'
       }`
     );
     if (summary.proofLayer) {

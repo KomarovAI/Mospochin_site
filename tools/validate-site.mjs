@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { analyzeHouseholdSyncState, HOUSEHOLD_SYNC_ZONES } from './household-fallback-sync-lib.mjs';
+import { analyzeRestaurantSyncState, RESTAURANT_SYNC_ZONES } from './restaurant-fallback-sync-lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1678,7 +1679,7 @@ function validateRestaurantPagePolicy(policy) {
   if (!isPlainObject(policy.publicPage)) {
     errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage must be an object`);
   } else {
-    for (const fieldName of ['requiredRegistryFields', 'requiredSectionIds', 'requiredSlotAnchors', 'requiredSlotFields', 'requiredBodyClasses', 'requiredFormFields']) {
+    for (const fieldName of ['requiredRegistryFields', 'requiredSectionIds', 'requiredSlotAnchors', 'requiredSlotFields', 'requiredBodyClasses', 'requiredFormFields', 'requiredSyncZones']) {
       if (!isArrayOfNonEmptyStrings(policy.publicPage[fieldName])) {
         errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.${fieldName} must be a non-empty array of strings`);
       }
@@ -1889,6 +1890,20 @@ function validateRestaurantPageSlots(slots, registry) {
       }
     }
 
+    if (!Array.isArray(slotEntry.faq) || slotEntry.faq.length === 0) {
+      errors.push(`${context}.faq must be a non-empty array`);
+    } else {
+      slotEntry.faq.forEach((item, index) => {
+        if (!isPlainObject(item)) {
+          errors.push(`${context}.faq[${index}] must be an object`);
+          return;
+        }
+        if (!isNonEmptyString(item.question) || !isNonEmptyString(item.answer)) {
+          errors.push(`${context}.faq[${index}] must define question and answer`);
+        }
+      });
+    }
+
     for (const className of restaurantPagePolicy?.publicPage?.requiredBodyClasses ?? []) {
       if (!bodyClasses.has(className)) {
         errors.push(`${service.page}: missing body class ${className}`);
@@ -1911,6 +1926,12 @@ function validateRestaurantPageSlots(slots, registry) {
     for (const sectionId of restaurantPagePolicy?.publicPage?.requiredSectionIds ?? []) {
       if (!html.includes(`<section id="${sectionId}"`)) {
         errors.push(`${service.page}: missing section id ${sectionId}`);
+      }
+    }
+
+    for (const zone of restaurantPagePolicy?.publicPage?.requiredSyncZones ?? []) {
+      if (!html.includes(`data-sync-zone="${zone}"`)) {
+        errors.push(`${service.page}: missing data-sync-zone="${zone}"`);
       }
     }
 
@@ -1939,6 +1960,16 @@ function validateRestaurantPageSlots(slots, registry) {
       if (countNamedFields(html, fieldName) === 0) {
         errors.push(`${service.page}: missing form field ${fieldName}`);
       }
+    }
+
+    const syncState = analyzeRestaurantSyncState(html, {
+      pageMeta: metadata.pages[service.page],
+      service,
+      slotEntry,
+    });
+
+    for (const issue of syncState.issues) {
+      errors.push(`${service.page}: ${issue}`);
     }
   });
 
