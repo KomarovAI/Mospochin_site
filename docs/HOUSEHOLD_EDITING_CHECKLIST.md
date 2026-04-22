@@ -16,6 +16,13 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 - Keep request hints focused on what the client should send or expect next.
 - Keep placeholders realistic for the actual device page.
 
+## Change Trust, Review, Or Conversion Proof
+
+- Edit `data/household-proof-layer.json` first.
+- Keep promises concrete: diagnosis, price before work, act, warranty, timing, and next step.
+- Keep review and proof cards focused on one confidence signal each.
+- Do not move shadow pages or speculative offers into visible proof content.
+
 ## Change Household Card Sections
 
 - Edit `data/household-page-slots.json` first for `categoryCards`, `trustCards`, and `contactChannels`.

@@ -16,6 +16,7 @@ const HOUSEHOLD_BRANCH_PATH = '/data/household-branch.json';
 const HOUSEHOLD_SERVICES_PATH = '/data/household-services.json';
 const HOUSEHOLD_PAGE_SLOTS_PATH = '/data/household-page-slots.json';
 const HOUSEHOLD_CARD_PRESETS_PATH = '/data/household-card-presets.json';
+const HOUSEHOLD_PROOF_LAYER_PATH = '/data/household-proof-layer.json';
 const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
   subtitle: '🔧 Ресторанное оборудование',
   contactHint: '⚡ Работаем 24/7',
@@ -193,6 +194,7 @@ let householdBranchPromise = null;
 let householdServicesPromise = null;
 let householdPageSlotsPromise = null;
 let householdCardPresetsPromise = null;
+let householdProofLayerPromise = null;
 
 async function loadJson(path) {
   const response = await fetch(path, { cache: 'no-store' });
@@ -293,6 +295,24 @@ async function loadHouseholdCardPresets() {
   }
 
   return householdCardPresetsPromise;
+}
+
+async function loadHouseholdProofLayer() {
+  if (!householdProofLayerPromise) {
+    householdProofLayerPromise = (async () => {
+      try {
+        return await loadJson(HOUSEHOLD_PROOF_LAYER_PATH);
+      } catch (error) {
+        console.error('Household proof layer unavailable:', error.message);
+        return {
+          serviceDefaults: {},
+          branchPages: {},
+        };
+      }
+    })();
+  }
+
+  return householdProofLayerPromise;
 }
 
 function inferBranchFromSlug() {
@@ -834,6 +854,77 @@ const Components = {
       .join('');
   },
 
+  renderHouseholdProofCards(cards) {
+    return (cards || [])
+      .map((card) => {
+        const tone = this.getHouseholdCardTone(card.tone || 'slate');
+
+        return `
+          <article class="household-card household-card--proof ${tone.card}">
+            <div class="household-card__topline">
+              <span class="household-card__eyebrow ${tone.badge}">${escapeHtml(card.badge || 'Без сюрпризов')}</span>
+              <span class="household-card__icon"><i class="${escapeHtml(card.icon || 'ri-shield-check-line')}"></i></span>
+            </div>
+            <h3 class="household-card__title">${escapeHtml(card.title)}</h3>
+            <p class="household-card__description">${escapeHtml(card.description)}</p>
+            ${card.outcome ? `<p class="household-card__meta">${escapeHtml(card.outcome)}</p>` : ''}
+          </article>
+        `;
+      })
+      .join('');
+  },
+
+  renderHouseholdReviewCards(cards) {
+    return (cards || [])
+      .map((card) => {
+        const tone = this.getHouseholdCardTone(card.tone || 'slate');
+
+        return `
+          <article class="household-card household-card--review ${tone.card}">
+            <div class="household-card__topline">
+              <span class="household-card__eyebrow ${tone.badge}">${escapeHtml(card.badge || 'Отзыв')}</span>
+              <span class="household-card__stars" aria-hidden="true">★★★★★</span>
+            </div>
+            <p class="household-card__quote">«${escapeHtml(card.quote || '')}»</p>
+            <div class="household-card__reviewer">
+              <strong>${escapeHtml(card.author || '')}</strong>
+              <span>${escapeHtml(card.meta || '')}</span>
+            </div>
+          </article>
+        `;
+      })
+      .join('');
+  },
+
+  renderHouseholdSlaStrip(sectionConfig) {
+    const items = Array.isArray(sectionConfig?.items) ? sectionConfig.items : [];
+    if (!items.length) return '';
+
+    return `
+      <div class="household-proof-strip">
+        <div class="household-proof-strip__copy">
+          <span class="household-proof-strip__badge">${escapeHtml(sectionConfig.badge || 'Понятный сценарий')}</span>
+          <h2 class="household-proof-strip__title">${escapeHtml(sectionConfig.title || '')}</h2>
+          <p class="household-proof-strip__description">${escapeHtml(sectionConfig.description || '')}</p>
+        </div>
+        <div class="household-proof-strip__grid">
+          ${items
+            .map((item) => {
+              const tone = this.getHouseholdCardTone(item.tone || 'slate');
+              return `
+                <article class="household-proof-strip__item ${tone.card}">
+                  <p class="household-proof-strip__value">${escapeHtml(item.value || '')}</p>
+                  <p class="household-proof-strip__label">${escapeHtml(item.label || '')}</p>
+                  <p class="household-proof-strip__meta">${escapeHtml(item.description || '')}</p>
+                </article>
+              `;
+            })
+            .join('')}
+        </div>
+      </div>
+    `;
+  },
+
   renderHouseholdCardActions(actions, inheritedTone = 'slate') {
     return (actions || [])
       .map((action) => {
@@ -916,6 +1007,29 @@ const Components = {
         container.innerHTML = this.renderHouseholdContactCards(
           sections.contactChannels.cards || []
         );
+      }
+    }
+  },
+
+  hydrateHouseholdProofSections(currentPage, proofLayer) {
+    const sections = proofLayer?.branchPages?.[currentPage];
+    if (!sections || typeof sections !== 'object') return;
+
+    if (sections.proofCards) {
+      this.updateHouseholdCardSectionCopy('proof-cards', sections.proofCards);
+      const container = document.querySelector('[data-slot="proof-cards"]');
+      if (container) {
+        container.className = 'household-card-grid household-card-grid--proof';
+        container.innerHTML = this.renderHouseholdProofCards(sections.proofCards.cards || []);
+      }
+    }
+
+    if (sections.reviewCards) {
+      this.updateHouseholdCardSectionCopy('review-cards', sections.reviewCards);
+      const container = document.querySelector('[data-slot="review-cards"]');
+      if (container) {
+        container.className = 'household-card-grid household-card-grid--reviews';
+        container.innerHTML = this.renderHouseholdReviewCards(sections.reviewCards.cards || []);
       }
     }
   },
@@ -1057,6 +1171,42 @@ const Components = {
       .join('');
   },
 
+  hydrateHouseholdServiceProofLayer(service, proofLayer, anchorForm) {
+    const defaults = proofLayer?.serviceDefaults;
+    if (!defaults || !anchorForm) return;
+
+    const requestSection = anchorForm.closest('section');
+    if (!requestSection) return;
+
+    let proofSection = document.querySelector('[data-household-slot-generated="service-proof"]');
+    if (!proofSection) {
+      proofSection = document.createElement('section');
+      proofSection.dataset.householdSlotGenerated = 'service-proof';
+      proofSection.className = 'py-16 lg:py-20 bg-white';
+      requestSection.insertAdjacentElement('afterend', proofSection);
+    }
+
+    proofSection.innerHTML = `
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-slate-50/90 p-6 sm:p-8 lg:p-10 shadow-sm">
+          ${this.renderHouseholdSlaStrip(defaults.slaStrip)}
+          <div class="mt-8 flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-3 py-1.5 text-sm font-semibold text-brand-orange">По категории ${escapeHtml(service.uiLabel)}</span>
+            ${this.renderHouseholdBadgeList((service.primarySymptoms || []).slice(0, 3), 'slate')}
+          </div>
+          <div class="mt-8 text-center">
+            <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-semibold text-brand-blue">${escapeHtml(defaults.proofCards?.badge || 'Почему это спокойнее')}</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(defaults.proofCards?.title || '')}</h2>
+            <p class="mt-3 text-slate-600">${escapeHtml(defaults.proofCards?.description || '')}</p>
+          </div>
+          <div class="mt-8 household-card-grid household-card-grid--proof">
+            ${this.renderHouseholdProofCards(defaults.proofCards?.cards || [])}
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
   hydrateHouseholdRelatedLinks(service, serviceMap, cardPresets, anchorForm) {
     const relatedServices = (service.relatedPages || [])
       .map((page) => serviceMap.get(page))
@@ -1071,7 +1221,8 @@ const Components = {
       relatedSection = document.createElement('section');
       relatedSection.dataset.householdSlotGenerated = 'related-links';
       relatedSection.className = 'py-16 lg:py-20 bg-slate-50';
-      requestSection.insertAdjacentElement('afterend', relatedSection);
+      const proofSection = document.querySelector('[data-household-slot-generated="service-proof"]');
+      (proofSection || requestSection).insertAdjacentElement('afterend', relatedSection);
     }
 
     relatedSection.innerHTML = `
@@ -1099,17 +1250,19 @@ const Components = {
     const currentPage = getCurrentPageFile();
     if (!this.isBytovaya()) return;
 
-    const [pageMetadata, serviceRegistry, pageSlots, cardPresets] = await Promise.all([
+    const [pageMetadata, serviceRegistry, pageSlots, cardPresets, proofLayer] = await Promise.all([
       loadCurrentPageMetadata(),
       loadHouseholdServicesRegistry(),
       loadHouseholdPageSlots(),
       loadHouseholdCardPresets(),
+      loadHouseholdProofLayer(),
     ]);
 
     const services = Array.isArray(serviceRegistry?.services) ? serviceRegistry.services : [];
     const serviceMap = new Map(services.map((entry) => [entry.page, entry]));
     const slotEntry = pageSlots?.pages?.[currentPage];
     this.hydrateHouseholdCardSections(slotEntry, serviceMap, cardPresets);
+    this.hydrateHouseholdProofSections(currentPage, proofLayer);
 
     if (currentPage.startsWith('bytovaya-')) return;
 
@@ -1121,6 +1274,7 @@ const Components = {
 
     this.hydrateHouseholdServiceSchema(service, pageMetadata, slotEntry);
     this.hydrateHouseholdFaq(slotEntry);
+    this.hydrateHouseholdServiceProofLayer(service, proofLayer, anchorForm);
     this.hydrateHouseholdRelatedLinks(service, serviceMap, cardPresets, anchorForm);
   },
 

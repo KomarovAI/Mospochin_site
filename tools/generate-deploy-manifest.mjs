@@ -16,6 +16,7 @@ const SOURCE_EXTENSIONS = new Set(['.html', '.css', '.js']);
 const ALWAYS_INCLUDE = [
   '404.html',
   'data/household-card-presets.json',
+  'data/household-proof-layer.json',
   'data/household-page-slots.json',
   'data/page-metadata.json',
   'data/household-services.json',

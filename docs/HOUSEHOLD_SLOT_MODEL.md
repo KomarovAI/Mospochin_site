@@ -17,6 +17,10 @@ This document defines the first slot-based content layer for public household se
   - brand cluster
   - related pages
   - service name / schema name
+- `data/household-proof-layer.json`
+  - shared service proof strip
+  - shared proof cards for public household service pages
+  - branch-level proof/review sections for household hubs and contact page
 - `data/household-page-slots.json`
   - FAQ content
   - request-form hint chips
@@ -50,16 +54,21 @@ This document defines the first slot-based content layer for public household se
   - runtime replaces the main FAQ list with the slot entry for the current page
 - `related-links`
   - runtime injects a compact “see also” block after the request section using household registry links
+- `service-proof`
+  - runtime injects a shared proof strip + proof cards after the request form on public household service pages
 - `category-cards`
   - runtime can replace household hub category grids from registry + card-section config
 - `trust-cards`
   - runtime can replace repeatable benefit/result cards on household hub pages
 - `contact-channels`
   - runtime can replace the main household contact channel cards from shared slot data
+- `proof-cards` / `review-cards`
+  - runtime can replace branch-level confidence and review sections from `data/household-proof-layer.json`
 
 ## Editing Rule
 
 - If you are changing FAQ or request copy, edit `data/household-page-slots.json` first.
+- If you are changing proof, trust, review, or “what happens next” conversion blocks, edit `data/household-proof-layer.json` first.
 - If you are changing household hub cards or contact-channel cards, edit `data/household-page-slots.json` first and keep tones/CTA labels aligned with `data/household-card-presets.json`.
 - If you are changing symptoms, brand coverage, page identity, or related page topology, edit `data/household-services.json`.
 - Only edit HTML when the change is truly layout-specific or intentionally unique to one page.

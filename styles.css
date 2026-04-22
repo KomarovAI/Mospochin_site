@@ -1111,8 +1111,13 @@ details summary::-webkit-details-marker {
 }
 
 .household-card-grid--trust,
-.household-card-grid--contact {
+.household-card-grid--contact,
+.household-card-grid--proof {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.household-card-grid--reviews {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .household-card-grid--related {
@@ -1276,6 +1281,41 @@ details summary::-webkit-details-marker {
   line-height: 1.55;
 }
 
+.household-card__quote {
+  margin-top: 0.9rem;
+  color: #334155;
+  line-height: 1.7;
+  font-size: 1rem;
+  flex: 1 1 auto;
+}
+
+.household-card__reviewer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.household-card__reviewer strong {
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+.household-card__reviewer span {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.household-card__stars {
+  color: #f59e0b;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
 .household-card__actions {
   display: flex;
   flex-wrap: wrap;
@@ -1321,6 +1361,80 @@ details summary::-webkit-details-marker {
   color: #ffffff;
 }
 
+.household-proof-strip {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.household-proof-strip__copy {
+  max-width: 46rem;
+}
+
+.household-proof-strip__badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.household-proof-strip__title {
+  margin: 1rem 0 0;
+  color: #0f172a;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.65rem, 2vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.household-proof-strip__description {
+  margin-top: 0.85rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.household-proof-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.household-proof-strip__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 100%;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 16px 34px -26px rgba(15, 23, 42, 0.4);
+}
+
+.household-proof-strip__value {
+  color: var(--household-card-accent);
+  font-family: var(--font-display, inherit);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.household-proof-strip__label {
+  color: #0f172a;
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.household-proof-strip__meta {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 @media (max-width: 767px) {
   .household-card {
     padding: 1.25rem;
@@ -1329,6 +1443,10 @@ details summary::-webkit-details-marker {
 
   .household-card__title {
     font-size: 1.2rem;
+  }
+
+  .household-proof-strip__grid {
+    grid-template-columns: 1fr;
   }
 }
 

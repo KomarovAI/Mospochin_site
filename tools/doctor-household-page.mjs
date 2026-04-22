@@ -12,6 +12,7 @@ const METADATA_PATH = path.join(SITE_ROOT, 'data/page-metadata.json');
 const REGISTRY_PATH = path.join(SITE_ROOT, 'data/household-services.json');
 const SLOTS_PATH = path.join(SITE_ROOT, 'data/household-page-slots.json');
 const CARD_PRESETS_PATH = path.join(SITE_ROOT, 'data/household-card-presets.json');
+const PROOF_LAYER_PATH = path.join(SITE_ROOT, 'data/household-proof-layer.json');
 
 function parseArgs(argv) {
   const result = {};
@@ -42,6 +43,10 @@ function countNamedFields(html, fieldName) {
   return (html.match(new RegExp(`name="${fieldName}"`, 'g')) || []).length;
 }
 
+function hasSlotAnchor(html, anchor) {
+  return html.includes(`data-slot="${anchor}"`);
+}
+
 function getPageFromArgs(args) {
   if (args.page && args.page !== true) return String(args.page);
   if (args.slug && args.slug !== true) return `${args.slug}.html`;
@@ -55,6 +60,7 @@ function runDoctor(page) {
   const taxonomy = readJson(TAXONOMY_PATH);
   const policy = readJson(POLICY_PATH);
   const cardPresets = readJson(CARD_PRESETS_PATH);
+  const proofLayer = readJson(PROOF_LAYER_PATH);
 
   const filePath = path.join(SITE_ROOT, page);
   const htmlExists = fs.existsSync(filePath);
@@ -69,6 +75,8 @@ function runDoctor(page) {
   const isServicePage = Boolean(registryEntry);
   const policyKey = registryEntry?.isShadow ? 'shadowPage' : 'publicPage';
   const contract = isServicePage ? policy[policyKey] ?? null : null;
+  const proofEntry = proofLayer?.branchPages?.[page] ?? null;
+  const serviceProofDefaults = proofLayer?.serviceDefaults ?? null;
   const issues = [];
 
   if (!htmlExists) issues.push('Missing HTML file');
@@ -115,6 +123,22 @@ function runDoctor(page) {
         }
       }
     }
+
+    if (!proofEntry || typeof proofEntry !== 'object') {
+      issues.push('Missing proof-layer branch entry');
+    } else {
+      for (const sectionName of Object.keys(proofEntry)) {
+        const anchor = sharedCardConfig.anchorMap?.[sectionName];
+        if (!anchor) {
+          issues.push(`Unknown proof-layer section ${sectionName}`);
+          continue;
+        }
+
+        if (!hasSlotAnchor(html, anchor)) {
+          issues.push(`Missing data-slot="${anchor}" for proof-layer section ${sectionName}`);
+        }
+      }
+    }
   }
 
   if (registryEntry && contract) {
@@ -155,8 +179,18 @@ function runDoctor(page) {
     }
 
     for (const anchor of contract.requiredSlotAnchors ?? []) {
-      if (!html.includes(`data-slot="${anchor}"`)) {
+      if (!hasSlotAnchor(html, anchor)) {
         issues.push(`Missing data-slot="${anchor}"`);
+      }
+    }
+
+    if (!registryEntry.isShadow) {
+      if (!serviceProofDefaults?.slaStrip || typeof serviceProofDefaults.slaStrip !== 'object') {
+        issues.push('Proof layer missing serviceDefaults.slaStrip');
+      }
+
+      if (!serviceProofDefaults?.proofCards || typeof serviceProofDefaults.proofCards !== 'object') {
+        issues.push('Proof layer missing serviceDefaults.proofCards');
       }
     }
   }
@@ -190,6 +224,21 @@ function runDoctor(page) {
           cardSections: Object.keys(slotEntry.cardSections ?? {}),
         }
       : null,
+    proofLayer: isBranchCardPage
+      ? {
+          branchSections: Object.keys(proofEntry ?? {}),
+          anchorsPresent: Object.keys(proofEntry ?? {}).every((sectionName) => {
+            const anchor = sharedCardConfig.anchorMap?.[sectionName];
+            return anchor ? hasSlotAnchor(html, anchor) : false;
+          }),
+        }
+      : isServicePage && !registryEntry?.isShadow
+        ? {
+            hasSlaStrip: Boolean(serviceProofDefaults?.slaStrip),
+            hasProofCards: Boolean(serviceProofDefaults?.proofCards),
+            requestAnchorPresent: hasSlotAnchor(html, 'request-form'),
+          }
+        : null,
     cardPresets: isServicePage
       ? {
           icon: cardPresets.pageIcons?.[page] ?? null,
@@ -217,6 +266,25 @@ try {
     console.log(`- registry: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.registry ? 'ok' : 'missing'}`);
     console.log(`- taxonomy: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'missing'}`);
     console.log(`- slots: ${summary.slots ? `ok (${summary.slots.cardSections.length} card sections)` : 'missing'}`);
+    if (summary.proofLayer) {
+      if (summary.pageType === 'branch-card-page') {
+        console.log(
+          `- proof layer: ${
+            summary.proofLayer.branchSections.length
+              ? `ok (${summary.proofLayer.branchSections.join(', ')})`
+              : 'missing sections'
+          }`
+        );
+      } else {
+        console.log(
+          `- proof layer: ${
+            summary.proofLayer.hasSlaStrip && summary.proofLayer.hasProofCards
+              ? 'ok (service defaults ready)'
+              : 'missing service defaults'
+          }`
+        );
+      }
+    }
     if (summary.cardPresets) {
       console.log(
         `- card presets: ${

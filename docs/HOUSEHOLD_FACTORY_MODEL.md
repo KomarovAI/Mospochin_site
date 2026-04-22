@@ -18,6 +18,8 @@ This document defines the first page-factory layer for household service pages.
   - FAQ, request-form copy, and branch-level card sections for household pages
 - `data/household-card-presets.json`
   - allowed tones, CTA vocabulary, and preset icon/tone mapping for reusable household cards
+- `data/household-proof-layer.json`
+  - shared proof strip, proof cards, and branch-level review/confidence blocks
 - `data/household-taxonomy.json`
   - device families, allowed symptoms, brand pools, semantic related-page rules
 - `data/household-page-policy.json`
@@ -42,6 +44,7 @@ This document defines the first page-factory layer for household service pages.
 - Use the scaffold first when adding a new household page.
 - Edit the registry first for symptoms, brands, related pages, and identity changes.
 - Edit slots first for FAQ or request-form copy changes.
+- Edit `data/household-proof-layer.json` first for trust, review, SLA, and conversion-confidence blocks.
 - Edit branch card sections in `data/household-page-slots.json` and keep them aligned with `data/household-card-presets.json`.
 - Edit HTML only for unique layout or page-specific narrative.
 - Run `npm run validate:site` after changes.

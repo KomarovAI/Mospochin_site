@@ -17,6 +17,7 @@ const HOUSEHOLD_BRANCH_DATA = 'data/household-branch.json';
 const HOUSEHOLD_SERVICES_DATA = 'data/household-services.json';
 const HOUSEHOLD_PAGE_SLOTS_DATA = 'data/household-page-slots.json';
 const HOUSEHOLD_CARD_PRESETS_DATA = 'data/household-card-presets.json';
+const HOUSEHOLD_PROOF_LAYER_DATA = 'data/household-proof-layer.json';
 const HOUSEHOLD_TAXONOMY_DATA = 'data/household-taxonomy.json';
 const HOUSEHOLD_PAGE_POLICY_DATA = 'data/household-page-policy.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
@@ -81,6 +82,10 @@ const householdCardPresetsPath = path.join(SITE_ROOT, HOUSEHOLD_CARD_PRESETS_DAT
 const householdCardPresets = fs.existsSync(householdCardPresetsPath)
   ? JSON.parse(fs.readFileSync(householdCardPresetsPath, 'utf8'))
   : null;
+const householdProofLayerPath = path.join(SITE_ROOT, HOUSEHOLD_PROOF_LAYER_DATA);
+const householdProofLayer = fs.existsSync(householdProofLayerPath)
+  ? JSON.parse(fs.readFileSync(householdProofLayerPath, 'utf8'))
+  : null;
 const householdTaxonomyPath = path.join(SITE_ROOT, HOUSEHOLD_TAXONOMY_DATA);
 const householdTaxonomy = fs.existsSync(householdTaxonomyPath)
   ? JSON.parse(fs.readFileSync(householdTaxonomyPath, 'utf8'))
@@ -115,6 +120,10 @@ function isNonEmptyString(value) {
 
 function isArrayOfNonEmptyStrings(value) {
   return Array.isArray(value) && value.length > 0 && value.every((item) => isNonEmptyString(item));
+}
+
+function isPlainObject(value) {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 }
 
 function getHouseholdPolicyKey(service) {
@@ -548,6 +557,165 @@ function validateHouseholdCardPresets(cardPresets) {
       errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}.${fieldName} must be an object`);
     }
   }
+}
+
+function validateHouseholdProofCopy(sectionConfig, context) {
+  if (!isPlainObject(sectionConfig)) {
+    errors.push(`${context} must be an object`);
+    return false;
+  }
+
+  for (const fieldName of ['badge', 'title', 'description']) {
+    if (!isNonEmptyString(sectionConfig[fieldName])) {
+      errors.push(`${context}.${fieldName} must be a non-empty string`);
+    }
+  }
+
+  return true;
+}
+
+function validateHouseholdProofCards(cards, context, allowedTones) {
+  if (!Array.isArray(cards) || cards.length === 0) {
+    errors.push(`${context}.cards must be a non-empty array`);
+    return;
+  }
+
+  cards.forEach((card, index) => {
+    const cardContext = `${context}.cards[${index}]`;
+    if (!isPlainObject(card)) {
+      errors.push(`${cardContext} must be an object`);
+      return;
+    }
+
+    validateCardTone(card.tone, cardContext, allowedTones);
+
+    for (const fieldName of ['badge', 'icon', 'title', 'description', 'outcome']) {
+      if (!isNonEmptyString(card[fieldName])) {
+        errors.push(`${cardContext}.${fieldName} must be a non-empty string`);
+      }
+    }
+  });
+}
+
+function validateHouseholdReviewCards(cards, context, allowedTones) {
+  if (!Array.isArray(cards) || cards.length === 0) {
+    errors.push(`${context}.cards must be a non-empty array`);
+    return;
+  }
+
+  cards.forEach((card, index) => {
+    const cardContext = `${context}.cards[${index}]`;
+    if (!isPlainObject(card)) {
+      errors.push(`${cardContext} must be an object`);
+      return;
+    }
+
+    validateCardTone(card.tone, cardContext, allowedTones);
+
+    for (const fieldName of ['badge', 'quote', 'author', 'meta']) {
+      if (!isNonEmptyString(card[fieldName])) {
+        errors.push(`${cardContext}.${fieldName} must be a non-empty string`);
+      }
+    }
+  });
+}
+
+function validateHouseholdProofLayer(proofLayer) {
+  if (!isPlainObject(proofLayer)) {
+    errors.push(`${HOUSEHOLD_PROOF_LAYER_DATA}: top-level object is required`);
+    return;
+  }
+
+  const allowedTones = new Set(householdCardPresets?.allowedTones ?? []);
+  const branchPages = new Set(getHouseholdSharedCardConfig()?.branchPages ?? []);
+  const anchorMap = getHouseholdSharedCardConfig()?.anchorMap ?? {};
+  const allowedBranchSections = new Set(['proofCards', 'reviewCards']);
+
+  if (!isPlainObject(proofLayer.serviceDefaults)) {
+    errors.push(`${HOUSEHOLD_PROOF_LAYER_DATA}.serviceDefaults must be an object`);
+  } else {
+    const defaults = proofLayer.serviceDefaults;
+    const slaContext = `${HOUSEHOLD_PROOF_LAYER_DATA}.serviceDefaults.slaStrip`;
+    const cardsContext = `${HOUSEHOLD_PROOF_LAYER_DATA}.serviceDefaults.proofCards`;
+
+    if (!validateHouseholdProofCopy(defaults.slaStrip, slaContext)) {
+      errors.push(`${slaContext}.items must be a non-empty array`);
+    } else if (!Array.isArray(defaults.slaStrip.items) || defaults.slaStrip.items.length === 0) {
+      errors.push(`${slaContext}.items must be a non-empty array`);
+    } else {
+      defaults.slaStrip.items.forEach((item, index) => {
+        const itemContext = `${slaContext}.items[${index}]`;
+        if (!isPlainObject(item)) {
+          errors.push(`${itemContext} must be an object`);
+          return;
+        }
+
+        validateCardTone(item.tone, itemContext, allowedTones);
+        for (const fieldName of ['value', 'label', 'description']) {
+          if (!isNonEmptyString(item[fieldName])) {
+            errors.push(`${itemContext}.${fieldName} must be a non-empty string`);
+          }
+        }
+      });
+    }
+
+    if (validateHouseholdProofCopy(defaults.proofCards, cardsContext)) {
+      validateHouseholdProofCards(defaults.proofCards.cards, cardsContext, allowedTones);
+    }
+  }
+
+  if (!isPlainObject(proofLayer.branchPages)) {
+    errors.push(`${HOUSEHOLD_PROOF_LAYER_DATA}.branchPages must be an object`);
+    return;
+  }
+
+  branchPages.forEach((page) => {
+    const context = `${HOUSEHOLD_PROOF_LAYER_DATA}.branchPages.${page}`;
+    const entry = proofLayer.branchPages[page];
+    const pageMeta = metadata.pages[page];
+    const html = pageMeta ? read(page) : '';
+
+    if (!pageMeta || pageMeta.branch !== 'household') {
+      errors.push(`${context} must point to an existing household branch page`);
+      return;
+    }
+
+    if (!isPlainObject(entry)) {
+      errors.push(`${context} must be an object`);
+      return;
+    }
+
+    const sectionNames = Object.keys(entry);
+    if (!sectionNames.length) {
+      errors.push(`${context} must define at least one branch proof section`);
+      return;
+    }
+
+    sectionNames.forEach((sectionName) => {
+      const sectionContext = `${context}.${sectionName}`;
+      if (!allowedBranchSections.has(sectionName)) {
+        errors.push(`${sectionContext} is not an allowed proof-layer branch section`);
+        return;
+      }
+
+      const slotAnchor = anchorMap[sectionName];
+      if (slotAnchor && !html.includes(`data-slot="${slotAnchor}"`)) {
+        errors.push(`${page}: missing data-slot="${slotAnchor}" for proof-layer section ${sectionName}`);
+      }
+
+      if (!validateHouseholdProofCopy(entry[sectionName], sectionContext)) {
+        return;
+      }
+
+      if (sectionName === 'proofCards') {
+        validateHouseholdProofCards(entry[sectionName].cards, sectionContext, allowedTones);
+      }
+
+      if (sectionName === 'reviewCards') {
+        validateHouseholdReviewCards(entry[sectionName].cards, sectionContext, allowedTones);
+      }
+    });
+  });
 }
 
 function validateHouseholdServicesRegistry(registry) {
@@ -1219,6 +1387,7 @@ validateBranchConfig(householdBranch, { dataFile: HOUSEHOLD_BRANCH_DATA, pages: 
 validateHouseholdTaxonomy(householdTaxonomy);
 validateHouseholdPagePolicy(householdPagePolicy);
 validateHouseholdCardPresets(householdCardPresets);
+validateHouseholdProofLayer(householdProofLayer);
 validateHouseholdServicesRegistry(householdServicesRegistry);
 validateHouseholdPageSlots(householdPageSlots, householdServicesRegistry);
 
@@ -1257,6 +1426,10 @@ if (!fs.existsSync(householdPageSlotsPath)) {
 
 if (!fs.existsSync(householdCardPresetsPath)) {
   errors.push(`${HOUSEHOLD_CARD_PRESETS_DATA}: household card presets missing`);
+}
+
+if (!fs.existsSync(householdProofLayerPath)) {
+  errors.push(`${HOUSEHOLD_PROOF_LAYER_DATA}: household proof layer missing`);
 }
 
 if (!fs.existsSync(householdTaxonomyPath)) {
