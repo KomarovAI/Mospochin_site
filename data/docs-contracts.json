@@ -1,0 +1,59 @@
+{
+  "canonicalDocs": [
+    "README.md",
+    "PROJECT_MAP.md",
+    "SITE_MAINTENANCE_MODEL.md",
+    "STABILIZATION_BACKLOG.md",
+    "DOC_STATUS.md"
+  ],
+  "referenceDocs": [
+    "READABILITY_REFACTOR.md",
+    "BRANDS_GUIDE.md"
+  ],
+  "removedHistoricalDocs": [
+    "BRANDS_SECTION_UPDATE.md",
+    "INDEX_RESTAURANT_UPDATE.md",
+    "MENU_UPDATED.md",
+    "VISUAL_EFFECTS.md"
+  ],
+  "forbiddenCanonicalPatterns": [
+    "/tmp/Mospochin_site",
+    "ANIMATIONS_ADDED.md",
+    "CENTRALIZATION_COMPLETE.md",
+    "CHEATSHEET.md",
+    "FINAL_FIXES.md",
+    "FULL_AUDIT_REPORT.md",
+    "INTERNAL_REFERENCE.md",
+    "OPTIMIZATION_FINAL.md"
+  ],
+  "requiredDocLinks": {
+    "README.md": [
+      "docs/SITE_MAINTENANCE_MODEL.md",
+      "docs/PROJECT_MAP.md",
+      "docs/STABILIZATION_BACKLOG.md",
+      "docs/DOC_STATUS.md"
+    ],
+    "PROJECT_MAP.md": [
+      "docs/DOC_STATUS.md"
+    ],
+    "SITE_MAINTENANCE_MODEL.md": [
+      "docs/STABILIZATION_BACKLOG.md",
+      "docs/DOC_STATUS.md"
+    ]
+  },
+  "requiredDocMentions": {
+    "README.md": [
+      "telegram-form.js",
+      "data/runtime-config.json",
+      "server/telegram-api.mjs"
+    ],
+    "SITE_MAINTENANCE_MODEL.md": [
+      "telegram-form.js",
+      "data/runtime-config.json",
+      "server/telegram-api.mjs"
+    ],
+    "DOC_STATUS.md": [
+      "Removed Historical Notes"
+    ]
+  }
+}

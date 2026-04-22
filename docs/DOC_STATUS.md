@@ -2,6 +2,8 @@
 
 Current doc taxonomy for `Mospochin_site`.
 
+Validator source of truth for this taxonomy lives in `data/docs-contracts.json`.
+
 ## Canonical
 
 - `README.md`
