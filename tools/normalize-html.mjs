@@ -5,20 +5,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SITE_ROOT = path.resolve(__dirname, '..');
-
-const HOUSEHOLD_PAGES = new Set([
-  'bytovaya-index.html',
-  'bytovaya-uslugi.html',
-  'bytovaya-about.html',
-  'bytovaya-contact.html',
-  'holodilniki.html',
-  'stiralnye-mashiny.html',
-  'posudomoyki.html',
-  'kompyutery.html',
-  'routery.html',
-  'microwaves.html',
-  'water-heaters.html',
-]);
+const metadata = JSON.parse(
+  fs.readFileSync(path.join(SITE_ROOT, 'data/page-metadata.json'), 'utf8')
+);
 
 const PROD_PAGES = fs
   .readdirSync(SITE_ROOT)
@@ -34,7 +23,7 @@ function ensureSingleBlankLines(input) {
 }
 
 function normalizeHeadAssets(fileName, originalHead, hasForm) {
-  const usesManrope = HOUSEHOLD_PAGES.has(fileName);
+  const usesManrope = metadata.pages?.[fileName]?.branch === 'household';
   const cleanedHead = originalHead
     .replace(/\s*<link[^>]+href="(?:styles-built\.css|styles\.css|\/assets\/fonts\/manrope\.css|\/assets\/fonts\/remixicon\.css|favicon\.svg|https:\/\/fonts\.gstatic\.com|https:\/\/cdnjs\.cloudflare\.com)[^"]*"[^>]*>\s*/gi, '\n')
     .replace(/\s*<link[^>]+rel="preload"[^>]+href="(?:styles-built\.css|styles\.css|main\.js|\/assets\/fonts\/manrope\.css|\/assets\/fonts\/remixicon\.css)"[^>]*>\s*/gi, '\n')

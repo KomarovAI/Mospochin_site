@@ -30,15 +30,14 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 
 ## Add a New Household Service Page
 
-- Add the HTML page.
-- Add metadata in `data/page-metadata.json`.
-- Add a registry entry in `data/household-services.json`.
-- Add a slot entry in `data/household-page-slots.json` if the page is public.
-- Make sure the page has `Service` JSON-LD, `.telegram-form`, `.faq-item`, and the declared section ids.
-- If the page should be public, add it to the appropriate branch navigation source.
+- Start with `npm run scaffold:household-service -- --slug <slug> --device-name "<device>" --ui-label "<label>" --service-name "<service>" --family <family>`.
+- The scaffold adds the HTML page, metadata, registry, taxonomy device, slot entry, and household branch navigation for public pages.
+- If the page is shadow, add `--shadow`; the scaffold keeps it out of visible navigation and sets `noindex,follow`.
+- After scaffold, refine the unique HTML sections and page-specific sales copy without breaking the scaffolded anchors and form contract.
 
 ## Validate
 
 - Run `npm run validate:site`.
+- Run `npm run doctor:household-page -- --page <file>.html` for a narrow page audit when one service page looks out of sync.
 - Run `npm run generate:sitemap` if metadata or indexing changed.
 - Run `npm run generate:deploy-manifest` if a new deployable file was added.

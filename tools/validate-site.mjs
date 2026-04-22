@@ -16,6 +16,8 @@ const RESTAURANT_BRANCH_DATA = 'data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_DATA = 'data/household-branch.json';
 const HOUSEHOLD_SERVICES_DATA = 'data/household-services.json';
 const HOUSEHOLD_PAGE_SLOTS_DATA = 'data/household-page-slots.json';
+const HOUSEHOLD_TAXONOMY_DATA = 'data/household-taxonomy.json';
+const HOUSEHOLD_PAGE_POLICY_DATA = 'data/household-page-policy.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
 const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
 const LEGACY_FORM_FIELDS = ['message'];
@@ -74,6 +76,14 @@ const householdPageSlotsPath = path.join(SITE_ROOT, HOUSEHOLD_PAGE_SLOTS_DATA);
 const householdPageSlots = fs.existsSync(householdPageSlotsPath)
   ? JSON.parse(fs.readFileSync(householdPageSlotsPath, 'utf8'))
   : null;
+const householdTaxonomyPath = path.join(SITE_ROOT, HOUSEHOLD_TAXONOMY_DATA);
+const householdTaxonomy = fs.existsSync(householdTaxonomyPath)
+  ? JSON.parse(fs.readFileSync(householdTaxonomyPath, 'utf8'))
+  : null;
+const householdPagePolicyPath = path.join(SITE_ROOT, HOUSEHOLD_PAGE_POLICY_DATA);
+const householdPagePolicy = fs.existsSync(householdPagePolicyPath)
+  ? JSON.parse(fs.readFileSync(householdPagePolicyPath, 'utf8'))
+  : null;
 const sitemapXml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
 
 const errors = [];
@@ -100,6 +110,15 @@ function isNonEmptyString(value) {
 
 function isArrayOfNonEmptyStrings(value) {
   return Array.isArray(value) && value.length > 0 && value.every((item) => isNonEmptyString(item));
+}
+
+function getHouseholdPolicyKey(service) {
+  return service?.isShadow ? 'shadowPage' : 'publicPage';
+}
+
+function getHouseholdPolicy(service) {
+  const policyKey = getHouseholdPolicyKey(service);
+  return householdPagePolicy?.[policyKey] ?? null;
 }
 
 function getBranchConfigForContract(contract) {
@@ -301,6 +320,162 @@ for (const fileName of htmlFiles) {
   }
 }
 
+function validateHouseholdTaxonomy(taxonomy) {
+  if (!taxonomy || typeof taxonomy !== 'object') {
+    errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!Array.isArray(taxonomy.families) || taxonomy.families.length === 0) {
+    errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: families must be a non-empty array`);
+  }
+
+  if (!Array.isArray(taxonomy.devices) || taxonomy.devices.length === 0) {
+    errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: devices must be a non-empty array`);
+  }
+
+  const familyMap = new Map();
+  (taxonomy.families ?? []).forEach((family, index) => {
+    const context = `${HOUSEHOLD_TAXONOMY_DATA}: families[${index}]`;
+    if (!family || typeof family !== 'object') {
+      errors.push(`${context} must be an object`);
+      return;
+    }
+
+    if (!isNonEmptyString(family.slug)) {
+      errors.push(`${context}.slug must be a non-empty string`);
+      return;
+    }
+
+    if (familyMap.has(family.slug)) {
+      errors.push(`${context}.slug duplicates ${family.slug}`);
+      return;
+    }
+
+    familyMap.set(family.slug, family);
+
+    for (const fieldName of ['allowedSymptoms', 'brandPool', 'relatedFamilies']) {
+      if (!isArrayOfNonEmptyStrings(family[fieldName])) {
+        errors.push(`${context}.${fieldName} must be a non-empty array of strings`);
+      }
+    }
+  });
+
+  const devicePageSet = new Set();
+  const deviceSlugSet = new Set();
+  (taxonomy.devices ?? []).forEach((device, index) => {
+    const context = `${HOUSEHOLD_TAXONOMY_DATA}: devices[${index}]`;
+    if (!device || typeof device !== 'object') {
+      errors.push(`${context} must be an object`);
+      return;
+    }
+
+    for (const fieldName of ['page', 'slug', 'family', 'deviceName', 'uiLabel']) {
+      if (!isNonEmptyString(device[fieldName])) {
+        errors.push(`${context}.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    if (typeof device.isShadow !== 'boolean') {
+      errors.push(`${context}.isShadow must be a boolean`);
+    }
+
+    if (isNonEmptyString(device.page)) {
+      if (devicePageSet.has(device.page)) {
+        errors.push(`${context}.page duplicates ${device.page}`);
+      } else {
+        devicePageSet.add(device.page);
+      }
+    }
+
+    if (isNonEmptyString(device.slug)) {
+      if (deviceSlugSet.has(device.slug)) {
+        errors.push(`${context}.slug duplicates ${device.slug}`);
+      } else {
+        deviceSlugSet.add(device.slug);
+      }
+    }
+
+    if (isNonEmptyString(device.family) && !familyMap.has(device.family)) {
+      errors.push(`${context}.family must point to a known taxonomy family`);
+    }
+  });
+
+  if (!taxonomy.symptomAliases || typeof taxonomy.symptomAliases !== 'object' || Array.isArray(taxonomy.symptomAliases)) {
+    errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: symptomAliases must be an object`);
+  } else {
+    Object.entries(taxonomy.symptomAliases).forEach(([symptom, aliases]) => {
+      if (!isNonEmptyString(symptom) || !isArrayOfNonEmptyStrings(aliases)) {
+        errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: symptomAliases.${symptom} must be a non-empty array of strings`);
+      }
+    });
+  }
+
+  if (!taxonomy.relatedRules || typeof taxonomy.relatedRules !== 'object') {
+    errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: relatedRules must be an object`);
+  } else {
+    const { maxLinks, sameBranchOnly, allowSelfLink, publicTargetsMustStayPublic } =
+      taxonomy.relatedRules;
+    if (!Number.isInteger(maxLinks) || maxLinks < 1) {
+      errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: relatedRules.maxLinks must be a positive integer`);
+    }
+    if (typeof sameBranchOnly !== 'boolean') {
+      errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: relatedRules.sameBranchOnly must be a boolean`);
+    }
+    if (typeof allowSelfLink !== 'boolean') {
+      errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: relatedRules.allowSelfLink must be a boolean`);
+    }
+    if (typeof publicTargetsMustStayPublic !== 'boolean') {
+      errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: relatedRules.publicTargetsMustStayPublic must be a boolean`);
+    }
+  }
+}
+
+function validateHouseholdPagePolicy(policy) {
+  if (!policy || typeof policy !== 'object') {
+    errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}: top-level object is required`);
+    return;
+  }
+
+  for (const policyKey of ['publicPage', 'shadowPage']) {
+    const contract = policy[policyKey];
+    const context = `${HOUSEHOLD_PAGE_POLICY_DATA}: ${policyKey}`;
+    if (!contract || typeof contract !== 'object') {
+      errors.push(`${context} must be an object`);
+      continue;
+    }
+
+    for (const fieldName of ['requiredRegistryFields', 'defaultSectionIds', 'requiredSectionIds', 'requiredFormFields']) {
+      if (!isArrayOfNonEmptyStrings(contract[fieldName])) {
+        errors.push(`${context}.${fieldName} must be a non-empty array of strings`);
+      }
+    }
+
+    if (policyKey === 'publicPage' && !isArrayOfNonEmptyStrings(contract.requiredSlotAnchors)) {
+      errors.push(`${context}.requiredSlotAnchors must be a non-empty array of strings`);
+    }
+
+    if (policyKey === 'publicPage' && !isArrayOfNonEmptyStrings(contract.requiredSlotFields)) {
+      errors.push(`${context}.requiredSlotFields must be a non-empty array of strings`);
+    }
+
+    if (!contract.requiredHtmlMarkers || typeof contract.requiredHtmlMarkers !== 'object') {
+      errors.push(`${context}.requiredHtmlMarkers must be an object`);
+      continue;
+    }
+
+    for (const fieldName of ['formClass', 'faqClass']) {
+      if (!isNonEmptyString(contract.requiredHtmlMarkers[fieldName])) {
+        errors.push(`${context}.requiredHtmlMarkers.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    if (typeof contract.requiredHtmlMarkers.requireH1 !== 'boolean') {
+      errors.push(`${context}.requiredHtmlMarkers.requireH1 must be a boolean`);
+    }
+  }
+}
+
 function validateHouseholdServicesRegistry(registry) {
   if (!registry || typeof registry !== 'object') {
     errors.push(`${HOUSEHOLD_SERVICES_DATA}: top-level object is required`);
@@ -321,19 +496,51 @@ function validateHouseholdServicesRegistry(registry) {
     ...(householdBranch?.services ?? []).map((service) => service.href),
     ...(householdBranch?.footerLinks ?? []).map((link) => link.href),
   ].filter((href) => isNonEmptyString(href) && href.endsWith('.html') && !href.startsWith('bytovaya-')));
+  const familyMap = new Map((householdTaxonomy?.families ?? []).map((family) => [family.slug, family]));
+  const taxonomyByPage = new Map((householdTaxonomy?.devices ?? []).map((device) => [device.page, device]));
+  const relatedRules = householdTaxonomy?.relatedRules ?? {};
 
   const registryByPage = new Map();
   const slugSet = new Set();
 
   registry.services.forEach((service, index) => {
     const context = `${HOUSEHOLD_SERVICES_DATA}: services[${index}]`;
+    const policy = getHouseholdPolicy(service);
 
     if (!service || typeof service !== 'object') {
       errors.push(`${context} must be an object`);
       return;
     }
 
-    for (const fieldName of ['page', 'slug', 'uiLabel', 'deviceName', 'serviceName', 'schemaName', 'formExample']) {
+    const requiredRegistryFields = policy?.requiredRegistryFields ?? [
+      'page',
+      'slug',
+      'uiLabel',
+      'deviceName',
+      'serviceName',
+      'schemaName',
+      'isShadow',
+      'primarySymptoms',
+      'brandCluster',
+      'relatedPages',
+      'formExample',
+      'sectionIds',
+    ];
+
+    for (const fieldName of requiredRegistryFields) {
+      if (fieldName === 'isShadow') continue;
+      if (fieldName === 'primarySymptoms' || fieldName === 'brandCluster' || fieldName === 'sectionIds') {
+        if (!isArrayOfNonEmptyStrings(service[fieldName])) {
+          errors.push(`${context}.${fieldName} must be a non-empty array of strings`);
+        }
+        continue;
+      }
+      if (fieldName === 'relatedPages') {
+        if (!Array.isArray(service.relatedPages) || !service.relatedPages.every((page) => isNonEmptyString(page))) {
+          errors.push(`${context}.relatedPages must be an array of non-empty strings`);
+        }
+        continue;
+      }
       if (!isNonEmptyString(service[fieldName])) {
         errors.push(`${context}.${fieldName} must be a non-empty string`);
       }
@@ -341,16 +548,6 @@ function validateHouseholdServicesRegistry(registry) {
 
     if (typeof service.isShadow !== 'boolean') {
       errors.push(`${context}.isShadow must be a boolean`);
-    }
-
-    for (const fieldName of ['primarySymptoms', 'brandCluster', 'sectionIds']) {
-      if (!isArrayOfNonEmptyStrings(service[fieldName])) {
-        errors.push(`${context}.${fieldName} must be a non-empty array of strings`);
-      }
-    }
-
-    if (!Array.isArray(service.relatedPages) || !service.relatedPages.every((page) => isNonEmptyString(page))) {
-      errors.push(`${context}.relatedPages must be an array of non-empty strings`);
     }
 
     if (!isNonEmptyString(service.page)) {
@@ -374,6 +571,41 @@ function validateHouseholdServicesRegistry(registry) {
     if (!expectedHouseholdServicePages.has(service.page)) {
       errors.push(`${context}.page must map to a household service page in data/page-metadata.json`);
       return;
+    }
+
+    const taxonomyDevice = taxonomyByPage.get(service.page);
+    if (!taxonomyDevice) {
+      errors.push(`${context}.page missing in ${HOUSEHOLD_TAXONOMY_DATA}`);
+    } else {
+      if (taxonomyDevice.slug !== service.slug) {
+        errors.push(`${context}.slug must match taxonomy device ${taxonomyDevice.slug}`);
+      }
+      if (taxonomyDevice.deviceName !== service.deviceName) {
+        errors.push(`${context}.deviceName must match taxonomy device ${taxonomyDevice.deviceName}`);
+      }
+      if (taxonomyDevice.uiLabel !== service.uiLabel) {
+        errors.push(`${context}.uiLabel must match taxonomy device ${taxonomyDevice.uiLabel}`);
+      }
+      if (taxonomyDevice.isShadow !== service.isShadow) {
+        errors.push(`${context}.isShadow must match taxonomy device state`);
+      }
+
+      const family = familyMap.get(taxonomyDevice.family);
+      if (!family) {
+        errors.push(`${context}.taxonomy family ${taxonomyDevice.family} is missing`);
+      } else {
+        for (const symptom of service.primarySymptoms ?? []) {
+          if (!family.allowedSymptoms.includes(symptom)) {
+            errors.push(`${context}.primarySymptoms contains ${symptom}, outside taxonomy family ${taxonomyDevice.family}`);
+          }
+        }
+
+        for (const brand of service.brandCluster ?? []) {
+          if (!family.brandPool.includes(brand)) {
+            errors.push(`${context}.brandCluster contains ${brand}, outside taxonomy family ${taxonomyDevice.family}`);
+          }
+        }
+      }
     }
 
     const pageMeta = metadata.pages[service.page];
@@ -409,8 +641,14 @@ function validateHouseholdServicesRegistry(registry) {
       errors.push(`${context}.page must include FAQ items`);
     }
 
-    if (!html.match(/<h1[\s>]/i)) {
+    if (policy?.requiredHtmlMarkers?.requireH1 && !html.match(/<h1[\s>]/i)) {
       errors.push(`${context}.page must include an h1`);
+    }
+
+    for (const requiredSectionId of policy?.requiredSectionIds ?? []) {
+      if (!service.sectionIds?.includes(requiredSectionId)) {
+        errors.push(`${context}.sectionIds must include policy-required section "${requiredSectionId}"`);
+      }
     }
 
     for (const sectionId of service.sectionIds ?? []) {
@@ -444,7 +682,23 @@ function validateHouseholdServicesRegistry(registry) {
       if (relatedRegistry && !service.isShadow && relatedRegistry.isShadow) {
         errors.push(`${context}.relatedPages[${relatedIndex}] must not point visible pages to shadow pages`);
       }
+
+      if (
+        relatedRegistry &&
+        relatedRules.sameBranchOnly &&
+        metadata.pages[relatedPage]?.branch !== metadata.pages[service.page]?.branch
+      ) {
+        errors.push(`${context}.relatedPages[${relatedIndex}] must stay in the same branch`);
+      }
     });
+
+    if (
+      Number.isInteger(relatedRules.maxLinks) &&
+      Array.isArray(service.relatedPages) &&
+      service.relatedPages.length > relatedRules.maxLinks
+    ) {
+      errors.push(`${context}.relatedPages exceeds taxonomy maxLinks=${relatedRules.maxLinks}`);
+    }
 
     if (!service.isShadow && !branchVisiblePages.has(service.page)) {
       errors.push(`${context}.page must be reachable from the household branch navigation sources`);
@@ -494,49 +748,62 @@ function validateHouseholdPageSlots(slots, registry) {
   for (const service of publicServices) {
     const slotEntry = slots.pages[service.page];
     const context = `${HOUSEHOLD_PAGE_SLOTS_DATA}: pages.${service.page}`;
+    const policy = getHouseholdPolicy(service);
 
     if (!slotEntry || typeof slotEntry !== 'object') {
       errors.push(`${context} must be an object`);
       continue;
     }
 
-    if (!Array.isArray(slotEntry.faq) || slotEntry.faq.length === 0) {
-      errors.push(`${context}.faq must be a non-empty array`);
-    } else {
-      slotEntry.faq.forEach((item, index) => {
-        if (!item || typeof item !== 'object') {
-          errors.push(`${context}.faq[${index}] must be an object`);
-          return;
-        }
+    for (const fieldName of policy?.requiredSlotFields ?? []) {
+      if (fieldName === 'faq') {
+        if (!Array.isArray(slotEntry.faq) || slotEntry.faq.length === 0) {
+          errors.push(`${context}.faq must be a non-empty array`);
+        } else {
+          slotEntry.faq.forEach((item, index) => {
+            if (!item || typeof item !== 'object') {
+              errors.push(`${context}.faq[${index}] must be an object`);
+              return;
+            }
 
-        if (!isNonEmptyString(item.question) || !isNonEmptyString(item.answer)) {
-          errors.push(`${context}.faq[${index}] must define question and answer`);
+            if (!isNonEmptyString(item.question) || !isNonEmptyString(item.answer)) {
+              errors.push(`${context}.faq[${index}] must define question and answer`);
+            }
+          });
         }
-      });
-    }
-
-    if (!slotEntry.formHints || typeof slotEntry.formHints !== 'object') {
-      errors.push(`${context}.formHints must be an object`);
-    } else {
-      if (!isArrayOfNonEmptyStrings(slotEntry.formHints.chips)) {
-        errors.push(`${context}.formHints.chips must be a non-empty array of strings`);
       }
 
-      for (const fieldName of ['typePlaceholder', 'problemPlaceholder']) {
-        if (!isNonEmptyString(slotEntry.formHints[fieldName])) {
-          errors.push(`${context}.formHints.${fieldName} must be a non-empty string`);
+      if (fieldName === 'formHints') {
+        if (!slotEntry.formHints || typeof slotEntry.formHints !== 'object') {
+          errors.push(`${context}.formHints must be an object`);
+        } else {
+          if (!isArrayOfNonEmptyStrings(slotEntry.formHints.chips)) {
+            errors.push(`${context}.formHints.chips must be a non-empty array of strings`);
+          }
+
+          for (const hintFieldName of ['typePlaceholder', 'problemPlaceholder']) {
+            if (!isNonEmptyString(slotEntry.formHints[hintFieldName])) {
+              errors.push(`${context}.formHints.${hintFieldName} must be a non-empty string`);
+            }
+          }
         }
       }
     }
 
     const html = read(service.page);
 
-    if (!/<script[^>]+type="application\/ld\+json"[^>]+data-slot="service-schema"/i.test(html)) {
-      errors.push(`${service.page}: missing data-slot="service-schema" on Service JSON-LD script`);
-    }
+    for (const anchor of policy?.requiredSlotAnchors ?? []) {
+      if (anchor === 'service-schema') {
+        if (!/<script[^>]+type="application\/ld\+json"[^>]+data-slot="service-schema"/i.test(html)) {
+          errors.push(`${service.page}: missing data-slot="service-schema" on Service JSON-LD script`);
+        }
+      }
 
-    if (!/<form[^>]+class="telegram-form\b[^"]*"[^>]+data-slot="request-form"/i.test(html)) {
-      errors.push(`${service.page}: missing data-slot="request-form" on canonical household form`);
+      if (anchor === 'request-form') {
+        if (!/<form[^>]+class="telegram-form\b[^"]*"[^>]+data-slot="request-form"/i.test(html)) {
+          errors.push(`${service.page}: missing data-slot="request-form" on canonical household form`);
+        }
+      }
     }
   }
 }
@@ -668,6 +935,8 @@ function validateBranchConfig(branchConfig, contract, expectedBranch) {
 
 validateBranchConfig(restaurantBranch, RESTAURANT_ROUTE_STRIP_CONTRACT, 'restaurant');
 validateBranchConfig(householdBranch, { dataFile: HOUSEHOLD_BRANCH_DATA, pages: {} }, 'household');
+validateHouseholdTaxonomy(householdTaxonomy);
+validateHouseholdPagePolicy(householdPagePolicy);
 validateHouseholdServicesRegistry(householdServicesRegistry);
 validateHouseholdPageSlots(householdPageSlots, householdServicesRegistry);
 
@@ -702,6 +971,14 @@ if (!fs.existsSync(householdServicesPath)) {
 
 if (!fs.existsSync(householdPageSlotsPath)) {
   errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: household page slots missing`);
+}
+
+if (!fs.existsSync(householdTaxonomyPath)) {
+  errors.push(`${HOUSEHOLD_TAXONOMY_DATA}: household taxonomy missing`);
+}
+
+if (!fs.existsSync(householdPagePolicyPath)) {
+  errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}: household page policy missing`);
 }
 
 if (typeof runtimeConfig.telegramFormEndpoint !== 'string' || !runtimeConfig.telegramFormEndpoint.trim()) {

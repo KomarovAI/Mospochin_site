@@ -7,6 +7,8 @@
     "dev": "node tools/dev-server.mjs",
     "dev:api": "node server/telegram-api.mjs",
     "normalize:html": "node tools/normalize-html.mjs",
+    "scaffold:household-service": "node tools/scaffold-household-service.mjs",
+    "doctor:household-page": "node tools/doctor-household-page.mjs",
     "sync:metadata": "node tools/sync-page-metadata.mjs",
     "generate:sitemap": "node tools/generate-sitemap.mjs",
     "generate:deploy-manifest": "node tools/generate-deploy-manifest.mjs",

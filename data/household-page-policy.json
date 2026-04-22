@@ -1,0 +1,52 @@
+{
+  "publicPage": {
+    "requiredRegistryFields": [
+      "page",
+      "slug",
+      "uiLabel",
+      "deviceName",
+      "serviceName",
+      "schemaName",
+      "isShadow",
+      "primarySymptoms",
+      "brandCluster",
+      "relatedPages",
+      "formExample",
+      "sectionIds"
+    ],
+    "defaultSectionIds": ["problems", "prices", "brands", "request"],
+    "requiredSectionIds": ["prices"],
+    "requiredSlotAnchors": ["service-schema", "request-form"],
+    "requiredSlotFields": ["faq", "formHints"],
+    "requiredFormFields": ["name", "phone", "type", "problem"],
+    "requiredHtmlMarkers": {
+      "formClass": "telegram-form",
+      "faqClass": "faq-item",
+      "requireH1": true
+    }
+  },
+  "shadowPage": {
+    "requiredRegistryFields": [
+      "page",
+      "slug",
+      "uiLabel",
+      "deviceName",
+      "serviceName",
+      "schemaName",
+      "isShadow",
+      "primarySymptoms",
+      "brandCluster",
+      "relatedPages",
+      "formExample",
+      "sectionIds"
+    ],
+    "defaultSectionIds": ["problems", "prices", "brands", "request"],
+    "requiredSectionIds": ["prices"],
+    "requiredFormFields": ["name", "phone", "type", "problem"],
+    "requiredHtmlMarkers": {
+      "formClass": "telegram-form",
+      "faqClass": "faq-item",
+      "requireH1": true
+    }
+  }
+}

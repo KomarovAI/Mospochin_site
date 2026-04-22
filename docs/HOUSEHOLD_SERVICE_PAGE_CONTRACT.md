@@ -6,6 +6,8 @@ This document defines the maintenance contract for household service pages.
 
 - `data/household-services.json` is the canonical registry for household service-page intent.
 - `data/household-page-slots.json` is the slot-content layer for household service pages.
+- `data/household-taxonomy.json` is the semantic normalization layer for device families, allowed symptoms, and brand pools.
+- `data/household-page-policy.json` is the machine-readable page contract for scaffold and validation.
 - `data/household-branch.json` remains the shared branch shell layer for top bar, menus, footer links, and branch-level navigation. It is not a route-strip content source anymore.
 - `data/page-metadata.json` remains the canonical SEO/branch metadata layer.
 - Page HTML keeps unique copy and layout, but should not become the only source of truth for symptoms, brand clusters, FAQ, request hints, or page identity.
@@ -45,6 +47,12 @@ Public household service pages currently use:
 - `data-slot="service-schema"` on the main `Service` JSON-LD script
 - `data-slot="request-form"` on the canonical `.telegram-form`
 - slot runtime content from `data/household-page-slots.json` for FAQ and request-form copy
+
+## Factory Contract
+
+- New pages should start from `npm run scaffold:household-service`, not from copying an old HTML file by hand.
+- The scaffold must produce a page that already satisfies metadata, registry, taxonomy, policy, and slot contracts.
+- `npm run doctor:household-page -- --page <file>.html` is the narrow audit surface for one household page.
 
 ## Shadow Pages
 

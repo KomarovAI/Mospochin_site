@@ -1,0 +1,132 @@
+{
+  "families": [
+    {
+      "slug": "cold-storage",
+      "allowedSymptoms": ["не морозит", "намерзает", "течет", "шумит"],
+      "brandPool": ["Bosch", "Samsung", "LG", "Indesit", "Beko"],
+      "relatedFamilies": ["laundry", "dishwashing", "water-heating"]
+    },
+    {
+      "slug": "laundry",
+      "allowedSymptoms": ["не сливает", "течет", "шумит", "не включается"],
+      "brandPool": ["Samsung", "LG", "Bosch", "Indesit", "Electrolux"],
+      "relatedFamilies": ["cold-storage", "dishwashing", "cooking"]
+    },
+    {
+      "slug": "dishwashing",
+      "allowedSymptoms": ["течет", "не моет", "не сливает", "не греет воду"],
+      "brandPool": ["Bosch", "Electrolux", "Beko", "Hotpoint", "Hansa"],
+      "relatedFamilies": ["laundry", "cold-storage", "water-heating"]
+    },
+    {
+      "slug": "cooking",
+      "allowedSymptoms": ["не греет", "искрит", "пахнет газом", "не включается"],
+      "brandPool": ["Gorenje", "Bosch", "Electrolux", "Gefest", "Hansa"],
+      "relatedFamilies": ["microwave", "water-heating", "cold-storage"]
+    },
+    {
+      "slug": "microwave",
+      "allowedSymptoms": ["не включается", "не греет", "искрит", "шумит"],
+      "brandPool": ["Samsung", "LG", "Panasonic", "Bosch", "Gorenje"],
+      "relatedFamilies": ["cooking", "water-heating", "cold-storage"]
+    },
+    {
+      "slug": "water-heating",
+      "allowedSymptoms": ["не греет", "течет", "выбивает автомат", "не включается"],
+      "brandPool": ["Ariston", "Thermex", "Electrolux", "Bosch", "Atlantic"],
+      "relatedFamilies": ["cooking", "microwave", "cold-storage"]
+    },
+    {
+      "slug": "home-computing",
+      "allowedSymptoms": ["не включается", "тормозит", "шумит", "перегревается"],
+      "brandPool": ["ASUS", "Acer", "Lenovo", "HP", "Dell"],
+      "relatedFamilies": ["home-networking", "cold-storage", "laundry"]
+    },
+    {
+      "slug": "home-networking",
+      "allowedSymptoms": ["не раздает Wi-Fi", "сбрасывает сеть", "не включается", "слабый сигнал"],
+      "brandPool": ["TP-Link", "Keenetic", "ASUS", "D-Link", "Xiaomi"],
+      "relatedFamilies": ["home-computing", "cold-storage", "water-heating"]
+    }
+  ],
+  "devices": [
+    {
+      "page": "holodilniki.html",
+      "slug": "holodilniki",
+      "family": "cold-storage",
+      "deviceName": "Холодильники",
+      "uiLabel": "Холодильники",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnye-mashiny.html",
+      "slug": "stiralnye-mashiny",
+      "family": "laundry",
+      "deviceName": "Стиральные машины",
+      "uiLabel": "Стиральные машины",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoyki.html",
+      "slug": "posudomoyki",
+      "family": "dishwashing",
+      "deviceName": "Посудомоечные машины",
+      "uiLabel": "Посудомойки",
+      "isShadow": false
+    },
+    {
+      "page": "plity.html",
+      "slug": "plity",
+      "family": "cooking",
+      "deviceName": "Плиты и духовки",
+      "uiLabel": "Плиты и духовки",
+      "isShadow": false
+    },
+    {
+      "page": "microwaves.html",
+      "slug": "microwaves",
+      "family": "microwave",
+      "deviceName": "Микроволновки",
+      "uiLabel": "Микроволновки",
+      "isShadow": false
+    },
+    {
+      "page": "water-heaters.html",
+      "slug": "water-heaters",
+      "family": "water-heating",
+      "deviceName": "Водонагреватели",
+      "uiLabel": "Водонагреватели",
+      "isShadow": false
+    },
+    {
+      "page": "kompyutery.html",
+      "slug": "kompyutery",
+      "family": "home-computing",
+      "deviceName": "Компьютеры",
+      "uiLabel": "Компьютеры",
+      "isShadow": true
+    },
+    {
+      "page": "routery.html",
+      "slug": "routery",
+      "family": "home-networking",
+      "deviceName": "Роутеры",
+      "uiLabel": "Роутеры",
+      "isShadow": true
+    }
+  ],
+  "symptomAliases": {
+    "не морозит": ["не холодит", "плохо морозит"],
+    "течет": ["подтекает", "капает вода"],
+    "не сливает": ["не уходит вода", "стоит вода"],
+    "не греет": ["не нагревает", "нет нагрева"],
+    "не включается": ["не запускается", "не подает признаков жизни"],
+    "шумит": ["гудит", "сильно вибрирует"]
+  },
+  "relatedRules": {
+    "maxLinks": 3,
+    "sameBranchOnly": true,
+    "allowSelfLink": false,
+    "publicTargetsMustStayPublic": true
+  }
+}
