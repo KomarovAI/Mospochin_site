@@ -58,9 +58,18 @@ This document is the canonical high-level map for maintaining `Mospochin_site`.
   - canonical site-wide maintenance model
 - `docs/STABILIZATION_BACKLOG.md`
   - confirmed rough edges and next hardening candidates
+- `docs/DOC_STATUS.md`
+  - canonical doc taxonomy and status map
 - `docs/HOUSEHOLD_*`
   - household branch contracts and workflows
 - `docs/RESTAURANT_*`
   - restaurant branch contracts and workflows
 
 Any older rollout report, one-off styling note, or transition summary is non-canonical and should not override the documents above.
+
+## Narrow Reference Docs
+
+- `docs/READABILITY_REFACTOR.md`
+  - normalization and asset-loading reference
+- `docs/BRANDS_GUIDE.md`
+  - restaurant brand reference

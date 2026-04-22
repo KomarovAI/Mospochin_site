@@ -4,8 +4,17 @@
 
 - Site-wide maintenance model: [docs/SITE_MAINTENANCE_MODEL.md](/home/artikk/Mospochin_site/docs/SITE_MAINTENANCE_MODEL.md)
 - Repo structure map: [docs/PROJECT_MAP.md](/home/artikk/Mospochin_site/docs/PROJECT_MAP.md)
+- Stabilization backlog: [docs/STABILIZATION_BACKLOG.md](/home/artikk/Mospochin_site/docs/STABILIZATION_BACKLOG.md)
+- Doc taxonomy: [docs/DOC_STATUS.md](/home/artikk/Mospochin_site/docs/DOC_STATUS.md)
 - Household docs: `docs/HOUSEHOLD_*`
 - Restaurant docs: `docs/RESTAURANT_*`
+
+## Narrow reference docs
+
+- `docs/READABILITY_REFACTOR.md`
+  - asset-loading and normalize-html reference
+- `docs/BRANDS_GUIDE.md`
+  - restaurant brand reference content
 
 ## Source of truth
 

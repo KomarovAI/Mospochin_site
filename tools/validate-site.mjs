@@ -14,6 +14,7 @@ const TELEGRAM_API_SCRIPT = 'server/telegram-api.mjs';
 const TELEGRAM_API_UNIT = 'deploy/systemd/mospochin-telegram-api.service';
 const TELEGRAM_API_ENV_TEMPLATE = 'deploy/env/telegram.env.example';
 const TELEGRAM_API_HOOK = 'deploy/post-activate.sh';
+const DOCS_ROOT = path.join(SITE_ROOT, 'docs');
 const RESTAURANT_BRANCH_DATA = 'data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_DATA = 'data/household-branch.json';
 const HOUSEHOLD_SERVICES_DATA = 'data/household-services.json';
@@ -28,6 +29,33 @@ const RESTAURANT_PROOF_LAYER_DATA = 'data/restaurant-proof-layer.json';
 const RESTAURANT_TAXONOMY_DATA = 'data/restaurant-taxonomy.json';
 const RESTAURANT_PAGE_POLICY_DATA = 'data/restaurant-page-policy.json';
 const SITE_PAGE_CONTRACTS_DATA = 'data/site-page-contracts.json';
+const REQUIRED_CANONICAL_DOCS = [
+  'README.md',
+  'PROJECT_MAP.md',
+  'SITE_MAINTENANCE_MODEL.md',
+  'STABILIZATION_BACKLOG.md',
+  'DOC_STATUS.md',
+];
+const REQUIRED_REFERENCE_DOCS = [
+  'READABILITY_REFACTOR.md',
+  'BRANDS_GUIDE.md',
+];
+const REMOVED_HISTORICAL_DOCS = [
+  'BRANDS_SECTION_UPDATE.md',
+  'INDEX_RESTAURANT_UPDATE.md',
+  'MENU_UPDATED.md',
+  'VISUAL_EFFECTS.md',
+];
+const FORBIDDEN_CANONICAL_DOC_PATTERNS = [
+  '/tmp/Mospochin_site',
+  'ANIMATIONS_ADDED.md',
+  'CENTRALIZATION_COMPLETE.md',
+  'CHEATSHEET.md',
+  'FINAL_FIXES.md',
+  'FULL_AUDIT_REPORT.md',
+  'INTERNAL_REFERENCE.md',
+  'OPTIMIZATION_FINAL.md',
+];
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
 const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
 const LEGACY_FORM_FIELDS = ['message'];
@@ -156,6 +184,74 @@ function isArrayOfNonEmptyStrings(value) {
 
 function isPlainObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+}
+
+function validateDocsIntegrity() {
+  for (const docName of [...REQUIRED_CANONICAL_DOCS, ...REQUIRED_REFERENCE_DOCS]) {
+    const docPath = path.join(DOCS_ROOT, docName);
+    if (!fs.existsSync(docPath)) {
+      errors.push(`docs/${docName}: required docs file missing`);
+    }
+  }
+
+  for (const docName of REMOVED_HISTORICAL_DOCS) {
+    const docPath = path.join(DOCS_ROOT, docName);
+    if (fs.existsSync(docPath)) {
+      errors.push(`docs/${docName}: historical one-off doc should be removed from the live docs set`);
+    }
+  }
+
+  const readme = fs.existsSync(path.join(DOCS_ROOT, 'README.md'))
+    ? fs.readFileSync(path.join(DOCS_ROOT, 'README.md'), 'utf8')
+    : '';
+  const projectMap = fs.existsSync(path.join(DOCS_ROOT, 'PROJECT_MAP.md'))
+    ? fs.readFileSync(path.join(DOCS_ROOT, 'PROJECT_MAP.md'), 'utf8')
+    : '';
+  const maintenanceModel = fs.existsSync(path.join(DOCS_ROOT, 'SITE_MAINTENANCE_MODEL.md'))
+    ? fs.readFileSync(path.join(DOCS_ROOT, 'SITE_MAINTENANCE_MODEL.md'), 'utf8')
+    : '';
+  const docStatus = fs.existsSync(path.join(DOCS_ROOT, 'DOC_STATUS.md'))
+    ? fs.readFileSync(path.join(DOCS_ROOT, 'DOC_STATUS.md'), 'utf8')
+    : '';
+
+  for (const [docName, content] of [
+    ['README.md', readme],
+    ['PROJECT_MAP.md', projectMap],
+    ['SITE_MAINTENANCE_MODEL.md', maintenanceModel],
+  ]) {
+    for (const forbidden of FORBIDDEN_CANONICAL_DOC_PATTERNS) {
+      if (content.includes(forbidden)) {
+        errors.push(`docs/${docName}: stale reference to ${forbidden}`);
+      }
+    }
+  }
+
+  for (const requiredToken of ['telegram-form.js', 'data/runtime-config.json', 'server/telegram-api.mjs']) {
+    if (!readme.includes(requiredToken)) {
+      errors.push(`docs/README.md: must mention ${requiredToken}`);
+    }
+    if (!maintenanceModel.includes(requiredToken)) {
+      errors.push(`docs/SITE_MAINTENANCE_MODEL.md: must mention ${requiredToken}`);
+    }
+  }
+
+  for (const requiredToken of ['docs/SITE_MAINTENANCE_MODEL.md', 'docs/PROJECT_MAP.md', 'docs/STABILIZATION_BACKLOG.md']) {
+    if (!readme.includes(requiredToken)) {
+      errors.push(`docs/README.md: must link ${requiredToken}`);
+    }
+  }
+
+  if (!projectMap.includes('docs/DOC_STATUS.md')) {
+    errors.push('docs/PROJECT_MAP.md: must mention docs/DOC_STATUS.md');
+  }
+
+  if (!maintenanceModel.includes('docs/STABILIZATION_BACKLOG.md')) {
+    errors.push('docs/SITE_MAINTENANCE_MODEL.md: must mention docs/STABILIZATION_BACKLOG.md');
+  }
+
+  if (!docStatus.includes('Removed Historical Notes')) {
+    errors.push('docs/DOC_STATUS.md: must classify removed historical notes');
+  }
 }
 
 function validateHouseholdRoutingHint(value, context) {
@@ -2358,6 +2454,7 @@ validateHouseholdCardPresets(householdCardPresets);
 validateHouseholdProofLayer(householdProofLayer);
 validateHouseholdServicesRegistry(householdServicesRegistry);
 validateHouseholdPageSlots(householdPageSlots, householdServicesRegistry);
+validateDocsIntegrity();
 
 const canonicalFormScriptPath = path.join(SITE_ROOT, CANONICAL_FORM_SCRIPT);
 const legacyFormScriptPath = path.join(SITE_ROOT, LEGACY_FORM_SCRIPT);

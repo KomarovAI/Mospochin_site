@@ -62,6 +62,12 @@ Compact map of the live repository structure and maintenance surfaces.
   - canonical site-wide maintenance model
 - `docs/STABILIZATION_BACKLOG.md`
   - confirmed rough edges and next hardening queue
+- `docs/DOC_STATUS.md`
+  - canonical taxonomy for live, reference, and removed historical docs
+- `docs/READABILITY_REFACTOR.md`
+  - narrow reference for head/script normalization
+- `docs/BRANDS_GUIDE.md`
+  - narrow reference for restaurant brand content
 - `docs/HOUSEHOLD_*`
   - household-specific maintenance docs
 - `docs/RESTAURANT_*`
