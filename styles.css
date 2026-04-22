@@ -44,7 +44,7 @@ body.page-restaurant-branch .counter {
   opacity: 1 !important;
   transform: none !important;
   filter: none !important;
-  transition: none !important;
+  animation: none !important;
 }
 
 body.page-restaurant-branch .counter {
@@ -66,6 +66,14 @@ body.page-restaurant-branch .counter {
 
 .bg-white\/95 {
   background-color: rgba(255, 255, 255, 0.95);
+}
+
+.bg-white\/92 {
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+.bg-brand-blue\/88 {
+  background-color: rgba(15, 23, 42, 0.88);
 }
 
 .border-slate-200\/80 {
