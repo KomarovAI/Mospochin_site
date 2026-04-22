@@ -199,6 +199,27 @@ function isPlainObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 }
 
+function getSectionDataAttributeValues(html, attributeName) {
+  const escapedAttribute = attributeName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`<section\\b[^>]*\\s${escapedAttribute}="([^"]+)"`, 'g');
+  const values = [];
+  let match = regex.exec(html);
+
+  while (match) {
+    values.push(match[1]);
+    match = regex.exec(html);
+  }
+
+  return values;
+}
+
+function getSectionTagByDataAttribute(html, attributeName, attributeValue) {
+  const escapedAttribute = attributeName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const escapedValue = attributeValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`<section\\b[^>]*\\s${escapedAttribute}="${escapedValue}"[^>]*>`, 'i');
+  return html.match(regex)?.[0] ?? null;
+}
+
 function normalizeCommandName(command) {
   const match = command.match(/^npm run ([a-z0-9:-]+)/i);
   return match?.[1] ?? null;
@@ -1935,6 +1956,14 @@ function validateRestaurantPagePolicy(policy) {
       errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.requirePageSlugClass must be a boolean`);
     }
 
+    if (!isNonEmptyString(policy.publicPage.mobileSectionAttribute)) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.mobileSectionAttribute must be a non-empty string`);
+    }
+
+    if (!Array.isArray(policy.publicPage.allowedMobileHiddenSectionIds) || !policy.publicPage.allowedMobileHiddenSectionIds.every((value) => isNonEmptyString(value))) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.allowedMobileHiddenSectionIds must be an array of non-empty strings`);
+    }
+
     if (!isPlainObject(policy.publicPage.requiredHtmlMarkers)) {
       errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.requiredHtmlMarkers must be an object`);
     } else {
@@ -2114,6 +2143,9 @@ function validateRestaurantServicesRegistry(registry) {
   const taxonomyByPage = new Map((restaurantTaxonomy?.devices ?? []).map((device) => [device.page, device]));
   const familyBySlug = new Map((restaurantTaxonomy?.families ?? []).map((family) => [family.slug, family]));
   const relatedRules = restaurantTaxonomy?.relatedRules ?? {};
+  const allowedMobileHiddenSectionIds = new Set(
+    restaurantPagePolicy?.publicPage?.allowedMobileHiddenSectionIds ?? []
+  );
   const visibleRestaurantPages = new Set(
     (restaurantBranch?.services ?? [])
       .map((service) => service?.href?.split('#', 1)[0])
@@ -2146,6 +2178,25 @@ function validateRestaurantServicesRegistry(registry) {
 
     if (service.isShadow) {
       errors.push(`${context}.restaurant public registry must not mark pages as shadow`);
+    }
+
+    if (service.mobileHiddenSectionIds != null) {
+      if (!Array.isArray(service.mobileHiddenSectionIds) || !service.mobileHiddenSectionIds.every((value) => isNonEmptyString(value))) {
+        errors.push(`${context}.mobileHiddenSectionIds must be an array of non-empty strings`);
+      } else {
+        const seenMobileHiddenSectionIds = new Set();
+        service.mobileHiddenSectionIds.forEach((sectionId, sectionIndex) => {
+          if (!allowedMobileHiddenSectionIds.has(sectionId)) {
+            errors.push(`${context}.mobileHiddenSectionIds[${sectionIndex}] must be one of ${Array.from(allowedMobileHiddenSectionIds).join(', ')}`);
+          }
+
+          if (seenMobileHiddenSectionIds.has(sectionId)) {
+            errors.push(`${context}.mobileHiddenSectionIds[${sectionIndex}] duplicates ${sectionId}`);
+          } else {
+            seenMobileHiddenSectionIds.add(sectionId);
+          }
+        });
+      }
     }
 
     const taxonomyDevice = taxonomyByPage.get(service.page);
@@ -2320,6 +2371,30 @@ function validateRestaurantPageSlots(slots, registry) {
     for (const fieldName of restaurantPagePolicy?.publicPage?.requiredFormFields ?? []) {
       if (countNamedFields(html, fieldName) === 0) {
         errors.push(`${service.page}: missing form field ${fieldName}`);
+      }
+    }
+
+    const mobileSectionAttribute = restaurantPagePolicy?.publicPage?.mobileSectionAttribute ?? 'data-mobile-section';
+    const actualMobileSectionIds = getSectionDataAttributeValues(html, mobileSectionAttribute);
+    const expectedMobileSectionIds = Array.isArray(service.mobileHiddenSectionIds)
+      ? service.mobileHiddenSectionIds
+      : [];
+
+    for (const sectionId of expectedMobileSectionIds) {
+      if (!actualMobileSectionIds.includes(sectionId)) {
+        errors.push(`${service.page}: missing ${mobileSectionAttribute}="${sectionId}" for registry-declared mobile hidden section`);
+        continue;
+      }
+
+      const sectionTag = getSectionTagByDataAttribute(html, mobileSectionAttribute, sectionId);
+      if (!sectionTag?.includes('restaurant-mobile-optional')) {
+        errors.push(`${service.page}: ${mobileSectionAttribute}="${sectionId}" must keep the restaurant-mobile-optional fallback class`);
+      }
+    }
+
+    for (const sectionId of actualMobileSectionIds) {
+      if (!expectedMobileSectionIds.includes(sectionId)) {
+        errors.push(`${service.page}: ${mobileSectionAttribute}="${sectionId}" must be declared in ${RESTAURANT_SERVICES_DATA}`);
       }
     }
 

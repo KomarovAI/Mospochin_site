@@ -80,6 +80,7 @@ Guardrails:
 - Do not use `household:*` helpers.
 - Keep HTML edits for unique layout or narrative only.
 - For repeatable restaurant `trustCards` layout tuning, prefer `data/restaurant-page-slots.json` over page HTML.
+- For repeatable restaurant service-page mobile pruning, prefer `data/restaurant-services.json` over page HTML.
 
 ## 4. Run Representative Stabilization Audit
 

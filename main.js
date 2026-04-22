@@ -2006,13 +2006,43 @@ const Components = {
     const service = services.find((entry) => entry.page === currentPage && !entry.isShadow);
     const slotEntry = pageSlots?.pages?.[currentPage];
 
-    if (!service || !slotEntry) return;
+    if (!service) return;
+
+    this.applyRestaurantServiceMobileVisibility(service);
+
+    if (!slotEntry) return;
 
     const anchorForm = this.hydrateRestaurantRequestForm(service, slotEntry);
     this.hydrateRestaurantServiceSchema(service, pageMetadata);
     this.hydrateRestaurantFaq(slotEntry);
     this.hydrateRestaurantServiceProofLayer(service, proofLayer, anchorForm);
     this.hydrateRestaurantRelatedLinks(service, serviceMap, anchorForm);
+  },
+
+  applyRestaurantServiceMobileVisibility(service) {
+    const hiddenSectionIds = new Set(
+      Array.isArray(service?.mobileHiddenSectionIds)
+        ? service.mobileHiddenSectionIds
+            .filter((value) => typeof value === 'string')
+            .map((value) => value.trim())
+            .filter(Boolean)
+        : []
+    );
+
+    document.querySelectorAll('[data-mobile-section]').forEach((section) => {
+      const sectionId = section.getAttribute('data-mobile-section')?.trim();
+      if (!sectionId) return;
+
+      const shouldHideOnMobile = hiddenSectionIds.has(sectionId);
+      section.classList.toggle('restaurant-mobile-optional', shouldHideOnMobile);
+
+      if (shouldHideOnMobile) {
+        section.setAttribute('data-mobile-hidden', 'true');
+        return;
+      }
+
+      section.removeAttribute('data-mobile-hidden');
+    });
   },
 
   applyPageIdentityClasses() {

@@ -13,7 +13,7 @@ This document defines the first page-factory layer for restaurant service pages.
 - `data/page-metadata.json`
   - SEO, canonical URL, indexing, branch, form presence
 - `data/restaurant-services.json`
-  - page identity, symptoms, brand cluster, related pages, section ids
+  - page identity, symptoms, brand cluster, related pages, section ids, and repeatable mobile-hidden secondary section ids
 - `data/restaurant-page-slots.json`
   - FAQ, request-form copy, and `requestOverview` for public restaurant service pages
 - `data/restaurant-proof-layer.json`
@@ -46,8 +46,9 @@ This document defines the first page-factory layer for restaurant service pages.
 
 - Use the scaffold first when adding a new restaurant page.
 - Edit the registry first for symptoms, brands, related pages, and identity changes.
+- Edit the registry first for repeatable mobile-hidden secondary sections on restaurant service pages.
 - Edit slots first for FAQ, request-form copy, or `requestOverview` changes.
 - Edit `data/restaurant-proof-layer.json` first for shared SLA/proof defaults.
 - After helper or direct JSON edits on a public restaurant service page, run `npm run restaurant:sync-fallbacks`.
-- Edit HTML only for unique layout or long-form narrative.
+- Edit HTML only for unique layout or long-form narrative; repeatable mobile pruning belongs in `data/restaurant-services.json`, while HTML keeps only `data-mobile-section` markers.
 - Run `npm run validate:site` after changes.
