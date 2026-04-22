@@ -126,6 +126,15 @@ function isPlainObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 }
 
+function getBodyClasses(html) {
+  const className = html.match(/<body[^>]+class="([^"]*)"/i)?.[1] ?? '';
+  return new Set(className.split(/\s+/).filter(Boolean));
+}
+
+function getExpectedPageClass(page) {
+  return `page-${page.replace(/\.html$/, '')}`;
+}
+
 function getHouseholdPolicyKey(service) {
   return service?.isShadow ? 'shadowPage' : 'publicPage';
 }
@@ -477,6 +486,14 @@ function validateHouseholdPagePolicy(policy) {
       errors.push(`${context}.requiredSlotFields must be a non-empty array of strings`);
     }
 
+    if (!isArrayOfNonEmptyStrings(contract.requiredBodyClasses)) {
+      errors.push(`${context}.requiredBodyClasses must be a non-empty array of strings`);
+    }
+
+    if (typeof contract.requirePageSlugClass !== 'boolean') {
+      errors.push(`${context}.requirePageSlugClass must be a boolean`);
+    }
+
     if (!contract.requiredHtmlMarkers || typeof contract.requiredHtmlMarkers !== 'object') {
       errors.push(`${context}.requiredHtmlMarkers must be an object`);
       continue;
@@ -502,6 +519,14 @@ function validateHouseholdPagePolicy(policy) {
     errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.branchPages must be a non-empty array of strings`);
   }
 
+  if (!isArrayOfNonEmptyStrings(policy.sharedCardSlots.requiredBodyClasses)) {
+    errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.requiredBodyClasses must be a non-empty array of strings`);
+  }
+
+  if (typeof policy.sharedCardSlots.requirePageSlugClass !== 'boolean') {
+    errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.requirePageSlugClass must be a boolean`);
+  }
+
   if (!isArrayOfNonEmptyStrings(policy.sharedCardSlots.allowedSections)) {
     errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.allowedSections must be a non-empty array of strings`);
   }
@@ -514,6 +539,32 @@ function validateHouseholdPagePolicy(policy) {
   for (const sectionName of policy.sharedCardSlots.allowedSections ?? []) {
     if (!isNonEmptyString(policy.sharedCardSlots.anchorMap[sectionName])) {
       errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.anchorMap.${sectionName} must be a non-empty string`);
+    }
+  }
+
+  if (!isPlainObject(policy.sharedCardSlots.pageContracts)) {
+    errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.pageContracts must be an object`);
+    return;
+  }
+
+  for (const page of policy.sharedCardSlots.branchPages ?? []) {
+    const contract = policy.sharedCardSlots.pageContracts[page];
+    if (!isPlainObject(contract)) {
+      errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.pageContracts.${page} must be an object`);
+      continue;
+    }
+
+    for (const fieldName of ['requiredCardSections', 'requiredProofSections']) {
+      if (!isArrayOfNonEmptyStrings(contract[fieldName])) {
+        errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.pageContracts.${page}.${fieldName} must be a non-empty array of strings`);
+        continue;
+      }
+
+      for (const sectionName of contract[fieldName]) {
+        if (!(policy.sharedCardSlots.allowedSections ?? []).includes(sectionName)) {
+          errors.push(`${HOUSEHOLD_PAGE_POLICY_DATA}.sharedCardSlots.pageContracts.${page}.${fieldName} contains unknown section ${sectionName}`);
+        }
+      }
     }
   }
 }
@@ -1205,7 +1256,8 @@ function validateHouseholdPageSlots(slots, registry) {
 
   const publicServices = (registry?.services ?? []).filter((service) => !service.isShadow);
   const publicServicePages = new Set(publicServices.map((service) => service.page));
-  const branchCardPages = new Set(getHouseholdSharedCardConfig()?.branchPages ?? []);
+  const sharedCardConfig = getHouseholdSharedCardConfig() ?? {};
+  const branchCardPages = new Set(sharedCardConfig.branchPages ?? []);
   const expectedPages = new Set([...publicServicePages, ...branchCardPages]);
   const slotPages = new Set(Object.keys(slots.pages));
 
@@ -1267,6 +1319,17 @@ function validateHouseholdPageSlots(slots, registry) {
     }
 
     const html = read(service.page);
+    const bodyClasses = getBodyClasses(html);
+
+    for (const className of policy?.requiredBodyClasses ?? []) {
+      if (!bodyClasses.has(className)) {
+        errors.push(`${service.page}: missing body class ${className}`);
+      }
+    }
+
+    if (policy?.requirePageSlugClass && !bodyClasses.has(getExpectedPageClass(service.page))) {
+      errors.push(`${service.page}: missing body class ${getExpectedPageClass(service.page)}`);
+    }
 
     for (const anchor of policy?.requiredSlotAnchors ?? []) {
       if (anchor === 'service-schema') {
@@ -1292,6 +1355,8 @@ function validateHouseholdPageSlots(slots, registry) {
     const context = `${HOUSEHOLD_PAGE_SLOTS_DATA}: pages.${page}`;
     const pageMeta = metadata.pages[page];
     const html = metadata.pages[page] ? read(page) : '';
+    const bodyClasses = getBodyClasses(html);
+    const branchContract = sharedCardConfig.pageContracts?.[page];
 
     if (!pageMeta || pageMeta.branch !== 'household') {
       errors.push(`${context}: branch card page must exist in metadata and belong to household branch`);
@@ -1303,7 +1368,47 @@ function validateHouseholdPageSlots(slots, registry) {
       continue;
     }
 
+    for (const className of sharedCardConfig.requiredBodyClasses ?? []) {
+      if (!bodyClasses.has(className)) {
+        errors.push(`${page}: missing body class ${className}`);
+      }
+    }
+
+    if (sharedCardConfig.requirePageSlugClass && !bodyClasses.has(getExpectedPageClass(page))) {
+      errors.push(`${page}: missing body class ${getExpectedPageClass(page)}`);
+    }
+
     validateHouseholdCardSections(slotEntry.cardSections, page, publicServicePages, html);
+
+    for (const sectionName of branchContract?.requiredCardSections ?? []) {
+      if (!slotEntry.cardSections?.[sectionName]) {
+        errors.push(`${context}: missing required card section ${sectionName}`);
+        continue;
+      }
+
+      const anchor = sharedCardConfig.anchorMap?.[sectionName];
+      if (anchor && !html.includes(`data-slot="${anchor}"`)) {
+        errors.push(`${page}: missing data-slot="${anchor}" for required card section ${sectionName}`);
+      }
+    }
+
+    const proofEntry = householdProofLayer?.branchPages?.[page] ?? null;
+    if (!isPlainObject(proofEntry)) {
+      errors.push(`${HOUSEHOLD_PROOF_LAYER_DATA}: missing branch proof entry for ${page}`);
+      continue;
+    }
+
+    for (const sectionName of branchContract?.requiredProofSections ?? []) {
+      if (!proofEntry[sectionName]) {
+        errors.push(`${HOUSEHOLD_PROOF_LAYER_DATA}: ${page} missing required proof section ${sectionName}`);
+        continue;
+      }
+
+      const anchor = sharedCardConfig.anchorMap?.[sectionName];
+      if (anchor && !html.includes(`data-slot="${anchor}"`)) {
+        errors.push(`${page}: missing data-slot="${anchor}" for required proof section ${sectionName}`);
+      }
+    }
   }
 }
 

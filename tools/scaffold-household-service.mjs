@@ -255,7 +255,7 @@ function buildHtml({
     <link rel="canonical" href="${escapeHtml(canonical)}">
 </head>
 
-<body class="font-sans text-slate-800 antialiased bg-white page-${slugToClass(slug)}">
+<body class="font-sans text-slate-800 antialiased bg-white page-household-service page-${slugToClass(slug)}">
     <!-- Normalized layout shell: ${page} -->
     <div id="header-container"></div>
 

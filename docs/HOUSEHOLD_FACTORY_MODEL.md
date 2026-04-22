@@ -15,7 +15,7 @@ This document defines the first page-factory layer for household service pages.
 - `data/household-services.json`
   - page identity, symptoms, brand cluster, related pages, section ids, shadow state
 - `data/household-page-slots.json`
-  - FAQ, request-form copy, and branch-level card sections for household pages
+  - FAQ, request-form copy, and branch-level card sections for household pages, including `bytovaya-about`
 - `data/household-card-presets.json`
   - allowed tones, CTA vocabulary, and preset icon/tone mapping for reusable household cards
 - `data/household-proof-layer.json`
@@ -23,7 +23,7 @@ This document defines the first page-factory layer for household service pages.
 - `data/household-taxonomy.json`
   - device families, allowed symptoms, brand pools, semantic related-page rules
 - `data/household-page-policy.json`
-  - required anchors, required form fields, scaffold defaults, and shared card-slot policy
+  - required anchors, required form fields, static body-class contract, scaffold defaults, and shared branch card-slot policy
 - HTML page
   - unique layout, unique long-form copy, and page-specific visual treatment
 
@@ -37,7 +37,7 @@ This document defines the first page-factory layer for household service pages.
   - adds a taxonomy device entry
   - adds public pages to household branch navigation when the page is not shadow
 - `npm run doctor:household-page -- --page <file>`
-  - checks whether one household page is aligned across metadata, registry, slots, taxonomy, and HTML anchors
+  - checks whether one household page is aligned across metadata, registry, slots, taxonomy, static body classes, and HTML anchors
 
 ## Editing Rule
 
@@ -54,3 +54,4 @@ This document defines the first page-factory layer for household service pages.
 - The factory does not generate the whole site.
 - The factory does not replace manual layout work.
 - The factory keeps HTML fallback content in place; runtime hydration remains additive.
+- Shared household styling expects stable body classes (`page-<slug>`, `page-household-branch`, `page-household-service`) to exist in HTML; runtime keeps them normalized as a fallback.

@@ -50,7 +50,7 @@
     <link rel="canonical" href="https://mospochin.ru/bytovaya-about.html">
 </head>
 
-<body class="font-sans text-slate-800 antialiased bg-white">
+<body class="font-sans text-slate-800 antialiased bg-white page-household-branch page-bytovaya-about">
     <!-- Normalized layout shell: bytovaya-about.html -->
 <div id="header-container" class="mt-12"></div>
 
@@ -239,41 +239,41 @@
     </section>
 
     <!-- SECTION 5: СТАТИСТИКА -->
-    <section class="py-20 lg:py-28 bg-slate-50">
+    <section class="py-20 lg:py-28 bg-slate-50 household-section-shell">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
+            <div class="household-section-intro scroll-reveal">
                 <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Что важно в нашей работе</h2>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-                <div class="scroll-reveal text-center" data-delay="1">
-                    <p class="text-2xl lg:text-3xl font-display font-extrabold text-brand-orange mb-2">Цена до ремонта</p>
-                    <p class="text-slate-600 font-medium">Сначала диагностика и согласование работ</p>
+            <div class="household-stat-grid">
+                <div class="household-stat-card scroll-reveal" data-delay="1">
+                    <p class="household-stat-value">Цена до ремонта</p>
+                    <p class="household-stat-label">Сначала диагностика и согласование работ</p>
                 </div>
-                <div class="scroll-reveal text-center" data-delay="2">
-                    <p class="text-2xl lg:text-3xl font-display font-extrabold text-brand-orange mb-2">Без лишнего вывоза</p>
-                    <p class="text-slate-600 font-medium">Если поломку можно решить дома, мастер работает на месте</p>
+                <div class="household-stat-card scroll-reveal" data-delay="2">
+                    <p class="household-stat-value">Без лишнего вывоза</p>
+                    <p class="household-stat-label">Если поломку можно решить дома, мастер работает на месте</p>
                 </div>
-                <div class="scroll-reveal text-center" data-delay="3">
-                    <p class="text-2xl lg:text-3xl font-display font-extrabold text-brand-orange mb-2">Акт и гарантия</p>
-                    <p class="text-slate-600 font-medium">После ремонта оставляем понятные документы по работе</p>
+                <div class="household-stat-card scroll-reveal" data-delay="3">
+                    <p class="household-stat-value">Акт и гарантия</p>
+                    <p class="household-stat-label">После ремонта оставляем понятные документы по работе</p>
                 </div>
-                <div class="scroll-reveal text-center" data-delay="4">
-                    <p class="text-2xl lg:text-3xl font-display font-extrabold text-brand-orange mb-2">Честная оценка</p>
-                    <p class="text-slate-600 font-medium">Сразу скажем, если технику уже невыгодно чинить</p>
+                <div class="household-stat-card scroll-reveal" data-delay="4">
+                    <p class="household-stat-value">Честная оценка</p>
+                    <p class="household-stat-label">Сразу скажем, если технику уже невыгодно чинить</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SECTION 6: ЧТО РЕМОНТИРУЕМ -->
-    <section class="py-20 lg:py-28 bg-white">
+    <section class="py-20 lg:py-28 bg-white household-section-shell">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-wrench-line mr-2"></i>УСЛУГИ</span>
-                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Ремонтируем любую бытовую технику на дому</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Мастер приедет к вам домой с запчастями и инструментами</p>
+            <div class="household-section-intro scroll-reveal">
+                <span class="household-section-eyebrow" data-slot-copy="category-cards.badge"><i class="ri-wrench-line"></i><span>УСЛУГИ</span></span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 mt-4 heading-reveal" data-slot-copy="category-cards.title">Ремонтируем любую бытовую технику на дому</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto" data-slot-copy="category-cards.description">Мастер приедет к вам домой с запчастями и инструментами</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6" data-slot="category-cards">
                 <a href="holodilniki.html" class="group bg-white p-5 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-lg hover:border-brand-orange transition-all scroll-reveal text-center" data-delay="1">
                     <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mx-auto mb-3 group-hover:bg-brand-orange group-hover:text-white transition-all"><i class="ri-snowy-line"></i></div>
                     <h3 class="text-sm lg:text-base font-display font-bold text-brand-blue mb-1 group-hover:text-brand-orange transition">Холодильники</h3>
@@ -373,13 +373,14 @@
     </section>
 
     <!-- SECTION 9: 6 ПРИНЦИПОВ -->
-    <section class="py-20 lg:py-28 bg-white">
+    <section class="py-20 lg:py-28 bg-white household-section-shell">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
-                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-lightbulb-line mr-2"></i>ПРИНЦИПЫ</span>
-                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">6 причин доверить нам свою технику</h2>
+            <div class="household-section-intro scroll-reveal">
+                <span class="household-section-eyebrow" data-slot-copy="trust-cards.badge"><i class="ri-lightbulb-line"></i><span>ПРИНЦИПЫ</span></span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 mt-4 heading-reveal" data-slot-copy="trust-cards.title">6 причин доверить нам свою технику</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto" data-slot-copy="trust-cards.description">Домашний сервис выглядит спокойнее, когда причина, цена, документы и целесообразность ремонта понятны заранее.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" data-slot="trust-cards">
                 <div class="scroll-reveal bg-gradient-to-br from-blue-50 to-indigo-50 p-6 lg:p-8 rounded-2xl border-2 border-blue-100" data-delay="1">
                     <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-4"><i class="ri-time-line"></i></div>
                     <h3 class="text-lg font-display font-extrabold text-brand-blue mb-3">Удобное окно выезда</h3>
@@ -533,13 +534,14 @@
     </section>
 
     <!-- SECTION 13: ГАРАНТИИ -->
-    <section class="py-20 lg:py-28 bg-white">
+    <section class="py-20 lg:py-28 bg-white household-section-shell">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 scroll-reveal">
-                <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4"><i class="ri-shield-check-line mr-2"></i>ГАРАНТИИ</span>
-                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">3 гарантии MosPochin</h2>
+            <div class="household-section-intro household-section-intro--narrow scroll-reveal">
+                <span class="household-section-eyebrow" data-slot-copy="proof-cards.badge"><i class="ri-shield-check-line"></i><span>ГАРАНТИИ</span></span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 mt-4 heading-reveal" data-slot-copy="proof-cards.title">3 гарантии MosPochin</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto" data-slot-copy="proof-cards.description">Диагностика, документы после ремонта и честная оценка целесообразности остаются частью одного сценария.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8" data-slot="proof-cards">
                 <div class="scroll-reveal bg-gradient-to-br from-green-50 to-emerald-50 p-6 lg:p-8 rounded-2xl border-2 border-green-200 text-center" data-delay="1">
                     <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mx-auto mb-4"><i class="ri-file-search-line"></i></div>
                     <h3 class="text-xl font-display font-extrabold text-brand-blue mb-3">Диагностика при ремонте</h3>

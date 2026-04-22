@@ -18,6 +18,8 @@
     "requiredSectionIds": ["prices"],
     "requiredSlotAnchors": ["service-schema", "request-form"],
     "requiredSlotFields": ["faq", "formHints"],
+    "requiredBodyClasses": ["page-household-service"],
+    "requirePageSlugClass": true,
     "requiredFormFields": ["name", "phone", "type", "problem"],
     "requiredHtmlMarkers": {
       "formClass": "telegram-form",
@@ -42,6 +44,8 @@
     ],
     "defaultSectionIds": ["problems", "prices", "brands", "request"],
     "requiredSectionIds": ["prices"],
+    "requiredBodyClasses": ["page-household-service"],
+    "requirePageSlugClass": true,
     "requiredFormFields": ["name", "phone", "type", "problem"],
     "requiredHtmlMarkers": {
       "formClass": "telegram-form",
@@ -53,9 +57,30 @@
     "branchPages": [
       "bytovaya-index.html",
       "bytovaya-uslugi.html",
+      "bytovaya-about.html",
       "bytovaya-contact.html"
     ],
+    "requiredBodyClasses": ["page-household-branch"],
+    "requirePageSlugClass": true,
     "allowedSections": ["categoryCards", "trustCards", "contactChannels", "proofCards", "reviewCards", "caseCards", "objectionCards"],
+    "pageContracts": {
+      "bytovaya-index.html": {
+        "requiredCardSections": ["categoryCards", "trustCards"],
+        "requiredProofSections": ["reviewCards", "caseCards"]
+      },
+      "bytovaya-uslugi.html": {
+        "requiredCardSections": ["categoryCards", "trustCards"],
+        "requiredProofSections": ["proofCards", "caseCards"]
+      },
+      "bytovaya-about.html": {
+        "requiredCardSections": ["categoryCards", "trustCards"],
+        "requiredProofSections": ["proofCards"]
+      },
+      "bytovaya-contact.html": {
+        "requiredCardSections": ["contactChannels"],
+        "requiredProofSections": ["proofCards", "objectionCards"]
+      }
+    },
     "anchorMap": {
       "categoryCards": "category-cards",
       "trustCards": "trust-cards",

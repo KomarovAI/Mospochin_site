@@ -40,6 +40,11 @@ This document defines the first slot-based content layer for public household se
 ## Runtime Behavior
 
 - `main.js` hydrates public household service pages only.
+- Household pages should also carry stable body classes in static HTML so critical styling does not depend only on runtime initialization.
+- `main.js` still normalizes and backfills body classes for the current page:
+  - `page-<slug>`
+  - `page-household-branch` for `bytovaya-*` pages
+  - `page-household-service` for public/shadow household service pages
 - Slot hydration is additive and must not depend on layout rewrites.
 - If slot data is missing, the page must keep working with its static HTML fallback.
 - Shadow pages are not hydrated from the household slot model.
@@ -71,5 +76,6 @@ This document defines the first slot-based content layer for public household se
 - If you are changing FAQ or request copy, edit `data/household-page-slots.json` first.
 - If you are changing proof, price-clarity, objections, review, case, or “what happens next” conversion blocks, edit `data/household-proof-layer.json` first.
 - If you are changing household hub cards or contact-channel cards, edit `data/household-page-slots.json` first and keep tones/CTA labels aligned with `data/household-card-presets.json`.
+- If you are changing branch-shell requirements, static body classes, or required branch card/proof sections, update `data/household-page-policy.json` together with the affected HTML shell.
 - If you are changing symptoms, brand coverage, page identity, or related page topology, edit `data/household-services.json`.
 - Only edit HTML when the change is truly layout-specific or intentionally unique to one page.

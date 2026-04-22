@@ -47,6 +47,15 @@ function hasSlotAnchor(html, anchor) {
   return html.includes(`data-slot="${anchor}"`);
 }
 
+function getBodyClasses(html) {
+  const className = html.match(/<body[^>]+class="([^"]*)"/i)?.[1] ?? '';
+  return new Set(className.split(/\s+/).filter(Boolean));
+}
+
+function getExpectedPageClass(page) {
+  return `page-${page.replace(/\.html$/, '')}`;
+}
+
 function getPageFromArgs(args) {
   if (args.page && args.page !== true) return String(args.page);
   if (args.slug && args.slug !== true) return `${args.slug}.html`;
@@ -77,6 +86,8 @@ function runDoctor(page) {
   const contract = isServicePage ? policy[policyKey] ?? null : null;
   const proofEntry = proofLayer?.branchPages?.[page] ?? null;
   const serviceProofDefaults = proofLayer?.serviceDefaults ?? null;
+  const branchPageContract = sharedCardConfig.pageContracts?.[page] ?? null;
+  const bodyClasses = getBodyClasses(html);
   const issues = [];
 
   if (!htmlExists) issues.push('Missing HTML file');
@@ -106,6 +117,16 @@ function runDoctor(page) {
   }
 
   if (isBranchCardPage) {
+    for (const className of sharedCardConfig.requiredBodyClasses ?? []) {
+      if (!bodyClasses.has(className)) {
+        issues.push(`Missing body class ${className}`);
+      }
+    }
+
+    if (sharedCardConfig.requirePageSlugClass && !bodyClasses.has(getExpectedPageClass(page))) {
+      issues.push(`Missing body class ${getExpectedPageClass(page)}`);
+    }
+
     if (!slotEntry) {
       issues.push('Missing slot entry for branch household page');
     } else if (!slotEntry.cardSections || typeof slotEntry.cardSections !== 'object') {
@@ -120,6 +141,18 @@ function runDoctor(page) {
 
         if (!html.includes(`data-slot="${anchor}"`)) {
           issues.push(`Missing data-slot="${anchor}" for ${sectionName}`);
+        }
+      }
+
+      for (const sectionName of branchPageContract?.requiredCardSections ?? []) {
+        if (!slotEntry.cardSections[sectionName]) {
+          issues.push(`Branch contract missing card section ${sectionName}`);
+          continue;
+        }
+
+        const anchor = sharedCardConfig.anchorMap?.[sectionName];
+        if (anchor && !hasSlotAnchor(html, anchor)) {
+          issues.push(`Branch contract missing data-slot="${anchor}"`);
         }
       }
     }
@@ -138,10 +171,32 @@ function runDoctor(page) {
           issues.push(`Missing data-slot="${anchor}" for proof-layer section ${sectionName}`);
         }
       }
+
+      for (const sectionName of branchPageContract?.requiredProofSections ?? []) {
+        if (!proofEntry[sectionName]) {
+          issues.push(`Branch contract missing proof section ${sectionName}`);
+          continue;
+        }
+
+        const anchor = sharedCardConfig.anchorMap?.[sectionName];
+        if (anchor && !hasSlotAnchor(html, anchor)) {
+          issues.push(`Branch contract missing data-slot="${anchor}"`);
+        }
+      }
     }
   }
 
   if (registryEntry && contract) {
+    for (const className of contract.requiredBodyClasses ?? []) {
+      if (!bodyClasses.has(className)) {
+        issues.push(`Missing body class ${className}`);
+      }
+    }
+
+    if (contract.requirePageSlugClass && !bodyClasses.has(getExpectedPageClass(page))) {
+      issues.push(`Missing body class ${getExpectedPageClass(page)}`);
+    }
+
     for (const fieldName of contract.requiredRegistryFields ?? []) {
       if (registryEntry[fieldName] == null) {
         issues.push(`Registry missing ${fieldName}`);
@@ -235,6 +290,8 @@ function runDoctor(page) {
     proofLayer: isBranchCardPage
       ? {
           branchSections: Object.keys(proofEntry ?? {}),
+          requiredCardSections: branchPageContract?.requiredCardSections ?? [],
+          requiredProofSections: branchPageContract?.requiredProofSections ?? [],
           anchorsPresent: Object.keys(proofEntry ?? {}).every((sectionName) => {
             const anchor = sharedCardConfig.anchorMap?.[sectionName];
             return anchor ? hasSlotAnchor(html, anchor) : false;
@@ -249,6 +306,7 @@ function runDoctor(page) {
             requestAnchorPresent: hasSlotAnchor(html, 'request-form'),
           }
         : null,
+    bodyClasses: Array.from(bodyClasses),
     cardPresets: isServicePage
       ? {
           icon: cardPresets.pageIcons?.[page] ?? null,
@@ -273,6 +331,7 @@ try {
     console.log(`- page type: ${summary.pageType}`);
     console.log(`- html: ${summary.htmlExists ? 'ok' : 'missing'}`);
     console.log(`- metadata: ${summary.metadata ? 'ok' : 'missing'}`);
+    console.log(`- body classes: ${summary.bodyClasses.length ? 'ok' : 'missing'}`);
     console.log(`- registry: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.registry ? 'ok' : 'missing'}`);
     console.log(`- taxonomy: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'missing'}`);
     console.log(`- slots: ${summary.slots ? `ok (${summary.slots.cardSections.length} card sections)` : 'missing'}`);
@@ -285,6 +344,11 @@ try {
               : 'missing sections'
           }`
         );
+        if (summary.proofLayer.requiredCardSections.length || summary.proofLayer.requiredProofSections.length) {
+          console.log(
+            `- branch contract: cards [${summary.proofLayer.requiredCardSections.join(', ')}], proof [${summary.proofLayer.requiredProofSections.join(', ')}]`
+          );
+        }
       } else {
         console.log(
           `- proof layer: ${

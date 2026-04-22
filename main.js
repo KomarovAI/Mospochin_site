@@ -179,6 +179,13 @@ const HOUSEHOLD_PAGES = new Set([
   'routery',
   'water-heaters',
 ]);
+const PAGE_CLASS_ALIASES = Object.freeze({
+  'stiralnye-mashiny.html': ['page-stiralki'],
+  'holodilniki.html': ['page-holodilniki'],
+  'posudomoyki.html': ['page-posudomoyki'],
+  'plity.html': ['page-plity'],
+  'kompyutery.html': ['page-kompyutery'],
+});
 
 function getCurrentPageSlug() {
   return (window.location.pathname.split('/').pop() || 'index.html').replace('.html', '');
@@ -186,6 +193,14 @@ function getCurrentPageSlug() {
 
 function getCurrentPageFile() {
   return window.location.pathname.split('/').pop() || 'index.html';
+}
+
+function toBodyPageClass(value) {
+  return String(value || '')
+    .trim()
+    .replace(/[^a-z0-9-]/gi, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 let pageMetadataPromise = null;
@@ -1300,6 +1315,27 @@ const Components = {
     `;
   },
 
+  applyPageIdentityClasses() {
+    const currentPage = getCurrentPageFile();
+    const currentSlug = toBodyPageClass(getCurrentPageSlug());
+    const classes = new Set();
+
+    if (currentSlug) {
+      classes.add(`page-${currentSlug}`);
+    }
+
+    (PAGE_CLASS_ALIASES[currentPage] || []).forEach((className) => classes.add(className));
+    classes.add(this.isBytovaya() ? 'branch-household' : 'branch-restaurant');
+
+    if (this.isBytovaya()) {
+      classes.add(currentPage.startsWith('bytovaya-') ? 'page-household-branch' : 'page-household-service');
+    }
+
+    if (classes.size > 0) {
+      document.body.classList.add(...classes);
+    }
+  },
+
   async initHouseholdServiceSlots() {
     const currentPage = getCurrentPageFile();
     if (!this.isBytovaya()) return;
@@ -1346,6 +1382,8 @@ const Components = {
       this.currentBranch = inferBranchFromSlug();
     }
 
+    this.applyPageIdentityClasses();
+
     const [restaurantBranch, householdBranch] = await Promise.all([
       loadRestaurantBranchConfig(),
       loadHouseholdBranchConfig(),
@@ -1363,8 +1401,6 @@ const Components = {
     });
     this.initBranchRouteStrips();
     await this.initHouseholdServiceSlots();
-
-    document.body.classList.add(this.isBytovaya() ? 'branch-household' : 'branch-restaurant');
 
     window.setTimeout(() => {
       this.initMobileMenu();
