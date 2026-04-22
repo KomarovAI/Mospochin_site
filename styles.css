@@ -35,6 +35,22 @@ body.page-household-service {
   --household-type-eyebrow-size: 0.76rem;
 }
 
+body.page-restaurant-branch .scroll-reveal,
+body.page-restaurant-branch .scroll-reveal-left,
+body.page-restaurant-branch .scroll-reveal-right,
+body.page-restaurant-branch .scroll-scale,
+body.page-restaurant-branch .heading-reveal,
+body.page-restaurant-branch .counter {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+body.page-restaurant-branch .counter {
+  opacity: 1 !important;
+}
+
 /* Utility fallbacks for classes used in HTML but absent from styles-built.css */
 .bg-white\/5 {
   background-color: rgba(255, 255, 255, 0.05);
@@ -200,7 +216,8 @@ html {
   }
 
   body.page-household-branch .fixed.bottom-24.right-4.z-50.md\:hidden,
-  body.page-household-service .fixed.bottom-24.right-4.z-50.md\:hidden {
+  body.page-household-service .fixed.bottom-24.right-4.z-50.md\:hidden,
+  body.page-restaurant-branch .fixed.bottom-24.right-4.z-50.md\:hidden {
     display: none;
   }
 

@@ -360,8 +360,29 @@
             <div class="grid lg:grid-cols-5 gap-6 lg:gap-8">
                 <!-- Карта -->
                 <div class="lg:col-span-3 scroll-reveal">
-                    <div class="bg-white rounded-2xl border-2 border-slate-100 shadow-sm overflow-hidden h-[400px] lg:h-[500px]">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.5!2d37.6173!3d55.7558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzIwLjkiTiAzN8KwMzcnMDIuMyJF!5e0!3m2!1sru!2sru!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Карта зоны обслуживания MosPochin"></iframe>
+                    <div class="relative bg-gradient-to-br from-slate-50 via-orange-50/40 to-blue-50 rounded-2xl border-2 border-slate-100 shadow-sm overflow-hidden h-[400px] lg:h-[500px]">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.12),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.14),transparent_45%)]"></div>
+                        <div class="absolute inset-x-5 top-5 z-20 flex items-start justify-between gap-4">
+                            <div class="max-w-xs rounded-2xl bg-white/92 backdrop-blur px-4 py-3 shadow-lg border border-white/70">
+                                <p class="text-xs font-bold tracking-[0.12em] uppercase text-brand-orange mb-2">Зона выезда</p>
+                                <p class="text-brand-blue font-display font-bold text-lg leading-tight">Москва и ближайшее МО без долгого согласования</p>
+                                <p class="text-slate-600 text-sm mt-2">Карта показывает общий контур обслуживания. Точный маршрут и время приезда подтверждаем после звонка.</p>
+                            </div>
+                            <div class="hidden sm:flex rounded-full bg-green-500 text-white px-4 py-2 shadow-lg items-center gap-2 text-sm font-bold">
+                                <i class="ri-time-line"></i>
+                                <span>24/7 на выезде</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-x-5 bottom-5 z-20">
+                            <div class="inline-flex max-w-md rounded-2xl bg-brand-blue/88 text-white px-4 py-3 shadow-lg backdrop-blur items-start gap-3">
+                                <i class="ri-map-pin-2-line text-brand-orange text-xl mt-0.5"></i>
+                                <div>
+                                    <p class="font-bold text-sm">Если карта не загрузилась, зона обслуживания не меняется</p>
+                                    <p class="text-white/85 text-xs mt-1">Работаем по Москве, ближнему Подмосковью и выезжаем на срочные заявки по ресторанам без ожидания до следующего дня.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <iframe class="relative z-10 h-full w-full bg-transparent" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.5!2d37.6173!3d55.7558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzIwLjkiTiAzN8KwMzcnMDIuMyJF!5e0!3m2!1sru!2sru!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Карта зоны обслуживания MosPochin"></iframe>
                     </div>
                 </div>
                 <!-- Районы -->
