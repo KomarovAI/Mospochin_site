@@ -1,0 +1,184 @@
+{
+  "services": [
+    {
+      "page": "parokonvektomaty.html",
+      "slug": "parokonvektomaty",
+      "uiLabel": "Пароконвектоматы",
+      "deviceName": "Пароконвектоматы",
+      "serviceName": "Ремонт пароконвектоматов",
+      "schemaName": "Ремонт пароконвектоматов",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не нагревает",
+        "ошибка",
+        "не подает пар",
+        "не запускается"
+      ],
+      "brandCluster": [
+        "Rational",
+        "Unox",
+        "Electrolux",
+        "Convotherm"
+      ],
+      "relatedPages": [
+        "plity-pechi.html",
+        "grili-mangaly.html",
+        "posudomoechnye-mashiny.html"
+      ],
+      "formExample": "Пароконвектомат Rational SCC 6-1/1 не нагревает, ошибка E05, ресторан в ЦАО, нужен срочный выезд",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "plity-pechi.html",
+      "slug": "plity-pechi",
+      "uiLabel": "Плиты и печи",
+      "deviceName": "Промышленные плиты и печи",
+      "serviceName": "Ремонт промышленных плит и печей",
+      "schemaName": "Ремонт промышленных плит и печей",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не греет",
+        "ошибка модуля",
+        "запах газа",
+        "не держит температуру"
+      ],
+      "brandCluster": [
+        "Abat",
+        "Apach",
+        "Fagor",
+        "Kovinastro"
+      ],
+      "relatedPages": [
+        "parokonvektomaty.html",
+        "grili-mangaly.html",
+        "holodilnoe-oborudovanie.html"
+      ],
+      "formExample": "Плита Abat ПЭ-4Ш не греет одну конфорку, кухня в ЮАО, нужен выезд на объект",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "holodilnoe-oborudovanie.html",
+      "slug": "holodilnoe-oborudovanie",
+      "uiLabel": "Холодильное оборудование",
+      "deviceName": "Холодильное оборудование",
+      "serviceName": "Ремонт холодильного оборудования",
+      "schemaName": "Ремонт холодильного оборудования",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не морозит",
+        "температура растет",
+        "ошибка контроллера",
+        "компрессор не запускается"
+      ],
+      "brandCluster": [
+        "Polair",
+        "Carboma",
+        "Hicold",
+        "Fagor"
+      ],
+      "relatedPages": [
+        "ice-machines.html",
+        "plity-pechi.html",
+        "parokonvektomaty.html"
+      ],
+      "formExample": "Холодильный шкаф Polair ШХ-1.0 не морозит, температура +15°C, кафе на Арбате, нужен срочный выезд",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "posudomoechnye-mashiny.html",
+      "slug": "posudomoechnye-mashiny",
+      "uiLabel": "Посудомойки",
+      "deviceName": "Промышленные посудомоечные машины",
+      "serviceName": "Ремонт промышленных посудомоечных машин",
+      "schemaName": "Ремонт промышленных посудомоечных машин",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не сливает",
+        "ошибка",
+        "не греет воду",
+        "течет"
+      ],
+      "brandCluster": [
+        "Winterhalter",
+        "Hobart",
+        "Meiko",
+        "Silanos"
+      ],
+      "relatedPages": [
+        "parokonvektomaty.html",
+        "plity-pechi.html",
+        "grili-mangaly.html"
+      ],
+      "formExample": "Winterhalter PT-L не сливает воду, ошибка E03, ресторан на Тверской, нужен срочный выезд",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "grili-mangaly.html",
+      "slug": "grili-mangaly",
+      "uiLabel": "Грили и фритюр",
+      "deviceName": "Грили, мангалы и фритюрницы",
+      "serviceName": "Ремонт грилей, мангалов и фритюрниц",
+      "schemaName": "Ремонт грилей, мангалов и фритюрниц",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не греет",
+        "ошибка",
+        "не держит температуру",
+        "не включается"
+      ],
+      "brandCluster": [
+        "Electrolux",
+        "Bertos",
+        "Kovinastro",
+        "Apach"
+      ],
+      "relatedPages": [
+        "plity-pechi.html",
+        "parokonvektomaty.html",
+        "ice-machines.html"
+      ],
+      "formExample": "Гриль Electrolux не нагревает поверхность, кухня бургерной в САО, нужен выезд сегодня",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "ice-machines.html",
+      "slug": "ice-machines",
+      "uiLabel": "Льдогенераторы",
+      "deviceName": "Льдогенераторы",
+      "serviceName": "Ремонт льдогенераторов",
+      "schemaName": "Ремонт льдогенераторов",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не производит лед",
+        "ошибка",
+        "не набирает воду",
+        "отключается"
+      ],
+      "brandCluster": [
+        "Scotsman",
+        "Manitowoc",
+        "Hoshizaki",
+        "Brema"
+      ],
+      "relatedPages": [
+        "holodilnoe-oborudovanie.html",
+        "grili-mangaly.html",
+        "parokonvektomaty.html"
+      ],
+      "formExample": "Scotsman ICE 160 не производит лед, ошибка E03, бар в ЦАО, нужен срочный выезд",
+      "sectionIds": [
+        "request"
+      ]
+    }
+  ]
+}

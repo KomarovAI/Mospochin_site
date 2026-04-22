@@ -1,0 +1,69 @@
+{
+  "families": [
+    {
+      "slug": "thermal-line",
+      "label": "Тепловая линия"
+    },
+    {
+      "slug": "refrigeration",
+      "label": "Холодильное оборудование"
+    },
+    {
+      "slug": "dishwashing",
+      "label": "Посудомоечное оборудование"
+    },
+    {
+      "slug": "ice",
+      "label": "Льдогенераторы"
+    }
+  ],
+  "devices": [
+    {
+      "page": "parokonvektomaty.html",
+      "slug": "parokonvektomaty",
+      "deviceName": "Пароконвектоматы",
+      "family": "thermal-line",
+      "isShadow": false
+    },
+    {
+      "page": "plity-pechi.html",
+      "slug": "plity-pechi",
+      "deviceName": "Промышленные плиты и печи",
+      "family": "thermal-line",
+      "isShadow": false
+    },
+    {
+      "page": "grili-mangaly.html",
+      "slug": "grili-mangaly",
+      "deviceName": "Грили, мангалы и фритюрницы",
+      "family": "thermal-line",
+      "isShadow": false
+    },
+    {
+      "page": "holodilnoe-oborudovanie.html",
+      "slug": "holodilnoe-oborudovanie",
+      "deviceName": "Холодильное оборудование",
+      "family": "refrigeration",
+      "isShadow": false
+    },
+    {
+      "page": "ice-machines.html",
+      "slug": "ice-machines",
+      "deviceName": "Льдогенераторы",
+      "family": "ice",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnye-mashiny.html",
+      "slug": "posudomoechnye-mashiny",
+      "deviceName": "Промышленные посудомоечные машины",
+      "family": "dishwashing",
+      "isShadow": false
+    }
+  ],
+  "relatedRules": {
+    "maxLinks": 3,
+    "sameFamilyFirst": true,
+    "excludeShadow": true
+  }
+}

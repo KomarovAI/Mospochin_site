@@ -1,0 +1,61 @@
+{
+  "publicPage": {
+    "requiredRegistryFields": [
+      "page",
+      "slug",
+      "uiLabel",
+      "deviceName",
+      "serviceName",
+      "schemaName",
+      "isShadow",
+      "primarySymptoms",
+      "brandCluster",
+      "relatedPages",
+      "formExample",
+      "sectionIds"
+    ],
+    "requiredSectionIds": [
+      "request"
+    ],
+    "requiredSlotAnchors": [
+      "service-schema",
+      "request-form"
+    ],
+    "requiredSlotFields": [
+      "formHints"
+    ],
+    "requiredBodyClasses": [
+      "page-restaurant-service",
+      "branch-restaurant"
+    ],
+    "requirePageSlugClass": true,
+    "requiredFormFields": [
+      "name",
+      "phone",
+      "type",
+      "problem"
+    ],
+    "requiredHtmlMarkers": {
+      "formClass": "telegram-form",
+      "faqClass": "faq-item",
+      "requireH1": true
+    }
+  },
+  "branchPages": {
+    "pages": [
+      "index.html",
+      "uslugi.html",
+      "about.html",
+      "contact.html"
+    ],
+    "requiredBodyClasses": [
+      "page-restaurant-branch",
+      "branch-restaurant"
+    ],
+    "requirePageSlugClass": true,
+    "routeStripPages": [
+      "index.html",
+      "uslugi.html"
+    ]
+  }
+}

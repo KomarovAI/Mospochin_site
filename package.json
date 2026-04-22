@@ -7,6 +7,7 @@
     "dev": "node tools/dev-server.mjs",
     "dev:api": "node server/telegram-api.mjs",
     "normalize:html": "node tools/normalize-html.mjs",
+    "doctor:page": "node tools/doctor-page.mjs",
     "scaffold:household-service": "node tools/scaffold-household-service.mjs",
     "doctor:household-page": "node tools/doctor-household-page.mjs",
     "household:set-faq": "node tools/set-household-faq.mjs",

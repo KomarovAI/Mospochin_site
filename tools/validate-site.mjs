@@ -21,6 +21,12 @@ const HOUSEHOLD_CARD_PRESETS_DATA = 'data/household-card-presets.json';
 const HOUSEHOLD_PROOF_LAYER_DATA = 'data/household-proof-layer.json';
 const HOUSEHOLD_TAXONOMY_DATA = 'data/household-taxonomy.json';
 const HOUSEHOLD_PAGE_POLICY_DATA = 'data/household-page-policy.json';
+const RESTAURANT_SERVICES_DATA = 'data/restaurant-services.json';
+const RESTAURANT_PAGE_SLOTS_DATA = 'data/restaurant-page-slots.json';
+const RESTAURANT_PROOF_LAYER_DATA = 'data/restaurant-proof-layer.json';
+const RESTAURANT_TAXONOMY_DATA = 'data/restaurant-taxonomy.json';
+const RESTAURANT_PAGE_POLICY_DATA = 'data/restaurant-page-policy.json';
+const SITE_PAGE_CONTRACTS_DATA = 'data/site-page-contracts.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
 const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
 const LEGACY_FORM_FIELDS = ['message'];
@@ -94,6 +100,30 @@ const householdTaxonomy = fs.existsSync(householdTaxonomyPath)
 const householdPagePolicyPath = path.join(SITE_ROOT, HOUSEHOLD_PAGE_POLICY_DATA);
 const householdPagePolicy = fs.existsSync(householdPagePolicyPath)
   ? JSON.parse(fs.readFileSync(householdPagePolicyPath, 'utf8'))
+  : null;
+const restaurantServicesPath = path.join(SITE_ROOT, RESTAURANT_SERVICES_DATA);
+const restaurantServicesRegistry = fs.existsSync(restaurantServicesPath)
+  ? JSON.parse(fs.readFileSync(restaurantServicesPath, 'utf8'))
+  : null;
+const restaurantPageSlotsPath = path.join(SITE_ROOT, RESTAURANT_PAGE_SLOTS_DATA);
+const restaurantPageSlots = fs.existsSync(restaurantPageSlotsPath)
+  ? JSON.parse(fs.readFileSync(restaurantPageSlotsPath, 'utf8'))
+  : null;
+const restaurantProofLayerPath = path.join(SITE_ROOT, RESTAURANT_PROOF_LAYER_DATA);
+const restaurantProofLayer = fs.existsSync(restaurantProofLayerPath)
+  ? JSON.parse(fs.readFileSync(restaurantProofLayerPath, 'utf8'))
+  : null;
+const restaurantTaxonomyPath = path.join(SITE_ROOT, RESTAURANT_TAXONOMY_DATA);
+const restaurantTaxonomy = fs.existsSync(restaurantTaxonomyPath)
+  ? JSON.parse(fs.readFileSync(restaurantTaxonomyPath, 'utf8'))
+  : null;
+const restaurantPagePolicyPath = path.join(SITE_ROOT, RESTAURANT_PAGE_POLICY_DATA);
+const restaurantPagePolicy = fs.existsSync(restaurantPagePolicyPath)
+  ? JSON.parse(fs.readFileSync(restaurantPagePolicyPath, 'utf8'))
+  : null;
+const sitePageContractsPath = path.join(SITE_ROOT, SITE_PAGE_CONTRACTS_DATA);
+const sitePageContracts = fs.existsSync(sitePageContractsPath)
+  ? JSON.parse(fs.readFileSync(sitePageContractsPath, 'utf8'))
   : null;
 const sitemapXml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
 
@@ -1530,6 +1560,420 @@ function validateHouseholdPageSlots(slots, registry) {
   }
 }
 
+function validateSitePageContracts(contracts) {
+  if (!isPlainObject(contracts)) {
+    errors.push(`${SITE_PAGE_CONTRACTS_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!isPlainObject(contracts.sharedLayers)) {
+    errors.push(`${SITE_PAGE_CONTRACTS_DATA}.sharedLayers must be an object`);
+  } else {
+    if (!isNonEmptyString(contracts.sharedLayers.metadata)) {
+      errors.push(`${SITE_PAGE_CONTRACTS_DATA}.sharedLayers.metadata must be a non-empty string`);
+    }
+
+    if (!isNonEmptyString(contracts.sharedLayers.runtime)) {
+      errors.push(`${SITE_PAGE_CONTRACTS_DATA}.sharedLayers.runtime must be a non-empty string`);
+    }
+
+    if (!isArrayOfNonEmptyStrings(contracts.sharedLayers.branchConfigs)) {
+      errors.push(`${SITE_PAGE_CONTRACTS_DATA}.sharedLayers.branchConfigs must be a non-empty array of strings`);
+    }
+  }
+
+  if (!isPlainObject(contracts.pageTypes)) {
+    errors.push(`${SITE_PAGE_CONTRACTS_DATA}.pageTypes must be an object`);
+    return;
+  }
+
+  for (const typeName of ['restaurantBranch', 'restaurantService', 'householdBranch', 'householdService', 'neutral']) {
+    const pageType = contracts.pageTypes[typeName];
+    if (!isPlainObject(pageType)) {
+      errors.push(`${SITE_PAGE_CONTRACTS_DATA}.pageTypes.${typeName} must be an object`);
+      continue;
+    }
+
+    if (!VALID_BRANCHES.has(pageType.branch)) {
+      errors.push(`${SITE_PAGE_CONTRACTS_DATA}.pageTypes.${typeName}.branch must be a valid branch`);
+    }
+
+    if (!isNonEmptyString(pageType.role)) {
+      errors.push(`${SITE_PAGE_CONTRACTS_DATA}.pageTypes.${typeName}.role must be a non-empty string`);
+    }
+  }
+}
+
+function validateRestaurantTaxonomy(taxonomy) {
+  if (!isPlainObject(taxonomy)) {
+    errors.push(`${RESTAURANT_TAXONOMY_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!Array.isArray(taxonomy.families) || taxonomy.families.length === 0) {
+    errors.push(`${RESTAURANT_TAXONOMY_DATA}.families must be a non-empty array`);
+  }
+
+  const familySlugs = new Set();
+  for (const [index, family] of (taxonomy.families ?? []).entries()) {
+    const context = `${RESTAURANT_TAXONOMY_DATA}.families[${index}]`;
+    if (!isPlainObject(family)) {
+      errors.push(`${context} must be an object`);
+      continue;
+    }
+    if (!isNonEmptyString(family.slug) || !isNonEmptyString(family.label)) {
+      errors.push(`${context} must define slug and label`);
+      continue;
+    }
+    familySlugs.add(family.slug);
+  }
+
+  if (!Array.isArray(taxonomy.devices) || taxonomy.devices.length === 0) {
+    errors.push(`${RESTAURANT_TAXONOMY_DATA}.devices must be a non-empty array`);
+  } else {
+    taxonomy.devices.forEach((device, index) => {
+      const context = `${RESTAURANT_TAXONOMY_DATA}.devices[${index}]`;
+      if (!isPlainObject(device)) {
+        errors.push(`${context} must be an object`);
+        return;
+      }
+
+      for (const fieldName of ['page', 'slug', 'deviceName', 'family']) {
+        if (!isNonEmptyString(device[fieldName])) {
+          errors.push(`${context}.${fieldName} must be a non-empty string`);
+        }
+      }
+
+      if (typeof device.isShadow !== 'boolean') {
+        errors.push(`${context}.isShadow must be a boolean`);
+      }
+
+      if (isNonEmptyString(device.family) && !familySlugs.has(device.family)) {
+        errors.push(`${context}.family references unknown family ${device.family}`);
+      }
+    });
+  }
+
+  if (!isPlainObject(taxonomy.relatedRules)) {
+    errors.push(`${RESTAURANT_TAXONOMY_DATA}.relatedRules must be an object`);
+  } else {
+    if (!Number.isInteger(taxonomy.relatedRules.maxLinks) || taxonomy.relatedRules.maxLinks < 1) {
+      errors.push(`${RESTAURANT_TAXONOMY_DATA}.relatedRules.maxLinks must be a positive integer`);
+    }
+    if (typeof taxonomy.relatedRules.sameFamilyFirst !== 'boolean') {
+      errors.push(`${RESTAURANT_TAXONOMY_DATA}.relatedRules.sameFamilyFirst must be a boolean`);
+    }
+    if (typeof taxonomy.relatedRules.excludeShadow !== 'boolean') {
+      errors.push(`${RESTAURANT_TAXONOMY_DATA}.relatedRules.excludeShadow must be a boolean`);
+    }
+  }
+}
+
+function validateRestaurantPagePolicy(policy) {
+  if (!isPlainObject(policy)) {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!isPlainObject(policy.publicPage)) {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage must be an object`);
+  } else {
+    for (const fieldName of ['requiredRegistryFields', 'requiredSectionIds', 'requiredSlotAnchors', 'requiredSlotFields', 'requiredBodyClasses', 'requiredFormFields']) {
+      if (!isArrayOfNonEmptyStrings(policy.publicPage[fieldName])) {
+        errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.${fieldName} must be a non-empty array of strings`);
+      }
+    }
+
+    if (typeof policy.publicPage.requirePageSlugClass !== 'boolean') {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.requirePageSlugClass must be a boolean`);
+    }
+
+    if (!isPlainObject(policy.publicPage.requiredHtmlMarkers)) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.requiredHtmlMarkers must be an object`);
+    } else {
+      for (const fieldName of ['formClass', 'faqClass']) {
+        if (!isNonEmptyString(policy.publicPage.requiredHtmlMarkers[fieldName])) {
+          errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.requiredHtmlMarkers.${fieldName} must be a non-empty string`);
+        }
+      }
+
+      if (typeof policy.publicPage.requiredHtmlMarkers.requireH1 !== 'boolean') {
+        errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.publicPage.requiredHtmlMarkers.requireH1 must be a boolean`);
+      }
+    }
+  }
+
+  if (!isPlainObject(policy.branchPages)) {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.branchPages must be an object`);
+    return;
+  }
+
+  for (const fieldName of ['pages', 'requiredBodyClasses', 'routeStripPages']) {
+    if (!isArrayOfNonEmptyStrings(policy.branchPages[fieldName])) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.branchPages.${fieldName} must be a non-empty array of strings`);
+    }
+  }
+
+  if (typeof policy.branchPages.requirePageSlugClass !== 'boolean') {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.branchPages.requirePageSlugClass must be a boolean`);
+  }
+}
+
+function validateRestaurantProofLayer(proofLayer) {
+  if (!isPlainObject(proofLayer)) {
+    errors.push(`${RESTAURANT_PROOF_LAYER_DATA}: top-level object is required`);
+    return;
+  }
+
+  const defaults = proofLayer.serviceDefaults;
+  if (!isPlainObject(defaults)) {
+    errors.push(`${RESTAURANT_PROOF_LAYER_DATA}.serviceDefaults must be an object`);
+    return;
+  }
+
+  for (const sectionName of ['slaStrip', 'proofCards']) {
+    const section = defaults[sectionName];
+    const context = `${RESTAURANT_PROOF_LAYER_DATA}.serviceDefaults.${sectionName}`;
+    if (!isPlainObject(section)) {
+      errors.push(`${context} must be an object`);
+      continue;
+    }
+
+    for (const fieldName of ['badge', 'title', 'description']) {
+      if (!isNonEmptyString(section[fieldName])) {
+        errors.push(`${context}.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    const listField = sectionName === 'slaStrip' ? 'items' : 'cards';
+    if (!Array.isArray(section[listField]) || section[listField].length === 0) {
+      errors.push(`${context}.${listField} must be a non-empty array`);
+    }
+  }
+}
+
+function validateRestaurantServicesRegistry(registry) {
+  if (!isPlainObject(registry) || !Array.isArray(registry.services)) {
+    errors.push(`${RESTAURANT_SERVICES_DATA}: services must be a non-empty array`);
+    return;
+  }
+
+  if (registry.services.length === 0) {
+    errors.push(`${RESTAURANT_SERVICES_DATA}: services must be a non-empty array`);
+    return;
+  }
+
+  const registryByPage = new Map();
+  const taxonomyByPage = new Map((restaurantTaxonomy?.devices ?? []).map((device) => [device.page, device]));
+  const familyBySlug = new Map((restaurantTaxonomy?.families ?? []).map((family) => [family.slug, family]));
+  const relatedRules = restaurantTaxonomy?.relatedRules ?? {};
+  const visibleRestaurantPages = new Set(
+    (restaurantBranch?.services ?? [])
+      .map((service) => service?.href?.split('#', 1)[0])
+      .concat((restaurantBranch?.footerLinks ?? []).map((link) => link?.href?.split('#', 1)[0]))
+      .filter((href) => typeof href === 'string' && href.endsWith('.html') && metadata.pages[href]?.branch === 'restaurant')
+  );
+
+  registry.services.forEach((service, index) => {
+    const context = `${RESTAURANT_SERVICES_DATA}.services[${index}]`;
+    if (!isPlainObject(service)) {
+      errors.push(`${context} must be an object`);
+      return;
+    }
+
+    for (const fieldName of restaurantPagePolicy?.publicPage?.requiredRegistryFields ?? []) {
+      if (service[fieldName] == null) {
+        errors.push(`${context}.${fieldName} is required`);
+      }
+    }
+
+    if (registryByPage.has(service.page)) {
+      errors.push(`${context}.page duplicates ${service.page}`);
+    }
+    registryByPage.set(service.page, service);
+
+    const pageMeta = metadata.pages[service.page];
+    if (!pageMeta || pageMeta.branch !== 'restaurant') {
+      errors.push(`${context}.page must belong to the restaurant branch`);
+    }
+
+    if (service.isShadow) {
+      errors.push(`${context}.restaurant public registry must not mark pages as shadow`);
+    }
+
+    const taxonomyDevice = taxonomyByPage.get(service.page);
+    if (!taxonomyDevice) {
+      errors.push(`${context}.page missing in ${RESTAURANT_TAXONOMY_DATA}`);
+    } else {
+      if (taxonomyDevice.slug !== service.slug) {
+        errors.push(`${context}.slug must match taxonomy device ${taxonomyDevice.slug}`);
+      }
+      if (taxonomyDevice.deviceName !== service.deviceName) {
+        errors.push(`${context}.deviceName must match taxonomy device ${taxonomyDevice.deviceName}`);
+      }
+      if (taxonomyDevice.isShadow !== service.isShadow) {
+        errors.push(`${context}.isShadow must match taxonomy device state`);
+      }
+      if (!familyBySlug.has(taxonomyDevice.family)) {
+        errors.push(`${context}.taxonomy family ${taxonomyDevice.family} is missing`);
+      }
+    }
+
+    if (!Array.isArray(service.relatedPages)) return;
+
+    service.relatedPages.forEach((relatedPage, relatedIndex) => {
+      if (!metadata.pages[relatedPage] || metadata.pages[relatedPage].branch !== 'restaurant') {
+        errors.push(`${context}.relatedPages[${relatedIndex}] must target a restaurant page`);
+        return;
+      }
+
+      if (relatedPage === service.page) {
+        errors.push(`${context}.relatedPages[${relatedIndex}] must not point to itself`);
+      }
+    });
+
+    if (Number.isInteger(relatedRules.maxLinks) && service.relatedPages.length > relatedRules.maxLinks) {
+      errors.push(`${context}.relatedPages exceeds taxonomy maxLinks=${relatedRules.maxLinks}`);
+    }
+
+    if (!visibleRestaurantPages.has(service.page)) {
+      errors.push(`${context}.page must be reachable from the restaurant branch navigation sources`);
+    }
+  });
+}
+
+function validateRestaurantPageSlots(slots, registry) {
+  if (!isPlainObject(slots) || !isPlainObject(slots.pages)) {
+    errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}: pages must be an object keyed by html file`);
+    return;
+  }
+
+  const publicServices = registry?.services ?? [];
+  const expectedPages = new Set(publicServices.map((service) => service.page));
+  const slotPages = new Set(Object.keys(slots.pages));
+
+  expectedPages.forEach((page) => {
+    if (!slotPages.has(page)) {
+      errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}: missing slot entry for ${page}`);
+    }
+  });
+
+  slotPages.forEach((page) => {
+    if (!expectedPages.has(page)) {
+      errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}: unexpected slot entry ${page}`);
+    }
+  });
+
+  publicServices.forEach((service) => {
+    const context = `${RESTAURANT_PAGE_SLOTS_DATA}.pages.${service.page}`;
+    const slotEntry = slots.pages[service.page];
+    const html = read(service.page);
+    const bodyClasses = getBodyClasses(html);
+
+    if (!isPlainObject(slotEntry)) {
+      errors.push(`${context} must be an object`);
+      return;
+    }
+
+    const formHints = slotEntry.formHints;
+    if (!isPlainObject(formHints)) {
+      errors.push(`${context}.formHints must be an object`);
+    } else {
+      if (!isArrayOfNonEmptyStrings(formHints.chips)) {
+        errors.push(`${context}.formHints.chips must be a non-empty array of strings`);
+      }
+      for (const fieldName of ['typePlaceholder', 'problemPlaceholder']) {
+        if (!isNonEmptyString(formHints[fieldName])) {
+          errors.push(`${context}.formHints.${fieldName} must be a non-empty string`);
+        }
+      }
+    }
+
+    for (const className of restaurantPagePolicy?.publicPage?.requiredBodyClasses ?? []) {
+      if (!bodyClasses.has(className)) {
+        errors.push(`${service.page}: missing body class ${className}`);
+      }
+    }
+
+    if (
+      restaurantPagePolicy?.publicPage?.requirePageSlugClass &&
+      !bodyClasses.has(getExpectedPageClass(service.page))
+    ) {
+      errors.push(`${service.page}: missing body class ${getExpectedPageClass(service.page)}`);
+    }
+
+    for (const anchor of restaurantPagePolicy?.publicPage?.requiredSlotAnchors ?? []) {
+      if (!html.includes(`data-slot="${anchor}"`)) {
+        errors.push(`${service.page}: missing data-slot="${anchor}"`);
+      }
+    }
+
+    for (const sectionId of restaurantPagePolicy?.publicPage?.requiredSectionIds ?? []) {
+      if (!html.includes(`<section id="${sectionId}"`)) {
+        errors.push(`${service.page}: missing section id ${sectionId}`);
+      }
+    }
+
+    if (
+      restaurantPagePolicy?.publicPage?.requiredHtmlMarkers?.requireH1 &&
+      !html.match(/<h1[\s>]/i)
+    ) {
+      errors.push(`${service.page}: page must include an h1`);
+    }
+
+    if (
+      isNonEmptyString(restaurantPagePolicy?.publicPage?.requiredHtmlMarkers?.formClass) &&
+      !html.includes(`class="${restaurantPagePolicy.publicPage.requiredHtmlMarkers.formClass}`)
+    ) {
+      errors.push(`${service.page}: page must include a .${restaurantPagePolicy.publicPage.requiredHtmlMarkers.formClass}`);
+    }
+
+    if (
+      isNonEmptyString(restaurantPagePolicy?.publicPage?.requiredHtmlMarkers?.faqClass) &&
+      !html.includes(restaurantPagePolicy.publicPage.requiredHtmlMarkers.faqClass)
+    ) {
+      errors.push(`${service.page}: page must include FAQ items`);
+    }
+
+    for (const fieldName of restaurantPagePolicy?.publicPage?.requiredFormFields ?? []) {
+      if (countNamedFields(html, fieldName) === 0) {
+        errors.push(`${service.page}: missing form field ${fieldName}`);
+      }
+    }
+  });
+
+  for (const page of restaurantPagePolicy?.branchPages?.pages ?? []) {
+    const pageMeta = metadata.pages[page];
+    const html = pageMeta ? read(page) : '';
+    const bodyClasses = getBodyClasses(html);
+
+    if (!pageMeta || pageMeta.branch !== 'restaurant') {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}: branch page ${page} must exist in metadata and belong to restaurant branch`);
+      continue;
+    }
+
+    for (const className of restaurantPagePolicy?.branchPages?.requiredBodyClasses ?? []) {
+      if (!bodyClasses.has(className)) {
+        errors.push(`${page}: missing body class ${className}`);
+      }
+    }
+
+    if (
+      restaurantPagePolicy?.branchPages?.requirePageSlugClass &&
+      !bodyClasses.has(getExpectedPageClass(page))
+    ) {
+      errors.push(`${page}: missing body class ${getExpectedPageClass(page)}`);
+    }
+
+    if (
+      restaurantPagePolicy?.branchPages?.routeStripPages?.includes(page) &&
+      !html.includes('data-restaurant-route-strip')
+    ) {
+      errors.push(`${page}: missing restaurant route-strip host`);
+    }
+  }
+}
+
 function validateBranchConfig(branchConfig, contract, expectedBranch) {
   if (!branchConfig) return;
 
@@ -1657,6 +2101,12 @@ function validateBranchConfig(branchConfig, contract, expectedBranch) {
 
 validateBranchConfig(restaurantBranch, RESTAURANT_ROUTE_STRIP_CONTRACT, 'restaurant');
 validateBranchConfig(householdBranch, { dataFile: HOUSEHOLD_BRANCH_DATA, pages: {} }, 'household');
+validateSitePageContracts(sitePageContracts);
+validateRestaurantTaxonomy(restaurantTaxonomy);
+validateRestaurantPagePolicy(restaurantPagePolicy);
+validateRestaurantProofLayer(restaurantProofLayer);
+validateRestaurantServicesRegistry(restaurantServicesRegistry);
+validateRestaurantPageSlots(restaurantPageSlots, restaurantServicesRegistry);
 validateHouseholdTaxonomy(householdTaxonomy);
 validateHouseholdPagePolicy(householdPagePolicy);
 validateHouseholdCardPresets(householdCardPresets);
@@ -1687,6 +2137,30 @@ if (!fs.existsSync(restaurantBranchPath)) {
 
 if (!fs.existsSync(householdBranchPath)) {
   errors.push(`${HOUSEHOLD_BRANCH_DATA}: household branch config missing`);
+}
+
+if (!fs.existsSync(sitePageContractsPath)) {
+  errors.push(`${SITE_PAGE_CONTRACTS_DATA}: site page contracts missing`);
+}
+
+if (!fs.existsSync(restaurantServicesPath)) {
+  errors.push(`${RESTAURANT_SERVICES_DATA}: restaurant services registry missing`);
+}
+
+if (!fs.existsSync(restaurantPageSlotsPath)) {
+  errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}: restaurant page slots missing`);
+}
+
+if (!fs.existsSync(restaurantProofLayerPath)) {
+  errors.push(`${RESTAURANT_PROOF_LAYER_DATA}: restaurant proof layer missing`);
+}
+
+if (!fs.existsSync(restaurantTaxonomyPath)) {
+  errors.push(`${RESTAURANT_TAXONOMY_DATA}: restaurant taxonomy missing`);
+}
+
+if (!fs.existsSync(restaurantPagePolicyPath)) {
+  errors.push(`${RESTAURANT_PAGE_POLICY_DATA}: restaurant page policy missing`);
 }
 
 if (!fs.existsSync(householdServicesPath)) {

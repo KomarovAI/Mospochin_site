@@ -1,0 +1,44 @@
+{
+  "sharedLayers": {
+    "metadata": "data/page-metadata.json",
+    "runtime": "data/runtime-config.json",
+    "branchConfigs": [
+      "data/restaurant-branch.json",
+      "data/household-branch.json"
+    ]
+  },
+  "pageTypes": {
+    "restaurantBranch": {
+      "branch": "restaurant",
+      "role": "branch",
+      "policy": "data/restaurant-page-policy.json"
+    },
+    "restaurantService": {
+      "branch": "restaurant",
+      "role": "service",
+      "registry": "data/restaurant-services.json",
+      "taxonomy": "data/restaurant-taxonomy.json",
+      "slots": "data/restaurant-page-slots.json",
+      "proof": "data/restaurant-proof-layer.json",
+      "policy": "data/restaurant-page-policy.json"
+    },
+    "householdBranch": {
+      "branch": "household",
+      "role": "branch",
+      "policy": "data/household-page-policy.json"
+    },
+    "householdService": {
+      "branch": "household",
+      "role": "service",
+      "registry": "data/household-services.json",
+      "taxonomy": "data/household-taxonomy.json",
+      "slots": "data/household-page-slots.json",
+      "proof": "data/household-proof-layer.json",
+      "policy": "data/household-page-policy.json"
+    },
+    "neutral": {
+      "branch": "neutral",
+      "role": "neutral"
+    }
+  }
+}

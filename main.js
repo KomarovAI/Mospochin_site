@@ -1406,6 +1406,8 @@ const Components = {
 
     if (this.isBytovaya()) {
       classes.add(currentPage.startsWith('bytovaya-') ? 'page-household-branch' : 'page-household-service');
+    } else {
+      classes.add(['index.html', 'uslugi.html', 'about.html', 'contact.html'].includes(currentPage) ? 'page-restaurant-branch' : 'page-restaurant-service');
     }
 
     if (classes.size > 0) {
