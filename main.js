@@ -1603,14 +1603,18 @@ const Components = {
         const [badgeClass, textClass, borderClass] = toneClass.split(' ');
 
         return `
-          <article class="rounded-3xl border ${borderClass} bg-white/90 p-6 shadow-sm">
-            <div class="flex items-center justify-between gap-3">
+          <article class="rounded-3xl border ${borderClass} bg-white/95 p-6 shadow-sm">
+            <div class="flex items-start justify-between gap-4">
+              <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl ${badgeClass} ${textClass}">
+                <i class="${escapeHtml(card.icon || 'ri-tools-line')} text-2xl"></i>
+              </div>
               <span class="inline-flex rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${badgeClass} ${textClass}">${escapeHtml(card.badge || 'Важно')}</span>
-              <i class="${escapeHtml(card.icon || 'ri-tools-line')} text-2xl ${textClass}"></i>
             </div>
-            <h3 class="mt-5 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(card.title || '')}</h3>
-            <p class="mt-3 text-slate-600">${escapeHtml(card.description || '')}</p>
-            <p class="mt-5 text-sm font-semibold text-slate-700">${escapeHtml(card.outcome || '')}</p>
+            <h3 class="mt-6 text-xl font-display font-extrabold text-brand-blue leading-tight">${escapeHtml(card.title || '')}</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">${escapeHtml(card.description || '')}</p>
+            <div class="mt-5 rounded-2xl bg-slate-50 px-4 py-3">
+              <p class="text-sm font-semibold text-slate-700">${escapeHtml(card.outcome || '')}</p>
+            </div>
           </article>
         `;
       })
