@@ -41,6 +41,10 @@ function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
+function isPlainObject(value) {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+}
+
 function getPageFromArgs(args) {
   if (args.page && args.page !== true) return String(args.page);
   if (args.slug && args.slug !== true) return `${args.slug}.html`;
@@ -89,6 +93,8 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
   if (pageType === 'restaurant-branch-page') {
     return {
       branchShell: 'Edit data/restaurant-branch.json for shared branch shell, nav, and route strips',
+      slots: `Edit data/restaurant-page-slots.json for ${page} repeatable category/trust/contact sections and routing hint`,
+      proof: `Edit data/restaurant-proof-layer.json for ${page} branch proof/review/case sections`,
       metadata: 'Edit data/page-metadata.json for SEO/canonical metadata',
       html: `Edit ${page} only for unique layout or long-form narrative`,
     };
@@ -127,6 +133,9 @@ function runRestaurantDoctor(page) {
   const registryEntry = (registry.services ?? []).find((entry) => entry.page === page) ?? null;
   const taxonomyEntry = (taxonomy.devices ?? []).find((entry) => entry.page === page) ?? null;
   const slotEntry = slots.pages?.[page] ?? null;
+  const sharedCardSlots = policy.sharedCardSlots ?? null;
+  const branchContract = sharedCardSlots?.pageContracts?.[page] ?? null;
+  const branchProofEntry = proof.branchPages?.[page] ?? null;
   const bodyClasses = getBodyClasses(html);
   const pageType = branchPages.has(page)
     ? 'restaurant-branch-page'
@@ -156,6 +165,46 @@ function runRestaurantDoctor(page) {
 
     if (policy.branchPages?.routeStripPages?.includes(page) && !html.includes('data-restaurant-route-strip')) {
       issues.push('Missing restaurant route-strip host');
+    }
+
+    if (!isPlainObject(slotEntry)) {
+      issues.push('Missing branch slot entry');
+    }
+
+    if (!isPlainObject(branchProofEntry)) {
+      issues.push('Missing branch proof entry');
+    }
+
+    for (const sectionName of branchContract?.requiredCardSections ?? []) {
+      if (!slotEntry?.cardSections?.[sectionName]) {
+        issues.push(`Missing branch card section ${sectionName}`);
+      } else {
+        const anchor = sharedCardSlots?.anchorMap?.[sectionName];
+        if (anchor && !hasSlotAnchor(html, anchor)) {
+          issues.push(`Missing data-slot="${anchor}" for ${sectionName}`);
+        }
+      }
+    }
+
+    const routingAnchor = sharedCardSlots?.routingHint?.anchor;
+    if (sharedCardSlots?.routingHint?.pages?.includes(page)) {
+      if (!slotEntry?.routingHint) {
+        issues.push('Missing routingHint');
+      }
+      if (routingAnchor && !hasSlotAnchor(html, routingAnchor)) {
+        issues.push(`Missing data-slot="${routingAnchor}" for routingHint`);
+      }
+    }
+
+    for (const sectionName of branchContract?.requiredProofSections ?? []) {
+      if (!branchProofEntry?.[sectionName]) {
+        issues.push(`Missing branch proof section ${sectionName}`);
+      } else {
+        const anchor = sharedCardSlots?.anchorMap?.[sectionName];
+        if (anchor && !hasSlotAnchor(html, anchor)) {
+          issues.push(`Missing data-slot="${anchor}" for ${sectionName}`);
+        }
+      }
     }
   }
 
@@ -286,12 +335,22 @@ function runRestaurantDoctor(page) {
           requestOverviewChips: slotEntry.requestOverview?.chips?.length ?? 0,
         }
       : null,
+    branchSlots: pageType === 'restaurant-branch-page'
+      ? {
+          cardSections: Object.keys(slotEntry?.cardSections ?? {}),
+          hasRoutingHint: Boolean(slotEntry?.routingHint),
+        }
+      : null,
     proofLayer: pageType === 'restaurant-service-page'
       ? {
           hasSlaStrip: Boolean(proof.serviceDefaults?.slaStrip),
           hasProofCards: Boolean(proof.serviceDefaults?.proofCards),
         }
-      : null,
+      : pageType === 'restaurant-branch-page'
+        ? {
+            sections: Object.keys(branchProofEntry ?? {}),
+          }
+        : null,
     syncCoverage: pageType === 'restaurant-service-page'
       ? {
           zones: policy.publicPage?.requiredSyncZones ?? [],
@@ -337,14 +396,23 @@ try {
           : 'n/a'
       }`
     );
-    if (summary.proofLayer) {
+    if (summary.branchSlots) {
       console.log(
-        `- proof layer: ${
-          summary.proofLayer.hasSlaStrip && summary.proofLayer.hasProofCards
-            ? 'ok (service defaults ready)'
-            : 'missing service defaults'
-        }`
+        `- branch slots: ok (sections=${summary.branchSlots.cardSections.join(', ') || 'none'}, routing=${summary.branchSlots.hasRoutingHint ? 'yes' : 'no'})`
       );
+    }
+    if (summary.proofLayer) {
+      if (summary.pageType === 'restaurant-service-page') {
+        console.log(
+          `- proof layer: ${
+            summary.proofLayer.hasSlaStrip && summary.proofLayer.hasProofCards
+              ? 'ok (service defaults ready)'
+              : 'missing service defaults'
+          }`
+        );
+      } else {
+        console.log(`- proof layer: ok (sections=${summary.proofLayer.sections.join(', ') || 'none'})`);
+      }
     }
     if (summary.syncCoverage) {
       console.log(`- sync coverage: ${summary.syncCoverage.ready ? 'ok' : 'incomplete'} (${summary.syncCoverage.zones.join(', ')})`);

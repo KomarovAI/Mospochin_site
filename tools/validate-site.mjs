@@ -1718,6 +1718,67 @@ function validateRestaurantPagePolicy(policy) {
   if (typeof policy.branchPages.requirePageSlugClass !== 'boolean') {
     errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.branchPages.requirePageSlugClass must be a boolean`);
   }
+
+  if (!isPlainObject(policy.sharedCardSlots)) {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots must be an object`);
+    return;
+  }
+
+  for (const fieldName of ['branchPages', 'requiredBodyClasses', 'allowedSections']) {
+    if (!isArrayOfNonEmptyStrings(policy.sharedCardSlots[fieldName])) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.${fieldName} must be a non-empty array of strings`);
+    }
+  }
+
+  if (typeof policy.sharedCardSlots.requirePageSlugClass !== 'boolean') {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.requirePageSlugClass must be a boolean`);
+  }
+
+  if (!isPlainObject(policy.sharedCardSlots.anchorMap)) {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.anchorMap must be an object`);
+  }
+
+  if (!isPlainObject(policy.sharedCardSlots.pageContracts)) {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.pageContracts must be an object`);
+  }
+
+  for (const sectionName of policy.sharedCardSlots.allowedSections ?? []) {
+    if (!isNonEmptyString(policy.sharedCardSlots.anchorMap?.[sectionName])) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.anchorMap.${sectionName} must be a non-empty string`);
+    }
+  }
+
+  for (const page of policy.sharedCardSlots.branchPages ?? []) {
+    const contract = policy.sharedCardSlots.pageContracts?.[page];
+    if (!isPlainObject(contract)) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.pageContracts.${page} must be an object`);
+      continue;
+    }
+
+    for (const fieldName of ['requiredCardSections', 'requiredProofSections']) {
+      if (!isArrayOfNonEmptyStrings(contract[fieldName])) {
+        errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.pageContracts.${page}.${fieldName} must be a non-empty array of strings`);
+        continue;
+      }
+
+      contract[fieldName].forEach((sectionName) => {
+        if (!(policy.sharedCardSlots.allowedSections ?? []).includes(sectionName)) {
+          errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.pageContracts.${page}.${fieldName} contains unknown section ${sectionName}`);
+        }
+      });
+    }
+  }
+
+  if (!isPlainObject(policy.sharedCardSlots.routingHint)) {
+    errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.routingHint must be an object`);
+  } else {
+    if (!isArrayOfNonEmptyStrings(policy.sharedCardSlots.routingHint.pages)) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.routingHint.pages must be a non-empty array of strings`);
+    }
+    if (!isNonEmptyString(policy.sharedCardSlots.routingHint.anchor)) {
+      errors.push(`${RESTAURANT_PAGE_POLICY_DATA}.sharedCardSlots.routingHint.anchor must be a non-empty string`);
+    }
+  }
 }
 
 function validateRestaurantProofLayer(proofLayer) {
@@ -1749,6 +1810,45 @@ function validateRestaurantProofLayer(proofLayer) {
     const listField = sectionName === 'slaStrip' ? 'items' : 'cards';
     if (!Array.isArray(section[listField]) || section[listField].length === 0) {
       errors.push(`${context}.${listField} must be a non-empty array`);
+    }
+  }
+
+  if (!isPlainObject(proofLayer.branchPages)) {
+    errors.push(`${RESTAURANT_PROOF_LAYER_DATA}.branchPages must be an object`);
+    return;
+  }
+
+  for (const page of restaurantPagePolicy?.sharedCardSlots?.branchPages ?? []) {
+    const entry = proofLayer.branchPages[page];
+    if (!isPlainObject(entry)) {
+      errors.push(`${RESTAURANT_PROOF_LAYER_DATA}.branchPages.${page} must be an object`);
+      continue;
+    }
+
+    for (const [sectionName, section] of Object.entries(entry)) {
+      const context = `${RESTAURANT_PROOF_LAYER_DATA}.branchPages.${page}.${sectionName}`;
+      if (!isPlainObject(section)) {
+        errors.push(`${context} must be an object`);
+        continue;
+      }
+
+      for (const fieldName of ['badge', 'title', 'description']) {
+        if (!isNonEmptyString(section[fieldName])) {
+          errors.push(`${context}.${fieldName} must be a non-empty string`);
+        }
+      }
+
+      if (sectionName === 'proofCards') {
+        if (!Array.isArray(section.cards) || section.cards.length === 0) {
+          errors.push(`${context}.cards must be a non-empty array`);
+        }
+      }
+
+      if (sectionName === 'reviewCards' || sectionName === 'caseCards') {
+        if (!Array.isArray(section.cards) || section.cards.length === 0) {
+          errors.push(`${context}.cards must be a non-empty array`);
+        }
+      }
     }
   }
 }
@@ -1850,7 +1950,8 @@ function validateRestaurantPageSlots(slots, registry) {
   }
 
   const publicServices = registry?.services ?? [];
-  const expectedPages = new Set(publicServices.map((service) => service.page));
+  const branchCardPages = new Set(restaurantPagePolicy?.sharedCardSlots?.branchPages ?? []);
+  const expectedPages = new Set([...publicServices.map((service) => service.page), ...branchCardPages]);
   const slotPages = new Set(Object.keys(slots.pages));
 
   expectedPages.forEach((page) => {
@@ -1993,6 +2094,10 @@ function validateRestaurantPageSlots(slots, registry) {
     const pageMeta = metadata.pages[page];
     const html = pageMeta ? read(page) : '';
     const bodyClasses = getBodyClasses(html);
+    const slotEntry = slots.pages?.[page];
+    const proofEntry = restaurantProofLayer?.branchPages?.[page];
+    const branchContract = restaurantPagePolicy?.sharedCardSlots?.pageContracts?.[page];
+    const anchorMap = restaurantPagePolicy?.sharedCardSlots?.anchorMap ?? {};
 
     if (!pageMeta || pageMeta.branch !== 'restaurant') {
       errors.push(`${RESTAURANT_PAGE_POLICY_DATA}: branch page ${page} must exist in metadata and belong to restaurant branch`);
@@ -2017,6 +2122,99 @@ function validateRestaurantPageSlots(slots, registry) {
       !html.includes('data-restaurant-route-strip')
     ) {
       errors.push(`${page}: missing restaurant route-strip host`);
+    }
+
+    if (!isPlainObject(slotEntry)) {
+      errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page} must be an object`);
+      continue;
+    }
+
+    for (const className of restaurantPagePolicy?.sharedCardSlots?.requiredBodyClasses ?? []) {
+      if (!bodyClasses.has(className)) {
+        errors.push(`${page}: missing body class ${className}`);
+      }
+    }
+
+    if (
+      restaurantPagePolicy?.sharedCardSlots?.requirePageSlugClass &&
+      !bodyClasses.has(getExpectedPageClass(page))
+    ) {
+      errors.push(`${page}: missing body class ${getExpectedPageClass(page)}`);
+    }
+
+    if (!isPlainObject(slotEntry.cardSections)) {
+      errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections must be an object`);
+    } else {
+      for (const [sectionName, sectionConfig] of Object.entries(slotEntry.cardSections)) {
+        if (!(restaurantPagePolicy?.sharedCardSlots?.allowedSections ?? []).includes(sectionName)) {
+          errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections.${sectionName} is not allowed by shared card policy`);
+          continue;
+        }
+
+        if (!isPlainObject(sectionConfig)) {
+          errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections.${sectionName} must be an object`);
+          continue;
+        }
+
+        for (const fieldName of ['badge', 'title', 'description']) {
+          if (!isNonEmptyString(sectionConfig[fieldName])) {
+            errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections.${sectionName}.${fieldName} must be a non-empty string`);
+          }
+        }
+
+        if (sectionName === 'categoryCards' && !isArrayOfNonEmptyStrings(sectionConfig.pages)) {
+          errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections.${sectionName}.pages must be a non-empty array of strings`);
+        }
+
+        if ((sectionName === 'trustCards' || sectionName === 'contactChannels') && !Array.isArray(sectionConfig.cards)) {
+          errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections.${sectionName}.cards must be an array`);
+        }
+      }
+    }
+
+    if (restaurantPagePolicy?.sharedCardSlots?.routingHint?.pages?.includes(page)) {
+      if (!isPlainObject(slotEntry.routingHint)) {
+        errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.routingHint must be an object`);
+      } else {
+        validateHouseholdRoutingHint(
+          slotEntry.routingHint,
+          `${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.routingHint`
+        );
+      }
+
+      const routingAnchor = restaurantPagePolicy?.sharedCardSlots?.routingHint?.anchor;
+      if (routingAnchor && !html.includes(`data-slot="${routingAnchor}"`)) {
+        errors.push(`${page}: missing data-slot="${routingAnchor}" for routingHint`);
+      }
+    }
+
+    for (const sectionName of branchContract?.requiredCardSections ?? []) {
+      if (!slotEntry.cardSections?.[sectionName]) {
+        errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}: missing required card section ${sectionName}`);
+        continue;
+      }
+
+      const anchor = anchorMap[sectionName];
+      if (anchor && !html.includes(`data-slot="${anchor}"`)) {
+        errors.push(`${page}: missing data-slot="${anchor}" for required card section ${sectionName}`);
+      }
+    }
+
+    if (!isPlainObject(proofEntry)) {
+      errors.push(`${RESTAURANT_PROOF_LAYER_DATA}: missing branch proof entry for ${page}`);
+      continue;
+    }
+
+    for (const sectionName of branchContract?.requiredProofSections ?? []) {
+      if (!proofEntry[sectionName]) {
+        errors.push(`${RESTAURANT_PROOF_LAYER_DATA}: ${page} missing required proof section ${sectionName}`);
+        continue;
+      }
+
+      const anchor = anchorMap[sectionName];
+      if (anchor && !html.includes(`data-slot="${anchor}"`)) {
+        errors.push(`${page}: missing data-slot="${anchor}" for required proof section ${sectionName}`);
+      }
     }
   }
 }

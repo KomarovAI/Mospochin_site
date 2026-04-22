@@ -870,6 +870,17 @@ const Components = {
     }
   },
 
+  updateRestaurantCardSectionCopy(sectionKey, sectionConfig) {
+    if (!sectionConfig) return;
+
+    for (const fieldName of ['badge', 'title', 'description']) {
+      const node = document.querySelector(`[data-slot-copy="${sectionKey}.${fieldName}"]`);
+      if (node && sectionConfig[fieldName]) {
+        node.textContent = sectionConfig[fieldName];
+      }
+    }
+  },
+
   renderHouseholdServiceCards(pages, serviceMap, cardPresets, mode = 'full') {
     const icons = cardPresets?.pageIcons || {};
     const tones = cardPresets?.pageTones || {};
@@ -1550,6 +1561,251 @@ const Components = {
       .join('');
   },
 
+  renderRestaurantServiceCards(pages, serviceMap) {
+    const iconMap = {
+      'parokonvektomaty.html': 'ri-fire-line',
+      'plity-pechi.html': 'ri-fire-line',
+      'holodilnoe-oborudovanie.html': 'ri-fridge-line',
+      'posudomoechnye-mashiny.html': 'ri-drop-line',
+      'grili-mangaly.html': 'ri-restaurant-line',
+      'ice-machines.html': 'ri-box-3-line',
+    };
+
+    return (pages || [])
+      .map((page) => serviceMap.get(page))
+      .filter((entry) => entry && !entry.isShadow)
+      .map((entry) => `
+        <a href="${entry.page}" class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-orange hover:shadow-lg">
+          <div class="flex items-start justify-between gap-4">
+            <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-orange/10 text-2xl text-brand-orange">
+              <i class="${iconMap[entry.page] || 'ri-tools-line'}"></i>
+            </div>
+            <span class="inline-flex rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">По категории</span>
+          </div>
+          <h3 class="mt-5 text-xl font-display font-extrabold text-brand-blue transition group-hover:text-brand-orange">${escapeHtml(entry.uiLabel)}</h3>
+          <p class="mt-3 text-sm text-slate-600">${escapeHtml((entry.primarySymptoms || []).slice(0, 3).join(', '))}</p>
+          <p class="mt-3 text-sm text-slate-500">${escapeHtml((entry.brandCluster || []).slice(0, 3).join(', '))}</p>
+          <p class="mt-5 text-sm font-semibold text-slate-700">Открыть страницу</p>
+        </a>
+      `)
+      .join('');
+  },
+
+  renderRestaurantTrustCards(cards) {
+    return (cards || [])
+      .map((card) => {
+        const toneClass =
+          {
+            orange: 'bg-brand-orange/10 text-brand-orange border-brand-orange/20',
+            blue: 'bg-brand-blue/10 text-brand-blue border-brand-blue/20',
+            green: 'bg-green-100 text-green-700 border-green-200',
+          }[card.tone] || 'bg-slate-100 text-slate-700 border-slate-200';
+        const [badgeClass, textClass, borderClass] = toneClass.split(' ');
+
+        return `
+          <article class="rounded-3xl border ${borderClass} bg-white/90 p-6 shadow-sm">
+            <div class="flex items-center justify-between gap-3">
+              <span class="inline-flex rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${badgeClass} ${textClass}">${escapeHtml(card.badge || 'Важно')}</span>
+              <i class="${escapeHtml(card.icon || 'ri-tools-line')} text-2xl ${textClass}"></i>
+            </div>
+            <h3 class="mt-5 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(card.title || '')}</h3>
+            <p class="mt-3 text-slate-600">${escapeHtml(card.description || '')}</p>
+            <p class="mt-5 text-sm font-semibold text-slate-700">${escapeHtml(card.outcome || '')}</p>
+          </article>
+        `;
+      })
+      .join('');
+  },
+
+  renderRestaurantContactCards(cards) {
+    return (cards || [])
+      .map((card) => {
+        const toneClass =
+          {
+            orange: 'bg-brand-orange/10 text-brand-orange border-brand-orange/20',
+            blue: 'bg-brand-blue/10 text-brand-blue border-brand-blue/20',
+            green: 'bg-green-100 text-green-700 border-green-200',
+          }[card.tone] || 'bg-slate-100 text-slate-700 border-slate-200';
+        const [badgeClass, textClass, borderClass] = toneClass.split(' ');
+
+        return `
+          <article class="rounded-3xl border ${borderClass} bg-white p-6 shadow-sm">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="inline-flex rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${badgeClass} ${textClass}">${escapeHtml(card.badge || 'Связь')}</span>
+                <h3 class="mt-4 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(card.title || '')}</h3>
+              </div>
+              <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 text-xl ${textClass}">
+                <i class="${escapeHtml(card.icon || 'ri-chat-3-line')}"></i>
+              </div>
+            </div>
+            <p class="mt-4 text-slate-600">${escapeHtml(card.description || '')}</p>
+            <ul class="mt-4 space-y-2">
+              ${(card.bullets || [])
+                .map(
+                  (item) => `<li class="flex items-start gap-2 text-sm text-slate-600"><i class="ri-check-line mt-0.5 text-green-600"></i><span>${escapeHtml(item)}</span></li>`
+                )
+                .join('')}
+            </ul>
+            <p class="mt-4 text-xs text-slate-500">${escapeHtml(card.note || '')}</p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              ${(card.actions || [])
+                .map(
+                  (action) => `
+                    <a href="${escapeHtml(action.href || '#')}" ${/^https?:\/\//.test(action.href || '') ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center justify-center rounded-full bg-brand-orange px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-orangeHover">
+                      ${escapeHtml(action.label || 'Открыть')}
+                    </a>
+                  `
+                )
+                .join('')}
+            </div>
+          </article>
+        `;
+      })
+      .join('');
+  },
+
+  renderRestaurantReviewCards(cards) {
+    return (cards || [])
+      .map(
+        (card) => `
+          <article class="rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm">
+            <p class="text-lg font-medium leading-relaxed text-white">“${escapeHtml(card.quote || '')}”</p>
+            <p class="mt-5 text-sm font-semibold uppercase tracking-[0.16em] text-brand-orange">${escapeHtml(card.author || '')}</p>
+            <p class="mt-2 text-sm text-slate-300">${escapeHtml(card.meta || '')}</p>
+          </article>
+        `
+      )
+      .join('');
+  },
+
+  renderRestaurantCaseCards(cards) {
+    return (cards || [])
+      .map(
+        (card) => `
+          <article class="rounded-3xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm">
+            <span class="inline-flex rounded-full bg-brand-orange/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">${escapeHtml(card.badge || 'Кейс')}</span>
+            <h3 class="mt-4 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(card.title || '')}</h3>
+            <p class="mt-3 text-slate-600">${escapeHtml(card.description || '')}</p>
+            <p class="mt-4 text-sm font-semibold text-slate-700">${escapeHtml(card.result || '')}</p>
+            <p class="mt-2 text-xs text-slate-500">${escapeHtml(card.meta || '')}</p>
+          </article>
+        `
+      )
+      .join('');
+  },
+
+  renderRestaurantRoutingHint(routingHint) {
+    const cards = Array.isArray(routingHint?.cards) ? routingHint.cards : [];
+    return `
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+        <div class="text-center">
+          <span class="inline-flex rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-blue">${escapeHtml(
+            routingHint?.badge || 'Маршрут'
+          )}</span>
+          <h3 class="mt-4 text-2xl font-display font-extrabold text-brand-blue">${escapeHtml(routingHint?.title || '')}</h3>
+          <p class="mt-3 text-slate-600">${escapeHtml(routingHint?.description || '')}</p>
+        </div>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          ${cards
+            .map(
+              (card) => `
+                <article class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5">
+                  <h4 class="text-lg font-display font-extrabold text-brand-blue">${escapeHtml(card.title || '')}</h4>
+                  <p class="mt-3 text-sm text-slate-600">${escapeHtml(card.description || '')}</p>
+                </article>
+              `
+            )
+            .join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  hydrateRestaurantBranchCardSections(currentPage, slotEntry, serviceMap) {
+    const sections = slotEntry?.cardSections;
+    if (sections?.categoryCards) {
+      this.updateRestaurantCardSectionCopy('category-cards', sections.categoryCards);
+      const container = document.querySelector('[data-slot="category-cards"]');
+      if (container) {
+        container.innerHTML = this.renderRestaurantServiceCards(sections.categoryCards.pages || [], serviceMap);
+      }
+    }
+
+    if (sections?.trustCards) {
+      this.updateRestaurantCardSectionCopy('trust-cards', sections.trustCards);
+      const container = document.querySelector('[data-slot="trust-cards"]');
+      if (container) {
+        container.innerHTML = this.renderRestaurantTrustCards(sections.trustCards.cards || []);
+      }
+    }
+
+    if (sections?.contactChannels) {
+      this.updateRestaurantCardSectionCopy('contact-channels', sections.contactChannels);
+      const container = document.querySelector('[data-slot="contact-channels"]');
+      if (container) {
+        container.innerHTML = this.renderRestaurantContactCards(sections.contactChannels.cards || []);
+      }
+    }
+
+    if (slotEntry?.routingHint) {
+      const container = document.querySelector('[data-slot="routing-hint"]');
+      if (container) {
+        container.innerHTML = this.renderRestaurantRoutingHint(slotEntry.routingHint);
+      }
+    }
+  },
+
+  hydrateRestaurantBranchProofSections(currentPage, proofLayer) {
+    const sections = proofLayer?.branchPages?.[currentPage];
+    if (!sections || typeof sections !== 'object') return;
+
+    if (sections.proofCards) {
+      this.updateRestaurantCardSectionCopy('proof-cards', sections.proofCards);
+      const container = document.querySelector('[data-slot="proof-cards"]');
+      if (container) {
+        container.innerHTML = this.renderRestaurantProofCards(sections.proofCards.cards || []);
+      }
+    }
+
+    if (sections.reviewCards) {
+      this.updateRestaurantCardSectionCopy('review-cards', sections.reviewCards);
+      const container = document.querySelector('[data-slot="review-cards"]');
+      if (container) {
+        container.innerHTML = this.renderRestaurantReviewCards(sections.reviewCards.cards || []);
+      }
+    }
+
+    if (sections.caseCards) {
+      this.updateRestaurantCardSectionCopy('case-cards', sections.caseCards);
+      const container = document.querySelector('[data-slot="case-cards"]');
+      if (container) {
+        container.innerHTML = this.renderRestaurantCaseCards(sections.caseCards.cards || []);
+      }
+    }
+  },
+
+  async initRestaurantBranchSlots() {
+    const currentPage = getCurrentPageFile();
+    if (this.isBytovaya()) return;
+    if (!['index.html', 'uslugi.html', 'about.html', 'contact.html'].includes(currentPage)) return;
+
+    const [serviceRegistry, pageSlots, proofLayer] = await Promise.all([
+      loadRestaurantServicesRegistry(),
+      loadRestaurantPageSlots(),
+      loadRestaurantProofLayer(),
+    ]);
+
+    const services = Array.isArray(serviceRegistry?.services) ? serviceRegistry.services : [];
+    const serviceMap = new Map(services.map((entry) => [entry.page, entry]));
+    const slotEntry = pageSlots?.pages?.[currentPage];
+
+    if (!slotEntry) return;
+
+    this.hydrateRestaurantBranchCardSections(currentPage, slotEntry, serviceMap);
+    this.hydrateRestaurantBranchProofSections(currentPage, proofLayer);
+  },
+
   hydrateRestaurantServiceSchema(service, pageMetadata) {
     const schemaScript = document.querySelector('script[data-slot="service-schema"]');
     if (!schemaScript || !service) return;
@@ -1830,6 +2086,7 @@ const Components = {
       node.setAttribute('href', `tel:${SITE_CONFIG.company.phoneLink}`);
     });
     this.initBranchRouteStrips();
+    await this.initRestaurantBranchSlots();
     await this.initHouseholdServiceSlots();
     await this.initRestaurantServiceSlots();
 

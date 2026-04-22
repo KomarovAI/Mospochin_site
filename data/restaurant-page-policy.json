@@ -65,5 +65,77 @@
       "index.html",
       "uslugi.html"
     ]
+  },
+  "sharedCardSlots": {
+    "branchPages": [
+      "index.html",
+      "uslugi.html",
+      "about.html",
+      "contact.html"
+    ],
+    "requiredBodyClasses": [
+      "page-restaurant-branch",
+      "branch-restaurant"
+    ],
+    "requirePageSlugClass": true,
+    "allowedSections": [
+      "categoryCards",
+      "trustCards",
+      "contactChannels",
+      "proofCards",
+      "reviewCards",
+      "caseCards"
+    ],
+    "pageContracts": {
+      "index.html": {
+        "requiredCardSections": [
+          "categoryCards",
+          "trustCards"
+        ],
+        "requiredProofSections": [
+          "reviewCards"
+        ]
+      },
+      "uslugi.html": {
+        "requiredCardSections": [
+          "categoryCards",
+          "trustCards"
+        ],
+        "requiredProofSections": [
+          "caseCards"
+        ]
+      },
+      "about.html": {
+        "requiredCardSections": [
+          "trustCards"
+        ],
+        "requiredProofSections": [
+          "proofCards"
+        ]
+      },
+      "contact.html": {
+        "requiredCardSections": [
+          "contactChannels"
+        ],
+        "requiredProofSections": [
+          "proofCards"
+        ]
+      }
+    },
+    "anchorMap": {
+      "categoryCards": "category-cards",
+      "trustCards": "trust-cards",
+      "contactChannels": "contact-channels",
+      "proofCards": "proof-cards",
+      "reviewCards": "review-cards",
+      "caseCards": "case-cards"
+    },
+    "routingHint": {
+      "pages": [
+        "index.html",
+        "uslugi.html"
+      ],
+      "anchor": "routing-hint"
+    }
   }
 }
