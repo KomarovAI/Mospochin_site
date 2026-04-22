@@ -234,6 +234,22 @@ html {
     scroll-margin-bottom: var(--mobile-sticky-safe-space);
   }
 
+  body.page-restaurant-service section.py-20,
+  body.page-restaurant-service section.py-24 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  body.page-restaurant-service section.py-28,
+  body.page-restaurant-service section.py-32 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  body.page-restaurant-service .restaurant-mobile-optional {
+    display: none;
+  }
+
   .telegram-form-enhanced .telegram-consent,
   .telegram-form-enhanced button[type="submit"] {
     scroll-margin-top: 5rem;
