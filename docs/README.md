@@ -1,5 +1,12 @@
 # Mospochin_site
 
+## Canonical docs
+
+- Site-wide maintenance model: [docs/SITE_MAINTENANCE_MODEL.md](/home/artikk/Mospochin_site/docs/SITE_MAINTENANCE_MODEL.md)
+- Repo structure map: [docs/PROJECT_MAP.md](/home/artikk/Mospochin_site/docs/PROJECT_MAP.md)
+- Household docs: `docs/HOUSEHOLD_*`
+- Restaurant docs: `docs/RESTAURANT_*`
+
 ## Source of truth
 
 - Canonical site source lives only in `/home/artikk/Mospochin_site`.
@@ -32,7 +39,8 @@
 - Deploy smoke tests call the configured form endpoint after publishing.
 - Deploy manifest must include the backend script and deploy hook assets so the VPS can activate them from the same release tree.
 
-## Restaurant Branch
+## Branch model
 
-- Restaurant branch maintenance contract: [docs/RESTAURANT_BRANCH_CONTRACT.md](/home/artikk/Mospochin_site/docs/RESTAURANT_BRANCH_CONTRACT.md)
-- `main.js` is the canonical runtime JavaScript for the restaurant branch.
+- `main.js` is the canonical shared runtime JavaScript for both branches.
+- Household and restaurant stay as separate authoring/maintenance workflows on top of the shared runtime.
+- Branch-specific contracts live in their own `docs/HOUSEHOLD_*` and `docs/RESTAURANT_*` files.

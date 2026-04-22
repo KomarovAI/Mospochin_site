@@ -1,132 +1,75 @@
-# 🗺️ Карта проекта MosPochin
+# Project Map
 
-**Последнее обновление:** 2026-04-01
+Compact map of the live repository structure and maintenance surfaces.
 
----
+## Runtime
 
-## 📁 Структура файлов
+- `main.js`
+  - shared site runtime for branch detection, shared shell rendering, slot hydration, and runtime behavior
+- `styles.css`
+  - canonical hand-maintained stylesheet
+- `styles-built.css`
+  - built stylesheet artifact used by pages
 
-### 🔝 ГЛАВНЫЕ СТРАНИЦЫ
-| Файл | Описание | Статус |
-|------|----------|--------|
-| `index.html` | Главная страница (рестораны) | ✅ Яркие карточки, hover анимации |
-| `uslugi.html` | Услуги и цены | ✅ 6 карточек с градиентами, hover |
-| `about.html` | О компании | 📄 Оригинал |
-| `contact.html` | Контакты | 📄 Оригинал |
+## Data Contracts
 
-### 🏪 БЫТОВАЯ ТЕХНИКА (bytovaya-*)
-| Файл | Описание |
-|------|----------|
-| `bytovaya-index.html` | Главная бытовой техники |
-| `bytovaya-uslugi.html` | Услуги бытовой техники |
-| `bytovaya-about.html` | О бытовой технике |
-| `bytovaya-contact.html` | Контакты бытовой техники |
+- `data/page-metadata.json`
+  - SEO, branch assignment, indexing
+- `data/site-page-contracts.json`
+  - shared page-type rules
+- `data/runtime-config.json`
+  - runtime/form endpoint configuration
+- `data/household-*.json`
+  - household branch shell and service/slot/proof/taxonomy/policy layers
+- `data/restaurant-*.json`
+  - restaurant branch shell and service/slot/proof/taxonomy/policy layers
 
-### 🔧 СТРАНИЦЫ УСЛУГ (по типам оборудования)
-| Файл | Оборудование |
-|------|-------------|
-| `plity.html` | Плиты |
-| `holodilniki.html` | Холодильники |
-| `posudomoyki.html` | Посудомойки |
-| `tvs.html` | Телевизоры |
-| `kompyutery.html` | Компьютеры |
-| `routery.html` | Роутеры |
-| `vacuums.html` | Пылесосы |
-| `microwaves.html` | Микроволновки |
-| `stiralnye-mashiny.html` | Стиральные машины |
-| `small-appliances.html` | Мелкая бытовая техника |
+## Tools
 
-### 🍳 РЕСТОРАННОЕ ОБОРУДОВАНИЕ
-| Файл | Оборудование |
-|------|-------------|
-| `parokonvektomaty.html` | Пароконвектоматы |
-| `plity-pechi.html` | Плиты и печи |
-| `holodilnoe-oborudovanie.html` | Холодильное оборудование |
-| `posudomoechnye-mashiny.html` | Посудомоечные машины |
-| `grili-mangaly.html` | Грили и мангалы |
-| `friturennitsy.html` | Фритюрницы |
+- `tools/validate-site.mjs`
+  - canonical repo-wide contract validator
+- `tools/doctor-page.mjs`
+  - shared page doctor
+- `tools/doctor-household-page.mjs`
+  - household-first doctor entrypoint
+- `tools/doctor-restaurant-page.mjs`
+  - restaurant-first doctor entrypoint
+- `tools/*sync-fallbacks.mjs`
+  - branch-specific fallback sync flows
+- `tools/scaffold-*.mjs`
+  - branch-specific service-page factory entrypoints
+- `tools/set-*.mjs`
+  - branch-specific narrow authoring helpers
 
----
+## Deploy And Backend
 
-## 🎨 СТИЛИ
+- `server/telegram-api.mjs`
+  - production form delivery backend
+- `deploy/`
+  - activation hooks, env examples, systemd units
+- `tools/generate-deploy-manifest.mjs`
+  - deploy file manifest
 
-### `styles.css` — ГЛАВНЫЙ CSS
-**Размер:** 13,465 байт
+## Docs
 
-**Что внутри:**
-- Переменные цветов (--brand-blue, --brand-orange)
-- Анимации (float, shine, pulse)
-- Классы карточек (.glass-card, .stat-card-hover)
-- Hover эффекты
+- `docs/README.md`
+  - repo-level operating notes
+- `docs/SITE_MAINTENANCE_MODEL.md`
+  - canonical site-wide maintenance model
+- `docs/HOUSEHOLD_*`
+  - household-specific maintenance docs
+- `docs/RESTAURANT_*`
+  - restaurant-specific maintenance docs
 
-**Исправления:**
-```css
-/* Было */
-.glass-card { background: rgba(255,255,255,0.8); }
+## Page Families
 
-/* Стало */
-.glass-card { background: rgba(255,255,255,0.05); }
-```
-
-### `main.js` — ГЛАВНЫЙ JS
-**Размер:** 16,058 байт
-
-**Что внутри:**
-- Мобильное меню
-- Анимации при скролле
-- Модальные окна
-
----
-
-## ✅ ЧТО ИСПРАВЛЕНО
-
-### uslugi.html
-- ✅ 6 карточек "Почему 500+" — яркие градиенты (инлайн CSS)
-- ✅ Все иконки белые с 30% фоном
-- ✅ Hover эффект на всех карточках
-- ✅ 6-я карточка работает (убран float-animation-delayed)
-
-### index.html
-- ✅ 8 иконок оборудования — 60% непрозрачности, белые
-- ✅ Hover анимация: scale(1.2) rotate(15deg)
-- ✅ 3 карточки преимуществ — инлайн градиенты
-- ✅ Статистика 500+ — яркие иконки
-
----
-
-## 🚀 СЕРВЕР
-
-**Запуск:**
-```bash
-cd /tmp/Mospochin_site
-sudo python3 -m http.server 8080 --bind 0.0.0.0 &
-```
-
-**Доступ:**
-- http://192.168.1.13:8080/index.html
-- http://192.168.1.13:8080/uslugi.html
-
----
-
-## 📦 GIT
-
-**Репозиторий:** https://github.com/KomarovAI/Mospochin_site
-
-**Последние коммиты:**
-- `cdece41` fix: все 8 иконок оборудования с hover анимацией
-- `1d4b75d` fix: добавил CSS для анимации иконок
-- `01ccb95` fix: инлайн градиенты для всех карточек
-
----
-
-## 🎯 ССЫЛКИ
-
-| Страница | URL |
-|----------|-----|
-| Главная | http://192.168.1.13:8080/index.html |
-| Услуги | http://192.168.1.13:8080/uslugi.html |
-| GitHub | https://github.com/KomarovAI/Mospochin_site |
-
----
-
-**💡 Совет:** Используй `grep -n "класс"` для поиска в файлах
+- Restaurant branch pages:
+  - `index.html`, `uslugi.html`, `about.html`, `contact.html`
+- Restaurant service pages:
+  - `parokonvektomaty.html`, `plity-pechi.html`, `holodilnoe-oborudovanie.html`, `posudomoechnye-mashiny.html`, `grili-mangaly.html`, `ice-machines.html`
+- Household branch pages:
+  - `bytovaya-index.html`, `bytovaya-uslugi.html`, `bytovaya-about.html`, `bytovaya-contact.html`
+- Household public service pages:
+  - `holodilniki.html`, `stiralnye-mashiny.html`, `posudomoyki.html`, `plity.html`, `microwaves.html`, `water-heaters.html`
+- Household shadow pages:
+  - `kompyutery.html`, `routery.html`
