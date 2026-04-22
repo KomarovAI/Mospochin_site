@@ -1,0 +1,324 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "household-change-faq",
+      "branch": "household",
+      "pageKind": "service-page",
+      "intent": "Change FAQ content on a public household service page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run household:set-faq -- --page <file.html> --faq-json '<json>'",
+        "npm run household:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/household-page-slots.json",
+      "requiresSync": true,
+      "syncCommand": "npm run household:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run restaurant:set-faq -- --page <file.html> --faq-json '<json>'",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>"
+      ]
+    },
+    {
+      "id": "restaurant-change-faq",
+      "branch": "restaurant",
+      "pageKind": "service-page",
+      "intent": "Change FAQ content on a public restaurant service page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run restaurant:set-faq -- --page <file.html> --faq-json '<json>'",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/restaurant-page-slots.json",
+      "requiresSync": true,
+      "syncCommand": "npm run restaurant:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run household:set-faq -- --page <file.html> --faq-json '<json>'",
+        "npm run household:sync-fallbacks -- --page <file.html>"
+      ]
+    },
+    {
+      "id": "household-change-form-hints",
+      "branch": "household",
+      "pageKind": "service-page",
+      "intent": "Change request-form hints on a public household service page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run household:set-form-hints -- --page <file.html> --chips \"a|b|c\" --type-placeholder \"...\" --problem-placeholder \"...\"",
+        "npm run household:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/household-page-slots.json",
+      "requiresSync": true,
+      "syncCommand": "npm run household:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run restaurant:set-form-hints -- --page <file.html> --chips \"a|b|c\" --type-placeholder \"...\" --problem-placeholder \"...\""
+      ]
+    },
+    {
+      "id": "restaurant-change-form-hints",
+      "branch": "restaurant",
+      "pageKind": "service-page",
+      "intent": "Change request-form hints on a public restaurant service page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run restaurant:set-form-hints -- --page <file.html> --chips \"a|b|c\" --type-placeholder \"...\" --problem-placeholder \"...\"",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/restaurant-page-slots.json",
+      "requiresSync": true,
+      "syncCommand": "npm run restaurant:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run household:set-form-hints -- --page <file.html> --chips \"a|b|c\" --type-placeholder \"...\" --problem-placeholder \"...\""
+      ]
+    },
+    {
+      "id": "household-change-related",
+      "branch": "household",
+      "pageKind": "service-page",
+      "intent": "Change related pages, symptoms, or brands on a household service page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run household:set-related -- --page <file.html> [--related \"a.html,b.html\"] [--symptoms \"x,y\"] [--brands \"A,B\"] [--form-example \"...\"]",
+        "npm run household:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/household-services.json",
+      "requiresSync": true,
+      "syncCommand": "npm run household:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run restaurant:set-related -- --page <file.html> [--related \"a.html,b.html\"] [--symptoms \"x,y\"] [--brands \"A,B\"] [--form-example \"...\"]"
+      ]
+    },
+    {
+      "id": "restaurant-change-related",
+      "branch": "restaurant",
+      "pageKind": "service-page",
+      "intent": "Change related pages, symptoms, or brands on a restaurant service page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run restaurant:set-related -- --page <file.html> [--related \"a.html,b.html\"] [--symptoms \"x,y\"] [--brands \"A,B\"] [--form-example \"...\"]",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/restaurant-services.json",
+      "requiresSync": true,
+      "syncCommand": "npm run restaurant:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run household:set-related -- --page <file.html> [--related \"a.html,b.html\"] [--symptoms \"x,y\"] [--brands \"A,B\"] [--form-example \"...\"]"
+      ]
+    },
+    {
+      "id": "household-change-proof",
+      "branch": "household",
+      "pageKind": "service-page",
+      "intent": "Change trust, review, or proof defaults on a household service page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run household:set-proof -- --page <file.html> --section <slaStrip|priceClarity|proofCards|objectionCards> --json '<json>'",
+        "npm run household:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/household-proof-layer.json",
+      "requiresSync": true,
+      "syncCommand": "npm run household:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run restaurant:set-proof -- --page <file.html> --section <slaStrip|proofCards> --json '<json>'"
+      ]
+    },
+    {
+      "id": "restaurant-change-proof",
+      "branch": "restaurant",
+      "pageKind": "service-page",
+      "intent": "Change trust or proof defaults on a restaurant service page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run restaurant:set-proof -- --page <file.html> --section <slaStrip|proofCards> --json '<json>'",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/restaurant-proof-layer.json",
+      "requiresSync": true,
+      "syncCommand": "npm run restaurant:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run household:set-proof -- --page <file.html> --section <slaStrip|priceClarity|proofCards|objectionCards> --json '<json>'"
+      ]
+    },
+    {
+      "id": "household-change-metadata",
+      "branch": "household",
+      "pageKind": "service-page",
+      "intent": "Change metadata or indexing on a household page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run household:set-metadata -- --page <file.html> [--title \"...\"] [--description \"...\"] [--canonical \"https://...\"] [--og-url \"https://...\"] [--robots \"...\"] [--clear-robots]",
+        "npm run household:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/page-metadata.json",
+      "requiresSync": true,
+      "syncCommand": "npm run household:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run restaurant:set-metadata -- --page <file.html> [--title \"...\"] [--description \"...\"] [--canonical \"https://...\"] [--og-url \"https://...\"] [--robots \"...\"] [--clear-robots]"
+      ]
+    },
+    {
+      "id": "restaurant-change-metadata",
+      "branch": "restaurant",
+      "pageKind": "service-page",
+      "intent": "Change metadata or indexing on a restaurant page.",
+      "entryCommand": "npm run doctor:page -- --page <file.html>",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run restaurant:set-metadata -- --page <file.html> [--title \"...\"] [--description \"...\"] [--canonical \"https://...\"] [--og-url \"https://...\"] [--robots \"...\"] [--clear-robots]",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/page-metadata.json",
+      "requiresSync": true,
+      "syncCommand": "npm run restaurant:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run household:set-metadata -- --page <file.html> [--title \"...\"] [--description \"...\"] [--canonical \"https://...\"] [--og-url \"https://...\"] [--robots \"...\"] [--clear-robots]"
+      ]
+    },
+    {
+      "id": "household-change-branch-shell",
+      "branch": "household",
+      "pageKind": "branch-page",
+      "intent": "Change household branch-wide shell, menus, or shared CTAs.",
+      "entryCommand": "npm run doctor:page -- --page bytovaya-index.html",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/household-branch.json",
+      "requiresSync": false,
+      "syncCommand": null,
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run restaurant:sync-fallbacks -- --page <file.html>"
+      ]
+    },
+    {
+      "id": "restaurant-change-branch-shell",
+      "branch": "restaurant",
+      "pageKind": "branch-page",
+      "intent": "Change restaurant branch-wide shell, menus, route strips, or shared CTAs.",
+      "entryCommand": "npm run doctor:page -- --page index.html",
+      "allowedCommands": [
+        "npm run doctor:page -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/restaurant-branch.json",
+      "requiresSync": false,
+      "syncCommand": null,
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run household:sync-fallbacks -- --page <file.html>"
+      ]
+    },
+    {
+      "id": "household-add-service-page",
+      "branch": "household",
+      "pageKind": "service-page",
+      "intent": "Add a new household service page with the scaffold flow.",
+      "entryCommand": "npm run scaffold:household-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+      "allowedCommands": [
+        "npm run scaffold:household-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+        "npm run doctor:page -- --page <file.html>",
+        "npm run household:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/household-services.json",
+      "requiresSync": true,
+      "syncCommand": "npm run household:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run scaffold:restaurant-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>"
+      ]
+    },
+    {
+      "id": "restaurant-add-service-page",
+      "branch": "restaurant",
+      "pageKind": "service-page",
+      "intent": "Add a new restaurant service page with the scaffold flow.",
+      "entryCommand": "npm run scaffold:restaurant-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+      "allowedCommands": [
+        "npm run scaffold:restaurant-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+        "npm run doctor:page -- --page <file.html>",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>",
+        "npm run validate:site"
+      ],
+      "preferredEditSurface": "data/restaurant-services.json",
+      "requiresSync": true,
+      "syncCommand": "npm run restaurant:sync-fallbacks -- --page <file.html>",
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run scaffold:household-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+        "npm run household:sync-fallbacks -- --page <file.html>"
+      ]
+    },
+    {
+      "id": "representative-stabilization-audit",
+      "branch": "shared",
+      "pageKind": "representative-audit",
+      "intent": "Run the representative stabilization audit without changing branch authoring flows.",
+      "entryCommand": "npm run audit:representative-pages",
+      "allowedCommands": [
+        "npm run audit:representative-pages",
+        "npm run audit:screenshots",
+        "npm run doctor:page -- --page <file.html>"
+      ],
+      "preferredEditSurface": "data/screenshot-audit.json",
+      "requiresSync": false,
+      "syncCommand": null,
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run household:sync-fallbacks -- --page <file.html>",
+        "npm run restaurant:sync-fallbacks -- --page <file.html>"
+      ]
+    },
+    {
+      "id": "restaurant-full-branch-audit",
+      "branch": "restaurant",
+      "pageKind": "branch-page",
+      "intent": "Run the full restaurant branch stabilization audit across all restaurant pages.",
+      "entryCommand": "npm run audit:restaurant-branch",
+      "allowedCommands": [
+        "npm run audit:restaurant-branch",
+        "npm run audit:restaurant-screenshots",
+        "npm run doctor:page -- --page <file.html>"
+      ],
+      "preferredEditSurface": "data/restaurant-screenshot-audit.json",
+      "requiresSync": false,
+      "syncCommand": null,
+      "validationCommand": "npm run validate:site",
+      "forbiddenCommands": [
+        "npm run household:sync-fallbacks -- --page <file.html>"
+      ]
+    }
+  ]
+}

@@ -21,6 +21,12 @@ Compact map of the live repository structure and maintenance surfaces.
   - shared page-type rules
 - `data/runtime-config.json`
   - runtime/form endpoint configuration
+- `data/operator-recipes.json`
+  - machine-readable operator recipe catalog for branch-safe edit routing
+- `data/screenshot-audit.json`
+  - representative screenshot audit manifest for page coverage and viewport presets
+- `data/restaurant-screenshot-audit.json`
+  - restaurant-only screenshot audit manifest for full branch stabilization coverage
 - `data/household-*.json`
   - household branch shell and service/slot/proof/taxonomy/policy layers
 - `data/restaurant-*.json`
@@ -32,6 +38,14 @@ Compact map of the live repository structure and maintenance surfaces.
   - canonical repo-wide contract validator
 - `tools/doctor-page.mjs`
   - shared page doctor
+- `tools/select-operator-recipe.mjs`
+  - read-only recipe selector for branch-safe routing from `data/operator-recipes.json` and `data/page-metadata.json`
+- `tools/audit-screenshots.mjs`
+  - Playwright-based representative screenshot runner on top of the local dev server
+- `tools/audit-representative-pages.mjs`
+  - orchestration entrypoint for `doctor:page` plus the screenshot pass
+- `npm run audit:restaurant-branch`
+  - restaurant-only orchestration entrypoint for full branch doctor plus screenshot coverage
 - `tools/doctor-household-page.mjs`
   - household-first doctor entrypoint
 - `tools/doctor-restaurant-page.mjs`
@@ -56,12 +70,16 @@ Compact map of the live repository structure and maintenance surfaces.
 
 ## Docs
 
+- `docs/OPERATOR_ROUTING.md`
+  - short LLM/operator routing layer for default workflows
 - `docs/README.md`
   - repo-level operating notes
 - `docs/SITE_MAINTENANCE_MODEL.md`
   - canonical site-wide maintenance model
 - `docs/STABILIZATION_BACKLOG.md`
   - confirmed rough edges and next hardening queue
+- `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md`
+  - fixed rubric for restaurant full-branch screenshot review and backlog decisions
 - `docs/DOC_STATUS.md`
   - canonical taxonomy for live, reference, and removed historical docs
 - `docs/READABILITY_REFACTOR.md`

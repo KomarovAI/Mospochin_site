@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { analyzeHouseholdSyncState, HOUSEHOLD_SYNC_ZONES } from './household-fallback-sync-lib.mjs';
 import { analyzeRestaurantSyncState, RESTAURANT_SYNC_ZONES } from './restaurant-fallback-sync-lib.mjs';
+import { getAuditContractSummary } from './screenshot-audit-lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,7 +31,35 @@ const RESTAURANT_PROOF_LAYER_DATA = 'data/restaurant-proof-layer.json';
 const RESTAURANT_TAXONOMY_DATA = 'data/restaurant-taxonomy.json';
 const RESTAURANT_PAGE_POLICY_DATA = 'data/restaurant-page-policy.json';
 const SITE_PAGE_CONTRACTS_DATA = 'data/site-page-contracts.json';
+const SCREENSHOT_AUDIT_DATA = 'data/screenshot-audit.json';
+const RESTAURANT_SCREENSHOT_AUDIT_DATA = 'data/restaurant-screenshot-audit.json';
+const OPERATOR_RECIPES_DATA = 'data/operator-recipes.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
+const VALID_RECIPE_BRANCHES = new Set(['shared', 'household', 'restaurant']);
+const VALID_RECIPE_PAGE_KINDS = new Set([
+  'branch-page',
+  'service-page',
+  'shadow-page',
+  'representative-audit',
+]);
+const REQUIRED_RECIPE_IDS = [
+  'household-change-faq',
+  'restaurant-change-faq',
+  'household-change-form-hints',
+  'restaurant-change-form-hints',
+  'household-change-related',
+  'restaurant-change-related',
+  'household-change-proof',
+  'restaurant-change-proof',
+  'household-change-metadata',
+  'restaurant-change-metadata',
+  'household-change-branch-shell',
+  'restaurant-change-branch-shell',
+  'household-add-service-page',
+  'restaurant-add-service-page',
+  'representative-stabilization-audit',
+  'restaurant-full-branch-audit',
+];
 const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
 const LEGACY_FORM_FIELDS = ['message'];
 const RESTAURANT_ROUTE_STRIP_CONTRACT = {
@@ -132,6 +161,11 @@ const docsContractsPath = path.join(SITE_ROOT, DOCS_CONTRACTS_DATA);
 const docsContracts = fs.existsSync(docsContractsPath)
   ? JSON.parse(fs.readFileSync(docsContractsPath, 'utf8'))
   : null;
+const operatorRecipesPath = path.join(SITE_ROOT, OPERATOR_RECIPES_DATA);
+const operatorRecipes = fs.existsSync(operatorRecipesPath)
+  ? JSON.parse(fs.readFileSync(operatorRecipesPath, 'utf8'))
+  : null;
+const packageJson = JSON.parse(fs.readFileSync(path.join(SITE_ROOT, 'package.json'), 'utf8'));
 const sitemapXml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
 
 const errors = [];
@@ -162,6 +196,11 @@ function isArrayOfNonEmptyStrings(value) {
 
 function isPlainObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+}
+
+function normalizeCommandName(command) {
+  const match = command.match(/^npm run ([a-z0-9:-]+)/i);
+  return match?.[1] ?? null;
 }
 
 function validateDocsIntegrity() {
@@ -224,6 +263,144 @@ function validateDocsIntegrity() {
       }
     }
   }
+}
+
+function validateScreenshotAuditContract() {
+  for (const manifestPath of [SCREENSHOT_AUDIT_DATA, RESTAURANT_SCREENSHOT_AUDIT_DATA]) {
+    const absolutePath = path.join(SITE_ROOT, manifestPath);
+    if (!fs.existsSync(absolutePath)) {
+      errors.push(`${manifestPath}: file missing`);
+      continue;
+    }
+
+    const { errors: auditErrors } = getAuditContractSummary(manifestPath);
+    auditErrors.forEach((error) => errors.push(error));
+  }
+}
+
+function validateOperatorRecipes() {
+  if (!fs.existsSync(operatorRecipesPath)) {
+    errors.push(`${OPERATOR_RECIPES_DATA}: file missing`);
+    return;
+  }
+
+  if (!isPlainObject(operatorRecipes)) {
+    errors.push(`${OPERATOR_RECIPES_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!Number.isInteger(operatorRecipes.version) || operatorRecipes.version <= 0) {
+    errors.push(`${OPERATOR_RECIPES_DATA}: version must be a positive integer`);
+  }
+
+  if (!Array.isArray(operatorRecipes.recipes) || operatorRecipes.recipes.length === 0) {
+    errors.push(`${OPERATOR_RECIPES_DATA}: recipes must be a non-empty array`);
+    return;
+  }
+
+  const availableScripts = new Set(Object.keys(packageJson.scripts ?? {}));
+  const seenIds = new Set();
+
+  for (const [index, recipe] of operatorRecipes.recipes.entries()) {
+    const context = `${OPERATOR_RECIPES_DATA}: recipes[${index}]`;
+    if (!isPlainObject(recipe)) {
+      errors.push(`${context} must be an object`);
+      continue;
+    }
+
+    if (!isNonEmptyString(recipe.id)) {
+      errors.push(`${context}.id must be a non-empty string`);
+    } else if (seenIds.has(recipe.id)) {
+      errors.push(`${context}.id duplicates ${recipe.id}`);
+    } else {
+      seenIds.add(recipe.id);
+    }
+
+    if (!VALID_RECIPE_BRANCHES.has(recipe.branch)) {
+      errors.push(`${context}.branch must be one of ${Array.from(VALID_RECIPE_BRANCHES).join(', ')}`);
+    }
+
+    if (!VALID_RECIPE_PAGE_KINDS.has(recipe.pageKind)) {
+      errors.push(`${context}.pageKind must be one of ${Array.from(VALID_RECIPE_PAGE_KINDS).join(', ')}`);
+    }
+
+    for (const fieldName of ['intent', 'entryCommand', 'preferredEditSurface', 'validationCommand']) {
+      if (!isNonEmptyString(recipe[fieldName])) {
+        errors.push(`${context}.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    if (!Array.isArray(recipe.allowedCommands) || recipe.allowedCommands.length === 0) {
+      errors.push(`${context}.allowedCommands must be a non-empty array`);
+    }
+
+    if (!Array.isArray(recipe.forbiddenCommands)) {
+      errors.push(`${context}.forbiddenCommands must be an array`);
+    }
+
+    if (typeof recipe.requiresSync !== 'boolean') {
+      errors.push(`${context}.requiresSync must be boolean`);
+    }
+
+    if (recipe.requiresSync && !isNonEmptyString(recipe.syncCommand)) {
+      errors.push(`${context}.syncCommand must be a non-empty string when requiresSync=true`);
+    }
+
+    if (!recipe.requiresSync && recipe.syncCommand !== null) {
+      errors.push(`${context}.syncCommand must be null when requiresSync=false`);
+    }
+
+    const referencedCommands = [
+      recipe.entryCommand,
+      recipe.validationCommand,
+      ...(recipe.allowedCommands ?? []),
+      ...(recipe.syncCommand ? [recipe.syncCommand] : []),
+      ...(recipe.forbiddenCommands ?? []),
+    ];
+
+    referencedCommands.forEach((command, commandIndex) => {
+      if (!isNonEmptyString(command)) {
+        errors.push(`${context}: command[${commandIndex}] must be a non-empty string`);
+        return;
+      }
+
+      const scriptName = normalizeCommandName(command);
+      if (scriptName && !availableScripts.has(scriptName)) {
+        errors.push(`${context}: references unknown npm script ${scriptName}`);
+      }
+    });
+
+    const joinedAllowed = [recipe.entryCommand, ...(recipe.allowedCommands ?? []), recipe.syncCommand ?? ''].join('\n');
+    const joinedForbidden = (recipe.forbiddenCommands ?? []).join('\n');
+
+    if (recipe.branch === 'household') {
+      if (joinedAllowed.includes('restaurant:')) {
+        errors.push(`${context}: household recipe must not allow restaurant:* commands`);
+      }
+      if (!joinedForbidden.includes('restaurant:')) {
+        errors.push(`${context}: household recipe must explicitly forbid restaurant:* commands`);
+      }
+    }
+
+    if (recipe.branch === 'restaurant') {
+      if (joinedAllowed.includes('household:')) {
+        errors.push(`${context}: restaurant recipe must not allow household:* commands`);
+      }
+      if (!joinedForbidden.includes('household:')) {
+        errors.push(`${context}: restaurant recipe must explicitly forbid household:* commands`);
+      }
+    }
+
+    if (recipe.branch === 'shared' && (joinedAllowed.includes('household:') || joinedAllowed.includes('restaurant:'))) {
+      errors.push(`${context}: shared recipe must not route through branch authoring commands`);
+    }
+  }
+
+  REQUIRED_RECIPE_IDS.forEach((recipeId) => {
+    if (!seenIds.has(recipeId)) {
+      errors.push(`${OPERATOR_RECIPES_DATA}: missing required recipe ${recipeId}`);
+    }
+  });
 }
 
 function validateHouseholdRoutingHint(value, context) {
@@ -2427,6 +2604,8 @@ validateHouseholdProofLayer(householdProofLayer);
 validateHouseholdServicesRegistry(householdServicesRegistry);
 validateHouseholdPageSlots(householdPageSlots, householdServicesRegistry);
 validateDocsIntegrity();
+validateScreenshotAuditContract();
+validateOperatorRecipes();
 
 const canonicalFormScriptPath = path.join(SITE_ROOT, CANONICAL_FORM_SCRIPT);
 const legacyFormScriptPath = path.join(SITE_ROOT, LEGACY_FORM_SCRIPT);

@@ -1,0 +1,91 @@
+{
+  "artifactRoot": ".artifacts/screenshots/restaurant",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 250
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "index.html",
+      "branch": "restaurant",
+      "pageType": "branch",
+      "fullPage": true
+    },
+    {
+      "page": "uslugi.html",
+      "branch": "restaurant",
+      "pageType": "branch",
+      "fullPage": true
+    },
+    {
+      "page": "about.html",
+      "branch": "restaurant",
+      "pageType": "branch",
+      "fullPage": true
+    },
+    {
+      "page": "contact.html",
+      "branch": "restaurant",
+      "pageType": "branch",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomaty.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "plity-pechi.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "holodilnoe-oborudovanie.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "posudomoechnye-mashiny.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "grili-mangaly.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ice-machines.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    }
+  ]
+}

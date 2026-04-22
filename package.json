@@ -6,6 +6,11 @@
   "scripts": {
     "dev": "node tools/dev-server.mjs",
     "dev:api": "node server/telegram-api.mjs",
+    "audit:screenshots": "node tools/audit-screenshots.mjs",
+    "audit:representative-pages": "node tools/audit-representative-pages.mjs",
+    "audit:restaurant-screenshots": "node tools/audit-screenshots.mjs --manifest data/restaurant-screenshot-audit.json",
+    "audit:restaurant-branch": "node tools/audit-representative-pages.mjs --manifest data/restaurant-screenshot-audit.json",
+    "recipe:select": "node tools/select-operator-recipe.mjs",
     "normalize:html": "node tools/normalize-html.mjs",
     "doctor:page": "node tools/doctor-page.mjs",
     "doctor:restaurant-page": "node tools/doctor-restaurant-page.mjs",
@@ -30,5 +35,8 @@
     "hash:deploy-content": "node tools/hash-deploy-content.mjs",
     "validate:site": "node tools/validate-site.mjs",
     "lint": "npm run validate:site && npm run generate:deploy-manifest"
+  },
+  "devDependencies": {
+    "playwright": "^1.59.1"
   }
 }

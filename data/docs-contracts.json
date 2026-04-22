@@ -1,9 +1,11 @@
 {
   "canonicalDocs": [
     "README.md",
+    "OPERATOR_ROUTING.md",
     "PROJECT_MAP.md",
     "SITE_MAINTENANCE_MODEL.md",
     "STABILIZATION_BACKLOG.md",
+    "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
     "DOC_STATUS.md"
   ],
   "referenceDocs": [
@@ -28,16 +30,24 @@
   ],
   "requiredDocLinks": {
     "README.md": [
+      "docs/OPERATOR_ROUTING.md",
       "docs/SITE_MAINTENANCE_MODEL.md",
       "docs/PROJECT_MAP.md",
       "docs/STABILIZATION_BACKLOG.md",
+      "docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
       "docs/DOC_STATUS.md"
+    ],
+    "OPERATOR_ROUTING.md": [
+      "data/operator-recipes.json",
+      "docs/SITE_MAINTENANCE_MODEL.md",
+      "docs/STABILIZATION_BACKLOG.md"
     ],
     "PROJECT_MAP.md": [
       "docs/DOC_STATUS.md"
     ],
     "SITE_MAINTENANCE_MODEL.md": [
       "docs/STABILIZATION_BACKLOG.md",
+      "docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
       "docs/DOC_STATUS.md"
     ]
   },
@@ -45,12 +55,41 @@
     "README.md": [
       "telegram-form.js",
       "data/runtime-config.json",
-      "server/telegram-api.mjs"
+      "server/telegram-api.mjs",
+      "data/screenshot-audit.json",
+      "data/restaurant-screenshot-audit.json",
+      "recipe:select",
+      "audit:restaurant-branch",
+      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md"
+    ],
+    "OPERATOR_ROUTING.md": [
+      "data/operator-recipes.json",
+      "recipe:select",
+      "doctor:page",
+      "validate:site",
+      "audit:representative-pages",
+      "audit:restaurant-branch",
+      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md"
+    ],
+    "PROJECT_MAP.md": [
+      "select-operator-recipe.mjs",
+      "data/restaurant-screenshot-audit.json",
+      "audit:restaurant-branch",
+      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md"
     ],
     "SITE_MAINTENANCE_MODEL.md": [
       "telegram-form.js",
       "data/runtime-config.json",
-      "server/telegram-api.mjs"
+      "server/telegram-api.mjs",
+      "data/screenshot-audit.json",
+      "data/restaurant-screenshot-audit.json",
+      "audit:restaurant-branch",
+      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md"
+    ],
+    "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md": [
+      "audit:restaurant-branch",
+      "STABILIZATION_BACKLOG.md",
+      "restaurant visual audit YYYY-MM-DD <artifact-folder-name>"
     ],
     "DOC_STATUS.md": [
       "Removed Historical Notes"

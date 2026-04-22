@@ -7,6 +7,7 @@ Validator source of truth for this taxonomy lives in `data/docs-contracts.json`.
 ## Canonical
 
 - `README.md`
+- `OPERATOR_ROUTING.md`
 - `PROJECT_MAP.md`
 - `SITE_MAINTENANCE_MODEL.md`
 - `STABILIZATION_BACKLOG.md`
