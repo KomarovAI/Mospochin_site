@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const SITE_ROOT = path.resolve(__dirname, '..');
 
 const METADATA_PATH = path.join(SITE_ROOT, 'data/page-metadata.json');
+const RUNTIME_CONFIG_PATH = path.join(SITE_ROOT, 'data/runtime-config.json');
 const RESTAURANT_POLICY_PATH = path.join(SITE_ROOT, 'data/restaurant-page-policy.json');
 const RESTAURANT_SERVICES_PATH = path.join(SITE_ROOT, 'data/restaurant-services.json');
 const RESTAURANT_SLOTS_PATH = path.join(SITE_ROOT, 'data/restaurant-page-slots.json');
@@ -15,6 +16,9 @@ const RESTAURANT_PROOF_PATH = path.join(SITE_ROOT, 'data/restaurant-proof-layer.
 const RESTAURANT_TAXONOMY_PATH = path.join(SITE_ROOT, 'data/restaurant-taxonomy.json');
 const RESTAURANT_POLICY_SYNC_HINT = 'Run npm run restaurant:sync-fallbacks after slot changes';
 const HOUSEHOLD_DOCTOR_PATH = path.join(SITE_ROOT, 'tools/doctor-household-page.mjs');
+const CANONICAL_FORM_SCRIPT = 'telegram-form.js';
+const PRODUCTION_FORM_ROUTE = '/api/send-telegram';
+const PRODUCTION_FORM_BACKEND = 'server/telegram-api.mjs';
 
 function parseArgs(argv) {
   const result = {};
@@ -68,6 +72,27 @@ function getExpectedPageClass(page) {
   return `page-${page.replace(/\.html$/, '')}`;
 }
 
+function countTelegramScripts(html) {
+  return (
+    html.match(/<script[^>]+src="(?:telegram-form\.js|\/telegram-form\.js|assets\/js\/telegram-form\.js|\/assets\/js\/telegram-form\.js)"/g) || []
+  ).length;
+}
+
+function getFormRuntimeSummary(html, pageMeta, runtimeConfig) {
+  const hasForm = Boolean(pageMeta?.hasForm);
+  const scriptCount = countTelegramScripts(html);
+
+  return {
+    hasForm,
+    scriptCount,
+    scriptReady: hasForm ? scriptCount === 1 : scriptCount === 0,
+    endpoint: runtimeConfig?.telegramFormEndpoint ?? null,
+    clientScript: CANONICAL_FORM_SCRIPT,
+    backendRoute: PRODUCTION_FORM_ROUTE,
+    backendScript: PRODUCTION_FORM_BACKEND,
+  };
+}
+
 function passthroughHouseholdDoctor(page, asJson) {
   const args = [HOUSEHOLD_DOCTOR_PATH, '--page', page];
   if (asJson) args.push('--json');
@@ -119,6 +144,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
 
 function runRestaurantDoctor(page) {
   const metadata = readJson(METADATA_PATH);
+  const runtimeConfig = readJson(RUNTIME_CONFIG_PATH);
   const policy = readJson(RESTAURANT_POLICY_PATH);
   const registry = readJson(RESTAURANT_SERVICES_PATH);
   const slots = readJson(RESTAURANT_SLOTS_PATH);
@@ -145,11 +171,18 @@ function runRestaurantDoctor(page) {
         ? 'restaurant-page'
         : 'unknown';
   const issues = [];
+  const formRuntime = getFormRuntimeSummary(html, pageMeta, runtimeConfig);
 
   if (!htmlExists) issues.push('Missing HTML file');
   if (!pageMeta) issues.push('Missing metadata entry');
   if (pageMeta?.branch && pageMeta.branch !== 'restaurant') {
     issues.push(`Metadata branch is ${pageMeta.branch}, expected restaurant`);
+  }
+  if (formRuntime.hasForm && formRuntime.scriptCount !== 1) {
+    issues.push(`Expected exactly one ${CANONICAL_FORM_SCRIPT} include for form page`);
+  }
+  if (!formRuntime.hasForm && formRuntime.scriptCount !== 0) {
+    issues.push(`Expected no ${CANONICAL_FORM_SCRIPT} include for non-form page`);
   }
 
   if (pageType === 'restaurant-branch-page') {
@@ -357,6 +390,7 @@ function runRestaurantDoctor(page) {
           ready: (policy.publicPage?.requiredSyncZones ?? []).every((zone) => html.includes(`data-sync-zone="${zone}"`)),
         }
       : null,
+    formRuntime,
     bodyClasses: Array.from(bodyClasses),
     recommendedEditSurface: getRecommendedEditSurface({ page, pageType, registryEntry }),
     issues,
@@ -387,6 +421,13 @@ try {
     console.log(`- html: ${summary.htmlExists ? 'ok' : 'missing'}`);
     console.log(`- metadata: ${summary.metadata ? 'ok' : 'missing'}`);
     console.log(`- body classes: ${summary.bodyClasses.length ? 'ok' : 'missing'}`);
+    console.log(
+      `- form runtime: ${
+        summary.formRuntime.hasForm
+          ? `${summary.formRuntime.scriptReady ? 'ok' : 'issues'} (script=${summary.formRuntime.clientScript}, endpoint=${summary.formRuntime.endpoint ?? 'missing'}, route=${summary.formRuntime.backendRoute})`
+          : 'n/a'
+      }`
+    );
     console.log(`- registry: ${summary.registry ? 'ok' : 'n/a'}`);
     console.log(`- taxonomy: ${summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'n/a'}`);
     console.log(

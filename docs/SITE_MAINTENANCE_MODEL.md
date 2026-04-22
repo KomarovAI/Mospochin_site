@@ -4,6 +4,12 @@ This document is the canonical high-level map for maintaining `Mospochin_site`.
 
 ## Source Of Truth
 
+- `telegram-form.js`
+  - canonical client-side form runtime for pages with `hasForm=true`
+- `data/runtime-config.json`
+  - canonical form endpoint/runtime configuration
+- `server/telegram-api.mjs`
+  - canonical production Telegram delivery backend
 - `data/page-metadata.json`
   - canonical URLs, indexing, branch, page-level metadata
 - `data/site-page-contracts.json`
@@ -29,6 +35,10 @@ This document is the canonical high-level map for maintaining `Mospochin_site`.
 - Use branch-specific doctor/helpers/sync commands for routine public page maintenance.
 - Keep HTML edits limited to unique layout, narrative, and required slot/sync hosts.
 - Public service-page fallback zones are intentionally duplicated and must stay aligned through branch sync commands.
+- Treat the form path as a concrete contract, not an abstract runtime note:
+  - `telegram-form.js` owns client submission
+  - `data/runtime-config.json` owns the site-relative endpoint
+  - `server/telegram-api.mjs` owns the production delivery backend
 
 ## Canonical Workflow
 
@@ -46,6 +56,8 @@ This document is the canonical high-level map for maintaining `Mospochin_site`.
   - compact structural map of runtime/data/docs/tooling
 - `docs/SITE_MAINTENANCE_MODEL.md`
   - canonical site-wide maintenance model
+- `docs/STABILIZATION_BACKLOG.md`
+  - confirmed rough edges and next hardening candidates
 - `docs/HOUSEHOLD_*`
   - household branch contracts and workflows
 - `docs/RESTAURANT_*`

@@ -10,6 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SITE_ROOT = path.resolve(__dirname, '..');
 
+const RUNTIME_CONFIG_PATH = path.join(SITE_ROOT, 'data/runtime-config.json');
 const TAXONOMY_PATH = path.join(SITE_ROOT, 'data/household-taxonomy.json');
 const POLICY_PATH = path.join(SITE_ROOT, 'data/household-page-policy.json');
 const METADATA_PATH = path.join(SITE_ROOT, 'data/page-metadata.json');
@@ -17,6 +18,9 @@ const REGISTRY_PATH = path.join(SITE_ROOT, 'data/household-services.json');
 const SLOTS_PATH = path.join(SITE_ROOT, 'data/household-page-slots.json');
 const CARD_PRESETS_PATH = path.join(SITE_ROOT, 'data/household-card-presets.json');
 const PROOF_LAYER_PATH = path.join(SITE_ROOT, 'data/household-proof-layer.json');
+const CANONICAL_FORM_SCRIPT = 'telegram-form.js';
+const PRODUCTION_FORM_ROUTE = '/api/send-telegram';
+const PRODUCTION_FORM_BACKEND = 'server/telegram-api.mjs';
 
 function parseArgs(argv) {
   const result = {};
@@ -60,6 +64,27 @@ function getExpectedPageClass(page) {
   return `page-${page.replace(/\.html$/, '')}`;
 }
 
+function countTelegramScripts(html) {
+  return (
+    html.match(/<script[^>]+src="(?:telegram-form\.js|\/telegram-form\.js|assets\/js\/telegram-form\.js|\/assets\/js\/telegram-form\.js)"/g) || []
+  ).length;
+}
+
+function getFormRuntimeSummary(html, pageMeta, runtimeConfig) {
+  const hasForm = Boolean(pageMeta?.hasForm);
+  const scriptCount = countTelegramScripts(html);
+
+  return {
+    hasForm,
+    scriptCount,
+    scriptReady: hasForm ? scriptCount === 1 : scriptCount === 0,
+    endpoint: runtimeConfig?.telegramFormEndpoint ?? null,
+    clientScript: CANONICAL_FORM_SCRIPT,
+    backendRoute: PRODUCTION_FORM_ROUTE,
+    backendScript: PRODUCTION_FORM_BACKEND,
+  };
+}
+
 function getRecommendedEditSurface({ page, pageType, registryEntry }) {
   if (pageType === 'branch-card-page') {
     return {
@@ -100,6 +125,7 @@ function getPageFromArgs(args) {
 }
 
 function runDoctor(page) {
+  const runtimeConfig = readJson(RUNTIME_CONFIG_PATH);
   const metadata = readJson(METADATA_PATH);
   const registry = readJson(REGISTRY_PATH);
   const slots = readJson(SLOTS_PATH);
@@ -127,6 +153,7 @@ function runDoctor(page) {
   const branchPageContract = sharedCardConfig.pageContracts?.[page] ?? null;
   const bodyClasses = getBodyClasses(html);
   const issues = [];
+  const formRuntime = getFormRuntimeSummary(html, pageMeta, runtimeConfig);
 
   if (!htmlExists) issues.push('Missing HTML file');
   if (!pageMeta) issues.push('Missing metadata entry');
@@ -136,6 +163,12 @@ function runDoctor(page) {
 
   if (pageMeta?.branch && pageMeta.branch !== 'household') {
     issues.push(`Metadata branch is ${pageMeta.branch}, expected household`);
+  }
+  if (formRuntime.hasForm && formRuntime.scriptCount !== 1) {
+    issues.push(`Expected exactly one ${CANONICAL_FORM_SCRIPT} include for form page`);
+  }
+  if (!formRuntime.hasForm && formRuntime.scriptCount !== 0) {
+    issues.push(`Expected no ${CANONICAL_FORM_SCRIPT} include for non-form page`);
   }
 
   if (registryEntry && taxonomyEntry) {
@@ -379,6 +412,7 @@ function runDoctor(page) {
               syncState?.issues.filter((issue) => issue.includes('fallback drift') || issue.includes('sync')).length === 0,
           }
         : null,
+    formRuntime,
     bodyClasses: Array.from(bodyClasses),
     cardPresets: isServicePage
       ? {
@@ -410,6 +444,13 @@ try {
     console.log(`- html: ${summary.htmlExists ? 'ok' : 'missing'}`);
     console.log(`- metadata: ${summary.metadata ? 'ok' : 'missing'}`);
     console.log(`- body classes: ${summary.bodyClasses.length ? 'ok' : 'missing'}`);
+    console.log(
+      `- form runtime: ${
+        summary.formRuntime.hasForm
+          ? `${summary.formRuntime.scriptReady ? 'ok' : 'issues'} (script=${summary.formRuntime.clientScript}, endpoint=${summary.formRuntime.endpoint ?? 'missing'}, route=${summary.formRuntime.backendRoute})`
+          : 'n/a'
+      }`
+    );
     console.log(`- registry: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.registry ? 'ok' : 'missing'}`);
     console.log(`- taxonomy: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'missing'}`);
     console.log(

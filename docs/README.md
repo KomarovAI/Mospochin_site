@@ -14,6 +14,8 @@
 
 ## Telegram form runtime contract
 
+- `telegram-form.js` is the canonical client-side form script and must be included exactly once on every `hasForm=true` page.
+- `main.js` is the shared site runtime, but it does not replace the dedicated Telegram form client script.
 - Production form delivery is configured through `data/runtime-config.json`.
 - `telegramFormEndpoint` must point to a live site-relative POST endpoint on the deployed host.
 - Local `npm run dev` serves the same path for smoke testing, but its handler is only a mock and does not deliver real Telegram messages.
@@ -36,6 +38,7 @@
 ## Validation and deploy
 
 - `npm run validate:site` now requires `data/runtime-config.json` and a non-empty `telegramFormEndpoint`.
+- `npm run validate:site` also enforces the page-level client contract: form pages must include exactly one `telegram-form.js`, and non-form pages must not include it.
 - Deploy smoke tests call the configured form endpoint after publishing.
 - Deploy manifest must include the backend script and deploy hook assets so the VPS can activate them from the same release tree.
 
@@ -44,3 +47,7 @@
 - `main.js` is the canonical shared runtime JavaScript for both branches.
 - Household and restaurant stay as separate authoring/maintenance workflows on top of the shared runtime.
 - Branch-specific contracts live in their own `docs/HOUSEHOLD_*` and `docs/RESTAURANT_*` files.
+
+## Stabilization tracking
+
+- Confirmed rough edges and follow-up hardening work live in [docs/STABILIZATION_BACKLOG.md](/home/artikk/Mospochin_site/docs/STABILIZATION_BACKLOG.md).

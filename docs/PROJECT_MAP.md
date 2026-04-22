@@ -6,6 +6,8 @@ Compact map of the live repository structure and maintenance surfaces.
 
 - `main.js`
   - shared site runtime for branch detection, shared shell rendering, slot hydration, and runtime behavior
+- `telegram-form.js`
+  - canonical client-side Telegram form submission runtime for `hasForm=true` pages
 - `styles.css`
   - canonical hand-maintained stylesheet
 - `styles-built.css`
@@ -43,6 +45,8 @@ Compact map of the live repository structure and maintenance surfaces.
 
 ## Deploy And Backend
 
+- `data/runtime-config.json`
+  - canonical site-relative form endpoint configuration
 - `server/telegram-api.mjs`
   - production form delivery backend
 - `deploy/`
@@ -56,6 +60,8 @@ Compact map of the live repository structure and maintenance surfaces.
   - repo-level operating notes
 - `docs/SITE_MAINTENANCE_MODEL.md`
   - canonical site-wide maintenance model
+- `docs/STABILIZATION_BACKLOG.md`
+  - confirmed rough edges and next hardening queue
 - `docs/HOUSEHOLD_*`
   - household-specific maintenance docs
 - `docs/RESTAURANT_*`
