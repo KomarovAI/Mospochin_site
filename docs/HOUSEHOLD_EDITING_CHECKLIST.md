@@ -19,6 +19,7 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 - Keep FAQ answers short, literal, and useful on a real call or form submission.
 - Keep request hints focused on what the client should send or expect next.
 - Keep placeholders realistic for the actual device page.
+- After these changes on a public service page, run `npm run household:sync-fallbacks -- --page <file>.html`.
 
 ## Change Trust, Review, Or Conversion Proof
 
@@ -28,6 +29,7 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 - Keep review, proof, objection, and case cards focused on one confidence signal each.
 - Keep `priceClarity` items factual: symptom, diagnosis, decision, and explicit repair viability.
 - Do not move shadow pages or speculative offers into visible proof content.
+- After these changes on a public service page, run `npm run household:sync-fallbacks -- --page <file>.html`.
 
 ## Change Household Card Sections
 
@@ -41,6 +43,7 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 - Edit `data/page-metadata.json` directly for branch pages and shadow pages.
 - Keep shadow pages aligned with `robots: noindex,follow`.
 - Do not use the service registry as the source of canonical URLs.
+- After public service-page metadata edits, run `npm run household:sync-fallbacks -- --page <file>.html`.
 
 ## Change Menus, Branch Header, Footer, or Branch-Wide CTAs
 
@@ -60,5 +63,6 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 - Run `npm run validate:site`.
 - Run `npm run doctor:household-page -- --page <file>.html` for a narrow page audit when one service page looks out of sync.
 - Read the `recommended edit surface` block from `doctor` before touching JSON or HTML by hand.
+- For public household service pages, run `npm run household:sync-fallbacks` before `validate:site`.
 - Run `npm run generate:sitemap` if metadata or indexing changed.
 - Run `npm run generate:deploy-manifest` if a new deployable file was added.

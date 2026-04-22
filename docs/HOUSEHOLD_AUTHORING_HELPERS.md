@@ -4,6 +4,8 @@ These helper commands reduce routine JSON edits for public household service pag
 
 ## Supported Commands
 
+- `npm run household:sync-fallbacks [-- --page <file.html>]`
+  - syncs fallback HTML for `service-schema`, request overview, FAQ, proof, and related links on public household service pages
 - `npm run household:set-faq -- --page <file.html> --faq-json '<json>'`
   - replaces `faq` in `data/household-page-slots.json`
 - `npm run household:set-form-hints -- --page <file.html> --chips "a|b|c" --type-placeholder "..." --problem-placeholder "..."`
@@ -27,4 +29,5 @@ These helper commands reduce routine JSON edits for public household service pag
 1. Run `npm run doctor:household-page -- --page <file.html>`.
 2. Follow the `recommended edit surface` block.
 3. Apply the smallest helper command that matches the requested change.
-4. Run `npm run validate:site`.
+4. Run `npm run household:sync-fallbacks -- --page <file.html>` for public household service pages.
+5. Run `npm run validate:site`.

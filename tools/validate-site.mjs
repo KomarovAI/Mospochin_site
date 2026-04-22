@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { analyzeHouseholdSyncState, HOUSEHOLD_SYNC_ZONES } from './household-fallback-sync-lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -484,6 +485,10 @@ function validateHouseholdPagePolicy(policy) {
 
     if (policyKey === 'publicPage' && !isArrayOfNonEmptyStrings(contract.requiredSlotFields)) {
       errors.push(`${context}.requiredSlotFields must be a non-empty array of strings`);
+    }
+
+    if (policyKey === 'publicPage' && !isArrayOfNonEmptyStrings(contract.requiredSyncZones)) {
+      errors.push(`${context}.requiredSyncZones must be a non-empty array of strings`);
     }
 
     if (!isArrayOfNonEmptyStrings(contract.requiredBodyClasses)) {
@@ -1343,6 +1348,37 @@ function validateHouseholdPageSlots(slots, registry) {
           errors.push(`${service.page}: missing data-slot="request-form" on canonical household form`);
         }
       }
+    }
+
+    for (const zone of policy?.requiredSyncZones ?? []) {
+      if (zone === 'service-schema') {
+        if (!html.includes('data-sync-zone="service-schema"')) {
+          errors.push(`${service.page}: missing data-sync-zone="service-schema"`);
+        }
+        continue;
+      }
+
+      if (!HOUSEHOLD_SYNC_ZONES.includes(zone)) {
+        errors.push(`${service.page}: unknown household sync zone ${zone}`);
+        continue;
+      }
+
+      if (!html.includes(`data-sync-zone="${zone}"`)) {
+        errors.push(`${service.page}: missing data-sync-zone="${zone}"`);
+      }
+    }
+
+    const syncState = analyzeHouseholdSyncState(html, {
+      pageMeta: metadata.pages[service.page],
+      service,
+      slotEntry,
+      registry,
+      cardPresets: householdCardPresets,
+      proofLayer: householdProofLayer,
+    });
+
+    for (const issue of syncState.issues) {
+      errors.push(`${service.page}: ${issue}`);
     }
 
     if (slotEntry.cardSections) {

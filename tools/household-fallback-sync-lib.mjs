@@ -1,0 +1,454 @@
+import fs from 'fs';
+import path from 'path';
+import {
+  SITE_ROOT,
+  METADATA_PATH,
+  REGISTRY_PATH,
+  SLOTS_PATH,
+  PROOF_LAYER_PATH,
+  readJson,
+} from './household-authoring-lib.mjs';
+
+export const CARD_PRESETS_PATH = path.join(SITE_ROOT, 'data/household-card-presets.json');
+export const POLICY_PATH = path.join(SITE_ROOT, 'data/household-page-policy.json');
+
+export const HOUSEHOLD_SYNC_ZONES = [
+  'request-overview',
+  'faq-items',
+  'service-proof',
+  'related-links',
+];
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+function getHouseholdCardTone(tone) {
+  return (
+    {
+      slate: {
+        card: 'household-card--slate',
+        badge: 'bg-slate-100 text-slate-700',
+      },
+      orange: {
+        card: 'household-card--orange',
+        badge: 'bg-brand-orange/10 text-brand-orange',
+      },
+      blue: {
+        card: 'household-card--blue',
+        badge: 'bg-brand-blue/10 text-brand-blue',
+      },
+      green: {
+        card: 'household-card--green',
+        badge: 'bg-green-100 text-green-700',
+      },
+    }[tone] ?? {
+      card: 'household-card--slate',
+      badge: 'bg-slate-100 text-slate-700',
+    }
+  );
+}
+
+function renderHouseholdBadgeList(items, tone = 'slate') {
+  const toneClasses = {
+    slate: 'bg-slate-100 text-slate-700',
+    orange: 'bg-brand-orange/10 text-brand-orange',
+    green: 'bg-green-100 text-green-700',
+    blue: 'bg-brand-blue/10 text-brand-blue',
+  };
+  const className = toneClasses[tone] || toneClasses.slate;
+
+  return (items || [])
+    .filter(Boolean)
+    .map(
+      (item) =>
+        `<span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium ${className}">${escapeHtml(item)}</span>`
+    )
+    .join('');
+}
+
+function renderHouseholdServiceCards(pages, serviceMap, cardPresets, mode = 'compact') {
+  const icons = cardPresets?.pageIcons || {};
+  const tones = cardPresets?.pageTones || {};
+
+  return pages
+    .map((page) => serviceMap.get(page))
+    .filter((entry) => entry && !entry.isShadow)
+    .map((entry) => {
+      const tone = getHouseholdCardTone(tones[entry.page] || 'slate');
+      const icon = icons[entry.page] || 'ri-settings-3-line';
+      const symptomText = (entry.primarySymptoms || []).slice(0, mode === 'compact' ? 3 : 4).join(', ');
+      const brandText = (entry.brandCluster || []).slice(0, 3).join(', ');
+
+      return `
+          <a href="${entry.page}" class="household-card household-card--service ${tone.card}">
+            <div class="household-card__topline">
+              <span class="household-card__eyebrow ${tone.badge}">По бытовой категории</span>
+              <span class="household-card__icon"><i class="${icon}"></i></span>
+            </div>
+            <h3 class="household-card__title">${escapeHtml(entry.uiLabel)}</h3>
+            <p class="household-card__description">${escapeHtml(symptomText)}</p>
+            <p class="household-card__meta">${escapeHtml(brandText)}</p>
+            <span class="household-card__cta">Открыть страницу</span>
+          </a>
+        `;
+    })
+    .join('');
+}
+
+function renderHouseholdProofCards(cards) {
+  return (cards || [])
+    .map((card) => {
+      const tone = getHouseholdCardTone(card.tone || 'slate');
+      return `
+          <article class="household-card household-card--proof ${tone.card}">
+            <div class="household-card__topline">
+              <span class="household-card__eyebrow ${tone.badge}">${escapeHtml(card.badge || 'Без сюрпризов')}</span>
+              <span class="household-card__icon"><i class="${escapeHtml(card.icon || 'ri-shield-check-line')}"></i></span>
+            </div>
+            <h3 class="household-card__title">${escapeHtml(card.title || '')}</h3>
+            <p class="household-card__description">${escapeHtml(card.description || '')}</p>
+            ${card.outcome ? `<p class="household-card__meta">${escapeHtml(card.outcome)}</p>` : ''}
+          </article>
+        `;
+    })
+    .join('');
+}
+
+function renderHouseholdSlaStrip(sectionConfig) {
+  const items = Array.isArray(sectionConfig?.items) ? sectionConfig.items : [];
+  if (!items.length) return '';
+
+  return `
+      <div class="household-proof-strip">
+        <div class="household-proof-strip__copy">
+          <span class="household-proof-strip__badge">${escapeHtml(sectionConfig.badge || 'Понятный сценарий')}</span>
+          <h2 class="household-proof-strip__title">${escapeHtml(sectionConfig.title || '')}</h2>
+          <p class="household-proof-strip__description">${escapeHtml(sectionConfig.description || '')}</p>
+        </div>
+        <div class="household-proof-strip__grid">
+          ${items
+            .map((item) => {
+              const tone = getHouseholdCardTone(item.tone || 'slate');
+              return `
+                <article class="household-proof-strip__item ${tone.card}">
+                  <p class="household-proof-strip__value">${escapeHtml(item.value || '')}</p>
+                  <p class="household-proof-strip__label">${escapeHtml(item.label || '')}</p>
+                  <p class="household-proof-strip__meta">${escapeHtml(item.description || '')}</p>
+                </article>
+              `;
+            })
+            .join('')}
+        </div>
+      </div>
+    `;
+}
+
+export function buildHouseholdServiceSchema(service, pageMeta, slotEntry) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.schemaName || service.serviceName,
+    description: slotEntry?.serviceSchema?.description || pageMeta?.description || '',
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: slotEntry?.serviceSchema?.areaServed || 'Москва и Московская область',
+    },
+    serviceType: slotEntry?.serviceSchema?.serviceType || service.deviceName || service.uiLabel,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'MosPochin',
+      url: 'https://mospochin.ru',
+      telephone: '+79990057172',
+      openingHours: 'Mo-Su 09:00-21:00',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Москва',
+        addressCountry: 'RU',
+      },
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '128',
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'RUB',
+      price: slotEntry?.serviceSchema?.price || 'По согласованию после диагностики',
+      availability: 'https://schema.org/InStock',
+    },
+  };
+}
+
+export function renderHouseholdRequestOverview(service, slotEntry) {
+  const hintChips = Array.isArray(slotEntry?.formHints?.chips)
+    ? slotEntry.formHints.chips.filter(Boolean)
+    : [];
+
+  return `<div data-sync-zone="request-overview" data-household-slot-zone="request-overview" class="mb-6 rounded-2xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5">
+      <div class="mb-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Что полезно указать сразу</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          ${renderHouseholdBadgeList(hintChips, 'orange')}
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <p class="text-sm font-bold text-brand-blue">Частые симптомы</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            ${renderHouseholdBadgeList(service.primarySymptoms || [], 'slate')}
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-brand-blue">Частые бренды</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            ${renderHouseholdBadgeList(service.brandCluster || [], 'blue')}
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Пример описания: ${escapeHtml(service.formExample || '')}</p>
+    </div>`;
+}
+
+export function renderHouseholdFaqItems(slotEntry) {
+  return `<div class="mt-10 space-y-4" data-sync-zone="faq-items">
+${(slotEntry?.faq || [])
+  .map(
+    (item, index) => `                <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}">
+                    <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+                        <span>${escapeHtml(item.question)}</span>
+                        <span class="text-brand-orange transition-transform duration-300">+</span>
+                    </summary>
+                    <p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p>
+                </details>`
+  )
+  .join('\n')}
+            </div>`;
+}
+
+export function renderHouseholdServiceProof(service, proofLayer) {
+  const defaults = proofLayer?.serviceDefaults;
+  if (!defaults) {
+    return '<section data-sync-zone="service-proof" data-household-slot-generated="service-proof" class="py-16 lg:py-20 bg-white"></section>';
+  }
+
+  return `<section data-sync-zone="service-proof" data-household-slot-generated="service-proof" class="py-16 lg:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-slate-50/90 p-6 sm:p-8 lg:p-10 shadow-sm">
+          ${renderHouseholdSlaStrip(defaults.slaStrip)}
+          ${defaults.priceClarity ? `<div class="mt-8">${renderHouseholdSlaStrip(defaults.priceClarity)}</div>` : ''}
+          <div class="mt-8 flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-3 py-1.5 text-sm font-semibold text-brand-orange">По категории ${escapeHtml(service.uiLabel)}</span>
+            ${renderHouseholdBadgeList((service.primarySymptoms || []).slice(0, 3), 'slate')}
+          </div>
+          <div class="mt-8 text-center">
+            <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-semibold text-brand-blue">${escapeHtml(defaults.proofCards?.badge || 'Почему это спокойнее')}</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(defaults.proofCards?.title || '')}</h2>
+            <p class="mt-3 text-slate-600">${escapeHtml(defaults.proofCards?.description || '')}</p>
+          </div>
+          <div class="mt-8 household-card-grid household-card-grid--proof">
+            ${renderHouseholdProofCards(defaults.proofCards?.cards || [])}
+          </div>
+          ${
+            defaults.objectionCards
+              ? `
+                <div class="mt-10 text-center">
+                  <span class="inline-flex items-center rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">${escapeHtml(defaults.objectionCards.badge || 'Что ещё важно')}</span>
+                  <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(defaults.objectionCards.title || '')}</h2>
+                  <p class="mt-3 text-slate-600">${escapeHtml(defaults.objectionCards.description || '')}</p>
+                </div>
+                <div class="mt-8 household-card-grid household-card-grid--proof">
+                  ${renderHouseholdProofCards(defaults.objectionCards.cards || [])}
+                </div>
+              `
+              : ''
+          }
+        </div>
+      </div>
+    </section>`;
+}
+
+export function renderHouseholdRelatedLinks(service, registry, cardPresets) {
+  const serviceMap = new Map((registry?.services || []).map((entry) => [entry.page, entry]));
+  const pages = (service.relatedPages || [])
+    .map((page) => serviceMap.get(page))
+    .filter((entry) => entry && !entry.isShadow)
+    .map((entry) => entry.page);
+
+  return `<section data-sync-zone="related-links" data-household-slot-generated="related-links" class="py-16 lg:py-20 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <div class="text-center mb-8">
+            <span class="inline-block rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-semibold text-brand-blue">ДРУГИЕ БЫТОВЫЕ КАТЕГОРИИ</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Если проблема в другой технике</h2>
+            <p class="mt-3 text-slate-600">Ниже ближайшие бытовые категории, которые чаще всего смотрят рядом с этой страницей.</p>
+          </div>
+          <div class="household-card-grid household-card-grid--related">
+            ${renderHouseholdServiceCards(pages, serviceMap, cardPresets, 'compact')}
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
+function buildSyncPayload({ pageMeta, service, slotEntry, registry, cardPresets, proofLayer }) {
+  return {
+    schema: JSON.stringify(buildHouseholdServiceSchema(service, pageMeta, slotEntry), null, 2),
+    zones: {
+      'request-overview': renderHouseholdRequestOverview(service, slotEntry),
+      'faq-items': renderHouseholdFaqItems(slotEntry),
+      'service-proof': renderHouseholdServiceProof(service, proofLayer),
+      'related-links': renderHouseholdRelatedLinks(service, registry, cardPresets),
+    },
+  };
+}
+
+function markerStart(zone) {
+  return `<!-- household-sync:${zone}:start -->`;
+}
+
+function markerEnd(zone) {
+  return `<!-- household-sync:${zone}:end -->`;
+}
+
+export function extractSyncZoneContent(html, zone) {
+  const regex = new RegExp(
+    `${markerStart(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*([\\s\\S]*?)\\s*${markerEnd(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`
+  );
+  return html.match(regex)?.[1] ?? null;
+}
+
+export function hasSyncZoneMarker(html, zone) {
+  return html.includes(markerStart(zone)) && html.includes(markerEnd(zone));
+}
+
+export function hasSyncZoneAttr(html, zone) {
+  return html.includes(`data-sync-zone="${zone}"`);
+}
+
+export function replaceSyncZoneContent(html, zone, content) {
+  const regex = new RegExp(
+    `${markerStart(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${markerEnd(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`
+  );
+  if (!regex.test(html)) {
+    throw new Error(`Missing sync marker block for zone ${zone}`);
+  }
+  return html.replace(regex, `${markerStart(zone)}\n${content}\n${markerEnd(zone)}`);
+}
+
+export function replaceServiceSchemaContent(html, schemaText) {
+  const regex = /(<script[^>]*data-slot="service-schema"[^>]*>)([\s\S]*?)(<\/script>)/i;
+  if (!regex.test(html)) {
+    throw new Error('Missing service-schema script block');
+  }
+  return html.replace(regex, `$1\n${schemaText}\n    $3`);
+}
+
+export function extractServiceSchemaContent(html) {
+  return html.match(/<script[^>]*data-slot="service-schema"[^>]*>([\s\S]*?)<\/script>/i)?.[1] ?? null;
+}
+
+export function normalizeComparableMarkup(value) {
+  return String(value ?? '')
+    .replace(/\r\n/g, '\n')
+    .replace(/>\s+</g, '><')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n+/g, '\n')
+    .trim();
+}
+
+export function loadHouseholdSyncState() {
+  return {
+    metadata: readJson(METADATA_PATH),
+    registry: readJson(REGISTRY_PATH),
+    slots: readJson(SLOTS_PATH),
+    proofLayer: readJson(PROOF_LAYER_PATH),
+    cardPresets: readJson(CARD_PRESETS_PATH),
+    policy: readJson(POLICY_PATH),
+  };
+}
+
+export function getPublicHouseholdServices(registry) {
+  return (registry?.services || []).filter((entry) => !entry.isShadow);
+}
+
+export function analyzeHouseholdSyncState(html, { pageMeta, service, slotEntry, registry, cardPresets, proofLayer }) {
+  const expected = buildSyncPayload({ pageMeta, service, slotEntry, registry, cardPresets, proofLayer });
+  const issues = [];
+
+  const schemaContent = extractServiceSchemaContent(html);
+  if (schemaContent == null) {
+    issues.push('Missing service-schema script block');
+  } else if (normalizeComparableMarkup(schemaContent) !== normalizeComparableMarkup(expected.schema)) {
+    issues.push('service-schema fallback drift');
+  }
+
+  for (const zone of HOUSEHOLD_SYNC_ZONES) {
+    if (!hasSyncZoneMarker(html, zone)) {
+      issues.push(`Missing sync marker block for ${zone}`);
+      continue;
+    }
+    if (!hasSyncZoneAttr(html, zone)) {
+      issues.push(`Missing data-sync-zone="${zone}"`);
+      continue;
+    }
+    const actualContent = extractSyncZoneContent(html, zone);
+    if (actualContent == null) {
+      issues.push(`Empty sync marker block for ${zone}`);
+      continue;
+    }
+    if (normalizeComparableMarkup(actualContent) !== normalizeComparableMarkup(expected.zones[zone])) {
+      issues.push(`${zone} fallback drift`);
+    }
+  }
+
+  return { expected, issues };
+}
+
+export function syncHouseholdServiceHtml(html, context) {
+  const { expected } = analyzeHouseholdSyncState(html, context);
+  let nextHtml = replaceServiceSchemaContent(html, expected.schema);
+  for (const zone of HOUSEHOLD_SYNC_ZONES) {
+    nextHtml = replaceSyncZoneContent(nextHtml, zone, expected.zones[zone]);
+  }
+  return nextHtml.replace(/[ \t]+$/gm, '');
+}
+
+export function getPublicServiceSyncContext(page, state = loadHouseholdSyncState()) {
+  const pageMeta = state.metadata.pages?.[page] ?? null;
+  const service = (state.registry.services || []).find((entry) => entry.page === page && !entry.isShadow) ?? null;
+  const slotEntry = state.slots.pages?.[page] ?? null;
+
+  if (!pageMeta) {
+    throw new Error(`Unknown page in metadata: ${page}`);
+  }
+  if (!service) {
+    throw new Error(`Unknown public household service page: ${page}`);
+  }
+  if (!slotEntry) {
+    throw new Error(`Missing household slot entry for ${page}`);
+  }
+
+  return {
+    pageMeta,
+    service,
+    slotEntry,
+    registry: state.registry,
+    cardPresets: state.cardPresets,
+    proofLayer: state.proofLayer,
+    policy: state.policy,
+  };
+}
+
+export function readPageHtml(page) {
+  return fs.readFileSync(path.join(SITE_ROOT, page), 'utf8');
+}
+
+export function writePageHtml(page, html) {
+  fs.writeFileSync(path.join(SITE_ROOT, page), html);
+}

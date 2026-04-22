@@ -42,6 +42,9 @@ This document defines the first page-factory layer for household service pages.
 - `npm run household:set-faq`, `household:set-form-hints`, `household:set-related`, `household:set-proof`, `household:set-metadata`
   - narrow authoring helpers for public household service pages
   - update only the source-of-truth JSON layer for the requested change
+- `npm run household:sync-fallbacks [-- --page <file>]`
+  - updates the sync-safe fallback zones in public household service-page HTML
+  - keeps runtime truth and checked-in HTML aligned for FAQ, request copy, proof, related links, and `Service` JSON-LD
 
 ## Editing Rule
 
@@ -51,6 +54,7 @@ This document defines the first page-factory layer for household service pages.
 - Edit `data/household-proof-layer.json` first for trust, review, SLA, price-clarity, objections, and conversion-confidence blocks.
 - Edit branch card sections in `data/household-page-slots.json` and keep them aligned with `data/household-card-presets.json`.
 - Prefer the narrow helper commands for routine public service-page changes before editing JSON by hand.
+- After helper or direct JSON edits on a public service page, run `npm run household:sync-fallbacks`.
 - Edit HTML only for unique layout or page-specific narrative.
 - Run `npm run validate:site` after changes.
 
@@ -58,5 +62,5 @@ This document defines the first page-factory layer for household service pages.
 
 - The factory does not generate the whole site.
 - The factory does not replace manual layout work.
-- The factory keeps HTML fallback content in place; runtime hydration remains additive.
+- The factory keeps HTML fallback content in place; runtime hydration remains additive, but public service-page fallback zones are expected to stay synced through `household:sync-fallbacks`.
 - Shared household styling expects stable body classes (`page-<slug>`, `page-household-branch`, `page-household-service`) to exist in HTML; runtime keeps them normalized as a fallback.

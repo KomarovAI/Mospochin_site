@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+  HOUSEHOLD_SYNC_ZONES,
+  analyzeHouseholdSyncState,
+} from './household-fallback-sync-lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -82,6 +86,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
     related: `npm run household:set-related -- --page ${page} ...`,
     proof: `npm run household:set-proof -- --page ${page} --section <section> ...`,
     metadata: `npm run household:set-metadata -- --page ${page} ...`,
+    sync: `npm run household:sync-fallbacks -- --page ${page}`,
     html: `Edit ${page} only for unique layout or long-form narrative`,
   };
 }
@@ -116,6 +121,7 @@ function runDoctor(page) {
   const contract = isServicePage ? policy[policyKey] ?? null : null;
   const proofEntry = proofLayer?.branchPages?.[page] ?? null;
   const serviceProofDefaults = proofLayer?.serviceDefaults ?? null;
+  let syncState = null;
   const branchPageContract = sharedCardConfig.pageContracts?.[page] ?? null;
   const bodyClasses = getBodyClasses(html);
   const issues = [];
@@ -270,6 +276,21 @@ function runDoctor(page) {
     }
 
     if (!registryEntry.isShadow) {
+      syncState = analyzeHouseholdSyncState(html, {
+        pageMeta,
+        service: registryEntry,
+        slotEntry,
+        registry,
+        cardPresets,
+        proofLayer,
+      });
+
+      for (const syncIssue of syncState.issues) {
+        issues.push(syncIssue);
+      }
+    }
+
+    if (!registryEntry.isShadow) {
       if (!serviceProofDefaults?.slaStrip || typeof serviceProofDefaults.slaStrip !== 'object') {
         issues.push('Proof layer missing serviceDefaults.slaStrip');
       }
@@ -334,6 +355,9 @@ function runDoctor(page) {
             hasProofCards: Boolean(serviceProofDefaults?.proofCards),
             hasObjectionCards: Boolean(serviceProofDefaults?.objectionCards),
             requestAnchorPresent: hasSlotAnchor(html, 'request-form'),
+            syncZonesPresent: HOUSEHOLD_SYNC_ZONES.filter((zone) => html.includes(`data-sync-zone="${zone}"`)),
+            syncReady:
+              syncState?.issues.filter((issue) => issue.includes('fallback drift') || issue.includes('sync')).length === 0,
           }
         : null,
     bodyClasses: Array.from(bodyClasses),
@@ -393,6 +417,13 @@ try {
             summary.proofLayer.hasObjectionCards
               ? 'ok (service defaults ready)'
               : 'missing service defaults'
+          }`
+        );
+        console.log(
+          `- fallback sync: ${
+            summary.proofLayer.syncReady
+              ? `ok (${summary.proofLayer.syncZonesPresent.join(', ')})`
+              : `issues (${summary.proofLayer.syncZonesPresent.join(', ') || 'no zones'})`
           }`
         );
       }

@@ -229,7 +229,7 @@ function buildHtml({
     <meta property="og:locale" content="ru_RU">
     <meta name="twitter:card" content="summary_large_image">
     ${robots ? `<meta name="robots" content="${escapeHtml(robots)}">` : ''}
-    <script type="application/ld+json" data-slot="service-schema">
+    <script type="application/ld+json" data-slot="service-schema" data-sync-zone="service-schema">
     {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -347,6 +347,31 @@ ${brandChips}
                 </div>
                 <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
                     <form class="telegram-form space-y-5" data-slot="request-form">
+                        <!-- household-sync:request-overview:start -->
+                        <div data-sync-zone="request-overview" data-household-slot-zone="request-overview" class="mb-6 rounded-2xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5">
+                            <div class="mb-4">
+                                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Что полезно указать сразу</p>
+                                <div class="mt-3 flex flex-wrap gap-2">
+                                    ${formHints.chips.map((chip) => `<span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">${escapeHtml(chip)}</span>`).join('\n                                    ')}
+                                </div>
+                            </div>
+                            <div class="grid gap-4 sm:grid-cols-2">
+                                <div>
+                                    <p class="text-sm font-bold text-brand-blue">Частые симптомы</p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        ${primarySymptoms.map((symptom) => `<span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">${escapeHtml(symptom)}</span>`).join('\n                                        ')}
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-brand-blue">Частые бренды</p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        ${brandCluster.map((brand) => `<span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-blue/10 text-brand-blue">${escapeHtml(brand)}</span>`).join('\n                                        ')}
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-xs text-slate-500">Пример описания: ${escapeHtml(buildFormExample(deviceName, brandCluster, primarySymptoms))}</p>
+                        </div>
+                        <!-- household-sync:request-overview:end -->
                         <div class="grid gap-5 md:grid-cols-2">
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-slate-700">Ваше имя *</label>
@@ -375,15 +400,25 @@ ${brandChips}
         </div>
     </section>
 
+    <!-- household-sync:service-proof:start -->
+    <section data-sync-zone="service-proof" data-household-slot-generated="service-proof" class="py-16 lg:py-20 bg-white"></section>
+    <!-- household-sync:service-proof:end -->
+
+    <!-- household-sync:related-links:start -->
+    <section data-sync-zone="related-links" data-household-slot-generated="related-links" class="py-16 lg:py-20 bg-slate-50"></section>
+    <!-- household-sync:related-links:end -->
+
     <section class="py-16 lg:py-24 bg-slate-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <span class="inline-block rounded-full bg-green-100 px-4 py-2 text-sm font-bold text-green-700">FAQ</span>
                 <h2 class="mt-4 text-3xl font-display font-extrabold text-brand-blue">Частые вопросы по странице ${escapeHtml(uiLabel)}</h2>
             </div>
-            <div class="mt-10 space-y-4">
+            <!-- household-sync:faq-items:start -->
+            <div class="mt-10 space-y-4" data-sync-zone="faq-items">
 ${faqItems}
             </div>
+            <!-- household-sync:faq-items:end -->
         </div>
     </section>
 
