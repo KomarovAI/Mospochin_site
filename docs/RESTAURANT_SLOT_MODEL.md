@@ -37,6 +37,7 @@ Repeatable branch sections must be edited through slot/proof data, not by manual
 - `caseCards`
 
 HTML keeps the shell and the slot hosts via `data-slot="..."`.
+Restaurant `trustCards` may also carry an optional `layoutVariant` in `data/restaurant-page-slots.json` when the grid treatment is repeatable and page-safe.
 
 ## Service Pages
 
@@ -55,6 +56,7 @@ Use restaurant helper commands for routine edits. Do not use household helpers o
 Edit JSON first when the change is:
 
 - repeatable card/proof content
+- repeatable restaurant `trustCards` grid variants
 - FAQ
 - request-form hints
 - related links

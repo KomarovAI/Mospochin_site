@@ -1617,6 +1617,18 @@ const Components = {
       .join('');
   },
 
+  applyRestaurantCardSectionLayout(container, sectionName, sectionConfig) {
+    if (!container || sectionName !== 'trustCards') return;
+
+    const layoutVariant =
+      {
+        default: 'grid md:grid-cols-2 lg:grid-cols-3 gap-8',
+        'balanced-four': 'grid gap-8 md:grid-cols-2 xl:grid-cols-4',
+      }[sectionConfig?.layoutVariant || 'default'] || 'grid md:grid-cols-2 lg:grid-cols-3 gap-8';
+
+    container.className = layoutVariant;
+  },
+
   renderRestaurantContactCards(cards) {
     return (cards || [])
       .map((card) => {
@@ -1736,6 +1748,7 @@ const Components = {
       this.updateRestaurantCardSectionCopy('trust-cards', sections.trustCards);
       const container = document.querySelector('[data-slot="trust-cards"]');
       if (container) {
+        this.applyRestaurantCardSectionLayout(container, 'trustCards', sections.trustCards);
         container.innerHTML = this.renderRestaurantTrustCards(sections.trustCards.cards || []);
       }
     }

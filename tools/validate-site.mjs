@@ -42,6 +42,7 @@ const VALID_RECIPE_PAGE_KINDS = new Set([
   'shadow-page',
   'representative-audit',
 ]);
+const VALID_RESTAURANT_CARD_LAYOUT_VARIANTS = new Set(['default', 'balanced-four']);
 const REQUIRED_RECIPE_IDS = [
   'household-change-faq',
   'restaurant-change-faq',
@@ -2404,6 +2405,16 @@ function validateRestaurantPageSlots(slots, registry) {
         for (const fieldName of ['badge', 'title', 'description']) {
           if (!isNonEmptyString(sectionConfig[fieldName])) {
             errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections.${sectionName}.${fieldName} must be a non-empty string`);
+          }
+        }
+
+        if (Object.hasOwn(sectionConfig, 'layoutVariant')) {
+          if (sectionName !== 'trustCards') {
+            errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections.${sectionName}.layoutVariant is allowed only for trustCards`);
+          } else if (!VALID_RESTAURANT_CARD_LAYOUT_VARIANTS.has(sectionConfig.layoutVariant)) {
+            errors.push(
+              `${RESTAURANT_PAGE_SLOTS_DATA}.pages.${page}.cardSections.${sectionName}.layoutVariant must be one of: ${Array.from(VALID_RESTAURANT_CARD_LAYOUT_VARIANTS).join(', ')}`
+            );
           }
         }
 
