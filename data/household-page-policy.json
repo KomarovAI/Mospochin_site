@@ -17,6 +17,7 @@
     "defaultSectionIds": ["problems", "prices", "brands", "request"],
     "requiredSectionIds": ["prices"],
     "requiredSlotAnchors": ["service-schema", "request-form"],
+    "optionalSlotAnchors": ["service-advisory"],
     "requiredSyncZones": ["service-schema", "request-overview", "faq-items", "service-proof", "related-links"],
     "requiredSlotFields": ["faq", "formHints"],
     "requiredBodyClasses": ["page-household-service"],
@@ -90,6 +91,10 @@
       "reviewCards": "review-cards",
       "caseCards": "case-cards",
       "objectionCards": "objection-cards"
+    },
+    "routingHint": {
+      "pages": ["bytovaya-index.html", "bytovaya-uslugi.html"],
+      "anchor": "routing-hint"
     }
   }
 }

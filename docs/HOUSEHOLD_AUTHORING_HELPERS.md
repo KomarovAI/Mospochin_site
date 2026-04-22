@@ -22,6 +22,8 @@ These helper commands reduce routine JSON edits for public household service pag
 - Helpers support only public household service pages.
 - Shadow pages stay on direct registry/metadata edits.
 - Helpers do not edit HTML, layout, or long-form narrative.
+- `routingHint` for `bytovaya-index.html` and `bytovaya-uslugi.html` still lives in direct edits to `data/household-page-slots.json`.
+- `advisoryCards` for public household service pages currently live in direct edits to `data/household-page-slots.json`.
 - Use `--dry-run` on helpers to preview the resulting payload before writing.
 
 ## Fast Workflow

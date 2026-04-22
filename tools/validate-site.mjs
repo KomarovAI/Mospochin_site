@@ -127,6 +127,56 @@ function isPlainObject(value) {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 }
 
+function validateHouseholdRoutingHint(value, context) {
+  if (!isPlainObject(value)) {
+    errors.push(`${context} must be an object`);
+    return;
+  }
+
+  for (const fieldName of ['badge', 'title', 'description']) {
+    if (!isNonEmptyString(value[fieldName])) {
+      errors.push(`${context}.${fieldName} must be a non-empty string`);
+    }
+  }
+
+  if (!Array.isArray(value.cards) || value.cards.length === 0) {
+    errors.push(`${context}.cards must be a non-empty array`);
+    return;
+  }
+
+  value.cards.forEach((card, index) => {
+    if (!isPlainObject(card)) {
+      errors.push(`${context}.cards[${index}] must be an object`);
+      return;
+    }
+
+    for (const fieldName of ['title', 'description']) {
+      if (!isNonEmptyString(card[fieldName])) {
+        errors.push(`${context}.cards[${index}].${fieldName} must be a non-empty string`);
+      }
+    }
+  });
+}
+
+function validateHouseholdAdvisoryCards(value, context) {
+  if (!isPlainObject(value)) {
+    errors.push(`${context} must be an object`);
+    return;
+  }
+
+  for (const fieldName of ['badge', 'title', 'description']) {
+    if (!isNonEmptyString(value[fieldName])) {
+      errors.push(`${context}.${fieldName} must be a non-empty string`);
+    }
+  }
+
+  for (const fieldName of ['safeChecks', 'dontDoList', 'urgencySignals']) {
+    if (!isArrayOfNonEmptyStrings(value[fieldName])) {
+      errors.push(`${context}.${fieldName} must be a non-empty array of strings`);
+    }
+  }
+}
+
 function getBodyClasses(html) {
   const className = html.match(/<body[^>]+class="([^"]*)"/i)?.[1] ?? '';
   return new Set(className.split(/\s+/).filter(Boolean));
@@ -1323,6 +1373,13 @@ function validateHouseholdPageSlots(slots, registry) {
       }
     }
 
+    if (slotEntry.advisoryCards) {
+      validateHouseholdAdvisoryCards(
+        slotEntry.advisoryCards,
+        `${context}.advisoryCards`
+      );
+    }
+
     const html = read(service.page);
     const bodyClasses = getBodyClasses(html);
 
@@ -1348,6 +1405,10 @@ function validateHouseholdPageSlots(slots, registry) {
           errors.push(`${service.page}: missing data-slot="request-form" on canonical household form`);
         }
       }
+    }
+
+    if (slotEntry.advisoryCards && !html.includes('data-slot="service-advisory"')) {
+      errors.push(`${service.page}: missing data-slot="service-advisory" for advisoryCards`);
     }
 
     for (const zone of policy?.requiredSyncZones ?? []) {
@@ -1404,6 +1465,18 @@ function validateHouseholdPageSlots(slots, registry) {
       continue;
     }
 
+    if (slotEntry.routingHint) {
+      validateHouseholdRoutingHint(slotEntry.routingHint, `${context}.routingHint`);
+      const routingAnchor = sharedCardConfig.routingHint?.anchor;
+      if (
+        sharedCardConfig.routingHint?.pages?.includes(page) &&
+        routingAnchor &&
+        !html.includes(`data-slot="${routingAnchor}"`)
+      ) {
+        errors.push(`${page}: missing data-slot="${routingAnchor}" for routingHint`);
+      }
+    }
+
     for (const className of sharedCardConfig.requiredBodyClasses ?? []) {
       if (!bodyClasses.has(className)) {
         errors.push(`${page}: missing body class ${className}`);
@@ -1415,6 +1488,15 @@ function validateHouseholdPageSlots(slots, registry) {
     }
 
     validateHouseholdCardSections(slotEntry.cardSections, page, publicServicePages, html);
+
+    const routingConfig = sharedCardConfig.routingHint ?? null;
+    if (routingConfig?.pages?.includes(page)) {
+      if (!slotEntry.routingHint) {
+        errors.push(`${context}: missing required routingHint`);
+      } else if (routingConfig.anchor && !html.includes(`data-slot="${routingConfig.anchor}"`)) {
+        errors.push(`${page}: missing data-slot="${routingConfig.anchor}" for routingHint`);
+      }
+    }
 
     for (const sectionName of branchContract?.requiredCardSections ?? []) {
       if (!slotEntry.cardSections?.[sectionName]) {

@@ -1009,40 +1009,107 @@ const Components = {
       .join('');
   },
 
+  renderHouseholdRoutingHint(section) {
+    if (!section || !Array.isArray(section.cards) || section.cards.length === 0) return '';
+
+    return `
+      <div class="rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-sm">
+        <div class="household-section-intro household-section-intro--left">
+          <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-brand-blue">${escapeHtml(section.badge || 'Как выбрать страницу')}</span>
+          <h3 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(section.title || '')}</h3>
+          <p class="mt-3 max-w-3xl text-slate-600">${escapeHtml(section.description || '')}</p>
+        </div>
+        <div class="mt-6 household-card-grid household-card-grid--proof">
+          ${this.renderHouseholdProofCards(section.cards)}
+        </div>
+      </div>
+    `;
+  },
+
+  renderHouseholdAdvisorySection(section) {
+    if (!section) return '';
+
+    const renderGuidanceList = (items, tone, icon, title) => {
+      if (!Array.isArray(items) || items.length === 0) return '';
+      const cardTone = this.getHouseholdCardTone(tone);
+
+      return `
+        <article class="household-card household-card--proof ${cardTone.card}">
+          <div class="household-card__topline">
+            <span class="household-card__eyebrow ${cardTone.badge}">${escapeHtml(title)}</span>
+            <span class="household-card__icon"><i class="${escapeHtml(icon)}"></i></span>
+          </div>
+          <ul class="household-card__list">
+            ${items
+              .map(
+                (item) => `
+                  <li><i class="ri-check-line"></i><span>${escapeHtml(item)}</span></li>
+                `
+              )
+              .join('')}
+          </ul>
+        </article>
+      `;
+    };
+
+    return `
+      <div class="rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8 lg:p-10 shadow-sm">
+        <div class="household-section-intro household-section-intro--left">
+          <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-brand-orange">${escapeHtml(section.badge || 'Перед заявкой')}</span>
+          <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(section.title || '')}</h2>
+          <p class="mt-3 max-w-3xl text-slate-600">${escapeHtml(section.description || '')}</p>
+        </div>
+        <div class="mt-6 household-card-grid household-card-grid--proof">
+          ${renderGuidanceList(section.safeChecks, 'blue', 'ri-search-eye-line', 'Можно проверить самому')}
+          ${renderGuidanceList(section.dontDoList, 'slate', 'ri-forbid-2-line', 'Лучше не делать')}
+          ${renderGuidanceList(section.urgencySignals, 'orange', 'ri-alarm-warning-line', 'Когда уже лучше не тянуть')}
+        </div>
+      </div>
+    `;
+  },
+
   hydrateHouseholdCardSections(slotEntry, serviceMap, cardPresets) {
     const sections = slotEntry?.cardSections;
-    if (!sections || typeof sections !== 'object') return;
+    if (sections && typeof sections === 'object') {
+      if (sections.categoryCards) {
+        this.updateHouseholdCardSectionCopy('category-cards', sections.categoryCards);
+        const container = document.querySelector('[data-slot="category-cards"]');
+        if (container) {
+          container.className = 'household-card-grid household-card-grid--services';
+          container.innerHTML = this.renderHouseholdServiceCards(
+            sections.categoryCards.pages || [],
+            serviceMap,
+            cardPresets
+          );
+        }
+      }
 
-    if (sections.categoryCards) {
-      this.updateHouseholdCardSectionCopy('category-cards', sections.categoryCards);
-      const container = document.querySelector('[data-slot="category-cards"]');
-      if (container) {
-        container.className = 'household-card-grid household-card-grid--services';
-        container.innerHTML = this.renderHouseholdServiceCards(
-          sections.categoryCards.pages || [],
-          serviceMap,
-          cardPresets
-        );
+      if (sections.trustCards) {
+        this.updateHouseholdCardSectionCopy('trust-cards', sections.trustCards);
+        const container = document.querySelector('[data-slot="trust-cards"]');
+        if (container) {
+          container.className = 'household-card-grid household-card-grid--trust';
+          container.innerHTML = this.renderHouseholdTrustCards(sections.trustCards.cards || []);
+        }
+      }
+
+      if (sections.contactChannels) {
+        this.updateHouseholdCardSectionCopy('contact-channels', sections.contactChannels);
+        const container = document.querySelector('[data-slot="contact-channels"]');
+        if (container) {
+          container.className = 'household-card-grid household-card-grid--contact';
+          container.innerHTML = this.renderHouseholdContactCards(
+            sections.contactChannels.cards || []
+          );
+        }
       }
     }
 
-    if (sections.trustCards) {
-      this.updateHouseholdCardSectionCopy('trust-cards', sections.trustCards);
-      const container = document.querySelector('[data-slot="trust-cards"]');
+    if (slotEntry?.routingHint) {
+      const container = document.querySelector('[data-slot="routing-hint"]');
       if (container) {
-        container.className = 'household-card-grid household-card-grid--trust';
-        container.innerHTML = this.renderHouseholdTrustCards(sections.trustCards.cards || []);
-      }
-    }
-
-    if (sections.contactChannels) {
-      this.updateHouseholdCardSectionCopy('contact-channels', sections.contactChannels);
-      const container = document.querySelector('[data-slot="contact-channels"]');
-      if (container) {
-        container.className = 'household-card-grid household-card-grid--contact';
-        container.innerHTML = this.renderHouseholdContactCards(
-          sections.contactChannels.cards || []
-        );
+        container.className = 'mt-6';
+        container.innerHTML = this.renderHouseholdRoutingHint(slotEntry.routingHint);
       }
     }
   },
@@ -1225,6 +1292,16 @@ const Components = {
       .join('');
   },
 
+  hydrateHouseholdServiceAdvisory(slotEntry, anchorForm) {
+    if (!slotEntry?.advisoryCards || !anchorForm) return;
+
+    const container = document.querySelector('[data-slot="service-advisory"]');
+    if (!container) return;
+
+    container.className = 'mt-8 mb-8';
+    container.innerHTML = this.renderHouseholdAdvisorySection(slotEntry.advisoryCards);
+  },
+
   hydrateHouseholdServiceProofLayer(service, proofLayer, anchorForm) {
     const defaults = proofLayer?.serviceDefaults;
     if (!defaults || !anchorForm) return;
@@ -1364,6 +1441,7 @@ const Components = {
 
     this.hydrateHouseholdServiceSchema(service, pageMetadata, slotEntry);
     this.hydrateHouseholdFaq(slotEntry);
+    this.hydrateHouseholdServiceAdvisory(slotEntry, anchorForm);
     this.hydrateHouseholdServiceProofLayer(service, proofLayer, anchorForm);
     this.hydrateHouseholdRelatedLinks(service, serviceMap, cardPresets, anchorForm);
   },

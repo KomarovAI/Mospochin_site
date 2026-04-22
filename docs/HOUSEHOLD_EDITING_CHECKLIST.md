@@ -34,6 +34,8 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 ## Change Household Card Sections
 
 - Edit `data/household-page-slots.json` first for `categoryCards`, `trustCards`, and `contactChannels`.
+- Edit `data/household-page-slots.json` for `routingHint` on `bytovaya-index.html` and `bytovaya-uslugi.html`.
+- Edit `data/household-page-slots.json` for `advisoryCards` on public household service pages when you need to change safe checks, "don't do" guidance, or urgency signals.
 - Keep card tones and CTA labels aligned with `data/household-card-presets.json`.
 - Prefer registry-driven category cards over handwritten HTML service-card copy.
 

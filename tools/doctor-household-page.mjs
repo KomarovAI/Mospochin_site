@@ -64,6 +64,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
   if (pageType === 'branch-card-page') {
     return {
       cardSections: 'Edit data/household-page-slots.json for branch card sections',
+      routingHint: 'Edit data/household-page-slots.json for branch routing guidance',
       proofSections: 'Edit data/household-proof-layer.json for branch proof/review/case sections',
       shell: `Edit ${page} only for unique layout or narrative copy`,
     };
@@ -83,6 +84,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
   return {
     faq: `npm run household:set-faq -- --page ${page} ...`,
     formHints: `npm run household:set-form-hints -- --page ${page} ...`,
+    advisory: `Edit data/household-page-slots.json for ${page} advisoryCards`,
     related: `npm run household:set-related -- --page ${page} ...`,
     proof: `npm run household:set-proof -- --page ${page} --section <section> ...`,
     metadata: `npm run household:set-metadata -- --page ${page} ...`,
@@ -189,6 +191,15 @@ function runDoctor(page) {
         const anchor = sharedCardConfig.anchorMap?.[sectionName];
         if (anchor && !hasSlotAnchor(html, anchor)) {
           issues.push(`Branch contract missing data-slot="${anchor}"`);
+        }
+      }
+
+      const routingConfig = sharedCardConfig.routingHint ?? null;
+      if (routingConfig?.pages?.includes(page)) {
+        if (!slotEntry.routingHint || typeof slotEntry.routingHint !== 'object') {
+          issues.push('Branch household page is missing routingHint');
+        } else if (!hasSlotAnchor(html, routingConfig.anchor)) {
+          issues.push(`Missing data-slot="${routingConfig.anchor}" for routingHint`);
         }
       }
     }
@@ -306,6 +317,12 @@ function runDoctor(page) {
       if (!serviceProofDefaults?.objectionCards || typeof serviceProofDefaults.objectionCards !== 'object') {
         issues.push('Proof layer missing serviceDefaults.objectionCards');
       }
+
+      if (slotEntry?.advisoryCards) {
+        if (!hasSlotAnchor(html, 'service-advisory')) {
+          issues.push('Missing data-slot="service-advisory" for advisoryCards');
+        }
+      }
     }
   }
 
@@ -335,6 +352,8 @@ function runDoctor(page) {
       ? {
           faqCount: Array.isArray(slotEntry.faq) ? slotEntry.faq.length : 0,
           hasFormHints: Boolean(slotEntry.formHints),
+          hasRoutingHint: Boolean(slotEntry.routingHint),
+          hasAdvisoryCards: Boolean(slotEntry.advisoryCards),
           cardSections: Object.keys(slotEntry.cardSections ?? {}),
         }
       : null,
@@ -393,7 +412,13 @@ try {
     console.log(`- body classes: ${summary.bodyClasses.length ? 'ok' : 'missing'}`);
     console.log(`- registry: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.registry ? 'ok' : 'missing'}`);
     console.log(`- taxonomy: ${summary.pageType === 'branch-card-page' ? 'n/a' : summary.taxonomy ? `ok (${summary.taxonomy.family})` : 'missing'}`);
-    console.log(`- slots: ${summary.slots ? `ok (${summary.slots.cardSections.length} card sections)` : 'missing'}`);
+    console.log(
+      `- slots: ${
+        summary.slots
+          ? `ok (${summary.slots.cardSections.length} card sections, advisory=${summary.slots.hasAdvisoryCards ? 'yes' : 'no'}, routing=${summary.slots.hasRoutingHint ? 'yes' : 'no'})`
+          : 'missing'
+      }`
+    );
     if (summary.proofLayer) {
       if (summary.pageType === 'branch-card-page') {
         console.log(
