@@ -20,7 +20,8 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 
 - Edit `data/household-proof-layer.json` first.
 - Keep promises concrete: diagnosis, price before work, act, warranty, timing, and next step.
-- Keep review and proof cards focused on one confidence signal each.
+- Keep review, proof, objection, and case cards focused on one confidence signal each.
+- Keep `priceClarity` items factual: symptom, diagnosis, decision, and explicit repair viability.
 - Do not move shadow pages or speculative offers into visible proof content.
 
 ## Change Household Card Sections

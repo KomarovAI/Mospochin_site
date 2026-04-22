@@ -620,6 +620,60 @@ function validateHouseholdReviewCards(cards, context, allowedTones) {
   });
 }
 
+function validateHouseholdCaseCards(cards, context, allowedTones) {
+  if (!Array.isArray(cards) || cards.length === 0) {
+    errors.push(`${context}.cards must be a non-empty array`);
+    return;
+  }
+
+  cards.forEach((card, index) => {
+    const cardContext = `${context}.cards[${index}]`;
+    if (!isPlainObject(card)) {
+      errors.push(`${cardContext} must be an object`);
+      return;
+    }
+
+    validateCardTone(card.tone, cardContext, allowedTones);
+
+    for (const fieldName of ['badge', 'title', 'description', 'result', 'meta']) {
+      if (!isNonEmptyString(card[fieldName])) {
+        errors.push(`${cardContext}.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    if (card.icon != null && !isNonEmptyString(card.icon)) {
+      errors.push(`${cardContext}.icon must be a non-empty string when present`);
+    }
+  });
+}
+
+function validateHouseholdProofStrip(sectionConfig, context, allowedTones) {
+  if (!validateHouseholdProofCopy(sectionConfig, context)) {
+    errors.push(`${context}.items must be a non-empty array`);
+    return;
+  }
+
+  if (!Array.isArray(sectionConfig.items) || sectionConfig.items.length === 0) {
+    errors.push(`${context}.items must be a non-empty array`);
+    return;
+  }
+
+  sectionConfig.items.forEach((item, index) => {
+    const itemContext = `${context}.items[${index}]`;
+    if (!isPlainObject(item)) {
+      errors.push(`${itemContext} must be an object`);
+      return;
+    }
+
+    validateCardTone(item.tone, itemContext, allowedTones);
+    for (const fieldName of ['value', 'label', 'description']) {
+      if (!isNonEmptyString(item[fieldName])) {
+        errors.push(`${itemContext}.${fieldName} must be a non-empty string`);
+      }
+    }
+  });
+}
+
 function validateHouseholdProofLayer(proofLayer) {
   if (!isPlainObject(proofLayer)) {
     errors.push(`${HOUSEHOLD_PROOF_LAYER_DATA}: top-level object is required`);
@@ -629,38 +683,26 @@ function validateHouseholdProofLayer(proofLayer) {
   const allowedTones = new Set(householdCardPresets?.allowedTones ?? []);
   const branchPages = new Set(getHouseholdSharedCardConfig()?.branchPages ?? []);
   const anchorMap = getHouseholdSharedCardConfig()?.anchorMap ?? {};
-  const allowedBranchSections = new Set(['proofCards', 'reviewCards']);
+  const allowedBranchSections = new Set(['proofCards', 'reviewCards', 'caseCards', 'objectionCards']);
 
   if (!isPlainObject(proofLayer.serviceDefaults)) {
     errors.push(`${HOUSEHOLD_PROOF_LAYER_DATA}.serviceDefaults must be an object`);
   } else {
     const defaults = proofLayer.serviceDefaults;
     const slaContext = `${HOUSEHOLD_PROOF_LAYER_DATA}.serviceDefaults.slaStrip`;
+    const priceClarityContext = `${HOUSEHOLD_PROOF_LAYER_DATA}.serviceDefaults.priceClarity`;
     const cardsContext = `${HOUSEHOLD_PROOF_LAYER_DATA}.serviceDefaults.proofCards`;
+    const objectionContext = `${HOUSEHOLD_PROOF_LAYER_DATA}.serviceDefaults.objectionCards`;
 
-    if (!validateHouseholdProofCopy(defaults.slaStrip, slaContext)) {
-      errors.push(`${slaContext}.items must be a non-empty array`);
-    } else if (!Array.isArray(defaults.slaStrip.items) || defaults.slaStrip.items.length === 0) {
-      errors.push(`${slaContext}.items must be a non-empty array`);
-    } else {
-      defaults.slaStrip.items.forEach((item, index) => {
-        const itemContext = `${slaContext}.items[${index}]`;
-        if (!isPlainObject(item)) {
-          errors.push(`${itemContext} must be an object`);
-          return;
-        }
-
-        validateCardTone(item.tone, itemContext, allowedTones);
-        for (const fieldName of ['value', 'label', 'description']) {
-          if (!isNonEmptyString(item[fieldName])) {
-            errors.push(`${itemContext}.${fieldName} must be a non-empty string`);
-          }
-        }
-      });
-    }
+    validateHouseholdProofStrip(defaults.slaStrip, slaContext, allowedTones);
+    validateHouseholdProofStrip(defaults.priceClarity, priceClarityContext, allowedTones);
 
     if (validateHouseholdProofCopy(defaults.proofCards, cardsContext)) {
       validateHouseholdProofCards(defaults.proofCards.cards, cardsContext, allowedTones);
+    }
+
+    if (validateHouseholdProofCopy(defaults.objectionCards, objectionContext)) {
+      validateHouseholdProofCards(defaults.objectionCards.cards, objectionContext, allowedTones);
     }
   }
 
@@ -713,6 +755,14 @@ function validateHouseholdProofLayer(proofLayer) {
 
       if (sectionName === 'reviewCards') {
         validateHouseholdReviewCards(entry[sectionName].cards, sectionContext, allowedTones);
+      }
+
+      if (sectionName === 'caseCards') {
+        validateHouseholdCaseCards(entry[sectionName].cards, sectionContext, allowedTones);
+      }
+
+      if (sectionName === 'objectionCards') {
+        validateHouseholdProofCards(entry[sectionName].cards, sectionContext, allowedTones);
       }
     });
   });

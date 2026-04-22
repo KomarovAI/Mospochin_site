@@ -189,8 +189,16 @@ function runDoctor(page) {
         issues.push('Proof layer missing serviceDefaults.slaStrip');
       }
 
+      if (!serviceProofDefaults?.priceClarity || typeof serviceProofDefaults.priceClarity !== 'object') {
+        issues.push('Proof layer missing serviceDefaults.priceClarity');
+      }
+
       if (!serviceProofDefaults?.proofCards || typeof serviceProofDefaults.proofCards !== 'object') {
         issues.push('Proof layer missing serviceDefaults.proofCards');
+      }
+
+      if (!serviceProofDefaults?.objectionCards || typeof serviceProofDefaults.objectionCards !== 'object') {
+        issues.push('Proof layer missing serviceDefaults.objectionCards');
       }
     }
   }
@@ -235,7 +243,9 @@ function runDoctor(page) {
       : isServicePage && !registryEntry?.isShadow
         ? {
             hasSlaStrip: Boolean(serviceProofDefaults?.slaStrip),
+            hasPriceClarity: Boolean(serviceProofDefaults?.priceClarity),
             hasProofCards: Boolean(serviceProofDefaults?.proofCards),
+            hasObjectionCards: Boolean(serviceProofDefaults?.objectionCards),
             requestAnchorPresent: hasSlotAnchor(html, 'request-form'),
           }
         : null,
@@ -278,7 +288,10 @@ try {
       } else {
         console.log(
           `- proof layer: ${
-            summary.proofLayer.hasSlaStrip && summary.proofLayer.hasProofCards
+            summary.proofLayer.hasSlaStrip &&
+            summary.proofLayer.hasPriceClarity &&
+            summary.proofLayer.hasProofCards &&
+            summary.proofLayer.hasObjectionCards
               ? 'ok (service defaults ready)'
               : 'missing service defaults'
           }`

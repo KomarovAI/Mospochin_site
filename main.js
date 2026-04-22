@@ -896,6 +896,27 @@ const Components = {
       .join('');
   },
 
+  renderHouseholdCaseCards(cards) {
+    return (cards || [])
+      .map((card) => {
+        const tone = this.getHouseholdCardTone(card.tone || 'slate');
+
+        return `
+          <article class="household-card household-card--case ${tone.card}">
+            <div class="household-card__topline">
+              <span class="household-card__eyebrow ${tone.badge}">${escapeHtml(card.badge || 'Кейс')}</span>
+              <span class="household-card__icon"><i class="${escapeHtml(card.icon || 'ri-file-list-3-line')}"></i></span>
+            </div>
+            <h3 class="household-card__title">${escapeHtml(card.title || '')}</h3>
+            <p class="household-card__description">${escapeHtml(card.description || '')}</p>
+            ${card.result ? `<p class="household-card__meta">${escapeHtml(card.result)}</p>` : ''}
+            ${card.meta ? `<p class="household-card__case-meta">${escapeHtml(card.meta)}</p>` : ''}
+          </article>
+        `;
+      })
+      .join('');
+  },
+
   renderHouseholdSlaStrip(sectionConfig) {
     const items = Array.isArray(sectionConfig?.items) ? sectionConfig.items : [];
     if (!items.length) return '';
@@ -1030,6 +1051,24 @@ const Components = {
       if (container) {
         container.className = 'household-card-grid household-card-grid--reviews';
         container.innerHTML = this.renderHouseholdReviewCards(sections.reviewCards.cards || []);
+      }
+    }
+
+    if (sections.caseCards) {
+      this.updateHouseholdCardSectionCopy('case-cards', sections.caseCards);
+      const container = document.querySelector('[data-slot="case-cards"]');
+      if (container) {
+        container.className = 'household-card-grid household-card-grid--cases';
+        container.innerHTML = this.renderHouseholdCaseCards(sections.caseCards.cards || []);
+      }
+    }
+
+    if (sections.objectionCards) {
+      this.updateHouseholdCardSectionCopy('objection-cards', sections.objectionCards);
+      const container = document.querySelector('[data-slot="objection-cards"]');
+      if (container) {
+        container.className = 'household-card-grid household-card-grid--proof';
+        container.innerHTML = this.renderHouseholdProofCards(sections.objectionCards.cards || []);
       }
     }
   },
@@ -1190,6 +1229,7 @@ const Components = {
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="rounded-[2rem] border border-slate-200 bg-slate-50/90 p-6 sm:p-8 lg:p-10 shadow-sm">
           ${this.renderHouseholdSlaStrip(defaults.slaStrip)}
+          ${defaults.priceClarity ? `<div class="mt-8">${this.renderHouseholdSlaStrip(defaults.priceClarity)}</div>` : ''}
           <div class="mt-8 flex flex-wrap items-center gap-2">
             <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-3 py-1.5 text-sm font-semibold text-brand-orange">По категории ${escapeHtml(service.uiLabel)}</span>
             ${this.renderHouseholdBadgeList((service.primarySymptoms || []).slice(0, 3), 'slate')}
@@ -1202,6 +1242,20 @@ const Components = {
           <div class="mt-8 household-card-grid household-card-grid--proof">
             ${this.renderHouseholdProofCards(defaults.proofCards?.cards || [])}
           </div>
+          ${
+            defaults.objectionCards
+              ? `
+                <div class="mt-10 text-center">
+                  <span class="inline-flex items-center rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">${escapeHtml(defaults.objectionCards.badge || 'Что ещё важно')}</span>
+                  <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(defaults.objectionCards.title || '')}</h2>
+                  <p class="mt-3 text-slate-600">${escapeHtml(defaults.objectionCards.description || '')}</p>
+                </div>
+                <div class="mt-8 household-card-grid household-card-grid--proof">
+                  ${this.renderHouseholdProofCards(defaults.objectionCards.cards || [])}
+                </div>
+              `
+              : ''
+          }
         </div>
       </div>
     `;

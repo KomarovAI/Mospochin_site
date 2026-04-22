@@ -6,7 +6,7 @@ This document defines the maintenance contract for household service pages.
 
 - `data/household-services.json` is the canonical registry for household service-page intent.
 - `data/household-page-slots.json` is the slot-content layer for household service pages.
-- `data/household-proof-layer.json` is the shared trust/conversion layer for service proof strips and branch-level proof/review sections.
+- `data/household-proof-layer.json` is the shared trust/conversion layer for service proof strips, price-clarity strips, objection cards, and branch-level proof/review/case sections.
 - `data/household-taxonomy.json` is the semantic normalization layer for device families, allowed symptoms, and brand pools.
 - `data/household-page-policy.json` is the machine-readable page contract for scaffold and validation.
 - `data/household-branch.json` remains the shared branch shell layer for top bar, menus, footer links, and branch-level navigation. It is not a route-strip content source anymore.
@@ -49,6 +49,10 @@ Public household service pages currently use:
 - `data-slot="request-form"` on the canonical `.telegram-form`
 - slot runtime content from `data/household-page-slots.json` for FAQ and request-form copy
 - runtime-generated proof content from `data/household-proof-layer.json` after the request form
+  - `slaStrip`
+  - `priceClarity`
+  - `proofCards`
+  - `objectionCards`
 
 ## Factory Contract
 

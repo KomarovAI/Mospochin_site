@@ -1120,6 +1120,10 @@ details summary::-webkit-details-marker {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+.household-card-grid--cases {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
 .household-card-grid--related {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
@@ -1306,6 +1310,13 @@ details summary::-webkit-details-marker {
 .household-card__reviewer span {
   color: #64748b;
   font-size: 0.85rem;
+}
+
+.household-card__case-meta {
+  margin-top: 0.85rem;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .household-card__stars {
