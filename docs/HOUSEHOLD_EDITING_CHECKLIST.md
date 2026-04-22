@@ -26,6 +26,7 @@ Use this checklist before changing household pages through Codex/LLM workflows.
 
 - Edit `data/household-branch.json`.
 - Do not duplicate branch shell content into each service page.
+- Do not reintroduce household `routeStrips`; branch-level fast-route content is no longer part of the household contract.
 
 ## Add a New Household Service Page
 

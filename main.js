@@ -149,94 +149,6 @@ const DEFAULT_HOUSEHOLD_BRANCH = Object.freeze({
     { href: 'bytovaya-about.html', label: 'О компании' },
     { href: 'bytovaya-contact.html', label: 'Контакты' },
   ],
-  routeStrips: {
-    index: {
-      badge: 'БЫСТРЫЙ МАРШРУТ',
-      title: 'Если уже знаете симптом, переходите сразу',
-      description:
-        'Этот хаб должен быстро уточнять бытовой сценарий. Каждая карточка ведёт в точную сервисную страницу без смешения разных типов техники.',
-      action: {
-        href: 'bytovaya-uslugi.html',
-        label: 'Полный каталог услуг',
-        icon: 'ri-arrow-right-line',
-      },
-      cards: [
-        {
-          href: 'stiralnye-mashiny.html',
-          title: 'Не сливает',
-          description: 'Стиральная машина: насос, фильтр, слив, отжим',
-        },
-        {
-          href: 'holodilniki.html',
-          title: 'Не морозит',
-          description: 'Холодильник: компрессор, датчики, утечка, оттайка',
-        },
-        {
-          href: 'plity.html',
-          title: 'Не греет',
-          description: 'Плита или духовка: конфорки, ТЭН, переключатели',
-        },
-        {
-          href: 'stiralnye-mashiny.html',
-          title: 'Шумит',
-          description: 'Стиральная машина: подшипники, амортизаторы, вибрация',
-        },
-        {
-          href: 'posudomoyki.html',
-          title: 'Течёт',
-          description: 'Посудомойка: шланги, насос, поддон, уплотнение',
-        },
-        {
-          href: 'microwaves.html',
-          title: 'Не включается',
-          description: 'Микроволновка: питание, предохранители, плата',
-        },
-      ],
-    },
-    uslugi: {
-      badge: 'БЫСТРЫЙ ВЫБОР',
-      title: 'Начните с симптома, если техника уже встала',
-      description:
-        'Сначала симптом, потом точная страница услуги. Ниже только бытовые маршруты без компьютеров, роутеров и размытых объединений.',
-      action: {
-        href: '#full-services',
-        label: 'Открыть полный список',
-        icon: 'ri-arrow-down-line',
-      },
-      cards: [
-        {
-          href: 'stiralnye-mashiny.html',
-          title: 'Не сливает',
-          description: 'Стиральная машина: слив, насос, фильтр, прессостат',
-        },
-        {
-          href: 'holodilniki.html',
-          title: 'Не морозит',
-          description: 'Холодильник: компрессор, термостат, датчики, утечка',
-        },
-        {
-          href: 'plity.html',
-          title: 'Не греет',
-          description: 'Плита и духовка: конфорки, ТЭН, силовые элементы',
-        },
-        {
-          href: 'stiralnye-mashiny.html',
-          title: 'Шумит',
-          description: 'Стиральная машина: барабан, подшипники, амортизаторы',
-        },
-        {
-          href: 'posudomoyki.html',
-          title: 'Течёт',
-          description: 'Посудомойка: шланги, поддон, насос, уплотнители',
-        },
-        {
-          href: 'microwaves.html',
-          title: 'Не включается',
-          description: 'Микроволновка: питание, дверь, плата, предохранители',
-        },
-      ],
-    },
-  },
 });
 const RESTAURANT_PAGES = new Set([
   'index',
@@ -746,52 +658,40 @@ const Components = {
   },
 
   initBranchRouteStrips() {
-    const routeStripSources = [
-      {
-        sections: document.querySelectorAll('[data-restaurant-route-strip]'),
-        getRouteKey: (section) => section.dataset.restaurantRouteStrip,
-        routeStrips: this.getRestaurantBranch().routeStrips || {},
-      },
-      {
-        sections: document.querySelectorAll('[data-household-route-strip]'),
-        getRouteKey: (section) => section.dataset.householdRouteStrip,
-        routeStrips: this.getHouseholdBranch().routeStrips || {},
-      },
-    ];
+    const sections = document.querySelectorAll('[data-restaurant-route-strip]');
+    const routeStrips = this.getRestaurantBranch().routeStrips || {};
 
-    routeStripSources.forEach(({ sections, getRouteKey, routeStrips }) => {
-      sections.forEach((section) => {
-        const routeKey = getRouteKey(section);
-        const routeStrip = routeStrips[routeKey];
-        if (!routeStrip) return;
+    sections.forEach((section) => {
+      const routeKey = section.dataset.restaurantRouteStrip;
+      const routeStrip = routeStrips[routeKey];
+      if (!routeStrip) return;
 
-        const badge = section.querySelector('[data-route-strip-badge]');
-        const title = section.querySelector('[data-route-strip-title]');
-        const description = section.querySelector('[data-route-strip-description]');
-        const action = section.querySelector('[data-route-strip-action]');
-        const actionLabel = section.querySelector('[data-route-strip-action-label]');
-        const actionIcon = section.querySelector('[data-route-strip-action-icon]');
-        const grid = section.querySelector('[data-route-strip-grid]');
+      const badge = section.querySelector('[data-route-strip-badge]');
+      const title = section.querySelector('[data-route-strip-title]');
+      const description = section.querySelector('[data-route-strip-description]');
+      const action = section.querySelector('[data-route-strip-action]');
+      const actionLabel = section.querySelector('[data-route-strip-action-label]');
+      const actionIcon = section.querySelector('[data-route-strip-action-icon]');
+      const grid = section.querySelector('[data-route-strip-grid]');
 
-        if (badge) badge.textContent = routeStrip.badge;
-        if (title) title.textContent = routeStrip.title;
-        if (description) description.textContent = routeStrip.description;
-        if (action) action.setAttribute('href', routeStrip.action.href);
-        if (actionLabel) actionLabel.textContent = routeStrip.action.label;
-        if (actionIcon) actionIcon.className = routeStrip.action.icon;
-        if (grid) {
-          grid.innerHTML = routeStrip.cards
-            .map(
-              (card) => `
-                <a href="${card.href}" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                  <p class="text-sm font-bold text-brand-blue">${card.title}</p>
-                  <p class="mt-1 text-sm text-slate-500">${card.description}</p>
-                </a>
-              `
-            )
-            .join('');
-        }
-      });
+      if (badge) badge.textContent = routeStrip.badge;
+      if (title) title.textContent = routeStrip.title;
+      if (description) description.textContent = routeStrip.description;
+      if (action) action.setAttribute('href', routeStrip.action.href);
+      if (actionLabel) actionLabel.textContent = routeStrip.action.label;
+      if (actionIcon) actionIcon.className = routeStrip.action.icon;
+      if (grid) {
+        grid.innerHTML = routeStrip.cards
+          .map(
+            (card) => `
+              <a href="${card.href}" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                <p class="text-sm font-bold text-brand-blue">${card.title}</p>
+                <p class="mt-1 text-sm text-slate-500">${card.description}</p>
+              </a>
+            `
+          )
+          .join('');
+      }
     });
   },
 

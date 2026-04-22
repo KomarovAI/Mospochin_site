@@ -19,22 +19,12 @@ const HOUSEHOLD_PAGE_SLOTS_DATA = 'data/household-page-slots.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
 const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
 const LEGACY_FORM_FIELDS = ['message'];
-const BRANCH_ROUTE_STRIP_CONTRACTS = {
-  restaurant: {
-    dataFile: RESTAURANT_BRANCH_DATA,
-    selectorPrefix: 'data-restaurant-route-strip',
-    pages: {
-      'index.html': 'index',
-      'uslugi.html': 'uslugi',
-    },
-  },
-  household: {
-    dataFile: HOUSEHOLD_BRANCH_DATA,
-    selectorPrefix: 'data-household-route-strip',
-    pages: {
-      'bytovaya-index.html': 'index',
-      'bytovaya-uslugi.html': 'uslugi',
-    },
+const RESTAURANT_ROUTE_STRIP_CONTRACT = {
+  dataFile: RESTAURANT_BRANCH_DATA,
+  selectorPrefix: 'data-restaurant-route-strip',
+  pages: {
+    'index.html': 'index',
+    'uslugi.html': 'uslugi',
   },
 };
 const EXPECTED_BRANCH_BY_PAGE = {
@@ -249,29 +239,30 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
     errors.push(`${fileName}: use tel:+79990057172, found legacy tel:79990057172 link`);
   }
 
-  for (const contract of Object.values(BRANCH_ROUTE_STRIP_CONTRACTS)) {
-    const routeKey = contract.pages[fileName];
-    if (!routeKey) continue;
+  const routeKey = RESTAURANT_ROUTE_STRIP_CONTRACT.pages[fileName];
+  if (routeKey) {
+    const routeStrip = restaurantBranch?.routeStrips?.[routeKey];
+    if (routeStrip) {
+      if (!html.includes(`${RESTAURANT_ROUTE_STRIP_CONTRACT.selectorPrefix}="${routeKey}"`)) {
+        errors.push(
+          `${fileName}: missing ${RESTAURANT_ROUTE_STRIP_CONTRACT.selectorPrefix}="${routeKey}"`
+        );
+      }
 
-    const branchConfig = getBranchConfigForContract(contract);
-    const routeStrip = branchConfig?.routeStrips?.[routeKey];
-    if (!routeStrip) continue;
-
-    if (!html.includes(`${contract.selectorPrefix}="${routeKey}"`)) {
-      errors.push(`${fileName}: missing ${contract.selectorPrefix}="${routeKey}"`);
-    }
-
-    for (const attr of [
-      'data-route-strip-badge',
-      'data-route-strip-title',
-      'data-route-strip-description',
-      'data-route-strip-action',
-      'data-route-strip-action-label',
-      'data-route-strip-action-icon',
-      'data-route-strip-grid',
-    ]) {
-      if (!html.includes(attr)) {
-        errors.push(`${fileName}: missing ${attr} for ${contract.dataFile} router contract`);
+      for (const attr of [
+        'data-route-strip-badge',
+        'data-route-strip-title',
+        'data-route-strip-description',
+        'data-route-strip-action',
+        'data-route-strip-action-label',
+        'data-route-strip-action-icon',
+        'data-route-strip-grid',
+      ]) {
+        if (!html.includes(attr)) {
+          errors.push(
+            `${fileName}: missing ${attr} for ${RESTAURANT_ROUTE_STRIP_CONTRACT.dataFile} router contract`
+          );
+        }
       }
     }
   }
@@ -675,8 +666,8 @@ function validateBranchConfig(branchConfig, contract, expectedBranch) {
   }
 }
 
-validateBranchConfig(restaurantBranch, BRANCH_ROUTE_STRIP_CONTRACTS.restaurant, 'restaurant');
-validateBranchConfig(householdBranch, BRANCH_ROUTE_STRIP_CONTRACTS.household, 'household');
+validateBranchConfig(restaurantBranch, RESTAURANT_ROUTE_STRIP_CONTRACT, 'restaurant');
+validateBranchConfig(householdBranch, { dataFile: HOUSEHOLD_BRANCH_DATA, pages: {} }, 'household');
 validateHouseholdServicesRegistry(householdServicesRegistry);
 validateHouseholdPageSlots(householdPageSlots, householdServicesRegistry);
 

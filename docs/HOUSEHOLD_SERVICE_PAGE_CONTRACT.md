@@ -6,7 +6,7 @@ This document defines the maintenance contract for household service pages.
 
 - `data/household-services.json` is the canonical registry for household service-page intent.
 - `data/household-page-slots.json` is the slot-content layer for household service pages.
-- `data/household-branch.json` remains the shared branch shell layer for top bar, menus, footer links, and branch-level navigation.
+- `data/household-branch.json` remains the shared branch shell layer for top bar, menus, footer links, and branch-level navigation. It is not a route-strip content source anymore.
 - `data/page-metadata.json` remains the canonical SEO/branch metadata layer.
 - Page HTML keeps unique copy and layout, but should not become the only source of truth for symptoms, brand clusters, FAQ, request hints, or page identity.
 
