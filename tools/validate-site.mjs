@@ -15,6 +15,7 @@ const TELEGRAM_API_HOOK = 'deploy/post-activate.sh';
 const RESTAURANT_BRANCH_DATA = 'data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_DATA = 'data/household-branch.json';
 const HOUSEHOLD_SERVICES_DATA = 'data/household-services.json';
+const HOUSEHOLD_PAGE_SLOTS_DATA = 'data/household-page-slots.json';
 const VALID_BRANCHES = new Set(['restaurant', 'household', 'neutral']);
 const CANONICAL_FORM_FIELDS = ['name', 'phone', 'type', 'problem'];
 const LEGACY_FORM_FIELDS = ['message'];
@@ -78,6 +79,10 @@ const householdBranch = fs.existsSync(householdBranchPath)
 const householdServicesPath = path.join(SITE_ROOT, HOUSEHOLD_SERVICES_DATA);
 const householdServicesRegistry = fs.existsSync(householdServicesPath)
   ? JSON.parse(fs.readFileSync(householdServicesPath, 'utf8'))
+  : null;
+const householdPageSlotsPath = path.join(SITE_ROOT, HOUSEHOLD_PAGE_SLOTS_DATA);
+const householdPageSlots = fs.existsSync(householdPageSlotsPath)
+  ? JSON.parse(fs.readFileSync(householdPageSlotsPath, 'utf8'))
   : null;
 const sitemapXml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
 
@@ -468,6 +473,83 @@ function validateHouseholdServicesRegistry(registry) {
   });
 }
 
+function validateHouseholdPageSlots(slots, registry) {
+  if (!slots || typeof slots !== 'object') {
+    errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!slots.pages || typeof slots.pages !== 'object' || Array.isArray(slots.pages)) {
+    errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: pages must be an object keyed by html file`);
+    return;
+  }
+
+  const publicServices = (registry?.services ?? []).filter((service) => !service.isShadow);
+  const expectedPages = new Set(publicServices.map((service) => service.page));
+  const slotPages = new Set(Object.keys(slots.pages));
+
+  for (const page of expectedPages) {
+    if (!slotPages.has(page)) {
+      errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: missing slot entry for ${page}`);
+    }
+  }
+
+  slotPages.forEach((page) => {
+    if (!expectedPages.has(page)) {
+      errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: unexpected slot entry ${page}`);
+    }
+  });
+
+  for (const service of publicServices) {
+    const slotEntry = slots.pages[service.page];
+    const context = `${HOUSEHOLD_PAGE_SLOTS_DATA}: pages.${service.page}`;
+
+    if (!slotEntry || typeof slotEntry !== 'object') {
+      errors.push(`${context} must be an object`);
+      continue;
+    }
+
+    if (!Array.isArray(slotEntry.faq) || slotEntry.faq.length === 0) {
+      errors.push(`${context}.faq must be a non-empty array`);
+    } else {
+      slotEntry.faq.forEach((item, index) => {
+        if (!item || typeof item !== 'object') {
+          errors.push(`${context}.faq[${index}] must be an object`);
+          return;
+        }
+
+        if (!isNonEmptyString(item.question) || !isNonEmptyString(item.answer)) {
+          errors.push(`${context}.faq[${index}] must define question and answer`);
+        }
+      });
+    }
+
+    if (!slotEntry.formHints || typeof slotEntry.formHints !== 'object') {
+      errors.push(`${context}.formHints must be an object`);
+    } else {
+      if (!isArrayOfNonEmptyStrings(slotEntry.formHints.chips)) {
+        errors.push(`${context}.formHints.chips must be a non-empty array of strings`);
+      }
+
+      for (const fieldName of ['typePlaceholder', 'problemPlaceholder']) {
+        if (!isNonEmptyString(slotEntry.formHints[fieldName])) {
+          errors.push(`${context}.formHints.${fieldName} must be a non-empty string`);
+        }
+      }
+    }
+
+    const html = read(service.page);
+
+    if (!/<script[^>]+type="application\/ld\+json"[^>]+data-slot="service-schema"/i.test(html)) {
+      errors.push(`${service.page}: missing data-slot="service-schema" on Service JSON-LD script`);
+    }
+
+    if (!/<form[^>]+class="telegram-form\b[^"]*"[^>]+data-slot="request-form"/i.test(html)) {
+      errors.push(`${service.page}: missing data-slot="request-form" on canonical household form`);
+    }
+  }
+}
+
 function validateBranchConfig(branchConfig, contract, expectedBranch) {
   if (!branchConfig) return;
 
@@ -596,6 +678,7 @@ function validateBranchConfig(branchConfig, contract, expectedBranch) {
 validateBranchConfig(restaurantBranch, BRANCH_ROUTE_STRIP_CONTRACTS.restaurant, 'restaurant');
 validateBranchConfig(householdBranch, BRANCH_ROUTE_STRIP_CONTRACTS.household, 'household');
 validateHouseholdServicesRegistry(householdServicesRegistry);
+validateHouseholdPageSlots(householdPageSlots, householdServicesRegistry);
 
 const canonicalFormScriptPath = path.join(SITE_ROOT, CANONICAL_FORM_SCRIPT);
 const legacyFormScriptPath = path.join(SITE_ROOT, LEGACY_FORM_SCRIPT);
@@ -624,6 +707,10 @@ if (!fs.existsSync(householdBranchPath)) {
 
 if (!fs.existsSync(householdServicesPath)) {
   errors.push(`${HOUSEHOLD_SERVICES_DATA}: household services registry missing`);
+}
+
+if (!fs.existsSync(householdPageSlotsPath)) {
+  errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: household page slots missing`);
 }
 
 if (typeof runtimeConfig.telegramFormEndpoint !== 'string' || !runtimeConfig.telegramFormEndpoint.trim()) {

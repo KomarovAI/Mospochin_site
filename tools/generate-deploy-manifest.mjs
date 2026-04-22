@@ -15,6 +15,7 @@ const allowGeneratedVersion = process.argv.includes('--allow-generated-version')
 const SOURCE_EXTENSIONS = new Set(['.html', '.css', '.js']);
 const ALWAYS_INCLUDE = [
   '404.html',
+  'data/household-page-slots.json',
   'data/page-metadata.json',
   'data/household-services.json',
   'data/restaurant-branch.json',

@@ -13,6 +13,8 @@ const SITE_CONFIG = {
 const PAGE_METADATA_PATH = '/data/page-metadata.json';
 const RESTAURANT_BRANCH_PATH = '/data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_PATH = '/data/household-branch.json';
+const HOUSEHOLD_SERVICES_PATH = '/data/household-services.json';
+const HOUSEHOLD_PAGE_SLOTS_PATH = '/data/household-page-slots.json';
 const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
   subtitle: '🔧 Ресторанное оборудование',
   contactHint: '⚡ Работаем 24/7',
@@ -275,6 +277,8 @@ function getCurrentPageFile() {
 let pageMetadataPromise = null;
 let restaurantBranchPromise = null;
 let householdBranchPromise = null;
+let householdServicesPromise = null;
+let householdPageSlotsPromise = null;
 
 async function loadJson(path) {
   const response = await fetch(path, { cache: 'no-store' });
@@ -326,11 +330,50 @@ async function loadHouseholdBranchConfig() {
   return householdBranchPromise;
 }
 
+async function loadHouseholdServicesRegistry() {
+  if (!householdServicesPromise) {
+    householdServicesPromise = (async () => {
+      try {
+        return await loadJson(HOUSEHOLD_SERVICES_PATH);
+      } catch (error) {
+        console.error('Household services registry unavailable:', error.message);
+        return { services: [] };
+      }
+    })();
+  }
+
+  return householdServicesPromise;
+}
+
+async function loadHouseholdPageSlots() {
+  if (!householdPageSlotsPromise) {
+    householdPageSlotsPromise = (async () => {
+      try {
+        return await loadJson(HOUSEHOLD_PAGE_SLOTS_PATH);
+      } catch (error) {
+        console.error('Household page slots unavailable:', error.message);
+        return { pages: {} };
+      }
+    })();
+  }
+
+  return householdPageSlotsPromise;
+}
+
 function inferBranchFromSlug() {
   const page = getCurrentPageSlug();
   if (HOUSEHOLD_PAGES.has(page)) return 'household';
   if (RESTAURANT_PAGES.has(page)) return 'restaurant';
   return 'restaurant';
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
 
 function observeElements(selector, options, onIntersect) {
@@ -752,6 +795,225 @@ const Components = {
     });
   },
 
+  renderHouseholdBadgeList(items, tone = 'slate') {
+    const toneClasses = {
+      slate: 'bg-slate-100 text-slate-700',
+      orange: 'bg-brand-orange/10 text-brand-orange',
+      blue: 'bg-brand-blue/10 text-brand-blue',
+    };
+    const className = toneClasses[tone] || toneClasses.slate;
+
+    return items
+      .map(
+        (item) =>
+          `<span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium ${className}">${escapeHtml(item)}</span>`
+      )
+      .join('');
+  },
+
+  hydrateHouseholdServiceSchema(service, pageMetadata, slotEntry) {
+    const schemaScript = document.querySelector('script[data-slot="service-schema"]');
+    if (!schemaScript || !service) return;
+
+    const schemaDescription =
+      slotEntry?.serviceSchema?.description ||
+      pageMetadata?.description ||
+      `${service.serviceName} на дому в Москве и Московской области.`;
+    const areaServed =
+      slotEntry?.serviceSchema?.areaServed || 'Москва и Московская область';
+    const priceLabel =
+      slotEntry?.serviceSchema?.price || 'По согласованию после диагностики';
+
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: service.schemaName,
+      description: schemaDescription,
+      provider: {
+        '@type': 'LocalBusiness',
+        name: SITE_CONFIG.company.name,
+        telephone: `+${SITE_CONFIG.company.phoneLink}`,
+        url: 'https://mospochin.ru',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Москва',
+          addressCountry: 'RU',
+        },
+        openingHours: 'Mo-Su 00:00-24:00',
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '500',
+        },
+      },
+      areaServed: {
+        '@type': 'AdministrativeArea',
+        name: areaServed,
+      },
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'RUB',
+        price: priceLabel,
+        availability: 'https://schema.org/InStock',
+      },
+    };
+
+    schemaScript.textContent = JSON.stringify(schema, null, 2);
+  },
+
+  hydrateHouseholdRequestForm(service, slotEntry) {
+    const form = document.querySelector('form.telegram-form[data-slot="request-form"], form.telegram-form');
+    if (!form || !service || !slotEntry?.formHints) return null;
+
+    const typeInput = form.querySelector('input[name="type"]');
+    const problemInput = form.querySelector('input[name="problem"]');
+
+    if (typeInput && slotEntry.formHints.typePlaceholder) {
+      typeInput.setAttribute('placeholder', slotEntry.formHints.typePlaceholder);
+    }
+
+    if (problemInput && slotEntry.formHints.problemPlaceholder) {
+      problemInput.setAttribute('placeholder', slotEntry.formHints.problemPlaceholder);
+    }
+
+    let slotZone = form.querySelector('[data-household-slot-zone="request-overview"]');
+    if (!slotZone) {
+      slotZone = document.createElement('div');
+      slotZone.dataset.householdSlotZone = 'request-overview';
+      slotZone.className =
+        'mb-6 rounded-2xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5';
+      form.insertBefore(slotZone, form.firstElementChild);
+    }
+
+    const hintChips = Array.isArray(slotEntry.formHints.chips)
+      ? slotEntry.formHints.chips.filter(Boolean)
+      : [];
+
+    slotZone.innerHTML = `
+      <div class="mb-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Что полезно указать сразу</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          ${this.renderHouseholdBadgeList(hintChips, 'orange')}
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <p class="text-sm font-bold text-brand-blue">Частые симптомы</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            ${this.renderHouseholdBadgeList(service.primarySymptoms || [], 'slate')}
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-brand-blue">Частые бренды</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            ${this.renderHouseholdBadgeList(service.brandCluster || [], 'blue')}
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Пример описания: ${escapeHtml(service.formExample || '')}</p>
+    `;
+
+    return form;
+  },
+
+  hydrateHouseholdFaq(slotEntry) {
+    if (!Array.isArray(slotEntry?.faq) || slotEntry.faq.length === 0) return;
+
+    const faqSection = [...document.querySelectorAll('section')]
+      .filter((section) => section.querySelector('.faq-item'))
+      .at(-1);
+    if (!faqSection) return;
+
+    const faqContainer =
+      faqSection.querySelector('.space-y-4') ||
+      faqSection.querySelector('.space-y-5') ||
+      faqSection.querySelector('.grid') ||
+      faqSection.querySelector('.faq-item')?.parentElement;
+
+    if (!faqContainer) return;
+
+    faqContainer.className = 'space-y-4';
+    faqContainer.innerHTML = slotEntry.faq
+      .map(
+        (item, index) => `
+          <details class="faq-item bg-white p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}">
+            <summary class="font-bold text-brand-blue text-lg flex items-center justify-between">
+              <span>${escapeHtml(item.question)}</span>
+              <span class="text-brand-orange transition-transform duration-300">+</span>
+            </summary>
+            <p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p>
+          </details>
+        `
+      )
+      .join('');
+  },
+
+  hydrateHouseholdRelatedLinks(service, serviceMap, anchorForm) {
+    const relatedServices = (service.relatedPages || [])
+      .map((page) => serviceMap.get(page))
+      .filter((entry) => entry && !entry.isShadow);
+    if (!relatedServices.length || !anchorForm) return;
+
+    const requestSection = anchorForm.closest('section');
+    if (!requestSection) return;
+
+    let relatedSection = document.querySelector('[data-household-slot-generated="related-links"]');
+    if (!relatedSection) {
+      relatedSection = document.createElement('section');
+      relatedSection.dataset.householdSlotGenerated = 'related-links';
+      relatedSection.className = 'py-16 lg:py-20 bg-slate-50';
+      requestSection.insertAdjacentElement('afterend', relatedSection);
+    }
+
+    relatedSection.innerHTML = `
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <div class="text-center mb-8">
+            <span class="inline-block rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-semibold text-brand-blue">ДРУГИЕ БЫТОВЫЕ КАТЕГОРИИ</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Если проблема в другой технике</h2>
+            <p class="mt-3 text-slate-600">Ниже ближайшие бытовые категории, которые чаще всего смотрят рядом с этой страницей.</p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            ${relatedServices
+              .map(
+                (entry) => `
+                  <a href="${entry.page}" class="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
+                    <p class="text-base font-bold text-brand-blue">${escapeHtml(entry.uiLabel)}</p>
+                    <p class="mt-1 text-sm text-slate-500">${escapeHtml((entry.primarySymptoms || []).slice(0, 3).join(', '))}</p>
+                  </a>
+                `
+              )
+              .join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  async initHouseholdServiceSlots() {
+    const currentPage = getCurrentPageFile();
+    if (!this.isBytovaya() || currentPage.startsWith('bytovaya-')) return;
+
+    const [pageMetadata, serviceRegistry, pageSlots] = await Promise.all([
+      loadCurrentPageMetadata(),
+      loadHouseholdServicesRegistry(),
+      loadHouseholdPageSlots(),
+    ]);
+
+    const services = Array.isArray(serviceRegistry?.services) ? serviceRegistry.services : [];
+    const service = services.find((entry) => entry.page === currentPage && !entry.isShadow);
+    const slotEntry = pageSlots?.pages?.[currentPage];
+
+    if (!service || !slotEntry) return;
+
+    const serviceMap = new Map(services.map((entry) => [entry.page, entry]));
+    const anchorForm = this.hydrateHouseholdRequestForm(service, slotEntry);
+
+    this.hydrateHouseholdServiceSchema(service, pageMetadata, slotEntry);
+    this.hydrateHouseholdFaq(slotEntry);
+    this.hydrateHouseholdRelatedLinks(service, serviceMap, anchorForm);
+  },
+
   async init() {
     const header = document.getElementById('header-container');
     const footer = document.getElementById('footer-container');
@@ -782,6 +1044,7 @@ const Components = {
       node.setAttribute('href', `tel:${SITE_CONFIG.company.phoneLink}`);
     });
     this.initBranchRouteStrips();
+    await this.initHouseholdServiceSlots();
 
     document.body.classList.add(this.isBytovaya() ? 'branch-household' : 'branch-restaurant');
 
