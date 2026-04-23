@@ -445,25 +445,25 @@ function normalizeBrandGroupConfig(slotEntry) {
         key: 'premium',
         title: String(premium.title || 'Премиум'),
         description: String(premium.description || 'Премиальные марки'),
-        toneClass: 'border-purple-200 bg-purple-50/70 text-purple-700',
-        chipClass: 'bg-purple-100 text-purple-700',
+        toneClass: 'border-amber-200 bg-amber-50/80 text-amber-700',
+        chipClass: 'bg-amber-100 text-amber-700',
         items: premiumItems,
       },
       {
         key: 'mid',
         title: String(mid.title || 'Средние'),
         description: String(mid.description || 'Массовый средний сегмент'),
-        toneClass: 'border-blue-200 bg-blue-50/70 text-blue-700',
-        chipClass: 'bg-blue-100 text-blue-700',
+        toneClass: 'border-sky-200 bg-sky-50/80 text-sky-700',
+        chipClass: 'bg-sky-100 text-sky-700',
         items: midItems,
       },
     ],
   };
 }
 
-function renderBrandGroupChip(item, chipClass, revealTone = 'blue') {
+function renderBrandGroupChip(item, chipClass, revealTone = 'mid') {
   return `<span class="inline-flex items-center gap-2 rounded-2xl border border-white/80 px-3 py-2 text-sm font-semibold shadow-sm ${chipClass}">
-      <i class="${revealTone === 'purple' ? 'ri-flashlight-line text-purple-500' : 'ri-check-line text-blue-500'} text-base"></i>
+      <i class="${revealTone === 'premium' ? 'ri-shield-star-line text-amber-600' : 'ri-tools-line text-sky-600'} text-base"></i>
       <span class="text-brand-blue leading-none">${escapeHtml(item.nameEn)}</span>
       <span class="text-xs font-medium text-slate-500 leading-none">${escapeHtml(item.nameRu)}</span>
     </span>`;
@@ -474,10 +474,11 @@ function renderPremiumBrandCard(item, index) {
   const note = item.serviceNote || 'Сложная автоматика и точная диагностика без лишних экспериментов.';
 
   return `<article class="scroll-reveal" data-delay="${(index % 8) + 1}">
-      <div class="card-brand bg-gradient-to-br from-white via-white to-purple-50 p-5 rounded-3xl shadow-sm border border-purple-200 h-full group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-purple-300">
-        <div class="flex items-center justify-between mb-4">
-          <span class="inline-flex items-center rounded-full bg-purple-100 text-purple-700 px-3 py-1 text-xs font-bold uppercase tracking-wide">${escapeHtml(label)}</span>
-          <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white border border-purple-200 text-sm font-bold text-purple-500">${index + 1}</span>
+      <div class="card-brand relative overflow-hidden bg-white p-5 rounded-3xl shadow-sm border border-slate-200 h-full group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-300">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500"></div>
+        <div class="flex items-center justify-between mb-4 mt-1">
+          <span class="inline-flex items-center rounded-full bg-amber-100 text-amber-700 px-3 py-1 text-xs font-bold uppercase tracking-wide">${escapeHtml(label)}</span>
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-sm font-bold text-brand-blue">${index + 1}</span>
         </div>
         <h3 class="text-lg lg:text-xl font-display font-extrabold text-brand-blue leading-tight">${escapeHtml(item.nameEn)}</h3>
         <p class="mt-1 text-sm font-semibold text-slate-500">${escapeHtml(item.nameRu)}</p>
@@ -500,57 +501,62 @@ export function renderHouseholdBrandGroups(slotEntry) {
   const premiumShowcase = premiumSegment.items.slice(0, 8);
   const premiumCatalog = premiumSegment.items.slice(8);
 
-  return `<section id="brands" data-sync-zone="brand-groups" class="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white">
+  return `<section id="brands" data-sync-zone="brand-groups" class="py-20 lg:py-28 bg-gradient-to-b from-slate-100 to-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white/90 p-6 sm:p-8 lg:p-10 shadow-sm">
-          <div class="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-purple-200/30 blur-3xl"></div>
-          <div class="pointer-events-none absolute -bottom-24 -left-20 h-56 w-56 rounded-full bg-blue-200/30 blur-3xl"></div>
+        <div class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 sm:p-8 lg:p-10 shadow-sm">
+          <div class="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-amber-200/25 blur-3xl"></div>
+          <div class="pointer-events-none absolute -bottom-24 -left-20 h-56 w-56 rounded-full bg-sky-200/25 blur-3xl"></div>
           <div class="relative">
-            <div class="text-center mb-10 scroll-reveal">
-              <span class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                <i class="ri-award-line"></i>
-                ${escapeHtml(config.badge)}
-              </span>
-              <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">${escapeHtml(config.title)}</h2>
-              <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto">${escapeHtml(config.description)}</p>
-            </div>
-            <div class="grid gap-3 sm:grid-cols-3 mb-8 scroll-reveal">
-              <div class="rounded-2xl border border-purple-200 bg-purple-50/70 px-4 py-3">
-                <p class="text-xs font-semibold uppercase tracking-wide text-purple-700">Премиум</p>
-                <p class="mt-1 text-xl font-display font-extrabold text-brand-blue">${premiumSegment.items.length}</p>
+            <div class="grid gap-5 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)] mb-10">
+              <div class="scroll-reveal">
+                <span class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  <i class="ri-award-line"></i>
+                  ${escapeHtml(config.badge)}
+                </span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">${escapeHtml(config.title)}</h2>
+                <p class="text-slate-600 text-base sm:text-lg max-w-3xl">${escapeHtml(config.description)}</p>
               </div>
-              <div class="rounded-2xl border border-blue-200 bg-blue-50/70 px-4 py-3">
-                <p class="text-xs font-semibold uppercase tracking-wide text-blue-700">Средний сегмент</p>
-                <p class="mt-1 text-xl font-display font-extrabold text-brand-blue">${midSegment.items.length}</p>
-              </div>
-              <div class="rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 py-3">
-                <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Сервис</p>
-                <p class="mt-1 text-xl font-display font-extrabold text-brand-blue">95% за 1 визит</p>
+              <div class="scroll-reveal rounded-3xl border border-brand-blue/15 bg-brand-blue text-white p-5 sm:p-6">
+                <p class="text-xs uppercase tracking-wide text-white/75">Как ведём заявку</p>
+                <p class="mt-3 text-lg font-display font-extrabold leading-snug">Причина поломки → фиксируем смету → закрываем актом и гарантией.</p>
+                <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+                  <div class="rounded-2xl bg-white/10 px-3 py-2">
+                    <p class="text-lg font-extrabold">${premiumSegment.items.length}</p>
+                    <p class="text-[11px] uppercase tracking-wide text-white/75">Premium</p>
+                  </div>
+                  <div class="rounded-2xl bg-white/10 px-3 py-2">
+                    <p class="text-lg font-extrabold">${midSegment.items.length}</p>
+                    <p class="text-[11px] uppercase tracking-wide text-white/75">Mid</p>
+                  </div>
+                  <div class="rounded-2xl bg-white/10 px-3 py-2">
+                    <p class="text-lg font-extrabold">95%</p>
+                    <p class="text-[11px] uppercase tracking-wide text-white/75">1 визит</p>
+                  </div>
+                </div>
               </div>
             </div>
             <section class="scroll-reveal mb-8">
-              <div class="rounded-3xl border border-purple-200 bg-gradient-to-br from-white to-purple-50 p-5 sm:p-7 lg:p-8 shadow-sm">
+              <div class="rounded-3xl border p-5 sm:p-7 lg:p-8 ${premiumSegment.toneClass}">
                 <div class="flex items-center justify-between gap-4 flex-wrap mb-6">
                   <div>
                     <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(premiumSegment.title)}</h3>
                     <p class="text-slate-600 mt-2">${escapeHtml(premiumSegment.description)}</p>
                   </div>
-                  <span class="inline-flex items-center rounded-full bg-purple-100 text-purple-700 px-4 py-2 text-sm font-semibold">${premiumSegment.items.length} марок в витрине</span>
+                  <span class="inline-flex items-center rounded-full bg-amber-100 text-amber-700 px-4 py-2 text-sm font-semibold">${premiumSegment.items.length} марок</span>
                 </div>
-                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                   ${premiumShowcase.map((item, index) => renderPremiumBrandCard(item, index)).join('')}
                 </div>
                 ${
                   premiumCatalog.length
-                    ? `<div class="mt-6 border-t border-purple-200 pt-5">
-                    <p class="text-sm font-semibold text-brand-blue mb-3">Дополнительно в премиум-контуре</p>
+                    ? `<div class="mt-6 border-t border-amber-200/80 pt-5">
+                    <p class="text-sm font-semibold text-brand-blue mb-3">Ещё марки премиум-сегмента</p>
                     <div class="flex flex-wrap gap-2">
-                      ${premiumCatalog.map((item) => renderBrandGroupChip(item, premiumSegment.chipClass, 'purple')).join('')}
+                      ${premiumCatalog.map((item) => renderBrandGroupChip(item, premiumSegment.chipClass, 'premium')).join('')}
                     </div>
                   </div>`
                     : ''
                 }
-              </div>
               </div>
             </section>
             <section class="scroll-reveal">
@@ -560,10 +566,10 @@ export function renderHouseholdBrandGroups(slotEntry) {
                     <h3 class="text-xl sm:text-2xl font-display font-extrabold text-brand-blue">${escapeHtml(midSegment.title)}</h3>
                     <p class="mt-2 text-sm text-slate-600">${escapeHtml(midSegment.description)}</p>
                   </div>
-                  <span class="inline-flex items-center rounded-full bg-blue-100 px-3 py-1.5 text-sm font-semibold text-blue-700">${midSegment.items.length} марок</span>
+                  <span class="inline-flex items-center rounded-full bg-sky-100 px-3 py-1.5 text-sm font-semibold text-sky-700">${midSegment.items.length} марок</span>
                 </div>
                 <div class="flex flex-wrap gap-2">
-                  ${midSegment.items.map((item) => renderBrandGroupChip(item, midSegment.chipClass, 'blue')).join('')}
+                  ${midSegment.items.map((item) => renderBrandGroupChip(item, midSegment.chipClass, 'mid')).join('')}
                 </div>
               </div>
             </section>
