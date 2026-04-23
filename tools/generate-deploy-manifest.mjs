@@ -129,7 +129,8 @@ function scanReferences(content, fromFile) {
     /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi,
     /\bsrcset\s*=\s*["']([^"']+)["']/gi,
   ];
-  if (path.extname(fromFile) === '.css') {
+  const extension = path.extname(fromFile);
+  if (extension === '.css' || extension === '.html') {
     patterns.push(/url\(\s*(['"]?)([^'")]+)\1\s*\)/gi);
   }
 
