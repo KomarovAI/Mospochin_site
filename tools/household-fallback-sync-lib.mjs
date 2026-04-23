@@ -398,26 +398,149 @@ export function renderHouseholdRelatedLinks(service, registry, cardPresets) {
     </section>`;
 }
 
-function normalizeBrandGroupItems(items, kind = 'mid') {
+function normalizeBrandV1Items(items) {
   if (!Array.isArray(items)) {
     return [];
   }
 
   return items
     .filter((item) => isPlainObject(item))
-    .filter((item) => String(item.nameEn ?? '').trim() && String(item.nameRu ?? '').trim())
-    .map((item) => ({
-      nameEn: String(item.nameEn).trim(),
-      nameRu: String(item.nameRu).trim(),
-      tierLabel:
-        kind === 'premium' && String(item.tierLabel ?? '').trim()
-          ? String(item.tierLabel).trim()
-          : '',
-      serviceNote:
-        kind === 'premium' && String(item.serviceNote ?? '').trim()
-          ? String(item.serviceNote).trim()
-          : '',
-    }));
+    .map((item) => {
+      const nameEn = String(item.nameEn ?? '').trim();
+      const nameRu = String(item.nameRu ?? '').trim();
+      const label = nameEn || nameRu;
+      if (!label) return null;
+      return { label };
+    })
+    .filter(Boolean);
+}
+
+function normalizeBrandV2Items(items) {
+  if (!Array.isArray(items)) {
+    return [];
+  }
+
+  return items
+    .map((item) => {
+      if (typeof item === 'string') {
+        const label = item.trim();
+        return label ? { label } : null;
+      }
+      if (!isPlainObject(item)) {
+        return null;
+      }
+
+      const label = String(item.label ?? item.name ?? '').trim();
+      if (!label) {
+        return null;
+      }
+      const href = String(item.href ?? '').trim();
+      return href ? { label, href } : { label };
+    })
+    .filter(Boolean);
+}
+
+function normalizeBrandGroupsV2(brandGroups) {
+  if (!Array.isArray(brandGroups.groups)) {
+    return null;
+  }
+
+  const groups = brandGroups.groups
+    .filter((group) => isPlainObject(group))
+    .map((group, index) => {
+      const brands = normalizeBrandV2Items(group.brands);
+      if (!brands.length) {
+        return null;
+      }
+
+      const title = String(group.title ?? '').trim();
+      if (!title) {
+        return null;
+      }
+
+      return {
+        key: String(group.key ?? `group-${index + 1}`).trim() || `group-${index + 1}`,
+        title,
+        note: String(group.note ?? '').trim(),
+        counterLabel: String(group.counterLabel ?? 'марок').trim() || 'марок',
+        count: Number.isFinite(group.count) ? Number(group.count) : brands.length,
+        toneClass: String(group.toneClass ?? 'border-slate-200 bg-slate-50/70'),
+        chipClass: String(group.chipClass ?? 'bg-white text-slate-700'),
+        brands,
+      };
+    })
+    .filter(Boolean);
+
+  if (!groups.length) {
+    return null;
+  }
+
+  const counters = Array.isArray(brandGroups.counters)
+    ? brandGroups.counters
+        .filter((item) => isPlainObject(item))
+        .map((item) => ({
+          value: String(item.value ?? '').trim(),
+          label: String(item.label ?? '').trim(),
+        }))
+        .filter((item) => item.value && item.label)
+    : [];
+
+  return {
+    badge: String(brandGroups.badge ?? '').trim(),
+    title: String(brandGroups.title ?? '').trim() || 'Ремонтируем марки водонагревателей',
+    subtitle:
+      String(brandGroups.subtitle ?? '').trim() ||
+      String(brandGroups.description ?? '').trim() ||
+      'Работаем с популярными и премиальными брендами.',
+    note: String(brandGroups.note ?? '').trim(),
+    counters,
+    groups,
+  };
+}
+
+function normalizeBrandGroupsV1(brandGroups) {
+  const segments = isPlainObject(brandGroups.segments) ? brandGroups.segments : {};
+  const premium = isPlainObject(segments.premium) ? segments.premium : {};
+  const mid = isPlainObject(segments.mid) ? segments.mid : {};
+
+  const premiumBrands = normalizeBrandV1Items(premium.items);
+  const midBrands = normalizeBrandV1Items(mid.items);
+  if (!premiumBrands.length || !midBrands.length) {
+    return null;
+  }
+
+  return {
+    badge: String(brandGroups.badge ?? '🏆 БРЕНДЫ'),
+    title: String(brandGroups.title ?? 'Ремонтируем марки водонагревателей'),
+    subtitle:
+      String(brandGroups.subtitle ?? '').trim() ||
+      String(brandGroups.description ?? '').trim() ||
+      'Работаем с популярными и премиальными брендами.',
+    note: String(brandGroups.note ?? '').trim(),
+    counters: [],
+    groups: [
+      {
+        key: 'premium',
+        title: String(premium.title ?? 'Премиум'),
+        note: String(premium.description ?? '').trim(),
+        counterLabel: 'марок',
+        count: premiumBrands.length,
+        toneClass: 'border-amber-200 bg-amber-50/80',
+        chipClass: 'bg-white text-slate-700',
+        brands: premiumBrands,
+      },
+      {
+        key: 'mid',
+        title: String(mid.title ?? 'Средние'),
+        note: String(mid.description ?? '').trim(),
+        counterLabel: 'марок',
+        count: midBrands.length,
+        toneClass: 'border-sky-200 bg-sky-50/80',
+        chipClass: 'bg-white text-slate-700',
+        brands: midBrands,
+      },
+    ],
+  };
 }
 
 function normalizeBrandGroupConfig(slotEntry) {
@@ -426,153 +549,66 @@ function normalizeBrandGroupConfig(slotEntry) {
   }
 
   const brandGroups = slotEntry.brandGroups;
-  const segments = isPlainObject(brandGroups.segments) ? brandGroups.segments : {};
-  const premium = isPlainObject(segments.premium) ? segments.premium : {};
-  const mid = isPlainObject(segments.mid) ? segments.mid : {};
-
-  const premiumItems = normalizeBrandGroupItems(premium.items, 'premium');
-  const midItems = normalizeBrandGroupItems(mid.items, 'mid');
-  if (premiumItems.length === 0 || midItems.length === 0) {
-    return null;
-  }
-
-  return {
-    badge: String(brandGroups.badge || '🏆 БРЕНДЫ'),
-    title: String(brandGroups.title || 'Ремонтируем марки водонагревателей'),
-    description: String(brandGroups.description || 'Работаем с популярными и премиальными брендами.'),
-    segments: [
-      {
-        key: 'premium',
-        title: String(premium.title || 'Премиум'),
-        description: String(premium.description || 'Премиальные марки'),
-        toneClass: 'border-amber-200 bg-amber-50/80 text-amber-700',
-        chipClass: 'bg-amber-100 text-amber-700',
-        items: premiumItems,
-      },
-      {
-        key: 'mid',
-        title: String(mid.title || 'Средние'),
-        description: String(mid.description || 'Массовый средний сегмент'),
-        toneClass: 'border-sky-200 bg-sky-50/80 text-sky-700',
-        chipClass: 'bg-sky-100 text-sky-700',
-        items: midItems,
-      },
-    ],
-  };
+  return normalizeBrandGroupsV2(brandGroups) ?? normalizeBrandGroupsV1(brandGroups);
 }
 
-function renderBrandGroupChip(item, chipClass, revealTone = 'mid') {
-  return `<span class="inline-flex items-center gap-2 rounded-2xl border border-white/80 px-3 py-2 text-sm font-semibold shadow-sm ${chipClass}">
-      <i class="${revealTone === 'premium' ? 'ri-shield-star-line text-amber-600' : 'ri-tools-line text-sky-600'} text-base"></i>
-      <span class="text-brand-blue leading-none">${escapeHtml(item.nameEn)}</span>
-      <span class="text-xs font-medium text-slate-500 leading-none">${escapeHtml(item.nameRu)}</span>
-    </span>`;
+function renderBrandGroupChip(item, chipClass) {
+  const chipBody = item.href
+    ? `<a href="${escapeHtml(item.href)}" class="inline-flex min-h-[44px] items-center rounded-xl px-3.5 py-2 text-sm font-medium ring-1 ring-inset ring-slate-200 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 ${chipClass}">${escapeHtml(item.label)}</a>`
+    : `<span class="inline-flex min-h-[44px] items-center rounded-xl px-3.5 py-2 text-sm font-medium ring-1 ring-inset ring-slate-200 ${chipClass}">${escapeHtml(item.label)}</span>`;
+  return `<li>${chipBody}</li>`;
 }
 
-function renderPremiumBrandCard(item, index) {
-  const label = item.tierLabel || 'ПРЕМИУМ';
-  const note = item.serviceNote || 'Сложная автоматика и точная диагностика без лишних экспериментов.';
+function renderBrandGroupCounter(counter) {
+  return `<li class="min-w-[112px] rounded-2xl bg-slate-50 px-3.5 py-3 ring-1 ring-inset ring-slate-200">
+      <span class="block text-lg font-semibold leading-none text-slate-900">${escapeHtml(counter.value)}</span>
+      <span class="mt-1 block text-[11px] font-medium uppercase tracking-[0.08em] text-slate-500">${escapeHtml(counter.label)}</span>
+    </li>`;
+}
 
-  return `<article class="scroll-reveal" data-delay="${(index % 8) + 1}">
-      <div class="card-brand relative overflow-hidden bg-white p-5 rounded-3xl shadow-sm border border-slate-200 h-full group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-amber-300">
-        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500"></div>
-        <div class="flex items-center justify-between mb-4 mt-1">
-          <span class="inline-flex items-center rounded-full bg-amber-100 text-amber-700 px-3 py-1 text-xs font-bold uppercase tracking-wide">${escapeHtml(label)}</span>
-          <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-sm font-bold text-brand-blue">${index + 1}</span>
+function renderBrandGroupCard(group) {
+  return `<article class="scroll-reveal rounded-2xl border p-4 sm:p-5 ${group.toneClass}">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <h3 class="text-base sm:text-lg font-display font-extrabold tracking-[-0.01em] text-brand-blue">${escapeHtml(group.title)}</h3>
+          ${group.note ? `<p class="mt-1 text-sm leading-6 text-slate-600">${escapeHtml(group.note)}</p>` : ''}
         </div>
-        <h3 class="text-lg lg:text-xl font-display font-extrabold text-brand-blue leading-tight">${escapeHtml(item.nameEn)}</h3>
-        <p class="mt-1 text-sm font-semibold text-slate-500">${escapeHtml(item.nameRu)}</p>
-        <p class="mt-3 text-sm text-slate-600 leading-relaxed">${escapeHtml(note)}</p>
+        <span class="shrink-0 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-200">${escapeHtml(String(group.count))} ${escapeHtml(group.counterLabel)}</span>
       </div>
+      <ul class="mt-4 flex flex-wrap gap-2.5 sm:gap-3">
+        ${group.brands.map((item) => renderBrandGroupChip(item, group.chipClass)).join('')}
+      </ul>
     </article>`;
 }
 
 export function renderHouseholdBrandGroups(slotEntry) {
   const config = normalizeBrandGroupConfig(slotEntry);
-  if (!config) {
+  if (!config || !config.groups.length) {
     return '';
   }
-
-  const premiumSegment = config.segments.find((segment) => segment.key === 'premium') ?? null;
-  const midSegment = config.segments.find((segment) => segment.key === 'mid') ?? null;
-  if (!premiumSegment || !midSegment) {
-    return '';
-  }
-  const premiumShowcase = premiumSegment.items.slice(0, 8);
-  const premiumCatalog = premiumSegment.items.slice(8);
 
   return `<section id="brands" data-sync-zone="brand-groups" class="py-20 lg:py-28 bg-gradient-to-b from-slate-100 to-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 sm:p-8 lg:p-10 shadow-sm">
-          <div class="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-amber-200/25 blur-3xl"></div>
-          <div class="pointer-events-none absolute -bottom-24 -left-20 h-56 w-56 rounded-full bg-sky-200/25 blur-3xl"></div>
-          <div class="relative">
-            <div class="grid gap-5 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)] mb-10">
-              <div class="scroll-reveal">
-                <span class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                  <i class="ri-award-line"></i>
-                  ${escapeHtml(config.badge)}
-                </span>
-                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">${escapeHtml(config.title)}</h2>
-                <p class="text-slate-600 text-base sm:text-lg max-w-3xl">${escapeHtml(config.description)}</p>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl border border-slate-200 bg-white">
+          <div class="p-5 sm:p-6 lg:p-8">
+            <header class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div class="min-w-0 max-w-3xl scroll-reveal">
+                ${config.badge ? `<span class="mb-3 inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-medium tracking-[0.04em] text-sky-800">${escapeHtml(config.badge)}</span>` : ''}
+                <h2 class="text-2xl sm:text-3xl font-display font-extrabold tracking-[-0.02em] text-brand-blue">${escapeHtml(config.title)}</h2>
+                ${config.subtitle ? `<p class="mt-2 text-sm sm:text-base leading-6 text-slate-600">${escapeHtml(config.subtitle)}</p>` : ''}
               </div>
-              <div class="scroll-reveal rounded-3xl border border-brand-blue/15 bg-brand-blue text-white p-5 sm:p-6">
-                <p class="text-xs uppercase tracking-wide text-white/75">Как ведём заявку</p>
-                <p class="mt-3 text-lg font-display font-extrabold leading-snug">Причина поломки → фиксируем смету → закрываем актом и гарантией.</p>
-                <div class="mt-4 grid grid-cols-3 gap-2 text-center">
-                  <div class="rounded-2xl bg-white/10 px-3 py-2">
-                    <p class="text-lg font-extrabold">${premiumSegment.items.length}</p>
-                    <p class="text-[11px] uppercase tracking-wide text-white/75">Premium</p>
-                  </div>
-                  <div class="rounded-2xl bg-white/10 px-3 py-2">
-                    <p class="text-lg font-extrabold">${midSegment.items.length}</p>
-                    <p class="text-[11px] uppercase tracking-wide text-white/75">Mid</p>
-                  </div>
-                  <div class="rounded-2xl bg-white/10 px-3 py-2">
-                    <p class="text-lg font-extrabold">95%</p>
-                    <p class="text-[11px] uppercase tracking-wide text-white/75">1 визит</p>
-                  </div>
-                </div>
-              </div>
+              ${
+                config.counters.length
+                  ? `<ul class="flex flex-wrap gap-2.5 lg:max-w-[440px] lg:justify-end">
+                ${config.counters.map((counter) => renderBrandGroupCounter(counter)).join('')}
+              </ul>`
+                  : ''
+              }
+            </header>
+            ${config.note ? `<div class="mt-4 rounded-2xl bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-600 ring-1 ring-inset ring-slate-200">${escapeHtml(config.note)}</div>` : ''}
+            <div class="mt-6 lg:mt-8 grid gap-4 sm:gap-5 md:grid-cols-2">
+              ${config.groups.map((group) => renderBrandGroupCard(group)).join('')}
             </div>
-            <section class="scroll-reveal mb-8">
-              <div class="rounded-3xl border p-5 sm:p-7 lg:p-8 ${premiumSegment.toneClass}">
-                <div class="flex items-center justify-between gap-4 flex-wrap mb-6">
-                  <div>
-                    <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(premiumSegment.title)}</h3>
-                    <p class="text-slate-600 mt-2">${escapeHtml(premiumSegment.description)}</p>
-                  </div>
-                  <span class="inline-flex items-center rounded-full bg-amber-100 text-amber-700 px-4 py-2 text-sm font-semibold">${premiumSegment.items.length} марок</span>
-                </div>
-                <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                  ${premiumShowcase.map((item, index) => renderPremiumBrandCard(item, index)).join('')}
-                </div>
-                ${
-                  premiumCatalog.length
-                    ? `<div class="mt-6 border-t border-amber-200/80 pt-5">
-                    <p class="text-sm font-semibold text-brand-blue mb-3">Ещё марки премиум-сегмента</p>
-                    <div class="flex flex-wrap gap-2">
-                      ${premiumCatalog.map((item) => renderBrandGroupChip(item, premiumSegment.chipClass, 'premium')).join('')}
-                    </div>
-                  </div>`
-                    : ''
-                }
-              </div>
-            </section>
-            <section class="scroll-reveal">
-              <div class="rounded-3xl border p-5 sm:p-7 ${midSegment.toneClass}">
-                <div class="flex items-center justify-between gap-4 flex-wrap mb-5">
-                  <div>
-                    <h3 class="text-xl sm:text-2xl font-display font-extrabold text-brand-blue">${escapeHtml(midSegment.title)}</h3>
-                    <p class="mt-2 text-sm text-slate-600">${escapeHtml(midSegment.description)}</p>
-                  </div>
-                  <span class="inline-flex items-center rounded-full bg-sky-100 px-3 py-1.5 text-sm font-semibold text-sky-700">${midSegment.items.length} марок</span>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  ${midSegment.items.map((item) => renderBrandGroupChip(item, midSegment.chipClass, 'mid')).join('')}
-                </div>
-              </div>
-            </section>
           </div>
         </div>
       </div>

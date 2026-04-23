@@ -657,6 +657,91 @@ function validateHouseholdBrandGroups(value, context) {
     return;
   }
 
+  if (Array.isArray(value.groups)) {
+    if (!isNonEmptyString(value.title)) {
+      errors.push(`${context}.title must be a non-empty string`);
+    }
+
+    if (Object.hasOwn(value, 'badge') && !isNonEmptyString(value.badge)) {
+      errors.push(`${context}.badge must be a non-empty string when provided`);
+    }
+    if (Object.hasOwn(value, 'subtitle') && !isNonEmptyString(value.subtitle)) {
+      errors.push(`${context}.subtitle must be a non-empty string when provided`);
+    }
+    if (Object.hasOwn(value, 'note') && !isNonEmptyString(value.note)) {
+      errors.push(`${context}.note must be a non-empty string when provided`);
+    }
+
+    if (Object.hasOwn(value, 'counters')) {
+      if (!Array.isArray(value.counters)) {
+        errors.push(`${context}.counters must be an array when provided`);
+      } else {
+        value.counters.forEach((item, index) => {
+          const itemContext = `${context}.counters[${index}]`;
+          if (!isPlainObject(item)) {
+            errors.push(`${itemContext} must be an object`);
+            return;
+          }
+          for (const fieldName of ['value', 'label']) {
+            if (!isNonEmptyString(item[fieldName])) {
+              errors.push(`${itemContext}.${fieldName} must be a non-empty string`);
+            }
+          }
+        });
+      }
+    }
+
+    if (value.groups.length === 0) {
+      errors.push(`${context}.groups must be a non-empty array`);
+      return;
+    }
+
+    value.groups.forEach((group, groupIndex) => {
+      const groupContext = `${context}.groups[${groupIndex}]`;
+      if (!isPlainObject(group)) {
+        errors.push(`${groupContext} must be an object`);
+        return;
+      }
+      if (!isNonEmptyString(group.title)) {
+        errors.push(`${groupContext}.title must be a non-empty string`);
+      }
+      for (const fieldName of ['note', 'counterLabel', 'toneClass', 'chipClass']) {
+        if (Object.hasOwn(group, fieldName) && !isNonEmptyString(group[fieldName])) {
+          errors.push(`${groupContext}.${fieldName} must be a non-empty string when provided`);
+        }
+      }
+      if (Object.hasOwn(group, 'count') && !Number.isFinite(group.count)) {
+        errors.push(`${groupContext}.count must be a finite number when provided`);
+      }
+
+      if (!Array.isArray(group.brands) || group.brands.length === 0) {
+        errors.push(`${groupContext}.brands must be a non-empty array`);
+        return;
+      }
+
+      group.brands.forEach((brand, brandIndex) => {
+        const brandContext = `${groupContext}.brands[${brandIndex}]`;
+        if (typeof brand === 'string') {
+          if (!brand.trim()) {
+            errors.push(`${brandContext} must be a non-empty string`);
+          }
+          return;
+        }
+        if (!isPlainObject(brand)) {
+          errors.push(`${brandContext} must be a string or object`);
+          return;
+        }
+        if (!isNonEmptyString(brand.label)) {
+          errors.push(`${brandContext}.label must be a non-empty string`);
+        }
+        if (Object.hasOwn(brand, 'href') && !isNonEmptyString(brand.href)) {
+          errors.push(`${brandContext}.href must be a non-empty string when provided`);
+        }
+      });
+    });
+    return;
+  }
+
   for (const fieldName of ['badge', 'title', 'description']) {
     if (!isNonEmptyString(value[fieldName])) {
       errors.push(`${context}.${fieldName} must be a non-empty string`);
