@@ -1,9 +1,10 @@
+(function () {
 // Telegram credentials loaded from server-side proxy
 // IMPORTANT: Never expose BOT_TOKEN in client-side code for production
 const FORM_MIN_FILL_MS = 1500;
 const FORM_RATE_LIMIT_MS = 60000;
 const FORM_MAX_PROBLEM_LENGTH = 500;
-const PAGE_METADATA_PATH = '/data/page-metadata.json';
+const TELEGRAM_PAGE_METADATA_PATH = '/data/page-metadata.json';
 const FORM_BASE_FIELDS = new Set(['name', 'phone', 'type', 'problem', 'website', 'consent']);
 
 let runtimeConfigPromise = null;
@@ -52,7 +53,7 @@ async function loadCurrentPageMetadata() {
     if (!pageMetadataPromise) {
         pageMetadataPromise = (async () => {
             try {
-                const response = await fetch(PAGE_METADATA_PATH, {
+                const response = await fetch(TELEGRAM_PAGE_METADATA_PATH, {
                     cache: 'no-store'
                 });
                 if (!response.ok) {
@@ -336,3 +337,4 @@ document.addEventListener('DOMContentLoaded', () => {
     void loadCurrentPageMetadata();
     setTimeout(initTelegramForms, 200);
 });
+})();
