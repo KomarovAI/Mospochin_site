@@ -699,6 +699,12 @@ function validateHouseholdBrandGroups(value, context) {
           errors.push(`${itemContext}.${fieldName} must be a non-empty string`);
         }
       }
+
+      for (const fieldName of ['tierLabel', 'serviceNote']) {
+        if (Object.hasOwn(item, fieldName) && !isNonEmptyString(item[fieldName])) {
+          errors.push(`${itemContext}.${fieldName} must be a non-empty string when provided`);
+        }
+      }
     });
   }
 }
