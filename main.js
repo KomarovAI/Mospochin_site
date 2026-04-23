@@ -2137,16 +2137,23 @@ const Components = {
     await this.initHouseholdServiceSlots();
     await this.initRestaurantServiceSlots();
 
-    window.setTimeout(() => {
-      this.initMobileMenu();
+    this.initMobileMenu();
+    this.initSmoothScroll();
+
+    const runDeferredUi = () => {
       this.initScrollEffect();
       this.initFadeIn();
-      this.initSmoothScroll();
       this.initCounters();
       this.initHeadingReveal();
       initStaggerAnimations();
       initScrollReveal();
-    }, 50);
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(runDeferredUi, { timeout: 700 });
+    } else {
+      window.setTimeout(runDeferredUi, 120);
+    }
   },
 };
 

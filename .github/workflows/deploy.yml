@@ -123,6 +123,51 @@ jobs:
             retry_curl "HEAD https://mospochin.ru/${asset}" -I "https://mospochin.ru/${asset}"
           done
 
+      - name: Verify cache and compression contract
+        timeout-minutes: 2
+        run: |
+          set -euo pipefail
+
+          require_header() {
+            local headers="$1"
+            local pattern="$2"
+            local label="$3"
+            if ! printf '%s\n' "$headers" | grep -Eiq "$pattern"; then
+              echo "Missing expected header pattern for ${label}: ${pattern}"
+              echo "Headers were:"
+              printf '%s\n' "$headers"
+              return 1
+            fi
+          }
+
+          check_html_contract() {
+            local path="$1"
+            local headers
+            headers="$(curl -fsS -I "https://mospochin.ru${path}")"
+            require_header "$headers" '^cache-control:.*no-cache' "${path} html no-cache"
+            require_header "$headers" '^cache-control:.*no-store' "${path} html no-store"
+            require_header "$headers" '^vary:.*accept-encoding' "${path} html vary"
+          }
+
+          check_asset_contract() {
+            local path="$1"
+            local expect_encoding="$2"
+            local headers
+            headers="$(curl -fsS -I --compressed "https://mospochin.ru${path}")"
+            require_header "$headers" '^cache-control:.*max-age=' "${path} asset max-age"
+            require_header "$headers" '^cache-control:.*immutable' "${path} asset immutable"
+            if [ "$expect_encoding" = "gzip" ]; then
+              require_header "$headers" '^vary:.*accept-encoding' "${path} asset vary"
+              require_header "$headers" '^content-encoding:\s*gzip' "${path} gzip"
+            fi
+          }
+
+          check_html_contract "/"
+          check_html_contract "/uslugi.html"
+          check_asset_contract "/styles.css" "gzip"
+          check_asset_contract "/main.js" "gzip"
+          check_asset_contract "/assets/images/hero-restaurant.jpg" "none"
+
       - name: Verify backend deploy artifacts are present in manifest
         run: |
           required=(
