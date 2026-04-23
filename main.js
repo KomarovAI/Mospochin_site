@@ -11,6 +11,7 @@ const SITE_CONFIG = {
 };
 
 const PAGE_METADATA_PATH = '/data/page-metadata.json';
+const CONTACT_CONFIG_PATH = '/data/contact-config.json';
 const RESTAURANT_BRANCH_PATH = '/data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_PATH = '/data/household-branch.json';
 const RESTAURANT_SERVICES_PATH = '/data/restaurant-services.json';
@@ -20,6 +21,13 @@ const HOUSEHOLD_SERVICES_PATH = '/data/household-services.json';
 const HOUSEHOLD_PAGE_SLOTS_PATH = '/data/household-page-slots.json';
 const HOUSEHOLD_CARD_PRESETS_PATH = '/data/household-card-presets.json';
 const HOUSEHOLD_PROOF_LAYER_PATH = '/data/household-proof-layer.json';
+const DEFAULT_CONTACT_CONFIG = Object.freeze({
+  phoneDisplay: SITE_CONFIG.company.phoneDisplay,
+  phoneE164: SITE_CONFIG.company.phoneLink,
+  whatsappNumber: SITE_CONFIG.company.phoneLink.replace(/[^\d]/g, ''),
+  whatsappDefaultText: 'Здравствуйте! Нужен ремонт. Сайт MosPochin',
+  email: SITE_CONFIG.company.email,
+});
 const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
   subtitle: '🔧 Ресторанное оборудование',
   contactHint: '⚡ Работаем 24/7',
@@ -216,6 +224,7 @@ let householdServicesPromise = null;
 let householdPageSlotsPromise = null;
 let householdCardPresetsPromise = null;
 let householdProofLayerPromise = null;
+let contactConfigPromise = null;
 
 async function loadJson(path) {
   const response = await fetch(path, { cache: 'no-store' });
@@ -235,6 +244,80 @@ async function loadCurrentPageMetadata() {
   }
 
   return pageMetadataPromise;
+}
+
+function toPhoneE164(value) {
+  const compact = String(value ?? '').trim().replace(/[^\d+]/g, '');
+  if (!compact) return DEFAULT_CONTACT_CONFIG.phoneE164;
+  if (compact.startsWith('+')) return compact;
+  return `+${compact}`;
+}
+
+function toWhatsappNumber(value, fallbackE164) {
+  const fromValue = String(value ?? '').replace(/[^\d]/g, '');
+  if (fromValue) return fromValue;
+  return String(fallbackE164 ?? '').replace(/[^\d]/g, '');
+}
+
+function normalizeContactConfig(rawConfig) {
+  const phoneE164 = toPhoneE164(rawConfig?.phoneE164);
+  return {
+    phoneDisplay: String(rawConfig?.phoneDisplay ?? DEFAULT_CONTACT_CONFIG.phoneDisplay).trim(),
+    phoneE164,
+    whatsappNumber: toWhatsappNumber(rawConfig?.whatsappNumber, phoneE164),
+    whatsappDefaultText: String(
+      rawConfig?.whatsappDefaultText ?? DEFAULT_CONTACT_CONFIG.whatsappDefaultText
+    ).trim(),
+    email: String(rawConfig?.email ?? DEFAULT_CONTACT_CONFIG.email).trim(),
+  };
+}
+
+function parseWhatsappTextFromHref(href) {
+  if (typeof href !== 'string' || !href.includes('wa.me/')) return null;
+  try {
+    const url = new URL(href, window.location.origin);
+    const text = url.searchParams.get('text');
+    return text ? text.trim() : null;
+  } catch {
+    return null;
+  }
+}
+
+function parseWhatsappTextFromToken(token) {
+  if (typeof token !== 'string') return null;
+  const trimmed = token.trim();
+  if (!/^@contact-whatsapp(?:\?text=.*)?$/.test(trimmed)) return null;
+  const query = trimmed.split('?', 2)[1];
+  if (!query) return null;
+
+  const params = new URLSearchParams(query);
+  const text = params.get('text');
+  return text ? text.trim() : null;
+}
+
+function buildWhatsappHref(number, text) {
+  const sanitizedNumber = String(number ?? '').replace(/[^\d]/g, '');
+  if (!sanitizedNumber) return '#';
+
+  const message = String(text ?? '').trim();
+  if (!message) return `https://wa.me/${sanitizedNumber}`;
+  return `https://wa.me/${sanitizedNumber}?text=${encodeURIComponent(message)}`;
+}
+
+async function loadContactConfig() {
+  if (!contactConfigPromise) {
+    contactConfigPromise = (async () => {
+      try {
+        const json = await loadJson(CONTACT_CONFIG_PATH);
+        return normalizeContactConfig(json);
+      } catch (error) {
+        console.error('Contact config unavailable:', error.message);
+        return DEFAULT_CONTACT_CONFIG;
+      }
+    })();
+  }
+
+  return contactConfigPromise;
 }
 
 async function loadRestaurantBranchConfig() {
@@ -415,6 +498,7 @@ const Components = {
   currentBranch: null,
   restaurantBranch: DEFAULT_RESTAURANT_BRANCH,
   householdBranch: DEFAULT_HOUSEHOLD_BRANCH,
+  contactConfig: DEFAULT_CONTACT_CONFIG,
 
   isBytovaya() {
     return (this.currentBranch || inferBranchFromSlug()) === 'household';
@@ -481,8 +565,8 @@ const Components = {
     <span class="hidden sm:inline">•</span>
     <span class="hidden sm:inline font-semibold">${branch.topBarText.sub}</span>
     <span class="hidden md:inline">•</span>
-    <a href="tel:${SITE_CONFIG.company.phoneLink}" class="hidden md:inline font-bold hover:text-yellow-300 transition">
-      <i class="ri-phone-line mr-1"></i>${SITE_CONFIG.company.phoneDisplay}
+    <a href="tel:${this.getPhoneLink()}" class="hidden md:inline font-bold hover:text-yellow-300 transition">
+      <i class="ri-phone-line mr-1"></i>${this.getPhone()}
     </a>
   </div>
 </div>
@@ -516,9 +600,9 @@ const Components = {
       <div class="hidden lg:flex items-center gap-4">
         <div class="text-right">
           <p class="text-xs text-slate-500 font-medium">${branch.contactHint}</p>
-          <a href="tel:${SITE_CONFIG.company.phoneLink}" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg px-5 py-2.5 rounded-full transition-all shadow-lg">
+          <a href="tel:${this.getPhoneLink()}" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg px-5 py-2.5 rounded-full transition-all shadow-lg">
             <i class="ri-phone-line animate-pulse"></i>
-            <span>${SITE_CONFIG.company.phoneDisplay}</span>
+            <span>${this.getPhone()}</span>
           </a>
         </div>
       </div>
@@ -594,7 +678,7 @@ const Components = {
         <ul class="space-y-3 text-sm">
           <li class="flex items-center gap-2">
             <i class="ri-phone-line text-brand-orange"></i>
-            <a href="tel:${SITE_CONFIG.company.phoneLink}" class="hover:text-white transition font-bold">${SITE_CONFIG.company.phoneDisplay}</a>
+            <a href="tel:${this.getPhoneLink()}" class="hover:text-white transition font-bold">${this.getPhone()}</a>
           </li>
           <li class="flex items-center gap-2">
             <i class="ri-time-line text-brand-orange"></i>
@@ -644,7 +728,7 @@ const Components = {
 <a href="${branch.aboutLink}" class="block px-3 py-2 text-base font-medium ${this.isActivePage('about') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg mt-3">ℹ️ О нас</a>
 <a href="${branch.contactLink}" class="block px-3 py-2 text-base font-medium ${this.isActivePage('contact') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg">📞 Контакты</a>
 <div class="border-t border-slate-200 my-3"></div>
-<a href="tel:${SITE_CONFIG.company.phoneLink}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="ri-phone-line mr-2"></i>Позвонить</a>
+<a href="tel:${this.getPhoneLink()}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="ri-phone-line mr-2"></i>Позвонить</a>
 <div class="border-t border-slate-200 my-2"></div>
 <a href="${branch.branchSwitchLink}" class="block w-full text-center bg-brand-orange/10 text-brand-orange px-4 py-3 rounded-lg font-bold text-sm border-2 border-brand-orange/30">
   ${branch.isBytovaya ? '🔧 Перейти: Ресторанное оборудование' : '🏠 Перейти: Бытовая техника'}
@@ -759,11 +843,66 @@ const Components = {
   },
 
   getPhone() {
-    return SITE_CONFIG.company.phoneDisplay;
+    return this.contactConfig.phoneDisplay || DEFAULT_CONTACT_CONFIG.phoneDisplay;
   },
 
   getPhoneLink() {
-    return SITE_CONFIG.company.phoneLink;
+    return this.contactConfig.phoneE164 || DEFAULT_CONTACT_CONFIG.phoneE164;
+  },
+
+  getWhatsappHref(preferredText = '') {
+    const message =
+      typeof preferredText === 'string' && preferredText.trim()
+        ? preferredText.trim()
+        : this.contactConfig.whatsappDefaultText;
+    return buildWhatsappHref(this.contactConfig.whatsappNumber, message);
+  },
+
+  resolveContactHref(rawHref, preferredWhatsappText = '') {
+    if (typeof rawHref !== 'string' || !rawHref.trim()) return '#';
+
+    const href = rawHref.trim();
+    if (href === '@contact-phone') {
+      return `tel:${this.getPhoneLink()}`;
+    }
+
+    if (/^@contact-whatsapp(?:\?text=.*)?$/.test(href)) {
+      const tokenText = parseWhatsappTextFromToken(href);
+      return this.getWhatsappHref(tokenText || preferredWhatsappText);
+    }
+
+    if (href.startsWith('tel:')) {
+      return `tel:${this.getPhoneLink()}`;
+    }
+
+    if (href.includes('wa.me/')) {
+      const hrefText = parseWhatsappTextFromHref(href);
+      return this.getWhatsappHref(preferredWhatsappText || hrefText || '');
+    }
+
+    return href;
+  },
+
+  hydrateContactLinks() {
+    const phoneTargets = document.querySelectorAll('[data-company-phone]');
+    const phoneLinks = document.querySelectorAll('a[data-contact-link="phone"]');
+    const whatsappLinks = document.querySelectorAll('a[data-contact-link="whatsapp"]');
+
+    phoneTargets.forEach((node) => {
+      node.textContent = this.getPhone();
+    });
+
+    phoneLinks.forEach((node) => {
+      node.setAttribute('href', this.resolveContactHref(node.getAttribute('href') || 'tel:'));
+    });
+
+    whatsappLinks.forEach((node) => {
+      const preferredText = node.dataset.whatsappText || '';
+      node.setAttribute(
+        'href',
+        this.resolveContactHref(node.getAttribute('href') || 'https://wa.me/', preferredText)
+      );
+    });
   },
 
   initBranchRouteStrips() {
@@ -861,7 +1000,7 @@ const Components = {
 
     const actionNode = document.querySelector(`[data-slot-action="${sectionKey}.action"]`);
     if (actionNode && sectionConfig.action?.href) {
-      actionNode.setAttribute('href', sectionConfig.action.href);
+      actionNode.setAttribute('href', this.resolveContactHref(sectionConfig.action.href));
     }
 
     const actionLabelNode = document.querySelector(`[data-slot-copy="${sectionKey}.action.label"]`);
@@ -1027,9 +1166,10 @@ const Components = {
     return (actions || [])
       .map((action) => {
         const tone = this.getHouseholdCardTone(action.tone || inheritedTone);
-        const isExternal = /^https?:\/\//.test(action.href);
+        const resolvedHref = this.resolveContactHref(action.href || '#');
+        const isExternal = /^https?:\/\//.test(resolvedHref);
         return `
-          <a href="${action.href}" class="household-card__button ${tone.button}" ${
+          <a href="${resolvedHref}" class="household-card__button ${tone.button}" ${
             isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''
           }>
             <span>${escapeHtml(action.label)}</span>
@@ -1238,7 +1378,7 @@ const Components = {
       provider: {
         '@type': 'LocalBusiness',
         name: SITE_CONFIG.company.name,
-        telephone: `+${SITE_CONFIG.company.phoneLink}`,
+        telephone: this.getPhoneLink(),
         url: 'https://mospochin.ru',
         address: {
           '@type': 'PostalAddress',
@@ -1666,13 +1806,17 @@ const Components = {
             <p class="mt-4 text-xs text-slate-500">${escapeHtml(card.note || '')}</p>
             <div class="mt-5 flex flex-wrap gap-3">
               ${(card.actions || [])
-                .map(
-                  (action) => `
-                    <a href="${escapeHtml(action.href || '#')}" ${/^https?:\/\//.test(action.href || '') ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center justify-center rounded-full bg-brand-orange px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-orangeHover">
+                .map((action) => {
+                  const resolvedHref = this.resolveContactHref(action.href || '#');
+                  const externalAttrs = /^https?:\/\//.test(resolvedHref)
+                    ? 'target="_blank" rel="noopener noreferrer"'
+                    : '';
+                  return `
+                    <a href="${escapeHtml(resolvedHref)}" ${externalAttrs} class="inline-flex items-center justify-center rounded-full bg-brand-orange px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-orangeHover">
                       ${escapeHtml(action.label || 'Открыть')}
                     </a>
-                  `
-                )
+                  `;
+                })
                 .join('')}
             </div>
           </article>
@@ -1835,7 +1979,7 @@ const Components = {
       provider: {
         '@type': 'LocalBusiness',
         name: SITE_CONFIG.company.name,
-        telephone: `+${SITE_CONFIG.company.phoneLink}`,
+        telephone: this.getPhoneLink(),
         url: 'https://mospochin.ru',
         address: {
           '@type': 'PostalAddress',
@@ -2104,8 +2248,6 @@ const Components = {
   async init() {
     const header = document.getElementById('header-container');
     const footer = document.getElementById('footer-container');
-    const phoneTargets = document.querySelectorAll('[data-company-phone]');
-    const phoneLinks = document.querySelectorAll('[href="tel:79990057172"], [href="tel:+79990057172"]');
 
     try {
       const pageMetadata = await loadCurrentPageMetadata();
@@ -2117,21 +2259,18 @@ const Components = {
 
     this.applyPageIdentityClasses();
 
-    const [restaurantBranch, householdBranch] = await Promise.all([
+    const [restaurantBranch, householdBranch, contactConfig] = await Promise.all([
       loadRestaurantBranchConfig(),
       loadHouseholdBranchConfig(),
+      loadContactConfig(),
     ]);
     this.restaurantBranch = restaurantBranch;
     this.householdBranch = householdBranch;
+    this.contactConfig = contactConfig;
 
     if (header) header.innerHTML = this.getHeader();
     if (footer) footer.innerHTML = this.getFooter();
-    phoneTargets.forEach((node) => {
-      node.textContent = SITE_CONFIG.company.phoneDisplay;
-    });
-    phoneLinks.forEach((node) => {
-      node.setAttribute('href', `tel:${SITE_CONFIG.company.phoneLink}`);
-    });
+    this.hydrateContactLinks();
     this.initBranchRouteStrips();
     await this.initRestaurantBranchSlots();
     await this.initHouseholdServiceSlots();

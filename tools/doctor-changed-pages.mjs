@@ -15,6 +15,7 @@ const GLOBAL_PAGE_TRIGGERS = new Set([
   'styles-built.css',
   'telegram-form.js',
   'data/page-metadata.json',
+  'data/contact-config.json',
   'data/runtime-config.json',
   'data/site-page-contracts.json',
   'tools/doctor-page.mjs',

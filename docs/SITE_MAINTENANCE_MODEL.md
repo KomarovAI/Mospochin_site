@@ -12,6 +12,8 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - canonical client-side form runtime for pages with `hasForm=true`
 - `data/runtime-config.json`
   - canonical form endpoint/runtime configuration
+- `data/contact-config.json`
+  - canonical shared contact runtime (phone/WhatsApp/email) for both branches
 - `server/telegram-api.mjs`
   - canonical production Telegram delivery backend
 - `data/page-metadata.json`
@@ -48,6 +50,10 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - `telegram-form.js` owns client submission
   - `data/runtime-config.json` owns the site-relative endpoint
   - `server/telegram-api.mjs` owns the production delivery backend
+- Treat contact rendering as a concrete contract:
+  - `data/contact-config.json` owns shared phone/WhatsApp values
+  - HTML contact links expose `data-contact-link="phone|whatsapp"` for runtime hydration
+  - optional `data-whatsapp-text` keeps page-specific message context
 
 ## Canonical Workflow
 

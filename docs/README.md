@@ -24,6 +24,7 @@
 - Matching HTML/CSS/JS files in `/home/artikk` are non-canonical workspace copies and must not be used for deploys or edits.
 - Start routine operator/LLM work from `docs/OPERATOR_ROUTING.md`; use the larger canonical docs only after the route is clear.
 - Machine-readable operator routing lives in `data/operator-recipes.json`.
+- Canonical shared contact contract now lives in `data/contact-config.json` (`phoneDisplay`, `phoneE164`, `whatsappNumber`, default WhatsApp text).
 - The shortest read-only route selector is `npm run recipe:select -- --intent <recipe-id-or-intent> [--page <file.html>] [--branch <household|restaurant|shared>] [--json]`.
 
 ## Telegram form runtime contract
@@ -64,6 +65,7 @@
 ## Branch model
 
 - `main.js` is the canonical shared runtime JavaScript for both branches.
+- `main.js` hydrates all `tel/wa` contact links from `data/contact-config.json`; HTML uses `data-contact-link="phone|whatsapp"` and optional `data-whatsapp-text`.
 - Household and restaurant stay as separate authoring/maintenance workflows on top of the shared runtime.
 - Branch-specific contracts live in their own `docs/HOUSEHOLD_*` and `docs/RESTAURANT_*` files.
 

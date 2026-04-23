@@ -31,6 +31,7 @@ const RESTAURANT_PROOF_LAYER_DATA = 'data/restaurant-proof-layer.json';
 const RESTAURANT_TAXONOMY_DATA = 'data/restaurant-taxonomy.json';
 const RESTAURANT_PAGE_POLICY_DATA = 'data/restaurant-page-policy.json';
 const SITE_PAGE_CONTRACTS_DATA = 'data/site-page-contracts.json';
+const CONTACT_CONFIG_DATA = 'data/contact-config.json';
 const SCREENSHOT_AUDIT_DATA = 'data/screenshot-audit.json';
 const RESTAURANT_SCREENSHOT_AUDIT_DATA = 'data/restaurant-screenshot-audit.json';
 const OPERATOR_RECIPES_DATA = 'data/operator-recipes.json';
@@ -102,6 +103,10 @@ const metadata = JSON.parse(
 const runtimeConfig = JSON.parse(
   fs.readFileSync(path.join(SITE_ROOT, 'data/runtime-config.json'), 'utf8')
 );
+const contactConfigPath = path.join(SITE_ROOT, CONTACT_CONFIG_DATA);
+const contactConfig = fs.existsSync(contactConfigPath)
+  ? JSON.parse(fs.readFileSync(contactConfigPath, 'utf8'))
+  : null;
 const restaurantBranchPath = path.join(SITE_ROOT, RESTAURANT_BRANCH_DATA);
 const restaurantBranch = fs.existsSync(restaurantBranchPath)
   ? JSON.parse(fs.readFileSync(restaurantBranchPath, 'utf8'))
@@ -223,6 +228,27 @@ function getSectionTagByDataAttribute(html, attributeName, attributeValue) {
 function normalizeCommandName(command) {
   const match = command.match(/^npm run ([a-z0-9:-]+)/i);
   return match?.[1] ?? null;
+}
+
+function validateContactConfig(config) {
+  if (!isPlainObject(config)) {
+    errors.push(`${CONTACT_CONFIG_DATA}: top-level object is required`);
+    return;
+  }
+
+  for (const fieldName of ['phoneDisplay', 'phoneE164', 'whatsappNumber', 'whatsappDefaultText']) {
+    if (!isNonEmptyString(config[fieldName])) {
+      errors.push(`${CONTACT_CONFIG_DATA}: ${fieldName} must be a non-empty string`);
+    }
+  }
+
+  if (isNonEmptyString(config.phoneE164) && !/^\+\d{10,15}$/.test(config.phoneE164.trim())) {
+    errors.push(`${CONTACT_CONFIG_DATA}: phoneE164 must be in +79990000000 format`);
+  }
+
+  if (isNonEmptyString(config.whatsappNumber) && !/^\d{10,15}$/.test(config.whatsappNumber.trim())) {
+    errors.push(`${CONTACT_CONFIG_DATA}: whatsappNumber must contain digits only`);
+  }
 }
 
 function toRepoPathCandidate(value) {
@@ -596,6 +622,12 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
   const normalizedShellCount = countNormalizedShellComments(html);
   const hardcodedPhoneLinks = html.match(/href="tel:89990057172"/g) || [];
   const nonCanonicalPhoneLinks = html.match(/href="tel:79990057172"/g) || [];
+  const phoneLinksWithoutContract = html.match(
+    /<a\b(?=[^>]*href="tel:[^"]+")(?![^>]*data-contact-link="phone")[^>]*>/g
+  ) || [];
+  const whatsappLinksWithoutContract = html.match(
+    /<a\b(?=[^>]*href="https:\/\/wa\.me\/[^"]+")(?![^>]*data-contact-link="whatsapp")[^>]*>/g
+  ) || [];
 
   const mainScriptCount = (html.match(/<script[^>]+src="main\.js"/g) || []).length;
   const telegramScriptCount = (
@@ -673,6 +705,18 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
 
   if (nonCanonicalPhoneLinks.length > 0) {
     errors.push(`${fileName}: use tel:+79990057172, found legacy tel:79990057172 link`);
+  }
+
+  if (phoneLinksWithoutContract.length > 0) {
+    errors.push(
+      `${fileName}: tel links must include data-contact-link="phone" for centralized contact hydration`
+    );
+  }
+
+  if (whatsappLinksWithoutContract.length > 0) {
+    errors.push(
+      `${fileName}: wa.me links must include data-contact-link="whatsapp" for centralized contact hydration`
+    );
   }
 
   const routeKey = RESTAURANT_ROUTE_STRIP_CONTRACT.pages[fileName];
@@ -1492,6 +1536,13 @@ function validateCardAction(action, context, html, ctaVocabulary) {
   }
 
   if (action.href.startsWith('tel:')) {
+    return;
+  }
+
+  if (
+    action.href === '@contact-phone' ||
+    /^@contact-whatsapp(?:\?text=.*)?$/.test(action.href)
+  ) {
     return;
   }
 
@@ -2733,6 +2784,7 @@ validateHouseholdPageSlots(householdPageSlots, householdServicesRegistry);
 validateDocsIntegrity();
 validateScreenshotAuditContract();
 validateOperatorRecipes();
+validateContactConfig(contactConfig);
 
 const canonicalFormScriptPath = path.join(SITE_ROOT, CANONICAL_FORM_SCRIPT);
 const legacyFormScriptPath = path.join(SITE_ROOT, LEGACY_FORM_SCRIPT);
@@ -2749,6 +2801,10 @@ if (!fs.existsSync(canonicalFormScriptPath)) {
 
 if (!fs.existsSync(runtimeConfigPath)) {
   errors.push('data/runtime-config.json: runtime config missing');
+}
+
+if (!fs.existsSync(contactConfigPath)) {
+  errors.push(`${CONTACT_CONFIG_DATA}: contact config missing`);
 }
 
 if (!fs.existsSync(restaurantBranchPath)) {
