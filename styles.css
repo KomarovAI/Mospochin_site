@@ -1891,6 +1891,17 @@ body.page-household-service section#request {
   .household-proof-strip__item {
     padding: 1rem;
   }
+
+  body.page-water-heaters .water-heaters-mobile-compact {
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
+  }
+
+  body.page-water-heaters .water-heaters-mobile-compact .text-center.mb-16,
+  body.page-water-heaters .water-heaters-mobile-compact .text-center.mb-14,
+  body.page-water-heaters .water-heaters-mobile-compact .text-center.mb-12 {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
