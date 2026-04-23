@@ -19,6 +19,7 @@ export const HOUSEHOLD_SYNC_ZONES = [
   'service-proof',
   'related-links',
 ];
+export const HOUSEHOLD_OPTIONAL_SYNC_ZONES = ['brand-groups'];
 const HOUSEHOLD_REQUEST_FORM_CLASS =
   'telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal';
 
@@ -57,6 +58,10 @@ function escapeHtml(value) {
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;');
+}
+
+function isPlainObject(value) {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 }
 
 function normalizeClassValue(value) {
@@ -393,16 +398,110 @@ export function renderHouseholdRelatedLinks(service, registry, cardPresets) {
     </section>`;
 }
 
+function normalizeBrandGroupItems(items) {
+  return Array.isArray(items)
+    ? items
+        .filter((item) => isPlainObject(item))
+        .filter((item) => String(item.nameEn ?? '').trim() && String(item.nameRu ?? '').trim())
+    : [];
+}
+
+function normalizeBrandGroupConfig(slotEntry) {
+  if (!isPlainObject(slotEntry?.brandGroups)) {
+    return null;
+  }
+
+  const brandGroups = slotEntry.brandGroups;
+  const segments = isPlainObject(brandGroups.segments) ? brandGroups.segments : {};
+  const premium = isPlainObject(segments.premium) ? segments.premium : {};
+  const mid = isPlainObject(segments.mid) ? segments.mid : {};
+
+  const premiumItems = normalizeBrandGroupItems(premium.items);
+  const midItems = normalizeBrandGroupItems(mid.items);
+  if (premiumItems.length === 0 || midItems.length === 0) {
+    return null;
+  }
+
+  return {
+    badge: String(brandGroups.badge || '🏆 БРЕНДЫ'),
+    title: String(brandGroups.title || 'Ремонтируем марки водонагревателей'),
+    description: String(brandGroups.description || 'Работаем с популярными и премиальными брендами.'),
+    segments: [
+      {
+        key: 'premium',
+        title: String(premium.title || 'Премиум'),
+        description: String(premium.description || 'Премиальные марки'),
+        toneClass: 'border-purple-200 bg-purple-50/70 text-purple-700',
+        chipClass: 'bg-purple-100 text-purple-700',
+        items: premiumItems,
+      },
+      {
+        key: 'mid',
+        title: String(mid.title || 'Средние'),
+        description: String(mid.description || 'Массовый средний сегмент'),
+        toneClass: 'border-blue-200 bg-blue-50/70 text-blue-700',
+        chipClass: 'bg-blue-100 text-blue-700',
+        items: midItems,
+      },
+    ],
+  };
+}
+
+function renderBrandGroupChip(item, chipClass) {
+  return `<span class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold ${chipClass}">
+      <span class="text-brand-blue">${escapeHtml(item.nameEn)}</span>
+      <span class="text-xs font-medium text-slate-500">${escapeHtml(item.nameRu)}</span>
+    </span>`;
+}
+
+export function renderHouseholdBrandGroups(slotEntry) {
+  const config = normalizeBrandGroupConfig(slotEntry);
+  if (!config) {
+    return '';
+  }
+
+  return `<section id="brands" data-sync-zone="brand-groups" class="py-24 lg:py-32 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 scroll-reveal">
+          <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">${escapeHtml(config.badge)}</span>
+          <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">${escapeHtml(config.title)}</h2>
+          <p class="text-slate-600 text-lg max-w-3xl mx-auto">${escapeHtml(config.description)}</p>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          ${config.segments
+            .map(
+              (segment) => `<section class="rounded-3xl border p-6 sm:p-7 ${segment.toneClass}">
+                <div class="mb-4">
+                  <h3 class="text-xl font-display font-extrabold text-brand-blue">${escapeHtml(segment.title)}</h3>
+                  <p class="mt-2 text-sm text-slate-600">${escapeHtml(segment.description)}</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  ${segment.items.map((item) => renderBrandGroupChip(item, segment.chipClass)).join('')}
+                </div>
+              </section>`
+            )
+            .join('')}
+        </div>
+      </div>
+    </section>`;
+}
+
 function buildSyncPayload({ pageMeta, service, slotEntry, slotsRoot, registry, cardPresets, proofLayer }) {
+  const zones = {
+    'service-kpi': renderHouseholdServiceKpi(slotEntry, slotsRoot),
+    'request-overview': renderHouseholdRequestOverview(service, slotEntry),
+    'faq-items': renderHouseholdFaqItems(slotEntry),
+    'service-proof': renderHouseholdServiceProof(service, proofLayer),
+    'related-links': renderHouseholdRelatedLinks(service, registry, cardPresets),
+  };
+  const brandGroupsSection = renderHouseholdBrandGroups(slotEntry);
+  if (brandGroupsSection) {
+    zones['brand-groups'] = brandGroupsSection;
+  }
+
   return {
     schema: JSON.stringify(buildHouseholdServiceSchema(service, pageMeta, slotEntry), null, 2),
-    zones: {
-      'service-kpi': renderHouseholdServiceKpi(slotEntry, slotsRoot),
-      'request-overview': renderHouseholdRequestOverview(service, slotEntry),
-      'faq-items': renderHouseholdFaqItems(slotEntry),
-      'service-proof': renderHouseholdServiceProof(service, proofLayer),
-      'related-links': renderHouseholdRelatedLinks(service, registry, cardPresets),
-    },
+    zones,
   };
 }
 
@@ -542,6 +641,36 @@ export function analyzeHouseholdSyncState(
     }
   }
 
+  for (const zone of HOUSEHOLD_OPTIONAL_SYNC_ZONES) {
+    const expectedContent = expected.zones[zone] ?? null;
+    const hasMarker = hasSyncZoneMarker(html, zone);
+
+    if (!expectedContent && !hasMarker) {
+      continue;
+    }
+    if (!expectedContent && hasMarker) {
+      issues.push(`Unexpected sync marker block for ${zone}`);
+      continue;
+    }
+    if (expectedContent && !hasMarker) {
+      issues.push(`Missing sync marker block for ${zone}`);
+      continue;
+    }
+    if (!hasSyncZoneAttr(html, zone)) {
+      issues.push(`Missing data-sync-zone="${zone}"`);
+      continue;
+    }
+
+    const actualContent = extractSyncZoneContent(html, zone);
+    if (actualContent == null) {
+      issues.push(`Empty sync marker block for ${zone}`);
+      continue;
+    }
+    if (normalizeComparableMarkup(actualContent) !== normalizeComparableMarkup(expectedContent)) {
+      issues.push(`${zone} fallback drift`);
+    }
+  }
+
   const currentRequestFormClass = extractRequestFormClass(html);
   if (
     currentRequestFormClass == null ||
@@ -557,6 +686,10 @@ export function syncHouseholdServiceHtml(html, context) {
   const { expected } = analyzeHouseholdSyncState(html, context);
   let nextHtml = replaceServiceSchemaContent(html, expected.schema);
   for (const zone of HOUSEHOLD_SYNC_ZONES) {
+    nextHtml = replaceSyncZoneContent(nextHtml, zone, expected.zones[zone]);
+  }
+  for (const zone of HOUSEHOLD_OPTIONAL_SYNC_ZONES) {
+    if (!expected.zones[zone]) continue;
     nextHtml = replaceSyncZoneContent(nextHtml, zone, expected.zones[zone]);
   }
   nextHtml = replaceRequestFormClass(nextHtml, HOUSEHOLD_REQUEST_FORM_CLASS);

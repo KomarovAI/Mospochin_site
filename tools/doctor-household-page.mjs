@@ -110,6 +110,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
     faq: `npm run household:set-faq -- --page ${page} ...`,
     formHints: `npm run household:set-form-hints -- --page ${page} ...`,
     serviceKpi: `npm run household:set-service-kpi -- --page ${page} --json '<json>'`,
+    brandGroups: `Edit data/household-page-slots.json for ${page} brandGroups`,
     advisory: `Edit data/household-page-slots.json for ${page} advisoryCards`,
     related: `npm run household:set-related -- --page ${page} ...`,
     proof: `npm run household:set-proof -- --page ${page} --section <section> ...`,

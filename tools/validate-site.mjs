@@ -651,6 +651,58 @@ function validateServiceKpi(value, context) {
   });
 }
 
+function validateHouseholdBrandGroups(value, context) {
+  if (!isPlainObject(value)) {
+    errors.push(`${context} must be an object`);
+    return;
+  }
+
+  for (const fieldName of ['badge', 'title', 'description']) {
+    if (!isNonEmptyString(value[fieldName])) {
+      errors.push(`${context}.${fieldName} must be a non-empty string`);
+    }
+  }
+
+  if (!isPlainObject(value.segments)) {
+    errors.push(`${context}.segments must be an object`);
+    return;
+  }
+
+  for (const segmentName of ['premium', 'mid']) {
+    const segment = value.segments[segmentName];
+    const segmentContext = `${context}.segments.${segmentName}`;
+    if (!isPlainObject(segment)) {
+      errors.push(`${segmentContext} must be an object`);
+      continue;
+    }
+
+    for (const fieldName of ['title', 'description']) {
+      if (!isNonEmptyString(segment[fieldName])) {
+        errors.push(`${segmentContext}.${fieldName} must be a non-empty string`);
+      }
+    }
+
+    if (!Array.isArray(segment.items) || segment.items.length === 0) {
+      errors.push(`${segmentContext}.items must be a non-empty array`);
+      continue;
+    }
+
+    segment.items.forEach((item, index) => {
+      const itemContext = `${segmentContext}.items[${index}]`;
+      if (!isPlainObject(item)) {
+        errors.push(`${itemContext} must be an object`);
+        return;
+      }
+
+      for (const fieldName of ['nameEn', 'nameRu']) {
+        if (!isNonEmptyString(item[fieldName])) {
+          errors.push(`${itemContext}.${fieldName} must be a non-empty string`);
+        }
+      }
+    });
+  }
+}
+
 function getBodyClasses(html) {
   const className = html.match(/<body[^>]+class="([^"]*)"/i)?.[1] ?? '';
   return new Set(className.split(/\s+/).filter(Boolean));
@@ -1918,6 +1970,10 @@ function validateHouseholdPageSlots(slots, registry) {
 
     if (Object.hasOwn(slotEntry, 'serviceKpi')) {
       validateServiceKpi(slotEntry.serviceKpi, `${context}.serviceKpi`);
+    }
+
+    if (Object.hasOwn(slotEntry, 'brandGroups')) {
+      validateHouseholdBrandGroups(slotEntry.brandGroups, `${context}.brandGroups`);
     }
 
     for (const zone of policy?.requiredSyncZones ?? []) {
