@@ -32,6 +32,7 @@ const RESTAURANT_TAXONOMY_DATA = 'data/restaurant-taxonomy.json';
 const RESTAURANT_PAGE_POLICY_DATA = 'data/restaurant-page-policy.json';
 const SITE_PAGE_CONTRACTS_DATA = 'data/site-page-contracts.json';
 const CONTACT_CONFIG_DATA = 'data/contact-config.json';
+const SCHEMA_PROFILE_DATA = 'data/schema-profile.json';
 const SCREENSHOT_AUDIT_DATA = 'data/screenshot-audit.json';
 const RESTAURANT_SCREENSHOT_AUDIT_DATA = 'data/restaurant-screenshot-audit.json';
 const OPERATOR_RECIPES_DATA = 'data/operator-recipes.json';
@@ -106,6 +107,10 @@ const runtimeConfig = JSON.parse(
 const contactConfigPath = path.join(SITE_ROOT, CONTACT_CONFIG_DATA);
 const contactConfig = fs.existsSync(contactConfigPath)
   ? JSON.parse(fs.readFileSync(contactConfigPath, 'utf8'))
+  : null;
+const schemaProfilePath = path.join(SITE_ROOT, SCHEMA_PROFILE_DATA);
+const schemaProfile = fs.existsSync(schemaProfilePath)
+  ? JSON.parse(fs.readFileSync(schemaProfilePath, 'utf8'))
   : null;
 const restaurantBranchPath = path.join(SITE_ROOT, RESTAURANT_BRANCH_DATA);
 const restaurantBranch = fs.existsSync(restaurantBranchPath)
@@ -248,6 +253,79 @@ function validateContactConfig(config) {
 
   if (isNonEmptyString(config.whatsappNumber) && !/^\d{10,15}$/.test(config.whatsappNumber.trim())) {
     errors.push(`${CONTACT_CONFIG_DATA}: whatsappNumber must contain digits only`);
+  }
+}
+
+function validateSchemaProfile(profile) {
+  if (!isPlainObject(profile)) {
+    errors.push(`${SCHEMA_PROFILE_DATA}: top-level object is required`);
+    return;
+  }
+
+  if (!isPlainObject(profile.global)) {
+    errors.push(`${SCHEMA_PROFILE_DATA}: global must be an object`);
+    return;
+  }
+
+  if (!isPlainObject(profile.global.provider)) {
+    errors.push(`${SCHEMA_PROFILE_DATA}: global.provider must be an object`);
+  } else {
+    for (const fieldName of ['name', 'url', 'addressLocality', 'addressCountry', 'openingHours']) {
+      if (!isNonEmptyString(profile.global.provider[fieldName])) {
+        errors.push(`${SCHEMA_PROFILE_DATA}: global.provider.${fieldName} must be a non-empty string`);
+      }
+    }
+  }
+
+  if (!isNonEmptyString(profile.global.areaServed)) {
+    errors.push(`${SCHEMA_PROFILE_DATA}: global.areaServed must be a non-empty string`);
+  }
+
+  if (!isPlainObject(profile.global.offers)) {
+    errors.push(`${SCHEMA_PROFILE_DATA}: global.offers must be an object`);
+  } else {
+    for (const fieldName of ['priceCurrency', 'price', 'availability']) {
+      if (!isNonEmptyString(profile.global.offers[fieldName])) {
+        errors.push(`${SCHEMA_PROFILE_DATA}: global.offers.${fieldName} must be a non-empty string`);
+      }
+    }
+  }
+
+  if (!isPlainObject(profile.branches)) {
+    errors.push(`${SCHEMA_PROFILE_DATA}: branches must be an object`);
+  } else {
+    for (const branchName of Object.keys(profile.branches)) {
+      if (!['restaurant', 'household'].includes(branchName)) {
+        errors.push(`${SCHEMA_PROFILE_DATA}: branches.${branchName} is not a supported branch key`);
+        continue;
+      }
+
+      if (!isPlainObject(profile.branches[branchName])) {
+        errors.push(`${SCHEMA_PROFILE_DATA}: branches.${branchName} must be an object`);
+      }
+    }
+  }
+
+  if (!isPlainObject(profile.pages)) {
+    errors.push(`${SCHEMA_PROFILE_DATA}: pages must be an object`);
+    return;
+  }
+
+  for (const [pageName, pageConfig] of Object.entries(profile.pages)) {
+    if (!isPlainObject(pageConfig)) {
+      errors.push(`${SCHEMA_PROFILE_DATA}: pages.${pageName} must be an object`);
+      continue;
+    }
+
+    if (!metadata.pages?.[pageName]) {
+      errors.push(`${SCHEMA_PROFILE_DATA}: pages.${pageName} points to a page missing from data/page-metadata.json`);
+      continue;
+    }
+
+    const branch = metadata.pages?.[pageName]?.branch;
+    if (branch !== 'restaurant' && branch !== 'household') {
+      errors.push(`${SCHEMA_PROFILE_DATA}: pages.${pageName} must map to restaurant or household branch page`);
+    }
   }
 }
 
@@ -2785,6 +2863,7 @@ validateDocsIntegrity();
 validateScreenshotAuditContract();
 validateOperatorRecipes();
 validateContactConfig(contactConfig);
+validateSchemaProfile(schemaProfile);
 
 const canonicalFormScriptPath = path.join(SITE_ROOT, CANONICAL_FORM_SCRIPT);
 const legacyFormScriptPath = path.join(SITE_ROOT, LEGACY_FORM_SCRIPT);
@@ -2805,6 +2884,10 @@ if (!fs.existsSync(runtimeConfigPath)) {
 
 if (!fs.existsSync(contactConfigPath)) {
   errors.push(`${CONTACT_CONFIG_DATA}: contact config missing`);
+}
+
+if (!fs.existsSync(schemaProfilePath)) {
+  errors.push(`${SCHEMA_PROFILE_DATA}: schema profile missing`);
 }
 
 if (!fs.existsSync(restaurantBranchPath)) {

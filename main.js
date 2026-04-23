@@ -12,6 +12,7 @@ const SITE_CONFIG = {
 
 const PAGE_METADATA_PATH = '/data/page-metadata.json';
 const CONTACT_CONFIG_PATH = '/data/contact-config.json';
+const SCHEMA_PROFILE_PATH = '/data/schema-profile.json';
 const RESTAURANT_BRANCH_PATH = '/data/restaurant-branch.json';
 const HOUSEHOLD_BRANCH_PATH = '/data/household-branch.json';
 const RESTAURANT_SERVICES_PATH = '/data/restaurant-services.json';
@@ -27,6 +28,38 @@ const DEFAULT_CONTACT_CONFIG = Object.freeze({
   whatsappNumber: SITE_CONFIG.company.phoneLink.replace(/[^\d]/g, ''),
   whatsappDefaultText: 'Здравствуйте! Нужен ремонт. Сайт MosPochin',
   email: SITE_CONFIG.company.email,
+});
+const DEFAULT_SCHEMA_PROFILE = Object.freeze({
+  global: {
+    provider: {
+      name: SITE_CONFIG.company.name,
+      url: 'https://mospochin.ru',
+      addressLocality: 'Москва',
+      addressCountry: 'RU',
+      openingHours: 'Mo-Su 00:00-24:00',
+    },
+    areaServed: 'Москва и Московская область',
+    offers: {
+      priceCurrency: 'RUB',
+      price: 'По согласованию после диагностики',
+      availability: 'https://schema.org/InStock',
+    },
+  },
+  branches: {
+    restaurant: {
+      descriptionTemplate: '{serviceName} с выездом на объект в Москве и МО.',
+    },
+    household: {
+      descriptionTemplate: '{serviceName} на дому в Москве и Московской области.',
+      provider: {
+        aggregateRating: {
+          ratingValue: '4.9',
+          reviewCount: '500',
+        },
+      },
+    },
+  },
+  pages: {},
 });
 const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
   subtitle: '🔧 Ресторанное оборудование',
@@ -225,6 +258,7 @@ let householdPageSlotsPromise = null;
 let householdCardPresetsPromise = null;
 let householdProofLayerPromise = null;
 let contactConfigPromise = null;
+let schemaProfilePromise = null;
 
 async function loadJson(path) {
   const response = await fetch(path, { cache: 'no-store' });
@@ -257,6 +291,129 @@ function toWhatsappNumber(value, fallbackE164) {
   const fromValue = String(value ?? '').replace(/[^\d]/g, '');
   if (fromValue) return fromValue;
   return String(fallbackE164 ?? '').replace(/[^\d]/g, '');
+}
+
+function isRecord(value) {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+}
+
+function withFallbackString(value, fallback) {
+  return typeof value === 'string' && value.trim() ? value.trim() : fallback;
+}
+
+function normalizeAggregateRating(value, fallback) {
+  if (value === null) return null;
+  if (!isRecord(value)) return fallback ?? null;
+
+  const ratingValue = withFallbackString(value.ratingValue, fallback?.ratingValue ?? '');
+  const reviewCount = withFallbackString(value.reviewCount, fallback?.reviewCount ?? '');
+  if (!ratingValue || !reviewCount) return fallback ?? null;
+
+  return {
+    ratingValue,
+    reviewCount,
+  };
+}
+
+function normalizeSchemaLayer(layer, fallback = {}) {
+  const source = isRecord(layer) ? layer : {};
+  const fallbackProvider = isRecord(fallback.provider) ? fallback.provider : {};
+  const fallbackOffers = isRecord(fallback.offers) ? fallback.offers : {};
+  const sourceProvider = isRecord(source.provider) ? source.provider : {};
+  const sourceOffers = isRecord(source.offers) ? source.offers : {};
+
+  return {
+    descriptionTemplate: withFallbackString(
+      source.descriptionTemplate,
+      withFallbackString(fallback.descriptionTemplate, '')
+    ),
+    provider: {
+      name: withFallbackString(sourceProvider.name, withFallbackString(fallbackProvider.name, '')),
+      url: withFallbackString(sourceProvider.url, withFallbackString(fallbackProvider.url, '')),
+      addressLocality: withFallbackString(
+        sourceProvider.addressLocality,
+        withFallbackString(fallbackProvider.addressLocality, '')
+      ),
+      addressCountry: withFallbackString(
+        sourceProvider.addressCountry,
+        withFallbackString(fallbackProvider.addressCountry, '')
+      ),
+      openingHours: withFallbackString(
+        sourceProvider.openingHours,
+        withFallbackString(fallbackProvider.openingHours, '')
+      ),
+      aggregateRating: normalizeAggregateRating(
+        sourceProvider.aggregateRating,
+        normalizeAggregateRating(fallbackProvider.aggregateRating, null)
+      ),
+    },
+    areaServed: withFallbackString(source.areaServed, withFallbackString(fallback.areaServed, '')),
+    offers: {
+      priceCurrency: withFallbackString(
+        sourceOffers.priceCurrency,
+        withFallbackString(fallbackOffers.priceCurrency, 'RUB')
+      ),
+      price: withFallbackString(sourceOffers.price, withFallbackString(fallbackOffers.price, '')),
+      availability: withFallbackString(
+        sourceOffers.availability,
+        withFallbackString(fallbackOffers.availability, 'https://schema.org/InStock')
+      ),
+    },
+  };
+}
+
+function mergeSchemaLayers(baseLayer, overrideLayer) {
+  const base = isRecord(baseLayer) ? baseLayer : {};
+  const override = isRecord(overrideLayer) ? overrideLayer : {};
+  const mergedProvider = {
+    ...(isRecord(base.provider) ? base.provider : {}),
+    ...(isRecord(override.provider) ? override.provider : {}),
+  };
+  if (isRecord(override.provider) && Object.prototype.hasOwnProperty.call(override.provider, 'aggregateRating')) {
+    mergedProvider.aggregateRating = override.provider.aggregateRating;
+  }
+
+  return {
+    ...base,
+    ...override,
+    provider: mergedProvider,
+    offers: {
+      ...(isRecord(base.offers) ? base.offers : {}),
+      ...(isRecord(override.offers) ? override.offers : {}),
+    },
+  };
+}
+
+function normalizeSchemaProfile(rawProfile) {
+  const profile = isRecord(rawProfile) ? rawProfile : {};
+  const defaultGlobal = normalizeSchemaLayer(DEFAULT_SCHEMA_PROFILE.global, DEFAULT_SCHEMA_PROFILE.global);
+  const defaultRestaurant = normalizeSchemaLayer(
+    DEFAULT_SCHEMA_PROFILE.branches.restaurant,
+    defaultGlobal
+  );
+  const defaultHousehold = normalizeSchemaLayer(
+    DEFAULT_SCHEMA_PROFILE.branches.household,
+    defaultGlobal
+  );
+
+  const global = normalizeSchemaLayer(profile.global, defaultGlobal);
+  const branches = {
+    restaurant: normalizeSchemaLayer(profile.branches?.restaurant, defaultRestaurant),
+    household: normalizeSchemaLayer(profile.branches?.household, defaultHousehold),
+  };
+  const pages = isRecord(profile.pages) ? profile.pages : {};
+
+  return {
+    global,
+    branches,
+    pages,
+  };
+}
+
+function applyDescriptionTemplate(template, serviceName, fallback) {
+  const preparedTemplate = withFallbackString(template, '');
+  if (!preparedTemplate) return fallback;
+  return preparedTemplate.replaceAll('{serviceName}', serviceName);
 }
 
 function normalizeContactConfig(rawConfig) {
@@ -318,6 +475,22 @@ async function loadContactConfig() {
   }
 
   return contactConfigPromise;
+}
+
+async function loadSchemaProfile() {
+  if (!schemaProfilePromise) {
+    schemaProfilePromise = (async () => {
+      try {
+        const json = await loadJson(SCHEMA_PROFILE_PATH);
+        return normalizeSchemaProfile(json);
+      } catch (error) {
+        console.error('Schema profile unavailable:', error.message);
+        return normalizeSchemaProfile(DEFAULT_SCHEMA_PROFILE);
+      }
+    })();
+  }
+
+  return schemaProfilePromise;
 }
 
 async function loadRestaurantBranchConfig() {
@@ -499,6 +672,7 @@ const Components = {
   restaurantBranch: DEFAULT_RESTAURANT_BRANCH,
   householdBranch: DEFAULT_HOUSEHOLD_BRANCH,
   contactConfig: DEFAULT_CONTACT_CONFIG,
+  schemaProfile: normalizeSchemaProfile(DEFAULT_SCHEMA_PROFILE),
 
   isBytovaya() {
     return (this.currentBranch || inferBranchFromSlug()) === 'household';
@@ -856,6 +1030,18 @@ const Components = {
         ? preferredText.trim()
         : this.contactConfig.whatsappDefaultText;
     return buildWhatsappHref(this.contactConfig.whatsappNumber, message);
+  },
+
+  getSchemaProfileForPage() {
+    const branchKey = this.isBytovaya() ? 'household' : 'restaurant';
+    const pageKey = getCurrentPageFile();
+    const profile = this.schemaProfile || normalizeSchemaProfile(DEFAULT_SCHEMA_PROFILE);
+    const globalLayer = profile.global || DEFAULT_SCHEMA_PROFILE.global;
+    const branchLayer = profile.branches?.[branchKey] || {};
+    const pageLayer = profile.pages?.[pageKey];
+    const mergedBase = mergeSchemaLayers(globalLayer, branchLayer);
+    const merged = mergeSchemaLayers(mergedBase, pageLayer);
+    return normalizeSchemaLayer(merged, mergedBase);
   },
 
   resolveContactHref(rawHref, preferredWhatsappText = '') {
@@ -1360,15 +1546,19 @@ const Components = {
   hydrateHouseholdServiceSchema(service, pageMetadata, slotEntry) {
     const schemaScript = document.querySelector('script[data-slot="service-schema"]');
     if (!schemaScript || !service) return;
+    const schemaProfile = this.getSchemaProfileForPage();
 
     const schemaDescription =
       slotEntry?.serviceSchema?.description ||
       pageMetadata?.description ||
-      `${service.serviceName} на дому в Москве и Московской области.`;
-    const areaServed =
-      slotEntry?.serviceSchema?.areaServed || 'Москва и Московская область';
-    const priceLabel =
-      slotEntry?.serviceSchema?.price || 'По согласованию после диагностики';
+      applyDescriptionTemplate(
+        schemaProfile.descriptionTemplate,
+        service.serviceName,
+        `${service.serviceName} на дому в Москве и Московской области.`
+      );
+    const areaServed = slotEntry?.serviceSchema?.areaServed || schemaProfile.areaServed;
+    const priceLabel = slotEntry?.serviceSchema?.price || schemaProfile.offers.price;
+    const aggregateRating = schemaProfile.provider.aggregateRating;
 
     const schema = {
       '@context': 'https://schema.org',
@@ -1377,20 +1567,24 @@ const Components = {
       description: schemaDescription,
       provider: {
         '@type': 'LocalBusiness',
-        name: SITE_CONFIG.company.name,
+        name: schemaProfile.provider.name,
         telephone: this.getPhoneLink(),
-        url: 'https://mospochin.ru',
+        url: schemaProfile.provider.url,
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Москва',
-          addressCountry: 'RU',
+          addressLocality: schemaProfile.provider.addressLocality,
+          addressCountry: schemaProfile.provider.addressCountry,
         },
-        openingHours: 'Mo-Su 00:00-24:00',
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: '500',
-        },
+        openingHours: schemaProfile.provider.openingHours,
+        ...(aggregateRating
+          ? {
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: aggregateRating.ratingValue,
+                reviewCount: aggregateRating.reviewCount,
+              },
+            }
+          : {}),
       },
       areaServed: {
         '@type': 'AdministrativeArea',
@@ -1398,9 +1592,9 @@ const Components = {
       },
       offers: {
         '@type': 'Offer',
-        priceCurrency: 'RUB',
+        priceCurrency: schemaProfile.offers.priceCurrency,
         price: priceLabel,
-        availability: 'https://schema.org/InStock',
+        availability: schemaProfile.offers.availability,
       },
     };
 
@@ -1970,33 +2164,40 @@ const Components = {
   hydrateRestaurantServiceSchema(service, pageMetadata) {
     const schemaScript = document.querySelector('script[data-slot="service-schema"]');
     if (!schemaScript || !service) return;
+    const schemaProfile = this.getSchemaProfileForPage();
 
     const schema = {
       '@context': 'https://schema.org',
       '@type': 'Service',
       name: service.schemaName,
-      description: pageMetadata?.description || `${service.serviceName} с выездом на объект в Москве и МО.`,
+      description:
+        pageMetadata?.description ||
+        applyDescriptionTemplate(
+          schemaProfile.descriptionTemplate,
+          service.serviceName,
+          `${service.serviceName} с выездом на объект в Москве и МО.`
+        ),
       provider: {
         '@type': 'LocalBusiness',
-        name: SITE_CONFIG.company.name,
+        name: schemaProfile.provider.name,
         telephone: this.getPhoneLink(),
-        url: 'https://mospochin.ru',
+        url: schemaProfile.provider.url,
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Москва',
-          addressCountry: 'RU',
+          addressLocality: schemaProfile.provider.addressLocality,
+          addressCountry: schemaProfile.provider.addressCountry,
         },
-        openingHours: 'Mo-Su 00:00-24:00',
+        openingHours: schemaProfile.provider.openingHours,
       },
       areaServed: {
         '@type': 'AdministrativeArea',
-        name: 'Москва и Московская область',
+        name: schemaProfile.areaServed,
       },
       offers: {
         '@type': 'Offer',
-        priceCurrency: 'RUB',
-        price: 'По согласованию после диагностики',
-        availability: 'https://schema.org/InStock',
+        priceCurrency: schemaProfile.offers.priceCurrency,
+        price: schemaProfile.offers.price,
+        availability: schemaProfile.offers.availability,
       },
     };
 
@@ -2259,14 +2460,16 @@ const Components = {
 
     this.applyPageIdentityClasses();
 
-    const [restaurantBranch, householdBranch, contactConfig] = await Promise.all([
+    const [restaurantBranch, householdBranch, contactConfig, schemaProfile] = await Promise.all([
       loadRestaurantBranchConfig(),
       loadHouseholdBranchConfig(),
       loadContactConfig(),
+      loadSchemaProfile(),
     ]);
     this.restaurantBranch = restaurantBranch;
     this.householdBranch = householdBranch;
     this.contactConfig = contactConfig;
+    this.schemaProfile = schemaProfile;
 
     if (header) header.innerHTML = this.getHeader();
     if (footer) footer.innerHTML = this.getFooter();

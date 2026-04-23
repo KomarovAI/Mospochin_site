@@ -14,6 +14,8 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - canonical form endpoint/runtime configuration
 - `data/contact-config.json`
   - canonical shared contact runtime (phone/WhatsApp/email) for both branches
+- `data/schema-profile.json`
+  - canonical schema defaults for service JSON-LD (`global -> branch -> page` override model)
 - `server/telegram-api.mjs`
   - canonical production Telegram delivery backend
 - `data/page-metadata.json`
@@ -54,6 +56,10 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - `data/contact-config.json` owns shared phone/WhatsApp values
   - HTML contact links expose `data-contact-link="phone|whatsapp"` for runtime hydration
   - optional `data-whatsapp-text` keeps page-specific message context
+- Treat service JSON-LD as a concrete contract:
+  - `data/schema-profile.json` owns shared schema defaults
+  - branch and page overrides are allowed only inside the same contract (`global -> branch -> page`)
+  - no standalone schema constants should be duplicated across branch runtimes
 
 ## Canonical Workflow
 

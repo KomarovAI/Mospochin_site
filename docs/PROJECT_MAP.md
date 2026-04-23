@@ -23,6 +23,8 @@ Compact map of the live repository structure and maintenance surfaces.
   - runtime/form endpoint configuration
 - `data/contact-config.json`
   - shared contact contract for phone/WhatsApp hydration across both branches
+- `data/schema-profile.json`
+  - shared service-schema profile for JSON-LD defaults with branch/page overrides
 - `data/operator-recipes.json`
   - machine-readable operator recipe catalog for branch-safe edit routing
 - `data/screenshot-audit.json`

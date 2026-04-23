@@ -25,6 +25,7 @@
 - Start routine operator/LLM work from `docs/OPERATOR_ROUTING.md`; use the larger canonical docs only after the route is clear.
 - Machine-readable operator routing lives in `data/operator-recipes.json`.
 - Canonical shared contact contract now lives in `data/contact-config.json` (`phoneDisplay`, `phoneE164`, `whatsappNumber`, default WhatsApp text).
+- Canonical shared service-schema defaults now live in `data/schema-profile.json` (`global -> branch -> page` overrides for JSON-LD provider/area/offers fields).
 - The shortest read-only route selector is `npm run recipe:select -- --intent <recipe-id-or-intent> [--page <file.html>] [--branch <household|restaurant|shared>] [--json]`.
 
 ## Telegram form runtime contract
@@ -53,6 +54,7 @@
 ## Validation and deploy
 
 - `npm run validate:site` now requires `data/runtime-config.json` and a non-empty `telegramFormEndpoint`.
+- `npm run validate:site` now also requires a valid `data/schema-profile.json` and ensures page-level overrides point only to existing household/restaurant pages.
 - `npm run validate:site` also enforces the page-level client contract: form pages must include exactly one `telegram-form.js`, and non-form pages must not include it.
 - `npm run validate:site` also requires a valid `data/screenshot-audit.json` manifest and confirms that every representative audit page exists and matches its branch/page-type metadata.
 - `npm run validate:site` also requires a valid `data/restaurant-screenshot-audit.json` manifest for the full restaurant stabilization path.
