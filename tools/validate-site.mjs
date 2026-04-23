@@ -690,6 +690,33 @@ function validateHouseholdBrandGroups(value, context) {
         });
       }
     }
+    if (Object.hasOwn(value, 'logos')) {
+      if (!Array.isArray(value.logos)) {
+        errors.push(`${context}.logos must be an array when provided`);
+      } else {
+        value.logos.forEach((logo, index) => {
+          const logoContext = `${context}.logos[${index}]`;
+          if (typeof logo === 'string') {
+            if (!logo.trim()) {
+              errors.push(`${logoContext} must be a non-empty string`);
+            }
+            return;
+          }
+          if (!isPlainObject(logo)) {
+            errors.push(`${logoContext} must be a string or object`);
+            return;
+          }
+          if (!isNonEmptyString(logo.label)) {
+            errors.push(`${logoContext}.label must be a non-empty string`);
+          }
+          for (const fieldName of ['logoSrc', 'logoAlt']) {
+            if (Object.hasOwn(logo, fieldName) && !isNonEmptyString(logo[fieldName])) {
+              errors.push(`${logoContext}.${fieldName} must be a non-empty string when provided`);
+            }
+          }
+        });
+      }
+    }
 
     if (value.groups.length === 0) {
       errors.push(`${context}.groups must be a non-empty array`);

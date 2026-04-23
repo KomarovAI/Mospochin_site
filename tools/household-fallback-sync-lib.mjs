@@ -440,6 +440,32 @@ function normalizeBrandV2Items(items) {
     .filter(Boolean);
 }
 
+function normalizeBrandLogoItems(items) {
+  if (!Array.isArray(items)) {
+    return [];
+  }
+
+  return items
+    .map((item) => {
+      if (typeof item === 'string') {
+        const label = item.trim();
+        return label ? { label } : null;
+      }
+      if (!isPlainObject(item)) {
+        return null;
+      }
+
+      const label = String(item.label ?? item.name ?? '').trim();
+      if (!label) {
+        return null;
+      }
+      const logoSrc = String(item.logoSrc ?? '').trim();
+      const logoAlt = String(item.logoAlt ?? '').trim() || `Логотип ${label}`;
+      return logoSrc ? { label, logoSrc, logoAlt } : { label, logoAlt };
+    })
+    .filter(Boolean);
+}
+
 function normalizeBrandGroupsV2(brandGroups) {
   if (!Array.isArray(brandGroups.groups)) {
     return null;
@@ -484,6 +510,7 @@ function normalizeBrandGroupsV2(brandGroups) {
         }))
         .filter((item) => item.value && item.label)
     : [];
+  const logos = normalizeBrandLogoItems(brandGroups.logos);
 
   return {
     badge: String(brandGroups.badge ?? '').trim(),
@@ -494,6 +521,7 @@ function normalizeBrandGroupsV2(brandGroups) {
       'Работаем с популярными и премиальными брендами.',
     note: String(brandGroups.note ?? '').trim(),
     counters,
+    logos,
     groups,
   };
 }
@@ -518,6 +546,7 @@ function normalizeBrandGroupsV1(brandGroups) {
       'Работаем с популярными и премиальными брендами.',
     note: String(brandGroups.note ?? '').trim(),
     counters: [],
+    logos: [],
     groups: [
       {
         key: 'premium',
@@ -566,6 +595,26 @@ function renderBrandGroupCounter(counter) {
     </li>`;
 }
 
+function renderBrandLogoTile(item) {
+  const initials = item.label
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((token) => token[0]?.toUpperCase() ?? '')
+    .join('');
+
+  const media = item.logoSrc
+    ? `<img src="${escapeHtml(item.logoSrc)}" alt="${escapeHtml(item.logoAlt || `Логотип ${item.label}`)}" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async">`
+    : `<span class="inline-flex h-9 min-w-9 items-center justify-center rounded-lg bg-brand-blue/10 px-2 text-xs font-bold tracking-[0.08em] text-brand-blue">${escapeHtml(initials || item.label.slice(0, 2).toUpperCase())}</span>`;
+
+  return `<li class="rounded-2xl border border-slate-200 bg-white px-3 py-2">
+      <div class="flex items-center gap-2">
+        ${media}
+        <span class="text-sm font-semibold text-slate-700 whitespace-nowrap">${escapeHtml(item.label)}</span>
+      </div>
+    </li>`;
+}
+
 function renderBrandGroupCard(group) {
   return `<article class="scroll-reveal rounded-2xl border p-4 sm:p-5 ${group.toneClass}">
       <div class="flex items-start justify-between gap-3">
@@ -606,6 +655,19 @@ export function renderHouseholdBrandGroups(slotEntry) {
               }
             </header>
             ${config.note ? `<div class="mt-4 rounded-2xl bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-600 ring-1 ring-inset ring-slate-200">${escapeHtml(config.note)}</div>` : ''}
+            ${
+              config.logos.length
+                ? `<section class="mt-5 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 sm:p-5 scroll-reveal">
+                <div class="flex items-center justify-between gap-3 mb-3">
+                  <h3 class="text-sm sm:text-base font-display font-extrabold text-brand-blue">Логотипы брендов водонагревателей</h3>
+                  <span class="text-xs font-medium uppercase tracking-[0.08em] text-slate-500">${config.logos.length} логотипов</span>
+                </div>
+                <ul class="flex flex-wrap gap-2.5">
+                  ${config.logos.map((item) => renderBrandLogoTile(item)).join('')}
+                </ul>
+              </section>`
+                : ''
+            }
             <div class="mt-6 lg:mt-8 grid gap-4 sm:gap-5 md:grid-cols-2">
               ${config.groups.map((group) => renderBrandGroupCard(group)).join('')}
             </div>
