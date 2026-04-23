@@ -13,11 +13,41 @@ export const CARD_PRESETS_PATH = path.join(SITE_ROOT, 'data/household-card-prese
 export const POLICY_PATH = path.join(SITE_ROOT, 'data/household-page-policy.json');
 
 export const HOUSEHOLD_SYNC_ZONES = [
+  'service-kpi',
   'request-overview',
   'faq-items',
   'service-proof',
   'related-links',
 ];
+
+const DEFAULT_HOUSEHOLD_SERVICE_KPI = {
+  badge: 'СЕРВИСНЫЕ ОРИЕНТИРЫ',
+  title: 'Что получаете по заявке до и после выезда',
+  description:
+    'Фиксируем понятные метрики сервиса, чтобы решение о ремонте принималось по фактам, а не по обещаниям.',
+  items: [
+    {
+      value: '15+',
+      label: 'Лет опыта',
+      note: 'Работаем с бытовыми категориями ежедневно по Москве и МО.',
+    },
+    {
+      value: '5000+',
+      label: 'Ремонтов',
+      note: 'Закрытые заявки по домашней технике в рабочем контуре сервиса.',
+    },
+    {
+      value: '95%',
+      label: 'За 1 визит',
+      note: 'Типовой кейс закрываем без повторного выезда.',
+    },
+    {
+      value: '12 мес',
+      label: 'Гарантия',
+      note: 'Подтверждаем результат актом и гарантийной фиксацией.',
+    },
+  ],
+};
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -215,6 +245,49 @@ export function renderHouseholdRequestOverview(service, slotEntry) {
     </div>`;
 }
 
+function normalizeServiceKpiConfig(defaults, override) {
+  const base = defaults && typeof defaults === 'object' ? defaults : DEFAULT_HOUSEHOLD_SERVICE_KPI;
+  const custom = override && typeof override === 'object' ? override : {};
+  const items = Array.isArray(custom.items) && custom.items.length > 0 ? custom.items : base.items;
+
+  return {
+    badge: custom.badge || base.badge || DEFAULT_HOUSEHOLD_SERVICE_KPI.badge,
+    title: custom.title || base.title || DEFAULT_HOUSEHOLD_SERVICE_KPI.title,
+    description: custom.description || base.description || DEFAULT_HOUSEHOLD_SERVICE_KPI.description,
+    items: Array.isArray(items) ? items.filter(Boolean).slice(0, 4) : DEFAULT_HOUSEHOLD_SERVICE_KPI.items,
+  };
+}
+
+export function renderHouseholdServiceKpi(slotEntry, slotsRoot) {
+  const config = normalizeServiceKpiConfig(
+    slotsRoot?.serviceKpiDefaults,
+    slotEntry?.serviceKpi
+  );
+
+  return `<section data-sync-zone="service-kpi" data-household-slot-generated="service-kpi" class="py-14 lg:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-slate-50/80 p-6 sm:p-8 lg:p-10 shadow-sm">
+          <div class="text-center">
+            <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-orange">${escapeHtml(config.badge)}</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(config.title)}</h2>
+            <p class="mt-3 text-slate-600">${escapeHtml(config.description)}</p>
+          </div>
+          <div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            ${config.items
+              .map(
+                (item) => `<article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">${escapeHtml(item.value || '')}</p>
+                  <p class="mt-2 text-sm font-semibold text-brand-blue">${escapeHtml(item.label || '')}</p>
+                  <p class="mt-2 text-xs text-slate-500">${escapeHtml(item.note || '')}</p>
+                </article>`
+              )
+              .join('')}
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
 export function renderHouseholdFaqItems(slotEntry) {
   return `<div class="mt-10 space-y-4" data-sync-zone="faq-items">
 ${(slotEntry?.faq || [])
@@ -296,10 +369,11 @@ export function renderHouseholdRelatedLinks(service, registry, cardPresets) {
     </section>`;
 }
 
-function buildSyncPayload({ pageMeta, service, slotEntry, registry, cardPresets, proofLayer }) {
+function buildSyncPayload({ pageMeta, service, slotEntry, slotsRoot, registry, cardPresets, proofLayer }) {
   return {
     schema: JSON.stringify(buildHouseholdServiceSchema(service, pageMeta, slotEntry), null, 2),
     zones: {
+      'service-kpi': renderHouseholdServiceKpi(slotEntry, slotsRoot),
       'request-overview': renderHouseholdRequestOverview(service, slotEntry),
       'faq-items': renderHouseholdFaqItems(slotEntry),
       'service-proof': renderHouseholdServiceProof(service, proofLayer),
@@ -336,6 +410,20 @@ export function replaceSyncZoneContent(html, zone, content) {
     `${markerStart(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${markerEnd(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`
   );
   if (!regex.test(html)) {
+    if (zone === 'service-kpi') {
+      const legacySectionRegex =
+        /<section\b[^>]*>[\s\S]*?Лет опыта[\s\S]*?Ремонтов[\s\S]*?(?:За 1 визит|За один визит)[\s\S]*?(?:Месяцев гарантия|Гарантия|мес)[\s\S]*?<\/section>/i;
+      const kpiBlock = `${markerStart(zone)}\n${content}\n${markerEnd(zone)}`;
+      if (legacySectionRegex.test(html)) {
+        return html.replace(legacySectionRegex, kpiBlock);
+      }
+
+      const requestOverviewStart = markerStart('request-overview');
+      const requestOverviewIndex = html.indexOf(requestOverviewStart);
+      if (requestOverviewIndex !== -1) {
+        return `${html.slice(0, requestOverviewIndex)}${kpiBlock}\n${html.slice(requestOverviewIndex)}`;
+      }
+    }
     throw new Error(`Missing sync marker block for zone ${zone}`);
   }
   return html.replace(regex, `${markerStart(zone)}\n${content}\n${markerEnd(zone)}`);
@@ -377,8 +465,19 @@ export function getPublicHouseholdServices(registry) {
   return (registry?.services || []).filter((entry) => !entry.isShadow);
 }
 
-export function analyzeHouseholdSyncState(html, { pageMeta, service, slotEntry, registry, cardPresets, proofLayer }) {
-  const expected = buildSyncPayload({ pageMeta, service, slotEntry, registry, cardPresets, proofLayer });
+export function analyzeHouseholdSyncState(
+  html,
+  { pageMeta, service, slotEntry, slotsRoot, registry, cardPresets, proofLayer }
+) {
+  const expected = buildSyncPayload({
+    pageMeta,
+    service,
+    slotEntry,
+    slotsRoot,
+    registry,
+    cardPresets,
+    proofLayer,
+  });
   const issues = [];
 
   const schemaContent = extractServiceSchemaContent(html);
@@ -438,6 +537,7 @@ export function getPublicServiceSyncContext(page, state = loadHouseholdSyncState
     pageMeta,
     service,
     slotEntry,
+    slotsRoot: state.slots,
     registry: state.registry,
     cardPresets: state.cardPresets,
     proofLayer: state.proofLayer,

@@ -16,6 +16,8 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - canonical shared contact runtime (phone/WhatsApp/email) for both branches
 - `data/schema-profile.json`
   - canonical schema defaults for service JSON-LD (`global -> branch -> page` override model)
+- `data/household-page-slots.json` and `data/restaurant-page-slots.json`
+  - canonical service KPI defaults (`serviceKpiDefaults`) and optional page-level KPI override (`pages.<page>.serviceKpi`)
 - `server/telegram-api.mjs`
   - canonical production Telegram delivery backend
 - `data/page-metadata.json`
@@ -48,6 +50,7 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
 - Use the screenshot audit flow only for stabilization review; it does not replace branch-specific authoring helpers.
 - Keep HTML edits limited to unique layout, narrative, and required slot/sync hosts.
 - Public service-page fallback zones are intentionally duplicated and must stay aligned through branch sync commands.
+- KPI/stat blocks on public service pages are a sync-managed fallback zone (`service-kpi`) and should be edited through slot contracts, not by direct hardcoded HTML counters.
 - Treat the form path as a concrete contract, not an abstract runtime note:
   - `telegram-form.js` owns client submission
   - `data/runtime-config.json` owns the site-relative endpoint

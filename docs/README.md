@@ -26,6 +26,7 @@
 - Machine-readable operator routing lives in `data/operator-recipes.json`.
 - Canonical shared contact contract now lives in `data/contact-config.json` (`phoneDisplay`, `phoneE164`, `whatsappNumber`, default WhatsApp text).
 - Canonical shared service-schema defaults now live in `data/schema-profile.json` (`global -> branch -> page` overrides for JSON-LD provider/area/offers fields).
+- Canonical shared service KPI layer now lives in branch slot contracts (`data/household-page-slots.json` and `data/restaurant-page-slots.json`) via `serviceKpiDefaults` plus optional page-level `serviceKpi` override.
 - The shortest read-only route selector is `npm run recipe:select -- --intent <recipe-id-or-intent> [--page <file.html>] [--branch <household|restaurant|shared>] [--json]`.
 
 ## Telegram form runtime contract
@@ -81,3 +82,4 @@
 - `npm run audit:restaurant-screenshots` runs the same screenshot flow for all restaurant pages and stores artifacts under `.artifacts/screenshots/restaurant/`.
 - `npm run audit:restaurant-branch` runs `doctor:page` across the whole restaurant branch, then captures screenshots, and routes review through `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md` before backlog logging.
 - This audit flow is a stabilization tool, not a branch authoring workflow or deploy gate.
+- For service KPI edits on public service pages use branch helpers (`npm run household:set-service-kpi` / `npm run restaurant:set-service-kpi`) and then sync fallbacks.

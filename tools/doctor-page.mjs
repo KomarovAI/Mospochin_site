@@ -127,7 +127,8 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
 
   if (pageType === 'restaurant-service-page' && registryEntry) {
     return {
-      slots: `Edit data/restaurant-page-slots.json for ${page} form hints, FAQ, and request overview`,
+      slots: `Edit data/restaurant-page-slots.json for ${page} form hints, FAQ, request overview, and service KPI`,
+      serviceKpi: `npm run restaurant:set-service-kpi -- --page ${page} --json '<json>'`,
       registry: `Edit data/restaurant-services.json for ${page} symptoms, brands, related pages, and service identity`,
       proof: 'Edit data/restaurant-proof-layer.json for shared restaurant proof defaults',
       metadata: `Edit data/page-metadata.json for ${page} SEO and canonical metadata`,

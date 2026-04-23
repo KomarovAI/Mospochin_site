@@ -620,6 +620,37 @@ function validateHouseholdAdvisoryCards(value, context) {
   }
 }
 
+function validateServiceKpi(value, context) {
+  if (!isPlainObject(value)) {
+    errors.push(`${context} must be an object`);
+    return;
+  }
+
+  for (const fieldName of ['badge', 'title', 'description']) {
+    if (!isNonEmptyString(value[fieldName])) {
+      errors.push(`${context}.${fieldName} must be a non-empty string`);
+    }
+  }
+
+  if (!Array.isArray(value.items) || value.items.length !== 4) {
+    errors.push(`${context}.items must be an array of exactly 4 items`);
+    return;
+  }
+
+  value.items.forEach((item, index) => {
+    if (!isPlainObject(item)) {
+      errors.push(`${context}.items[${index}] must be an object`);
+      return;
+    }
+
+    for (const fieldName of ['value', 'label', 'note']) {
+      if (!isNonEmptyString(item[fieldName])) {
+        errors.push(`${context}.items[${index}].${fieldName} must be a non-empty string`);
+      }
+    }
+  });
+}
+
 function getBodyClasses(html) {
   const className = html.match(/<body[^>]+class="([^"]*)"/i)?.[1] ?? '';
   return new Set(className.split(/\s+/).filter(Boolean));
@@ -1777,6 +1808,12 @@ function validateHouseholdPageSlots(slots, registry) {
     return;
   }
 
+  if (!isPlainObject(slots.serviceKpiDefaults)) {
+    errors.push(`${HOUSEHOLD_PAGE_SLOTS_DATA}: serviceKpiDefaults must be an object`);
+  } else {
+    validateServiceKpi(slots.serviceKpiDefaults, `${HOUSEHOLD_PAGE_SLOTS_DATA}: serviceKpiDefaults`);
+  }
+
   const publicServices = (registry?.services ?? []).filter((service) => !service.isShadow);
   const publicServicePages = new Set(publicServices.map((service) => service.page));
   const sharedCardConfig = getHouseholdSharedCardConfig() ?? {};
@@ -1879,6 +1916,10 @@ function validateHouseholdPageSlots(slots, registry) {
       errors.push(`${service.page}: missing data-slot="service-advisory" for advisoryCards`);
     }
 
+    if (Object.hasOwn(slotEntry, 'serviceKpi')) {
+      validateServiceKpi(slotEntry.serviceKpi, `${context}.serviceKpi`);
+    }
+
     for (const zone of policy?.requiredSyncZones ?? []) {
       if (zone === 'service-schema') {
         if (!html.includes('data-sync-zone="service-schema"')) {
@@ -1901,6 +1942,7 @@ function validateHouseholdPageSlots(slots, registry) {
       pageMeta: metadata.pages[service.page],
       service,
       slotEntry,
+      slotsRoot: slots,
       registry,
       cardPresets: householdCardPresets,
       proofLayer: householdProofLayer,
@@ -2416,6 +2458,12 @@ function validateRestaurantPageSlots(slots, registry) {
     return;
   }
 
+  if (!isPlainObject(slots.serviceKpiDefaults)) {
+    errors.push(`${RESTAURANT_PAGE_SLOTS_DATA}: serviceKpiDefaults must be an object`);
+  } else {
+    validateServiceKpi(slots.serviceKpiDefaults, `${RESTAURANT_PAGE_SLOTS_DATA}: serviceKpiDefaults`);
+  }
+
   const publicServices = registry?.services ?? [];
   const branchCardPages = new Set(restaurantPagePolicy?.sharedCardSlots?.branchPages ?? []);
   const expectedPages = new Set([...publicServices.map((service) => service.page), ...branchCardPages]);
@@ -2484,6 +2532,10 @@ function validateRestaurantPageSlots(slots, registry) {
       if (!isArrayOfNonEmptyStrings(slotEntry.requestOverview.chips)) {
         errors.push(`${context}.requestOverview.chips must be a non-empty array of strings`);
       }
+    }
+
+    if (Object.hasOwn(slotEntry, 'serviceKpi')) {
+      validateServiceKpi(slotEntry.serviceKpi, `${context}.serviceKpi`);
     }
 
     for (const className of restaurantPagePolicy?.publicPage?.requiredBodyClasses ?? []) {
@@ -2572,6 +2624,7 @@ function validateRestaurantPageSlots(slots, registry) {
       pageMeta: metadata.pages[service.page],
       service,
       slotEntry,
+      slotsRoot: slots,
       registry: restaurantServicesRegistry,
       proofLayer: restaurantProofLayer,
     });

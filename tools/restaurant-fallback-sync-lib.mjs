@@ -11,11 +11,41 @@ import {
 
 export const POLICY_PATH = path.join(SITE_ROOT, 'data/restaurant-page-policy.json');
 export const RESTAURANT_SYNC_ZONES = [
+  'service-kpi',
   'request-overview',
   'faq-items',
   'service-proof',
   'related-links',
 ];
+
+const DEFAULT_RESTAURANT_SERVICE_KPI = {
+  badge: 'СЕРВИСНЫЕ ОРИЕНТИРЫ',
+  title: 'Какие метрики держим по заявке ресторана',
+  description:
+    'Показываем операционные ориентиры заранее: скорость реакции, глубину закрытия и гарантийный финал по работам.',
+  items: [
+    {
+      value: '18+',
+      label: 'Лет практики',
+      note: 'Опыт по горячей линии, холоду и моечному контуру кухни.',
+    },
+    {
+      value: '4000+',
+      label: 'Заявок',
+      note: 'Реальные кейсы по ресторанному оборудованию в полевых условиях.',
+    },
+    {
+      value: '97%',
+      label: 'За 1 выезд',
+      note: 'Типовые поломки закрываем без лишнего простоя смены.',
+    },
+    {
+      value: '24 мес',
+      label: 'Гарантия',
+      note: 'Фиксируем результат документами и гарантийным подтверждением.',
+    },
+  ],
+};
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -100,6 +130,20 @@ function replaceSyncZoneContent(html, zone, content) {
   const startIndex = html.indexOf(start);
   const endIndex = html.indexOf(end);
   if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
+    if (zone === 'service-kpi') {
+      const legacySectionRegex =
+        /<section\b[^>]*>[\s\S]*?Лет опыта[\s\S]*?Ремонтов[\s\S]*?(?:За 1 визит|За один визит)[\s\S]*?(?:Месяцев гарантия|Гарантия|мес)[\s\S]*?<\/section>/i;
+      const kpiBlock = `${start}\n${content}\n${end}`;
+      if (legacySectionRegex.test(html)) {
+        return html.replace(legacySectionRegex, kpiBlock);
+      }
+
+      const requestOverviewStart = markerStart('request-overview');
+      const requestOverviewIndex = html.indexOf(requestOverviewStart);
+      if (requestOverviewIndex !== -1) {
+        return `${html.slice(0, requestOverviewIndex)}${kpiBlock}\n${html.slice(requestOverviewIndex)}`;
+      }
+    }
     throw new Error(`Missing sync markers for ${zone}`);
   }
   return `${html.slice(0, startIndex)}${start}\n${content}\n${end}${html.slice(endIndex + end.length)}`;
@@ -135,6 +179,46 @@ function buildRequestOverview(service, slotEntry) {
       </div>
       <p class="mt-4 text-xs text-slate-500">Пример описания: ${escapeHtml(service.formExample || '')}</p>
     </div>`;
+}
+
+function normalizeServiceKpiConfig(defaults, override) {
+  const base = defaults && typeof defaults === 'object' ? defaults : DEFAULT_RESTAURANT_SERVICE_KPI;
+  const custom = override && typeof override === 'object' ? override : {};
+  const items = Array.isArray(custom.items) && custom.items.length > 0 ? custom.items : base.items;
+
+  return {
+    badge: custom.badge || base.badge || DEFAULT_RESTAURANT_SERVICE_KPI.badge,
+    title: custom.title || base.title || DEFAULT_RESTAURANT_SERVICE_KPI.title,
+    description: custom.description || base.description || DEFAULT_RESTAURANT_SERVICE_KPI.description,
+    items: Array.isArray(items) ? items.filter(Boolean).slice(0, 4) : DEFAULT_RESTAURANT_SERVICE_KPI.items,
+  };
+}
+
+function buildServiceKpi(slotEntry, slotsRoot) {
+  const config = normalizeServiceKpiConfig(slotsRoot?.serviceKpiDefaults, slotEntry?.serviceKpi);
+
+  return `<section data-sync-zone="service-kpi" class="py-14 lg:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-slate-50/80 p-6 sm:p-8 lg:p-10 shadow-sm">
+          <div class="text-center">
+            <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-orange">${escapeHtml(config.badge)}</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(config.title)}</h2>
+            <p class="mt-3 text-slate-600">${escapeHtml(config.description)}</p>
+          </div>
+          <div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            ${config.items
+              .map(
+                (item) => `<article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">${escapeHtml(item.value || '')}</p>
+                  <p class="mt-2 text-sm font-semibold text-brand-blue">${escapeHtml(item.label || '')}</p>
+                  <p class="mt-2 text-xs text-slate-500">${escapeHtml(item.note || '')}</p>
+                </article>`
+              )
+              .join('')}
+          </div>
+        </div>
+      </div>
+    </section>`;
 }
 
 function buildSlaStrip(strip) {
@@ -306,10 +390,11 @@ function buildServiceSchema({ pageMeta, service }) {
     }`;
 }
 
-function buildSyncPayload({ pageMeta, service, slotEntry, registry, proofLayer }) {
+function buildSyncPayload({ pageMeta, service, slotEntry, slotsRoot, registry, proofLayer }) {
   return {
     schema: buildServiceSchema({ pageMeta, service }),
     zones: {
+      'service-kpi': buildServiceKpi(slotEntry, slotsRoot),
       'request-overview': buildRequestOverview(service, slotEntry),
       'faq-items': buildFaqMarkup(slotEntry.faq || []),
       'service-proof': buildServiceProof(service, proofLayer),
@@ -336,8 +421,11 @@ export function getPublicRestaurantServices(registry) {
   return (registry?.services || []).filter((entry) => !entry.isShadow);
 }
 
-export function analyzeRestaurantSyncState(html, { pageMeta, service, slotEntry, registry, proofLayer }) {
-  const expected = buildSyncPayload({ pageMeta, service, slotEntry, registry, proofLayer });
+export function analyzeRestaurantSyncState(
+  html,
+  { pageMeta, service, slotEntry, slotsRoot, registry, proofLayer }
+) {
+  const expected = buildSyncPayload({ pageMeta, service, slotEntry, slotsRoot, registry, proofLayer });
   const issues = [];
 
   const schemaContent = extractServiceSchemaContent(html);
@@ -408,6 +496,7 @@ export function getPublicRestaurantServiceSyncContext(page, state = loadRestaura
     pageMeta,
     service,
     slotEntry,
+    slotsRoot: state.slots,
     registry: state.registry,
     proofLayer: state.proofLayer,
     policy: state.policy,
