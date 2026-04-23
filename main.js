@@ -977,14 +977,16 @@ const Components = {
 
       element.dataset.finalValue = finalValue;
       element.setAttribute('aria-label', finalValue);
-
-      if (element.textContent.trim() === '0') {
-        element.textContent = finalValue;
-      }
+      element.textContent = `0${suffix}`;
     });
 
     observeElements('.counter', { threshold: 0.5 }, (entry, observer) => {
       const element = entry.target;
+      if (element.dataset.counterAnimated === 'true') {
+        observer.unobserve(element);
+        return;
+      }
+
       const target = Number.parseInt(element.dataset.target || '0', 10);
       const suffix = element.dataset.suffix || '';
       const finalValue = element.dataset.finalValue || `${target}${suffix}`;
@@ -1001,6 +1003,8 @@ const Components = {
 
         if (progress < 1) {
           requestAnimationFrame(update);
+        } else {
+          element.dataset.counterAnimated = 'true';
         }
       };
 
