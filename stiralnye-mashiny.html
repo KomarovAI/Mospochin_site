@@ -189,19 +189,19 @@
           </div>
           <div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
             <article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
-                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">15+</p>
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange"><span class="counter" data-target="15" data-suffix="+">0</span></p>
                   <p class="mt-2 text-sm font-semibold text-brand-blue">Лет опыта</p>
                   <p class="mt-2 text-xs text-slate-500">Работаем с бытовыми категориями ежедневно по Москве и МО.</p>
                 </article><article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
-                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">5000+</p>
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange"><span class="counter" data-target="5000" data-suffix="+">0</span></p>
                   <p class="mt-2 text-sm font-semibold text-brand-blue">Ремонтов</p>
                   <p class="mt-2 text-xs text-slate-500">Закрытые заявки по домашней технике в рабочем контуре сервиса.</p>
                 </article><article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
-                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">95%</p>
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange"><span class="counter" data-target="95" data-suffix="%">0</span></p>
                   <p class="mt-2 text-sm font-semibold text-brand-blue">За 1 визит</p>
                   <p class="mt-2 text-xs text-slate-500">Типовой кейс закрываем без повторного выезда.</p>
                 </article><article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
-                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">12 мес</p>
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange"><span class="counter" data-target="12" data-suffix="мес">0</span></p>
                   <p class="mt-2 text-sm font-semibold text-brand-blue">Гарантия</p>
                   <p class="mt-2 text-xs text-slate-500">Подтверждаем результат актом и гарантийной фиксацией.</p>
                 </article>
@@ -864,7 +864,7 @@
  </div>
  </section>
  <!-- Форма заявки -->
- <section class="py-16 sm:py-20 lg:py-24 text-white relative overflow-hidden" style="background: linear-gradient(135deg, #7c2d12 0%, #be185d 45%, #881337 100%);">
+ <section id="request" class="py-16 sm:py-20 lg:py-24 text-white relative overflow-hidden" style="background: linear-gradient(135deg, #7c2d12 0%, #be185d 45%, #881337 100%);">
  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 20%, white 0, transparent 25%), radial-gradient(circle at 80% 30%, white 0, transparent 20%), radial-gradient(circle at 50% 80%, white 0, transparent 25%);"></div>
  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
   <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
@@ -921,7 +921,7 @@
  <span class="inline-flex items-center gap-2 bg-slate-100 rounded-full px-4 py-2 text-sm text-slate-700"><i class="ri-checkbox-circle-line text-green-600"></i>Сразу скажем, если выгоднее не чинить</span>
  </div>
  <div class="hidden" data-slot="service-advisory"></div>
- <form class="telegram-form bg-gradient-to-br from-white to-slate-50 p-6 sm:p-8 lg:p-10 rounded-3xl shadow-xl border border-slate-200 scroll-reveal" data-slot="request-form">
+ <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form">
                 <!-- household-sync:request-overview:start -->
 <div data-sync-zone="request-overview" data-household-slot-zone="request-overview" class="mb-6 rounded-2xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5">
       <div class="mb-4">

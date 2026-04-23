@@ -17,6 +17,8 @@ export const RESTAURANT_SYNC_ZONES = [
   'service-proof',
   'related-links',
 ];
+const RESTAURANT_REQUEST_FORM_CLASS =
+  'telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal';
 
 const DEFAULT_RESTAURANT_SERVICE_KPI = {
   badge: 'СЕРВИСНЫЕ ОРИЕНТИРЫ',
@@ -53,6 +55,12 @@ function escapeHtml(value) {
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;');
+}
+
+function normalizeClassValue(value) {
+  return String(value ?? '')
+    .trim()
+    .replace(/\s+/g, ' ');
 }
 
 function markerStart(zone) {
@@ -194,6 +202,22 @@ function normalizeServiceKpiConfig(defaults, override) {
   };
 }
 
+function renderKpiCounterValue(rawValue) {
+  const value = String(rawValue || '').trim();
+  const match = value.match(/^(\d+)\s*(.*)$/);
+  if (!match) {
+    return escapeHtml(value);
+  }
+
+  const target = Number.parseInt(match[1], 10);
+  if (!Number.isFinite(target)) {
+    return escapeHtml(value);
+  }
+
+  const suffix = match[2] || '';
+  return `<span class="counter" data-target="${target}" data-suffix="${escapeHtml(suffix)}">0</span>`;
+}
+
 function buildServiceKpi(slotEntry, slotsRoot) {
   const config = normalizeServiceKpiConfig(slotsRoot?.serviceKpiDefaults, slotEntry?.serviceKpi);
 
@@ -209,7 +233,7 @@ function buildServiceKpi(slotEntry, slotsRoot) {
             ${config.items
               .map(
                 (item) => `<article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
-                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">${escapeHtml(item.value || '')}</p>
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">${renderKpiCounterValue(item.value)}</p>
                   <p class="mt-2 text-sm font-semibold text-brand-blue">${escapeHtml(item.label || '')}</p>
                   <p class="mt-2 text-xs text-slate-500">${escapeHtml(item.note || '')}</p>
                 </article>`
@@ -338,6 +362,18 @@ function replaceInputPlaceholder(html, fieldName, placeholder) {
   return html.replace(regex, `$1${escapeHtml(placeholder)}$3`);
 }
 
+function extractRequestFormClass(html) {
+  return html.match(/<form\b(?=[^>]*data-slot="request-form")(?=[^>]*class="([^"]+)")[^>]*>/i)?.[1] ?? null;
+}
+
+function replaceRequestFormClass(html, className) {
+  const regex = /(<form\b(?=[^>]*data-slot="request-form")[^>]*\bclass=")([^"]*)(")/i;
+  if (!regex.test(html)) {
+    throw new Error('Missing request-form shell class');
+  }
+  return html.replace(regex, `$1${escapeHtml(className)}$3`);
+}
+
 export function replaceServiceSchemaContent(html, schemaText) {
   const regex = /(<script[^>]*data-slot="service-schema"[^>]*>)([\s\S]*?)(<\/script>)/i;
   if (!regex.test(html)) {
@@ -463,6 +499,14 @@ export function analyzeRestaurantSyncState(
     issues.push('problem placeholder drift');
   }
 
+  const currentRequestFormClass = extractRequestFormClass(html);
+  if (
+    currentRequestFormClass == null ||
+    normalizeClassValue(currentRequestFormClass) !== normalizeClassValue(RESTAURANT_REQUEST_FORM_CLASS)
+  ) {
+    issues.push('request-form shell class drift');
+  }
+
   return { expected, issues };
 }
 
@@ -474,6 +518,7 @@ export function syncRestaurantServiceHtml(html, context) {
   }
   nextHtml = replaceInputPlaceholder(nextHtml, 'type', expected.placeholders.type);
   nextHtml = replaceInputPlaceholder(nextHtml, 'problem', expected.placeholders.problem);
+  nextHtml = replaceRequestFormClass(nextHtml, RESTAURANT_REQUEST_FORM_CLASS);
   return nextHtml.replace(/[ \t]+$/gm, '');
 }
 
