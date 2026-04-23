@@ -55,6 +55,9 @@
 - `npm run validate:site` also enforces the page-level client contract: form pages must include exactly one `telegram-form.js`, and non-form pages must not include it.
 - `npm run validate:site` also requires a valid `data/screenshot-audit.json` manifest and confirms that every representative audit page exists and matches its branch/page-type metadata.
 - `npm run validate:site` also requires a valid `data/restaurant-screenshot-audit.json` manifest for the full restaurant stabilization path.
+- `npm run validate:site` now also fails on docs/recipe drift when required links point to missing repo files or a recipe `preferredEditSurface` file is missing.
+- `npm run doctor:changed-pages` runs `doctor:page` only for pages touched by the current diff and is used as an additional CI gate in `.github/workflows/validate.yml`.
+- `npm run optimize:images` is a local lightweight ffmpeg-based pass for changed raster assets (`jpg/jpeg/png/webp`) and rewrites files only when size reduction is meaningful.
 - Deploy smoke tests call the configured form endpoint after publishing.
 - Deploy manifest must include the backend script and deploy hook assets so the VPS can activate them from the same release tree.
 

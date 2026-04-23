@@ -46,6 +46,10 @@ Compact map of the live repository structure and maintenance surfaces.
   - orchestration entrypoint for `doctor:page` plus the screenshot pass
 - `npm run audit:restaurant-branch`
   - restaurant-only orchestration entrypoint for full branch doctor plus screenshot coverage
+- `tools/doctor-changed-pages.mjs`
+  - diff-aware doctor gate that runs `doctor:page` only for changed branch pages
+- `tools/optimize-images.mjs`
+  - local lightweight ffmpeg-based raster optimizer for changed image assets
 - `tools/doctor-household-page.mjs`
   - household-first doctor entrypoint
 - `tools/doctor-restaurant-page.mjs`

@@ -13,6 +13,7 @@
     "recipe:select": "node tools/select-operator-recipe.mjs",
     "normalize:html": "node tools/normalize-html.mjs",
     "doctor:page": "node tools/doctor-page.mjs",
+    "doctor:changed-pages": "node tools/doctor-changed-pages.mjs",
     "doctor:restaurant-page": "node tools/doctor-restaurant-page.mjs",
     "scaffold:household-service": "node tools/scaffold-household-service.mjs",
     "scaffold:restaurant-service": "node tools/scaffold-restaurant-service.mjs",
@@ -33,6 +34,7 @@
     "generate:sitemap": "node tools/generate-sitemap.mjs",
     "generate:deploy-manifest": "node tools/generate-deploy-manifest.mjs",
     "check:image-budget": "node tools/check-image-budget.mjs",
+    "optimize:images": "node tools/optimize-images.mjs",
     "hash:deploy-content": "node tools/hash-deploy-content.mjs",
     "validate:site": "node tools/validate-site.mjs",
     "lint": "npm run validate:site && npm run generate:deploy-manifest && npm run check:image-budget"

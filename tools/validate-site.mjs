@@ -225,6 +225,25 @@ function normalizeCommandName(command) {
   return match?.[1] ?? null;
 }
 
+function toRepoPathCandidate(value) {
+  if (!isNonEmptyString(value)) return null;
+  if (value.startsWith('#')) return null;
+  if (value.includes('://')) return null;
+  if (value.startsWith('mailto:') || value.startsWith('tel:')) return null;
+
+  const cleanTarget = value.split('#', 1)[0].split('?', 1)[0].trim();
+  if (!cleanTarget) return null;
+
+  const normalized = cleanTarget.startsWith('./')
+    ? cleanTarget.slice(2)
+    : cleanTarget.startsWith('/')
+      ? cleanTarget.slice(1)
+      : cleanTarget;
+
+  if (!normalized) return null;
+  return normalized;
+}
+
 function validateDocsIntegrity() {
   if (!docsContracts || typeof docsContracts !== 'object') {
     errors.push(`${DOCS_CONTRACTS_DATA}: docs contract manifest missing or invalid`);
@@ -273,6 +292,12 @@ function validateDocsIntegrity() {
     for (const requiredLink of requiredLinks) {
       if (!content.includes(requiredLink)) {
         errors.push(`docs/${docName}: must reference ${requiredLink}`);
+      }
+
+      const repoPathCandidate = toRepoPathCandidate(requiredLink);
+      if (!repoPathCandidate) continue;
+      if (!fs.existsSync(path.join(SITE_ROOT, repoPathCandidate))) {
+        errors.push(`docs/${docName}: linked path missing in repo: ${repoPathCandidate}`);
       }
     }
   }
@@ -352,12 +377,28 @@ function validateOperatorRecipes() {
       }
     }
 
+    if (isNonEmptyString(recipe.preferredEditSurface)) {
+      const editSurfacePath = path.join(SITE_ROOT, recipe.preferredEditSurface);
+      if (!fs.existsSync(editSurfacePath)) {
+        errors.push(`${context}.preferredEditSurface points to missing file ${recipe.preferredEditSurface}`);
+      }
+    }
+
     if (!Array.isArray(recipe.allowedCommands) || recipe.allowedCommands.length === 0) {
       errors.push(`${context}.allowedCommands must be a non-empty array`);
     }
 
     if (!Array.isArray(recipe.forbiddenCommands)) {
       errors.push(`${context}.forbiddenCommands must be an array`);
+    }
+
+    if (Array.isArray(recipe.allowedCommands) && Array.isArray(recipe.forbiddenCommands)) {
+      const forbiddenSet = new Set(recipe.forbiddenCommands);
+      recipe.allowedCommands.forEach((command) => {
+        if (forbiddenSet.has(command)) {
+          errors.push(`${context}: command appears in both allowedCommands and forbiddenCommands: ${command}`);
+        }
+      });
     }
 
     if (typeof recipe.requiresSync !== 'boolean') {
