@@ -1,6 +1,6 @@
 # MosPochin Site — Asset Map
 
-> Все ресурсы загружаются локально из `/assets/`. Единственный внешний ресурс — Tailwind CSS CDN (JIT config).
+> Current pages load local CSS, images, and JavaScript; `styles.css` still imports Google Fonts. Use `npm run audit:assets` before pruning tracked assets.
 
 ## Directory Structure
 
@@ -8,8 +8,8 @@
 /home/artikk/Mospochin_site/
 ├── assets/
 │   ├── css/
-│   │   ├── styles-built.css    # Tailwind CSS (built from input.css)
-│   │   └── styles.css          # Custom CSS (animations, glass effects)
+│   │   ├── styles-built.css    # legacy built CSS copy; pages load the root file
+│   │   └── styles.css          # legacy custom CSS copy; pages load the root file
 │   ├── fonts/
 │   │   ├── manrope.css         # Manrope font faces (400-800)
 │   │   ├── remixicon.css       # RemixIcon icon font
@@ -37,8 +37,8 @@
 ├── contact.html                # Контакты (ресторанное)
 ├── main.js                     # Canonical runtime JS
 ├── telegram-form.js            # Telegram form handler (canonical source)
-├── styles-built.css            # → symlink to /assets/css/styles-built.css
-├── styles.css                  # → symlink to /assets/css/styles.css
+├── styles-built.css            # built stylesheet loaded by pages
+├── styles.css                  # hand-maintained stylesheet loaded by pages
 ├── og-image.svg                # Open Graph image
 └── favicon.svg                 # Favicon
 ```
@@ -57,18 +57,19 @@
    - `main.js` → Canonical runtime JS: header/footer injection, mobile menu, branch UI, scroll animations, counters
    - `telegram-form.js` → Form submission to Telegram
 
-## CDN Dependencies
+## Asset Audit
 
-| Resource | URL | Purpose |
-|----------|-----|---------|
-| Tailwind CSS | `https://cdn.tailwindcss.com` | JIT config for brand colors |
+- `npm run audit:assets` is read-only.
+- "Outside site reference graph" only means a tracked asset is not referenced by current HTML/CSS/JS/JSON; it remains a review candidate, not automatic deletion proof.
+- Unused raster images may be parked locally under ignored `.asset-archive/unused-images/` before final deletion.
+- `npm run check:image-budget` checks raster files included in the deploy manifest.
 
 ## Page Structure (LLM-readable)
 
 Each page follows this template:
 
 ```
-<head> → Meta, SEO, OG, Fonts, CSS, Tailwind Config, JS (defer), JSON-LD
+<head> → Meta, SEO, OG, Fonts, CSS, JS (defer), JSON-LD
 <body>
   #header-container → Injected by Components.getHeader()
   <header> → Hero section (varies per page)
@@ -92,10 +93,11 @@ Each page follows this template:
 - `Components.initCounters()` → Animated number counters
 - `Components.initHeadingReveal()` → Blur-in headings
 
-## Build Commands
+## Asset Commands
 
 ```bash
-npm run build:css  # Build Tailwind CSS from input.css
-npm run build      # Build CSS + merge custom styles
+npm run audit:assets       # Read-only asset inventory
+npm run optimize:images    # Optimize changed raster assets
+npm run check:image-budget # Check deploy-manifest raster budget
 npm run dev        # Start HTTP server (port 3000)
 ```

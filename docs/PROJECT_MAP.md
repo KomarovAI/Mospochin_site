@@ -54,6 +54,8 @@ Compact map of the live repository structure and maintenance surfaces.
   - diff-aware doctor gate that runs `doctor:page` only for changed branch pages
 - `tools/optimize-images.mjs`
   - local lightweight ffmpeg-based raster optimizer for changed image assets
+- `tools/audit-assets.mjs`
+  - read-only inventory for HTML/CSS/JS/JSON asset references and tracked asset cleanup candidates
 - `tools/doctor-household-page.mjs`
   - household-first doctor entrypoint
 - `tools/doctor-restaurant-page.mjs`

@@ -62,6 +62,7 @@
 - `npm run validate:site` now also fails on docs/recipe drift when required links point to missing repo files or a recipe `preferredEditSurface` file is missing.
 - `npm run doctor:changed-pages` runs `doctor:page` only for pages touched by the current diff and is used as an additional CI gate in `.github/workflows/validate.yml`.
 - `npm run optimize:images` is a local lightweight ffmpeg-based pass for changed raster assets (`jpg/jpeg/png/webp`) and rewrites files only when size reduction is meaningful.
+- `npm run audit:assets` is read-only and reports HTML/CSS/JS/JSON asset references, heavy referenced rasters, and tracked assets outside that scan surface.
 - Deploy smoke tests call the configured form endpoint after publishing.
 - Deploy manifest must include the backend script and deploy hook assets so the VPS can activate them from the same release tree.
 

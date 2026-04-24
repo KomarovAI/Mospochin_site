@@ -75,6 +75,7 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
 7. For full restaurant stabilization passes, run `npm run audit:restaurant-branch`, review `.artifacts/screenshots/restaurant/` through `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md`, and add only confirmed findings to `docs/STABILIZATION_BACKLOG.md`.
 8. Before merge, run `npm run doctor:changed-pages` (or rely on CI) so modified pages always pass `doctor:page`.
 9. If raster assets changed, run `npm run optimize:images` before `npm run check:image-budget`.
+10. Before deleting or pruning assets, run `npm run audit:assets` and treat "outside site reference graph" as a candidate list, not automatic deletion approval.
 
 ## Screenshot Audit Workflow
 
@@ -92,6 +93,8 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - runs `doctor:page` only for pages affected by the current diff and serves as a narrow CI doctor gate
 - `npm run optimize:images`
   - local lightweight ffmpeg pass for changed raster assets (`jpg/jpeg/png/webp`), replacing files only when size savings are meaningful
+- `npm run audit:assets`
+  - read-only asset inventory for assets referenced by HTML/CSS/JS/JSON, heavy referenced rasters, and tracked assets that are not referenced by that scan surface
 - `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md`
   - fixed human review rubric for restaurant full-branch screenshot inspection and backlog triage
 - The workflow is intentionally semi-automated:

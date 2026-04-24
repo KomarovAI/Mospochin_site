@@ -1,18 +1,17 @@
 import fs from 'fs';
 import path from 'path';
+import { spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const rootArgIndex = process.argv.indexOf('--root');
-const SITE_ROOT = rootArgIndex >= 0
-  ? path.resolve(process.argv[rootArgIndex + 1] ?? '.')
-  : path.resolve(__dirname, '..');
-const DEPLOY_DIR = path.join(SITE_ROOT, '.deploy');
-const MANIFEST_PATH = path.join(DEPLOY_DIR, 'include-files.txt');
-const allowGeneratedVersion = process.argv.includes('--allow-generated-version');
+const SITE_ROOT = path.resolve(__dirname, '..');
 
 const SOURCE_EXTENSIONS = new Set(['.html', '.css', '.js', '.json']);
+const RASTER_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
+const ASSET_DIRS = ['assets'];
+const TOP_LIMIT = 25;
+
 const ALWAYS_INCLUDE = [
   '404.html',
   'data/contact-config.json',
@@ -48,12 +47,20 @@ const ALWAYS_INCLUDE = [
   'version.json',
 ];
 
-const errors = [];
 const included = new Set();
 const scanned = new Set();
+const missing = [];
 
 function toPosix(filePath) {
   return filePath.split(path.sep).join('/');
+}
+
+function formatMb(bytes) {
+  return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+function getBytes(relativePath) {
+  return fs.statSync(path.join(SITE_ROOT, relativePath)).size;
 }
 
 function exists(relativePath) {
@@ -90,8 +97,7 @@ function normalizeReference(rawReference, fromFile) {
   }
 
   const withoutQuery = trimmed.split(/[?#]/, 1)[0];
-  if (!withoutQuery) return null;
-  if (withoutQuery.includes('${')) return null;
+  if (!withoutQuery || withoutQuery.includes('${')) return null;
 
   const resolved = withoutQuery.startsWith('/')
     ? withoutQuery.slice(1)
@@ -106,20 +112,15 @@ function addFile(relativePath, reason) {
 
   const normalized = toPosix(path.normalize(relativePath));
   if (!isDeployable(normalized)) return;
-  if (normalized === 'version.json') {
-    included.add(normalized);
-    return;
-  }
+
   if (normalized.startsWith('assets/fonts/remixicon.') && normalized !== 'assets/fonts/remixicon.css' && normalized !== 'assets/fonts/remixicon.woff2') {
     return;
   }
 
   if (!exists(normalized)) {
-    if (normalized === 'version.json' && allowGeneratedVersion) {
-      included.add(normalized);
-      return;
+    if (normalized !== 'version.json') {
+      missing.push({ path: normalized, reason });
     }
-    errors.push(`${reason}: referenced file is missing: ${normalized}`);
     return;
   }
 
@@ -167,30 +168,79 @@ function scanFile(relativePath) {
   scanReferences(content, relativePath);
 }
 
-const rootFiles = fs.readdirSync(SITE_ROOT, { withFileTypes: true })
-  .filter((entry) => entry.isFile())
-  .map((entry) => entry.name)
-  .filter((fileName) => fileName.endsWith('.html'));
-
-for (const fileName of rootFiles) {
-  addFile(fileName, 'root html');
+function getTrackedFiles(relativeDirs) {
+  const result = spawnSync('git', ['ls-files', ...relativeDirs], {
+    cwd: SITE_ROOT,
+    encoding: 'utf8',
+  });
+  if (result.status !== 0) {
+    throw new Error(result.stderr?.trim() || result.stdout?.trim() || 'git ls-files failed');
+  }
+  return result.stdout
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .filter((filePath) => exists(filePath));
 }
 
-for (const fileName of ALWAYS_INCLUDE) {
-  addFile(fileName, 'always include');
+function sortBySizeDesc(files) {
+  return [...files].sort((a, b) => getBytes(b) - getBytes(a));
 }
 
-if (errors.length) {
-  console.error('Deploy manifest generation failed:\n');
-  errors.forEach((error) => console.error(`- ${error}`));
-  process.exit(1);
+function summarizeFiles(label, files) {
+  const totalBytes = files.reduce((sum, filePath) => sum + getBytes(filePath), 0);
+  console.log(`${label}: ${files.length} file(s), ${formatMb(totalBytes)}`);
 }
 
-fs.mkdirSync(DEPLOY_DIR, { recursive: true });
-const manifest = [...included].sort().join('\n') + '\n';
-fs.writeFileSync(MANIFEST_PATH, manifest);
+function printTop(label, files) {
+  console.log(`\n${label}:`);
+  if (files.length === 0) {
+    console.log('- none');
+    return;
+  }
 
-const assets = [...included].filter((fileName) => fileName.startsWith('assets/'));
-console.log(
-  `Generated ${toPosix(path.relative(SITE_ROOT, MANIFEST_PATH))}: ${included.size} files, ${assets.length} assets.`
-);
+  sortBySizeDesc(files).slice(0, TOP_LIMIT).forEach((filePath) => {
+    console.log(`- ${filePath}: ${formatMb(getBytes(filePath))}`);
+  });
+}
+
+function main() {
+  const rootHtmlFiles = fs.readdirSync(SITE_ROOT, { withFileTypes: true })
+    .filter((entry) => entry.isFile())
+    .map((entry) => entry.name)
+    .filter((fileName) => fileName.endsWith('.html'));
+
+  rootHtmlFiles.forEach((fileName) => addFile(fileName, 'root html'));
+  ALWAYS_INCLUDE.forEach((fileName) => addFile(fileName, 'always include'));
+
+  const trackedAssets = getTrackedFiles(ASSET_DIRS).filter((filePath) => !filePath.endsWith('/README.md'));
+  const deployAssets = [...included].filter((filePath) => filePath.startsWith('assets/'));
+  const trackedRasters = trackedAssets.filter((filePath) => RASTER_EXTENSIONS.has(path.extname(filePath).toLowerCase()));
+  const deployRasters = deployAssets.filter((filePath) => RASTER_EXTENSIONS.has(path.extname(filePath).toLowerCase()));
+  const outsideDeployGraph = trackedAssets.filter((filePath) => !included.has(filePath));
+  const orphanedRasters = trackedRasters.filter((filePath) => !included.has(filePath));
+
+  console.log('Asset audit is read-only. Files outside the site reference graph may still be an intentional source library.');
+  summarizeFiles('Site reference graph assets', deployAssets);
+  summarizeFiles('Site reference graph raster assets', deployRasters);
+  summarizeFiles('Tracked asset files outside site reference graph', outsideDeployGraph);
+  summarizeFiles('Tracked raster assets outside site reference graph', orphanedRasters);
+
+  printTop('Largest site reference graph raster assets', deployRasters);
+  printTop('Largest tracked raster assets outside site reference graph', orphanedRasters);
+
+  if (missing.length > 0) {
+    console.log('\nMissing referenced files:');
+    missing.slice(0, TOP_LIMIT).forEach((item) => {
+      console.log(`- ${item.path} (${item.reason})`);
+    });
+    if (missing.length > TOP_LIMIT) {
+      console.log(`- ... ${missing.length - TOP_LIMIT} more`);
+    }
+    process.exitCode = 1;
+  } else {
+    console.log('\nMissing referenced files: none');
+  }
+}
+
+main();
