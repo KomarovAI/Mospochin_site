@@ -1986,6 +1986,165 @@ body.page-household-service section#request {
   body.page-water-heaters .water-heaters-mobile-compact .text-center.mb-12 {
     margin-bottom: 1.5rem;
   }
+
+  body.page-water-heaters .water-heaters-hero {
+    padding-top: 4.75rem;
+    padding-bottom: 3.5rem;
+    background-position: 62% top !important;
+  }
+
+  body.page-water-heaters .water-heaters-hero-badge {
+    max-width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+  }
+
+  body.page-water-heaters .water-heaters-hero h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.05rem, 10vw, 2.8rem);
+    line-height: 1.03;
+  }
+
+  body.page-water-heaters .water-heaters-hero h1 + p {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  body.page-water-heaters .water-heaters-hero-kpis {
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  body.page-water-heaters .water-heaters-hero .glass-card {
+    padding: 0.75rem 0.55rem;
+    border-radius: 1rem;
+  }
+
+  body.page-water-heaters .water-heaters-hero .glass-card p:first-child {
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  body.page-water-heaters .water-heaters-hero .glass-card p:last-child {
+    font-size: 0.68rem;
+  }
+
+  body.page-water-heaters .water-heaters-hero .btn-click {
+    padding: 0.95rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  body.page-water-heaters .water-heaters-hero-trust {
+    gap: 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  body.page-water-heaters .water-heaters-hero-trust > span {
+    display: none;
+  }
+
+  body.page-water-heaters .water-heaters-price-section {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  body.page-water-heaters .water-heaters-price-section .text-center.mb-16 {
+    margin-bottom: 1.6rem;
+  }
+
+  body.page-water-heaters .water-heaters-price-card {
+    border-width: 1px;
+    border-radius: 1.5rem;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  }
+
+  body.page-water-heaters .water-heaters-price-card .overflow-x-auto {
+    overflow-x: visible;
+  }
+
+  body.page-water-heaters .water-heaters-price-table,
+  body.page-water-heaters .water-heaters-price-table thead,
+  body.page-water-heaters .water-heaters-price-table tbody,
+  body.page-water-heaters .water-heaters-price-table tr,
+  body.page-water-heaters .water-heaters-price-table th,
+  body.page-water-heaters .water-heaters-price-table td {
+    display: block;
+    width: 100%;
+  }
+
+  body.page-water-heaters .water-heaters-price-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  body.page-water-heaters .water-heaters-price-table tbody {
+    padding: 0.7rem;
+  }
+
+  body.page-water-heaters .water-heaters-price-table tr {
+    margin-bottom: 0.75rem;
+    padding: 0.9rem;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 1.1rem;
+    background: #fff;
+  }
+
+  body.page-water-heaters .water-heaters-price-table tr:last-child {
+    margin-bottom: 0;
+  }
+
+  body.page-water-heaters .water-heaters-price-table td {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.38rem 0;
+    border: 0;
+    text-align: right;
+    font-size: 0.9rem;
+  }
+
+  body.page-water-heaters .water-heaters-price-table td:first-child {
+    display: block;
+    padding-bottom: 0.55rem;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  body.page-water-heaters .water-heaters-price-table td:not(:first-child)::before {
+    content: "";
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #94a3b8;
+  }
+
+  body.page-water-heaters .water-heaters-price-table td:nth-child(2)::before {
+    content: "Время";
+  }
+
+  body.page-water-heaters .water-heaters-price-table td:nth-child(3)::before {
+    content: "Гарантия";
+  }
+
+  body.page-water-heaters .water-heaters-price-table td:nth-child(4)::before {
+    content: "Цена";
+  }
+
+  body.page-water-heaters .water-heaters-price-table td:nth-child(4) {
+    white-space: nowrap;
+    font-size: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
