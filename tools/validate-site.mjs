@@ -852,6 +852,95 @@ function getExpectedPageClass(page) {
   return `page-${page.replace(/\.html$/, '')}`;
 }
 
+function getExpectedBranchPageKind(fileName) {
+  const restaurantBranchPages = new Set(restaurantPagePolicy?.branchPages?.pages ?? []);
+  const householdBranchPages = new Set(householdPagePolicy?.sharedCardSlots?.branchPages ?? []);
+  const restaurantServicePages = new Set((restaurantServicesRegistry?.services ?? []).map((service) => service.page));
+  const householdServicePages = new Set((householdServicesRegistry?.services ?? []).map((service) => service.page));
+  const isHouseholdBranchPage = householdBranchPages.has(fileName) || fileName.startsWith('bytovaya-');
+  const memberships = [
+    restaurantBranchPages.has(fileName) ? 'restaurant branch page' : null,
+    restaurantServicePages.has(fileName) ? 'restaurant service registry' : null,
+    isHouseholdBranchPage ? 'household branch page' : null,
+    householdServicePages.has(fileName) ? 'household service registry' : null,
+  ].filter(Boolean);
+
+  if (memberships.length > 1) {
+    return { conflict: memberships.join(', ') };
+  }
+
+  if (restaurantBranchPages.has(fileName)) return { branch: 'restaurant', kind: 'branch' };
+  if (restaurantServicePages.has(fileName)) return { branch: 'restaurant', kind: 'service' };
+  if (isHouseholdBranchPage) return { branch: 'household', kind: 'branch' };
+  if (householdServicePages.has(fileName)) return { branch: 'household', kind: 'service' };
+  return { branch: 'neutral', kind: 'neutral' };
+}
+
+function validatePageBranchConsistency() {
+  const pagesToCheck = new Set([...Object.keys(metadata.pages ?? {}), ...htmlFiles]);
+
+  for (const fileName of pagesToCheck) {
+    const page = metadata.pages?.[fileName] ?? null;
+    const expected = getExpectedBranchPageKind(fileName);
+    if (expected.conflict) {
+      errors.push(`${fileName}: page belongs to multiple branch surfaces (${expected.conflict})`);
+      continue;
+    }
+
+    if (page && VALID_BRANCHES.has(page.branch) && page.branch !== expected.branch) {
+      errors.push(`${fileName}: metadata branch ${page.branch} must match ${expected.branch} ${expected.kind} contract`);
+    }
+
+    const filePath = path.join(SITE_ROOT, fileName);
+    if (!fs.existsSync(filePath)) continue;
+
+    const bodyClasses = getBodyClasses(read(fileName));
+    const hasRestaurantClass =
+      bodyClasses.has('branch-restaurant') ||
+      bodyClasses.has('page-restaurant-branch') ||
+      bodyClasses.has('page-restaurant-service');
+    const hasHouseholdClass =
+      bodyClasses.has('branch-household') ||
+      bodyClasses.has('page-household-branch') ||
+      bodyClasses.has('page-household-service');
+
+    if (expected.branch === 'restaurant') {
+      if (!bodyClasses.has('branch-restaurant')) {
+        errors.push(`${fileName}: restaurant page must include body class branch-restaurant`);
+      }
+      const pageKindClass = expected.kind === 'branch' ? 'page-restaurant-branch' : 'page-restaurant-service';
+      const oppositeKindClass = expected.kind === 'branch' ? 'page-restaurant-service' : 'page-restaurant-branch';
+      if (!bodyClasses.has(pageKindClass)) {
+        errors.push(`${fileName}: restaurant ${expected.kind} page must include body class ${pageKindClass}`);
+      }
+      if (bodyClasses.has(oppositeKindClass)) {
+        errors.push(`${fileName}: restaurant ${expected.kind} page must not include body class ${oppositeKindClass}`);
+      }
+      if (hasHouseholdClass) {
+        errors.push(`${fileName}: restaurant page must not include household body classes`);
+      }
+    }
+
+    if (expected.branch === 'household') {
+      const pageKindClass = expected.kind === 'branch' ? 'page-household-branch' : 'page-household-service';
+      const oppositeKindClass = expected.kind === 'branch' ? 'page-household-service' : 'page-household-branch';
+      if (!bodyClasses.has(pageKindClass)) {
+        errors.push(`${fileName}: household ${expected.kind} page must include body class ${pageKindClass}`);
+      }
+      if (bodyClasses.has(oppositeKindClass)) {
+        errors.push(`${fileName}: household ${expected.kind} page must not include body class ${oppositeKindClass}`);
+      }
+      if (hasRestaurantClass) {
+        errors.push(`${fileName}: household page must not include restaurant body classes`);
+      }
+    }
+
+    if (expected.branch === 'neutral' && (hasRestaurantClass || hasHouseholdClass)) {
+      errors.push(`${fileName}: neutral page must not include branch body classes`);
+    }
+  }
+}
+
 function getHouseholdPolicyKey(service) {
   return service?.isShadow ? 'shadowPage' : 'publicPage';
 }
@@ -1081,6 +1170,8 @@ for (const fileName of htmlFiles) {
     errors.push(`${fileName}: missing metadata entry in data/page-metadata.json`);
   }
 }
+
+validatePageBranchConsistency();
 
 function validateHouseholdTaxonomy(taxonomy) {
   if (!taxonomy || typeof taxonomy !== 'object') {

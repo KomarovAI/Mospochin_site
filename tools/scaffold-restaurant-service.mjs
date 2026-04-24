@@ -241,7 +241,7 @@ function buildHtml({
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Укажите модель и проблему. Сразу скажем, как действовать по смене и насколько срочный выезд нужен.</p>
             </div>
             <form class="telegram-form bg-white p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200" data-slot="request-form">
-<!-- sync:request-overview:start -->
+<!-- sync:request-overview:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
                 <div data-sync-zone="request-overview" class="mb-6 rounded-3xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5 lg:p-6">
                     <div class="flex flex-wrap items-center gap-2">
                         <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-green-700">${escapeHtml(requestOverview.badge)}</span>
@@ -267,10 +267,10 @@ function buildHtml({
             </form>
         </div>
     </section>
-<!-- sync:service-proof:start -->
+<!-- sync:service-proof:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
     <section data-sync-zone="service-proof" class="py-16 lg:py-20 bg-white"></section>
 <!-- sync:service-proof:end -->
-<!-- sync:related-links:start -->
+<!-- sync:related-links:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
     <section data-sync-zone="related-links" class="py-16 lg:py-20 bg-slate-50"></section>
 <!-- sync:related-links:end -->
     <section class="py-20 bg-white">
@@ -280,7 +280,7 @@ function buildHtml({
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4">Частые вопросы по ремонту</h2>
             </div>
             <div class="grid lg:grid-cols-2 gap-4 lg:gap-6" data-sync-zone="faq-items">
-<!-- sync:faq-items:start -->
+<!-- sync:faq-items:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
 ${buildFaqMarkup(faq)}
 <!-- sync:faq-items:end -->
             </div>

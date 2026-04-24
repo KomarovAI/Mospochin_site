@@ -64,6 +64,10 @@ function normalizeClassValue(value) {
 }
 
 function markerStart(zone) {
+  return `<!-- sync:${zone}:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->`;
+}
+
+function legacyMarkerStart(zone) {
   return `<!-- sync:${zone}:start -->`;
 }
 
@@ -116,6 +120,10 @@ function renderBadgeList(items, tone = 'orange') {
 }
 
 function hasSyncZoneMarker(html, zone) {
+  return (html.includes(markerStart(zone)) || html.includes(legacyMarkerStart(zone))) && html.includes(markerEnd(zone));
+}
+
+function hasSyncZoneOwnershipMarker(html, zone) {
   return html.includes(markerStart(zone)) && html.includes(markerEnd(zone));
 }
 
@@ -124,7 +132,7 @@ function hasSyncZoneAttr(html, zone) {
 }
 
 function extractSyncZoneContent(html, zone) {
-  const start = markerStart(zone);
+  const start = html.includes(markerStart(zone)) ? markerStart(zone) : legacyMarkerStart(zone);
   const end = markerEnd(zone);
   const startIndex = html.indexOf(start);
   const endIndex = html.indexOf(end);
@@ -133,7 +141,7 @@ function extractSyncZoneContent(html, zone) {
 }
 
 function replaceSyncZoneContent(html, zone, content) {
-  const start = markerStart(zone);
+  const start = html.includes(markerStart(zone)) ? markerStart(zone) : legacyMarkerStart(zone);
   const end = markerEnd(zone);
   const startIndex = html.indexOf(start);
   const endIndex = html.indexOf(end);
@@ -141,7 +149,7 @@ function replaceSyncZoneContent(html, zone, content) {
     if (zone === 'service-kpi') {
       const legacySectionRegex =
         /<section\b[^>]*>[\s\S]*?Лет опыта[\s\S]*?Ремонтов[\s\S]*?(?:За 1 визит|За один визит)[\s\S]*?(?:Месяцев гарантия|Гарантия|мес)[\s\S]*?<\/section>/i;
-      const kpiBlock = `${start}\n${content}\n${end}`;
+      const kpiBlock = `${markerStart(zone)}\n${content}\n${end}`;
       if (legacySectionRegex.test(html)) {
         return html.replace(legacySectionRegex, kpiBlock);
       }
@@ -154,7 +162,7 @@ function replaceSyncZoneContent(html, zone, content) {
     }
     throw new Error(`Missing sync markers for ${zone}`);
   }
-  return `${html.slice(0, startIndex)}${start}\n${content}\n${end}${html.slice(endIndex + end.length)}`;
+  return `${html.slice(0, startIndex)}${markerStart(zone)}\n${content}\n${end}${html.slice(endIndex + end.length)}`;
 }
 
 function buildFaqMarkup(faq) {
@@ -474,6 +482,10 @@ export function analyzeRestaurantSyncState(
   for (const zone of RESTAURANT_SYNC_ZONES) {
     if (!hasSyncZoneMarker(html, zone)) {
       issues.push(`Missing sync marker block for ${zone}`);
+      continue;
+    }
+    if (!hasSyncZoneOwnershipMarker(html, zone)) {
+      issues.push(`Missing sync ownership marker for ${zone}`);
       continue;
     }
     if (!hasSyncZoneAttr(html, zone)) {

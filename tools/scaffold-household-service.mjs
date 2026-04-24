@@ -347,7 +347,7 @@ ${brandChips}
                 </div>
                 <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
                     <form class="telegram-form space-y-5" data-slot="request-form">
-                        <!-- household-sync:request-overview:start -->
+                        <!-- household-sync:request-overview:start owner="tools/household-sync-fallbacks.mjs" source="data/household-page-slots.json,data/household-proof-layer.json,data/household-services.json" -->
                         <div data-sync-zone="request-overview" data-household-slot-zone="request-overview" class="mb-6 rounded-2xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5">
                             <div class="mb-4">
                                 <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Что полезно указать сразу</p>
@@ -400,11 +400,11 @@ ${brandChips}
         </div>
     </section>
 
-    <!-- household-sync:service-proof:start -->
+    <!-- household-sync:service-proof:start owner="tools/household-sync-fallbacks.mjs" source="data/household-page-slots.json,data/household-proof-layer.json,data/household-services.json" -->
     <section data-sync-zone="service-proof" data-household-slot-generated="service-proof" class="py-16 lg:py-20 bg-white"></section>
     <!-- household-sync:service-proof:end -->
 
-    <!-- household-sync:related-links:start -->
+    <!-- household-sync:related-links:start owner="tools/household-sync-fallbacks.mjs" source="data/household-page-slots.json,data/household-proof-layer.json,data/household-services.json" -->
     <section data-sync-zone="related-links" data-household-slot-generated="related-links" class="py-16 lg:py-20 bg-slate-50"></section>
     <!-- household-sync:related-links:end -->
 
@@ -414,7 +414,7 @@ ${brandChips}
                 <span class="inline-block rounded-full bg-green-100 px-4 py-2 text-sm font-bold text-green-700">FAQ</span>
                 <h2 class="mt-4 text-3xl font-display font-extrabold text-brand-blue">Частые вопросы по странице ${escapeHtml(uiLabel)}</h2>
             </div>
-            <!-- household-sync:faq-items:start -->
+            <!-- household-sync:faq-items:start owner="tools/household-sync-fallbacks.mjs" source="data/household-page-slots.json,data/household-proof-layer.json,data/household-services.json" -->
             <div class="mt-10 space-y-4" data-sync-zone="faq-items">
 ${faqItems}
             </div>

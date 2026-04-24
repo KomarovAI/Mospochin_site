@@ -702,6 +702,10 @@ function buildSyncPayload({ pageMeta, service, slotEntry, slotsRoot, registry, c
 }
 
 function markerStart(zone) {
+  return `<!-- household-sync:${zone}:start owner="tools/household-sync-fallbacks.mjs" source="data/household-page-slots.json,data/household-proof-layer.json,data/household-services.json" -->`;
+}
+
+function legacyMarkerStart(zone) {
   return `<!-- household-sync:${zone}:start -->`;
 }
 
@@ -710,13 +714,18 @@ function markerEnd(zone) {
 }
 
 export function extractSyncZoneContent(html, zone) {
+  const startMarker = html.includes(markerStart(zone)) ? markerStart(zone) : legacyMarkerStart(zone);
   const regex = new RegExp(
-    `${markerStart(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*([\\s\\S]*?)\\s*${markerEnd(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`
+    `${startMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*([\\s\\S]*?)\\s*${markerEnd(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`
   );
   return html.match(regex)?.[1] ?? null;
 }
 
 export function hasSyncZoneMarker(html, zone) {
+  return (html.includes(markerStart(zone)) || html.includes(legacyMarkerStart(zone))) && html.includes(markerEnd(zone));
+}
+
+export function hasSyncZoneOwnershipMarker(html, zone) {
   return html.includes(markerStart(zone)) && html.includes(markerEnd(zone));
 }
 
@@ -725,8 +734,9 @@ export function hasSyncZoneAttr(html, zone) {
 }
 
 export function replaceSyncZoneContent(html, zone, content) {
+  const startMarker = html.includes(markerStart(zone)) ? markerStart(zone) : legacyMarkerStart(zone);
   const regex = new RegExp(
-    `${markerStart(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${markerEnd(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`
+    `${startMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${markerEnd(zone).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`
   );
   if (!regex.test(html)) {
     if (zone === 'service-kpi') {
@@ -823,6 +833,10 @@ export function analyzeHouseholdSyncState(
       issues.push(`Missing sync marker block for ${zone}`);
       continue;
     }
+    if (!hasSyncZoneOwnershipMarker(html, zone)) {
+      issues.push(`Missing sync ownership marker for ${zone}`);
+      continue;
+    }
     if (!hasSyncZoneAttr(html, zone)) {
       issues.push(`Missing data-sync-zone="${zone}"`);
       continue;
@@ -850,6 +864,10 @@ export function analyzeHouseholdSyncState(
     }
     if (expectedContent && !hasMarker) {
       issues.push(`Missing sync marker block for ${zone}`);
+      continue;
+    }
+    if (expectedContent && !hasSyncZoneOwnershipMarker(html, zone)) {
+      issues.push(`Missing sync ownership marker for ${zone}`);
       continue;
     }
     if (!hasSyncZoneAttr(html, zone)) {
