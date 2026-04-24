@@ -1866,6 +1866,90 @@ body.page-household-service section#request {
   padding-bottom: clamp(4rem, 7vw, 5.5rem);
 }
 
+.brand-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.brand-logo-card {
+  min-height: 5.75rem;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 1rem;
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
+}
+
+.brand-logo-card__media {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.brand-logo-card__image {
+  display: block;
+  width: 100%;
+  max-width: 10rem;
+  height: 2.75rem;
+  object-fit: contain;
+}
+
+.brand-logo-card__label {
+  max-width: 100%;
+  overflow: hidden;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.brand-chip {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.85rem;
+  background: #ffffff;
+  padding: 0.5rem 0.85rem;
+  color: #334155;
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.15;
+}
+
+@media (min-width: 640px) {
+  .brand-logo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-logo-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .brand-logo-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 767px) {
   .household-card {
     padding: 1.15rem;

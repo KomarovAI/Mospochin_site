@@ -520,6 +520,8 @@ function normalizeBrandGroupsV2(brandGroups) {
       String(brandGroups.description ?? '').trim() ||
       'Работаем с популярными и премиальными брендами.',
     note: String(brandGroups.note ?? '').trim(),
+    logosTitle: String(brandGroups.logosTitle ?? '').trim() || 'Ключевые производители',
+    logosNote: String(brandGroups.logosNote ?? '').trim(),
     counters,
     logos,
     groups,
@@ -583,8 +585,8 @@ function normalizeBrandGroupConfig(slotEntry) {
 
 function renderBrandGroupChip(item, chipClass) {
   const chipBody = item.href
-    ? `<a href="${escapeHtml(item.href)}" class="inline-flex min-h-[44px] items-center rounded-xl px-3.5 py-2 text-sm font-medium ring-1 ring-inset ring-slate-200 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 ${chipClass}">${escapeHtml(item.label)}</a>`
-    : `<span class="inline-flex min-h-[44px] items-center rounded-xl px-3.5 py-2 text-sm font-medium ring-1 ring-inset ring-slate-200 ${chipClass}">${escapeHtml(item.label)}</span>`;
+    ? `<a href="${escapeHtml(item.href)}" class="brand-chip inline-flex min-h-[44px] items-center rounded-xl px-3.5 py-2 text-sm font-medium ring-1 ring-inset ring-slate-200 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 ${chipClass}">${escapeHtml(item.label)}</a>`
+    : `<span class="brand-chip inline-flex min-h-[44px] items-center rounded-xl px-3.5 py-2 text-sm font-medium ring-1 ring-inset ring-slate-200 ${chipClass}">${escapeHtml(item.label)}</span>`;
   return `<li>${chipBody}</li>`;
 }
 
@@ -604,12 +606,13 @@ function renderBrandLogoTile(item) {
     .join('');
 
   const media = item.logoSrc
-    ? `<img src="${escapeHtml(item.logoSrc)}" alt="${escapeHtml(item.logoAlt || `Логотип ${item.label}`)}" class="max-h-9 max-w-[118px] w-auto object-contain" loading="lazy" decoding="async">`
-    : `<span class="inline-flex items-center gap-2"><span class="inline-flex h-9 min-w-9 items-center justify-center rounded-lg bg-brand-blue/10 px-2 text-xs font-bold tracking-[0.08em] text-brand-blue">${escapeHtml(initials || item.label.slice(0, 2).toUpperCase())}</span><span class="text-sm font-semibold text-slate-700 whitespace-nowrap">${escapeHtml(item.label)}</span></span>`;
+    ? `<img src="${escapeHtml(item.logoSrc)}" alt="${escapeHtml(item.logoAlt || `Логотип ${item.label}`)}" class="brand-logo-card__image max-h-10 max-w-[132px] w-auto object-contain" loading="eager" decoding="async">`
+    : `<span class="brand-logo-card__fallback inline-flex h-10 min-w-10 items-center justify-center rounded-xl bg-brand-blue/10 px-2 text-xs font-bold tracking-[0.08em] text-brand-blue">${escapeHtml(initials || item.label.slice(0, 2).toUpperCase())}</span>`;
 
-  return `<li class="flex h-16 min-w-[132px] items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-3">
-      <div class="flex items-center justify-center">
+  return `<li class="brand-logo-card flex min-h-[92px] items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-[0_12px_28px_rgba(15,23,42,0.04)]">
+      <div class="brand-logo-card__media flex min-w-0 flex-col items-center justify-center gap-2 text-center">
         ${media}
+        <span class="brand-logo-card__label max-w-full truncate text-xs font-semibold text-slate-600">${escapeHtml(item.label)}</span>
       </div>
     </li>`;
 }
@@ -623,7 +626,7 @@ function renderBrandGroupCard(group) {
         </div>
         <span class="shrink-0 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-200">${escapeHtml(String(group.count))} ${escapeHtml(group.counterLabel)}</span>
       </div>
-      <ul class="mt-4 flex flex-wrap gap-2.5 sm:gap-3">
+      <ul class="brand-chip-list mt-4 flex flex-wrap gap-2.5 sm:gap-3">
         ${group.brands.map((item) => renderBrandGroupChip(item, group.chipClass)).join('')}
       </ul>
     </article>`;
@@ -657,11 +660,14 @@ export function renderHouseholdBrandGroups(slotEntry) {
             ${
               config.logos.length
                 ? `<section class="mt-5 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 sm:p-5 scroll-reveal">
-                <div class="flex items-center justify-between gap-3 mb-3">
-                  <h3 class="text-sm sm:text-base font-display font-extrabold text-brand-blue">Логотипы брендов водонагревателей</h3>
-                  <span class="text-xs font-medium uppercase tracking-[0.08em] text-slate-500">${config.logos.length} логотипов</span>
+                <div class="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h3 class="text-base sm:text-lg font-display font-extrabold text-brand-blue">${escapeHtml(config.logosTitle)}</h3>
+                    ${config.logosNote ? `<p class="mt-1 text-sm leading-6 text-slate-600">${escapeHtml(config.logosNote)}</p>` : ''}
+                  </div>
+                  <span class="text-xs font-medium uppercase tracking-[0.08em] text-slate-500">${config.logos.length} брендов</span>
                 </div>
-                <ul class="flex flex-wrap gap-2.5">
+                <ul class="brand-logo-grid grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
                   ${config.logos.map((item) => renderBrandLogoTile(item)).join('')}
                 </ul>
               </section>`
