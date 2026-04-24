@@ -714,6 +714,28 @@ function validateHouseholdBrandGroups(value, context) {
               errors.push(`${logoContext}.${fieldName} must be a non-empty string when provided`);
             }
           }
+          if (isNonEmptyString(logo.logoSrc)) {
+            if (/^(https?:)?\/\//i.test(logo.logoSrc) || /^[a-z]+:/i.test(logo.logoSrc)) {
+              errors.push(`${logoContext}.logoSrc must be a local repository path`);
+              return;
+            }
+            if (path.isAbsolute(logo.logoSrc) || logo.logoSrc.split(/[\\/]+/).includes('..')) {
+              errors.push(`${logoContext}.logoSrc must not be absolute or traverse directories`);
+              return;
+            }
+            if (!logo.logoSrc.startsWith('assets/brand-logos/') || !logo.logoSrc.endsWith('.svg')) {
+              errors.push(`${logoContext}.logoSrc must point to a local assets/brand-logos svg file`);
+              return;
+            }
+            const logoPath = path.resolve(SITE_ROOT, logo.logoSrc);
+            if (!logoPath.startsWith(path.join(SITE_ROOT, 'assets', 'brand-logos'))) {
+              errors.push(`${logoContext}.logoSrc must stay inside assets/brand-logos`);
+              return;
+            }
+            if (!fs.existsSync(logoPath)) {
+              errors.push(`${logoContext}.logoSrc points to a missing file: ${logo.logoSrc}`);
+            }
+          }
         });
       }
     }

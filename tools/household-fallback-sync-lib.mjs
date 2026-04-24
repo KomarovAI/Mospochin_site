@@ -604,13 +604,12 @@ function renderBrandLogoTile(item) {
     .join('');
 
   const media = item.logoSrc
-    ? `<img src="${escapeHtml(item.logoSrc)}" alt="${escapeHtml(item.logoAlt || `Логотип ${item.label}`)}" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async">`
-    : `<span class="inline-flex h-9 min-w-9 items-center justify-center rounded-lg bg-brand-blue/10 px-2 text-xs font-bold tracking-[0.08em] text-brand-blue">${escapeHtml(initials || item.label.slice(0, 2).toUpperCase())}</span>`;
+    ? `<img src="${escapeHtml(item.logoSrc)}" alt="${escapeHtml(item.logoAlt || `Логотип ${item.label}`)}" class="max-h-9 max-w-[118px] w-auto object-contain" loading="lazy" decoding="async">`
+    : `<span class="inline-flex items-center gap-2"><span class="inline-flex h-9 min-w-9 items-center justify-center rounded-lg bg-brand-blue/10 px-2 text-xs font-bold tracking-[0.08em] text-brand-blue">${escapeHtml(initials || item.label.slice(0, 2).toUpperCase())}</span><span class="text-sm font-semibold text-slate-700 whitespace-nowrap">${escapeHtml(item.label)}</span></span>`;
 
-  return `<li class="rounded-2xl border border-slate-200 bg-white px-3 py-2">
-      <div class="flex items-center gap-2">
+  return `<li class="flex h-16 min-w-[132px] items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-3">
+      <div class="flex items-center justify-center">
         ${media}
-        <span class="text-sm font-semibold text-slate-700 whitespace-nowrap">${escapeHtml(item.label)}</span>
       </div>
     </li>`;
 }
