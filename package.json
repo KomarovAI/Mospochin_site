@@ -11,6 +11,7 @@
     "audit:restaurant-screenshots": "node tools/audit-screenshots.mjs --manifest data/restaurant-screenshot-audit.json",
     "audit:restaurant-branch": "node tools/audit-representative-pages.mjs --manifest data/restaurant-screenshot-audit.json",
     "audit:assets": "node tools/audit-assets.mjs",
+    "inspect:page": "node tools/inspect-page.mjs",
     "recipe:select": "node tools/select-operator-recipe.mjs",
     "normalize:html": "node tools/normalize-html.mjs",
     "doctor:page": "node tools/doctor-page.mjs",

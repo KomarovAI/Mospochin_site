@@ -206,7 +206,7 @@ export function buildHouseholdServiceSchema(service, pageMeta, slotEntry) {
       '@type': 'LocalBusiness',
       name: 'MosPochin',
       url: 'https://mospochin.ru',
-      telephone: '+79990057172',
+      telephone: '+79099946177',
       openingHours: 'Mo-Su 09:00-21:00',
       address: {
         '@type': 'PostalAddress',

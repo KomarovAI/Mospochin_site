@@ -44,6 +44,8 @@ Compact map of the live repository structure and maintenance surfaces.
   - shared page doctor
 - `tools/select-operator-recipe.mjs`
   - read-only recipe selector for branch-safe routing from `data/operator-recipes.json` and `data/page-metadata.json`
+- `tools/inspect-page.mjs`
+  - read-only page preflight that combines doctor output, metadata, recipes, edit surfaces, and screenshot audit coverage
 - `tools/audit-screenshots.mjs`
   - Playwright-based representative screenshot runner on top of the local dev server
 - `tools/audit-representative-pages.mjs`

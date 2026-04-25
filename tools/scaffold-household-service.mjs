@@ -238,7 +238,7 @@ function buildHtml({
       "provider": {
         "@type": "LocalBusiness",
         "name": "MosPochin",
-        "telephone": "+79990057172",
+        "telephone": "+79099946177",
         "url": "https://mospochin.ru",
         "address": {
           "@type": "PostalAddress",
@@ -270,7 +270,7 @@ function buildHtml({
                 <p class="mt-6 max-w-2xl text-lg text-white/75">Выезд по Москве и МО, диагностика причины до работ и спокойный бытовой сценарий без лишней логистики.</p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#request" class="rounded-full bg-brand-orange px-6 py-3 font-bold text-white transition hover:bg-brand-orangeHover">Оставить заявку</a>
-                    <a href="tel:+79990057172" class="rounded-full border border-white/15 bg-white/5 px-6 py-3 font-bold text-white transition hover:bg-white/10">8 (999) 005-71-72</a>
+                    <a href="tel:+79099946177" class="rounded-full border border-white/15 bg-white/5 px-6 py-3 font-bold text-white transition hover:bg-white/10">8 (909) 994-61-77</a>
                 </div>
             </div>
         </div>

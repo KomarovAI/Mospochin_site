@@ -1,10 +1,10 @@
 const SITE_CONFIG = {
   company: {
     name: 'MosPochin',
-    phoneDisplay: '8 (999) 005-71-72',
-    phoneLink: '+79990057172',
+    phoneDisplay: '8 (909) 994-61-77',
+    phoneLink: '+79099946177',
     whatsapp:
-      'https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
+      'https://wa.me/79099946177?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
     email: 'info@mospochin.ru',
     experience: '15+ лет',
   },

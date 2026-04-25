@@ -412,7 +412,7 @@ function buildServiceSchema({ pageMeta, service }) {
       "provider": {
         "@type": "LocalBusiness",
         "name": "MosPochin",
-        "telephone": "+79990057172",
+        "telephone": "+79099946177",
         "url": "https://mospochin.ru",
         "address": {
           "@type": "PostalAddress",

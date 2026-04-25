@@ -7,6 +7,7 @@ Use this doc to choose the default workflow fast. Use the branch docs only after
 The wider maintenance model stays in [docs/SITE_MAINTENANCE_MODEL.md](/home/artikk/Mospochin_site/docs/SITE_MAINTENANCE_MODEL.md).
 The machine-readable route catalog lives in `data/operator-recipes.json`.
 The shortest machine-readable selector is `npm run recipe:select -- --intent <recipe-id-or-intent> [--page <file.html>] [--branch <household|restaurant|shared>] [--json]`.
+For a compact page preflight before editing, use `npm run inspect:page -- --page <file.html>`.
 
 ## Default Routes
 
@@ -15,6 +16,7 @@ The shortest machine-readable selector is `npm run recipe:select -- --intent <re
 Use this first when the page, branch, or edit surface is not obvious.
 
 Command:
+- `npm run inspect:page -- --page <file.html>`
 - `npm run doctor:page -- --page <file.html>`
 - `npm run recipe:select -- --intent <recipe-id-or-intent> --page <file.html>`
 
@@ -27,6 +29,9 @@ Relevant recipe ids:
 
 What it gives:
 - branch and page type
+- likely JSON/source files and edit surfaces
+- branch-safe doctor/sync/validation commands
+- screenshot audit manifest coverage, if any
 - issues, if any
 - recommended edit surface
 
