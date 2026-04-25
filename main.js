@@ -5,7 +5,7 @@ const SITE_CONFIG = {
     phoneLink: '+79099946177',
     whatsapp:
       'https://wa.me/79099946177?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
-    email: 'info@mospochin.ru',
+    email: 'mospochin@yandex.ru',
     experience: '15+ лет',
   },
 };

@@ -1931,6 +1931,10 @@ function validateCardAction(action, context, html, ctaVocabulary) {
     return;
   }
 
+  if (action.href.startsWith('tg://')) {
+    return;
+  }
+
   if (
     action.href === '@contact-phone' ||
     /^@contact-whatsapp(?:\?text=.*)?$/.test(action.href)
