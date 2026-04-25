@@ -27,6 +27,7 @@ const DEFAULT_CONTACT_CONFIG = Object.freeze({
   phoneE164: SITE_CONFIG.company.phoneLink,
   whatsappNumber: SITE_CONFIG.company.phoneLink.replace(/[^\d]/g, ''),
   whatsappDefaultText: 'Здравствуйте! Нужен ремонт. Сайт MosPochin',
+  telegramHref: 'tg://resolve?phone=79099946177',
   email: SITE_CONFIG.company.email,
 });
 const DEFAULT_SCHEMA_PROFILE = Object.freeze({
@@ -425,6 +426,7 @@ function normalizeContactConfig(rawConfig) {
     whatsappDefaultText: String(
       rawConfig?.whatsappDefaultText ?? DEFAULT_CONTACT_CONFIG.whatsappDefaultText
     ).trim(),
+    telegramHref: normalizeTelegramHref(rawConfig?.telegramHref, phoneE164),
     email: String(rawConfig?.email ?? DEFAULT_CONTACT_CONFIG.email).trim(),
   };
 }
@@ -459,6 +461,14 @@ function buildWhatsappHref(number, text) {
   const message = String(text ?? '').trim();
   if (!message) return `https://wa.me/${sanitizedNumber}`;
   return `https://wa.me/${sanitizedNumber}?text=${encodeURIComponent(message)}`;
+}
+
+function normalizeTelegramHref(value, phoneE164) {
+  const prepared = String(value ?? '').trim();
+  if (/^tg:\/\/resolve\?phone=\d{10,15}$/.test(prepared)) return prepared;
+
+  const fallbackNumber = String(phoneE164 ?? '').replace(/[^\d]/g, '');
+  return fallbackNumber ? `tg://resolve?phone=${fallbackNumber}` : DEFAULT_CONTACT_CONFIG.telegramHref;
 }
 
 async function loadContactConfig() {
@@ -1036,6 +1046,10 @@ const Components = {
     return buildWhatsappHref(this.contactConfig.whatsappNumber, message);
   },
 
+  getTelegramHref() {
+    return this.contactConfig.telegramHref || DEFAULT_CONTACT_CONFIG.telegramHref;
+  },
+
   getSchemaProfileForPage() {
     const branchKey = this.isBytovaya() ? 'household' : 'restaurant';
     const pageKey = getCurrentPageFile();
@@ -1061,6 +1075,10 @@ const Components = {
       return this.getWhatsappHref(tokenText || preferredWhatsappText);
     }
 
+    if (href === '@contact-telegram' || href.startsWith('tg://')) {
+      return this.getTelegramHref();
+    }
+
     if (href.startsWith('tel:')) {
       return `tel:${this.getPhoneLink()}`;
     }
@@ -1077,6 +1095,7 @@ const Components = {
     const phoneTargets = document.querySelectorAll('[data-company-phone]');
     const phoneLinks = document.querySelectorAll('a[data-contact-link="phone"]');
     const whatsappLinks = document.querySelectorAll('a[data-contact-link="whatsapp"]');
+    const telegramLinks = document.querySelectorAll('a[data-contact-link="telegram"]');
 
     phoneTargets.forEach((node) => {
       node.textContent = this.getPhone();
@@ -1092,6 +1111,10 @@ const Components = {
         'href',
         this.resolveContactHref(node.getAttribute('href') || 'https://wa.me/', preferredText)
       );
+    });
+
+    telegramLinks.forEach((node) => {
+      node.setAttribute('href', this.resolveContactHref(node.getAttribute('href') || '@contact-telegram'));
     });
   },
 
@@ -1357,7 +1380,7 @@ const Components = {
       .map((action) => {
         const tone = this.getHouseholdCardTone(action.tone || inheritedTone);
         const resolvedHref = this.resolveContactHref(action.href || '#');
-        const isExternal = /^https?:\/\//.test(resolvedHref);
+        const isExternal = /^(?:https?:\/\/|tg:\/\/)/.test(resolvedHref);
         return `
           <a href="${resolvedHref}" class="household-card__button ${tone.button}" ${
             isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''
@@ -2006,7 +2029,7 @@ const Components = {
               ${(card.actions || [])
                 .map((action) => {
                   const resolvedHref = this.resolveContactHref(action.href || '#');
-                  const externalAttrs = /^https?:\/\//.test(resolvedHref)
+                  const externalAttrs = /^(?:https?:\/\/|tg:\/\/)/.test(resolvedHref)
                     ? 'target="_blank" rel="noopener noreferrer"'
                     : '';
                   return `

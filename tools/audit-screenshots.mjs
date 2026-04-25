@@ -1,4 +1,5 @@
 import fs from 'fs';
+import net from 'net';
 import path from 'path';
 import { spawn } from 'child_process';
 import { chromium, errors as playwrightErrors } from 'playwright';
@@ -58,6 +59,39 @@ function waitForServer(url, timeoutMs) {
   });
 }
 
+function canListen(host, port) {
+  return new Promise((resolve) => {
+    const server = net.createServer();
+    server.once('error', () => resolve(false));
+    server.listen(port, host, () => {
+      server.close(() => resolve(true));
+    });
+  });
+}
+
+function getEphemeralPort(host) {
+  return new Promise((resolve, reject) => {
+    const server = net.createServer();
+    server.once('error', reject);
+    server.listen(0, host, () => {
+      const address = server.address();
+      const port = typeof address === 'object' && address ? address.port : null;
+      server.close(() => {
+        if (port) {
+          resolve(port);
+        } else {
+          reject(new Error('Unable to allocate screenshot audit port'));
+        }
+      });
+    });
+  });
+}
+
+async function resolveAuditServerPort(host, preferredPort) {
+  if (await canListen(host, preferredPort)) return preferredPort;
+  return getEphemeralPort(host);
+}
+
 async function stopChildProcess(child) {
   if (child.exitCode != null) return;
 
@@ -75,12 +109,13 @@ async function stopChildProcess(child) {
 }
 
 async function withDevServer(manifest, callback) {
-  const baseUrl = `http://${manifest.server.host}:${manifest.server.port}`;
+  const port = await resolveAuditServerPort(manifest.server.host, manifest.server.port);
+  const baseUrl = `http://${manifest.server.host}:${port}`;
   const child = spawn('node', ['tools/dev-server.mjs'], {
     cwd: SITE_ROOT,
     env: {
       ...process.env,
-      PORT: String(manifest.server.port),
+      PORT: String(port),
     },
     stdio: ['ignore', 'pipe', 'pipe'],
   });

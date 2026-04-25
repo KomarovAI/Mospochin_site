@@ -79,11 +79,13 @@ function normalizeReference(rawReference, fromFile) {
   if (
     !trimmed ||
     trimmed.startsWith('#') ||
+    trimmed.startsWith('@contact-') ||
     trimmed.startsWith('data:') ||
     trimmed.startsWith('http://') ||
     trimmed.startsWith('https://') ||
     trimmed.startsWith('mailto:') ||
     trimmed.startsWith('tel:') ||
+    trimmed.startsWith('tg://') ||
     trimmed.startsWith('//')
   ) {
     return null;

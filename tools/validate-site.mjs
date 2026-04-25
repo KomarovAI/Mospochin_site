@@ -241,7 +241,7 @@ function validateContactConfig(config) {
     return;
   }
 
-  for (const fieldName of ['phoneDisplay', 'phoneE164', 'whatsappNumber', 'whatsappDefaultText']) {
+  for (const fieldName of ['phoneDisplay', 'phoneE164', 'whatsappNumber', 'whatsappDefaultText', 'telegramHref']) {
     if (!isNonEmptyString(config[fieldName])) {
       errors.push(`${CONTACT_CONFIG_DATA}: ${fieldName} must be a non-empty string`);
     }
@@ -253,6 +253,10 @@ function validateContactConfig(config) {
 
   if (isNonEmptyString(config.whatsappNumber) && !/^\d{10,15}$/.test(config.whatsappNumber.trim())) {
     errors.push(`${CONTACT_CONFIG_DATA}: whatsappNumber must contain digits only`);
+  }
+
+  if (isNonEmptyString(config.telegramHref) && !/^tg:\/\/resolve\?phone=\d{10,15}$/.test(config.telegramHref.trim())) {
+    errors.push(`${CONTACT_CONFIG_DATA}: telegramHref must be tg://resolve?phone=<digits>`);
   }
 }
 
@@ -1018,6 +1022,15 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
   const whatsappLinksWithoutContract = html.match(
     /<a\b(?=[^>]*href="https:\/\/wa\.me\/[^"]+")(?![^>]*data-contact-link="whatsapp")[^>]*>/g
   ) || [];
+  const telegramLinksWithoutContract = html.match(
+    /<a\b(?=[^>]*href="tg:\/\/[^"]+")(?![^>]*data-contact-link="telegram")[^>]*>/g
+  ) || [];
+  const telegramTokenLinksWithoutContract = html.match(
+    /<a\b(?=[^>]*href="@contact-telegram")(?![^>]*data-contact-link="telegram")[^>]*>/g
+  ) || [];
+  const rawTelegramHrefMatches = [...html.matchAll(/<a\b(?=[^>]*data-contact-link="telegram")[^>]*href="([^"]*)"[^>]*>/g)]
+    .map((match) => match[1])
+    .filter((href) => href.startsWith('tg://'));
 
   const mainScriptCount = (html.match(/<script[^>]+src="main\.js"/g) || []).length;
   const telegramScriptCount = (
@@ -1108,6 +1121,18 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
       `${fileName}: wa.me links must include data-contact-link="whatsapp" for centralized contact hydration`
     );
   }
+
+  if (telegramLinksWithoutContract.length > 0 || telegramTokenLinksWithoutContract.length > 0) {
+    errors.push(
+      `${fileName}: Telegram links must include data-contact-link="telegram" for centralized contact hydration`
+    );
+  }
+
+  rawTelegramHrefMatches.forEach((href) => {
+    if (href !== contactConfig?.telegramHref) {
+      errors.push(`${fileName}: Telegram fallback href must match ${CONTACT_CONFIG_DATA}.telegramHref`);
+    }
+  });
 
   const routeKey = RESTAURANT_ROUTE_STRIP_CONTRACT.pages[fileName];
   if (routeKey) {
@@ -1931,12 +1956,9 @@ function validateCardAction(action, context, html, ctaVocabulary) {
     return;
   }
 
-  if (action.href.startsWith('tg://')) {
-    return;
-  }
-
   if (
     action.href === '@contact-phone' ||
+    action.href === '@contact-telegram' ||
     /^@contact-whatsapp(?:\?text=.*)?$/.test(action.href)
   ) {
     return;
