@@ -15,6 +15,7 @@ TUNNEL_UNIT_TARGET="/etc/systemd/system/${TUNNEL_SERVICE_NAME}"
 ENV_DIR="/etc/mospochin"
 ENV_TARGET="${ENV_DIR}/telegram.env"
 ENV_TEMPLATE="deploy/env/telegram.env.example"
+NGINX_STATIC_COMPRESSION_CONF="/etc/nginx/conf.d/mospochin-static-compression.conf"
 
 install -d -m 0755 /etc/systemd/system
 
@@ -46,10 +47,46 @@ build_public_webroot() {
     install -m 0644 "${RELEASE_ROOT}/data/${file}" "${tmp_dir}/data/${file}"
   done
 
+  generate_precompressed_assets "${tmp_dir}"
+
   chmod -R u=rwX,go=rX "${tmp_dir}"
   rm -rf "${public_dir}"
   mv "${tmp_dir}" "${public_dir}"
   ln -sfn "${public_dir}" /var/www/mospochin-public-current
+}
+
+generate_precompressed_assets() {
+  local public_dir="$1"
+
+  if ! command -v gzip >/dev/null 2>&1; then
+    echo "Skipping precompressed assets: gzip is not available."
+    return
+  fi
+
+  find "${public_dir}" -type f \
+    \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.json' -o -name '*.svg' -o -name '*.xml' -o -name '*.txt' \) \
+    -size +1023c \
+    -print0 | xargs -0 -r gzip -9 -n -kf --
+}
+
+install_nginx_static_compression_config() {
+  if ! command -v nginx >/dev/null 2>&1; then
+    echo "Skipping nginx static compression config: nginx is not available."
+    return
+  fi
+
+  install -d -m 0755 "$(dirname "${NGINX_STATIC_COMPRESSION_CONF}")"
+  local tmp_conf
+  tmp_conf="$(mktemp)"
+  {
+    echo "# Managed by MosPochin deploy hook."
+    echo "gzip_static on;"
+  } > "${tmp_conf}"
+  install -m 0644 "${tmp_conf}" "${NGINX_STATIC_COMPRESSION_CONF}"
+  rm -f "${tmp_conf}"
+
+  nginx -t
+  systemctl reload nginx
 }
 
 ensure_env_file() {
@@ -79,6 +116,7 @@ else
 fi
 
 build_public_webroot
+install_nginx_static_compression_config
 
 systemctl daemon-reload
 

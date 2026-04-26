@@ -199,6 +199,22 @@ jobs:
           check_webp_contract "/assets/images/hero-restaurant.jpg"
           check_manifest_webp_assets
 
+      - name: Verify static gzip sidecars
+        timeout-minutes: 2
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "set -e; \
+             if [ '${{ steps.deploy_hash.outputs.skip }}' = 'true' ] && [ ! -s /var/www/mospochin-public-current/styles.css.gz ]; then \
+               echo 'Static gzip sidecars are not present on a skipped deploy; skipping first-activation check.'; \
+               exit 0; \
+             fi; \
+             test -s /var/www/mospochin-public-current/styles.css.gz; \
+             test -s /var/www/mospochin-public-current/main.js.gz; \
+             gzip -cd /var/www/mospochin-public-current/styles.css.gz | cmp -s - /var/www/mospochin-public-current/styles.css; \
+             gzip -cd /var/www/mospochin-public-current/main.js.gz | cmp -s - /var/www/mospochin-public-current/main.js; \
+             nginx -T 2>/dev/null | grep -Eq '^[[:space:]]*gzip_static[[:space:]]+on;'"
+
       - name: Verify backend deploy artifacts are present in manifest
         run: |
           required=(
