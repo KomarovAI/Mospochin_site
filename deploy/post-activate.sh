@@ -18,6 +18,40 @@ ENV_TEMPLATE="deploy/env/telegram.env.example"
 
 install -d -m 0755 /etc/systemd/system
 
+build_public_webroot() {
+  local public_dir="${RELEASE_ROOT}/public"
+  local tmp_dir="${public_dir}.tmp"
+
+  rm -rf "${tmp_dir}"
+  mkdir -p "${tmp_dir}/data"
+  rsync -a --delete \
+    --include='/assets/***' \
+    --include='/*.html' \
+    --include='/*.css' \
+    --include='/*.js' \
+    --include='/*.svg' \
+    --include='/robots.txt' \
+    --include='/sitemap.xml' \
+    --include='/version.json' \
+    --exclude='*' \
+    "${RELEASE_ROOT}/" "${tmp_dir}/"
+
+  local public_data_files=(
+    contact-config.json page-metadata.json schema-profile.json runtime-config.json
+    restaurant-branch.json restaurant-services.json restaurant-page-slots.json restaurant-proof-layer.json
+    household-branch.json household-services.json household-page-slots.json household-card-presets.json household-proof-layer.json
+  )
+  local file
+  for file in "${public_data_files[@]}"; do
+    install -m 0644 "${RELEASE_ROOT}/data/${file}" "${tmp_dir}/data/${file}"
+  done
+
+  chmod -R u=rwX,go=rX "${tmp_dir}"
+  rm -rf "${public_dir}"
+  mv "${tmp_dir}" "${public_dir}"
+  ln -sfn "${public_dir}" /var/www/mospochin-public-current
+}
+
 ensure_env_file() {
   install -d -m 0755 "${ENV_DIR}"
   if [ ! -f "${ENV_TARGET}" ]; then
@@ -43,6 +77,8 @@ if [ -f "${TUNNEL_UNIT_SOURCE}" ]; then
 else
   echo "Skipping Telegram tunnel unit install: ${TUNNEL_UNIT_SOURCE} is missing."
 fi
+
+build_public_webroot
 
 systemctl daemon-reload
 
