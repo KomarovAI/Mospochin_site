@@ -213,7 +213,7 @@ jobs:
              test -s /var/www/mospochin-public-current/main.js.gz; \
              gzip -cd /var/www/mospochin-public-current/styles.css.gz | cmp -s - /var/www/mospochin-public-current/styles.css; \
              gzip -cd /var/www/mospochin-public-current/main.js.gz | cmp -s - /var/www/mospochin-public-current/main.js; \
-             nginx -T 2>/dev/null | grep -Eq '^[[:space:]]*gzip_static[[:space:]]+on;'"
+             grep -Eq '^[[:space:]]*gzip_static[[:space:]]+on;' /etc/nginx/conf.d/mospochin-static-compression.conf"
 
       - name: Verify backend deploy artifacts are present in manifest
         run: |
