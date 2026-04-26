@@ -37,11 +37,13 @@
     "sync:metadata": "node tools/sync-page-metadata.mjs",
     "generate:sitemap": "node tools/generate-sitemap.mjs",
     "generate:deploy-manifest": "node tools/generate-deploy-manifest.mjs",
+    "generate:webp-sidecars": "node tools/generate-webp-sidecars.mjs",
+    "check:webp-sidecars": "node tools/generate-webp-sidecars.mjs --check",
     "check:image-budget": "node tools/check-image-budget.mjs",
     "optimize:images": "node tools/optimize-images.mjs",
     "hash:deploy-content": "node tools/hash-deploy-content.mjs",
     "validate:site": "node tools/validate-site.mjs",
-    "lint": "npm run validate:site && npm run generate:deploy-manifest && npm run check:image-budget"
+    "lint": "npm run validate:site && npm run generate:deploy-manifest && npm run check:webp-sidecars && npm run generate:deploy-manifest && npm run check:image-budget"
   },
   "devDependencies": {
     "playwright": "^1.59.1"

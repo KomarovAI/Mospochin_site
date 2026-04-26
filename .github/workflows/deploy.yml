@@ -162,11 +162,42 @@ jobs:
             fi
           }
 
+          check_image_fallback_contract() {
+            local path="$1"
+            local headers
+            headers="$(curl -fsS -I -H 'Accept: image/jpeg,image/*,*/*;q=0.8' "https://mospochin.ru${path}")"
+            require_header "$headers" '^content-type:\s*image/jpeg' "${path} jpeg fallback content-type"
+            require_header "$headers" '^cache-control:.*immutable' "${path} jpeg fallback immutable"
+            require_header "$headers" '^vary:.*accept' "${path} jpeg fallback vary"
+          }
+
+          check_webp_contract() {
+            local path="$1"
+            local headers
+            headers="$(curl -fsS -I -H 'Accept: image/webp,image/*,*/*;q=0.8' "https://mospochin.ru${path}")"
+            require_header "$headers" '^content-type:\s*image/webp' "${path} webp content-type"
+            require_header "$headers" '^cache-control:.*immutable' "${path} webp immutable"
+            require_header "$headers" '^vary:.*accept' "${path} webp vary"
+          }
+
+          check_manifest_webp_assets() {
+            local sidecar
+            local headers
+            while IFS= read -r sidecar; do
+              headers="$(curl -fsS -I "https://mospochin.ru/${sidecar}")"
+              require_header "$headers" '^content-type:\s*image/webp' "${sidecar} direct webp content-type"
+              require_header "$headers" '^cache-control:.*immutable' "${sidecar} direct webp immutable"
+            done < <(grep -E '\.(jpg|jpeg|png)\.webp$' .deploy/include-files.txt)
+          }
+
           check_html_contract "/"
           check_html_contract "/uslugi.html"
           check_asset_contract "/styles.css" "gzip"
           check_asset_contract "/main.js" "gzip"
           check_asset_contract "/assets/images/hero-restaurant.jpg" "none"
+          check_image_fallback_contract "/assets/images/hero-restaurant.jpg"
+          check_webp_contract "/assets/images/hero-restaurant.jpg"
+          check_manifest_webp_assets
 
       - name: Verify backend deploy artifacts are present in manifest
         run: |

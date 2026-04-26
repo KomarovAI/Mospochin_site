@@ -13,6 +13,7 @@ const MANIFEST_PATH = path.join(DEPLOY_DIR, 'include-files.txt');
 const allowGeneratedVersion = process.argv.includes('--allow-generated-version');
 
 const SOURCE_EXTENSIONS = new Set(['.html', '.css', '.js', '.json']);
+const WEBP_SIDECAR_SOURCE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png']);
 const ALWAYS_INCLUDE = [
   '404.html',
   'data/contact-config.json',
@@ -126,7 +127,17 @@ function addFile(relativePath, reason) {
   }
 
   included.add(normalized);
+  addWebpSidecar(normalized);
   scanFile(normalized);
+}
+
+function addWebpSidecar(relativePath) {
+  const extension = path.extname(relativePath).toLowerCase();
+  if (!WEBP_SIDECAR_SOURCE_EXTENSIONS.has(extension)) return;
+
+  const sidecarPath = `${relativePath}.webp`;
+  if (!exists(sidecarPath) || !isDeployable(sidecarPath)) return;
+  included.add(sidecarPath);
 }
 
 function scanReferences(content, fromFile) {
