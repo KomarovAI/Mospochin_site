@@ -42,6 +42,8 @@
     "check:image-budget": "node tools/check-image-budget.mjs",
     "optimize:images": "node tools/optimize-images.mjs",
     "hash:deploy-content": "node tools/hash-deploy-content.mjs",
+    "report:ads": "node tools/report-ads.mjs",
+    "report:ads:local": "codex-secret run yandex/metrika/oauth YANDEX_METRIKA_TOKEN -- codex-secret run yandex/direct/oauth YANDEX_DIRECT_TOKEN -- node tools/report-ads.mjs",
     "validate:site": "node tools/validate-site.mjs",
     "lint": "npm run validate:site && npm run generate:deploy-manifest && npm run check:webp-sidecars && npm run generate:deploy-manifest && npm run check:image-budget"
   },
