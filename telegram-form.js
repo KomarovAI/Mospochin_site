@@ -91,6 +91,14 @@ function getSourceLabel(branch) {
     return 'Общий сайт';
 }
 
+function trackFormGoal(goalName, form, extra = {}) {
+    window.mospochinTrackGoal?.(goalName, {
+        form_context: form.dataset.formContext?.trim() || '',
+        page: window.location.pathname,
+        ...extra
+    });
+}
+
 function collectExtraFields(form) {
     const formData = new FormData(form);
     const extraFields = {};
@@ -308,6 +316,9 @@ function initTelegramForms() {
             try {
                 const response = await sendToTelegram(formData);
                 if (response.ok) {
+                    trackFormGoal('form_submit_success', form, {
+                        form_type: formData.type || ''
+                    });
                     window.localStorage.setItem(rateLimitKey, String(Date.now()));
                     btn.innerHTML = '<i class="ri-check-line mr-2"></i>Отправлено! ✓';
                     btn.classList.remove('bg-brand-orange', 'bg-green-600');
@@ -321,6 +332,9 @@ function initTelegramForms() {
                     throw new Error('Failed');
                 }
             } catch (error) {
+                trackFormGoal('form_submit_error', form, {
+                    error: 'submit_failed'
+                });
                 btn.innerHTML = '<i class="ri-phone-line mr-2"></i>Позвоните нам!';
                 btn.classList.remove('bg-brand-orange', 'bg-green-600');
                 btn.classList.add('bg-red-500');

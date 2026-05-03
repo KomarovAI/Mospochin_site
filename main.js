@@ -7,6 +7,12 @@ const SITE_CONFIG = {
       'https://wa.me/79099946177?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
     email: 'mospochin@yandex.ru',
     experience: '15+ лет',
+    legal: {
+      name: 'Кудашов Александр Викторович',
+      inn: '772503580362',
+      ogrn: '',
+      address: '',
+    },
   },
 };
 
@@ -828,6 +834,20 @@ const Components = {
         (link) => `<li><a href="${link.href}" class="hover:text-white transition">${link.label}</a></li>`
       )
       .join('');
+    const legal = SITE_CONFIG.company.legal || {};
+    const hasLegal = legal.name && legal.inn;
+    const legalBlock = hasLegal
+      ? `
+    <div class="mt-6 border-t border-slate-800 pt-6 text-left text-xs leading-relaxed" data-legal-requisites>
+      <p class="mb-2 font-bold text-slate-300">Рекламодатель</p>
+      <ul class="space-y-1">
+        <li>${escapeHtml(legal.name)}</li>
+        <li>ИНН: ${escapeHtml(legal.inn)}</li>
+        ${legal.ogrn ? `<li>ОГРН/ОГРНИП: ${escapeHtml(legal.ogrn)}</li>` : ''}
+        ${legal.address ? `<li>${escapeHtml(legal.address)}</li>` : ''}
+      </ul>
+    </div>`
+      : '';
 
     return `
 <footer class="bg-brand-blue text-slate-400 py-12 border-t border-slate-800">
@@ -878,6 +898,7 @@ const Components = {
 
     <div class="border-t border-slate-800 pt-8 text-center text-xs">
       <p>&copy; ${new Date().getFullYear()} MosPochin. Все права защищены.</p>
+      ${legalBlock}
     </div>
   </div>
 </footer>`;
