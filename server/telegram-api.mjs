@@ -306,6 +306,40 @@ function sanitizeExtraFields(value) {
   return sanitized;
 }
 
+function sanitizeAttribution(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+
+  const sanitizeTouch = (touch) => {
+    if (!touch || typeof touch !== 'object' || Array.isArray(touch)) return null;
+    const allowed = [
+      'landing_page',
+      'referrer_host',
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_content',
+      'utm_term',
+      'yclid',
+      'captured_at',
+    ];
+    const result = {};
+    for (const key of allowed) {
+      const safeValue = sanitizeString(touch[key], 200);
+      if (safeValue) result[key] = safeValue;
+    }
+    return Object.keys(result).length ? result : null;
+  };
+
+  const firstTouch = sanitizeTouch(value.first_touch);
+  const lastTouch = sanitizeTouch(value.last_touch);
+  if (!firstTouch && !lastTouch) return null;
+
+  return {
+    first_touch: firstTouch,
+    last_touch: lastTouch,
+  };
+}
+
 function getSourceLabel(branch) {
   if (branch === 'household') return 'B2C (Бытовая)';
   if (branch === 'restaurant') return 'B2B (Рестораны)';
@@ -335,6 +369,20 @@ function buildTelegramMessage(submission) {
     lines.push(`Контекст формы: ${submission.formContext}`);
   }
 
+  if (submission.attribution?.last_touch) {
+    const touch = submission.attribution.last_touch;
+    lines.push('');
+    lines.push('Рекламная атрибуция:');
+    if (touch.utm_source) lines.push(`utm_source: ${touch.utm_source}`);
+    if (touch.utm_medium) lines.push(`utm_medium: ${touch.utm_medium}`);
+    if (touch.utm_campaign) lines.push(`utm_campaign: ${touch.utm_campaign}`);
+    if (touch.utm_content) lines.push(`utm_content: ${touch.utm_content}`);
+    if (touch.utm_term) lines.push(`utm_term: ${touch.utm_term}`);
+    if (touch.yclid) lines.push(`yclid: ${touch.yclid}`);
+    if (touch.landing_page) lines.push(`Вход: ${touch.landing_page}`);
+    if (touch.referrer_host) lines.push(`Реферер: ${touch.referrer_host}`);
+  }
+
   for (const [name, value] of Object.entries(submission.extraFields)) {
     lines.push(`${formatExtraFieldLabel(name)}: ${value}`);
   }
@@ -356,6 +404,7 @@ function validateSubmission(body) {
   const formContext = sanitizeString(body.formContext, MAX_CONTEXT_LENGTH);
   const website = sanitizeString(body.website, 80);
   const extraFields = sanitizeExtraFields(body.extraFields);
+  const attribution = sanitizeAttribution(body.attribution);
   const consent = body.consent === true;
 
   if (website) {
@@ -392,6 +441,7 @@ function validateSubmission(body) {
       problem,
       formContext,
       extraFields,
+      attribution,
     }
   };
 }

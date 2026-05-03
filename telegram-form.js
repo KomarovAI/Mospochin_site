@@ -99,6 +99,12 @@ function trackFormGoal(goalName, form, extra = {}) {
     });
 }
 
+function getAttributionSnapshot() {
+    const attribution = window.mospochinGetAttribution?.();
+    if (!attribution || typeof attribution !== 'object') return null;
+    return attribution;
+}
+
 function collectExtraFields(form) {
     const formData = new FormData(form);
     const extraFields = {};
@@ -135,6 +141,7 @@ async function sendToTelegram(formData) {
         sourceLabel: getSourceLabel(branch),
         formContext: formData.formContext,
         extraFields: formData.extraFields,
+        attribution: formData.attribution,
         website: formData.website,
         consent: true
     };
@@ -245,6 +252,7 @@ function initTelegramForms() {
                 problem: form.querySelector('[name="problem"]')?.value.trim() || '',
                 formContext: form.dataset.formContext?.trim() || '',
                 extraFields: collectExtraFields(form),
+                attribution: getAttributionSnapshot(),
                 website: honeypotValue
             };
 

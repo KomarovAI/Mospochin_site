@@ -4,9 +4,41 @@
     var METRIKA_ID = '109024063';
     var isEnabled = /^\d+$/.test(String(METRIKA_ID));
     var startedForms = new WeakSet();
+    var ATTRIBUTION_STORAGE_KEY = 'mospochin_attribution_v1';
+    var ATTRIBUTION_PARAMS = [
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'utm_content',
+        'utm_term',
+        'yclid'
+    ];
 
     function cleanText(value) {
         return (value || '').replace(/\s+/g, ' ').trim().slice(0, 160);
+    }
+
+    function cleanParam(value) {
+        return cleanText(value).slice(0, 120);
+    }
+
+    function pageSlug() {
+        var file = window.location.pathname.split('/').pop() || 'index.html';
+        return file.replace(/\.html$/, '') || 'index';
+    }
+
+    function referrerHost(referrer) {
+        if (!referrer) return '';
+        try {
+            return new URL(referrer).hostname.slice(0, 120);
+        } catch (error) {
+            return '';
+        }
+    }
+
+    function isExternalReferrer(referrer) {
+        var host = referrerHost(referrer);
+        return Boolean(host && host !== window.location.hostname);
     }
 
     function pageType() {
@@ -21,8 +53,77 @@
     function params(extra) {
         return Object.assign({
             page: window.location.pathname,
-            page_type: pageType()
-        }, extra || {});
+            page_type: pageType(),
+            page_slug: pageSlug()
+        }, attributionGoalParams(), extra || {});
+    }
+
+    function getCurrentTouch() {
+        var search = new URLSearchParams(window.location.search);
+        var touch = {
+            landing_page: window.location.pathname,
+            referrer_host: isExternalReferrer(document.referrer) ? referrerHost(document.referrer) : ''
+        };
+        var hasTracking = false;
+
+        ATTRIBUTION_PARAMS.forEach(function (name) {
+            var value = cleanParam(search.get(name) || '');
+            if (!value) return;
+            touch[name] = value;
+            hasTracking = true;
+        });
+
+        if (!hasTracking && !touch.referrer_host) return null;
+        touch.captured_at = new Date().toISOString();
+        return touch;
+    }
+
+    function readAttribution() {
+        try {
+            return JSON.parse(window.localStorage.getItem(ATTRIBUTION_STORAGE_KEY) || '{}') || {};
+        } catch (error) {
+            return {};
+        }
+    }
+
+    function writeAttribution(attribution) {
+        try {
+            window.localStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(attribution));
+        } catch (error) {
+            // Ignore storage limits or private browsing restrictions.
+        }
+    }
+
+    function captureAttribution() {
+        var currentTouch = getCurrentTouch();
+        var attribution = readAttribution();
+        if (!currentTouch) return attribution;
+
+        if (!attribution.first_touch) attribution.first_touch = currentTouch;
+        attribution.last_touch = currentTouch;
+        writeAttribution(attribution);
+        return attribution;
+    }
+
+    function attributionGoalParams() {
+        var attribution = readAttribution();
+        var touch = attribution.last_touch || attribution.first_touch || {};
+        var result = {
+            landing_page: touch.landing_page || '',
+            referrer_host: touch.referrer_host || '',
+            has_yclid: touch.yclid ? 'yes' : 'no'
+        };
+
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (name) {
+            if (touch[name]) result[name] = touch[name];
+        });
+
+        return result;
+    }
+
+    window.mospochinGetAttribution = function () {
+        var attribution = readAttribution();
+        return JSON.parse(JSON.stringify(attribution));
     }
 
     function initMetrika() {
@@ -72,9 +173,8 @@
         if (!goal) return;
 
         window.mospochinTrackGoal(goal, {
-            href: href,
-            text: cleanText(link.textContent),
-            contact_type: link.dataset.contactLink || goal.replace('_click', '')
+            contact_type: link.dataset.contactLink || goal.replace('_click', ''),
+            cta_text_length: cleanText(link.textContent).length
         });
     }
 
@@ -105,5 +205,6 @@
         });
     }, true);
 
+    captureAttribution();
     initMetrika();
 })();

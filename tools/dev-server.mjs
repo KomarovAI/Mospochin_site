@@ -67,6 +67,7 @@ const server = http.createServer(async (req, res) => {
         type: String(body.type || ''),
         problemPreview: String(body.problem || '').slice(0, 200),
         extraFields: body.extraFields && typeof body.extraFields === 'object' ? body.extraFields : {},
+        attribution: body.attribution && typeof body.attribution === 'object' ? body.attribution : null,
       };
       send(res, 200, JSON.stringify(payload, null, 2), 'application/json; charset=utf-8');
       return;
