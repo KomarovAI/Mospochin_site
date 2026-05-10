@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const METRIKA_COUNTER_ID = process.env.METRIKA_COUNTER_ID || '109024063';
-const DIRECT_CAMPAIGN_ID = process.env.DIRECT_CAMPAIGN_ID || '709581220';
+const METRIKA_COUNTER_ID = process.env.METRIKA_COUNTER_ID || '109138661';
+const DIRECT_CAMPAIGN_ID = process.env.DIRECT_CAMPAIGN_ID || '709782647';
 const DATE_1 = process.env.DATE_1 || '7daysAgo';
 const DATE_2 = process.env.DATE_2 || 'today';
 
@@ -55,10 +55,10 @@ async function getMetrikaOverview() {
       'ym:s:visits',
       'ym:s:users',
       'ym:s:bounceRate',
-      'ym:s:goal556581051reaches',
-      'ym:s:goal556581084reaches',
-      'ym:s:goal556581122reaches',
-      'ym:s:goal556581123reaches'
+      'ym:s:goal558329465reaches',
+      'ym:s:goal558329466reaches',
+      'ym:s:goal558329471reaches',
+      'ym:s:goal558329472reaches'
     ].join(','),
     dimensions: 'ym:s:lastsignTrafficSource',
     limit: '20'
@@ -74,7 +74,7 @@ async function getMetrikaUtm() {
     ids: METRIKA_COUNTER_ID,
     date1: DATE_1,
     date2: DATE_2,
-    metrics: 'ym:s:visits,ym:s:goal556581122reaches',
+    metrics: 'ym:s:visits,ym:s:goal558329471reaches',
     dimensions: [
       'ym:s:lastsignUTMSource',
       'ym:s:lastsignUTMMedium',

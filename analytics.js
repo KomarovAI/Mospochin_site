@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var METRIKA_ID = '109024063';
+    var METRIKA_ID = '109138661';
     var isEnabled = /^\d+$/.test(String(METRIKA_ID));
     var startedForms = new WeakSet();
     var ATTRIBUTION_STORAGE_KEY = 'mospochin_attribution_v1';
