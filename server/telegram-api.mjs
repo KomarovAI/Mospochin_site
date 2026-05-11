@@ -319,6 +319,7 @@ function sanitizeAttribution(value) {
       'utm_campaign',
       'utm_content',
       'utm_term',
+      'metrika_client_id',
       'yclid',
       'captured_at',
     ];
@@ -379,6 +380,7 @@ function buildTelegramMessage(submission) {
     if (touch.utm_content) lines.push(`utm_content: ${touch.utm_content}`);
     if (touch.utm_term) lines.push(`utm_term: ${touch.utm_term}`);
     if (touch.yclid) lines.push(`yclid: ${touch.yclid}`);
+    if (touch.metrika_client_id) lines.push(`metrika_client_id: ${touch.metrika_client_id}`);
     if (touch.landing_page) lines.push(`Вход: ${touch.landing_page}`);
     if (touch.referrer_host) lines.push(`Реферер: ${touch.referrer_host}`);
   }

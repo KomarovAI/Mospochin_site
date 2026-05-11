@@ -11,6 +11,7 @@
         'utm_campaign',
         'utm_content',
         'utm_term',
+        'metrika_client_id',
         'yclid'
     ];
 
@@ -105,6 +106,26 @@
         return attribution;
     }
 
+    function setMetrikaClientId(clientId) {
+        var safeClientId = cleanParam(clientId || '');
+        if (!safeClientId) return;
+
+        var attribution = readAttribution();
+        var touch = attribution.last_touch || attribution.first_touch || {
+            landing_page: window.location.pathname,
+            referrer_host: ''
+        };
+
+        touch.metrika_client_id = safeClientId;
+        touch.captured_at = touch.captured_at || new Date().toISOString();
+        if (!attribution.first_touch) attribution.first_touch = touch;
+        if (attribution.first_touch) attribution.first_touch.metrika_client_id = safeClientId;
+        attribution.last_touch = Object.assign({}, touch, {
+            metrika_client_id: safeClientId
+        });
+        writeAttribution(attribution);
+    }
+
     function attributionGoalParams() {
         var attribution = readAttribution();
         var touch = attribution.last_touch || attribution.first_touch || {};
@@ -114,7 +135,7 @@
             has_yclid: touch.yclid ? 'yes' : 'no'
         };
 
-        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (name) {
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'metrika_client_id'].forEach(function (name) {
             if (touch[name]) result[name] = touch[name];
         });
 
@@ -153,6 +174,10 @@
             ecommerce: 'dataLayer',
             referrer: document.referrer,
             url: location.href
+        });
+
+        window.ym(METRIKA_ID, 'getClientID', function (clientId) {
+            setMetrikaClientId(clientId);
         });
     }
 
