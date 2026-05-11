@@ -104,3 +104,29 @@ a,button,[role="button"],input[type="submit"],select,.btn-click{min-height:48px;
 .fixed.bottom-24.right-4.z-50.md\:hidden{display:flex!important;opacity:0.85}
 .fixed.bottom-24.right-4.z-50.md\:hidden:hover{opacity:1}
 }
+
+body.page-parokonvektomaty .pariki-hero-title{text-wrap:balance}
+body.page-parokonvektomaty .scroll-reveal,body.page-parokonvektomaty .scroll-reveal-left,body.page-parokonvektomaty .scroll-reveal-right,body.page-parokonvektomaty .scroll-scale,body.page-parokonvektomaty .heading-reveal,body.page-parokonvektomaty .fade-in-section{opacity:1!important;transform:none!important;filter:none!important}
+body.page-parokonvektomaty .pariki-priority-strip{background:#020617;color:#fff}
+body.page-parokonvektomaty .pariki-priority-strip article{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.06)}
+body.page-parokonvektomaty .pariki-priority-strip p{color:rgba(226,232,240,.88)}
+body.page-parokonvektomaty .pariki-priority-strip p:first-child{color:#f97316}
+@media(min-width:1024px){
+body.page-parokonvektomaty .pariki-hero-layout{grid-template-columns:minmax(0,0.95fr) minmax(380px,0.75fr)}
+body.page-parokonvektomaty .pariki-hero-title{font-size:clamp(3rem,3.6vw,4rem);line-height:1.08}
+}
+@media(max-width:640px){
+body.page-parokonvektomaty #header-container{margin-top:2.45rem!important}
+body.page-parokonvektomaty #header-container>div:first-child{padding-top:.45rem!important;padding-bottom:.45rem!important;font-size:.9rem}
+body.page-parokonvektomaty .pariki-hero{padding-top:3rem!important;padding-bottom:2.25rem!important;background-position:58% top!important}
+body.page-parokonvektomaty .pariki-hero-badge{max-width:100%;justify-content:center;white-space:normal}
+body.page-parokonvektomaty .pariki-hero-title{font-size:clamp(2.15rem,11vw,3rem);line-height:1.06;margin-bottom:1rem}
+body.page-parokonvektomaty .pariki-hero-copy{margin-bottom:1rem;font-size:1rem;line-height:1.5}
+body.page-parokonvektomaty .pariki-hero-kpis{display:none}
+body.page-parokonvektomaty .pariki-hero-actions{display:none}
+body.page-parokonvektomaty .pariki-hero-trust{display:none}
+body.page-parokonvektomaty .pariki-hero-card .telegram-form{margin-bottom:0}
+body.page-parokonvektomaty .fixed.bottom-0.left-0.right-0{padding:.55rem .75rem!important}
+body.page-parokonvektomaty .fixed.bottom-0.left-0.right-0 a{padding-top:.7rem!important;padding-bottom:.7rem!important;border-radius:.9rem}
+body.page-parokonvektomaty .fixed.bottom-24.right-4{display:none}
+}

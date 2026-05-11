@@ -1650,7 +1650,9 @@ const Components = {
   },
 
   hydrateHouseholdRequestForm(service, slotEntry) {
-    const form = document.querySelector('form.telegram-form[data-slot="request-form"], form.telegram-form');
+    const form =
+      document.querySelector('form.telegram-form[data-slot="request-form"]') ||
+      document.querySelector('form.telegram-form');
     if (!form || !service || !slotEntry?.formHints) return null;
 
     const typeInput = form.querySelector('input[name="type"]');
@@ -2253,7 +2255,9 @@ const Components = {
   },
 
   hydrateRestaurantRequestForm(service, slotEntry) {
-    const form = document.querySelector('form.telegram-form[data-slot="request-form"], form.telegram-form');
+    const form =
+      document.querySelector('form.telegram-form[data-slot="request-form"]') ||
+      document.querySelector('form.telegram-form');
     if (!form || !service || !slotEntry?.formHints) return null;
 
     const typeInput = form.querySelector('input[name="type"]');
