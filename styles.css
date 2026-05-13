@@ -2200,6 +2200,25 @@ body.page-parokonvektomaty .pariki-priority-strip p:first-child {
   color: #f97316;
 }
 
+body.page-microwaves .microwave-hero-shell {
+  padding-top: 8.25rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  body.page-microwaves .microwave-hero-shell {
+    padding-top: 9rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body.page-microwaves .microwave-hero-shell {
+    padding-top: 12rem;
+    padding-bottom: 5rem;
+  }
+}
+
 @media (min-width: 1024px) {
   body.page-parokonvektomaty .pariki-hero-layout {
     grid-template-columns: minmax(0, 0.95fr) minmax(380px, 0.75fr);
