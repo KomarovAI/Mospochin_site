@@ -1014,8 +1014,8 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
   const ogUrl = getMatch(html, /<meta[^>]+property="og:url"[^>]+content="([^"]*)"[^>]*>/i);
   const robots = getMatch(html, /<meta[^>]+name="robots"[^>]+content="([^"]*)"[^>]*>/i);
   const normalizedShellCount = countNormalizedShellComments(html);
-  const hardcodedPhoneLinks = html.match(/href="tel:89099946177"/g) || [];
-  const nonCanonicalPhoneLinks = html.match(/href="tel:79099946177"/g) || [];
+  const hardcodedPhoneLinks = html.match(/href="tel:89990057172"/g) || [];
+  const nonCanonicalPhoneLinks = html.match(/href="tel:79990057172"/g) || [];
   const phoneLinksWithoutContract = html.match(
     /<a\b(?=[^>]*href="tel:[^"]+")(?![^>]*data-contact-link="phone")[^>]*>/g
   ) || [];
@@ -1107,7 +1107,7 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
   }
 
   if (nonCanonicalPhoneLinks.length > 0) {
-    errors.push(`${fileName}: use tel:+79099946177, found legacy tel:79099946177 link`);
+    errors.push(`${fileName}: use tel:+79990057172, found legacy tel:79990057172 link`);
   }
 
   if (phoneLinksWithoutContract.length > 0) {

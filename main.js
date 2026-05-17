@@ -1,10 +1,10 @@
 const SITE_CONFIG = {
   company: {
     name: 'MosPochin',
-    phoneDisplay: '8 (909) 994-61-77',
-    phoneLink: '+79099946177',
+    phoneDisplay: '8 (999) 005-71-72',
+    phoneLink: '+79990057172',
     whatsapp:
-      'https://wa.me/79099946177?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
+      'https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin',
     email: 'mospochin@yandex.ru',
     experience: '15+ лет',
     legal: {
@@ -33,7 +33,7 @@ const DEFAULT_CONTACT_CONFIG = Object.freeze({
   phoneE164: SITE_CONFIG.company.phoneLink,
   whatsappNumber: SITE_CONFIG.company.phoneLink.replace(/[^\d]/g, ''),
   whatsappDefaultText: 'Здравствуйте! Нужен ремонт. Сайт MosPochin',
-  telegramHref: 'tg://resolve?phone=79099946177',
+  telegramHref: 'tg://resolve?phone=79990057172',
   email: SITE_CONFIG.company.email,
 });
 const DEFAULT_SCHEMA_PROFILE = Object.freeze({
