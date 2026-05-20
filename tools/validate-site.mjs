@@ -3127,6 +3127,34 @@ function validateBranchConfig(branchConfig, contract, expectedBranch) {
     });
   }
 
+  if (branchConfig.primaryServices !== undefined) {
+    if (!Array.isArray(branchConfig.primaryServices) || branchConfig.primaryServices.length === 0) {
+      errors.push(`${contract.dataFile}: primaryServices must be a non-empty array when defined`);
+    } else {
+      const serviceTargets = new Set(branchConfig.services.map((service) => service?.href));
+
+      branchConfig.primaryServices.forEach((service, index) => {
+        if (!service || typeof service !== 'object') {
+          errors.push(`${contract.dataFile}: primaryServices[${index}] must be an object`);
+          return;
+        }
+
+        if (!isNonEmptyString(service.name) || !isNonEmptyString(service.icon)) {
+          errors.push(`${contract.dataFile}: primaryServices[${index}] must define name and icon`);
+        }
+        validateHtmlTarget(
+          service.href,
+          `${contract.dataFile}: primaryServices[${index}].href`,
+          expectedBranch
+        );
+
+        if (!serviceTargets.has(service.href)) {
+          errors.push(`${contract.dataFile}: primaryServices[${index}].href must also exist in services`);
+        }
+      });
+    }
+  }
+
   if (!Array.isArray(branchConfig.footerLinks) || branchConfig.footerLinks.length === 0) {
     errors.push(`${contract.dataFile}: footerLinks must be a non-empty array`);
   } else {

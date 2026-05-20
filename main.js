@@ -718,7 +718,11 @@ const Components = {
       branchSwitchLabel: isBytovaya
         ? '🔧 Ресторанное оборудование'
         : '🏠 Бытовая техника',
+      isBytovaya,
       services: isBytovaya ? householdBranch.services : restaurantBranch.services,
+      primaryServices: isBytovaya
+        ? householdBranch.primaryServices || householdBranch.services
+        : restaurantBranch.primaryServices || restaurantBranch.services,
       topBarText: isBytovaya ? householdBranch.topBarText : restaurantBranch.topBarText,
       contactHint: isBytovaya ? householdBranch.contactHint : restaurantBranch.contactHint,
     };
@@ -739,7 +743,7 @@ const Components = {
 
   getHeader() {
     const branch = this.getBranchMeta();
-    const serviceItems = branch.services
+    const serviceItems = branch.primaryServices
       .map(
         (service) =>
           `<a href="${service.href}" class="dropdown-item"><span class="icon">${service.icon}</span>${service.name}</a>`
@@ -912,7 +916,7 @@ const Components = {
     if (!btn || !menu || !items) return;
 
     const branch = this.getBranchMeta();
-    const serviceLinks = branch.services
+    const serviceLinks = branch.primaryServices
       .map(
         (service) =>
           `<a href="${service.href}" class="block pl-8 py-2 text-sm text-slate-600 hover:text-brand-orange hover:bg-orange-50 rounded-lg">${service.name}</a>`
