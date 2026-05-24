@@ -1181,6 +1181,22 @@ const sitemapLocs = new Set(
   [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1])
 );
 
+for (const loc of sitemapLocs) {
+  let fileName;
+  try {
+    const url = new URL(loc);
+    if (url.hostname !== 'mospochin.ru') continue;
+    fileName = url.pathname === '/' ? 'index.html' : url.pathname.replace(/^\//, '');
+  } catch {
+    errors.push(`sitemap.xml: invalid URL ${loc}`);
+    continue;
+  }
+
+  if (fileName.endsWith('.html') && !metadata.pages[fileName]) {
+    errors.push(`${fileName}: sitemap URL missing from data/page-metadata.json`);
+  }
+}
+
 for (const [fileName, page] of Object.entries(metadata.pages)) {
   if (!page.canonical) continue;
   if (isNoindexPage(page)) continue;

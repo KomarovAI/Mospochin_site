@@ -209,6 +209,7 @@ const RESTAURANT_PAGES = new Set([
   'about',
   'contact',
   'parokonvektomaty',
+  'parokonvektomaty-promo',
   'plity-pechi',
   'holodilnoe-oborudovanie',
   'posudomoechnye-mashiny',
@@ -236,6 +237,7 @@ const PAGE_CLASS_ALIASES = Object.freeze({
   'posudomoyki.html': ['page-posudomoyki'],
   'plity.html': ['page-plity'],
   'kompyutery.html': ['page-kompyutery'],
+  'parokonvektomaty-promo.html': ['page-parokonvektomaty'],
 });
 
 function getCurrentPageSlug() {
