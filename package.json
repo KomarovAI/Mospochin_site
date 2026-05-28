@@ -46,7 +46,18 @@
     "report:ads": "node tools/report-ads.mjs",
     "report:ads:local": "codex-secret run yandex/metrika/oauth YANDEX_METRIKA_TOKEN -- codex-secret run yandex/direct/oauth YANDEX_DIRECT_TOKEN -- node tools/report-ads.mjs",
     "validate:site": "node tools/validate-site.mjs",
-    "lint": "npm run validate:site && npm run generate:deploy-manifest && npm run check:webp-sidecars && npm run generate:deploy-manifest && npm run check:image-budget"
+    "lint": "npm run validate:site && npm run generate:deploy-manifest && npm run check:webp-sidecars && npm run generate:deploy-manifest && npm run check:image-budget",
+    "ai:price": "node tools/ai-edit.mjs --price",
+    "ai:text": "node tools/ai-edit.mjs --text",
+    "ai:faq-add": "node tools/ai-edit.mjs --faq-add",
+    "ai:contact": "node tools/ai-edit.mjs --contact",
+    "ai:help": "node tools/ai-edit.mjs",
+    "ai:check": "node tools/ai-check.mjs",
+    "optimize:site": "node tools/optimize-site.mjs",
+    "build:partials": "node tools/build-partials.mjs",
+    "optimize:html": "node tools/optimize-html.mjs",
+    "content:extract": "node tools/extract-content.mjs",
+    "optimize:all": "node tools/optimize-all.mjs"
   },
   "devDependencies": {
     "playwright": "^1.59.1"
