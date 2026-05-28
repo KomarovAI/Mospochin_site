@@ -953,24 +953,9 @@
     </section>
 <!-- sync:related-links:end -->
 
-    <!-- Mobile sticky footer -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
-        <div class="grid grid-cols-2 gap-3">
-            <a href="tel:+79990057172" data-contact-link="phone" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
-                <i class="ri-phone-line"></i><span class="text-sm">Позвонить</span>
-            </a>
-            <a href="https://wa.me/79990057172" data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
-                <i class="ri-whatsapp-line"></i><span class="text-sm">WhatsApp</span>
-            </a>
-        </div>
-    </div>
+    <!-- Mobile footer injected via JS -->
 
-    <!-- WhatsApp floating button -->
-    <div class="fixed bottom-24 right-4 z-50 md:hidden">
-        <a href="https://wa.me/79990057172" data-contact-link="whatsapp" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95">
-            <i class="ri-whatsapp-line text-2xl"></i>
-        </a>
-    </div>
+    <!-- WhatsApp float injected via JS -->
 
     <!-- Footer -->
     <div id="footer-container"></div>
@@ -1017,6 +1002,7 @@
         tick();
     })();
     </script>
+    <script src="partials-injector.js" defer></script>
 </body>
 
 </html>

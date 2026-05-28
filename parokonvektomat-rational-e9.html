@@ -1664,49 +1664,14 @@
     </section>
 <!-- sync:related-links:end -->
 
-    <!-- Mobile sticky footer -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
-        <div class="grid grid-cols-2 gap-3">
-            <a href="tel:+79990057172" data-contact-link="phone" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
-                <i class="ri-phone-line"></i>
-                <span class="text-sm">Rational</span>
-            </a>
-            <a href="https://wa.me/79990057172?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A3%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B0%20Rational%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%20E9.%20%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8E%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D1%8F%2C%20%D1%88%D0%B8%D0%BB%D1%8C%D0%B4%D0%B8%D0%BA%D0%B0%2C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0." data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2">
-                <i class="ri-whatsapp-line"></i>
-                <span class="text-sm">Фото E9</span>
-            </a>
-        </div>
-    </div>
+    <!-- Mobile footer injected via JS -->
 
-    <!-- WhatsApp floating button (mobile) -->
-    <div class="fixed bottom-24 right-4 z-50 md:hidden">
-        <a href="https://wa.me/79990057172?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A3%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B0%20Rational%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%20E9.%20%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8E%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D1%8F%2C%20%D1%88%D0%B8%D0%BB%D1%8C%D0%B4%D0%B8%D0%BA%D0%B0%2C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0." data-contact-link="whatsapp" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95">
-            <i class="ri-whatsapp-line text-2xl"></i>
-        </a>
-    </div>
+    <!-- WhatsApp float injected via JS -->
 
     <!-- Footer -->
     <div id="footer-container"></div>
 
-    <!-- Noscript fallback -->
-    <noscript>
-        <style>
-            .noscript-fallback{position:fixed;top:0;left:0;right:0;z-index:9999;background:#0f172a;color:#fff;padding:12px 16px;text-align:center;font-family:sans-serif}
-            .noscript-fallback a{color:#f97316;font-weight:bold;text-decoration:none;margin:0 8px}
-            .noscript-fallback .ns-phone{font-size:1.2em}
-        </style>
-        <div class="noscript-fallback">
-            <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px">
-                <strong style="font-size:1.3em">🔥 MosPochin — Пароконвектоматы</strong>
-                <span style="opacity:0.5">|</span>
-                <a href="uslugi.html">Услуги</a>
-                <a href="about.html">О нас</a>
-                <a href="contact.html">Контакты</a>
-                <span style="opacity:0.5">|</span>
-                <a href="tel:+79990057172" data-contact-link="phone" class="ns-phone">☎ 8 (999) 005-71-72</a>
-            </div>
-        </div>
-    </noscript>
+    <!-- Noscript fallback inline -->
 
     <!-- Countdown Timer Script -->
     <script>
@@ -1737,6 +1702,7 @@
         setInterval(tick, 1000);
     })();
     </script>
+    <script src="partials-injector.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,31 @@
+<!-- Countdown Timer -->
+<div id="countdown-container">
+    <script>
+    (function() {
+        const TIMER_KEY = 'mospochin_timer_end';
+        const DURATION = 60 * 60 * 1000;
+        let endTime = localStorage.getItem(TIMER_KEY);
+        if (!endTime || parseInt(endTime) <= Date.now()) {
+            endTime = Date.now() + DURATION;
+            localStorage.setItem(TIMER_KEY, endTime);
+        }
+        endTime = parseInt(endTime);
+        const minEl = document.getElementById('cd-min');
+        const secEl = document.getElementById('cd-sec');
+        if (!minEl || !secEl) return;
+        const tick = () => {
+            const remaining = Math.max(0, endTime - Date.now());
+            const min = Math.floor(remaining / 60000);
+            const sec = Math.floor((remaining % 60000) / 1000);
+            minEl.textContent = String(min).padStart(2, '0');
+            secEl.textContent = ':' + String(sec).padStart(2, '0');
+            if (remaining <= 0) {
+                endTime = Date.now() + DURATION;
+                localStorage.setItem(TIMER_KEY, endTime);
+            }
+        };
+        tick();
+        setInterval(tick, 1000);
+    })();
+    </script>
+</div>
