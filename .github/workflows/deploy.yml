@@ -12,7 +12,7 @@ on:
       - "tools/**"
       - "main.js"
       - "telegram-form.js"
-      - "styles.css"
+      - "styles-combined.css"
       - "sitemap.xml"
       - "package.json"
       - "package-lock.json"
@@ -192,7 +192,7 @@ jobs:
 
           check_html_contract "/"
           check_html_contract "/uslugi.html"
-          check_asset_contract "/styles.css" "gzip"
+          check_asset_contract "/styles-combined.css" "gzip"
           check_asset_contract "/main.js" "gzip"
           check_asset_contract "/assets/images/hero-restaurant.jpg" "none"
           check_image_fallback_contract "/assets/images/hero-restaurant.jpg"
@@ -205,13 +205,13 @@ jobs:
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             "set -e; \
-             if [ '${{ steps.deploy_hash.outputs.skip }}' = 'true' ] && [ ! -s /var/www/mospochin-public-current/styles.css.gz ]; then \
+             if [ '${{ steps.deploy_hash.outputs.skip }}' = 'true' ] && [ ! -s /var/www/mospochin-public-current/styles-combined.css.gz ]; then \
                echo 'Static gzip sidecars are not present on a skipped deploy; skipping first-activation check.'; \
                exit 0; \
              fi; \
-             test -s /var/www/mospochin-public-current/styles.css.gz; \
+             test -s /var/www/mospochin-public-current/styles-combined.css.gz; \
              test -s /var/www/mospochin-public-current/main.js.gz; \
-             gzip -cd /var/www/mospochin-public-current/styles.css.gz | cmp -s - /var/www/mospochin-public-current/styles.css; \
+             gzip -cd /var/www/mospochin-public-current/styles-combined.css.gz | cmp -s - /var/www/mospochin-public-current/styles-combined.css; \
              gzip -cd /var/www/mospochin-public-current/main.js.gz | cmp -s - /var/www/mospochin-public-current/main.js; \
              grep -Eq '^[[:space:]]*gzip_static[[:space:]]+on;' /etc/nginx/conf.d/mospochin-static-compression.conf"
 
