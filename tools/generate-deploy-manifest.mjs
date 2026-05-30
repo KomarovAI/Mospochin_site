@@ -43,8 +43,6 @@ const ALWAYS_INCLUDE = [
   'robots.txt',
   'server/telegram-api.mjs',
   'sitemap.xml',
-  'styles-built.css',
-  'styles.css',
   'telegram-form.js',
   'version.json',
 ];
