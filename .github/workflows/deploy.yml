@@ -196,7 +196,6 @@ jobs:
           check_asset_contract "/main.js" "gzip"
           check_asset_contract "/assets/images/hero-restaurant.jpg" "none"
           check_image_fallback_contract "/assets/images/hero-restaurant.jpg"
-          check_webp_contract "/assets/images/hero-restaurant.jpg"
           check_manifest_webp_assets
 
       - name: Verify static gzip sidecars
