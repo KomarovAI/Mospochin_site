@@ -25,7 +25,8 @@ npm-debug.log*
 # Temporary
 *.tmp
 *.bak
-.deploy/
+.deploy/*
+!.deploy/include-files.txt
 .artifacts/
 .asset-archive/
 tools/
