@@ -77,12 +77,10 @@ jobs:
       - name: Deploy on VPS
         if: steps.deploy_hash.outputs.skip != 'true'
         timeout-minutes: 2
-        env:
-          REPO_PAT: ${{ secrets.REPO_PAT }}
         run: |
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "git config --global url.https://x-access-token:${REPO_PAT}@github.com/KomarovAI/Mospochin_site.git.insteadOf https://github.com/KomarovAI/Mospochin_site.git && sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
+            "sudo GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0='url.https://x-access-token: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@github.com/KomarovAI/Mospochin_site.git.insteadOf' GIT_CONFIG_VALUE_0='https://github.com/KomarovAI/Mospochin_site.git' /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
 
       - name: Smoke test public pages
         timeout-minutes: 4
