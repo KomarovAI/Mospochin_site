@@ -80,7 +80,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "sudo git config --system url.https://x-access-token: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@github.com/KomarovAI/Mospochin_site.git.insteadOf https://github.com/KomarovAI/Mospochin_site.git && sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
+            "sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
 
       - name: Smoke test public pages
         timeout-minutes: 4
