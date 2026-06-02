@@ -16,6 +16,7 @@ ENV_DIR="/etc/mospochin"
 ENV_TARGET="${ENV_DIR}/telegram.env"
 ENV_TEMPLATE="deploy/env/telegram.env.example"
 NGINX_STATIC_COMPRESSION_CONF="/etc/nginx/conf.d/mospochin-static-compression.conf"
+NGINX_SECURITY_HEADERS_CONF="/etc/nginx/conf.d/mospochin-security-headers.conf"
 
 install -d -m 0755 /etc/systemd/system
 
@@ -24,28 +25,15 @@ build_public_webroot() {
   local tmp_dir="${public_dir}.tmp"
 
   rm -rf "${tmp_dir}"
-  mkdir -p "${tmp_dir}/data"
-  rsync -a --delete \
-    --include='/assets/***' \
-    --include='/*.html' \
-    --include='/*.css' \
-    --include='/*.js' \
-    --include='/*.svg' \
-    --include='/robots.txt' \
-    --include='/sitemap.xml' \
-    --include='/version.json' \
-    --exclude='*' \
-    "${RELEASE_ROOT}/" "${tmp_dir}/"
+  mkdir -p "${tmp_dir}"
 
-  local public_data_files=(
-    contact-config.json page-metadata.json schema-profile.json runtime-config.json
-    restaurant-branch.json restaurant-services.json restaurant-page-slots.json restaurant-proof-layer.json
-    household-branch.json household-services.json household-page-slots.json household-card-presets.json household-proof-layer.json
-  )
-  local file
-  for file in "${public_data_files[@]}"; do
-    install -m 0644 "${RELEASE_ROOT}/data/${file}" "${tmp_dir}/data/${file}"
-  done
+  local public_file_list
+  public_file_list="$(mktemp)"
+  node "${RELEASE_ROOT}/tools/generate-public-file-list.mjs" --out "${public_file_list}"
+
+  rsync -a --delete --files-from="${public_file_list}" \
+    "${RELEASE_ROOT}/" "${tmp_dir}/"
+  rm -f "${public_file_list}"
 
   generate_precompressed_assets "${tmp_dir}"
 
@@ -57,16 +45,33 @@ build_public_webroot() {
 
 generate_precompressed_assets() {
   local public_dir="$1"
-
-  if ! command -v gzip >/dev/null 2>&1; then
-    echo "Skipping precompressed assets: gzip is not available."
-    return
-  fi
+  local compressible_files
+  compressible_files="$(mktemp)"
 
   find "${public_dir}" -type f \
     \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.json' -o -name '*.svg' -o -name '*.xml' -o -name '*.txt' \) \
     -size +1023c \
-    -print0 | xargs -0 -r gzip -9 -n -kf --
+    -print0 > "${compressible_files}"
+
+  if command -v gzip >/dev/null 2>&1; then
+    xargs -0 -r gzip -9 -n -kf -- < "${compressible_files}"
+  else
+    echo "Skipping gzip precompressed assets: gzip is not available."
+  fi
+
+  if command -v brotli >/dev/null 2>&1; then
+    while IFS= read -r -d '' file; do
+      brotli -f -q 11 "${file}"
+    done < "${compressible_files}"
+  else
+    echo "Skipping Brotli precompressed assets: brotli is not available."
+  fi
+
+  rm -f "${compressible_files}"
+}
+
+nginx_supports_brotli_static() {
+  command -v nginx >/dev/null 2>&1 && nginx -V 2>&1 | grep -qi 'brotli'
 }
 
 install_nginx_static_compression_config() {
@@ -81,8 +86,38 @@ install_nginx_static_compression_config() {
   {
     echo "# Managed by MosPochin deploy hook."
     echo "gzip_static on;"
+    if nginx_supports_brotli_static; then
+      echo "brotli_static on;"
+    else
+      echo "# brotli_static is not enabled because the installed nginx build does not advertise Brotli support."
+    fi
   } > "${tmp_conf}"
   install -m 0644 "${tmp_conf}" "${NGINX_STATIC_COMPRESSION_CONF}"
+  rm -f "${tmp_conf}"
+
+  nginx -t
+  systemctl reload nginx
+}
+
+install_nginx_security_headers_config() {
+  if ! command -v nginx >/dev/null 2>&1; then
+    echo "Skipping nginx security headers config: nginx is not available."
+    return
+  fi
+
+  install -d -m 0755 "$(dirname "${NGINX_SECURITY_HEADERS_CONF}")"
+  local tmp_conf
+  tmp_conf="$(mktemp)"
+  cat > "${tmp_conf}" <<'NGINX_SECURITY_HEADERS'
+# Managed by MosPochin deploy hook.
+# CSP starts in report-only mode so inline legacy scripts can be audited before enforcement.
+add_header Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https://mc.yandex.ru https://*.mc.yandex.ru; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://*.mc.yandex.ru; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://mc.yandex.ru https://*.mc.yandex.ru; form-action 'self'; upgrade-insecure-requests" always;
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" always;
+add_header X-Content-Type-Options "nosniff" always;
+NGINX_SECURITY_HEADERS
+  install -m 0644 "${tmp_conf}" "${NGINX_SECURITY_HEADERS_CONF}"
   rm -f "${tmp_conf}"
 
   nginx -t
@@ -117,6 +152,7 @@ fi
 
 build_public_webroot
 install_nginx_static_compression_config
+install_nginx_security_headers_config
 
 systemctl daemon-reload
 

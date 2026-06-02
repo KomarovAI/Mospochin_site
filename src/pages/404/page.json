@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "404.html",
+  "slug": "404",
+  "route": "/404.html",
+  "branch": "neutral",
+  "role": "neutral",
+  "title": "404 — Страница не найдена | MosPochin",
+  "h1": "Страница не найдена",
+  "source": {
+    "extractedFrom": "404.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "e465be7a2b8ddba4e9356e986faa4f90eff1a2f325becef9d6fc0d0eb6305473",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-noscript-noscript-fallback",
+      "component": "noscript",
+      "label": "Noscript fallback",
+      "bytes": 208,
+      "hash": "468caad1f64721d4",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "yandex-metrika-pixel",
+      "templateRef": "src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html",
+      "props": {},
+      "sourceFile": "sections/001-noscript-noscript-fallback.html"
+    },
+    {
+      "id": "002-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/002-raw-html-fragment.html",
+      "bytes": 47,
+      "hash": "2646981210d11046"
+    },
+    {
+      "id": "003-contact-cta-stranica-ne-naydena",
+      "component": "contact-cta",
+      "label": "Страница не найдена",
+      "file": "sections/003-contact-cta-stranica-ne-naydena.html",
+      "bytes": 1612,
+      "hash": "c335369c73e238fe"
+    },
+    {
+      "id": "004-runtime-partials-podklyuchenie-partials-injector",
+      "component": "runtime-partials",
+      "label": "Подключение partials-injector",
+      "bytes": 51,
+      "hash": "a55dc22a049e1a0e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html",
+      "props": {},
+      "sourceFile": "sections/004-runtime-partials-podklyuchenie-partials-injector.html"
+    },
+    {
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "007-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/007-raw-html-fragment.html",
+      "bytes": 1,
+      "hash": "01ba4719c80b6fe9"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:page -- --page 404.html",
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page 404.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

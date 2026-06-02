@@ -41,8 +41,7 @@ const ALWAYS_INCLUDE = [
   'robots.txt',
   'server/telegram-api.mjs',
   'sitemap.xml',
-  'styles-built.css',
-  'styles.css',
+  'styles-combined.css',
   'telegram-form.js',
   'version.json',
 ];
@@ -170,7 +169,45 @@ function scanFile(relativePath) {
   scanReferences(content, relativePath);
 }
 
+function isGitRepo() {
+  const result = spawnSync('git', ['rev-parse', '--is-inside-work-tree'], {
+    cwd: SITE_ROOT,
+    encoding: 'utf8',
+  });
+
+  return result.status === 0 && result.stdout.trim() === 'true';
+}
+
+function collectFilesFromDirectory(relativeDir) {
+  const absoluteDir = path.join(SITE_ROOT, relativeDir);
+  if (!fs.existsSync(absoluteDir)) return [];
+
+  const files = [];
+  const stack = [relativeDir];
+
+  while (stack.length > 0) {
+    const currentDir = stack.pop();
+    const currentAbsoluteDir = path.join(SITE_ROOT, currentDir);
+
+    for (const entry of fs.readdirSync(currentAbsoluteDir, { withFileTypes: true })) {
+      const relativePath = toPosix(path.join(currentDir, entry.name));
+      if (entry.isDirectory()) {
+        stack.push(relativePath);
+      } else if (entry.isFile() && exists(relativePath)) {
+        files.push(relativePath);
+      }
+    }
+  }
+
+  return files;
+}
+
 function getTrackedFiles(relativeDirs) {
+  if (!isGitRepo()) {
+    console.log('Asset audit: git repository not found, scanning asset directories from filesystem.');
+    return relativeDirs.flatMap((relativeDir) => collectFilesFromDirectory(relativeDir));
+  }
+
   const result = spawnSync('git', ['ls-files', ...relativeDirs], {
     cwd: SITE_ROOT,
     encoding: 'utf8',

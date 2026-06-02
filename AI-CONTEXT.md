@@ -1,171 +1,273 @@
 # AI-CONTEXT: MosPochin Site
 
-**Краткая справка для нейронки. Читай ЭТО вместо всех HTML файлов.**
+Краткий рабочий контекст для нейронок. Начинай отсюда, а не с чтения всех HTML.
 
-## 🎯 Что это за сайт
+## Что это за проект
 
-MosPochin — сервис ремонта техники в Москве с 2010 года. Две ветки бизнеса:
+MosPochin — статический маркетинговый сайт сервиса ремонта техники в Москве. У сайта две основные ветки:
 
-- **restaurant** — ресторанное оборудование (B2B, юрлица, 24/7, гарантия до 24 мес)
-- **household** — бытовая техника на дому (B2C, гарантия 12 мес)
+- `restaurant` — ресторанное/профессиональное оборудование, B2B, юрлица, срочные выезды, документы, гарантия до 24 месяцев.
+- `household` — бытовая техника на дому, B2C, согласование стоимости до ремонта, гарантия до 12 месяцев.
+- `neutral` — служебные или общие страницы.
 
-## 📊 Ключевые цифры
+## Главный принцип сопровождения
 
-- 15+ лет опыта, 500+ клиентов, 12K+ ремонтов
-- Выезд 45 мин по Москве, 98% за 1 визит
-- Москва + МО (Химки, Мытищи, Балашиха и т.д.)
-- Работаем с юрлицами, НДС
+Не редактируй HTML вслепую, если задача относится к контенту, SEO, FAQ, контактам или связям страниц. Сначала найди источник правды в `data/*.json`, `content/site-content.json` или через AI-команды.
 
-## 🏗️ Архитектура сайта
+Рабочий цикл:
 
-### Структура файлов
+```bash
+npm run ai:context -- --page <file.html>
+# или
+npm run ai:context -- --query "часть названия/темы"
 
-```
-Mospochin_site/
-├── 📄 30+ HTML страниц (оптимизированы через partials/)
-├── 🎨 styles.css (53 KB) + styles-built.css (81 KB)
-├── ⚙️ main.js (104 KB) + telegram-form.js (13 KB)
-├── 📊 data/*.json (23 файла) — источник правды для контента
-├── 🛠️ tools/*.mjs (42 инструмента) — автоматизация
-├── 📦 partials/*.html — переиспользуемые компоненты
-└── 📖 docs/ — документация
+# внести точечную правку в источник правды
+npm run ai:changed
+npm run ai:check
 ```
 
-### Как работает система компонентов
+## Самые важные файлы для AI
 
-HTML файлы оптимизированы через partials:
+| Файл | Назначение |
+|---|---|
+| `data/ai-project-index.json` | Машинный индекс страниц: ветка, роль, источники, проверки |
+| `AI-CONTEXT.md` | Этот краткий контекст |
+| `docs/AI_FILE_OWNERSHIP.md` | Что можно менять, что generated, что danger-zone |
+| `docs/AI_TASK_RECIPES.md` | Рецепты типовых задач |
+| `docs/PROJECT_DECISIONS.md` | Почему проект устроен именно так |
+| `.aiignore` | Что не включать в AI-контекст |
+| `content/site-content.json` | Снимок текстового контента сайта |
+| `content/faq/page-faq-registry.json` | Машинный индекс видимых FAQ и источник generated FAQPage schema |
+| `content/faq/schema/*.json` | Generated FAQPage JSON-LD по страницам |
+| `data/page-metadata.json` | SEO title/description/canonical/robots/branch |
+| `data/contact-config.json` | Телефон, WhatsApp, Telegram, email |
+| `data/household-services.json` | Реестр бытовых услуг |
+| `data/restaurant-services.json` | Реестр ресторанных услуг |
+| `data/household-page-slots.json` | FAQ/KPI/слоты бытовых страниц |
+| `data/restaurant-page-slots.json` | FAQ/KPI/слоты ресторанных страниц |
 
-```html
-<!-- INCLUDE: partials/header.html -->
-<!-- INCLUDE: partials/footer.html -->
-<!-- INCLUDE: partials/mobile-sticky.html -->
+
+## Scale policy / рост проекта
+
+Текущий режим роста: `controlled-growth-to-150-pages`.
+
+Файлы контракта:
+
+- `docs/SCALE_POLICY.md` — человеческое правило;
+- `data/ai-scale-policy.json` — machine-readable лимиты;
+- `tools/check-scale-policy.mjs` — проверка;
+- `npm run guard:scale` — gate.
+
+Правило: проект можно расширять до 100–150 страниц без большого предварительного blueprint-рефактора, но нельзя ухудшать shared/parametric coverage, среднее число секций и source-файлов на страницу. После 150 страниц новые страницы запрещены до отдельного source-compression/blueprint этапа.
+
+После добавления страниц или source-compression правок запускай:
+
+```bash
+npm run analyze:source-complexity
+npm run guard:scale
+npm run verify
 ```
 
-- **Для разработки:** HTML файлы маленькие, легко читать и редактировать
-- **Для production:** `npm run build:partials` собирает всё обратно
+## Команды для нейронок
 
-## 📝 Как редактировать (ПРАВИЛА)
+```bash
+npm run ai:context -- --summary
+npm run ai:context -- --query "ремонт холодильников"
+npm run ai:context -- --page holodilniki.html
+npm run ai:changed
+npm run ai:check
+npm run ai:check -- --fast
+npm run ai:digest
+npm run check:faq-registry
+```
 
-### ✅ ЧТО МОЖНО менять
+Команды индекса:
 
-1. **Тексты, цены, FAQ** — через JSON в `data/`:
-   - `data/household-services.json` — бытовые услуги
-   - `data/restaurant-services.json` — ресторанные услуги
-   - `data/household-page-slots.json` — FAQ, формы, proof
-   - `data/page-metadata.json` — SEO title/description
+```bash
+npm run generate:ai-index
+npm run check:ai-index
+```
 
-2. **Через готовые npm команды:**
+## Типовые маршруты правок
+
+### SEO страницы
+
+1. `npm run ai:context -- --page <file.html>`
+2. Менять `data/page-metadata.json` или использовать профильную команду:
    ```bash
-   npm run household:set-faq -- --page <file.html> --faq-json '<json>'
    npm run household:set-metadata -- --page <file.html> --title "..." --description "..."
-   npm run household:set-proof -- --page <file.html> --proof '<json>'
-   npm run restaurant:set-* — то же самое для ресторанной ветки
+   npm run restaurant:set-metadata -- --page <file.html> --title "..." --description "..."
    ```
+3. `npm run sync:metadata`
+4. `npm run ai:check`
 
-3. **AI контент слой:**
-   - `content/site-content.json` — весь текст сайта в одном файле
-   - Читай этот файл чтобы понять что на сайте, НЕ читай HTML
+### FAQ
 
-### ❌ ЧТО НЕЛЬЗЯ трогать
-
-- `.github/workflows/*` — CI/CD
-- `tools/*.mjs` — скрипты автоматизации
-- `main.js`, `telegram-form.js` — runtime логика
-- `styles.css` — стили (есть ещё `styles-built.css` для production)
-- Структуру HTML (секции, классы, id)
-
-## 🔍 Валидация после изменений
+Видимый FAQ редактируется в builder source (`src/pages/<slug>/sections/*`, shared или parametric component). Машинный registry и FAQPage JSON-LD пересоздаются командой.
 
 ```bash
-npm run validate:site          # основная валидация
-npm run doctor:page -- --page <file.html>  # проверка конкретной страницы
-npm run sync:metadata          # синхронизация метаданных
-npm run generate:sitemap       # обновление sitemap
+npm run ai:context -- --page <file.html>
+# найти FAQ section/component source
+# внести правку
+npm run generate:faq-registry
+npm run build:site -- --page <file.html> --write
+npm run check:faq-registry
+npm run ai:semantic-diff -- --page <file.html>
+npm run ai:check
 ```
 
-## 📁 Ключевые файлы
+Если правка идёт через старые branch-команды, после них всё равно запускать `generate:faq-registry`, чтобы visible FAQ и FAQPage schema не разъехались.
 
-- `AGENTS.md` — правила для AI (короткие)
-- `data/operator-recipes.json` — защитные рецепты
-- `data/page-metadata.json` — SEO всех страниц
-- `content/site-content.json` — **весь контент сайта** (читай это!)
-
-## 🎯 Типовые задачи
-
-### Изменить цену/текст услуги
-
-1. Найти услугу в `data/household-services.json` или `restaurant-services.json`
-2. Изменить поле
-3. `npm run validate:site`
-
-### Добавить FAQ на страницу
+### Контакты
 
 ```bash
-npm run household:set-faq -- --page bytovaya-holodilniki.html \
-  --faq-json '[{"question":"...?","answer":"..."}]'
+npm run ai:contact -- --phone "+7 (999) 005-71-72" --email "mospochin@yandex.ru"
+npm run ai:changed
+npm run ai:check
 ```
 
-### Изменить SEO страницы
+### Изображения
+
+Оригиналы не пережимать вручную. Использовать генераторы:
 
 ```bash
-npm run household:set-metadata -- --page bytovaya-holodilniki.html \
-  --title "Новый заголовок" --description "Новое описание"
+npm run generate:responsive-images
+npm run generate:webp-sidecars
+npm run generate:deploy-manifest
+npm run ai:check
 ```
 
-## 🆘 Если что-то сломалось
+### Sitemap/deploy manifest/AI index после структурных изменений
 
 ```bash
-git status                    # посмотреть что изменилось
-git diff                      # посмотреть изменения
-npm run validate:site         # запустить валидацию
-git checkout -- <file>        # откатить конкретный файл
+npm run generate:sitemap
+npm run generate:deploy-manifest
+npm run generate:ai-index
+npm run ai:check
 ```
 
-## 📊 Оптимизация для нейронки
+## Что не трогать без причины
 
-### Проблема была
+- `deploy/*` и `.github/workflows/*` — влияют на выкладку.
+- `server/telegram-api.mjs` — серверная отправка заявок и секреты.
+- `tools/*.mjs` — менять только если задача про автоматизацию.
+- `assets/images/responsive/*`, `*.webp`, `*.avif` — generated, пересоздавать командами.
+- `sitemap.xml`, `.deploy/include-files.txt`, `data/ai-project-index.json` — generated, обновлять командами.
 
-- HTML файлы по 183 KB
-- Нейронка читала весь HTML чтобы изменить один текст
-- 95% HTML — это вёрстка, не контент
+## Финальный ответ после правок
 
-### Что сделали
+Всегда указывай:
 
-- Вынесли повторяющиеся блоки в `partials/`
-- HTML файлы стали 40-50 KB вместо 183 KB
-- Создали `content/site-content.json` — весь текст в одном файле
-- Нейронка теперь читает ~100 KB вместо 578 MB
+1. Что изменено.
+2. Какие файлы затронуты.
+3. Какие команды/проверки прошли.
+4. Что требует ручного визуального review, если такое есть.
 
-### Как работать
+## Data contracts
 
-1. **Читай `content/site-content.json`** — там весь текст сайта
-2. **Используй JSON в `data/`** — для редактирования контента
-3. **НЕ читай HTML** — они для продакшена, не для понимания
-
-## 🚀 Команды для работы
+Структурные данные защищены отдельным валидатором:
 
 ```bash
-# Извлечь контент для нейронки
-npm run content:extract
-
-# Оптимизировать HTML (разделить на partials)
-npm run optimize:html
-
-# Собрать partials обратно в HTML (для production)
-npm run build:partials
-
-# Валидация
-npm run validate:site
-npm run doctor:page -- --page <file.html>
+npm run validate:data
+npm run validate:data -- --page holodilniki.html
 ```
 
-## 📞 Контакты
+Перед финальным ответом после любых правок `data/*.json` запускай `npm run validate:data` или полный `npm run ai:check`. Подробнее: `docs/DATA_CONTRACTS.md`.
 
-- Телефон: 8 (999) 005-71-72
-- Email: mospochin@yandex.ru
-- Сайт: mospochin.ru
-- Telegram: @mospochin_bot
+## Flexible AI Workspace
 
----
+Для гибкого редактирования проекта не используй только узкие команды. Сначала собери рабочий контекст:
 
-**Этот файл создан для нейронки. Читай его вместо всех HTML файлов.**
+```bash
+npm run ai:workspace -- --task "описание задачи"
+```
+
+После свободных правок HTML/CSS/JS/JSON запусти:
+
+```bash
+npm run ai:review
+npm run ai:semantic-diff -- --page <page.html>
+npm run ai:check
+```
+
+Ключевые файлы:
+
+- `docs/AI_PROJECT_KNOWLEDGE.md` — смысловая база проекта для AI.
+- `docs/AI_FLEXIBLE_EDITING.md` — workflow гибких правок.
+- `data/ai-component-map.json` — карта компонентов, связанных файлов и рисков.
+
+Инструменты Flexible AI Workspace не запрещают изменения. Они помогают понять последствия и проверить, что SEO, формы, schema, изображения и глобальное поведение не сломались.
+
+## Static Component Builder baseline
+
+Все 37 индексированных HTML-страниц подключены к параллельному builder-слою:
+
+```text
+src/site-builder.json
+src/pages/<slug>/page.json
+src/pages/<slug>/sections/*.html
+```
+
+Предпочтительный workflow для HTML-страниц:
+
+```bash
+npm run ai:context -- --page holodilniki.html
+# редактировать нужную секцию в src/pages/holodilniki/sections
+npm run build:site -- --page holodilniki.html --write
+npm run check:site-builder
+npm run ai:semantic-diff -- --page holodilniki.html
+npm run ai:check
+```
+
+Если root HTML был изменён вручную и его нужно принять как источник правды:
+
+```bash
+npm run site-builder:bootstrap -- --pages holodilniki.html
+npm run check:site-builder
+npm run generate:ai-index
+```
+
+## Declarative shared components
+
+Повторяющиеся секции вынесены в `src/components/shared/*`. В `src/pages/<slug>/page.json` такие секции имеют `componentRef`; локальные секции имеют `file`. Для изменения одного блока одной страницы редактируй `src/pages/<slug>/sections/*`. Для изменения общего блока редактируй `src/components/shared/*`, затем запускай `npm run build:site -- --write`, `npm run check:shared-components`, `npm run check:site-builder` и `npm run ai:check`.
+
+
+## AI Digest / Source Compression
+
+Для крупных задач сначала читать сжатый контекст:
+
+```bash
+npm run ai:workspace -- --task "описание задачи"
+npm run ai:digest
+```
+
+Главные файлы:
+
+- `.ai/digest/project.md` — короткая карта проекта для AI.
+- `.ai/digest/content-map.json` — машинная карта страниц, компонентов, источников и проверок.
+- `.ai/digest/pages/*.md` — digest конкретной страницы.
+- `.ai/digest/components/*.md` — digest компонента.
+- `reports/source-complexity.md` — где source перегружен и что сжимать дальше.
+- `docs/SOURCE_COMPRESSION_PLAN.md` — стратегия перехода к blueprints, parameterized components и content registry.
+
+После структурных изменений запускать:
+
+```bash
+npm run analyze:source-complexity
+npm run ai:digest
+npm run check:source-complexity
+npm run check:ai-digest
+```
+
+## Parameterized components
+
+Проект теперь поддерживает parametric sections в `src/pages/<slug>/page.json` через `templateRef + propsRef`.
+
+- Шаблоны: `src/components/parametric/*/*.template.html`
+- Props: `content/components/*/*.json`
+- Контракты: `src/components/parametric/*/*.contract.json`
+- Проверка: `npm run check:parameterized-components`
+
+Если section имеет `componentMode: "parametric"`, не ищи локальный `sections/*.html`: builder рендерит HTML из template + props. Для page-specific текста меняй props, для структуры — template.
+
+Pack #2 добавил `static-core` parametric sections для технических повторов без смыслового контента: `noscript`, `runtime-partials`, `footer-anchor`, breadcrumb marker comments. Эти refs меняются через `src/components/parametric/static/*`, а не через page-local sections.

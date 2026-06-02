@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/contact-config.schema.json",
+  "title": "MosPochin contact config",
+  "type": "object",
+  "required": ["phoneDisplay", "phoneE164", "whatsappNumber", "whatsappDefaultText", "telegramHref", "email"],
+  "additionalProperties": false,
+  "properties": {
+    "phoneDisplay": { "type": "string", "minLength": 5 },
+    "phoneE164": { "type": "string", "pattern": "^\\+7\\d{10}$" },
+    "whatsappNumber": { "type": "string", "pattern": "^7\\d{10}$" },
+    "whatsappDefaultText": { "type": "string", "minLength": 1 },
+    "telegramHref": { "type": "string", "pattern": "^(https://|tg://)" },
+    "email": { "type": "string", "format": "email" }
+  }
+}

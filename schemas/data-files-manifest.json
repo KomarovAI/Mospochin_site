@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MosPochin data files manifest",
+  "description": "Maps source-of-truth data files to their documentation schemas. Runtime validation is implemented in tools/validate-data.mjs.",
+  "files": {
+    "data/page-metadata.json": "schemas/page-metadata.schema.json",
+    "data/contact-config.json": "schemas/contact-config.schema.json",
+    "data/runtime-config.json": "schemas/runtime-config.schema.json",
+    "data/household-services.json": "schemas/service-registry.schema.json",
+    "data/restaurant-services.json": "schemas/service-registry.schema.json",
+    "data/household-page-slots.json": "schemas/page-slots.schema.json",
+    "data/restaurant-page-slots.json": "schemas/page-slots.schema.json",
+    "data/household-branch.json": "schemas/branch-config.schema.json",
+    "data/restaurant-branch.json": "schemas/branch-config.schema.json",
+    "data/schema-profile.json": "schemas/schema-profile.schema.json",
+    "data/site-page-contracts.json": "schemas/site-page-contracts.schema.json",
+    "data/ai-project-index.json": "schemas/ai-project-index.schema.json"
+  }
+}

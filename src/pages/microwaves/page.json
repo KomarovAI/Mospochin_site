@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "microwaves.html",
+  "slug": "microwaves",
+  "route": "/microwaves.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Ремонт встроенных микроволновок — MosPochin",
+  "h1": "Ремонт встроенных СВЧ Neff, Miele и Bosch",
+  "source": {
+    "extractedFrom": "microwaves.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "6c2538fba35689a2bc086d435dd9fa06026f49062c0befca283d1da5ab77ae9f",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-noscript-noscript-fallback",
+      "component": "noscript",
+      "label": "Noscript fallback",
+      "bytes": 208,
+      "hash": "468caad1f64721d4",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "yandex-metrika-pixel",
+      "templateRef": "src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html",
+      "props": {},
+      "sourceFile": "sections/001-noscript-noscript-fallback.html"
+    },
+    {
+      "id": "002-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/002-raw-html-fragment.html",
+      "bytes": 52,
+      "hash": "805e06bac1530014"
+    },
+    {
+      "id": "003-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/003-raw-html-fragment.html",
+      "bytes": 54,
+      "hash": "26c5a9e988be8aff"
+    },
+    {
+      "id": "004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch",
+      "component": "lead-form",
+      "label": "Ремонт встроенных СВЧ Neff, Miele и Bosch",
+      "file": "sections/004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html",
+      "bytes": 53965,
+      "hash": "cc836d88d0afa190"
+    },
+    {
+      "id": "005-footer-anchor-footer-mount-point",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 39,
+      "hash": "f6291c7cb9f5554c",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-f6291c7cb9f5.template.html",
+      "props": {},
+      "sourceFile": "sections/005-footer-anchor-footer-mount-point.html"
+    },
+    {
+      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 486,
+      "hash": "dd70d30aa492d907"
+    },
+    {
+      "id": "007-runtime-partials-podklyuchenie-partials-injector",
+      "component": "runtime-partials",
+      "label": "Подключение partials-injector",
+      "bytes": 51,
+      "hash": "a55dc22a049e1a0e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html",
+      "props": {},
+      "sourceFile": "sections/007-runtime-partials-podklyuchenie-partials-injector.html"
+    },
+    {
+      "id": "008-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/008-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "009-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/009-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "010-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/010-raw-html-fragment.html",
+      "bytes": 1,
+      "hash": "01ba4719c80b6fe9"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page microwaves.html",
+    "npm run doctor:page -- --page microwaves.html",
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page microwaves.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

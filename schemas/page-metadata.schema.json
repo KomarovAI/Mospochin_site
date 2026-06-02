@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/page-metadata.schema.json",
+  "title": "MosPochin page metadata",
+  "type": "object",
+  "required": ["pages"],
+  "additionalProperties": false,
+  "properties": {
+    "pages": {
+      "type": "object",
+      "description": "Map of root HTML filename to SEO metadata.",
+      "patternProperties": {
+        "^[a-z0-9][a-z0-9-]*\\.html$": { "$ref": "#/$defs/pageMeta" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "pageMeta": {
+      "type": "object",
+      "required": ["title", "description", "canonical", "ogUrl", "hasForm", "branch"],
+      "properties": {
+        "title": { "type": "string", "minLength": 10, "maxLength": 75 },
+        "description": { "type": "string", "minLength": 40, "maxLength": 170 },
+        "canonical": { "type": ["string", "null"] },
+        "ogUrl": { "type": ["string", "null"] },
+        "hasForm": { "type": "boolean" },
+        "branch": { "enum": ["restaurant", "household", "neutral"] },
+        "robots": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "x-runtimeChecks": [
+    "HTML file exists for every key",
+    "canonical and ogUrl equal https://mospochin.ru/<page> except 404.html",
+    "404.html uses null canonical and noindex,follow",
+    "service registry branch matches metadata branch"
+  ]
+}

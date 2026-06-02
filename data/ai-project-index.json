@@ -1,0 +1,2008 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "note": "Deterministic AI index. Regenerate with npm run generate:ai-index after page/data structure changes.",
+  "project": {
+    "name": "MosPochin static site",
+    "primaryContext": "AI-CONTEXT.md",
+    "ownership": "docs/AI_FILE_OWNERSHIP.md",
+    "recipes": "docs/AI_TASK_RECIPES.md"
+  },
+  "summary": {
+    "totalPages": 37,
+    "byBranch": {
+      "neutral": 14,
+      "restaurant": 11,
+      "household": 12
+    },
+    "byRole": {
+      "neutral": 14,
+      "branch": 8,
+      "service": 15
+    }
+  },
+  "sourceOfTruth": {
+    "metadata": "data/page-metadata.json",
+    "contentSnapshot": "content/site-content.json",
+    "householdServices": "data/household-services.json",
+    "restaurantServices": "data/restaurant-services.json",
+    "householdSlots": "data/household-page-slots.json",
+    "restaurantSlots": "data/restaurant-page-slots.json",
+    "contacts": "data/contact-config.json",
+    "staticComponentBuilder": "src/site-builder.json"
+  },
+  "pages": {
+    "404.html": {
+      "page": "404.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "404 — Страница не найдена | MosPochin",
+      "h1": "Страница не найдена",
+      "description": "Страница не найдена. Вернитесь на главную MosPochin — ремонт техники в Москве.",
+      "canonical": null,
+      "hasForm": false,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "404.html",
+        "src/site-builder.json",
+        "src/pages/404/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/404/page.json",
+        "slug": "404",
+        "sections": 7,
+        "sourceHash": "e465be7a2b8ddba4e9356e986faa4f90eff1a2f325becef9d6fc0d0eb6305473",
+        "commands": {
+          "preview": "npm run build:site -- --page 404.html",
+          "write": "npm run build:site -- --page 404.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages 404.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page 404.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "about.html": {
+      "page": "about.html",
+      "branch": "restaurant",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "О компании MosPochin — с 2010 года ремонта техники в Москве",
+      "h1": "О компании MosPochin",
+      "description": "MosPochin — профессиональный ремонт техники с 2010 года. 500+ клиентов, 15 мастеров. Оригинальные запчасти. Гарантия до 24 месяцев.",
+      "canonical": "https://mospochin.ru/about.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-page-slots.json",
+        "about.html",
+        "src/site-builder.json",
+        "src/pages/about/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/about/page.json",
+        "slug": "about",
+        "sections": 25,
+        "sourceHash": "d563928b68115401fc84128224441f09a4ff0c7da69a200a0b004e68a4a46d41",
+        "commands": {
+          "preview": "npm run build:site -- --page about.html",
+          "write": "npm run build:site -- --page about.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages about.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page about.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "bytovaya-about.html": {
+      "page": "bytovaya-about.html",
+      "branch": "household",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "О MosPochin — ремонт бытовой техники в Москве",
+      "h1": "Помогаем спокойно решить поломку бытовой техники дома.",
+      "description": "MosPochin ремонтирует бытовую технику на дому в Москве: находим причину поломки, согласуем цену до работ и даём гарантию.",
+      "canonical": "https://mospochin.ru/bytovaya-about.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-page-slots.json",
+        "bytovaya-about.html",
+        "src/site-builder.json",
+        "src/pages/bytovaya-about/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/bytovaya-about/page.json",
+        "slug": "bytovaya-about",
+        "sections": 49,
+        "sourceHash": "ec1b85722663090db34118439713fc03fab0e957720402f912fb9efbc7815a62",
+        "commands": {
+          "preview": "npm run build:site -- --page bytovaya-about.html",
+          "write": "npm run build:site -- --page bytovaya-about.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages bytovaya-about.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page bytovaya-about.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "bytovaya-contact.html": {
+      "page": "bytovaya-contact.html",
+      "branch": "household",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "Контакты MosPochin — сервисные точки в Москве и Балашихе",
+      "h1": "Связаться по ремонту бытовой техники",
+      "description": "Контакты MosPochin по бытовой технике: 8 (999) 005-71-72, WhatsApp, Telegram и сервисные точки в Москве и Балашихе. Работаем без выходных.",
+      "canonical": "https://mospochin.ru/bytovaya-contact.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-page-slots.json",
+        "bytovaya-contact.html",
+        "src/site-builder.json",
+        "src/pages/bytovaya-contact/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/bytovaya-contact/page.json",
+        "slug": "bytovaya-contact",
+        "sections": 18,
+        "sourceHash": "bc20e7f3f3285aee48cef8207baf0766d7402e5ec2d026409f7b55c0de4f8317",
+        "commands": {
+          "preview": "npm run build:site -- --page bytovaya-contact.html",
+          "write": "npm run build:site -- --page bytovaya-contact.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages bytovaya-contact.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page bytovaya-contact.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "bytovaya-index.html": {
+      "page": "bytovaya-index.html",
+      "branch": "household",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "Ремонт бытовой техники на дому в Москве — MosPochin",
+      "h1": "Ремонт бытовой техники на дому в Москве",
+      "description": "Ремонт бытовой техники на дому в Москве: холодильники, стиральные машины, посудомойки, плиты, микроволновки и водонагреватели.",
+      "canonical": "https://mospochin.ru/bytovaya-index.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-page-slots.json",
+        "bytovaya-index.html",
+        "src/site-builder.json",
+        "src/pages/bytovaya-index/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/bytovaya-index/page.json",
+        "slug": "bytovaya-index",
+        "sections": 36,
+        "sourceHash": "2157b5828416fbd557a7637c9e343995961f12a2918df44d0d2d063a5177836d",
+        "commands": {
+          "preview": "npm run build:site -- --page bytovaya-index.html",
+          "write": "npm run build:site -- --page bytovaya-index.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages bytovaya-index.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page bytovaya-index.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "bytovaya-uslugi.html": {
+      "page": "bytovaya-uslugi.html",
+      "branch": "household",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "Услуги по ремонту бытовой техники — MosPochin",
+      "h1": "Ремонт бытовой техники на дому",
+      "description": "Каталог услуг MosPochin: ремонт холодильников, стиральных машин, посудомоек, плит, микроволновок и водонагревателей на дому.",
+      "canonical": "https://mospochin.ru/bytovaya-uslugi.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-page-slots.json",
+        "bytovaya-uslugi.html",
+        "src/site-builder.json",
+        "src/pages/bytovaya-uslugi/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/bytovaya-uslugi/page.json",
+        "slug": "bytovaya-uslugi",
+        "sections": 18,
+        "sourceHash": "584bd726ca911c495f52bb029ae241b64921cb81dbf3e10665073d64e4db0077",
+        "commands": {
+          "preview": "npm run build:site -- --page bytovaya-uslugi.html",
+          "write": "npm run build:site -- --page bytovaya-uslugi.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages bytovaya-uslugi.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page bytovaya-uslugi.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "contact.html": {
+      "page": "contact.html",
+      "branch": "restaurant",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "Контакты MosPochin — телефон, WhatsApp, Telegram, адрес в Москве",
+      "h1": "Связаться с MosPochin и быстро решить вопрос с ремонтом",
+      "description": "Телефон, WhatsApp, Telegram и адрес MosPochin в Москве. Принимаем заявки на ремонт ресторанного оборудования 24/7.",
+      "canonical": "https://mospochin.ru/contact.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-page-slots.json",
+        "contact.html",
+        "src/site-builder.json",
+        "src/pages/contact/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/contact/page.json",
+        "slug": "contact",
+        "sections": 39,
+        "sourceHash": "7c624c767f386a9cd536930d6ad83def954454c8b9679d70a353812e1809f317",
+        "commands": {
+          "preview": "npm run build:site -- --page contact.html",
+          "write": "npm run build:site -- --page contact.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages contact.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page contact.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "grili-mangaly.html": {
+      "page": "grili-mangaly.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт грилей и фритюрниц в Москве — MosPochin | от 500₽",
+      "h1": "Грили или фритюрница встали? Починим за 1-3 часа",
+      "description": "Ремонт контактных и газовых грилей, фритюрниц, саламандр и мармитов. Миксеры и блендеры обслуживаем как доп. оборудование. Выезд за 45 мин. Гарантия 24 мес.",
+      "canonical": "https://mospochin.ru/grili-mangaly.html",
+      "hasForm": true,
+      "service": {
+        "slug": "grili-mangaly",
+        "uiLabel": "Грили и фритюр",
+        "deviceName": "Грили, мангалы и фритюрницы",
+        "serviceName": "Ремонт грилей, мангалов и фритюрниц",
+        "relatedPages": [
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "ice-machines.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "grili-mangaly.html",
+        "src/site-builder.json",
+        "src/pages/grili-mangaly/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/grili-mangaly/page.json",
+        "slug": "grili-mangaly",
+        "sections": 61,
+        "sourceHash": "90c471d61ec00ae83ac09cd50ed352eaa41a1e76af765920de53b07fa9b883b6",
+        "commands": {
+          "preview": "npm run build:site -- --page grili-mangaly.html",
+          "write": "npm run build:site -- --page grili-mangaly.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages grili-mangaly.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page grili-mangaly.html",
+        "npm run doctor:page -- --page grili-mangaly.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "holodilniki.html": {
+      "page": "holodilniki.html",
+      "branch": "household",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт холодильников на дому в Москве — MosPochin",
+      "h1": "Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене",
+      "description": "Ремонт холодильников Bosch, Samsung, LG, Indesit на дому в Москве и МО. Диагностика причины, согласование работ и гарантия после ремонта.",
+      "canonical": "https://mospochin.ru/holodilniki.html",
+      "hasForm": true,
+      "service": {
+        "slug": "holodilniki",
+        "uiLabel": "Холодильники",
+        "deviceName": "Холодильники",
+        "serviceName": "Ремонт холодильников",
+        "relatedPages": [
+          "stiralnye-mashiny.html",
+          "posudomoyki.html",
+          "water-heaters.html"
+        ],
+        "sectionIds": [
+          "problems",
+          "prices",
+          "brands",
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-services.json",
+        "data/household-taxonomy.json",
+        "data/household-proof-layer.json",
+        "data/household-page-slots.json",
+        "holodilniki.html",
+        "src/site-builder.json",
+        "src/pages/holodilniki/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/holodilniki/page.json",
+        "slug": "holodilniki",
+        "sections": 51,
+        "sourceHash": "12858c9d1124284ed18d7ca7dacf36c93ff0c74b018a36d2f9ba0b6613a918d7",
+        "commands": {
+          "preview": "npm run build:site -- --page holodilniki.html",
+          "write": "npm run build:site -- --page holodilniki.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages holodilniki.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:household-page -- --page holodilniki.html",
+        "npm run doctor:page -- --page holodilniki.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "holodilnoe-oborudovanie.html": {
+      "page": "holodilnoe-oborudovanie.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт холодильного оборудования в Москве — MosPochin | от 1 290₽",
+      "h1": "Ремонт холодильного оборудования в Москве до того, как продукты и смена уйдут в минус",
+      "description": "Ремонт промышленных холодильных шкафов, морозильных камер, шоковой заморозки. Выезд за 45 мин. Гарантия 24 мес. Диагностика при ремонте.",
+      "canonical": "https://mospochin.ru/holodilnoe-oborudovanie.html",
+      "hasForm": true,
+      "service": {
+        "slug": "holodilnoe-oborudovanie",
+        "uiLabel": "Холодильное оборудование",
+        "deviceName": "Холодильное оборудование",
+        "serviceName": "Ремонт холодильного оборудования",
+        "relatedPages": [
+          "ice-machines.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "holodilnoe-oborudovanie.html",
+        "src/site-builder.json",
+        "src/pages/holodilnoe-oborudovanie/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/holodilnoe-oborudovanie/page.json",
+        "slug": "holodilnoe-oborudovanie",
+        "sections": 64,
+        "sourceHash": "b83c8ab4a80e908334c42ef0a26e1ebe1ac808358b25b34e6f313a9b386273bb",
+        "commands": {
+          "preview": "npm run build:site -- --page holodilnoe-oborudovanie.html",
+          "write": "npm run build:site -- --page holodilnoe-oborudovanie.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages holodilnoe-oborudovanie.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page holodilnoe-oborudovanie.html",
+        "npm run doctor:page -- --page holodilnoe-oborudovanie.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "ice-machines.html": {
+      "page": "ice-machines.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт льдогенераторов в Москве — MosPochin | от 800₽",
+      "h1": "Льдогенератор встал? Починим за 1-3 часа",
+      "description": "Ремонт льдогенераторов Scotsman, Manitowoc, Hoshizaki. Кусковые, гранулярные, Gourmet. Выезд за 45 мин. Гарантия 24 мес. Диагностика при ремонте.",
+      "canonical": "https://mospochin.ru/ice-machines.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ice-machines",
+        "uiLabel": "Льдогенераторы",
+        "deviceName": "Льдогенераторы",
+        "serviceName": "Ремонт льдогенераторов",
+        "relatedPages": [
+          "holodilnoe-oborudovanie.html",
+          "grili-mangaly.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ice-machines.html",
+        "src/site-builder.json",
+        "src/pages/ice-machines/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/ice-machines/page.json",
+        "slug": "ice-machines",
+        "sections": 64,
+        "sourceHash": "910280cb3d0b770c4036714d8c3feb956c5133aa92e2f1e2190639cd9334ba2a",
+        "commands": {
+          "preview": "npm run build:site -- --page ice-machines.html",
+          "write": "npm run build:site -- --page ice-machines.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages ice-machines.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ice-machines.html",
+        "npm run doctor:page -- --page ice-machines.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "index.html": {
+      "page": "index.html",
+      "branch": "restaurant",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "Ремонт ресторанного оборудования в Москве — MosPochin",
+      "h1": "Ремонт ресторанного оборудования в Москве без простоя и сюрпризов по цене",
+      "description": "Срочный ремонт пароконвектоматов, плит и холодильного оборудования для ресторанов и кафе. Выезд инженера, договор, гарантия.",
+      "canonical": "https://mospochin.ru/",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-page-slots.json",
+        "index.html",
+        "src/site-builder.json",
+        "src/pages/index/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/index/page.json",
+        "slug": "index",
+        "sections": 27,
+        "sourceHash": "51fef01f7473c2eb638916fcbe9735e36aec3a4e30b6ac3e764a5e4976796e1f",
+        "commands": {
+          "preview": "npm run build:site -- --page index.html",
+          "write": "npm run build:site -- --page index.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages index.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page index.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "kompyutery.html": {
+      "page": "kompyutery.html",
+      "branch": "household",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт компьютеров и ноутбуков в Москве на дому — MosPochin",
+      "h1": "Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен",
+      "description": "Ремонт компьютеров и ноутбуков на дому в Москве. Диагностика, согласование работ, аккуратная настройка и восстановление техники с гарантией.",
+      "canonical": "https://mospochin.ru/kompyutery.html",
+      "hasForm": true,
+      "service": {
+        "slug": "kompyutery",
+        "uiLabel": "Компьютеры",
+        "deviceName": "Компьютеры",
+        "serviceName": "Ремонт компьютеров",
+        "relatedPages": [
+          "routery.html",
+          "holodilniki.html",
+          "stiralnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "problems",
+          "prices",
+          "brands",
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-services.json",
+        "data/household-taxonomy.json",
+        "data/household-proof-layer.json",
+        "kompyutery.html",
+        "src/site-builder.json",
+        "src/pages/kompyutery/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/kompyutery/page.json",
+        "slug": "kompyutery",
+        "sections": 55,
+        "sourceHash": "05027702ab1b279f0f527471c2b71c3ea1118cbb9fa681bdc775e60ca6201a23",
+        "commands": {
+          "preview": "npm run build:site -- --page kompyutery.html",
+          "write": "npm run build:site -- --page kompyutery.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages kompyutery.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:household-page -- --page kompyutery.html",
+        "npm run doctor:page -- --page kompyutery.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "microwaves.html": {
+      "page": "microwaves.html",
+      "branch": "household",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт встроенных микроволновок — MosPochin",
+      "h1": "Ремонт встроенных СВЧ Neff, Miele и Bosch",
+      "description": "Ремонт встраиваемых СВЧ Neff, Miele, Bosch, Siemens, Smeg и Gaggenau в Москве. Смета до работ и гарантия на ремонт.",
+      "canonical": "https://mospochin.ru/microwaves.html",
+      "hasForm": true,
+      "service": {
+        "slug": "microwaves",
+        "uiLabel": "Встроенные СВЧ",
+        "deviceName": "Встроенные микроволновки",
+        "serviceName": "Ремонт встроенных микроволновок",
+        "relatedPages": [
+          "plity.html",
+          "water-heaters.html",
+          "holodilniki.html"
+        ],
+        "sectionIds": [
+          "problems",
+          "prices",
+          "brands",
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-services.json",
+        "data/household-taxonomy.json",
+        "data/household-proof-layer.json",
+        "data/household-page-slots.json",
+        "microwaves.html",
+        "src/site-builder.json",
+        "src/pages/microwaves/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/microwaves/page.json",
+        "slug": "microwaves",
+        "sections": 10,
+        "sourceHash": "6c2538fba35689a2bc086d435dd9fa06026f49062c0befca283d1da5ab77ae9f",
+        "commands": {
+          "preview": "npm run build:site -- --page microwaves.html",
+          "write": "npm run build:site -- --page microwaves.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages microwaves.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:household-page -- --page microwaves.html",
+        "npm run doctor:page -- --page microwaves.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-abat.html": {
+      "page": "parokonvektomat-abat.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ремонт пароконвектоматов Abat — ПКА, КПЭ | MosPochin",
+      "h1": "Ремонт пароконвектоматов Abat",
+      "description": "Ремонт пароконвектоматов Abat ПКА, КПЭ: ошибки E02, E07, E10, не греет, нет пара. Срочный выезд инженера по Москве. Договор, безнал, гарантия 24 мес.",
+      "canonical": "https://mospochin.ru/parokonvektomat-abat.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-abat.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-abat/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-abat/page.json",
+        "slug": "parokonvektomat-abat",
+        "sections": 74,
+        "sourceHash": "bc1c63ae8fe7b99a910817f732d725227d7619b4901467f0828965d3dc4fdfbd",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-abat.html",
+          "write": "npm run build:site -- --page parokonvektomat-abat.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-abat.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-abat.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-convotherm.html": {
+      "page": "parokonvektomat-convotherm.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ремонт пароконвектоматов Convotherm — C4, C6 | MosPochin",
+      "h1": "Ремонт пароконвектоматов Convotherm",
+      "description": "Ремонт пароконвектоматов Convotherm C4, C6, mini, combiPro: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия 24 мес.",
+      "canonical": "https://mospochin.ru/parokonvektomat-convotherm.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-convotherm.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-convotherm/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-convotherm/page.json",
+        "slug": "parokonvektomat-convotherm",
+        "sections": 74,
+        "sourceHash": "3a1bd3e2bf3b0a840434ba087536720670d94c4fb503793d006c835643242521",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-convotherm.html",
+          "write": "npm run build:site -- --page parokonvektomat-convotherm.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-convotherm.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-convotherm.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-e02-e07-e10.html": {
+      "page": "parokonvektomat-e02-e07-e10.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ошибки E02, E07, E10 пароконвектомата — MosPochin",
+      "h1": "Ошибка E02 / E07 / E10",
+      "description": "Ошибки E02, E07, E10 на пароконвектоматах Abat, Абат и Fagor: диагностика на объекте, фото кода в WhatsApp, выезд инженера для ресторанов и кафе.",
+      "canonical": "https://mospochin.ru/parokonvektomat-e02-e07-e10.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-e02-e07-e10.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-e02-e07-e10/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-e02-e07-e10/page.json",
+        "slug": "parokonvektomat-e02-e07-e10",
+        "sections": 76,
+        "sourceHash": "79f614085bdeb17c4a376dee54192fc107988414a7cac326dc0265a7cc811043",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-e02-e07-e10.html",
+          "write": "npm run build:site -- --page parokonvektomat-e02-e07-e10.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-e02-e07-e10.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-e02-e07-e10.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-electrolux.html": {
+      "page": "parokonvektomat-electrolux.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ремонт пароконвектоматов Electrolux Professional | MosPochin",
+      "h1": "Ремонт пароконвектоматов Electrolux Professional",
+      "description": "Ремонт пароконвектоматов Electrolux Professional: air-o-steam, air-o-convect, SkyLine, thermaline. Ошибки, не греет, нет пара. Срочный выезд. Договор, безнал.",
+      "canonical": "https://mospochin.ru/parokonvektomat-electrolux.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-electrolux.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-electrolux/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-electrolux/page.json",
+        "slug": "parokonvektomat-electrolux",
+        "sections": 74,
+        "sourceHash": "7c3e2685642c4e4f774ad3219e13e8c578b26918c7cf75c92b7e79a27e0e6e5c",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-electrolux.html",
+          "write": "npm run build:site -- --page parokonvektomat-electrolux.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-electrolux.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-electrolux.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-kod-oshibki.html": {
+      "page": "parokonvektomat-kod-oshibki.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Код ошибки пароконвектомата — расшифровка | MosPochin",
+      "h1": "Код ошибки пароконвектомата",
+      "description": "Код ошибки пароконвектомата Rational, Unox, Abat, Fagor или Lainox: что проверить без разбора и когда нужен инженер.",
+      "canonical": "https://mospochin.ru/parokonvektomat-kod-oshibki.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-kod-oshibki.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-kod-oshibki/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-kod-oshibki/page.json",
+        "slug": "parokonvektomat-kod-oshibki",
+        "sections": 76,
+        "sourceHash": "05f7411ce438595f8558b02ce7f231675ab6ff2b74a435456e4dbc2cc9581171",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-kod-oshibki.html",
+          "write": "npm run build:site -- --page parokonvektomat-kod-oshibki.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-kod-oshibki.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-kod-oshibki.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-lainox.html": {
+      "page": "parokonvektomat-lainox.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ремонт пароконвектоматов Lainox — Naboo, Krea, Junior | MosPochin",
+      "h1": "Ремонт пароконвектоматов Lainox",
+      "description": "Ремонт пароконвектоматов Lainox Naboo, Krea, Junior: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия 24 мес.",
+      "canonical": "https://mospochin.ru/parokonvektomat-lainox.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-lainox.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-lainox/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-lainox/page.json",
+        "slug": "parokonvektomat-lainox",
+        "sections": 74,
+        "sourceHash": "1e305bfc064ec9ac007e95d36748e2e2d218c1efac18ffac9aad6ed257081aed",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-lainox.html",
+          "write": "npm run build:site -- --page parokonvektomat-lainox.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-lainox.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-lainox.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-ne-greet.html": {
+      "page": "parokonvektomat-ne-greet.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Пароконвектомат не греет — выезд инженера в Москве | MosPochin",
+      "h1": "Пароконвектомат не греет",
+      "description": "Пароконвектомат не греет или не набирает температуру: проверка ТЭНов, датчиков, SSR-реле, платы и питания. Выезд инженера для ресторанов.",
+      "canonical": "https://mospochin.ru/parokonvektomat-ne-greet.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-ne-greet.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-ne-greet/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-ne-greet/page.json",
+        "slug": "parokonvektomat-ne-greet",
+        "sections": 76,
+        "sourceHash": "4ebea16cc5b2480f1edfc4bbec63e383e4f4f3c6427f250d64a25e4b3b939976",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-ne-greet.html",
+          "write": "npm run build:site -- --page parokonvektomat-ne-greet.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-ne-greet.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-ne-greet.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-net-para.html": {
+      "page": "parokonvektomat-net-para.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Нет пара в пароконвектомате — ремонт на объекте | MosPochin",
+      "h1": "В пароконвектомате нет пара",
+      "description": "Пароконвектомат не подаёт пар или не держит влажность: проверка воды, клапанов, парогенератора, накипи и датчиков. Выезд инженера для ресторанов.",
+      "canonical": "https://mospochin.ru/parokonvektomat-net-para.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-net-para.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-net-para/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-net-para/page.json",
+        "slug": "parokonvektomat-net-para",
+        "sections": 76,
+        "sourceHash": "6cb7f7d12e43533c61d80068f0babcce0ef3ce9bcc042fde38bac08549463969",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-net-para.html",
+          "write": "npm run build:site -- --page parokonvektomat-net-para.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-net-para.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-net-para.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-obschuzhivanie.html": {
+      "page": "parokonvektomat-obschuzhivanie.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Техническое обслуживание пароконвектоматов | MosPochin",
+      "h1": "Техническое обслуживание пароконвектоматов",
+      "description": "Регулярное ТО пароконвектоматов Rational, Unox, Convotherm, Abat, Lainox и Electrolux. Договор, профилактика, декальцинация.",
+      "canonical": "https://mospochin.ru/parokonvektomat-obschuzhivanie.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-obschuzhivanie.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-obschuzhivanie/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-obschuzhivanie/page.json",
+        "slug": "parokonvektomat-obschuzhivanie",
+        "sections": 30,
+        "sourceHash": "0c31d32d76736bc3decc68409f423a29053745193b208d50d48c585bf4f8f98d",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-obschuzhivanie.html",
+          "write": "npm run build:site -- --page parokonvektomat-obschuzhivanie.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-obschuzhivanie.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-obschuzhivanie.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-rational-e9.html": {
+      "page": "parokonvektomat-rational-e9.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ошибка Rational E9 — ремонт пароконвектомата | MosPochin",
+      "h1": "Ошибка Rational E9",
+      "description": "Ошибка E9 на пароконвектомате Rational: фото кода и шильдика в WhatsApp, диагностика на объекте, выезд инженера для ресторанов, кафе и пекарен.",
+      "canonical": "https://mospochin.ru/parokonvektomat-rational-e9.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-rational-e9.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-rational-e9/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-rational-e9/page.json",
+        "slug": "parokonvektomat-rational-e9",
+        "sections": 74,
+        "sourceHash": "36b50f480980aa7e968cd111388d8759a1e45b36560e87507945d626e000765e",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-rational-e9.html",
+          "write": "npm run build:site -- --page parokonvektomat-rational-e9.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-rational-e9.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-rational-e9.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomat-unox-af02-af08.html": {
+      "page": "parokonvektomat-unox-af02-af08.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ошибка Unox AF02 и AF08 — ремонт пароконвектомата | MosPochin",
+      "h1": "Ошибка Unox AF02 / AF08",
+      "description": "Ошибки AF02 и AF08 на пароконвектоматах Unox: фото кода в WhatsApp, диагностика датчиков, пара, нагрева и платы, выезд инженера для ресторанов.",
+      "canonical": "https://mospochin.ru/parokonvektomat-unox-af02-af08.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomat-unox-af02-af08.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-unox-af02-af08/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-unox-af02-af08/page.json",
+        "slug": "parokonvektomat-unox-af02-af08",
+        "sections": 74,
+        "sourceHash": "77fe199157760101ea9057c7602028c74ec05735e6db0aff3c9c449bdf02ee55",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-unox-af02-af08.html",
+          "write": "npm run build:site -- --page parokonvektomat-unox-af02-af08.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-unox-af02-af08.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-unox-af02-af08.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomaty-promo.html": {
+      "page": "parokonvektomaty-promo.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ошибка пароконвектомата — выезд инженера | MosPochin",
+      "h1": "Ошибка Rational / Unox / Abat",
+      "description": "Посадочная для срочных B2B-заявок: коды ошибок, нет пара или нагрева у Rational, Unox, Abat. Выезд инженера, договор, безнал.",
+      "canonical": "https://mospochin.ru/parokonvektomaty-promo.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "parokonvektomaty-promo.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomaty-promo/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomaty-promo/page.json",
+        "slug": "parokonvektomaty-promo",
+        "sections": 74,
+        "sourceHash": "c3390258d1ddf7f0fb5ae419f6cabaae58d5a153cd83cb12686a680faf2ad109",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomaty-promo.html",
+          "write": "npm run build:site -- --page parokonvektomaty-promo.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomaty-promo.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomaty-promo.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "parokonvektomaty.html": {
+      "page": "parokonvektomaty.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт пароконвектоматов для ресторанов в Москве | MosPochin",
+      "h1": "Ремонт пароконвектоматов для ресторанов",
+      "description": "Ремонт и обслуживание пароконвектоматов для ресторанов, кафе и пекарен. Выезд инженера, смета до работ, договор и безнал.",
+      "canonical": "https://mospochin.ru/parokonvektomaty.html",
+      "hasForm": true,
+      "service": {
+        "slug": "parokonvektomaty",
+        "uiLabel": "Пароконвектоматы",
+        "deviceName": "Пароконвектоматы",
+        "serviceName": "Ремонт пароконвектоматов",
+        "relatedPages": [
+          "plity-pechi.html",
+          "grili-mangaly.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "parokonvektomaty.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomaty/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomaty/page.json",
+        "slug": "parokonvektomaty",
+        "sections": 70,
+        "sourceHash": "e3df1c5989b6737dfdb239eefed748796205c3c02a4ae3af2b7c775f89e560ed",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomaty.html",
+          "write": "npm run build:site -- --page parokonvektomaty.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomaty.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page parokonvektomaty.html",
+        "npm run doctor:page -- --page parokonvektomaty.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "pishevarochnye-kotly.html": {
+      "page": "pishevarochnye-kotly.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт пищеварочных котлов в Москве — MosPochin",
+      "h1": "Ремонт пищеварочных котлов для ресторанов и столовых",
+      "description": "Ремонт промышленных пищеварочных котлов для ресторанов, столовых и производств: не греет, течёт, ошибка, не держит температуру.",
+      "canonical": "https://mospochin.ru/pishevarochnye-kotly.html",
+      "hasForm": true,
+      "service": {
+        "slug": "pishevarochnye-kotly",
+        "uiLabel": "Пищеварочные котлы",
+        "deviceName": "Пищеварочные котлы",
+        "serviceName": "Ремонт пищеварочных котлов",
+        "relatedPages": [
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "grili-mangaly.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "pishevarochnye-kotly.html",
+        "src/site-builder.json",
+        "src/pages/pishevarochnye-kotly/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/pishevarochnye-kotly/page.json",
+        "slug": "pishevarochnye-kotly",
+        "sections": 27,
+        "sourceHash": "382f269c0de44138f1e58a87ce8c28182da64b74add2b8cdfcae1fa7822fa424",
+        "commands": {
+          "preview": "npm run build:site -- --page pishevarochnye-kotly.html",
+          "write": "npm run build:site -- --page pishevarochnye-kotly.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnye-kotly.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page pishevarochnye-kotly.html",
+        "npm run doctor:page -- --page pishevarochnye-kotly.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "plity-pechi.html": {
+      "page": "plity-pechi.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт промышленных плит и печей в Москве — MosPochin",
+      "h1": "Ремонт плит и печей в Москве без простоя кухни и без хаоса по смете",
+      "description": "Ремонт газовых и электрических плит, индукционных поверхностей и жарочных шкафов для ресторанов и столовых. Смета до работ.",
+      "canonical": "https://mospochin.ru/plity-pechi.html",
+      "hasForm": true,
+      "service": {
+        "slug": "plity-pechi",
+        "uiLabel": "Плиты и печи",
+        "deviceName": "Промышленные плиты и печи",
+        "serviceName": "Ремонт промышленных плит и печей",
+        "relatedPages": [
+          "parokonvektomaty.html",
+          "grili-mangaly.html",
+          "holodilnoe-oborudovanie.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "plity-pechi.html",
+        "src/site-builder.json",
+        "src/pages/plity-pechi/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/plity-pechi/page.json",
+        "slug": "plity-pechi",
+        "sections": 34,
+        "sourceHash": "27239ea665726b634f417822e2d2cd4490bd2facd0a4161bd720101ec52a2b49",
+        "commands": {
+          "preview": "npm run build:site -- --page plity-pechi.html",
+          "write": "npm run build:site -- --page plity-pechi.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages plity-pechi.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page plity-pechi.html",
+        "npm run doctor:page -- --page plity-pechi.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "plity.html": {
+      "page": "plity.html",
+      "branch": "household",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт плит и духовок в Москве на дому — MosPochin",
+      "h1": "Плита не греет, искрит или пахнет газом? Починим дома без навязанных замен",
+      "description": "Ремонт газовых, электрических и индукционных плит и духовок на дому в Москве. Согласуем работы до ремонта и даём гарантию.",
+      "canonical": "https://mospochin.ru/plity.html",
+      "hasForm": true,
+      "service": {
+        "slug": "plity",
+        "uiLabel": "Плиты и духовки",
+        "deviceName": "Плиты и духовки",
+        "serviceName": "Ремонт плит и духовок",
+        "relatedPages": [
+          "microwaves.html",
+          "water-heaters.html",
+          "holodilniki.html"
+        ],
+        "sectionIds": [
+          "problems",
+          "prices",
+          "brands",
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-services.json",
+        "data/household-taxonomy.json",
+        "data/household-proof-layer.json",
+        "data/household-page-slots.json",
+        "plity.html",
+        "src/site-builder.json",
+        "src/pages/plity/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/plity/page.json",
+        "slug": "plity",
+        "sections": 48,
+        "sourceHash": "df69a8547bb5610e5e84581bd1906f0c62e401a7dda552b7253339c3c9b1f8a9",
+        "commands": {
+          "preview": "npm run build:site -- --page plity.html",
+          "write": "npm run build:site -- --page plity.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages plity.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:household-page -- --page plity.html",
+        "npm run doctor:page -- --page plity.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "posudomoechnye-mashiny.html": {
+      "page": "posudomoechnye-mashiny.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт промышленных посудомоечных машин — MosPochin",
+      "h1": "Ремонт промышленных посудомоечных машин без остановки кухни на полдня",
+      "description": "Ремонт купольных, конвейерных, фронтальных посудомоек Winterhalter, Hobart, Meiko. Выезд за 45 мин. Гарантия 24 мес. Диагностика при ремонте.",
+      "canonical": "https://mospochin.ru/posudomoechnye-mashiny.html",
+      "hasForm": true,
+      "service": {
+        "slug": "posudomoechnye-mashiny",
+        "uiLabel": "Посудомойки",
+        "deviceName": "Промышленные посудомоечные машины",
+        "serviceName": "Ремонт промышленных посудомоечных машин",
+        "relatedPages": [
+          "parokonvektomaty.html",
+          "plity-pechi.html",
+          "grili-mangaly.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "posudomoechnye-mashiny.html",
+        "src/site-builder.json",
+        "src/pages/posudomoechnye-mashiny/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/posudomoechnye-mashiny/page.json",
+        "slug": "posudomoechnye-mashiny",
+        "sections": 64,
+        "sourceHash": "f5aa2e8c29419f359d8cc2483fbc268e947e0844cb0fa6bdefc28d971b0bf158",
+        "commands": {
+          "preview": "npm run build:site -- --page posudomoechnye-mashiny.html",
+          "write": "npm run build:site -- --page posudomoechnye-mashiny.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages posudomoechnye-mashiny.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page posudomoechnye-mashiny.html",
+        "npm run doctor:page -- --page posudomoechnye-mashiny.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "posudomoyki.html": {
+      "page": "posudomoyki.html",
+      "branch": "household",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт посудомоечных машин в Москве — MosPochin",
+      "h1": "Посудомойка не сливает, не моет или течёт? Вернём мойку без лишних замен",
+      "description": "Ремонт посудомоечных машин на дому в Москве. Диагностика, согласование стоимости до ремонта и аккуратное восстановление без лишних замен.",
+      "canonical": "https://mospochin.ru/posudomoyki.html",
+      "hasForm": true,
+      "service": {
+        "slug": "posudomoyki",
+        "uiLabel": "Посудомойки",
+        "deviceName": "Посудомоечные машины",
+        "serviceName": "Ремонт посудомоечных машин",
+        "relatedPages": [
+          "stiralnye-mashiny.html",
+          "holodilniki.html",
+          "water-heaters.html"
+        ],
+        "sectionIds": [
+          "problems",
+          "prices",
+          "brands",
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-services.json",
+        "data/household-taxonomy.json",
+        "data/household-proof-layer.json",
+        "data/household-page-slots.json",
+        "posudomoyki.html",
+        "src/site-builder.json",
+        "src/pages/posudomoyki/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/posudomoyki/page.json",
+        "slug": "posudomoyki",
+        "sections": 53,
+        "sourceHash": "b0aa7c3b86f914accce90a1c7c70de1992e6ab45fa7a22c85acd25633b317a44",
+        "commands": {
+          "preview": "npm run build:site -- --page posudomoyki.html",
+          "write": "npm run build:site -- --page posudomoyki.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages posudomoyki.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:household-page -- --page posudomoyki.html",
+        "npm run doctor:page -- --page posudomoyki.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "remont-oborudovaniya-restorana-parokonvektomat.html": {
+      "page": "remont-oborudovaniya-restorana-parokonvektomat.html",
+      "branch": "neutral",
+      "role": "neutral",
+      "htmlExists": true,
+      "title": "Ремонт кухни ресторана — Rational, Unox, Abat | MosPochin",
+      "h1": "Ремонт кухни ресторана: пароконвектоматы",
+      "description": "Рекламная посадочная для B2B-заявок по кухне ресторана: пароконвектоматы Rational, Unox, Abat, ошибки, нагрев, пар, срочный выезд, договор и безнал.",
+      "canonical": "https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "remont-oborudovaniya-restorana-parokonvektomat.html",
+        "src/site-builder.json",
+        "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json",
+        "slug": "remont-oborudovaniya-restorana-parokonvektomat",
+        "sections": 77,
+        "sourceHash": "51bd3eaa20b53315cf4710a74b47b0220e2432b754fa29db5616c28086e90da6",
+        "commands": {
+          "preview": "npm run build:site -- --page remont-oborudovaniya-restorana-parokonvektomat.html",
+          "write": "npm run build:site -- --page remont-oborudovaniya-restorana-parokonvektomat.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages remont-oborudovaniya-restorana-parokonvektomat.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page remont-oborudovaniya-restorana-parokonvektomat.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "routery.html": {
+      "page": "routery.html",
+      "branch": "household",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт и настройка роутеров в Москве — MosPochin",
+      "h1": "Ремонт и настройка роутеров в Москве",
+      "description": "Ремонт и настройка Wi-Fi роутеров TP-Link, ASUS, D-Link и Keenetic в Москве. Диагностика, выезд мастера, аккуратная настройка домашней сети.",
+      "canonical": "https://mospochin.ru/routery.html",
+      "hasForm": true,
+      "service": {
+        "slug": "routery",
+        "uiLabel": "Роутеры",
+        "deviceName": "Роутеры",
+        "serviceName": "Ремонт и настройка роутеров",
+        "relatedPages": [
+          "kompyutery.html",
+          "holodilniki.html",
+          "water-heaters.html"
+        ],
+        "sectionIds": [
+          "problems",
+          "prices",
+          "brands",
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-services.json",
+        "data/household-taxonomy.json",
+        "data/household-proof-layer.json",
+        "routery.html",
+        "src/site-builder.json",
+        "src/pages/routery/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/routery/page.json",
+        "slug": "routery",
+        "sections": 52,
+        "sourceHash": "433208c3ed2dbeacdfd1c75d0d081096c8637ff9b9d755fdf78f8de5c0be367f",
+        "commands": {
+          "preview": "npm run build:site -- --page routery.html",
+          "write": "npm run build:site -- --page routery.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages routery.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:household-page -- --page routery.html",
+        "npm run doctor:page -- --page routery.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "stiralnye-mashiny.html": {
+      "page": "stiralnye-mashiny.html",
+      "branch": "household",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт стиральных машин в Москве на дому — MosPochin",
+      "h1": "Стиральная машина не сливает, течёт или шумит? Вернём стирку без лишних замен",
+      "description": "Ремонт стиральных машин на дому в Москве. Диагностика, согласование стоимости до ремонта и честный бытовой сценарий без лишних замен.",
+      "canonical": "https://mospochin.ru/stiralnye-mashiny.html",
+      "hasForm": true,
+      "service": {
+        "slug": "stiralnye-mashiny",
+        "uiLabel": "Стиральные машины",
+        "deviceName": "Стиральные машины",
+        "serviceName": "Ремонт стиральных машин",
+        "relatedPages": [
+          "holodilniki.html",
+          "posudomoyki.html",
+          "plity.html"
+        ],
+        "sectionIds": [
+          "prices",
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-services.json",
+        "data/household-taxonomy.json",
+        "data/household-proof-layer.json",
+        "data/household-page-slots.json",
+        "stiralnye-mashiny.html",
+        "src/site-builder.json",
+        "src/pages/stiralnye-mashiny/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/stiralnye-mashiny/page.json",
+        "slug": "stiralnye-mashiny",
+        "sections": 50,
+        "sourceHash": "b545938313edaccb29417cb81e589b2adfc2ae7f882005f5c2981cc9292725ef",
+        "commands": {
+          "preview": "npm run build:site -- --page stiralnye-mashiny.html",
+          "write": "npm run build:site -- --page stiralnye-mashiny.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages stiralnye-mashiny.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:household-page -- --page stiralnye-mashiny.html",
+        "npm run doctor:page -- --page stiralnye-mashiny.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "uslugi.html": {
+      "page": "uslugi.html",
+      "branch": "restaurant",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "Услуги по ремонту ресторанного оборудования — MosPochin | Цены",
+      "h1": "Услуги и цены на ремонт ресторанного оборудования",
+      "description": "Ремонт пароконвектоматов, плит, холодильного оборудования, посудомоек, грилей и фритюра, льдогенераторов. Гарантия 24 мес. Диагностика бесплатно при ремонте.",
+      "canonical": "https://mospochin.ru/uslugi.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-page-slots.json",
+        "uslugi.html",
+        "src/site-builder.json",
+        "src/pages/uslugi/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/uslugi/page.json",
+        "slug": "uslugi",
+        "sections": 30,
+        "sourceHash": "affd8e0c025fddf3ae97b499867fc75fcc22bcd17ca476a7d05cb279a400dc70",
+        "commands": {
+          "preview": "npm run build:site -- --page uslugi.html",
+          "write": "npm run build:site -- --page uslugi.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages uslugi.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page uslugi.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
+    "water-heaters.html": {
+      "page": "water-heaters.html",
+      "branch": "household",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт водонагревателей в Москве на дому — MosPochin",
+      "h1": "Ремонт водонагревателей на дому в Москве",
+      "description": "Ремонт накопительных, проточных и газовых водонагревателей на дому в Москве. Диагностика, согласование работ и аккуратное восстановление техники с гарантией.",
+      "canonical": "https://mospochin.ru/water-heaters.html",
+      "hasForm": true,
+      "service": {
+        "slug": "water-heaters",
+        "uiLabel": "Водонагреватели",
+        "deviceName": "Водонагреватели",
+        "serviceName": "Ремонт водонагревателей",
+        "relatedPages": [
+          "plity.html",
+          "microwaves.html",
+          "holodilniki.html"
+        ],
+        "sectionIds": [
+          "problems",
+          "prices",
+          "brands",
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/household-branch.json",
+        "data/household-page-policy.json",
+        "data/household-services.json",
+        "data/household-taxonomy.json",
+        "data/household-proof-layer.json",
+        "data/household-page-slots.json",
+        "water-heaters.html",
+        "src/site-builder.json",
+        "src/pages/water-heaters/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/water-heaters/page.json",
+        "slug": "water-heaters",
+        "sections": 49,
+        "sourceHash": "6e7faf22eeddbc169a930af1c45d44121fea3a8dad5c5acce5b8db772de387a0",
+        "commands": {
+          "preview": "npm run build:site -- --page water-heaters.html",
+          "write": "npm run build:site -- --page water-heaters.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages water-heaters.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:household-page -- --page water-heaters.html",
+        "npm run doctor:page -- --page water-heaters.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    }
+  }
+}

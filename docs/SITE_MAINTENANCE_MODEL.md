@@ -128,7 +128,5 @@ Any older rollout report, one-off styling note, or transition summary is non-can
 
 ## Narrow Reference Docs
 
-- `docs/READABILITY_REFACTOR.md`
-  - normalization and asset-loading reference
 - `docs/BRANDS_GUIDE.md`
   - restaurant brand reference

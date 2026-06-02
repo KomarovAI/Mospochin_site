@@ -11,8 +11,7 @@ const DOCTOR_SCRIPT = path.join(SITE_ROOT, 'tools/doctor-page.mjs');
 
 const GLOBAL_PAGE_TRIGGERS = new Set([
   'main.js',
-  'styles.css',
-  'styles-built.css',
+  'styles-combined.css',
   'telegram-form.js',
   'data/page-metadata.json',
   'data/contact-config.json',
@@ -22,6 +21,10 @@ const GLOBAL_PAGE_TRIGGERS = new Set([
   'tools/doctor-page.mjs',
   'tools/doctor-household-page.mjs',
   'tools/doctor-restaurant-page.mjs',
+  'tools/site-builder-lib.mjs',
+  'tools/build-site.mjs',
+  'tools/site-builder-parameterize-core.mjs',
+  'src/site-builder.json',
 ]);
 
 function parseArgs(argv) {
@@ -47,6 +50,15 @@ function isNonEmptyString(value) {
 
 function isZeroSha(value) {
   return isNonEmptyString(value) && /^0+$/.test(value.trim());
+}
+
+function isGitRepo() {
+  const result = spawnSync('git', ['rev-parse', '--is-inside-work-tree'], {
+    cwd: SITE_ROOT,
+    encoding: 'utf8',
+  });
+
+  return result.status === 0 && result.stdout.trim() === 'true';
 }
 
 function runGit(args) {
@@ -79,6 +91,8 @@ function parsePorcelainPaths(output) {
 }
 
 function getChangedFiles(baseSha, headSha) {
+  if (!isGitRepo()) return null;
+
   if (
     isNonEmptyString(baseSha) &&
     isNonEmptyString(headSha) &&
@@ -102,6 +116,24 @@ function getChangedFiles(baseSha, headSha) {
     .filter(Boolean);
 }
 
+function collectAllBranchPages(metadata) {
+  return Object.entries(metadata.pages ?? {})
+    .filter(([page, pageMeta]) => page.endsWith('.html') && (pageMeta?.branch === 'restaurant' || pageMeta?.branch === 'household'))
+    .map(([page]) => page)
+    .sort();
+}
+
+function slugFromPage(page) {
+  return page === 'index.html' ? 'index' : page.replace(/\.html$/i, '');
+}
+
+function pageFromBuilderPath(filePath, metadata) {
+  if (!filePath.startsWith('src/pages/')) return null;
+  const slug = filePath.split('/')[2];
+  if (!slug) return null;
+  return Object.keys(metadata.pages ?? {}).find((page) => page.endsWith('.html') && slugFromPage(page) === slug) || null;
+}
+
 function collectTargetPages(changedFiles, metadata) {
   const targetPages = new Set();
   const allBranchPages = new Set();
@@ -117,8 +149,14 @@ function collectTargetPages(changedFiles, metadata) {
   }
 
   for (const filePath of changedFiles) {
-    if (GLOBAL_PAGE_TRIGGERS.has(filePath)) {
+    if (GLOBAL_PAGE_TRIGGERS.has(filePath) || filePath.startsWith('src/components/shared/') || filePath.startsWith('src/components/parametric/') || filePath.startsWith('content/components/')) {
       allBranchPages.forEach((page) => targetPages.add(page));
+      continue;
+    }
+
+    const builderPage = pageFromBuilderPath(filePath, metadata);
+    if (builderPage && (restaurantPages.has(builderPage) || householdPages.has(builderPage))) {
+      targetPages.add(builderPage);
       continue;
     }
 
@@ -140,18 +178,21 @@ function collectTargetPages(changedFiles, metadata) {
   return [...targetPages].sort();
 }
 
-function runDoctorForPages(pages) {
+function runDoctorForPages(pages, options = {}) {
   const failures = [];
+  const quiet = Boolean(options.quiet);
 
   for (const page of pages) {
-    process.stdout.write(`doctor:page ${page}\n`);
+    if (!quiet) process.stdout.write(`doctor:page ${page}\n`);
     const result = spawnSync(process.execPath, [DOCTOR_SCRIPT, '--page', page], {
       cwd: SITE_ROOT,
       encoding: 'utf8',
     });
 
-    if (result.stdout) process.stdout.write(result.stdout);
-    if (result.stderr) process.stderr.write(result.stderr);
+    if (!quiet || result.status !== 0) {
+      if (result.stdout) process.stdout.write(result.stdout);
+      if (result.stderr) process.stderr.write(result.stderr);
+    }
     if (result.status !== 0) {
       failures.push(page);
     }
@@ -164,9 +205,16 @@ try {
   const args = parseArgs(process.argv.slice(2));
   const baseSha = args.base && args.base !== true ? String(args.base) : process.env.GITHUB_BASE_SHA;
   const headSha = args.head && args.head !== true ? String(args.head) : process.env.GITHUB_SHA;
-  const changedFiles = getChangedFiles(baseSha, headSha);
+  const quiet = Boolean(args.quiet || args.summary);
   const metadata = JSON.parse(fs.readFileSync(METADATA_PATH, 'utf8'));
-  const pages = collectTargetPages(changedFiles, metadata);
+  const changedFiles = getChangedFiles(baseSha, headSha);
+  const pages = changedFiles === null
+    ? collectAllBranchPages(metadata)
+    : collectTargetPages(changedFiles, metadata);
+
+  if (changedFiles === null) {
+    console.log('doctor:changed-pages: git repository not found, checking all branch pages');
+  }
 
   if (pages.length === 0) {
     console.log('doctor:changed-pages skipped: no relevant page or contract changes');
@@ -174,7 +222,7 @@ try {
   }
 
   console.log(`doctor:changed-pages target count: ${pages.length}`);
-  const failures = runDoctorForPages(pages);
+  const failures = runDoctorForPages(pages, { quiet });
 
   if (failures.length > 0) {
     console.error(`doctor:changed-pages failed for: ${failures.join(', ')}`);

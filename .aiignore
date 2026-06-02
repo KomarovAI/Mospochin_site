@@ -1,0 +1,49 @@
+# AI context ignore list for MosPochin
+# Purpose: keep neural agents focused on source-of-truth files, not generated/heavy artifacts.
+
+# VCS / dependencies
+.git/
+node_modules/
+package-lock.json
+
+# Archives and temporary outputs
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+.tmp/
+tmp/
+reports/
+screenshots/
+playwright-report/
+test-results/
+
+# Generated / production image derivatives
+assets/images/responsive/
+assets/**/*.webp
+assets/**/*.avif
+*.br
+*.gz
+
+# Local runtime noise
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*.log
+
+# Public/deploy outputs when present
+public/
+dist/
+build/
+.deploy/content-hashes.json
+
+# Generated Static Component Builder previews
+build/site-builder/
+
+# Keep semantic digest/reports visible to AI agents
+!reports/source-complexity.md
+!reports/source-complexity.json
+!.ai/digest/
+!.ai/digest/**

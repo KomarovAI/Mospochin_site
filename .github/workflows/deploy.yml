@@ -38,6 +38,9 @@ jobs:
         with:
           node-version: 24
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Validate site
         run: npm run lint
 
@@ -156,9 +159,9 @@ jobs:
             headers="$(curl -fsS -I --compressed "https://mospochin.ru${path}")"
             require_header "$headers" '^cache-control:.*max-age=' "${path} asset max-age"
             require_header "$headers" '^cache-control:.*immutable' "${path} asset immutable"
-            if [ "$expect_encoding" = "gzip" ]; then
+            if [ "$expect_encoding" = "compressed" ]; then
               require_header "$headers" '^vary:.*accept-encoding' "${path} asset vary"
-              require_header "$headers" '^content-encoding:\s*gzip' "${path} gzip"
+              require_header "$headers" '^content-encoding:\s*(gzip|br)' "${path} static compression"
             fi
           }
 
@@ -180,6 +183,17 @@ jobs:
             require_header "$headers" '^vary:.*accept' "${path} webp vary"
           }
 
+
+          check_security_headers() {
+            local path="$1"
+            local headers
+            headers="$(curl -fsS -I "https://mospochin.ru${path}")"
+            require_header "$headers" '^content-security-policy-report-only:.*frame-ancestors' "${path} csp report-only frame-ancestors"
+            require_header "$headers" '^strict-transport-security:\s*max-age=31536000' "${path} hsts"
+            require_header "$headers" '^referrer-policy:\s*strict-origin-when-cross-origin' "${path} referrer policy"
+            require_header "$headers" '^permissions-policy:.*geolocation=\(\)' "${path} permissions policy"
+          }
+
           check_manifest_webp_assets() {
             local sidecar
             local headers
@@ -191,14 +205,15 @@ jobs:
           }
 
           check_html_contract "/"
+          check_security_headers "/"
           check_html_contract "/uslugi.html"
-          check_asset_contract "/styles-combined.css" "gzip"
-          check_asset_contract "/main.js" "gzip"
+          check_asset_contract "/styles-combined.css" "compressed"
+          check_asset_contract "/main.js" "compressed"
           check_asset_contract "/assets/images/hero-restaurant.jpg" "none"
           check_image_fallback_contract "/assets/images/hero-restaurant.jpg"
           check_manifest_webp_assets
 
-      - name: Verify static gzip sidecars
+      - name: Verify static compression sidecars
         timeout-minutes: 2
         run: |
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
@@ -212,6 +227,9 @@ jobs:
              test -s /var/www/mospochin-public-current/main.js.gz; \
              gzip -cd /var/www/mospochin-public-current/styles-combined.css.gz | cmp -s - /var/www/mospochin-public-current/styles-combined.css; \
              gzip -cd /var/www/mospochin-public-current/main.js.gz | cmp -s - /var/www/mospochin-public-current/main.js; \
+             if command -v brotli >/dev/null 2>&1 && [ -s /var/www/mospochin-public-current/styles-combined.css.br ]; then \
+               brotli -cd /var/www/mospochin-public-current/styles-combined.css.br | cmp -s - /var/www/mospochin-public-current/styles-combined.css; \
+             fi; \
              grep -Eq '^[[:space:]]*gzip_static[[:space:]]+on;' /etc/nginx/conf.d/mospochin-static-compression.conf"
 
       - name: Verify backend deploy artifacts are present in manifest
@@ -219,6 +237,7 @@ jobs:
           required=(
             "server/telegram-api.mjs"
             "deploy/post-activate.sh"
+            "tools/generate-public-file-list.mjs"
             "deploy/systemd/mospochin-telegram-api.service"
             "deploy/env/telegram.env.example"
           )

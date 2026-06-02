@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "component": "lead-form",
+  "variant": "restaurant-parokonvektomat-b2b",
+  "intent": "B2B форма заявки для страниц ремонта пароконвектоматов",
+  "requiredFields": [
+    "name",
+    "phone",
+    "type",
+    "problem",
+    "address",
+    "business_type"
+  ],
+  "requiredAttributes": [
+    "action=\"/api/send-telegram\"",
+    "method=\"post\"",
+    "autocomplete=\"name\"",
+    "autocomplete=\"tel\"",
+    "inputmode=\"tel\"",
+    "data-slot=\"request-form\""
+  ],
+  "aiNotes": [
+    "Компонент параметризует одинаковый B2B form layout: менять структуру формы в template, тексты/placeholder/button — в content/components/lead-form/*.json.",
+    "После правки запускай npm run check:parameterized-components && npm run check:site-builder."
+  ]
+}

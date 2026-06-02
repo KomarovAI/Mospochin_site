@@ -178,10 +178,8 @@ function buildHtml({
     <link rel="stylesheet" href="/assets/fonts/manrope.css">
     <link rel="preload" href="/assets/fonts/remixicon.css" as="style">
     <link rel="stylesheet" href="/assets/fonts/remixicon.css">
-    <link rel="preload" href="styles-built.css" as="style">
-    <link rel="stylesheet" href="styles-built.css">
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles-combined.css" as="style">
+    <link rel="stylesheet" href="styles-combined.css">
     <script src="main.js" defer></script>
     <script src="telegram-form.js" defer></script>
     <title>${escapeHtml(title)}</title>

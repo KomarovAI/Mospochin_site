@@ -14,6 +14,9 @@ const allowGeneratedVersion = process.argv.includes('--allow-generated-version')
 
 const SOURCE_EXTENSIONS = new Set(['.html', '.css', '.js', '.json']);
 const WEBP_SIDECAR_SOURCE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png']);
+const DEPLOY_TOOL_FILES = new Set([
+  'tools/generate-public-file-list.mjs',
+]);
 const ALWAYS_INCLUDE = [
   '404.html',
   'data/contact-config.json',
@@ -44,6 +47,7 @@ const ALWAYS_INCLUDE = [
   'server/telegram-api.mjs',
   'sitemap.xml',
   'telegram-form.js',
+  'tools/generate-public-file-list.mjs',
   'version.json',
 ];
 
@@ -60,6 +64,7 @@ function exists(relativePath) {
 }
 
 function isDeployable(relativePath) {
+  if (DEPLOY_TOOL_FILES.has(relativePath)) return true;
   return (
     relativePath &&
     !relativePath.startsWith('.') &&
@@ -138,7 +143,16 @@ function addWebpSidecar(relativePath) {
   included.add(sidecarPath);
 }
 
-function scanReferences(content, fromFile) {
+function stripNonRuntimeComments(content, fromFile) {
+  if (path.extname(fromFile).toLowerCase() !== '.html') return content;
+  return content.replace(/<!--([\s\S]*?)-->/g, (match) => {
+    if (/\b(?:\[if\s|endif\b)/i.test(match)) return match;
+    return '';
+  });
+}
+
+function scanReferences(rawContent, fromFile) {
+  const content = stripNonRuntimeComments(rawContent, fromFile);
   const patterns = [
     /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi,
     /\bsrcset\s*=\s*["']([^"']+)["']/gi,

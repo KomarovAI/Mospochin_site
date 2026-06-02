@@ -1,0 +1,71 @@
+
+    <section class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-semibold mb-4"><i class="ri-time-line mr-2"></i>ГРАФИК</span>
+                <h2 class="text-2xl lg:text-3xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Режим работы</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Работаем круглосуточно, без выходных</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Live status -->
+                <div class="scroll-reveal">
+                    <div class="bg-white rounded-2xl p-8 border-2 border-slate-100 shadow-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div id="live-dot" class="w-5 h-5 bg-green-500 rounded-full animate-pulse"></div>
+                            <div>
+                                <p id="live-status" class="text-green-600 font-bold text-lg">Сейчас работаем</p>
+                                <p id="live-sub" class="text-slate-500 text-sm">Принимаем обращения без выходных</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between py-3 border-b border-slate-100">
+                                <div class="flex items-center gap-3"><div class="w-3 h-3 bg-green-500 rounded-full"></div><span class="text-slate-700">Понедельник - пятница</span></div>
+                                <span class="font-bold text-green-600">24/7</span>
+                            </div>
+                            <div class="flex items-center justify-between py-3 border-b border-slate-100">
+                                <div class="flex items-center gap-3"><div class="w-3 h-3 bg-green-500 rounded-full"></div><span class="text-slate-700">Суббота - воскресенье</span></div>
+                                <span class="font-bold text-green-600">24/7</span>
+                            </div>
+                            <div class="flex items-center justify-between py-3">
+                                <div class="flex items-center gap-3"><div class="w-3 h-3 bg-green-500 rounded-full"></div><span class="text-slate-700">Праздники</span></div>
+                                <span class="font-bold text-green-600">24/7</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 bg-brand-orange/10 rounded-xl p-4 text-center">
+                            <p class="text-brand-orange font-bold text-sm"><i class="ri-truck-line mr-2"></i>Средний выезд: 45 минут по Москве</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 метрики -->
+                <div class="scroll-reveal space-y-4" data-delay="2">
+                    <div class="bg-gradient-to-br from-brand-orange/5 to-orange-100/30 p-6 rounded-2xl border-2 border-brand-orange/20">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-brand-orange/20 rounded-2xl flex items-center justify-center text-brand-orange text-2xl"><i class="ri-time-line"></i></div>
+                            <div>
+                                <p class="text-3xl font-display font-extrabold text-brand-blue">45 мин</p>
+                                <p class="text-slate-600 text-sm">Среднее время выезда</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50/30 p-6 rounded-2xl border-2 border-green-200">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl"><i class="ri-file-search-line"></i></div>
+                            <div>
+                                <p class="text-3xl font-display font-extrabold text-brand-blue">0₽</p>
+                                <p class="text-slate-600 text-sm">Диагностика при ремонте</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50/30 p-6 rounded-2xl border-2 border-blue-200">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl"><i class="ri-shield-check-line"></i></div>
+                            <div>
+                                <p class="text-3xl font-display font-extrabold text-brand-blue">24 мес</p>
+                                <p class="text-slate-600 text-sm">Гарантия на работы</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

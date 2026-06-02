@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "component": "static-core",
+  "variants": [
+    "noscript/yandex-metrika-pixel",
+    "runtime-partials/partials-injector-script",
+    "footer-anchor/footer-container-mount",
+    "breadcrumb/breadcrumb-marker"
+  ],
+  "intent": "Lossless parametric wrappers for tiny repeated technical sections. They remove page-local section files without changing rendered HTML bytes.",
+  "editPolicy": "Do not edit per-page generated root HTML. Change these templates only when the global technical mount/pixel/marker contract intentionally changes.",
+  "aiNotes": [
+    "These templates intentionally preserve whitespace byte-for-byte; similar variants can differ only by surrounding newlines/spaces.",
+    "After changes run npm run check:parameterized-components && npm run check:site-builder && npm run ai:check."
+  ]
+}

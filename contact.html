@@ -52,10 +52,69 @@
     </script>
     <link rel="canonical" href="https://mospochin.ru/contact.html">
   <link rel="stylesheet" href="styles-combined.css">
+    <script type="application/ld+json" data-generated="faq-registry">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://mospochin.ru/contact.html#faq",
+        "url": "https://mospochin.ru/contact.html",
+        "name": "Контакты MosPochin — телефон, WhatsApp, Telegram, адрес в Москве",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Как быстро приедет мастер?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Среднее время — 45 минут по Москве. По МО — 60-90 минут."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Работаете ли в выходные и ночью?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, 24/7 , включая все праздники. Аварийный выезд — круглосуточно."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько стоит выезд?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Выезд по Москве — бесплатно . Диагностика — 0₽ при заказе ремонта."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какая гарантия?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "До 24 месяцев на работы и запчасти. Акт + гарантийный талон."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно заключить договор на ТО?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, ежемесячное ТО — приоритетный выезд и скидки 15-30% ."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какие документы вы предоставляете?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Договор, акт выполненных работ, счёт-фактура (с НДС), гарантийный талон."
+            }
+          }
+        ]
+      }
+    </script>
 </head>
 
 <body class="font-sans text-slate-800 antialiased bg-white branch-restaurant page-restaurant-branch page-contact">
-    <noscript><div><img src="https://mc.yandex.ru/watch/109138661" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109138661" style="position:absolute; left:-9999px;" alt="" decoding="async" fetchpriority="high" loading="eager" width="1" height="1"></div></noscript>
     <!-- Normalized layout shell: contact.html -->
 <div id="header-container" class="mt-12"></div>
 
@@ -536,14 +595,14 @@
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-3 sm:mb-4 heading-reveal">Оставьте заявку, и мы свяжемся по ремонту</h2>
                 <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Опишите проблему своими словами. Мы перезвоним, уточним детали и подскажем следующий шаг.</p>
             </div>
-            <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal">
+            <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" action="/api/send-telegram" method="post">
                 <div class="grid md:grid-cols-2 gap-4 mb-4 sm:gap-6 sm:mb-6">
-                    <div><label class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label><input type="text" name="name" required placeholder="Алексей" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
-                    <div><label class="block text-sm font-medium text-slate-700 mb-2">Телефон *</label><input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
+                    <div><label for="contact-name" class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label><input type="text" name="name" required placeholder="Алексей" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="contact-name" autocomplete="name"></div>
+                    <div><label for="contact-phone" class="block text-sm font-medium text-slate-700 mb-2">Телефон *</label><input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="contact-phone" autocomplete="tel" inputmode="tel"></div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-4 mb-4 sm:gap-6 sm:mb-6">
-                    <div><label class="block text-sm font-medium text-slate-700 mb-2">Тип оборудования</label><input type="text" name="type" placeholder="Пароконвектомат Rational" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
-                    <div><label class="block text-sm font-medium text-slate-700 mb-2">Что случилось?</label><input type="text" name="problem" placeholder="Ошибка E03, не греет" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700"></div>
+                    <div><label for="contact-type" class="block text-sm font-medium text-slate-700 mb-2">Тип оборудования</label><input type="text" name="type" placeholder="Пароконвектомат Rational" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="contact-type"></div>
+                    <div><label for="contact-problem" class="block text-sm font-medium text-slate-700 mb-2">Что случилось?</label><input type="text" name="problem" placeholder="Ошибка E03, не греет" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="contact-problem"></div>
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
                     <i class="ri-send-plane-line mr-2"></i>Получить обратный звонок

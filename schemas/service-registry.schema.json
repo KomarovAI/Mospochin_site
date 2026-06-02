@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/service-registry.schema.json",
+  "title": "MosPochin service registry",
+  "type": "object",
+  "required": ["services"],
+  "additionalProperties": false,
+  "properties": {
+    "services": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/service" }
+    }
+  },
+  "$defs": {
+    "service": {
+      "type": "object",
+      "required": [
+        "page", "slug", "uiLabel", "deviceName", "serviceName", "schemaName", "isShadow",
+        "primarySymptoms", "brandCluster", "relatedPages", "formExample", "sectionIds"
+      ],
+      "properties": {
+        "page": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*\\.html$" },
+        "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "uiLabel": { "type": "string", "minLength": 1 },
+        "deviceName": { "type": "string", "minLength": 1 },
+        "serviceName": { "type": "string", "minLength": 1 },
+        "schemaName": { "type": "string", "minLength": 1 },
+        "isShadow": { "type": "boolean" },
+        "primarySymptoms": { "type": "array", "minItems": 3, "items": { "type": "string", "minLength": 1 } },
+        "brandCluster": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "relatedPages": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*\\.html$" } },
+        "formExample": { "type": "string", "minLength": 1 },
+        "mobileHiddenSectionIds": { "type": "array", "items": { "type": "string" } },
+        "sectionIds": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    }
+  },
+  "x-runtimeChecks": [
+    "No duplicate pages or slugs",
+    "Every service page exists in metadata and as HTML",
+    "relatedPages exist and do not point to self",
+    "metadata branch matches the registry branch"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/site-page-contracts.schema.json",
+  "title": "MosPochin site page contracts",
+  "type": "object",
+  "required": ["sharedLayers", "pageTypes"],
+  "properties": {
+    "sharedLayers": { "type": "object" },
+    "pageTypes": { "type": "object" }
+  },
+  "additionalProperties": true
+}

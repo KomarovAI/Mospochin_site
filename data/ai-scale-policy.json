@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "mode": "controlled-growth-to-150-pages",
+  "intent": "До 100–150 страниц проект можно расширять без большого blueprint-рефактора, но нельзя ухудшать source-layer и AI-сопровождаемость.",
+  "sourceOfTruth": [
+    "src/site-builder.json",
+    "src/pages/*/page.json",
+    "src/pages/*/sections/*",
+    "src/components/shared/*",
+    "src/components/parametric/*",
+    "content/components/*",
+    "content/faq/*",
+    "data/*.json"
+  ],
+  "generatedOutput": [
+    "root *.html",
+    "sitemap.xml",
+    ".deploy/include-files.txt",
+    "data/ai-project-index.json",
+    "data/ai-component-map.json",
+    ".ai/digest/*",
+    "reports/source-complexity.*"
+  ],
+  "pageBudget": {
+    "currentTargetPages": 150,
+    "softReviewAtPages": 100,
+    "hardStopAtPages": 150,
+    "afterHardStop": "Новые страницы после 150 допускаются только после отдельного blueprint/source-compression этапа или осознанного изменения этого policy файла."
+  },
+  "hardGates": {
+    "builderParityRequired": true,
+    "missingSourceFilesAllowed": 0,
+    "minimumSharedCoverageRatio": 0.26,
+    "maxAverageSectionsPerPage": 55,
+    "maxAverageSourceFilesPerPage": 60
+  },
+  "stageGates": [
+    {
+      "minPages": 75,
+      "minimumSharedCoverageRatio": 0.28,
+      "maxAverageSectionsPerPage": 55,
+      "maxAverageSourceFilesPerPage": 58,
+      "message": "На 75+ страницах нужно начинать выносить повторяемые hero/FAQ/proof/pricing блоки."
+    },
+    {
+      "minPages": 100,
+      "minimumSharedCoverageRatio": 0.35,
+      "maxAverageSectionsPerPage": 50,
+      "maxAverageSourceFilesPerPage": 52,
+      "message": "На 100+ страницах новые страницы не должны быть длинной копией локальных секций; нужен активный parametric/blueprint слой."
+    },
+    {
+      "minPages": 125,
+      "minimumSharedCoverageRatio": 0.42,
+      "maxAverageSectionsPerPage": 47,
+      "maxAverageSourceFilesPerPage": 48,
+      "message": "На 125+ страницах обязательны blueprints для повторяемых семейств страниц."
+    },
+    {
+      "minPages": 151,
+      "block": true,
+      "message": "Стоп: лимит controlled-growth исчерпан. Сначала делать blueprint/source-compression pack, потом расширять дальше."
+    }
+  ],
+  "warningThresholds": {
+    "maxSectionsPerPage": 80,
+    "maxLocalSectionsPerPage": 60,
+    "maxRawSectionsPerPage": 35,
+    "maxSourceFilesPerPage": 85
+  },
+  "allowedGrowthWorkflow": [
+    "Добавлять страницы через source/builder/data, не через ручной root HTML.",
+    "После каждых +20–30 страниц запускать analyze:source-complexity и guard:scale.",
+    "Если guard:scale падает — не добавлять новые страницы, а делать compression pack.",
+    "Не снижать shared/parametric coverage ниже текущего базового пола."
+  ]
+}

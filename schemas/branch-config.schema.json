@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/branch-config.schema.json",
+  "title": "MosPochin branch config",
+  "type": "object",
+  "required": ["subtitle", "contactHint", "topBarText", "services", "footerLinks"],
+  "properties": {
+    "subtitle": { "type": "string", "minLength": 1 },
+    "contactHint": { "type": "string", "minLength": 1 },
+    "topBarText": { "type": "object" },
+    "services": { "type": "array", "minItems": 1 },
+    "primaryServices": { "type": "array" },
+    "footerLinks": { "type": "array", "minItems": 1 },
+    "brandClusters": { "type": "array" },
+    "routeStrips": { "type": "object" }
+  },
+  "additionalProperties": true,
+  "x-runtimeChecks": [
+    "services/footerLinks href values point to known pages unless external/hash links"
+  ]
+}

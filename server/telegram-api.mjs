@@ -36,6 +36,7 @@ const MAX_EXTRA_FIELD_LENGTH = 200;
 
 const ipRateLimit = new Map();
 const globalRateLimit = new Map();
+const RATE_LIMIT_CLEANUP_INTERVAL_MS = Math.max(1000, Math.min(RATE_LIMIT_WINDOW_MS, GLOBAL_RATE_LIMIT_WINDOW_MS));
 
 function sendJson(res, status, payload, extraHeaders = {}) {
   res.writeHead(status, {
@@ -126,6 +127,44 @@ function connectViaSocks5(proxy, targetHost, targetPort, timeoutMs) {
   });
 }
 
+function parseHttpHeaders(headerBlock) {
+  const headers = new Map();
+  for (const line of headerBlock.split('\r\n').slice(1)) {
+    const separator = line.indexOf(':');
+    if (separator === -1) continue;
+    headers.set(line.slice(0, separator).trim().toLowerCase(), line.slice(separator + 1).trim().toLowerCase());
+  }
+  return headers;
+}
+
+function decodeChunkedBody(bodyBuffer) {
+  const decodedChunks = [];
+  let offset = 0;
+
+  while (offset < bodyBuffer.length) {
+    const lineEnd = bodyBuffer.indexOf('\r\n', offset);
+    if (lineEnd === -1) throw new Error('telegram_invalid_chunked_response');
+
+    const sizeLine = bodyBuffer.slice(offset, lineEnd).toString('ascii').split(';', 1)[0].trim();
+    const chunkSize = Number.parseInt(sizeLine, 16);
+    if (!Number.isFinite(chunkSize)) throw new Error('telegram_invalid_chunk_size');
+
+    offset = lineEnd + 2;
+    if (chunkSize === 0) return Buffer.concat(decodedChunks).toString('utf8');
+    if (offset + chunkSize > bodyBuffer.length) throw new Error('telegram_incomplete_chunked_response');
+
+    decodedChunks.push(bodyBuffer.slice(offset, offset + chunkSize));
+    offset += chunkSize;
+
+    if (bodyBuffer[offset] !== 13 || bodyBuffer[offset + 1] !== 10) {
+      throw new Error('telegram_invalid_chunk_separator');
+    }
+    offset += 2;
+  }
+
+  throw new Error('telegram_unfinished_chunked_response');
+}
+
 async function postJson(urlString, requestBody) {
   const url = new URL(urlString);
   const proxy = parseSocksProxy(TELEGRAM_PROXY);
@@ -190,6 +229,7 @@ async function postJson(urlString, requestBody) {
         `Host: ${url.hostname}`,
         'Content-Type: application/json',
         `Content-Length: ${Buffer.byteLength(requestBody)}`,
+        'Accept-Encoding: identity',
         'Connection: close',
         '',
         requestBody,
@@ -200,15 +240,16 @@ async function postJson(urlString, requestBody) {
     const chunks = [];
     tlsSocket.on('data', (chunk) => chunks.push(chunk));
     tlsSocket.on('end', () => {
-      const rawResponse = Buffer.concat(chunks).toString('utf8');
-      const separator = rawResponse.indexOf('\r\n\r\n');
+      const responseBuffer = Buffer.concat(chunks);
+      const separator = responseBuffer.indexOf('\r\n\r\n');
       if (separator === -1) {
         finish(new Error('telegram_invalid_http_response'));
         return;
       }
 
-      const headerBlock = rawResponse.slice(0, separator);
-      const body = rawResponse.slice(separator + 4);
+      const headerBlock = responseBuffer.slice(0, separator).toString('utf8');
+      const headers = parseHttpHeaders(headerBlock);
+      const bodyBuffer = responseBuffer.slice(separator + 4);
       const statusLine = headerBlock.split('\r\n')[0] || '';
       const match = statusLine.match(/^HTTP\/\d+\.\d+\s+(\d{3})/);
       if (!match) {
@@ -216,9 +257,19 @@ async function postJson(urlString, requestBody) {
         return;
       }
 
+      let raw;
+      try {
+        raw = headers.get('transfer-encoding')?.includes('chunked')
+          ? decodeChunkedBody(bodyBuffer)
+          : bodyBuffer.toString('utf8');
+      } catch (error) {
+        finish(error);
+        return;
+      }
+
       finish(null, {
         statusCode: Number(match[1]),
-        raw: body,
+        raw,
       });
     });
   });
@@ -263,6 +314,17 @@ function getClientIp(req) {
     return forwarded;
   }
   return remoteAddress || 'unknown';
+}
+
+function pruneRateLimitMap(map, windowMs, now = Date.now()) {
+  for (const [key, timestamps] of map.entries()) {
+    const recent = timestamps.filter((timestamp) => now - timestamp < windowMs);
+    if (recent.length === 0) {
+      map.delete(key);
+    } else if (recent.length !== timestamps.length) {
+      map.set(key, recent);
+    }
+  }
 }
 
 function consumeRateLimit(map, key, limit, windowMs, now) {
@@ -562,6 +624,13 @@ server.requestTimeout = REQUEST_TIMEOUT_MS;
 server.headersTimeout = REQUEST_TIMEOUT_MS + 1000;
 server.keepAliveTimeout = 5000;
 server.setTimeout(REQUEST_TIMEOUT_MS);
+
+const rateLimitCleanupTimer = setInterval(() => {
+  const now = Date.now();
+  pruneRateLimitMap(ipRateLimit, RATE_LIMIT_WINDOW_MS, now);
+  pruneRateLimitMap(globalRateLimit, GLOBAL_RATE_LIMIT_WINDOW_MS, now);
+}, RATE_LIMIT_CLEANUP_INTERVAL_MS);
+rateLimitCleanupTimer.unref?.();
 
 server.listen(PORT, HOST, () => {
   console.log(`Mospochin telegram API listening on http://${HOST}:${PORT}`);

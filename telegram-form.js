@@ -121,6 +121,40 @@ function collectExtraFields(form) {
     return extraFields;
 }
 
+function safeGetLocalStorage(key) {
+    try {
+        return window.localStorage.getItem(key);
+    } catch {
+        return null;
+    }
+}
+
+function safeSetLocalStorage(key, value) {
+    try {
+        window.localStorage.setItem(key, value);
+    } catch {
+        // Storage can be unavailable in private/restricted browser modes.
+    }
+}
+
+function buildProblemValue(form, extraFields) {
+    const explicitProblem = form.querySelector('[name="problem"]')?.value.trim() || '';
+    if (explicitProblem) return explicitProblem;
+
+    const labels = {
+        quantity: 'количество',
+        address: 'адрес/район',
+        business_type: 'формат кухни'
+    };
+
+    const details = Object.entries(labels)
+        .filter(([name]) => extraFields[name])
+        .map(([name, label]) => `${label}: ${extraFields[name]}`);
+
+    if (details.length === 0) return '';
+    return `Заявка на техническое обслуживание (${details.join('; ')})`;
+}
+
 async function sendToTelegram(formData) {
     const runtimeConfig = await loadRuntimeConfig();
     const endpoint = runtimeConfig.telegramFormEndpoint;
@@ -245,13 +279,14 @@ function initTelegramForms() {
 
             const honeypotValue = form.querySelector('[name="website"]')?.value.trim() || '';
             const consentChecked = Boolean(form.querySelector('[name="consent"]')?.checked);
+            const extraFields = collectExtraFields(form);
             const formData = {
                 name: form.querySelector('[name="name"]')?.value.trim() || '',
                 phone: normalizePhone(form.querySelector('[name="phone"]')?.value || ''),
                 type: form.querySelector('[name="type"]')?.value.trim() || '',
-                problem: form.querySelector('[name="problem"]')?.value.trim() || '',
+                problem: buildProblemValue(form, extraFields),
                 formContext: form.dataset.formContext?.trim() || '',
-                extraFields: collectExtraFields(form),
+                extraFields,
                 attribution: getAttributionSnapshot(),
                 website: honeypotValue
             };
@@ -259,7 +294,7 @@ function initTelegramForms() {
             const startedAt = Number(form.dataset.startedAt || Date.now());
             const fillMs = Date.now() - startedAt;
             const rateLimitKey = `mospochin_form_last_${window.location.pathname}`;
-            const lastSubmitAt = Number(window.localStorage.getItem(rateLimitKey) || 0);
+            const lastSubmitAt = Number(safeGetLocalStorage(rateLimitKey) || 0);
 
             if (honeypotValue) {
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
@@ -327,7 +362,7 @@ function initTelegramForms() {
                     trackFormGoal('form_submit_success', form, {
                         form_type: formData.type || ''
                     });
-                    window.localStorage.setItem(rateLimitKey, String(Date.now()));
+                    safeSetLocalStorage(rateLimitKey, String(Date.now()));
                     btn.innerHTML = '<i class="ri-check-line mr-2"></i>Отправлено! ✓';
                     btn.classList.remove('bg-brand-orange', 'bg-green-600');
                     btn.classList.add('bg-green-500');

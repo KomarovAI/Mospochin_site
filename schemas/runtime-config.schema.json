@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/runtime-config.schema.json",
+  "title": "MosPochin runtime config",
+  "type": "object",
+  "required": ["telegramFormEndpoint"],
+  "additionalProperties": false,
+  "properties": {
+    "telegramFormEndpoint": {
+      "type": "string",
+      "pattern": "^/",
+      "description": "Root-relative API endpoint used by telegram-form.js and form fallbacks."
+    }
+  }
+}

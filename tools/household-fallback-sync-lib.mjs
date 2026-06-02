@@ -597,6 +597,29 @@ function renderBrandGroupCounter(counter) {
     </li>`;
 }
 
+
+function getLogoImageSizeAttrs(src) {
+  if (!src) return '';
+  const normalized = String(src).split(/[?#]/, 1)[0].replace(/^\//, '');
+  if (!normalized || normalized.startsWith('../') || /^https?:\/\//i.test(normalized) || normalized.startsWith('data:')) {
+    return '';
+  }
+  const logoPath = path.join(SITE_ROOT, normalized);
+  if (!fs.existsSync(logoPath) || path.extname(logoPath).toLowerCase() !== '.svg') {
+    return '';
+  }
+  const svg = fs.readFileSync(logoPath, 'utf8');
+  const rootTag = svg.match(/<svg\b[^>]*>/i)?.[0] ?? '';
+  const widthMatch = rootTag.match(/\bwidth="([0-9]+(?:\.[0-9]+)?)(?:[a-z%]+)?"/i);
+  const heightMatch = rootTag.match(/\bheight="([0-9]+(?:\.[0-9]+)?)(?:[a-z%]+)?"/i);
+  if (widthMatch && heightMatch) {
+    return ` width="${Math.round(Number(widthMatch[1]))}" height="${Math.round(Number(heightMatch[1]))}"`;
+  }
+  const viewBoxMatch = rootTag.match(/\bviewBox="\s*[-0-9.]+[\s,]+[-0-9.]+[\s,]+([0-9.]+)[\s,]+([0-9.]+)\s*"/i);
+  if (!viewBoxMatch) return '';
+  return ` width="${Math.round(Number(viewBoxMatch[1]))}" height="${Math.round(Number(viewBoxMatch[2]))}"`;
+}
+
 function renderBrandLogoTile(item) {
   const initials = item.label
     .split(/\s+/)
@@ -606,7 +629,7 @@ function renderBrandLogoTile(item) {
     .join('');
 
   const media = item.logoSrc
-    ? `<img src="${escapeHtml(item.logoSrc)}" alt="${escapeHtml(item.logoAlt || `Логотип ${item.label}`)}" class="brand-logo-card__image max-h-10 max-w-[132px] w-auto object-contain" loading="eager" decoding="async">`
+    ? `<img src="${escapeHtml(item.logoSrc)}" alt="${escapeHtml(item.logoAlt || `Логотип ${item.label}`)}" class="brand-logo-card__image max-h-10 max-w-[132px] w-auto object-contain" loading="eager" decoding="async"${getLogoImageSizeAttrs(item.logoSrc)}>`
     : `<span class="brand-logo-card__fallback inline-flex h-10 min-w-10 items-center justify-center rounded-xl bg-brand-blue/10 px-2 text-xs font-bold tracking-[0.08em] text-brand-blue">${escapeHtml(initials || item.label.slice(0, 2).toUpperCase())}</span>`;
 
   return `<li class="brand-logo-card flex min-h-[92px] items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-[0_12px_28px_rgba(15,23,42,0.04)]">

@@ -16,8 +16,8 @@ Validator source of truth for this taxonomy lives in `data/docs-contracts.json`.
 
 ## Narrow Reference
 
-- `READABILITY_REFACTOR.md`
 - `BRANDS_GUIDE.md`
+- `CLEANUP_POLICY.md`
 
 ## Removed Historical Notes
 

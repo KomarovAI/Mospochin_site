@@ -1,0 +1,105 @@
+
+
+    <section id="request" class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">ЗАЯВКА</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Опишите проблему с плитой или печью</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">По заявке уточним тип оборудования, модель, линию и симптомы, чтобы сразу понять, нужен газовый, электрический или индукционный выезд.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-8 scroll-reveal" data-delay="1">
+                <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-semibold text-slate-700"><i class="ri-image-line text-brand-orange"></i>Можно сразу назвать модель или фото шильдика</span>
+                <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-semibold text-slate-700"><i class="ri-phone-find-line text-brand-orange"></i>Подскажем, безопасно ли включать линию до приезда</span>
+                <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-semibold text-slate-700"><i class="ri-user-voice-line text-brand-orange"></i>Ответ без повторного пересказа разным людям</span>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4 mb-8 scroll-reveal" data-delay="2">
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-slate-400 mb-2">Шаг 1</p>
+                    <h3 class="font-display font-extrabold text-brand-blue mb-2">Маршрутизируем заявку</h3>
+                    <p class="text-sm text-slate-600">Понимаем, это газ, электро или индукция, и не гоняем вас по кругу.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-slate-400 mb-2">Шаг 2</p>
+                    <h3 class="font-display font-extrabold text-brand-blue mb-2">Уточняем модель и риск</h3>
+                    <p class="text-sm text-slate-600">Сразу говорим, безопасно ли включать линию до приезда и что подготовить инженеру.</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-slate-400 mb-2">Шаг 3</p>
+                    <h3 class="font-display font-extrabold text-brand-blue mb-2">Ставим понятный выезд</h3>
+                    <p class="text-sm text-slate-600">После заявки у вас остаётся не “ожидание”, а понятный сценарий по времени и типу работ.</p>
+                </div>
+            </div>
+            <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form" action="/api/send-telegram" method="post">
+<!-- sync:service-kpi:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
+<section data-sync-zone="service-kpi" class="py-14 lg:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-slate-50/80 p-6 sm:p-8 lg:p-10 shadow-sm">
+          <div class="text-center">
+            <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-orange">СЕРВИСНЫЕ ОРИЕНТИРЫ</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Какие метрики держим по заявке ресторана</h2>
+            <p class="mt-3 text-slate-600">Показываем операционные ориентиры заранее: скорость реакции, глубину закрытия и гарантийный финал по работам.</p>
+          </div>
+          <div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            <article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange"><span class="counter" data-target="18" data-suffix="+">0</span></p>
+                  <p class="mt-2 text-sm font-semibold text-brand-blue">Лет практики</p>
+                  <p class="mt-2 text-xs text-slate-500">Опыт по горячей линии, холоду и моечному контуру кухни.</p>
+                </article><article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange"><span class="counter" data-target="4000" data-suffix="+">0</span></p>
+                  <p class="mt-2 text-sm font-semibold text-brand-blue">Заявок</p>
+                  <p class="mt-2 text-xs text-slate-500">Реальные кейсы по ресторанному оборудованию в полевых условиях.</p>
+                </article><article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange"><span class="counter" data-target="97" data-suffix="%">0</span></p>
+                  <p class="mt-2 text-sm font-semibold text-brand-blue">За 1 выезд</p>
+                  <p class="mt-2 text-xs text-slate-500">Типовые поломки закрываем без лишнего простоя смены.</p>
+                </article><article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange"><span class="counter" data-target="24" data-suffix="мес">0</span></p>
+                  <p class="mt-2 text-sm font-semibold text-brand-blue">Гарантия</p>
+                  <p class="mt-2 text-xs text-slate-500">Фиксируем результат документами и гарантийным подтверждением.</p>
+                </article>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- sync:service-kpi:end -->
+<!-- sync:request-overview:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
+<div data-sync-zone="request-overview" class="mb-6 rounded-3xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5 lg:p-6">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-green-700">ЧТО ПОЛЕЗНО УКАЗАТЬ СРАЗУ</span>
+        <span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">не греет</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">ошибка модуля</span>
+      </div>
+      <h3 class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-brand-blue">Чтобы не терять время на линии</h3>
+      <p class="mt-3 text-slate-600">Для плит и печей важно сразу понять тип оборудования, симптом и нужен ли газовый или электрический выезд.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Тип линии и оборудования</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Газовый или электрический сценарий</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Насколько критичен простой</span>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Пример описания: Плита Abat ПЭ-4Ш не греет одну конфорку, кухня в ЮАО, нужен выезд на объект</p>
+    </div>
+<!-- sync:request-overview:end -->
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="plity-pechi-name" class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label>
+                        <input type="text" name="name" required placeholder="Дмитрий" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700" id="plity-pechi-name" autocomplete="name">
+                    </div>
+                    <div>
+                        <label for="plity-pechi-phone" class="block text-sm font-medium text-slate-700 mb-2">Телефон *</label>
+                        <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700" id="plity-pechi-phone" autocomplete="tel" inputmode="tel">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="plity-pechi-type" class="block text-sm font-medium text-slate-700 mb-2">Тип оборудования</label>
+                        <input type="text" name="type" placeholder="Плита Abat ПЭ-4Ш, шкаф Apach..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700" id="plity-pechi-type">
+                    </div>
+                    <div>
+                        <label for="plity-pechi-problem" class="block text-sm font-medium text-slate-700 mb-2">Что случилось?</label>
+                        <input type="text" name="problem" placeholder="Не греет, ошибка модуля, запах газа..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700" id="plity-pechi-problem">
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg">
+                    <i class="ri-send-plane-line mr-2"></i>Получить звонок по ремонту
+                </button>
+                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Контакты используем только для связи по этой заявке</p>
+            </form>
+        </div>
+    </section>

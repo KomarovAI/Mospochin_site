@@ -2,6 +2,8 @@
 
 ## Canonical docs
 
+- Scale policy: [docs/SCALE_POLICY.md](/home/artikk/Mospochin_site/docs/SCALE_POLICY.md)
+
 - Operator routing: [docs/OPERATOR_ROUTING.md](/home/artikk/Mospochin_site/docs/OPERATOR_ROUTING.md)
 - Site-wide maintenance model: [docs/SITE_MAINTENANCE_MODEL.md](/home/artikk/Mospochin_site/docs/SITE_MAINTENANCE_MODEL.md)
 - Repo structure map: [docs/PROJECT_MAP.md](/home/artikk/Mospochin_site/docs/PROJECT_MAP.md)
@@ -13,8 +15,6 @@
 
 ## Narrow reference docs
 
-- `docs/READABILITY_REFACTOR.md`
-  - asset-loading and normalize-html reference
 - `docs/BRANDS_GUIDE.md`
   - restaurant brand reference content
 
@@ -61,6 +61,7 @@
 - `npm run validate:site` also requires a valid `data/restaurant-screenshot-audit.json` manifest for the full restaurant stabilization path.
 - `npm run validate:site` now also fails on docs/recipe drift when required links point to missing repo files or a recipe `preferredEditSurface` file is missing.
 - `npm run doctor:changed-pages` runs `doctor:page` only for pages touched by the current diff and is used as an additional CI gate in `.github/workflows/validate.yml`.
+- `npm run guard:scale` enforces `data/ai-scale-policy.json`: controlled growth to 100–150 pages without degrading source-layer maintainability.
 - `npm run optimize:images` is a local lightweight ffmpeg-based pass for changed raster assets (`jpg/jpeg/png/webp`) and rewrites files only when size reduction is meaningful.
 - `npm run audit:assets` is read-only and reports HTML/CSS/JS/JSON asset references, heavy referenced rasters, and tracked assets outside that scan surface.
 - Deploy smoke tests call the configured form endpoint after publishing.

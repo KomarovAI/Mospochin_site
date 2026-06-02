@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "component": "mobile-contact",
+  "variants": [
+    "mobile-footer-container",
+    "whatsapp-float-container"
+  ],
+  "intent": "Mount points для runtime partials мобильного footer и floating WhatsApp",
+  "requiredContainers": [
+    "mobile-footer-container",
+    "whatsapp-float-container"
+  ],
+  "aiNotes": [
+    "Это параметризованные static mount components: менять HTML только если изменяется runtime partials contract."
+  ]
+}

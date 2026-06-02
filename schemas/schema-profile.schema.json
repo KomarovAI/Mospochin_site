@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/schema-profile.schema.json",
+  "title": "MosPochin schema.org profile",
+  "type": "object",
+  "required": ["global", "branches", "pages"],
+  "properties": {
+    "global": {
+      "type": "object",
+      "required": ["provider", "areaServed", "offers"],
+      "properties": {
+        "provider": { "type": "object" },
+        "areaServed": { "type": "string" },
+        "offers": { "type": "object" }
+      },
+      "additionalProperties": true
+    },
+    "branches": { "type": "object" },
+    "pages": { "type": "object" }
+  },
+  "additionalProperties": false
+}

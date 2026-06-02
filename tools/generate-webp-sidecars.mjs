@@ -68,7 +68,22 @@ function generateSidecar(sourcePath, tempDir, webpQuality, dryRun) {
   const outputPath = `${absoluteSource}.webp`;
   const relativeOutput = `${sourcePath}.webp`;
   const tempOutput = path.join(tempDir, `${sourcePath.replace(/[\\/]/g, '__')}.webp`);
-  const originalSize = fs.statSync(absoluteSource).size;
+  const sourceStat = fs.statSync(absoluteSource);
+  const originalSize = sourceStat.size;
+  if (fs.existsSync(outputPath)) {
+    const outputStat = fs.statSync(outputPath);
+    if (outputStat.mtimeMs >= sourceStat.mtimeMs && outputStat.size < originalSize - MIN_SAVING_BYTES) {
+      return {
+        sourcePath,
+        relativeOutput,
+        status: 'current',
+        originalSize,
+        previousSize: outputStat.size,
+        webpSize: outputStat.size,
+        savedBytes: originalSize - outputStat.size,
+      };
+    }
+  }
   const result = spawnSync('ffmpeg', [
     '-y',
     '-loglevel',

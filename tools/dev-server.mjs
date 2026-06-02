@@ -34,10 +34,18 @@ function send(res, status, body, type = 'text/plain; charset=utf-8') {
 }
 
 function safePathFromUrl(urlPath) {
-  const decoded = decodeURIComponent(urlPath.split('?')[0]);
+  let decoded;
+  try {
+    decoded = decodeURIComponent(urlPath.split('?')[0]);
+  } catch {
+    return null;
+  }
+
   const pathname = decoded === '/' ? '/index.html' : decoded;
   const absolutePath = path.resolve(SITE_ROOT, `.${pathname}`);
-  if (!absolutePath.startsWith(SITE_ROOT)) return null;
+  const relativePath = path.relative(SITE_ROOT, absolutePath);
+
+  if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) return null;
   return absolutePath;
 }
 
