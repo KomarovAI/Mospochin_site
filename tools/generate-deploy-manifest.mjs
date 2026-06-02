@@ -15,6 +15,7 @@ const allowGeneratedVersion = process.argv.includes('--allow-generated-version')
 const SOURCE_EXTENSIONS = new Set(['.html', '.css', '.js', '.json']);
 const WEBP_SIDECAR_SOURCE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png']);
 const DEPLOY_TOOL_FILES = new Set([
+  '.deploy/include-files.txt',
   'tools/generate-public-file-list.mjs',
 ]);
 const ALWAYS_INCLUDE = [
