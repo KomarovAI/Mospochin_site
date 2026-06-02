@@ -80,7 +80,16 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
+            "sudo GIT_ASKPASS=/tmp/mospochin-git-askpass.sh GITHUB_REPO_TOKEN='${{ secrets.REPO_PAT }}' /bin/bash -lc 'cat > /tmp/mospochin-git-askpass.sh <<EOF
+#!/usr/bin/env bash
+case \"\$1\" in
+  *Username*) echo x-access-token ;;
+  *Password*) echo \"\$GITHUB_REPO_TOKEN\" ;;
+esac
+EOF
+chmod 700 /tmp/mospochin-git-askpass.sh
+/usr/local/sbin/mospochin-deploy-git \"${GITHUB_SHA}\" \"${GITHUB_RUN_ID}\" \"${GITHUB_RUN_NUMBER}\" \"$(cat .deploy/content.sha256)\"
+rm -f /tmp/mospochin-git-askpass.sh'"
 
       - name: Smoke test public pages
         timeout-minutes: 4
