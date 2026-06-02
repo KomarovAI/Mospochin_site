@@ -19,6 +19,7 @@ const DEPLOY_TOOL_FILES = new Set([
   'tools/generate-public-file-list.mjs',
 ]);
 const ALWAYS_INCLUDE = [
+  '.deploy/include-files.txt',
   '404.html',
   'data/contact-config.json',
   'data/household-card-presets.json',
