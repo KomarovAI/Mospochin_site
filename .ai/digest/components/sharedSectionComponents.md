@@ -1,7 +1,7 @@
 # Component Digest — sharedSectionComponents
 
 - Name: Shared section components / общие HTML-секции
-- Appears in: 25 pages
+- Appears in: 27 pages
 - Keywords: shared, компонент, общие секции, дубли, src/components/shared
 
 ## Related files
@@ -18,7 +18,7 @@
 
 ## Safe editing notes
 
-- Сейчас shared refs: 289, shared files: 32.
+- Сейчас shared refs: 333, shared files: 32.
 - После правки src/components/shared/* запускай check:shared-components и check:site-builder.
 
 ## Representative pages
@@ -37,10 +37,10 @@
 - parokonvektomat-ne-greet.html
 - parokonvektomat-net-para.html
 - parokonvektomat-rational-e9.html
+- parokonvektomat-rational.html
 - parokonvektomat-unox-af02-af08.html
+- parokonvektomat-unox.html
 - parokonvektomaty-promo.html
 - parokonvektomaty.html
 - pishevarochnye-kotly.html
-- plity.html
-- posudomoechnye-mashiny.html
-- … ещё 5
+- … ещё 7

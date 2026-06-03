@@ -1,7 +1,7 @@
 # Component Digest — responsiveImages
 
 - Name: Responsive images / srcset / WebP sidecars
-- Appears in: 32 pages
+- Appears in: 34 pages
 - Keywords: картинка, изображ, фото, srcset, webp, avif, responsive, hero image
 - CSS selectors: img[srcset], picture source
 
@@ -41,5 +41,5 @@
 - parokonvektomat-net-para.html
 - parokonvektomat-obschuzhivanie.html
 - parokonvektomat-rational-e9.html
-- parokonvektomat-unox-af02-af08.html
-- … ещё 12
+- parokonvektomat-rational.html
+- … ещё 14

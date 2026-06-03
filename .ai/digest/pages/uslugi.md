@@ -7,18 +7,19 @@
 - H1: Услуги и цены на ремонт ресторанного оборудования
 - Canonical: https://mospochin.ru/uslugi.html
 - Builder model: src/pages/uslugi/page.json
-- Sections: 30 (25 local, 0 shared refs, 7 raw)
+- Sections: 30 (20 local, 0 shared refs, 2 raw)
 - Text words inside referenced sections: 926
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 7 |
 | mobile-contact | 6 |
+| layout-fragment | 5 |
 | pricing | 4 |
 | section | 3 |
 | proof | 2 |
+| raw | 2 |
 | breadcrumb | 1 |
 | contact-cta | 1 |
 | faq | 1 |

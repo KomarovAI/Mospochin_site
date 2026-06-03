@@ -7,7 +7,7 @@
 - H1: Связаться по ремонту бытовой техники
 - Canonical: https://mospochin.ru/bytovaya-contact.html
 - Builder model: src/pages/bytovaya-contact/page.json
-- Sections: 18 (13 local, 0 shared refs, 2 raw)
+- Sections: 18 (11 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 1477
 
 ## Component mix
@@ -16,7 +16,7 @@
 | --- | --- |
 | mobile-contact | 5 |
 | contact-cta | 3 |
-| raw | 2 |
+| layout-fragment | 2 |
 | breadcrumb | 1 |
 | faq | 1 |
 | footer-anchor | 1 |

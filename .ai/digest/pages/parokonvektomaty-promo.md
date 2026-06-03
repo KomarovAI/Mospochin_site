@@ -1,20 +1,20 @@
 # Page Digest — parokonvektomaty-promo.html
 
-- Branch: neutral
-- Role: neutral
-- Title: Ошибка пароконвектомата — выезд инженера | MosPochin
-- Description: Посадочная для срочных B2B-заявок: коды ошибок, нет пара или нагрева у Rational, Unox, Abat. Выезд инженера, договор, безнал.
+- Branch: restaurant
+- Role: branch
+- Title: Ошибка пароконвектомата — выезд инженера Rational, Unox, Abat | MosPochin
+- Description: Рекламная посадочная MosPochin для срочных B2B-заявок: код ошибки, нет пара или нагрева у пароконвектомата Rational, Unox, Abat. Фото кода в WhatsApp, выезд инженера, договор и безнал.
 - H1: Ошибка Rational / Unox / Abat
 - Canonical: https://mospochin.ru/parokonvektomaty-promo.html
 - Builder model: src/pages/parokonvektomaty-promo/page.json
-- Sections: 74 (46 local, 21 shared refs, 36 raw)
+- Sections: 74 (12 local, 21 shared refs, 2 raw)
 - Text words inside referenced sections: 2241
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 36 |
+| layout-fragment | 34 |
 | pricing | 10 |
 | proof | 9 |
 | mobile-contact | 3 |
@@ -22,6 +22,7 @@
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
+| raw | 2 |
 | section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
@@ -49,6 +50,8 @@
 - data/page-metadata.json
 - data/contact-config.json
 - data/runtime-config.json
+- data/restaurant-branch.json
+- data/restaurant-page-policy.json
 - parokonvektomaty-promo.html
 - src/site-builder.json
 - src/pages/parokonvektomaty-promo/page.json

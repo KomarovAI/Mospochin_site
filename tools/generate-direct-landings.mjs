@@ -84,6 +84,7 @@ function updateBodyClass(html, slug) {
     'text-slate-800',
     'antialiased',
     'bg-white',
+    'branch-restaurant',
     'page-parokonvektomaty',
     'page-direct-landing',
     `page-${slug}`,
@@ -168,6 +169,9 @@ function updateMobileSticky(html, page) {
   const match = html.match(blockPattern);
 
   if (!match) {
+    if (html.includes('id="mobile-footer-container"') || html.includes('id="whatsapp-float-container"')) {
+      return html;
+    }
     throw new Error('Cannot find mobile sticky footer block');
   }
 
@@ -190,6 +194,25 @@ function updateMobileSticky(html, page) {
   return html.replace(blockPattern, block);
 }
 
+function renderRelatedLinks(page) {
+  if (!Array.isArray(page.relatedLinks) || page.relatedLinks.length === 0) return '';
+
+  const links = page.relatedLinks.map((link) => `
+                    <a class="block rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-brand-orange hover:bg-white" href="${escapeAttr(link.href)}">
+                        <span class="font-display text-base font-extrabold text-brand-blue">${escapeHtml(link.label)}</span>
+                        <span class="mt-1 block text-sm leading-relaxed text-slate-600">${escapeHtml(link.description)}</span>
+                    </a>`).join('');
+
+  return `
+            <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-brand-orange">По теме</p>
+                <h3 class="mt-2 font-display text-xl font-extrabold text-brand-blue">Связанные посадочные и симптомы</h3>
+                <div class="mt-4 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+${links}
+                </div>
+            </div>`;
+}
+
 function renderAnalysisSection(page) {
   const cards = page.analysisCards.map((card) => `
                 <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -207,7 +230,7 @@ function renderAnalysisSection(page) {
             </div>
             <div class="grid gap-4 md:grid-cols-3">
 ${cards}
-            </div>
+            </div>${renderRelatedLinks(page)}
         </div>
     </section>
 <!-- direct-landing-analysis:end -->`;
@@ -268,8 +291,8 @@ function upsertMetadata(page) {
     description: page.description,
     canonical,
     ogUrl: canonical,
-    hasForm: true,
-    branch: 'neutral',
+    hasForm: page.hasForm ?? true,
+    branch: page.branch ?? 'restaurant',
   };
 
   if (page.robots) {

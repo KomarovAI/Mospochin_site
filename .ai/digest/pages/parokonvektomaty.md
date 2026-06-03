@@ -7,16 +7,17 @@
 - H1: Ремонт пароконвектоматов для ресторанов
 - Canonical: https://mospochin.ru/parokonvektomaty.html
 - Builder model: src/pages/parokonvektomaty/page.json
-- Sections: 70 (46 local, 18 shared refs, 27 raw)
+- Sections: 70 (24 local, 18 shared refs, 5 raw)
 - Text words inside referenced sections: 2560
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 27 |
+| layout-fragment | 22 |
 | pricing | 12 |
 | proof | 9 |
+| raw | 5 |
 | related-links | 4 |
 | section | 4 |
 | mobile-contact | 3 |

@@ -9,15 +9,15 @@
     "recipes": "docs/AI_TASK_RECIPES.md"
   },
   "summary": {
-    "totalPages": 37,
+    "totalPages": 39,
     "byBranch": {
-      "neutral": 14,
-      "restaurant": 11,
+      "neutral": 6,
+      "restaurant": 21,
       "household": 12
     },
     "byRole": {
-      "neutral": 14,
-      "branch": 8,
+      "neutral": 6,
+      "branch": 18,
       "service": 15
     }
   },
@@ -887,10 +887,10 @@
     },
     "parokonvektomat-e02-e07-e10.html": {
       "page": "parokonvektomat-e02-e07-e10.html",
-      "branch": "neutral",
-      "role": "neutral",
+      "branch": "restaurant",
+      "role": "branch",
       "htmlExists": true,
-      "title": "Ошибки E02, E07, E10 пароконвектомата — MosPochin",
+      "title": "Ошибка E02, E07, E10 пароконвектомата Abat и Fagor — ремонт | MosPochin",
       "h1": "Ошибка E02 / E07 / E10",
       "description": "Ошибки E02, E07, E10 на пароконвектоматах Abat, Абат и Fagor: диагностика на объекте, фото кода в WhatsApp, выезд инженера для ресторанов и кафе.",
       "canonical": "https://mospochin.ru/parokonvektomat-e02-e07-e10.html",
@@ -900,6 +900,8 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
         "parokonvektomat-e02-e07-e10.html",
         "src/site-builder.json",
         "src/pages/parokonvektomat-e02-e07-e10/page.json"
@@ -908,8 +910,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-e02-e07-e10/page.json",
         "slug": "parokonvektomat-e02-e07-e10",
-        "sections": 76,
-        "sourceHash": "79f614085bdeb17c4a376dee54192fc107988414a7cac326dc0265a7cc811043",
+        "sections": 74,
+        "sourceHash": "26c7823e874210d4bd673c2919af475caeb0ec8306630133f6b8186de217cafa",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-e02-e07-e10.html",
           "write": "npm run build:site -- --page parokonvektomat-e02-e07-e10.html --write",
@@ -975,12 +977,12 @@
     },
     "parokonvektomat-kod-oshibki.html": {
       "page": "parokonvektomat-kod-oshibki.html",
-      "branch": "neutral",
-      "role": "neutral",
+      "branch": "restaurant",
+      "role": "branch",
       "htmlExists": true,
-      "title": "Код ошибки пароконвектомата — расшифровка | MosPochin",
+      "title": "Код ошибки пароконвектомата — расшифровка и выезд инженера | MosPochin",
       "h1": "Код ошибки пароконвектомата",
-      "description": "Код ошибки пароконвектомата Rational, Unox, Abat, Fagor или Lainox: что проверить без разбора и когда нужен инженер.",
+      "description": "Код ошибки пароконвектомата Rational, Unox, Abat, Fagor или Lainox: что означает, что проверить без разбора и когда нужен инженер на объект. Фото кода в WhatsApp.",
       "canonical": "https://mospochin.ru/parokonvektomat-kod-oshibki.html",
       "hasForm": true,
       "service": null,
@@ -988,6 +990,8 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
         "parokonvektomat-kod-oshibki.html",
         "src/site-builder.json",
         "src/pages/parokonvektomat-kod-oshibki/page.json"
@@ -996,8 +1000,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-kod-oshibki/page.json",
         "slug": "parokonvektomat-kod-oshibki",
-        "sections": 76,
-        "sourceHash": "05f7411ce438595f8558b02ce7f231675ab6ff2b74a435456e4dbc2cc9581171",
+        "sections": 74,
+        "sourceHash": "f1a4f11c42bed38241e72aa99940e3adf8583b7c4019e4646e5743eb9835f83d",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-kod-oshibki.html",
           "write": "npm run build:site -- --page parokonvektomat-kod-oshibki.html --write",
@@ -1063,8 +1067,8 @@
     },
     "parokonvektomat-ne-greet.html": {
       "page": "parokonvektomat-ne-greet.html",
-      "branch": "neutral",
-      "role": "neutral",
+      "branch": "restaurant",
+      "role": "branch",
       "htmlExists": true,
       "title": "Пароконвектомат не греет — выезд инженера в Москве | MosPochin",
       "h1": "Пароконвектомат не греет",
@@ -1076,6 +1080,8 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
         "parokonvektomat-ne-greet.html",
         "src/site-builder.json",
         "src/pages/parokonvektomat-ne-greet/page.json"
@@ -1084,8 +1090,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-ne-greet/page.json",
         "slug": "parokonvektomat-ne-greet",
-        "sections": 76,
-        "sourceHash": "4ebea16cc5b2480f1edfc4bbec63e383e4f4f3c6427f250d64a25e4b3b939976",
+        "sections": 74,
+        "sourceHash": "23f7fcd92b476856fc59551beaf63aefce2473d22215daa6ae5ddfc5ea9db250",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-ne-greet.html",
           "write": "npm run build:site -- --page parokonvektomat-ne-greet.html --write",
@@ -1107,8 +1113,8 @@
     },
     "parokonvektomat-net-para.html": {
       "page": "parokonvektomat-net-para.html",
-      "branch": "neutral",
-      "role": "neutral",
+      "branch": "restaurant",
+      "role": "branch",
       "htmlExists": true,
       "title": "Нет пара в пароконвектомате — ремонт на объекте | MosPochin",
       "h1": "В пароконвектомате нет пара",
@@ -1120,6 +1126,8 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
         "parokonvektomat-net-para.html",
         "src/site-builder.json",
         "src/pages/parokonvektomat-net-para/page.json"
@@ -1128,8 +1136,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-net-para/page.json",
         "slug": "parokonvektomat-net-para",
-        "sections": 76,
-        "sourceHash": "6cb7f7d12e43533c61d80068f0babcce0ef3ce9bcc042fde38bac08549463969",
+        "sections": 74,
+        "sourceHash": "9104b12586251ae9b8cd5802dcf48c76a51688b53f969a69bd29e938fa7cf9ae",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-net-para.html",
           "write": "npm run build:site -- --page parokonvektomat-net-para.html --write",
@@ -1195,10 +1203,10 @@
     },
     "parokonvektomat-rational-e9.html": {
       "page": "parokonvektomat-rational-e9.html",
-      "branch": "neutral",
-      "role": "neutral",
+      "branch": "restaurant",
+      "role": "branch",
       "htmlExists": true,
-      "title": "Ошибка Rational E9 — ремонт пароконвектомата | MosPochin",
+      "title": "Ошибка Rational E9 — ремонт пароконвектомата для ресторана | MosPochin",
       "h1": "Ошибка Rational E9",
       "description": "Ошибка E9 на пароконвектомате Rational: фото кода и шильдика в WhatsApp, диагностика на объекте, выезд инженера для ресторанов, кафе и пекарен.",
       "canonical": "https://mospochin.ru/parokonvektomat-rational-e9.html",
@@ -1208,6 +1216,8 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
         "parokonvektomat-rational-e9.html",
         "src/site-builder.json",
         "src/pages/parokonvektomat-rational-e9/page.json"
@@ -1217,7 +1227,7 @@
         "model": "src/pages/parokonvektomat-rational-e9/page.json",
         "slug": "parokonvektomat-rational-e9",
         "sections": 74,
-        "sourceHash": "36b50f480980aa7e968cd111388d8759a1e45b36560e87507945d626e000765e",
+        "sourceHash": "a5bd8002824bfadc2d8c25725914998b9f9ee197e6b45dae1326c19ee4b858e3",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-rational-e9.html",
           "write": "npm run build:site -- --page parokonvektomat-rational-e9.html --write",
@@ -1237,10 +1247,56 @@
         "npm run check:site-builder"
       ]
     },
+    "parokonvektomat-rational.html": {
+      "page": "parokonvektomat-rational.html",
+      "branch": "restaurant",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "Ремонт пароконвектоматов Rational в Москве — выезд инженера | MosPochin",
+      "h1": "Ремонт пароконвектоматов Rational",
+      "description": "Ремонт пароконвектоматов Rational SCC и CMP для ресторанов и кафе: ошибки, нет пара, не греет, диагностика и выезд инженера.",
+      "canonical": "https://mospochin.ru/parokonvektomat-rational.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "parokonvektomat-rational.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-rational/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-rational/page.json",
+        "slug": "parokonvektomat-rational",
+        "sections": 74,
+        "sourceHash": "080504ed1a30f0eb64bbad333396e3299393c04559429106083106ec3d6b50bf",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-rational.html",
+          "write": "npm run build:site -- --page parokonvektomat-rational.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-rational.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-rational.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
     "parokonvektomat-unox-af02-af08.html": {
       "page": "parokonvektomat-unox-af02-af08.html",
-      "branch": "neutral",
-      "role": "neutral",
+      "branch": "restaurant",
+      "role": "branch",
       "htmlExists": true,
       "title": "Ошибка Unox AF02 и AF08 — ремонт пароконвектомата | MosPochin",
       "h1": "Ошибка Unox AF02 / AF08",
@@ -1252,6 +1308,8 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
         "parokonvektomat-unox-af02-af08.html",
         "src/site-builder.json",
         "src/pages/parokonvektomat-unox-af02-af08/page.json"
@@ -1261,7 +1319,7 @@
         "model": "src/pages/parokonvektomat-unox-af02-af08/page.json",
         "slug": "parokonvektomat-unox-af02-af08",
         "sections": 74,
-        "sourceHash": "77fe199157760101ea9057c7602028c74ec05735e6db0aff3c9c449bdf02ee55",
+        "sourceHash": "b9c66245ed66d1f8c0e60018e83b15144f7afb61f7d6d3e520d9899b0c2e70d4",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-unox-af02-af08.html",
           "write": "npm run build:site -- --page parokonvektomat-unox-af02-af08.html --write",
@@ -1281,14 +1339,60 @@
         "npm run check:site-builder"
       ]
     },
+    "parokonvektomat-unox.html": {
+      "page": "parokonvektomat-unox.html",
+      "branch": "restaurant",
+      "role": "branch",
+      "htmlExists": true,
+      "title": "Ремонт пароконвектоматов Unox в Москве — диагностика и выезд | MosPochin",
+      "h1": "Ремонт пароконвектоматов Unox",
+      "description": "Ремонт пароконвектоматов Unox для ресторанов, кафе и пекарен: ошибки AF01, AF02, AF08, нет пара, не греет, выезд инженера.",
+      "canonical": "https://mospochin.ru/parokonvektomat-unox.html",
+      "hasForm": true,
+      "service": null,
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "parokonvektomat-unox.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomat-unox/page.json"
+      ],
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomat-unox/page.json",
+        "slug": "parokonvektomat-unox",
+        "sections": 74,
+        "sourceHash": "2292a2a55a9ec9224843980e4eeaf2ffd292929efe7808c257b4bc98459d58ca",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomat-unox.html",
+          "write": "npm run build:site -- --page parokonvektomat-unox.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-unox.html"
+        }
+      },
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:page -- --page parokonvektomat-unox.html",
+        "npm run validate:site",
+        "npm run check:site-builder"
+      ]
+    },
     "parokonvektomaty-promo.html": {
       "page": "parokonvektomaty-promo.html",
-      "branch": "neutral",
-      "role": "neutral",
+      "branch": "restaurant",
+      "role": "branch",
       "htmlExists": true,
-      "title": "Ошибка пароконвектомата — выезд инженера | MosPochin",
+      "title": "Ошибка пароконвектомата — выезд инженера Rational, Unox, Abat | MosPochin",
       "h1": "Ошибка Rational / Unox / Abat",
-      "description": "Посадочная для срочных B2B-заявок: коды ошибок, нет пара или нагрева у Rational, Unox, Abat. Выезд инженера, договор, безнал.",
+      "description": "Рекламная посадочная MosPochin для срочных B2B-заявок: код ошибки, нет пара или нагрева у пароконвектомата Rational, Unox, Abat. Фото кода в WhatsApp, выезд инженера, договор и безнал.",
       "canonical": "https://mospochin.ru/parokonvektomaty-promo.html",
       "hasForm": true,
       "service": null,
@@ -1296,6 +1400,8 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
         "parokonvektomaty-promo.html",
         "src/site-builder.json",
         "src/pages/parokonvektomaty-promo/page.json"
@@ -1305,7 +1411,7 @@
         "model": "src/pages/parokonvektomaty-promo/page.json",
         "slug": "parokonvektomaty-promo",
         "sections": 74,
-        "sourceHash": "c3390258d1ddf7f0fb5ae419f6cabaae58d5a153cd83cb12686a680faf2ad109",
+        "sourceHash": "b0de885e2ac561d6bab91340088fbbd72fba8a20b5d5dda28172ea1ea1b7f6de",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomaty-promo.html",
           "write": "npm run build:site -- --page parokonvektomaty-promo.html --write",
@@ -1717,10 +1823,10 @@
     },
     "remont-oborudovaniya-restorana-parokonvektomat.html": {
       "page": "remont-oborudovaniya-restorana-parokonvektomat.html",
-      "branch": "neutral",
-      "role": "neutral",
+      "branch": "restaurant",
+      "role": "branch",
       "htmlExists": true,
-      "title": "Ремонт кухни ресторана — Rational, Unox, Abat | MosPochin",
+      "title": "Ремонт кухни ресторана — пароконвектоматы Rational, Unox, Abat | MosPochin",
       "h1": "Ремонт кухни ресторана: пароконвектоматы",
       "description": "Рекламная посадочная для B2B-заявок по кухне ресторана: пароконвектоматы Rational, Unox, Abat, ошибки, нагрев, пар, срочный выезд, договор и безнал.",
       "canonical": "https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html",
@@ -1730,6 +1836,8 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
         "remont-oborudovaniya-restorana-parokonvektomat.html",
         "src/site-builder.json",
         "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json"
@@ -1738,8 +1846,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json",
         "slug": "remont-oborudovaniya-restorana-parokonvektomat",
-        "sections": 77,
-        "sourceHash": "51bd3eaa20b53315cf4710a74b47b0220e2432b754fa29db5616c28086e90da6",
+        "sections": 74,
+        "sourceHash": "3dfc3db92ba18a02c0132f59ce2ba8942ec0def3042d9c2409a29ef44dc02dae",
         "commands": {
           "preview": "npm run build:site -- --page remont-oborudovaniya-restorana-parokonvektomat.html",
           "write": "npm run build:site -- --page remont-oborudovaniya-restorana-parokonvektomat.html --write",

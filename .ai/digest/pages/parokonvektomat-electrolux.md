@@ -7,14 +7,14 @@
 - H1: Ремонт пароконвектоматов Electrolux Professional
 - Canonical: https://mospochin.ru/parokonvektomat-electrolux.html
 - Builder model: src/pages/parokonvektomat-electrolux/page.json
-- Sections: 74 (49 local, 18 shared refs, 36 raw)
+- Sections: 74 (15 local, 18 shared refs, 2 raw)
 - Text words inside referenced sections: 2245
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 36 |
+| layout-fragment | 34 |
 | proof | 10 |
 | pricing | 9 |
 | mobile-contact | 3 |
@@ -22,6 +22,7 @@
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
+| raw | 2 |
 | section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |

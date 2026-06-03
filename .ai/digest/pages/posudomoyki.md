@@ -7,7 +7,7 @@
 - H1: Посудомойка не сливает, не моет или течёт? Вернём мойку без лишних замен
 - Canonical: https://mospochin.ru/posudomoyki.html
 - Builder model: src/pages/posudomoyki/page.json
-- Sections: 53 (45 local, 3 shared refs, 11 raw)
+- Sections: 53 (35 local, 3 shared refs, 1 raw)
 - Text words inside referenced sections: 2738
 
 ## Component mix
@@ -15,7 +15,7 @@
 | Component | Count |
 | --- | --- |
 | pricing | 13 |
-| raw | 11 |
+| layout-fragment | 10 |
 | proof | 7 |
 | mobile-contact | 5 |
 | contact-cta | 4 |
@@ -27,6 +27,7 @@
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
+| raw | 1 |
 | runtime-partials | 1 |
 
 

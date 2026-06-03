@@ -7,20 +7,21 @@
 - H1: Ремонт и настройка роутеров в Москве
 - Canonical: https://mospochin.ru/routery.html
 - Builder model: src/pages/routery/page.json
-- Sections: 52 (45 local, 2 shared refs, 12 raw)
+- Sections: 52 (43 local, 2 shared refs, 10 raw)
 - Text words inside referenced sections: 2395
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 12 |
 | pricing | 11 |
+| raw | 10 |
 | section | 7 |
 | mobile-contact | 5 |
 | contact-cta | 4 |
 | proof | 4 |
 | faq | 3 |
+| layout-fragment | 2 |
 | breadcrumb | 1 |
 | footer-anchor | 1 |
 | hero | 1 |

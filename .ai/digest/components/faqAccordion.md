@@ -1,7 +1,7 @@
 # Component Digest — faqAccordion
 
 - Name: FAQ / аккордеон вопросов
-- Appears in: 36 pages
+- Appears in: 38 pages
 - Keywords: faq, вопрос, ответ, аккордеон, частые вопросы
 - CSS selectors: .faq, [onclick*="toggleFAQ"]
 - JS hooks: toggleFAQ
@@ -45,4 +45,4 @@
 - parokonvektomat-kod-oshibki.html
 - parokonvektomat-lainox.html
 - parokonvektomat-ne-greet.html
-- … ещё 16
+- … ещё 18

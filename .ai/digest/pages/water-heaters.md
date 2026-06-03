@@ -7,7 +7,7 @@
 - H1: Ремонт водонагревателей на дому в Москве
 - Canonical: https://mospochin.ru/water-heaters.html
 - Builder model: src/pages/water-heaters/page.json
-- Sections: 49 (43 local, 1 shared refs, 10 raw)
+- Sections: 49 (35 local, 1 shared refs, 2 raw)
 - Text words inside referenced sections: 2506
 
 ## Component mix
@@ -16,10 +16,11 @@
 | --- | --- |
 | pricing | 10 |
 | proof | 10 |
-| raw | 10 |
+| layout-fragment | 8 |
 | mobile-contact | 5 |
 | contact-cta | 2 |
 | hero | 2 |
+| raw | 2 |
 | related-links | 2 |
 | section | 2 |
 | breadcrumb | 1 |

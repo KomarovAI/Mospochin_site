@@ -7,7 +7,7 @@
 - H1: Ремонт пищеварочных котлов для ресторанов и столовых
 - Canonical: https://mospochin.ru/pishevarochnye-kotly.html
 - Builder model: src/pages/pishevarochnye-kotly/page.json
-- Sections: 27 (22 local, 1 shared refs, 3 raw)
+- Sections: 27 (19 local, 1 shared refs, 0 raw)
 - Text words inside referenced sections: 996
 
 ## Component mix
@@ -16,7 +16,7 @@
 | --- | --- |
 | mobile-contact | 6 |
 | proof | 5 |
-| raw | 3 |
+| layout-fragment | 3 |
 | pricing | 2 |
 | related-links | 2 |
 | section | 2 |

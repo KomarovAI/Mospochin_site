@@ -1,7 +1,7 @@
 # Component Digest — hero
 
 - Name: Hero / первый экран
-- Appears in: 36 pages
+- Appears in: 38 pages
 - Keywords: hero, первый экран, обложка, главный блок, заголовок, h1
 - CSS selectors: .hero-animate, .hero-animate-delay-*, header .glass-card
 
@@ -13,7 +13,7 @@
 
 | Total sections | Local | Shared refs | Shared % |
 | --- | --- | --- | --- |
-| 35 | 35 | 0 | 0% |
+| 37 | 37 | 0 | 0% |
 
 
 ## Risks
@@ -47,4 +47,4 @@
 - parokonvektomat-electrolux.html
 - parokonvektomat-kod-oshibki.html
 - parokonvektomat-lainox.html
-- … ещё 16
+- … ещё 18

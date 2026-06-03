@@ -7,7 +7,7 @@
 - H1: Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене
 - Canonical: https://mospochin.ru/holodilniki.html
 - Builder model: src/pages/holodilniki/page.json
-- Sections: 51 (44 local, 2 shared refs, 10 raw)
+- Sections: 51 (35 local, 2 shared refs, 1 raw)
 - Text words inside referenced sections: 2995
 
 ## Component mix
@@ -15,7 +15,7 @@
 | Component | Count |
 | --- | --- |
 | pricing | 12 |
-| raw | 10 |
+| layout-fragment | 9 |
 | proof | 7 |
 | mobile-contact | 5 |
 | section | 4 |
@@ -27,6 +27,7 @@
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
+| raw | 1 |
 | runtime-partials | 1 |
 
 

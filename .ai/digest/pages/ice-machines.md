@@ -7,14 +7,15 @@
 - H1: Льдогенератор встал? Починим за 1-3 часа
 - Canonical: https://mospochin.ru/ice-machines.html
 - Builder model: src/pages/ice-machines/page.json
-- Sections: 64 (55 local, 3 shared refs, 26 raw)
+- Sections: 64 (43 local, 3 shared refs, 14 raw)
 - Text words inside referenced sections: 2068
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 26 |
+| raw | 14 |
+| layout-fragment | 12 |
 | proof | 11 |
 | pricing | 10 |
 | mobile-contact | 3 |

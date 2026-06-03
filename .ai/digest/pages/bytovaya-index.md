@@ -7,18 +7,19 @@
 - H1: Ремонт бытовой техники на дому в Москве
 - Canonical: https://mospochin.ru/bytovaya-index.html
 - Builder model: src/pages/bytovaya-index/page.json
-- Sections: 36 (31 local, 0 shared refs, 12 raw)
+- Sections: 36 (29 local, 0 shared refs, 10 raw)
 - Text words inside referenced sections: 1041
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 12 |
+| raw | 10 |
 | proof | 5 |
 | pricing | 4 |
 | mobile-contact | 3 |
 | faq | 2 |
+| layout-fragment | 2 |
 | lead-form | 2 |
 | noscript | 2 |
 | related-links | 2 |

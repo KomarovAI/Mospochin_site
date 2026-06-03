@@ -7,7 +7,7 @@
 - H1: Ремонт встроенных СВЧ Neff, Miele и Bosch
 - Canonical: https://mospochin.ru/microwaves.html
 - Builder model: src/pages/microwaves/page.json
-- Sections: 10 (5 local, 0 shared refs, 3 raw)
+- Sections: 10 (3 local, 0 shared refs, 1 raw)
 - Text words inside referenced sections: 1284
 
 ## Component mix
@@ -15,10 +15,11 @@
 | Component | Count |
 | --- | --- |
 | mobile-contact | 3 |
-| raw | 3 |
+| layout-fragment | 2 |
 | footer-anchor | 1 |
 | lead-form | 1 |
 | noscript | 1 |
+| raw | 1 |
 | runtime-partials | 1 |
 
 
@@ -30,7 +31,7 @@
 | Мобильные контактные элементы | mobile-contact | 486 B | 0 | no | src/pages/microwaves/sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Noscript fallback | noscript | 208 B | 0 | no | src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html |
 | HTML-фрагмент | raw | 54 B | 0 | no | src/pages/microwaves/sections/003-raw-html-fragment.html |
-| HTML-фрагмент | raw | 52 B | 0 | no | src/pages/microwaves/sections/002-raw-html-fragment.html |
+| HTML-фрагмент | layout-fragment | 52 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-805e06bac153.template.html |
 | Подключение partials-injector | runtime-partials | 51 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html |
 | Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
 | Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |

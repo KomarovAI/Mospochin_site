@@ -7,7 +7,7 @@
 - H1: Ремонт ресторанного оборудования в Москве без простоя и сюрпризов по цене
 - Canonical: https://mospochin.ru/
 - Builder model: src/pages/index/page.json
-- Sections: 27 (22 local, 0 shared refs, 3 raw)
+- Sections: 27 (20 local, 0 shared refs, 1 raw)
 - Text words inside referenced sections: 1179
 
 ## Component mix
@@ -17,13 +17,14 @@
 | mobile-contact | 6 |
 | pricing | 5 |
 | proof | 5 |
-| raw | 3 |
+| layout-fragment | 2 |
 | contact-cta | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
+| raw | 1 |
 | runtime-partials | 1 |
 | section | 1 |
 

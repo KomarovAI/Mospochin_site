@@ -7,14 +7,14 @@
 - H1: Ремонт пароконвектоматов Convotherm
 - Canonical: https://mospochin.ru/parokonvektomat-convotherm.html
 - Builder model: src/pages/parokonvektomat-convotherm/page.json
-- Sections: 74 (47 local, 20 shared refs, 36 raw)
+- Sections: 74 (13 local, 20 shared refs, 2 raw)
 - Text words inside referenced sections: 2241
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 36 |
+| layout-fragment | 34 |
 | proof | 10 |
 | pricing | 9 |
 | mobile-contact | 3 |
@@ -22,6 +22,7 @@
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
+| raw | 2 |
 | section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |

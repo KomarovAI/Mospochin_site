@@ -7,7 +7,7 @@
 - H1: О компании MosPochin
 - Canonical: https://mospochin.ru/about.html
 - Builder model: src/pages/about/page.json
-- Sections: 25 (20 local, 0 shared refs, 3 raw)
+- Sections: 25 (18 local, 0 shared refs, 1 raw)
 - Text words inside referenced sections: 755
 
 ## Component mix
@@ -16,7 +16,7 @@
 | --- | --- |
 | proof | 9 |
 | mobile-contact | 4 |
-| raw | 3 |
+| layout-fragment | 2 |
 | breadcrumb | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
@@ -24,6 +24,7 @@
 | lead-form | 1 |
 | noscript | 1 |
 | pricing | 1 |
+| raw | 1 |
 | runtime-partials | 1 |
 | section | 1 |
 

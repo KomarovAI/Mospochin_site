@@ -1,7 +1,7 @@
 # Component Digest — globalNavigation
 
 - Name: Глобальная навигация / header
-- Appears in: 37 pages
+- Appears in: 39 pages
 - Keywords: меню, навигац, header, шапка, nav
 - CSS selectors: nav, .mobile-menu, [data-mobile-menu], .btn-click
 - JS hooks: mobile-menu, DOMContentLoaded
@@ -42,4 +42,4 @@
 - parokonvektomat-electrolux.html
 - parokonvektomat-kod-oshibki.html
 - parokonvektomat-lainox.html
-- … ещё 17
+- … ещё 19

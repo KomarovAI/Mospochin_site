@@ -7,18 +7,19 @@
 - H1: Стиральная машина не сливает, течёт или шумит? Вернём стирку без лишних замен
 - Canonical: https://mospochin.ru/stiralnye-mashiny.html
 - Builder model: src/pages/stiralnye-mashiny/page.json
-- Sections: 50 (44 local, 1 shared refs, 11 raw)
+- Sections: 50 (40 local, 1 shared refs, 7 raw)
 - Text words inside referenced sections: 2914
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 11 |
 | pricing | 8 |
 | proof | 8 |
 | mobile-contact | 7 |
+| raw | 7 |
 | faq | 4 |
+| layout-fragment | 4 |
 | contact-cta | 2 |
 | lead-form | 2 |
 | related-links | 2 |

@@ -100,6 +100,45 @@ function classifyStaticCoreSection(component, html) {
   }
   return null;
 }
+
+function safeVariantSlug(value) {
+  const stripped = String(value)
+    .replace(/<!--|-->/g, ' ')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/[^a-zA-Zа-яА-Я0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .toLowerCase();
+  return stripped.slice(0, 48) || 'technical-fragment';
+}
+
+function buildRepeatedRawIndex(models) {
+  const counts = new Map();
+  for (const { model, path } of models) {
+    for (const section of model.sections || []) {
+      if (section.component !== 'raw' || section.componentMode === 'parametric' || !section.file) continue;
+      const html = readSectionContent(path, section);
+      const bytes = Buffer.byteLength(html, 'utf8');
+      if (bytes > 256) continue;
+      const current = counts.get(html) || { html, bytes, refs: 0 };
+      current.refs += 1;
+      counts.set(html, current);
+    }
+  }
+  return new Map([...counts.values()].filter((item) => item.refs >= 3).map((item) => [item.html, item]));
+}
+
+function classifyRepeatedRawSection(component, html, repeatedRawIndex) {
+  if (component !== 'raw') return null;
+  const item = repeatedRawIndex.get(html);
+  if (!item) return null;
+  const hash = hashContent(html).slice(0, 12);
+  const variant = `${safeVariantSlug(html)}-${hash}`;
+  return {
+    component: 'layout-fragment',
+    variant,
+    templateRef: `src/components/parametric/static/layout-fragment-${variant}.template.html`,
+  };
+}
 function ensureComponentFiles(templateSource = null, firstProps = null) {
   if (!existsSync(abs(LEAD_TEMPLATE)) && templateSource && firstProps) write(LEAD_TEMPLATE, makeLeadTemplateFromHtml(templateSource, firstProps));
   if (!existsSync(abs(LEAD_TEMPLATE))) throw new Error(`${LEAD_TEMPLATE} не создан`);
@@ -128,8 +167,8 @@ function ensureComponentFiles(templateSource = null, firstProps = null) {
   write(STATIC_CONTRACT, JSON.stringify({
     schemaVersion: 1,
     component: 'static-core',
-    variants: ['noscript/yandex-metrika-pixel', 'runtime-partials/partials-injector-script', 'footer-anchor/footer-container-mount', 'breadcrumb/breadcrumb-marker'],
-    intent: 'Lossless parametric wrappers for tiny repeated technical sections. They remove page-local section files without changing rendered HTML bytes.',
+    variants: ['noscript/yandex-metrika-pixel', 'runtime-partials/partials-injector-script', 'footer-anchor/footer-container-mount', 'breadcrumb/breadcrumb-marker', 'layout-fragment/repeated-static'],
+    intent: 'Lossless parametric wrappers for tiny repeated technical and layout sections. They remove page-local section files without changing rendered HTML bytes.',
     editPolicy: 'Do not edit per-page generated root HTML. Change these templates only when the global technical mount/pixel/marker contract intentionally changes.',
     aiNotes: [
       'These templates intentionally preserve whitespace byte-for-byte; similar variants can differ only by surrounding newlines/spaces.',
@@ -230,6 +269,7 @@ function applyParameterization() {
     if (firstTemplateHtml) break;
   }
   ensureComponentFiles(firstTemplateHtml, firstProps);
+  const repeatedRawIndex = buildRepeatedRawIndex(models);
 
   for (const { model, path } of models) {
     let changed = false;
@@ -279,6 +319,24 @@ function applyParameterization() {
           changed = true;
           continue;
         }
+      }
+      const repeatedRawSection = classifyRepeatedRawSection(section.component, html, repeatedRawIndex);
+      if (repeatedRawSection) {
+        write(repeatedRawSection.templateRef, html);
+        section.component = repeatedRawSection.component;
+        section.componentMode = 'parametric';
+        section.componentScope = 'parametric-static';
+        section.variant = repeatedRawSection.variant;
+        section.templateRef = repeatedRawSection.templateRef;
+        section.props = {};
+        section.sourceFile = section.sourceFile || section.file;
+        delete section.file;
+        delete section.componentRef;
+        removeProjectFile(originalPath);
+        migratedStatic += 1;
+        staticCounts.set(section.component, (staticCounts.get(section.component) || 0) + 1);
+        changed = true;
+        continue;
       }
       const staticSection = classifyStaticCoreSection(section.component, html);
       if (staticSection) {

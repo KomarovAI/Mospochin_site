@@ -7,14 +7,15 @@
 - H1: Ремонт холодильного оборудования в Москве до того, как продукты и смена уйдут в минус
 - Canonical: https://mospochin.ru/holodilnoe-oborudovanie.html
 - Builder model: src/pages/holodilnoe-oborudovanie/page.json
-- Sections: 64 (56 local, 2 shared refs, 26 raw)
+- Sections: 64 (43 local, 2 shared refs, 13 raw)
 - Text words inside referenced sections: 2246
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 26 |
+| layout-fragment | 13 |
+| raw | 13 |
 | pricing | 11 |
 | proof | 10 |
 | mobile-contact | 3 |

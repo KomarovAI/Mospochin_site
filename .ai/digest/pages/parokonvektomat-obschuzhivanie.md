@@ -7,15 +7,16 @@
 - H1: Техническое обслуживание пароконвектоматов
 - Canonical: https://mospochin.ru/parokonvektomat-obschuzhivanie.html
 - Builder model: src/pages/parokonvektomat-obschuzhivanie/page.json
-- Sections: 30 (26 local, 0 shared refs, 13 raw)
+- Sections: 30 (23 local, 0 shared refs, 10 raw)
 - Text words inside referenced sections: 1249
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 13 |
+| raw | 10 |
 | section | 4 |
+| layout-fragment | 3 |
 | pricing | 3 |
 | breadcrumb | 2 |
 | faq | 2 |

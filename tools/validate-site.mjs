@@ -31,6 +31,7 @@ const RESTAURANT_PROOF_LAYER_DATA = 'data/restaurant-proof-layer.json';
 const RESTAURANT_TAXONOMY_DATA = 'data/restaurant-taxonomy.json';
 const RESTAURANT_PAGE_POLICY_DATA = 'data/restaurant-page-policy.json';
 const SITE_PAGE_CONTRACTS_DATA = 'data/site-page-contracts.json';
+const DIRECT_LANDING_PAGES_DATA = 'data/direct-landing-pages.json';
 const CONTACT_CONFIG_DATA = 'data/contact-config.json';
 const SCHEMA_PROFILE_DATA = 'data/schema-profile.json';
 const SCREENSHOT_AUDIT_DATA = 'data/screenshot-audit.json';
@@ -175,6 +176,10 @@ const docsContracts = fs.existsSync(docsContractsPath)
 const operatorRecipesPath = path.join(SITE_ROOT, OPERATOR_RECIPES_DATA);
 const operatorRecipes = fs.existsSync(operatorRecipesPath)
   ? JSON.parse(fs.readFileSync(operatorRecipesPath, 'utf8'))
+  : null;
+const directLandingPagesPath = path.join(SITE_ROOT, DIRECT_LANDING_PAGES_DATA);
+const directLandingPages = fs.existsSync(directLandingPagesPath)
+  ? JSON.parse(fs.readFileSync(directLandingPagesPath, 'utf8'))
   : null;
 const packageJson = JSON.parse(fs.readFileSync(path.join(SITE_ROOT, 'package.json'), 'utf8'));
 const sitemapXml = fs.readFileSync(path.join(SITE_ROOT, 'sitemap.xml'), 'utf8');
@@ -861,10 +866,12 @@ function getExpectedBranchPageKind(fileName) {
   const householdBranchPages = new Set(householdPagePolicy?.sharedCardSlots?.branchPages ?? []);
   const restaurantServicePages = new Set((restaurantServicesRegistry?.services ?? []).map((service) => service.page));
   const householdServicePages = new Set((householdServicesRegistry?.services ?? []).map((service) => service.page));
+  const directRestaurantPages = new Set((directLandingPages?.pages ?? []).map((page) => page.file));
   const isHouseholdBranchPage = householdBranchPages.has(fileName) || fileName.startsWith('bytovaya-');
   const memberships = [
     restaurantBranchPages.has(fileName) ? 'restaurant branch page' : null,
     restaurantServicePages.has(fileName) ? 'restaurant service registry' : null,
+    directRestaurantPages.has(fileName) ? 'restaurant direct landing' : null,
     isHouseholdBranchPage ? 'household branch page' : null,
     householdServicePages.has(fileName) ? 'household service registry' : null,
   ].filter(Boolean);
@@ -875,6 +882,7 @@ function getExpectedBranchPageKind(fileName) {
 
   if (restaurantBranchPages.has(fileName)) return { branch: 'restaurant', kind: 'branch' };
   if (restaurantServicePages.has(fileName)) return { branch: 'restaurant', kind: 'service' };
+  if (directRestaurantPages.has(fileName)) return { branch: 'restaurant', kind: 'direct' };
   if (isHouseholdBranchPage) return { branch: 'household', kind: 'branch' };
   if (householdServicePages.has(fileName)) return { branch: 'household', kind: 'service' };
   return { branch: 'neutral', kind: 'neutral' };
@@ -912,14 +920,25 @@ function validatePageBranchConsistency() {
       if (!bodyClasses.has('branch-restaurant')) {
         errors.push(`${fileName}: restaurant page must include body class branch-restaurant`);
       }
-      const pageKindClass = expected.kind === 'branch' ? 'page-restaurant-branch' : 'page-restaurant-service';
-      const oppositeKindClass = expected.kind === 'branch' ? 'page-restaurant-service' : 'page-restaurant-branch';
-      if (!bodyClasses.has(pageKindClass)) {
-        errors.push(`${fileName}: restaurant ${expected.kind} page must include body class ${pageKindClass}`);
+
+      if (expected.kind === 'direct') {
+        if (!bodyClasses.has('page-direct-landing')) {
+          errors.push(`${fileName}: restaurant direct page must include body class page-direct-landing`);
+        }
+        if (bodyClasses.has('page-restaurant-branch') || bodyClasses.has('page-restaurant-service')) {
+          errors.push(`${fileName}: restaurant direct page must not include branch/service body classes`);
+        }
+      } else {
+        const pageKindClass = expected.kind === 'branch' ? 'page-restaurant-branch' : 'page-restaurant-service';
+        const oppositeKindClass = expected.kind === 'branch' ? 'page-restaurant-service' : 'page-restaurant-branch';
+        if (!bodyClasses.has(pageKindClass)) {
+          errors.push(`${fileName}: restaurant ${expected.kind} page must include body class ${pageKindClass}`);
+        }
+        if (bodyClasses.has(oppositeKindClass)) {
+          errors.push(`${fileName}: restaurant ${expected.kind} page must not include body class ${oppositeKindClass}`);
+        }
       }
-      if (bodyClasses.has(oppositeKindClass)) {
-        errors.push(`${fileName}: restaurant ${expected.kind} page must not include body class ${oppositeKindClass}`);
-      }
+
       if (hasHouseholdClass) {
         errors.push(`${fileName}: restaurant page must not include household body classes`);
       }

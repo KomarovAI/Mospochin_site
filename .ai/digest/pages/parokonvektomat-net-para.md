@@ -1,27 +1,28 @@
 # Page Digest — parokonvektomat-net-para.html
 
-- Branch: neutral
-- Role: neutral
+- Branch: restaurant
+- Role: branch
 - Title: Нет пара в пароконвектомате — ремонт на объекте | MosPochin
 - Description: Пароконвектомат не подаёт пар или не держит влажность: проверка воды, клапанов, парогенератора, накипи и датчиков. Выезд инженера для ресторанов.
 - H1: В пароконвектомате нет пара
 - Canonical: https://mospochin.ru/parokonvektomat-net-para.html
 - Builder model: src/pages/parokonvektomat-net-para/page.json
-- Sections: 76 (48 local, 21 shared refs, 36 raw)
-- Text words inside referenced sections: 2455
+- Sections: 74 (12 local, 21 shared refs, 2 raw)
+- Text words inside referenced sections: 2245
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 36 |
-| pricing | 11 |
+| layout-fragment | 34 |
+| pricing | 10 |
 | proof | 9 |
-| mobile-contact | 4 |
+| mobile-contact | 3 |
 | related-links | 3 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
+| raw | 2 |
 | section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
@@ -34,7 +35,6 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Почему нет пара или не держит влажность | pricing | 13.6 KB | 210 | no | src/pages/parokonvektomat-net-para/sections/013-pricing-pochemu-net-para-ili-ne-derzhit-vlazhnost.html |
 | В пароконвектомате нет пара | hero | 11.1 KB | 95 | no | src/pages/parokonvektomat-net-para/sections/007-hero-v-parokonvektomate-net-para.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
@@ -42,6 +42,7 @@
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 242 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
+| Цены на ремонт пароконвектоматов | pricing | 6.1 KB | 163 | yes | src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html |
 
 
 ## Editable source files
@@ -49,6 +50,8 @@
 - data/page-metadata.json
 - data/contact-config.json
 - data/runtime-config.json
+- data/restaurant-branch.json
+- data/restaurant-page-policy.json
 - parokonvektomat-net-para.html
 - src/site-builder.json
 - src/pages/parokonvektomat-net-para/page.json

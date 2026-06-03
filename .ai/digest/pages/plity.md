@@ -7,7 +7,7 @@
 - H1: Плита не греет, искрит или пахнет газом? Починим дома без навязанных замен
 - Canonical: https://mospochin.ru/plity.html
 - Builder model: src/pages/plity/page.json
-- Sections: 48 (40 local, 3 shared refs, 8 raw)
+- Sections: 48 (33 local, 3 shared refs, 1 raw)
 - Text words inside referenced sections: 2855
 
 ## Component mix
@@ -16,7 +16,7 @@
 | --- | --- |
 | pricing | 12 |
 | proof | 9 |
-| raw | 8 |
+| layout-fragment | 7 |
 | contact-cta | 4 |
 | faq | 3 |
 | mobile-contact | 3 |
@@ -26,6 +26,7 @@
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
+| raw | 1 |
 | runtime-partials | 1 |
 | section | 1 |
 

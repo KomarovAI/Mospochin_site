@@ -7,7 +7,7 @@
 - H1: Ремонт плит и печей в Москве без простоя кухни и без хаоса по смете
 - Canonical: https://mospochin.ru/plity-pechi.html
 - Builder model: src/pages/plity-pechi/page.json
-- Sections: 34 (29 local, 0 shared refs, 3 raw)
+- Sections: 34 (27 local, 0 shared refs, 1 raw)
 - Text words inside referenced sections: 2314
 
 ## Component mix
@@ -20,13 +20,14 @@
 | section | 4 |
 | faq | 3 |
 | mobile-contact | 3 |
-| raw | 3 |
 | related-links | 3 |
+| layout-fragment | 2 |
 | breadcrumb | 1 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
+| raw | 1 |
 | runtime-partials | 1 |
 
 

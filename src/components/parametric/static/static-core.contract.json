@@ -5,9 +5,10 @@
     "noscript/yandex-metrika-pixel",
     "runtime-partials/partials-injector-script",
     "footer-anchor/footer-container-mount",
-    "breadcrumb/breadcrumb-marker"
+    "breadcrumb/breadcrumb-marker",
+    "layout-fragment/repeated-static"
   ],
-  "intent": "Lossless parametric wrappers for tiny repeated technical sections. They remove page-local section files without changing rendered HTML bytes.",
+  "intent": "Lossless parametric wrappers for tiny repeated technical and layout sections. They remove page-local section files without changing rendered HTML bytes.",
   "editPolicy": "Do not edit per-page generated root HTML. Change these templates only when the global technical mount/pixel/marker contract intentionally changes.",
   "aiNotes": [
     "These templates intentionally preserve whitespace byte-for-byte; similar variants can differ only by surrounding newlines/spaces.",

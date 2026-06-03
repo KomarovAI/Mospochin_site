@@ -1,28 +1,29 @@
 # Page Digest — remont-oborudovaniya-restorana-parokonvektomat.html
 
-- Branch: neutral
-- Role: neutral
-- Title: Ремонт кухни ресторана — Rational, Unox, Abat | MosPochin
+- Branch: restaurant
+- Role: branch
+- Title: Ремонт кухни ресторана — пароконвектоматы Rational, Unox, Abat | MosPochin
 - Description: Рекламная посадочная для B2B-заявок по кухне ресторана: пароконвектоматы Rational, Unox, Abat, ошибки, нагрев, пар, срочный выезд, договор и безнал.
 - H1: Ремонт кухни ресторана: пароконвектоматы
 - Canonical: https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html
 - Builder model: src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json
-- Sections: 77 (47 local, 23 shared refs, 29 raw)
-- Text words inside referenced sections: 2641
+- Sections: 74 (12 local, 21 shared refs, 2 raw)
+- Text words inside referenced sections: 2241
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 29 |
-| pricing | 14 |
+| layout-fragment | 34 |
+| pricing | 10 |
 | proof | 9 |
-| related-links | 5 |
-| section | 5 |
-| mobile-contact | 4 |
+| mobile-contact | 3 |
+| related-links | 3 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
+| raw | 2 |
+| section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
@@ -34,14 +35,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем все марки пароконвектоматов | pricing | 17.9 KB | 83 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/047-pricing-remontiruem-vse-marki-parokonvektomatov.html |
-| Ремонтируем все марки пароконвектоматов | pricing | 15.8 KB | 98 | yes | src/components/shared/pricing/pricing-remontiruem-vse-marki-parokonvektomatov--c77131be6eeae042.html |
-| Ремонт кухни ресторана: пароконвектоматы | hero | 11.3 KB | 95 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/007-hero-remont-kuhni-restorana-parokonvektomaty.html |
+| Ремонт кухни ресторана: пароконвектоматы | hero | 11.2 KB | 95 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/007-hero-remont-kuhni-restorana-parokonvektomaty.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.5 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 242 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html |
+| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
+| Цены на ремонт пароконвектоматов | pricing | 6.1 KB | 163 | yes | src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html |
 
 
 ## Editable source files
@@ -49,6 +50,8 @@
 - data/page-metadata.json
 - data/contact-config.json
 - data/runtime-config.json
+- data/restaurant-branch.json
+- data/restaurant-page-policy.json
 - remont-oborudovaniya-restorana-parokonvektomat.html
 - src/site-builder.json
 - src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json

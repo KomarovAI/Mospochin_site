@@ -7,14 +7,15 @@
 - H1: Грили или фритюрница встали? Починим за 1-3 часа
 - Canonical: https://mospochin.ru/grili-mangaly.html
 - Builder model: src/pages/grili-mangaly/page.json
-- Sections: 61 (53 local, 2 shared refs, 25 raw)
+- Sections: 61 (42 local, 2 shared refs, 14 raw)
 - Text words inside referenced sections: 1864
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 25 |
+| raw | 14 |
+| layout-fragment | 11 |
 | proof | 11 |
 | pricing | 6 |
 | mobile-contact | 3 |

@@ -7,17 +7,18 @@
 - H1: Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен
 - Canonical: https://mospochin.ru/kompyutery.html
 - Builder model: src/pages/kompyutery/page.json
-- Sections: 55 (46 local, 4 shared refs, 19 raw)
+- Sections: 55 (42 local, 4 shared refs, 15 raw)
 - Text words inside referenced sections: 2260
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 19 |
+| raw | 15 |
 | pricing | 12 |
 | proof | 6 |
 | mobile-contact | 5 |
+| layout-fragment | 4 |
 | contact-cta | 3 |
 | faq | 3 |
 | breadcrumb | 1 |

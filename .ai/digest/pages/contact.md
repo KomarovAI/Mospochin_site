@@ -7,14 +7,15 @@
 - H1: Связаться с MosPochin и быстро решить вопрос с ремонтом
 - Canonical: https://mospochin.ru/contact.html
 - Builder model: src/pages/contact/page.json
-- Sections: 39 (33 local, 0 shared refs, 17 raw)
+- Sections: 39 (25 local, 0 shared refs, 9 raw)
 - Text words inside referenced sections: 660
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 17 |
+| raw | 9 |
+| layout-fragment | 8 |
 | mobile-contact | 4 |
 | contact-cta | 3 |
 | proof | 3 |

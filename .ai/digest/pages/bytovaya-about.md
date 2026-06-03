@@ -7,14 +7,15 @@
 - H1: Помогаем спокойно решить поломку бытовой техники дома.
 - Canonical: https://mospochin.ru/bytovaya-about.html
 - Builder model: src/pages/bytovaya-about/page.json
-- Sections: 49 (43 local, 0 shared refs, 22 raw)
+- Sections: 49 (37 local, 0 shared refs, 16 raw)
 - Text words inside referenced sections: 1206
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 22 |
+| raw | 16 |
+| layout-fragment | 6 |
 | pricing | 6 |
 | proof | 4 |
 | section | 4 |
