@@ -42,7 +42,10 @@ jobs:
         run: npm ci
 
       - name: Validate site
-        run: npm run lint
+        run: |
+          npm run ai:digest
+          npm run analyze:source-complexity
+          npm run lint
 
       - name: Calculate deploy content hash
         run: npm run hash:deploy-content
