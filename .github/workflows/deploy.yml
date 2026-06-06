@@ -5,13 +5,17 @@ on:
     branches: [main]
     paths:
       - "**/*.html"
+      - ".deploy/**"
       - "assets/**"
+      - "content/**"
       - "data/**"
       - "deploy/**"
       - "server/**"
+      - "src/**"
       - "tools/**"
       - "main.js"
       - "telegram-form.js"
+      - "analytics.js"
       - "styles-combined.css"
       - "sitemap.xml"
       - "package.json"
@@ -37,6 +41,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: npm ci
