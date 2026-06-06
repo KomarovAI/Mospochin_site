@@ -113,7 +113,9 @@
     "audit:ai-overlap": "node tools/audit-ai-overlap.mjs",
     "audit:maintenance": "npm run audit:docs && npm run audit:tools && npm run audit:ai-overlap && npm run audit:unused-assets",
     "deploy:pack": "node tools/deploy-pack.mjs",
-    "check:deploy-pack": "npm run generate:deploy-manifest && npm run hash:deploy-content && npm run deploy:pack"
+    "check:deploy-pack": "npm run generate:deploy-manifest && npm run hash:deploy-content && npm run deploy:pack",
+    "check:repo-budget": "node tools/check-repo-budget.mjs",
+    "check:deploy": "node tools/check-deploy.mjs"
   },
   "devDependencies": {
     "playwright": "^1.59.1"

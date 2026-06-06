@@ -1,0 +1,63 @@
+{
+  "max_tracked_worktree_mb": 45,
+  "max_assets_mb": 28,
+  "max_assets_images_mb": 26,
+  "max_deploy_manifest_mb": 19,
+  "max_single_asset_mb": 1.2,
+  "required_manifest_files": [
+    "index.html",
+    "styles-combined.css",
+    "main.js",
+    "telegram-form.js",
+    "analytics.js",
+    "sitemap.xml",
+    "data/runtime-config.json",
+    "server/telegram-api.mjs",
+    "deploy/post-activate.sh",
+    "tools/generate-public-file-list.mjs",
+    "deploy/systemd/mospochin-telegram-api.service",
+    "deploy/env/telegram.env.example"
+  ],
+  "manifest_forbidden_patterns": [
+    "docs/",
+    "reports/",
+    ".ai/",
+    "node_modules/",
+    "dist/",
+    "coverage/",
+    "playwright-report/",
+    "test-results/",
+    ".cache/",
+    ".parcel-cache/",
+    "*.zip",
+    "*.tar",
+    "*.tar.gz",
+    "*.tgz",
+    "*.7z",
+    "*.rar",
+    ".env",
+    ".env.*"
+  ],
+  "manifest_forbidden_allowlist": [
+    "tools/generate-public-file-list.mjs",
+    "deploy/env/telegram.env.example"
+  ],
+  "forbidden_tracked_patterns": [
+    "node_modules/",
+    "dist/",
+    "coverage/",
+    "playwright-report/",
+    "test-results/",
+    ".cache/",
+    ".parcel-cache/",
+    "reports/deploy/*.md",
+    "*.zip",
+    "*.tar",
+    "*.tar.gz",
+    "*.tgz",
+    "*.7z",
+    "*.rar",
+    ".env",
+    ".env.*"
+  ]
+}
