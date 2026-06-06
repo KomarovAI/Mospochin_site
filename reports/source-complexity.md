@@ -8,8 +8,8 @@
 | --- | --- |
 | Root HTML pages | 39 |
 | Builder pages | 39 |
-| src/pages files | 1051 |
-| src/pages HTML section files | 1012 |
+| src/pages files | 1165 |
+| src/pages HTML section files | 1126 |
 | Shared component files | 32 |
 | Parametric template files | 63 |
 | Parametric props files | 14 |
@@ -22,7 +22,7 @@
 | Average sections/page | 53.7 |
 | Average source files/page | 57.8 |
 | Root HTML bytes | 4.47 MB |
-| src/pages HTML bytes | 2.91 MB |
+| src/pages HTML bytes | 2.98 MB |
 | Shared HTML bytes | 139.0 KB |
 | Estimated duplicate bytes removed by shared components | 1.28 MB |
 
