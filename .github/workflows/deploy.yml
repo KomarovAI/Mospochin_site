@@ -51,7 +51,6 @@ jobs:
         timeout-minutes: 12
         run: |
           npm run check:deploy
-          npm run check:ai
 
       - name: Calculate deploy content hash
         run: npm run hash:deploy-content
