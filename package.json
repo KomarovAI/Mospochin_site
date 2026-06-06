@@ -115,7 +115,8 @@
     "deploy:pack": "node tools/deploy-pack.mjs",
     "check:deploy-pack": "npm run generate:deploy-manifest && npm run hash:deploy-content && npm run deploy:pack",
     "check:repo-budget": "node tools/check-repo-budget.mjs",
-    "check:deploy": "node tools/check-deploy.mjs"
+    "check:deploy": "node tools/check-deploy.mjs",
+    "check:public-deploy": "node tools/check-public-deploy.mjs"
   },
   "devDependencies": {
     "playwright": "^1.59.1"

@@ -138,6 +138,15 @@ jobs:
             retry_curl "HEAD https://mospochin.ru/${asset}" -I "https://mospochin.ru/${asset}"
           done
 
+      - name: Verify public deploy metadata
+        timeout-minutes: 2
+        run: |
+          if [ "${{ steps.deploy_hash.outputs.skip }}" = "true" ]; then
+            REQUIRE_DEPLOY_COMMIT=false npm run check:public-deploy
+          else
+            EXPECT_DEPLOY_COMMIT="${GITHUB_SHA}" REQUIRE_DEPLOY_COMMIT=true npm run check:public-deploy
+          fi
+
       - name: Verify cache and compression contract
         timeout-minutes: 2
         run: |
