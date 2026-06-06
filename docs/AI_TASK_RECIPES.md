@@ -204,3 +204,74 @@ npm run ai:check
 ## FAQ Registry note
 
 FAQ теперь индексируется в `content/faq/page-faq-registry.json`, а generated FAQPage JSON-LD лежит в `content/faq/schema/*.json` и вставляется в head через `data-generated="faq-registry"`. После правок FAQ запускать `npm run generate:faq-registry`, затем `npm run build:site -- --write` и `npm run check:faq-registry`.
+
+---
+
+## Править пароконвектоматный кластер
+
+1. Открой кластерный гайд:
+
+```bash
+cat docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md
+cat data/parokonvektomat-conversion-pages.json
+```
+
+2. Для конкретной страницы открой digest и source:
+
+```bash
+npm run ai:context -- --page parokonvektomat-rational.html
+cat .ai/digest/pages/parokonvektomat-rational.md
+```
+
+3. Не создавай новые P1/P2-страницы без статистики. Сначала проверь, можно ли усилить существующую страницу.
+
+4. После правки:
+
+```bash
+npm run check:conversion-ui
+npm run verify:fast
+```
+
+## Добавить или изменить related links в пароконвектоматах
+
+Direct-страницы:
+
+```bash
+# правь data/direct-landing-pages.json
+npm run generate:direct-landings
+npm run check:conversion-ui
+```
+
+Старые source-страницы:
+
+```bash
+# правь src/pages/<slug>/sections/*
+npm run build:site -- --page <file.html> --write
+npm run check:conversion-ui
+```
+
+Правила: не добавлять self-link, не вести на 404, держать 8–12 релевантных ссылок на странице.
+
+## Добавить умеренный блок поломок
+
+Не писать справочник. Формат карточки:
+
+```text
+Симптом / ошибка
+Как проявляется
+Что может быть
+Что сделать
+```
+
+После правки direct-страницы обновить генератор/manifest, чтобы блок не слетел при следующем `npm run generate:direct-landings`.
+
+## Сделать AI handoff после правки
+
+```bash
+npm run ai:doctor
+npm run ai:changed
+cat docs/AI_CHANGE_CHECKLIST.md
+```
+
+В ответе указать: изменённые слои, команды, known warnings, manual visual review.
+

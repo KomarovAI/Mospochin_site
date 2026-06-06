@@ -68,6 +68,20 @@ function setRobots(html, robots) {
   return html.replace(/<meta name="robots" content="[^"]*">\s*/, '');
 }
 
+
+function updateFaqRegistrySchema(html, page) {
+  const canonical = canonicalFor(page.file);
+  const pattern = /(<script type="application\/ld\+json" data-generated="faq-registry">)([\s\S]*?)(<\/script>)/;
+  const match = html.match(pattern);
+  if (!match) return html;
+
+  let schema = match[2];
+  schema = schema.replace(/("@id":\s*")[^"]*("\s*,)/, `$1${escapeAttr(`${canonical}#faq`)}$2`);
+  schema = schema.replace(/("url":\s*")[^"]*("\s*,)/, `$1${escapeAttr(canonical)}$2`);
+  schema = schema.replace(/("name":\s*")[^"]*("\s*,)/, `$1${escapeAttr(page.title)}$2`);
+  return html.replace(pattern, `${match[1]}${schema}${match[3]}`);
+}
+
 function updateJsonLdDescription(html, description) {
   const escaped = JSON.stringify(description);
   return replaceOrThrow(
@@ -194,6 +208,55 @@ function updateMobileSticky(html, page) {
   return html.replace(blockPattern, block);
 }
 
+
+function renderFaultDetails(page) {
+  const details = page.faultDetails;
+  if (!details || !Array.isArray(details.cards) || details.cards.length === 0) return '';
+
+  const cards = details.cards.map((card) => `
+                <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <h3 class="font-display text-lg font-extrabold text-brand-blue">${escapeHtml(card.title)}</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600"><strong>Как проявляется:</strong> ${escapeHtml(card.symptom)}</p>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600"><strong>Что может быть:</strong> ${escapeHtml(card.cause)}</p>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600"><strong>Что сделать:</strong> ${escapeHtml(card.action)}</p>
+                </article>`).join('');
+
+  return `
+            <div class="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-5 lg:p-6 shadow-sm" data-seo-block="fault-details">
+                <div class="max-w-3xl">
+                    <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-brand-orange">${escapeHtml(details.eyebrow || 'Ошибки и поломки')}</p>
+                    <h3 class="mt-2 font-display text-xl sm:text-2xl font-extrabold text-brand-blue">${escapeHtml(details.title)}</h3>
+                    <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">${escapeHtml(details.intro)}</p>
+                </div>
+                <div class="mt-5 grid gap-4 md:grid-cols-2">
+${cards}
+                </div>
+            </div>`;
+}
+
+function renderBrandDetails(page) {
+  const details = page.brandDetails;
+  if (!details || !Array.isArray(details.cards) || details.cards.length === 0) return '';
+
+  const cards = details.cards.map((card) => `
+                <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <h3 class="font-display text-lg font-extrabold text-brand-blue">${escapeHtml(card.title)}</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">${escapeHtml(card.text)}</p>
+                </article>`).join('');
+
+  return `
+            <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-5 lg:p-6 shadow-sm" data-seo-block="brand-context">
+                <div class="max-w-3xl">
+                    <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-brand-orange">${escapeHtml(details.eyebrow || 'По бренду')}</p>
+                    <h3 class="mt-2 font-display text-xl sm:text-2xl font-extrabold text-brand-blue">${escapeHtml(details.title)}</h3>
+                    <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">${escapeHtml(details.intro)}</p>
+                </div>
+                <div class="mt-5 grid gap-4 md:grid-cols-3">
+${cards}
+                </div>
+            </div>`;
+}
+
 function renderRelatedLinks(page) {
   if (!Array.isArray(page.relatedLinks) || page.relatedLinks.length === 0) return '';
 
@@ -230,7 +293,7 @@ function renderAnalysisSection(page) {
             </div>
             <div class="grid gap-4 md:grid-cols-3">
 ${cards}
-            </div>${renderRelatedLinks(page)}
+            </div>${renderFaultDetails(page)}${renderBrandDetails(page)}${renderRelatedLinks(page)}
         </div>
     </section>
 <!-- direct-landing-analysis:end -->`;
@@ -268,6 +331,7 @@ function updateHead(html, page) {
   );
   updated = setRobots(updated, page.robots);
   updated = updateJsonLdDescription(updated, page.description);
+  updated = updateFaqRegistrySchema(updated, page);
   return updated;
 }
 

@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "plity-pechi.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "27239ea665726b634f417822e2d2cd4490bd2facd0a4161bd720101ec52a2b49",
+    "hash": "701995610246c2b302908bf269ea691809b1c1843ce20f6c6b7bd988e90d2dda",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -332,8 +332,8 @@
     "npm run doctor:restaurant-page -- --page plity-pechi.html",
     "npm run doctor:page -- --page plity-pechi.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page plity-pechi.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page plity-pechi.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

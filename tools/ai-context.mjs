@@ -129,8 +129,10 @@ function printSummary() {
   console.log('\nPrimary files:');
   for (const [key, value] of Object.entries(index.sourceOfTruth)) console.log(`- ${key}: ${value}`);
   console.log('\nDocs:');
-  console.log('- AI-CONTEXT.md');
-  console.log('- docs/AI_FILE_OWNERSHIP.md');
+  console.log('- docs/AI_START_HERE.md');
+  console.log('- data/project-map.generated.json');
+  console.log('- data/file-ownership.json');
+  console.log('- AI-CONTEXT.md (compatibility stub)');
   console.log('- docs/AI_TASK_RECIPES.md');
   console.log('- docs/PROJECT_DECISIONS.md');
   console.log('- docs/DATA_CONTRACTS.md');

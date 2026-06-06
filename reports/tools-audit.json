@@ -1,0 +1,1537 @@
+{
+  "summary": {
+    "generatedAt": "2026-06-06T08:58:13.069Z",
+    "totalTools": 79,
+    "totalBytes": 732715,
+    "byCategory": {
+      "npmScriptEntry": 68,
+      "importedByTool": 10,
+      "deployUsed": 1
+    },
+    "byAction": {
+      "keep": 79
+    }
+  },
+  "tools": [
+    {
+      "file": "tools/ai-changed.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:changed",
+      "sizeBytes": 2814,
+      "scripts": [
+        "ai:changed"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/ai-check.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:check",
+      "sizeBytes": 6373,
+      "scripts": [
+        "ai:check"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/ai-context.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:context",
+      "sizeBytes": 6409,
+      "scripts": [
+        "ai:context"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/data-contract-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/ai-edit.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:price, ai:text, ai:faq-add, ai:contact, ai:help",
+      "sizeBytes": 5728,
+      "scripts": [
+        "ai:price",
+        "ai:text",
+        "ai:faq-add",
+        "ai:contact",
+        "ai:help"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/ai-impact.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:impact",
+      "sizeBytes": 2860,
+      "scripts": [
+        "ai:impact"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/ai-semantic-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/ai-check.mjs"
+      ]
+    },
+    {
+      "file": "tools/ai-maintenance-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/ai-changed.mjs, tools/ai-check.mjs, tools/ai-context.mjs, tools/ai-impact.mjs, tools/ai-review.mjs",
+      "sizeBytes": 8213,
+      "scripts": [],
+      "importedBy": [
+        "tools/ai-changed.mjs",
+        "tools/ai-check.mjs",
+        "tools/ai-context.mjs",
+        "tools/ai-impact.mjs",
+        "tools/ai-review.mjs",
+        "tools/ai-semantic-diff.mjs",
+        "tools/ai-semantic-lib.mjs",
+        "tools/ai-workspace.mjs",
+        "tools/analyze-source-complexity.mjs",
+        "tools/build-site.mjs",
+        "tools/check-scale-policy.mjs",
+        "tools/data-contract-lib.mjs",
+        "tools/generate-ai-component-map.mjs",
+        "tools/generate-ai-digest.mjs",
+        "tools/generate-ai-index.mjs",
+        "tools/generate-faq-registry.mjs",
+        "tools/site-builder-bootstrap.mjs",
+        "tools/site-builder-extract-shared.mjs",
+        "tools/site-builder-lib.mjs",
+        "tools/site-builder-parameterize-core.mjs",
+        "tools/source-compression-lib.mjs",
+        "tools/validate-data.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "tools/ai-changed.mjs",
+        "tools/ai-check.mjs",
+        "tools/ai-context.mjs",
+        "tools/ai-impact.mjs",
+        "tools/ai-review.mjs",
+        "tools/ai-semantic-diff.mjs",
+        "tools/ai-semantic-lib.mjs",
+        "tools/ai-workspace.mjs",
+        "tools/analyze-source-complexity.mjs",
+        "tools/build-site.mjs",
+        "tools/check-scale-policy.mjs",
+        "tools/data-contract-lib.mjs",
+        "tools/generate-ai-component-map.mjs",
+        "tools/generate-ai-digest.mjs",
+        "tools/generate-ai-index.mjs",
+        "tools/generate-faq-registry.mjs",
+        "tools/site-builder-bootstrap.mjs",
+        "tools/site-builder-extract-shared.mjs",
+        "tools/site-builder-lib.mjs",
+        "tools/site-builder-parameterize-core.mjs"
+      ]
+    },
+    {
+      "file": "tools/ai-review.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:review",
+      "sizeBytes": 3619,
+      "scripts": [
+        "ai:review"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/ai-semantic-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/ai-check.mjs"
+      ]
+    },
+    {
+      "file": "tools/ai-semantic-diff.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:semantic-diff",
+      "sizeBytes": 2596,
+      "scripts": [
+        "ai:semantic-diff"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/ai-semantic-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/ai-check.mjs"
+      ]
+    },
+    {
+      "file": "tools/ai-semantic-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/ai-impact.mjs, tools/ai-review.mjs, tools/ai-semantic-diff.mjs, tools/ai-workspace.mjs, tools/generate-ai-component-map.mjs",
+      "sizeBytes": 24350,
+      "scripts": [],
+      "importedBy": [
+        "tools/ai-impact.mjs",
+        "tools/ai-review.mjs",
+        "tools/ai-semantic-diff.mjs",
+        "tools/ai-workspace.mjs",
+        "tools/generate-ai-component-map.mjs"
+      ],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        "tools/ai-check.mjs",
+        "tools/ai-impact.mjs",
+        "tools/ai-review.mjs",
+        "tools/ai-semantic-diff.mjs",
+        "tools/ai-workspace.mjs",
+        "tools/generate-ai-component-map.mjs"
+      ]
+    },
+    {
+      "file": "tools/ai-task-router.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:route",
+      "sizeBytes": 5676,
+      "scripts": [
+        "ai:route"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/AI_PROJECT_OPERATING_GUIDE.md",
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/ai-workspace.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:workspace",
+      "sizeBytes": 7169,
+      "scripts": [
+        "ai:workspace"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/ai-semantic-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/ai-check.mjs"
+      ]
+    },
+    {
+      "file": "tools/analyze-source-complexity.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: analyze:source-complexity, check:source-complexity",
+      "sizeBytes": 1379,
+      "scripts": [
+        "analyze:source-complexity",
+        "check:source-complexity"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/source-compression-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/ai-check.mjs",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/audit-ai-overlap.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:ai-overlap",
+      "sizeBytes": 6914,
+      "scripts": [
+        "audit:ai-overlap"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/audit-assets.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:assets",
+      "sizeBytes": 9024,
+      "scripts": [
+        "audit:assets"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/audit-docs.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:docs",
+      "sizeBytes": 6543,
+      "scripts": [
+        "audit:docs"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/audit-representative-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:representative-pages, audit:restaurant-branch",
+      "sizeBytes": 1788,
+      "scripts": [
+        "audit:representative-pages",
+        "audit:restaurant-branch"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/screenshot-audit-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/audit-screenshots.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:screenshots, audit:restaurant-screenshots, audit:parokonvektomat-screenshots",
+      "sizeBytes": 10296,
+      "scripts": [
+        "audit:screenshots",
+        "audit:restaurant-screenshots",
+        "audit:parokonvektomat-screenshots"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/screenshot-audit-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/audit-representative-pages.mjs",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/audit-tools.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:tools",
+      "sizeBytes": 5788,
+      "scripts": [
+        "audit:tools"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/audit-unused-assets.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:unused-assets, prune:unused-assets",
+      "sizeBytes": 13941,
+      "scripts": [
+        "audit:unused-assets",
+        "prune:unused-assets"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "CHANGELOG_AI.md",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/build-site.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: build:site, check:site-builder",
+      "sizeBytes": 3771,
+      "scripts": [
+        "build:site",
+        "check:site-builder"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/ai-check.mjs",
+        "tools/ai-workspace.mjs",
+        "tools/check-profile.mjs",
+        "tools/doctor-changed-pages.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-conversion-ui.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:conversion-ui",
+      "sizeBytes": 9778,
+      "scripts": [
+        "check:conversion-ui"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-image-budget.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:image-budget",
+      "sizeBytes": 3053,
+      "scripts": [
+        "check:image-budget"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-ownership.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:ownership",
+      "sizeBytes": 3849,
+      "scripts": [
+        "check:ownership"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-profile.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:core, check:ai, check:assets, check:images, check:visual, check:handoff, check:full, check:doctor",
+      "sizeBytes": 3633,
+      "scripts": [
+        "check:core",
+        "check:ai",
+        "check:assets",
+        "check:images",
+        "check:visual",
+        "check:handoff",
+        "check:full",
+        "check:doctor"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "CHANGELOG_AI.md",
+        "data/file-ownership.json",
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/check-scale-policy.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: guard:scale, guard:scale:strict",
+      "sizeBytes": 6856,
+      "scripts": [
+        "guard:scale",
+        "guard:scale:strict"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/source-compression-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/data-contract-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/ai-context.mjs, tools/validate-data.mjs",
+      "sizeBytes": 19756,
+      "scripts": [],
+      "importedBy": [
+        "tools/ai-context.mjs",
+        "tools/validate-data.mjs"
+      ],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        "tools/ai-context.mjs",
+        "tools/validate-data.mjs"
+      ]
+    },
+    {
+      "file": "tools/dev-server.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: dev",
+      "sizeBytes": 3974,
+      "scripts": [
+        "dev"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/SITE_MAINTENANCE_MODEL.md",
+        "package.json",
+        "tools/audit-screenshots.mjs"
+      ]
+    },
+    {
+      "file": "tools/doctor-changed-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: doctor:changed-pages",
+      "sizeBytes": 7349,
+      "scripts": [
+        "doctor:changed-pages"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/doctor-household-page.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: doctor:household-page",
+      "sizeBytes": 20073,
+      "scripts": [
+        "doctor:household-page"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-fallback-sync-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/doctor-changed-pages.mjs",
+        "tools/doctor-page.mjs"
+      ]
+    },
+    {
+      "file": "tools/doctor-page.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: doctor:page",
+      "sizeBytes": 18127,
+      "scripts": [
+        "doctor:page"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/audit-representative-pages.mjs",
+        "tools/doctor-changed-pages.mjs",
+        "tools/doctor-restaurant-page.mjs",
+        "tools/inspect-page.mjs"
+      ]
+    },
+    {
+      "file": "tools/doctor-restaurant-page.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: doctor:restaurant-page",
+      "sizeBytes": 481,
+      "scripts": [
+        "doctor:restaurant-page"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/doctor-changed-pages.mjs"
+      ]
+    },
+    {
+      "file": "tools/extract-content.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: content:extract",
+      "sizeBytes": 4378,
+      "scripts": [
+        "content:extract"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-ai-component-map.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:ai-component-map, check:ai-component-map",
+      "sizeBytes": 14036,
+      "scripts": [
+        "generate:ai-component-map",
+        "check:ai-component-map"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/ai-semantic-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/ai-check.mjs",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-ai-digest.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:digest, check:ai-digest",
+      "sizeBytes": 19738,
+      "scripts": [
+        "ai:digest",
+        "check:ai-digest"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/source-compression-lib.mjs"
+      ],
+      "textReferences": [
+        "CHANGELOG_AI.md",
+        "package.json",
+        "tools/ai-check.mjs",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-ai-index.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:ai-index, check:ai-index",
+      "sizeBytes": 916,
+      "scripts": [
+        "generate:ai-index",
+        "check:ai-index"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        "docs/DATA_CONTRACTS.md",
+        "package.json",
+        "schemas/ai-project-index.schema.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-deploy-manifest.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:deploy-manifest",
+      "sizeBytes": 6890,
+      "scripts": [
+        "generate:deploy-manifest"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/generate-webp-sidecars.mjs",
+        "tools/report-size.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-direct-landings.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:direct-landings",
+      "sizeBytes": 14234,
+      "scripts": [
+        "generate:direct-landings"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "docs/AI_PROJECT_OPERATING_GUIDE.md",
+        "docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md",
+        "package.json",
+        "tools/ai-task-router.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-faq-registry.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:faq-registry, check:faq-registry",
+      "sizeBytes": 16237,
+      "scripts": [
+        "generate:faq-registry",
+        "check:faq-registry"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        ".ai/digest/components/faqAccordion.md",
+        ".ai/digest/components/schemaJsonLd.md",
+        ".ai/digest/content-map.json",
+        "data/ai-component-map.json",
+        "docs/PARAMETERIZED_COMPONENTS.md",
+        "package.json",
+        "tools/ai-check.mjs",
+        "tools/check-profile.mjs",
+        "tools/generate-ai-component-map.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-project-map.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:project-map, check:project-map",
+      "sizeBytes": 7223,
+      "scripts": [
+        "generate:project-map",
+        "check:project-map"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/project-map.generated.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-public-file-list.mjs",
+      "category": "deployUsed",
+      "action": "keep",
+      "reason": "Referenced by deploy/server/workflow files.",
+      "sizeBytes": 1936,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        ".deploy/include-files.txt",
+        ".github/workflows/deploy.yml",
+        "deploy/post-activate.sh",
+        "tools/generate-deploy-manifest.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-responsive-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:responsive-images, check:responsive-images",
+      "sizeBytes": 16095,
+      "scripts": [
+        "generate:responsive-images",
+        "check:responsive-images"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        ".ai/digest/components/responsiveImages.md",
+        ".ai/digest/content-map.json",
+        "data/ai-component-map.json",
+        "package.json",
+        "tools/ai-workspace.mjs",
+        "tools/check-profile.mjs",
+        "tools/generate-ai-component-map.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-sitemap.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:sitemap",
+      "sizeBytes": 2823,
+      "scripts": [
+        "generate:sitemap"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-webp-sidecars.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:webp-sidecars, check:webp-sidecars",
+      "sizeBytes": 6555,
+      "scripts": [
+        "generate:webp-sidecars",
+        "check:webp-sidecars"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        ".ai/digest/components/responsiveImages.md",
+        ".ai/digest/content-map.json",
+        "data/ai-component-map.json",
+        "package.json",
+        "tools/check-profile.mjs",
+        "tools/generate-ai-component-map.mjs"
+      ]
+    },
+    {
+      "file": "tools/handoff-pack.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: handoff:pack",
+      "sizeBytes": 4343,
+      "scripts": [
+        "handoff:pack"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "docs/AI_PROJECT_OPERATING_GUIDE.md",
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/hash-deploy-content.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: hash:deploy-content",
+      "sizeBytes": 1236,
+      "scripts": [
+        "hash:deploy-content"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/household-authoring-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/household-fallback-sync-lib.mjs, tools/household-sync-fallbacks.mjs, tools/set-household-faq.mjs, tools/set-household-form-hints.mjs, tools/set-household-metadata.mjs",
+      "sizeBytes": 4493,
+      "scripts": [],
+      "importedBy": [
+        "tools/household-fallback-sync-lib.mjs",
+        "tools/household-sync-fallbacks.mjs",
+        "tools/set-household-faq.mjs",
+        "tools/set-household-form-hints.mjs",
+        "tools/set-household-metadata.mjs",
+        "tools/set-household-proof.mjs",
+        "tools/set-household-related.mjs",
+        "tools/set-household-service-kpi.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "tools/household-fallback-sync-lib.mjs",
+        "tools/household-sync-fallbacks.mjs",
+        "tools/set-household-faq.mjs",
+        "tools/set-household-form-hints.mjs",
+        "tools/set-household-metadata.mjs",
+        "tools/set-household-proof.mjs",
+        "tools/set-household-related.mjs",
+        "tools/set-household-service-kpi.mjs"
+      ]
+    },
+    {
+      "file": "tools/household-fallback-sync-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/doctor-household-page.mjs, tools/household-sync-fallbacks.mjs, tools/validate-site.mjs",
+      "sizeBytes": 39280,
+      "scripts": [],
+      "importedBy": [
+        "tools/doctor-household-page.mjs",
+        "tools/household-sync-fallbacks.mjs",
+        "tools/validate-site.mjs"
+      ],
+      "imports": [
+        "tools/household-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "tools/doctor-household-page.mjs",
+        "tools/household-sync-fallbacks.mjs",
+        "tools/validate-site.mjs"
+      ]
+    },
+    {
+      "file": "tools/household-sync-fallbacks.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: household:sync-fallbacks",
+      "sizeBytes": 1422,
+      "scripts": [
+        "household:sync-fallbacks"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-authoring-lib.mjs",
+        "tools/household-fallback-sync-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/household-fallback-sync-lib.mjs",
+        "tools/scaffold-household-service.mjs"
+      ]
+    },
+    {
+      "file": "tools/inspect-page.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: inspect:page",
+      "sizeBytes": 9262,
+      "scripts": [
+        "inspect:page"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/optimize-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: optimize:images",
+      "sizeBytes": 6126,
+      "scripts": [
+        "optimize:images"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/report-ads.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: report:ads, report:ads:local",
+      "sizeBytes": 6410,
+      "scripts": [
+        "report:ads",
+        "report:ads:local"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/report-size.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: report:size",
+      "sizeBytes": 5119,
+      "scripts": [
+        "report:size"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/restaurant-authoring-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/restaurant-fallback-sync-lib.mjs, tools/restaurant-sync-fallbacks.mjs, tools/set-restaurant-faq.mjs, tools/set-restaurant-form-hints.mjs, tools/set-restaurant-metadata.mjs",
+      "sizeBytes": 4502,
+      "scripts": [],
+      "importedBy": [
+        "tools/restaurant-fallback-sync-lib.mjs",
+        "tools/restaurant-sync-fallbacks.mjs",
+        "tools/set-restaurant-faq.mjs",
+        "tools/set-restaurant-form-hints.mjs",
+        "tools/set-restaurant-metadata.mjs",
+        "tools/set-restaurant-proof.mjs",
+        "tools/set-restaurant-related.mjs",
+        "tools/set-restaurant-service-kpi.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "tools/restaurant-fallback-sync-lib.mjs",
+        "tools/restaurant-sync-fallbacks.mjs",
+        "tools/set-restaurant-faq.mjs",
+        "tools/set-restaurant-form-hints.mjs",
+        "tools/set-restaurant-metadata.mjs",
+        "tools/set-restaurant-proof.mjs",
+        "tools/set-restaurant-related.mjs",
+        "tools/set-restaurant-service-kpi.mjs"
+      ]
+    },
+    {
+      "file": "tools/restaurant-fallback-sync-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/restaurant-sync-fallbacks.mjs, tools/validate-site.mjs",
+      "sizeBytes": 23589,
+      "scripts": [],
+      "importedBy": [
+        "tools/restaurant-sync-fallbacks.mjs",
+        "tools/validate-site.mjs"
+      ],
+      "imports": [
+        "tools/restaurant-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "tools/restaurant-sync-fallbacks.mjs",
+        "tools/validate-site.mjs"
+      ]
+    },
+    {
+      "file": "tools/restaurant-sync-fallbacks.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: restaurant:sync-fallbacks",
+      "sizeBytes": 1447,
+      "scripts": [
+        "restaurant:sync-fallbacks"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/restaurant-authoring-lib.mjs",
+        "tools/restaurant-fallback-sync-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/restaurant-fallback-sync-lib.mjs",
+        "tools/scaffold-restaurant-service.mjs"
+      ]
+    },
+    {
+      "file": "tools/scaffold-household-service.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: scaffold:household-service",
+      "sizeBytes": 27835,
+      "scripts": [
+        "scaffold:household-service"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/scaffold-restaurant-service.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: scaffold:restaurant-service",
+      "sizeBytes": 19055,
+      "scripts": [
+        "scaffold:restaurant-service"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/screenshot-audit-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/audit-representative-pages.mjs, tools/audit-screenshots.mjs, tools/validate-site.mjs",
+      "sizeBytes": 6694,
+      "scripts": [],
+      "importedBy": [
+        "tools/audit-representative-pages.mjs",
+        "tools/audit-screenshots.mjs",
+        "tools/validate-site.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "tools/audit-representative-pages.mjs",
+        "tools/audit-screenshots.mjs",
+        "tools/validate-site.mjs"
+      ]
+    },
+    {
+      "file": "tools/select-operator-recipe.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: recipe:select",
+      "sizeBytes": 5777,
+      "scripts": [
+        "recipe:select"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-household-faq.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: household:set-faq",
+      "sizeBytes": 1740,
+      "scripts": [
+        "household:set-faq"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-household-form-hints.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: household:set-form-hints",
+      "sizeBytes": 1732,
+      "scripts": [
+        "household:set-form-hints"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-household-metadata.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: household:set-metadata",
+      "sizeBytes": 2094,
+      "scripts": [
+        "household:set-metadata"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-household-proof.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: household:set-proof",
+      "sizeBytes": 1849,
+      "scripts": [
+        "household:set-proof"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-household-related.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: household:set-related",
+      "sizeBytes": 2671,
+      "scripts": [
+        "household:set-related"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-household-service-kpi.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: household:set-service-kpi",
+      "sizeBytes": 2121,
+      "scripts": [
+        "household:set-service-kpi"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-restaurant-faq.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: restaurant:set-faq",
+      "sizeBytes": 1744,
+      "scripts": [
+        "restaurant:set-faq"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/restaurant-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-restaurant-form-hints.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: restaurant:set-form-hints",
+      "sizeBytes": 1735,
+      "scripts": [
+        "restaurant:set-form-hints"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/restaurant-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-restaurant-metadata.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: restaurant:set-metadata",
+      "sizeBytes": 2097,
+      "scripts": [
+        "restaurant:set-metadata"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/restaurant-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-restaurant-proof.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: restaurant:set-proof",
+      "sizeBytes": 1802,
+      "scripts": [
+        "restaurant:set-proof"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/restaurant-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-restaurant-related.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: restaurant:set-related",
+      "sizeBytes": 2676,
+      "scripts": [
+        "restaurant:set-related"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/restaurant-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/set-restaurant-service-kpi.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: restaurant:set-service-kpi",
+      "sizeBytes": 2129,
+      "scripts": [
+        "restaurant:set-service-kpi"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/restaurant-authoring-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/site-builder-bootstrap.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: site-builder:bootstrap",
+      "sizeBytes": 1815,
+      "scripts": [
+        "site-builder:bootstrap"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/ai-check.mjs"
+      ]
+    },
+    {
+      "file": "tools/site-builder-extract-shared.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: site-builder:extract-shared, check:shared-components",
+      "sizeBytes": 9292,
+      "scripts": [
+        "site-builder:extract-shared",
+        "check:shared-components"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        ".ai/digest/components/sharedSectionComponents.md",
+        ".ai/digest/content-map.json",
+        "data/ai-component-map.json",
+        "package.json",
+        "tools/ai-check.mjs",
+        "tools/ai-workspace.mjs",
+        "tools/check-profile.mjs",
+        "tools/generate-ai-component-map.mjs"
+      ]
+    },
+    {
+      "file": "tools/site-builder-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/build-site.mjs, tools/generate-faq-registry.mjs, tools/site-builder-bootstrap.mjs, tools/site-builder-extract-shared.mjs, tools/site-builder-parameterize-core.mjs",
+      "sizeBytes": 14603,
+      "scripts": [],
+      "importedBy": [
+        "tools/build-site.mjs",
+        "tools/generate-faq-registry.mjs",
+        "tools/site-builder-bootstrap.mjs",
+        "tools/site-builder-extract-shared.mjs",
+        "tools/site-builder-parameterize-core.mjs"
+      ],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        ".ai/digest/components/parametricComponents.md",
+        ".ai/digest/components/sharedSectionComponents.md",
+        ".ai/digest/content-map.json",
+        "data/ai-component-map.json",
+        "tools/ai-check.mjs",
+        "tools/ai-workspace.mjs",
+        "tools/build-site.mjs",
+        "tools/doctor-changed-pages.mjs",
+        "tools/generate-ai-component-map.mjs",
+        "tools/generate-faq-registry.mjs",
+        "tools/site-builder-bootstrap.mjs",
+        "tools/site-builder-extract-shared.mjs",
+        "tools/site-builder-parameterize-core.mjs"
+      ]
+    },
+    {
+      "file": "tools/site-builder-parameterize-core.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: site-builder:parameterize-core, check:parameterized-components",
+      "sizeBytes": 18844,
+      "scripts": [
+        "site-builder:parameterize-core",
+        "check:parameterized-components"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        ".ai/digest/components/parametricComponents.md",
+        ".ai/digest/content-map.json",
+        "data/ai-component-map.json",
+        "package.json",
+        "tools/ai-check.mjs",
+        "tools/check-profile.mjs",
+        "tools/doctor-changed-pages.mjs",
+        "tools/generate-ai-component-map.mjs"
+      ]
+    },
+    {
+      "file": "tools/source-compression-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/analyze-source-complexity.mjs, tools/check-scale-policy.mjs, tools/generate-ai-digest.mjs",
+      "sizeBytes": 20249,
+      "scripts": [],
+      "importedBy": [
+        "tools/analyze-source-complexity.mjs",
+        "tools/check-scale-policy.mjs",
+        "tools/generate-ai-digest.mjs"
+      ],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        "tools/ai-check.mjs",
+        "tools/analyze-source-complexity.mjs",
+        "tools/check-scale-policy.mjs",
+        "tools/generate-ai-digest.mjs"
+      ]
+    },
+    {
+      "file": "tools/sync-page-metadata.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: sync:metadata",
+      "sizeBytes": 2544,
+      "scripts": [
+        "sync:metadata"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/validate-data.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: validate:data",
+      "sizeBytes": 1364,
+      "scripts": [
+        "validate:data"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/data-contract-lib.mjs"
+      ],
+      "textReferences": [
+        "docs/DATA_CONTRACTS.md",
+        "package.json",
+        "schemas/data-files-manifest.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/validate-site.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: validate:site",
+      "sizeBytes": 129783,
+      "scripts": [
+        "validate:site"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/household-fallback-sync-lib.mjs",
+        "tools/restaurant-fallback-sync-lib.mjs",
+        "tools/screenshot-audit-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    }
+  ]
+}

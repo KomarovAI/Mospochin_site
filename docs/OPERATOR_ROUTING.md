@@ -105,7 +105,7 @@ What it does:
 Guardrails:
 - Do not treat this as a deploy gate.
 - Do not log issues automatically.
-- Add to `docs/STABILIZATION_BACKLOG.md` only confirmed findings after review.
+- Add to `reports/manual-review-backlog.md` only confirmed findings after review.
 
 ## 5. Run Full Restaurant Stabilization Audit
 
@@ -126,7 +126,7 @@ What it does:
 Guardrails:
 - Do not treat this as the default site-wide audit.
 - Do not use this for household pages.
-- Add to `docs/STABILIZATION_BACKLOG.md` only confirmed findings after review.
+- Add to `reports/manual-review-backlog.md` only confirmed findings after review.
 
 ## When Not To Go Deeper
 

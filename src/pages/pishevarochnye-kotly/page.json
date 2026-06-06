@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnye-kotly.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "382f269c0de44138f1e58a87ce8c28182da64b74add2b8cdfcae1fa7822fa424",
+    "hash": "211a1f6d5f9f5a214f482e3c603ccaa3e11dada484d69e13f9616b6cb9cee58e",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -279,8 +279,8 @@
     "npm run doctor:restaurant-page -- --page pishevarochnye-kotly.html",
     "npm run doctor:page -- --page pishevarochnye-kotly.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page pishevarochnye-kotly.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page pishevarochnye-kotly.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

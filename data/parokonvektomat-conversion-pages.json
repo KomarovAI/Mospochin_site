@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "cluster": "parokonvektomaty",
+  "canonicalBase": "https://mospochin.ru/",
+  "defaults": {
+    "minForms": 1,
+    "minClusterLinks": 8,
+    "requirePhoneLink": true,
+    "requireWhatsappLink": true,
+    "requireAnalytics": true,
+    "requireTelegramFormScript": true,
+    "requireMobileContactContainers": true,
+    "requireFaqSchema": true,
+    "requireSingleH1": true,
+    "requireHiddenProblem": true
+  },
+  "pages": [
+    {
+      "page": "parokonvektomaty.html",
+      "intent": "hub",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 12
+    },
+    {
+      "page": "parokonvektomaty-promo.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-rational.html",
+      "intent": "brand",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-rational-e9.html",
+      "intent": "error",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-unox.html",
+      "intent": "brand",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-unox-af02-af08.html",
+      "intent": "error",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-kod-oshibki.html",
+      "intent": "error-hub",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-e02-e07-e10.html",
+      "intent": "error",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-ne-greet.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-net-para.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-abat.html",
+      "intent": "brand",
+      "indexable": true,
+      "branch": "neutral",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-convotherm.html",
+      "intent": "brand",
+      "indexable": true,
+      "branch": "neutral",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-electrolux.html",
+      "intent": "brand",
+      "indexable": true,
+      "branch": "neutral",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-lainox.html",
+      "intent": "brand",
+      "indexable": true,
+      "branch": "neutral",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "parokonvektomat-obschuzhivanie.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "neutral",
+      "minClusterLinks": 8
+    },
+    {
+      "page": "remont-oborudovaniya-restorana-parokonvektomat.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 8
+    }
+  ]
+}

@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "grili-mangaly.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "90c471d61ec00ae83ac09cd50ed352eaa41a1e76af765920de53b07fa9b883b6",
+    "hash": "039251095dbb5e54866a6549884288f5da6fda46cc1e6ebccaa35d4050bf0da3",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -604,8 +604,8 @@
     "npm run doctor:restaurant-page -- --page grili-mangaly.html",
     "npm run doctor:page -- --page grili-mangaly.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page grili-mangaly.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page grili-mangaly.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

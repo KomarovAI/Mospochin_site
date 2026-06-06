@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "contact.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "7c624c767f386a9cd536930d6ad83def954454c8b9679d70a353812e1809f317",
+    "hash": "900f9c1afac198ada1aa50984f68cf615bd2edfa628575d733b20466b1340869",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -406,8 +406,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page contact.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page contact.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page contact.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

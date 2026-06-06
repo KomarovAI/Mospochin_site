@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "bytovaya-contact.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "bc20e7f3f3285aee48cef8207baf0766d7402e5ec2d026409f7b55c0de4f8317",
+    "hash": "faa2957c40a8f8f0ec7a53f60aac2f8430335035ec6dd1002cc0ad59b1ceb52d",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -203,8 +203,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page bytovaya-contact.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page bytovaya-contact.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page bytovaya-contact.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

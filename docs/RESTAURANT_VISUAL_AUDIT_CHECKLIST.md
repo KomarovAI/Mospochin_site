@@ -73,7 +73,7 @@ Use only:
 
 ## Backlog Rules
 
-Log only confirmed issues in `docs/STABILIZATION_BACKLOG.md`.
+Log only confirmed issues in `reports/manual-review-backlog.md`.
 
 Use the fixed columns:
 

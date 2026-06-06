@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "ice-machines.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "910280cb3d0b770c4036714d8c3feb956c5133aa92e2f1e2190639cd9334ba2a",
+    "hash": "f89dd1daef91a63ee3dca38f5d31a98df6de258c766329c1370ded527ad12240",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -636,8 +636,8 @@
     "npm run doctor:restaurant-page -- --page ice-machines.html",
     "npm run doctor:page -- --page ice-machines.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page ice-machines.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page ice-machines.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

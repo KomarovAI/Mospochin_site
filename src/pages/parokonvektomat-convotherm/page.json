@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomat-convotherm.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "3a1bd3e2bf3b0a840434ba087536720670d94c4fb503793d006c835643242521",
+    "hash": "55c1b19299e386c0862a2cf6bf10edb7ffb4ae62344757bea679d44ac5367c84",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -710,15 +710,31 @@
       "hash": "3ba619ca8d598e8b"
     },
     {
-      "id": "061-proof-dokazatel-stva-garantii",
+      "id": "061-section-tipovye-polomki-convotherm",
+      "component": "section",
+      "label": "Типовые поломки Convotherm",
+      "file": "sections/061-section-tipovye-polomki-convotherm.html",
+      "bytes": 4726,
+      "hash": "7bd1c44466584c68"
+    },
+    {
+      "id": "062-section-chto-chasche-vidim-po-convotherm",
+      "component": "section",
+      "label": "Что чаще видим по Convotherm",
+      "file": "sections/062-section-chto-chasche-vidim-po-convotherm.html",
+      "bytes": 2996,
+      "hash": "b92b8f29d6274c47"
+    },
+    {
+      "id": "063-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/061-proof-dokazatel-stva-garantii.html",
+      "file": "sections/063-proof-dokazatel-stva-garantii.html",
       "bytes": 182,
       "hash": "d0c02b385f4baba2"
     },
     {
-      "id": "062-related-links-esli-problema-v-drugom-restorannom-obo",
+      "id": "064-related-links-esli-problema-v-drugom-restorannom-obo",
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
       "bytes": 2977,
@@ -726,31 +742,39 @@
       "componentRef": "src/components/shared/related-links/related-links-esli-problema-v-drugom-restorannom-oborudova--4d77c43f3f7ac07c.html",
       "componentScope": "shared",
       "componentSignature": "4d77c43f3f7ac07c",
-      "sourceFile": "sections/062-related-links-esli-problema-v-drugom-restorannom-obo.html"
+      "sourceFile": "sections/064-related-links-esli-problema-v-drugom-restorannom-obo.html"
     },
     {
-      "id": "063-related-links-svyazannye-stranicy",
+      "id": "065-related-links-svyazannye-stranicy",
       "component": "related-links",
       "label": "Связанные страницы",
-      "file": "sections/063-related-links-svyazannye-stranicy.html",
+      "file": "sections/065-related-links-svyazannye-stranicy.html",
       "bytes": 32,
       "hash": "445698083184be8e"
     },
     {
-      "id": "064-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 44,
-      "hash": "9ddb40c7b689b718",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "mobile-footer-injected-via-js-9ddb40c7b689",
-      "templateRef": "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-9ddb40c7b689.template.html",
-      "props": {},
-      "sourceFile": "sections/064-raw-html-fragment.html"
+      "id": "066-related-links-svyazannye-stranicy-po-parokonvektomat",
+      "component": "related-links",
+      "label": "Связанные страницы по пароконвектоматам",
+      "file": "sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
+      "bytes": 9117,
+      "hash": "6b0219abf46cce04"
     },
     {
-      "id": "065-raw-html-fragment",
+      "id": "067-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 45,
+      "hash": "85653c99b4909375",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "mobile-footer-injected-via-js-85653c99b490",
+      "templateRef": "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-85653c99b490.template.html",
+      "props": {},
+      "sourceFile": "sections/067-raw-html-fragment.html"
+    },
+    {
+      "id": "068-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 45,
@@ -760,10 +784,10 @@
       "variant": "whatsapp-float-injected-via-js-7c5d01e0cd0d",
       "templateRef": "src/components/parametric/static/layout-fragment-whatsapp-float-injected-via-js-7c5d01e0cd0d.template.html",
       "props": {},
-      "sourceFile": "sections/065-raw-html-fragment.html"
+      "sourceFile": "sections/068-raw-html-fragment.html"
     },
     {
-      "id": "066-raw-html-fragment",
+      "id": "069-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 21,
@@ -773,10 +797,10 @@
       "variant": "footer-17c44fb2bab2",
       "templateRef": "src/components/parametric/static/layout-fragment-footer-17c44fb2bab2.template.html",
       "props": {},
-      "sourceFile": "sections/066-raw-html-fragment.html"
+      "sourceFile": "sections/069-raw-html-fragment.html"
     },
     {
-      "id": "067-footer-anchor-footer-mount-point",
+      "id": "070-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
       "bytes": 38,
@@ -786,10 +810,10 @@
       "variant": "footer-container-mount",
       "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-d4bb19e48569.template.html",
       "props": {},
-      "sourceFile": "sections/067-footer-anchor-footer-mount-point.html"
+      "sourceFile": "sections/070-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "068-raw-html-fragment",
+      "id": "071-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 39,
@@ -799,10 +823,10 @@
       "variant": "noscript-fallback-inline-bf67e22492ee",
       "templateRef": "src/components/parametric/static/layout-fragment-noscript-fallback-inline-bf67e22492ee.template.html",
       "props": {},
-      "sourceFile": "sections/068-raw-html-fragment.html"
+      "sourceFile": "sections/071-raw-html-fragment.html"
     },
     {
-      "id": "069-raw-html-fragment",
+      "id": "072-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 37,
@@ -812,10 +836,10 @@
       "variant": "countdown-timer-script-dac583333c60",
       "templateRef": "src/components/parametric/static/layout-fragment-countdown-timer-script-dac583333c60.template.html",
       "props": {},
-      "sourceFile": "sections/069-raw-html-fragment.html"
+      "sourceFile": "sections/072-raw-html-fragment.html"
     },
     {
-      "id": "070-raw-html-fragment",
+      "id": "073-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
       "bytes": 1524,
@@ -823,10 +847,10 @@
       "componentRef": "src/components/shared/raw/raw-html-fragment--515914ccb7489562.html",
       "componentScope": "shared",
       "componentSignature": "515914ccb7489562",
-      "sourceFile": "sections/070-raw-html-fragment.html"
+      "sourceFile": "sections/073-raw-html-fragment.html"
     },
     {
-      "id": "071-runtime-partials-podklyuchenie-partials-injector",
+      "id": "074-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 55,
@@ -836,10 +860,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a0c0c2f23990.template.html",
       "props": {},
-      "sourceFile": "sections/071-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/074-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "072-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "075-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 41,
@@ -849,10 +873,10 @@
       "variant": "mobile-footer-container",
       "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
-      "sourceFile": "sections/072-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/075-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "073-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "076-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 42,
@@ -862,10 +886,10 @@
       "variant": "whatsapp-float-container",
       "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
-      "sourceFile": "sections/073-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/076-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "074-raw-html-fragment",
+      "id": "077-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -875,14 +899,14 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/074-raw-html-fragment.html"
+      "sourceFile": "sections/077-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:page -- --page parokonvektomat-convotherm.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page parokonvektomat-convotherm.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page parokonvektomat-convotherm.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

@@ -4,8 +4,9 @@
   "note": "Deterministic AI index. Regenerate with npm run generate:ai-index after page/data structure changes.",
   "project": {
     "name": "MosPochin static site",
-    "primaryContext": "AI-CONTEXT.md",
-    "ownership": "docs/AI_FILE_OWNERSHIP.md",
+    "primaryContext": "docs/AI_START_HERE.md",
+    "ownership": "data/file-ownership.json",
+    "projectMap": "data/project-map.generated.json",
     "recipes": "docs/AI_TASK_RECIPES.md"
   },
   "summary": {
@@ -103,7 +104,7 @@
         "model": "src/pages/about/page.json",
         "slug": "about",
         "sections": 25,
-        "sourceHash": "d563928b68115401fc84128224441f09a4ff0c7da69a200a0b004e68a4a46d41",
+        "sourceHash": "0e471f649c191f2ee2eb630a04c33320920153cf0e213cc6eacf656ed23af471",
         "commands": {
           "preview": "npm run build:site -- --page about.html",
           "write": "npm run build:site -- --page about.html --write",
@@ -150,7 +151,7 @@
         "model": "src/pages/bytovaya-about/page.json",
         "slug": "bytovaya-about",
         "sections": 49,
-        "sourceHash": "ec1b85722663090db34118439713fc03fab0e957720402f912fb9efbc7815a62",
+        "sourceHash": "a8fe25e8367a8fb78a76232be6d6866a0cf254248bc798320d66e91b810be007",
         "commands": {
           "preview": "npm run build:site -- --page bytovaya-about.html",
           "write": "npm run build:site -- --page bytovaya-about.html --write",
@@ -197,7 +198,7 @@
         "model": "src/pages/bytovaya-contact/page.json",
         "slug": "bytovaya-contact",
         "sections": 18,
-        "sourceHash": "bc20e7f3f3285aee48cef8207baf0766d7402e5ec2d026409f7b55c0de4f8317",
+        "sourceHash": "faa2957c40a8f8f0ec7a53f60aac2f8430335035ec6dd1002cc0ad59b1ceb52d",
         "commands": {
           "preview": "npm run build:site -- --page bytovaya-contact.html",
           "write": "npm run build:site -- --page bytovaya-contact.html --write",
@@ -244,7 +245,7 @@
         "model": "src/pages/bytovaya-index/page.json",
         "slug": "bytovaya-index",
         "sections": 36,
-        "sourceHash": "2157b5828416fbd557a7637c9e343995961f12a2918df44d0d2d063a5177836d",
+        "sourceHash": "bca1f7e64d8d1e15c6db93cb3652f5d07bdbe24a70cfb591b4dd526cb2ca5446",
         "commands": {
           "preview": "npm run build:site -- --page bytovaya-index.html",
           "write": "npm run build:site -- --page bytovaya-index.html --write",
@@ -291,7 +292,7 @@
         "model": "src/pages/bytovaya-uslugi/page.json",
         "slug": "bytovaya-uslugi",
         "sections": 18,
-        "sourceHash": "584bd726ca911c495f52bb029ae241b64921cb81dbf3e10665073d64e4db0077",
+        "sourceHash": "4b623fb81385fa8f18e66679a08d0e0b913085ea0ce83c1b7a27b9b24e4074ee",
         "commands": {
           "preview": "npm run build:site -- --page bytovaya-uslugi.html",
           "write": "npm run build:site -- --page bytovaya-uslugi.html --write",
@@ -338,7 +339,7 @@
         "model": "src/pages/contact/page.json",
         "slug": "contact",
         "sections": 39,
-        "sourceHash": "7c624c767f386a9cd536930d6ad83def954454c8b9679d70a353812e1809f317",
+        "sourceHash": "900f9c1afac198ada1aa50984f68cf615bd2edfa628575d733b20466b1340869",
         "commands": {
           "preview": "npm run build:site -- --page contact.html",
           "write": "npm run build:site -- --page contact.html --write",
@@ -401,7 +402,7 @@
         "model": "src/pages/grili-mangaly/page.json",
         "slug": "grili-mangaly",
         "sections": 61,
-        "sourceHash": "90c471d61ec00ae83ac09cd50ed352eaa41a1e76af765920de53b07fa9b883b6",
+        "sourceHash": "039251095dbb5e54866a6549884288f5da6fda46cc1e6ebccaa35d4050bf0da3",
         "commands": {
           "preview": "npm run build:site -- --page grili-mangaly.html",
           "write": "npm run build:site -- --page grili-mangaly.html --write",
@@ -468,7 +469,7 @@
         "model": "src/pages/holodilniki/page.json",
         "slug": "holodilniki",
         "sections": 51,
-        "sourceHash": "12858c9d1124284ed18d7ca7dacf36c93ff0c74b018a36d2f9ba0b6613a918d7",
+        "sourceHash": "c4f08730c458ee4490a8f100ee5774e7785fcd72db705e03db5ddddc659d3aeb",
         "commands": {
           "preview": "npm run build:site -- --page holodilniki.html",
           "write": "npm run build:site -- --page holodilniki.html --write",
@@ -532,7 +533,7 @@
         "model": "src/pages/holodilnoe-oborudovanie/page.json",
         "slug": "holodilnoe-oborudovanie",
         "sections": 64,
-        "sourceHash": "b83c8ab4a80e908334c42ef0a26e1ebe1ac808358b25b34e6f313a9b386273bb",
+        "sourceHash": "b61e1a469bfe1ddb1683836269c707c6461c1e289fd8cfb0be7408075464ac69",
         "commands": {
           "preview": "npm run build:site -- --page holodilnoe-oborudovanie.html",
           "write": "npm run build:site -- --page holodilnoe-oborudovanie.html --write",
@@ -596,7 +597,7 @@
         "model": "src/pages/ice-machines/page.json",
         "slug": "ice-machines",
         "sections": 64,
-        "sourceHash": "910280cb3d0b770c4036714d8c3feb956c5133aa92e2f1e2190639cd9334ba2a",
+        "sourceHash": "f89dd1daef91a63ee3dca38f5d31a98df6de258c766329c1370ded527ad12240",
         "commands": {
           "preview": "npm run build:site -- --page ice-machines.html",
           "write": "npm run build:site -- --page ice-machines.html --write",
@@ -644,7 +645,7 @@
         "model": "src/pages/index/page.json",
         "slug": "index",
         "sections": 27,
-        "sourceHash": "51fef01f7473c2eb638916fcbe9735e36aec3a4e30b6ac3e764a5e4976796e1f",
+        "sourceHash": "4a930e048cd74a8368830eda5175dda88ffdce4ed0081d6e356b131009cd2ec3",
         "commands": {
           "preview": "npm run build:site -- --page index.html",
           "write": "npm run build:site -- --page index.html --write",
@@ -709,7 +710,7 @@
         "model": "src/pages/kompyutery/page.json",
         "slug": "kompyutery",
         "sections": 55,
-        "sourceHash": "05027702ab1b279f0f527471c2b71c3ea1118cbb9fa681bdc775e60ca6201a23",
+        "sourceHash": "d981f477353463ef9a684dd6da59ce3e3558d21a6f2f8a1be4b1680d6537a3e3",
         "commands": {
           "preview": "npm run build:site -- --page kompyutery.html",
           "write": "npm run build:site -- --page kompyutery.html --write",
@@ -820,8 +821,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-abat/page.json",
         "slug": "parokonvektomat-abat",
-        "sections": 74,
-        "sourceHash": "bc1c63ae8fe7b99a910817f732d725227d7619b4901467f0828965d3dc4fdfbd",
+        "sections": 77,
+        "sourceHash": "b050509575177a6c3c29653a7d1c3c2127a3c3481379743250a6e13a3eb9bc46",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-abat.html",
           "write": "npm run build:site -- --page parokonvektomat-abat.html --write",
@@ -864,8 +865,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-convotherm/page.json",
         "slug": "parokonvektomat-convotherm",
-        "sections": 74,
-        "sourceHash": "3a1bd3e2bf3b0a840434ba087536720670d94c4fb503793d006c835643242521",
+        "sections": 77,
+        "sourceHash": "55c1b19299e386c0862a2cf6bf10edb7ffb4ae62344757bea679d44ac5367c84",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-convotherm.html",
           "write": "npm run build:site -- --page parokonvektomat-convotherm.html --write",
@@ -910,8 +911,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-e02-e07-e10/page.json",
         "slug": "parokonvektomat-e02-e07-e10",
-        "sections": 74,
-        "sourceHash": "26c7823e874210d4bd673c2919af475caeb0ec8306630133f6b8186de217cafa",
+        "sections": 75,
+        "sourceHash": "3c2c9e781380d88bbf31d03a908727c1743c9c8f7d7a91e877282b371f7c1b53",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-e02-e07-e10.html",
           "write": "npm run build:site -- --page parokonvektomat-e02-e07-e10.html --write",
@@ -954,8 +955,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-electrolux/page.json",
         "slug": "parokonvektomat-electrolux",
-        "sections": 74,
-        "sourceHash": "7c3e2685642c4e4f774ad3219e13e8c578b26918c7cf75c92b7e79a27e0e6e5c",
+        "sections": 77,
+        "sourceHash": "bd00ab7bb4abab02b8a135a60a300a44ce7a90f74842a9a31d2aec080ee80e99",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-electrolux.html",
           "write": "npm run build:site -- --page parokonvektomat-electrolux.html --write",
@@ -1000,8 +1001,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-kod-oshibki/page.json",
         "slug": "parokonvektomat-kod-oshibki",
-        "sections": 74,
-        "sourceHash": "f1a4f11c42bed38241e72aa99940e3adf8583b7c4019e4646e5743eb9835f83d",
+        "sections": 75,
+        "sourceHash": "c34b13f77e2500b700738ab855418907b535a796ee9b67a59cb4e85b4bb10de8",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-kod-oshibki.html",
           "write": "npm run build:site -- --page parokonvektomat-kod-oshibki.html --write",
@@ -1044,8 +1045,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-lainox/page.json",
         "slug": "parokonvektomat-lainox",
-        "sections": 74,
-        "sourceHash": "1e305bfc064ec9ac007e95d36748e2e2d218c1efac18ffac9aad6ed257081aed",
+        "sections": 77,
+        "sourceHash": "8b7981f5e9f6994183a92ee622744be38aadf60e11fb5d971e81ab2026864256",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-lainox.html",
           "write": "npm run build:site -- --page parokonvektomat-lainox.html --write",
@@ -1090,8 +1091,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-ne-greet/page.json",
         "slug": "parokonvektomat-ne-greet",
-        "sections": 74,
-        "sourceHash": "23f7fcd92b476856fc59551beaf63aefce2473d22215daa6ae5ddfc5ea9db250",
+        "sections": 75,
+        "sourceHash": "b5fbb3b1f433e70efa8c2470b9249af2e36e2102dfe6323e61fac473afc615f8",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-ne-greet.html",
           "write": "npm run build:site -- --page parokonvektomat-ne-greet.html --write",
@@ -1136,8 +1137,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-net-para/page.json",
         "slug": "parokonvektomat-net-para",
-        "sections": 74,
-        "sourceHash": "9104b12586251ae9b8cd5802dcf48c76a51688b53f969a69bd29e938fa7cf9ae",
+        "sections": 75,
+        "sourceHash": "a474c98eb82d2d6378274802e6f68415ab8567b0420e3f161ccbbd98d805ce04",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-net-para.html",
           "write": "npm run build:site -- --page parokonvektomat-net-para.html --write",
@@ -1180,8 +1181,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-obschuzhivanie/page.json",
         "slug": "parokonvektomat-obschuzhivanie",
-        "sections": 30,
-        "sourceHash": "0c31d32d76736bc3decc68409f423a29053745193b208d50d48c585bf4f8f98d",
+        "sections": 34,
+        "sourceHash": "d322d634d46cae004f47d69c94035d4529752db56e8027514b71ec339699eb7d",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-obschuzhivanie.html",
           "write": "npm run build:site -- --page parokonvektomat-obschuzhivanie.html --write",
@@ -1226,8 +1227,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-rational-e9/page.json",
         "slug": "parokonvektomat-rational-e9",
-        "sections": 74,
-        "sourceHash": "a5bd8002824bfadc2d8c25725914998b9f9ee197e6b45dae1326c19ee4b858e3",
+        "sections": 75,
+        "sourceHash": "bf9f13f8fba43961320d409386d7b0ceff0b7561eb8c971664c4f98c009fe5c4",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-rational-e9.html",
           "write": "npm run build:site -- --page parokonvektomat-rational-e9.html --write",
@@ -1272,8 +1273,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-rational/page.json",
         "slug": "parokonvektomat-rational",
-        "sections": 74,
-        "sourceHash": "080504ed1a30f0eb64bbad333396e3299393c04559429106083106ec3d6b50bf",
+        "sections": 75,
+        "sourceHash": "794c10fb4f8c792425715b393a6e72b58d79313bc28e090d80b611398bb6bec9",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-rational.html",
           "write": "npm run build:site -- --page parokonvektomat-rational.html --write",
@@ -1318,8 +1319,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-unox-af02-af08/page.json",
         "slug": "parokonvektomat-unox-af02-af08",
-        "sections": 74,
-        "sourceHash": "b9c66245ed66d1f8c0e60018e83b15144f7afb61f7d6d3e520d9899b0c2e70d4",
+        "sections": 75,
+        "sourceHash": "56c637420765096cabc521c3eaabb18e4af4efb8c904fb587056b243aa263de7",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-unox-af02-af08.html",
           "write": "npm run build:site -- --page parokonvektomat-unox-af02-af08.html --write",
@@ -1364,8 +1365,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomat-unox/page.json",
         "slug": "parokonvektomat-unox",
-        "sections": 74,
-        "sourceHash": "2292a2a55a9ec9224843980e4eeaf2ffd292929efe7808c257b4bc98459d58ca",
+        "sections": 75,
+        "sourceHash": "5ecdb6b7c2a08265da5acadbaa418002796a6fc4b6fe3836bc976e781a6af856",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomat-unox.html",
           "write": "npm run build:site -- --page parokonvektomat-unox.html --write",
@@ -1392,7 +1393,7 @@
       "htmlExists": true,
       "title": "Ошибка пароконвектомата — выезд инженера Rational, Unox, Abat | MosPochin",
       "h1": "Ошибка Rational / Unox / Abat",
-      "description": "Рекламная посадочная MosPochin для срочных B2B-заявок: код ошибки, нет пара или нагрева у пароконвектомата Rational, Unox, Abat. Фото кода в WhatsApp, выезд инженера, договор и безнал.",
+      "description": "Ошибка, нет пара или нагрева у пароконвектомата Rational, Unox, Abat. Фото кода в WhatsApp, выезд инженера, договор и безнал.",
       "canonical": "https://mospochin.ru/parokonvektomaty-promo.html",
       "hasForm": true,
       "service": null,
@@ -1410,8 +1411,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomaty-promo/page.json",
         "slug": "parokonvektomaty-promo",
-        "sections": 74,
-        "sourceHash": "b0de885e2ac561d6bab91340088fbbd72fba8a20b5d5dda28172ea1ea1b7f6de",
+        "sections": 75,
+        "sourceHash": "8de3f6bf3cebcfd988ebce63ee4bcb114f6d26087ee477fe1f276414de85de0f",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomaty-promo.html",
           "write": "npm run build:site -- --page parokonvektomaty-promo.html --write",
@@ -1473,8 +1474,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomaty/page.json",
         "slug": "parokonvektomaty",
-        "sections": 70,
-        "sourceHash": "e3df1c5989b6737dfdb239eefed748796205c3c02a4ae3af2b7c775f89e560ed",
+        "sections": 72,
+        "sourceHash": "998ba02bdb0c0508d170bf97361dc39f1547c61410223656206880ea06b30c41",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomaty.html",
           "write": "npm run build:site -- --page parokonvektomaty.html --write",
@@ -1538,7 +1539,7 @@
         "model": "src/pages/pishevarochnye-kotly/page.json",
         "slug": "pishevarochnye-kotly",
         "sections": 27,
-        "sourceHash": "382f269c0de44138f1e58a87ce8c28182da64b74add2b8cdfcae1fa7822fa424",
+        "sourceHash": "211a1f6d5f9f5a214f482e3c603ccaa3e11dada484d69e13f9616b6cb9cee58e",
         "commands": {
           "preview": "npm run build:site -- --page pishevarochnye-kotly.html",
           "write": "npm run build:site -- --page pishevarochnye-kotly.html --write",
@@ -1602,7 +1603,7 @@
         "model": "src/pages/plity-pechi/page.json",
         "slug": "plity-pechi",
         "sections": 34,
-        "sourceHash": "27239ea665726b634f417822e2d2cd4490bd2facd0a4161bd720101ec52a2b49",
+        "sourceHash": "701995610246c2b302908bf269ea691809b1c1843ce20f6c6b7bd988e90d2dda",
         "commands": {
           "preview": "npm run build:site -- --page plity-pechi.html",
           "write": "npm run build:site -- --page plity-pechi.html --write",
@@ -1669,7 +1670,7 @@
         "model": "src/pages/plity/page.json",
         "slug": "plity",
         "sections": 48,
-        "sourceHash": "df69a8547bb5610e5e84581bd1906f0c62e401a7dda552b7253339c3c9b1f8a9",
+        "sourceHash": "ac38039561fb993e2b71402010a032156050cebbfe048e69d5f2811e5311cc27",
         "commands": {
           "preview": "npm run build:site -- --page plity.html",
           "write": "npm run build:site -- --page plity.html --write",
@@ -1733,7 +1734,7 @@
         "model": "src/pages/posudomoechnye-mashiny/page.json",
         "slug": "posudomoechnye-mashiny",
         "sections": 64,
-        "sourceHash": "f5aa2e8c29419f359d8cc2483fbc268e947e0844cb0fa6bdefc28d971b0bf158",
+        "sourceHash": "cd6cceacf3fd6082a0f0183e55e11fbf5f879cc7d5982fb04f7394365f17796b",
         "commands": {
           "preview": "npm run build:site -- --page posudomoechnye-mashiny.html",
           "write": "npm run build:site -- --page posudomoechnye-mashiny.html --write",
@@ -1800,7 +1801,7 @@
         "model": "src/pages/posudomoyki/page.json",
         "slug": "posudomoyki",
         "sections": 53,
-        "sourceHash": "b0aa7c3b86f914accce90a1c7c70de1992e6ab45fa7a22c85acd25633b317a44",
+        "sourceHash": "ddd798ee1e1c514608495c2de0f5df6c573321c00396b9dcfee4c9284c76cc14",
         "commands": {
           "preview": "npm run build:site -- --page posudomoyki.html",
           "write": "npm run build:site -- --page posudomoyki.html --write",
@@ -1846,8 +1847,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json",
         "slug": "remont-oborudovaniya-restorana-parokonvektomat",
-        "sections": 74,
-        "sourceHash": "3dfc3db92ba18a02c0132f59ce2ba8942ec0def3042d9c2409a29ef44dc02dae",
+        "sections": 75,
+        "sourceHash": "976f4a47ce8ce2e8bc54dfbc8e20c73ac200ab99e9227fc414671bb0e674113d",
         "commands": {
           "preview": "npm run build:site -- --page remont-oborudovaniya-restorana-parokonvektomat.html",
           "write": "npm run build:site -- --page remont-oborudovaniya-restorana-parokonvektomat.html --write",
@@ -1912,7 +1913,7 @@
         "model": "src/pages/routery/page.json",
         "slug": "routery",
         "sections": 52,
-        "sourceHash": "433208c3ed2dbeacdfd1c75d0d081096c8637ff9b9d755fdf78f8de5c0be367f",
+        "sourceHash": "01ef620aa81f6449d8c3efb7b91d2b1a119f03c77a1b1ccaa76119ac7a40fa98",
         "commands": {
           "preview": "npm run build:site -- --page routery.html",
           "write": "npm run build:site -- --page routery.html --write",
@@ -1977,7 +1978,7 @@
         "model": "src/pages/stiralnye-mashiny/page.json",
         "slug": "stiralnye-mashiny",
         "sections": 50,
-        "sourceHash": "b545938313edaccb29417cb81e589b2adfc2ae7f882005f5c2981cc9292725ef",
+        "sourceHash": "6eccd795c657c667f82cf05a38b397b9cf867f408763cb2e025472f1c3b4d672",
         "commands": {
           "preview": "npm run build:site -- --page stiralnye-mashiny.html",
           "write": "npm run build:site -- --page stiralnye-mashiny.html --write",
@@ -2025,7 +2026,7 @@
         "model": "src/pages/uslugi/page.json",
         "slug": "uslugi",
         "sections": 30,
-        "sourceHash": "affd8e0c025fddf3ae97b499867fc75fcc22bcd17ca476a7d05cb279a400dc70",
+        "sourceHash": "acdbaa47dfce09e3d63c6fcf5499cf4d725b924a3d2134c2a3ffe7461ea0d9f2",
         "commands": {
           "preview": "npm run build:site -- --page uslugi.html",
           "write": "npm run build:site -- --page uslugi.html --write",
@@ -2091,7 +2092,7 @@
         "model": "src/pages/water-heaters/page.json",
         "slug": "water-heaters",
         "sections": 49,
-        "sourceHash": "6e7faf22eeddbc169a930af1c45d44121fea3a8dad5c5acce5b8db772de387a0",
+        "sourceHash": "4d90598b266c6a89a1eb2e16f72629034c241be2c875e81f1b360304d806b682",
         "commands": {
           "preview": "npm run build:site -- --page water-heaters.html",
           "write": "npm run build:site -- --page water-heaters.html --write",

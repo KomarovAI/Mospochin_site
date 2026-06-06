@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "bytovaya-index.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "2157b5828416fbd557a7637c9e343995961f12a2918df44d0d2d063a5177836d",
+    "hash": "bca1f7e64d8d1e15c6db93cb3652f5d07bdbe24a70cfb591b4dd526cb2ca5446",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -280,8 +280,8 @@
       "component": "noscript",
       "label": "Noscript fallback",
       "file": "sections/031-noscript-noscript-fallback.html",
-      "bytes": 1222,
-      "hash": "c63a32472ab9f7e8"
+      "bytes": 1221,
+      "hash": "268c091d5671151a"
     },
     {
       "id": "032-raw-html-fragment",
@@ -347,8 +347,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page bytovaya-index.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page bytovaya-index.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page bytovaya-index.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

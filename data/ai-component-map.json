@@ -591,6 +591,7 @@
         "parokonvektomat-lainox.html",
         "parokonvektomat-ne-greet.html",
         "parokonvektomat-net-para.html",
+        "parokonvektomat-obschuzhivanie.html",
         "parokonvektomat-rational-e9.html",
         "parokonvektomat-rational.html",
         "parokonvektomat-unox-af02-af08.html",
@@ -608,7 +609,7 @@
         "uslugi.html",
         "water-heaters.html"
       ],
-      "appearsInCount": 38,
+      "appearsInCount": 39,
       "cssSelectors": [
         "#whatsapp-float-container"
       ],
@@ -721,7 +722,7 @@
         "Всегда проверяй hash/render через check:parameterized-components."
       ],
       "safeEditingNotes": [
-        "Parametric refs: 858, templates: 62, props files: 14.",
+        "Parametric refs: 870, templates: 63, props files: 14.",
         "Для текста конкретной страницы меняй content/components/*/*.json; для разметки меняй template.html.",
         "После правки запускай check:parameterized-components и check:site-builder."
       ],
@@ -788,7 +789,7 @@
           ]
         },
         "src/components/parametric/mobile-contact/mobile-footer-container.template.html": {
-          "refs": 38,
+          "refs": 39,
           "pages": [
             "404.html",
             "about.html",
@@ -812,6 +813,7 @@
             "parokonvektomat-lainox.html",
             "parokonvektomat-ne-greet.html",
             "parokonvektomat-net-para.html",
+            "parokonvektomat-obschuzhivanie.html",
             "parokonvektomat-rational-e9.html",
             "parokonvektomat-rational.html",
             "parokonvektomat-unox-af02-af08.html",
@@ -831,7 +833,7 @@
           ]
         },
         "src/components/parametric/mobile-contact/whatsapp-float-container.template.html": {
-          "refs": 38,
+          "refs": 39,
           "pages": [
             "404.html",
             "about.html",
@@ -855,6 +857,7 @@
             "parokonvektomat-lainox.html",
             "parokonvektomat-ne-greet.html",
             "parokonvektomat-net-para.html",
+            "parokonvektomat-obschuzhivanie.html",
             "parokonvektomat-rational-e9.html",
             "parokonvektomat-rational.html",
             "parokonvektomat-unox-af02-af08.html",
@@ -1002,19 +1005,15 @@
           ]
         },
         "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-9ddb40c7b689.template.html": {
-          "refs": 21,
+          "refs": 16,
           "pages": [
             "bytovaya-about.html",
             "contact.html",
             "grili-mangaly.html",
             "holodilnoe-oborudovanie.html",
             "ice-machines.html",
-            "parokonvektomat-abat.html",
-            "parokonvektomat-convotherm.html",
             "parokonvektomat-e02-e07-e10.html",
-            "parokonvektomat-electrolux.html",
             "parokonvektomat-kod-oshibki.html",
-            "parokonvektomat-lainox.html",
             "parokonvektomat-ne-greet.html",
             "parokonvektomat-net-para.html",
             "parokonvektomat-rational-e9.html",
@@ -1022,7 +1021,6 @@
             "parokonvektomat-unox-af02-af08.html",
             "parokonvektomat-unox.html",
             "parokonvektomaty-promo.html",
-            "parokonvektomaty.html",
             "posudomoechnye-mashiny.html",
             "remont-oborudovaniya-restorana-parokonvektomat.html"
           ]
@@ -1491,7 +1489,7 @@
           ]
         },
         "src/components/parametric/static/layout-fragment-direct-landing-analysis-end-2d039682f147.template.html": {
-          "refs": 14,
+          "refs": 24,
           "pages": [
             "parokonvektomat-abat.html",
             "parokonvektomat-convotherm.html",
@@ -1881,6 +1879,16 @@
             "remont-oborudovaniya-restorana-parokonvektomat.html"
           ]
         },
+        "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-85653c99b490.template.html": {
+          "refs": 5,
+          "pages": [
+            "parokonvektomat-abat.html",
+            "parokonvektomat-convotherm.html",
+            "parokonvektomat-electrolux.html",
+            "parokonvektomat-lainox.html",
+            "parokonvektomaty.html"
+          ]
+        },
         "src/components/parametric/static/footer-anchor-footer-container-mount-64173ac09ccc.template.html": {
           "refs": 1,
           "pages": [
@@ -1948,7 +1956,7 @@
         "Builder output должен оставаться синхронным с root HTML."
       ],
       "safeEditingNotes": [
-        "Сейчас shared refs: 333, shared files: 32.",
+        "Сейчас shared refs: 330, shared files: 29.",
         "После правки src/components/shared/* запускай check:shared-components и check:site-builder."
       ]
     }

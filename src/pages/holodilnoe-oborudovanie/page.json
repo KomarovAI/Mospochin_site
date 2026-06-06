@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "holodilnoe-oborudovanie.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "b83c8ab4a80e908334c42ef0a26e1ebe1ac808358b25b34e6f313a9b386273bb",
+    "hash": "b61e1a469bfe1ddb1683836269c707c6461c1e289fd8cfb0be7408075464ac69",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -638,8 +638,8 @@
     "npm run doctor:restaurant-page -- --page holodilnoe-oborudovanie.html",
     "npm run doctor:page -- --page holodilnoe-oborudovanie.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page holodilnoe-oborudovanie.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page holodilnoe-oborudovanie.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

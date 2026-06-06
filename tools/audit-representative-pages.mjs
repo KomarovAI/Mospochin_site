@@ -48,7 +48,7 @@ try {
   console.log('Audit complete');
   console.log(`- pages checked: ${manifest.pages.map((entry) => entry.page).join(', ')}`);
   console.log(`- artifact folder: ${path.relative(SITE_ROOT, artifactDir)}`);
-  console.log('- next step: review screenshots and record only confirmed issues in docs/STABILIZATION_BACKLOG.md');
+  console.log('- next step: review screenshots and record only confirmed issues in reports/manual-review-backlog.md');
   process.exit(0);
 } catch (error) {
   console.error(error.message);

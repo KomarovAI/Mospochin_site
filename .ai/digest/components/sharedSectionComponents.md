@@ -18,7 +18,7 @@
 
 ## Safe editing notes
 
-- Сейчас shared refs: 333, shared files: 32.
+- Сейчас shared refs: 330, shared files: 29.
 - После правки src/components/shared/* запускай check:shared-components и check:site-builder.
 
 ## Representative pages

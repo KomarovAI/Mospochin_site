@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SITE_ROOT = path.resolve(__dirname, '..');
 const AUDIT_MANIFEST_PATH = path.join(SITE_ROOT, 'data/screenshot-audit.json');
-const VALID_BRANCHES = new Set(['household', 'restaurant']);
+const VALID_BRANCHES = new Set(['household', 'restaurant', 'neutral']);
 const VALID_PAGE_TYPES = new Set(['branch', 'service']);
 const HOUSEHOLD_BRANCH_PAGES = new Set([
   'bytovaya-index.html',
@@ -195,6 +195,10 @@ function inferPageType(page, branch) {
 
   if (branch === 'restaurant') {
     return RESTAURANT_BRANCH_PAGES.has(page) ? 'branch' : 'service';
+  }
+
+  if (branch === 'neutral') {
+    return 'service';
   }
 
   return null;

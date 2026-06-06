@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomaty.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "e3df1c5989b6737dfdb239eefed748796205c3c02a4ae3af2b7c775f89e560ed",
+    "hash": "998ba02bdb0c0508d170bf97361dc39f1547c61410223656206880ea06b30c41",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -449,12 +449,9 @@
       "id": "040-pricing-remontiruem-vse-marki-parokonvektomatov",
       "component": "pricing",
       "label": "Ремонтируем все марки пароконвектоматов",
+      "file": "sections/040-pricing-remontiruem-vse-marki-parokonvektomatov.html",
       "bytes": 16162,
-      "hash": "c77131be6eeae042",
-      "componentRef": "src/components/shared/pricing/pricing-remontiruem-vse-marki-parokonvektomatov--c77131be6eeae042.html",
-      "componentScope": "shared",
-      "componentSignature": "c77131be6eeae042",
-      "sourceFile": "sections/040-pricing-remontiruem-vse-marki-parokonvektomatov.html"
+      "hash": "c77131be6eeae042"
     },
     {
       "id": "041-related-links-svyazannye-stranicy",
@@ -484,12 +481,9 @@
       "id": "044-section-zona-zapuska-reklamnoy-kampanii",
       "component": "section",
       "label": "Зона запуска рекламной кампании",
+      "file": "sections/044-section-zona-zapuska-reklamnoy-kampanii.html",
       "bytes": 2892,
-      "hash": "127e9db049e425dc",
-      "componentRef": "src/components/shared/section/section-zona-zapuska-reklamnoy-kampanii--127e9db049e425dc.html",
-      "componentScope": "shared",
-      "componentSignature": "127e9db049e425dc",
-      "sourceFile": "sections/044-section-zona-zapuska-reklamnoy-kampanii.html"
+      "hash": "127e9db049e425dc"
     },
     {
       "id": "045-raw-html-fragment",
@@ -503,12 +497,9 @@
       "id": "046-section-chto-delat-pri-polomke-parokonvektomata",
       "component": "section",
       "label": "Что делать при поломке пароконвектомата",
+      "file": "sections/046-section-chto-delat-pri-polomke-parokonvektomata.html",
       "bytes": 3906,
-      "hash": "d0b2c83fde10e4e6",
-      "componentRef": "src/components/shared/section/section-chto-delat-pri-polomke-parokonvektomata--d0b2c83fde10e4e6.html",
-      "componentScope": "shared",
-      "componentSignature": "d0b2c83fde10e4e6",
-      "sourceFile": "sections/046-section-chto-delat-pri-polomke-parokonvektomata.html"
+      "hash": "d0b2c83fde10e4e6"
     },
     {
       "id": "047-faq-faq",
@@ -607,15 +598,23 @@
       "hash": "3ba619ca8d598e8b"
     },
     {
-      "id": "057-proof-dokazatel-stva-garantii",
+      "id": "057-section-kak-ponyat-harakter-polomki-do-priezda-inzhe",
+      "component": "section",
+      "label": "Как понять характер поломки до приезда инженера",
+      "file": "sections/057-section-kak-ponyat-harakter-polomki-do-priezda-inzhe.html",
+      "bytes": 5023,
+      "hash": "0eeb59e8f9ec504e"
+    },
+    {
+      "id": "058-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/057-proof-dokazatel-stva-garantii.html",
+      "file": "sections/058-proof-dokazatel-stva-garantii.html",
       "bytes": 182,
       "hash": "d0c02b385f4baba2"
     },
     {
-      "id": "058-related-links-esli-problema-v-drugom-restorannom-obo",
+      "id": "059-related-links-esli-problema-v-drugom-restorannom-obo",
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
       "bytes": 2977,
@@ -623,31 +622,39 @@
       "componentRef": "src/components/shared/related-links/related-links-esli-problema-v-drugom-restorannom-oborudova--4d77c43f3f7ac07c.html",
       "componentScope": "shared",
       "componentSignature": "4d77c43f3f7ac07c",
-      "sourceFile": "sections/058-related-links-esli-problema-v-drugom-restorannom-obo.html"
+      "sourceFile": "sections/059-related-links-esli-problema-v-drugom-restorannom-obo.html"
     },
     {
-      "id": "059-related-links-svyazannye-stranicy",
+      "id": "060-related-links-svyazannye-stranicy",
       "component": "related-links",
       "label": "Связанные страницы",
-      "file": "sections/059-related-links-svyazannye-stranicy.html",
+      "file": "sections/060-related-links-svyazannye-stranicy.html",
       "bytes": 32,
       "hash": "445698083184be8e"
     },
     {
-      "id": "060-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 44,
-      "hash": "9ddb40c7b689b718",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "mobile-footer-injected-via-js-9ddb40c7b689",
-      "templateRef": "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-9ddb40c7b689.template.html",
-      "props": {},
-      "sourceFile": "sections/060-raw-html-fragment.html"
+      "id": "061-related-links-svyazannye-stranicy-po-parokonvektomat",
+      "component": "related-links",
+      "label": "Связанные страницы по пароконвектоматам",
+      "file": "sections/061-related-links-svyazannye-stranicy-po-parokonvektomat.html",
+      "bytes": 12058,
+      "hash": "4c723f5433f06c9a"
     },
     {
-      "id": "061-raw-html-fragment",
+      "id": "062-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 45,
+      "hash": "85653c99b4909375",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "mobile-footer-injected-via-js-85653c99b490",
+      "templateRef": "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-85653c99b490.template.html",
+      "props": {},
+      "sourceFile": "sections/062-raw-html-fragment.html"
+    },
+    {
+      "id": "063-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 45,
@@ -657,10 +664,10 @@
       "variant": "whatsapp-float-injected-via-js-7c5d01e0cd0d",
       "templateRef": "src/components/parametric/static/layout-fragment-whatsapp-float-injected-via-js-7c5d01e0cd0d.template.html",
       "props": {},
-      "sourceFile": "sections/061-raw-html-fragment.html"
+      "sourceFile": "sections/063-raw-html-fragment.html"
     },
     {
-      "id": "062-raw-html-fragment",
+      "id": "064-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 21,
@@ -670,10 +677,10 @@
       "variant": "footer-17c44fb2bab2",
       "templateRef": "src/components/parametric/static/layout-fragment-footer-17c44fb2bab2.template.html",
       "props": {},
-      "sourceFile": "sections/062-raw-html-fragment.html"
+      "sourceFile": "sections/064-raw-html-fragment.html"
     },
     {
-      "id": "063-footer-anchor-footer-mount-point",
+      "id": "065-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
       "bytes": 38,
@@ -683,10 +690,10 @@
       "variant": "footer-container-mount",
       "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-d4bb19e48569.template.html",
       "props": {},
-      "sourceFile": "sections/063-footer-anchor-footer-mount-point.html"
+      "sourceFile": "sections/065-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "064-raw-html-fragment",
+      "id": "066-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 39,
@@ -696,10 +703,10 @@
       "variant": "noscript-fallback-inline-bf67e22492ee",
       "templateRef": "src/components/parametric/static/layout-fragment-noscript-fallback-inline-bf67e22492ee.template.html",
       "props": {},
-      "sourceFile": "sections/064-raw-html-fragment.html"
+      "sourceFile": "sections/066-raw-html-fragment.html"
     },
     {
-      "id": "065-raw-html-fragment",
+      "id": "067-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 37,
@@ -709,10 +716,10 @@
       "variant": "countdown-timer-script-dac583333c60",
       "templateRef": "src/components/parametric/static/layout-fragment-countdown-timer-script-dac583333c60.template.html",
       "props": {},
-      "sourceFile": "sections/065-raw-html-fragment.html"
+      "sourceFile": "sections/067-raw-html-fragment.html"
     },
     {
-      "id": "066-raw-html-fragment",
+      "id": "068-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
       "bytes": 1524,
@@ -720,10 +727,10 @@
       "componentRef": "src/components/shared/raw/raw-html-fragment--515914ccb7489562.html",
       "componentScope": "shared",
       "componentSignature": "515914ccb7489562",
-      "sourceFile": "sections/066-raw-html-fragment.html"
+      "sourceFile": "sections/068-raw-html-fragment.html"
     },
     {
-      "id": "067-runtime-partials-podklyuchenie-partials-injector",
+      "id": "069-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 55,
@@ -733,10 +740,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a0c0c2f23990.template.html",
       "props": {},
-      "sourceFile": "sections/067-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/069-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "068-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "070-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 41,
@@ -746,10 +753,10 @@
       "variant": "mobile-footer-container",
       "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
-      "sourceFile": "sections/068-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/070-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "069-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "071-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 42,
@@ -759,10 +766,10 @@
       "variant": "whatsapp-float-container",
       "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
-      "sourceFile": "sections/069-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/071-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "070-raw-html-fragment",
+      "id": "072-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -772,7 +779,7 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/070-raw-html-fragment.html"
+      "sourceFile": "sections/072-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [

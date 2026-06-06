@@ -1,0 +1,127 @@
+{
+  "artifactRoot": ".artifacts/screenshots/parokonvektomaty",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 2200
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "parokonvektomaty.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomaty-promo.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-rational.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-rational-e9.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-unox.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-unox-af02-af08.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-kod-oshibki.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-e02-e07-e10.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-ne-greet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-net-para.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-abat.html",
+      "branch": "neutral",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-convotherm.html",
+      "branch": "neutral",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-electrolux.html",
+      "branch": "neutral",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-lainox.html",
+      "branch": "neutral",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "parokonvektomat-obschuzhivanie.html",
+      "branch": "neutral",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-oborudovaniya-restorana-parokonvektomat.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    }
+  ]
+}

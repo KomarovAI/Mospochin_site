@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "kompyutery.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "05027702ab1b279f0f527471c2b71c3ea1118cbb9fa681bdc775e60ca6201a23",
+    "hash": "d981f477353463ef9a684dd6da59ce3e3558d21a6f2f8a1be4b1680d6537a3e3",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -522,8 +522,8 @@
     "npm run doctor:household-page -- --page kompyutery.html",
     "npm run doctor:page -- --page kompyutery.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page kompyutery.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page kompyutery.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

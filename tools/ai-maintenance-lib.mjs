@@ -214,8 +214,9 @@ export function buildAiIndex() {
     note: 'Deterministic AI index. Regenerate with npm run generate:ai-index after page/data structure changes.',
     project: {
       name: 'MosPochin static site',
-      primaryContext: 'AI-CONTEXT.md',
-      ownership: 'docs/AI_FILE_OWNERSHIP.md',
+      primaryContext: 'docs/AI_START_HERE.md',
+      ownership: 'data/file-ownership.json',
+      projectMap: 'data/project-map.generated.json',
       recipes: 'docs/AI_TASK_RECIPES.md',
     },
     summary: {

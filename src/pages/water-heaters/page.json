@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "water-heaters.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "6e7faf22eeddbc169a930af1c45d44121fea3a8dad5c5acce5b8db772de387a0",
+    "hash": "4d90598b266c6a89a1eb2e16f72629034c241be2c875e81f1b360304d806b682",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -485,8 +485,8 @@
     "npm run doctor:household-page -- --page water-heaters.html",
     "npm run doctor:page -- --page water-heaters.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page water-heaters.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page water-heaters.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "purpose": "AI editing ownership manifest. It tells agents what can be edited manually, what is generated, and what zones are high risk.",
+  "manual": [
+    "AGENTS.md",
+    "AI-CONTEXT.md",
+    "CHANGELOG_AI.md",
+    "docs/**/*.md",
+    "src/site-builder.json",
+    "src/pages/**",
+    "src/components/shared/**",
+    "src/components/parametric/**",
+    "content/components/**/*.json",
+    "data/page-metadata.json",
+    "data/direct-landing-pages.json",
+    "data/parokonvektomat-conversion-pages.json",
+    "data/parokonvektomat-screenshot-audit.json",
+    "data/ai-editing-manifest.json",
+    "data/file-ownership.json",
+    "package.json"
+  ],
+  "generated": [
+    "*.html",
+    "sitemap.xml",
+    ".deploy/include-files.txt",
+    "data/ai-project-index.json",
+    "data/ai-component-map.json",
+    "data/project-map.generated.json",
+    ".ai/digest/**",
+    "reports/source-complexity.json",
+    "reports/source-complexity.md",
+    "content/faq/page-faq-registry.json",
+    "content/faq/schema/**/*.json",
+    "reports/handoff/**"
+  ],
+  "dangerZones": [
+    ".github/workflows/**",
+    "deploy/**",
+    "server/telegram-api.mjs",
+    "tools/build-site.mjs",
+    "tools/site-builder-*.mjs",
+    "tools/generate-direct-landings.mjs",
+    "tools/check-profile.mjs",
+    "tools/handoff-pack.mjs",
+    "main.js",
+    "telegram-form.js",
+    "analytics.js",
+    "styles-combined.css"
+  ],
+  "rules": [
+    "Prefer manual/source files over root HTML.",
+    "If generated files change, run npm run sync:generated and npm run check:handoff.",
+    "Danger zones can be edited, but require a focused reason and check:handoff at minimum.",
+    "Root *.html files are production output and must match the builder.",
+    "Use docs/AI_START_HERE.md as AI entrypoint; AI-CONTEXT.md is compatibility only."
+  ]
+}

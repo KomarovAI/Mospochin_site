@@ -1,0 +1,1292 @@
+{
+  "summary": {
+    "generatedAt": "2026-06-06T08:58:10.614Z",
+    "totalDocs": 33,
+    "totalBytes": 155393,
+    "byCategory": {
+      "active": 13,
+      "reference": 20
+    },
+    "byAction": {
+      "keep": 33
+    }
+  },
+  "docs": [
+    {
+      "file": "AGENTS.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 6863,
+      "references": [
+        {
+          "file": "AI-CONTEXT.md",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 6
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/file-ownership.json",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 4
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 4
+        },
+        {
+          "file": "tools/ai-task-router.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-assets.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/generate-deploy-manifest.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/generate-public-file-list.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/report-size.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 38,
+      "headings": [
+        "Mospochin_site Rules",
+        "AI operating entrypoint",
+        "Source of truth",
+        "Preferred AI workflow",
+        "Generated / do not edit manually",
+        "Risky zones",
+        "Scale policy",
+        "Validation"
+      ]
+    },
+    {
+      "file": "AI-CONTEXT.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 1621,
+      "references": [
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": "AGENTS.md",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 2
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/file-ownership.json",
+          "count": 4
+        },
+        {
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-context.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/generate-ai-digest.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 26,
+      "headings": [
+        "AI-CONTEXT — compatibility stub",
+        "Актуальный маршрут",
+        "Быстрый workflow",
+        "Source of truth",
+        "Почему файл короткий"
+      ]
+    },
+    {
+      "file": "CHANGELOG_AI.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 6537,
+      "references": [
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/file-ownership.json",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_CHANGE_CHECKLIST.md",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_START_HERE.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-task-router.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 6
+        }
+      ],
+      "referenceCount": 20,
+      "headings": [
+        "AI Change Log — MosPochin",
+        "2026-06-03 — Parokonvektomat AI operating layer",
+        "2026-06-06 — low-resource/high-impact patch",
+        "2026-06-06 — low-resource check hierarchy",
+        "2026-06-06 — AI navigation pack",
+        "2026-06-06 — AI/docs prune pack",
+        "2026-06-06 — Safe assets prune pack",
+        "2026-06-06 — Maintenance audit pack"
+      ]
+    },
+    {
+      "file": "docs/AGENTS.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 694,
+      "references": [
+        {
+          "file": "AI-CONTEXT.md",
+          "count": 1
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 3
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 1
+        },
+        {
+          "file": "data/file-ownership.json",
+          "count": 1
+        },
+        {
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-task-router.mjs",
+          "count": 1
+        },
+        {
+          "file": "tools/audit-assets.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/generate-deploy-manifest.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/generate-public-file-list.mjs",
+          "count": 1
+        },
+        {
+          "file": "tools/report-size.mjs",
+          "count": 1
+        }
+      ],
+      "referenceCount": 19,
+      "headings": [
+        "Docs Rules"
+      ]
+    },
+    {
+      "file": "docs/AI_CHANGE_CHECKLIST.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 3182,
+      "references": [
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 2
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "docs/AI_TASK_RECIPES.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-task-router.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 13,
+      "headings": [
+        "AI Change Checklist — MosPochin",
+        "0. Navigation / routing",
+        "1. Source / build",
+        "2. SEO / индексация",
+        "3. Деньги / заявки",
+        "4. Ссылки / кластер",
+        "5. Schema / FAQ",
+        "6. Проверки"
+      ]
+    },
+    {
+      "file": "docs/AI_FLEXIBLE_EDITING.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 6754,
+      "references": [
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/generate-ai-digest.mjs",
+          "count": 4
+        }
+      ],
+      "referenceCount": 10,
+      "headings": [
+        "Flexible AI Editing",
+        "Принцип",
+        "Основные команды",
+        "Workspace snapshot",
+        "Impact по файлам",
+        "Review после правок",
+        "Semantic diff HTML",
+        "Component map"
+      ]
+    },
+    {
+      "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 7742,
+      "references": [
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "AGENTS.md",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 2
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 3
+        },
+        {
+          "file": "tools/ai-task-router.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/generate-ai-digest.mjs",
+          "count": 4
+        }
+      ],
+      "referenceCount": 24,
+      "headings": [
+        "AI Project Operating Guide — MosPochin",
+        "1. Быстрый старт для новой нейронки",
+        "2. Source of truth",
+        "3. Generated / не править руками",
+        "4. Базовый workflow правки",
+        "5. Проверки по типу задачи",
+        "6. Денежные guardrails",
+        "7. Правила роста проекта"
+      ]
+    },
+    {
+      "file": "docs/AI_START_HERE.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 5342,
+      "references": [
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "AGENTS.md",
+          "count": 4
+        },
+        {
+          "file": "AI-CONTEXT.md",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 4
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 4
+        },
+        {
+          "file": "data/ai-project-index.json",
+          "count": 2
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "data/file-ownership.json",
+          "count": 2
+        },
+        {
+          "file": "docs/AGENTS.md",
+          "count": 4
+        },
+        {
+          "file": "docs/AI_CHANGE_CHECKLIST.md",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 4
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 6
+        },
+        {
+          "file": "docs/PROJECT_DECISIONS.md",
+          "count": 4
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 63,
+      "headings": [
+        "AI_START_HERE — быстрый вход в MosPochin",
+        "1. Сначала определить тип задачи",
+        "2. Source of truth",
+        "3. Карта проекта",
+        "4. Минимальные проверки",
+        "5. Пароконвектоматы",
+        "6. Handoff",
+        "7. Что делать, если сомневаешься"
+      ]
+    },
+    {
+      "file": "docs/AI_TASK_RECIPES.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 8225,
+      "references": [
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 2
+        },
+        {
+          "file": "data/ai-project-index.json",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-context.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-maintenance-lib.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 14,
+      "headings": [
+        "AI Task Recipes — MosPochin",
+        "Узнать, где править страницу",
+        "Найти страницу по смыслу",
+        "Изменить SEO title/description",
+        "Добавить или заменить FAQ",
+        "Изменить контакты",
+        "Добавить новую страницу услуги",
+        "Изменить изображение или добавить новое"
+      ]
+    },
+    {
+      "file": "docs/BRANDS_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 11090,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "docs/README.md",
+          "count": 2
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 5,
+      "headings": [
+        "🍽️ ПОПУЛЯРНЫЕ БРЕНДЫ РЕСТОРАННОЙ ТЕХНИКИ",
+        "📊 ТАБЛИЦА БРЕНДОВ ПО КАТЕГОРИЯМ",
+        "🔥 ТЕПЛОВОЕ ОБОРУДОВАНИЕ",
+        "❄️ ХОЛОДИЛЬНОЕ ОБОРУДОВАНИЕ",
+        "🍽️ ПОСУДОМОЕЧНОЕ ОБОРУДОВАНИЕ",
+        "🥣 МЕХАНИЧЕСКОЕ ОБОРУДОВАНИЕ",
+        "☕ КОФЕЙНОЕ ОБОРУДОВАНИЕ",
+        "🍗 ЖАРОЧНОЕ ОБОРУДОВАНИЕ"
+      ]
+    },
+    {
+      "file": "docs/CLEANUP_POLICY.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 1889,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "Cleanup Policy",
+        "Что считается live source",
+        "Что не добавлять обратно",
+        "Как чистить безопасно"
+      ]
+    },
+    {
+      "file": "docs/DATA_CONTRACTS.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 5679,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-context.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 7,
+      "headings": [
+        "Data Contracts — MosPochin",
+        "Главная команда",
+        "Что проверяется",
+        "1. JSON-синтаксис",
+        "2. Наличие контрактных файлов",
+        "3. SEO metadata",
+        "4. Контакты и runtime",
+        "5. Реестры услуг"
+      ]
+    },
+    {
+      "file": "docs/DECLARATIVE_COMPONENTS.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 4614,
+      "references": [
+        {
+          "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "docs/STATIC_COMPONENT_BUILDER.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-workspace.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/generate-ai-digest.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 10,
+      "headings": [
+        "Declarative Components",
+        "Что это даёт",
+        "Текущий статус",
+        "Как устроена ссылка на компонент",
+        "Команды",
+        "Безопасный workflow",
+        "Изменить уникальную секцию одной страницы",
+        "Изменить общий компонент"
+      ]
+    },
+    {
+      "file": "docs/DOC_INDEX.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 6458,
+      "references": [
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "AGENTS.md",
+          "count": 2
+        },
+        {
+          "file": "AI-CONTEXT.md",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 8
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 4
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 7
+        },
+        {
+          "file": "docs/AGENTS.md",
+          "count": 4
+        },
+        {
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 4
+        },
+        {
+          "file": "docs/AI_START_HERE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/PROJECT_DECISIONS.md",
+          "count": 4
+        },
+        {
+          "file": "docs/README.md",
+          "count": 4
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-task-router.mjs",
+          "count": 4
+        }
+      ],
+      "referenceCount": 63,
+      "headings": [
+        "DOC_INDEX — статусы документации MosPochin",
+        "Активные входы",
+        "Специальные reference-документы",
+        "Удалённые/схлопнутые документы",
+        "Правило чтения",
+        "Что может устаревать",
+        "Maintenance audit reports"
+      ]
+    },
+    {
+      "file": "docs/FAQ_REGISTRY.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 2186,
+      "references": [
+        {
+          "file": "docs/PARAMETERIZED_COMPONENTS.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/generate-faq-registry.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "FAQ Registry + FAQPage Schema Sync",
+        "Источник правды",
+        "Команды",
+        "Метрики текущего registry",
+        "Workflow для AI",
+        "Что считается schemaEligible"
+      ]
+    },
+    {
+      "file": "docs/HOUSEHOLD_AUTHORING_HELPERS.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 2164,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Household Authoring Helpers",
+        "Supported Commands",
+        "Boundaries",
+        "Fast Workflow"
+      ]
+    },
+    {
+      "file": "docs/HOUSEHOLD_EDITING_CHECKLIST.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 4250,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Household Editing Checklist",
+        "Change Symptoms, Brands, or Related Pages",
+        "Change FAQ Or Request-Form Copy",
+        "Change Trust, Review, Or Conversion Proof",
+        "Change Household Card Sections",
+        "Change SEO or Indexing",
+        "Change Menus, Branch Header, Footer, or Branch-Wide CTAs",
+        "Add a New Household Service Page"
+      ]
+    },
+    {
+      "file": "docs/HOUSEHOLD_FACTORY_MODEL.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 3851,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Household Factory Model",
+        "Goal",
+        "Source Of Truth Layers",
+        "Factory Tools",
+        "Editing Rule",
+        "Design Boundaries"
+      ]
+    },
+    {
+      "file": "docs/HOUSEHOLD_SERVICE_PAGE_CONTRACT.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 3380,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Household Service Page Contract",
+        "Source of Truth",
+        "Registry Fields",
+        "Page Contract",
+        "Slot Contract",
+        "Factory Contract",
+        "Shadow Pages"
+      ]
+    },
+    {
+      "file": "docs/HOUSEHOLD_SLOT_MODEL.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 4059,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Household Slot Model",
+        "Purpose",
+        "Source Of Truth Split",
+        "Runtime Behavior",
+        "Current Slot Surfaces",
+        "Editing Rule"
+      ]
+    },
+    {
+      "file": "docs/OPERATOR_ROUTING.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 5076,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 5
+        },
+        {
+          "file": "docs/README.md",
+          "count": 6
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 6
+        }
+      ],
+      "referenceCount": 17,
+      "headings": [
+        "Operator Routing",
+        "Default Routes",
+        "1. Diagnose A Page",
+        "2. Edit A Household Page",
+        "3. Edit A Restaurant Page",
+        "4. Run Representative Stabilization Audit",
+        "5. Run Full Restaurant Stabilization Audit",
+        "When Not To Go Deeper"
+      ]
+    },
+    {
+      "file": "docs/PARAMETERIZED_COMPONENTS.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 4213,
+      "references": [
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
+      "headings": [
+        "Parameterized Components",
+        "Что уже параметризовано",
+        "`lead-form / restaurant-parokonvektomat-b2b`",
+        "`mobile-contact` mount containers",
+        "Как это читать нейронке",
+        "Команды",
+        "Контракт качества",
+        "Почему это импактно"
+      ]
+    },
+    {
+      "file": "docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 7711,
+      "references": [
+        {
+          "file": ".ai/digest/clusters/parokonvektomaty.md",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 4
+        },
+        {
+          "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "AGENTS.md",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 2
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "data/project-map.generated.json",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_START_HERE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_TASK_RECIPES.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 4
+        },
+        {
+          "file": "tools/ai-task-router.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/generate-ai-digest.mjs",
+          "count": 8
+        }
+      ],
+      "referenceCount": 43,
+      "headings": [
+        "Parokonvektomat Cluster AI Guide",
+        "1. Роль кластера",
+        "2. Список страниц",
+        "3. P0/P1/P2 стратегия",
+        "4. Где править direct-страницы",
+        "5. Где лежат важные блоки",
+        "6. Перелинковка",
+        "7. Контентные правила"
+      ]
+    },
+    {
+      "file": "docs/PROJECT_DECISIONS.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 6101,
+      "references": [
+        {
+          "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 2
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "docs/AI_START_HERE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 5
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-context.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/generate-ai-digest.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 22,
+      "headings": [
+        "Project Decisions — MosPochin",
+        "2026-06 — Safe optimization over destructive compression",
+        "2026-06 — AI-maintainable workflow",
+        "2026-06 — Forms security contract",
+        "2026-06 — Metadata source of truth",
+        "2026-06 — Static Component Builder baseline",
+        "2026-06 — Docs prune v2: generated maps over stale human maps",
+        "2026-06 — Keep static-builder, avoid heavy stack migration"
+      ]
+    },
+    {
+      "file": "docs/README.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 7131,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 3
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-assets.mjs",
+          "count": 1
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "Mospochin_site",
+        "Canonical docs",
+        "Narrow reference docs",
+        "Source of truth",
+        "Telegram form runtime contract",
+        "Telegram delivery path",
+        "Validation and deploy",
+        "Branch model"
+      ]
+    },
+    {
+      "file": "docs/RESTAURANT_AUTHORING_HELPERS.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 2257,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Restaurant Authoring Helpers",
+        "Supported Commands",
+        "Boundaries",
+        "Fast Workflow"
+      ]
+    },
+    {
+      "file": "docs/RESTAURANT_BRANCH_CONTRACT.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 917,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Restaurant Branch Contract",
+        "Source of Truth",
+        "Page Roles",
+        "Validation"
+      ]
+    },
+    {
+      "file": "docs/RESTAURANT_FACTORY_MODEL.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 2912,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Restaurant Factory Model",
+        "Goal",
+        "Source Of Truth Layers",
+        "Factory Tools",
+        "Editing Rule"
+      ]
+    },
+    {
+      "file": "docs/RESTAURANT_SLOT_MODEL.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 2234,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Restaurant Slot Model",
+        "Source Of Truth",
+        "Branch Pages",
+        "Service Pages",
+        "Editing Rule",
+        "Validation"
+      ]
+    },
+    {
+      "file": "docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 3006,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 9
+        },
+        {
+          "file": "docs/OPERATOR_ROUTING.md",
+          "count": 4
+        },
+        {
+          "file": "docs/README.md",
+          "count": 6
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 4
+        }
+      ],
+      "referenceCount": 23,
+      "headings": [
+        "Restaurant Visual Audit Checklist",
+        "Start",
+        "Per-Page Review Sequence",
+        "Fixed Rubric",
+        "Severity Mapping",
+        "Finding Types",
+        "Do Not File",
+        "Backlog Rules"
+      ]
+    },
+    {
+      "file": "docs/SCALE_POLICY.md",
+      "category": "active",
+      "action": "keep",
+      "reason": "Current AI/project operating path or active contract.",
+      "sizeBytes": 4603,
+      "references": [
+        {
+          "file": "AGENTS.md",
+          "count": 2
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 3
+        },
+        {
+          "file": "docs/README.md",
+          "count": 4
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 12,
+      "headings": [
+        "Scale Policy: controlled growth to 150 pages",
+        "Решение",
+        "Жёсткий контракт",
+        "Текущий режим",
+        "Что нельзя делать",
+        "Что можно делать",
+        "Контрольные точки",
+        "До 75 страниц"
+      ]
+    },
+    {
+      "file": "docs/SITE_MAINTENANCE_MODEL.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 7708,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 7
+        },
+        {
+          "file": "docs/AGENTS.md",
+          "count": 2
+        },
+        {
+          "file": "docs/OPERATOR_ROUTING.md",
+          "count": 4
+        },
+        {
+          "file": "docs/README.md",
+          "count": 4
+        }
+      ],
+      "referenceCount": 17,
+      "headings": [
+        "Site Maintenance Model",
+        "Source Of Truth",
+        "Branch Separation",
+        "Editing Rules",
+        "Canonical Workflow",
+        "Screenshot Audit Workflow",
+        "Canonical Docs",
+        "Narrow Reference Docs"
+      ]
+    },
+    {
+      "file": "docs/STATIC_COMPONENT_BUILDER.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Domain/branch/component reference documentation.",
+      "sizeBytes": 4944,
+      "references": [
+        {
+          "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-context.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-workspace.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/generate-ai-digest.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 10,
+      "headings": [
+        "Static Component Builder",
+        "Что уже подключено",
+        "Команды",
+        "Рабочий цикл",
+        "Изменить страницу через builder",
+        "Если root HTML был изменён вручную",
+        "Почему это важно",
+        "Правила"
+      ]
+    }
+  ]
+}

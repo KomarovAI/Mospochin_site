@@ -2,21 +2,34 @@
   "canonicalDocs": [
     "README.md",
     "OPERATOR_ROUTING.md",
-    "PROJECT_MAP.md",
     "SITE_MAINTENANCE_MODEL.md",
-    "STABILIZATION_BACKLOG.md",
     "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
-    "DOC_STATUS.md"
+    "AI_START_HERE.md",
+    "DOC_INDEX.md",
+    "PROJECT_DECISIONS.md",
+    "SCALE_POLICY.md"
   ],
   "referenceDocs": [
     "BRANDS_GUIDE.md",
-    "CLEANUP_POLICY.md"
+    "CLEANUP_POLICY.md",
+    "DATA_CONTRACTS.md",
+    "AI_PROJECT_OPERATING_GUIDE.md",
+    "AI_CHANGE_CHECKLIST.md",
+    "PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md"
   ],
   "removedHistoricalDocs": [
     "BRANDS_SECTION_UPDATE.md",
     "INDEX_RESTAURANT_UPDATE.md",
     "MENU_UPDATED.md",
-    "VISUAL_EFFECTS.md"
+    "VISUAL_EFFECTS.md",
+    "AI_PROJECT_KNOWLEDGE.md",
+    "DOC_STATUS.md",
+    "PROJECT_MAP.md",
+    "SOURCE_COMPRESSION_PLAN.md",
+    "STABILIZATION_BACKLOG.md",
+    "STATIC_BUILDER_MIGRATION_PLAN.md",
+    "AI_NAVIGATION_PACK.md",
+    "AI_FILE_OWNERSHIP.md"
   ],
   "forbiddenCanonicalPatterns": [
     "/tmp/Mospochin_site",
@@ -32,23 +45,26 @@
     "README.md": [
       "docs/OPERATOR_ROUTING.md",
       "docs/SITE_MAINTENANCE_MODEL.md",
-      "docs/PROJECT_MAP.md",
-      "docs/STABILIZATION_BACKLOG.md",
       "docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
-      "docs/DOC_STATUS.md"
+      "docs/DOC_INDEX.md",
+      "data/project-map.generated.json",
+      "reports/manual-review-backlog.md"
     ],
     "OPERATOR_ROUTING.md": [
       "data/operator-recipes.json",
       "docs/SITE_MAINTENANCE_MODEL.md",
-      "docs/STABILIZATION_BACKLOG.md"
-    ],
-    "PROJECT_MAP.md": [
-      "docs/DOC_STATUS.md"
+      "reports/manual-review-backlog.md"
     ],
     "SITE_MAINTENANCE_MODEL.md": [
-      "docs/STABILIZATION_BACKLOG.md",
+      "reports/manual-review-backlog.md",
       "docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
-      "docs/DOC_STATUS.md"
+      "docs/DOC_INDEX.md",
+      "data/project-map.generated.json"
+    ],
+    "DOC_INDEX.md": [
+      "data/project-map.generated.json",
+      "data/file-ownership.json",
+      "reports/manual-review-backlog.md"
     ]
   },
   "requiredDocMentions": {
@@ -60,7 +76,8 @@
       "data/restaurant-screenshot-audit.json",
       "recipe:select",
       "audit:restaurant-branch",
-      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md"
+      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
+      "data/project-map.generated.json"
     ],
     "OPERATOR_ROUTING.md": [
       "data/operator-recipes.json",
@@ -69,13 +86,8 @@
       "validate:site",
       "audit:representative-pages",
       "audit:restaurant-branch",
-      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md"
-    ],
-    "PROJECT_MAP.md": [
-      "select-operator-recipe.mjs",
-      "data/restaurant-screenshot-audit.json",
-      "audit:restaurant-branch",
-      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md"
+      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
+      "reports/manual-review-backlog.md"
     ],
     "SITE_MAINTENANCE_MODEL.md": [
       "telegram-form.js",
@@ -84,15 +96,17 @@
       "data/screenshot-audit.json",
       "data/restaurant-screenshot-audit.json",
       "audit:restaurant-branch",
-      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md"
+      "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md",
+      "reports/manual-review-backlog.md",
+      "data/project-map.generated.json"
     ],
     "RESTAURANT_VISUAL_AUDIT_CHECKLIST.md": [
       "audit:restaurant-branch",
-      "STABILIZATION_BACKLOG.md",
+      "reports/manual-review-backlog.md",
       "restaurant visual audit YYYY-MM-DD <artifact-folder-name>"
     ],
-    "DOC_STATUS.md": [
-      "Removed Historical Notes"
+    "DOC_INDEX.md": [
+      "Удалённые/схлопнутые документы"
     ]
   }
 }

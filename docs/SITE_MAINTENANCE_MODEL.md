@@ -71,8 +71,8 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
 3. Sync fallbacks when the branch workflow requires it.
 4. Run `npm run validate:site`.
 5. Run any narrow branch/page smoke checks needed for the risk surface.
-6. For representative stabilization passes, run `npm run audit:representative-pages`, review `.artifacts/screenshots/`, and add only confirmed findings to `docs/STABILIZATION_BACKLOG.md`.
-7. For full restaurant stabilization passes, run `npm run audit:restaurant-branch`, review `.artifacts/screenshots/restaurant/` through `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md`, and add only confirmed findings to `docs/STABILIZATION_BACKLOG.md`.
+6. For representative stabilization passes, run `npm run audit:representative-pages`, review `.artifacts/screenshots/`, and add only confirmed findings to `reports/manual-review-backlog.md`.
+7. For full restaurant stabilization passes, run `npm run audit:restaurant-branch`, review `.artifacts/screenshots/restaurant/` through `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md`, and add only confirmed findings to `reports/manual-review-backlog.md`.
 8. Before merge, run `npm run doctor:changed-pages` (or rely on CI) so modified pages always pass `doctor:page`.
 9. If raster assets changed, run `npm run optimize:images` before `npm run check:image-budget`.
 10. Before deleting or pruning assets, run `npm run audit:assets` and treat "outside site reference graph" as a candidate list, not automatic deletion approval.
@@ -111,14 +111,14 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - machine-readable recipe catalog for default edit routes and branch-safe command paths
 - `docs/README.md`
   - repo-level operational overview
-- `docs/PROJECT_MAP.md`
-  - compact structural map of runtime/data/docs/tooling
+- `data/project-map.generated.json`
+  - generated machine map of pages, source, clusters, checks and ownership summary
 - `docs/SITE_MAINTENANCE_MODEL.md`
   - canonical site-wide maintenance model
-- `docs/STABILIZATION_BACKLOG.md`
+- `reports/manual-review-backlog.md`
   - confirmed rough edges and next hardening candidates, including screenshot-audit findings after manual review
-- `docs/DOC_STATUS.md`
-  - canonical doc taxonomy and status map
+- `docs/DOC_INDEX.md`
+  - current doc taxonomy and reading route
 - `docs/HOUSEHOLD_*`
   - household branch contracts and workflows
 - `docs/RESTAURANT_*`

@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomat-obschuzhivanie.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "0c31d32d76736bc3decc68409f423a29053745193b208d50d48c585bf4f8f98d",
+    "hash": "d322d634d46cae004f47d69c94035d4529752db56e8027514b71ec339699eb7d",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -209,36 +209,36 @@
       "hash": "29ff5e08fb19efa7"
     },
     {
-      "id": "022-faq-faq",
+      "id": "022-section-polomki-kotorye-chasto-predotvraschaet-obslu",
+      "component": "section",
+      "label": "Поломки, которые часто предотвращает обслуживание",
+      "file": "sections/022-section-polomki-kotorye-chasto-predotvraschaet-obslu.html",
+      "bytes": 4841,
+      "hash": "d78927ab13bc4761"
+    },
+    {
+      "id": "023-faq-faq",
       "component": "faq",
       "label": "FAQ",
-      "file": "sections/022-faq-faq.html",
+      "file": "sections/023-faq-faq.html",
       "bytes": 18,
       "hash": "9e584c17def5f620"
     },
     {
-      "id": "023-faq-chastye-voprosy-o-to-parokonvektomatov",
+      "id": "024-faq-chastye-voprosy-o-to-parokonvektomatov",
       "component": "faq",
       "label": "Частые вопросы о ТО пароконвектоматов",
-      "file": "sections/023-faq-chastye-voprosy-o-to-parokonvektomatov.html",
+      "file": "sections/024-faq-chastye-voprosy-o-to-parokonvektomatov.html",
       "bytes": 8652,
       "hash": "f9eb1347dd0c1db8"
     },
     {
-      "id": "024-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/024-raw-html-fragment.html",
-      "bytes": 37,
-      "hash": "cd38750147f42d85"
-    },
-    {
-      "id": "025-mobile-contact-zaklyuchite-dogovor-na-to-i-zabud-te-",
-      "component": "mobile-contact",
-      "label": "Заключите договор на ТО и забудьте об аварийных простоях",
-      "file": "sections/025-mobile-contact-zaklyuchite-dogovor-na-to-i-zabud-te-.html",
-      "bytes": 2061,
-      "hash": "76b50f1758b9d9e8"
+      "id": "025-related-links-svyazannye-stranicy-po-parokonvektomat",
+      "component": "related-links",
+      "label": "Связанные страницы по пароконвектоматам",
+      "file": "sections/025-related-links-svyazannye-stranicy-po-parokonvektomat.html",
+      "bytes": 9875,
+      "hash": "58fe11951c3d3e01"
     },
     {
       "id": "026-raw-html-fragment",
@@ -246,18 +246,60 @@
       "label": "HTML-фрагмент",
       "file": "sections/026-raw-html-fragment.html",
       "bytes": 38,
+      "hash": "4103a15d844d9528"
+    },
+    {
+      "id": "027-mobile-contact-zaklyuchite-dogovor-na-to-i-zabud-te-",
+      "component": "mobile-contact",
+      "label": "Заключите договор на ТО и забудьте об аварийных простоях",
+      "file": "sections/027-mobile-contact-zaklyuchite-dogovor-na-to-i-zabud-te-.html",
+      "bytes": 2061,
+      "hash": "76b50f1758b9d9e8"
+    },
+    {
+      "id": "028-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/028-raw-html-fragment.html",
+      "bytes": 38,
       "hash": "fb422908b4282971"
     },
     {
-      "id": "027-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz",
+      "id": "029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz",
       "component": "lead-form",
       "label": "Заключите договор на техническое обслуживание",
-      "file": "sections/027-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html",
-      "bytes": 5220,
-      "hash": "fe0f24d2ef1f1d07"
+      "file": "sections/029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html",
+      "bytes": 5405,
+      "hash": "d13cc216a1bd7bd5"
     },
     {
-      "id": "028-footer-anchor-footer-mount-point",
+      "id": "030-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/030-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "031-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/031-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "032-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
       "bytes": 39,
@@ -267,10 +309,10 @@
       "variant": "footer-container-mount",
       "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-f6291c7cb9f5.template.html",
       "props": {},
-      "sourceFile": "sections/028-footer-anchor-footer-mount-point.html"
+      "sourceFile": "sections/032-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "029-runtime-partials-podklyuchenie-partials-injector",
+      "id": "033-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 55,
@@ -280,10 +322,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a0c0c2f23990.template.html",
       "props": {},
-      "sourceFile": "sections/029-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/033-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "030-raw-html-fragment",
+      "id": "034-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -293,14 +335,14 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/030-raw-html-fragment.html"
+      "sourceFile": "sections/034-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:page -- --page parokonvektomat-obschuzhivanie.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page parokonvektomat-obschuzhivanie.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page parokonvektomat-obschuzhivanie.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

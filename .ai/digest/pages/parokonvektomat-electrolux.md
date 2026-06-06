@@ -7,8 +7,8 @@
 - H1: Ремонт пароконвектоматов Electrolux Professional
 - Canonical: https://mospochin.ru/parokonvektomat-electrolux.html
 - Builder model: src/pages/parokonvektomat-electrolux/page.json
-- Sections: 74 (15 local, 18 shared refs, 2 raw)
-- Text words inside referenced sections: 2245
+- Sections: 77 (18 local, 18 shared refs, 2 raw)
+- Text words inside referenced sections: 2670
 
 ## Component mix
 
@@ -17,13 +17,13 @@
 | layout-fragment | 34 |
 | proof | 10 |
 | pricing | 9 |
+| related-links | 4 |
+| section | 4 |
 | mobile-contact | 3 |
-| related-links | 3 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
-| section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
@@ -37,12 +37,12 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонт пароконвектоматов Electrolux Professional | hero | 10.6 KB | 97 | no | src/pages/parokonvektomat-electrolux/sections/007-hero-remont-parokonvektomatov-electrolux-professiona.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
+| Связанные страницы по пароконвектоматам | related-links | 8.9 KB | 173 | no | src/pages/parokonvektomat-electrolux/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 105 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 241 | no | src/pages/parokonvektomat-electrolux/sections/052-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
 | Что фиксируем до начала работ на объекте | proof | 6.7 KB | 181 | no | src/pages/parokonvektomat-electrolux/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
-| Цены на ремонт пароконвектоматов | pricing | 6.1 KB | 163 | yes | src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html |
 
 
 ## Editable source files

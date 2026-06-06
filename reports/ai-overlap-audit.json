@@ -1,0 +1,98 @@
+{
+  "summary": {
+    "generatedAt": "2026-06-06T08:58:14.278Z",
+    "pageCounts": {
+      "projectMap": 39,
+      "aiProjectIndex": 39,
+      "pageDigests": 39,
+      "clusterDigests": 1,
+      "overlapProjectIndex": 39,
+      "overlapProjectDigest": 39
+    },
+    "totalBytes": 908283
+  },
+  "inventory": [
+    {
+      "name": "projectMap",
+      "file": "data/project-map.generated.json",
+      "exists": true,
+      "sizeBytes": 51532,
+      "role": "primary machine-readable project map"
+    },
+    {
+      "name": "aiEditingManifest",
+      "file": "data/ai-editing-manifest.json",
+      "exists": true,
+      "sizeBytes": 6257,
+      "role": "compatibility/editing hints; candidate for compaction"
+    },
+    {
+      "name": "aiProjectIndex",
+      "file": "data/ai-project-index.json",
+      "exists": true,
+      "sizeBytes": 92812,
+      "role": "AI search/index layer; keep generated"
+    },
+    {
+      "name": "aiComponentMap",
+      "file": "data/ai-component-map.json",
+      "exists": true,
+      "sizeBytes": 74457,
+      "role": "AI component index; keep generated"
+    },
+    {
+      "name": "contentMap",
+      "file": ".ai/digest/content-map.json",
+      "exists": true,
+      "sizeBytes": 669596,
+      "role": "AI digest map; candidate for compaction if it duplicates project-map"
+    },
+    {
+      "name": "aiStartHere",
+      "file": "docs/AI_START_HERE.md",
+      "exists": true,
+      "sizeBytes": 5342,
+      "role": "primary human AI entrypoint"
+    },
+    {
+      "name": "docIndex",
+      "file": "docs/DOC_INDEX.md",
+      "exists": true,
+      "sizeBytes": 6458,
+      "role": "primary docs index"
+    },
+    {
+      "name": "fileOwnership",
+      "file": "data/file-ownership.json",
+      "exists": true,
+      "sizeBytes": 1829,
+      "role": "primary ownership/generated/manual contract"
+    }
+  ],
+  "findings": [
+    {
+      "id": "project-map-vs-ai-index-pages",
+      "severity": "info",
+      "summary": "39/39 project-map pages also appear in ai-project-index",
+      "recommendation": "Keep both for now: project-map routes edits; ai-project-index supports semantic/project context."
+    },
+    {
+      "id": "project-map-vs-page-digests",
+      "severity": "info",
+      "summary": "39/39 project-map pages have page digests",
+      "recommendation": "Keep page digests; they provide compact page summaries not present in project-map."
+    },
+    {
+      "id": "ai-editing-manifest-overlap",
+      "severity": "review",
+      "summary": "ai-editing-manifest likely overlaps with project-map and file-ownership after the AI navigation pack.",
+      "recommendation": "Review unique fields, then reduce to a small compatibility manifest in a future prune step."
+    },
+    {
+      "id": "content-map-size",
+      "severity": "review",
+      "summary": ".ai/digest/content-map.json size is 653.9 KB",
+      "recommendation": "If still >500 KB, compact long excerpts and duplicated page metadata in a future AI generated compact step."
+    }
+  ]
+}

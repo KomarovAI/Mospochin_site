@@ -6,10 +6,10 @@
 
 - Operator routing: [docs/OPERATOR_ROUTING.md](/home/artikk/Mospochin_site/docs/OPERATOR_ROUTING.md)
 - Site-wide maintenance model: [docs/SITE_MAINTENANCE_MODEL.md](/home/artikk/Mospochin_site/docs/SITE_MAINTENANCE_MODEL.md)
-- Repo structure map: [docs/PROJECT_MAP.md](/home/artikk/Mospochin_site/docs/PROJECT_MAP.md)
-- Stabilization backlog: [docs/STABILIZATION_BACKLOG.md](/home/artikk/Mospochin_site/docs/STABILIZATION_BACKLOG.md)
+- Project map: `data/project-map.generated.json` (generated machine map)
+- Manual review backlog: [reports/manual-review-backlog.md](/home/artikk/Mospochin_site/reports/manual-review-backlog.md)
 - Restaurant visual audit checklist: [docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md](/home/artikk/Mospochin_site/docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md)
-- Doc taxonomy: [docs/DOC_STATUS.md](/home/artikk/Mospochin_site/docs/DOC_STATUS.md)
+- Doc taxonomy: [docs/DOC_INDEX.md](/home/artikk/Mospochin_site/docs/DOC_INDEX.md)
 - Household docs: `docs/HOUSEHOLD_*`
 - Restaurant docs: `docs/RESTAURANT_*`
 
@@ -76,7 +76,7 @@
 
 ## Stabilization tracking
 
-- Confirmed rough edges and follow-up hardening work live in [docs/STABILIZATION_BACKLOG.md](/home/artikk/Mospochin_site/docs/STABILIZATION_BACKLOG.md).
+- Confirmed rough edges and follow-up hardening work live in [reports/manual-review-backlog.md](/home/artikk/Mospochin_site/reports/manual-review-backlog.md).
 - Representative screenshot audit coverage is defined only in `data/screenshot-audit.json`.
 - Full restaurant screenshot audit coverage is defined only in `data/restaurant-screenshot-audit.json`.
 - `npm run audit:screenshots` runs a local Playwright screenshot pass for the representative pages and stores artifacts under `.artifacts/screenshots/`.

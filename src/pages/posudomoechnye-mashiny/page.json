@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "posudomoechnye-mashiny.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "f5aa2e8c29419f359d8cc2483fbc268e947e0844cb0fa6bdefc28d971b0bf158",
+    "hash": "cd6cceacf3fd6082a0f0183e55e11fbf5f879cc7d5982fb04f7394365f17796b",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -641,8 +641,8 @@
     "npm run doctor:restaurant-page -- --page posudomoechnye-mashiny.html",
     "npm run doctor:page -- --page posudomoechnye-mashiny.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page posudomoechnye-mashiny.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page posudomoechnye-mashiny.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

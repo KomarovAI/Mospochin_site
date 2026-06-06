@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "routery.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "433208c3ed2dbeacdfd1c75d0d081096c8637ff9b9d755fdf78f8de5c0be367f",
+    "hash": "01ef620aa81f6449d8c3efb7b91d2b1a119f03c77a1b1ccaa76119ac7a40fa98",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -482,8 +482,8 @@
     "npm run doctor:household-page -- --page routery.html",
     "npm run doctor:page -- --page routery.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page routery.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page routery.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

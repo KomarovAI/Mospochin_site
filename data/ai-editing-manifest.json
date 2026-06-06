@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Machine-readable map for AI-assisted editing of MosPochin site.",
+  "startHere": [
+    "docs/AI_START_HERE.md",
+    "docs/DOC_INDEX.md",
+    "AGENTS.md",
+    "data/project-map.generated.json",
+    "data/file-ownership.json",
+    "docs/AI_PROJECT_OPERATING_GUIDE.md",
+    "AI-CONTEXT.md"
+  ],
+  "sourceOfTruth": {
+    "pageBuilder": "src/site-builder.json",
+    "pageModels": "src/pages/<slug>/page.json",
+    "pageSections": "src/pages/<slug>/sections/*.html",
+    "sharedComponents": "src/components/shared/*",
+    "parametricTemplates": "src/components/parametric/*/*.template.html",
+    "parametricProps": "content/components/*/*.json",
+    "metadata": "data/page-metadata.json",
+    "directLandings": "data/direct-landing-pages.json",
+    "faq": "content/faq/*",
+    "projectMap": "data/project-map.generated.json",
+    "fileOwnership": "data/file-ownership.json"
+  },
+  "generatedDoNotEditDirectly": [
+    "root *.html unless syncing builder intentionally",
+    "sitemap.xml",
+    ".deploy/include-files.txt",
+    "data/ai-project-index.json",
+    "data/ai-component-map.json",
+    ".ai/digest/*",
+    "reports/source-complexity.*",
+    "content/faq/page-faq-registry.json",
+    "data/project-map.generated.json"
+  ],
+  "criticalCommands": {
+    "afterAnyEdit": [
+      "npm run verify:fast"
+    ],
+    "afterLinksFormsOrCTA": [
+      "npm run check:conversion-ui"
+    ],
+    "afterDirectLandingEdit": [
+      "npm run generate:direct-landings",
+      "npm run check:conversion-ui"
+    ],
+    "afterMetadataEdit": [
+      "npm run sync:metadata",
+      "npm run validate:data",
+      "npm run validate:site"
+    ],
+    "afterAiDocsOrIndexEdit": [
+      "npm run generate:ai-index",
+      "npm run ai:digest",
+      "npm run ai:doctor"
+    ],
+    "beforeHandoff": [
+      "npm run sync:generated",
+      "npm run check:handoff"
+    ],
+    "routeTask": [
+      "npm run ai:route -- --task <type> --page <file.html>"
+    ],
+    "afterNavigationLayerEdit": [
+      "npm run sync:generated",
+      "npm run check:ai",
+      "npm run check:ownership"
+    ],
+    "packageHandoff": [
+      "npm run handoff:pack"
+    ],
+    "afterDocsPrune": [
+      "npm run sync:generated",
+      "npm run check:core",
+      "npm run check:ai",
+      "npm run check:handoff"
+    ]
+  },
+  "clusters": {
+    "parokonvektomaty": {
+      "guide": "docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md",
+      "conversionManifest": "data/parokonvektomat-conversion-pages.json",
+      "screenshotManifest": "data/parokonvektomat-screenshot-audit.json",
+      "digest": ".ai/digest/clusters/parokonvektomaty.md",
+      "guardCommand": "npm run check:conversion-ui",
+      "pages": [
+        {
+          "page": "parokonvektomaty.html",
+          "intent": "hub",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 12
+        },
+        {
+          "page": "parokonvektomaty-promo.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-rational.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-rational-e9.html",
+          "intent": "error",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-unox.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-unox-af02-af08.html",
+          "intent": "error",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-kod-oshibki.html",
+          "intent": "error-hub",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-e02-e07-e10.html",
+          "intent": "error",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-ne-greet.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-net-para.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-abat.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "neutral",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-convotherm.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "neutral",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-electrolux.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "neutral",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-lainox.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "neutral",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "parokonvektomat-obschuzhivanie.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "neutral",
+          "minClusterLinks": 8
+        },
+        {
+          "page": "remont-oborudovaniya-restorana-parokonvektomat.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant",
+          "minClusterLinks": 8
+        }
+      ]
+    }
+  },
+  "handoffChecklist": "docs/AI_CHANGE_CHECKLIST.md",
+  "changelog": "CHANGELOG_AI.md",
+  "navigationLayer": {
+    "entrypoint": "docs/AI_START_HERE.md",
+    "docIndex": "docs/DOC_INDEX.md",
+    "projectMap": "data/project-map.generated.json",
+    "ownership": "data/file-ownership.json",
+    "taskRouter": "npm run ai:route -- --task <type> --page <file.html>",
+    "handoffPacker": "npm run handoff:pack"
+  }
+}

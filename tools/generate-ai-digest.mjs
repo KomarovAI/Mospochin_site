@@ -20,6 +20,7 @@ import {
 } from './source-compression-lib.mjs';
 
 const args = parseArgs();
+const PAROKONVEKTOMAT_CLUSTER_MANIFEST = 'data/parokonvektomat-conversion-pages.json';
 
 function safeName(value) {
   return String(value || 'item')
@@ -36,6 +37,74 @@ function mdTable(headers, rows) {
     `| ${headers.map(() => '---').join(' | ')} |`,
     ...rows.map((row) => `| ${row.map(esc).join(' | ')} |`),
   ].join('\n') + '\n';
+}
+
+
+function loadParokonvektomatCluster() {
+  if (!fileExists(PAROKONVEKTOMAT_CLUSTER_MANIFEST)) return null;
+  try {
+    return readJson(PAROKONVEKTOMAT_CLUSTER_MANIFEST);
+  } catch {
+    return null;
+  }
+}
+
+function renderParokonvektomatClusterDigest(cluster, index) {
+  const pages = Array.isArray(cluster?.pages) ? cluster.pages : [];
+  const byIntent = new Map();
+  for (const page of pages) {
+    const key = page.intent || 'other';
+    if (!byIntent.has(key)) byIntent.set(key, []);
+    byIntent.get(key).push(page.page);
+  }
+
+  const lines = [];
+  lines.push('# Cluster Digest — parokonvektomaty');
+  lines.push('');
+  lines.push('Машинная сводка для AI-редактирования пароконвектоматного кластера. Полные правила: `docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md`. Контракт проверок: `data/parokonvektomat-conversion-pages.json`.');
+  lines.push('');
+  lines.push('## Summary');
+  lines.push('');
+  lines.push(mdTable(['Metric', 'Value'], [
+    ['Cluster', cluster?.cluster || 'parokonvektomaty'],
+    ['Pages', pages.length],
+    ['Canonical base', cluster?.canonicalBase || 'https://mospochin.ru/'],
+    ['Default min forms', cluster?.defaults?.minForms ?? '—'],
+    ['Default min cluster links', cluster?.defaults?.minClusterLinks ?? '—'],
+    ['Requires mobile CTA containers', cluster?.defaults?.requireMobileContactContainers ? 'yes' : 'no'],
+  ]));
+  lines.push('');
+  lines.push('## Pages');
+  lines.push('');
+  lines.push(mdTable(['Page', 'Intent', 'Indexable', 'Branch', 'Digest'], pages.map((page) => {
+    const digest = index.pages?.[page.page] ? `.ai/digest/pages/${safeName(page.page)}.md` : '—';
+    return [page.page, page.intent || '—', page.indexable ? 'index' : 'noindex', page.branch || '—', digest];
+  })));
+  lines.push('');
+  lines.push('## Intent groups');
+  lines.push('');
+  for (const [intent, groupPages] of [...byIntent.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
+    lines.push(`- **${intent}**: ${groupPages.join(', ')}`);
+  }
+  lines.push('');
+  lines.push('## AI editing rules');
+  lines.push('');
+  lines.push('- Do not create P1/P2 parokonvektomat pages without traffic/conversion data.');
+  lines.push('- Do not edit direct landing root HTML without syncing `data/direct-landing-pages.json` / generator output.');
+  lines.push('- Keep promo/noindex pages out of sitemap unless strategy changes.');
+  lines.push('- Keep forms, phone, WhatsApp, mobile CTA containers, analytics and Telegram form script intact.');
+  lines.push('- Keep internal links relevant: no self-link, no 404, no blind all-to-all spam.');
+  lines.push('- For old brand pages marked `neutral`, do not change branch to restaurant until registry/slots migration is done.');
+  lines.push('');
+  lines.push('## Mandatory checks');
+  lines.push('');
+  lines.push('```bash');
+  lines.push('npm run check:conversion-ui');
+  lines.push('npm run verify:fast');
+  lines.push('npm run ai:doctor');
+  lines.push('```');
+  lines.push('');
+  return lines.join('\n');
 }
 
 function firstTextFromHtml(html, selector = 'h2') {
@@ -61,12 +130,17 @@ function renderProjectDigest(report, index, componentMap) {
   lines.push('## Быстрая карта');
   lines.push('');
   lines.push(mdTable(['Область', 'Источник'], [
-    ['Главный контекст', 'AI-CONTEXT.md'],
-    ['Владение файлами', 'docs/AI_FILE_OWNERSHIP.md'],
+    ['AI entrypoint', 'docs/AI_START_HERE.md'],
+    ['Doc index', 'docs/DOC_INDEX.md'],
+    ['Project map', 'data/project-map.generated.json'],
+    ['AI operating guide', 'docs/AI_PROJECT_OPERATING_GUIDE.md'],
+    ['AI editing manifest', 'data/ai-editing-manifest.json'],
+    ['Пароконвектоматы AI guide', 'docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md'],
+    ['Владение файлами', 'data/file-ownership.json'],
     ['Гибкое редактирование', 'docs/AI_FLEXIBLE_EDITING.md'],
     ['Builder', 'docs/STATIC_COMPONENT_BUILDER.md'],
     ['Shared components', 'docs/DECLARATIVE_COMPONENTS.md'],
-    ['Сжатие source', 'docs/SOURCE_COMPRESSION_PLAN.md'],
+    ['Scale/source decisions', 'docs/PROJECT_DECISIONS.md'],
     ['Страницы', '.ai/digest/pages/*.md'],
     ['Компоненты', '.ai/digest/components/*.md'],
     ['Машинная карта', '.ai/digest/content-map.json'],
@@ -282,12 +356,31 @@ function buildContentMap(report, index, componentMap) {
     entrypoints: {
       projectDigest: `${DIGEST_DIR}/project.md`,
       sourceComplexity: 'reports/source-complexity.md',
-      aiContext: 'AI-CONTEXT.md',
+      aiStartHere: 'docs/AI_START_HERE.md',
+      docIndex: 'docs/DOC_INDEX.md',
+      projectMap: 'data/project-map.generated.json',
+      fileOwnership: 'data/file-ownership.json',
+      aiContextCompatibility: 'AI-CONTEXT.md',
+      aiOperatingGuide: 'docs/AI_PROJECT_OPERATING_GUIDE.md',
+      aiEditingManifest: 'data/ai-editing-manifest.json',
+      parokonvektomatClusterGuide: 'docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md',
       flexibleEditing: 'docs/AI_FLEXIBLE_EDITING.md',
     },
     summary: report.summary,
     pages,
     components,
+    clusters: (() => {
+      const cluster = loadParokonvektomatCluster();
+      if (!cluster) return {};
+      return {
+        parokonvektomaty: {
+          guide: 'docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md',
+          manifest: PAROKONVEKTOMAT_CLUSTER_MANIFEST,
+          digest: `${DIGEST_DIR}/clusters/parokonvektomaty.md`,
+          pages: (cluster.pages || []).map((page) => page.page),
+        },
+      };
+    })(),
     compressionOpportunities: report.compressionOpportunities,
   };
 }
@@ -306,6 +399,11 @@ function generateDigestFiles() {
   const sharedByFile = componentRefPages(report);
   for (const component of Object.values(componentMap.components || {}).sort((a, b) => a.id.localeCompare(b.id))) {
     files.set(`${DIGEST_DIR}/components/${safeName(component.id)}.md`, renderComponentDigest(component, report, sharedByFile));
+  }
+
+  const parokonvektomatCluster = loadParokonvektomatCluster();
+  if (parokonvektomatCluster) {
+    files.set(`${DIGEST_DIR}/clusters/parokonvektomaty.md`, renderParokonvektomatClusterDigest(parokonvektomatCluster, aiIndex));
   }
 
   files.set(`${DIGEST_DIR}/content-map.json`, `${JSON.stringify(buildContentMap(report, aiIndex, componentMap), null, 2)}\n`);
@@ -342,6 +440,7 @@ if (args.check) {
 if (existsSync(join(ROOT_DIR, DIGEST_DIR))) rmSync(join(ROOT_DIR, DIGEST_DIR), { recursive: true, force: true });
 ensureDir(`${DIGEST_DIR}/pages`);
 ensureDir(`${DIGEST_DIR}/components`);
+ensureDir(`${DIGEST_DIR}/clusters`);
 for (const [file, content] of files) writeProjectFile(file, content);
 console.log(`✅ AI digest записан: ${DIGEST_DIR}`);
 console.log(`Files: ${files.size}`);

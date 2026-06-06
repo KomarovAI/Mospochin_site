@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "bytovaya-uslugi.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "584bd726ca911c495f52bb029ae241b64921cb81dbf3e10665073d64e4db0077",
+    "hash": "4b623fb81385fa8f18e66679a08d0e0b913085ea0ce83c1b7a27b9b24e4074ee",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -203,8 +203,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page bytovaya-uslugi.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page bytovaya-uslugi.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page bytovaya-uslugi.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

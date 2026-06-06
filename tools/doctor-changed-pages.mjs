@@ -184,10 +184,16 @@ function runDoctorForPages(pages, options = {}) {
 
   for (const page of pages) {
     if (!quiet) process.stdout.write(`doctor:page ${page}\n`);
-    const result = spawnSync(process.execPath, [DOCTOR_SCRIPT, '--page', page], {
-      cwd: SITE_ROOT,
-      encoding: 'utf8',
-    });
+    const result = spawnSync(process.execPath, [DOCTOR_SCRIPT, '--page', page], quiet
+      ? {
+          cwd: SITE_ROOT,
+          stdio: ['ignore', 'ignore', 'pipe'],
+          encoding: 'utf8',
+        }
+      : {
+          cwd: SITE_ROOT,
+          encoding: 'utf8',
+        });
 
     if (!quiet || result.status !== 0) {
       if (result.stdout) process.stdout.write(result.stdout);

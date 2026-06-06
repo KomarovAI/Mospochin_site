@@ -1,0 +1,1228 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "tools/generate-project-map.mjs",
+  "generatedAt": "deterministic",
+  "purpose": "Single generated navigation map for AI agents: pages, ownership, generated files, clusters and check commands.",
+  "sourceOfTruth": {
+    "pageBuilder": "src/site-builder.json",
+    "pageModels": "src/pages/<slug>/page.json",
+    "pageSections": "src/pages/<slug>/sections/*.html",
+    "sharedComponents": "src/components/shared/*",
+    "parametricTemplates": "src/components/parametric/*/*.template.html",
+    "parametricProps": "content/components/*/*.json",
+    "metadata": "data/page-metadata.json",
+    "directLandings": "data/direct-landing-pages.json",
+    "faq": "content/faq/*"
+  },
+  "commands": {
+    "afterSmallEdit": "npm run check:core",
+    "afterGeneratedSourceEdit": "npm run sync:generated && npm run check:handoff",
+    "beforeHandoff": "npm run check:handoff",
+    "beforeProduction": "npm run check:full",
+    "routeTask": "npm run ai:route -- --task <type> --page <file.html>",
+    "packageHandoff": "npm run handoff:pack"
+  },
+  "ownership": {
+    "manifest": "data/file-ownership.json",
+    "manualPatterns": 16,
+    "generatedPatterns": 12,
+    "dangerZonePatterns": 12,
+    "check": "npm run check:ownership"
+  },
+  "summary": {
+    "pages": 39,
+    "branches": {
+      "neutral": 6,
+      "restaurant": 21,
+      "household": 12
+    },
+    "sitemapPages": 34,
+    "clusters": 1,
+    "directLandingPages": 10
+  },
+  "clusters": {
+    "parokonvektomaty": {
+      "manifest": "data/parokonvektomat-conversion-pages.json",
+      "guide": "docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md",
+      "screenshotManifest": "data/parokonvektomat-screenshot-audit.json",
+      "check": "npm run check:conversion-ui",
+      "pages": [
+        "parokonvektomaty.html",
+        "parokonvektomaty-promo.html",
+        "parokonvektomat-rational.html",
+        "parokonvektomat-rational-e9.html",
+        "parokonvektomat-unox.html",
+        "parokonvektomat-unox-af02-af08.html",
+        "parokonvektomat-kod-oshibki.html",
+        "parokonvektomat-e02-e07-e10.html",
+        "parokonvektomat-ne-greet.html",
+        "parokonvektomat-net-para.html",
+        "parokonvektomat-abat.html",
+        "parokonvektomat-convotherm.html",
+        "parokonvektomat-electrolux.html",
+        "parokonvektomat-lainox.html",
+        "parokonvektomat-obschuzhivanie.html",
+        "remont-oborudovaniya-restorana-parokonvektomat.html"
+      ]
+    }
+  },
+  "pages": {
+    "404.html": {
+      "slug": "404",
+      "rootHtml": "404.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/404/page.json",
+        "sectionsDir": "src/pages/404/sections",
+        "sourceHash": "e465be7a2b8ddba4e9356e986faa4f90eff1a2f325becef9d6fc0d0eb6305473",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "404 — Страница не найдена | MosPochin",
+        "description": "Страница не найдена. Вернитесь на главную MosPochin — ремонт техники в Москве.",
+        "canonical": null,
+        "robots": "noindex,follow",
+        "branch": "neutral",
+        "hasForm": false
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "about.html": {
+      "slug": "about",
+      "rootHtml": "about.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/about/page.json",
+        "sectionsDir": "src/pages/about/sections",
+        "sourceHash": "0e471f649c191f2ee2eb630a04c33320920153cf0e213cc6eacf656ed23af471",
+        "sections": 25
+      },
+      "metadata": {
+        "title": "О компании MosPochin — с 2010 года ремонта техники в Москве",
+        "description": "MosPochin — профессиональный ремонт техники с 2010 года. 500+ клиентов, 15 мастеров. Оригинальные запчасти. Гарантия до 24 месяцев.",
+        "canonical": "https://mospochin.ru/about.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bytovaya-about.html": {
+      "slug": "bytovaya-about",
+      "rootHtml": "bytovaya-about.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bytovaya-about/page.json",
+        "sectionsDir": "src/pages/bytovaya-about/sections",
+        "sourceHash": "a8fe25e8367a8fb78a76232be6d6866a0cf254248bc798320d66e91b810be007",
+        "sections": 49
+      },
+      "metadata": {
+        "title": "О MosPochin — ремонт бытовой техники в Москве",
+        "description": "MosPochin ремонтирует бытовую технику на дому в Москве: находим причину поломки, согласуем цену до работ и даём гарантию.",
+        "canonical": "https://mospochin.ru/bytovaya-about.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bytovaya-contact.html": {
+      "slug": "bytovaya-contact",
+      "rootHtml": "bytovaya-contact.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bytovaya-contact/page.json",
+        "sectionsDir": "src/pages/bytovaya-contact/sections",
+        "sourceHash": "faa2957c40a8f8f0ec7a53f60aac2f8430335035ec6dd1002cc0ad59b1ceb52d",
+        "sections": 18
+      },
+      "metadata": {
+        "title": "Контакты MosPochin — сервисные точки в Москве и Балашихе",
+        "description": "Контакты MosPochin по бытовой технике: 8 (999) 005-71-72, WhatsApp, Telegram и сервисные точки в Москве и Балашихе. Работаем без выходных.",
+        "canonical": "https://mospochin.ru/bytovaya-contact.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bytovaya-index.html": {
+      "slug": "bytovaya-index",
+      "rootHtml": "bytovaya-index.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bytovaya-index/page.json",
+        "sectionsDir": "src/pages/bytovaya-index/sections",
+        "sourceHash": "bca1f7e64d8d1e15c6db93cb3652f5d07bdbe24a70cfb591b4dd526cb2ca5446",
+        "sections": 36
+      },
+      "metadata": {
+        "title": "Ремонт бытовой техники на дому в Москве — MosPochin",
+        "description": "Ремонт бытовой техники на дому в Москве: холодильники, стиральные машины, посудомойки, плиты, микроволновки и водонагреватели.",
+        "canonical": "https://mospochin.ru/bytovaya-index.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bytovaya-uslugi.html": {
+      "slug": "bytovaya-uslugi",
+      "rootHtml": "bytovaya-uslugi.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bytovaya-uslugi/page.json",
+        "sectionsDir": "src/pages/bytovaya-uslugi/sections",
+        "sourceHash": "4b623fb81385fa8f18e66679a08d0e0b913085ea0ce83c1b7a27b9b24e4074ee",
+        "sections": 18
+      },
+      "metadata": {
+        "title": "Услуги по ремонту бытовой техники — MosPochin",
+        "description": "Каталог услуг MosPochin: ремонт холодильников, стиральных машин, посудомоек, плит, микроволновок и водонагревателей на дому.",
+        "canonical": "https://mospochin.ru/bytovaya-uslugi.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "contact.html": {
+      "slug": "contact",
+      "rootHtml": "contact.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/contact/page.json",
+        "sectionsDir": "src/pages/contact/sections",
+        "sourceHash": "900f9c1afac198ada1aa50984f68cf615bd2edfa628575d733b20466b1340869",
+        "sections": 39
+      },
+      "metadata": {
+        "title": "Контакты MosPochin — телефон, WhatsApp, Telegram, адрес в Москве",
+        "description": "Телефон, WhatsApp, Telegram и адрес MosPochin в Москве. Принимаем заявки на ремонт ресторанного оборудования 24/7.",
+        "canonical": "https://mospochin.ru/contact.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "grili-mangaly.html": {
+      "slug": "grili-mangaly",
+      "rootHtml": "grili-mangaly.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/grili-mangaly/page.json",
+        "sectionsDir": "src/pages/grili-mangaly/sections",
+        "sourceHash": "039251095dbb5e54866a6549884288f5da6fda46cc1e6ebccaa35d4050bf0da3",
+        "sections": 61
+      },
+      "metadata": {
+        "title": "Ремонт грилей и фритюрниц в Москве — MosPochin | от 500₽",
+        "description": "Ремонт контактных и газовых грилей, фритюрниц, саламандр и мармитов. Миксеры и блендеры обслуживаем как доп. оборудование. Выезд за 45 мин. Гарантия 24 мес.",
+        "canonical": "https://mospochin.ru/grili-mangaly.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "holodilniki.html": {
+      "slug": "holodilniki",
+      "rootHtml": "holodilniki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/holodilniki/page.json",
+        "sectionsDir": "src/pages/holodilniki/sections",
+        "sourceHash": "c4f08730c458ee4490a8f100ee5774e7785fcd72db705e03db5ddddc659d3aeb",
+        "sections": 51
+      },
+      "metadata": {
+        "title": "Ремонт холодильников на дому в Москве — MosPochin",
+        "description": "Ремонт холодильников Bosch, Samsung, LG, Indesit на дому в Москве и МО. Диагностика причины, согласование работ и гарантия после ремонта.",
+        "canonical": "https://mospochin.ru/holodilniki.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "holodilnoe-oborudovanie.html": {
+      "slug": "holodilnoe-oborudovanie",
+      "rootHtml": "holodilnoe-oborudovanie.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/holodilnoe-oborudovanie/page.json",
+        "sectionsDir": "src/pages/holodilnoe-oborudovanie/sections",
+        "sourceHash": "b61e1a469bfe1ddb1683836269c707c6461c1e289fd8cfb0be7408075464ac69",
+        "sections": 64
+      },
+      "metadata": {
+        "title": "Ремонт холодильного оборудования в Москве — MosPochin | от 1 290₽",
+        "description": "Ремонт промышленных холодильных шкафов, морозильных камер, шоковой заморозки. Выезд за 45 мин. Гарантия 24 мес. Диагностика при ремонте.",
+        "canonical": "https://mospochin.ru/holodilnoe-oborudovanie.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ice-machines.html": {
+      "slug": "ice-machines",
+      "rootHtml": "ice-machines.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ice-machines/page.json",
+        "sectionsDir": "src/pages/ice-machines/sections",
+        "sourceHash": "f89dd1daef91a63ee3dca38f5d31a98df6de258c766329c1370ded527ad12240",
+        "sections": 64
+      },
+      "metadata": {
+        "title": "Ремонт льдогенераторов в Москве — MosPochin | от 800₽",
+        "description": "Ремонт льдогенераторов Scotsman, Manitowoc, Hoshizaki. Кусковые, гранулярные, Gourmet. Выезд за 45 мин. Гарантия 24 мес. Диагностика при ремонте.",
+        "canonical": "https://mospochin.ru/ice-machines.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "index.html": {
+      "slug": "index",
+      "rootHtml": "index.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/index/page.json",
+        "sectionsDir": "src/pages/index/sections",
+        "sourceHash": "4a930e048cd74a8368830eda5175dda88ffdce4ed0081d6e356b131009cd2ec3",
+        "sections": 27
+      },
+      "metadata": {
+        "title": "Ремонт ресторанного оборудования в Москве — MosPochin",
+        "description": "Срочный ремонт пароконвектоматов, плит и холодильного оборудования для ресторанов и кафе. Выезд инженера, договор, гарантия.",
+        "canonical": "https://mospochin.ru/",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kompyutery.html": {
+      "slug": "kompyutery",
+      "rootHtml": "kompyutery.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kompyutery/page.json",
+        "sectionsDir": "src/pages/kompyutery/sections",
+        "sourceHash": "d981f477353463ef9a684dd6da59ce3e3558d21a6f2f8a1be4b1680d6537a3e3",
+        "sections": 55
+      },
+      "metadata": {
+        "title": "Ремонт компьютеров и ноутбуков в Москве на дому — MosPochin",
+        "description": "Ремонт компьютеров и ноутбуков на дому в Москве. Диагностика, согласование работ, аккуратная настройка и восстановление техники с гарантией.",
+        "canonical": "https://mospochin.ru/kompyutery.html",
+        "robots": "noindex,follow",
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "microwaves.html": {
+      "slug": "microwaves",
+      "rootHtml": "microwaves.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/microwaves/page.json",
+        "sectionsDir": "src/pages/microwaves/sections",
+        "sourceHash": "6c2538fba35689a2bc086d435dd9fa06026f49062c0befca283d1da5ab77ae9f",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Ремонт встроенных микроволновок — MosPochin",
+        "description": "Ремонт встраиваемых СВЧ Neff, Miele, Bosch, Siemens, Smeg и Gaggenau в Москве. Смета до работ и гарантия на ремонт.",
+        "canonical": "https://mospochin.ru/microwaves.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-abat.html": {
+      "slug": "parokonvektomat-abat",
+      "rootHtml": "parokonvektomat-abat.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-abat/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-abat/sections",
+        "sourceHash": "b050509575177a6c3c29653a7d1c3c2127a3c3481379743250a6e13a3eb9bc46",
+        "sections": 77
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Abat — ПКА, КПЭ | MosPochin",
+        "description": "Ремонт пароконвектоматов Abat ПКА, КПЭ: ошибки E02, E07, E10, не греет, нет пара. Срочный выезд инженера по Москве. Договор, безнал, гарантия 24 мес.",
+        "canonical": "https://mospochin.ru/parokonvektomat-abat.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-convotherm.html": {
+      "slug": "parokonvektomat-convotherm",
+      "rootHtml": "parokonvektomat-convotherm.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-convotherm/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-convotherm/sections",
+        "sourceHash": "55c1b19299e386c0862a2cf6bf10edb7ffb4ae62344757bea679d44ac5367c84",
+        "sections": 77
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Convotherm — C4, C6 | MosPochin",
+        "description": "Ремонт пароконвектоматов Convotherm C4, C6, mini, combiPro: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия 24 мес.",
+        "canonical": "https://mospochin.ru/parokonvektomat-convotherm.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-e02-e07-e10.html": {
+      "slug": "parokonvektomat-e02-e07-e10",
+      "rootHtml": "parokonvektomat-e02-e07-e10.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-e02-e07-e10/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-e02-e07-e10/sections",
+        "sourceHash": "3c2c9e781380d88bbf31d03a908727c1743c9c8f7d7a91e877282b371f7c1b53",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Ошибка E02, E07, E10 пароконвектомата Abat и Fagor — ремонт | MosPochin",
+        "description": "Ошибки E02, E07, E10 на пароконвектоматах Abat, Абат и Fagor: диагностика на объекте, фото кода в WhatsApp, выезд инженера для ресторанов и кафе.",
+        "canonical": "https://mospochin.ru/parokonvektomat-e02-e07-e10.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-electrolux.html": {
+      "slug": "parokonvektomat-electrolux",
+      "rootHtml": "parokonvektomat-electrolux.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-electrolux/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-electrolux/sections",
+        "sourceHash": "bd00ab7bb4abab02b8a135a60a300a44ce7a90f74842a9a31d2aec080ee80e99",
+        "sections": 77
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Electrolux Professional | MosPochin",
+        "description": "Ремонт пароконвектоматов Electrolux Professional: air-o-steam, air-o-convect, SkyLine, thermaline. Ошибки, не греет, нет пара. Срочный выезд. Договор, безнал.",
+        "canonical": "https://mospochin.ru/parokonvektomat-electrolux.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-kod-oshibki.html": {
+      "slug": "parokonvektomat-kod-oshibki",
+      "rootHtml": "parokonvektomat-kod-oshibki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-kod-oshibki/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-kod-oshibki/sections",
+        "sourceHash": "c34b13f77e2500b700738ab855418907b535a796ee9b67a59cb4e85b4bb10de8",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Код ошибки пароконвектомата — расшифровка и выезд инженера | MosPochin",
+        "description": "Код ошибки пароконвектомата Rational, Unox, Abat, Fagor или Lainox: что означает, что проверить без разбора и когда нужен инженер на объект. Фото кода в WhatsApp.",
+        "canonical": "https://mospochin.ru/parokonvektomat-kod-oshibki.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-lainox.html": {
+      "slug": "parokonvektomat-lainox",
+      "rootHtml": "parokonvektomat-lainox.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-lainox/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-lainox/sections",
+        "sourceHash": "8b7981f5e9f6994183a92ee622744be38aadf60e11fb5d971e81ab2026864256",
+        "sections": 77
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Lainox — Naboo, Krea, Junior | MosPochin",
+        "description": "Ремонт пароконвектоматов Lainox Naboo, Krea, Junior: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия 24 мес.",
+        "canonical": "https://mospochin.ru/parokonvektomat-lainox.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-ne-greet.html": {
+      "slug": "parokonvektomat-ne-greet",
+      "rootHtml": "parokonvektomat-ne-greet.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-ne-greet/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-ne-greet/sections",
+        "sourceHash": "b5fbb3b1f433e70efa8c2470b9249af2e36e2102dfe6323e61fac473afc615f8",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Пароконвектомат не греет — выезд инженера в Москве | MosPochin",
+        "description": "Пароконвектомат не греет или не набирает температуру: проверка ТЭНов, датчиков, SSR-реле, платы и питания. Выезд инженера для ресторанов.",
+        "canonical": "https://mospochin.ru/parokonvektomat-ne-greet.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-net-para.html": {
+      "slug": "parokonvektomat-net-para",
+      "rootHtml": "parokonvektomat-net-para.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-net-para/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-net-para/sections",
+        "sourceHash": "a474c98eb82d2d6378274802e6f68415ab8567b0420e3f161ccbbd98d805ce04",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Нет пара в пароконвектомате — ремонт на объекте | MosPochin",
+        "description": "Пароконвектомат не подаёт пар или не держит влажность: проверка воды, клапанов, парогенератора, накипи и датчиков. Выезд инженера для ресторанов.",
+        "canonical": "https://mospochin.ru/parokonvektomat-net-para.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-obschuzhivanie.html": {
+      "slug": "parokonvektomat-obschuzhivanie",
+      "rootHtml": "parokonvektomat-obschuzhivanie.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-obschuzhivanie/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-obschuzhivanie/sections",
+        "sourceHash": "d322d634d46cae004f47d69c94035d4529752db56e8027514b71ec339699eb7d",
+        "sections": 34
+      },
+      "metadata": {
+        "title": "Техническое обслуживание пароконвектоматов | MosPochin",
+        "description": "Регулярное ТО пароконвектоматов Rational, Unox, Convotherm, Abat, Lainox и Electrolux. Договор, профилактика, декальцинация.",
+        "canonical": "https://mospochin.ru/parokonvektomat-obschuzhivanie.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-rational-e9.html": {
+      "slug": "parokonvektomat-rational-e9",
+      "rootHtml": "parokonvektomat-rational-e9.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-rational-e9/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-rational-e9/sections",
+        "sourceHash": "bf9f13f8fba43961320d409386d7b0ceff0b7561eb8c971664c4f98c009fe5c4",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Ошибка Rational E9 — ремонт пароконвектомата для ресторана | MosPochin",
+        "description": "Ошибка E9 на пароконвектомате Rational: фото кода и шильдика в WhatsApp, диагностика на объекте, выезд инженера для ресторанов, кафе и пекарен.",
+        "canonical": "https://mospochin.ru/parokonvektomat-rational-e9.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-rational.html": {
+      "slug": "parokonvektomat-rational",
+      "rootHtml": "parokonvektomat-rational.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-rational/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-rational/sections",
+        "sourceHash": "794c10fb4f8c792425715b393a6e72b58d79313bc28e090d80b611398bb6bec9",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Rational в Москве — выезд инженера | MosPochin",
+        "description": "Ремонт пароконвектоматов Rational SCC и CMP для ресторанов и кафе: ошибки, нет пара, не греет, диагностика и выезд инженера.",
+        "canonical": "https://mospochin.ru/parokonvektomat-rational.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-unox-af02-af08.html": {
+      "slug": "parokonvektomat-unox-af02-af08",
+      "rootHtml": "parokonvektomat-unox-af02-af08.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-unox-af02-af08/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-unox-af02-af08/sections",
+        "sourceHash": "56c637420765096cabc521c3eaabb18e4af4efb8c904fb587056b243aa263de7",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Ошибка Unox AF02 и AF08 — ремонт пароконвектомата | MosPochin",
+        "description": "Ошибки AF02 и AF08 на пароконвектоматах Unox: фото кода в WhatsApp, диагностика датчиков, пара, нагрева и платы, выезд инженера для ресторанов.",
+        "canonical": "https://mospochin.ru/parokonvektomat-unox-af02-af08.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-unox.html": {
+      "slug": "parokonvektomat-unox",
+      "rootHtml": "parokonvektomat-unox.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-unox/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-unox/sections",
+        "sourceHash": "5ecdb6b7c2a08265da5acadbaa418002796a6fc4b6fe3836bc976e781a6af856",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Unox в Москве — диагностика и выезд | MosPochin",
+        "description": "Ремонт пароконвектоматов Unox для ресторанов, кафе и пекарен: ошибки AF01, AF02, AF08, нет пара, не греет, выезд инженера.",
+        "canonical": "https://mospochin.ru/parokonvektomat-unox.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomaty-promo.html": {
+      "slug": "parokonvektomaty-promo",
+      "rootHtml": "parokonvektomaty-promo.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomaty-promo/page.json",
+        "sectionsDir": "src/pages/parokonvektomaty-promo/sections",
+        "sourceHash": "8de3f6bf3cebcfd988ebce63ee4bcb114f6d26087ee477fe1f276414de85de0f",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Ошибка пароконвектомата — выезд инженера Rational, Unox, Abat | MosPochin",
+        "description": "Ошибка, нет пара или нагрева у пароконвектомата Rational, Unox, Abat. Фото кода в WhatsApp, выезд инженера, договор и безнал.",
+        "canonical": "https://mospochin.ru/parokonvektomaty-promo.html",
+        "robots": "noindex,follow",
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomaty.html": {
+      "slug": "parokonvektomaty",
+      "rootHtml": "parokonvektomaty.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomaty/page.json",
+        "sectionsDir": "src/pages/parokonvektomaty/sections",
+        "sourceHash": "998ba02bdb0c0508d170bf97361dc39f1547c61410223656206880ea06b30c41",
+        "sections": 72
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов для ресторанов в Москве | MosPochin",
+        "description": "Ремонт и обслуживание пароконвектоматов для ресторанов, кафе и пекарен. Выезд инженера, смета до работ, договор и безнал.",
+        "canonical": "https://mospochin.ru/parokonvektomaty.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnye-kotly.html": {
+      "slug": "pishevarochnye-kotly",
+      "rootHtml": "pishevarochnye-kotly.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnye-kotly/page.json",
+        "sectionsDir": "src/pages/pishevarochnye-kotly/sections",
+        "sourceHash": "211a1f6d5f9f5a214f482e3c603ccaa3e11dada484d69e13f9616b6cb9cee58e",
+        "sections": 27
+      },
+      "metadata": {
+        "title": "Ремонт пищеварочных котлов в Москве — MosPochin",
+        "description": "Ремонт промышленных пищеварочных котлов для ресторанов, столовых и производств: не греет, течёт, ошибка, не держит температуру.",
+        "canonical": "https://mospochin.ru/pishevarochnye-kotly.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "plity-pechi.html": {
+      "slug": "plity-pechi",
+      "rootHtml": "plity-pechi.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/plity-pechi/page.json",
+        "sectionsDir": "src/pages/plity-pechi/sections",
+        "sourceHash": "701995610246c2b302908bf269ea691809b1c1843ce20f6c6b7bd988e90d2dda",
+        "sections": 34
+      },
+      "metadata": {
+        "title": "Ремонт промышленных плит и печей в Москве — MosPochin",
+        "description": "Ремонт газовых и электрических плит, индукционных поверхностей и жарочных шкафов для ресторанов и столовых. Смета до работ.",
+        "canonical": "https://mospochin.ru/plity-pechi.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "plity.html": {
+      "slug": "plity",
+      "rootHtml": "plity.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/plity/page.json",
+        "sectionsDir": "src/pages/plity/sections",
+        "sourceHash": "ac38039561fb993e2b71402010a032156050cebbfe048e69d5f2811e5311cc27",
+        "sections": 48
+      },
+      "metadata": {
+        "title": "Ремонт плит и духовок в Москве на дому — MosPochin",
+        "description": "Ремонт газовых, электрических и индукционных плит и духовок на дому в Москве. Согласуем работы до ремонта и даём гарантию.",
+        "canonical": "https://mospochin.ru/plity.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "posudomoechnye-mashiny.html": {
+      "slug": "posudomoechnye-mashiny",
+      "rootHtml": "posudomoechnye-mashiny.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/posudomoechnye-mashiny/page.json",
+        "sectionsDir": "src/pages/posudomoechnye-mashiny/sections",
+        "sourceHash": "cd6cceacf3fd6082a0f0183e55e11fbf5f879cc7d5982fb04f7394365f17796b",
+        "sections": 64
+      },
+      "metadata": {
+        "title": "Ремонт промышленных посудомоечных машин — MosPochin",
+        "description": "Ремонт купольных, конвейерных, фронтальных посудомоек Winterhalter, Hobart, Meiko. Выезд за 45 мин. Гарантия 24 мес. Диагностика при ремонте.",
+        "canonical": "https://mospochin.ru/posudomoechnye-mashiny.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "posudomoyki.html": {
+      "slug": "posudomoyki",
+      "rootHtml": "posudomoyki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/posudomoyki/page.json",
+        "sectionsDir": "src/pages/posudomoyki/sections",
+        "sourceHash": "ddd798ee1e1c514608495c2de0f5df6c573321c00396b9dcfee4c9284c76cc14",
+        "sections": 53
+      },
+      "metadata": {
+        "title": "Ремонт посудомоечных машин в Москве — MosPochin",
+        "description": "Ремонт посудомоечных машин на дому в Москве. Диагностика, согласование стоимости до ремонта и аккуратное восстановление без лишних замен.",
+        "canonical": "https://mospochin.ru/posudomoyki.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-oborudovaniya-restorana-parokonvektomat.html": {
+      "slug": "remont-oborudovaniya-restorana-parokonvektomat",
+      "rootHtml": "remont-oborudovaniya-restorana-parokonvektomat.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json",
+        "sectionsDir": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections",
+        "sourceHash": "976f4a47ce8ce2e8bc54dfbc8e20c73ac200ab99e9227fc414671bb0e674113d",
+        "sections": 75
+      },
+      "metadata": {
+        "title": "Ремонт кухни ресторана — пароконвектоматы Rational, Unox, Abat | MosPochin",
+        "description": "Рекламная посадочная для B2B-заявок по кухне ресторана: пароконвектоматы Rational, Unox, Abat, ошибки, нагрев, пар, срочный выезд, договор и безнал.",
+        "canonical": "https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html",
+        "robots": "noindex,follow",
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "routery.html": {
+      "slug": "routery",
+      "rootHtml": "routery.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/routery/page.json",
+        "sectionsDir": "src/pages/routery/sections",
+        "sourceHash": "01ef620aa81f6449d8c3efb7b91d2b1a119f03c77a1b1ccaa76119ac7a40fa98",
+        "sections": 52
+      },
+      "metadata": {
+        "title": "Ремонт и настройка роутеров в Москве — MosPochin",
+        "description": "Ремонт и настройка Wi-Fi роутеров TP-Link, ASUS, D-Link и Keenetic в Москве. Диагностика, выезд мастера, аккуратная настройка домашней сети.",
+        "canonical": "https://mospochin.ru/routery.html",
+        "robots": "noindex,follow",
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "stiralnye-mashiny.html": {
+      "slug": "stiralnye-mashiny",
+      "rootHtml": "stiralnye-mashiny.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/stiralnye-mashiny/page.json",
+        "sectionsDir": "src/pages/stiralnye-mashiny/sections",
+        "sourceHash": "6eccd795c657c667f82cf05a38b397b9cf867f408763cb2e025472f1c3b4d672",
+        "sections": 50
+      },
+      "metadata": {
+        "title": "Ремонт стиральных машин в Москве на дому — MosPochin",
+        "description": "Ремонт стиральных машин на дому в Москве. Диагностика, согласование стоимости до ремонта и честный бытовой сценарий без лишних замен.",
+        "canonical": "https://mospochin.ru/stiralnye-mashiny.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "uslugi.html": {
+      "slug": "uslugi",
+      "rootHtml": "uslugi.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/uslugi/page.json",
+        "sectionsDir": "src/pages/uslugi/sections",
+        "sourceHash": "acdbaa47dfce09e3d63c6fcf5499cf4d725b924a3d2134c2a3ffe7461ea0d9f2",
+        "sections": 30
+      },
+      "metadata": {
+        "title": "Услуги по ремонту ресторанного оборудования — MosPochin | Цены",
+        "description": "Ремонт пароконвектоматов, плит, холодильного оборудования, посудомоек, грилей и фритюра, льдогенераторов. Гарантия 24 мес. Диагностика бесплатно при ремонте.",
+        "canonical": "https://mospochin.ru/uslugi.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "water-heaters.html": {
+      "slug": "water-heaters",
+      "rootHtml": "water-heaters.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/water-heaters/page.json",
+        "sectionsDir": "src/pages/water-heaters/sections",
+        "sourceHash": "4d90598b266c6a89a1eb2e16f72629034c241be2c875e81f1b360304d806b682",
+        "sections": 49
+      },
+      "metadata": {
+        "title": "Ремонт водонагревателей в Москве на дому — MosPochin",
+        "description": "Ремонт накопительных, проточных и газовых водонагревателей на дому в Москве. Диагностика, согласование работ и аккуратное восстановление техники с гарантией.",
+        "canonical": "https://mospochin.ru/water-heaters.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    }
+  }
+}

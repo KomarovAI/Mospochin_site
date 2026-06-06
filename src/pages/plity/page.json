@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "plity.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "df69a8547bb5610e5e84581bd1906f0c62e401a7dda552b7253339c3c9b1f8a9",
+    "hash": "ac38039561fb993e2b71402010a032156050cebbfe048e69d5f2811e5311cc27",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -478,8 +478,8 @@
     "npm run doctor:household-page -- --page plity.html",
     "npm run doctor:page -- --page plity.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page plity.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page plity.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
