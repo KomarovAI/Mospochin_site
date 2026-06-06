@@ -43,6 +43,24 @@ function restorePreserved(snapshot) {
   }
 }
 
+function rmrf(target) {
+  if (fs.existsSync(target)) {
+    fs.rmSync(target, { recursive: true, force: true });
+  }
+}
+
+function cleanupDeployPackArtifacts() {
+  rmrf('dist/deploy');
+
+  if (fs.existsSync('reports/deploy')) {
+    for (const name of fs.readdirSync('reports/deploy')) {
+      if (/^DEPLOY_REPORT_.*\.md$/.test(name)) {
+        fs.unlinkSync(`reports/deploy/${name}`);
+      }
+    }
+  }
+}
+
 const preserved = Object.fromEntries(
   preserveFiles.map((file) => [file, readIfExists(file)])
 );
@@ -78,6 +96,7 @@ try {
 
   console.log('\n✅ check:deploy passed');
 } finally {
+  cleanupDeployPackArtifacts();
   restorePreserved(preserved);
 
   if (createdVersion && fs.existsSync(versionPath)) {
