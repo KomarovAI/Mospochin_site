@@ -5,13 +5,17 @@ on:
     branches: [main]
     paths:
       - "**/*.html"
+      - ".deploy/**"
       - "assets/**"
+      - "content/**"
       - "data/**"
       - "deploy/**"
       - "server/**"
+      - "src/**"
       - "tools/**"
       - "main.js"
       - "telegram-form.js"
+      - "analytics.js"
       - "styles-combined.css"
       - "sitemap.xml"
       - "package.json"
@@ -21,7 +25,7 @@ on:
 
 concurrency:
   group: vps-deploy
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -37,12 +41,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate site
-        run: npm run lint
+      - name: Validate deploy guardrails
+        timeout-minutes: 12
+        run: |
+          npm run check:deploy
 
       - name: Calculate deploy content hash
         run: npm run hash:deploy-content
@@ -116,15 +124,28 @@ jobs:
           for page in "${pages[@]}"; do
             retry_curl "HEAD https://mospochin.ru${page}" -I "https://mospochin.ru${page}"
           done
-          endpoint="$(node -e "const fs=require('fs');const cfg=JSON.parse(fs.readFileSync('data/runtime-config.json','utf8'));if(!cfg.telegramFormEndpoint)process.exit(1);process.stdout.write(cfg.telegramFormEndpoint)")"
-          retry_curl "POST https://mospochin.ru${endpoint}" -X POST \
-            -H 'Content-Type: application/json' \
-            -d '{"name":"GitHub Actions Smoke","phone":"+79991234567","type":"Deploy smoke test","problem":"Автоматическая проверка после выкладки","page":"uslugi.html","branch":"restaurant","formContext":"github-actions-deploy","extraFields":{},"website":"","consent":true}' \
-            "https://mospochin.ru${endpoint}"
+          if [ "${{ steps.deploy_hash.outputs.skip }}" != "true" ]; then
+            endpoint="$(node -e "const fs=require('fs');const cfg=JSON.parse(fs.readFileSync('data/runtime-config.json','utf8'));if(!cfg.telegramFormEndpoint)process.exit(1);process.stdout.write(cfg.telegramFormEndpoint)")"
+            retry_curl "POST https://mospochin.ru${endpoint}" -X POST \
+              -H 'Content-Type: application/json' \
+              -d '{"name":"GitHub Actions Smoke","phone":"+79991234567","type":"Deploy smoke test","problem":"Автоматическая проверка после выкладки","page":"uslugi.html","branch":"restaurant","formContext":"github-actions-deploy","extraFields":{},"website":"","consent":true}' \
+              "https://mospochin.ru${endpoint}"
+          else
+            echo "Skipping POST form smoke because deploy content hash is unchanged."
+          fi
           mapfile -t smoke_assets < <(grep -E '^(assets/.*|styles.*\.css|main\.js|telegram-form\.js)$' .deploy/include-files.txt | head -20)
           for asset in "${smoke_assets[@]}"; do
             retry_curl "HEAD https://mospochin.ru/${asset}" -I "https://mospochin.ru/${asset}"
           done
+
+      - name: Verify public deploy metadata
+        timeout-minutes: 2
+        run: |
+          if [ "${{ steps.deploy_hash.outputs.skip }}" = "true" ]; then
+            REQUIRE_DEPLOY_COMMIT=false npm run check:public-deploy
+          else
+            EXPECT_DEPLOY_COMMIT="${GITHUB_SHA}" REQUIRE_DEPLOY_COMMIT=true npm run check:public-deploy
+          fi
 
       - name: Verify cache and compression contract
         timeout-minutes: 2
