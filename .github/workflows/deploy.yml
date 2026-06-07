@@ -50,11 +50,15 @@ jobs:
       - name: Validate deploy guardrails
         timeout-minutes: 12
         run: |
-          npm run sync:generated
-          npm run lint
+          npm run generate:deploy-manifest
           node tools/validate-data.mjs
           node tools/validate-site.mjs
           node tools/check-conversion-ui.mjs
+          node tools/build-site.mjs --check
+          node tools/site-builder-extract-shared.mjs --check
+          node tools/site-builder-parameterize-core.mjs --check
+          node tools/generate-faq-registry.mjs --check
+          node tools/check-scale-policy.mjs
 
       - name: Calculate deploy content hash
         run: npm run hash:deploy-content
