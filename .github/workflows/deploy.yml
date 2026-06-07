@@ -149,11 +149,41 @@ jobs:
       - name: Verify public deploy metadata
         timeout-minutes: 2
         run: |
-          if [ "${{ steps.deploy_hash.outputs.skip }}" = "true" ]; then
-            REQUIRE_DEPLOY_COMMIT=false npm run check:public-deploy
-          else
-            EXPECT_DEPLOY_COMMIT="${GITHUB_SHA}" REQUIRE_DEPLOY_COMMIT=true npm run check:public-deploy
-          fi
+          curl -fsS --max-time 12 https://mospochin.ru/version.json -o /tmp/mospochin-version.json
+
+          python3 - <<'PYVERIFY'
+          import json
+          import os
+          import sys
+
+          with open("/tmp/mospochin-version.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          commit = data.get("commit", "")
+          run_id = data.get("run_id", "")
+          deployed_at = data.get("deployed_at", "")
+
+          if not commit or not run_id or not deployed_at:
+              print("Invalid version.json:", data)
+              sys.exit(1)
+
+          expected = os.environ.get("GITHUB_SHA", "")
+          skip = os.environ.get("DEPLOY_SKIPPED", "")
+
+          print("Public version:", data)
+          print("Expected GitHub SHA:", expected)
+          print("Deploy skipped:", skip)
+
+          # Если content hash не менялся, deploy легально skipped,
+          # и public commit может оставаться предыдущим контентным commit.
+          if skip != "true" and expected and commit != expected:
+              print(f"Public commit mismatch: expected {expected}, got {commit}")
+              sys.exit(1)
+
+          print("Public deploy metadata OK")
+          PYVERIFY
+        env:
+          DEPLOY_SKIPPED: ${{ steps.deploy_hash.outputs.skip }}
 
       - name: Verify cache and compression contract
         timeout-minutes: 2
