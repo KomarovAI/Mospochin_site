@@ -1,7 +1,7 @@
 # MosPochin — P0 patch: аналитика, атрибуция форм и Telegram-заявки
 
-Дата: 2026-06-07  
-Пакет: `mospochin-conversion-p0-runtime-attribution-patch-20260607.zip`  
+Дата: 2026-06-07
+Пакет: `mospochin-conversion-p0-runtime-attribution-patch-20260607.zip`
 Фокус: безопасные правки, которые можно было внести до новой production-only статистики Метрики.
 
 ## Что изменено

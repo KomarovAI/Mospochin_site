@@ -7,8 +7,8 @@
 - H1: Ремонт пароконвектоматов Electrolux Professional
 - Canonical: https://mospochin.ru/parokonvektomat-electrolux.html
 - Builder model: src/pages/parokonvektomat-electrolux/page.json
-- Sections: 79 (20 local, 18 shared refs, 2 raw)
-- Text words inside referenced sections: 2889
+- Sections: 77 (18 local, 18 shared refs, 2 raw)
+- Text words inside referenced sections: 2674
 
 ## Component mix
 
@@ -17,11 +17,11 @@
 | layout-fragment | 34 |
 | proof | 10 |
 | pricing | 9 |
-| section | 5 |
 | related-links | 4 |
-| contact-cta | 3 |
+| section | 4 |
 | mobile-contact | 3 |
 | breadcrumb | 2 |
+| contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
 | footer-anchor | 1 |
@@ -35,7 +35,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонт пароконвектоматов Electrolux Professional | hero | 10.7 KB | 95 | no | src/pages/parokonvektomat-electrolux/sections/007-hero-remont-parokonvektomatov-electrolux-professiona.html |
+| Ремонт пароконвектоматов Electrolux Professional | hero | 10.7 KB | 92 | no | src/pages/parokonvektomat-electrolux/sections/007-hero-remont-parokonvektomatov-electrolux-professiona.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Связанные страницы по пароконвектоматам | related-links | 8.9 KB | 173 | no | src/pages/parokonvektomat-electrolux/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |

@@ -7,8 +7,8 @@
 - H1: Ремонт пароконвектоматов Lainox
 - Canonical: https://mospochin.ru/parokonvektomat-lainox.html
 - Builder model: src/pages/parokonvektomat-lainox/page.json
-- Sections: 79 (18 local, 20 shared refs, 2 raw)
-- Text words inside referenced sections: 2878
+- Sections: 77 (16 local, 20 shared refs, 2 raw)
+- Text words inside referenced sections: 2646
 
 ## Component mix
 
@@ -17,11 +17,11 @@
 | layout-fragment | 34 |
 | proof | 10 |
 | pricing | 9 |
-| section | 5 |
 | related-links | 4 |
-| contact-cta | 3 |
+| section | 4 |
 | mobile-contact | 3 |
 | breadcrumb | 2 |
+| contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
 | footer-anchor | 1 |
@@ -36,7 +36,7 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
-| Ремонт пароконвектоматов Lainox | hero | 10.5 KB | 92 | no | src/pages/parokonvektomat-lainox/sections/007-hero-remont-parokonvektomatov-lainox.html |
+| Ремонт пароконвектоматов Lainox | hero | 10.5 KB | 87 | no | src/pages/parokonvektomat-lainox/sections/007-hero-remont-parokonvektomatov-lainox.html |
 | Связанные страницы по пароконвектоматам | related-links | 8.9 KB | 173 | no | src/pages/parokonvektomat-lainox/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
