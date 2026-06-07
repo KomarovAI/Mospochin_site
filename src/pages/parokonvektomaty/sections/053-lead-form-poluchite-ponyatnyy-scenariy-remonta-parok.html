@@ -3,8 +3,8 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 scroll-reveal">
                 <span class="inline-block bg-green-100 text-green-700 px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">B2B ЗАЯВКА НА ВЫЕЗД</span>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-3 sm:mb-4 heading-reveal">Получите понятный сценарий ремонта пароконвектомата</h2>
-                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Укажите модель и ошибку. Мы быстро свяжемся, уточним симптомы, подскажем срочность выезда и объясним, как пойдёт диагностика на объекте.</p>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-3 sm:mb-4 heading-reveal">Что случилось с пароконвектоматом?</h2>
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Укажите бренд, модель, код ошибки или симптом. Перезвоним, уточним адрес объекта и согласуем диагностику на кухне.</p>
             </div>
             <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form" data-form-context="parokonvektomat_b2b_ad_landing" action="/api/send-telegram" method="post">
 <!-- sync:request-overview:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
@@ -34,11 +34,11 @@
                 <div class="grid md:grid-cols-2 gap-4 mb-4 sm:gap-6 sm:mb-6">
                     <div>
                         <label for="parokonvektomaty-type" class="block text-sm font-medium text-slate-700 mb-2">Модель пароконвектомата</label>
-	                        <input type="text" name="type" placeholder="Марка, модель или код ошибки..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="parokonvektomaty-type">
+	                        <input type="text" name="type" placeholder="Rational SCC 101, Unox ChefTop, Abat ПКА..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="parokonvektomaty-type">
                     </div>
                     <div>
                         <label for="parokonvektomaty-problem" class="block text-sm font-medium text-slate-700 mb-2">Что случилось?</label>
-	                        <input type="text" name="problem" placeholder="Ошибка E05, не греет, нет пара, адрес объекта..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="parokonvektomaty-problem">
+	                        <input type="text" name="problem" placeholder="E9, AF02, не греет, нет пара, течёт..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="parokonvektomaty-problem">
                     </div>
 	                </div>
 	                <div class="grid md:grid-cols-2 gap-4 mb-4 sm:gap-6 sm:mb-6">
@@ -52,7 +52,7 @@
 	                    </div>
 	                </div>
 	                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
-	                    <i class="ri-send-plane-line mr-2"></i>Вызвать инженера на кухню
+	                    <i class="ri-send-plane-line mr-2"></i>Получить диагностику
 	                </button>
                 <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Контакты используем только для связи по этой заявке</p>
             </form>

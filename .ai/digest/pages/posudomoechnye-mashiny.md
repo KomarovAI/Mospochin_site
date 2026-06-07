@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/posudomoechnye-mashiny.html
 - Builder model: src/pages/posudomoechnye-mashiny/page.json
 - Sections: 64 (42 local, 3 shared refs, 13 raw)
-- Text words inside referenced sections: 2309
+- Text words inside referenced sections: 2310
 
 ## Component mix
 

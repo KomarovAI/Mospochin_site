@@ -31,7 +31,7 @@ const GLOBAL_RATE_LIMIT_MAX_REQUESTS = Number(process.env.GLOBAL_RATE_LIMIT_MAX_
 const MAX_NAME_LENGTH = 120;
 const MAX_TYPE_LENGTH = 200;
 const MAX_CONTEXT_LENGTH = 120;
-const MAX_EXTRA_FIELDS = 6;
+const MAX_EXTRA_FIELDS = 10;
 const MAX_EXTRA_FIELD_LENGTH = 200;
 
 const ipRateLimit = new Map();
@@ -375,14 +375,21 @@ function sanitizeAttribution(value) {
     if (!touch || typeof touch !== 'object' || Array.isArray(touch)) return null;
     const allowed = [
       'landing_page',
+      'page_url',
+      'page_path',
+      'page_title',
+      'referrer',
       'referrer_host',
       'utm_source',
       'utm_medium',
       'utm_campaign',
       'utm_content',
       'utm_term',
+      'utm_service',
+      'utm_landing',
       'metrika_client_id',
       'yclid',
+      'gclid',
       'captured_at',
     ];
     const result = {};
@@ -411,7 +418,11 @@ function getSourceLabel(branch) {
 
 function formatExtraFieldLabel(name) {
   const labels = {
+    address: 'Адрес/район',
+    business_type: 'Формат кухни',
     district: 'Район',
+    quantity: 'Количество',
+    equipment_model: 'Модель оборудования',
   };
 
   return labels[name] || name.replace(/[_-]+/g, ' ');
@@ -435,16 +446,25 @@ function buildTelegramMessage(submission) {
   if (submission.attribution?.last_touch) {
     const touch = submission.attribution.last_touch;
     lines.push('');
+    lines.push('Источник заявки:');
+    if (touch.page_path || touch.landing_page) lines.push(`page: ${touch.page_path || touch.landing_page}`);
+    if (touch.page_url) lines.push(`url: ${touch.page_url}`);
+    if (touch.page_title) lines.push(`title: ${touch.page_title}`);
+    if (touch.referrer) lines.push(`referrer: ${touch.referrer}`);
+    if (touch.referrer_host) lines.push(`referrer_host: ${touch.referrer_host}`);
+
+    lines.push('');
     lines.push('Рекламная атрибуция:');
     if (touch.utm_source) lines.push(`utm_source: ${touch.utm_source}`);
     if (touch.utm_medium) lines.push(`utm_medium: ${touch.utm_medium}`);
     if (touch.utm_campaign) lines.push(`utm_campaign: ${touch.utm_campaign}`);
     if (touch.utm_content) lines.push(`utm_content: ${touch.utm_content}`);
     if (touch.utm_term) lines.push(`utm_term: ${touch.utm_term}`);
+    if (touch.utm_service) lines.push(`utm_service: ${touch.utm_service}`);
+    if (touch.utm_landing) lines.push(`utm_landing: ${touch.utm_landing}`);
     if (touch.yclid) lines.push(`yclid: ${touch.yclid}`);
+    if (touch.gclid) lines.push(`gclid: ${touch.gclid}`);
     if (touch.metrika_client_id) lines.push(`metrika_client_id: ${touch.metrika_client_id}`);
-    if (touch.landing_page) lines.push(`Вход: ${touch.landing_page}`);
-    if (touch.referrer_host) lines.push(`Реферер: ${touch.referrer_host}`);
   }
 
   for (const [name, value] of Object.entries(submission.extraFields)) {

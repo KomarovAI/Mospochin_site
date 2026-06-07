@@ -1,3 +1,20 @@
+
+## 2026-06-07 — Parokonvektomat cluster unique content hardening
+
+- Уникализированы верхние диагностические блоки страниц кластера пароконвектоматов.
+- Исправлены повторяющиеся Rational-кейсы на нерелевантных страницах.
+- Добавлены быстрые переходы по кластеру без self-links.
+- Новые страницы, тесты, скрипты и deploy-pack не добавлялись.
+
+
+## 2026-06-07 — Parokonvektomat cluster UX/content hardening
+
+- Сделаны кликабельными карточки брендов на `/parokonvektomaty.html`; добавлен Lainox, карточки без отдельных страниц ведут в заявку.
+- Усилены hero-блоки `/parokonvektomaty.html`, `/parokonvektomat-rational.html`, `/parokonvektomat-unox.html`: больше брендовых/симптомных быстрых переходов, меньше шаблонных обещаний.
+- Исправлен Unox hero-кейс, где был текст про Rational.
+- Смягчены неподтверждённые рекламные цифры в пароконвектоматном кластере: 500+, 97%, 24 месяца, 20–35 минут заменены на проверяемые формулировки.
+- Формы по пароконвектоматам сделаны более предметными: бренд/модель, код ошибки или симптом, адрес объекта.
+
 # AI Change Log — MosPochin
 
 Краткая история AI-правок. Новые агенты должны добавлять запись при каждом handoff.
@@ -87,4 +104,22 @@ Checks to run:
 - Replaced old human project map/status docs with `data/project-map.generated.json`, `docs/DOC_INDEX.md`, and `data/file-ownership.json`.
 - Moved active visual/manual findings process to `reports/manual-review-backlog.md`.
 - Updated docs contracts, AI checks, digest generation and routing references to avoid deleted legacy docs.
+
+
+## 2026-06-07 — Conversion P0 runtime attribution patch
+
+- Added production-host whitelist for Yandex Metrika in `analytics.js` so local/dev hosts do not pollute the production counter.
+- Added runtime flags `MOSPOCHIN_RUNTIME.analyticsEnabled` and `__MOSPOCHIN_RUNTIME__.analyticsEnabled`.
+- Expanded attribution capture with page URL/path/title, referrer, `utm_service`, `utm_landing`, `yclid`, `gclid`.
+- Added automatic hidden attribution fields to every `.telegram-form` in `telegram-form.js`.
+- Extended Telegram API attribution sanitization and message output in `server/telegram-api.mjs`.
+- Raised extra form field limit from 6 to 10 for B2B request details.
+- Verified with `node --check`, `npm run check:core`, and `npm run check:handoff`.
+
+## 2026-06-07 — Real-impact conversion hardening
+
+- Removed Yandex Metrika noscript pixel from source.
+- Hardened contact-click goal detection for tel/mailto/WhatsApp/Telegram variants.
+- Softened hard hero promises in the parokonvektomat cluster.
+- Added compact problem routers to the main Direct heroes.
 

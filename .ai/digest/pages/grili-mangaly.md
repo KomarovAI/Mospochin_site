@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/grili-mangaly.html
 - Builder model: src/pages/grili-mangaly/page.json
 - Sections: 61 (42 local, 2 shared refs, 14 raw)
-- Text words inside referenced sections: 1864
+- Text words inside referenced sections: 1865
 
 ## Component mix
 

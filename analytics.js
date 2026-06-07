@@ -2,6 +2,7 @@
     'use strict';
 
     var METRIKA_ID = '109138661';
+    var PRODUCTION_HOSTS = ['mospochin.ru', 'www.mospochin.ru'];
     var isEnabled = /^\d+$/.test(String(METRIKA_ID));
     var startedForms = new WeakSet();
     var ATTRIBUTION_STORAGE_KEY = 'mospochin_attribution_v1';
@@ -11,9 +12,31 @@
         'utm_campaign',
         'utm_content',
         'utm_term',
+        'utm_service',
+        'utm_landing',
         'metrika_client_id',
-        'yclid'
+        'yclid',
+        'gclid'
     ];
+
+    function isProductionHost() {
+        return PRODUCTION_HOSTS.indexOf(window.location.hostname) !== -1;
+    }
+
+    function analyticsEnabled() {
+        return isEnabled && isProductionHost();
+    }
+
+    function configureRuntimeFlags() {
+        var isProduction = isProductionHost();
+        window.MOSPOCHIN_RUNTIME = window.MOSPOCHIN_RUNTIME || {};
+        window.__MOSPOCHIN_RUNTIME__ = window.__MOSPOCHIN_RUNTIME__ || {};
+
+        window.MOSPOCHIN_RUNTIME.isProduction = isProduction;
+        window.MOSPOCHIN_RUNTIME.analyticsEnabled = isProduction && isEnabled;
+        window.__MOSPOCHIN_RUNTIME__.isProduction = isProduction;
+        window.__MOSPOCHIN_RUNTIME__.analyticsEnabled = isProduction && isEnabled;
+    }
 
     function cleanText(value) {
         return (value || '').replace(/\s+/g, ' ').trim().slice(0, 160);
@@ -63,6 +86,10 @@
         var search = new URLSearchParams(window.location.search);
         var touch = {
             landing_page: window.location.pathname,
+            page_url: window.location.href,
+            page_path: window.location.pathname,
+            page_title: cleanText(document.title),
+            referrer: cleanText(document.referrer || ''),
             referrer_host: isExternalReferrer(document.referrer) ? referrerHost(document.referrer) : ''
         };
         var hasTracking = false;
@@ -131,11 +158,13 @@
         var touch = attribution.last_touch || attribution.first_touch || {};
         var result = {
             landing_page: touch.landing_page || '',
+            page_path: touch.page_path || touch.landing_page || '',
             referrer_host: touch.referrer_host || '',
-            has_yclid: touch.yclid ? 'yes' : 'no'
+            has_yclid: touch.yclid ? 'yes' : 'no',
+            has_gclid: touch.gclid ? 'yes' : 'no'
         };
 
-        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'metrika_client_id'].forEach(function (name) {
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_service', 'utm_landing', 'metrika_client_id'].forEach(function (name) {
             if (touch[name]) result[name] = touch[name];
         });
 
@@ -145,10 +174,17 @@
     window.mospochinGetAttribution = function () {
         var attribution = readAttribution();
         return JSON.parse(JSON.stringify(attribution));
-    }
+    };
+
+    window.mospochinIsProductionHost = isProductionHost;
 
     function initMetrika() {
-        if (!isEnabled) return;
+        if (!analyticsEnabled()) {
+            if (isEnabled && window.console && console.info) {
+                console.info('[analytics] disabled on non-production host:', window.location.hostname);
+            }
+            return;
+        }
 
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
@@ -182,24 +218,31 @@
     }
 
     window.mospochinTrackGoal = function (goalName, goalParams) {
-        if (!goalName || !isEnabled || typeof window.ym !== 'function') return;
+        if (!goalName || !analyticsEnabled() || typeof window.ym !== 'function') return;
         window.ym(METRIKA_ID, 'reachGoal', goalName, params(goalParams));
     };
 
+    function contactGoalFromLink(link) {
+        var rawHref = (link.getAttribute('href') || '').trim();
+        var href = rawHref.toLowerCase();
+        var declaredType = (link.dataset.contactLink || link.dataset.goal || '').toLowerCase();
+
+        if (href.indexOf('tel:') === 0 || declaredType === 'phone') return 'phone_click';
+        if (href.indexOf('mailto:') === 0 || declaredType === 'email') return 'email_click';
+        if (href.indexOf('whatsapp://') === 0 || href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp.com') !== -1 || declaredType === 'whatsapp') return 'whatsapp_click';
+        if (href.indexOf('tg://') === 0 || href.indexOf('t.me/') !== -1 || href.indexOf('telegram.me') !== -1 || href.indexOf('telegram.dog') !== -1 || declaredType === 'telegram') return 'telegram_click';
+
+        return '';
+    }
+
     function trackContactClick(link) {
-        var href = link.getAttribute('href') || '';
-        var goal = '';
-
-        if (href.indexOf('tel:') === 0) goal = 'phone_click';
-        if (href.indexOf('https://wa.me/') === 0 || href.indexOf('http://wa.me/') === 0) goal = 'whatsapp_click';
-        if (href.indexOf('tg://') === 0 || href.indexOf('telegram') !== -1) goal = 'telegram_click';
-        if (href.indexOf('mailto:') === 0) goal = 'email_click';
-
+        var goal = contactGoalFromLink(link);
         if (!goal) return;
 
         window.mospochinTrackGoal(goal, {
             contact_type: link.dataset.contactLink || goal.replace('_click', ''),
-            cta_text_length: cleanText(link.textContent).length
+            cta_text: cleanText(link.textContent).slice(0, 80),
+            href_type: (link.getAttribute('href') || '').split(':')[0].slice(0, 24)
         });
     }
 
@@ -230,6 +273,7 @@
         });
     }, true);
 
+    configureRuntimeFlags();
     captureAttribution();
     initMetrika();
 })();

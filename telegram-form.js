@@ -5,7 +5,23 @@ const FORM_MIN_FILL_MS = 1500;
 const FORM_RATE_LIMIT_MS = 60000;
 const FORM_MAX_PROBLEM_LENGTH = 500;
 const TELEGRAM_PAGE_METADATA_PATH = '/data/page-metadata.json';
-const FORM_BASE_FIELDS = new Set(['name', 'phone', 'type', 'problem', 'website', 'consent']);
+const ATTRIBUTION_FIELD_NAMES = [
+    'page_url',
+    'page_path',
+    'page_title',
+    'referrer',
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_content',
+    'utm_term',
+    'utm_service',
+    'utm_landing',
+    'yclid',
+    'gclid',
+    'metrika_client_id'
+];
+const FORM_BASE_FIELDS = new Set(['name', 'phone', 'type', 'problem', 'website', 'consent', ...ATTRIBUTION_FIELD_NAMES]);
 
 let runtimeConfigPromise = null;
 let pageMetadataPromise = null;
@@ -91,6 +107,58 @@ function getSourceLabel(branch) {
     return 'Общий сайт';
 }
 
+function cleanAttributionValue(value, maxLength = 500) {
+    return String(value || '').replace(/\s+/g, ' ').trim().slice(0, maxLength);
+}
+
+function getQueryParam(name) {
+    try {
+        return new URLSearchParams(window.location.search).get(name) || '';
+    } catch {
+        return '';
+    }
+}
+
+function getCurrentAttributionFields() {
+    const storedTouch = window.mospochinGetAttribution?.()?.last_touch || window.mospochinGetAttribution?.()?.first_touch || {};
+    const fields = {
+        page_url: window.location.href,
+        page_path: window.location.pathname,
+        page_title: document.title,
+        referrer: document.referrer || ''
+    };
+
+    for (const name of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_service', 'utm_landing', 'yclid', 'gclid']) {
+        fields[name] = getQueryParam(name) || storedTouch[name] || '';
+    }
+
+    fields.metrika_client_id = storedTouch.metrika_client_id || '';
+
+    return Object.fromEntries(
+        ATTRIBUTION_FIELD_NAMES.map(name => [name, cleanAttributionValue(fields[name], name === 'page_url' || name === 'referrer' ? 800 : 240)])
+    );
+}
+
+function ensureAttributionFields(form) {
+    for (const name of ATTRIBUTION_FIELD_NAMES) {
+        if (form.querySelector(`[name="${name}"]`)) continue;
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.dataset.autoAttribution = '1';
+        form.append(input);
+    }
+}
+
+function fillAttributionFields(form) {
+    const fields = getCurrentAttributionFields();
+    for (const [name, value] of Object.entries(fields)) {
+        const field = form.querySelector(`[name="${name}"]`);
+        if (field) field.value = value;
+    }
+    return fields;
+}
+
 function trackFormGoal(goalName, form, extra = {}) {
     window.mospochinTrackGoal?.(goalName, {
         form_context: form.dataset.formContext?.trim() || '',
@@ -99,10 +167,18 @@ function trackFormGoal(goalName, form, extra = {}) {
     });
 }
 
-function getAttributionSnapshot() {
+function getAttributionSnapshot(currentFields = null) {
     const attribution = window.mospochinGetAttribution?.();
-    if (!attribution || typeof attribution !== 'object') return null;
-    return attribution;
+    const snapshot = attribution && typeof attribution === 'object' ? JSON.parse(JSON.stringify(attribution)) : {};
+    const touch = currentFields || getCurrentAttributionFields();
+
+    if (!snapshot.first_touch) snapshot.first_touch = touch;
+    snapshot.last_touch = {
+        ...(snapshot.last_touch || snapshot.first_touch || {}),
+        ...touch
+    };
+
+    return snapshot;
 }
 
 function collectExtraFields(form) {
@@ -227,6 +303,8 @@ function enhanceTelegramForm(form) {
     form.dataset.telegramEnhanced = '1';
     form.dataset.startedAt = String(Date.now());
     form.classList.add('telegram-form-enhanced');
+    ensureAttributionFields(form);
+    fillAttributionFields(form);
 
     if (!form.querySelector('[name="website"]')) {
         const honeypot = document.createElement('input');
@@ -277,6 +355,7 @@ function initTelegramForms() {
             btn.disabled = true;
             btn.innerHTML = '<i class="ri-loader-4-line mr-2"></i>Отправляю...';
 
+            const currentAttributionFields = fillAttributionFields(form);
             const honeypotValue = form.querySelector('[name="website"]')?.value.trim() || '';
             const consentChecked = Boolean(form.querySelector('[name="consent"]')?.checked);
             const extraFields = collectExtraFields(form);
@@ -287,7 +366,7 @@ function initTelegramForms() {
                 problem: buildProblemValue(form, extraFields),
                 formContext: form.dataset.formContext?.trim() || '',
                 extraFields,
-                attribution: getAttributionSnapshot(),
+                attribution: getAttributionSnapshot(currentAttributionFields),
                 website: honeypotValue
             };
 

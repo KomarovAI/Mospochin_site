@@ -8,9 +8,9 @@
 | --- | --- |
 | Root HTML pages | 39 |
 | Builder pages | 39 |
-| src/pages files | 1165 |
-| src/pages HTML section files | 1126 |
-| Shared component files | 32 |
+| src/pages files | 1051 |
+| src/pages HTML section files | 1012 |
+| Shared component files | 39 |
 | Parametric template files | 63 |
 | Parametric props files | 14 |
 | Total declared sections | 2095 |
@@ -21,9 +21,9 @@
 | Shared/parametric coverage | 57.3% |
 | Average sections/page | 53.7 |
 | Average source files/page | 57.8 |
-| Root HTML bytes | 4.47 MB |
-| src/pages HTML bytes | 2.98 MB |
-| Shared HTML bytes | 139.0 KB |
+| Root HTML bytes | 4.41 MB |
+| src/pages HTML bytes | 2.84 MB |
+| Shared HTML bytes | 170.0 KB |
 | Estimated duplicate bytes removed by shared components | 1.28 MB |
 
 
@@ -56,9 +56,9 @@
 | water-heaters.html | 132.2 KB | 49 |
 | holodilnoe-oborudovanie.html | 117.0 KB | 64 |
 | kompyutery.html | 113.8 KB | 55 |
+| parokonvektomaty.html | 110.3 KB | 72 |
 | stiralnye-mashiny.html | 107.1 KB | 50 |
 | posudomoechnye-mashiny.html | 104.2 KB | 64 |
-| parokonvektomaty.html | 102.6 KB | 72 |
 | ice-machines.html | 101.7 KB | 64 |
 | plity-pechi.html | 98.4 KB | 34 |
 
@@ -94,13 +94,13 @@
 | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html | 14 | 14 | 96.3 KB |
 | src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html | 15 | 15 | 85.8 KB |
 | src/components/shared/proof/proof-chto-govoryat-shef-povara-i-upravlyayuschie--e94fa2cfbc1265d5.html | 15 | 15 | 81.7 KB |
-| src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html | 13 | 13 | 80.4 KB |
+| src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html | 13 | 13 | 78.9 KB |
 | src/components/shared/pricing/pricing-faktory-stoimosti-remonta--c35e37bf08c85b74.html | 15 | 15 | 75.1 KB |
-| src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html | 15 | 15 | 69.8 KB |
+| src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html | 15 | 15 | 72.0 KB |
 | src/components/shared/pricing/pricing-vyberite-problemu-pokazhem-cenu--5d86ccad444cb9af.html | 15 | 15 | 68.1 KB |
 | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html | 11 | 11 | 66.9 KB |
 | src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html | 20 | 20 | 59.8 KB |
-| src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html | 15 | 15 | 55.2 KB |
+| src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html | 15 | 15 | 55.5 KB |
 
 
 ## Возможности для следующего сжатия смысла

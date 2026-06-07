@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ice-machines.html
 - Builder model: src/pages/ice-machines/page.json
 - Sections: 64 (43 local, 3 shared refs, 14 raw)
-- Text words inside referenced sections: 2068
+- Text words inside referenced sections: 2069
 
 ## Component mix
 
