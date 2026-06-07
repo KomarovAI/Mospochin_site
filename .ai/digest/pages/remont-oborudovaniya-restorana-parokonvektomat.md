@@ -7,8 +7,8 @@
 - H1: Ремонт кухни ресторана: пароконвектоматы
 - Canonical: https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html
 - Builder model: src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json
-- Sections: 75 (12 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2274
+- Sections: 77 (14 local, 21 shared refs, 2 raw)
+- Text words inside referenced sections: 2450
 
 ## Component mix
 
@@ -18,17 +18,17 @@
 | pricing | 10 |
 | proof | 9 |
 | related-links | 4 |
+| contact-cta | 3 |
 | mobile-contact | 3 |
 | breadcrumb | 2 |
-| contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
+| section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
 | runtime-partials | 1 |
-| section | 1 |
 
 
 ## Largest sections to inspect first

@@ -7,8 +7,8 @@
 - H1: Ремонт пароконвектоматов Unox
 - Canonical: https://mospochin.ru/parokonvektomat-unox.html
 - Builder model: src/pages/parokonvektomat-unox/page.json
-- Sections: 75 (12 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2326
+- Sections: 77 (14 local, 21 shared refs, 2 raw)
+- Text words inside referenced sections: 2565
 
 ## Component mix
 
@@ -17,13 +17,13 @@
 | layout-fragment | 35 |
 | pricing | 10 |
 | proof | 9 |
+| contact-cta | 3 |
 | mobile-contact | 3 |
 | related-links | 3 |
+| section | 3 |
 | breadcrumb | 2 |
-| contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
-| section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |

@@ -31,29 +31,3 @@ npm-debug.log*
 .asset-archive/
 tools/tmp/
 tools/*.log
-
-# Local generated build outputs
-dist/
-playwright-report/
-test-results/
-coverage/
-.cache/
-.parcel-cache/
-
-# Generated deploy pack reports and artifacts
-reports/deploy/*.md
-dist/deploy/
-
-# Local env secrets and logs
-.env.*
-!.env.example
-*.old
-*.orig
-
-# Archives should not live in repo
-*.zip
-*.tar
-*.tar.gz
-*.tgz
-*.7z
-*.rar

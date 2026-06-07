@@ -7,8 +7,8 @@
 - H1: Пароконвектомат не греет
 - Canonical: https://mospochin.ru/parokonvektomat-ne-greet.html
 - Builder model: src/pages/parokonvektomat-ne-greet/page.json
-- Sections: 75 (12 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2290
+- Sections: 77 (14 local, 21 shared refs, 2 raw)
+- Text words inside referenced sections: 2553
 
 ## Component mix
 
@@ -18,17 +18,17 @@
 | pricing | 10 |
 | proof | 9 |
 | related-links | 4 |
+| contact-cta | 3 |
 | mobile-contact | 3 |
 | breadcrumb | 2 |
-| contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
+| section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
 | runtime-partials | 1 |
-| section | 1 |
 
 
 ## Largest sections to inspect first
@@ -42,7 +42,7 @@
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 227 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html |
-| Цены на ремонт пароконвектоматов | pricing | 6.1 KB | 163 | yes | src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html |
+| Пароконвектомат не греет: причина важнее общего описания | section | 6.3 KB | 194 | no | src/pages/parokonvektomat-ne-greet/sections/stage3-seo-conversion-parokonvektomat-ne-greet.html |
 
 
 ## Editable source files
