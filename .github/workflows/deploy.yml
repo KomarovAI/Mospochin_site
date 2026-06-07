@@ -50,6 +50,7 @@ jobs:
       - name: Validate deploy guardrails
         timeout-minutes: 12
         run: |
+          npm run sync:generated
           npm run lint
           node tools/validate-data.mjs
           node tools/validate-site.mjs
