@@ -2,13 +2,13 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: Ремонт пароконвектоматов Unox в Москве — диагностика и выезд | MosPochin
+- Title: Ремонт Unox в Москве — диагностика и выезд | MosPochin
 - Description: Ремонт пароконвектоматов Unox для ресторанов, кафе и пекарен: ошибки AF01, AF02, AF08, нет пара, не греет, выезд инженера.
 - H1: Ремонт пароконвектоматов Unox
 - Canonical: https://mospochin.ru/parokonvektomat-unox.html
 - Builder model: src/pages/parokonvektomat-unox/page.json
-- Sections: 75 (12 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2688
+- Sections: 77 (14 local, 21 shared refs, 2 raw)
+- Text words inside referenced sections: 2565
 
 ## Component mix
 
@@ -17,13 +17,13 @@
 | layout-fragment | 35 |
 | pricing | 10 |
 | proof | 9 |
+| contact-cta | 3 |
 | mobile-contact | 3 |
 | related-links | 3 |
+| section | 3 |
 | breadcrumb | 2 |
-| contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
-| section | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
@@ -35,7 +35,6 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Что проверяем у пароконвектомата Unox | section | 15.6 KB | 467 | no | src/pages/parokonvektomat-unox/sections/010-section-chto-proveryaem-u-parokonvektomata-unox.html |
 | Ремонт пароконвектоматов Unox | hero | 12.9 KB | 127 | no | src/pages/parokonvektomat-unox/sections/007-hero-remont-parokonvektomatov-unox.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
@@ -43,6 +42,7 @@
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 109 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 227 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html |
+| Цены на ремонт пароконвектоматов | pricing | 6.1 KB | 163 | yes | src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html |
 
 
 ## Editable source files

@@ -1,4 +1,22 @@
 
+## 2026-06-07 — Site conversion implementation pack
+
+- Applied the Direct/Metric conversion task to the actual project source, not only as a plan.
+- Strengthened P0 `parokonvektomaty.html`: Moscow B2B hero, phone/WhatsApp/request CTAs, visible mobile hero detail fields for brand/model and symptom/error code, and a symptom-to-request bridge.
+- Added repair-bridge conversion blocks for error pages: `parokonvektomat-kod-oshibki.html`, `parokonvektomat-e02-e07-e10.html`, `parokonvektomat-rational-e9.html`.
+- Lightly strengthened protected/winner pages: `parokonvektomaty-promo.html` and `parokonvektomat-unox-af02-af08.html`, without changing their URL/indexing logic.
+- Fixed malformed WhatsApp encoded URLs in the parokonvektomat cluster.
+- Added `ym_client_id` as an alias alongside existing `metrika_client_id` in runtime attribution and Telegram submission output.
+
+
+## 2026-06-07 — Parokonvektomat cluster unique content hardening
+
+- Уникализированы верхние диагностические блоки страниц кластера пароконвектоматов.
+- Исправлены повторяющиеся Rational-кейсы на нерелевантных страницах.
+- Добавлены быстрые переходы по кластеру без self-links.
+- Новые страницы, тесты, скрипты и deploy-pack не добавлялись.
+
+
 ## 2026-06-07 — Parokonvektomat cluster UX/content hardening
 
 - Сделаны кликабельными карточки брендов на `/parokonvektomaty.html`; добавлен Lainox, карточки без отдельных страниц ведут в заявку.
@@ -115,3 +133,9 @@ Checks to run:
 - Softened hard hero promises in the parokonvektomat cluster.
 - Added compact problem routers to the main Direct heroes.
 
+## 2026-06-08 — Stage 5 Direct conversion ready archive
+
+- Hardened Telegram API attribution sanitization so long `page_url`, `referrer`, `utm_campaign`, `utm_content`, `utm_term`, `yclid` and `gclid` are preserved better in lead messages.
+- Added `tools/check-conversion-runtime.mjs` to guard the Direct/Metrika/form attribution runtime against regressions.
+- Added `check:conversion-runtime` npm script and included the guard into `check:core`.
+- Added `reports/direct/STAGE5_DIRECT_CONVERSION_READY_20260608.md` with apply notes, checks and post-deploy manual verification.

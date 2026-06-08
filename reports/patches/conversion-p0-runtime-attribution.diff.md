@@ -5,7 +5,7 @@
 +++ analytics.js	2026-06-07 09:14:36.725935277 +0000
 @@ -2,6 +2,7 @@
      'use strict';
-
+ 
      var METRIKA_ID = '109138661';
 +    var PRODUCTION_HOSTS = ['mospochin.ru', 'www.mospochin.ru'];
      var isEnabled = /^\d+$/.test(String(METRIKA_ID));
@@ -22,7 +22,7 @@
 +        'yclid',
 +        'gclid'
      ];
-
+ 
 +    function isProductionHost() {
 +        return PRODUCTION_HOSTS.indexOf(window.location.hostname) !== -1;
 +    }
@@ -66,12 +66,12 @@
 +            has_yclid: touch.yclid ? 'yes' : 'no',
 +            has_gclid: touch.gclid ? 'yes' : 'no'
          };
-
+ 
 -        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'metrika_client_id'].forEach(function (name) {
 +        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_service', 'utm_landing', 'metrika_client_id'].forEach(function (name) {
              if (touch[name]) result[name] = touch[name];
          });
-
+ 
 @@ -145,10 +174,17 @@
      window.mospochinGetAttribution = function () {
          var attribution = readAttribution();
@@ -80,7 +80,7 @@
 +    };
 +
 +    window.mospochinIsProductionHost = isProductionHost;
-
+ 
      function initMetrika() {
 -        if (!isEnabled) return;
 +        if (!analyticsEnabled()) {
@@ -89,22 +89,22 @@
 +            }
 +            return;
 +        }
-
+ 
          (function (m, e, t, r, i, k, a) {
              m[i] = m[i] || function () {
 @@ -182,7 +218,7 @@
      }
-
+ 
      window.mospochinTrackGoal = function (goalName, goalParams) {
 -        if (!goalName || !isEnabled || typeof window.ym !== 'function') return;
 +        if (!goalName || !analyticsEnabled() || typeof window.ym !== 'function') return;
          window.ym(METRIKA_ID, 'reachGoal', goalName, params(goalParams));
      };
-
+ 
 @@ -230,6 +266,7 @@
          });
      }, true);
-
+ 
 +    configureRuntimeFlags();
      captureAttribution();
      initMetrika();
@@ -133,13 +133,13 @@
 +    'metrika_client_id'
 +];
 +const FORM_BASE_FIELDS = new Set(['name', 'phone', 'type', 'problem', 'website', 'consent', ...ATTRIBUTION_FIELD_NAMES]);
-
+ 
  let runtimeConfigPromise = null;
  let pageMetadataPromise = null;
 @@ -91,6 +107,58 @@
      return 'Общий сайт';
  }
-
+ 
 +function cleanAttributionValue(value, maxLength = 500) {
 +    return String(value || '').replace(/\s+/g, ' ').trim().slice(0, maxLength);
 +}
@@ -198,7 +198,7 @@
 @@ -99,10 +167,18 @@
      });
  }
-
+ 
 -function getAttributionSnapshot() {
 +function getAttributionSnapshot(currentFields = null) {
      const attribution = window.mospochinGetAttribution?.();
@@ -215,7 +215,7 @@
 +
 +    return snapshot;
  }
-
+ 
  function collectExtraFields(form) {
 @@ -227,6 +303,8 @@
      form.dataset.telegramEnhanced = '1';
@@ -223,13 +223,13 @@
      form.classList.add('telegram-form-enhanced');
 +    ensureAttributionFields(form);
 +    fillAttributionFields(form);
-
+ 
      if (!form.querySelector('[name="website"]')) {
          const honeypot = document.createElement('input');
 @@ -277,6 +355,7 @@
              btn.disabled = true;
              btn.innerHTML = '<i class="ri-loader-4-line mr-2"></i>Отправляю...';
-
+ 
 +            const currentAttributionFields = fillAttributionFields(form);
              const honeypotValue = form.querySelector('[name="website"]')?.value.trim() || '';
              const consentChecked = Boolean(form.querySelector('[name="consent"]')?.checked);
@@ -242,7 +242,7 @@
 +                attribution: getAttributionSnapshot(currentAttributionFields),
                  website: honeypotValue
              };
-
+ 
 --- /tmp/telegram-api.mjs.before	2026-06-07 09:14:34.878224907 +0000
 +++ server/telegram-api.mjs	2026-06-07 09:14:36.727525769 +0000
 @@ -31,7 +31,7 @@
@@ -252,7 +252,7 @@
 -const MAX_EXTRA_FIELDS = 6;
 +const MAX_EXTRA_FIELDS = 10;
  const MAX_EXTRA_FIELD_LENGTH = 200;
-
+ 
  const ipRateLimit = new Map();
 @@ -375,14 +375,21 @@
      if (!touch || typeof touch !== 'object' || Array.isArray(touch)) return null;
@@ -277,7 +277,7 @@
      ];
      const result = {};
 @@ -411,7 +418,11 @@
-
+ 
  function formatExtraFieldLabel(name) {
    const labels = {
 +    address: 'Адрес/район',
@@ -286,7 +286,7 @@
 +    quantity: 'Количество',
 +    equipment_model: 'Модель оборудования',
    };
-
+ 
    return labels[name] || name.replace(/[_-]+/g, ' ');
 @@ -435,16 +446,25 @@
    if (submission.attribution?.last_touch) {
@@ -314,6 +314,6 @@
 -    if (touch.landing_page) lines.push(`Вход: ${touch.landing_page}`);
 -    if (touch.referrer_host) lines.push(`Реферер: ${touch.referrer_host}`);
    }
-
+ 
    for (const [name, value] of Object.entries(submission.extraFields)) {
 ```

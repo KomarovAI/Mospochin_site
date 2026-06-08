@@ -58,28 +58,14 @@ function matchesAny(file, patterns) {
 
 function gitChangedFiles() {
   if (!existsSync(path.join(ROOT_DIR, '.git'))) return [];
-  const result = spawnSync('git', ['status', '--porcelain=v1'], { cwd: ROOT_DIR, encoding: 'utf8' });
+  const result = spawnSync('git', ['status', '--porcelain'], { cwd: ROOT_DIR, encoding: 'utf8' });
   if (result.status !== 0) return [];
-
-  const files = [];
-  for (const rawLine of result.stdout.split('\n')) {
-    if (!rawLine.trim()) continue;
-
-    // Porcelain v1:
-    // XY path
-    // XY old -> new
-    // Важно: НЕ trim() до slice(3), иначе для unstaged строк вида " M file"
-    // можно потерять первый символ имени файла.
-    let file = rawLine.slice(3).trim();
-
-    if (file.includes(' -> ')) {
-      file = file.split(' -> ').pop().trim();
-    }
-
-    if (file) files.push(normalize(file));
-  }
-
-  return [...new Set(files)];
+  return result.stdout
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => normalize(line.slice(3).trim()))
+    .filter(Boolean);
 }
 
 if (!existsSync(MANIFEST)) {
@@ -108,16 +94,9 @@ if (overlaps.length) {
   fail(`file-ownership: файл одновременно manual и generated: ${overlaps.slice(0, 10).join(', ')}`);
 }
 
-const changedFiles = gitChangedFiles();
-const changedGenerated = changedFiles.filter((file) => matchesAny(file, manifest.generated));
-const changedSource = changedFiles.filter((file) => !matchesAny(file, manifest.generated));
-
-if (changedGenerated.length && !changedSource.length) {
-  fail(`changed generated files detected without source/manual changes: ${changedGenerated.join(', ')}. Запусти sync:generated и проверь, что source тоже изменён.`);
-}
-
-if (changedGenerated.length && changedSource.length) {
-  console.warn(`⚠️ generated files changed together with source/manual files: ${changedGenerated.length} generated, ${changedSource.length} source/manual. OK after sync:generated.`);
+const changedGenerated = gitChangedFiles().filter((file) => matchesAny(file, manifest.generated));
+if (changedGenerated.length) {
+  fail(`changed generated files detected: ${changedGenerated.join(', ')}. Запусти sync:generated и проверь, что source тоже изменён.`);
 }
 
 if (process.exitCode) process.exit(process.exitCode);

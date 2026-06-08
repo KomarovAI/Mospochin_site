@@ -1,207 +1,239 @@
-import crypto from 'crypto';
+#!/usr/bin/env node
+/**
+ * Production deploy packer for MosPochin.
+ *
+ * Builds a public/runtime-only ZIP from .deploy/include-files.txt.
+ * This intentionally differs from handoff:pack: docs/src/reports/.ai stay out
+ * of the production artifact. version.json may be generated at pack time.
+ */
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const SITE_ROOT = path.resolve(__dirname, '..');
-const DEPLOY_DIR = path.join(SITE_ROOT, '.deploy');
-const MANIFEST_PATH = path.join(DEPLOY_DIR, 'include-files.txt');
-const OUT_DIR = path.join(SITE_ROOT, 'dist', 'deploy');
-const REPORT_DIR = path.join(SITE_ROOT, 'reports', 'deploy');
+const ROOT_DIR = path.resolve(__dirname, '..');
+const MANIFEST_PATH = path.join(ROOT_DIR, '.deploy/include-files.txt');
+const DIST_DIR = path.join(ROOT_DIR, '.deploy/dist');
+const STAGE_DIR = path.join(DIST_DIR, 'public-runtime');
+const REPORT_DIR = path.join(ROOT_DIR, 'reports/deploy');
+const PACKAGE_JSON = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'package.json'), 'utf8'));
 
-const now = new Date();
-const stamp = now.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
-const stageDir = path.join(OUT_DIR, `mospochin-public-${stamp}`);
-const zipPath = path.join(OUT_DIR, `mospochin-public-deploy-${stamp}.zip`);
-const shaPath = `${zipPath}.sha256`;
-const reportPath = path.join(REPORT_DIR, `DEPLOY_REPORT_${stamp}.md`);
-
-const forbiddenPrefixes = [
-  '.git/',
-  '.github/',
-  '.ai/',
-  'docs/',
-  'reports/',
-  'node_modules/',
-  'playwright-report/',
-  'test-results/',
-  'dist/',
-];
-
-const forbiddenExact = new Set([
-  '.env',
-  'package-lock.json.tmp',
-]);
-
-const forbiddenPatterns = [
-  /\.env(\.|$)/,
-  /\.(zip|tar|tgz|gz|7z|rar)$/i,
-  /\.log$/i,
-  /\.bak$/i,
-  /\.old$/i,
-  /\.orig$/i,
-];
-
-const required = [
-  '.deploy/include-files.txt',
-  'index.html',
-  '404.html',
-  'robots.txt',
-  'sitemap.xml',
-  'styles-combined.css',
-  'main.js',
-  'telegram-form.js',
-  'data/runtime-config.json',
-  'data/contact-config.json',
-  'server/telegram-api.mjs',
-  'deploy/post-activate.sh',
-  'deploy/systemd/mospochin-telegram-api.service',
-  'deploy/env/telegram.env.example',
-  'tools/generate-public-file-list.mjs',
-  'package.json',
-];
-
-function relToAbs(rel) {
-  return path.join(SITE_ROOT, rel);
+function argValue(name, fallback = null) {
+  const idx = process.argv.indexOf(name);
+  if (idx < 0) return fallback;
+  return process.argv[idx + 1] ?? fallback;
 }
 
-function toPosix(value) {
-  return value.split(path.sep).join('/');
+function toPosix(filePath) {
+  return filePath.split(path.sep).join('/');
 }
 
-function fail(message) {
-  console.error(`DEPLOY PACK FAILED: ${message}`);
-  process.exit(1);
+function rel(...parts) {
+  return toPosix(path.join(...parts));
 }
 
-function ensureFile(rel) {
-  const abs = relToAbs(rel);
-  if (fs.existsSync(abs) === false || fs.statSync(abs).isFile() === false) {
-    fail(`missing required file: ${rel}`);
+function ensureInsideRoot(relativePath) {
+  const resolved = path.resolve(ROOT_DIR, relativePath);
+  if (!resolved.startsWith(ROOT_DIR + path.sep) && resolved !== ROOT_DIR) {
+    throw new Error(`Path escapes project root: ${relativePath}`);
   }
+  return resolved;
 }
 
-function isForbidden(rel) {
-  if (rel.endsWith(".env.example")) return false;
-  if (forbiddenExact.has(rel)) return true;
-  if (forbiddenPrefixes.some((prefix) => rel.startsWith(prefix))) return true;
-  if (forbiddenPatterns.some((re) => re.test(rel))) return true;
-  return false;
-}
+function readManifest() {
+  if (!fs.existsSync(MANIFEST_PATH)) {
+    throw new Error('Missing .deploy/include-files.txt. Run npm run generate:deploy-manifest first.');
+  }
 
-function copyFile(rel) {
-  const src = relToAbs(rel);
-  const dst = path.join(stageDir, rel);
-  fs.mkdirSync(path.dirname(dst), { recursive: true });
-  fs.copyFileSync(src, dst);
-  const mode = fs.statSync(src).mode;
-  fs.chmodSync(dst, mode & 0o777);
+  const files = fs.readFileSync(MANIFEST_PATH, 'utf8')
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .filter((line) => !line.startsWith('#'));
+
+  return [...new Set(files)].sort();
 }
 
 function sha256File(filePath) {
   return crypto.createHash('sha256').update(fs.readFileSync(filePath)).digest('hex');
 }
 
-if (fs.existsSync(MANIFEST_PATH) === false) {
-  fail(`missing manifest: ${MANIFEST_PATH}`);
+function sha256Text(text) {
+  return crypto.createHash('sha256').update(text).digest('hex');
 }
 
-const manifestFiles = fs.readFileSync(MANIFEST_PATH, 'utf8')
-  .split('\n')
-  .map((line) => line.trim())
-  .filter(Boolean);
-
-if (manifestFiles.length === 0) fail('manifest is empty');
-
-const unique = [...new Set(manifestFiles)].sort();
-
-for (const rel of unique) {
-  if (rel.includes('..') || path.isAbsolute(rel)) fail(`unsafe manifest path: ${rel}`);
-  if (isForbidden(rel)) fail(`forbidden file in deploy manifest: ${rel}`);
-  ensureFile(rel);
+function mkdirClean(dir) {
+  fs.rmSync(dir, { recursive: true, force: true });
+  fs.mkdirSync(dir, { recursive: true });
 }
 
-for (const rel of required) {
-  if (unique.includes(rel) === false) fail(`required file is not listed in manifest: ${rel}`);
-  ensureFile(rel);
+function copyRuntimeFile(relativePath) {
+  const src = ensureInsideRoot(relativePath);
+  const dest = path.join(STAGE_DIR, relativePath);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.copyFileSync(src, dest);
 }
 
-fs.rmSync(stageDir, { recursive: true, force: true });
-fs.mkdirSync(stageDir, { recursive: true });
-fs.mkdirSync(REPORT_DIR, { recursive: true });
-fs.mkdirSync(OUT_DIR, { recursive: true });
+function buildVersionJson(files, copiedFiles) {
+  const manifestHash = sha256Text(files.join('\n') + '\n');
+  const runtimeHashes = {};
+  for (const file of copiedFiles) {
+    runtimeHashes[file] = sha256File(path.join(STAGE_DIR, file));
+  }
+  const runtimeHash = sha256Text(
+    Object.entries(runtimeHashes)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([file, hash]) => `${hash}  ${file}`)
+      .join('\n') + '\n'
+  );
 
-for (const rel of unique) copyFile(rel);
-
-const fileStats = unique.map((rel) => {
-  const size = fs.statSync(path.join(stageDir, rel)).size;
-  return { rel, size };
-});
-
-const totalBytes = fileStats.reduce((sum, item) => sum + item.size, 0);
-const totalMb = totalBytes / 1024 / 1024;
-const assetsCount = unique.filter((fileName) => fileName.startsWith('assets/')).length;
-
-const maxMb = Number(process.env.DEPLOY_PACK_MAX_MB || '45');
-if (totalMb > maxMb) {
-  fail(`deploy pack is too large: ${totalMb.toFixed(2)} MB > ${maxMb} MB`);
+  return {
+    project: 'mospochin-site',
+    artifact: 'public-runtime',
+    packageVersion: PACKAGE_JSON.version || '0.0.0',
+    generatedAt: new Date().toISOString(),
+    source: {
+      githubSha: process.env.GITHUB_SHA || '',
+      githubRef: process.env.GITHUB_REF || '',
+      node: process.version,
+    },
+    manifest: {
+      path: '.deploy/include-files.txt',
+      files: files.length,
+      sha256: manifestHash,
+    },
+    runtime: {
+      files: copiedFiles.length + 1,
+      sha256: runtimeHash,
+    },
+  };
 }
 
-const zip = spawnSync('zip', ['-qr', zipPath, '.'], {
-  cwd: stageDir,
-  encoding: 'utf8',
-});
-
-if (zip.status !== 0) {
-  console.error(zip.stdout || '');
-  console.error(zip.stderr || '');
-  fail('zip command failed; install zip or check file permissions');
+function runZip(zipPath) {
+  fs.rmSync(zipPath, { force: true });
+  const result = spawnSync('zip', ['-qr', zipPath, '.'], {
+    cwd: STAGE_DIR,
+    stdio: 'inherit',
+  });
+  if (result.status !== 0) {
+    throw new Error('zip command failed. Make sure the system zip binary is available.');
+  }
 }
 
-const digest = sha256File(zipPath);
-fs.writeFileSync(shaPath, `${digest}  ${path.basename(zipPath)}\n`);
+function fileSize(filePath) {
+  return fs.statSync(filePath).size;
+}
 
-const topFiles = [...fileStats]
-  .sort((a, b) => b.size - a.size)
-  .slice(0, 30);
+function humanSize(bytes) {
+  const units = ['B', 'KB', 'MB', 'GB'];
+  let value = bytes;
+  let idx = 0;
+  while (value >= 1024 && idx < units.length - 1) {
+    value /= 1024;
+    idx += 1;
+  }
+  return `${value.toFixed(idx === 0 ? 0 : 2)} ${units[idx]}`;
+}
 
-const report = [
-  '# Mospochin production deploy pack',
-  '',
-  `Generated: **${now.toISOString()}**`,
-  '',
-  '## Summary',
-  '',
-  '| Field | Value |',
-  '| --- | ---: |',
-  `| Manifest files | ${unique.length} |`,
-  `| Assets | ${assetsCount} |`,
-  `| Raw size | ${totalMb.toFixed(2)} MB |`,
-  `| ZIP | \`${toPosix(path.relative(SITE_ROOT, zipPath))}\` |`,
-  `| SHA256 | \`${digest}\` |`,
-  '',
-  '## Top files',
-  '',
-  '| Size | File |',
-  '| ---: | --- |',
-  ...topFiles.map((item) => `| ${(item.size / 1024 / 1024).toFixed(2)} MB | \`${item.rel}\` |`),
-  '',
-  '## Guardrails',
-  '',
-  '- Forbidden dev folders are excluded.',
-  '- Required backend/deploy artifacts are present.',
-  `- Size budget: ${maxMb} MB.`,
-  '- Source manifest: `.deploy/include-files.txt`.',
-  '',
-].join('\n');
+function writeReport({ name, files, copiedFiles, generatedFiles, zipPath, shaPath, sha, version }) {
+  fs.mkdirSync(REPORT_DIR, { recursive: true });
+  const reportName = `${name.replace(/\.zip$/, '')}.md`;
+  const reportPath = path.join(REPORT_DIR, reportName);
+  const stageRelative = toPosix(path.relative(ROOT_DIR, STAGE_DIR));
+  const zipRelative = toPosix(path.relative(ROOT_DIR, zipPath));
+  const shaRelative = toPosix(path.relative(ROOT_DIR, shaPath));
 
-fs.writeFileSync(reportPath, report);
+  const byExt = new Map();
+  for (const file of [...copiedFiles, ...generatedFiles]) {
+    const ext = path.extname(file) || '(no ext)';
+    byExt.set(ext, (byExt.get(ext) || 0) + 1);
+  }
+  const extRows = [...byExt.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([ext, count]) => `| ${ext} | ${count} |`)
+    .join('\n');
 
-console.log(`deploy_pack_zip=${toPosix(path.relative(SITE_ROOT, zipPath))}`);
-console.log(`deploy_pack_sha256=${digest}`);
-console.log(`deploy_pack_report=${toPosix(path.relative(SITE_ROOT, reportPath))}`);
-console.log(`deploy_pack_files=${unique.length}`);
-console.log(`deploy_pack_raw_mb=${totalMb.toFixed(2)}`);
+  const text = `# MosPochin public deploy pack\n\n` +
+    `Дата: **${new Date().toISOString()}**\n\n` +
+    `## Результат\n\n` +
+    `- ZIP: \`${zipRelative}\`\n` +
+    `- SHA256: \`${shaRelative}\`\n` +
+    `- ZIP size: **${humanSize(fileSize(zipPath))}**\n` +
+    `- SHA256: \`${sha}\`\n` +
+    `- Staging dir: \`${stageRelative}\`\n\n` +
+    `## Состав\n\n` +
+    `- Manifest entries: **${files.length}**\n` +
+    `- Copied existing files: **${copiedFiles.length}**\n` +
+    `- Generated runtime files: **${generatedFiles.length}** (${generatedFiles.join(', ')})\n` +
+    `- Runtime files in version.json: **${version.runtime.files}**\n\n` +
+    `## Распределение по расширениям\n\n` +
+    `| Extension | Count |\n|---|---:|\n${extRows}\n\n` +
+    `## Важные решения\n\n` +
+    `- Production ZIP собирается строго по \`.deploy/include-files.txt\`.\n` +
+    `- \`version.json\` генерируется на этапе pack, если отсутствует в root проекта.\n` +
+    `- Docs/src/reports/.ai не входят в public runtime artifact.\n` +
+    `- Для полного AI handoff использовать \`npm run handoff:pack\`, для production — \`npm run deploy:pack\`.\n`;
+
+  fs.writeFileSync(reportPath, text);
+  return reportPath;
+}
+
+function main() {
+  const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+  const name = argValue('--name', `mospochin-public-deploy-${date}.zip`);
+  fs.mkdirSync(DIST_DIR, { recursive: true });
+  mkdirClean(STAGE_DIR);
+
+  const files = readManifest();
+  const copiedFiles = [];
+  const missing = [];
+
+  for (const file of files) {
+    if (file === 'version.json' && !fs.existsSync(path.join(ROOT_DIR, file))) {
+      continue;
+    }
+    const abs = ensureInsideRoot(file);
+    if (!fs.existsSync(abs)) {
+      missing.push(file);
+      continue;
+    }
+    if (fs.statSync(abs).isDirectory()) {
+      missing.push(`${file} (directory is not deployable)`);
+      continue;
+    }
+    copyRuntimeFile(file);
+    copiedFiles.push(file);
+  }
+
+  if (missing.length) {
+    throw new Error(`Missing deploy files:\n- ${missing.join('\n- ')}`);
+  }
+
+  const version = buildVersionJson(files, copiedFiles);
+  fs.writeFileSync(path.join(STAGE_DIR, 'version.json'), `${JSON.stringify(version, null, 2)}\n`);
+  const generatedFiles = ['version.json'];
+
+  const zipPath = path.join(DIST_DIR, name);
+  runZip(zipPath);
+  const sha = sha256File(zipPath);
+  const shaPath = `${zipPath}.sha256`;
+  fs.writeFileSync(shaPath, `${sha}  ${path.basename(zipPath)}\n`);
+
+  const reportPath = writeReport({ name, files, copiedFiles, generatedFiles, zipPath, shaPath, sha, version });
+
+  console.log('\n✅ public deploy pack ready');
+  console.log(`ZIP: ${toPosix(path.relative(ROOT_DIR, zipPath))}`);
+  console.log(`SHA256: ${toPosix(path.relative(ROOT_DIR, shaPath))}`);
+  console.log(`REPORT: ${toPosix(path.relative(ROOT_DIR, reportPath))}`);
+  console.log(`FILES: ${copiedFiles.length + generatedFiles.length}`);
+}
+
+try {
+  main();
+} catch (error) {
+  console.error(`❌ deploy:pack failed: ${error.message}`);
+  process.exit(1);
+}

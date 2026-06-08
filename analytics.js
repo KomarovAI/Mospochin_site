@@ -15,6 +15,7 @@
         'utm_service',
         'utm_landing',
         'metrika_client_id',
+        'ym_client_id',
         'yclid',
         'gclid'
     ];
@@ -144,11 +145,16 @@
         };
 
         touch.metrika_client_id = safeClientId;
+        touch.ym_client_id = safeClientId;
         touch.captured_at = touch.captured_at || new Date().toISOString();
         if (!attribution.first_touch) attribution.first_touch = touch;
-        if (attribution.first_touch) attribution.first_touch.metrika_client_id = safeClientId;
+        if (attribution.first_touch) {
+            attribution.first_touch.metrika_client_id = safeClientId;
+            attribution.first_touch.ym_client_id = safeClientId;
+        }
         attribution.last_touch = Object.assign({}, touch, {
-            metrika_client_id: safeClientId
+            metrika_client_id: safeClientId,
+            ym_client_id: safeClientId
         });
         writeAttribution(attribution);
     }
@@ -164,7 +170,7 @@
             has_gclid: touch.gclid ? 'yes' : 'no'
         };
 
-        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_service', 'utm_landing', 'metrika_client_id'].forEach(function (name) {
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_service', 'utm_landing', 'metrika_client_id', 'ym_client_id'].forEach(function (name) {
             if (touch[name]) result[name] = touch[name];
         });
 
