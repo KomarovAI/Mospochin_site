@@ -86,7 +86,7 @@ async function main() {
 
   if (submitTestLead) {
     const payload = {
-      page: 'parokonvektomaty',
+      page: 'parokonvektomaty.html',
       branch: 'restaurant',
       name: 'GitHub Actions Smoke',
       phone: '+7 999 123-45-67',
