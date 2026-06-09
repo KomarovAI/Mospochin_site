@@ -3,12 +3,12 @@
 - Branch: restaurant
 - Role: service
 - Title: Ремонт пароконвектоматов для ресторанов в Москве | MosPochin
-- Description: Ремонт и обслуживание пароконвектоматов для ресторанов, кафе и пекарен. Выезд инженера, смета до работ, договор и безнал.
+- Description: Ремонт пароконвектоматов для ресторанов и столовых в Москве: Rational, Unox, Abat, коды ошибок, нет пара, не греет. Фото дисплея в WhatsApp, выезд инженера.
 - H1: Ремонт пароконвектоматов для ресторанов
 - Canonical: https://mospochin.ru/parokonvektomaty.html
 - Builder model: src/pages/parokonvektomaty/page.json
 - Sections: 74 (31 local, 15 shared refs, 5 raw)
-- Text words inside referenced sections: 3489
+- Text words inside referenced sections: 3897
 
 ## Component mix
 
@@ -35,14 +35,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем все марки пароконвектоматов | pricing | 20.6 KB | 219 | no | src/pages/parokonvektomaty/sections/040-pricing-remontiruem-vse-marki-parokonvektomatov.html |
-| Ремонт пароконвектоматов для ресторанов | hero | 15.7 KB | 160 | no | src/pages/parokonvektomaty/sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html |
+| Ремонтируем все марки пароконвектоматов | pricing | 20.6 KB | 220 | no | src/pages/parokonvektomaty/sections/040-pricing-remontiruem-vse-marki-parokonvektomatov.html |
+| Ремонт пароконвектоматов для ресторанов | hero | 14.5 KB | 147 | no | src/pages/parokonvektomaty/sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html |
 | Частые поломки пароконвектоматов | pricing | 12.8 KB | 244 | no | src/pages/parokonvektomaty/sections/026-pricing-chastye-polomki-parokonvektomatov.html |
-| Связанные страницы по пароконвектоматам | related-links | 11.8 KB | 237 | no | src/pages/parokonvektomaty/sections/061-related-links-svyazannye-stranicy-po-parokonvektomat.html |
+| Связанные страницы по пароконвектоматам | related-links | 11.6 KB | 236 | no | src/pages/parokonvektomaty/sections/061-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
+| Разобрать проблему пароконвектомата точнее | section | 8.0 KB | 182 | no | src/pages/parokonvektomaty/sections/028-section-razobrat-problemu-parokonvektomata-tochnee.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 133 | no | src/pages/parokonvektomaty/sections/014-pricing-remontiruem-vse-tipy-parokonvektomatov.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.1 KB | 101 | no | src/pages/parokonvektomaty/sections/053-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
-| Как быстрее понять поломку пароконвектомата | section | 6.7 KB | 239 | no | src/pages/parokonvektomaty/sections/stage3-seo-conversion-parokonvektomaty.html |
+| Как быстрее понять поломку пароконвектомата | section | 7.3 KB | 264 | no | src/pages/parokonvektomaty/sections/stage3-seo-conversion-parokonvektomaty.html |
 
 
 ## Editable source files

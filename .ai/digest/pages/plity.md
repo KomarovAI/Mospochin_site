@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/plity.html
 - Builder model: src/pages/plity/page.json
 - Sections: 48 (33 local, 3 shared refs, 1 raw)
-- Text words inside referenced sections: 2855
+- Text words inside referenced sections: 2856
 
 ## Component mix
 

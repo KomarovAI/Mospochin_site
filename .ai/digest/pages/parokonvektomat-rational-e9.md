@@ -2,13 +2,13 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: Ошибка Rational E9 — ремонт пароконвектомата для ресторана | MosPochin
-- Description: Ошибка E9 на пароконвектомате Rational: фото кода и шильдика в WhatsApp, диагностика на объекте, выезд инженера для ресторанов, кафе и пекарен.
+- Title: Ошибка Rational E9 — ремонт с выездом | MosPochin
+- Description: Ошибка E9 на Rational SCC, CMP или iCombi: фото кода и шильдика, диагностика нагрева, пара, мойки и платы на объекте, выезд инженера.
 - H1: Ошибка Rational E9
 - Canonical: https://mospochin.ru/parokonvektomat-rational-e9.html
 - Builder model: src/pages/parokonvektomat-rational-e9/page.json
 - Sections: 77 (14 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2589
+- Text words inside referenced sections: 2608
 
 ## Component mix
 
@@ -35,12 +35,12 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ошибка Rational E9 | hero | 11.5 KB | 114 | no | src/pages/parokonvektomat-rational-e9/sections/007-hero-oshibka-rational-e9.html |
+| Ошибка Rational E9 | hero | 11.6 KB | 125 | no | src/pages/parokonvektomat-rational-e9/sections/007-hero-oshibka-rational-e9.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
-| Что уточняем по Rational E9 | related-links | 8.2 KB | 152 | no | src/pages/parokonvektomat-rational-e9/sections/010-related-links-chto-utochnyaem-po-rational-e9.html |
+| Что уточняем по Rational E9 | related-links | 8.2 KB | 153 | no | src/pages/parokonvektomat-rational-e9/sections/010-related-links-chto-utochnyaem-po-rational-e9.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 103 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 227 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html |
 

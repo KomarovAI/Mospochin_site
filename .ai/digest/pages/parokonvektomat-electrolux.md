@@ -3,12 +3,12 @@
 - Branch: neutral
 - Role: neutral
 - Title: Ремонт пароконвектоматов Electrolux Professional | MosPochin
-- Description: Ремонт пароконвектоматов Electrolux Professional: air-o-steam, air-o-convect, SkyLine, thermaline. Ошибки, не греет, нет пара. Срочный выезд. Договор, безнал.
+- Description: Ремонт Electrolux Professional air-o-steam, SkyLine, thermaline: пар, нагрев, мойка, датчики и ошибки. Выезд, договор и гарантия.
 - H1: Ремонт пароконвектоматов Electrolux Professional
 - Canonical: https://mospochin.ru/parokonvektomat-electrolux.html
 - Builder model: src/pages/parokonvektomat-electrolux/page.json
 - Sections: 79 (20 local, 18 shared refs, 2 raw)
-- Text words inside referenced sections: 2889
+- Text words inside referenced sections: 2915
 
 ## Component mix
 
@@ -35,12 +35,12 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонт пароконвектоматов Electrolux Professional | hero | 10.7 KB | 95 | no | src/pages/parokonvektomat-electrolux/sections/007-hero-remont-parokonvektomatov-electrolux-professiona.html |
+| Ремонт пароконвектоматов Electrolux Professional | hero | 11.1 KB | 95 | no | src/pages/parokonvektomat-electrolux/sections/007-hero-remont-parokonvektomatov-electrolux-professiona.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
-| Связанные страницы по пароконвектоматам | related-links | 8.9 KB | 173 | no | src/pages/parokonvektomat-electrolux/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
+| Связанные страницы по пароконвектоматам | related-links | 8.8 KB | 170 | no | src/pages/parokonvektomat-electrolux/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 105 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 241 | no | src/pages/parokonvektomat-electrolux/sections/052-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
 | Что фиксируем до начала работ на объекте | proof | 6.7 KB | 181 | no | src/pages/parokonvektomat-electrolux/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 

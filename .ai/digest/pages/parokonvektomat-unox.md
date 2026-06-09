@@ -2,13 +2,13 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: Ремонт Unox в Москве — диагностика и выезд | MosPochin
-- Description: Ремонт пароконвектоматов Unox для ресторанов, кафе и пекарен: ошибки AF01, AF02, AF08, нет пара, не греет, выезд инженера.
-- H1: Ремонт пароконвектоматов Unox
+- Title: Ремонт Unox ChefTop и BakerTop в Москве | MosPochin
+- Description: Ремонт Unox ChefTop и BakerTop: AF02/AF08, нет пара, вода, датчики, нагрев и выезд инженера на кухню или пекарню в Москве.
+- H1: Ремонт пароконвектоматов Unox ChefTop и BakerTop
 - Canonical: https://mospochin.ru/parokonvektomat-unox.html
 - Builder model: src/pages/parokonvektomat-unox/page.json
 - Sections: 77 (14 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2565
+- Text words inside referenced sections: 2591
 
 ## Component mix
 
@@ -35,7 +35,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонт пароконвектоматов Unox | hero | 12.9 KB | 127 | no | src/pages/parokonvektomat-unox/sections/007-hero-remont-parokonvektomatov-unox.html |
+| Ремонт пароконвектоматов Unox | hero | 12.7 KB | 121 | no | src/pages/parokonvektomat-unox/sections/007-hero-remont-parokonvektomatov-unox.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |

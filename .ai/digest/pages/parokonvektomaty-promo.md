@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/parokonvektomaty-promo.html
 - Builder model: src/pages/parokonvektomaty-promo/page.json
 - Sections: 77 (14 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2501
+- Text words inside referenced sections: 2495
 
 ## Component mix
 
@@ -38,7 +38,7 @@
 | Ошибка Rational / Unox / Abat | hero | 11.1 KB | 98 | no | src/pages/parokonvektomaty-promo/sections/007-hero-oshibka-rational-unox-abat.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
-| Что важно по ошибке пароконвектомата | related-links | 8.1 KB | 139 | no | src/pages/parokonvektomaty-promo/sections/010-related-links-chto-vazhno-po-oshibke-parokonvektomat.html |
+| Что важно по ошибке пароконвектомата | related-links | 8.1 KB | 133 | no | src/pages/parokonvektomaty-promo/sections/010-related-links-chto-vazhno-po-oshibke-parokonvektomat.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 103 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |

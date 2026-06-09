@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/stiralnye-mashiny.html
 - Builder model: src/pages/stiralnye-mashiny/page.json
 - Sections: 50 (40 local, 1 shared refs, 7 raw)
-- Text words inside referenced sections: 2914
+- Text words inside referenced sections: 2915
 
 ## Component mix
 

@@ -10,7 +10,7 @@
 | Builder pages | 39 |
 | src/pages files | 1083 |
 | src/pages HTML section files | 1044 |
-| Shared component files | 39 |
+| Shared component files | 43 |
 | Parametric template files | 63 |
 | Parametric props files | 14 |
 | Total declared sections | 2127 |
@@ -21,9 +21,9 @@
 | Shared/parametric coverage | 56.4% |
 | Average sections/page | 54.5 |
 | Average source files/page | 58.6 |
-| Root HTML bytes | 4.57 MB |
-| src/pages HTML bytes | 3.00 MB |
-| Shared HTML bytes | 170.0 KB |
+| Root HTML bytes | 4.59 MB |
+| src/pages HTML bytes | 3.03 MB |
+| Shared HTML bytes | 180.2 KB |
 | Estimated duplicate bytes removed by shared components | 1.28 MB |
 
 
@@ -51,10 +51,10 @@
 | --- | --- | --- |
 | holodilniki.html | 143.4 KB | 51 |
 | routery.html | 142.7 KB | 52 |
+| parokonvektomaty.html | 139.0 KB | 74 |
 | posudomoyki.html | 133.8 KB | 53 |
 | plity.html | 133.5 KB | 48 |
 | water-heaters.html | 132.2 KB | 49 |
-| parokonvektomaty.html | 124.8 KB | 74 |
 | holodilnoe-oborudovanie.html | 117.0 KB | 64 |
 | kompyutery.html | 113.8 KB | 55 |
 | stiralnye-mashiny.html | 107.1 KB | 50 |
@@ -99,7 +99,7 @@
 | src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html | 15 | 15 | 72.0 KB |
 | src/components/shared/pricing/pricing-vyberite-problemu-pokazhem-cenu--5d86ccad444cb9af.html | 15 | 15 | 68.1 KB |
 | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html | 11 | 11 | 66.9 KB |
-| src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html | 20 | 20 | 59.8 KB |
+| src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html | 20 | 20 | 60.1 KB |
 | src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html | 15 | 15 | 55.5 KB |
 
 

@@ -26,6 +26,7 @@ const commandSets = {
     cmd(NODE, ['tools/validate-site.mjs']),
     cmd(NODE, ['tools/check-conversion-ui.mjs']),
     cmd(NODE, ['tools/check-conversion-runtime.mjs']),
+    cmd(NODE, ['tools/check-visible-copy.mjs']),
     cmd(NODE, ['tools/check-deploy-runtime.mjs']),
     cmd(NODE, ['tools/check-ownership.mjs']),
     cmd(NODE, ['tools/build-site.mjs', '--check']),

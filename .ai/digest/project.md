@@ -31,7 +31,7 @@
 | Total sections | 2127 |
 | src/pages files | 1083 |
 | src/pages HTML section files | 1044 |
-| Shared component files | 39 |
+| Shared component files | 43 |
 | Shared refs | 330 |
 | Shared coverage | 56.4% |
 | Average sections/page | 54.5 |

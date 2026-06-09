@@ -3,12 +3,12 @@
 - Branch: neutral
 - Role: neutral
 - Title: Ремонт пароконвектоматов Convotherm — C4, C6 | MosPochin
-- Description: Ремонт пароконвектоматов Convotherm C4, C6, mini, combiPro: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия 24 мес.
+- Description: Ремонт Convotherm C4, C6, mini и combiPro: пар, нагрев, мойка, датчики и ошибки. Выезд по Москве, договор, акт, гарантия.
 - H1: Ремонт пароконвектоматов Convotherm
 - Canonical: https://mospochin.ru/parokonvektomat-convotherm.html
 - Builder model: src/pages/parokonvektomat-convotherm/page.json
 - Sections: 79 (18 local, 20 shared refs, 2 raw)
-- Text words inside referenced sections: 2888
+- Text words inside referenced sections: 2960
 
 ## Component mix
 
@@ -35,12 +35,12 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
+| Ремонт пароконвектоматов Convotherm | hero | 11.0 KB | 93 | no | src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
-| Ремонт пароконвектоматов Convotherm | hero | 10.5 KB | 92 | no | src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
-| Связанные страницы по пароконвектоматам | related-links | 8.9 KB | 172 | no | src/pages/parokonvektomat-convotherm/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
+| Связанные страницы по пароконвектоматам | related-links | 8.8 KB | 169 | no | src/pages/parokonvektomat-convotherm/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 108 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 227 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html |
 | Что фиксируем до начала работ на объекте | proof | 6.5 KB | 180 | no | src/pages/parokonvektomat-convotherm/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 

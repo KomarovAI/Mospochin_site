@@ -13,8 +13,8 @@
                         Ошибка <span class="text-brand-orange">E02 / E07 / E10</span>
                     </h1>
                     <p class="pariki-hero-copy text-base sm:text-lg lg:text-xl text-slate-200 mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Abat, Абат или Fagor показывает E02, E07, E10, не даёт смене нормально работать.
-                        <span class="text-white font-bold">Пришлите фото кода и шильдика - инженер подготовит сценарий диагностики.</span>
+                        Abat, Абат или Fagor показывает E02, E07 или E10, останавливает цикл, нагрев или пар.
+                        <span class="text-white font-bold">Отправьте фото кода и шильдика — инженер уточнит риск простоя и подготовит диагностику под модель.</span>
                     </p>
                     <!-- Stats -->
                     <div class="pariki-hero-kpis grid grid-cols-3 gap-2 sm:gap-4 max-w-xl mx-auto lg:mx-0 mb-5 sm:mb-6">
@@ -39,7 +39,7 @@
                         </a>
                         <a href="https://wa.me/79990057172?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A3%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B0%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%20E02%2FE07%2FE10.%20%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8E%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D1%8F%2C%20%D1%88%D0%B8%D0%BB%D1%8C%D0%B4%D0%B8%D0%BA%D0%B0%2C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0." data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2">
                             <i class="ri-whatsapp-line"></i>
-                            <span>Отправить фото ошибки</span>
+                            <span>Фото ошибки</span>
                         </a>
                     </div>
                     <!-- Trust badges -->
@@ -59,25 +59,29 @@
                             <span>Договор, акт, гарантия</span>
                         </div>
                     </div>
+                
+                    <div class="direct-problem-router mt-5 rounded-2xl border border-white/15 bg-white/10 p-4 text-left backdrop-blur">
+                      <p class="text-xs font-bold uppercase tracking-[0.16em] text-brand-orange">Что отправить инженеру</p>
+                      <p class="mt-2 text-sm leading-relaxed text-white/85">Фото E02/E07/E10, бренд Abat/Fagor, модель, когда появляется код, есть ли нагрев/пар/вода и адрес объекта.</p>
+                    </div>
                 </div>
                 <!-- Hero image -->
                 <div class="pariki-hero-card scroll-reveal is-visible relative">
                     <form class="telegram-form rounded-2xl border border-white/15 bg-white p-3.5 shadow-2xl lg:hidden mb-6 text-left" data-form-context="parokonvektomat_b2b_hero_short" action="/api/send-telegram" method="post">
                         <input type="hidden" name="name" value="Заявка с первого экрана">
-                        <input type="hidden" name="problem" value="Ошибка E02/E07/E10 пароконвектомата Abat/Fagor">
+                        <input type="hidden" name="problem" value="Abat/Fagor E02/E07/E10 / нужна диагностика и выезд">
                         <input type="hidden" name="address" value="Адрес уточнить по звонку">
                         <div class="flex items-center justify-between gap-3 mb-3">
                             <div>
                                 <p class="text-xs font-bold uppercase tracking-[0.16em] text-brand-orange">Быстрая заявка</p>
-                                <h2 class="mt-1 text-base font-display font-extrabold text-brand-blue">Проверить E02 / E07 / E10</h2>
+                                <h2 class="mt-1 text-base font-display font-extrabold text-brand-blue">Разобрать E02/E07/E10</h2>
                             </div>
                             <i class="ri-tools-line text-2xl text-brand-orange"></i>
                         </div>
-                        <input type="text" name="type" placeholder="Abat E02, Abat E07 или Fagor E10..." class="mb-2 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-slate-700 transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20" id="parokonvektomaty-promo-type">
+                        <input type="text" name="type" placeholder="Abat E02, E07, E10 или Fagor E10..." class="mb-2 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-slate-700 transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20" id="parokonvektomaty-promo-type">
                         <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-slate-700 transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20" id="parokonvektomaty-promo-phone" autocomplete="tel" inputmode="tel">
                         <button type="submit" class="mt-3 w-full rounded-xl bg-green-600 px-5 py-3 font-bold text-white shadow-lg transition hover:bg-green-700">
-                            <i class="ri-send-plane-line mr-2"></i>Проверить код
-                        </button>
+                            <i class="ri-send-plane-line mr-2"></i>Согласовать выезд по коду</button>
                     </form>
                     <div class="hidden lg:block rounded-2xl shadow-lg w-full h-[500px] overflow-hidden relative bg-slate-800">
                         <img src="/assets/images/responsive/combi-oven-08-1200w.jpeg" alt="Ремонт пароконвектомата — профессиональное кухонное оборудование" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="800" height="500" srcset="/assets/images/responsive/combi-oven-08-768w.jpeg 768w, /assets/images/responsive/combi-oven-08-1200w.jpeg 1200w, /assets/images/responsive/combi-oven-08-1600w.jpeg 1600w" sizes="(max-width: 768px) 100vw, 800px">
@@ -107,7 +111,7 @@
                             <i class="ri-star-fill"></i>
                             <i class="ri-star-fill"></i>
                         </div>
-                        <p class="text-slate-600 text-xs italic">«E02/E07/E10 по-разному читаются на разных моделях. Сначала сверяем бренд, шильдик, режим и момент появления ошибки.»</p>
+                        <p class="text-slate-600 text-xs italic">«Фото E02/E07/E10, бренд Abat/Fagor, модель, когда появляется код, есть ли нагрев/пар/вода и адрес объекта.»</p>
                         <p class="text-slate-500 text-xs font-semibold mt-2">— Заявка по пароконвектомату</p>
                     </div>
                 </div>

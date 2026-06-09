@@ -2782,3 +2782,871 @@ body.page-parokonvektomaty [data-stage3-content] details[open] summary::after { 
     transform: none !important;
   }
 }
+
+/* ============================================================
+   Prog7 mobile UX / CTA rhythm patch.
+   Keeps desktop content intact, but reduces first-screen pressure
+   on 390px phones: compact hero, one-row problem chips, shorter
+   sticky footer and no duplicate hub router inside the hero.
+   ============================================================ */
+@media (max-width: 640px) {
+  body.page-parokonvektomaty {
+    --mobile-sticky-safe-space: 7.35rem;
+  }
+
+  body.page-parokonvektomaty .pariki-hero {
+    padding-top: 2.15rem !important;
+    padding-bottom: 1.35rem !important;
+    background-position: 58% top !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-badge {
+    padding: .45rem .7rem !important;
+    font-size: .68rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: .01em;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-title {
+    font-size: clamp(1.9rem, 9.3vw, 2.55rem) !important;
+    line-height: 1.05 !important;
+    margin-bottom: .75rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-copy {
+    margin-bottom: .8rem !important;
+    font-size: .95rem !important;
+    line-height: 1.42 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief {
+    padding: .75rem !important;
+    margin-bottom: .75rem !important;
+    border-radius: 1rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief p {
+    font-size: .66rem !important;
+    letter-spacing: .12em !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief .mt-3 {
+    margin-top: .5rem !important;
+    gap: .45rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief .mt-3 > div {
+    padding: .55rem .65rem !important;
+    border-radius: .85rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief strong {
+    font-size: .82rem !important;
+    line-height: 1.15 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief span {
+    font-size: .76rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body.page-parokonvektomaty .direct-hub-router {
+    display: none !important;
+  }
+
+  body.page-parokonvektomaty .direct-problem-router {
+    margin-top: .8rem !important;
+    padding: .75rem !important;
+    border-radius: 1rem !important;
+  }
+
+  body.page-parokonvektomaty .direct-problem-router p {
+    font-size: .66rem !important;
+    letter-spacing: .12em !important;
+  }
+
+  body.page-parokonvektomaty .direct-problem-router .mt-3 {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: .45rem !important;
+    margin-top: .55rem !important;
+    padding-bottom: .15rem !important;
+    scrollbar-width: none;
+  }
+
+  body.page-parokonvektomaty .direct-problem-router .mt-3::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.page-parokonvektomaty .direct-problem-router a {
+    flex: 0 0 auto;
+    padding: .45rem .65rem !important;
+    font-size: .78rem !important;
+    line-height: 1.15 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form {
+    padding: .85rem !important;
+    border-radius: 1rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form h2 {
+    font-size: .95rem !important;
+    line-height: 1.2 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form input,
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form textarea,
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form select {
+    padding-top: .7rem !important;
+    padding-bottom: .7rem !important;
+    border-radius: .85rem !important;
+    font-size: .9rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form button[type="submit"] {
+    min-height: 2.75rem !important;
+    padding-top: .72rem !important;
+    padding-bottom: .72rem !important;
+    border-radius: .9rem !important;
+    font-size: .92rem !important;
+  }
+
+  #mobile-footer-container {
+    padding: .48rem .62rem calc(.48rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  #mobile-footer-container .mobile-footer-grid {
+    gap: .42rem !important;
+  }
+
+  #mobile-footer-container a {
+    min-height: 2.75rem !important;
+    border-radius: .82rem !important;
+    font-size: .72rem !important;
+  }
+
+  .stage4-visual-nav {
+    padding-bottom: 1.2rem !important;
+  }
+
+  .stage4-rail {
+    padding: .7rem !important;
+  }
+
+  .stage4-chip-row {
+    gap: .42rem !important;
+  }
+
+  .stage4-chip {
+    min-height: 2.18rem !important;
+    padding: .48rem .62rem !important;
+    font-size: .78rem !important;
+  }
+}
+
+
+/* ============================================================
+   Prog15 AI visual review fix: mobile parokonvektomat hero copy.
+   Prevents single-letter Cyrillic breaks like "пароконвектома / т"
+   and keeps problem chips readable on 393px screenshots.
+   ============================================================ */
+@media (max-width: 640px) {
+  body.page-parokonvektomaty .pariki-hero-title {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    letter-spacing: -0.035em !important;
+    text-wrap: balance;
+  }
+
+  body.page-parokonvektomaty:not(.page-direct-landing) .pariki-hero-title {
+    font-size: clamp(1.72rem, 7.9vw, 2.18rem) !important;
+    line-height: 1.09 !important;
+  }
+
+  body.page-direct-landing .pariki-hero-title {
+    font-size: clamp(1.52rem, 7.1vw, 1.98rem) !important;
+    line-height: 1.11 !important;
+    max-width: 20.75rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-copy {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+
+  body.page-direct-landing .direct-problem-router .mt-3 {
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    justify-content: center;
+    padding-bottom: 0 !important;
+  }
+
+  body.page-direct-landing .direct-problem-router a {
+    flex: 0 1 auto !important;
+    max-width: 100%;
+    white-space: nowrap;
+  }
+}
+
+/* ============================================================
+   Prog16 visual V1: mobile horizontal overflow safety.
+   Screenshot review showed full-page mobile PNG widths > viewport
+   on parokonvektomat cluster pages. Keep desktop untouched, but
+   prevent chips/cards/grids from expanding the document width.
+   ============================================================ */
+@media (max-width: 640px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body.page-parokonvektomaty,
+  body.page-direct-landing {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body.page-parokonvektomaty main,
+  body.page-direct-landing main,
+  body.page-parokonvektomaty section,
+  body.page-direct-landing section,
+  body.page-parokonvektomaty .container,
+  body.page-direct-landing .container,
+  body.page-parokonvektomaty .pariki-hero,
+  body.page-direct-landing .pariki-hero,
+  body.page-parokonvektomaty .pariki-hero-layout,
+  body.page-direct-landing .pariki-hero-layout,
+  body.page-parokonvektomaty .pariki-hero-card,
+  body.page-direct-landing .pariki-hero-card,
+  body.page-parokonvektomaty [data-stage3-content],
+  body.page-direct-landing [data-stage3-content],
+  body.page-parokonvektomaty .stage4-visual-nav,
+  body.page-direct-landing .stage4-visual-nav,
+  body.page-parokonvektomaty .stage4-rail,
+  body.page-direct-landing .stage4-rail,
+  body.page-parokonvektomaty .direct-problem-router,
+  body.page-direct-landing .direct-problem-router,
+  body.page-parokonvektomaty .direct-hub-router,
+  body.page-direct-landing .direct-hub-router {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  body.page-parokonvektomaty .grid,
+  body.page-direct-landing .grid,
+  body.page-parokonvektomaty .flex,
+  body.page-direct-landing .flex,
+  body.page-parokonvektomaty article,
+  body.page-direct-landing article,
+  body.page-parokonvektomaty .rounded-2xl,
+  body.page-direct-landing .rounded-2xl {
+    min-width: 0;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-kpis,
+  body.page-direct-landing .pariki-hero-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 100%;
+  }
+
+  body.page-parokonvektomaty .direct-problem-router .mt-3,
+  body.page-direct-landing .direct-problem-router .mt-3,
+  body.page-parokonvektomaty .stage4-chip-row,
+  body.page-direct-landing .stage4-chip-row {
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: visible !important;
+    flex-wrap: wrap !important;
+  }
+
+  body.page-parokonvektomaty .direct-problem-router a,
+  body.page-direct-landing .direct-problem-router a,
+  body.page-parokonvektomaty .stage4-chip,
+  body.page-direct-landing .stage4-chip,
+  body.page-parokonvektomaty .stage4-cta,
+  body.page-direct-landing .stage4-cta {
+    max-width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  body.page-parokonvektomaty .direct-problem-router a,
+  body.page-direct-landing .direct-problem-router a {
+    flex: 0 1 auto !important;
+  }
+
+  body.page-parokonvektomaty img,
+  body.page-direct-landing img,
+  body.page-parokonvektomaty svg,
+  body.page-direct-landing svg,
+  body.page-parokonvektomaty iframe,
+  body.page-direct-landing iframe,
+  body.page-parokonvektomaty table,
+  body.page-direct-landing table {
+    max-width: 100%;
+  }
+}
+
+
+/* ============================================================
+   Prog17 visual V2: mobile hero compact pass.
+   Tightens first screens after AI screenshot review: clearer
+   mobile header identity, shorter parokonvektomat hub hero, and
+   denser issue chips/forms without changing desktop layout.
+   ============================================================ */
+@media (max-width: 640px) {
+  #navbar .h-16 {
+    height: 3.45rem !important;
+  }
+
+  #navbar a.flex.items-center.gap-2,
+  #navbar a.flex.items-center.gap-3 {
+    min-width: 0;
+  }
+
+  #navbar a.flex.items-center.gap-2 > div:first-child,
+  #navbar a.flex.items-center.gap-3 > div:first-child {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    border-radius: .85rem !important;
+  }
+
+  #navbar a.flex.items-center.gap-2 span:first-child,
+  #navbar a.flex.items-center.gap-3 span:first-child {
+    max-width: 7.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #mobile-menu-btn {
+    padding: .55rem .72rem !important;
+    font-size: .82rem !important;
+    border-radius: .82rem !important;
+  }
+
+  #mobile-menu-btn i {
+    margin-right: .28rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero {
+    padding-top: 1.45rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-badge {
+    margin-bottom: .55rem !important;
+    max-width: 92vw;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-title {
+    margin-bottom: .55rem !important;
+  }
+
+  body.page-parokonvektomaty:not(.page-direct-landing) .pariki-hero-title {
+    font-size: clamp(1.66rem, 7.45vw, 2.06rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.page-direct-landing .pariki-hero-title {
+    font-size: clamp(1.44rem, 6.65vw, 1.86rem) !important;
+    line-height: 1.1 !important;
+    max-width: 21.5rem;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-copy {
+    max-width: 21.5rem;
+    margin-bottom: .62rem !important;
+    font-size: .9rem !important;
+    line-height: 1.36 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief {
+    padding: .62rem !important;
+    margin-bottom: .62rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief .mt-3 {
+    margin-top: .42rem !important;
+    gap: .38rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief .mt-3 > div {
+    padding: .48rem .55rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief strong {
+    font-size: .78rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief span {
+    font-size: .72rem !important;
+  }
+
+  body.page-direct-landing .direct-problem-router {
+    margin-top: .62rem !important;
+    padding: .62rem !important;
+    border-radius: .9rem !important;
+  }
+
+  body.page-direct-landing .direct-problem-router p {
+    font-size: .62rem !important;
+    letter-spacing: .105em !important;
+  }
+
+  body.page-direct-landing .direct-problem-router .mt-3 {
+    margin-top: .45rem !important;
+    gap: .35rem !important;
+  }
+
+  body.page-direct-landing .direct-problem-router a {
+    padding: .36rem .5rem !important;
+    border-radius: 999px !important;
+    font-size: .7rem !important;
+    line-height: 1.1 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form {
+    padding: .72rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form .mb-3 {
+    margin-bottom: .52rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form input,
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form textarea,
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form select {
+    padding-top: .6rem !important;
+    padding-bottom: .6rem !important;
+    font-size: .84rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form button[type="submit"] {
+    min-height: 2.55rem !important;
+    padding-top: .62rem !important;
+    padding-bottom: .62rem !important;
+    font-size: .86rem !important;
+  }
+}
+
+/* ============================================================
+   Prog18 visual audit pass: mobile sticky safe-space + contact readability.
+   Scope: visual-only polish after AI screenshot review. Keeps desktop intact,
+   reduces mobile fixed footer height, preserves tap targets, improves contact
+   hero KPI contrast, and reserves enough bottom space for forms/cards.
+   ============================================================ */
+@media (max-width: 640px) {
+  :root {
+    --mobile-sticky-safe-space: 7rem;
+  }
+
+  html {
+    scroll-padding-bottom: calc(var(--mobile-sticky-safe-space) + env(safe-area-inset-bottom));
+  }
+
+  body {
+    padding-bottom: calc(var(--mobile-sticky-safe-space) + env(safe-area-inset-bottom));
+  }
+
+  #mobile-footer-container {
+    padding: .34rem .52rem calc(.34rem + env(safe-area-inset-bottom)) !important;
+    box-shadow: 0 -12px 30px rgba(15,23,42,.12) !important;
+  }
+
+  #mobile-footer-container .mobile-footer-grid {
+    gap: .36rem !important;
+  }
+
+  #mobile-footer-container a {
+    min-height: 2.46rem !important;
+    padding-top: .34rem !important;
+    padding-bottom: .34rem !important;
+    border-radius: .76rem !important;
+    font-size: .68rem !important;
+    line-height: 1.05 !important;
+    gap: .05rem !important;
+  }
+
+  #mobile-footer-container i {
+    font-size: 1rem !important;
+    line-height: 1 !important;
+  }
+
+  body.page-parokonvektomaty,
+  body.page-direct-landing {
+    --mobile-sticky-safe-space: 7rem;
+  }
+
+  body.page-parokonvektomaty .pariki-hero {
+    padding-top: 1.12rem !important;
+    padding-bottom: .78rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-copy {
+    margin-bottom: .52rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief {
+    margin-bottom: .5rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form {
+    margin-bottom: calc(1.1rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form input,
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form textarea,
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form select {
+    min-height: 2.42rem !important;
+  }
+
+  body.page-contact header.relative {
+    padding-top: 6.35rem !important;
+    padding-bottom: 3.35rem !important;
+  }
+
+  body.page-contact header h1 {
+    font-size: clamp(2rem, 8.4vw, 2.65rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: .9rem !important;
+    text-wrap: balance;
+  }
+
+  body.page-contact header p.text-lg,
+  body.page-contact header p.text-xl {
+    font-size: .96rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  body.page-contact header .grid.grid-cols-2 {
+    gap: .5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  body.page-contact header .glass-card {
+    background: rgba(255,255,255,.16) !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    box-shadow: none !important;
+    padding: .62rem .5rem !important;
+  }
+
+  body.page-contact header .glass-card p:first-child {
+    color: #fff !important;
+    text-shadow: 0 1px 10px rgba(15,23,42,.35);
+  }
+
+  body.page-contact header .glass-card p:last-child {
+    color: rgba(226,232,240,.94) !important;
+  }
+
+  body.page-contact header .flex.flex-col.sm\:flex-row {
+    gap: .65rem !important;
+    margin-bottom: .5rem !important;
+  }
+
+  body.page-contact header a.btn-click {
+    min-height: 2.7rem !important;
+    padding-top: .72rem !important;
+    padding-bottom: .72rem !important;
+  }
+}
+
+
+/* ============================================================
+   Prog19 final mobile safe-space pass.
+   Scope: visual-only polish after Prog18 smoke screenshots.
+   Goals: keep desktop unchanged, reduce first-screen vertical pressure,
+   prevent the fixed mobile footer from covering contact CTA / hero forms,
+   and compact the parokonvektomat mobile helper card into a one-row cue.
+   ============================================================ */
+@media (max-width: 640px) {
+  :root {
+    --mobile-sticky-safe-space: 8.25rem;
+  }
+
+  body {
+    padding-bottom: calc(var(--mobile-sticky-safe-space) + env(safe-area-inset-bottom)) !important;
+  }
+
+  html {
+    scroll-padding-bottom: calc(var(--mobile-sticky-safe-space) + env(safe-area-inset-bottom)) !important;
+  }
+
+  #mobile-footer-container {
+    padding: .28rem .46rem calc(.28rem + env(safe-area-inset-bottom)) !important;
+    border-top-width: 1px !important;
+    box-shadow: 0 -10px 24px rgba(15,23,42,.11) !important;
+  }
+
+  #mobile-footer-container .mobile-footer-grid {
+    gap: .32rem !important;
+  }
+
+  #mobile-footer-container a {
+    min-height: 2.34rem !important;
+    padding-top: .28rem !important;
+    padding-bottom: .28rem !important;
+    border-radius: .72rem !important;
+    font-size: .64rem !important;
+    line-height: 1.02 !important;
+  }
+
+  #mobile-footer-container i {
+    font-size: .94rem !important;
+  }
+
+  /* Main restaurant landing and services: remove extra blank air above hero
+     and pull core CTA area above the sticky footer on 393px screens. */
+  body.page-index > header.hero-bg-restaurant,
+  body.page-uslugi > header.relative {
+    padding-top: 4.25rem !important;
+    padding-bottom: 2.45rem !important;
+  }
+
+  body.page-index > header .inline-flex,
+  body.page-uslugi > header .inline-flex {
+    padding: .58rem .95rem !important;
+    margin-bottom: .95rem !important;
+    font-size: .76rem !important;
+    line-height: 1.05 !important;
+  }
+
+  body.page-index > header h1,
+  body.page-uslugi > header h1 {
+    font-size: clamp(1.82rem, 7.35vw, 2.28rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: .82rem !important;
+    text-wrap: balance;
+  }
+
+  body.page-index > header p.text-lg,
+  body.page-uslugi > header p.text-lg {
+    font-size: .94rem !important;
+    line-height: 1.42 !important;
+    margin-bottom: .9rem !important;
+  }
+
+  body.page-index > header .grid.grid-cols-3,
+  body.page-uslugi > header .grid.grid-cols-2 {
+    gap: .5rem !important;
+    margin-bottom: .9rem !important;
+  }
+
+  body.page-index > header .glass-card,
+  body.page-uslugi > header .glass-card {
+    padding: .58rem .42rem !important;
+  }
+
+  body.page-uslugi > header .glass-card .w-14 {
+    width: 2.1rem !important;
+    height: 2.1rem !important;
+    margin-bottom: .34rem !important;
+    font-size: 1.05rem !important;
+  }
+
+  body.page-index > header .glass-card p:first-child,
+  body.page-uslugi > header .glass-card p:first-child {
+    font-size: 1.08rem !important;
+    line-height: 1.08 !important;
+    margin-bottom: .18rem !important;
+  }
+
+  body.page-index > header .glass-card p:last-child,
+  body.page-uslugi > header .glass-card p:last-child {
+    font-size: .68rem !important;
+    line-height: 1.15 !important;
+  }
+
+  body.page-index > header .flex.flex-col.sm\:flex-row,
+  body.page-uslugi > header .flex.flex-col.sm\:flex-row {
+    gap: .56rem !important;
+    margin-bottom: calc(4.15rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  body.page-index > header .flex.flex-col.sm\:flex-row a,
+  body.page-uslugi > header .flex.flex-col.sm\:flex-row a {
+    min-height: 2.62rem !important;
+    padding-top: .68rem !important;
+    padding-bottom: .68rem !important;
+    font-size: .94rem !important;
+  }
+
+  body.page-index > header p.text-white\/75,
+  body.page-index > header .flex.flex-wrap.items-center.justify-center.lg\:justify-start.gap-3,
+  body.page-index > header .flex.flex-wrap.items-center.justify-center.lg\:justify-start.gap-4,
+  body.page-uslugi > header .flex.flex-wrap.items-center.justify-center.gap-6 {
+    display: none !important;
+  }
+
+  /* Contact: sticky already provides phone/WA/request actions. On small
+     screens the duplicated inline CTA was clipped by the fixed footer, so
+     hide only that duplicate action row and keep the proof/KPI block visible. */
+  body.page-contact header.relative {
+    padding-top: 4.45rem !important;
+    padding-bottom: 2.35rem !important;
+  }
+
+  body.page-contact header .inline-flex {
+    padding: .58rem .88rem !important;
+    margin-bottom: .82rem !important;
+    font-size: .74rem !important;
+    line-height: 1.05 !important;
+  }
+
+  body.page-contact header h1 {
+    font-size: clamp(1.82rem, 7.55vw, 2.28rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: .72rem !important;
+  }
+
+  body.page-contact header p.text-lg,
+  body.page-contact header p.text-xl {
+    font-size: .92rem !important;
+    line-height: 1.38 !important;
+    margin-bottom: .78rem !important;
+  }
+
+  body.page-contact header .grid.grid-cols-2 {
+    gap: .42rem !important;
+    margin-bottom: calc(3.8rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  body.page-contact header .glass-card {
+    padding: .52rem .42rem !important;
+  }
+
+  body.page-contact header .glass-card p:first-child {
+    font-size: 1.04rem !important;
+    line-height: 1.08 !important;
+  }
+
+  body.page-contact header .glass-card p:last-child {
+    font-size: .72rem !important;
+    line-height: 1.15 !important;
+  }
+
+  body.page-contact header .flex.flex-col.sm\:flex-row {
+    display: none !important;
+  }
+
+  /* Parokonvektomat cluster: keep the useful “what to send” cue, but make it
+     horizontal and much shorter before the hero form on mobile. */
+  body.page-parokonvektomaty,
+  body.page-direct-landing {
+    --mobile-sticky-safe-space: 8.35rem;
+  }
+
+  body.page-parokonvektomaty .pariki-hero {
+    padding-top: .92rem !important;
+    padding-bottom: 1.55rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-badge {
+    padding: .5rem .72rem !important;
+    margin-bottom: .48rem !important;
+    font-size: .68rem !important;
+  }
+
+  body.page-parokonvektomaty:not(.page-direct-landing) .pariki-hero-title,
+  body.page-direct-landing .pariki-hero-title {
+    font-size: clamp(1.46rem, 6.65vw, 1.92rem) !important;
+    line-height: 1.06 !important;
+    margin-bottom: .48rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-copy {
+    font-size: .86rem !important;
+    line-height: 1.32 !important;
+    margin-bottom: .48rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-kpis,
+  body.page-direct-landing .pariki-hero-kpis {
+    display: none !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-actions {
+    gap: .5rem !important;
+    margin-bottom: .52rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-actions a {
+    min-height: 2.48rem !important;
+    padding-top: .62rem !important;
+    padding-bottom: .62rem !important;
+    font-size: .88rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief {
+    padding: .58rem !important;
+    margin-bottom: .62rem !important;
+    border-radius: 1rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief .mt-3 {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: .38rem !important;
+    margin-top: .38rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding-bottom: .12rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief .mt-3 > div {
+    flex: 0 0 74% !important;
+    min-width: 0 !important;
+    padding: .5rem .56rem !important;
+    scroll-snap-align: start;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief strong {
+    font-size: .76rem !important;
+    line-height: 1.12 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-brief span {
+    font-size: .7rem !important;
+    line-height: 1.18 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form {
+    padding: .62rem !important;
+    margin-bottom: calc(4.45rem + env(safe-area-inset-bottom)) !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form h2 {
+    font-size: .94rem !important;
+    line-height: 1.15 !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form input,
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form textarea,
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form select {
+    min-height: 2.18rem !important;
+    padding-top: .48rem !important;
+    padding-bottom: .48rem !important;
+    font-size: .78rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form button[type="submit"] {
+    min-height: 2.36rem !important;
+    padding-top: .54rem !important;
+    padding-bottom: .54rem !important;
+    font-size: .8rem !important;
+  }
+}

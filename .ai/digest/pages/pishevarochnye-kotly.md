@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/pishevarochnye-kotly.html
 - Builder model: src/pages/pishevarochnye-kotly/page.json
 - Sections: 27 (19 local, 1 shared refs, 0 raw)
-- Text words inside referenced sections: 996
+- Text words inside referenced sections: 997
 
 ## Component mix
 
@@ -38,7 +38,7 @@
 | Частые вопросы по ремонту | faq | 6.0 KB | 193 | no | src/pages/pishevarochnye-kotly/sections/019-faq-chastye-voprosy-po-remontu.html |
 | Согласовать выезд по котлу | lead-form | 5.3 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/012-lead-form-soglasovat-vyezd-po-kotlu.html |
 | С чем чаще всего вызывают инженера | contact-cta | 3.3 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/006-contact-cta-s-chem-chasche-vsego-vyzyvayut-inzhenera.html |
-| Какие метрики держим по заявке ресторана | proof | 3.1 KB | 62 | yes | src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html |
+| Какие метрики держим по заявке ресторана | proof | 3.2 KB | 63 | yes | src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html |
 | Если проблема в другом ресторанном оборудовании | related-links | 2.9 KB | 59 | no | src/pages/pishevarochnye-kotly/sections/017-related-links-esli-problema-v-drugom-restorannom-obo.html |
 | Что берем в ремонт на кухне | section | 2.9 KB | 65 | no | src/pages/pishevarochnye-kotly/sections/005-section-chto-berem-v-remont-na-kuhne.html |
 

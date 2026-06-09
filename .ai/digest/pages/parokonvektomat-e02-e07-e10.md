@@ -3,12 +3,12 @@
 - Branch: restaurant
 - Role: branch
 - Title: Ошибка E02/E07/E10 Abat и Fagor — ремонт | MosPochin
-- Description: Ошибки E02, E07, E10 на пароконвектоматах Abat, Абат и Fagor: диагностика на объекте, фото кода в WhatsApp, выезд инженера для ресторанов и кафе.
+- Description: Ошибки E02, E07, E10 на пароконвектоматах Abat, Абат и Fagor: диагностика датчиков, нагрева, воды, пара и платы на объекте.
 - H1: Ошибка E02 / E07 / E10
 - Canonical: https://mospochin.ru/parokonvektomat-e02-e07-e10.html
 - Builder model: src/pages/parokonvektomat-e02-e07-e10/page.json
 - Sections: 77 (14 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2573
+- Text words inside referenced sections: 2606
 
 ## Component mix
 
@@ -35,12 +35,12 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ошибка E02 / E07 / E10 | hero | 11.0 KB | 97 | no | src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html |
+| Ошибка E02 / E07 / E10 | hero | 11.5 KB | 116 | no | src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
-| Что может стоять за E02 / E07 / E10 | related-links | 8.2 KB | 162 | no | src/pages/parokonvektomat-e02-e07-e10/sections/010-related-links-chto-mozhet-stoyat-za-e02-e07-e10.html |
+| Что может стоять за E02 / E07 / E10 | related-links | 8.2 KB | 163 | no | src/pages/parokonvektomat-e02-e07-e10/sections/010-related-links-chto-mozhet-stoyat-za-e02-e07-e10.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.1 KB | 103 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 227 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html |
 

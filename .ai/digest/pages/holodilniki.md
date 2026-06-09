@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/holodilniki.html
 - Builder model: src/pages/holodilniki/page.json
 - Sections: 51 (35 local, 2 shared refs, 1 raw)
-- Text words inside referenced sections: 2995
+- Text words inside referenced sections: 2996
 
 ## Component mix
 

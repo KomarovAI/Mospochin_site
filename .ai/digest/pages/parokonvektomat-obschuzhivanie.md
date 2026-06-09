@@ -3,12 +3,12 @@
 - Branch: neutral
 - Role: neutral
 - Title: Техническое обслуживание пароконвектоматов | MosPochin
-- Description: Регулярное ТО пароконвектоматов Rational, Unox, Convotherm, Abat, Lainox и Electrolux. Договор, профилактика, декальцинация.
+- Description: ТО пароконвектоматов для ресторанов: договор, график, декальцинация, вода, парогенератор, датчики, акты и рекомендации по профилактике.
 - H1: Техническое обслуживание пароконвектоматов
 - Canonical: https://mospochin.ru/parokonvektomat-obschuzhivanie.html
 - Builder model: src/pages/parokonvektomat-obschuzhivanie/page.json
 - Sections: 36 (27 local, 0 shared refs, 10 raw)
-- Text words inside referenced sections: 1778
+- Text words inside referenced sections: 1826
 
 ## Component mix
 
@@ -34,14 +34,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Техническое обслуживание пароконвектоматов | hero | 11.3 KB | 116 | no | src/pages/parokonvektomat-obschuzhivanie/sections/007-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html |
+| Техническое обслуживание пароконвектоматов | hero | 11.5 KB | 124 | no | src/pages/parokonvektomat-obschuzhivanie/sections/007-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html |
 | Особенности ТО для каждого бренда | section | 11.0 KB | 146 | no | src/pages/parokonvektomat-obschuzhivanie/sections/017-section-osobennosti-to-dlya-kazhdogo-brenda.html |
-| Связанные страницы по пароконвектоматам | related-links | 9.6 KB | 187 | no | src/pages/parokonvektomat-obschuzhivanie/sections/025-related-links-svyazannye-stranicy-po-parokonvektomat.html |
+| Связанные страницы по пароконвектоматам | related-links | 9.5 KB | 185 | no | src/pages/parokonvektomat-obschuzhivanie/sections/025-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Частые вопросы о ТО пароконвектоматов | faq | 8.4 KB | 323 | no | src/pages/parokonvektomat-obschuzhivanie/sections/024-faq-chastye-voprosy-o-to-parokonvektomatov.html |
 | Что говорят клиенты с договором на ТО | section | 5.9 KB | 157 | no | src/pages/parokonvektomat-obschuzhivanie/sections/021-section-chto-govoryat-klienty-s-dogovorom-na-to.html |
 | Почему ТО выгоднее аварийного ремонта | pricing | 5.8 KB | 82 | no | src/pages/parokonvektomat-obschuzhivanie/sections/015-pricing-pochemu-to-vygodnee-avariynogo-remonta.html |
-| Полный комплекс профилактики | section | 5.6 KB | 90 | no | src/pages/parokonvektomat-obschuzhivanie/sections/011-section-polnyy-kompleks-profilaktiki.html |
-| Заключите договор на техническое обслуживание | lead-form | 5.3 KB | 47 | no | src/pages/parokonvektomat-obschuzhivanie/sections/029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html |
+| Полный комплекс профилактики | section | 5.7 KB | 91 | no | src/pages/parokonvektomat-obschuzhivanie/sections/011-section-polnyy-kompleks-profilaktiki.html |
+| ТО пароконвектомата: дешевле аварийного простоя | section | 5.6 KB | 181 | no | src/pages/parokonvektomat-obschuzhivanie/sections/stage3-seo-conversion-parokonvektomat-obschuzhivanie.html |
 
 
 ## Editable source files

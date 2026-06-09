@@ -1,0 +1,67 @@
+{
+  "artifactRoot": ".artifacts/screenshots/visual-smoke",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9998
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1200
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "index.html",
+      "branch": "restaurant",
+      "pageType": "branch",
+      "fullPage": false
+    },
+    {
+      "page": "uslugi.html",
+      "branch": "restaurant",
+      "pageType": "branch",
+      "fullPage": false
+    },
+    {
+      "page": "contact.html",
+      "branch": "restaurant",
+      "pageType": "branch",
+      "fullPage": false
+    },
+    {
+      "page": "parokonvektomaty.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "parokonvektomat-rational.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "parokonvektomat-unox-af02-af08.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ]
+}

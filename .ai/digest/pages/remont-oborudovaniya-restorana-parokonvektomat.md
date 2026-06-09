@@ -3,12 +3,12 @@
 - Branch: restaurant
 - Role: branch
 - Title: Ремонт кухни ресторана — Rational, Unox, Abat | MosPochin
-- Description: Рекламная посадочная для B2B-заявок по кухне ресторана: пароконвектоматы Rational, Unox, Abat, ошибки, нагрев, пар, срочный выезд, договор и безнал.
+- Description: Заявка по кухне ресторана: пароконвектоматы Rational, Unox, Abat, ошибки, нагрев, пар, срочный выезд, договор и безнал.
 - H1: Ремонт кухни ресторана: пароконвектоматы
 - Canonical: https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html
 - Builder model: src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json
 - Sections: 77 (14 local, 21 shared refs, 2 raw)
-- Text words inside referenced sections: 2450
+- Text words inside referenced sections: 2455
 
 ## Component mix
 

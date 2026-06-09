@@ -804,9 +804,9 @@ const Components = {
         <div class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-orange to-orange-600 rounded-xl flex items-center justify-center text-white text-lg lg:text-xl shadow-lg flex-shrink-0">
           <i class="ri-tools-line"></i>
         </div>
-        <div class="hidden md:block">
-          <span class="font-extrabold text-xl lg:text-2xl text-brand-blue tracking-tight block leading-tight">MosPochin</span>
-          <span class="text-xs text-slate-500 block font-medium leading-tight">${branch.subtitle}</span>
+        <div class="min-w-0 block">
+          <span class="font-extrabold text-base sm:text-xl lg:text-2xl text-brand-blue tracking-tight block leading-tight">MosPochin</span>
+          <span class="hidden sm:block text-xs text-slate-500 font-medium leading-tight truncate max-w-[12rem] lg:max-w-none">${branch.subtitle}</span>
         </div>
       </a>
 
@@ -1042,10 +1042,17 @@ const Components = {
 
       const suffix = element.dataset.suffix || '';
       const finalValue = `${target}${suffix}`;
+      const fallbackValue = element.textContent.trim() || finalValue;
 
-      element.dataset.finalValue = finalValue;
-      element.setAttribute('aria-label', finalValue);
-      element.textContent = `0${suffix}`;
+      element.dataset.finalValue = fallbackValue;
+      element.setAttribute('aria-label', fallbackValue);
+
+      // P0 trust fix: keep the HTML fallback value intact.
+      // No-JS/text-only/render-before-animation must show the real number,
+      // not a temporary 0{suffix} state.
+      if (!element.textContent.trim()) {
+        element.textContent = fallbackValue;
+      }
     });
 
     observeElements('.counter', { threshold: 0.5 }, (entry, observer) => {
