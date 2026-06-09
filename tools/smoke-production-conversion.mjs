@@ -76,8 +76,10 @@ async function main() {
 
   try {
     const version = JSON.parse(responses.get('/version.json') || '{}');
-    if (!version.project && !version.artifact) fail('version.json: unexpected payload');
-    else ok('version.json: readable');
+    const hasPackMetadata = Boolean(version.project || version.artifact);
+    const hasDeployMetadata = Boolean(version.commit && version.run_id && version.deployed_at);
+    if (hasPackMetadata || hasDeployMetadata) ok('version.json: readable');
+    else fail('version.json: unexpected payload');
   } catch (error) {
     fail(`version.json JSON parse error: ${error.message}`);
   }
