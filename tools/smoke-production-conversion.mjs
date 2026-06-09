@@ -86,8 +86,14 @@ async function main() {
 
   if (submitTestLead) {
     const payload = {
-      name: 'Smoke Test',
-      phone: '+7 999 000-00-00',
+      page: 'parokonvektomaty',
+      branch: 'restaurant',
+      name: 'GitHub Actions Smoke',
+      phone: '+7 999 123-45-67',
+      type: 'Deploy smoke test',
+      problem: 'Автоматическая проверка после выкладки',
+      formContext: 'github-actions-deploy',
+      consent: true,
       message: 'SMOKE TEST: проверка атрибуции, не обрабатывать как реальную заявку',
       pageIntent: 'smoke-test',
       leadQuality: 'test',
@@ -106,8 +112,11 @@ async function main() {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(payload),
     });
-    if (!response.ok) fail(`/api/send-telegram: HTTP ${response.status}`);
-    else ok('/api/send-telegram: test lead accepted');
+    const responseText = await response.text().catch(() => '');
+    if (response.ok) ok('/api/send-telegram: test lead accepted');
+    else if (response.status === 429 && responseText.includes('rate_limited')) {
+      ok('/api/send-telegram: rate limited after recent smoke lead');
+    } else fail(`/api/send-telegram: HTTP ${response.status} ${responseText}`);
   } else {
     ok('test lead submit skipped (pass --submit-test-lead to send)');
   }
