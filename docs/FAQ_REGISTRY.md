@@ -21,11 +21,11 @@ npm run ai:check
 
 ## Метрики текущего registry
 
-- Страниц с FAQ: 37
-- FAQ-блоков: 48
-- Вопросов/ответов: 290
-- Страниц с generated FAQPage schema: 37
-- Вопросов в schema: 257
+- Страниц с FAQ: 43
+- FAQ-блоков: 54
+- Вопросов/ответов: 314
+- Страниц с generated FAQPage schema: 43
+- Вопросов в schema: 281
 
 ## Workflow для AI
 

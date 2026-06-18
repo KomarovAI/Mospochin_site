@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/water-heaters.html
 - Builder model: src/pages/water-heaters/page.json
 - Sections: 49 (35 local, 1 shared refs, 2 raw)
-- Text words inside referenced sections: 2507
+- Text words inside referenced sections: 2506
 
 ## Component mix
 

@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/bytovaya-uslugi.html
 - Builder model: src/pages/bytovaya-uslugi/page.json
 - Sections: 18 (11 local, 0 shared refs, 1 raw)
-- Text words inside referenced sections: 714
+- Text words inside referenced sections: 713
 
 ## Component mix
 
@@ -33,7 +33,7 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Сначала выберите тип техники | faq | 13.4 KB | 115 | no | src/pages/bytovaya-uslugi/sections/007-faq-snachala-vyberite-tip-tehniki.html |
-| Ремонт бытовой техники на дому | hero | 7.0 KB | 82 | no | src/pages/bytovaya-uslugi/sections/005-hero-remont-bytovoy-tehniki-na-domu.html |
+| Ремонт бытовой техники на дому | hero | 7.0 KB | 81 | no | src/pages/bytovaya-uslugi/sections/005-hero-remont-bytovoy-tehniki-na-domu.html |
 | Оставьте заявку на ремонт | lead-form | 4.4 KB | 57 | no | src/pages/bytovaya-uslugi/sections/012-lead-form-ostav-te-zayavku-na-remont.html |
 | Как выглядит путь от симптома до результата | pricing | 4.2 KB | 131 | no | src/pages/bytovaya-uslugi/sections/009-pricing-kak-vyglyadit-put-ot-simptoma-do-rezul-tata.html |
 | Что остаётся у клиента после ремонта | pricing | 3.9 KB | 100 | no | src/pages/bytovaya-uslugi/sections/010-pricing-chto-ostaetsya-u-klienta-posle-remonta.html |

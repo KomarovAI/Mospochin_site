@@ -239,24 +239,6 @@ const PAGE_CLASS_ALIASES = Object.freeze({
   'kompyutery.html': ['page-kompyutery'],
   'parokonvektomaty-promo.html': ['page-parokonvektomaty'],
 });
-const PAGE_WHATSAPP_INTENTS = Object.freeze({
-  'parokonvektomaty.html': 'Здравствуйте! Нужен ремонт пароконвектомата в Москве. Отправлю бренд, модель, симптом и адрес объекта.',
-  'parokonvektomaty-promo.html': 'Здравствуйте! У пароконвектомата ошибка, кухня стоит. Хочу согласовать срочный выезд. Отправлю фото дисплея, шильдика и адрес объекта.',
-  'parokonvektomat-unox-af02-af08.html': 'Здравствуйте! У пароконвектомата Unox ошибка AF02/AF08. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-rational-e9.html': 'Здравствуйте! У пароконвектомата Rational ошибка E9. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-e02-e07-e10.html': 'Здравствуйте! У пароконвектомата ошибка E02/E07/E10. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-kod-oshibki.html': 'Здравствуйте! Нужно разобрать код ошибки пароконвектомата. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-rational.html': 'Здравствуйте! Нужен ремонт пароконвектомата Rational. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-unox.html': 'Здравствуйте! Нужен ремонт пароконвектомата Unox. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-ne-greet.html': 'Здравствуйте! Пароконвектомат не греет или не набирает температуру. Отправлю модель, фото шильдика и адрес объекта.',
-  'parokonvektomat-net-para.html': 'Здравствуйте! В пароконвектомате нет пара или не держится влажность. Отправлю модель, фото шильдика и адрес объекта.',
-  'remont-oborudovaniya-restorana-parokonvektomat.html': 'Здравствуйте! Нужен ремонт оборудования кухни ресторана, пароконвектомат. Отправлю модель, проблему, адрес и реквизиты для договора.',
-  'parokonvektomat-abat.html': 'Здравствуйте! Нужен ремонт пароконвектомата Abat. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-convotherm.html': 'Здравствуйте! Нужен ремонт пароконвектомата Convotherm. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-electrolux.html': 'Здравствуйте! Нужен ремонт пароконвектомата Electrolux Professional. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-lainox.html': 'Здравствуйте! Нужен ремонт пароконвектомата Lainox. Отправлю фото дисплея, шильдика, модель и адрес объекта.',
-  'parokonvektomat-obschuzhivanie.html': 'Здравствуйте! Нужно обслуживание пароконвектомата. Отправлю бренд, модель, состояние и адрес объекта.',
-});
 
 function getCurrentPageSlug() {
   return (window.location.pathname.split('/').pop() || 'index.html').replace('.html', '');
@@ -264,19 +246,6 @@ function getCurrentPageSlug() {
 
 function getCurrentPageFile() {
   return window.location.pathname.split('/').pop() || 'index.html';
-}
-
-function getPageWhatsappText(pageFile = getCurrentPageFile()) {
-  return PAGE_WHATSAPP_INTENTS[pageFile] || '';
-}
-
-function appendPageToWhatsappText(text) {
-  const cleanText = String(text || '').trim();
-  const pagePart = `Страница: ${window.location.href}`;
-  if (!cleanText) return pagePart;
-  if (cleanText.includes(window.location.href) || cleanText.includes('Страница:')) return cleanText;
-  return `${cleanText}
-${pagePart}`;
 }
 
 function toBodyPageClass(value) {
@@ -804,9 +773,9 @@ const Components = {
         <div class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-orange to-orange-600 rounded-xl flex items-center justify-center text-white text-lg lg:text-xl shadow-lg flex-shrink-0">
           <i class="ri-tools-line"></i>
         </div>
-        <div class="min-w-0 block">
-          <span class="font-extrabold text-base sm:text-xl lg:text-2xl text-brand-blue tracking-tight block leading-tight">MosPochin</span>
-          <span class="hidden sm:block text-xs text-slate-500 font-medium leading-tight truncate max-w-[12rem] lg:max-w-none">${branch.subtitle}</span>
+        <div class="hidden md:block">
+          <span class="font-extrabold text-xl lg:text-2xl text-brand-blue tracking-tight block leading-tight">MosPochin</span>
+          <span class="text-xs text-slate-500 block font-medium leading-tight">${branch.subtitle}</span>
         </div>
       </a>
 
@@ -1042,17 +1011,10 @@ const Components = {
 
       const suffix = element.dataset.suffix || '';
       const finalValue = `${target}${suffix}`;
-      const fallbackValue = element.textContent.trim() || finalValue;
 
-      element.dataset.finalValue = fallbackValue;
-      element.setAttribute('aria-label', fallbackValue);
-
-      // P0 trust fix: keep the HTML fallback value intact.
-      // No-JS/text-only/render-before-animation must show the real number,
-      // not a temporary 0{suffix} state.
-      if (!element.textContent.trim()) {
-        element.textContent = fallbackValue;
-      }
+      element.dataset.finalValue = finalValue;
+      element.setAttribute('aria-label', finalValue);
+      element.textContent = `0${suffix}`;
     });
 
     observeElements('.counter', { threshold: 0.5 }, (entry, observer) => {
@@ -1171,14 +1133,10 @@ const Components = {
     });
 
     whatsappLinks.forEach((node) => {
-      const currentHref = node.getAttribute('href') || 'https://wa.me/';
-      const hrefText = parseWhatsappTextFromHref(currentHref) || parseWhatsappTextFromToken(currentHref) || '';
-      const pageText = getPageWhatsappText();
-      const preferredText = node.dataset.whatsappText || hrefText || pageText || '';
-      if (pageText && !node.dataset.whatsappIntent) node.dataset.whatsappIntent = getCurrentPageFile();
+      const preferredText = node.dataset.whatsappText || '';
       node.setAttribute(
         'href',
-        this.resolveContactHref(currentHref, appendPageToWhatsappText(preferredText))
+        this.resolveContactHref(node.getAttribute('href') || 'https://wa.me/', preferredText)
       );
     });
 
@@ -2624,62 +2582,6 @@ function initScrollReveal() {
   );
 }
 
-function readDebugStorageJson(key) {
-  try {
-    const raw = window.localStorage.getItem(key);
-    if (!raw) return null;
-    return JSON.parse(raw);
-  } catch {
-    return null;
-  }
-}
-
-function initLeadDebugMode() {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('lead_debug') !== '1') return;
-
-  const attribution = readDebugStorageJson('mospochin_attribution_v1');
-  const draft = readDebugStorageJson('mospochin_last_lead_draft_v2');
-  const touch = attribution?.last_touch || attribution?.first_touch || {};
-  const query = Object.fromEntries(params.entries());
-  const checks = [
-    ['analytics.js', typeof window.mospochinTrackGoal === 'function'],
-    ['mospochinGetAttribution', typeof window.mospochinGetAttribution === 'function'],
-    ['yclid', Boolean(touch.yclid || query.yclid)],
-    ['ym_client_id / metrika_client_id', Boolean(touch.ym_client_id || touch.metrika_client_id)],
-    ['last lead draft', Boolean(draft)],
-    ['production host', Boolean(window.mospochinIsProductionHost?.())]
-  ];
-
-  const panel = document.createElement('aside');
-  panel.id = 'lead-debug-panel';
-  panel.className = 'fixed inset-x-3 bottom-3 z-[9999] max-h-[70vh] overflow-auto rounded-2xl border border-slate-200 bg-white p-4 text-xs shadow-2xl md:left-auto md:w-[560px]';
-  panel.innerHTML = `
-    <div class="flex items-center justify-between gap-3">
-      <strong class="text-sm text-brand-blue">Lead debug / MosPochin</strong>
-      <button type="button" data-debug-close class="rounded-full bg-slate-100 px-3 py-1 font-bold text-slate-700">Закрыть</button>
-    </div>
-    <div class="mt-3 grid gap-2 sm:grid-cols-2">
-      ${checks.map(([label, ok]) => `<div class="rounded-xl ${ok ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'} px-3 py-2"><b>${ok ? '✓' : '×'} ${escapeHtml(label)}</b></div>`).join('')}
-    </div>
-    <details class="mt-3" open>
-      <summary class="cursor-pointer font-bold">Query</summary>
-      <pre class="mt-2 max-h-40 overflow-auto rounded-xl bg-slate-950 p-3 text-slate-100">${escapeHtml(JSON.stringify(query, null, 2))}</pre>
-    </details>
-    <details class="mt-3">
-      <summary class="cursor-pointer font-bold">Attribution localStorage</summary>
-      <pre class="mt-2 max-h-52 overflow-auto rounded-xl bg-slate-950 p-3 text-slate-100">${escapeHtml(JSON.stringify(attribution || null, null, 2))}</pre>
-    </details>
-    <details class="mt-3">
-      <summary class="cursor-pointer font-bold">Last lead draft</summary>
-      <pre class="mt-2 max-h-52 overflow-auto rounded-xl bg-slate-950 p-3 text-slate-100">${escapeHtml(JSON.stringify(draft || null, null, 2))}</pre>
-    </details>
-  `;
-  panel.querySelector('[data-debug-close]')?.addEventListener('click', () => panel.remove());
-  document.body.append(panel);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   void Components.init();
-  window.setTimeout(initLeadDebugMode, 500);
 });

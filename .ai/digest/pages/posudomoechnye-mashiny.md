@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/posudomoechnye-mashiny.html
 - Builder model: src/pages/posudomoechnye-mashiny/page.json
 - Sections: 64 (42 local, 3 shared refs, 13 raw)
-- Text words inside referenced sections: 2312
+- Text words inside referenced sections: 2309
 
 ## Component mix
 
@@ -37,7 +37,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонтируем все типы промышленных посудомоек | pricing | 14.8 KB | 313 | no | src/pages/posudomoechnye-mashiny/sections/013-pricing-remontiruem-vse-tipy-promyshlennyh-posudomoe.html |
 | Ремонтируем все марки промышленных посудомоек | section | 12.2 KB | 70 | no | src/pages/posudomoechnye-mashiny/sections/027-section-remontiruem-vse-marki-promyshlennyh-posudomo.html |
-| Ремонт промышленных посудомоечных машин без остановки кухни на полдня | hero | 7.9 KB | 89 | no | src/pages/posudomoechnye-mashiny/sections/007-hero-remont-promyshlennyh-posudomoechnyh-mashin-bez-.html |
+| Ремонт промышленных посудомоечных машин без остановки кухни на полдня | hero | 7.8 KB | 88 | no | src/pages/posudomoechnye-mashiny/sections/007-hero-remont-promyshlennyh-posudomoechnyh-mashin-bez-.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | no | src/pages/posudomoechnye-mashiny/sections/049-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Частые вопросы о ремонте промышленных посудомоек | faq | 6.5 KB | 232 | no | src/pages/posudomoechnye-mashiny/sections/043-faq-chastye-voprosy-o-remonte-promyshlennyh-posudomo.html |
 | Получите понятный сценарий ремонта мойки | lead-form | 5.7 KB | 106 | no | src/pages/posudomoechnye-mashiny/sections/047-lead-form-poluchite-ponyatnyy-scenariy-remonta-moyki.html |
