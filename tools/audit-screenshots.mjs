@@ -1,7 +1,7 @@
 import fs from 'fs';
 import net from 'net';
 import path from 'path';
-import { spawn, spawnSync } from 'child_process';
+import { spawn } from 'child_process';
 import { chromium, errors as playwrightErrors } from 'playwright';
 import {
   getAuditContractSummary,
@@ -14,52 +14,6 @@ const SCREENSHOT_TIMEOUT_MS = 20000;
 const PAGE_LOAD_TIMEOUT_MS = 15000;
 const CHUNK_HEIGHT_FALLBACK = 4000;
 const AUDIT_DOM_SETTLE_MS = 250;
-
-const SYSTEM_CHROMIUM_CANDIDATES = [
-  process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE,
-  process.env.CHROMIUM_BIN,
-  process.env.CHROME_BIN,
-  '/usr/bin/chromium',
-  '/usr/bin/chromium-browser',
-  '/usr/bin/google-chrome',
-  '/usr/bin/google-chrome-stable',
-].filter(Boolean);
-
-function findExecutable(candidates) {
-  for (const candidate of candidates) {
-    try {
-      if (candidate && fs.existsSync(candidate)) return candidate;
-    } catch {
-      // Keep looking.
-    }
-  }
-  return null;
-}
-
-function createChromiumLaunchOptions() {
-  const explicitExecutable = findExecutable(SYSTEM_CHROMIUM_CANDIDATES);
-  const args = ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'];
-
-  if (explicitExecutable) {
-    return {
-      executablePath: explicitExecutable,
-      args,
-    };
-  }
-
-  return { args };
-}
-
-function explainBrowserError(error) {
-  const text = `${error?.message || error}`;
-  if (text.includes('Executable doesn')) {
-    return `${text}\n\nVisual audit cannot find a Playwright-managed Chromium browser. Run npm run setup:visual, or set PLAYWRIGHT_CHROMIUM_EXECUTABLE=/path/to/chromium.`;
-  }
-  if (text.includes('ERR_BLOCKED_BY_ADMINISTRATOR')) {
-    return `${text}\n\nVisual audit reached Chromium, but navigation was blocked by system/browser policy. Use npm run setup:visual in an unrestricted environment or run in the official Playwright Docker image.`;
-  }
-  return text;
-}
 
 function parseArgs(argv) {
   const result = {};
@@ -308,7 +262,7 @@ async function stabilizeAuditDom(page) {
 }
 
 async function captureSingleViewport(manifest, artifactDir, baseUrl, pageEntry, viewport) {
-  const browser = await chromium.launch(createChromiumLaunchOptions());
+  const browser = await chromium.launch();
   const context = await browser.newContext(createViewportConfig(viewport));
   const page = await context.newPage();
   const pageUrl = `${baseUrl}/${pageEntry.page}`;
@@ -336,7 +290,7 @@ async function captureSingleViewport(manifest, artifactDir, baseUrl, pageEntry, 
   } catch (error) {
     const isTimeout = error instanceof playwrightErrors.TimeoutError;
     if (!pageEntry.fullPage || !isTimeout) {
-      throw new Error(explainBrowserError(error));
+      throw error;
     }
 
     const chunkFiles = await captureChunkedFullPage(page, screenshotPath);

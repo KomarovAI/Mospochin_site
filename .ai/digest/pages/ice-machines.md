@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ice-machines.html
 - Builder model: src/pages/ice-machines/page.json
 - Sections: 64 (43 local, 3 shared refs, 14 raw)
-- Text words inside referenced sections: 2071
+- Text words inside referenced sections: 2068
 
 ## Component mix
 
@@ -37,7 +37,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонтируем все типы льдогенераторов | pricing | 15.3 KB | 320 | no | src/pages/ice-machines/sections/013-pricing-remontiruem-vse-tipy-l-dogeneratorov.html |
 | Ремонтируем все марки льдогенераторов | section | 13.0 KB | 72 | no | src/pages/ice-machines/sections/027-section-remontiruem-vse-marki-l-dogeneratorov.html |
-| Льдогенератор встал? Починим за 1-3 часа | hero | 7.4 KB | 79 | no | src/pages/ice-machines/sections/007-hero-l-dogenerator-vstal-pochinim-za-1-3-chasa.html |
+| Льдогенератор встал? Починим за 1-3 часа | hero | 7.4 KB | 78 | no | src/pages/ice-machines/sections/007-hero-l-dogenerator-vstal-pochinim-za-1-3-chasa.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 180 | no | src/pages/ice-machines/sections/049-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Частые вопросы о ремонте льдогенераторов | faq | 5.9 KB | 189 | no | src/pages/ice-machines/sections/043-faq-chastye-voprosy-o-remonte-l-dogeneratorov.html |
 | Что говорят клиенты | pricing | 5.4 KB | 150 | no | src/pages/ice-machines/sections/033-pricing-chto-govoryat-klienty.html |

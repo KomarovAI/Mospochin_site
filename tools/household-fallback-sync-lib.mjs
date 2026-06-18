@@ -284,7 +284,7 @@ function renderKpiCounterValue(rawValue) {
   }
 
   const suffix = match[2] || '';
-  return `<span class="counter" data-target="${target}" data-suffix="${escapeHtml(suffix)}">${escapeHtml(value)}</span>`;
+  return `<span class="counter" data-target="${target}" data-suffix="${escapeHtml(suffix)}">0</span>`;
 }
 
 export function renderHouseholdServiceKpi(slotEntry, slotsRoot) {
