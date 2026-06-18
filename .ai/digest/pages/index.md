@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/
 - Builder model: src/pages/index/page.json
 - Sections: 27 (20 local, 0 shared refs, 1 raw)
-- Text words inside referenced sections: 1181
+- Text words inside referenced sections: 1179
 
 ## Component mix
 
@@ -35,7 +35,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Работаем со всеми производителями | pricing | 25.6 KB | 108 | no | src/pages/index/sections/013-pricing-rabotaem-so-vsemi-proizvoditelyami.html |
 | Ключевые направления по типу поломки и оборудования | pricing | 8.3 KB | 87 | no | src/pages/index/sections/007-pricing-klyuchevye-napravleniya-po-tipu-polomki-i-ob.html |
-| Ремонт ресторанного оборудования в Москве без простоя и сюрпризов по цене | hero | 8.2 KB | 114 | no | src/pages/index/sections/004-hero-remont-restorannogo-oborudovaniya-v-moskve-bez-.html |
+| Ремонт ресторанного оборудования в Москве без простоя и сюрпризов по цене | hero | 8.2 KB | 113 | no | src/pages/index/sections/004-hero-remont-restorannogo-oborudovaniya-v-moskve-bez-.html |
 | Почему рестораны возвращаются к MosPochin | pricing | 6.8 KB | 115 | no | src/pages/index/sections/008-pricing-pochemu-restorany-vozvraschayutsya-k-mospoch.html |
 | Каждая минута простоя = потеря денег и смены | contact-cta | 4.8 KB | 77 | no | src/pages/index/sections/006-contact-cta-kazhdaya-minuta-prostoya-poterya-deneg-i.html |
 | Оставьте заявку на ремонт | lead-form | 4.7 KB | 71 | no | src/pages/index/sections/019-lead-form-ostav-te-zayavku-na-remont.html |

@@ -1,7 +1,7 @@
 # Component Digest — contactLinks
 
 - Name: Контакты: телефон, WhatsApp, Telegram
-- Appears in: 39 pages
+- Appears in: 63 pages
 - Keywords: контакты, телефон, whatsapp, ватсап, telegram, связь, позвонить
 - CSS selectors: [data-contact-link], .btn-click
 - JS hooks: data-contact-link
@@ -43,4 +43,4 @@
 - parokonvektomat-electrolux.html
 - parokonvektomat-kod-oshibki.html
 - parokonvektomat-lainox.html
-- … ещё 19
+- … ещё 43

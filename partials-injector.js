@@ -11,45 +11,6 @@
 
   const cache = {};
 
-
-  function getCurrentPageFile() {
-    return window.location.pathname.split('/').pop() || 'index.html';
-  }
-
-  function pageMobileIntent() {
-    const page = getCurrentPageFile();
-    const map = {
-      'parokonvektomaty-promo.html': ['Срочно', 'WhatsApp', 'Заявка'],
-      'parokonvektomat-unox-af02-af08.html': ['Позвонить', 'AF02/AF08', 'Заявка'],
-      'parokonvektomat-rational-e9.html': ['Позвонить', 'E9', 'Заявка'],
-      'parokonvektomat-kod-oshibki.html': ['Позвонить', 'Код ошибки', 'Заявка'],
-      'parokonvektomat-e02-e07-e10.html': ['Позвонить', 'E02/E07', 'Заявка'],
-      'parokonvektomat-ne-greet.html': ['Позвонить', 'Не греет', 'Заявка'],
-      'parokonvektomat-net-para.html': ['Позвонить', 'Нет пара', 'Заявка'],
-      'parokonvektomat-rational.html': ['Позвонить', 'Rational', 'Заявка'],
-      'parokonvektomat-unox.html': ['Позвонить', 'Unox', 'Заявка'],
-      'parokonvektomat-obschuzhivanie.html': ['Позвонить', 'ТО', 'Заявка'],
-      'remont-oborudovaniya-restorana-parokonvektomat.html': ['Позвонить', 'B2B кухня', 'Заявка']
-    };
-    return map[page] || ['Позвонить', 'WhatsApp', 'Заявка'];
-  }
-
-  function personalizeMobileFooter() {
-    const footer = document.querySelector('#mobile-footer-container');
-    if (!footer) return;
-    const [phone, whatsapp, request] = pageMobileIntent();
-    footer.querySelector('[data-mobile-label="phone"]')?.replaceChildren(document.createTextNode(phone));
-    footer.querySelector('[data-mobile-label="whatsapp"]')?.replaceChildren(document.createTextNode(whatsapp));
-    footer.querySelector('[data-mobile-label="request"]')?.replaceChildren(document.createTextNode(request));
-    const wa = footer.querySelector('a[data-contact-link="whatsapp"]');
-    if (wa) {
-      const page = getCurrentPageFile();
-      const text = `Здравствуйте! Нужен ремонт пароконвектомата. Страница: ${page}. Отправлю фото панели, модель, симптом и адрес кухни.`;
-      wa.setAttribute('href', `https://wa.me/79990057172?text=${encodeURIComponent(text)}`);
-      wa.dataset.whatsappIntent = page;
-    }
-  }
-
   async function loadPartial(name) {
     if (cache[name]) return cache[name];
     try {
@@ -92,8 +53,6 @@
         }
       }
     }
-
-    personalizeMobileFooter();
 
     // Noscript fallback - уже в HTML, ничего не делаем
     // Countdown timer - уже в HTML, ничего не делаем

@@ -1,7 +1,7 @@
 # Component Digest — hero
 
 - Name: Hero / первый экран
-- Appears in: 36 pages
+- Appears in: 38 pages
 - Keywords: hero, первый экран, обложка, главный блок, заголовок, h1
 - CSS selectors: .hero-animate, .hero-animate-delay-*, header .glass-card
 
@@ -27,6 +27,7 @@
 
 ## Representative pages
 
+- 404.html
 - about.html
 - bytovaya-about.html
 - bytovaya-contact.html
@@ -39,12 +40,11 @@
 - ice-machines.html
 - index.html
 - kompyutery.html
+- microwaves.html
 - parokonvektomat-abat.html
 - parokonvektomat-convotherm.html
 - parokonvektomat-e02-e07-e10.html
 - parokonvektomat-electrolux.html
 - parokonvektomat-kod-oshibki.html
 - parokonvektomat-lainox.html
-- parokonvektomat-ne-greet.html
-- parokonvektomat-net-para.html
-- … ещё 16
+- … ещё 18

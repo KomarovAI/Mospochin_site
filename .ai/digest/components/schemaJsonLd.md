@@ -1,7 +1,7 @@
 # Component Digest — schemaJsonLd
 
 - Name: Schema.org JSON-LD
-- Appears in: 38 pages
+- Appears in: 62 pages
 - Keywords: schema, json-ld, ld+json, structured data, микроразметка
 
 ## Related files
@@ -42,4 +42,4 @@
 - parokonvektomat-kod-oshibki.html
 - parokonvektomat-lainox.html
 - parokonvektomat-ne-greet.html
-- … ещё 18
+- … ещё 42

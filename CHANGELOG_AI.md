@@ -1,30 +1,3 @@
-
-## 2026-06-07 — Site conversion implementation pack
-
-- Applied the Direct/Metric conversion task to the actual project source, not only as a plan.
-- Strengthened P0 `parokonvektomaty.html`: Moscow B2B hero, phone/WhatsApp/request CTAs, visible mobile hero detail fields for brand/model and symptom/error code, and a symptom-to-request bridge.
-- Added repair-bridge conversion blocks for error pages: `parokonvektomat-kod-oshibki.html`, `parokonvektomat-e02-e07-e10.html`, `parokonvektomat-rational-e9.html`.
-- Lightly strengthened protected/winner pages: `parokonvektomaty-promo.html` and `parokonvektomat-unox-af02-af08.html`, without changing their URL/indexing logic.
-- Fixed malformed WhatsApp encoded URLs in the parokonvektomat cluster.
-- Added `ym_client_id` as an alias alongside existing `metrika_client_id` in runtime attribution and Telegram submission output.
-
-
-## 2026-06-07 — Parokonvektomat cluster unique content hardening
-
-- Уникализированы верхние диагностические блоки страниц кластера пароконвектоматов.
-- Исправлены повторяющиеся Rational-кейсы на нерелевантных страницах.
-- Добавлены быстрые переходы по кластеру без self-links.
-- Новые страницы, тесты, скрипты и deploy-pack не добавлялись.
-
-
-## 2026-06-07 — Parokonvektomat cluster UX/content hardening
-
-- Сделаны кликабельными карточки брендов на `/parokonvektomaty.html`; добавлен Lainox, карточки без отдельных страниц ведут в заявку.
-- Усилены hero-блоки `/parokonvektomaty.html`, `/parokonvektomat-rational.html`, `/parokonvektomat-unox.html`: больше брендовых/симптомных быстрых переходов, меньше шаблонных обещаний.
-- Исправлен Unox hero-кейс, где был текст про Rational.
-- Смягчены неподтверждённые рекламные цифры в пароконвектоматном кластере: 500+, 97%, 24 месяца, 20–35 минут заменены на проверяемые формулировки.
-- Формы по пароконвектоматам сделаны более предметными: бренд/модель, код ошибки или симптом, адрес объекта.
-
 # AI Change Log — MosPochin
 
 Краткая история AI-правок. Новые агенты должны добавлять запись при каждом handoff.
@@ -115,27 +88,3 @@ Checks to run:
 - Moved active visual/manual findings process to `reports/manual-review-backlog.md`.
 - Updated docs contracts, AI checks, digest generation and routing references to avoid deleted legacy docs.
 
-
-## 2026-06-07 — Conversion P0 runtime attribution patch
-
-- Added production-host whitelist for Yandex Metrika in `analytics.js` so local/dev hosts do not pollute the production counter.
-- Added runtime flags `MOSPOCHIN_RUNTIME.analyticsEnabled` and `__MOSPOCHIN_RUNTIME__.analyticsEnabled`.
-- Expanded attribution capture with page URL/path/title, referrer, `utm_service`, `utm_landing`, `yclid`, `gclid`.
-- Added automatic hidden attribution fields to every `.telegram-form` in `telegram-form.js`.
-- Extended Telegram API attribution sanitization and message output in `server/telegram-api.mjs`.
-- Raised extra form field limit from 6 to 10 for B2B request details.
-- Verified with `node --check`, `npm run check:core`, and `npm run check:handoff`.
-
-## 2026-06-07 — Real-impact conversion hardening
-
-- Removed Yandex Metrika noscript pixel from source.
-- Hardened contact-click goal detection for tel/mailto/WhatsApp/Telegram variants.
-- Softened hard hero promises in the parokonvektomat cluster.
-- Added compact problem routers to the main Direct heroes.
-
-## 2026-06-08 — Stage 5 Direct conversion ready archive
-
-- Hardened Telegram API attribution sanitization so long `page_url`, `referrer`, `utm_campaign`, `utm_content`, `utm_term`, `yclid` and `gclid` are preserved better in lead messages.
-- Added `tools/check-conversion-runtime.mjs` to guard the Direct/Metrika/form attribution runtime against regressions.
-- Added `check:conversion-runtime` npm script and included the guard into `check:core`.
-- Added `reports/direct/STAGE5_DIRECT_CONVERSION_READY_20260608.md` with apply notes, checks and post-deploy manual verification.
