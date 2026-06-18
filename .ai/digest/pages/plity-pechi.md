@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/plity-pechi.html
 - Builder model: src/pages/plity-pechi/page.json
 - Sections: 34 (27 local, 0 shared refs, 1 raw)
-- Text words inside referenced sections: 2314
+- Text words inside referenced sections: 2315
 
 ## Component mix
 
@@ -35,7 +35,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Опишите проблему с плитой или печью | lead-form | 11.8 KB | 240 | no | src/pages/plity-pechi/sections/022-lead-form-opishite-problemu-s-plitoy-ili-pech-yu.html |
+| Опишите проблему с плитой или печью | lead-form | 11.8 KB | 241 | no | src/pages/plity-pechi/sections/022-lead-form-opishite-problemu-s-plitoy-ili-pech-yu.html |
 | Ремонт плит и печей в Москве без простоя кухни и без хаоса по смете | hero | 11.3 KB | 212 | no | src/pages/plity-pechi/sections/005-hero-remont-plit-i-pechey-v-moskve-bez-prostoya-kuhn.html |
 | С какими брендами и линиями реально работаем | contact-cta | 8.3 KB | 173 | no | src/pages/plity-pechi/sections/018-contact-cta-s-kakimi-brendami-i-liniyami-real-no-rab.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 181 | no | src/pages/plity-pechi/sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |

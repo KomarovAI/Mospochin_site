@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/contact.html
 - Builder model: src/pages/contact/page.json
 - Sections: 39 (25 local, 0 shared refs, 9 raw)
-- Text words inside referenced sections: 660
+- Text words inside referenced sections: 661
 
 ## Component mix
 
@@ -36,7 +36,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Зона обслуживания | section | 7.0 KB | 92 | no | src/pages/contact/sections/017-section-zona-obsluzhivaniya.html |
 | Все способы связи | mobile-contact | 6.7 KB | 69 | no | src/pages/contact/sections/011-mobile-contact-vse-sposoby-svyazi.html |
-| Связаться с MosPochin и быстро решить вопрос с ремонтом | hero | 6.1 KB | 69 | no | src/pages/contact/sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html |
+| Связаться с MosPochin и быстро решить вопрос с ремонтом | hero | 6.1 KB | 70 | no | src/pages/contact/sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html |
 | Режим работы | pricing | 5.3 KB | 43 | no | src/pages/contact/sections/013-pricing-rezhim-raboty.html |
 | Кто приедет к вам | proof | 3.9 KB | 52 | no | src/pages/contact/sections/015-proof-kto-priedet-k-vam.html |
 | Частые вопросы | faq | 3.7 KB | 97 | no | src/pages/contact/sections/023-faq-chastye-voprosy.html |

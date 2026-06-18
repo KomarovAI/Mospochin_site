@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/grili-mangaly.html
 - Builder model: src/pages/grili-mangaly/page.json
 - Sections: 61 (42 local, 2 shared refs, 14 raw)
-- Text words inside referenced sections: 1864
+- Text words inside referenced sections: 1867
 
 ## Component mix
 
@@ -37,7 +37,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонтируем грили, фритюрницы и тепловую линию кухни | pricing | 20.9 KB | 408 | no | src/pages/grili-mangaly/sections/013-pricing-remontiruem-grili-frityurnicy-i-teplovuyu-li.html |
 | Ремонтируем все марки кухонного оборудования | section | 8.0 KB | 54 | no | src/pages/grili-mangaly/sections/023-section-remontiruem-vse-marki-kuhonnogo-oborudovaniy.html |
-| Грили или фритюрница встали? Починим за 1-3 часа | hero | 7.7 KB | 85 | no | src/pages/grili-mangaly/sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html |
+| Грили или фритюрница встали? Починим за 1-3 часа | hero | 7.7 KB | 86 | no | src/pages/grili-mangaly/sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 181 | no | src/pages/grili-mangaly/sections/045-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Оставьте заявку на ремонт | lead-form | 5.5 KB | 95 | no | src/pages/grili-mangaly/sections/043-lead-form-ostav-te-zayavku-na-remont.html |
 | Цены на ремонт грилей, фритюрниц и вспомогательной техники | pricing | 5.2 KB | 108 | no | src/pages/grili-mangaly/sections/019-pricing-ceny-na-remont-griley-frityurnic-i-vspomogat.html |

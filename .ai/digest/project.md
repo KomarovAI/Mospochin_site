@@ -26,16 +26,16 @@
 
 | Метрика | Значение |
 | --- | --- |
-| Pages | 63 |
-| Builder pages | 63 |
-| Total sections | 2686 |
-| src/pages files | 1413 |
-| src/pages HTML section files | 1350 |
-| Shared component files | 37 |
-| Shared refs | 388 |
-| Shared coverage | 56.8% |
-| Average sections/page | 42.6 |
-| Average source files/page | 46.7 |
+| Pages | 39 |
+| Builder pages | 39 |
+| Total sections | 2127 |
+| src/pages files | 1083 |
+| src/pages HTML section files | 1044 |
+| Shared component files | 43 |
+| Shared refs | 330 |
+| Shared coverage | 56.4% |
+| Average sections/page | 54.5 |
+| Average source files/page | 58.6 |
 | AI component map entries | 12 |
 
 
@@ -51,32 +51,32 @@
 
 | Page | Sections | Local | Shared |
 | --- | --- | --- | --- |
-| parokonvektomat-abat.html | 77 | 16 | 20 |
-| parokonvektomat-convotherm.html | 77 | 16 | 20 |
-| parokonvektomat-electrolux.html | 77 | 18 | 18 |
-| parokonvektomat-lainox.html | 77 | 16 | 20 |
-| parokonvektomat-e02-e07-e10.html | 75 | 12 | 21 |
-| parokonvektomat-kod-oshibki.html | 75 | 12 | 21 |
-| parokonvektomat-ne-greet.html | 75 | 12 | 21 |
-| parokonvektomat-net-para.html | 75 | 12 | 21 |
-| parokonvektomat-rational-e9.html | 75 | 12 | 21 |
-| parokonvektomat-rational.html | 75 | 12 | 21 |
+| parokonvektomat-abat.html | 79 | 18 | 20 |
+| parokonvektomat-convotherm.html | 79 | 18 | 20 |
+| parokonvektomat-electrolux.html | 79 | 20 | 18 |
+| parokonvektomat-lainox.html | 79 | 18 | 20 |
+| parokonvektomat-e02-e07-e10.html | 77 | 14 | 21 |
+| parokonvektomat-kod-oshibki.html | 77 | 14 | 21 |
+| parokonvektomat-ne-greet.html | 77 | 14 | 21 |
+| parokonvektomat-net-para.html | 77 | 14 | 21 |
+| parokonvektomat-rational-e9.html | 77 | 14 | 21 |
+| parokonvektomat-rational.html | 77 | 14 | 21 |
 
 
 ## Крупнейшие кандидаты на сжатие смысла
 
-- **high**: proof: 235 локальных секций, shared ratio 24% — кандидат на параметризованный компонент + props.
-- **high**: mobile-contact: 159 локальных секций, shared ratio 33% — кандидат на параметризованный компонент + props.
-- **high**: raw: 151 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props.
-- **high**: faq: 81 локальных секций, shared ratio 19% — кандидат на параметризованный компонент + props.
-- **medium**: related-links: 66 локальных секций, shared ratio 31% — кандидат на параметризованный компонент + props.
-- **medium**: section: 67 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props.
-- **medium**: lead-form: 51 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props.
+- **high**: proof: 211 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props.
+- **high**: raw: 148 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props.
+- **high**: section: 83 локальных секций, shared ratio 14% — кандидат на параметризованный компонент + props.
+- **medium**: related-links: 57 локальных секций, shared ratio 34% — кандидат на параметризованный компонент + props.
+- **medium**: faq: 63 локальных секций, shared ratio 17% — кандидат на параметризованный компонент + props.
 - **medium**: hero: 37 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **medium**: body-preamble: 25 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: parokonvektomat-abat.html: 77 секций — кандидат на page blueprint вместо длинного списка sections.
-- **high**: parokonvektomat-convotherm.html: 77 секций — кандидат на page blueprint вместо длинного списка sections.
-- **high**: parokonvektomat-electrolux.html: 77 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomat-abat.html: 79 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomat-convotherm.html: 79 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomat-electrolux.html: 79 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomat-lainox.html: 79 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomat-e02-e07-e10.html: 77 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomat-kod-oshibki.html: 77 секций — кандидат на page blueprint вместо длинного списка sections.
 
 ## Команды digest/source compression
 

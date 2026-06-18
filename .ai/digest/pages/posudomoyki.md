@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/posudomoyki.html
 - Builder model: src/pages/posudomoyki/page.json
 - Sections: 53 (35 local, 3 shared refs, 1 raw)
-- Text words inside referenced sections: 2738
+- Text words inside referenced sections: 2739
 
 ## Component mix
 

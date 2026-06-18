@@ -1,7 +1,7 @@
 # Component Digest — leadForm
 
 - Name: Форма заявки / Telegram submit
-- Appears in: 62 pages
+- Appears in: 38 pages
 - Keywords: форма, заявк, telegram, телеграм, лид, обратн, phone, телефон
 - CSS selectors: .telegram-form, .form-field, [data-slot="request-form"]
 - JS hooks: telegram-form, submit, /api/send-telegram
@@ -44,4 +44,4 @@
 - parokonvektomat-kod-oshibki.html
 - parokonvektomat-lainox.html
 - parokonvektomat-ne-greet.html
-- … ещё 42
+- … ещё 18

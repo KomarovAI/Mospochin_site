@@ -7,18 +7,17 @@
 - H1: Ремонт пищеварочных котлов для ресторанов и столовых
 - Canonical: https://mospochin.ru/pishevarochnye-kotly.html
 - Builder model: src/pages/pishevarochnye-kotly/page.json
-- Sections: 42 (23 local, 3 shared refs, 1 raw)
-- Text words inside referenced sections: 1737
+- Sections: 27 (19 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 997
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| layout-fragment | 12 |
 | mobile-contact | 6 |
-| pricing | 6 |
 | proof | 5 |
-| lead-form | 2 |
+| layout-fragment | 3 |
+| pricing | 2 |
 | related-links | 2 |
 | section | 2 |
 | body-preamble | 1 |
@@ -26,7 +25,7 @@
 | contact-cta | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
-| raw | 1 |
+| lead-form | 1 |
 | runtime-partials | 1 |
 
 
@@ -34,14 +33,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 8.5 KB | 160 | no | src/pages/pishevarochnye-kotly/sections/025-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 181 | no | src/pages/pishevarochnye-kotly/sections/029-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
+| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 181 | no | src/pages/pishevarochnye-kotly/sections/014-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Ремонт пищеварочных котлов для ресторанов и столовых | mobile-contact | 6.2 KB | 112 | no | src/pages/pishevarochnye-kotly/sections/004-mobile-contact-remont-pischevarochnyh-kotlov-dlya-re.html |
-| Частые вопросы по ремонту | faq | 6.0 KB | 193 | no | src/pages/pishevarochnye-kotly/sections/034-faq-chastye-voprosy-po-remontu.html |
-| Согласовать выезд по котлу | lead-form | 5.5 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/027-lead-form-soglasovat-vyezd-po-kotlu.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.4 KB | 199 | yes | src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html |
-| Разводим трафик по реальному симптому | pricing | 4.9 KB | 122 | no | src/pages/pishevarochnye-kotly/sections/010-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
-| Разводим заявки по симптому: нагрев, течь, электрика, H2O и Abat КПЭМ | lead-form | 4.8 KB | 131 | no | src/pages/pishevarochnye-kotly/sections/007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e.html |
+| Частые вопросы по ремонту | faq | 6.0 KB | 193 | no | src/pages/pishevarochnye-kotly/sections/019-faq-chastye-voprosy-po-remontu.html |
+| Согласовать выезд по котлу | lead-form | 5.3 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/012-lead-form-soglasovat-vyezd-po-kotlu.html |
+| С чем чаще всего вызывают инженера | contact-cta | 3.3 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/006-contact-cta-s-chem-chasche-vsego-vyzyvayut-inzhenera.html |
+| Какие метрики держим по заявке ресторана | proof | 3.2 KB | 63 | yes | src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html |
+| Если проблема в другом ресторанном оборудовании | related-links | 2.9 KB | 59 | no | src/pages/pishevarochnye-kotly/sections/017-related-links-esli-problema-v-drugom-restorannom-obo.html |
+| Что берем в ремонт на кухне | section | 2.9 KB | 65 | no | src/pages/pishevarochnye-kotly/sections/005-section-chto-berem-v-remont-na-kuhne.html |
 
 
 ## Editable source files

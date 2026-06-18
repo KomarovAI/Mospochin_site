@@ -1,0 +1,20 @@
+MosPochin Stage 5 Direct conversion ready archive checks
+Date: 2026-06-08
+
+Executed successfully in this environment:
+- node --check analytics.js
+- node --check telegram-form.js
+- node --check server/telegram-api.mjs
+- node --check tools/check-conversion-runtime.mjs
+- npm run check:conversion-runtime
+- npm run sync:generated
+- npm run check:core
+- npm run check:handoff
+
+Key passed signals:
+- 39 pages validated successfully.
+- 16 parokonvektomat pages passed conversion UI check.
+- all critical Direct pages have stage4 CTA rails, forms, phone and WhatsApp markers.
+- root HTML has no Metrika noscript pixel.
+- Yandex Metrika whitelist and hidden attribution fields are guarded by check-conversion-runtime.
+- npm audit found 0 vulnerabilities.
