@@ -23,18 +23,18 @@
     "sharedComponentFiles": 48,
     "parametricTemplateFiles": 83,
     "parametricPropsFiles": 14,
-    "totalSections": 2686,
-    "localSections": 1161,
+    "totalSections": 2711,
+    "localSections": 1186,
     "sharedSectionRefs": 388,
     "parametricSectionRefs": 1137,
     "compressedSectionRefs": 1525,
-    "sharedCoverageRatio": 0.567758749069248,
-    "rootHtmlBytes": 5856956,
-    "srcPageHtmlBytes": 4235134,
+    "sharedCoverageRatio": 0.5625230542235338,
+    "rootHtmlBytes": 5972806,
+    "srcPageHtmlBytes": 4197784,
     "sharedHtmlBytes": 208791,
-    "averageSectionsPerPage": 42.63492063492063,
-    "averageSourceFilesPerPage": 46.666666666666664,
-    "estimatedSharedSavedBytes": 1582946,
+    "averageSectionsPerPage": 43.03174603174603,
+    "averageSourceFilesPerPage": 47.06349206349206,
+    "estimatedSharedSavedBytes": 1557111,
     "componentMapComponents": 12
   },
   "pages": {
@@ -4328,19 +4328,19 @@
       "h1": "Ремонт пароконвектоматов Abat",
       "digest": ".ai/digest/pages/parokonvektomat-abat.md",
       "builderModel": "src/pages/parokonvektomat-abat/page.json",
-      "sections": 77,
-      "localSections": 16,
+      "sections": 79,
+      "localSections": 18,
       "sharedRefs": 20,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 34,
         "proof": 10,
         "pricing": 9,
+        "section": 5,
         "related-links": 4,
-        "section": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
         "footer-anchor": 1,
@@ -4350,14 +4350,14 @@
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html",
+        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-abat/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/pages/parokonvektomat-abat/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html"
+        "src/pages/parokonvektomat-abat/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
       ],
       "sectionPreview": [
         {
@@ -4410,11 +4410,25 @@
           "source": "src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-abat",
+          "component": "contact-cta",
+          "label": "ПКА / КПЭ",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-abat/sections/stage4-visual-conversion-ui-parokonvektomat-abat.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-abat",
+          "component": "section",
+          "label": "Ремонт пароконвектоматов Abat — ПКА и КПЭ без простоя кухни",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-abat/sections/stage3-seo-conversion-parokonvektomat-abat.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -4426,7 +4440,7 @@
         {
           "id": "010-section-chto-utochnyaem-po-abat",
           "component": "section",
-          "label": "Что уточняем по Abat",
+          "label": "Abat: ПКА, КПЭ и ошибки E02/E07/E10 на кухне",
           "shared": false,
           "source": "src/pages/parokonvektomat-abat/sections/010-section-chto-utochnyaem-po-abat.html"
         },
@@ -4456,7 +4470,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "015-raw-html-fragment",
@@ -4587,9 +4601,9 @@
         {
           "id": "033-proof-pochemu-500-restoranov-vybrali-nas",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "034-raw-html-fragment",
@@ -4617,7 +4631,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "038-proof-dokazatel-stva-garantii",
@@ -4631,7 +4645,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "040-raw-html-fragment",
@@ -4722,7 +4736,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "053-raw-html-fragment",
@@ -4783,14 +4797,14 @@
         {
           "id": "061-section-tipovye-polomki-abat-i-abat",
           "component": "section",
-          "label": "Типовые поломки Abat и Абат",
+          "label": "Abat на объекте: типовые аварийные сценарии",
           "shared": false,
           "source": "src/pages/parokonvektomat-abat/sections/061-section-tipovye-polomki-abat-i-abat.html"
         },
         {
           "id": "062-section-chto-chasche-vidim-po-abat-na-ob-ektah-obsch",
           "component": "section",
-          "label": "Что чаще видим по Abat на объектах общепита",
+          "label": "Как работаем с Abat в столовых и на пищеблоках",
           "shared": false,
           "source": "src/pages/parokonvektomat-abat/sections/062-section-chto-chasche-vidim-po-abat-na-ob-ektah-obsch.html"
         },
@@ -4913,19 +4927,19 @@
       "h1": "Ремонт пароконвектоматов Convotherm",
       "digest": ".ai/digest/pages/parokonvektomat-convotherm.md",
       "builderModel": "src/pages/parokonvektomat-convotherm/page.json",
-      "sections": 77,
-      "localSections": 16,
+      "sections": 79,
+      "localSections": 18,
       "sharedRefs": 20,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 34,
         "proof": 10,
         "pricing": 9,
+        "section": 5,
         "related-links": 4,
-        "section": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
         "footer-anchor": 1,
@@ -4935,13 +4949,13 @@
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html",
+        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/pages/parokonvektomat-convotherm/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html",
         "src/pages/parokonvektomat-convotherm/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html"
       ],
       "sectionPreview": [
@@ -4995,11 +5009,25 @@
           "source": "src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-convotherm",
+          "component": "contact-cta",
+          "label": "C4 / C6 / mini",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-convotherm/sections/stage4-visual-conversion-ui-parokonvektomat-convotherm.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-convotherm",
+          "component": "section",
+          "label": "Ремонт Convotherm C4/C6 для ресторанов и пищеблоков",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-convotherm/sections/stage3-seo-conversion-parokonvektomat-convotherm.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -5011,7 +5039,7 @@
         {
           "id": "010-section-chto-utochnyaem-po-convotherm",
           "component": "section",
-          "label": "Что уточняем по Convotherm",
+          "label": "Convotherm: C4, C6, mini и сбои пара/нагрева",
           "shared": false,
           "source": "src/pages/parokonvektomat-convotherm/sections/010-section-chto-utochnyaem-po-convotherm.html"
         },
@@ -5041,7 +5069,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "015-raw-html-fragment",
@@ -5172,9 +5200,9 @@
         {
           "id": "033-proof-pochemu-500-restoranov-vybrali-nas",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "034-raw-html-fragment",
@@ -5202,7 +5230,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "038-proof-dokazatel-stva-garantii",
@@ -5216,7 +5244,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "040-raw-html-fragment",
@@ -5307,7 +5335,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "053-raw-html-fragment",
@@ -5368,14 +5396,14 @@
         {
           "id": "061-section-tipovye-polomki-convotherm",
           "component": "section",
-          "label": "Типовые поломки Convotherm",
+          "label": "Convotherm: что проверяем на объекте",
           "shared": false,
           "source": "src/pages/parokonvektomat-convotherm/sections/061-section-tipovye-polomki-convotherm.html"
         },
         {
           "id": "062-section-chto-chasche-vidim-po-convotherm",
           "component": "section",
-          "label": "Что чаще видим по Convotherm",
+          "label": "Convotherm на ресторане: акцент на точной диагностике",
           "shared": false,
           "source": "src/pages/parokonvektomat-convotherm/sections/062-section-chto-chasche-vidim-po-convotherm.html"
         },
@@ -5498,8 +5526,8 @@
       "h1": "Ошибка E02 / E07 / E10",
       "digest": ".ai/digest/pages/parokonvektomat-e02-e07-e10.md",
       "builderModel": "src/pages/parokonvektomat-e02-e07-e10/page.json",
-      "sections": 75,
-      "localSections": 12,
+      "sections": 77,
+      "localSections": 14,
       "sharedRefs": 21,
       "rawSections": 2,
       "componentMix": {
@@ -5507,27 +5535,27 @@
         "pricing": 10,
         "proof": 9,
         "related-links": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
+        "section": 2,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
         "noscript": 1,
-        "runtime-partials": 1,
-        "section": 1
+        "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-e02-e07-e10/sections/010-related-links-chto-mozhet-stoyat-za-e02-e07-e10.html",
         "src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
+        "src/pages/parokonvektomat-e02-e07-e10/sections/010-related-links-chto-mozhet-stoyat-za-e02-e07-e10.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
+        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
       ],
       "sectionPreview": [
         {
@@ -5580,11 +5608,25 @@
           "source": "src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-e02-e07-e10",
+          "component": "contact-cta",
+          "label": "Код и бренд",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-e02-e07-e10/sections/stage4-visual-conversion-ui-parokonvektomat-e02-e07-e10.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-e02-e07-e10",
+          "component": "section",
+          "label": "E02, E07, E10: не угадываем узел, а собираем данные для диагностики",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-e02-e07-e10/sections/stage3-seo-conversion-parokonvektomat-e02-e07-e10.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -5596,7 +5638,7 @@
         {
           "id": "010-related-links-chto-mozhet-stoyat-za-e02-e07-e10",
           "component": "related-links",
-          "label": "Что может стоять за E02 / E07 / E10",
+          "label": "Что может стоять за E02, E07 и E10",
           "shared": false,
           "source": "src/pages/parokonvektomat-e02-e07-e10/sections/010-related-links-chto-mozhet-stoyat-za-e02-e07-e10.html"
         },
@@ -5633,7 +5675,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "016-raw-html-fragment",
@@ -5762,11 +5804,11 @@
           "source": "src/pages/parokonvektomat-e02-e07-e10/sections/033-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "034-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "034-proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "035-raw-html-fragment",
@@ -5794,7 +5836,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "039-proof-dokazatel-stva-garantii",
@@ -5808,7 +5850,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "041-raw-html-fragment",
@@ -5899,7 +5941,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "054-raw-html-fragment",
@@ -6069,19 +6111,19 @@
       "h1": "Ремонт пароконвектоматов Electrolux Professional",
       "digest": ".ai/digest/pages/parokonvektomat-electrolux.md",
       "builderModel": "src/pages/parokonvektomat-electrolux/page.json",
-      "sections": 77,
-      "localSections": 18,
+      "sections": 79,
+      "localSections": 20,
       "sharedRefs": 18,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 34,
         "proof": 10,
         "pricing": 9,
+        "section": 5,
         "related-links": 4,
-        "section": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
         "footer-anchor": 1,
@@ -6093,8 +6135,8 @@
       "largestSectionSources": [
         "src/pages/parokonvektomat-electrolux/sections/007-hero-remont-parokonvektomatov-electrolux-professiona.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
-        "src/pages/parokonvektomat-electrolux/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
+        "src/pages/parokonvektomat-electrolux/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
         "src/pages/parokonvektomat-electrolux/sections/052-faq-chastye-voprosy-o-remonte-parokonvektomatov.html",
@@ -6151,6 +6193,20 @@
           "source": "src/pages/parokonvektomat-electrolux/sections/007-hero-remont-parokonvektomatov-electrolux-professiona.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-electrolux",
+          "component": "contact-cta",
+          "label": "air-o-steam / SkyLine",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-electrolux/sections/stage4-visual-conversion-ui-parokonvektomat-electrolux.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-electrolux",
+          "component": "section",
+          "label": "Ремонт Electrolux Professional: air-o-steam, SkyLine, thermaline",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-electrolux/sections/stage3-seo-conversion-parokonvektomat-electrolux.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
@@ -6167,7 +6223,7 @@
         {
           "id": "010-section-chto-utochnyaem-po-electrolux-professional",
           "component": "section",
-          "label": "Что уточняем по Electrolux Professional",
+          "label": "Electrolux Professional: пар, нагрев, датчики и мойка",
           "shared": false,
           "source": "src/pages/parokonvektomat-electrolux/sections/010-section-chto-utochnyaem-po-electrolux-professional.html"
         },
@@ -6197,7 +6253,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "015-raw-html-fragment",
@@ -6328,9 +6384,9 @@
         {
           "id": "033-proof-pochemu-500-restoranov-vybrali-nas",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "034-raw-html-fragment",
@@ -6358,7 +6414,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "038-proof-dokazatel-stva-garantii",
@@ -6372,7 +6428,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "040-raw-html-fragment",
@@ -6524,14 +6580,14 @@
         {
           "id": "061-section-tipovye-polomki-electrolux-professional",
           "component": "section",
-          "label": "Типовые поломки Electrolux Professional",
+          "label": "Electrolux Professional: типовые сигналы к выезду",
           "shared": false,
           "source": "src/pages/parokonvektomat-electrolux/sections/061-section-tipovye-polomki-electrolux-professional.html"
         },
         {
           "id": "062-section-chto-chasche-vidim-po-electrolux-professiona",
           "component": "section",
-          "label": "Что чаще видим по Electrolux Professional",
+          "label": "Electrolux Professional на кухне ресторана",
           "shared": false,
           "source": "src/pages/parokonvektomat-electrolux/sections/062-section-chto-chasche-vidim-po-electrolux-professiona.html"
         },
@@ -6654,8 +6710,8 @@
       "h1": "Код ошибки пароконвектомата",
       "digest": ".ai/digest/pages/parokonvektomat-kod-oshibki.md",
       "builderModel": "src/pages/parokonvektomat-kod-oshibki/page.json",
-      "sections": 75,
-      "localSections": 12,
+      "sections": 77,
+      "localSections": 14,
       "sharedRefs": 21,
       "rawSections": 2,
       "componentMix": {
@@ -6663,27 +6719,27 @@
         "pricing": 10,
         "proof": 9,
         "related-links": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
+        "section": 2,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
         "noscript": 1,
-        "runtime-partials": 1,
-        "section": 1
+        "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-kod-oshibki/sections/010-related-links-kak-chitaem-kod-oshibki.html",
         "src/pages/parokonvektomat-kod-oshibki/sections/007-hero-kod-oshibki-parokonvektomata.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
+        "src/pages/parokonvektomat-kod-oshibki/sections/010-related-links-kak-chitaem-kod-oshibki.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
+        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
       ],
       "sectionPreview": [
         {
@@ -6736,11 +6792,25 @@
           "source": "src/pages/parokonvektomat-kod-oshibki/sections/007-hero-kod-oshibki-parokonvektomata.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-kod-oshibki",
+          "component": "contact-cta",
+          "label": "Код + бренд",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-kod-oshibki/sections/stage4-visual-conversion-ui-parokonvektomat-kod-oshibki.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-kod-oshibki",
+          "component": "section",
+          "label": "Код ошибки должен вести не в справочник, а к понятному сценарию ремонта",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-kod-oshibki/sections/stage3-seo-conversion-parokonvektomat-kod-oshibki.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -6752,7 +6822,7 @@
         {
           "id": "010-related-links-kak-chitaem-kod-oshibki",
           "component": "related-links",
-          "label": "Как читаем код ошибки",
+          "label": "Как читаем код ошибки пароконвектомата",
           "shared": false,
           "source": "src/pages/parokonvektomat-kod-oshibki/sections/010-related-links-kak-chitaem-kod-oshibki.html"
         },
@@ -6789,7 +6859,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "016-raw-html-fragment",
@@ -6918,11 +6988,11 @@
           "source": "src/pages/parokonvektomat-kod-oshibki/sections/033-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "034-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "034-proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "035-raw-html-fragment",
@@ -6950,7 +7020,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "039-proof-dokazatel-stva-garantii",
@@ -6964,7 +7034,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "041-raw-html-fragment",
@@ -7055,7 +7125,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "054-raw-html-fragment",
@@ -7225,19 +7295,19 @@
       "h1": "Ремонт пароконвектоматов Lainox",
       "digest": ".ai/digest/pages/parokonvektomat-lainox.md",
       "builderModel": "src/pages/parokonvektomat-lainox/page.json",
-      "sections": 77,
-      "localSections": 16,
+      "sections": 79,
+      "localSections": 18,
       "sharedRefs": 20,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 34,
         "proof": 10,
         "pricing": 9,
+        "section": 5,
         "related-links": 4,
-        "section": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
         "footer-anchor": 1,
@@ -7247,14 +7317,14 @@
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-lainox/sections/007-hero-remont-parokonvektomatov-lainox.html",
-        "src/pages/parokonvektomat-lainox/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
+        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
+        "src/pages/parokonvektomat-lainox/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/pages/parokonvektomat-lainox/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html"
+        "src/pages/parokonvektomat-lainox/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
       ],
       "sectionPreview": [
         {
@@ -7307,11 +7377,25 @@
           "source": "src/pages/parokonvektomat-lainox/sections/007-hero-remont-parokonvektomatov-lainox.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-lainox",
+          "component": "contact-cta",
+          "label": "Naboo / Krea / Junior",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-lainox/sections/stage4-visual-conversion-ui-parokonvektomat-lainox.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-lainox",
+          "component": "section",
+          "label": "Ремонт Lainox Naboo, Krea и Junior для кухни ресторана",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-lainox/sections/stage3-seo-conversion-parokonvektomat-lainox.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -7323,7 +7407,7 @@
         {
           "id": "010-section-chto-utochnyaem-po-lainox",
           "component": "section",
-          "label": "Что уточняем по Lainox",
+          "label": "Lainox: Naboo, Krea, Junior и сбои влажности/нагрева",
           "shared": false,
           "source": "src/pages/parokonvektomat-lainox/sections/010-section-chto-utochnyaem-po-lainox.html"
         },
@@ -7353,7 +7437,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "015-raw-html-fragment",
@@ -7484,9 +7568,9 @@
         {
           "id": "033-proof-pochemu-500-restoranov-vybrali-nas",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "034-raw-html-fragment",
@@ -7514,7 +7598,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "038-proof-dokazatel-stva-garantii",
@@ -7528,7 +7612,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "040-raw-html-fragment",
@@ -7619,7 +7703,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "053-raw-html-fragment",
@@ -7680,14 +7764,14 @@
         {
           "id": "061-section-tipovye-polomki-lainox",
           "component": "section",
-          "label": "Типовые поломки Lainox",
+          "label": "Lainox: где чаще теряется стабильность",
           "shared": false,
           "source": "src/pages/parokonvektomat-lainox/sections/061-section-tipovye-polomki-lainox.html"
         },
         {
           "id": "062-section-chto-chasche-vidim-po-lainox",
           "component": "section",
-          "label": "Что чаще видим по Lainox",
+          "label": "Lainox на кухне: Naboo, Krea, Junior",
           "shared": false,
           "source": "src/pages/parokonvektomat-lainox/sections/062-section-chto-chasche-vidim-po-lainox.html"
         },
@@ -7810,8 +7894,8 @@
       "h1": "Пароконвектомат не греет",
       "digest": ".ai/digest/pages/parokonvektomat-ne-greet.md",
       "builderModel": "src/pages/parokonvektomat-ne-greet/page.json",
-      "sections": 75,
-      "localSections": 12,
+      "sections": 77,
+      "localSections": 14,
       "sharedRefs": 21,
       "rawSections": 2,
       "componentMix": {
@@ -7819,27 +7903,27 @@
         "pricing": 10,
         "proof": 9,
         "related-links": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
+        "section": 2,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
         "noscript": 1,
-        "runtime-partials": 1,
-        "section": 1
+        "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-ne-greet/sections/010-related-links-pochemu-parokonvektomat-ne-greet.html",
         "src/pages/parokonvektomat-ne-greet/sections/007-hero-parokonvektomat-ne-greet.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
+        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html",
+        "src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html"
       ],
       "sectionPreview": [
         {
@@ -7892,11 +7976,25 @@
           "source": "src/pages/parokonvektomat-ne-greet/sections/007-hero-parokonvektomat-ne-greet.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-ne-greet",
+          "component": "contact-cta",
+          "label": "Температура и режим",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-ne-greet/sections/stage4-visual-conversion-ui-parokonvektomat-ne-greet.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-ne-greet",
+          "component": "section",
+          "label": "Пароконвектомат не греет: переводим симптом в понятную диагностику",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-ne-greet/sections/stage3-seo-conversion-parokonvektomat-ne-greet.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -7945,7 +8043,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "016-raw-html-fragment",
@@ -8074,11 +8172,11 @@
           "source": "src/pages/parokonvektomat-ne-greet/sections/033-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "034-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "034-proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "035-raw-html-fragment",
@@ -8106,7 +8204,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "039-proof-dokazatel-stva-garantii",
@@ -8120,7 +8218,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "041-raw-html-fragment",
@@ -8211,7 +8309,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "054-raw-html-fragment",
@@ -8381,8 +8479,8 @@
       "h1": "В пароконвектомате нет пара",
       "digest": ".ai/digest/pages/parokonvektomat-net-para.md",
       "builderModel": "src/pages/parokonvektomat-net-para/page.json",
-      "sections": 75,
-      "localSections": 12,
+      "sections": 77,
+      "localSections": 14,
       "sharedRefs": 21,
       "rawSections": 2,
       "componentMix": {
@@ -8390,27 +8488,27 @@
         "pricing": 10,
         "proof": 9,
         "related-links": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
+        "section": 2,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
         "noscript": 1,
-        "runtime-partials": 1,
-        "section": 1
+        "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-net-para/sections/010-related-links-chto-proveryaem-kogda-net-para.html",
         "src/pages/parokonvektomat-net-para/sections/007-hero-v-parokonvektomate-net-para.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
+        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html",
+        "src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html"
       ],
       "sectionPreview": [
         {
@@ -8463,11 +8561,25 @@
           "source": "src/pages/parokonvektomat-net-para/sections/007-hero-v-parokonvektomate-net-para.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-net-para",
+          "component": "contact-cta",
+          "label": "Вода и фильтр",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-net-para/sections/stage4-visual-conversion-ui-parokonvektomat-net-para.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-net-para",
+          "component": "section",
+          "label": "Нет пара: отделяем воду, фильтр, парогенератор и датчики до выезда",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-net-para/sections/stage3-seo-conversion-parokonvektomat-net-para.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -8516,7 +8628,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "016-raw-html-fragment",
@@ -8645,11 +8757,11 @@
           "source": "src/pages/parokonvektomat-net-para/sections/033-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "034-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "034-proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "035-raw-html-fragment",
@@ -8677,7 +8789,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "039-proof-dokazatel-stva-garantii",
@@ -8691,7 +8803,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "041-raw-html-fragment",
@@ -8782,7 +8894,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "054-raw-html-fragment",
@@ -8952,18 +9064,19 @@
       "h1": "Техническое обслуживание пароконвектоматов",
       "digest": ".ai/digest/pages/parokonvektomat-obschuzhivanie.md",
       "builderModel": "src/pages/parokonvektomat-obschuzhivanie/page.json",
-      "sections": 34,
-      "localSections": 25,
+      "sections": 36,
+      "localSections": 27,
       "sharedRefs": 0,
       "rawSections": 10,
       "componentMix": {
         "raw": 10,
-        "section": 5,
+        "section": 6,
         "layout-fragment": 3,
         "mobile-contact": 3,
         "pricing": 3,
         "breadcrumb": 2,
         "faq": 2,
+        "contact-cta": 1,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
@@ -8972,14 +9085,14 @@
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-obschuzhivanie/sections/011-section-polnyy-kompleks-profilaktiki.html",
-        "src/pages/parokonvektomat-obschuzhivanie/sections/017-section-osobennosti-to-dlya-kazhdogo-brenda.html",
         "src/pages/parokonvektomat-obschuzhivanie/sections/007-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html",
+        "src/pages/parokonvektomat-obschuzhivanie/sections/017-section-osobennosti-to-dlya-kazhdogo-brenda.html",
         "src/pages/parokonvektomat-obschuzhivanie/sections/025-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/pages/parokonvektomat-obschuzhivanie/sections/024-faq-chastye-voprosy-o-to-parokonvektomatov.html",
         "src/pages/parokonvektomat-obschuzhivanie/sections/021-section-chto-govoryat-klienty-s-dogovorom-na-to.html",
         "src/pages/parokonvektomat-obschuzhivanie/sections/015-pricing-pochemu-to-vygodnee-avariynogo-remonta.html",
-        "src/pages/parokonvektomat-obschuzhivanie/sections/029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html"
+        "src/pages/parokonvektomat-obschuzhivanie/sections/011-section-polnyy-kompleks-profilaktiki.html",
+        "src/pages/parokonvektomat-obschuzhivanie/sections/stage3-seo-conversion-parokonvektomat-obschuzhivanie.html"
       ],
       "sectionPreview": [
         {
@@ -9032,6 +9145,20 @@
           "source": "src/pages/parokonvektomat-obschuzhivanie/sections/007-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-obschuzhivanie",
+          "component": "contact-cta",
+          "label": "Бренды и количество",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-obschuzhivanie/sections/stage4-visual-conversion-ui-parokonvektomat-obschuzhivanie.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-obschuzhivanie",
+          "component": "section",
+          "label": "ТО пароконвектомата: график вместо аварийного простоя",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-obschuzhivanie/sections/stage3-seo-conversion-parokonvektomat-obschuzhivanie.html"
+        },
+        {
           "id": "008-raw-html-fragment",
           "component": "raw",
           "label": "HTML-фрагмент",
@@ -9055,7 +9182,7 @@
         {
           "id": "011-section-polnyy-kompleks-profilaktiki",
           "component": "section",
-          "label": "Полный комплекс профилактики",
+          "label": "Что входит в обслуживание",
           "shared": false,
           "source": "src/pages/parokonvektomat-obschuzhivanie/sections/011-section-polnyy-kompleks-profilaktiki.html"
         },
@@ -9181,7 +9308,7 @@
         {
           "id": "029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz",
           "component": "lead-form",
-          "label": "Заключите договор на техническое обслуживание",
+          "label": "Согласуйте договор на ТО пароконвектоматов",
           "shared": false,
           "source": "src/pages/parokonvektomat-obschuzhivanie/sections/029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html"
         },
@@ -9234,8 +9361,8 @@
       "h1": "Ошибка Rational E9",
       "digest": ".ai/digest/pages/parokonvektomat-rational-e9.md",
       "builderModel": "src/pages/parokonvektomat-rational-e9/page.json",
-      "sections": 75,
-      "localSections": 12,
+      "sections": 77,
+      "localSections": 14,
       "sharedRefs": 21,
       "rawSections": 2,
       "componentMix": {
@@ -9243,27 +9370,27 @@
         "pricing": 10,
         "proof": 9,
         "related-links": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
+        "section": 2,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
         "noscript": 1,
-        "runtime-partials": 1,
-        "section": 1
+        "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-rational-e9/sections/010-related-links-chto-utochnyaem-po-rational-e9.html",
         "src/pages/parokonvektomat-rational-e9/sections/007-hero-oshibka-rational-e9.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
+        "src/pages/parokonvektomat-rational-e9/sections/010-related-links-chto-utochnyaem-po-rational-e9.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
+        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
       ],
       "sectionPreview": [
         {
@@ -9316,11 +9443,25 @@
           "source": "src/pages/parokonvektomat-rational-e9/sections/007-hero-oshibka-rational-e9.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-rational-e9",
+          "component": "contact-cta",
+          "label": "Серия Rational",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-rational-e9/sections/stage4-visual-conversion-ui-parokonvektomat-rational-e9.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-rational-e9",
+          "component": "section",
+          "label": "E9 на Rational: фиксируем код, серию и поведение аппарата до выезда",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-rational-e9/sections/stage3-seo-conversion-parokonvektomat-rational-e9.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -9369,7 +9510,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "016-raw-html-fragment",
@@ -9498,11 +9639,11 @@
           "source": "src/pages/parokonvektomat-rational-e9/sections/033-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "034-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "034-proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "035-raw-html-fragment",
@@ -9530,7 +9671,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "039-proof-dokazatel-stva-garantii",
@@ -9544,7 +9685,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "041-raw-html-fragment",
@@ -9635,7 +9776,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "054-raw-html-fragment",
@@ -9802,11 +9943,11 @@
       "branch": "restaurant",
       "role": "branch",
       "title": "Ремонт пароконвектоматов Rational в Москве — выезд инженера | MosPochin",
-      "h1": "Ремонт пароконвектоматов Rational",
+      "h1": "Ремонт пароконвектоматов Rational SCC, CMP и iCombi",
       "digest": ".ai/digest/pages/parokonvektomat-rational.md",
       "builderModel": "src/pages/parokonvektomat-rational/page.json",
-      "sections": 75,
-      "localSections": 12,
+      "sections": 77,
+      "localSections": 14,
       "sharedRefs": 21,
       "rawSections": 2,
       "componentMix": {
@@ -9814,27 +9955,27 @@
         "pricing": 10,
         "proof": 9,
         "related-links": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
+        "section": 2,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
         "noscript": 1,
-        "runtime-partials": 1,
-        "section": 1
+        "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-rational/sections/010-related-links-chto-proveryaem-u-parokonvektomata-rat.html",
         "src/pages/parokonvektomat-rational/sections/007-hero-remont-parokonvektomatov-rational.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
+        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html",
+        "src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html"
       ],
       "sectionPreview": [
         {
@@ -9882,16 +10023,30 @@
         {
           "id": "007-hero-remont-parokonvektomatov-rational",
           "component": "hero",
-          "label": "Ремонт пароконвектоматов Rational",
+          "label": "Ремонт пароконвектоматов Rational SCC, CMP и iCombi",
           "shared": false,
           "source": "src/pages/parokonvektomat-rational/sections/007-hero-remont-parokonvektomatov-rational.html"
+        },
+        {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-rational",
+          "component": "contact-cta",
+          "label": "Фото дисплея и E9",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-rational/sections/stage4-visual-conversion-ui-parokonvektomat-rational.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-rational",
+          "component": "section",
+          "label": "Rational: что отличает заявку от общего ремонта",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-rational/sections/stage3-seo-conversion-parokonvektomat-rational.html"
         },
         {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -9903,7 +10058,7 @@
         {
           "id": "010-related-links-chto-proveryaem-u-parokonvektomata-rat",
           "component": "related-links",
-          "label": "Что проверяем у пароконвектомата Rational",
+          "label": "Что проверяем у Rational",
           "shared": false,
           "source": "src/pages/parokonvektomat-rational/sections/010-related-links-chto-proveryaem-u-parokonvektomata-rat.html"
         },
@@ -9940,7 +10095,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "016-raw-html-fragment",
@@ -10069,11 +10224,11 @@
           "source": "src/pages/parokonvektomat-rational/sections/033-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "034-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "034-proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "035-raw-html-fragment",
@@ -10101,7 +10256,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "039-proof-dokazatel-stva-garantii",
@@ -10115,7 +10270,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "041-raw-html-fragment",
@@ -10206,7 +10361,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "054-raw-html-fragment",
@@ -10376,8 +10531,8 @@
       "h1": "Ошибка Unox AF02 / AF08",
       "digest": ".ai/digest/pages/parokonvektomat-unox-af02-af08.md",
       "builderModel": "src/pages/parokonvektomat-unox-af02-af08/page.json",
-      "sections": 75,
-      "localSections": 12,
+      "sections": 77,
+      "localSections": 14,
       "sharedRefs": 21,
       "rawSections": 2,
       "componentMix": {
@@ -10385,27 +10540,27 @@
         "pricing": 10,
         "proof": 9,
         "related-links": 4,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
+        "section": 2,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
         "noscript": 1,
-        "runtime-partials": 1,
-        "section": 1
+        "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-unox-af02-af08/sections/010-related-links-kak-podhodim-k-af02-af08.html",
         "src/pages/parokonvektomat-unox-af02-af08/sections/007-hero-oshibka-unox-af02-af08.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
+        "src/pages/parokonvektomat-unox-af02-af08/sections/010-related-links-kak-podhodim-k-af02-af08.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
+        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
       ],
       "sectionPreview": [
         {
@@ -10458,11 +10613,25 @@
           "source": "src/pages/parokonvektomat-unox-af02-af08/sections/007-hero-oshibka-unox-af02-af08.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-unox-af02-af08",
+          "component": "contact-cta",
+          "label": "Код на дисплее",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-unox-af02-af08/sections/stage4-visual-conversion-ui-parokonvektomat-unox-af02-af08.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-unox-af02-af08",
+          "component": "section",
+          "label": "AF02/AF08: связываем код с водой, паром, датчиками и режимом кухни",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-unox-af02-af08/sections/stage3-seo-conversion-parokonvektomat-unox-af02-af08.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -10474,7 +10643,7 @@
         {
           "id": "010-related-links-kak-podhodim-k-af02-af08",
           "component": "related-links",
-          "label": "Как подходим к AF02 / AF08",
+          "label": "Как подходим к AF02 и AF08",
           "shared": false,
           "source": "src/pages/parokonvektomat-unox-af02-af08/sections/010-related-links-kak-podhodim-k-af02-af08.html"
         },
@@ -10511,7 +10680,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "016-raw-html-fragment",
@@ -10640,11 +10809,11 @@
           "source": "src/pages/parokonvektomat-unox-af02-af08/sections/033-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "034-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "034-proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "035-raw-html-fragment",
@@ -10672,7 +10841,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "039-proof-dokazatel-stva-garantii",
@@ -10686,7 +10855,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "041-raw-html-fragment",
@@ -10777,7 +10946,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "054-raw-html-fragment",
@@ -10944,24 +11113,24 @@
       "branch": "restaurant",
       "role": "branch",
       "title": "Ремонт пароконвектоматов Unox в Москве — диагностика и выезд | MosPochin",
-      "h1": "Ремонт пароконвектоматов Unox",
+      "h1": "Ремонт пароконвектоматов Unox ChefTop и BakerTop",
       "digest": ".ai/digest/pages/parokonvektomat-unox.md",
       "builderModel": "src/pages/parokonvektomat-unox/page.json",
-      "sections": 75,
-      "localSections": 12,
+      "sections": 77,
+      "localSections": 14,
       "sharedRefs": 21,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
         "pricing": 10,
         "proof": 9,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "related-links": 3,
+        "section": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
         "raw": 2,
-        "section": 2,
         "footer-anchor": 1,
         "hero": 1,
         "lead-form": 1,
@@ -10969,14 +11138,14 @@
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomat-unox/sections/010-section-chto-proveryaem-u-parokonvektomata-unox.html",
         "src/pages/parokonvektomat-unox/sections/007-hero-remont-parokonvektomatov-unox.html",
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
-        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
+        "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html",
+        "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html",
+        "src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html"
       ],
       "sectionPreview": [
         {
@@ -11024,16 +11193,30 @@
         {
           "id": "007-hero-remont-parokonvektomatov-unox",
           "component": "hero",
-          "label": "Ремонт пароконвектоматов Unox",
+          "label": "Ремонт пароконвектоматов Unox ChefTop и BakerTop",
           "shared": false,
           "source": "src/pages/parokonvektomat-unox/sections/007-hero-remont-parokonvektomatov-unox.html"
+        },
+        {
+          "id": "stage4-visual-conversion-ui-parokonvektomat-unox",
+          "component": "contact-cta",
+          "label": "AF02 / AF08",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-unox/sections/stage4-visual-conversion-ui-parokonvektomat-unox.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomat-unox",
+          "component": "section",
+          "label": "Unox: ошибка, вода, влажность и нагрев в одной заявке",
+          "shared": false,
+          "source": "src/pages/parokonvektomat-unox/sections/stage3-seo-conversion-parokonvektomat-unox.html"
         },
         {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
           "label": "Рестораны, кафе, пекарни и dark kitchen",
           "shared": true,
-          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html"
+          "source": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--1e2bd28bfc5dce61.html"
         },
         {
           "id": "009-raw-html-fragment",
@@ -11045,7 +11228,7 @@
         {
           "id": "010-section-chto-proveryaem-u-parokonvektomata-unox",
           "component": "section",
-          "label": "Что проверяем у пароконвектомата Unox",
+          "label": "Что проверяем у Unox",
           "shared": false,
           "source": "src/pages/parokonvektomat-unox/sections/010-section-chto-proveryaem-u-parokonvektomata-unox.html"
         },
@@ -11082,7 +11265,7 @@
           "component": "proof",
           "label": "Какие метрики держим по заявке ресторана",
           "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "016-raw-html-fragment",
@@ -11211,11 +11394,11 @@
           "source": "src/pages/parokonvektomat-unox/sections/033-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "034-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "034-proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
           "id": "035-raw-html-fragment",
@@ -11243,7 +11426,7 @@
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html"
+          "source": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--357d58d9d8d92039.html"
         },
         {
           "id": "039-proof-dokazatel-stva-garantii",
@@ -11257,7 +11440,7 @@
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
           "id": "041-raw-html-fragment",
@@ -11348,7 +11531,7 @@
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": true,
-          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html"
+          "source": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html"
         },
         {
           "id": "054-raw-html-fragment",
@@ -12089,36 +12272,36 @@
       "h1": "Ремонт пароконвектоматов для ресторанов",
       "digest": ".ai/digest/pages/parokonvektomaty.md",
       "builderModel": "src/pages/parokonvektomaty/page.json",
-      "sections": 75,
-      "localSections": 32,
+      "sections": 74,
+      "localSections": 31,
       "sharedRefs": 15,
-      "rawSections": 7,
+      "rawSections": 5,
       "componentMix": {
         "layout-fragment": 22,
         "pricing": 12,
         "proof": 9,
-        "raw": 7,
+        "section": 6,
+        "raw": 5,
         "related-links": 5,
-        "section": 5,
+        "contact-cta": 3,
         "mobile-contact": 3,
         "breadcrumb": 2,
-        "contact-cta": 2,
         "faq": 2,
-        "lead-form": 2,
         "footer-anchor": 1,
         "hero": 1,
+        "lead-form": 1,
         "noscript": 1,
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/pages/parokonvektomaty/sections/043-pricing-remontiruem-vse-marki-parokonvektomatov.html",
-        "src/pages/parokonvektomaty/sections/064-related-links-svyazannye-stranicy-po-parokonvektomat.html",
-        "src/pages/parokonvektomaty/sections/029-pricing-chastye-polomki-parokonvektomatov.html",
+        "src/pages/parokonvektomaty/sections/040-pricing-remontiruem-vse-marki-parokonvektomatov.html",
         "src/pages/parokonvektomaty/sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html",
+        "src/pages/parokonvektomaty/sections/026-pricing-chastye-polomki-parokonvektomatov.html",
+        "src/pages/parokonvektomaty/sections/061-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
-        "src/pages/parokonvektomaty/sections/010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc.html",
-        "src/pages/parokonvektomaty/sections/017-pricing-remontiruem-vse-tipy-parokonvektomatov.html",
-        "src/pages/parokonvektomaty/sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
+        "src/pages/parokonvektomaty/sections/028-section-razobrat-problemu-parokonvektomata-tochnee.html",
+        "src/pages/parokonvektomaty/sections/014-pricing-remontiruem-vse-tipy-parokonvektomatov.html",
+        "src/pages/parokonvektomaty/sections/stage3-seo-conversion-parokonvektomaty.html"
       ],
       "sectionPreview": [
         {
@@ -12166,37 +12349,51 @@
         {
           "id": "007-hero-remont-parokonvektomatov-dlya-restoranov",
           "component": "hero",
-          "label": "Ремонт пароконвектоматов для ресторанов",
+          "label": "Ремонт пароконвектоматов для ресторанов в Москве",
           "shared": false,
           "source": "src/pages/parokonvektomaty/sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html"
         },
         {
+          "id": "stage4-visual-conversion-ui-parokonvektomaty",
+          "component": "contact-cta",
+          "label": "Фото дисплея и шильдика",
+          "shared": false,
+          "source": "src/pages/parokonvektomaty/sections/stage4-visual-conversion-ui-parokonvektomaty.html"
+        },
+        {
+          "id": "stage3-seo-conversion-parokonvektomaty",
+          "component": "section",
+          "label": "Как быстрее понять поломку пароконвектомата",
+          "shared": false,
+          "source": "src/pages/parokonvektomaty/sections/stage3-seo-conversion-parokonvektomaty.html"
+        },
+        {
           "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
           "component": "section",
-          "label": "Рестораны, кафе, пекарни и dark kitchen",
+          "label": "Рестораны, кафе, столовые, пищеблоки и dark kitchen",
           "shared": false,
           "source": "src/pages/parokonvektomaty/sections/008-section-restorany-kafe-pekarni-i-dark-kitchen.html"
         },
         {
           "id": "009-raw-html-fragment",
-          "component": "raw",
+          "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/009-raw-html-fragment.html"
+          "source": null
         },
         {
-          "id": "010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc",
-          "component": "lead-form",
-          "label": "Ошибка на дисплее — повод не читать справочник, а быстро вернуть кухню в работу",
+          "id": "010-proof-dokazatel-stva-garantii",
+          "component": "proof",
+          "label": "Какие метрики держим по заявке ресторана",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc.html"
+          "source": "src/pages/parokonvektomaty/sections/010-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "011-raw-html-fragment",
-          "component": "raw",
-          "label": "HTML-фрагмент",
-          "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/011-raw-html-fragment.html"
+          "id": "011-proof-kakie-metriki-derzhim-po-zayavke-restorana",
+          "component": "proof",
+          "label": "Какие метрики держим по заявке ресторана",
+          "shared": true,
+          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--3025a8aff64f8385.html"
         },
         {
           "id": "012-raw-html-fragment",
@@ -12206,18 +12403,18 @@
           "source": null
         },
         {
-          "id": "013-proof-dokazatel-stva-garantii",
-          "component": "proof",
-          "label": "Доказательства/гарантии",
+          "id": "013-raw-html-fragment",
+          "component": "layout-fragment",
+          "label": "HTML-фрагмент",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/013-proof-dokazatel-stva-garantii.html"
+          "source": null
         },
         {
-          "id": "014-proof-kakie-metriki-derzhim-po-zayavke-restorana",
-          "component": "proof",
-          "label": "Какие метрики держим по заявке ресторана",
-          "shared": true,
-          "source": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html"
+          "id": "014-pricing-remontiruem-vse-tipy-parokonvektomatov",
+          "component": "pricing",
+          "label": "Ремонтируем все типы пароконвектоматов",
+          "shared": false,
+          "source": "src/pages/parokonvektomaty/sections/014-pricing-remontiruem-vse-tipy-parokonvektomatov.html"
         },
         {
           "id": "015-raw-html-fragment",
@@ -12227,352 +12424,352 @@
           "source": null
         },
         {
-          "id": "016-raw-html-fragment",
-          "component": "layout-fragment",
-          "label": "HTML-фрагмент",
-          "shared": false,
-          "source": null
-        },
-        {
-          "id": "017-pricing-remontiruem-vse-tipy-parokonvektomatov",
-          "component": "pricing",
-          "label": "Ремонтируем все типы пароконвектоматов",
-          "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/017-pricing-remontiruem-vse-tipy-parokonvektomatov.html"
-        },
-        {
-          "id": "018-raw-html-fragment",
-          "component": "layout-fragment",
-          "label": "HTML-фрагмент",
-          "shared": false,
-          "source": null
-        },
-        {
-          "id": "019-related-links-svyazannye-stranicy",
+          "id": "016-related-links-svyazannye-stranicy",
           "component": "related-links",
           "label": "Связанные страницы",
           "shared": true,
           "source": "src/components/shared/related-links/related-links-svyazannye-stranicy--473d3567b57fb087.html"
         },
         {
-          "id": "020-raw-html-fragment",
+          "id": "017-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "021-contact-cta-otkladyvat-remont-parokonvektomata-obych",
+          "id": "018-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
           "shared": true,
           "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
         },
         {
-          "id": "022-pricing-ceny-stoimost",
+          "id": "019-pricing-ceny-stoimost",
           "component": "pricing",
           "label": "Цены/стоимость",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/022-pricing-ceny-stoimost.html"
+          "source": "src/pages/parokonvektomaty/sections/019-pricing-ceny-stoimost.html"
         },
         {
-          "id": "023-pricing-faktory-stoimosti-remonta",
+          "id": "020-pricing-faktory-stoimosti-remonta",
           "component": "pricing",
           "label": "Факторы стоимости ремонта",
           "shared": true,
           "source": "src/components/shared/pricing/pricing-faktory-stoimosti-remonta--c35e37bf08c85b74.html"
         },
         {
-          "id": "024-raw-html-fragment",
+          "id": "021-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "025-pricing-vyberite-problemu-pokazhem-cenu",
+          "id": "022-pricing-vyberite-problemu-pokazhem-cenu",
           "component": "pricing",
           "label": "Выберите проблему — покажем цену",
           "shared": true,
           "source": "src/components/shared/pricing/pricing-vyberite-problemu-pokazhem-cenu--5d86ccad444cb9af.html"
         },
         {
-          "id": "026-raw-html-fragment",
+          "id": "023-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "027-pricing-poslednie-remonty-parokonvektomatov",
+          "id": "024-pricing-poslednie-remonty-parokonvektomatov",
           "component": "pricing",
           "label": "Последние ремонты пароконвектоматов",
           "shared": true,
           "source": "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html"
         },
         {
-          "id": "028-raw-html-fragment",
+          "id": "025-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "029-pricing-chastye-polomki-parokonvektomatov",
+          "id": "026-pricing-chastye-polomki-parokonvektomatov",
           "component": "pricing",
           "label": "Частые поломки пароконвектоматов",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/029-pricing-chastye-polomki-parokonvektomatov.html"
+          "source": "src/pages/parokonvektomaty/sections/026-pricing-chastye-polomki-parokonvektomatov.html"
         },
         {
-          "id": "030-raw-html-fragment",
+          "id": "027-raw-html-fragment",
           "component": "raw",
           "label": "HTML-фрагмент",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/030-raw-html-fragment.html"
+          "source": "src/pages/parokonvektomaty/sections/027-raw-html-fragment.html"
         },
         {
-          "id": "031-section-razobrat-problemu-parokonvektomata-tochnee",
+          "id": "028-section-razobrat-problemu-parokonvektomata-tochnee",
           "component": "section",
-          "label": "Разобрать проблему пароконвектомата точнее",
+          "label": "Куда перейти дальше: бренд, код или симптом",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/031-section-razobrat-problemu-parokonvektomata-tochnee.html"
+          "source": "src/pages/parokonvektomaty/sections/028-section-razobrat-problemu-parokonvektomata-tochnee.html"
         },
         {
-          "id": "032-raw-html-fragment",
+          "id": "029-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "033-pricing-ceny-na-remont-parokonvektomatov",
+          "id": "030-pricing-ceny-na-remont-parokonvektomatov",
           "component": "pricing",
           "label": "Цены на ремонт пароконвектоматов",
           "shared": true,
           "source": "src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html"
         },
         {
-          "id": "034-proof-dokazatel-stva-garantii",
+          "id": "031-proof-dokazatel-stva-garantii",
           "component": "proof",
           "label": "Доказательства/гарантии",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/034-proof-dokazatel-stva-garantii.html"
+          "source": "src/pages/parokonvektomaty/sections/031-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "035-proof-pochemu-500-restoranov-vybrali-nas",
+          "id": "032-proof-pochemu-500-restoranov-vybrali-nas",
           "component": "proof",
-          "label": "Почему 500+ ресторанов выбрали нас",
+          "label": "Почему рестораны вызывают нас на пароконвектоматы",
           "shared": true,
-          "source": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html"
+          "source": "src/components/shared/proof/proof-pochemu-restorany-vyzyvayut-nas-na-parokonvektomaty--3ba019048a3e736d.html"
         },
         {
-          "id": "036-raw-html-fragment",
+          "id": "033-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "037-proof-chto-govoryat-shef-povara-i-upravlyayuschie",
+          "id": "034-proof-chto-govoryat-shef-povara-i-upravlyayuschie",
           "component": "proof",
           "label": "Что говорят шеф-повара и управляющие",
           "shared": true,
           "source": "src/components/shared/proof/proof-chto-govoryat-shef-povara-i-upravlyayuschie--e94fa2cfbc1265d5.html"
         },
         {
-          "id": "038-raw-html-fragment",
+          "id": "035-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "039-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-",
+          "id": "036-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-",
           "component": "pricing",
           "label": "Как проходит ремонт без лишнего хаоса для кухни",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/039-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-.html"
+          "source": "src/pages/parokonvektomaty/sections/036-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-.html"
         },
         {
-          "id": "040-proof-dokazatel-stva-garantii",
+          "id": "037-proof-dokazatel-stva-garantii",
           "component": "proof",
           "label": "Доказательства/гарантии",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/040-proof-dokazatel-stva-garantii.html"
+          "source": "src/pages/parokonvektomaty/sections/037-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "041-pricing-chto-poluchaet-kuhnya-posle-remonta",
+          "id": "038-pricing-chto-poluchaet-kuhnya-posle-remonta",
           "component": "pricing",
           "label": "Что получает кухня после ремонта",
           "shared": true,
-          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html"
+          "source": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--79a76f427157c5f3.html"
         },
         {
-          "id": "042-raw-html-fragment",
+          "id": "039-raw-html-fragment",
           "component": "raw",
           "label": "HTML-фрагмент",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/042-raw-html-fragment.html"
+          "source": "src/pages/parokonvektomaty/sections/039-raw-html-fragment.html"
         },
         {
-          "id": "043-pricing-remontiruem-vse-marki-parokonvektomatov",
+          "id": "040-pricing-remontiruem-vse-marki-parokonvektomatov",
           "component": "pricing",
-          "label": "Ремонтируем все марки пароконвектоматов",
+          "label": "Выберите марку пароконвектомата",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/043-pricing-remontiruem-vse-marki-parokonvektomatov.html"
+          "source": "src/pages/parokonvektomaty/sections/040-pricing-remontiruem-vse-marki-parokonvektomatov.html"
         },
         {
-          "id": "044-related-links-svyazannye-stranicy",
+          "id": "041-related-links-svyazannye-stranicy",
           "component": "related-links",
           "label": "Связанные страницы",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/044-related-links-svyazannye-stranicy.html"
+          "source": "src/pages/parokonvektomaty/sections/041-related-links-svyazannye-stranicy.html"
         },
         {
-          "id": "045-pricing-pochemu-nam-doveryayut",
+          "id": "042-pricing-pochemu-nam-doveryayut",
           "component": "pricing",
           "label": "Почему нам доверяют",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/045-pricing-pochemu-nam-doveryayut.html"
+          "source": "src/pages/parokonvektomaty/sections/042-pricing-pochemu-nam-doveryayut.html"
         },
         {
-          "id": "046-raw-html-fragment",
+          "id": "043-raw-html-fragment",
           "component": "raw",
           "label": "HTML-фрагмент",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/046-raw-html-fragment.html"
+          "source": "src/pages/parokonvektomaty/sections/043-raw-html-fragment.html"
         },
         {
-          "id": "047-section-zona-zapuska-reklamnoy-kampanii",
+          "id": "044-section-zona-zapuska-reklamnoy-kampanii",
           "component": "section",
           "label": "Зона запуска рекламной кампании",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/047-section-zona-zapuska-reklamnoy-kampanii.html"
+          "source": "src/pages/parokonvektomaty/sections/044-section-zona-zapuska-reklamnoy-kampanii.html"
         },
         {
-          "id": "048-raw-html-fragment",
+          "id": "045-raw-html-fragment",
           "component": "raw",
           "label": "HTML-фрагмент",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/048-raw-html-fragment.html"
+          "source": "src/pages/parokonvektomaty/sections/045-raw-html-fragment.html"
         },
         {
-          "id": "049-section-chto-delat-pri-polomke-parokonvektomata",
+          "id": "046-section-chto-delat-pri-polomke-parokonvektomata",
           "component": "section",
           "label": "Что делать при поломке пароконвектомата",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/049-section-chto-delat-pri-polomke-parokonvektomata.html"
+          "source": "src/pages/parokonvektomaty/sections/046-section-chto-delat-pri-polomke-parokonvektomata.html"
         },
         {
-          "id": "050-faq-faq",
+          "id": "047-faq-faq",
           "component": "faq",
           "label": "FAQ",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/050-faq-faq.html"
+          "source": "src/pages/parokonvektomaty/sections/047-faq-faq.html"
         },
         {
-          "id": "051-faq-chastye-voprosy-o-remonte-parokonvektomatov",
+          "id": "048-faq-chastye-voprosy-o-remonte-parokonvektomatov",
           "component": "faq",
           "label": "Частые вопросы о ремонте пароконвектоматов",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/051-faq-chastye-voprosy-o-remonte-parokonvektomatov.html"
+          "source": "src/pages/parokonvektomaty/sections/048-faq-chastye-voprosy-o-remonte-parokonvektomatov.html"
         },
         {
-          "id": "052-raw-html-fragment",
+          "id": "049-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "053-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l",
+          "id": "050-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l",
           "component": "mobile-contact",
           "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/053-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html"
+          "source": "src/pages/parokonvektomaty/sections/050-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html"
         },
         {
-          "id": "054-raw-html-fragment",
+          "id": "051-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
           "source": null
         },
         {
-          "id": "055-contact-cta-parokonvektomat-vstal",
+          "id": "052-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
           "shared": true,
           "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
         },
         {
-          "id": "056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
+          "id": "053-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
           "component": "lead-form",
-          "label": "Получите понятный сценарий ремонта пароконвектомата",
+          "label": "Что случилось с пароконвектоматом?",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
+          "source": "src/pages/parokonvektomaty/sections/053-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
         },
         {
-          "id": "057-proof-dokazatel-stva-garantii",
+          "id": "054-proof-dokazatel-stva-garantii",
           "component": "proof",
-          "label": "Доказательства/гарантии",
+          "label": "Что фиксируем до начала работ на объекте",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/057-proof-dokazatel-stva-garantii.html"
+          "source": "src/pages/parokonvektomaty/sections/054-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "058-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte",
+          "id": "055-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte",
           "component": "pricing",
           "label": "Что фиксируем до начала работ на объекте",
           "shared": true,
           "source": "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
         },
         {
-          "id": "059-proof-dokazatel-stva-garantii",
+          "id": "056-proof-dokazatel-stva-garantii",
           "component": "proof",
           "label": "Доказательства/гарантии",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/059-proof-dokazatel-stva-garantii.html"
+          "source": "src/pages/parokonvektomaty/sections/056-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "060-section-kak-ponyat-harakter-polomki-do-priezda-inzhe",
+          "id": "057-section-kak-ponyat-harakter-polomki-do-priezda-inzhe",
           "component": "section",
           "label": "Как понять характер поломки до приезда инженера",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/060-section-kak-ponyat-harakter-polomki-do-priezda-inzhe.html"
+          "source": "src/pages/parokonvektomaty/sections/057-section-kak-ponyat-harakter-polomki-do-priezda-inzhe.html"
         },
         {
-          "id": "061-proof-dokazatel-stva-garantii",
+          "id": "058-proof-dokazatel-stva-garantii",
           "component": "proof",
-          "label": "Доказательства/гарантии",
+          "label": "Если проблема в другом ресторанном оборудовании",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/061-proof-dokazatel-stva-garantii.html"
+          "source": "src/pages/parokonvektomaty/sections/058-proof-dokazatel-stva-garantii.html"
         },
         {
-          "id": "062-related-links-esli-problema-v-drugom-restorannom-obo",
+          "id": "059-related-links-esli-problema-v-drugom-restorannom-obo",
           "component": "related-links",
           "label": "Если проблема в другом ресторанном оборудовании",
           "shared": true,
           "source": "src/components/shared/related-links/related-links-esli-problema-v-drugom-restorannom-oborudova--4d77c43f3f7ac07c.html"
         },
         {
-          "id": "063-related-links-svyazannye-stranicy",
+          "id": "060-related-links-svyazannye-stranicy",
           "component": "related-links",
           "label": "Связанные страницы",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/063-related-links-svyazannye-stranicy.html"
+          "source": "src/pages/parokonvektomaty/sections/060-related-links-svyazannye-stranicy.html"
         },
         {
-          "id": "064-related-links-svyazannye-stranicy-po-parokonvektomat",
+          "id": "061-related-links-svyazannye-stranicy-po-parokonvektomat",
           "component": "related-links",
           "label": "Связанные страницы по пароконвектоматам",
           "shared": false,
-          "source": "src/pages/parokonvektomaty/sections/064-related-links-svyazannye-stranicy-po-parokonvektomat.html"
+          "source": "src/pages/parokonvektomaty/sections/061-related-links-svyazannye-stranicy-po-parokonvektomat.html"
         },
         {
-          "id": "065-raw-html-fragment",
+          "id": "062-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
+          "shared": false,
+          "source": null
+        },
+        {
+          "id": "063-raw-html-fragment",
+          "component": "layout-fragment",
+          "label": "HTML-фрагмент",
+          "shared": false,
+          "source": null
+        },
+        {
+          "id": "064-raw-html-fragment",
+          "component": "layout-fragment",
+          "label": "HTML-фрагмент",
+          "shared": false,
+          "source": null
+        },
+        {
+          "id": "065-footer-anchor-footer-mount-point",
+          "component": "footer-anchor",
+          "label": "Footer mount point",
           "shared": false,
           "source": null
         },
@@ -12591,56 +12788,35 @@
           "source": null
         },
         {
-          "id": "068-footer-anchor-footer-mount-point",
-          "component": "footer-anchor",
-          "label": "Footer mount point",
-          "shared": false,
-          "source": null
-        },
-        {
-          "id": "069-raw-html-fragment",
-          "component": "layout-fragment",
-          "label": "HTML-фрагмент",
-          "shared": false,
-          "source": null
-        },
-        {
-          "id": "070-raw-html-fragment",
-          "component": "layout-fragment",
-          "label": "HTML-фрагмент",
-          "shared": false,
-          "source": null
-        },
-        {
-          "id": "071-raw-html-fragment",
+          "id": "068-raw-html-fragment",
           "component": "raw",
           "label": "HTML-фрагмент",
           "shared": true,
           "source": "src/components/shared/raw/raw-html-fragment--515914ccb7489562.html"
         },
         {
-          "id": "072-runtime-partials-podklyuchenie-partials-injector",
+          "id": "069-runtime-partials-podklyuchenie-partials-injector",
           "component": "runtime-partials",
           "label": "Подключение partials-injector",
           "shared": false,
           "source": null
         },
         {
-          "id": "073-mobile-contact-mobil-nye-kontaktnye-elementy",
+          "id": "070-mobile-contact-mobil-nye-kontaktnye-elementy",
           "component": "mobile-contact",
           "label": "Мобильные контактные элементы",
           "shared": false,
           "source": null
         },
         {
-          "id": "074-mobile-contact-mobil-nye-kontaktnye-elementy",
+          "id": "071-mobile-contact-mobil-nye-kontaktnye-elementy",
           "component": "mobile-contact",
           "label": "Мобильные контактные элементы",
           "shared": false,
           "source": null
         },
         {
-          "id": "075-raw-html-fragment",
+          "id": "072-raw-html-fragment",
           "component": "layout-fragment",
           "label": "HTML-фрагмент",
           "shared": false,
@@ -17548,7 +17724,7 @@
           "component": "proof",
           "label": "Что получаете по заявке до и после выезда",
           "shared": true,
-          "source": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--0736ad0b9d07bbb7.html"
+          "source": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--707aa54ac63263c6.html"
         },
         {
           "id": "008-raw-html-fragment",
@@ -17649,11 +17825,11 @@
           "source": "src/pages/plity/sections/021-pricing-ceny-na-remont-plit-i-duhovok.html"
         },
         {
-          "id": "022-proof-pochemu-0-klientov-vybrali-nas",
+          "id": "022-proof-pochemu-500-klientov-vybrali-nas",
           "component": "proof",
-          "label": "Почему 0 клиентов выбрали нас",
+          "label": "Почему 500+ клиентов выбрали нас",
           "shared": false,
-          "source": "src/pages/plity/sections/022-proof-pochemu-0-klientov-vybrali-nas.html"
+          "source": "src/pages/plity/sections/022-proof-pochemu-500-klientov-vybrali-nas.html"
         },
         {
           "id": "023-proof-chto-govoryat-nashi-klienty",
@@ -21681,7 +21857,7 @@
     "hero": {
       "name": "Hero / первый экран",
       "digest": ".ai/digest/components/hero.md",
-      "appearsInCount": 38,
+      "appearsInCount": 36,
       "relatedFiles": [
         "styles-combined.css"
       ],
@@ -21820,7 +21996,7 @@
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "raw",
-      "message": "raw: 151 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props."
+      "message": "raw: 149 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
@@ -21836,15 +22012,15 @@
     },
     {
       "type": "componentize-local-sections",
-      "priority": "medium",
+      "priority": "high",
       "component": "section",
-      "message": "section: 67 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props."
+      "message": "section: 81 локальных секций, shared ratio 14% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
       "priority": "medium",
       "component": "lead-form",
-      "message": "lead-form: 51 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props."
+      "message": "lead-form: 50 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
@@ -21862,61 +22038,61 @@
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-abat.html",
-      "message": "parokonvektomat-abat.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-abat.html: 79 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-convotherm.html",
-      "message": "parokonvektomat-convotherm.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-convotherm.html: 79 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-electrolux.html",
-      "message": "parokonvektomat-electrolux.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-electrolux.html: 79 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-lainox.html",
-      "message": "parokonvektomat-lainox.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-lainox.html: 79 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-e02-e07-e10.html",
-      "message": "parokonvektomat-e02-e07-e10.html: 75 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-e02-e07-e10.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-kod-oshibki.html",
-      "message": "parokonvektomat-kod-oshibki.html: 75 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-kod-oshibki.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-ne-greet.html",
-      "message": "parokonvektomat-ne-greet.html: 75 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-ne-greet.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-net-para.html",
-      "message": "parokonvektomat-net-para.html: 75 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-net-para.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-rational-e9.html",
-      "message": "parokonvektomat-rational-e9.html: 75 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-rational-e9.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomat-rational.html",
-      "message": "parokonvektomat-rational.html: 75 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomat-rational.html: 77 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "raw-section-reduction",

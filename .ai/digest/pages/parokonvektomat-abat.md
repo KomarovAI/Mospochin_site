@@ -7,8 +7,8 @@
 - H1: Ремонт пароконвектоматов Abat
 - Canonical: https://mospochin.ru/parokonvektomat-abat.html
 - Builder model: src/pages/parokonvektomat-abat/page.json
-- Sections: 77 (16 local, 20 shared refs, 2 raw)
-- Text words inside referenced sections: 2720
+- Sections: 79 (18 local, 20 shared refs, 2 raw)
+- Text words inside referenced sections: 3069
 
 ## Component mix
 
@@ -17,11 +17,11 @@
 | layout-fragment | 34 |
 | proof | 10 |
 | pricing | 9 |
+| section | 5 |
 | related-links | 4 |
-| section | 4 |
+| contact-cta | 3 |
 | mobile-contact | 3 |
 | breadcrumb | 2 |
-| contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
 | footer-anchor | 1 |
@@ -35,14 +35,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
+| Ремонт пароконвектоматов Abat | hero | 11.2 KB | 100 | no | src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
-| Ремонт пароконвектоматов Abat | hero | 10.5 KB | 94 | no | src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html |
-| Связанные страницы по пароконвектоматам | related-links | 9.6 KB | 190 | no | src/pages/parokonvektomat-abat/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
+| Связанные страницы по пароконвектоматам | related-links | 9.5 KB | 187 | no | src/pages/parokonvektomat-abat/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.1 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
-| Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 242 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html |
 | Что фиксируем до начала работ на объекте | proof | 6.6 KB | 190 | no | src/pages/parokonvektomat-abat/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
+| Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 227 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--ae5ce7618bf4987d.html |
 
 
 ## Editable source files
