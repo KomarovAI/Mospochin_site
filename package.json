@@ -122,7 +122,8 @@
     "screenshots:live:core": "node tools/screenshot-live-site.mjs --scope=core --depth=layout-deep --parts=full,top,header,menu,footer,forms,contacts,blocks --viewports=desktop,mobile --llm=compact",
     "screenshots:live:page": "node tools/screenshot-live-site.mjs --scope=page --depth=atomic --parts=full,top,header,menu,footer,forms,contacts,blocks --viewports=desktop,mobile --llm=compact",
     "visual:dom": "node tools/visual-dom-dissector.mjs",
-    "visual:contact-sheets": "node tools/visual-contact-sheets.mjs"
+    "visual:contact-sheets": "node tools/visual-contact-sheets.mjs",
+    "visual:atomic": "node tools/visual-atomic-capture.mjs"
   },
   "devDependencies": {
     "playwright": "^1.59.1",

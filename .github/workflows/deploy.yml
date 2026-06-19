@@ -256,6 +256,21 @@ jobs:
         run: node tools/visual-dom-dissector.mjs --max-pages=7 --max-block-shots=6 --max-element-shots=8
 
 
+      - name: Build manual atomic visual page
+        continue-on-error: true
+        timeout-minutes: 6
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.visual_scope == 'page' && inputs.visual_page != '' && inputs.visual_depth == 'atomic' }}
+        env:
+          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
+          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
+          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
+          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
+          MOSPOCHIN_VISUAL_SCOPE: ${{ inputs.visual_scope }}
+          MOSPOCHIN_VISUAL_PAGE: ${{ inputs.visual_page }}
+          MOSPOCHIN_VISUAL_DEPTH: ${{ inputs.visual_depth }}
+        run: npm run visual:atomic -- --max-blocks=120 --max-elements=260 --max-block-shots=48 --max-element-shots=96
+
+
       - name: Build visual contact sheets
         continue-on-error: true
         timeout-minutes: 2
