@@ -133,6 +133,7 @@ jobs:
           echo "Manifest required files OK"
 
       - name: Setup SSH
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
         run: |
 
           set -euo pipefail
@@ -196,6 +197,7 @@ jobs:
 
 
       - name: Check deployed content hash
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
         id: deploy_hash
         run: |
           set -euo pipefail
@@ -216,7 +218,7 @@ jobs:
           echo "remote_hash=${remote_hash:-none}" >> "$GITHUB_OUTPUT"
 
       - name: Deploy on VPS
-        if: steps.deploy_hash.outputs.skip != 'true'
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
         timeout-minutes: 4
         run: |
           set -euo pipefail
@@ -226,6 +228,7 @@ jobs:
             "sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
 
       - name: Verify public version metadata
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
         timeout-minutes: 2
         env:
           DEPLOY_SKIPPED: ${{ steps.deploy_hash.outputs.skip }}
@@ -250,10 +253,12 @@ jobs:
           PY
 
       - name: Smoke production conversion runtime
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
         timeout-minutes: 4
         run: npm run smoke:production-conversion -- --submit-test-lead || echo "::warning::Production conversion smoke failed after deploy; deployment already completed"
 
       - name: Verify VPS health basics
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
         timeout-minutes: 3
         run: |
           set -euo pipefail
@@ -265,7 +270,7 @@ jobs:
       - name: Capture live visual pack
         continue-on-error: true
         timeout-minutes: 3
-        if: ${{ success() }}
+        if: ${{ success() && (github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic') }}
         env:
           MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
           MOSPOCHIN_SCREENSHOT_MODE: postdeploy
@@ -278,7 +283,7 @@ jobs:
       - name: Build live visual DOM maps
         continue-on-error: true
         timeout-minutes: 3
-        if: ${{ always() }}
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic') }}
         env:
           MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
           MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
@@ -290,7 +295,7 @@ jobs:
       - name: Build manual atomic visual page
         continue-on-error: true
         timeout-minutes: 6
-        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.visual_scope == 'page' && inputs.visual_page != '' && inputs.visual_depth == 'atomic' }}
+        if: ${{ always() && (github.event_name == 'workflow_dispatch' && inputs.visual_scope == 'page' && inputs.visual_page != '' && inputs.visual_depth == 'atomic') }}
         env:
           MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
           MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
