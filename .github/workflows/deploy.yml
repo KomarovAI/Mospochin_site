@@ -312,7 +312,7 @@ jobs:
           name: mospochin-visual-plan-${{ github.run_id }}
           path: reports/visual-debug/
           if-no-files-found: warn
-          retention-days: 5
+          retention-days: 1
 
   visual-shard:
     name: Visual shard ${{ matrix.shard }} of ${{ matrix.total }}
@@ -356,7 +356,7 @@ jobs:
           name: mospochin-visual-shard-${{ github.run_id }}-${{ matrix.shard }}
           path: reports/live-visual-shards/shard-${{ matrix.shard }}/
           if-no-files-found: warn
-          retention-days: 5
+          retention-days: 1
 
   visual-merge:
     name: Merge visual shards
