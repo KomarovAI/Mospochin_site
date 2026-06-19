@@ -102,16 +102,66 @@ jobs:
 
       - name: Setup SSH
         run: |
+
           set -euo pipefail
+
+
           : "${{ secrets.DEPLOY_SSH_KEY }}"
+
           : "${{ secrets.DEPLOY_HOST }}"
+
           : "${{ secrets.DEPLOY_PORT }}"
+
           : "${{ secrets.DEPLOY_USER }}"
+
+
           mkdir -p ~/.ssh
+
           chmod 700 ~/.ssh
+
+
           printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "${{ secrets.DEPLOY_PORT }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+
+
+          : > ~/.ssh/known_hosts
+
+          chmod 600 ~/.ssh/known_hosts
+
+
+          echo "Scanning SSH host key with retries..."
+
+          for attempt in 1 2 3 4 5; do
+
+            if ssh-keyscan -T 15 -p "${{ secrets.DEPLOY_PORT }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts 2>/tmp/ssh-keyscan.err; then
+
+              if [ -s ~/.ssh/known_hosts ]; then
+
+                echo "SSH host key scan OK"
+
+                break
+
+              fi
+
+            fi
+
+            echo "::warning::ssh-keyscan attempt $attempt failed; retrying"
+
+            cat /tmp/ssh-keyscan.err || true
+
+            sleep 3
+
+          done
+
+
+          if [ ! -s ~/.ssh/known_hosts ]; then
+
+            echo "::warning::ssh-keyscan failed; using StrictHostKeyChecking=accept-new fallback"
+
+          fi
+
+
 
       - name: Check deployed content hash
         id: deploy_hash
@@ -119,7 +169,7 @@ jobs:
           set -euo pipefail
           local_hash="$(cat .deploy/content.sha256)"
           remote_hash="$(ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" \
-            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=10 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             "cat /var/www/mospochin-shared/current-content.sha256 2>/dev/null || true")"
 
@@ -139,7 +189,7 @@ jobs:
         run: |
           set -euo pipefail
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" \
-            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=10 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             "sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
 
@@ -176,7 +226,7 @@ jobs:
         run: |
           set -euo pipefail
           ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" \
-            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=10 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             "set -e; systemctl is-active nginx >/dev/null; test -L /var/www/mospochin-current; test -L /var/www/mospochin-public-current; systemctl is-active mospochin-telegram-api >/dev/null"
 
