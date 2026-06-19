@@ -27,7 +27,38 @@ on:
       - "package-lock.json"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
-
+    inputs:
+      visual_scope:
+        description: 'Visual scope: auto/core/cluster/page/all'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - core
+          - cluster
+          - page
+          - all
+      visual_cluster:
+        description: 'Cluster: pariki/kettles/contacts/direct/all'
+        required: false
+        default: ''
+        type: string
+      visual_page:
+        description: 'Single page for atomic mode, e.g. /pishevarochnye-kotly.html'
+        required: false
+        default: ''
+        type: string
+      visual_depth:
+        description: 'Depth: layout/blocks/deep/atomic'
+        required: false
+        default: 'atomic'
+        type: choice
+        options:
+          - layout
+          - blocks
+          - deep
+          - atomic
 concurrency:
   group: vps-deploy
   cancel-in-progress: true
