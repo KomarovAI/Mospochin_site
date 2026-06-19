@@ -244,6 +244,18 @@ jobs:
           MOSPOCHIN_SCREENSHOT_CONTENT_HASH: ${{ steps.deploy_hash.outputs.local_hash }}
         run: bash tools/screenshot-live-site-lite.sh
 
+      - name: Build live visual DOM maps
+        continue-on-error: true
+        timeout-minutes: 3
+        if: ${{ always() }}
+        env:
+          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
+          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
+          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
+          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
+        run: node tools/visual-dom-dissector.mjs --max-pages=7 --max-block-shots=6 --max-element-shots=8
+
+
       - name: Upload live visual pack
         continue-on-error: true
         if: ${{ always() }}
