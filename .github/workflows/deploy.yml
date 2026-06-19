@@ -256,6 +256,18 @@ jobs:
         run: node tools/visual-dom-dissector.mjs --max-pages=7 --max-block-shots=6 --max-element-shots=8
 
 
+      - name: Build visual contact sheets
+        continue-on-error: true
+        timeout-minutes: 2
+        if: ${{ always() }}
+        env:
+          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
+          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
+          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
+          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
+        run: npm run visual:contact-sheets
+
+
       - name: Upload live visual pack
         continue-on-error: true
         if: ${{ always() }}
