@@ -181,10 +181,12 @@ jobs:
             "set -e; systemctl is-active nginx >/dev/null; test -L /var/www/mospochin-current; test -L /var/www/mospochin-public-current; systemctl is-active mospochin-telegram-api >/dev/null"
 
       - name: Install Playwright Chromium for live visual pack
+        timeout-minutes: 4
         if: ${{ success() }}
-        run: npx playwright install chromium --with-deps
+        run: npx playwright install chromium
 
       - name: Capture live visual pack
+        timeout-minutes: 6
         if: ${{ success() }}
         env:
           MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
