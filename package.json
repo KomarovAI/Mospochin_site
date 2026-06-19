@@ -116,7 +116,11 @@
     "check:conversion-runtime": "node tools/check-conversion-runtime.mjs",
     "check:deploy-runtime": "node tools/check-deploy-runtime.mjs",
     "smoke:production-conversion": "node tools/smoke-production-conversion.mjs",
-    "deploy:pack": "node tools/deploy-pack.mjs"
+    "deploy:pack": "node tools/deploy-pack.mjs",
+    "screenshots:live": "node tools/screenshot-live-site.mjs",
+    "screenshots:live:postdeploy": "node tools/screenshot-live-site.mjs --scope=auto --include-core --new-depth=deep --changed-depth=medium --affected-depth=layout --parts=full,top,header,menu,footer,forms,contacts,blocks --viewports=desktop,mobile --llm=compact --fail-on-critical --warn-on-selector-miss",
+    "screenshots:live:core": "node tools/screenshot-live-site.mjs --scope=core --depth=layout-deep --parts=full,top,header,menu,footer,forms,contacts,blocks --viewports=desktop,mobile --llm=compact",
+    "screenshots:live:page": "node tools/screenshot-live-site.mjs --scope=page --depth=atomic --parts=full,top,header,menu,footer,forms,contacts,blocks --viewports=desktop,mobile --llm=compact"
   },
   "devDependencies": {
     "playwright": "^1.59.1"

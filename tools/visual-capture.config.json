@@ -1,0 +1,82 @@
+{
+  "baseUrl": "https://mospochin.ru",
+  "outputDir": "reports/live-visual-pack",
+  "inventoryDir": "reports/visual-inventory",
+  "debugDir": "reports/visual-debug",
+  "core": {
+    "always": ["/", "/contact.html", "/bytovaya-contact.html"],
+    "parts": ["full", "top", "header", "menu", "footer", "forms", "contacts", "blocks"]
+  },
+  "critical": [
+    "/",
+    "/parokonvektomaty.html",
+    "/parokonvektomat-rational.html",
+    "/parokonvektomat-unox.html",
+    "/parokonvektomat-kod-oshibki.html",
+    "/pishevarochnye-kotly.html",
+    "/pishevarochnyj-kotel-abat-kpem.html",
+    "/pishevarochnyj-kotel-ne-greet.html",
+    "/remont-pishevarochnyh-kotlov-abat.html",
+    "/contact.html",
+    "/bytovaya-contact.html"
+  ],
+  "clusters": {
+    "pariki": [
+      "/parokonvektomaty.html",
+      "/parokonvektomat-rational.html",
+      "/parokonvektomat-unox.html",
+      "/parokonvektomat-kod-oshibki.html"
+    ],
+    "kettles": [
+      "/pishevarochnye-kotly.html",
+      "/pishevarochnyj-kotel-abat-kpem.html",
+      "/pishevarochnyj-kotel-ne-greet.html",
+      "/remont-pishevarochnyh-kotlov-abat.html"
+    ],
+    "contacts": [
+      "/contact.html",
+      "/bytovaya-contact.html"
+    ]
+  },
+  "viewports": {
+    "desktop": { "width": 1440, "height": 1200, "deviceScaleFactor": 1 },
+    "mobile": { "width": 390, "height": 844, "deviceScaleFactor": 1, "isMobile": true, "hasTouch": true }
+  },
+  "depths": {
+    "new": "deep",
+    "changed": "medium",
+    "clusterAffected": "blocks",
+    "globalAffected": "layout",
+    "core": "layout-deep",
+    "manualPage": "atomic"
+  },
+  "selectors": {
+    "header": ["header", ".site-header", "[data-block='header']", "[data-section='header']"],
+    "menuButtons": ["[aria-label*='меню' i]", "[aria-label*='menu' i]", ".burger", ".menu-toggle", "button[class*='menu']"],
+    "menus": ["nav", ".site-nav", ".main-menu", "[data-block='menu']"],
+    "footer": ["footer", ".site-footer", "[data-block='footer']", "[data-section='footer']"],
+    "forms": ["form[data-telegram-form]", "form[data-contact-form]", "form", "[data-form]"],
+    "cta": ["[data-block*='cta']", ".cta", ".callback", ".lead-form", "a[href^='tel:']", "a[href*='wa.me']", "a[href*='t.me']"],
+    "contacts": ["a[href^='tel:']", "a[href*='wa.me']", "a[href*='whatsapp']", "a[href*='t.me']", "a[href*='telegram']", "[data-contact-link]"],
+    "blocks": ["main section", "[data-block]", ".lead-form", ".cta", ".service-card", ".problem-card", ".repair-bridge", ".faq", ".cluster-links"]
+  },
+  "budgets": {
+    "maxNewPages": 30,
+    "maxChangedPages": 60,
+    "maxAffectedPages": 40,
+    "maxBlocksPerPage": 80,
+    "maxElementsPerDeepPage": 220,
+    "maxElementsPerAtomicPage": 700,
+    "artifactRetentionDays": 5,
+    "maxArtifactMb": 450
+  },
+  "elementFilters": {
+    "minWidth": 24,
+    "minHeight": 16,
+    "minArea": 384,
+    "skipTags": ["script", "style", "meta", "link", "template", "noscript"],
+    "skipInvisible": true,
+    "skipEmptyWrappers": true,
+    "skipDuplicateParentBBox": true
+  }
+}

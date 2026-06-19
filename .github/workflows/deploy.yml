@@ -180,6 +180,30 @@ jobs:
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             "set -e; systemctl is-active nginx >/dev/null; test -L /var/www/mospochin-current; test -L /var/www/mospochin-public-current; systemctl is-active mospochin-telegram-api >/dev/null"
 
+      - name: Install Playwright Chromium for live visual pack
+        if: ${{ success() }}
+        run: npx playwright install chromium --with-deps
+
+      - name: Capture live visual pack
+        if: ${{ success() }}
+        env:
+          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
+          MOSPOCHIN_SCREENSHOT_MODE: postdeploy
+          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
+          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
+          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
+          MOSPOCHIN_SCREENSHOT_CONTENT_HASH: ${{ steps.deploy_hash.outputs.local_hash }}
+        run: npm run screenshots:live:postdeploy
+
+      - name: Upload live visual pack
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-live-visual-pack-${{ github.sha }}-${{ github.run_id }}
+          path: reports/live-visual-pack/
+          if-no-files-found: warn
+          retention-days: 5
+
       - name: Write deploy summary
         if: always()
         run: |
