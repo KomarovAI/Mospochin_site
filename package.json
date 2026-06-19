@@ -123,7 +123,10 @@
     "screenshots:live:page": "node tools/screenshot-live-site.mjs --scope=page --depth=atomic --parts=full,top,header,menu,footer,forms,contacts,blocks --viewports=desktop,mobile --llm=compact",
     "visual:dom": "node tools/visual-dom-dissector.mjs",
     "visual:contact-sheets": "node tools/visual-contact-sheets.mjs",
-    "visual:atomic": "node tools/visual-atomic-capture.mjs"
+    "visual:atomic": "node tools/visual-atomic-capture.mjs",
+    "visual:shard-plan": "node tools/visual-shard-plan.mjs",
+    "visual:shard-runner": "node tools/visual-shard-runner.mjs",
+    "visual:shard-merge": "node tools/visual-shard-merge.mjs"
   },
   "devDependencies": {
     "playwright": "^1.59.1",

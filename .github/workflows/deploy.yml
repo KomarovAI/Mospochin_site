@@ -267,68 +267,6 @@ jobs:
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             "set -e; systemctl is-active nginx >/dev/null; test -L /var/www/mospochin-current; test -L /var/www/mospochin-public-current; systemctl is-active mospochin-telegram-api >/dev/null"
 
-      - name: Capture live visual pack
-        continue-on-error: true
-        timeout-minutes: 3
-        if: ${{ success() && (github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic') }}
-        env:
-          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
-          MOSPOCHIN_SCREENSHOT_MODE: postdeploy
-          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
-          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
-          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
-          MOSPOCHIN_SCREENSHOT_CONTENT_HASH: ${{ steps.deploy_hash.outputs.local_hash }}
-        run: bash tools/screenshot-live-site-lite.sh
-
-      - name: Build live visual DOM maps
-        continue-on-error: true
-        timeout-minutes: 3
-        if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic') }}
-        env:
-          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
-          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
-          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
-          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
-        run: node tools/visual-dom-dissector.mjs --max-pages=7 --max-block-shots=6 --max-element-shots=8
-
-
-      - name: Build manual atomic visual page
-        continue-on-error: true
-        timeout-minutes: 6
-        if: ${{ always() && (github.event_name == 'workflow_dispatch' && inputs.visual_scope == 'page' && inputs.visual_page != '' && inputs.visual_depth == 'atomic') }}
-        env:
-          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
-          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
-          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
-          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
-          MOSPOCHIN_VISUAL_SCOPE: ${{ inputs.visual_scope }}
-          MOSPOCHIN_VISUAL_PAGE: ${{ inputs.visual_page }}
-          MOSPOCHIN_VISUAL_DEPTH: ${{ inputs.visual_depth }}
-        run: npm run visual:atomic -- --max-blocks=120 --max-elements=260 --max-block-shots=48 --max-element-shots=96
-
-
-      - name: Build visual contact sheets
-        continue-on-error: true
-        timeout-minutes: 2
-        if: ${{ always() }}
-        env:
-          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
-          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
-          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
-          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
-        run: npm run visual:contact-sheets
-
-
-      - name: Upload live visual pack
-        continue-on-error: true
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: mospochin-live-visual-pack-${{ github.sha }}-${{ github.run_id }}
-          path: reports/live-visual-pack/
-          if-no-files-found: warn
-          retention-days: 5
-
       - name: Write deploy summary
         if: always()
         run: |
@@ -344,3 +282,128 @@ jobs:
             echo "| Remote content hash | \`${{ steps.deploy_hash.outputs.remote_hash || 'unknown' }}\` |"
             echo "| Manifest files | \`$(wc -l < .deploy/include-files.txt 2>/dev/null || echo unknown)\` |"
           } >> "$GITHUB_STEP_SUMMARY"
+
+  visual-plan:
+    name: Visual shard plan
+    needs: deploy
+    if: ${{ always() && needs.deploy.result == 'success' }}
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.plan.outputs.enabled }}
+      matrix: ${{ steps.plan.outputs.matrix }}
+      worker_count: ${{ steps.plan.outputs.worker_count }}
+      mode: ${{ steps.plan.outputs.mode }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build adaptive visual shard plan
+        id: plan
+        env:
+          MOSPOCHIN_VISUAL_SCOPE: ${{ inputs.visual_scope || 'auto' }}
+          MOSPOCHIN_VISUAL_CLUSTER: ${{ inputs.visual_cluster || '' }}
+          MOSPOCHIN_VISUAL_PAGE: ${{ inputs.visual_page || '' }}
+          MOSPOCHIN_VISUAL_DEPTH: ${{ inputs.visual_depth || 'layout' }}
+        run: node tools/visual-shard-plan.mjs
+
+      - name: Upload visual plan debug
+        uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-visual-plan-${{ github.run_id }}
+          path: reports/visual-debug/
+          if-no-files-found: warn
+          retention-days: 5
+
+  visual-shard:
+    name: Visual shard ${{ matrix.shard }} of ${{ matrix.total }}
+    needs: visual-plan
+    if: ${{ always() && needs.visual-plan.outputs.enabled == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.visual-plan.outputs.matrix) }}
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Run visual shard
+        timeout-minutes: 4
+        continue-on-error: true
+        env:
+          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
+          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
+          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
+          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
+          MOSPOCHIN_VISUAL_SHARD: ${{ matrix.shard }}
+          MOSPOCHIN_VISUAL_TASKS: ${{ matrix.tasks }}
+        run: node tools/visual-shard-runner.mjs
+
+      - name: Upload visual shard
+        uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-visual-shard-${{ github.run_id }}-${{ matrix.shard }}
+          path: reports/live-visual-shards/shard-${{ matrix.shard }}/
+          if-no-files-found: warn
+          retention-days: 5
+
+  visual-merge:
+    name: Merge visual shards
+    needs:
+      - visual-plan
+      - visual-shard
+    if: ${{ always() && needs.visual-plan.outputs.enabled == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Download visual shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: mospochin-visual-shard-${{ github.run_id }}-*
+          path: reports/visual-shards-downloaded
+
+      - name: Merge shard outputs
+        run: npm run visual:shard-merge
+
+      - name: Build visual contact sheets
+        timeout-minutes: 2
+        continue-on-error: true
+        env:
+          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
+          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
+          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
+          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
+        run: npm run visual:contact-sheets
+
+      - name: Upload final live visual pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-live-visual-pack-${{ github.sha }}-${{ github.run_id }}
+          path: reports/live-visual-pack/
+          if-no-files-found: warn
+          retention-days: 5
