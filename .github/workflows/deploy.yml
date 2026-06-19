@@ -180,13 +180,9 @@ jobs:
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             "set -e; systemctl is-active nginx >/dev/null; test -L /var/www/mospochin-current; test -L /var/www/mospochin-public-current; systemctl is-active mospochin-telegram-api >/dev/null"
 
-      - name: Install Playwright Chromium for live visual pack
-        timeout-minutes: 4
-        if: ${{ success() }}
-        run: npx playwright install chromium
-
       - name: Capture live visual pack
-        timeout-minutes: 6
+        continue-on-error: true
+        timeout-minutes: 3
         if: ${{ success() }}
         env:
           MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
@@ -195,9 +191,10 @@ jobs:
           MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
           MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
           MOSPOCHIN_SCREENSHOT_CONTENT_HASH: ${{ steps.deploy_hash.outputs.local_hash }}
-        run: npm run screenshots:live:postdeploy
+        run: bash tools/screenshot-live-site-lite.sh
 
       - name: Upload live visual pack
+        continue-on-error: true
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
