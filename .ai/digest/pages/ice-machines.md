@@ -37,12 +37,12 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонтируем все типы льдогенераторов | pricing | 15.3 KB | 320 | no | src/pages/ice-machines/sections/013-pricing-remontiruem-vse-tipy-l-dogeneratorov.html |
 | Ремонтируем все марки льдогенераторов | section | 13.0 KB | 72 | no | src/pages/ice-machines/sections/027-section-remontiruem-vse-marki-l-dogeneratorov.html |
-| Льдогенератор встал? Починим за 1-3 часа | hero | 7.4 KB | 78 | no | src/pages/ice-machines/sections/007-hero-l-dogenerator-vstal-pochinim-za-1-3-chasa.html |
+| Льдогенератор встал? Починим за 1-3 часа | hero | 7.6 KB | 78 | no | src/pages/ice-machines/sections/007-hero-l-dogenerator-vstal-pochinim-za-1-3-chasa.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 180 | no | src/pages/ice-machines/sections/049-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Частые вопросы о ремонте льдогенераторов | faq | 5.9 KB | 189 | no | src/pages/ice-machines/sections/043-faq-chastye-voprosy-o-remonte-l-dogeneratorov.html |
+| Оставьте заявку на ремонт | lead-form | 5.5 KB | 92 | no | src/pages/ice-machines/sections/047-lead-form-ostav-te-zayavku-na-remont.html |
 | Что говорят клиенты | pricing | 5.4 KB | 150 | no | src/pages/ice-machines/sections/033-pricing-chto-govoryat-klienty.html |
 | Примеры ремонта льдогенераторов | pricing | 5.4 KB | 134 | no | src/pages/ice-machines/sections/025-pricing-primery-remonta-l-dogeneratorov.html |
-| Оставьте заявку на ремонт | lead-form | 5.4 KB | 92 | no | src/pages/ice-machines/sections/047-lead-form-ostav-te-zayavku-na-remont.html |
 
 
 ## Editable source files

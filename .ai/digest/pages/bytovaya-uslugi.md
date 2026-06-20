@@ -33,13 +33,13 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Сначала выберите тип техники | faq | 13.4 KB | 115 | no | src/pages/bytovaya-uslugi/sections/007-faq-snachala-vyberite-tip-tehniki.html |
-| Ремонт бытовой техники на дому | hero | 7.0 KB | 81 | no | src/pages/bytovaya-uslugi/sections/005-hero-remont-bytovoy-tehniki-na-domu.html |
-| Оставьте заявку на ремонт | lead-form | 4.4 KB | 57 | no | src/pages/bytovaya-uslugi/sections/012-lead-form-ostav-te-zayavku-na-remont.html |
+| Ремонт бытовой техники на дому | hero | 7.2 KB | 81 | no | src/pages/bytovaya-uslugi/sections/005-hero-remont-bytovoy-tehniki-na-domu.html |
+| Оставьте заявку на ремонт | lead-form | 4.5 KB | 57 | no | src/pages/bytovaya-uslugi/sections/012-lead-form-ostav-te-zayavku-na-remont.html |
 | Как выглядит путь от симптома до результата | pricing | 4.2 KB | 131 | no | src/pages/bytovaya-uslugi/sections/009-pricing-kak-vyglyadit-put-ot-simptoma-do-rezul-tata.html |
 | Что остаётся у клиента после ремонта | pricing | 3.9 KB | 100 | no | src/pages/bytovaya-uslugi/sections/010-pricing-chto-ostaetsya-u-klienta-posle-remonta.html |
 | Что проговариваем до начала ремонта | pricing | 3.5 KB | 103 | no | src/pages/bytovaya-uslugi/sections/008-pricing-chto-progovarivaem-do-nachala-remonta.html |
 | Частые вопросы | faq | 3.3 KB | 105 | no | src/pages/bytovaya-uslugi/sections/011-faq-chastye-voprosy.html |
-| Контактный CTA | contact-cta | 1.2 KB | 17 | no | src/pages/bytovaya-uslugi/sections/006-contact-cta-kontaktnyy-cta.html |
+| Контактный CTA | contact-cta | 1.3 KB | 17 | no | src/pages/bytovaya-uslugi/sections/006-contact-cta-kontaktnyy-cta.html |
 
 
 ## Editable source files

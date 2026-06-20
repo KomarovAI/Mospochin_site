@@ -18,23 +18,23 @@
   "summary": {
     "rootHtmlPages": 63,
     "builderPages": 63,
-    "srcPageFiles": 1487,
-    "srcPageHtmlFiles": 1424,
-    "sharedComponentFiles": 48,
+    "srcPageFiles": 1451,
+    "srcPageHtmlFiles": 1388,
+    "sharedComponentFiles": 37,
     "parametricTemplateFiles": 83,
     "parametricPropsFiles": 14,
     "totalSections": 2686,
-    "localSections": 1161,
-    "sharedSectionRefs": 388,
-    "parametricSectionRefs": 1137,
-    "compressedSectionRefs": 1525,
-    "sharedCoverageRatio": 0.567758749069248,
-    "rootHtmlBytes": 5856956,
-    "srcPageHtmlBytes": 4235134,
-    "sharedHtmlBytes": 208791,
+    "localSections": 1199,
+    "sharedSectionRefs": 354,
+    "parametricSectionRefs": 1133,
+    "compressedSectionRefs": 1487,
+    "sharedCoverageRatio": 0.5536113179448995,
+    "rootHtmlBytes": 5917028,
+    "srcPageHtmlBytes": 4126879,
+    "sharedHtmlBytes": 166869,
     "averageSectionsPerPage": 42.63492063492063,
-    "averageSourceFilesPerPage": 46.666666666666664,
-    "estimatedSharedSavedBytes": 1582946,
+    "averageSourceFilesPerPage": 46.61904761904762,
+    "estimatedSharedSavedBytes": 1491549,
     "componentMapComponents": 12
   },
   "pages": {
@@ -157,7 +157,7 @@
         "src/pages/about/sections/016-section-restorannoe-oborudovanie.html",
         "src/pages/about/sections/009-proof-original-nye-zapchasti-vsegda-v-nalichii.html",
         "src/pages/about/sections/014-proof-nashi-klienty.html",
-        "src/pages/about/sections/013-proof-rabotaem-po-vsey-moskve-i-mo.html"
+        "src/pages/about/sections/017-lead-form-nuzhen-remont-ostav-te-zayavku-na-remont.html"
       ],
       "sectionPreview": [
         {
@@ -930,8 +930,8 @@
         "src/pages/bytovaya-index/sections/018-pricing-prozrachnye-ceny-bez-syurprizov.html",
         "src/pages/bytovaya-index/sections/013-proof-pochemu-bytovuyu-tehniku-chasche-chinyat-doma-.html",
         "src/pages/bytovaya-index/sections/009-pricing-spokoynyy-scenariy-remonta-bez-lishnih-shago.html",
-        "src/pages/bytovaya-index/sections/015-proof-istorii-nashih-klientov.html",
-        "src/pages/bytovaya-index/sections/025-lead-form-ostav-te-zayavku-na-remont.html"
+        "src/pages/bytovaya-index/sections/025-lead-form-ostav-te-zayavku-na-remont.html",
+        "src/pages/bytovaya-index/sections/015-proof-istorii-nashih-klientov.html"
       ],
       "sectionPreview": [
         {
@@ -1390,8 +1390,8 @@
         "section": 1
       },
       "largestSectionSources": [
-        "src/pages/contact/sections/017-section-zona-obsluzhivaniya.html",
         "src/pages/contact/sections/011-mobile-contact-vse-sposoby-svyazi.html",
+        "src/pages/contact/sections/017-section-zona-obsluzhivaniya.html",
         "src/pages/contact/sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html",
         "src/pages/contact/sections/013-pricing-rezhim-raboty.html",
         "src/pages/contact/sections/015-proof-kto-priedet-k-vam.html",
@@ -2162,8 +2162,8 @@
       "digest": ".ai/digest/pages/holodilniki.md",
       "builderModel": "src/pages/holodilniki/page.json",
       "sections": 51,
-      "localSections": 35,
-      "sharedRefs": 2,
+      "localSections": 36,
+      "sharedRefs": 1,
       "rawSections": 1,
       "componentMix": {
         "pricing": 12,
@@ -2185,8 +2185,8 @@
       "largestSectionSources": [
         "src/pages/holodilniki/sections/028-pricing-kakie-brendy-i-modeli-berem-v-rabotu.html",
         "src/pages/holodilniki/sections/038-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
-        "src/pages/holodilniki/sections/036-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html",
         "src/pages/holodilniki/sections/018-contact-cta-svezhie-keysy-po-remontu-holodil-nikov.html",
+        "src/pages/holodilniki/sections/036-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html",
         "src/pages/holodilniki/sections/005-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html",
         "src/pages/holodilniki/sections/019-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom.html",
         "src/pages/holodilniki/sections/020-pricing-skol-ko-obychno-stoit-remont-holodil-nika.html",
@@ -2512,8 +2512,8 @@
           "id": "046-mobile-contact-mobil-nye-kontaktnye-elementy",
           "component": "mobile-contact",
           "label": "Мобильные контактные элементы",
-          "shared": true,
-          "source": "src/components/shared/mobile-contact/mobile-contact-mobilnye-kontaktnye-elementy--0ba09078427d85ff.html"
+          "shared": false,
+          "source": "src/pages/holodilniki/sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html"
         },
         {
           "id": "047-footer-anchor-footer-mount-point",
@@ -3087,9 +3087,9 @@
         "src/pages/ice-machines/sections/007-hero-l-dogenerator-vstal-pochinim-za-1-3-chasa.html",
         "src/pages/ice-machines/sections/049-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
         "src/pages/ice-machines/sections/043-faq-chastye-voprosy-o-remonte-l-dogeneratorov.html",
+        "src/pages/ice-machines/sections/047-lead-form-ostav-te-zayavku-na-remont.html",
         "src/pages/ice-machines/sections/033-pricing-chto-govoryat-klienty.html",
-        "src/pages/ice-machines/sections/025-pricing-primery-remonta-l-dogeneratorov.html",
-        "src/pages/ice-machines/sections/047-lead-form-ostav-te-zayavku-na-remont.html"
+        "src/pages/ice-machines/sections/025-pricing-primery-remonta-l-dogeneratorov.html"
       ],
       "sectionPreview": [
         {
@@ -3576,8 +3576,8 @@
       },
       "largestSectionSources": [
         "src/pages/index/sections/013-pricing-rabotaem-so-vsemi-proizvoditelyami.html",
-        "src/pages/index/sections/007-pricing-klyuchevye-napravleniya-po-tipu-polomki-i-ob.html",
         "src/pages/index/sections/004-hero-remont-restorannogo-oborudovaniya-v-moskve-bez-.html",
+        "src/pages/index/sections/007-pricing-klyuchevye-napravleniya-po-tipu-polomki-i-ob.html",
         "src/pages/index/sections/008-pricing-pochemu-restorany-vozvraschayutsya-k-mospoch.html",
         "src/pages/index/sections/006-contact-cta-kazhdaya-minuta-prostoya-poterya-deneg-i.html",
         "src/pages/index/sections/019-lead-form-ostav-te-zayavku-na-remont.html",
@@ -3789,8 +3789,8 @@
       "digest": ".ai/digest/pages/kompyutery.md",
       "builderModel": "src/pages/kompyutery/page.json",
       "sections": 55,
-      "localSections": 42,
-      "sharedRefs": 4,
+      "localSections": 43,
+      "sharedRefs": 3,
       "rawSections": 15,
       "componentMix": {
         "raw": 15,
@@ -4166,8 +4166,8 @@
           "id": "050-mobile-contact-mobil-nye-kontaktnye-elementy",
           "component": "mobile-contact",
           "label": "Мобильные контактные элементы",
-          "shared": true,
-          "source": "src/components/shared/mobile-contact/mobile-contact-mobilnye-kontaktnye-elementy--0ba09078427d85ff.html"
+          "shared": false,
+          "source": "src/pages/kompyutery/sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html"
         },
         {
           "id": "051-footer-anchor-footer-mount-point",
@@ -4329,8 +4329,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-abat.md",
       "builderModel": "src/pages/parokonvektomat-abat/page.json",
       "sections": 77,
-      "localSections": 16,
-      "sharedRefs": 20,
+      "localSections": 18,
+      "sharedRefs": 18,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 34,
@@ -4350,8 +4350,8 @@
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html",
+        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-abat/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
@@ -4504,8 +4504,8 @@
           "id": "021-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-abat/sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "022-pricing-ceny-stoimost",
@@ -4749,8 +4749,8 @@
           "id": "056-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-abat/sections/056-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -4914,8 +4914,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-convotherm.md",
       "builderModel": "src/pages/parokonvektomat-convotherm/page.json",
       "sections": 77,
-      "localSections": 16,
-      "sharedRefs": 20,
+      "localSections": 18,
+      "sharedRefs": 18,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 34,
@@ -4935,8 +4935,8 @@
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html",
+        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/pages/parokonvektomat-convotherm/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
@@ -5089,8 +5089,8 @@
           "id": "021-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-convotherm/sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "022-pricing-ceny-stoimost",
@@ -5334,8 +5334,8 @@
           "id": "056-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-convotherm/sections/056-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -5499,8 +5499,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-e02-e07-e10.md",
       "builderModel": "src/pages/parokonvektomat-e02-e07-e10/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 15,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -5525,7 +5525,7 @@
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
-        "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
+        "src/pages/parokonvektomat-e02-e07-e10/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
         "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
         "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
       ],
@@ -5681,8 +5681,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-e02-e07-e10/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -5926,15 +5926,15 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-e02-e07-e10/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
           "component": "lead-form",
           "label": "Получите понятный сценарий ремонта пароконвектомата",
           "shared": false,
-          "source": null
+          "source": "src/pages/parokonvektomat-e02-e07-e10/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
         },
         {
           "id": "059-proof-dokazatel-stva-garantii",
@@ -6070,8 +6070,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-electrolux.md",
       "builderModel": "src/pages/parokonvektomat-electrolux/page.json",
       "sections": 77,
-      "localSections": 18,
-      "sharedRefs": 18,
+      "localSections": 20,
+      "sharedRefs": 16,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 34,
@@ -6245,8 +6245,8 @@
           "id": "021-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-electrolux/sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "022-pricing-ceny-stoimost",
@@ -6490,8 +6490,8 @@
           "id": "056-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-electrolux/sections/056-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -6655,8 +6655,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-kod-oshibki.md",
       "builderModel": "src/pages/parokonvektomat-kod-oshibki/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 15,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -6681,7 +6681,7 @@
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
-        "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
+        "src/pages/parokonvektomat-kod-oshibki/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
         "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
         "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
       ],
@@ -6837,8 +6837,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-kod-oshibki/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -7082,15 +7082,15 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-kod-oshibki/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
           "component": "lead-form",
           "label": "Получите понятный сценарий ремонта пароконвектомата",
           "shared": false,
-          "source": null
+          "source": "src/pages/parokonvektomat-kod-oshibki/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
         },
         {
           "id": "059-proof-dokazatel-stva-garantii",
@@ -7226,8 +7226,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-lainox.md",
       "builderModel": "src/pages/parokonvektomat-lainox/page.json",
       "sections": 77,
-      "localSections": 16,
-      "sharedRefs": 20,
+      "localSections": 18,
+      "sharedRefs": 18,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 34,
@@ -7247,8 +7247,8 @@
         "runtime-partials": 1
       },
       "largestSectionSources": [
-        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-lainox/sections/007-hero-remont-parokonvektomatov-lainox.html",
+        "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/pages/parokonvektomat-lainox/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
@@ -7401,8 +7401,8 @@
           "id": "021-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-lainox/sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "022-pricing-ceny-stoimost",
@@ -7646,8 +7646,8 @@
           "id": "056-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-lainox/sections/056-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -7811,8 +7811,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-ne-greet.md",
       "builderModel": "src/pages/parokonvektomat-ne-greet/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 14,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -7993,8 +7993,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-ne-greet/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -8238,8 +8238,8 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-ne-greet/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -8382,8 +8382,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-net-para.md",
       "builderModel": "src/pages/parokonvektomat-net-para/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 14,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -8564,8 +8564,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-net-para/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -8809,8 +8809,8 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-net-para/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -9235,8 +9235,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-rational-e9.md",
       "builderModel": "src/pages/parokonvektomat-rational-e9/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 15,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -9261,7 +9261,7 @@
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
-        "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
+        "src/pages/parokonvektomat-rational-e9/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
         "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
         "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
       ],
@@ -9417,8 +9417,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-rational-e9/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -9662,15 +9662,15 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-rational-e9/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
           "component": "lead-form",
           "label": "Получите понятный сценарий ремонта пароконвектомата",
           "shared": false,
-          "source": null
+          "source": "src/pages/parokonvektomat-rational-e9/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
         },
         {
           "id": "059-proof-dokazatel-stva-garantii",
@@ -9806,8 +9806,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-rational.md",
       "builderModel": "src/pages/parokonvektomat-rational/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 14,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -9988,8 +9988,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-rational/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -10233,8 +10233,8 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-rational/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -10377,8 +10377,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-unox-af02-af08.md",
       "builderModel": "src/pages/parokonvektomat-unox-af02-af08/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 15,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -10403,7 +10403,7 @@
         "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
         "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
         "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
-        "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
+        "src/pages/parokonvektomat-unox-af02-af08/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
         "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
         "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html"
       ],
@@ -10559,8 +10559,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-unox-af02-af08/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -10804,15 +10804,15 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-unox-af02-af08/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
           "component": "lead-form",
           "label": "Получите понятный сценарий ремонта пароконвектомата",
           "shared": false,
-          "source": null
+          "source": "src/pages/parokonvektomat-unox-af02-af08/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
         },
         {
           "id": "059-proof-dokazatel-stva-garantii",
@@ -10948,8 +10948,8 @@
       "digest": ".ai/digest/pages/parokonvektomat-unox.md",
       "builderModel": "src/pages/parokonvektomat-unox/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 14,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -11130,8 +11130,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-unox/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -11375,8 +11375,8 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomat-unox/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -11519,8 +11519,8 @@
       "digest": ".ai/digest/pages/parokonvektomaty-promo.md",
       "builderModel": "src/pages/parokonvektomaty-promo/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 14,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -11701,8 +11701,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomaty-promo/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -11946,8 +11946,8 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomaty-promo/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -12090,8 +12090,8 @@
       "digest": ".ai/digest/pages/parokonvektomaty.md",
       "builderModel": "src/pages/parokonvektomaty/page.json",
       "sections": 75,
-      "localSections": 32,
-      "sharedRefs": 15,
+      "localSections": 34,
+      "sharedRefs": 13,
       "rawSections": 7,
       "componentMix": {
         "layout-fragment": 22,
@@ -12265,8 +12265,8 @@
           "id": "021-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomaty/sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "022-pricing-ceny-stoimost",
@@ -12503,8 +12503,8 @@
           "id": "055-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/parokonvektomaty/sections/055-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -12688,8 +12688,8 @@
         "src/pages/pishevarochnye-kotly/sections/034-faq-chastye-voprosy-po-remontu.html",
         "src/pages/pishevarochnye-kotly/sections/027-lead-form-soglasovat-vyezd-po-kotlu.html",
         "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
-        "src/pages/pishevarochnye-kotly/sections/010-pricing-razvodim-trafik-po-real-nomu-simptomu.html",
-        "src/pages/pishevarochnye-kotly/sections/007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e.html"
+        "src/pages/pishevarochnye-kotly/sections/007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e.html",
+        "src/pages/pishevarochnye-kotly/sections/010-pricing-razvodim-trafik-po-real-nomu-simptomu.html"
       ],
       "sectionPreview": [
         {
@@ -14193,8 +14193,8 @@
       },
       "largestSectionSources": [
         "src/pages/pishevarochnyj-kotel-datchik-temperatury/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-datchik-temperatury/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
+        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-datchik-temperatury/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
         "src/pages/pishevarochnyj-kotel-datchik-temperatury/sections/003-mobile-contact-datchik-temperatury-pischevarochnogo-.html",
@@ -14394,12 +14394,12 @@
       },
       "largestSectionSources": [
         "src/pages/pishevarochnyj-kotel-dolgo-greet/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-dolgo-greet/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
         "src/pages/pishevarochnyj-kotel-dolgo-greet/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
+        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-        "src/pages/pishevarochnyj-kotel-dolgo-greet/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/pages/pishevarochnyj-kotel-dolgo-greet/sections/003-mobile-contact-pischevarochnyy-kotel-dolgo-greet.html",
+        "src/pages/pishevarochnyj-kotel-dolgo-greet/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html"
       ],
       "sectionPreview": [
@@ -14875,9 +14875,9 @@
       },
       "largestSectionSources": [
         "src/pages/pishevarochnyj-kotel-manometr/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
-        "src/pages/pishevarochnyj-kotel-manometr/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
         "src/pages/pishevarochnyj-kotel-manometr/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
+        "src/pages/pishevarochnyj-kotel-manometr/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
+        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
         "src/pages/pishevarochnyj-kotel-manometr/sections/003-mobile-contact-manometr-i-davlenie-pischevarochnogo-.html",
         "src/pages/pishevarochnyj-kotel-manometr/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
@@ -15356,12 +15356,12 @@
       },
       "largestSectionSources": [
         "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
+        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-        "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/003-mobile-contact-pischevarochnyy-kotel-ne-vklyuchaetsy.html",
+        "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html"
       ],
       "sectionPreview": [
@@ -15557,12 +15557,12 @@
       },
       "largestSectionSources": [
         "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
         "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
+        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-        "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/003-mobile-contact-diagnostika-parovodyanoy-rubashki-pis.html",
+        "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html"
       ],
       "sectionPreview": [
@@ -15758,12 +15758,12 @@
       },
       "largestSectionSources": [
         "src/pages/pishevarochnyj-kotel-plata-upravleniya/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-plata-upravleniya/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
+        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-plata-upravleniya/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-        "src/pages/pishevarochnyj-kotel-plata-upravleniya/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/pages/pishevarochnyj-kotel-plata-upravleniya/sections/003-mobile-contact-plata-upravleniya-pischevarochnogo-ko.html",
+        "src/pages/pishevarochnyj-kotel-plata-upravleniya/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html"
       ],
       "sectionPreview": [
@@ -15959,12 +15959,12 @@
       },
       "largestSectionSources": [
         "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
+        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-        "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/sections/003-mobile-contact-remont-slivnogo-krana-pischevarochnog.html",
+        "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html"
       ],
       "sectionPreview": [
@@ -16724,8 +16724,8 @@
         "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
         "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/sections/022-lead-form-ostav-te-zayavku-na-remont.html",
         "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
-        "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html",
         "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/sections/005-mobile-contact-vybivaet-avtomat-ili-uzo-povtorno-ne-.html",
+        "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
         "src/components/shared/faq/faq-chastye-voprosy-po-remontu--08de6cea263988af.html"
       ],
@@ -17000,12 +17000,12 @@
       },
       "largestSectionSources": [
         "src/pages/pishevarochnyj-kotel-zamena-tena/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-zamena-tena/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
+        "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
         "src/pages/pishevarochnyj-kotel-zamena-tena/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
         "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-        "src/pages/pishevarochnyj-kotel-zamena-tena/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/pages/pishevarochnyj-kotel-zamena-tena/sections/003-mobile-contact-zamena-tena-pischevarochnogo-kotla.html",
+        "src/pages/pishevarochnyj-kotel-zamena-tena/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html",
         "src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html"
       ],
       "sectionPreview": [
@@ -18348,8 +18348,8 @@
       "digest": ".ai/digest/pages/posudomoyki.md",
       "builderModel": "src/pages/posudomoyki/page.json",
       "sections": 53,
-      "localSections": 35,
-      "sharedRefs": 3,
+      "localSections": 37,
+      "sharedRefs": 1,
       "rawSections": 1,
       "componentMix": {
         "pricing": 13,
@@ -18474,8 +18474,8 @@
           "id": "014-contact-cta-kontaktnyy-cta",
           "component": "contact-cta",
           "label": "Контактный CTA",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-kontaktnyy-cta--6f8fb400fc7723d5.html"
+          "shared": false,
+          "source": "src/pages/posudomoyki/sections/014-contact-cta-kontaktnyy-cta.html"
         },
         {
           "id": "015-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-",
@@ -18502,8 +18502,8 @@
           "id": "018-contact-cta-kontaktnyy-cta",
           "component": "contact-cta",
           "label": "Контактный CTA",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-kontaktnyy-cta--6f8fb400fc7723d5.html"
+          "shared": false,
+          "source": "src/pages/posudomoyki/sections/018-contact-cta-kontaktnyy-cta.html"
         },
         {
           "id": "019-raw-html-fragment",
@@ -18766,8 +18766,8 @@
       "digest": ".ai/digest/pages/remont-oborudovaniya-restorana-parokonvektomat.md",
       "builderModel": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json",
       "sections": 75,
-      "localSections": 12,
-      "sharedRefs": 21,
+      "localSections": 14,
+      "sharedRefs": 19,
       "rawSections": 2,
       "componentMix": {
         "layout-fragment": 35,
@@ -18948,8 +18948,8 @@
           "id": "022-contact-cta-otkladyvat-remont-parokonvektomata-obych",
           "component": "contact-cta",
           "label": "Откладывать ремонт пароконвектомата обычно дороже",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html"
+          "shared": false,
+          "source": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
         },
         {
           "id": "023-pricing-ceny-stoimost",
@@ -19193,8 +19193,8 @@
           "id": "057-contact-cta-parokonvektomat-vstal",
           "component": "contact-cta",
           "label": "Пароконвектомат встал?",
-          "shared": true,
-          "source": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html"
+          "shared": false,
+          "source": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/057-contact-cta-parokonvektomat-vstal.html"
         },
         {
           "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
@@ -19490,7 +19490,7 @@
     "remont-pishevarochnyh-kotlov-apach.html": {
       "branch": "restaurant",
       "role": "branch",
-      "title": "Ремонт пищеварочных котлов Apach APKE в Москве — нагрев, кран, электрика | MosPochin",
+      "title": "Ремонт котлов Apach APKE — нагрев, кран, электрика | MosPochin",
       "h1": "Ремонт пищеварочных котлов Apach APKE",
       "digest": ".ai/digest/pages/remont-pishevarochnyh-kotlov-apach.md",
       "builderModel": "src/pages/remont-pishevarochnyh-kotlov-apach/page.json",
@@ -19648,7 +19648,7 @@
     "remont-pishevarochnyh-kotlov-atesy.html": {
       "branch": "restaurant",
       "role": "branch",
-      "title": "Ремонт пищеварочных котлов Atesy / АТЕСИ — диагностика для общепита | MosPochin",
+      "title": "Ремонт котлов Atesy / АТЕСИ — диагностика общепита | MosPochin",
       "h1": "Ремонт пищеварочных котлов Atesy / АТЕСИ",
       "digest": ".ai/digest/pages/remont-pishevarochnyh-kotlov-atesy.md",
       "builderModel": "src/pages/remont-pishevarochnyh-kotlov-atesy/page.json",
@@ -19806,7 +19806,7 @@
     "remont-pishevarochnyh-kotlov-iterma.html": {
       "branch": "restaurant",
       "role": "branch",
-      "title": "Ремонт пищеварочных котлов Iterma — манометр, ТЭНы, контакторы, рубашка | MosPochin",
+      "title": "Ремонт котлов Iterma — ТЭНы, манометр, рубашка | MosPochin",
       "h1": "Ремонт пищеварочных котлов Iterma / Итерма",
       "digest": ".ai/digest/pages/remont-pishevarochnyh-kotlov-iterma.md",
       "builderModel": "src/pages/remont-pishevarochnyh-kotlov-iterma/page.json",
@@ -20562,8 +20562,8 @@
         "src/pages/stiralnye-mashiny/sections/033-lead-form-opishite-problemu-i-poluchite-ponyatnyy-sc.html",
         "src/pages/stiralnye-mashiny/sections/020-contact-cta-svezhie-vyezdy-chtoby-srazu-ponimat-scen.html",
         "src/pages/stiralnye-mashiny/sections/011-pricing-kakie-problemy-stiral-noy-mashiny-my-zakryva.html",
-        "src/pages/stiralnye-mashiny/sections/023-pricing-skol-ko-obychno-stoit-remont-stiral-noy-mash.html",
         "src/pages/stiralnye-mashiny/sections/005-hero-stiral-naya-mashina-ne-slivaet-techet-ili-shumi.html",
+        "src/pages/stiralnye-mashiny/sections/023-pricing-skol-ko-obychno-stoit-remont-stiral-noy-mash.html",
         "src/pages/stiralnye-mashiny/sections/032-mobile-contact-ne-otkladyvayte-zayavku-esli-stiralka.html",
         "src/pages/stiralnye-mashiny/sections/025-proof-chto-govoryat-posle-remonta-stiral-noy-mashiny.html"
       ],
@@ -21814,7 +21814,7 @@
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "mobile-contact",
-      "message": "mobile-contact: 159 локальных секций, shared ratio 33% — кандидат на параметризованный компонент + props."
+      "message": "mobile-contact: 161 локальных секций, shared ratio 33% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
@@ -21843,8 +21843,14 @@
     {
       "type": "componentize-local-sections",
       "priority": "medium",
+      "component": "contact-cta",
+      "message": "contact-cta: 70 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props."
+    },
+    {
+      "type": "componentize-local-sections",
+      "priority": "medium",
       "component": "lead-form",
-      "message": "lead-form: 51 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props."
+      "message": "lead-form: 55 локальных секций, shared ratio 15% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",

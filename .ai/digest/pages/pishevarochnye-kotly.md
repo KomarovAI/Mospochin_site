@@ -36,12 +36,12 @@
 | --- | --- | --- | --- | --- | --- |
 | Развели заявки по симптомам и узлам | pricing | 8.5 KB | 160 | no | src/pages/pishevarochnye-kotly/sections/025-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 181 | no | src/pages/pishevarochnye-kotly/sections/029-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
-| Ремонт пищеварочных котлов для ресторанов и столовых | mobile-contact | 6.2 KB | 112 | no | src/pages/pishevarochnye-kotly/sections/004-mobile-contact-remont-pischevarochnyh-kotlov-dlya-re.html |
+| Ремонт пищеварочных котлов для ресторанов и столовых | mobile-contact | 6.4 KB | 112 | no | src/pages/pishevarochnye-kotly/sections/004-mobile-contact-remont-pischevarochnyh-kotlov-dlya-re.html |
 | Частые вопросы по ремонту | faq | 6.0 KB | 193 | no | src/pages/pishevarochnye-kotly/sections/034-faq-chastye-voprosy-po-remontu.html |
-| Согласовать выезд по котлу | lead-form | 5.5 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/027-lead-form-soglasovat-vyezd-po-kotlu.html |
+| Согласовать выезд по котлу | lead-form | 5.6 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/027-lead-form-soglasovat-vyezd-po-kotlu.html |
 | Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.4 KB | 199 | yes | src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html |
+| Разводим заявки по симптому: нагрев, течь, электрика, H2O и Abat КПЭМ | lead-form | 5.0 KB | 131 | no | src/pages/pishevarochnye-kotly/sections/007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e.html |
 | Разводим трафик по реальному симптому | pricing | 4.9 KB | 122 | no | src/pages/pishevarochnye-kotly/sections/010-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
-| Разводим заявки по симптому: нагрев, течь, электрика, H2O и Abat КПЭМ | lead-form | 4.8 KB | 131 | no | src/pages/pishevarochnye-kotly/sections/007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e.html |
 
 
 ## Editable source files

@@ -18,7 +18,7 @@
 
 ## Safe editing notes
 
-- Parametric refs: 1137, templates: 79, props files: 14.
+- Parametric refs: 1133, templates: 79, props files: 10.
 - Для текста конкретной страницы меняй content/components/*/*.json; для разметки меняй template.html.
 - После правки запускай check:parameterized-components и check:site-builder.
 

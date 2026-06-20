@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomat-lainox.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "8b7981f5e9f6994183a92ee622744be38aadf60e11fb5d971e81ab2026864256",
+    "hash": "e29384ed92579062ee272c5824bfdf5414a73e83709b694dda2c303584cbc0ff",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -101,8 +101,8 @@
       "component": "hero",
       "label": "Ремонт пароконвектоматов Lainox",
       "file": "sections/007-hero-remont-parokonvektomatov-lainox.html",
-      "bytes": 10728,
-      "hash": "e4f64e606078ecbe"
+      "bytes": 11060,
+      "hash": "572459dc6783a605"
     },
     {
       "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
@@ -259,12 +259,9 @@
       "id": "021-contact-cta-otkladyvat-remont-parokonvektomata-obych",
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
-      "bytes": 3261,
-      "hash": "fadd3f54818d1031",
-      "componentRef": "src/components/shared/contact-cta/contact-cta-otkladyvat-remont-parokonvektomata-obychno-dor--fadd3f54818d1031.html",
-      "componentScope": "shared",
-      "componentSignature": "fadd3f54818d1031",
-      "sourceFile": "sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html"
+      "file": "sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
+      "bytes": 3364,
+      "hash": "95e7462a89a5fc2b"
     },
     {
       "id": "022-pricing-ceny-stoimost",
@@ -645,8 +642,8 @@
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
       "file": "sections/054-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
-      "bytes": 1790,
-      "hash": "66c6e6a0104ab8e0"
+      "bytes": 2002,
+      "hash": "811d7a1b3eef2177"
     },
     {
       "id": "055-raw-html-fragment",
@@ -665,19 +662,16 @@
       "id": "056-contact-cta-parokonvektomat-vstal",
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
-      "bytes": 3002,
-      "hash": "e9977c37284df64a",
-      "componentRef": "src/components/shared/contact-cta/contact-cta-parokonvektomat-vstal--e9977c37284df64a.html",
-      "componentScope": "shared",
-      "componentSignature": "e9977c37284df64a",
-      "sourceFile": "sections/056-contact-cta-parokonvektomat-vstal.html"
+      "file": "sections/056-contact-cta-parokonvektomat-vstal.html",
+      "bytes": 3105,
+      "hash": "0b61e0cdfe2aae34"
     },
     {
       "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "bytes": 7324,
-      "hash": "65f2943637f5c217",
+      "bytes": 7444,
+      "hash": "8da52288a2cce139",
       "componentMode": "parametric",
       "componentScope": "parametric",
       "variant": "restaurant-parokonvektomat-b2b",
@@ -914,7 +908,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 20,
+    "sharedSectionRefs": 18,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

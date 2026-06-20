@@ -1,0 +1,43 @@
+MosPochin metrics Run5 — technical audit / cleanup checks
+Date: 2026-06-20
+Mode: archive-only
+
+External API basis checked:
+- Yandex Metrica JavaScript event goals / reachGoal: separate event goals for separate actions.
+- Yandex Metrica robots reports/filtering: clean decision layer should not rely blindly on raw sessions.
+- MDN sendBeacon: small async POST transport for analytics.
+- MDN IntersectionObserver: async CTA visibility observation.
+
+Syntax checks:
+- node --check analytics.js: PASS
+- node --check telegram-form.js: PASS
+- node --check server/telegram-api.mjs: PASS
+- node --check tools/generate-direct-landings.mjs: PASS
+- node --check tools/audit-metrics-clean.mjs: PASS
+- node --check tools/check-metrics-contract.mjs: PASS
+- node --check tools/metrics-local-smoke.mjs: PASS
+- node --check tools/check-metrics-markup.mjs: PASS
+- python3 -m py_compile ops/mosanalytics/bin/mosanalytics-events-aggregate.py: PASS
+
+NPM checks:
+- npm run verify:metrics: PASS
+- npm run verify:fast: PASS
+- npm run lint: PASS
+- npm run predeploy:check: PASS
+- npm audit --audit-level=moderate: PASS, 0 vulnerabilities
+
+Run5 audit-specific checks:
+- backend duplicate extraHeaders spread removed: PASS
+- backend chunked decoder duplicate chunk push removed: PASS
+- backend duplicate extra_field_keys removed: PASS
+- frontend/backend contact target redaction present: PASS
+- raw tel:/mailto:/phone/email contact values masked in event payload/log path: PASS
+- direct landing generator preserves body data-* attrs: PASS
+- direct landing generator tolerates pages without analysisCards: PASS
+- stale METRICS_RUN1-4 root artifacts removed: PASS
+- stale metrics run1-4 docs removed: PASS
+- page metadata titles <= 75 chars: PASS
+
+Notes:
+- assets were not deleted because audit-unused-assets reported safeDelete=0.
+- generated context files (.ai/data/reports) were regenerated or kept because check:ai/predeploy depends on them.

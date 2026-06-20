@@ -33,11 +33,11 @@
                     </div>
                     <!-- CTA buttons -->
                     <div class="pariki-hero-actions flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center mb-6">
-                        <a href="tel:+79990057172" data-contact-link="phone" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg">
+                        <a href="tel:+79990057172" data-contact-link="phone" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg" data-cta-id="parokonvektomaty_phone_01" data-cta-group="phone_contact" data-block="auto_contact">
                             <i class="ri-phone-line"></i>
                             <span>Вызвать инженера</span>
                         </a>
-                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20пароконвектомата.%20Укажу%20модель,%20адрес%20ресторана%20и%20код%20ошибки." data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2">
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20пароконвектомата.%20Укажу%20модель,%20адрес%20ресторана%20и%20код%20ошибки." data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2" data-cta-id="parokonvektomaty_whatsapp_01" data-cta-group="whatsapp_contact" data-block="auto_contact">
                             <i class="ri-whatsapp-line"></i>
                             <span>Отправить фото ошибки</span>
                         </a>
@@ -62,7 +62,7 @@
                 </div>
                 <!-- Hero image -->
                 <div class="pariki-hero-card scroll-reveal is-visible relative">
-                    <form class="telegram-form rounded-2xl border border-white/15 bg-white p-3.5 shadow-2xl lg:hidden mb-6 text-left" data-form-context="parokonvektomat_b2b_hero_short" action="/api/send-telegram" method="post">
+                    <form class="telegram-form rounded-2xl border border-white/15 bg-white p-3.5 shadow-2xl lg:hidden mb-6 text-left" data-form-context="parokonvektomat_b2b_hero_short" action="/api/send-telegram" method="post" data-contact-form="true" data-cta-id="parokonvektomaty_form_01" data-cta-group="lead_form" data-block="lead_form">
                         <input type="hidden" name="name" value="Заявка с первого экрана">
                         <input type="hidden" name="problem" value="Нужен срочный ремонт пароконвектомата">
                         <input type="hidden" name="type" value="Пароконвектомат / профессиональная кухня">

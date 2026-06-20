@@ -37,10 +37,10 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонтируем все марки холодильного оборудования | related-links | 18.0 KB | 92 | no | src/pages/holodilnoe-oborudovanie/sections/027-related-links-remontiruem-vse-marki-holodil-nogo-obo.html |
 | Ремонтируем все виды холодильного оборудования | pricing | 14.0 KB | 264 | no | src/pages/holodilnoe-oborudovanie/sections/013-pricing-remontiruem-vse-vidy-holodil-nogo-oborudovan.html |
-| Ремонт холодильного оборудования в Москве до того, как продукты и смена уйдут в минус | hero | 8.8 KB | 100 | no | src/pages/holodilnoe-oborudovanie/sections/007-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html |
+| Ремонт холодильного оборудования в Москве до того, как продукты и смена уйдут в минус | hero | 9.0 KB | 100 | no | src/pages/holodilnoe-oborudovanie/sections/007-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 180 | no | src/pages/holodilnoe-oborudovanie/sections/049-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Частые вопросы о ремонте холодильного оборудования | faq | 6.4 KB | 226 | no | src/pages/holodilnoe-oborudovanie/sections/043-faq-chastye-voprosy-o-remonte-holodil-nogo-oborudova.html |
-| Оставьте заявку и получите понятный план действий | lead-form | 6.1 KB | 107 | no | src/pages/holodilnoe-oborudovanie/sections/047-lead-form-ostav-te-zayavku-i-poluchite-ponyatnyy-pla.html |
+| Оставьте заявку и получите понятный план действий | lead-form | 6.2 KB | 107 | no | src/pages/holodilnoe-oborudovanie/sections/047-lead-form-ostav-te-zayavku-i-poluchite-ponyatnyy-pla.html |
 | Что говорят клиенты | pricing | 5.5 KB | 156 | no | src/pages/holodilnoe-oborudovanie/sections/033-pricing-chto-govoryat-klienty.html |
 | Примеры ремонта холодильного оборудования | pricing | 5.4 KB | 132 | no | src/pages/holodilnoe-oborudovanie/sections/025-pricing-primery-remonta-holodil-nogo-oborudovaniya.html |
 

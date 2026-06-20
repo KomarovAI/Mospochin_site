@@ -36,12 +36,12 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Что клиент понимает ещё до начала работ | pricing | 13.0 KB | 425 | no | src/pages/stiralnye-mashiny/sections/035-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
-| Опишите проблему и получите понятный сценарий ремонта | lead-form | 8.4 KB | 155 | no | src/pages/stiralnye-mashiny/sections/033-lead-form-opishite-problemu-i-poluchite-ponyatnyy-sc.html |
-| Свежие выезды, чтобы сразу понимать сценарий ремонта | contact-cta | 6.2 KB | 159 | no | src/pages/stiralnye-mashiny/sections/020-contact-cta-svezhie-vyezdy-chtoby-srazu-ponimat-scen.html |
+| Опишите проблему и получите понятный сценарий ремонта | lead-form | 8.5 KB | 155 | no | src/pages/stiralnye-mashiny/sections/033-lead-form-opishite-problemu-i-poluchite-ponyatnyy-sc.html |
+| Свежие выезды, чтобы сразу понимать сценарий ремонта | contact-cta | 6.5 KB | 159 | no | src/pages/stiralnye-mashiny/sections/020-contact-cta-svezhie-vyezdy-chtoby-srazu-ponimat-scen.html |
 | Какие проблемы стиральной машины мы закрываем за 1 визит | pricing | 5.7 KB | 124 | no | src/pages/stiralnye-mashiny/sections/011-pricing-kakie-problemy-stiral-noy-mashiny-my-zakryva.html |
+| Стиральная машина не сливает, течёт или шумит? Вернём стирку без лишних замен | hero | 5.3 KB | 89 | no | src/pages/stiralnye-mashiny/sections/005-hero-stiral-naya-mashina-ne-slivaet-techet-ili-shumi.html |
 | Сколько обычно стоит ремонт стиральной машины | pricing | 5.2 KB | 135 | no | src/pages/stiralnye-mashiny/sections/023-pricing-skol-ko-obychno-stoit-remont-stiral-noy-mash.html |
-| Стиральная машина не сливает, течёт или шумит? Вернём стирку без лишних замен | hero | 5.1 KB | 89 | no | src/pages/stiralnye-mashiny/sections/005-hero-stiral-naya-mashina-ne-slivaet-techet-ili-shumi.html |
-| Не откладывайте заявку, если стиралка уже встала | mobile-contact | 4.7 KB | 107 | no | src/pages/stiralnye-mashiny/sections/032-mobile-contact-ne-otkladyvayte-zayavku-esli-stiralka.html |
+| Не откладывайте заявку, если стиралка уже встала | mobile-contact | 4.9 KB | 107 | no | src/pages/stiralnye-mashiny/sections/032-mobile-contact-ne-otkladyvayte-zayavku-esli-stiralka.html |
 | Что говорят после ремонта стиральной машины | proof | 4.7 KB | 148 | no | src/pages/stiralnye-mashiny/sections/025-proof-chto-govoryat-posle-remonta-stiral-noy-mashiny.html |
 
 

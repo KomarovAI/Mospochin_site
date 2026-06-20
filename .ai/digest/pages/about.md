@@ -33,14 +33,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| О компании MosPochin | hero | 8.2 KB | 84 | no | src/pages/about/sections/005-hero-o-kompanii-mospochin.html |
+| О компании MosPochin | hero | 8.4 KB | 84 | no | src/pages/about/sections/005-hero-o-kompanii-mospochin.html |
 | Почему нам доверяют | pricing | 4.9 KB | 108 | no | src/pages/about/sections/008-pricing-pochemu-nam-doveryayut.html |
 | От 2 мастеров до 15 специалистов | proof | 4.8 KB | 101 | no | src/pages/about/sections/012-proof-ot-2-masterov-do-15-specialistov.html |
 | Наши мастера | proof | 4.6 KB | 71 | no | src/pages/about/sections/011-proof-nashi-mastera.html |
 | Ресторанное оборудование | section | 3.9 KB | 20 | no | src/pages/about/sections/016-section-restorannoe-oborudovanie.html |
 | Оригинальные запчасти всегда в наличии | proof | 3.7 KB | 60 | no | src/pages/about/sections/009-proof-original-nye-zapchasti-vsegda-v-nalichii.html |
 | Наши клиенты | proof | 3.3 KB | 23 | no | src/pages/about/sections/014-proof-nashi-klienty.html |
-| Работаем по всей Москве и МО | proof | 2.9 KB | 90 | no | src/pages/about/sections/013-proof-rabotaem-po-vsey-moskve-i-mo.html |
+| Нужен ремонт? Оставьте заявку на ремонт | lead-form | 3.0 KB | 25 | no | src/pages/about/sections/017-lead-form-nuzhen-remont-ostav-te-zayavku-na-remont.html |
 
 
 ## Editable source files

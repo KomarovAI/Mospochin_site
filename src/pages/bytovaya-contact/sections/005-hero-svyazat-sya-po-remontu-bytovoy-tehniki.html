@@ -41,11 +41,11 @@
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="tel:+79990057172" data-contact-link="phone" class="inline-flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-full transition shadow-lg">
+                        <a href="tel:+79990057172" data-contact-link="phone" class="inline-flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-full transition shadow-lg" data-cta-id="bytovaya-contact_phone_01" data-cta-group="phone_contact" data-block="auto_contact">
                             <i class="ri-phone-line"></i>
                             <span data-company-phone>8 (999) 005-71-72</span>
                         </a>
-                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin" data-contact-link="whatsapp" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-lg font-bold px-8 py-4 rounded-full transition">
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт.%20Сайт%20MosPochin" data-contact-link="whatsapp" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-lg font-bold px-8 py-4 rounded-full transition" data-cta-id="bytovaya-contact_whatsapp_01" data-cta-group="whatsapp_contact" data-block="auto_contact">
                             <i class="ri-whatsapp-line"></i>
                             <span>Написать в WhatsApp</span>
                         </a>
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form id="contact-form" class="telegram-form space-y-5 bg-white" data-form-context="B2C contacts" action="/api/send-telegram" method="post">
+                        <form id="contact-form" class="telegram-form space-y-5 bg-white" data-form-context="B2C contacts" action="/api/send-telegram" method="post" data-contact-form="true" data-cta-id="bytovaya-contact_form_01" data-cta-group="lead_form" data-block="lead_form">
                             <div>
                                 <label for="bytovaya-contact-name" class="block text-sm font-semibold text-slate-700 mb-2">Ваше имя</label>
                                 <input type="text" name="name" class="w-full rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange" placeholder="Как к вам обращаться" required id="bytovaya-contact-name" autocomplete="name">

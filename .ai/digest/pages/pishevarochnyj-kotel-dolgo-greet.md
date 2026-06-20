@@ -30,12 +30,12 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Развели заявки по симптомам и узлам | pricing | 8.5 KB | 161 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
+| Оставьте заявку на диагностику | lead-form | 5.5 KB | 69 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
+| Симптом → узел → риск простоя → диагностика | mobile-contact | 5.4 KB | 112 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html |
 | Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.4 KB | 199 | yes | src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html |
-| Оставьте заявку на диагностику | lead-form | 5.3 KB | 69 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
-| Симптом → узел → риск простоя → диагностика | mobile-contact | 5.2 KB | 112 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html |
 | Развели ошибки КПЭМ по отдельным сценариям | pricing | 4.6 KB | 129 | yes | src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html |
+| Пищеварочный котел долго греет | mobile-contact | 3.0 KB | 39 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/003-mobile-contact-pischevarochnyy-kotel-dolgo-greet.html |
 | Частые вопросы по этой неисправности | faq | 2.9 KB | 87 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html |
-| Пищеварочный котел долго греет | mobile-contact | 2.8 KB | 39 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/003-mobile-contact-pischevarochnyy-kotel-dolgo-greet.html |
 | Не просто статья, а страница под заявку | proof | 2.1 KB | 69 | yes | src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html |
 
 

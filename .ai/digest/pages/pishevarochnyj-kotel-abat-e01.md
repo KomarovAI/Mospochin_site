@@ -29,10 +29,10 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Переходы по симптомам, узлам и кодам | pricing | 6.3 KB | 134 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/007-pricing-perehody-po-simptomam-uzlam-i-kodam.html |
-| Отправьте код и шильдик инженеру | lead-form | 5.4 KB | 82 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/014-lead-form-otprav-te-kod-i-shil-dik-inzheneru.html |
+| Отправьте код и шильдик инженеру | lead-form | 5.6 KB | 82 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/014-lead-form-otprav-te-kod-i-shil-dik-inzheneru.html |
 | Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.4 KB | 199 | yes | src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html |
-| Не просто сбросить ошибку, а найти причину | mobile-contact | 5.0 KB | 113 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/005-mobile-contact-ne-prosto-sbrosit-oshibku-a-nayti-pri.html |
-| Ошибка E01 на пищеварочном котле Abat КПЭМ | mobile-contact | 3.9 KB | 77 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/003-mobile-contact-oshibka-e01-na-pischevarochnom-kotle-.html |
+| Не просто сбросить ошибку, а найти причину | mobile-contact | 5.3 KB | 113 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/005-mobile-contact-ne-prosto-sbrosit-oshibku-a-nayti-pri.html |
+| Ошибка E01 на пищеварочном котле Abat КПЭМ | mobile-contact | 4.1 KB | 77 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/003-mobile-contact-oshibka-e01-na-pischevarochnom-kotle-.html |
 | Развели ошибки КПЭМ по отдельным сценариям | pricing | 3.9 KB | 112 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Частые вопросы по E01 | faq | 2.9 KB | 86 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/015-faq-chastye-voprosy-po-e01.html |
 | Секция 1 | body-preamble | 73 B | 0 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/001-body-preamble-sekciya-1.html |

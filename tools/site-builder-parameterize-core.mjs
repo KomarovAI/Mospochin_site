@@ -58,8 +58,14 @@ function extractB2bProps(page, slug, html) {
       businessType: matchOne(html, /<input type="text" name="business_type" placeholder="([^"]*)"/, 'business type placeholder'),
     },
     submitText: matchOne(html, /<i class="ri-send-plane-line mr-2"><\/i>([^\n<]+)\n\s*<\/button>/, 'submit text').trim(),
+    metrics: {
+      contactForm: html.match(/data-contact-form="([^"]+)"/)?.[1] || 'true',
+      ctaId: html.match(/data-cta-id="([^"]+)"/)?.[1] || `${slug}_form`,
+      ctaGroup: html.match(/data-cta-group="([^"]+)"/)?.[1] || 'lead_form',
+      block: html.match(/data-block="([^"]+)"/)?.[1] || 'lead_form',
+    },
   };
-  return props;
+ return props;
 }
 function makeLeadTemplateFromHtml(html, props) {
   const replacements = [
@@ -77,6 +83,10 @@ function makeLeadTemplateFromHtml(html, props) {
     [props.placeholders.address, '{{placeholders.address}}'],
     [props.placeholders.businessType, '{{placeholders.businessType}}'],
     [props.submitText, '{{submitText}}'],
+    [props.metrics.contactForm, '{{metrics.contactForm}}'],
+    [props.metrics.ctaId, '{{metrics.ctaId}}'],
+    [props.metrics.ctaGroup, '{{metrics.ctaGroup}}'],
+    [props.metrics.block, '{{metrics.block}}'],
   ].sort((a, b) => b[0].length - a[0].length);
   let template = html;
   for (const [from, to] of replacements) template = template.split(from).join(to);
@@ -140,7 +150,7 @@ function classifyRepeatedRawSection(component, html, repeatedRawIndex) {
   };
 }
 function ensureComponentFiles(templateSource = null, firstProps = null) {
-  if (!existsSync(abs(LEAD_TEMPLATE)) && templateSource && firstProps) write(LEAD_TEMPLATE, makeLeadTemplateFromHtml(templateSource, firstProps));
+  if (templateSource && firstProps) write(LEAD_TEMPLATE, makeLeadTemplateFromHtml(templateSource, firstProps));
   if (!existsSync(abs(LEAD_TEMPLATE))) throw new Error(`${LEAD_TEMPLATE} не создан`);
   write('src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.contract.json', JSON.stringify({
     schemaVersion: 1,
@@ -148,7 +158,7 @@ function ensureComponentFiles(templateSource = null, firstProps = null) {
     variant: 'restaurant-parokonvektomat-b2b',
     intent: 'B2B форма заявки для страниц ремонта пароконвектоматов',
     requiredFields: ['name', 'phone', 'type', 'problem', 'address', 'business_type'],
-    requiredAttributes: ['action="/api/send-telegram"', 'method="post"', 'autocomplete="name"', 'autocomplete="tel"', 'inputmode="tel"', 'data-slot="request-form"'],
+    requiredAttributes: ['action="/api/send-telegram"', 'method="post"', 'autocomplete="name"', 'autocomplete="tel"', 'inputmode="tel"', 'data-slot="request-form"', 'data-contact-form="true"', 'data-cta-id', 'data-cta-group', 'data-block'],
     aiNotes: [
       'Компонент параметризует одинаковый B2B form layout: менять структуру формы в template, тексты/placeholder/button — в content/components/lead-form/*.json.',
       'После правки запускай npm run check:parameterized-components && npm run check:site-builder.',

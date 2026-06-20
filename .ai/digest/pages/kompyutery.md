@@ -7,7 +7,7 @@
 - H1: Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен
 - Canonical: https://mospochin.ru/kompyutery.html
 - Builder model: src/pages/kompyutery/page.json
-- Sections: 55 (42 local, 4 shared refs, 15 raw)
+- Sections: 55 (43 local, 3 shared refs, 15 raw)
 - Text words inside referenced sections: 2260
 
 ## Component mix
@@ -36,7 +36,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонтируем все марки компьютеров и ноутбуков | pricing | 17.9 KB | 108 | no | src/pages/kompyutery/sections/032-pricing-remontiruem-vse-marki-komp-yuterov-i-noutbuk.html |
 | Ремонтируем ноутбуки и стационарные ПК | pricing | 9.9 KB | 216 | no | src/pages/kompyutery/sections/008-pricing-remontiruem-noutbuki-i-stacionarnye-pk.html |
-| Реальные ремонты на этой неделе | contact-cta | 7.6 KB | 133 | no | src/pages/kompyutery/sections/017-contact-cta-real-nye-remonty-na-etoy-nedele.html |
+| Реальные ремонты на этой неделе | contact-cta | 7.9 KB | 133 | no | src/pages/kompyutery/sections/017-contact-cta-real-nye-remonty-na-etoy-nedele.html |
 | Частые вопросы | faq | 7.2 KB | 238 | no | src/pages/kompyutery/sections/041-faq-chastye-voprosy.html |
 | Частые поломки компьютеров и ноутбуков | pricing | 6.2 KB | 125 | no | src/pages/kompyutery/sections/019-pricing-chastye-polomki-komp-yuterov-i-noutbukov.html |
 | Цены на ремонт компьютеров и ноутбуков | pricing | 5.8 KB | 115 | no | src/pages/kompyutery/sections/021-pricing-ceny-na-remont-komp-yuterov-i-noutbukov.html |

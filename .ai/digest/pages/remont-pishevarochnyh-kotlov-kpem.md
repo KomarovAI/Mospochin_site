@@ -28,11 +28,11 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Отправьте модель, симптом и фото шильдика | lead-form | 6.4 KB | 92 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
+| Отправьте модель, симптом и фото шильдика | lead-form | 6.6 KB | 92 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
 | Куда перейти дальше по Abat КПЭМ | pricing | 5.8 KB | 110 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/007-pricing-kuda-pereyti-dal-she-po-abat-kpem.html |
-| Брендовая страница без тонкого SEO | mobile-contact | 5.2 KB | 118 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/005-mobile-contact-brendovaya-stranica-bez-tonkogo-seo.html |
+| Брендовая страница без тонкого SEO | mobile-contact | 5.4 KB | 118 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/005-mobile-contact-brendovaya-stranica-bez-tonkogo-seo.html |
 | Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 4.5 KB | 166 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
-| Ремонт пищеварочных котлов КПЭМ | mobile-contact | 4.1 KB | 105 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-kpem.html |
+| Ремонт пищеварочных котлов КПЭМ | mobile-contact | 4.4 KB | 105 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-kpem.html |
 | Частые вопросы по Abat КПЭМ | faq | 3.0 KB | 106 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/012-faq-chastye-voprosy-po-abat-kpem.html |
 | Секция 1 | body-preamble | 77 B | 0 | no | src/pages/remont-pishevarochnyh-kotlov-kpem/sections/001-body-preamble-sekciya-1.html |
 | HTML-фрагмент | layout-fragment | 51 B | 0 | no | src/components/parametric/static/layout-fragment-cooking-kettle-brand-repair-bridge-start-8ab502f37162.template.html |

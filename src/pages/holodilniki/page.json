@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "holodilniki.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "c4f08730c458ee4490a8f100ee5774e7785fcd72db705e03db5ddddc659d3aeb",
+    "hash": "ffefc872d7cf7767421574e372b86d932c4701451de66eff24a128f5ec1aff51",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -67,8 +67,8 @@
       "component": "hero",
       "label": "Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене",
       "file": "sections/005-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html",
-      "bytes": 6365,
-      "hash": "c46b0e9e081dea39"
+      "bytes": 6555,
+      "hash": "9c72f527c41b9584"
     },
     {
       "id": "006-proof-dokazatel-stva-garantii",
@@ -144,8 +144,8 @@
       "component": "contact-cta",
       "label": "Контактный CTA",
       "file": "sections/013-contact-cta-kontaktnyy-cta.html",
-      "bytes": 3589,
-      "hash": "3d0e2a1df19726d4"
+      "bytes": 3681,
+      "hash": "95ddd0ee77cef6ec"
     },
     {
       "id": "014-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit",
@@ -194,8 +194,8 @@
       "component": "contact-cta",
       "label": "Свежие кейсы по ремонту холодильников",
       "file": "sections/018-contact-cta-svezhie-keysy-po-remontu-holodil-nikov.html",
-      "bytes": 8288,
-      "hash": "b4289df62aecca7a"
+      "bytes": 8564,
+      "hash": "14875cda8209a692"
     },
     {
       "id": "019-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom",
@@ -314,8 +314,8 @@
       "component": "mobile-contact",
       "label": "Когда лучше не откладывать ремонт холодильника",
       "file": "sections/033-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-ho.html",
-      "bytes": 1907,
-      "hash": "2e6e7dd2d7fd10be"
+      "bytes": 2097,
+      "hash": "da9467fed5e860de"
     },
     {
       "id": "034-raw-html-fragment",
@@ -343,8 +343,8 @@
       "component": "lead-form",
       "label": "Оставьте заявку на звонок по холодильнику",
       "file": "sections/036-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html",
-      "bytes": 8408,
-      "hash": "068a978683da856c"
+      "bytes": 8517,
+      "hash": "bd8275c7e218207a"
     },
     {
       "id": "037-proof-dokazatel-stva-garantii",
@@ -412,8 +412,8 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/044-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 415,
-      "hash": "7a6a87d51c1eb0f2"
+      "bytes": 513,
+      "hash": "43d50b802c6d69ae"
     },
     {
       "id": "045-raw-html-fragment",
@@ -432,12 +432,9 @@
       "id": "046-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "bytes": 823,
-      "hash": "0ba09078427d85ff",
-      "componentRef": "src/components/shared/mobile-contact/mobile-contact-mobilnye-kontaktnye-elementy--0ba09078427d85ff.html",
-      "componentScope": "shared",
-      "componentSignature": "0ba09078427d85ff",
-      "sourceFile": "sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "file": "sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 1013,
+      "hash": "71d002120a380f60"
     },
     {
       "id": "047-footer-anchor-footer-mount-point",
@@ -518,7 +515,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 2,
+    "sharedSectionRefs": 1,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

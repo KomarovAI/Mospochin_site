@@ -7,7 +7,7 @@
 - H1: Ошибка E02 / E07 / E10
 - Canonical: https://mospochin.ru/parokonvektomat-e02-e07-e10.html
 - Builder model: src/pages/parokonvektomat-e02-e07-e10/page.json
-- Sections: 75 (12 local, 21 shared refs, 2 raw)
+- Sections: 75 (15 local, 19 shared refs, 2 raw)
 - Text words inside referenced sections: 2566
 
 ## Component mix
@@ -36,11 +36,11 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Что может стоять за E02 / E07 / E10 | related-links | 12.4 KB | 370 | no | src/pages/parokonvektomat-e02-e07-e10/sections/010-related-links-chto-mozhet-stoyat-za-e02-e07-e10.html |
-| Ошибка E02 / E07 / E10 | hero | 10.9 KB | 101 | no | src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html |
+| Ошибка E02 / E07 / E10 | hero | 11.3 KB | 101 | no | src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.3 KB | 104 | no | src/pages/parokonvektomat-e02-e07-e10/sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 242 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
 

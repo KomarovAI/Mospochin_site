@@ -35,7 +35,7 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Ключевые направления по типу техники | pricing | 14.0 KB | 134 | no | src/pages/uslugi/sections/009-pricing-klyuchevye-napravleniya-po-tipu-tehniki.html |
-| Услуги и цены на ремонт ресторанного оборудования | hero | 8.3 KB | 81 | no | src/pages/uslugi/sections/005-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html |
+| Услуги и цены на ремонт ресторанного оборудования | hero | 8.5 KB | 81 | no | src/pages/uslugi/sections/005-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html |
 | Все виды услуг для ресторанов | pricing | 7.1 KB | 109 | no | src/pages/uslugi/sections/014-pricing-vse-vidy-uslug-dlya-restoranov.html |
 | Почему Быстрый выезд, договор и понятная ответственность | proof | 6.7 KB | 105 | no | src/pages/uslugi/sections/011-proof-pochemu-bystryy-vyezd-dogovor-i-ponyatnaya-otv.html |
 | Работаем со всеми форматами | section | 4.7 KB | 36 | no | src/pages/uslugi/sections/010-section-rabotaem-so-vsemi-formatami.html |

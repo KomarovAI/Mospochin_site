@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "kompyutery.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "d981f477353463ef9a684dd6da59ce3e3558d21a6f2f8a1be4b1680d6537a3e3",
+    "hash": "ee42b5796a4aad7e018646417d13307a421b54a0986bc91a4b49ece56ecae633",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -67,8 +67,8 @@
       "component": "hero",
       "label": "Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен",
       "file": "sections/005-hero-komp-yuter-ili-noutbuk-tormozit-shumit-ili-ne-v.html",
-      "bytes": 4379,
-      "hash": "fc1211b006c3f3b7"
+      "bytes": 4567,
+      "hash": "ba394cf1a6257b92"
     },
     {
       "id": "006-proof-dokazatel-stva-garantii",
@@ -123,8 +123,8 @@
       "component": "contact-cta",
       "label": "Контактный CTA",
       "file": "sections/011-contact-cta-kontaktnyy-cta.html",
-      "bytes": 2606,
-      "hash": "6553c0ddedd03660"
+      "bytes": 2697,
+      "hash": "52a115a589179560"
     },
     {
       "id": "012-raw-html-fragment",
@@ -171,8 +171,8 @@
       "component": "contact-cta",
       "label": "Реальные ремонты на этой неделе",
       "file": "sections/017-contact-cta-real-nye-remonty-na-etoy-nedele.html",
-      "bytes": 7820,
-      "hash": "0663c6c3c7b5e9c9"
+      "bytes": 8093,
+      "hash": "dacc98a387d3e4d0"
     },
     {
       "id": "018-raw-html-fragment",
@@ -385,8 +385,8 @@
       "component": "mobile-contact",
       "label": "Поможем спокойно вернуть компьютер в рабочее состояние",
       "file": "sections/043-mobile-contact-pomozhem-spokoyno-vernut-komp-yuter-v.html",
-      "bytes": 1779,
-      "hash": "f84fbe160c79a1e8"
+      "bytes": 1967,
+      "hash": "0cf82e3e5e0fbf40"
     },
     {
       "id": "044-raw-html-fragment",
@@ -401,16 +401,16 @@
       "component": "contact-cta",
       "label": "Компьютер или ноутбук подвис?",
       "file": "sections/045-contact-cta-komp-yuter-ili-noutbuk-podvis.html",
-      "bytes": 3839,
-      "hash": "517657eddeedfd8a"
+      "bytes": 3930,
+      "hash": "c3bbf78895819ccc"
     },
     {
       "id": "046-lead-form-ostav-te-zayavku-na-remont",
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/046-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 3237,
-      "hash": "6bf62d3e40640a64"
+      "bytes": 3345,
+      "hash": "e6a20b28c4c0990c"
     },
     {
       "id": "047-raw-html-fragment",
@@ -425,8 +425,8 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/048-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 415,
-      "hash": "7a6a87d51c1eb0f2"
+      "bytes": 512,
+      "hash": "d7c60409f9038df1"
     },
     {
       "id": "049-raw-html-fragment",
@@ -445,12 +445,9 @@
       "id": "050-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "bytes": 823,
-      "hash": "0ba09078427d85ff",
-      "componentRef": "src/components/shared/mobile-contact/mobile-contact-mobilnye-kontaktnye-elementy--0ba09078427d85ff.html",
-      "componentScope": "shared",
-      "componentSignature": "0ba09078427d85ff",
-      "sourceFile": "sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "file": "sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 1011,
+      "hash": "5b6690230a08eee1"
     },
     {
       "id": "051-footer-anchor-footer-mount-point",
@@ -531,7 +528,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 4,
+    "sharedSectionRefs": 3,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

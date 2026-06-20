@@ -35,9 +35,9 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Опишите проблему с плитой или печью | lead-form | 11.8 KB | 240 | no | src/pages/plity-pechi/sections/022-lead-form-opishite-problemu-s-plitoy-ili-pech-yu.html |
-| Ремонт плит и печей в Москве без простоя кухни и без хаоса по смете | hero | 11.3 KB | 212 | no | src/pages/plity-pechi/sections/005-hero-remont-plit-i-pechey-v-moskve-bez-prostoya-kuhn.html |
-| С какими брендами и линиями реально работаем | contact-cta | 8.3 KB | 173 | no | src/pages/plity-pechi/sections/018-contact-cta-s-kakimi-brendami-i-liniyami-real-no-rab.html |
+| Опишите проблему с плитой или печью | lead-form | 11.9 KB | 240 | no | src/pages/plity-pechi/sections/022-lead-form-opishite-problemu-s-plitoy-ili-pech-yu.html |
+| Ремонт плит и печей в Москве без простоя кухни и без хаоса по смете | hero | 11.5 KB | 212 | no | src/pages/plity-pechi/sections/005-hero-remont-plit-i-pechey-v-moskve-bez-prostoya-kuhn.html |
+| С какими брендами и линиями реально работаем | contact-cta | 8.4 KB | 173 | no | src/pages/plity-pechi/sections/018-contact-cta-s-kakimi-brendami-i-liniyami-real-no-rab.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 181 | no | src/pages/plity-pechi/sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Что покрывает этот выезд по плитам и печам | related-links | 6.1 KB | 163 | no | src/pages/plity-pechi/sections/011-related-links-chto-pokryvaet-etot-vyezd-po-plitam-i-.html |
 | Частые вопросы по плитам и печам | faq | 5.5 KB | 195 | no | src/pages/plity-pechi/sections/020-faq-chastye-voprosy-po-plitam-i-pecham.html |

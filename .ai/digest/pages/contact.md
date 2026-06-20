@@ -34,14 +34,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
+| Все способы связи | mobile-contact | 7.1 KB | 69 | no | src/pages/contact/sections/011-mobile-contact-vse-sposoby-svyazi.html |
 | Зона обслуживания | section | 7.0 KB | 92 | no | src/pages/contact/sections/017-section-zona-obsluzhivaniya.html |
-| Все способы связи | mobile-contact | 6.7 KB | 69 | no | src/pages/contact/sections/011-mobile-contact-vse-sposoby-svyazi.html |
-| Связаться с MosPochin и быстро решить вопрос с ремонтом | hero | 6.1 KB | 69 | no | src/pages/contact/sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html |
+| Связаться с MosPochin и быстро решить вопрос с ремонтом | hero | 6.3 KB | 69 | no | src/pages/contact/sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html |
 | Режим работы | pricing | 5.3 KB | 43 | no | src/pages/contact/sections/013-pricing-rezhim-raboty.html |
 | Кто приедет к вам | proof | 3.9 KB | 52 | no | src/pages/contact/sections/015-proof-kto-priedet-k-vam.html |
 | Частые вопросы | faq | 3.7 KB | 97 | no | src/pages/contact/sections/023-faq-chastye-voprosy.html |
-| Схема работы | contact-cta | 3.6 KB | 87 | no | src/pages/contact/sections/021-contact-cta-shema-raboty.html |
-| Оставьте заявку, и мы свяжемся по ремонту | lead-form | 3.4 KB | 41 | no | src/pages/contact/sections/027-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon.html |
+| Схема работы | contact-cta | 3.7 KB | 87 | no | src/pages/contact/sections/021-contact-cta-shema-raboty.html |
+| Оставьте заявку, и мы свяжемся по ремонту | lead-form | 3.5 KB | 41 | no | src/pages/contact/sections/027-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon.html |
 
 
 ## Editable source files

@@ -7,7 +7,7 @@
 - H1: Ремонт пароконвектоматов для ресторанов
 - Canonical: https://mospochin.ru/parokonvektomaty.html
 - Builder model: src/pages/parokonvektomaty/page.json
-- Sections: 75 (32 local, 15 shared refs, 7 raw)
+- Sections: 75 (34 local, 13 shared refs, 7 raw)
 - Text words inside referenced sections: 3140
 
 ## Component mix
@@ -38,11 +38,11 @@
 | Ремонтируем все марки пароконвектоматов | pricing | 15.8 KB | 98 | no | src/pages/parokonvektomaty/sections/043-pricing-remontiruem-vse-marki-parokonvektomatov.html |
 | Связанные страницы по пароконвектоматам | related-links | 11.8 KB | 237 | no | src/pages/parokonvektomaty/sections/064-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Частые поломки пароконвектоматов | pricing | 11.2 KB | 205 | no | src/pages/parokonvektomaty/sections/029-pricing-chastye-polomki-parokonvektomatov.html |
-| Ремонт пароконвектоматов для ресторанов | hero | 10.8 KB | 108 | no | src/pages/parokonvektomaty/sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html |
+| Ремонт пароконвектоматов для ресторанов | hero | 11.1 KB | 108 | no | src/pages/parokonvektomaty/sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
-| Ошибка на дисплее — повод не читать справочник, а быстро вернуть кухню в работу | lead-form | 8.2 KB | 162 | no | src/pages/parokonvektomaty/sections/010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc.html |
+| Ошибка на дисплее — повод не читать справочник, а быстро вернуть кухню в работу | lead-form | 8.5 KB | 162 | no | src/pages/parokonvektomaty/sections/010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 133 | no | src/pages/parokonvektomaty/sections/017-pricing-remontiruem-vse-tipy-parokonvektomatov.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 107 | no | src/pages/parokonvektomaty/sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.3 KB | 107 | no | src/pages/parokonvektomaty/sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
 
 
 ## Editable source files

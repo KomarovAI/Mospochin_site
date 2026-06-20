@@ -7,7 +7,7 @@
 - H1: Ремонт пароконвектоматов Rational
 - Canonical: https://mospochin.ru/parokonvektomat-rational.html
 - Builder model: src/pages/parokonvektomat-rational/page.json
-- Sections: 75 (12 local, 21 shared refs, 2 raw)
+- Sections: 75 (14 local, 19 shared refs, 2 raw)
 - Text words inside referenced sections: 2661
 
 ## Component mix
@@ -36,11 +36,11 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Что проверяем у пароконвектомата Rational | related-links | 15.7 KB | 475 | no | src/pages/parokonvektomat-rational/sections/010-related-links-chto-proveryaem-u-parokonvektomata-rat.html |
-| Ремонт пароконвектоматов Rational | hero | 10.9 KB | 92 | no | src/pages/parokonvektomat-rational/sections/007-hero-remont-parokonvektomatov-rational.html |
+| Ремонт пароконвектоматов Rational | hero | 11.3 KB | 92 | no | src/pages/parokonvektomat-rational/sections/007-hero-remont-parokonvektomatov-rational.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 103 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.3 KB | 103 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 242 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
 

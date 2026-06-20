@@ -33,7 +33,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Помогаем спокойно решить поломку бытовой техники дома. | hero | 8.0 KB | 111 | no | src/pages/bytovaya-about/sections/007-hero-pomogaem-spokoyno-reshit-polomku-bytovoy-tehnik.html |
+| Помогаем спокойно решить поломку бытовой техники дома. | hero | 8.2 KB | 111 | no | src/pages/bytovaya-about/sections/007-hero-pomogaem-spokoyno-reshit-polomku-bytovoy-tehnik.html |
 | Ремонтируем любую бытовую технику на дому | pricing | 5.2 KB | 37 | no | src/pages/bytovaya-about/sections/015-pricing-remontiruem-lyubuyu-bytovuyu-tehniku-na-domu.html |
 | 6 причин доверить нам свою технику | proof | 4.9 KB | 91 | no | src/pages/bytovaya-about/sections/021-proof-6-prichin-doverit-nam-svoyu-tehniku.html |
 | Как мы смотрим на домашний сервис | proof | 4.9 KB | 126 | no | src/pages/bytovaya-about/sections/011-proof-kak-my-smotrim-na-domashniy-servis.html |

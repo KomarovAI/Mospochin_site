@@ -2,7 +2,7 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: Ремонт пищеварочных котлов Apach APKE в Москве — нагрев, кран, электрика | MosPochin
+- Title: Ремонт котлов Apach APKE — нагрев, кран, электрика | MosPochin
 - Description: Ремонт пищеварочных котлов Apach APKE: не греет, долго нагревает, течет сливной кран, выбивает автомат, диагностика ТЭНов, термостата и электрики.
 - H1: Ремонт пищеварочных котлов Apach APKE
 - Canonical: https://mospochin.ru/remont-pishevarochnyh-kotlov-apach.html
@@ -28,11 +28,11 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Отправьте модель, симптом и фото шильдика | lead-form | 6.3 KB | 86 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
+| Отправьте модель, симптом и фото шильдика | lead-form | 6.5 KB | 86 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
 | Куда перейти дальше по Apach | pricing | 6.2 KB | 133 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/007-pricing-kuda-pereyti-dal-she-po-apach.html |
-| Брендовая страница без тонкого SEO | mobile-contact | 5.1 KB | 109 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/005-mobile-contact-brendovaya-stranica-bez-tonkogo-seo.html |
+| Брендовая страница без тонкого SEO | mobile-contact | 5.3 KB | 109 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/005-mobile-contact-brendovaya-stranica-bez-tonkogo-seo.html |
 | Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 4.5 KB | 164 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
-| Ремонт пищеварочных котлов Apach APKE | mobile-contact | 4.1 KB | 106 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-apach-a.html |
+| Ремонт пищеварочных котлов Apach APKE | mobile-contact | 4.3 KB | 106 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-apach-a.html |
 | Частые вопросы по Apach | faq | 2.8 KB | 84 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/012-faq-chastye-voprosy-po-apach.html |
 | Секция 1 | body-preamble | 78 B | 0 | no | src/pages/remont-pishevarochnyh-kotlov-apach/sections/001-body-preamble-sekciya-1.html |
 | HTML-фрагмент | layout-fragment | 51 B | 0 | no | src/components/parametric/static/layout-fragment-cooking-kettle-brand-repair-bridge-start-8ab502f37162.template.html |

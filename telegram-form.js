@@ -94,8 +94,17 @@ function getSourceLabel(branch) {
 
 function trackFormGoal(goalName, form, extra = {}) {
     window.mospochinTrackGoal?.(goalName, {
+        form_id: form.id || form.dataset.formContext?.trim() || '',
         form_context: form.dataset.formContext?.trim() || '',
         page: window.location.pathname,
+        ...extra
+    });
+}
+
+function trackFormIssue(form, reason, field = '', extra = {}) {
+    trackFormGoal('form_validation_error', form, {
+        reason,
+        field,
         ...extra
     });
 }
@@ -109,6 +118,12 @@ function getAttributionSnapshot() {
 function getStoredAttributionTouch() {
     const attribution = getAttributionSnapshot();
     return attribution?.last_touch || attribution?.first_touch || {};
+}
+
+function getSessionSnapshot() {
+    const session = window.mospochinGetSession?.();
+    if (!session || typeof session !== 'object') return null;
+    return session;
 }
 
 function buildAttributionHiddenFields() {
@@ -220,6 +235,7 @@ async function sendToTelegram(formData) {
         formContext: formData.formContext,
         extraFields: formData.extraFields,
         attribution: formData.attribution,
+        session: formData.session,
         website: formData.website,
         consent: true
     };
@@ -334,6 +350,7 @@ function initTelegramForms() {
                 formContext: form.dataset.formContext?.trim() || '',
                 extraFields,
                 attribution: getAttributionSnapshot(),
+                session: getSessionSnapshot(),
                 website: honeypotValue
             };
 
@@ -343,11 +360,13 @@ function initTelegramForms() {
             const lastSubmitAt = Number(safeGetLocalStorage(rateLimitKey) || 0);
 
             if (honeypotValue) {
+                trackFormGoal('form_submit_blocked', form, { reason: 'honeypot_filled' });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 return;
             }
 
             if (fillMs < FORM_MIN_FILL_MS) {
+                trackFormGoal('form_submit_blocked', form, { reason: 'too_fast', fill_ms: fillMs });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -359,6 +378,7 @@ function initTelegramForms() {
             }
 
             if (!consentChecked) {
+                trackFormIssue(form, 'consent_required', 'consent');
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -370,6 +390,7 @@ function initTelegramForms() {
             }
 
             if (!isValidPhone(formData.phone)) {
+                trackFormIssue(form, 'invalid_phone', 'phone');
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -381,6 +402,7 @@ function initTelegramForms() {
             }
 
             if (formData.problem.length > FORM_MAX_PROBLEM_LENGTH) {
+                trackFormIssue(form, 'problem_too_long', 'problem', { problem_length: formData.problem.length });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -392,6 +414,7 @@ function initTelegramForms() {
             }
 
             if (lastSubmitAt && Date.now() - lastSubmitAt < FORM_RATE_LIMIT_MS) {
+                trackFormGoal('form_submit_blocked', form, { reason: 'client_rate_limited' });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -401,6 +424,12 @@ function initTelegramForms() {
                 );
                 return;
             }
+
+            trackFormGoal('form_submit_attempt', form, {
+                has_phone: Boolean(formData.phone),
+                has_problem: Boolean(formData.problem),
+                form_type: formData.type || ''
+            });
 
             try {
                 const response = await sendToTelegram(formData);

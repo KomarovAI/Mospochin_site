@@ -1,0 +1,19 @@
+PASS: node --check analytics.js
+PASS: node --check telegram-form.js
+PASS: node --check server/telegram-api.mjs
+PASS: node --check tools/check-metrics-contract.mjs
+PASS: node --check tools/check-metrics-markup.mjs
+PASS: node --check tools/metrics-local-smoke.mjs
+PASS: node --check tools/audit-metrics-clean.mjs
+PASS: node --check tools/generate-direct-landings.mjs
+PASS: python3 -m py_compile ops/mosanalytics/bin/mosanalytics-events-aggregate.py
+PASS: npm run verify:metrics
+PASS: npm run verify:fast
+PASS: npm run lint
+PASS: npm run predeploy:check
+PASS: npm audit --audit-level=moderate (0 vulnerabilities)
+PASS: HTML page context: 62/62 non-404 root pages
+PASS: CTA metadata: 466 elements with data-cta-id
+PASS: tracked forms: 79
+PASS: rejected log path aligned with TZ: site_event_rejects.jsonl
+PASS: no safe unused assets to remove (safeDelete=0)

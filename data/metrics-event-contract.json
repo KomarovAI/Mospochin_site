@@ -1,0 +1,142 @@
+{
+  "version": "2026-06-20-run6-final-tz-compliance",
+  "purpose": "MosPochin archive-only metrics contract. This file is the local source of truth for required website events, backend log fields, and clean LLM aggregates.",
+  "metrika": {
+    "counter_id": "109138661",
+    "goal_type": "JavaScript event",
+    "goal_id_rule": "Use stable snake_case identifiers without / \\ & # ? = \".",
+    "goals": [
+      "phone_click",
+      "whatsapp_click",
+      "telegram_click",
+      "email_click",
+      "form_open",
+      "form_start",
+      "form_submit_attempt",
+      "form_submit_success",
+      "form_submit_error",
+      "form_validation_error",
+      "form_submit_blocked",
+      "cta_view",
+      "cta_click"
+    ]
+  },
+  "frontend": {
+    "attribution_storage_key": "mospochin_attribution_v1",
+    "session_storage_key": "mospochin_session_v1",
+    "required_runtime_exports": [
+      "window.mospochinGetAttribution",
+      "window.mospochinGetSession",
+      "window.mospochinTrackGoal",
+      "window.MospochinAnalytics"
+    ],
+    "required_guards": [
+      "production_only_host_guard",
+      "blocked_localhost_guard",
+      "automation_hint_guard",
+      "event_isTrusted_guard",
+      "client_rate_limit"
+    ],
+    "event_transport": [
+      "navigator.sendBeacon",
+      "fetch keepalive fallback"
+    ],
+    "cta_view_rule": {
+      "api": "IntersectionObserver",
+      "minimum_visible_ratio": 0.5,
+      "minimum_visible_ms": 900,
+      "dedupe": "once per CTA per page session"
+    },
+    "required_markup_scripts": [
+      "tools/apply-metrics-page-markup.mjs",
+      "tools/check-metrics-markup.mjs"
+    ]
+  },
+  "backend": {
+    "endpoint": "/api/track-event",
+    "accepted_log": "/var/log/mospochin/site_events.jsonl",
+    "rejected_log": "/var/log/mospochin/site_event_rejects.jsonl",
+    "lead_log": "/var/log/mospochin/direct_leads.jsonl",
+    "required_quality_values": [
+      "human_candidate",
+      "suspicious",
+      "bot",
+      "internal",
+      "test"
+    ],
+    "must_hash_fields": [
+      "session_id",
+      "yclid",
+      "ip",
+      "phone",
+      "name"
+    ],
+    "forbidden_plaintext_fields_in_logs": [
+      "phone",
+      "name",
+      "problem",
+      "comment",
+      "ip",
+      "user_agent",
+      "raw_href",
+      "tel_href",
+      "mailto_href",
+      "whatsapp_phone",
+      "telegram_id"
+    ],
+    "contact_target_policy": "Do not write raw tel:, mailto:, WhatsApp phone numbers, Telegram IDs, full IP or full user-agent to analytics logs. Store redacted target hints and hashes only."
+  },
+  "llm_outputs": [
+    "llm_event_funnel_YYYY-MM-DD.csv",
+    "llm_cta_performance_YYYY-MM-DD.csv",
+    "llm_form_friction_YYYY-MM-DD.csv",
+    "llm_traffic_quality_YYYY-MM-DD.csv",
+    "llm_rejected_events_summary_YYYY-MM-DD.csv",
+    "llm_offline_conversions_YYYY-MM-DD.csv",
+    "llm_query_landing_actions_YYYY-MM-DD.csv",
+    "llm_landing_mismatch_YYYY-MM-DD.csv",
+    "llm_events_manifest_YYYY-MM-DD.json"
+  ],
+  "decision_policy": {
+    "primary_quality": "human_candidate",
+    "do_not_treat_as_hard_conversion": [
+      "phone_click",
+      "whatsapp_click",
+      "telegram_click",
+      "email_click",
+      "form_open",
+      "form_start",
+      "cta_view",
+      "cta_click"
+    ],
+    "hard_conversion": [
+      "form_submit_success",
+      "backend_lead_created"
+    ],
+    "qualified_conversion": [
+      "lead_qualified",
+      "call_answered",
+      "whatsapp_dialog_started",
+      "repair_order_created"
+    ]
+  },
+  "page_context": {
+    "context_map": "data/metrics-page-context.json",
+    "required_body_attrs": [
+      "data-page-slug",
+      "data-page-intent",
+      "data-equipment",
+      "data-service",
+      "data-commercial-segment"
+    ],
+    "optional_body_attrs": [
+      "data-brand"
+    ],
+    "required_cta_attrs": [
+      "data-cta-id",
+      "data-cta-group",
+      "data-block"
+    ],
+    "purpose": "Make page intent, equipment, brand and CTA identity explicit in event payloads instead of relying only on URL inference."
+  }
+}

@@ -2,7 +2,7 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: Ремонт пищеварочных котлов Iterma — манометр, ТЭНы, контакторы, рубашка | MosPochin
+- Title: Ремонт котлов Iterma — ТЭНы, манометр, рубашка | MosPochin
 - Description: Ремонт пищеварочных котлов Iterma / Итерма: не греет, давление рубашки, манометр, контакторы, датчики, ТЭНы, плата управления и срочная диагностика.
 - H1: Ремонт пищеварочных котлов Iterma / Итерма
 - Canonical: https://mospochin.ru/remont-pishevarochnyh-kotlov-iterma.html
@@ -28,11 +28,11 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Отправьте модель, симптом и фото шильдика | lead-form | 6.4 KB | 87 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
+| Отправьте модель, симптом и фото шильдика | lead-form | 6.6 KB | 87 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
 | Куда перейти дальше по Iterma / Итерма | pricing | 6.2 KB | 133 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/007-pricing-kuda-pereyti-dal-she-po-iterma-iterma.html |
-| Брендовая страница без тонкого SEO | mobile-contact | 5.2 KB | 111 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/005-mobile-contact-brendovaya-stranica-bez-tonkogo-seo.html |
+| Брендовая страница без тонкого SEO | mobile-contact | 5.4 KB | 111 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/005-mobile-contact-brendovaya-stranica-bez-tonkogo-seo.html |
 | Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 4.5 KB | 163 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
-| Ремонт пищеварочных котлов Iterma / Итерма | mobile-contact | 4.2 KB | 101 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-iterma-.html |
+| Ремонт пищеварочных котлов Iterma / Итерма | mobile-contact | 4.4 KB | 101 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-iterma-.html |
 | Частые вопросы по Iterma / Итерма | faq | 2.8 KB | 84 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/012-faq-chastye-voprosy-po-iterma-iterma.html |
 | Секция 1 | body-preamble | 79 B | 0 | no | src/pages/remont-pishevarochnyh-kotlov-iterma/sections/001-body-preamble-sekciya-1.html |
 | HTML-фрагмент | layout-fragment | 51 B | 0 | no | src/components/parametric/static/layout-fragment-cooking-kettle-brand-repair-bridge-start-8ab502f37162.template.html |

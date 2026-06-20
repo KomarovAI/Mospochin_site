@@ -227,7 +227,7 @@
     </script>
 </head>
 
-<body class="font-sans text-slate-800 antialiased bg-white page-household-branch page-bytovaya-uslugi">
+<body class="font-sans text-slate-800 antialiased bg-white page-household-branch page-bytovaya-uslugi" data-page-slug="bytovaya-uslugi" data-page-intent="hub" data-equipment="site" data-service="repair" data-commercial-segment="b2c_home">
     <noscript><div><img src="https://mc.yandex.ru/watch/109138661" style="position:absolute; left:-9999px;" alt="" decoding="async" fetchpriority="high" loading="eager" width="1" height="1"></div></noscript>
     <!-- Normalized layout shell: bytovaya-uslugi.html -->
 <div id="header-container" class="mt-12"></div>
@@ -279,8 +279,8 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 hero-animate hero-animate-delay-4">
-                    <a href="tel:+79990057172" data-contact-link="phone" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg"><i class="ri-phone-line"></i><span>Позвонить и согласовать выезд</span></a>
-                    <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20бытовой%20техники" data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-whatsapp-line"></i><span>Написать в WhatsApp и показать поломку</span></a>
+                    <a href="tel:+79990057172" data-contact-link="phone" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-lg px-10 py-5 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg" data-cta-id="bytovaya-uslugi_phone_01" data-cta-group="phone_contact" data-block="auto_contact"><i class="ri-phone-line"></i><span>Позвонить и согласовать выезд</span></a>
+                    <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20бытовой%20техники" data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-5 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2" data-cta-id="bytovaya-uslugi_whatsapp_01" data-cta-group="whatsapp_contact" data-block="auto_contact"><i class="ri-whatsapp-line"></i><span>Написать в WhatsApp и показать поломку</span></a>
                 </div>
                 <div class="flex flex-wrap items-center justify-center gap-6 text-white/80 text-sm hero-animate hero-animate-delay-4">
                     <div class="flex items-center gap-2"><i class="ri-checkbox-circle-line text-green-400"></i><span>Цена после осмотра</span></div>
@@ -309,7 +309,7 @@
                     <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0"><i class="ri-customer-service-2-line text-white text-2xl"></i></div>
                     <div><p class="text-white font-bold text-lg">Нужна помощь с техникой?</p><p class="text-white/90 text-sm">Подскажем по вашей технике, поломке и согласуем удобное время визита мастера</p></div>
                 </div>
-                <a href="tel:+79990057172" data-contact-link="phone" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105"><i class="ri-phone-line"></i><span>Позвонить мастеру</span></a>
+                <a href="tel:+79990057172" data-contact-link="phone" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-10 py-4 rounded-full font-bold transition shadow-lg flex items-center gap-2 whitespace-nowrap transform hover:scale-105" data-cta-id="bytovaya-uslugi_phone_02" data-cta-group="phone_contact" data-block="auto_contact"><i class="ri-phone-line"></i><span>Позвонить мастеру</span></a>
             </div>
             <div class="mt-6 hidden" data-slot="routing-hint"></div>
         </div>
@@ -565,7 +565,7 @@
                 <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку на ремонт</h2>
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Опишите поломку и оставьте номер. Мы быстро перезвоним, уточним симптомы и объясним, как пройдёт ремонт у вас дома.</p>
             </div>
-            <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" action="/api/send-telegram" method="post">
+            <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" action="/api/send-telegram" method="post" data-contact-form="true" data-cta-id="bytovaya-uslugi_form_01" data-cta-group="lead_form" data-block="lead_form">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label for="bytovaya-uslugi-name" class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label>
@@ -604,7 +604,7 @@
     </section>
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 p-4 z-50 md:hidden shadow-lg">
         <div class="grid grid-cols-2 gap-3">
-            <a href="tel:+79990057172" data-contact-link="phone" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-phone-line"></i><span>Позвонить</span></a>
+            <a href="tel:+79990057172" data-contact-link="phone" class="btn-click bg-brand-orange hover:bg-brand-orangeHover text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2" data-cta-id="bytovaya-uslugi_phone_03" data-cta-group="phone_contact" data-block="auto_contact"><i class="ri-phone-line"></i><span>Позвонить</span></a>
             <a href="#request" class="btn-click bg-brand-blue hover:bg-slate-900 text-white text-center py-4 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2"><i class="ri-edit-2-line"></i><span>Заявка</span></a>
         </div>
     </div>

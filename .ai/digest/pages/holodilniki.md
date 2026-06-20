@@ -7,7 +7,7 @@
 - H1: Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене
 - Canonical: https://mospochin.ru/holodilniki.html
 - Builder model: src/pages/holodilniki/page.json
-- Sections: 51 (35 local, 2 shared refs, 1 raw)
+- Sections: 51 (36 local, 1 shared refs, 1 raw)
 - Text words inside referenced sections: 2995
 
 ## Component mix
@@ -37,9 +37,9 @@
 | --- | --- | --- | --- | --- | --- |
 | Какие бренды и модели берём в работу | pricing | 18.9 KB | 110 | no | src/pages/holodilniki/sections/028-pricing-kakie-brendy-i-modeli-berem-v-rabotu.html |
 | Что клиент понимает ещё до начала работ | pricing | 13.0 KB | 424 | no | src/pages/holodilniki/sections/038-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
-| Оставьте заявку на звонок по холодильнику | lead-form | 8.2 KB | 143 | no | src/pages/holodilniki/sections/036-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html |
-| Свежие кейсы по ремонту холодильников | contact-cta | 8.1 KB | 105 | no | src/pages/holodilniki/sections/018-contact-cta-svezhie-keysy-po-remontu-holodil-nikov.html |
-| Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене | hero | 6.2 KB | 85 | no | src/pages/holodilniki/sections/005-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html |
+| Свежие кейсы по ремонту холодильников | contact-cta | 8.4 KB | 105 | no | src/pages/holodilniki/sections/018-contact-cta-svezhie-keysy-po-remontu-holodil-nikov.html |
+| Оставьте заявку на звонок по холодильнику | lead-form | 8.3 KB | 143 | no | src/pages/holodilniki/sections/036-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html |
+| Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене | hero | 6.4 KB | 85 | no | src/pages/holodilniki/sections/005-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html |
 | Какие поломки мы чаще всего чиним на дому | pricing | 6.0 KB | 108 | no | src/pages/holodilniki/sections/019-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom.html |
 | Сколько обычно стоит ремонт холодильника | pricing | 5.4 KB | 105 | no | src/pages/holodilniki/sections/020-pricing-skol-ko-obychno-stoit-remont-holodil-nika.html |
 | Отзывы по ремонту холодильников | pricing | 5.4 KB | 138 | no | src/pages/holodilniki/sections/024-pricing-otzyvy-po-remontu-holodil-nikov.html |

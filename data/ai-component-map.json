@@ -890,7 +890,7 @@
         "Всегда проверяй hash/render через check:parameterized-components."
       ],
       "safeEditingNotes": [
-        "Parametric refs: 1137, templates: 79, props files: 14.",
+        "Parametric refs: 1133, templates: 79, props files: 10.",
         "Для текста конкретной страницы меняй content/components/*/*.json; для разметки меняй template.html.",
         "После правки запускай check:parameterized-components и check:site-builder."
       ],
@@ -2089,19 +2089,15 @@
           ]
         },
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html": {
-          "refs": 14,
+          "refs": 10,
           "pages": [
             "parokonvektomat-abat.html",
             "parokonvektomat-convotherm.html",
-            "parokonvektomat-e02-e07-e10.html",
             "parokonvektomat-electrolux.html",
-            "parokonvektomat-kod-oshibki.html",
             "parokonvektomat-lainox.html",
             "parokonvektomat-ne-greet.html",
             "parokonvektomat-net-para.html",
-            "parokonvektomat-rational-e9.html",
             "parokonvektomat-rational.html",
-            "parokonvektomat-unox-af02-af08.html",
             "parokonvektomat-unox.html",
             "parokonvektomaty-promo.html",
             "remont-oborudovaniya-restorana-parokonvektomat.html"
@@ -2490,7 +2486,7 @@
         "Builder output должен оставаться синхронным с root HTML."
       ],
       "safeEditingNotes": [
-        "Сейчас shared refs: 388, shared files: 34.",
+        "Сейчас shared refs: 354, shared files: 30.",
         "После правки src/components/shared/* запускай check:shared-components и check:site-builder."
       ]
     }

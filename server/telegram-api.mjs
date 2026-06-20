@@ -1,6 +1,7 @@
 import fs from 'fs';
 import http from 'http';
 import dns from 'dns';
+import { createHash } from 'crypto';
 import https from 'https';
 import net from 'net';
 import path from 'path';
@@ -31,11 +32,84 @@ const GLOBAL_RATE_LIMIT_MAX_REQUESTS = Number(process.env.GLOBAL_RATE_LIMIT_MAX_
 const MAX_NAME_LENGTH = 120;
 const MAX_TYPE_LENGTH = 200;
 const MAX_CONTEXT_LENGTH = 120;
-const MAX_EXTRA_FIELDS = 16;
+const MAX_EXTRA_FIELDS = 6;
 const MAX_EXTRA_FIELD_LENGTH = 200;
+const LOG_DIR = String(process.env.MOSPOCHIN_LOG_DIR || '/var/log/mospochin').trim();
+const DIRECT_LEAD_LOG_PATH = String(process.env.DIRECT_LEAD_LOG_PATH || path.join(LOG_DIR, 'direct_leads.jsonl')).trim();
+const SITE_EVENTS_LOG_PATH = String(process.env.SITE_EVENTS_LOG_PATH || path.join(LOG_DIR, 'site_events.jsonl')).trim();
+const SITE_EVENTS_REJECTED_LOG_PATH = String(process.env.SITE_EVENTS_REJECTED_LOG_PATH || path.join(LOG_DIR, 'site_event_rejects.jsonl')).trim();
+const ANALYTICS_SALT = String(process.env.MOSPOCHIN_ANALYTICS_SALT || 'mospochin-local-dev-salt').trim();
+const EVENT_RATE_LIMIT_WINDOW_MS = Number(process.env.EVENT_RATE_LIMIT_WINDOW_MS || 30 * 1000);
+const EVENT_RATE_LIMIT_MAX_REQUESTS = Number(process.env.EVENT_RATE_LIMIT_MAX_REQUESTS || 60);
+const MAX_EVENT_EXTRA_FIELDS = 24;
+const MAX_EVENT_VALUE_LENGTH = 260;
+const ALLOWED_ORIGIN_HOSTS = new Set(['mospochin.ru', 'www.mospochin.ru']);
+const ALLOWED_EVENTS = new Set([
+  'phone_click',
+  'whatsapp_click',
+  'telegram_click',
+  'email_click',
+  'form_open',
+  'form_start',
+  'form_submit_attempt',
+  'form_submit_success',
+  'form_submit_error',
+  'form_validation_error',
+  'form_submit_blocked',
+  'cta_view',
+  'cta_click',
+]);
+const SAFE_EVENT_FIELDS = new Set([
+  'event',
+  'goal',
+  'page',
+  'page_path',
+  'page_slug',
+  'page_type',
+  'page_intent',
+  'equipment',
+  'brand',
+  'service',
+  'commercial_segment',
+  'landing_page',
+  'session_landing_path',
+  'session_started_at',
+  'referrer_host',
+  'has_yclid',
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_content',
+  'utm_term',
+  'utm_service',
+  'utm_landing',
+  'utm_geo',
+  'metrika_client_id',
+  'contact_type',
+  'href',
+  'text',
+  'text_length',
+  'cta_id',
+  'cta_group',
+  'cta_type',
+  'contact_goal',
+  'block',
+  'form_id',
+  'form_context',
+  'form_class',
+  'form_type',
+  'has_phone',
+  'has_problem',
+  'field',
+  'reason',
+  'error',
+  'status',
+  'quality',
+]);
 
 const ipRateLimit = new Map();
 const globalRateLimit = new Map();
+const eventRateLimit = new Map();
 const RATE_LIMIT_CLEANUP_INTERVAL_MS = Math.max(1000, Math.min(RATE_LIMIT_WINDOW_MS, GLOBAL_RATE_LIMIT_WINDOW_MS));
 
 function sendJson(res, status, payload, extraHeaders = {}) {
@@ -352,6 +426,154 @@ function sanitizeString(value, maxLength) {
   return String(value || '').trim().replace(/\s+/g, ' ').slice(0, maxLength);
 }
 
+function redactSensitiveText(value, maxLength = MAX_EVENT_VALUE_LENGTH) {
+  return sanitizeString(value, maxLength)
+    .replace(/(?:\+?7|8)?[\s()\-.]*\d{3}[\s()\-.]*\d{3}[\s()\-.]*\d{2}[\s()\-.]*\d{2}/g, '[phone_redacted]')
+    .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, '[email_redacted]');
+}
+
+function sanitizeContactHref(value) {
+  const raw = sanitizeString(value, 500);
+  if (!raw) return '';
+  if (/^tel:/i.test(raw)) return 'tel:[redacted]';
+  if (/^mailto:/i.test(raw)) return 'mailto:[redacted]';
+  try {
+    const parsed = new URL(raw, 'https://mospochin.ru');
+    const host = parsed.hostname.toLowerCase();
+    if (/wa\.me|whatsapp|t\.me|telegram/i.test(host + parsed.pathname)) {
+      return `${parsed.protocol}//${host}${parsed.pathname.replace(/\d{5,}/g, '[id_redacted]')}`.slice(0, 180);
+    }
+    return `${parsed.protocol}//${host}${parsed.pathname}`.slice(0, 180);
+  } catch {
+    return '';
+  }
+}
+
+
+function sanitizeKey(value, maxLength = 50) {
+  return String(value || '')
+    .trim()
+    .replace(/[^a-zA-Z0-9_.:-]/g, '_')
+    .slice(0, maxLength);
+}
+
+function sanitizePath(value, maxLength = 240) {
+  const safe = sanitizeString(value, maxLength);
+  if (!safe) return '';
+  if (/^https?:\/\//i.test(safe)) {
+    try {
+      const parsed = new URL(safe);
+      return `${parsed.pathname}${parsed.search ? '?' + parsed.searchParams.toString().slice(0, 160) : ''}`.slice(0, maxLength);
+    } catch {
+      return '';
+    }
+  }
+  if (!safe.startsWith('/')) return '';
+  return safe;
+}
+
+function sha256(value) {
+  const raw = sanitizeString(value, 1000);
+  if (!raw) return '';
+  return createHash('sha256').update(`${ANALYTICS_SALT}:${raw}`).digest('hex');
+}
+
+function shortHash(value) {
+  const digest = sha256(value);
+  return digest ? digest.slice(0, 24) : '';
+}
+
+function ensureLogDir(filePath) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+}
+
+function appendJsonl(filePath, payload) {
+  ensureLogDir(filePath);
+  fs.appendFileSync(filePath, `${JSON.stringify(payload)}\n`, { encoding: 'utf8', mode: 0o640 });
+}
+
+function parseHeaderHost(value) {
+  const raw = sanitizeString(value, 500);
+  if (!raw) return '';
+  try {
+    return new URL(raw).hostname.toLowerCase();
+  } catch {
+    return '';
+  }
+}
+
+function getOriginHost(req) {
+  return parseHeaderHost(req.headers.origin || req.headers.referer || '');
+}
+
+function isAllowedOrigin(req) {
+  const host = getOriginHost(req);
+  return Boolean(host && ALLOWED_ORIGIN_HOSTS.has(host));
+}
+
+function userAgentFlags(req) {
+  const ua = String(req.headers['user-agent'] || '');
+  const flags = [];
+  if (!ua) flags.push('missing_user_agent');
+  if (/HeadlessChrome|PhantomJS|SlimerJS|Selenium|Playwright|Puppeteer/i.test(ua)) flags.push('headless_or_automation');
+  if (/curl|wget|python-requests|httpclient|scrapy|spider|crawler|bot/i.test(ua)) flags.push('bot_user_agent');
+  return flags;
+}
+
+function safeUserAgentFamily(req) {
+  const ua = String(req.headers['user-agent'] || '');
+  if (/YaBrowser/i.test(ua)) return 'yabrowser';
+  if (/Chrome/i.test(ua) && !/Chromium/i.test(ua)) return 'chrome';
+  if (/Safari/i.test(ua) && !/Chrome/i.test(ua)) return 'safari';
+  if (/Firefox/i.test(ua)) return 'firefox';
+  if (/Edg\//i.test(ua)) return 'edge';
+  if (/bot|crawler|spider/i.test(ua)) return 'bot_like';
+  return ua ? 'other' : 'missing';
+}
+
+function sanitizeSession(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+  const sessionId = sanitizeString(value.session_id, 120);
+  const result = {
+    session_id_hash: shortHash(sessionId),
+    started_at: sanitizeString(value.started_at, 40),
+    last_seen_at: sanitizeString(value.last_seen_at, 40),
+    landing_path: sanitizePath(value.landing_path || value.session_landing_path || '', 240),
+    current_path: sanitizePath(value.current_path || '', 240),
+    page_count: Number.isFinite(Number(value.page_count)) ? Math.max(0, Math.min(100, Number(value.page_count))) : 0,
+  };
+  return Object.fromEntries(Object.entries(result).filter(([, item]) => item !== '' && item !== 0));
+}
+
+function attributionHashes(attribution) {
+  const touch = attribution?.last_touch || attribution?.first_touch || attribution || {};
+  return {
+    yclid_hash: shortHash(touch.yclid || attribution?.yclid || ''),
+    metrika_client_id_hash: shortHash(touch.metrika_client_id || attribution?.metrika_client_id || ''),
+  };
+}
+
+function cleanPublicAttribution(attribution) {
+  const touch = attribution?.last_touch || attribution?.first_touch || attribution || {};
+  return {
+    landing_page: sanitizePath(attribution?.first_landing_page || touch.landing_page || '', 240),
+    referrer_host: sanitizeString(touch.referrer_host || attribution?.last_referrer_host || '', 120),
+    utm_source: sanitizeString(touch.utm_source || attribution?.utm_source || '', 160),
+    utm_medium: sanitizeString(touch.utm_medium || attribution?.utm_medium || '', 160),
+    utm_campaign: sanitizeString(touch.utm_campaign || attribution?.utm_campaign || '', 220),
+    utm_content: sanitizeString(touch.utm_content || attribution?.utm_content || '', 220),
+    utm_term: sanitizeString(touch.utm_term || attribution?.utm_term || '', 220),
+    utm_service: sanitizeString(touch.utm_service || attribution?.utm_service || '', 160),
+    utm_landing: sanitizeString(touch.utm_landing || attribution?.utm_landing || '', 160),
+    utm_geo: sanitizeString(touch.utm_geo || attribution?.utm_geo || '', 120),
+    has_yclid: touch.yclid || attribution?.yclid ? 'yes' : 'no',
+  };
+}
+
+function compactObject(value) {
+  return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== '' && item !== null && item !== undefined));
+}
+
 function sanitizeExtraFields(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
 
@@ -376,9 +598,9 @@ function sanitizeAttribution(value) {
     const allowed = [
       'landing_page',
       'page_url',
-      'page_path',
-      'page_title',
-      'referrer',
+      'current_page',
+      'current_path',
+      'first_landing_page',
       'referrer_host',
       'utm_source',
       'utm_medium',
@@ -387,26 +609,17 @@ function sanitizeAttribution(value) {
       'utm_term',
       'utm_service',
       'utm_landing',
+      'utm_geo',
       'metrika_client_id',
-      'ym_client_id',
       'yclid',
-      'gclid',
       'captured_at',
+      'first_seen_at',
+      'last_seen_at',
+      'updated_at',
     ];
     const result = {};
-    const maxLengthByKey = {
-      page_url: 800,
-      referrer: 800,
-      page_title: 240,
-      utm_campaign: 240,
-      utm_content: 240,
-      utm_term: 240,
-      yclid: 240,
-      gclid: 240,
-    };
-
     for (const key of allowed) {
-      const safeValue = sanitizeString(touch[key], maxLengthByKey[key] || 200);
+      const safeValue = sanitizeString(touch[key], 200);
       if (safeValue) result[key] = safeValue;
     }
     return Object.keys(result).length ? result : null;
@@ -422,41 +635,6 @@ function sanitizeAttribution(value) {
   };
 }
 
-function sanitizePageIntent(value) {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
-  const result = {
-    cluster: sanitizeString(value.cluster, 80),
-    intent: sanitizeString(value.intent, 80),
-    label: sanitizeString(value.label, 120),
-  };
-  return Object.values(result).some(Boolean) ? result : null;
-}
-
-function sanitizeLeadQuality(value) {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
-  const level = sanitizeString(value.level, 20).toUpperCase();
-  const score = Number(value.score || 0);
-  const reasons = Array.isArray(value.reasons)
-    ? value.reasons.slice(0, 8).map((reason) => sanitizeString(reason, 60)).filter(Boolean)
-    : [];
-  if (!level && !Number.isFinite(score) && reasons.length === 0) return null;
-  return {
-    level: ['HIGH', 'MEDIUM', 'LOW'].includes(level) ? level : 'UNKNOWN',
-    score: Number.isFinite(score) ? Math.max(0, Math.min(20, Math.round(score))) : 0,
-    reasons,
-  };
-}
-
-function sanitizeDevice(value) {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
-  const result = {
-    device_type: sanitizeString(value.device_type, 40),
-    viewport: sanitizeString(value.viewport, 40),
-    user_agent: sanitizeString(value.user_agent, 240),
-  };
-  return Object.values(result).some(Boolean) ? result : null;
-}
-
 function getSourceLabel(branch) {
   if (branch === 'household') return 'B2C (Бытовая)';
   if (branch === 'restaurant') return 'B2B (Рестораны)';
@@ -465,89 +643,150 @@ function getSourceLabel(branch) {
 
 function formatExtraFieldLabel(name) {
   const labels = {
-    address: 'Адрес/район',
-    business_type: 'Формат кухни',
     district: 'Район',
-    quantity: 'Количество',
-    equipment_model: 'Модель оборудования',
-    equipment_brand: 'Бренд из мини-диагностики',
-    problem_type: 'Симптом из мини-диагностики',
-    error_code: 'Код ошибки из мини-диагностики',
   };
 
   return labels[name] || name.replace(/[_-]+/g, ' ');
 }
 
 function buildTelegramMessage(submission) {
-  const touch = submission.attribution?.last_touch || null;
-  const firstTouch = submission.attribution?.first_touch || null;
-  const pageIntent = submission.pageIntent || null;
-  const quality = submission.leadQuality || null;
-  const qualityPrefix = quality?.level === 'HIGH' ? '🔥' : quality?.level === 'MEDIUM' ? '🟠' : '⚪';
   const lines = [
-    `${qualityPrefix} Новая заявка MosPochin`,
+    'Новая заявка с сайта MosPochin',
     '',
-    `Качество: ${quality?.level || 'UNKNOWN'}${quality ? ` / score=${quality.score}` : ''}`,
-    quality?.reasons?.length ? `Почему: ${quality.reasons.join(', ')}` : '',
     `Источник: ${getSourceLabel(submission.branch)} (${submission.page})`,
-    pageIntent ? `Интент: ${pageIntent.label || pageIntent.intent || 'не указан'}${pageIntent.cluster ? ` / cluster=${pageIntent.cluster}` : ''}` : '',
-    `Контекст формы: ${submission.formContext || 'не указан'}`,
-    '',
     `Телефон: ${submission.phone}`,
     `Имя: ${submission.name || 'не указано'}`,
-    `Техника/бренд: ${submission.type || 'не указано'}`,
+    `Тип техники: ${submission.type || 'не указан'}`,
     `Проблема: ${submission.problem || 'не указана'}`,
-  ].filter(Boolean);
+  ];
 
-  const extraEntries = Object.entries(submission.extraFields || {});
-  if (extraEntries.length) {
-    lines.push('', 'Детали из формы:');
-    for (const [name, value] of extraEntries) {
-      lines.push(`${formatExtraFieldLabel(name)}: ${value}`);
-    }
+  if (submission.formContext) {
+    lines.push(`Контекст формы: ${submission.formContext}`);
   }
 
-  if (submission.timeToSubmitMs || submission.device) {
-    lines.push('', 'UX-сигналы:');
-    if (submission.timeToSubmitMs) lines.push(`Время до отправки: ${Math.round(submission.timeToSubmitMs / 1000)} сек.`);
-    if (submission.device?.device_type) lines.push(`Устройство: ${submission.device.device_type}`);
-    if (submission.device?.viewport) lines.push(`Viewport: ${submission.device.viewport}`);
-  }
-
-  if (touch) {
-    lines.push('', 'Источник заявки:');
-    if (touch.page_path || touch.landing_page) lines.push(`page: ${touch.page_path || touch.landing_page}`);
-    if (touch.page_url) lines.push(`url: ${touch.page_url}`);
-    if (touch.page_title) lines.push(`title: ${touch.page_title}`);
-    if (touch.referrer) lines.push(`referrer: ${touch.referrer}`);
-    if (touch.referrer_host) lines.push(`referrer_host: ${touch.referrer_host}`);
-
-    lines.push('', 'Рекламная атрибуция:');
+  if (submission.attribution?.last_touch) {
+    const touch = submission.attribution.last_touch;
+    lines.push('');
+    lines.push('Рекламная атрибуция:');
     if (touch.utm_source) lines.push(`utm_source: ${touch.utm_source}`);
     if (touch.utm_medium) lines.push(`utm_medium: ${touch.utm_medium}`);
     if (touch.utm_campaign) lines.push(`utm_campaign: ${touch.utm_campaign}`);
     if (touch.utm_content) lines.push(`utm_content: ${touch.utm_content}`);
     if (touch.utm_term) lines.push(`utm_term: ${touch.utm_term}`);
-    if (touch.utm_service) lines.push(`utm_service: ${touch.utm_service}`);
-    if (touch.utm_landing) lines.push(`utm_landing: ${touch.utm_landing}`);
     if (touch.yclid) lines.push(`yclid: ${touch.yclid}`);
-    if (touch.gclid) lines.push(`gclid: ${touch.gclid}`);
     if (touch.metrika_client_id) lines.push(`metrika_client_id: ${touch.metrika_client_id}`);
-    if (touch.ym_client_id) lines.push(`ym_client_id: ${touch.ym_client_id}`);
+    if (touch.landing_page) lines.push(`Вход: ${touch.landing_page}`);
+    if (touch.referrer_host) lines.push(`Реферер: ${touch.referrer_host}`);
   }
 
-  if (firstTouch && firstTouch !== touch) {
-    lines.push('', 'Первое касание:');
-    if (firstTouch.landing_page || firstTouch.page_path) lines.push(`landing: ${firstTouch.landing_page || firstTouch.page_path}`);
-    if (firstTouch.utm_campaign) lines.push(`first_utm_campaign: ${firstTouch.utm_campaign}`);
-    if (firstTouch.utm_term) lines.push(`first_utm_term: ${firstTouch.utm_term}`);
-    if (firstTouch.yclid) lines.push(`first_yclid: ${firstTouch.yclid}`);
+  for (const [name, value] of Object.entries(submission.extraFields)) {
+    lines.push(`${formatExtraFieldLabel(name)}: ${value}`);
   }
 
   lines.push('');
   lines.push(`Время: ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}`);
 
   return lines.join('\n');
+}
+
+
+function sanitizeSiteEvent(body, req) {
+  if (!body || typeof body !== 'object' || Array.isArray(body)) return { error: 'invalid_payload' };
+  const event = sanitizeString(body.event || body.goal, 80);
+  if (!ALLOWED_EVENTS.has(event)) return { error: 'unknown_event' };
+
+  const originOk = isAllowedOrigin(req);
+  if (!originOk) return { error: 'bad_origin' };
+
+  const now = Date.now();
+  const clientIp = getClientIp(req);
+  const rateKey = `${clientIp}:${event}`;
+  const retryAfter = consumeRateLimit(eventRateLimit, rateKey, EVENT_RATE_LIMIT_MAX_REQUESTS, EVENT_RATE_LIMIT_WINDOW_MS, now);
+  if (retryAfter > 0) return { error: 'rate_limited', retryAfter };
+
+  const botFlags = userAgentFlags(req);
+  const eventData = {};
+  let count = 0;
+  for (const [key, rawValue] of Object.entries(body)) {
+    const safeKey = sanitizeKey(key);
+    if (!SAFE_EVENT_FIELDS.has(safeKey)) continue;
+    if (safeKey === 'event' || safeKey === 'goal') continue;
+    if (count >= MAX_EVENT_EXTRA_FIELDS) break;
+    if (safeKey.includes('url')) continue;
+    const value = safeKey === 'href'
+      ? sanitizeContactHref(rawValue)
+      : redactSensitiveText(rawValue, MAX_EVENT_VALUE_LENGTH);
+    if (!value) continue;
+    eventData[safeKey] = value;
+    count += 1;
+  }
+
+  const attribution = cleanPublicAttribution(body);
+  const sessionId = sanitizeString(body.session_id, 120);
+  const session = compactObject({
+    session_id_hash: shortHash(sessionId),
+    started_at: sanitizeString(body.session_started_at, 40),
+    landing_path: sanitizePath(body.session_landing_path || '', 240),
+  });
+  const hashes = {
+    yclid_hash: shortHash(body.yclid || ''),
+    metrika_client_id_hash: shortHash(body.metrika_client_id || ''),
+    ip_hash: shortHash(clientIp),
+  };
+
+  const pagePath = sanitizePath(body.page_path || body.page || '', 240);
+  if (!pagePath) return { error: 'invalid_page_path' };
+
+  return {
+    event: compactObject({
+      ts: new Date().toISOString(),
+      event,
+      page_path: pagePath,
+      page_slug: sanitizeString(body.page_slug, 120),
+      page_type: sanitizeString(body.page_type, 40),
+      page_intent: sanitizeString(body.page_intent, 80),
+      equipment: sanitizeString(body.equipment, 80),
+      brand: sanitizeString(body.brand, 80),
+      service: sanitizeString(body.service, 80),
+      commercial_segment: sanitizeString(body.commercial_segment, 80),
+      ...attribution,
+      ...eventData,
+      ...session,
+      ...hashes,
+      user_agent_family: safeUserAgentFamily(req),
+      quality: botFlags.length ? 'suspicious' : 'human_candidate',
+      bot_flags: botFlags,
+      is_decision_event: botFlags.length === 0,
+    })
+  };
+}
+
+function buildLeadLogRecord(submission, delivery) {
+  const attribution = submission.attribution || null;
+  const hashes = attributionHashes(attribution);
+  const publicAttribution = cleanPublicAttribution(attribution);
+  const session = submission.session || null;
+
+  return compactObject({
+    ts: new Date().toISOString(),
+    event: 'backend_lead',
+    status: delivery.status,
+    delivery_error: delivery.error || '',
+    telegram_message_id_hash: shortHash(delivery.messageId ? String(delivery.messageId) : ''),
+    lead_id_hash: shortHash(`${submission.phone}:${submission.page}:${Date.now()}`),
+    phone_hash: shortHash(submission.phone),
+    name_hash: shortHash(submission.name),
+    page: submission.page,
+    page_path: publicAttribution.landing_page || '',
+    branch: submission.branch,
+    form_context: submission.formContext,
+    type: submission.type,
+    problem_present: submission.problem ? true : false,
+    extra_field_keys: Object.keys(submission.extraFields || {}).slice(0, MAX_EXTRA_FIELDS),
+    ...publicAttribution,
+    ...hashes,
+    ...(session || {}),
+  });
 }
 
 function validateSubmission(body) {
@@ -560,13 +799,9 @@ function validateSubmission(body) {
   const problem = sanitizeString(body.problem, 500);
   const formContext = sanitizeString(body.formContext, MAX_CONTEXT_LENGTH);
   const website = sanitizeString(body.website, 80);
-  const pageIntent = sanitizePageIntent(body.pageIntent);
-  const leadQuality = sanitizeLeadQuality(body.leadQuality);
-  const rawTimeToSubmitMs = Number(body.timeToSubmitMs || 0);
-  const timeToSubmitMs = Number.isFinite(rawTimeToSubmitMs) ? Math.max(0, Math.min(30 * 60 * 1000, Math.round(rawTimeToSubmitMs))) : 0;
-  const device = sanitizeDevice(body.device);
   const extraFields = sanitizeExtraFields(body.extraFields);
   const attribution = sanitizeAttribution(body.attribution);
+  const session = sanitizeSession(body.session);
   const consent = body.consent === true;
 
   if (website) {
@@ -602,12 +837,9 @@ function validateSubmission(body) {
       type,
       problem,
       formContext,
-      pageIntent,
-      leadQuality,
-      timeToSubmitMs,
-      device,
       extraFields,
       attribution,
+      session,
     }
   };
 }
@@ -619,7 +851,9 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    if (req.method === 'GET' && req.url === '/health') {
+    const pathname = new URL(req.url, 'http://localhost').pathname;
+
+    if (req.method === 'GET' && pathname === '/health') {
       sendJson(res, 200, {
         ok: true,
         service: 'mospochin-telegram-api',
@@ -627,7 +861,35 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    if (req.method === 'POST' && req.url === '/api/send-telegram') {
+    if (req.method === 'POST' && pathname === '/api/track-event') {
+      const contentType = String(req.headers['content-type'] || '').toLowerCase();
+      if (!contentType.startsWith('application/json')) {
+        sendJson(res, 415, { ok: false, error: 'content_type_required' });
+        return;
+      }
+
+      const body = await readJsonBody(req);
+      const validation = sanitizeSiteEvent(body, req);
+      if (validation.error) {
+        appendJsonl(SITE_EVENTS_REJECTED_LOG_PATH, {
+          ts: new Date().toISOString(),
+          error: validation.error,
+          event: sanitizeString(body?.event || body?.goal, 80),
+          page_path: sanitizePath(body?.page_path || body?.page || '', 240),
+          ip_hash: shortHash(getClientIp(req)),
+          user_agent_family: safeUserAgentFamily(req),
+        });
+        const headers = validation.retryAfter ? { 'Retry-After': String(validation.retryAfter) } : {};
+        sendJson(res, validation.error === 'rate_limited' ? 429 : 400, { ok: false, error: validation.error }, headers);
+        return;
+      }
+
+      appendJsonl(SITE_EVENTS_LOG_PATH, validation.event);
+      sendJson(res, 200, { ok: true });
+      return;
+    }
+
+    if (req.method === 'POST' && pathname === '/api/send-telegram') {
       const contentType = String(req.headers['content-type'] || '').toLowerCase();
       if (!contentType.startsWith('application/json')) {
         sendJson(res, 415, { ok: false, error: 'content_type_required' });
@@ -687,6 +949,10 @@ const server = http.createServer(async (req, res) => {
 
       try {
         const messageId = await deliverToTelegram(buildTelegramMessage(validation.submission));
+        appendJsonl(DIRECT_LEAD_LOG_PATH, buildLeadLogRecord(validation.submission, {
+          status: 'delivered',
+          messageId,
+        }));
         sendJson(res, 200, {
           ok: true,
           delivered: true,
@@ -694,6 +960,10 @@ const server = http.createServer(async (req, res) => {
         });
       } catch (error) {
         console.error('Telegram delivery failed:', error.message);
+        appendJsonl(DIRECT_LEAD_LOG_PATH, buildLeadLogRecord(validation.submission, {
+          status: 'telegram_delivery_failed',
+          error: error.message,
+        }));
         sendJson(res, 502, {
           ok: false,
           error: 'telegram_delivery_failed',
@@ -731,6 +1001,7 @@ const rateLimitCleanupTimer = setInterval(() => {
   const now = Date.now();
   pruneRateLimitMap(ipRateLimit, RATE_LIMIT_WINDOW_MS, now);
   pruneRateLimitMap(globalRateLimit, GLOBAL_RATE_LIMIT_WINDOW_MS, now);
+  pruneRateLimitMap(eventRateLimit, EVENT_RATE_LIMIT_WINDOW_MS, now);
 }, RATE_LIMIT_CLEANUP_INTERVAL_MS);
 rateLimitCleanupTimer.unref?.();
 

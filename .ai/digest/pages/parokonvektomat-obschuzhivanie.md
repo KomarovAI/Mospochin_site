@@ -35,12 +35,12 @@
 | --- | --- | --- | --- | --- | --- |
 | Полный комплекс профилактики | section | 11.4 KB | 135 | no | src/pages/parokonvektomat-obschuzhivanie/sections/011-section-polnyy-kompleks-profilaktiki.html |
 | Особенности ТО для каждого бренда | section | 11.0 KB | 146 | no | src/pages/parokonvektomat-obschuzhivanie/sections/017-section-osobennosti-to-dlya-kazhdogo-brenda.html |
-| Техническое обслуживание пароконвектоматов | hero | 10.7 KB | 96 | no | src/pages/parokonvektomat-obschuzhivanie/sections/007-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html |
+| Техническое обслуживание пароконвектоматов | hero | 11.0 KB | 96 | no | src/pages/parokonvektomat-obschuzhivanie/sections/007-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html |
 | Связанные страницы по пароконвектоматам | related-links | 9.6 KB | 187 | no | src/pages/parokonvektomat-obschuzhivanie/sections/025-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Частые вопросы о ТО пароконвектоматов | faq | 8.4 KB | 323 | no | src/pages/parokonvektomat-obschuzhivanie/sections/024-faq-chastye-voprosy-o-to-parokonvektomatov.html |
 | Что говорят клиенты с договором на ТО | section | 5.9 KB | 157 | no | src/pages/parokonvektomat-obschuzhivanie/sections/021-section-chto-govoryat-klienty-s-dogovorom-na-to.html |
 | Почему ТО выгоднее аварийного ремонта | pricing | 5.8 KB | 82 | no | src/pages/parokonvektomat-obschuzhivanie/sections/015-pricing-pochemu-to-vygodnee-avariynogo-remonta.html |
-| Заключите договор на техническое обслуживание | lead-form | 5.3 KB | 47 | no | src/pages/parokonvektomat-obschuzhivanie/sections/029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html |
+| Заключите договор на техническое обслуживание | lead-form | 5.4 KB | 47 | no | src/pages/parokonvektomat-obschuzhivanie/sections/029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html |
 
 
 ## Editable source files

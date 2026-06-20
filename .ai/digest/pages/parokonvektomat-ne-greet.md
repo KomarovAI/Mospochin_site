@@ -7,7 +7,7 @@
 - H1: Пароконвектомат не греет
 - Canonical: https://mospochin.ru/parokonvektomat-ne-greet.html
 - Builder model: src/pages/parokonvektomat-ne-greet/page.json
-- Sections: 75 (12 local, 21 shared refs, 2 raw)
+- Sections: 75 (14 local, 19 shared refs, 2 raw)
 - Text words inside referenced sections: 2610
 
 ## Component mix
@@ -36,11 +36,11 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Почему пароконвектомат не греет | related-links | 14.4 KB | 422 | no | src/pages/parokonvektomat-ne-greet/sections/010-related-links-pochemu-parokonvektomat-ne-greet.html |
-| Пароконвектомат не греет | hero | 11.1 KB | 93 | no | src/pages/parokonvektomat-ne-greet/sections/007-hero-parokonvektomat-ne-greet.html |
+| Пароконвектомат не греет | hero | 11.4 KB | 93 | no | src/pages/parokonvektomat-ne-greet/sections/007-hero-parokonvektomat-ne-greet.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.2 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.3 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 242 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
 

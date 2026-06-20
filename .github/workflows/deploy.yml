@@ -4,77 +4,31 @@ on:
   push:
     branches: [main]
     paths:
-      - "*.html"
+      - "**/*.html"
       - "assets/**"
-      - "content/**"
       - "data/**"
-      - "partials/**"
-      - "src/**"
-      - "tools/**"
-      - "server/**"
       - "deploy/**"
-      - ".deploy/include-files.txt"
+      - "server/**"
+      - "tools/**"
       - "main.js"
       - "telegram-form.js"
-      - "analytics.js"
-      - "partials-injector.js"
       - "styles-combined.css"
       - "sitemap.xml"
-      - "robots.txt"
-      - "favicon.svg"
-      - "og-image.svg"
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
-    inputs:
-      visual_scope:
-        description: 'Visual scope: auto/core/cluster/page/all'
-        required: false
-        default: 'auto'
-        type: choice
-        options:
-          - auto
-          - core
-          - cluster
-          - page
-          - all
-      visual_cluster:
-        description: 'Cluster: pariki/kettles/contacts/direct/all'
-        required: false
-        default: ''
-        type: string
-      visual_page:
-        description: 'Single page for atomic mode, e.g. /pishevarochnye-kotly.html'
-        required: false
-        default: ''
-        type: string
-      visual_depth:
-        description: 'Depth: layout/blocks/deep/atomic'
-        required: false
-        default: 'atomic'
-        type: choice
-        options:
-          - layout
-          - blocks
-          - deep
-          - atomic
+
 concurrency:
   group: vps-deploy
   cancel-in-progress: true
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  MOSPOCHIN_SMOKE_BASE: https://mospochin.ru
 
 jobs:
   deploy:
-    name: Validate and deploy in one worker
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      contents: read
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -83,195 +37,219 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      # Production guardrails only. Do not use npm run lint here:
-      # lint may include AI/dev/generated housekeeping and should not block deploy.
-      # Whitespace/style checks are intentionally not production blockers.
-      - name: Build/check generated HTML parity
-        run: npm run build:site -- --check
-
-      - name: Validate site contracts
-        run: npm run validate:site
-
-      - name: Check conversion runtime
-        run: npm run check:conversion-runtime || echo "::warning::Conversion runtime guard failed; continuing because Validate Site passed for kettle release"
-
-      - name: Generate deploy manifest
-        run: npm run generate:deploy-manifest
-
-      - name: Check deploy runtime manifest
-        run: npm run check:deploy-runtime
-
-      - name: Build public deploy package
-        run: npm run deploy:pack
+      - name: Validate site
+        run: npm run lint
 
       - name: Calculate deploy content hash
         run: npm run hash:deploy-content
 
-      - name: Verify required manifest files
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.DEPLOY_PORT }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Check deployed content hash
+        id: deploy_hash
+        run: |
+          local_hash="$(cat .deploy/content.sha256)"
+          remote_hash="$(ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "cat /var/www/mospochin-shared/current-content.sha256 2>/dev/null || true")"
+          if [ "$local_hash" = "$remote_hash" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "local_hash=${local_hash}" >> "$GITHUB_OUTPUT"
+            echo "remote_hash=${remote_hash}" >> "$GITHUB_OUTPUT"
+            echo "Deploy skipped: published content hash is unchanged."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "local_hash=${local_hash}" >> "$GITHUB_OUTPUT"
+            echo "remote_hash=${remote_hash:-none}" >> "$GITHUB_OUTPUT"
+            echo "Deploy required: content hash changed."
+          fi
+
+      - name: Deploy on VPS
+        if: steps.deploy_hash.outputs.skip != 'true'
+        timeout-minutes: 2
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
+
+      - name: Smoke test public pages
+        timeout-minutes: 4
+        run: |
+          retry_curl() {
+            local label="$1"
+            shift
+            local attempt
+            for attempt in 1 2 3 4 5; do
+              if curl -fsS --max-time 10 "$@" >/dev/null; then
+                return 0
+              fi
+              if [ "$attempt" -lt 5 ]; then
+                echo "Retry ${attempt}/5 failed for ${label}; waiting before next attempt..."
+                sleep $((attempt * 2))
+              fi
+            done
+            echo "Smoke check failed: ${label}"
+            return 1
+          }
+
+          pages=(
+            "/"
+            "/uslugi.html"
+            "/contact.html"
+            "/about.html"
+            "/bytovaya-index.html"
+            "/bytovaya-uslugi.html"
+            "/holodilnoe-oborudovanie.html"
+            "/data/runtime-config.json"
+            "/version.json"
+          )
+          for page in "${pages[@]}"; do
+            retry_curl "HEAD https://mospochin.ru${page}" -I "https://mospochin.ru${page}"
+          done
+          endpoint="$(node -e "const fs=require('fs');const cfg=JSON.parse(fs.readFileSync('data/runtime-config.json','utf8'));if(!cfg.telegramFormEndpoint)process.exit(1);process.stdout.write(cfg.telegramFormEndpoint)")"
+          retry_curl "POST https://mospochin.ru${endpoint}" -X POST \
+            -H 'Content-Type: application/json' \
+            -d '{"name":"GitHub Actions Smoke","phone":"+79991234567","type":"Deploy smoke test","problem":"Автоматическая проверка после выкладки","page":"uslugi.html","branch":"restaurant","formContext":"github-actions-deploy","extraFields":{},"website":"","consent":true}' \
+            "https://mospochin.ru${endpoint}"
+          mapfile -t smoke_assets < <(grep -E '^(assets/.*|styles.*\.css|main\.js|telegram-form\.js)$' .deploy/include-files.txt | head -20)
+          for asset in "${smoke_assets[@]}"; do
+            retry_curl "HEAD https://mospochin.ru/${asset}" -I "https://mospochin.ru/${asset}"
+          done
+
+      - name: Verify cache and compression contract
+        timeout-minutes: 2
         run: |
           set -euo pipefail
+
+          require_header() {
+            local headers="$1"
+            local pattern="$2"
+            local label="$3"
+            if ! printf '%s\n' "$headers" | grep -Eiq "$pattern"; then
+              echo "Missing expected header pattern for ${label}: ${pattern}"
+              echo "Headers were:"
+              printf '%s\n' "$headers"
+              return 1
+            fi
+          }
+
+          check_html_contract() {
+            local path="$1"
+            local headers
+            headers="$(curl -fsS -I "https://mospochin.ru${path}")"
+            require_header "$headers" '^cache-control:.*no-cache' "${path} html no-cache"
+            require_header "$headers" '^cache-control:.*no-store' "${path} html no-store"
+            require_header "$headers" '^vary:.*accept-encoding' "${path} html vary"
+          }
+
+          check_asset_contract() {
+            local path="$1"
+            local expect_encoding="$2"
+            local headers
+            headers="$(curl -fsS -I --compressed "https://mospochin.ru${path}")"
+            require_header "$headers" '^cache-control:.*max-age=' "${path} asset max-age"
+            require_header "$headers" '^cache-control:.*immutable' "${path} asset immutable"
+            if [ "$expect_encoding" = "compressed" ]; then
+              require_header "$headers" '^vary:.*accept-encoding' "${path} asset vary"
+              require_header "$headers" '^content-encoding:\s*(gzip|br)' "${path} static compression"
+            fi
+          }
+
+          check_image_fallback_contract() {
+            local path="$1"
+            local headers
+            headers="$(curl -fsS -I -H 'Accept: image/jpeg,image/*,*/*;q=0.8' "https://mospochin.ru${path}")"
+            require_header "$headers" '^content-type:\s*image/jpeg' "${path} jpeg fallback content-type"
+            require_header "$headers" '^cache-control:.*immutable' "${path} jpeg fallback immutable"
+            require_header "$headers" '^vary:.*accept' "${path} jpeg fallback vary"
+          }
+
+          check_webp_contract() {
+            local path="$1"
+            local headers
+            headers="$(curl -fsS -I -H 'Accept: image/webp,image/*,*/*;q=0.8' "https://mospochin.ru${path}")"
+            require_header "$headers" '^content-type:\s*image/webp' "${path} webp content-type"
+            require_header "$headers" '^cache-control:.*immutable' "${path} webp immutable"
+            require_header "$headers" '^vary:.*accept' "${path} webp vary"
+          }
+
+
+          check_security_headers() {
+            local path="$1"
+            local headers
+            headers="$(curl -fsS -I "https://mospochin.ru${path}")"
+            require_header "$headers" '^content-security-policy-report-only:.*frame-ancestors' "${path} csp report-only frame-ancestors"
+            require_header "$headers" '^strict-transport-security:\s*max-age=31536000' "${path} hsts"
+            require_header "$headers" '^referrer-policy:\s*strict-origin-when-cross-origin' "${path} referrer policy"
+            require_header "$headers" '^permissions-policy:.*geolocation=\(\)' "${path} permissions policy"
+          }
+
+          check_manifest_webp_assets() {
+            local sidecar
+            local headers
+            while IFS= read -r sidecar; do
+              headers="$(curl -fsS -I "https://mospochin.ru/${sidecar}")"
+              require_header "$headers" '^content-type:\s*image/webp' "${sidecar} direct webp content-type"
+              require_header "$headers" '^cache-control:.*immutable' "${sidecar} direct webp immutable"
+            done < <(grep -E '\.(jpg|jpeg|png)\.webp$' .deploy/include-files.txt)
+          }
+
+          check_html_contract "/"
+          check_security_headers "/"
+          check_html_contract "/uslugi.html"
+          check_asset_contract "/styles-combined.css" "compressed"
+          check_asset_contract "/main.js" "compressed"
+          check_asset_contract "/assets/images/hero-restaurant.jpg" "none"
+          check_image_fallback_contract "/assets/images/hero-restaurant.jpg"
+          check_manifest_webp_assets
+
+      - name: Verify static compression sidecars
+        timeout-minutes: 2
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "set -e; \
+             if [ '${{ steps.deploy_hash.outputs.skip }}' = 'true' ] && [ ! -s /var/www/mospochin-public-current/styles-combined.css.gz ]; then \
+               echo 'Static gzip sidecars are not present on a skipped deploy; skipping first-activation check.'; \
+               exit 0; \
+             fi; \
+             test -s /var/www/mospochin-public-current/styles-combined.css.gz; \
+             test -s /var/www/mospochin-public-current/main.js.gz; \
+             gzip -cd /var/www/mospochin-public-current/styles-combined.css.gz | cmp -s - /var/www/mospochin-public-current/styles-combined.css; \
+             gzip -cd /var/www/mospochin-public-current/main.js.gz | cmp -s - /var/www/mospochin-public-current/main.js; \
+             if command -v brotli >/dev/null 2>&1 && [ -s /var/www/mospochin-public-current/styles-combined.css.br ]; then \
+               brotli -cd /var/www/mospochin-public-current/styles-combined.css.br | cmp -s - /var/www/mospochin-public-current/styles-combined.css; \
+             fi; \
+             grep -Eq '^[[:space:]]*gzip_static[[:space:]]+on;' /etc/nginx/conf.d/mospochin-static-compression.conf"
+
+      - name: Verify backend deploy artifacts are present in manifest
+        run: |
           required=(
-            "index.html"
-            "parokonvektomaty.html"
-            "analytics.js"
-            "telegram-form.js"
-            "main.js"
-            "styles-combined.css"
             "server/telegram-api.mjs"
-            "data/runtime-config.json"
-            "robots.txt"
-            "sitemap.xml"
+            "deploy/post-activate.sh"
+            "tools/generate-public-file-list.mjs"
+            "deploy/systemd/mospochin-telegram-api.service"
+            "deploy/env/telegram.env.example"
           )
           for path in "${required[@]}"; do
             grep -Fx "$path" .deploy/include-files.txt >/dev/null
           done
-          echo "Manifest required files OK"
-
-      - name: Setup SSH
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
-        run: |
-
-          set -euo pipefail
-
-
-          : "${{ secrets.DEPLOY_SSH_KEY }}"
-
-          : "${{ secrets.DEPLOY_HOST }}"
-
-          : "${{ secrets.DEPLOY_PORT }}"
-
-          : "${{ secrets.DEPLOY_USER }}"
-
-
-          mkdir -p ~/.ssh
-
-          chmod 700 ~/.ssh
-
-
-          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
-
-          chmod 600 ~/.ssh/deploy_key
-
-
-          : > ~/.ssh/known_hosts
-
-          chmod 600 ~/.ssh/known_hosts
-
-
-          echo "Scanning SSH host key with retries..."
-
-          for attempt in 1 2 3 4 5; do
-
-            if ssh-keyscan -T 15 -p "${{ secrets.DEPLOY_PORT }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts 2>/tmp/ssh-keyscan.err; then
-
-              if [ -s ~/.ssh/known_hosts ]; then
-
-                echo "SSH host key scan OK"
-
-                break
-
-              fi
-
-            fi
-
-            echo "::warning::ssh-keyscan attempt $attempt failed; retrying"
-
-            cat /tmp/ssh-keyscan.err || true
-
-            sleep 3
-
-          done
-
-
-          if [ ! -s ~/.ssh/known_hosts ]; then
-
-            echo "::warning::ssh-keyscan failed; using StrictHostKeyChecking=accept-new fallback"
-
-          fi
-
-
-
-      - name: Check deployed content hash
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
-        id: deploy_hash
-        run: |
-          set -euo pipefail
-          local_hash="$(cat .deploy/content.sha256)"
-          remote_hash="$(ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" \
-            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=10 \
-            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "cat /var/www/mospochin-shared/current-content.sha256 2>/dev/null || true")"
-
-          if [ "$local_hash" = "$remote_hash" ]; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Deploy skipped: published content hash is unchanged."
-          else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Deploy required: content hash changed."
-          fi
-          echo "local_hash=${local_hash}" >> "$GITHUB_OUTPUT"
-          echo "remote_hash=${remote_hash:-none}" >> "$GITHUB_OUTPUT"
-
-      - name: Deploy on VPS
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
-        timeout-minutes: 4
-        run: |
-          set -euo pipefail
-          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" \
-            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=10 \
-            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "sudo /usr/local/sbin/mospochin-deploy-git '${GITHUB_SHA}' '${GITHUB_RUN_ID}' '${GITHUB_RUN_NUMBER}' '$(cat .deploy/content.sha256)'"
-
-      - name: Verify public version metadata
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
-        timeout-minutes: 2
-        env:
-          DEPLOY_SKIPPED: ${{ steps.deploy_hash.outputs.skip }}
-        run: |
-          set -euo pipefail
-          curl -fsS --max-time 12 https://mospochin.ru/version.json -o /tmp/mospochin-version.json
-          python3 - <<'PY'
-          import json, os, sys
-          data = json.load(open('/tmp/mospochin-version.json', encoding='utf-8'))
-          commit = data.get('commit', '')
-          run_id = data.get('run_id', '')
-          deployed_at = data.get('deployed_at', '')
-          if not commit or not run_id or not deployed_at:
-              print('Invalid version.json:', data)
-              sys.exit(1)
-          expected = os.environ.get('GITHUB_SHA', '')
-          skip = os.environ.get('DEPLOY_SKIPPED', '')
-          if skip != 'true' and expected and commit != expected:
-              print(f'Public commit mismatch: expected {expected}, got {commit}')
-              sys.exit(1)
-          print('Public deploy metadata OK:', commit, run_id, deployed_at)
-          PY
-
-      - name: Smoke production conversion runtime
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
-        timeout-minutes: 4
-        run: npm run smoke:production-conversion -- --submit-test-lead || echo "::warning::Production conversion smoke failed after deploy; deployment already completed"
-
-      - name: Verify VPS health basics
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.visual_scope != 'page' || inputs.visual_page == '' || inputs.visual_depth != 'atomic' }}
-        timeout-minutes: 3
-        run: |
-          set -euo pipefail
-          ssh -i ~/.ssh/deploy_key -p "${{ secrets.DEPLOY_PORT }}" \
-            -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=10 \
-            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "set -e; systemctl is-active nginx >/dev/null; test -L /var/www/mospochin-current; test -L /var/www/mospochin-public-current; systemctl is-active mospochin-telegram-api >/dev/null"
 
       - name: Write deploy summary
         if: always()
         run: |
           {
-            echo "## MosPochin deploy"
+            echo "## Mospochin deploy"
             echo
             echo "| Field | Value |"
             echo "| --- | --- |"
@@ -280,130 +258,6 @@ jobs:
             echo "| Deploy skipped | \`${{ steps.deploy_hash.outputs.skip || 'unknown' }}\` |"
             echo "| Local content hash | \`${{ steps.deploy_hash.outputs.local_hash || 'unknown' }}\` |"
             echo "| Remote content hash | \`${{ steps.deploy_hash.outputs.remote_hash || 'unknown' }}\` |"
-            echo "| Manifest files | \`$(wc -l < .deploy/include-files.txt 2>/dev/null || echo unknown)\` |"
+            echo "| Manifest files | \`$(wc -l < .deploy/include-files.txt)\` |"
+            echo "| Manifest assets | \`$(grep -c '^assets/' .deploy/include-files.txt || true)\` |"
           } >> "$GITHUB_STEP_SUMMARY"
-
-  visual-plan:
-    name: Visual shard plan
-    needs: deploy
-    if: ${{ always() && needs.deploy.result == 'success' }}
-    runs-on: ubuntu-latest
-    outputs:
-      enabled: ${{ steps.plan.outputs.enabled }}
-      matrix: ${{ steps.plan.outputs.matrix }}
-      worker_count: ${{ steps.plan.outputs.worker_count }}
-      mode: ${{ steps.plan.outputs.mode }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build adaptive visual shard plan
-        id: plan
-        env:
-          MOSPOCHIN_VISUAL_SCOPE: ${{ inputs.visual_scope || 'auto' }}
-          MOSPOCHIN_VISUAL_CLUSTER: ${{ inputs.visual_cluster || '' }}
-          MOSPOCHIN_VISUAL_PAGE: ${{ inputs.visual_page || '' }}
-          MOSPOCHIN_VISUAL_DEPTH: ${{ inputs.visual_depth || 'layout' }}
-        run: node tools/visual-shard-plan.mjs
-
-      - name: Upload visual plan debug
-        uses: actions/upload-artifact@v4
-        with:
-          name: mospochin-visual-plan-${{ github.run_id }}
-          path: reports/visual-debug/
-          if-no-files-found: warn
-          retention-days: 1
-
-  visual-shard:
-    name: Visual shard ${{ matrix.shard }} of ${{ matrix.total }}
-    needs: visual-plan
-    if: ${{ always() && needs.visual-plan.outputs.enabled == 'true' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 6
-    strategy:
-      fail-fast: false
-      matrix: ${{ fromJSON(needs.visual-plan.outputs.matrix) }}
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit --fund=false
-
-      - name: Run visual shard
-        timeout-minutes: 4
-        continue-on-error: true
-        env:
-          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
-          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
-          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
-          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
-          MOSPOCHIN_VISUAL_SHARD: ${{ matrix.shard }}
-          MOSPOCHIN_VISUAL_TASKS: ${{ matrix.tasks }}
-        run: node tools/visual-shard-runner.mjs
-
-      - name: Upload visual shard
-        uses: actions/upload-artifact@v4
-        with:
-          name: mospochin-visual-shard-${{ github.run_id }}-${{ matrix.shard }}
-          path: reports/live-visual-shards/shard-${{ matrix.shard }}/
-          if-no-files-found: warn
-          retention-days: 1
-
-  visual-merge:
-    name: Merge visual shards
-    needs:
-      - visual-plan
-      - visual-shard
-    if: ${{ always() && needs.visual-plan.outputs.enabled == 'true' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit --fund=false
-
-      - name: Download visual shards
-        uses: actions/download-artifact@v4
-        with:
-          pattern: mospochin-visual-shard-${{ github.run_id }}-*
-          path: reports/visual-shards-downloaded
-
-      - name: Merge shard outputs
-        run: npm run visual:shard-merge
-
-      - name: Build visual contact sheets
-        timeout-minutes: 2
-        continue-on-error: true
-        env:
-          MOSPOCHIN_SCREENSHOT_BASE_URL: https://mospochin.ru
-          MOSPOCHIN_SCREENSHOT_COMMIT: ${{ github.sha }}
-          MOSPOCHIN_SCREENSHOT_RUN_ID: ${{ github.run_id }}
-          MOSPOCHIN_SCREENSHOT_RUN_NUMBER: ${{ github.run_number }}
-        run: npm run visual:contact-sheets
-
-      - name: Upload final live visual pack
-        uses: actions/upload-artifact@v4
-        with:
-          name: mospochin-live-visual-pack-${{ github.sha }}-${{ github.run_id }}
-          path: reports/live-visual-pack/
-          if-no-files-found: warn
-          retention-days: 5

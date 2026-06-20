@@ -1,0 +1,576 @@
+{
+  "version": "2026-06-20-run4",
+  "purpose": "Archive-only page and CTA context map for clean MosPochin metrics. Generated from root HTML filenames and used by tools/apply-metrics-page-markup.mjs.",
+  "required_body_attrs": [
+    "data-page-slug",
+    "data-page-intent",
+    "data-equipment",
+    "data-service",
+    "data-commercial-segment"
+  ],
+  "cta_required_attrs": [
+    "data-cta-id",
+    "data-cta-group",
+    "data-block"
+  ],
+  "pages": {
+    "about.html": {
+      "page_slug": "about",
+      "page_intent": "hub",
+      "equipment": "site",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "bytovaya-about.html": {
+      "page_slug": "bytovaya-about",
+      "page_intent": "hub",
+      "equipment": "site",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "bytovaya-contact.html": {
+      "page_slug": "bytovaya-contact",
+      "page_intent": "hub",
+      "equipment": "site",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "bytovaya-index.html": {
+      "page_slug": "bytovaya-index",
+      "page_intent": "hub",
+      "equipment": "site",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "bytovaya-uslugi.html": {
+      "page_slug": "bytovaya-uslugi",
+      "page_intent": "hub",
+      "equipment": "site",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "contact.html": {
+      "page_slug": "contact",
+      "page_intent": "hub",
+      "equipment": "site",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "grili-mangaly.html": {
+      "page_slug": "grili-mangaly",
+      "page_intent": "service",
+      "equipment": "plity_pechi",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "holodilniki.html": {
+      "page_slug": "holodilniki",
+      "page_intent": "service",
+      "equipment": "holodilnoe_oborudovanie",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "holodilnoe-oborudovanie.html": {
+      "page_slug": "holodilnoe-oborudovanie",
+      "page_intent": "service",
+      "equipment": "holodilnoe_oborudovanie",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "ice-machines.html": {
+      "page_slug": "ice-machines",
+      "page_intent": "service",
+      "equipment": "holodilnoe_oborudovanie",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "index.html": {
+      "page_slug": "index",
+      "page_intent": "hub",
+      "equipment": "site",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "kompyutery.html": {
+      "page_slug": "kompyutery",
+      "page_intent": "service",
+      "equipment": "electronics",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "microwaves.html": {
+      "page_slug": "microwaves",
+      "page_intent": "service",
+      "equipment": "svch",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-abat.html": {
+      "page_slug": "parokonvektomat-abat",
+      "page_intent": "brand",
+      "equipment": "parokonvektomat",
+      "brand": "abat",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-convotherm.html": {
+      "page_slug": "parokonvektomat-convotherm",
+      "page_intent": "brand",
+      "equipment": "parokonvektomat",
+      "brand": "convotherm",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-e02-e07-e10.html": {
+      "page_slug": "parokonvektomat-e02-e07-e10",
+      "page_intent": "error_code",
+      "equipment": "parokonvektomat",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-electrolux.html": {
+      "page_slug": "parokonvektomat-electrolux",
+      "page_intent": "brand",
+      "equipment": "parokonvektomat",
+      "brand": "electrolux",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-kod-oshibki.html": {
+      "page_slug": "parokonvektomat-kod-oshibki",
+      "page_intent": "error_code",
+      "equipment": "parokonvektomat",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-lainox.html": {
+      "page_slug": "parokonvektomat-lainox",
+      "page_intent": "brand",
+      "equipment": "parokonvektomat",
+      "brand": "lainox",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-ne-greet.html": {
+      "page_slug": "parokonvektomat-ne-greet",
+      "page_intent": "symptom",
+      "equipment": "parokonvektomat",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-net-para.html": {
+      "page_slug": "parokonvektomat-net-para",
+      "page_intent": "symptom",
+      "equipment": "parokonvektomat",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-obschuzhivanie.html": {
+      "page_slug": "parokonvektomat-obschuzhivanie",
+      "page_intent": "service",
+      "equipment": "parokonvektomat",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-rational-e9.html": {
+      "page_slug": "parokonvektomat-rational-e9",
+      "page_intent": "error_code",
+      "equipment": "parokonvektomat",
+      "brand": "rational",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-rational.html": {
+      "page_slug": "parokonvektomat-rational",
+      "page_intent": "brand",
+      "equipment": "parokonvektomat",
+      "brand": "rational",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-unox-af02-af08.html": {
+      "page_slug": "parokonvektomat-unox-af02-af08",
+      "page_intent": "error_code",
+      "equipment": "parokonvektomat",
+      "brand": "unox",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomat-unox.html": {
+      "page_slug": "parokonvektomat-unox",
+      "page_intent": "brand",
+      "equipment": "parokonvektomat",
+      "brand": "unox",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomaty-promo.html": {
+      "page_slug": "parokonvektomaty-promo",
+      "page_intent": "urgent",
+      "equipment": "parokonvektomat",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "parokonvektomaty.html": {
+      "page_slug": "parokonvektomaty",
+      "page_intent": "hub",
+      "equipment": "parokonvektomat",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnye-kotly.html": {
+      "page_slug": "pishevarochnye-kotly",
+      "page_intent": "hub",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-abat-e01.html": {
+      "page_slug": "pishevarochnyj-kotel-abat-e01",
+      "page_intent": "error_code",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "abat",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-abat-e02.html": {
+      "page_slug": "pishevarochnyj-kotel-abat-e02",
+      "page_intent": "error_code",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "abat",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-abat-e04.html": {
+      "page_slug": "pishevarochnyj-kotel-abat-e04",
+      "page_intent": "error_code",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "abat",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-abat-e17.html": {
+      "page_slug": "pishevarochnyj-kotel-abat-e17",
+      "page_intent": "error_code",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "abat",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-abat-h20.html": {
+      "page_slug": "pishevarochnyj-kotel-abat-h20",
+      "page_intent": "error_code",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "abat",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-abat-kpem.html": {
+      "page_slug": "pishevarochnyj-kotel-abat-kpem",
+      "page_intent": "brand",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "abat",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-datchik-temperatury.html": {
+      "page_slug": "pishevarochnyj-kotel-datchik-temperatury",
+      "page_intent": "service",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-dolgo-greet.html": {
+      "page_slug": "pishevarochnyj-kotel-dolgo-greet",
+      "page_intent": "symptom",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-kod-oshibki.html": {
+      "page_slug": "pishevarochnyj-kotel-kod-oshibki",
+      "page_intent": "error_code",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-manometr.html": {
+      "page_slug": "pishevarochnyj-kotel-manometr",
+      "page_intent": "service",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-ne-greet.html": {
+      "page_slug": "pishevarochnyj-kotel-ne-greet",
+      "page_intent": "symptom",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-ne-vklyuchaetsya.html": {
+      "page_slug": "pishevarochnyj-kotel-ne-vklyuchaetsya",
+      "page_intent": "symptom",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-parovodyanaya-rubashka.html": {
+      "page_slug": "pishevarochnyj-kotel-parovodyanaya-rubashka",
+      "page_intent": "service",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-plata-upravleniya.html": {
+      "page_slug": "pishevarochnyj-kotel-plata-upravleniya",
+      "page_intent": "service",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-remont-slivnogo-krana.html": {
+      "page_slug": "pishevarochnyj-kotel-remont-slivnogo-krana",
+      "page_intent": "service",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-suhoy-hod.html": {
+      "page_slug": "pishevarochnyj-kotel-suhoy-hod",
+      "page_intent": "symptom",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-techet.html": {
+      "page_slug": "pishevarochnyj-kotel-techet",
+      "page_intent": "symptom",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-vybivaet-avtomat.html": {
+      "page_slug": "pishevarochnyj-kotel-vybivaet-avtomat",
+      "page_intent": "symptom",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "pishevarochnyj-kotel-zamena-tena.html": {
+      "page_slug": "pishevarochnyj-kotel-zamena-tena",
+      "page_intent": "service",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "plity-pechi.html": {
+      "page_slug": "plity-pechi",
+      "page_intent": "service",
+      "equipment": "plity_pechi",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "plity.html": {
+      "page_slug": "plity",
+      "page_intent": "service",
+      "equipment": "plity_pechi",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "posudomoechnye-mashiny.html": {
+      "page_slug": "posudomoechnye-mashiny",
+      "page_intent": "service",
+      "equipment": "posudomoechnaya_mashina",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "posudomoyki.html": {
+      "page_slug": "posudomoyki",
+      "page_intent": "service",
+      "equipment": "posudomoechnaya_mashina",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "remont-oborudovaniya-restorana-parokonvektomat.html": {
+      "page_slug": "remont-oborudovaniya-restorana-parokonvektomat",
+      "page_intent": "b2b",
+      "equipment": "parokonvektomat",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "remont-pishevarochnyh-kotlov-abat.html": {
+      "page_slug": "remont-pishevarochnyh-kotlov-abat",
+      "page_intent": "brand",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "abat",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "remont-pishevarochnyh-kotlov-apach.html": {
+      "page_slug": "remont-pishevarochnyh-kotlov-apach",
+      "page_intent": "brand",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "apach",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "remont-pishevarochnyh-kotlov-atesy.html": {
+      "page_slug": "remont-pishevarochnyh-kotlov-atesy",
+      "page_intent": "brand",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "atesy",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "remont-pishevarochnyh-kotlov-iterma.html": {
+      "page_slug": "remont-pishevarochnyh-kotlov-iterma",
+      "page_intent": "brand",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "iterma",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "remont-pishevarochnyh-kotlov-kpem.html": {
+      "page_slug": "remont-pishevarochnyh-kotlov-kpem",
+      "page_intent": "brand",
+      "equipment": "pishevarochnyj_kotel",
+      "brand": "kpem",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "routery.html": {
+      "page_slug": "routery",
+      "page_intent": "service",
+      "equipment": "electronics",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "stiralnye-mashiny.html": {
+      "page_slug": "stiralnye-mashiny",
+      "page_intent": "service",
+      "equipment": "stiralnaya_mashina",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    },
+    "uslugi.html": {
+      "page_slug": "uslugi",
+      "page_intent": "hub",
+      "equipment": "site",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2b_kitchen",
+      "source": "run4_archive_only_inferred"
+    },
+    "water-heaters.html": {
+      "page_slug": "water-heaters",
+      "page_intent": "service",
+      "equipment": "vodonagrevatel",
+      "brand": "",
+      "service": "repair",
+      "commercial_segment": "b2c_home",
+      "source": "run4_archive_only_inferred"
+    }
+  }
+}
