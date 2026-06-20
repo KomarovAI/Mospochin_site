@@ -24,6 +24,7 @@ jobs:
   targeted-mobile:
     name: Targeted mobile deep screenshots
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,6 +33,7 @@ jobs:
       - run: npm ci
       - env:
           VISUAL_TARGET_PAGES: ${{ inputs.pages }}
+        timeout-minutes: 10
         run: node tools/visual-targeted-mobile-deep.mjs
       - uses: actions/upload-artifact@v4
         with:

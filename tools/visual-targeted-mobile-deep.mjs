@@ -117,13 +117,38 @@ for (const pagePath of pages) {
       caret: 'hide'
     });
 
+    // Avoid heavy fullPage screenshot in targeted mode: it can hang on long pages.
+    // Instead capture top/middle/bottom viewport evidence.
     await page.screenshot({
-      path: path.join(dir, '02_full.png'),
-      fullPage: true,
-      timeout: 90000,
+      path: path.join(dir, '02_top.png'),
+      fullPage: false,
+      timeout: 45000,
       animations: 'disabled',
       caret: 'hide'
     });
+
+    await page.evaluate(() => window.scrollTo(0, Math.floor(document.body.scrollHeight * 0.45))).catch(() => {});
+    await page.waitForTimeout(500);
+    await page.screenshot({
+      path: path.join(dir, '02_mid.png'),
+      fullPage: false,
+      timeout: 45000,
+      animations: 'disabled',
+      caret: 'hide'
+    });
+
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)).catch(() => {});
+    await page.waitForTimeout(500);
+    await page.screenshot({
+      path: path.join(dir, '02_bottom.png'),
+      fullPage: false,
+      timeout: 45000,
+      animations: 'disabled',
+      caret: 'hide'
+    });
+
+    await page.evaluate(() => window.scrollTo(0, 0)).catch(() => {});
+    await page.waitForTimeout(500);
 
     await safeShot(page.locator('body > div').first(), path.join(dir, '03_topbar_or_first_wrapper.png'));
     await safeShot(page.locator('header, nav, #header-container, [data-block*="header"], [class*="header"], [class*="nav"]').first(), path.join(dir, '04_header.png'));
@@ -196,6 +221,9 @@ const sections = rows.map(r => {
 
 ![viewport](pages/${key}/01_viewport.png)
 ![header](pages/${key}/04_header.png)
+![top](pages/${key}/02_top.png)
+![mid](pages/${key}/02_mid.png)
+![bottom](pages/${key}/02_bottom.png)
 ![hero](pages/${key}/05_hero.png)
 ![switcher](pages/${key}/06_branch_switcher.png)
 ![form](pages/${key}/07_form.png)
