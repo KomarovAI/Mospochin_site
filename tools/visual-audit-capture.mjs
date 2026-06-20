@@ -50,17 +50,49 @@ for (const task of bucket.tasks) {
     deviceScaleFactor: 1,
     userAgent: `MosPochinVisualAudit/1.0 ${task.viewport}`,
   });
+  await context.route('**/*', async route => {
+    const type = route.request().resourceType();
+    if (type === 'font' || type === 'media') {
+      return route.abort().catch(() => {});
+    }
+    return route.continue().catch(() => {});
+  });
+
   const page = await context.newPage();
 
   let status = null;
   let error = '';
   try {
-    const response = await page.goto(task.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    const response = await page.goto(task.url, { waitUntil: 'commit', timeout: 45000 });
     status = response?.status() ?? null;
-    await page.waitForTimeout(1200);
+    await page.waitForLoadState('domcontentloaded', { timeout: 15000 }).catch(() => {});
+    await page.waitForTimeout(1800);
+    await page.addStyleTag({
+      content: `
+        *, *::before, *::after {
+          animation-duration: 0s !important;
+          animation-delay: 0s !important;
+          transition-duration: 0s !important;
+          scroll-behavior: auto !important;
+        }
+      `
+    }).catch(() => {});
+    await page.evaluate(() => window.stop()).catch(() => {});
 
-    await page.screenshot({ path: path.join(pageDir, 'viewport.png'), fullPage: false });
-    await page.screenshot({ path: path.join(pageDir, 'full.png'), fullPage: true });
+    await page.screenshot({
+      path: path.join(pageDir, 'viewport.png'),
+      fullPage: false,
+      timeout: 90000,
+      animations: 'disabled',
+      caret: 'hide'
+    });
+    await page.screenshot({
+      path: path.join(pageDir, 'full.png'),
+      fullPage: true,
+      timeout: 90000,
+      animations: 'disabled',
+      caret: 'hide'
+    });
 
     const audit = await page.evaluate(() => {
       const links = [...document.querySelectorAll('a[href]')].map(a => ({
