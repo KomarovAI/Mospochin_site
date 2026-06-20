@@ -1,0 +1,110 @@
+name: Visual Audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'Scope: smoke/sitemap/cluster/page'
+        type: choice
+        options: [smoke, sitemap, cluster, page]
+        default: sitemap
+      cluster:
+        description: 'Cluster: pariki/kettles/contacts/bytovaya/commercial'
+        type: string
+        default: commercial
+      page:
+        description: 'Single page path for scope=page, e.g. /pishevarochnye-kotly.html'
+        type: string
+        default: /
+      viewports:
+        description: 'Viewports'
+        type: choice
+        options: [both, desktop, mobile]
+        default: both
+      workers:
+        description: 'Worker count: auto or 1..10'
+        type: string
+        default: auto
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: visual-audit-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  VISUAL_BASE_URL: https://mospochin.ru
+
+jobs:
+  visual-plan:
+    name: Visual audit plan
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      workers: ${{ steps.plan.outputs.workers }}
+      tasks: ${{ steps.plan.outputs.tasks }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - id: plan
+        env:
+          VISUAL_SCOPE: ${{ inputs.scope }}
+          VISUAL_CLUSTER: ${{ inputs.cluster }}
+          VISUAL_PAGE: ${{ inputs.page }}
+          VISUAL_VIEWPORTS: ${{ inputs.viewports }}
+          VISUAL_WORKERS: ${{ inputs.workers }}
+        run: node tools/visual-audit-plan.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-visual-audit-plan-${{ github.run_id }}
+          path: reports/visual-audit/plan.json
+          retention-days: 5
+
+  visual-capture:
+    name: Visual audit shard ${{ matrix.shard }} of ${{ matrix.total }}
+    needs: visual-plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.visual-plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: mospochin-visual-audit-plan-${{ github.run_id }}
+          path: reports/visual-audit
+      - env:
+          SHARD: ${{ matrix.shard }}
+        run: node tools/visual-audit-capture.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-visual-audit-shard-${{ github.run_id }}-${{ matrix.shard }}
+          path: reports/visual-audit/shards/shard-${{ matrix.shard }}
+          retention-days: 1
+
+  visual-merge:
+    name: Visual audit merge
+    needs: visual-capture
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: mospochin-visual-audit-shard-${{ github.run_id }}-*
+          path: reports/visual-audit/downloaded
+      - run: node tools/visual-audit-merge.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-visual-audit-pack-${{ github.sha }}-${{ github.run_id }}
+          path: reports/visual-audit/final
+          retention-days: 5
