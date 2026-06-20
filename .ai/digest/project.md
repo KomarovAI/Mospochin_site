@@ -29,9 +29,9 @@
 | Pages | 63 |
 | Builder pages | 63 |
 | Total sections | 2686 |
-| src/pages files | 1451 |
-| src/pages HTML section files | 1388 |
-| Shared component files | 37 |
+| src/pages files | 1525 |
+| src/pages HTML section files | 1462 |
+| Shared component files | 48 |
 | Shared refs | 354 |
 | Shared coverage | 55.4% |
 | Average sections/page | 42.6 |
