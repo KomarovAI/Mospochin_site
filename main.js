@@ -1014,39 +1014,9 @@ const Components = {
 
       element.dataset.finalValue = finalValue;
       element.setAttribute('aria-label', finalValue);
-      element.textContent = `0${suffix}`;
-    });
-
-    observeElements('.counter', { threshold: 0.5 }, (entry, observer) => {
-      const element = entry.target;
-      if (element.dataset.counterAnimated === 'true') {
-        observer.unobserve(element);
-        return;
-      }
-
-      const target = Number.parseInt(element.dataset.target || '0', 10);
-      const suffix = element.dataset.suffix || '';
-      const finalValue = element.dataset.finalValue || `${target}${suffix}`;
-      const duration = 2000;
-      const start = performance.now();
-
+      element.textContent = finalValue;
       element.classList.add('is-visible');
-
-      const update = (now) => {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-
-        element.textContent = progress === 1 ? finalValue : `${Math.floor(eased * target)}${suffix}`;
-
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        } else {
-          element.dataset.counterAnimated = 'true';
-        }
-      };
-
-      requestAnimationFrame(update);
-      observer.unobserve(element);
+      element.dataset.counterAnimated = 'true';
     });
   },
 

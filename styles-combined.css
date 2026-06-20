@@ -2442,3 +2442,115 @@ body.page-microwaves .microwave-hero-shell {
   }
 }
 
+
+/* ============================================================
+   MosPochin visual audit patch — 2026-06-20
+   Evidence: visual audit artifacts 27865721721 / 27866046332.
+   Scope: header overlap on direct kettle pages, contact contrast,
+   mobile brand/header polish, and stable counter values.
+   ============================================================ */
+
+/* Direct/kettle landing pages were missing the mt-12 header offset
+   used by the stronger dark commercial templates. Without this, the
+   fixed white navbar visually starts under the red emergency bar. */
+body.page-direct-landing #header-container {
+  margin-top: 3rem !important;
+}
+
+body.page-direct-landing > section:first-of-type {
+  padding-top: clamp(8.25rem, 14vw, 11rem) !important;
+}
+
+@media (max-width: 640px) {
+  body.page-direct-landing #header-container {
+    margin-top: 2.95rem !important;
+  }
+
+  body.page-direct-landing > section:first-of-type {
+    padding-top: 8.5rem !important;
+  }
+
+  body.page-direct-landing #navbar .flex.justify-between.items-center {
+    min-height: 4.25rem;
+  }
+
+  body.page-direct-landing #mobile-menu-btn {
+    min-height: 48px;
+    padding-left: 0.95rem;
+    padding-right: 0.95rem;
+  }
+}
+
+/* Contact hero stat cards: strengthen contrast so the numbers remain
+   readable on the dark hero background in desktop and mobile screenshots. */
+body.page-contact header .glass-card {
+  background: rgba(15, 23, 42, 0.68) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
+}
+
+body.page-contact header .glass-card p:first-child,
+body.page-contact header .glass-card .counter {
+  color: #fb923c !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+body.page-contact header .glass-card p:last-child {
+  color: #f8fafc !important;
+}
+
+/* About hero counters: avoid a visible 0+/0% state in screenshots and for
+   users on slow devices. JS now writes final values immediately as well. */
+body.page-about .counter {
+  opacity: 1 !important;
+}
+
+body.page-about header .glass-card {
+  background: rgba(15, 23, 42, 0.48);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+@media (max-width: 640px) {
+  body.page-about header .grid.grid-cols-2.md\:grid-cols-4 {
+    gap: 0.75rem;
+  }
+
+  body.page-about header .glass-card {
+    padding: 1rem !important;
+    border-radius: 1.25rem;
+  }
+
+  body.page-about header .glass-card .w-14.h-14 {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: 0.65rem;
+  }
+}
+
+/* Mobile brand polish: do not leave only an anonymous orange square.
+   The text stays hidden on very narrow screens, but becomes visible on
+   modern 390px+ mobile widths used by the audit. */
+@media (min-width: 380px) and (max-width: 767px) {
+  #header-container #navbar a[href] > div.hidden.md\:block {
+    display: block !important;
+    max-width: 9.25rem;
+  }
+
+  #header-container #navbar a[href] > div.hidden.md\:block .text-xs {
+    display: none !important;
+  }
+
+  #header-container #navbar a[href] > div.hidden.md\:block span:first-child {
+    font-size: 1rem;
+    line-height: 1.05;
+  }
+}
+
+/* Keep CTA/tap targets safely large after visual cleanup. */
+#header-container a,
+#header-container button,
+body.page-direct-landing a.btn-click,
+body.page-contact a.btn-click,
+body.page-about a.btn-click {
+  min-height: 44px;
+}
