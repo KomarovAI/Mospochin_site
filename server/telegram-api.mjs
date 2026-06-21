@@ -138,7 +138,9 @@ function validateTrackingEvent(body, req) {
   const userAgent = sanitizeString(req.headers['user-agent'], 260);
   const originStatus = getOriginStatus(req);
   const payload = {
+    ts: new Date().toISOString(),
     received_at: new Date().toISOString(),
+    event: eventName,
     event_name: eventName,
     event_id: sanitizeString(body.event_id, 120),
     occurred_at: sanitizeString(body.occurred_at, 80),
@@ -148,6 +150,11 @@ function validateTrackingEvent(body, req) {
     page_referrer: sanitizeString(body.page_referrer, 500),
     page: sanitizeTrackingObject(body.page || {}),
     details: sanitizeTrackingObject(body.details || {}),
+    cta_id: sanitizeTrackingString(body.cta_id || body.details?.cta_id || ''),
+    cta_group: sanitizeTrackingString(body.cta_group || body.details?.cta_group || ''),
+    block: sanitizeTrackingString(body.block || body.details?.block || ''),
+    form_id: sanitizeTrackingString(body.form_id || body.details?.form_id || ''),
+    form_context: sanitizeTrackingString(body.form_context || body.details?.form_context || ''),
     ip: getClientIp(req),
     user_agent: userAgent,
     origin_status: originStatus,
