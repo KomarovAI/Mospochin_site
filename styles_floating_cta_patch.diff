@@ -1,0 +1,21 @@
+--- /mnt/data/mospochin_followup_patch_work/styles-combined.css	2026-06-20 09:04:26.000000000 +0000
++++ /mnt/data/mospochin_final_floating_cta_patch_work/styles-combined.css	2026-06-20 09:53:36.663074205 +0000
+@@ -2554,3 +2554,18 @@
+ body.page-about a.btn-click {
+   min-height: 44px;
+ }
++
++/* ============================================================
++   MosPochin visual follow-up patch — floating CTA overlap
++   Evidence: targeted mobile visual check 71a817a.
++   Scope: /pishevarochnye-kotly.html mobile only.
++   ============================================================ */
++
++@media (max-width: 767px) {
++  /* The page already has a bottom sticky phone/request bar and hero CTAs.
++     Hiding the extra floating WhatsApp bubble prevents CTA-on-CTA overlap
++     on the first mobile viewport without removing the primary conversion paths. */
++  body.page-pishevarochnye-kotly .fixed.bottom-24.right-4.z-50.md\:hidden {
++    display: none !important;
++  }
++}

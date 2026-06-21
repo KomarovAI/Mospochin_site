@@ -42,9 +42,7 @@ jobs:
         run: npm ci
 
       - name: Validate site
-        run: |
-          npm run check:core
-          npm run check:ai || echo "::warning::AI/generated checks failed; deploy continues. Fix generated AI artifacts separately."
+        run: npm run lint
 
       - name: Calculate deploy content hash
         run: npm run hash:deploy-content

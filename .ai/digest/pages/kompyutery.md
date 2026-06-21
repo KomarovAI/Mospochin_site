@@ -40,7 +40,7 @@
 | Частые вопросы | faq | 7.2 KB | 238 | no | src/pages/kompyutery/sections/041-faq-chastye-voprosy.html |
 | Частые поломки компьютеров и ноутбуков | pricing | 6.2 KB | 125 | no | src/pages/kompyutery/sections/019-pricing-chastye-polomki-komp-yuterov-i-noutbukov.html |
 | Цены на ремонт компьютеров и ноутбуков | pricing | 5.8 KB | 115 | no | src/pages/kompyutery/sections/021-pricing-ceny-na-remont-komp-yuterov-i-noutbukov.html |
-| Что случилось с компьютером? | pricing | 5.2 KB | 45 | no | src/pages/kompyutery/sections/015-pricing-chto-sluchilos-s-komp-yuterom.html |
+| Что случилось с компьютером? | pricing | 5.6 KB | 45 | no | src/pages/kompyutery/sections/015-pricing-chto-sluchilos-s-komp-yuterom.html |
 | Что говорят наши клиенты | pricing | 5.0 KB | 143 | no | src/pages/kompyutery/sections/025-pricing-chto-govoryat-nashi-klienty.html |
 
 

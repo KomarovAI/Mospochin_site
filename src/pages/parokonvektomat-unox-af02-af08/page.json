@@ -7,11 +7,11 @@
   "branch": "restaurant",
   "role": "branch",
   "title": "Ошибка Unox AF02 и AF08 — ремонт пароконвектомата | MosPochin",
-  "h1": "Ошибка Unox AF02 / AF08",
+  "h1": "Ошибки Unox AF02 и AF08 — диагностика на объекте",
   "source": {
     "extractedFrom": "parokonvektomat-unox-af02-af08.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "999cf471968356c617d2eda3b51596108334ca81fb15eebd0d87f3fadca21462",
+    "hash": "237c00729a4cc5d5e01c5875334ca6bf49e1e6bc9c578782cc029ab81f906ffd",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -76,12 +76,9 @@
       "id": "005-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "bytes": 818,
-      "hash": "b8378d436da3d89d",
-      "componentRef": "src/components/shared/breadcrumb/breadcrumb-hlebnye-kroshki--b8378d436da3d89d.html",
-      "componentScope": "shared",
-      "componentSignature": "b8378d436da3d89d",
-      "sourceFile": "sections/005-breadcrumb-hlebnye-kroshki.html"
+      "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
+      "bytes": 1038,
+      "hash": "d90b3d364e539942"
     },
     {
       "id": "006-raw-html-fragment",
@@ -101,8 +98,16 @@
       "component": "hero",
       "label": "Ошибка Unox AF02 / AF08",
       "file": "sections/007-hero-oshibka-unox-af02-af08.html",
-      "bytes": 11550,
-      "hash": "eea3a12dc5d30aed"
+      "bytes": 11555,
+      "hash": "67372baf912d0bb9"
+    },
+    {
+      "id": "008a-parokonvektomat-error-intent-bridge",
+      "component": "section",
+      "label": "Repair bridge: ошибка / симптом / бренд → диагностика → заявка",
+      "file": "sections/008a-parokonvektomat-error-intent-bridge.html",
+      "bytes": 7209,
+      "hash": "9a10908efa8ca2f3"
     },
     {
       "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
@@ -133,8 +138,8 @@
       "component": "related-links",
       "label": "Как подходим к AF02 / AF08",
       "file": "sections/010-related-links-kak-podhodim-k-af02-af08.html",
-      "bytes": 14072,
-      "hash": "310ceaba8827be66"
+      "bytes": 15397,
+      "hash": "cb99e1e5289fe27c"
     },
     {
       "id": "011-raw-html-fragment",
@@ -273,8 +278,8 @@
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
       "file": "sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
-      "bytes": 3372,
-      "hash": "4d6cf8001c0410b4"
+      "bytes": 3355,
+      "hash": "d4e56336a5dcad15"
     },
     {
       "id": "023-pricing-ceny-stoimost",
@@ -312,12 +317,9 @@
       "id": "026-pricing-vyberite-problemu-pokazhem-cenu",
       "component": "pricing",
       "label": "Выберите проблему — покажем цену",
-      "bytes": 4980,
-      "hash": "5d86ccad444cb9af",
-      "componentRef": "src/components/shared/pricing/pricing-vyberite-problemu-pokazhem-cenu--5d86ccad444cb9af.html",
-      "componentScope": "shared",
-      "componentSignature": "5d86ccad444cb9af",
-      "sourceFile": "sections/026-pricing-vyberite-problemu-pokazhem-cenu.html"
+      "file": "sections/026-pricing-vyberite-problemu-pokazhem-cenu.html",
+      "bytes": 5556,
+      "hash": "32e645b71dadfcee"
     },
     {
       "id": "027-raw-html-fragment",
@@ -619,6 +621,15 @@
       "sourceFile": "sections/051-raw-html-fragment.html"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 4358,
+      "hash": "3c8bc1e5d4533105",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "052-faq-faq",
       "component": "faq",
       "label": "FAQ",
@@ -655,8 +666,8 @@
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
       "file": "sections/055-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
-      "bytes": 2433,
-      "hash": "be5c42c45cb00a6b"
+      "bytes": 2399,
+      "hash": "14be5f2daeb7452e"
     },
     {
       "id": "056-raw-html-fragment",
@@ -676,16 +687,21 @@
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
       "file": "sections/057-contact-cta-parokonvektomat-vstal.html",
-      "bytes": 3113,
-      "hash": "6eee7a009c145c1d"
+      "bytes": 3096,
+      "hash": "c17e174b47e4f84b"
     },
     {
       "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "file": "sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
-      "bytes": 7465,
-      "hash": "703d00dcddb1619a"
+      "bytes": 9303,
+      "hash": "d6571f5222ec7068",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "restaurant-parokonvektomat-b2b",
+      "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
+      "propsRef": "content/components/lead-form/parokonvektomat-unox-af02-af08.json",
+      "sourceFile": "sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
     },
     {
       "id": "059-proof-dokazatel-stva-garantii",
@@ -726,12 +742,9 @@
       "id": "063-related-links-esli-problema-v-drugom-restorannom-obo",
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
-      "bytes": 2977,
-      "hash": "4d77c43f3f7ac07c",
-      "componentRef": "src/components/shared/related-links/related-links-esli-problema-v-drugom-restorannom-oborudova--4d77c43f3f7ac07c.html",
-      "componentScope": "shared",
-      "componentSignature": "4d77c43f3f7ac07c",
-      "sourceFile": "sections/063-related-links-esli-problema-v-drugom-restorannom-obo.html"
+      "file": "sections/063-related-links-esli-problema-v-drugom-restorannom-obo.html",
+      "bytes": 3310,
+      "hash": "6f1fc1723b64510e"
     },
     {
       "id": "064-related-links-svyazannye-stranicy",
@@ -895,7 +908,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 19,
+    "sharedSectionRefs": 16,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

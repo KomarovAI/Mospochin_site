@@ -1,0 +1,50 @@
+{
+  "run": "P6 SEO / technical QA",
+  "date": "2026-06-21",
+  "base_pack": "mospochin_cooking_kettles_run5_production_readiness_pack_20260621.zip",
+  "root_html_pages": 63,
+  "indexable_html_pages": 58,
+  "intentional_noindex_pages": [
+    "404.html",
+    "kompyutery.html",
+    "parokonvektomaty-promo.html",
+    "remont-oborudovaniya-restorana-parokonvektomat.html",
+    "routery.html"
+  ],
+  "sitemap_urls": 58,
+  "metadata_pages": 63,
+  "direct_landing_pages": 28,
+  "pages_with_data_page_slug": 63,
+  "total_data_cta_id": 1836,
+  "total_forms": 79,
+  "jsonld_type_counts": {
+    "Answer": 61,
+    "FAQPage": 61,
+    "LocalBusiness": 62,
+    "PostalAddress": 62,
+    "Question": 61,
+    "AggregateRating": 10,
+    "ContactPoint": 2,
+    "City": 5,
+    "CollectionPage": 2,
+    "GeoCoordinates": 2,
+    "ItemList": 2,
+    "ListItem": 27,
+    "OpeningHoursSpecification": 2,
+    "Service": 56,
+    "AdministrativeArea": 52,
+    "Offer": 54,
+    "BreadcrumbList": 25
+  },
+  "meta_missing_html": [],
+  "metadata_orphans": [],
+  "direct_missing_html": [],
+  "blocking_issues_after_reclassification": [],
+  "blocking_issues_count": 0,
+  "notes": [
+    "Noindex pages are intentionally excluded from sitemap checks: 404 and existing noindex/promo/household pages.",
+    "No new SEO pages were created in P6.",
+    "Direct settings/keys/bids/minus phrases were not changed.",
+    "Playwright screenshot audit still requires Chromium in CI/server environment."
+  ]
+}

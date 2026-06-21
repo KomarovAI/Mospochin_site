@@ -38,10 +38,10 @@
 | Ремонтируем все марки посудомоечных машин | pricing | 18.7 KB | 107 | no | src/pages/posudomoyki/sections/029-pricing-remontiruem-vse-marki-posudomoechnyh-mashin.html |
 | Что клиент понимает ещё до начала работ | pricing | 13.0 KB | 425 | no | src/pages/posudomoyki/sections/040-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
 | Свежие кейсы по ремонту посудомоек | contact-cta | 8.4 KB | 110 | no | src/pages/posudomoyki/sections/022-contact-cta-svezhie-keysy-po-remontu-posudomoek.html |
-| Оставьте заявку на ремонт посудомойки | lead-form | 8.1 KB | 140 | no | src/pages/posudomoyki/sections/038-lead-form-ostav-te-zayavku-na-remont-posudomoyki.html |
+| Оставьте заявку на ремонт посудомойки | lead-form | 8.2 KB | 140 | no | src/pages/posudomoyki/sections/038-lead-form-ostav-te-zayavku-na-remont-posudomoyki.html |
 | Какие поломки посудомойки мы чаще всего чиним на дому | pricing | 5.9 KB | 100 | no | src/pages/posudomoyki/sections/023-pricing-kakie-polomki-posudomoyki-my-chasche-vsego-c.html |
+| Когда посудомойку уже нельзя откладывать | pricing | 5.7 KB | 50 | no | src/pages/posudomoyki/sections/020-pricing-kogda-posudomoyku-uzhe-nel-zya-otkladyvat.html |
 | Сколько обычно стоит ремонт посудомойки | pricing | 5.5 KB | 104 | no | src/pages/posudomoyki/sections/024-pricing-skol-ko-obychno-stoit-remont-posudomoyki.html |
-| Когда посудомойку уже нельзя откладывать | pricing | 5.3 KB | 50 | no | src/pages/posudomoyki/sections/020-pricing-kogda-posudomoyku-uzhe-nel-zya-otkladyvat.html |
 | Какие проблемы посудомойки мы закрываем за 1 визит | pricing | 5.2 KB | 89 | no | src/pages/posudomoyki/sections/010-pricing-kakie-problemy-posudomoyki-my-zakryvaem-za-1.html |
 
 

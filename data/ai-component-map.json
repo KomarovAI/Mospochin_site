@@ -890,7 +890,7 @@
         "Всегда проверяй hash/render через check:parameterized-components."
       ],
       "safeEditingNotes": [
-        "Parametric refs: 1133, templates: 79, props files: 10.",
+        "Parametric refs: 1137, templates: 79, props files: 14.",
         "Для текста конкретной страницы меняй content/components/*/*.json; для разметки меняй template.html.",
         "После правки запускай check:parameterized-components и check:site-builder."
       ],
@@ -2089,15 +2089,19 @@
           ]
         },
         "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html": {
-          "refs": 10,
+          "refs": 14,
           "pages": [
             "parokonvektomat-abat.html",
             "parokonvektomat-convotherm.html",
+            "parokonvektomat-e02-e07-e10.html",
             "parokonvektomat-electrolux.html",
+            "parokonvektomat-kod-oshibki.html",
             "parokonvektomat-lainox.html",
             "parokonvektomat-ne-greet.html",
             "parokonvektomat-net-para.html",
+            "parokonvektomat-rational-e9.html",
             "parokonvektomat-rational.html",
+            "parokonvektomat-unox-af02-af08.html",
             "parokonvektomat-unox.html",
             "parokonvektomaty-promo.html",
             "remont-oborudovaniya-restorana-parokonvektomat.html"
@@ -2445,11 +2449,6 @@
         "parokonvektomaty-promo.html",
         "parokonvektomaty.html",
         "pishevarochnye-kotly.html",
-        "pishevarochnyj-kotel-abat-e01.html",
-        "pishevarochnyj-kotel-abat-e02.html",
-        "pishevarochnyj-kotel-abat-e04.html",
-        "pishevarochnyj-kotel-abat-e17.html",
-        "pishevarochnyj-kotel-abat-h20.html",
         "pishevarochnyj-kotel-abat-kpem.html",
         "pishevarochnyj-kotel-datchik-temperatury.html",
         "pishevarochnyj-kotel-dolgo-greet.html",
@@ -2472,7 +2471,7 @@
         "stiralnye-mashiny.html",
         "water-heaters.html"
       ],
-      "appearsInCount": 46,
+      "appearsInCount": 41,
       "cssSelectors": [],
       "jsHooks": [],
       "relatedFiles": [
@@ -2486,7 +2485,7 @@
         "Builder output должен оставаться синхронным с root HTML."
       ],
       "safeEditingNotes": [
-        "Сейчас shared refs: 354, shared files: 30.",
+        "Сейчас shared refs: 271, shared files: 24.",
         "После правки src/components/shared/* запускай check:shared-components и check:site-builder."
       ]
     }

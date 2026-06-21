@@ -718,11 +718,8 @@ const Components = {
       servicesLink: isBytovaya ? 'bytovaya-uslugi.html' : 'uslugi.html',
       branchSwitchLink: isBytovaya ? 'index.html' : 'bytovaya-index.html',
       branchSwitchLabel: isBytovaya
-        ? '↔ Для ресторанов'
-        : '↔ Для дома',
-      branchSwitchTitle: isBytovaya
-        ? 'Перейти в раздел ремонта ресторанного оборудования'
-        : 'Перейти в раздел ремонта бытовой техники',
+        ? '🔧 Ресторанное оборудование'
+        : '🏠 Бытовая техника',
       isBytovaya,
       services: isBytovaya ? householdBranch.services : restaurantBranch.services,
       primaryServices: isBytovaya
@@ -825,7 +822,7 @@ const Components = {
   </div>
 
   <div class="branch-switcher flex items-center gap-2 ml-4">
-    <a href="${branch.branchSwitchLink}" class="text-xs font-semibold px-4 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-brand-orange hover:text-white transition border border-slate-200" title="${branch.branchSwitchTitle}" aria-label="${branch.branchSwitchTitle}">
+    <a href="${branch.branchSwitchLink}" class="text-xs font-semibold px-4 py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-brand-orange hover:text-white transition border border-slate-200">
       ${branch.branchSwitchLabel}
     </a>
   </div>
@@ -945,7 +942,7 @@ const Components = {
 <a href="tel:${this.getPhoneLink()}" class="block w-full text-center bg-brand-orange text-white px-4 py-3 rounded-lg font-bold text-lg"><i class="ri-phone-line mr-2"></i>Позвонить</a>
 <div class="border-t border-slate-200 my-2"></div>
 <a href="${branch.branchSwitchLink}" class="block w-full text-center bg-brand-orange/10 text-brand-orange px-4 py-3 rounded-lg font-bold text-sm border-2 border-brand-orange/30">
-  ${branch.isBytovaya ? '↔ Перейти в ресторанный раздел' : '↔ Перейти в бытовой раздел'}
+  ${branch.isBytovaya ? '🔧 Перейти: Ресторанное оборудование' : '🏠 Перейти: Бытовая техника'}
 </a>`;
 
     const servicesToggle = document.getElementById('mobile-services-toggle');
@@ -1017,9 +1014,39 @@ const Components = {
 
       element.dataset.finalValue = finalValue;
       element.setAttribute('aria-label', finalValue);
-      element.textContent = finalValue;
+      element.textContent = `0${suffix}`;
+    });
+
+    observeElements('.counter', { threshold: 0.5 }, (entry, observer) => {
+      const element = entry.target;
+      if (element.dataset.counterAnimated === 'true') {
+        observer.unobserve(element);
+        return;
+      }
+
+      const target = Number.parseInt(element.dataset.target || '0', 10);
+      const suffix = element.dataset.suffix || '';
+      const finalValue = element.dataset.finalValue || `${target}${suffix}`;
+      const duration = 2000;
+      const start = performance.now();
+
       element.classList.add('is-visible');
-      element.dataset.counterAnimated = 'true';
+
+      const update = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+
+        element.textContent = progress === 1 ? finalValue : `${Math.floor(eased * target)}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          element.dataset.counterAnimated = 'true';
+        }
+      };
+
+      requestAnimationFrame(update);
+      observer.unobserve(element);
     });
   },
 

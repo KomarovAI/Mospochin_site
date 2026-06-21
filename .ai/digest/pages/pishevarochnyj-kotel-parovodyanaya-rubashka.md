@@ -7,8 +7,8 @@
 - H1: Диагностика пароводяной рубашки пищеварочного котла
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-parovodyanaya-rubashka.html
 - Builder model: src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/page.json
-- Sections: 23 (9 local, 3 shared refs, 0 raw)
-- Text words inside referenced sections: 854
+- Sections: 25 (13 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 1034
 
 ## Component mix
 
@@ -22,21 +22,23 @@
 | footer-anchor | 1 |
 | lead-form | 1 |
 | proof | 1 |
+| related-links | 1 |
 | runtime-partials | 1 |
+| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 8.5 KB | 161 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
-| Оставьте заявку на диагностику | lead-form | 5.5 KB | 69 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
+| Развели заявки по симптомам и узлам | pricing | 10.1 KB | 161 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
+| Run5: production readiness bridge | section | 7.7 KB | 124 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/008a-cooking-kettle-run5-readiness.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.0 KB | 199 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Оставьте заявку на диагностику | lead-form | 5.6 KB | 69 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
 | Симптом → узел → риск простоя → диагностика | mobile-contact | 5.4 KB | 106 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.4 KB | 199 | yes | src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 4.6 KB | 129 | yes | src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.3 KB | 129 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Связанные маршруты ремонта | related-links | 4.6 KB | 56 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/900-related-links-run7-conversion-path.html |
 | Диагностика пароводяной рубашки пищеварочного котла | mobile-contact | 3.0 KB | 41 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/003-mobile-contact-diagnostika-parovodyanoy-rubashki-pis.html |
-| Частые вопросы по этой неисправности | faq | 2.9 KB | 80 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html |
-| Не просто статья, а страница под заявку | proof | 2.1 KB | 69 | yes | src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html |
 
 
 ## Editable source files

@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnyj-kotel-abat-h20.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "6bf24f9c5182fa5b16a4ea2216e1362b0b78729a848277dc39150a8d9aa7171d",
+    "hash": "219cafc7a16c0c625cbc428e5a1e473f53bbaa1115c79fe013073fc659837739",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -46,8 +46,16 @@
       "component": "mobile-contact",
       "label": "Ошибка H20 / Н20 на пищеварочном котле Abat КПЭМ",
       "file": "sections/003-mobile-contact-oshibka-h20-n20-na-pischevarochnom-ko.html",
-      "bytes": 4229,
-      "hash": "30ee6918d6256a19"
+      "bytes": 4195,
+      "hash": "db78a8885c8899db"
+    },
+    {
+      "id": "008a-cooking-kettle-run5-readiness",
+      "component": "section",
+      "label": "Run5: production readiness bridge",
+      "file": "sections/008a-cooking-kettle-run5-readiness.html",
+      "bytes": 7299,
+      "hash": "1df88b0ffdc624fe"
     },
     {
       "id": "004-raw-html-fragment",
@@ -67,8 +75,8 @@
       "component": "mobile-contact",
       "label": "Не просто сбросить ошибку, а найти причину",
       "file": "sections/005-mobile-contact-ne-prosto-sbrosit-oshibku-a-nayti-pri.html",
-      "bytes": 5429,
-      "hash": "6d3827cbbfc5b38a"
+      "bytes": 5395,
+      "hash": "de70b765f8d9d342"
     },
     {
       "id": "006-raw-html-fragment",
@@ -88,8 +96,8 @@
       "component": "pricing",
       "label": "Переходы по симптомам, узлам и кодам",
       "file": "sections/007-pricing-perehody-po-simptomam-uzlam-i-kodam.html",
-      "bytes": 6400,
-      "hash": "bbb3d23ea1141738"
+      "bytes": 7272,
+      "hash": "da4ff0ca2a757352"
     },
     {
       "id": "008-raw-html-fragment",
@@ -108,12 +116,9 @@
       "id": "009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at",
       "component": "pricing",
       "label": "Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma",
-      "bytes": 5481,
-      "hash": "6501b772607fe7ea",
-      "componentRef": "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
-      "componentScope": "shared",
-      "componentSignature": "6501b772607fe7ea",
-      "sourceFile": "sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html"
+      "file": "sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html",
+      "bytes": 6030,
+      "hash": "a4118d90fcc5c1d2"
     },
     {
       "id": "010-raw-html-fragment",
@@ -146,8 +151,8 @@
       "component": "pricing",
       "label": "Развели ошибки КПЭМ по отдельным сценариям",
       "file": "sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html",
-      "bytes": 3964,
-      "hash": "311547cdb33b79d2"
+      "bytes": 4404,
+      "hash": "c0369e0f6769adf6"
     },
     {
       "id": "013-raw-html-fragment",
@@ -163,12 +168,21 @@
       "sourceFile": "sections/013-raw-html-fragment.html"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 4853,
+      "hash": "1a6719ee009c0333",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "014-lead-form-otprav-te-kod-i-shil-dik-inzheneru",
       "component": "lead-form",
       "label": "Отправьте код и шильдик инженеру",
       "file": "sections/014-lead-form-otprav-te-kod-i-shil-dik-inzheneru.html",
-      "bytes": 5704,
-      "hash": "0086c0d2b0f9b861"
+      "bytes": 5742,
+      "hash": "07892d2f90a9274e"
     },
     {
       "id": "015-faq-chastye-voprosy-po-h20-n20",
@@ -241,7 +255,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 1,
+    "sharedSectionRefs": 0,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

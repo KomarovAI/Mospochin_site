@@ -7,8 +7,8 @@
 - H1: Ошибка E01 на пищеварочном котле Abat КПЭМ
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-abat-e01.html
 - Builder model: src/pages/pishevarochnyj-kotel-abat-e01/page.json
-- Sections: 20 (10 local, 1 shared refs, 0 raw)
-- Text words inside referenced sections: 803
+- Sections: 22 (13 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 993
 
 ## Component mix
 
@@ -21,21 +21,23 @@
 | faq | 1 |
 | footer-anchor | 1 |
 | lead-form | 1 |
+| related-links | 1 |
 | runtime-partials | 1 |
+| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Переходы по симптомам, узлам и кодам | pricing | 6.3 KB | 134 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/007-pricing-perehody-po-simptomam-uzlam-i-kodam.html |
+| Run5: production readiness bridge | section | 7.5 KB | 126 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/008a-cooking-kettle-run5-readiness.html |
+| Переходы по симптомам, узлам и кодам | pricing | 7.2 KB | 134 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/007-pricing-perehody-po-simptomam-uzlam-i-kodam.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.0 KB | 199 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
 | Отправьте код и шильдик инженеру | lead-form | 5.6 KB | 82 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/014-lead-form-otprav-te-kod-i-shil-dik-inzheneru.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.4 KB | 199 | yes | src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html |
 | Не просто сбросить ошибку, а найти причину | mobile-contact | 5.3 KB | 113 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/005-mobile-contact-ne-prosto-sbrosit-oshibku-a-nayti-pri.html |
+| Связанные маршруты ремонта | related-links | 4.7 KB | 64 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/900-related-links-run7-conversion-path.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 4.4 KB | 112 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Ошибка E01 на пищеварочном котле Abat КПЭМ | mobile-contact | 4.1 KB | 77 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/003-mobile-contact-oshibka-e01-na-pischevarochnom-kotle-.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 3.9 KB | 112 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
-| Частые вопросы по E01 | faq | 2.9 KB | 86 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/015-faq-chastye-voprosy-po-e01.html |
-| Секция 1 | body-preamble | 73 B | 0 | no | src/pages/pishevarochnyj-kotel-abat-e01/sections/001-body-preamble-sekciya-1.html |
 
 
 ## Editable source files

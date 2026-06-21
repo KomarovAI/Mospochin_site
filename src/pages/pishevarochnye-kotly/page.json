@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnye-kotly.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "7517623d43fa5cff8b13e6a4de2bfc85da56ad68e2fc3df547ed982f4a8937ef",
+    "hash": "35180792b0dc2b7faf85fccd24e5c4015377792ffd2d817738ff04df7286a41c",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -46,16 +46,24 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 822,
-      "hash": "485860fcfc1de4fa"
+      "bytes": 1022,
+      "hash": "4d9d5dfbac135d25"
     },
     {
       "id": "004-mobile-contact-remont-pischevarochnyh-kotlov-dlya-re",
       "component": "mobile-contact",
       "label": "Ремонт пищеварочных котлов для ресторанов и столовых",
       "file": "sections/004-mobile-contact-remont-pischevarochnyh-kotlov-dlya-re.html",
-      "bytes": 6576,
-      "hash": "8635e00568bf4afe"
+      "bytes": 6628,
+      "hash": "155ef14eefed51d9"
+    },
+    {
+      "id": "008a-cooking-kettle-run5-readiness",
+      "component": "section",
+      "label": "Run5: production readiness bridge",
+      "file": "sections/008a-cooking-kettle-run5-readiness.html",
+      "bytes": 7466,
+      "hash": "bbbac18d28300006"
     },
     {
       "id": "005-section-chto-berem-v-remont-na-kuhne",
@@ -74,12 +82,21 @@
       "hash": "83b20d25eb23900b"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 5216,
+      "hash": "a336e1dbc389133f",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e",
       "component": "lead-form",
       "label": "Разводим заявки по симптому: нагрев, течь, электрика, H2O и Abat КПЭМ",
       "file": "sections/007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e.html",
-      "bytes": 5087,
-      "hash": "66f597248acfa422"
+      "bytes": 5053,
+      "hash": "c31e0ad23a829b75"
     },
     {
       "id": "008-raw-html-fragment",
@@ -112,8 +129,8 @@
       "component": "pricing",
       "label": "Разводим трафик по реальному симптому",
       "file": "sections/010-pricing-razvodim-trafik-po-real-nomu-simptomu.html",
-      "bytes": 5051,
-      "hash": "754608f084b388dc"
+      "bytes": 5651,
+      "hash": "11449938f067e4f2"
     },
     {
       "id": "011-raw-html-fragment",
@@ -133,8 +150,8 @@
       "component": "contact-cta",
       "label": "С чем чаще всего вызывают инженера",
       "file": "sections/012-contact-cta-s-chem-chasche-vsego-vyzyvayut-inzhenera.html",
-      "bytes": 3449,
-      "hash": "a70a415fcc7df533"
+      "bytes": 3432,
+      "hash": "8f106262ce34ec15"
     },
     {
       "id": "013-section-rabotaem-s-kuhnyami-gde-nuzhen-ponyatnyy-rez",
@@ -201,12 +218,9 @@
       "id": "019-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at",
       "component": "pricing",
       "label": "Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma",
-      "bytes": 5481,
-      "hash": "6501b772607fe7ea",
-      "componentRef": "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
-      "componentScope": "shared",
-      "componentSignature": "6501b772607fe7ea",
-      "sourceFile": "sections/019-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html"
+      "file": "sections/019-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html",
+      "bytes": 5985,
+      "hash": "a564714644d6625d"
     },
     {
       "id": "020-raw-html-fragment",
@@ -238,12 +252,9 @@
       "id": "022-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam",
       "component": "pricing",
       "label": "Развели ошибки КПЭМ по отдельным сценариям",
-      "bytes": 4707,
-      "hash": "b9734b323f0f36f9",
-      "componentRef": "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-      "componentScope": "shared",
-      "componentSignature": "b9734b323f0f36f9",
-      "sourceFile": "sections/022-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html"
+      "file": "sections/022-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html",
+      "bytes": 5202,
+      "hash": "faea621129d189cc"
     },
     {
       "id": "023-raw-html-fragment",
@@ -276,8 +287,8 @@
       "component": "pricing",
       "label": "Развели заявки по симптомам и узлам",
       "file": "sections/025-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-      "bytes": 8680,
-      "hash": "747932204785781e"
+      "bytes": 9882,
+      "hash": "e1ae21846d139bc9"
     },
     {
       "id": "026-raw-html-fragment",
@@ -297,8 +308,8 @@
       "component": "lead-form",
       "label": "Согласовать выезд по котлу",
       "file": "sections/027-lead-form-soglasovat-vyezd-po-kotlu.html",
-      "bytes": 5757,
-      "hash": "ee9a0344f3b128f9"
+      "bytes": 5814,
+      "hash": "9295fb4ba284feef"
     },
     {
       "id": "028-proof-dokazatel-stva-garantii",
@@ -361,24 +372,24 @@
       "component": "mobile-contact",
       "label": "Согласуем выезд инженера по пищеварочному котлу",
       "file": "sections/035-mobile-contact-soglasuem-vyezd-inzhenera-po-pischeva.html",
-      "bytes": 2112,
-      "hash": "6f0c578429e1fede"
+      "bytes": 2078,
+      "hash": "2c203c727bdcbd6c"
     },
     {
       "id": "036-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/036-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 882,
-      "hash": "8b53c900f939d964"
+      "bytes": 951,
+      "hash": "61fae92d8f0f86c7"
     },
     {
       "id": "037-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/037-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 743,
-      "hash": "995d811240ff4224"
+      "bytes": 726,
+      "hash": "494250381fe097fb"
     },
     {
       "id": "038-footer-anchor-footer-mount-point",
@@ -459,7 +470,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 3,
+    "sharedSectionRefs": 1,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

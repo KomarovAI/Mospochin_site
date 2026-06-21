@@ -40,7 +40,7 @@
 | Частые вопросы про роутеры | faq | 8.0 KB | 216 | no | src/pages/routery/sections/030-faq-chastye-voprosy-pro-routery.html |
 | Настройка и ремонт роутеров | faq | 7.3 KB | 176 | no | src/pages/routery/sections/042-faq-nastroyka-i-remont-routerov.html |
 | Частые поломки роутеров | pricing | 6.3 KB | 122 | no | src/pages/routery/sections/031-pricing-chastye-polomki-routerov.html |
-| Ремонт и настройка роутеров в Москве | hero | 6.3 KB | 77 | no | src/pages/routery/sections/005-hero-remont-i-nastroyka-routerov-v-moskve.html |
+| Ремонт и настройка роутеров в Москве | hero | 6.2 KB | 77 | no | src/pages/routery/sections/005-hero-remont-i-nastroyka-routerov-v-moskve.html |
 | 2.4ГГц vs 5ГГц vs 6ГГц — что выбрать | section | 5.9 KB | 93 | no | src/pages/routery/sections/023-section-2-4ggc-vs-5ggc-vs-6ggc-chto-vybrat.html |
 
 

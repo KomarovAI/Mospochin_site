@@ -7,8 +7,8 @@
 - H1: Ремонт кухни ресторана: пароконвектоматы
 - Canonical: https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html
 - Builder model: src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json
-- Sections: 75 (14 local, 19 shared refs, 2 raw)
-- Text words inside referenced sections: 2521
+- Sections: 75 (17 local, 16 shared refs, 2 raw)
+- Text words inside referenced sections: 2527
 
 ## Component mix
 
@@ -35,12 +35,12 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Когда кухня ресторана теряет смену | related-links | 12.7 KB | 331 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/010-related-links-kogda-kuhnya-restorana-teryaet-smenu.html |
+| Когда кухня ресторана теряет смену | related-links | 14.1 KB | 331 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/010-related-links-kogda-kuhnya-restorana-teryaet-smenu.html |
 | Ремонт кухни ресторана: пароконвектоматы | hero | 11.6 KB | 95 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/007-hero-remont-kuhni-restorana-parokonvektomaty.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 9.1 KB | 110 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.4 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 242 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--34bee320032c85f0.html |
 

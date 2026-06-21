@@ -42,7 +42,7 @@
 | Получите понятный сценарий ремонта плиты | lead-form | 6.7 KB | 86 | no | src/pages/plity/sections/035-lead-form-poluchite-ponyatnyy-scenariy-remonta-plity.html |
 | Частые поломки плит и духовок | pricing | 6.3 KB | 121 | no | src/pages/plity/sections/020-pricing-chastye-polomki-plit-i-duhovok.html |
 | Цены на ремонт плит и духовок | pricing | 6.1 KB | 136 | no | src/pages/plity/sections/021-pricing-ceny-na-remont-plit-i-duhovok.html |
-| Что говорят наши клиенты | proof | 5.4 KB | 150 | no | src/pages/plity/sections/023-proof-chto-govoryat-nashi-klienty.html |
+| Что случилось с плитой или духовкой? | pricing | 5.6 KB | 47 | no | src/pages/plity/sections/017-pricing-chto-sluchilos-s-plitoy-ili-duhovkoy.html |
 
 
 ## Editable source files

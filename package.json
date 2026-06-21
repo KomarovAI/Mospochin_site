@@ -112,13 +112,7 @@
     "audit:tools": "node tools/audit-tools.mjs",
     "audit:ai-overlap": "node tools/audit-ai-overlap.mjs",
     "audit:maintenance": "npm run audit:docs && npm run audit:tools && npm run audit:ai-overlap && npm run audit:unused-assets",
-    "audit:cooking-kettles-screenshots": "node tools/audit-screenshots.mjs --manifest data/cooking-kettles-screenshot-audit.json",
-    "check:metrics": "node tools/check-metrics-contract.mjs",
-    "smoke:metrics": "node tools/metrics-local-smoke.mjs",
-    "verify:metrics": "npm run check:metrics && npm run check:metrics-markup && npm run smoke:metrics && npm run audit:metrics-clean",
-    "apply:metrics-markup": "node tools/apply-metrics-page-markup.mjs",
-    "check:metrics-markup": "node tools/check-metrics-markup.mjs",
-    "audit:metrics-clean": "node tools/audit-metrics-clean.mjs"
+    "audit:cooking-kettles-screenshots": "node tools/audit-screenshots.mjs --manifest data/cooking-kettles-screenshot-audit.json"
   },
   "devDependencies": {
     "playwright": "^1.59.1"

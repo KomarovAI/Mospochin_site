@@ -2,13 +2,13 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: Ремонт котлов Atesy / АТЕСИ — диагностика общепита | MosPochin
-- Description: Ремонт пищеварочных котлов Atesy / АТЕСИ для кафе, ресторанов, столовых и пищеблоков: нагрев, кран, датчики, электрика, ТЭНы и заявка инженеру.
+- Title: Ремонт котлов Atesy / АТЕСИ для общепита | MosPochin
+- Description: Ремонт пищеварочных котлов Atesy / АТЕСИ: нагрев, кран, датчики, электрика, ТЭНы, заявка инженеру и WhatsApp с фото.
 - H1: Ремонт пищеварочных котлов Atesy / АТЕСИ
 - Canonical: https://mospochin.ru/remont-pishevarochnyh-kotlov-atesy.html
 - Builder model: src/pages/remont-pishevarochnyh-kotlov-atesy/page.json
-- Sections: 17 (10 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 672
+- Sections: 19 (12 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 857
 
 ## Component mix
 
@@ -21,21 +21,23 @@
 | faq | 1 |
 | footer-anchor | 1 |
 | lead-form | 1 |
+| related-links | 1 |
 | runtime-partials | 1 |
+| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Отправьте модель, симптом и фото шильдика | lead-form | 6.6 KB | 85 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
-| Куда перейти дальше по Atesy / АТЕСИ | pricing | 6.2 KB | 131 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/007-pricing-kuda-pereyti-dal-she-po-atesy-atesi.html |
+| Run5: production readiness bridge | section | 7.5 KB | 122 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/008a-cooking-kettle-run5-readiness.html |
+| Куда перейти дальше по Atesy / АТЕСИ | pricing | 7.2 KB | 131 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/007-pricing-kuda-pereyti-dal-she-po-atesy-atesi.html |
+| Отправьте модель, симптом и фото шильдика | lead-form | 6.7 KB | 85 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
 | Брендовая страница без тонкого SEO | mobile-contact | 5.3 KB | 106 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/005-mobile-contact-brendovaya-stranica-bez-tonkogo-seo.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 4.5 KB | 166 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.0 KB | 166 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Связанные маршруты ремонта | related-links | 4.7 KB | 63 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/900-related-links-run7-conversion-path.html |
 | Ремонт пищеварочных котлов Atesy / АТЕСИ | mobile-contact | 4.4 KB | 96 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-atesy-a.html |
 | Частые вопросы по Atesy / АТЕСИ | faq | 2.9 KB | 88 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/012-faq-chastye-voprosy-po-atesy-atesi.html |
-| Секция 1 | body-preamble | 78 B | 0 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/001-body-preamble-sekciya-1.html |
-| HTML-фрагмент | layout-fragment | 51 B | 0 | no | src/components/parametric/static/layout-fragment-cooking-kettle-brand-repair-bridge-start-8ab502f37162.template.html |
 
 
 ## Editable source files

@@ -129,7 +129,7 @@
     </script>
 </head>
 
-<body class="font-sans text-slate-800 antialiased bg-white branch-restaurant page-restaurant-service page-parokonvektomaty" data-page-slug="parokonvektomaty" data-page-intent="hub" data-equipment="parokonvektomat" data-service="repair" data-commercial-segment="b2b_kitchen">
+<body class="font-sans text-slate-800 antialiased bg-white branch-restaurant page-restaurant-service page-parokonvektomaty" data-page-slug="parokonvektomaty" data-service="repair" data-commercial-segment="b2b_kitchen" data-equipment="parokonvektomat" data-page-intent="repair">
     <noscript><div><img src="https://mc.yandex.ru/watch/109138661" style="position:absolute; left:-9999px;" alt="" decoding="async" fetchpriority="high" loading="eager" width="1" height="1"></div></noscript>
     <!-- Normalized layout shell: parokonvektomaty.html -->
 <div id="header-container" class="mt-12"></div>
@@ -140,9 +140,9 @@
     <nav class="bg-slate-50 border-b border-slate-100 py-3" aria-label="Breadcrumb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
-                <li><a href="/" class="hover:text-brand-orange transition"><i class="ri-home-4-line mr-1"></i>Главная</a></li>
+                <li><a href="/" class="hover:text-brand-orange transition" data-cta-id="parokonvektomaty_internal_link_1" data-cta-group="internal_link" data-block="auto"><i class="ri-home-4-line mr-1"></i>Главная</a></li>
                 <li><i class="ri-arrow-right-s-line text-xs text-slate-300"></i></li>
-                <li><a href="/index.html" class="hover:text-brand-orange transition">Ресторанное оборудование</a></li>
+                <li><a href="/index.html" class="hover:text-brand-orange transition" data-cta-id="parokonvektomaty_internal_link_2" data-cta-group="internal_link" data-block="auto">Ресторанное оборудование</a></li>
                 <li><i class="ri-arrow-right-s-line text-xs text-slate-300"></i></li>
                 <li class="text-brand-orange font-semibold">Пароконвектоматы</li>
             </ol>
@@ -186,13 +186,17 @@
                     </div>
                     <!-- CTA buttons -->
                     <div class="pariki-hero-actions flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center mb-6">
-                        <a href="tel:+79990057172" data-contact-link="phone" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg" data-cta-id="parokonvektomaty_phone_01" data-cta-group="phone_contact" data-block="auto_contact">
+                        <a href="tel:+79990057172" data-contact-link="phone" class="btn-click w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition transform hover:-translate-y-1 flex items-center justify-center gap-2 shadow-lg" data-cta-id="parokonvektomaty_phone_1" data-cta-group="phone" data-block="hero">
                             <i class="ri-phone-line"></i>
                             <span>Вызвать инженера</span>
                         </a>
-                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20пароконвектомата.%20Укажу%20модель,%20адрес%20ресторана%20и%20код%20ошибки." data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2" data-cta-id="parokonvektomaty_whatsapp_01" data-cta-group="whatsapp_contact" data-block="auto_contact">
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Нужен%20ремонт%20пароконвектомата.%20Укажу%20модель,%20адрес%20ресторана%20и%20код%20ошибки." data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2" data-cta-id="parokonvektomaty_whatsapp_1" data-cta-group="whatsapp" data-block="hero">
                             <i class="ri-whatsapp-line"></i>
                             <span>Отправить фото ошибки</span>
+                        </a>
+                        <a href="#request" class="btn-click w-full sm:w-auto bg-white/15 hover:bg-white/25 text-white border border-white/30 text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition shadow-lg flex items-center justify-center gap-2" data-cta-id="parokonvektomaty_form_hero" data-cta-group="form" data-block="hero" data-form-open="parokonvektomat_error_repair_bridge">
+                            <i class="ri-file-text-line"></i>
+                            <span>Описать поломку</span>
                         </a>
                     </div>
                     <!-- Trust badges -->
@@ -215,9 +219,13 @@
                 </div>
                 <!-- Hero image -->
                 <div class="pariki-hero-card scroll-reveal is-visible relative">
-                    <form class="telegram-form rounded-2xl border border-white/15 bg-white p-3.5 shadow-2xl lg:hidden mb-6 text-left" data-form-context="parokonvektomat_b2b_hero_short" action="/api/send-telegram" method="post" data-contact-form="true" data-cta-id="parokonvektomaty_form_01" data-cta-group="lead_form" data-block="lead_form">
+                    <form class="telegram-form rounded-2xl border border-white/15 bg-white p-3.5 shadow-2xl lg:hidden mb-6 text-left" data-form-context="parokonvektomat_b2b_hero_short" action="/api/send-telegram" method="post" data-form-id="parokonvektomaty_telegram_form_1">
                         <input type="hidden" name="name" value="Заявка с первого экрана">
                         <input type="hidden" name="problem" value="Нужен срочный ремонт пароконвектомата">
+                        <input type="hidden" name="brand" value="хаб пароконвектоматов">
+                        <input type="hidden" name="model" value="Уточнить по фото шильдика">
+                        <input type="hidden" name="error_code" value="Нет / уточнить">
+                        <input type="hidden" name="problem_details" value="Заявка с первого экрана: Если пароконвектомат не греет, не даёт пар или показывает код ошибки, страница должна сразу вести в заявку: фото панели, бренд, модель, симп">
                         <input type="hidden" name="type" value="Пароконвектомат / профессиональная кухня">
                         <input type="hidden" name="address" value="Адрес уточнить по звонку">
                         <div class="flex items-center justify-between gap-3 mb-3">
@@ -228,7 +236,7 @@
                             <i class="ri-tools-line text-2xl text-brand-orange"></i>
                         </div>
                         <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-slate-700 transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20" id="parokonvektomaty-phone" autocomplete="tel" inputmode="tel">
-                        <button type="submit" class="mt-3 w-full rounded-xl bg-green-600 px-5 py-3 font-bold text-white shadow-lg transition hover:bg-green-700">
+                        <button type="submit" class="mt-3 w-full rounded-xl bg-green-600 px-5 py-3 font-bold text-white shadow-lg transition hover:bg-green-700" data-cta-id="parokonvektomaty_form_submit_1" data-cta-group="form_submit" data-block="auto">
                             <i class="ri-send-plane-line mr-2"></i>Жду звонок
                         </button>
                     </form>
@@ -267,6 +275,48 @@
             </div>
         </div>
     </header>
+    <section class="py-12 sm:py-16 bg-white border-b border-slate-100" data-ads-repair-bridge="parokonvektomat-error-intent" data-parokonvektomat-run4="error-intent-bridge" data-block="parokonvektomat_repair_bridge">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-orange-200 bg-orange-50/80 p-5 sm:p-7 lg:p-9 shadow-sm">
+                <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 items-start">
+                    <div>
+                        <p class="text-sm font-bold tracking-[0.25em] text-brand-orange mb-2">REPAIR BRIDGE / ERROR INTENT</p>
+                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue mb-4">Ремонт пароконвектоматов для ресторанов, кафе и столовых</h2>
+                        <p class="text-slate-700 text-base sm:text-lg leading-relaxed mb-5">Если пароконвектомат не греет, не даёт пар или показывает код ошибки, страница должна сразу вести в заявку: фото панели, бренд, модель, симптом и срочность запуска кухни.</p>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <div class="rounded-2xl bg-white border border-slate-200 p-4">
+                                <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-2">Возможный узел</p>
+                                <p class="text-slate-700">нагрев, пар, вода, датчики, вентилятор или плата управления</p>
+                            </div>
+                            <div class="rounded-2xl bg-white border border-slate-200 p-4">
+                                <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 mb-2">Риск простоя</p>
+                                <p class="text-slate-700">простой горячей линии, срыв смены и повторный аварийный запуск без устранения причины</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm">
+                        <h3 class="text-xl font-display font-extrabold text-brand-blue mb-4">Что сделать до звонка мастеру</h3>
+                        <ul class="space-y-3 text-sm sm:text-base text-slate-700 mb-5">
+                            <li class="flex gap-3"><i class="ri-checkbox-circle-line text-green-600 mt-1"></i><span>сфотографировать код, шильдик и состояние камеры; записать модель и время появления ошибки.</span></li>
+                            <li class="flex gap-3"><i class="ri-error-warning-line text-brand-orange mt-1"></i><span>Не стоит: многократно сбрасывать ошибку, разбирать электрическую часть или продолжать смену при запахе гари, течи и выбивании автомата.</span></li>
+                            <li class="flex gap-3"><i class="ri-tools-line text-brand-blue mt-1"></i><span>Инженер проверяет причину на объекте и согласует ремонт до работ.</span></li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="tel:+79990057172" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-orangeHover" data-contact-link="phone" data-cta-id="parokonvektomaty_bridge_phone" data-cta-group="phone" data-block="parokonvektomat_repair_bridge"><i class="ri-phone-line"></i><span>Позвонить мастеру</span></a>
+                            <a href="https://wa.me/79990057172?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%B4%D0%B8%D0%B0%D0%B3%D0%BD%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B0%3A%20%D1%85%D0%B0%D0%B1%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%BE%D0%B2.%20%D0%9F%D1%80%D0%B8%D1%88%D0%BB%D1%8E%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%2C%20%D1%88%D0%B8%D0%BB%D1%8C%D0%B4%D0%B8%D0%BA%D0%B0%2C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%20%D0%B8%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0." class="inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-green-700" data-contact-link="whatsapp" data-cta-id="parokonvektomaty_bridge_whatsapp" data-cta-group="whatsapp" data-block="parokonvektomat_repair_bridge" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i><span>Отправить фото</span></a>
+                        </div>
+                        <a href="#request" class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-slate-50 px-5 py-3 text-sm font-bold text-brand-blue transition hover:border-brand-orange hover:text-brand-orange" data-cta-id="parokonvektomaty_bridge_form" data-cta-group="form" data-block="parokonvektomat_repair_bridge" data-form-open="parokonvektomat_error_repair_bridge"><i class="ri-file-list-3-line"></i><span>Описать поломку в форме</span></a>
+                    </div>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-2" data-block="parokonvektomat_related_from_bridge">
+                    <a href="parokonvektomat-kod-oshibki.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-brand-blue transition hover:border-brand-orange hover:text-brand-orange" data-cta-id="parokonvektomaty_bridge_link_1" data-cta-group="internal_link" data-block="parokonvektomat_repair_bridge">Коды ошибок</a>
+<a href="parokonvektomat-ne-greet.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-brand-blue transition hover:border-brand-orange hover:text-brand-orange" data-cta-id="parokonvektomaty_bridge_link_2" data-cta-group="internal_link" data-block="parokonvektomat_repair_bridge">Не греет</a>
+<a href="parokonvektomat-net-para.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-brand-blue transition hover:border-brand-orange hover:text-brand-orange" data-cta-id="parokonvektomaty_bridge_link_3" data-cta-group="internal_link" data-block="parokonvektomat_repair_bridge">Нет пара</a>
+<a href="parokonvektomat-convotherm.html" class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-brand-blue transition hover:border-brand-orange hover:text-brand-orange" data-cta-id="parokonvektomaty_bridge_link_4" data-cta-group="internal_link" data-block="parokonvektomat_repair_bridge">Convotherm</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="pariki-priority-strip py-12 lg:py-16 bg-slate-950 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -292,6 +342,19 @@
 
 
 <!-- ads-repair-bridge:start -->
+<section class="py-12 lg:py-16 bg-slate-50 border-y border-slate-100" data-block="run7_interlinking" data-interlink-run7="conversion-path">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">Связанные маршруты ремонта</p>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-bold text-slate-900">Путь по пароконвектоматам: от симптома к заявке</h2>
+      <p class="mt-4 text-base text-slate-600">Выберите страницу по коду ошибки, бренду или симптому: так инженер быстрее поймет узел, риск простоя и сценарий диагностики.</p>
+    </div>
+    <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-kod-oshibki.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_kod_oshibki" data-cta-group="internal_link" data-block="run7_interlinking">Коды ошибок пароконвектомата</a><a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-e02-e07-e10.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_e02_e07_e10" data-cta-group="internal_link" data-block="run7_interlinking">Ошибки E02, E07 и E10</a><a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-ne-greet.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_ne_greet" data-cta-group="internal_link" data-block="run7_interlinking">Пароконвектомат не греет</a><a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-net-para.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_net_para" data-cta-group="internal_link" data-block="run7_interlinking">Нет пара в пароконвектомате</a><a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-rational.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_rational" data-cta-group="internal_link" data-block="run7_interlinking">Rational</a><a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-unox.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_unox" data-cta-group="internal_link" data-block="run7_interlinking">Unox</a><a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-convotherm.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_convotherm" data-cta-group="internal_link" data-block="run7_interlinking">Convotherm</a><a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-abat.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_abat" data-cta-group="internal_link" data-block="run7_interlinking">Abat</a><a class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-brand-orange hover:text-brand-orange" href="/parokonvektomat-electrolux.html" data-cta-id="run7_parokonvektomaty_to_parokonvektomat_electrolux" data-cta-group="internal_link" data-block="run7_interlinking">Electrolux</a>
+    </div>
+  </div>
+</section>
+
 <section data-ads-repair-bridge="parokonvektomat-error-intent" class="py-12 lg:py-16 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] items-start">
@@ -322,15 +385,15 @@
                     <p class="mt-2 text-sm leading-relaxed text-amber-900/80">Сброс может убрать сообщение на пару минут, но причина остаётся. На профессиональной кухне безопаснее зафиксировать код, сфотографировать дисплей и согласовать диагностику до того, как аппарат остановит смену.</p>
                 </div>
                 <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                    <a href="tel:+79990057172" data-contact-link="phone" class="btn-click inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 font-bold text-white shadow-lg transition hover:bg-brand-orangeHover" data-cta-id="parokonvektomaty_phone_02" data-cta-group="phone_contact" data-block="auto_contact">
+                    <a href="tel:+79990057172" data-contact-link="phone" class="btn-click inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 font-bold text-white shadow-lg transition hover:bg-brand-orangeHover" data-cta-id="parokonvektomaty_phone_2" data-cta-group="phone" data-block="auto">
                         <i class="ri-phone-line"></i><span>Вызвать мастера</span>
                     </a>
-                    <a href="https://wa.me/79990057172?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B0.%20%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8E%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%2C%20%D0%B1%D1%80%D0%B5%D0%BD%D0%B4%2C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%2C%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BA%D1%83%D1%85%D0%BD%D0%B8%20%D0%B8%20%D0%BA%D0%BE%D0%B4%20%D0%BD%D0%B0%20%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D0%B5." data-contact-link="whatsapp" target="_blank" rel="noopener noreferrer" class="btn-click inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-green-700" data-cta-id="parokonvektomaty_whatsapp_02" data-cta-group="whatsapp_contact" data-block="auto_contact">
+                    <a href="https://wa.me/79990057172?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%BF%D0%B0%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B0.%20%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8E%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%2C%20%D0%B1%D1%80%D0%B5%D0%BD%D0%B4%2C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%2C%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BA%D1%83%D1%85%D0%BD%D0%B8%20%D0%B8%20%D0%BA%D0%BE%D0%B4%20%D0%BD%D0%B0%20%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D0%B5." data-contact-link="whatsapp" target="_blank" rel="noopener noreferrer" class="btn-click inline-flex items-center justify-center gap-2 rounded-full bg-green-600 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-green-700" data-cta-id="parokonvektomaty_whatsapp_2" data-cta-group="whatsapp" data-block="auto">
                         <i class="ri-whatsapp-line"></i><span>Отправить фото ошибки</span>
                     </a>
                 </div>
             </div>
-            <form class="telegram-form rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-lg" data-form-context="parokonvektomat_error_repair_bridge" action="/api/send-telegram" method="post" data-contact-form="true" data-cta-id="parokonvektomaty_form_02" data-cta-group="lead_form" data-block="lead_form">
+            <form class="telegram-form rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-6 lg:p-8 shadow-lg" data-form-context="parokonvektomat_error_repair_bridge" action="/api/send-telegram" method="post" data-form-id="parokonvektomat_error_repair_bridge">
                 <input type="hidden" name="name" value="Заявка по коду ошибки пароконвектомата">
                 <input type="hidden" name="type" value="Пароконвектомат / error-intent из рекламы">
                 <input type="hidden" name="address" value="Адрес уточнить по звонку">
@@ -345,8 +408,9 @@
                     <input type="text" name="error_code" placeholder="E13, AF01, E6, E07, F02, A4..." class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-slate-700 transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
                     <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" class="w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-slate-700 transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
                 </div>
-                <textarea name="problem" rows="3" placeholder="Комментарий: когда появилась ошибка, есть ли нагрев/пар, адрес кухни, срочность..." class="mt-3 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-slate-700 transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20">Нужен ремонт пароконвектомата: код ошибки, нагрев, пар или простой кухни</textarea>
-                <button type="submit" class="mt-4 w-full rounded-xl bg-green-600 px-5 py-3 font-bold text-white shadow-lg transition hover:bg-green-700">
+                <input type="hidden" name="problem" value="Нужен ремонт пароконвектомата: код ошибки, нагрев, пар или простой кухни">
+                <textarea name="problem_details" rows="3" placeholder="Комментарий: когда появилась ошибка, есть ли нагрев/пар, адрес кухни, срочность..." class="mt-3 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-slate-700 transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20">Нужен ремонт пароконвектомата: код ошибки, нагрев, пар или простой кухни</textarea>
+                <button type="submit" class="mt-4 w-full rounded-xl bg-green-600 px-5 py-3 font-bold text-white shadow-lg transition hover:bg-green-700" data-cta-id="parokonvektomaty_form_submit_2" data-cta-group="form_submit" data-block="auto">
                     <i class="ri-send-plane-line mr-2"></i>Отправить код инженеру
                 </button>
                 <p class="mt-3 text-center text-xs text-slate-500"><i class="ri-lock-line mr-1"></i>Данные нужны только для связи по ремонту пароконвектомата</p>
@@ -506,7 +570,7 @@
                     <p class="text-red-200 text-sm mt-2">Забронируйте выезд прямо сейчас</p>
                 </div>
                 <div class="text-center scroll-reveal-right">
-                    <a href="tel:+79990057172" data-contact-link="phone" class="btn-click inline-flex items-center gap-2 bg-white text-red-700 hover:bg-red-50 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl transform hover:-translate-y-1" data-cta-id="parokonvektomaty_phone_03" data-cta-group="phone_contact" data-block="auto_contact">
+                    <a href="tel:+79990057172" data-contact-link="phone" class="btn-click inline-flex items-center gap-2 bg-white text-red-700 hover:bg-red-50 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl transform hover:-translate-y-1" data-cta-id="parokonvektomaty_phone_3" data-cta-group="phone" data-block="auto">
                         <i class="ri-phone-line"></i>
                         <span>Вызвать инженера</span>
                     </a>
@@ -588,42 +652,42 @@
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto">Нажмите на иконку — перейдёте к ценам на этот ремонт</p>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-red-100 text-center hover:shadow-xl hover:border-red-300 transition-all transform hover:-translate-y-1" data-delay="1">
+                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-red-100 text-center hover:shadow-xl hover:border-red-300 transition-all transform hover:-translate-y-1" data-delay="1" data-cta-id="parokonvektomaty_anchor_1" data-cta-group="anchor" data-block="auto">
                     <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center text-red-500 text-2xl mx-auto mb-3 icon-spring group-hover:bg-red-500 group-hover:text-white">
                         <i class="ri-temp-cold-line"></i>
                     </div>
                     <p class="font-bold text-brand-blue text-sm">Не нагревает</p>
                     <p class="text-red-500 text-xs font-semibold mt-1">от 2 800₽</p>
                 </a>
-                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-blue-100 text-center hover:shadow-xl hover:border-blue-300 transition-all transform hover:-translate-y-1" data-delay="2">
+                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-blue-100 text-center hover:shadow-xl hover:border-blue-300 transition-all transform hover:-translate-y-1" data-delay="2" data-cta-id="parokonvektomaty_anchor_2" data-cta-group="anchor" data-block="auto">
                     <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mx-auto mb-3 icon-spring">
                         <i class="ri-error-warning-line"></i>
                     </div>
                     <p class="font-bold text-brand-blue text-sm">Ошибка на дисплее</p>
                     <p class="text-blue-500 text-xs font-semibold mt-1">от 1 800₽</p>
                 </a>
-                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-cyan-100 text-center hover:shadow-xl hover:border-cyan-300 transition-all transform hover:-translate-y-1" data-delay="3">
+                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-cyan-100 text-center hover:shadow-xl hover:border-cyan-300 transition-all transform hover:-translate-y-1" data-delay="3" data-cta-id="parokonvektomaty_anchor_3" data-cta-group="anchor" data-block="auto">
                     <div class="w-14 h-14 bg-cyan-50 rounded-full flex items-center justify-center text-cyan-500 text-2xl mx-auto mb-3 icon-spring">
                         <i class="ri-water-flash-line"></i>
                     </div>
                     <p class="font-bold text-brand-blue text-sm">Течёт вода</p>
                     <p class="text-cyan-500 text-xs font-semibold mt-1">от 1 500₽</p>
                 </a>
-                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-orange-100 text-center hover:shadow-xl hover:border-orange-300 transition-all transform hover:-translate-y-1" data-delay="4">
+                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-orange-100 text-center hover:shadow-xl hover:border-orange-300 transition-all transform hover:-translate-y-1" data-delay="4" data-cta-id="parokonvektomaty_anchor_4" data-cta-group="anchor" data-block="auto">
                     <div class="w-14 h-14 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 text-2xl mx-auto mb-3 icon-spring">
                         <i class="ri-volume-up-line"></i>
                     </div>
                     <p class="font-bold text-brand-blue text-sm">Шум вентилятора</p>
                     <p class="text-orange-500 text-xs font-semibold mt-1">от 2 500₽</p>
                 </a>
-                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-green-100 text-center hover:shadow-xl hover:border-green-300 transition-all transform hover:-translate-y-1" data-delay="5">
+                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-green-100 text-center hover:shadow-xl hover:border-green-300 transition-all transform hover:-translate-y-1" data-delay="5" data-cta-id="parokonvektomaty_anchor_5" data-cta-group="anchor" data-block="auto">
                     <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center text-green-500 text-2xl mx-auto mb-3 icon-spring">
                         <i class="ri-lock-unlock-line"></i>
                     </div>
                     <p class="font-bold text-brand-blue text-sm">Не закрывается дверь</p>
                     <p class="text-green-500 text-xs font-semibold mt-1">от 1 500₽</p>
                 </a>
-                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-purple-100 text-center hover:shadow-xl hover:border-purple-300 transition-all transform hover:-translate-y-1" data-delay="6">
+                <a href="#prices" class="scroll-reveal card-brand bg-white p-5 rounded-2xl border-2 border-purple-100 text-center hover:shadow-xl hover:border-purple-300 transition-all transform hover:-translate-y-1" data-delay="6" data-cta-id="parokonvektomaty_anchor_6" data-cta-group="anchor" data-block="auto">
                     <div class="w-14 h-14 bg-purple-50 rounded-full flex items-center justify-center text-purple-500 text-2xl mx-auto mb-3 icon-spring">
                         <i class="ri-power-line"></i>
                     </div>
@@ -780,7 +844,7 @@
                     </div>
                     <p class="text-slate-600 text-sm mb-3"><strong>Причины:</strong> Сгорел ТЭН, неисправность SSR-реле, обрыв проводки, сгорела плата управления.</p>
                     <p class="text-slate-600 text-sm mb-4"><strong>Симптомы:</strong> Камера не набирает температуру, ошибка HTR или E05, еда не пропекается.</p>
-                    <a href="parokonvektomat-ne-greet.html" class="mb-4 inline-flex items-center gap-2 text-sm font-bold text-red-600 hover:text-red-700">
+                    <a href="parokonvektomat-ne-greet.html" class="mb-4 inline-flex items-center gap-2 text-sm font-bold text-red-600 hover:text-red-700" data-cta-id="parokonvektomaty_internal_link_3" data-cta-group="internal_link" data-block="auto">
                         Что делать, если не греет
                         <i class="ri-arrow-right-line"></i>
                     </a>
@@ -802,7 +866,7 @@
                     </div>
                     <p class="text-slate-600 text-sm mb-3"><strong>Причины:</strong> Сбой ПО, неисправный датчик температуры, датчик влажности, повреждение платы.</p>
                     <p class="text-slate-600 text-sm mb-4"><strong>Симптомы:</strong> E01-E10 на Rational, ALARM на Unox, самопроизвольная остановка программ.</p>
-                    <a href="parokonvektomat-kod-oshibki.html" class="mb-4 inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700">
+                    <a href="parokonvektomat-kod-oshibki.html" class="mb-4 inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700" data-cta-id="parokonvektomaty_internal_link_4" data-cta-group="internal_link" data-block="auto">
                         Разобрать код ошибки
                         <i class="ri-arrow-right-line"></i>
                     </a>
@@ -901,37 +965,37 @@
                 <p class="mt-4 text-lg leading-relaxed text-slate-600">Если на дисплее уже есть код, аппарат не греет или не дает пар, откройте страницу под вашу ситуацию. Там собраны признаки, что прислать инженеру и когда нужен срочный выезд.</p>
             </div>
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <a href="parokonvektomat-kod-oshibki.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl">
+                <a href="parokonvektomat-kod-oshibki.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl" data-cta-id="parokonvektomaty_internal_link_5" data-cta-group="internal_link" data-block="auto">
                     <p class="text-sm font-bold uppercase tracking-[0.16em] text-brand-orange">Коды ошибок</p>
                     <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Код ошибки пароконвектомата</h3>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600">Что означает код на дисплее и какие фото отправить перед выездом.</p>
                     <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-blue group-hover:text-brand-orange">Открыть разбор <i class="ri-arrow-right-line"></i></span>
                 </a>
-                <a href="parokonvektomat-e02-e07-e10.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl">
+                <a href="parokonvektomat-e02-e07-e10.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl" data-cta-id="parokonvektomaty_internal_link_6" data-cta-group="internal_link" data-block="auto">
                     <p class="text-sm font-bold uppercase tracking-[0.16em] text-brand-orange">Abat / Fagor</p>
                     <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Ошибка E02 / E07 / E10</h3>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600">Отдельная страница для частых кодов, датчиков, нагрева и воды.</p>
                     <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-blue group-hover:text-brand-orange">Проверить код <i class="ri-arrow-right-line"></i></span>
                 </a>
-                <a href="parokonvektomat-unox-af02-af08.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl">
+                <a href="parokonvektomat-unox-af02-af08.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl" data-cta-id="parokonvektomaty_internal_link_7" data-cta-group="internal_link" data-block="auto">
                     <p class="text-sm font-bold uppercase tracking-[0.16em] text-brand-orange">Unox</p>
                     <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Ошибка AF02 / AF08</h3>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600">Что проверить у Unox и как подготовить заявку для инженера.</p>
                     <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-blue group-hover:text-brand-orange">Разобрать Unox <i class="ri-arrow-right-line"></i></span>
                 </a>
-                <a href="parokonvektomat-rational-e9.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl">
+                <a href="parokonvektomat-rational-e9.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl" data-cta-id="parokonvektomaty_internal_link_8" data-cta-group="internal_link" data-block="auto">
                     <p class="text-sm font-bold uppercase tracking-[0.16em] text-brand-orange">Rational</p>
                     <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Ошибка Rational E9</h3>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600">Фиксируем модель, код, режим работы и срочность для кухни.</p>
                     <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-blue group-hover:text-brand-orange">Открыть Rational E9 <i class="ri-arrow-right-line"></i></span>
                 </a>
-                <a href="parokonvektomat-ne-greet.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl">
+                <a href="parokonvektomat-ne-greet.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl" data-cta-id="parokonvektomaty_internal_link_9" data-cta-group="internal_link" data-block="auto">
                     <p class="text-sm font-bold uppercase tracking-[0.16em] text-brand-orange">Нагрев</p>
                     <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Пароконвектомат не греет</h3>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600">ТЭН, датчики, SSR-реле, плата и питание: когда нужен выезд.</p>
                     <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-blue group-hover:text-brand-orange">Разобрать нагрев <i class="ri-arrow-right-line"></i></span>
                 </a>
-                <a href="parokonvektomat-net-para.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl">
+                <a href="parokonvektomat-net-para.html" class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:border-brand-orange/40 hover:bg-white hover:shadow-xl" data-cta-id="parokonvektomaty_internal_link_10" data-cta-group="internal_link" data-block="auto">
                     <p class="text-sm font-bold uppercase tracking-[0.16em] text-brand-orange">Пар и влажность</p>
                     <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">Нет пара в пароконвектомате</h3>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600">Вода, клапаны, парогенератор, накипь и датчики влажности.</p>
@@ -1459,11 +1523,11 @@
             <h2 class="text-3xl lg:text-5xl font-display font-extrabold mb-6 leading-tight">Вернём пароконвектомат в работу без лишнего простоя кухни</h2>
             <p class="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl mx-auto">Опишите модель и симптомы, а мы быстро скажем срочность выезда, вероятный сценарий ремонта и как быстрее вернуть оборудование в смену.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="tel:+79990057172" data-contact-link="phone" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl transform hover:-translate-y-1 flex items-center gap-2" data-cta-id="parokonvektomaty_phone_04" data-cta-group="phone_contact" data-block="auto_contact">
+                <a href="tel:+79990057172" data-contact-link="phone" class="btn-click bg-white text-brand-orange hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-xl transform hover:-translate-y-1 flex items-center gap-2" data-cta-id="parokonvektomaty_phone_4" data-cta-group="phone" data-block="auto">
                     <i class="ri-phone-line"></i>
                     <span>8 (999) 005-71-72</span>
                 </a>
-                <a href="https://wa.me/79990057172?text=Нужен%20ремонт%20пароконвектомата" data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl flex items-center gap-2" data-cta-id="parokonvektomaty_whatsapp_03" data-cta-group="whatsapp_contact" data-block="auto_contact">
+                <a href="https://wa.me/79990057172?text=Нужен%20ремонт%20пароконвектомата" data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" class="btn-click bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl flex items-center gap-2" data-cta-id="parokonvektomaty_whatsapp_3" data-cta-group="whatsapp" data-block="auto">
                     <i class="ri-whatsapp-line"></i>
                     <span>Описать проблему в WhatsApp</span>
                 </a>
@@ -1495,7 +1559,7 @@
                         <span class="text-4xl font-display font-extrabold" data-countdown-sec>59</span>
                     </div>
                     <p class="text-xs mt-2" style="color: rgba(255, 255, 255, 0.72);">Диагностика при ремонте при заявке сейчас</p>
-                    <a href="tel:+79990057172" data-contact-link="phone" class="mt-4 inline-block px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105" style="background: #ffffff; color: #0f4c81;" data-cta-id="parokonvektomaty_phone_05" data-cta-group="phone_contact" data-block="auto_contact">
+                    <a href="tel:+79990057172" data-contact-link="phone" class="mt-4 inline-block px-8 py-3 rounded-full font-bold transition shadow-lg transform hover:scale-105" style="background: #ffffff; color: #0f4c81;" data-cta-id="parokonvektomaty_phone_5" data-cta-group="phone" data-block="auto">
                         <i class="ri-phone-line mr-2"></i>Вызвать инженера
                     </a>
                 </div>
@@ -1509,7 +1573,7 @@
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-3 sm:mb-4 heading-reveal">Получите понятный сценарий ремонта пароконвектомата</h2>
                     <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Укажите модель и ошибку. Мы быстро свяжемся, уточним симптомы, подскажем срочность выезда и объясним, как пойдёт диагностика на объекте.</p>
             </div>
-            <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form" data-form-context="parokonvektomat_b2b_ad_landing" action="/api/send-telegram" method="post" data-contact-form="true" data-cta-id="parokonvektomaty_form_03" data-cta-group="lead_form" data-block="lead_form">
+            <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form" data-form-context="parokonvektomat_b2b_ad_landing" action="/api/send-telegram" method="post" data-form-id="parokonvektomaty_telegram_form_3">
 <!-- sync:request-overview:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
 <div data-sync-zone="request-overview" class="mb-6 rounded-3xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5 lg:p-6">
       <div class="flex flex-wrap items-center gap-2">
@@ -1554,7 +1618,7 @@
 	                        <input type="text" name="business_type" placeholder="Ресторан, кафе, пекарня, dark kitchen" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="parokonvektomaty-business_type">
 	                    </div>
 	                </div>
-	                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
+	                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5" data-cta-id="parokonvektomaty_form_submit_3" data-cta-group="form_submit" data-block="auto">
 	                    <i class="ri-send-plane-line mr-2"></i>Вызвать инженера на кухню
 	                </button>
                 <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Контакты используем только для связи по этой заявке</p>
@@ -1706,91 +1770,91 @@
                 <p class="mt-3 text-slate-600">Переходы между брендами, симптомами, кодами ошибок и срочными B2B-посадочными без выхода из темы.</p>
             </div>
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="parokonvektomat-rational.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-rational.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_14" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Rational</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">SCC, CMP, SelfCookingCenter и CombiMaster: ошибки, пар и нагрев.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-unox.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-unox.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_15" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Unox</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">ChefTop, BakerTop и другие Unox: AF01, AF02, AF08, пар и нагрев.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-abat.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-abat.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_16" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Abat</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Ремонт Abat и Абат: ошибки, нагрев, вода и парообразование.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-convotherm.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-convotherm.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_17" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Convotherm</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Диагностика Convotherm: нагрев, пар, ошибки и условия запуска.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-electrolux.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-electrolux.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_18" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Electrolux</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Electrolux Air-O-Steam: нагрев, пар, датчики и ошибки.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-lainox.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-lainox.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_19" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Lainox</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Пароконвектоматы Lainox: ошибки, влажность, нагрев и сервис.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-ne-greet.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-ne-greet.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_20" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Не греет</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Диагностика ТЭНов, датчиков, реле, платы и питания.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-net-para.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-net-para.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_21" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Нет пара</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Проверка воды, клапанов, парогенератора, накипи и датчиков.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-kod-oshibki.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-kod-oshibki.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_22" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Коды ошибок</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Общий слой по кодам ошибок, фото дисплея и подготовке выезда.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-rational-e9.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-rational-e9.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_23" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Rational E9</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Узкая страница под ошибку E9 и диагностику Rational на объекте.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-unox-af02-af08.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-unox-af02-af08.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_24" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Unox AF02 / AF08</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Ошибки AF02 и AF08: датчики, пар, нагрев и плата управления.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-e02-e07-e10.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-e02-e07-e10.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_25" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">E02 / E07 / E10</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Ошибки Abat, Абат и Fagor: датчики, нагрев, вода и плата.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomaty-promo.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomaty-promo.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_26" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Срочный выезд</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Аварийная посадочная: код ошибки, нет пара или нагрева, фото дисплея.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="parokonvektomat-obschuzhivanie.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="parokonvektomat-obschuzhivanie.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_27" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Обслуживание</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">Плановое ТО пароконвектоматов, профилактика аварий и договор.</p>
                 <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
             </a>
-            <a href="remont-oborudovaniya-restorana-parokonvektomat.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md">
+            <a href="remont-oborudovaniya-restorana-parokonvektomat.html" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:border-brand-orange hover:bg-white hover:shadow-md" data-cta-id="parokonvektomaty_internal_link_28" data-cta-group="internal_link" data-block="auto">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По кластеру</p>
                 <h3 class="mt-3 text-lg font-display font-extrabold text-brand-blue">Кухня ресторана</h3>
                 <p class="mt-3 text-sm leading-relaxed text-slate-600">B2B-посадочная для ремонта оборудования ресторана и горячего цеха.</p>

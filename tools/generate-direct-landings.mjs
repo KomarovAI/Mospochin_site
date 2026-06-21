@@ -106,8 +106,8 @@ function updateBodyClass(html, slug) {
 
   return replaceOrThrow(
     html,
-    /<body([^>]*)\sclass="[^"]*"([^>]*)>/,
-    `<body$1 class="${bodyClass}"$2>`,
+    /<body class="[^"]*">/,
+    `<body class="${bodyClass}">`,
     'body class',
   );
 }
@@ -300,7 +300,6 @@ ${cards}
 }
 
 function updateAnalysisSection(html, page) {
-  if (!Array.isArray(page.analysisCards) || page.analysisCards.length === 0) return html;
   const section = renderAnalysisSection(page);
   const markerPattern = /<!-- direct-landing-analysis:start -->[\s\S]*?<!-- direct-landing-analysis:end -->/;
 

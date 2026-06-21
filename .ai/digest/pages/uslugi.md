@@ -7,8 +7,8 @@
 - H1: Услуги и цены на ремонт ресторанного оборудования
 - Canonical: https://mospochin.ru/uslugi.html
 - Builder model: src/pages/uslugi/page.json
-- Sections: 30 (20 local, 0 shared refs, 2 raw)
-- Text words inside referenced sections: 926
+- Sections: 31 (21 local, 0 shared refs, 2 raw)
+- Text words inside referenced sections: 968
 
 ## Component mix
 
@@ -27,6 +27,7 @@
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
+| related-links | 1 |
 | runtime-partials | 1 |
 
 
@@ -34,14 +35,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ключевые направления по типу техники | pricing | 14.0 KB | 134 | no | src/pages/uslugi/sections/009-pricing-klyuchevye-napravleniya-po-tipu-tehniki.html |
-| Услуги и цены на ремонт ресторанного оборудования | hero | 8.5 KB | 81 | no | src/pages/uslugi/sections/005-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html |
+| Ключевые направления по типу техники | pricing | 14.5 KB | 134 | no | src/pages/uslugi/sections/009-pricing-klyuchevye-napravleniya-po-tipu-tehniki.html |
+| Услуги и цены на ремонт ресторанного оборудования | hero | 8.4 KB | 81 | no | src/pages/uslugi/sections/005-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html |
 | Все виды услуг для ресторанов | pricing | 7.1 KB | 109 | no | src/pages/uslugi/sections/014-pricing-vse-vidy-uslug-dlya-restoranov.html |
 | Почему Быстрый выезд, договор и понятная ответственность | proof | 6.7 KB | 105 | no | src/pages/uslugi/sections/011-proof-pochemu-bystryy-vyezd-dogovor-i-ponyatnaya-otv.html |
 | Работаем со всеми форматами | section | 4.7 KB | 36 | no | src/pages/uslugi/sections/010-section-rabotaem-so-vsemi-formatami.html |
 | Каждая минута простоя = потеря денег | pricing | 4.4 KB | 67 | no | src/pages/uslugi/sections/008-pricing-kazhdaya-minuta-prostoya-poterya-deneg.html |
-| Не знаете, какую услугу выбрать? | section | 3.7 KB | 82 | no | src/pages/uslugi/sections/015-section-ne-znaete-kakuyu-uslugu-vybrat.html |
-| Нам доверяют | proof | 3.4 KB | 26 | no | src/pages/uslugi/sections/012-proof-nam-doveryayut.html |
+| Не знаете, какую услугу выбрать? | section | 4.0 KB | 82 | no | src/pages/uslugi/sections/015-section-ne-znaete-kakuyu-uslugu-vybrat.html |
+| Начните с симптома, если техника уже встала | section | 3.8 KB | 64 | no | src/pages/uslugi/sections/007-section-nachnite-s-simptoma-esli-tehnika-uzhe-vstala.html |
 
 
 ## Editable source files

@@ -28,7 +28,7 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Ремонт встроенных СВЧ Neff, Miele и Bosch | lead-form | 53.2 KB | 1284 | no | src/pages/microwaves/sections/004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html |
-| Мобильные контактные элементы | mobile-contact | 583 B | 0 | no | src/pages/microwaves/sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 566 B | 0 | no | src/pages/microwaves/sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Noscript fallback | noscript | 208 B | 0 | no | src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html |
 | HTML-фрагмент | raw | 54 B | 0 | no | src/pages/microwaves/sections/003-raw-html-fragment.html |
 | HTML-фрагмент | layout-fragment | 52 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-805e06bac153.template.html |

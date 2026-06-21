@@ -7,8 +7,8 @@
 - H1: Связаться с MosPochin и быстро решить вопрос с ремонтом
 - Canonical: https://mospochin.ru/contact.html
 - Builder model: src/pages/contact/page.json
-- Sections: 39 (25 local, 0 shared refs, 9 raw)
-- Text words inside referenced sections: 660
+- Sections: 40 (26 local, 0 shared refs, 9 raw)
+- Text words inside referenced sections: 706
 
 ## Component mix
 
@@ -26,6 +26,7 @@
 | hero | 1 |
 | lead-form | 1 |
 | pricing | 1 |
+| related-links | 1 |
 | runtime-partials | 1 |
 | section | 1 |
 
@@ -39,9 +40,9 @@
 | Связаться с MosPochin и быстро решить вопрос с ремонтом | hero | 6.3 KB | 69 | no | src/pages/contact/sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html |
 | Режим работы | pricing | 5.3 KB | 43 | no | src/pages/contact/sections/013-pricing-rezhim-raboty.html |
 | Кто приедет к вам | proof | 3.9 KB | 52 | no | src/pages/contact/sections/015-proof-kto-priedet-k-vam.html |
+| Связанные маршруты ремонта | related-links | 3.7 KB | 46 | no | src/pages/contact/sections/900-related-links-run7-conversion-path.html |
 | Частые вопросы | faq | 3.7 KB | 97 | no | src/pages/contact/sections/023-faq-chastye-voprosy.html |
 | Схема работы | contact-cta | 3.7 KB | 87 | no | src/pages/contact/sections/021-contact-cta-shema-raboty.html |
-| Оставьте заявку, и мы свяжемся по ремонту | lead-form | 3.5 KB | 41 | no | src/pages/contact/sections/027-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon.html |
 
 
 ## Editable source files

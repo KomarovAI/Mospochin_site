@@ -1,0 +1,229 @@
+{
+  "project": "MosPochin / mospochin.ru",
+  "run": "P8_final_deploy_handoff",
+  "date": "2026-06-21",
+  "base_package": "mospochin_interlinking_run7_pack_20260621.zip",
+  "base_sha256": "18cd9f793367712a2bb747d9a2e749232a49b88bd3db54d0974d14a34375aabd",
+  "mode": "site-only; no Yandex Direct apply changes; deployment handoff only",
+  "source_inventory": {
+    "root_html_pages": 63,
+    "indexable_html_pages": 58,
+    "noindex_html_pages": 5,
+    "sitemap_urls": 58,
+    "metadata_pages": 63,
+    "direct_landing_entries": 28,
+    "pages_with_data_page_slug": 63,
+    "data_cta_id_total": 2266,
+    "forms_total": 79
+  },
+  "guardrails": {
+    "must_preserve": [
+      "analytics.js",
+      "telegram-form.js",
+      "server/telegram-api.mjs",
+      "/api/track-event",
+      "/api/send-telegram",
+      "site_events.jsonl",
+      "site_event_rejects.jsonl",
+      "data-page-*",
+      "data-cta-*",
+      "data-form-id",
+      "data-form-context"
+    ],
+    "do_not_do": [
+      "do not overwrite production tracking blindly",
+      "do not apply Yandex Direct bid/keyword/minus changes",
+      "do not delete current production logs",
+      "do not deploy if /api/track-event smoke fails"
+    ]
+  },
+  "key_pages_for_smoke": [
+    "/",
+    "/parokonvektomaty.html",
+    "/parokonvektomat-kod-oshibki.html",
+    "/parokonvektomat-e02-e07-e10.html",
+    "/parokonvektomat-convotherm.html",
+    "/pishevarochnye-kotly.html",
+    "/pishevarochnyj-kotel-abat-h20.html",
+    "/remont-pishevarochnyh-kotlov-abat.html"
+  ],
+  "expected_events": [
+    "cta_view",
+    "cta_click",
+    "phone_click",
+    "whatsapp_click",
+    "telegram_click",
+    "email_click",
+    "form_open",
+    "form_start",
+    "form_submit_attempt",
+    "form_submit_success",
+    "form_submit_error",
+    "form_validation_error",
+    "form_submit_blocked"
+  ],
+  "smoke_actions": [
+    "Открыть страницу и убедиться, что нет JS errors в console.",
+    "Дождаться видимости hero/mobile CTA и проверить cta_view.",
+    "Кликнуть телефон и проверить phone_click.",
+    "Кликнуть WhatsApp и проверить whatsapp_click.",
+    "Открыть форму через CTA и проверить form_open.",
+    "Ввести первый символ в поле и проверить form_start.",
+    "Отправить невалидную форму и проверить form_validation_error / form_submit_blocked.",
+    "Отправить тестовую валидную форму и проверить form_submit_attempt + form_submit_success."
+  ],
+  "checks": {
+    "h1_issues": [],
+    "missing_canonical": [],
+    "bad_target_blank": 0,
+    "broken_internal_links": 0,
+    "intentional_noindex": [
+      "404.html",
+      "kompyutery.html",
+      "parokonvektomaty-promo.html",
+      "remont-oborudovaniya-restorana-parokonvektomat.html",
+      "routery.html"
+    ],
+    "broken_internal_link_samples": []
+  },
+  "production_success_criteria": {
+    "first_24h": [
+      "/api/track-event returns ok",
+      "site_events.jsonl receives human_candidate events",
+      "site_event_rejects.jsonl is not growing abnormally",
+      "phone_click > 0 after manual smoke",
+      "whatsapp_click > 0 after manual smoke",
+      "form_open > 0 after manual smoke",
+      "form_start > 0 after manual smoke"
+    ],
+    "first_7_14_days": [
+      "compare landing pages by cta_click, phone_click, whatsapp_click, form_start, form_submit_success",
+      "do not change Direct until enough decision events exist",
+      "exclude bots/internal/smoke/curl from decision slice"
+    ]
+  },
+  "official_reference_urls": {
+    "google_sitemaps": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+    "google_structured_data_policies": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+    "yandex_metrica_reachgoal": "https://yandex.com/support/metrica/en/objects/reachgoal",
+    "yandex_direct_report_type": "https://yandex.ru/dev/direct/doc/en/type"
+  },
+  "page_summaries_sample": [
+    {
+      "page": "404.html",
+      "indexable": false,
+      "title_len": 37,
+      "description_len": 78,
+      "h1_count": 1,
+      "cta_ids": 4,
+      "forms": 0,
+      "data_page": true
+    },
+    {
+      "page": "about.html",
+      "indexable": true,
+      "title_len": 59,
+      "description_len": 131,
+      "h1_count": 1,
+      "cta_ids": 23,
+      "forms": 1,
+      "data_page": true
+    },
+    {
+      "page": "bytovaya-about.html",
+      "indexable": true,
+      "title_len": 45,
+      "description_len": 121,
+      "h1_count": 1,
+      "cta_ids": 17,
+      "forms": 1,
+      "data_page": true
+    },
+    {
+      "page": "bytovaya-contact.html",
+      "indexable": true,
+      "title_len": 56,
+      "description_len": 138,
+      "h1_count": 1,
+      "cta_ids": 17,
+      "forms": 1,
+      "data_page": true
+    },
+    {
+      "page": "bytovaya-index.html",
+      "indexable": true,
+      "title_len": 51,
+      "description_len": 126,
+      "h1_count": 1,
+      "cta_ids": 27,
+      "forms": 1,
+      "data_page": true
+    },
+    {
+      "page": "bytovaya-uslugi.html",
+      "indexable": true,
+      "title_len": 45,
+      "description_len": 124,
+      "h1_count": 1,
+      "cta_ids": 13,
+      "forms": 1,
+      "data_page": true
+    },
+    {
+      "page": "contact.html",
+      "indexable": true,
+      "title_len": 64,
+      "description_len": 114,
+      "h1_count": 1,
+      "cta_ids": 27,
+      "forms": 1,
+      "data_page": true
+    },
+    {
+      "page": "grili-mangaly.html",
+      "indexable": true,
+      "title_len": 56,
+      "description_len": 156,
+      "h1_count": 1,
+      "cta_ids": 19,
+      "forms": 1,
+      "data_page": true
+    },
+    {
+      "page": "holodilniki.html",
+      "indexable": true,
+      "title_len": 49,
+      "description_len": 137,
+      "h1_count": 1,
+      "cta_ids": 20,
+      "forms": 1,
+      "data_page": true
+    },
+    {
+      "page": "holodilnoe-oborudovanie.html",
+      "indexable": true,
+      "title_len": 65,
+      "description_len": 136,
+      "h1_count": 1,
+      "cta_ids": 15,
+      "forms": 1,
+      "data_page": true
+    }
+  ],
+  "verification": {
+    "npm_ci_ignore_scripts": "PASS",
+    "verify_fast": "PASS",
+    "lint": "PASS",
+    "predeploy_check": "PASS",
+    "npm_audit_moderate": "PASS: 0 vulnerabilities",
+    "node_check": [
+      "analytics.js PASS",
+      "telegram-form.js PASS",
+      "server/telegram-api.mjs PASS"
+    ],
+    "local_track_event_smoke": "PASS: /api/track-event returned {\"ok\":true}",
+    "zip_integrity": "PASS",
+    "node_modules_excluded": "PASS",
+    "visual_screenshot_audit": "NOT RUN: requires Playwright Chromium in CI/server environment"
+  }
+}

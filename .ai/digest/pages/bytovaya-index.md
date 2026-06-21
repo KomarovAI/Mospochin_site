@@ -35,12 +35,12 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонтируем все марки | pricing | 28.9 KB | 88 | no | src/pages/bytovaya-index/sections/020-pricing-remontiruem-vse-marki.html |
 | Ремонт бытовой техники на дому в Москве | hero | 8.8 KB | 107 | no | src/pages/bytovaya-index/sections/006-hero-remont-bytovoy-tehniki-na-domu-v-moskve.html |
-| Популярные категории и типовые поломки | related-links | 7.7 KB | 136 | no | src/pages/bytovaya-index/sections/011-related-links-populyarnye-kategorii-i-tipovye-polomk.html |
-| Прозрачные цены без сюрпризов | pricing | 6.5 KB | 73 | no | src/pages/bytovaya-index/sections/018-pricing-prozrachnye-ceny-bez-syurprizov.html |
+| Популярные категории и типовые поломки | related-links | 8.4 KB | 136 | no | src/pages/bytovaya-index/sections/011-related-links-populyarnye-kategorii-i-tipovye-polomk.html |
+| Прозрачные цены без сюрпризов | pricing | 6.9 KB | 73 | no | src/pages/bytovaya-index/sections/018-pricing-prozrachnye-ceny-bez-syurprizov.html |
 | Почему бытовую технику чаще чинят дома, а не везут в мастерскую | proof | 5.9 KB | 107 | no | src/pages/bytovaya-index/sections/013-proof-pochemu-bytovuyu-tehniku-chasche-chinyat-doma-.html |
 | Спокойный сценарий ремонта без лишних шагов | pricing | 5.0 KB | 96 | no | src/pages/bytovaya-index/sections/009-pricing-spokoynyy-scenariy-remonta-bez-lishnih-shago.html |
-| Оставьте заявку на ремонт | lead-form | 4.7 KB | 55 | no | src/pages/bytovaya-index/sections/025-lead-form-ostav-te-zayavku-na-remont.html |
-| Истории наших клиентов | proof | 4.7 KB | 95 | no | src/pages/bytovaya-index/sections/015-proof-istorii-nashih-klientov.html |
+| Сначала выберите, что сломалось | section | 5.0 KB | 73 | no | src/pages/bytovaya-index/sections/007-section-snachala-vyberite-chto-slomalos.html |
+| Оставьте заявку на ремонт | lead-form | 4.8 KB | 55 | no | src/pages/bytovaya-index/sections/025-lead-form-ostav-te-zayavku-na-remont.html |
 
 
 ## Editable source files

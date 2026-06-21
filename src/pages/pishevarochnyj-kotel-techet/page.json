@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnyj-kotel-techet.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "cc9da4bf8ffe897fa6c3da6e765732636275e81066255c58312d65b38d80de06",
+    "hash": "89864f79d04c7332d1caace002814b0379cae943f10101c7debe25b3f02fa722",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -46,8 +46,16 @@
       "component": "mobile-contact",
       "label": "Ремонт пищеварочного котла при течи",
       "file": "sections/003-mobile-contact-remont-pischevarochnogo-kotla-pri-tec.html",
-      "bytes": 3149,
-      "hash": "f41134c89abe4a29"
+      "bytes": 3115,
+      "hash": "f28e908ac50968ce"
+    },
+    {
+      "id": "008a-cooking-kettle-run5-readiness",
+      "component": "section",
+      "label": "Run5: production readiness bridge",
+      "file": "sections/008a-cooking-kettle-run5-readiness.html",
+      "bytes": 7723,
+      "hash": "08f93d6ee0a4cf2b"
     },
     {
       "id": "004-raw-html-fragment",
@@ -67,8 +75,8 @@
       "component": "mobile-contact",
       "label": "Котел течет — сначала определяем, откуда вода или продукт",
       "file": "sections/005-mobile-contact-kotel-techet-snachala-opredelyaem-otk.html",
-      "bytes": 5010,
-      "hash": "a25f0f0dce0d6718"
+      "bytes": 4976,
+      "hash": "696f66474e2a22e5"
     },
     {
       "id": "006-raw-html-fragment",
@@ -101,8 +109,8 @@
       "component": "pricing",
       "label": "Разводим трафик по реальному симптому",
       "file": "sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html",
-      "bytes": 5090,
-      "hash": "ad81661e9380ebf1"
+      "bytes": 5732,
+      "hash": "1e25ea777184201f"
     },
     {
       "id": "009-raw-html-fragment",
@@ -166,12 +174,9 @@
       "id": "014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at",
       "component": "pricing",
       "label": "Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma",
-      "bytes": 5481,
-      "hash": "6501b772607fe7ea",
-      "componentRef": "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
-      "componentScope": "shared",
-      "componentSignature": "6501b772607fe7ea",
-      "sourceFile": "sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html"
+      "file": "sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html",
+      "bytes": 6018,
+      "hash": "d899dbf6aff02c23"
     },
     {
       "id": "015-raw-html-fragment",
@@ -203,12 +208,9 @@
       "id": "017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam",
       "component": "pricing",
       "label": "Развели ошибки КПЭМ по отдельным сценариям",
-      "bytes": 4707,
-      "hash": "b9734b323f0f36f9",
-      "componentRef": "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-      "componentScope": "shared",
-      "componentSignature": "b9734b323f0f36f9",
-      "sourceFile": "sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html"
+      "file": "sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html",
+      "bytes": 5237,
+      "hash": "69cfc9ca698f0b17"
     },
     {
       "id": "018-raw-html-fragment",
@@ -241,8 +243,8 @@
       "component": "pricing",
       "label": "Развели заявки по симптомам и узлам",
       "file": "sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-      "bytes": 8698,
-      "hash": "5102b1e98a66a044"
+      "bytes": 9984,
+      "hash": "a67918dab9c3909d"
     },
     {
       "id": "021-raw-html-fragment",
@@ -258,12 +260,21 @@
       "sourceFile": "sections/021-raw-html-fragment.html"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 4560,
+      "hash": "96f5d317b23e9037",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "022-lead-form-ostav-te-zayavku-na-remont",
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/022-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 6394,
-      "hash": "d8c47efaab02dc9f"
+      "bytes": 6431,
+      "hash": "54dc734b3bdb6d7b"
     },
     {
       "id": "023-proof-dokazatel-stva-garantii",
@@ -393,7 +404,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 4,
+    "sharedSectionRefs": 2,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

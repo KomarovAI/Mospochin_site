@@ -34,7 +34,7 @@
 | Сервисные точки и карта | contact-cta | 18.3 KB | 302 | no | src/pages/bytovaya-contact/sections/007-contact-cta-servisnye-tochki-i-karta.html |
 | Когда лучше звонить, а когда писать | mobile-contact | 13.0 KB | 263 | no | src/pages/bytovaya-contact/sections/009-mobile-contact-kogda-luchshe-zvonit-a-kogda-pisat.html |
 | Связаться по ремонту бытовой техники | hero | 12.3 KB | 136 | no | src/pages/bytovaya-contact/sections/005-hero-svyazat-sya-po-remontu-bytovoy-tehniki.html |
-| Куда писать и звонить по бытовой технике | mobile-contact | 9.9 KB | 146 | no | src/pages/bytovaya-contact/sections/006-mobile-contact-kuda-pisat-i-zvonit-po-bytovoy-tehnik.html |
+| Куда писать и звонить по бытовой технике | mobile-contact | 9.8 KB | 146 | no | src/pages/bytovaya-contact/sections/006-mobile-contact-kuda-pisat-i-zvonit-po-bytovoy-tehnik.html |
 | Что лучше отправить сразу | contact-cta | 7.4 KB | 172 | no | src/pages/bytovaya-contact/sections/011-contact-cta-chto-luchshe-otpravit-srazu.html |
 | Что клиент понимает ещё до приезда мастера | proof | 4.7 KB | 154 | no | src/pages/bytovaya-contact/sections/008-proof-chto-klient-ponimaet-esche-do-priezda-mastera.html |
 | Частые вопросы | faq | 4.7 KB | 152 | no | src/pages/bytovaya-contact/sections/012-faq-chastye-voprosy.html |

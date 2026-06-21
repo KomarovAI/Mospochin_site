@@ -7,11 +7,11 @@
   "branch": "restaurant",
   "role": "service",
   "title": "Ремонт пароконвектоматов для ресторанов в Москве | MosPochin",
-  "h1": "Ремонт пароконвектоматов для ресторанов",
+  "h1": "Ремонт пароконвектоматов для ресторанов, кафе и столовых",
   "source": {
     "extractedFrom": "parokonvektomaty.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "8ca4565935a4029e2353dd010d4255ef73b36addc392b2316919a2a2c76df224",
+    "hash": "05ab4a202c6c67894478da1a7a97b9d23d9aee07bc800daab19c0287538b53c6",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -76,12 +76,9 @@
       "id": "005-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "bytes": 818,
-      "hash": "b8378d436da3d89d",
-      "componentRef": "src/components/shared/breadcrumb/breadcrumb-hlebnye-kroshki--b8378d436da3d89d.html",
-      "componentScope": "shared",
-      "componentSignature": "b8378d436da3d89d",
-      "sourceFile": "sections/005-breadcrumb-hlebnye-kroshki.html"
+      "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
+      "bytes": 1010,
+      "hash": "e993397e0adac8a8"
     },
     {
       "id": "006-raw-html-fragment",
@@ -101,8 +98,16 @@
       "component": "hero",
       "label": "Ремонт пароконвектоматов для ресторанов",
       "file": "sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html",
-      "bytes": 11410,
-      "hash": "19d9f2beadee7e48"
+      "bytes": 11402,
+      "hash": "743f5f5521045a1a"
+    },
+    {
+      "id": "008a-parokonvektomat-error-intent-bridge",
+      "component": "section",
+      "label": "Repair bridge: ошибка / симптом / бренд → диагностика → заявка",
+      "file": "sections/008a-parokonvektomat-error-intent-bridge.html",
+      "bytes": 7407,
+      "hash": "2b90276099af9365"
     },
     {
       "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
@@ -121,12 +126,21 @@
       "hash": "b1fb411c1977cf7b"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 4215,
+      "hash": "464f4b72b289d80f",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc",
       "component": "lead-form",
       "label": "Ошибка на дисплее — повод не читать справочник, а быстро вернуть кухню в работу",
       "file": "sections/010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc.html",
-      "bytes": 8701,
-      "hash": "0e0eb1369807ee83"
+      "bytes": 8693,
+      "hash": "bb9d664a975f165f"
     },
     {
       "id": "011-raw-html-fragment",
@@ -244,8 +258,8 @@
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
       "file": "sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
-      "bytes": 3358,
-      "hash": "468dcea780c022d9"
+      "bytes": 3341,
+      "hash": "29f1a95f6e992af5"
     },
     {
       "id": "022-pricing-ceny-stoimost",
@@ -283,12 +297,9 @@
       "id": "025-pricing-vyberite-problemu-pokazhem-cenu",
       "component": "pricing",
       "label": "Выберите проблему — покажем цену",
-      "bytes": 4980,
-      "hash": "5d86ccad444cb9af",
-      "componentRef": "src/components/shared/pricing/pricing-vyberite-problemu-pokazhem-cenu--5d86ccad444cb9af.html",
-      "componentScope": "shared",
-      "componentSignature": "5d86ccad444cb9af",
-      "sourceFile": "sections/025-pricing-vyberite-problemu-pokazhem-cenu.html"
+      "file": "sections/025-pricing-vyberite-problemu-pokazhem-cenu.html",
+      "bytes": 5472,
+      "hash": "ad55eb78cae47a1a"
     },
     {
       "id": "026-raw-html-fragment",
@@ -332,8 +343,8 @@
       "component": "pricing",
       "label": "Частые поломки пароконвектоматов",
       "file": "sections/029-pricing-chastye-polomki-parokonvektomatov.html",
-      "bytes": 11440,
-      "hash": "c7dffca803453370"
+      "bytes": 11632,
+      "hash": "e7874e20482caf61"
     },
     {
       "id": "030-raw-html-fragment",
@@ -348,8 +359,8 @@
       "component": "section",
       "label": "Разобрать проблему пароконвектомата точнее",
       "file": "sections/031-section-razobrat-problemu-parokonvektomata-tochnee.html",
-      "bytes": 6483,
-      "hash": "53e8c55db1e5a40d"
+      "bytes": 7060,
+      "hash": "69bbc31133bb654c"
     },
     {
       "id": "032-raw-html-fragment",
@@ -556,8 +567,8 @@
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
       "file": "sections/053-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
-      "bytes": 1916,
-      "hash": "a94b6793a081fd07"
+      "bytes": 1882,
+      "hash": "b5a66d9a9b571928"
     },
     {
       "id": "054-raw-html-fragment",
@@ -577,16 +588,16 @@
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
       "file": "sections/055-contact-cta-parokonvektomat-vstal.html",
-      "bytes": 3099,
-      "hash": "9b43ddafaf860de5"
+      "bytes": 3082,
+      "hash": "ba78785d11b70231"
     },
     {
       "id": "056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
       "file": "sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
-      "bytes": 7482,
-      "hash": "b824a7e2a40993a3"
+      "bytes": 7508,
+      "hash": "33d538757c5a107e"
     },
     {
       "id": "057-proof-dokazatel-stva-garantii",
@@ -635,12 +646,9 @@
       "id": "062-related-links-esli-problema-v-drugom-restorannom-obo",
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
+      "file": "sections/062-related-links-esli-problema-v-drugom-restorannom-obo.html",
       "bytes": 2977,
-      "hash": "4d77c43f3f7ac07c",
-      "componentRef": "src/components/shared/related-links/related-links-esli-problema-v-drugom-restorannom-oborudova--4d77c43f3f7ac07c.html",
-      "componentScope": "shared",
-      "componentSignature": "4d77c43f3f7ac07c",
-      "sourceFile": "sections/062-related-links-esli-problema-v-drugom-restorannom-obo.html"
+      "hash": "4d77c43f3f7ac07c"
     },
     {
       "id": "063-related-links-svyazannye-stranicy",
@@ -655,8 +663,8 @@
       "component": "related-links",
       "label": "Связанные страницы по пароконвектоматам",
       "file": "sections/064-related-links-svyazannye-stranicy-po-parokonvektomat.html",
-      "bytes": 12058,
-      "hash": "4c723f5433f06c9a"
+      "bytes": 13513,
+      "hash": "d87ec01561dcef05"
     },
     {
       "id": "065-raw-html-fragment",
@@ -813,7 +821,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 13,
+    "sharedSectionRefs": 10,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

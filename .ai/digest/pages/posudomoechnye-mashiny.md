@@ -7,8 +7,8 @@
 - H1: Ремонт промышленных посудомоечных машин без остановки кухни на полдня
 - Canonical: https://mospochin.ru/posudomoechnye-mashiny.html
 - Builder model: src/pages/posudomoechnye-mashiny/page.json
-- Sections: 64 (42 local, 3 shared refs, 13 raw)
-- Text words inside referenced sections: 2309
+- Sections: 65 (43 local, 3 shared refs, 13 raw)
+- Text words inside referenced sections: 2352
 
 ## Component mix
 
@@ -19,9 +19,9 @@
 | proof | 11 |
 | pricing | 10 |
 | mobile-contact | 3 |
+| related-links | 3 |
 | breadcrumb | 2 |
 | faq | 2 |
-| related-links | 2 |
 | section | 2 |
 | contact-cta | 1 |
 | footer-anchor | 1 |

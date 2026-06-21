@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnyj-kotel-ne-greet.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "466923c89bc943ce40fae93e21a3a5cf4b7a9f942afeb8283517ee9093fa0e6a",
+    "hash": "0cd2cb8c25461237bd1b1beef8c27605bf86918263b95c40f5e4b299ec95620e",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -46,8 +46,16 @@
       "component": "mobile-contact",
       "label": "Ремонт пищеварочного котла, который не греет",
       "file": "sections/003-mobile-contact-remont-pischevarochnogo-kotla-kotoryy.html",
-      "bytes": 3178,
-      "hash": "971fd0db250b6f69"
+      "bytes": 3144,
+      "hash": "191e99105a3700e2"
+    },
+    {
+      "id": "008a-cooking-kettle-run5-readiness",
+      "component": "section",
+      "label": "Run5: production readiness bridge",
+      "file": "sections/008a-cooking-kettle-run5-readiness.html",
+      "bytes": 7802,
+      "hash": "49e0d9e779c110d1"
     },
     {
       "id": "004-raw-html-fragment",
@@ -67,8 +75,8 @@
       "component": "mobile-contact",
       "label": "Котел не греет — проверяем не только ТЭН",
       "file": "sections/005-mobile-contact-kotel-ne-greet-proveryaem-ne-tol-ko-t.html",
-      "bytes": 4989,
-      "hash": "54d8231ab5a43a4a"
+      "bytes": 4955,
+      "hash": "b7ee7cfe4f5395b2"
     },
     {
       "id": "006-raw-html-fragment",
@@ -101,8 +109,8 @@
       "component": "pricing",
       "label": "Разводим трафик по реальному симптому",
       "file": "sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html",
-      "bytes": 5089,
-      "hash": "f0f5ec3aeb567c2f"
+      "bytes": 5743,
+      "hash": "884bbfc4d6634269"
     },
     {
       "id": "009-raw-html-fragment",
@@ -166,12 +174,9 @@
       "id": "014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at",
       "component": "pricing",
       "label": "Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma",
-      "bytes": 5481,
-      "hash": "6501b772607fe7ea",
-      "componentRef": "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
-      "componentScope": "shared",
-      "componentSignature": "6501b772607fe7ea",
-      "sourceFile": "sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html"
+      "file": "sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html",
+      "bytes": 6028,
+      "hash": "3d59c327b0723f67"
     },
     {
       "id": "015-raw-html-fragment",
@@ -203,12 +208,9 @@
       "id": "017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam",
       "component": "pricing",
       "label": "Развели ошибки КПЭМ по отдельным сценариям",
-      "bytes": 4707,
-      "hash": "b9734b323f0f36f9",
-      "componentRef": "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-      "componentScope": "shared",
-      "componentSignature": "b9734b323f0f36f9",
-      "sourceFile": "sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html"
+      "file": "sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html",
+      "bytes": 5247,
+      "hash": "ed4c6f7b6d864294"
     },
     {
       "id": "018-raw-html-fragment",
@@ -241,8 +243,8 @@
       "component": "pricing",
       "label": "Развели заявки по симптомам и узлам",
       "file": "sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-      "bytes": 8700,
-      "hash": "23800f72b6e60873"
+      "bytes": 10010,
+      "hash": "9a361be11145d6bc"
     },
     {
       "id": "021-raw-html-fragment",
@@ -258,12 +260,21 @@
       "sourceFile": "sections/021-raw-html-fragment.html"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 4569,
+      "hash": "80478e1980143e8a",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "022-lead-form-ostav-te-zayavku-na-remont",
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/022-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 6411,
-      "hash": "0d75b7e9af66ec2b"
+      "bytes": 6450,
+      "hash": "7c5d7f3dfa8ab73f"
     },
     {
       "id": "023-proof-dokazatel-stva-garantii",
@@ -393,7 +404,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 4,
+    "sharedSectionRefs": 2,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

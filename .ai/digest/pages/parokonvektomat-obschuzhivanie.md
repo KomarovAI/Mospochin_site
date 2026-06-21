@@ -7,8 +7,8 @@
 - H1: Техническое обслуживание пароконвектоматов
 - Canonical: https://mospochin.ru/parokonvektomat-obschuzhivanie.html
 - Builder model: src/pages/parokonvektomat-obschuzhivanie/page.json
-- Sections: 34 (25 local, 0 shared refs, 10 raw)
-- Text words inside referenced sections: 1595
+- Sections: 35 (26 local, 0 shared refs, 10 raw)
+- Text words inside referenced sections: 1644
 
 ## Component mix
 
@@ -21,11 +21,11 @@
 | pricing | 3 |
 | breadcrumb | 2 |
 | faq | 2 |
+| related-links | 2 |
 | footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
 | noscript | 1 |
-| related-links | 1 |
 | runtime-partials | 1 |
 
 
@@ -36,7 +36,7 @@
 | Полный комплекс профилактики | section | 11.4 KB | 135 | no | src/pages/parokonvektomat-obschuzhivanie/sections/011-section-polnyy-kompleks-profilaktiki.html |
 | Особенности ТО для каждого бренда | section | 11.0 KB | 146 | no | src/pages/parokonvektomat-obschuzhivanie/sections/017-section-osobennosti-to-dlya-kazhdogo-brenda.html |
 | Техническое обслуживание пароконвектоматов | hero | 11.0 KB | 96 | no | src/pages/parokonvektomat-obschuzhivanie/sections/007-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html |
-| Связанные страницы по пароконвектоматам | related-links | 9.6 KB | 187 | no | src/pages/parokonvektomat-obschuzhivanie/sections/025-related-links-svyazannye-stranicy-po-parokonvektomat.html |
+| Связанные страницы по пароконвектоматам | related-links | 10.9 KB | 187 | no | src/pages/parokonvektomat-obschuzhivanie/sections/025-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Частые вопросы о ТО пароконвектоматов | faq | 8.4 KB | 323 | no | src/pages/parokonvektomat-obschuzhivanie/sections/024-faq-chastye-voprosy-o-to-parokonvektomatov.html |
 | Что говорят клиенты с договором на ТО | section | 5.9 KB | 157 | no | src/pages/parokonvektomat-obschuzhivanie/sections/021-section-chto-govoryat-klienty-s-dogovorom-na-to.html |
 | Почему ТО выгоднее аварийного ремонта | pricing | 5.8 KB | 82 | no | src/pages/parokonvektomat-obschuzhivanie/sections/015-pricing-pochemu-to-vygodnee-avariynogo-remonta.html |

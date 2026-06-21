@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnyj-kotel-datchik-temperatury.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "414ec9e4a92f05310a4421c6a292b4b0f19c4fe00436c13f3d7f7ef4f3296cc5",
+    "hash": "84cf11e8c2a9a95f8d9db9550f5316833f3618123637a3d1e9fe56d40f3530bb",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -46,8 +46,16 @@
       "component": "mobile-contact",
       "label": "Датчик температуры пищеварочного котла",
       "file": "sections/003-mobile-contact-datchik-temperatury-pischevarochnogo-.html",
-      "bytes": 3060,
-      "hash": "6b1389aef73d735c"
+      "bytes": 3026,
+      "hash": "563e0b38a00c0f27"
+    },
+    {
+      "id": "008a-cooking-kettle-run5-readiness",
+      "component": "section",
+      "label": "Run5: production readiness bridge",
+      "file": "sections/008a-cooking-kettle-run5-readiness.html",
+      "bytes": 7891,
+      "hash": "bf51d2ee4945c561"
     },
     {
       "id": "004-raw-html-fragment",
@@ -67,8 +75,8 @@
       "component": "mobile-contact",
       "label": "Симптом → узел → риск простоя → диагностика",
       "file": "sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html",
-      "bytes": 5462,
-      "hash": "c82ce9ad8f91091d"
+      "bytes": 5428,
+      "hash": "56b342c5cefed83f"
     },
     {
       "id": "006-raw-html-fragment",
@@ -111,12 +119,9 @@
       "id": "009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at",
       "component": "pricing",
       "label": "Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma",
-      "bytes": 5481,
-      "hash": "6501b772607fe7ea",
-      "componentRef": "src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html",
-      "componentScope": "shared",
-      "componentSignature": "6501b772607fe7ea",
-      "sourceFile": "sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html"
+      "file": "sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html",
+      "bytes": 6081,
+      "hash": "c603b4411aed4f7a"
     },
     {
       "id": "010-raw-html-fragment",
@@ -148,12 +153,9 @@
       "id": "012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam",
       "component": "pricing",
       "label": "Развели ошибки КПЭМ по отдельным сценариям",
-      "bytes": 4707,
-      "hash": "b9734b323f0f36f9",
-      "componentRef": "src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html",
-      "componentScope": "shared",
-      "componentSignature": "b9734b323f0f36f9",
-      "sourceFile": "sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html"
+      "file": "sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html",
+      "bytes": 5308,
+      "hash": "ee9c49de1730aec3"
     },
     {
       "id": "013-raw-html-fragment",
@@ -186,8 +188,8 @@
       "component": "pricing",
       "label": "Развели заявки по симптомам и узлам",
       "file": "sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-      "bytes": 8673,
-      "hash": "66fc5d7951932063"
+      "bytes": 10125,
+      "hash": "e4968a76b2412140"
     },
     {
       "id": "016-raw-html-fragment",
@@ -203,12 +205,21 @@
       "sourceFile": "sections/016-raw-html-fragment.html"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 4690,
+      "hash": "7c93f45ba468655f",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "017-lead-form-ostav-te-zayavku-na-diagnostiku",
       "component": "lead-form",
       "label": "Оставьте заявку на диагностику",
       "file": "sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html",
-      "bytes": 5588,
-      "hash": "ce864d9907640c94"
+      "bytes": 5638,
+      "hash": "fe704ebf3d48d722"
     },
     {
       "id": "018-faq-chastye-voprosy-po-etoy-neispravnosti",
@@ -281,7 +292,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 3,
+    "sharedSectionRefs": 1,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

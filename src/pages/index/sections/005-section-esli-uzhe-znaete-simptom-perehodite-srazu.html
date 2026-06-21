@@ -1,36 +1,73 @@
 
-    <section class="py-8 bg-white border-b border-slate-100" data-restaurant-route-strip="index">
+    <section class="py-10 bg-white border-b border-slate-100" data-restaurant-route-strip="index" data-block="index_service_cards">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 lg:p-8 shadow-sm">
                 <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6">
                     <div>
-                        <p class="text-sm font-bold tracking-[0.25em] text-brand-orange mb-2" data-route-strip-badge>БЫСТРЫЙ МАРШРУТ</p>
-                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue" data-route-strip-title>Если уже знаете симптом, переходите сразу</h2>
-                        <p class="text-slate-600 mt-2 max-w-3xl" data-route-strip-description>Не нужно читать весь лендинг подряд. Выберите, что именно встало на кухне, и попадёте в нужную сервисную страницу.</p>
+                        <p class="text-sm font-bold tracking-[0.25em] text-brand-orange mb-2" data-route-strip-badge>ЧТО РЕМОНТИРУЕМ</p>
+                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue" data-route-strip-title>Основные направления ремонта для кухни общепита</h2>
+                        <p class="text-slate-600 mt-2 max-w-3xl" data-route-strip-description>Выберите тип оборудования или отправьте фото ошибки в WhatsApp. На посадочных страницах есть симптомы, бренды, ошибки, узлы и форма заявки.</p>
                     </div>
-                    <a href="uslugi.html" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orangeHover" data-route-strip-action>
+                    <a href="uslugi.html" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-orangeHover" data-route-strip-action data-cta-id="index_service_catalog" data-cta-group="internal_link" data-block="service_cards">
                         <span data-route-strip-action-label>Полный каталог услуг</span>
                         <i class="ri-arrow-right-line" data-route-strip-action-icon></i>
                     </a>
                 </div>
-                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4" data-route-strip-grid>
-                    <a href="parokonvektomaty.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Ошибка у пароконвектомата</p>
-                        <p class="mt-1 text-sm text-slate-500">Rational, Unox, Electrolux, Abat</p>
+                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" data-route-strip-grid>
+                    <a href="parokonvektomaty.html" class="service-card rounded-2xl border border-slate-200 bg-white px-5 py-5 transition hover:border-brand-orange hover:shadow-md" data-cta-id="index_service_parokonvektomaty" data-cta-group="internal_link" data-block="service_cards">
+                        <h3 class="text-base font-display font-extrabold text-brand-blue">Пароконвектоматы</h3>
+                        <p class="mt-1 text-sm text-slate-500">Не греет, нет пара, ошибки E02/E07/E10, Rational, Unox, Abat, Convotherm.</p>
+                        <span class="mt-3 inline-flex text-sm font-bold text-brand-orange">Перейти к ремонту пароконвектоматов</span>
                     </a>
-                    <a href="plity-pechi.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Не греет горячая линия</p>
-                        <p class="mt-1 text-sm text-slate-500">Плиты, печи, шкафы, индукция</p>
+                    <a href="pishevarochnye-kotly.html" class="service-card rounded-2xl border border-slate-200 bg-white px-5 py-5 transition hover:border-brand-orange hover:shadow-md" data-cta-id="index_service_cooking_kettles" data-cta-group="internal_link" data-block="service_cards">
+                        <h3 class="text-base font-display font-extrabold text-brand-blue">Пищеварочные / варочные котлы</h3>
+                        <p class="mt-1 text-sm text-slate-500">Abat, КПЭМ, Apach, Atesy, Iterma: H20, E01/E02/E04/E17, сухой ход, ТЭН, рубашка.</p>
+                        <span class="mt-3 inline-flex text-sm font-bold text-brand-orange">Перейти к ремонту котлов</span>
                     </a>
-                    <a href="holodilnoe-oborudovanie.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Не морозит или течёт</p>
-                        <p class="mt-1 text-sm text-slate-500">Шкафы, столы, витрины, камеры</p>
+                    <a href="plity-pechi.html" class="service-card rounded-2xl border border-slate-200 bg-white px-5 py-5 transition hover:border-brand-orange hover:shadow-md" data-cta-id="index_service_plity_pechi" data-cta-group="internal_link" data-block="service_cards">
+                        <h3 class="text-base font-display font-extrabold text-brand-blue">Плиты и печи</h3>
+                        <p class="mt-1 text-sm text-slate-500">Горячая линия не греет, выбивает автомат, сбои нагрева, индукция и тепловые шкафы.</p>
+                        <span class="mt-3 inline-flex text-sm font-bold text-brand-orange">Смотреть направление</span>
                     </a>
-                    <a href="posudomoechnye-mashiny.html" class="rounded-2xl border border-slate-200 bg-white px-5 py-4 transition hover:border-brand-orange hover:shadow-md">
-                        <p class="text-sm font-bold text-brand-blue">Не моет или не греет воду</p>
-                        <p class="mt-1 text-sm text-slate-500">Купольные, фронтальные, туннельные</p>
+                    <a href="posudomoechnye-mashiny.html" class="service-card rounded-2xl border border-slate-200 bg-white px-5 py-5 transition hover:border-brand-orange hover:shadow-md" data-cta-id="index_service_dishwashers" data-cta-group="internal_link" data-block="service_cards">
+                        <h3 class="text-base font-display font-extrabold text-brand-blue">Посудомоечные машины</h3>
+                        <p class="mt-1 text-sm text-slate-500">Купольные, фронтальные и туннельные машины: не моет, не греет, течёт, показывает ошибку.</p>
+                        <span class="mt-3 inline-flex text-sm font-bold text-brand-orange">Смотреть направление</span>
+                    </a>
+                    <a href="holodilnoe-oborudovanie.html" class="service-card rounded-2xl border border-slate-200 bg-white px-5 py-5 transition hover:border-brand-orange hover:shadow-md" data-cta-id="index_service_cooling" data-cta-group="internal_link" data-block="service_cards">
+                        <h3 class="text-base font-display font-extrabold text-brand-blue">Холодильное оборудование</h3>
+                        <p class="mt-1 text-sm text-slate-500">Шкафы, столы, витрины, камеры: не держит температуру, течёт, обмерзает, шумит.</p>
+                        <span class="mt-3 inline-flex text-sm font-bold text-brand-orange">Смотреть направление</span>
+                    </a>
+                    <a href="microwaves.html" class="service-card rounded-2xl border border-slate-200 bg-white px-5 py-5 transition hover:border-brand-orange hover:shadow-md" data-cta-id="index_service_microwaves" data-cta-group="internal_link" data-block="service_cards">
+                        <h3 class="text-base font-display font-extrabold text-brand-blue">СВЧ / микроволновые печи</h3>
+                        <p class="mt-1 text-sm text-slate-500">Коммерческие СВЧ: не греет, искрит, не запускается, шумит, сбои панели управления.</p>
+                        <span class="mt-3 inline-flex text-sm font-bold text-brand-orange">Смотреть направление</span>
                     </a>
                 </div>
             </div>
+
+            <section class="mt-8 rounded-3xl border border-green-200 bg-green-50 p-6 sm:p-8 lg:p-10 whatsapp-diagnostic-bridge" data-block="whatsapp_diagnostic_bridge">
+                <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+                    <div>
+                        <p class="text-sm font-bold tracking-[0.25em] text-green-700 mb-2">ДИАГНОСТИКА ПО ФОТО</p>
+                        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-brand-blue mb-4">Можно прислать фото ошибки в WhatsApp</h2>
+                        <p class="text-slate-700 text-lg leading-relaxed">Сфотографируйте панель, шильдик и код ошибки. Так мастер быстрее поймёт тип оборудования, бренд, модель и возможный узел поломки до выезда.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-5 border border-green-100 shadow-sm">
+                        <p class="font-bold text-brand-blue mb-3">Что прислать:</p>
+                        <ul class="space-y-2 text-sm text-slate-600 mb-5">
+                            <li class="flex gap-2"><i class="ri-camera-line text-green-600"></i><span>фото панели с ошибкой;</span></li>
+                            <li class="flex gap-2"><i class="ri-price-tag-3-line text-green-600"></i><span>фото шильдика и модели;</span></li>
+                            <li class="flex gap-2"><i class="ri-video-line text-green-600"></i><span>короткое видео поведения;</span></li>
+                            <li class="flex gap-2"><i class="ri-map-pin-line text-green-600"></i><span>адрес объекта и срочность запуска кухни.</span></li>
+                        </ul>
+                        <a href="https://wa.me/79990057172?text=Здравствуйте!%20Хочу%20отправить%20фото%20ошибки%20оборудования." data-contact-link="whatsapp" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-green-600 px-6 py-4 text-base font-bold text-white transition hover:bg-green-700" data-cta-id="index_whatsapp_photo_bridge" data-cta-group="whatsapp" data-block="whatsapp_diagnostic_bridge" target="_blank" rel="noopener noreferrer">
+                            <i class="ri-whatsapp-line"></i>
+                            <span>Отправить фото ошибки</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </section>

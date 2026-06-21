@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomat-kod-oshibki.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "9e6b8a9559ef64bb90368599d28b380a44a782233e8006a33ef2a1f462c404b6",
+    "hash": "b54fbeb383ab2e86cc370d269de5ec037384aa5f1c68fd51e98bc5d7f9e4d763",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -76,12 +76,9 @@
       "id": "005-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "bytes": 818,
-      "hash": "b8378d436da3d89d",
-      "componentRef": "src/components/shared/breadcrumb/breadcrumb-hlebnye-kroshki--b8378d436da3d89d.html",
-      "componentScope": "shared",
-      "componentSignature": "b8378d436da3d89d",
-      "sourceFile": "sections/005-breadcrumb-hlebnye-kroshki.html"
+      "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
+      "bytes": 1032,
+      "hash": "b2ca21c8b59054d6"
     },
     {
       "id": "006-raw-html-fragment",
@@ -101,8 +98,16 @@
       "component": "hero",
       "label": "Код ошибки пароконвектомата",
       "file": "sections/007-hero-kod-oshibki-parokonvektomata.html",
-      "bytes": 11709,
-      "hash": "a6f26f610772e71e"
+      "bytes": 11711,
+      "hash": "2592e02f2303d2d2"
+    },
+    {
+      "id": "008a-parokonvektomat-error-intent-bridge",
+      "component": "section",
+      "label": "Repair bridge: ошибка / симптом / бренд → диагностика → заявка",
+      "file": "sections/008a-parokonvektomat-error-intent-bridge.html",
+      "bytes": 7319,
+      "hash": "43a944713a4984a7"
     },
     {
       "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
@@ -133,8 +138,8 @@
       "component": "related-links",
       "label": "Как читаем код ошибки",
       "file": "sections/010-related-links-kak-chitaem-kod-oshibki.html",
-      "bytes": 15309,
-      "hash": "c8ae9345a8e8d95b"
+      "bytes": 16814,
+      "hash": "7f35271f0cb0062b"
     },
     {
       "id": "011-raw-html-fragment",
@@ -273,8 +278,8 @@
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
       "file": "sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
-      "bytes": 3369,
-      "hash": "d437b4c1e27babd8"
+      "bytes": 3352,
+      "hash": "c1e0b1c8e4beb18f"
     },
     {
       "id": "023-pricing-ceny-stoimost",
@@ -312,12 +317,9 @@
       "id": "026-pricing-vyberite-problemu-pokazhem-cenu",
       "component": "pricing",
       "label": "Выберите проблему — покажем цену",
-      "bytes": 4980,
-      "hash": "5d86ccad444cb9af",
-      "componentRef": "src/components/shared/pricing/pricing-vyberite-problemu-pokazhem-cenu--5d86ccad444cb9af.html",
-      "componentScope": "shared",
-      "componentSignature": "5d86ccad444cb9af",
-      "sourceFile": "sections/026-pricing-vyberite-problemu-pokazhem-cenu.html"
+      "file": "sections/026-pricing-vyberite-problemu-pokazhem-cenu.html",
+      "bytes": 5538,
+      "hash": "4e66cda0b86e5af1"
     },
     {
       "id": "027-raw-html-fragment",
@@ -619,6 +621,15 @@
       "sourceFile": "sections/051-raw-html-fragment.html"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 4285,
+      "hash": "0a9a8af7ed4699d3",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "052-faq-faq",
       "component": "faq",
       "label": "FAQ",
@@ -655,8 +666,8 @@
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
       "file": "sections/055-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
-      "bytes": 2508,
-      "hash": "1474907b05ec080f"
+      "bytes": 2474,
+      "hash": "f9f47e562881fd37"
     },
     {
       "id": "056-raw-html-fragment",
@@ -676,16 +687,21 @@
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
       "file": "sections/057-contact-cta-parokonvektomat-vstal.html",
-      "bytes": 3110,
-      "hash": "d6ba1a32cde1bccb"
+      "bytes": 3093,
+      "hash": "8fc6c4033fffdc6e"
     },
     {
       "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "file": "sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
-      "bytes": 7462,
-      "hash": "06610e66845c533e"
+      "bytes": 9300,
+      "hash": "6c06ef65a9fc8263",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "restaurant-parokonvektomat-b2b",
+      "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
+      "propsRef": "content/components/lead-form/parokonvektomat-kod-oshibki.json",
+      "sourceFile": "sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
     },
     {
       "id": "059-proof-dokazatel-stva-garantii",
@@ -726,12 +742,9 @@
       "id": "063-related-links-esli-problema-v-drugom-restorannom-obo",
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
-      "bytes": 2977,
-      "hash": "4d77c43f3f7ac07c",
-      "componentRef": "src/components/shared/related-links/related-links-esli-problema-v-drugom-restorannom-oborudova--4d77c43f3f7ac07c.html",
-      "componentScope": "shared",
-      "componentSignature": "4d77c43f3f7ac07c",
-      "sourceFile": "sections/063-related-links-esli-problema-v-drugom-restorannom-obo.html"
+      "file": "sections/063-related-links-esli-problema-v-drugom-restorannom-obo.html",
+      "bytes": 3301,
+      "hash": "a558cc1076d5349b"
     },
     {
       "id": "064-related-links-svyazannye-stranicy",
@@ -895,7 +908,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 19,
+    "sharedSectionRefs": 16,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

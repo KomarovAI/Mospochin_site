@@ -7,11 +7,11 @@
   "branch": "neutral",
   "role": "neutral",
   "title": "Ремонт пароконвектоматов Abat — ПКА, КПЭ | MosPochin",
-  "h1": "Ремонт пароконвектоматов Abat",
+  "h1": "Ремонт пароконвектоматов Abat — ПКА, ошибки, нагрев и пар",
   "source": {
     "extractedFrom": "parokonvektomat-abat.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "04e985f8939e90994307b8daf12c99cc9087f5b4d2a127896f00af876e454d62",
+    "hash": "bb7123132616017aff4b52a2f569897377cd84597e53fd7fc7ae40dfba1fa45b",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -76,12 +76,9 @@
       "id": "005-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "bytes": 818,
-      "hash": "b8378d436da3d89d",
-      "componentRef": "src/components/shared/breadcrumb/breadcrumb-hlebnye-kroshki--b8378d436da3d89d.html",
-      "componentScope": "shared",
-      "componentSignature": "b8378d436da3d89d",
-      "sourceFile": "sections/005-breadcrumb-hlebnye-kroshki.html"
+      "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
+      "bytes": 1018,
+      "hash": "eff25dfe11636f1f"
     },
     {
       "id": "006-raw-html-fragment",
@@ -101,8 +98,16 @@
       "component": "hero",
       "label": "Ремонт пароконвектоматов Abat",
       "file": "sections/007-hero-remont-parokonvektomatov-abat.html",
-      "bytes": 11059,
-      "hash": "6b642840ab0e2bd9"
+      "bytes": 11055,
+      "hash": "707638296c911449"
+    },
+    {
+      "id": "008a-parokonvektomat-error-intent-bridge",
+      "component": "section",
+      "label": "Repair bridge: ошибка / симптом / бренд → диагностика → заявка",
+      "file": "sections/008a-parokonvektomat-error-intent-bridge.html",
+      "bytes": 7154,
+      "hash": "2ce6f7ed90ceacdf"
     },
     {
       "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
@@ -260,8 +265,8 @@
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
       "file": "sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
-      "bytes": 3362,
-      "hash": "8cdae5770b2f6df1"
+      "bytes": 3345,
+      "hash": "f8508fd036855874"
     },
     {
       "id": "022-pricing-ceny-stoimost",
@@ -299,12 +304,9 @@
       "id": "025-pricing-vyberite-problemu-pokazhem-cenu",
       "component": "pricing",
       "label": "Выберите проблему — покажем цену",
-      "bytes": 4980,
-      "hash": "5d86ccad444cb9af",
-      "componentRef": "src/components/shared/pricing/pricing-vyberite-problemu-pokazhem-cenu--5d86ccad444cb9af.html",
-      "componentScope": "shared",
-      "componentSignature": "5d86ccad444cb9af",
-      "sourceFile": "sections/025-pricing-vyberite-problemu-pokazhem-cenu.html"
+      "file": "sections/025-pricing-vyberite-problemu-pokazhem-cenu.html",
+      "bytes": 5496,
+      "hash": "57d95139286d5f1a"
     },
     {
       "id": "026-raw-html-fragment",
@@ -606,6 +608,15 @@
       "sourceFile": "sections/050-raw-html-fragment.html"
     },
     {
+      "id": "900-related-links-run7-conversion-path",
+      "component": "related-links",
+      "label": "Связанные маршруты ремонта",
+      "file": "sections/900-related-links-run7-conversion-path.html",
+      "bytes": 4286,
+      "hash": "60fb9aed46ab79bb",
+      "run": "p7-interlinking"
+    },
+    {
       "id": "051-faq-faq",
       "component": "faq",
       "label": "FAQ",
@@ -642,8 +653,8 @@
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
       "file": "sections/054-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
-      "bytes": 1992,
-      "hash": "4d0fd8549acc851d"
+      "bytes": 1958,
+      "hash": "1f1c7551ab033520"
     },
     {
       "id": "055-raw-html-fragment",
@@ -663,15 +674,15 @@
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
       "file": "sections/056-contact-cta-parokonvektomat-vstal.html",
-      "bytes": 3103,
-      "hash": "aa6a7cc5a8bf2631"
+      "bytes": 3086,
+      "hash": "181b4f78625d24e4"
     },
     {
       "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "bytes": 7425,
-      "hash": "f4307f675cf07faa",
+      "bytes": 9258,
+      "hash": "e54f181c44594bd4",
       "componentMode": "parametric",
       "componentScope": "parametric",
       "variant": "restaurant-parokonvektomat-b2b",
@@ -731,12 +742,9 @@
       "id": "064-related-links-esli-problema-v-drugom-restorannom-obo",
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
-      "bytes": 2977,
-      "hash": "4d77c43f3f7ac07c",
-      "componentRef": "src/components/shared/related-links/related-links-esli-problema-v-drugom-restorannom-oborudova--4d77c43f3f7ac07c.html",
-      "componentScope": "shared",
-      "componentSignature": "4d77c43f3f7ac07c",
-      "sourceFile": "sections/064-related-links-esli-problema-v-drugom-restorannom-obo.html"
+      "file": "sections/064-related-links-esli-problema-v-drugom-restorannom-obo.html",
+      "bytes": 3277,
+      "hash": "08d4066f282063a7"
     },
     {
       "id": "065-related-links-svyazannye-stranicy",
@@ -751,8 +759,8 @@
       "component": "related-links",
       "label": "Связанные страницы по пароконвектоматам",
       "file": "sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
-      "bytes": 9856,
-      "hash": "fbaaedcb74e0f2c0"
+      "bytes": 11064,
+      "hash": "c4eb7fb512cdd191"
     },
     {
       "id": "067-raw-html-fragment",
@@ -908,7 +916,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 18,
+    "sharedSectionRefs": 15,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

@@ -2,13 +2,13 @@
 
 - Branch: neutral
 - Role: neutral
-- Title: Ремонт пароконвектоматов Convotherm — C4, C6 | MosPochin
-- Description: Ремонт пароконвектоматов Convotherm C4, C6, mini, combiPro: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия 24 мес.
-- H1: Ремонт пароконвектоматов Convotherm
+- Title: Ремонт пароконвектоматов Convotherm — диагностика и выезд | MosPochin
+- Description: Ремонт и диагностика пароконвектоматов Convotherm для ресторанов, кафе и столовых. Ошибки, нет пара, не греет, сбои датчиков, вентилятор, ТЭНы. Звонок и WhatsApp.
+- H1: Ремонт пароконвектоматов Convotherm — бренд, симптом, узел, заявка
 - Canonical: https://mospochin.ru/parokonvektomat-convotherm.html
 - Builder model: src/pages/parokonvektomat-convotherm/page.json
-- Sections: 77 (18 local, 18 shared refs, 2 raw)
-- Text words inside referenced sections: 2671
+- Sections: 79 (23 local, 15 shared refs, 2 raw)
+- Text words inside referenced sections: 2843
 
 ## Component mix
 
@@ -17,8 +17,8 @@
 | layout-fragment | 34 |
 | proof | 10 |
 | pricing | 9 |
-| related-links | 4 |
-| section | 4 |
+| related-links | 5 |
+| section | 5 |
 | mobile-contact | 3 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
@@ -35,14 +35,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонт пароконвектоматов Convotherm | hero | 10.9 KB | 95 | no | src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html |
+| Ремонт пароконвектоматов Convotherm | hero | 12.0 KB | 97 | no | src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html |
 | Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
+| Связанные страницы по пароконвектоматам | related-links | 10.0 KB | 172 | no | src/pages/parokonvektomat-convotherm/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 9.1 KB | 110 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
 | Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
-| Связанные страницы по пароконвектоматам | related-links | 8.9 KB | 172 | no | src/pages/parokonvektomat-convotherm/sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html |
 | Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.3 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html |
+| Repair bridge: ошибка / симптом / бренд → диагностика → заявка | section | 7.1 KB | 115 | no | src/pages/parokonvektomat-convotherm/sections/008a-parokonvektomat-error-intent-bridge.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 242 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html |
-| Что фиксируем до начала работ на объекте | proof | 6.5 KB | 180 | no | src/pages/parokonvektomat-convotherm/sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 
 
 ## Editable source files

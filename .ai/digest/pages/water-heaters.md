@@ -38,7 +38,7 @@
 | Ремонтируем водонагреватели известных марок | hero | 17.4 KB | 129 | no | src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html |
 | Что клиент понимает ещё до начала работ | pricing | 13.0 KB | 425 | no | src/pages/water-heaters/sections/036-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
 | Ремонтируем все типы водонагревателей | pricing | 9.9 KB | 205 | no | src/pages/water-heaters/sections/009-pricing-remontiruem-vse-tipy-vodonagrevateley.html |
-| Реальные ремонты на этой неделе | contact-cta | 8.6 KB | 130 | no | src/pages/water-heaters/sections/016-contact-cta-real-nye-remonty-na-etoy-nedele.html |
+| Реальные ремонты на этой неделе | contact-cta | 8.5 KB | 130 | no | src/pages/water-heaters/sections/016-contact-cta-real-nye-remonty-na-etoy-nedele.html |
 | Оставьте заявку на ремонт | lead-form | 6.6 KB | 80 | no | src/pages/water-heaters/sections/034-lead-form-ostav-te-zayavku-na-remont.html |
 | Частые поломки водонагревателей | pricing | 6.4 KB | 135 | no | src/pages/water-heaters/sections/017-pricing-chastye-polomki-vodonagrevateley.html |
 | Ремонт водонагревателей на дому в Москве | hero | 6.2 KB | 64 | no | src/pages/water-heaters/sections/005-hero-remont-vodonagrevateley-na-domu-v-moskve.html |

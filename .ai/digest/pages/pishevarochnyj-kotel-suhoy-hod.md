@@ -7,8 +7,8 @@
 - H1: Сухой ход пищеварочного котла — H2O, уровень воды, рубашка
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-suhoy-hod.html
 - Builder model: src/pages/pishevarochnyj-kotel-suhoy-hod/page.json
-- Sections: 34 (14 local, 5 shared refs, 0 raw)
-- Text words inside referenced sections: 1252
+- Sections: 36 (19 local, 2 shared refs, 0 raw)
+- Text words inside referenced sections: 1436
 
 ## Component mix
 
@@ -18,26 +18,27 @@
 | pricing | 5 |
 | proof | 5 |
 | mobile-contact | 4 |
-| related-links | 2 |
+| related-links | 3 |
 | body-preamble | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
 | lead-form | 1 |
 | runtime-partials | 1 |
+| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 8.5 KB | 156 | yes | src/components/shared/pricing/pricing-razveli-zayavki-po-simptomam-i-uzlam--20a4b3a999c02953.html |
+| Развели заявки по симптомам и узлам | pricing | 10.0 KB | 156 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
+| Run5: production readiness bridge | section | 7.5 KB | 129 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/008a-cooking-kettle-run5-readiness.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 183 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
-| Оставьте заявку на ремонт | lead-form | 6.2 KB | 91 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/022-lead-form-ostav-te-zayavku-na-remont.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.4 KB | 199 | yes | src/components/shared/pricing/pricing-otdelnye-posadochnye-pod-abat-kpem-apach-atesy-i-i--6501b772607fe7ea.html |
-| Разводим трафик по реальному симптому | pricing | 5.0 KB | 120 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
+| Оставьте заявку на ремонт | lead-form | 6.3 KB | 91 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/022-lead-form-ostav-te-zayavku-na-remont.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.0 KB | 199 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Разводим трафик по реальному симптому | pricing | 5.7 KB | 120 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.2 KB | 129 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | H2O или сухой ход — проверяем рубашку, уровень и датчик | mobile-contact | 4.9 KB | 110 | no | src/pages/pishevarochnyj-kotel-suhoy-hod/sections/005-mobile-contact-h2o-ili-suhoy-hod-proveryaem-rubashku.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 4.6 KB | 129 | yes | src/components/shared/pricing/pricing-razveli-oshibki-kpem-po-otdelnym-scenariyam--b9734b323f0f36f9.html |
-| Частые вопросы по ремонту | faq | 3.4 KB | 98 | yes | src/components/shared/faq/faq-chastye-voprosy-po-remontu--08de6cea263988af.html |
 
 
 ## Editable source files

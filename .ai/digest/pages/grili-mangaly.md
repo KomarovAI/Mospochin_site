@@ -7,8 +7,8 @@
 - H1: Грили или фритюрница встали? Починим за 1-3 часа
 - Canonical: https://mospochin.ru/grili-mangaly.html
 - Builder model: src/pages/grili-mangaly/page.json
-- Sections: 61 (42 local, 2 shared refs, 14 raw)
-- Text words inside referenced sections: 1864
+- Sections: 62 (43 local, 2 shared refs, 14 raw)
+- Text words inside referenced sections: 1907
 
 ## Component mix
 
@@ -19,11 +19,11 @@
 | proof | 11 |
 | pricing | 6 |
 | mobile-contact | 3 |
+| related-links | 3 |
 | section | 3 |
 | breadcrumb | 2 |
 | faq | 2 |
 | noscript | 2 |
-| related-links | 2 |
 | contact-cta | 1 |
 | footer-anchor | 1 |
 | hero | 1 |
@@ -37,9 +37,9 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонтируем грили, фритюрницы и тепловую линию кухни | pricing | 20.9 KB | 408 | no | src/pages/grili-mangaly/sections/013-pricing-remontiruem-grili-frityurnicy-i-teplovuyu-li.html |
 | Ремонтируем все марки кухонного оборудования | section | 8.0 KB | 54 | no | src/pages/grili-mangaly/sections/023-section-remontiruem-vse-marki-kuhonnogo-oborudovaniy.html |
-| Грили или фритюрница встали? Починим за 1-3 часа | hero | 7.9 KB | 85 | no | src/pages/grili-mangaly/sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html |
+| Грили или фритюрница встали? Починим за 1-3 часа | hero | 7.8 KB | 85 | no | src/pages/grili-mangaly/sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 181 | no | src/pages/grili-mangaly/sections/045-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
-| Оставьте заявку на ремонт | lead-form | 5.6 KB | 95 | no | src/pages/grili-mangaly/sections/043-lead-form-ostav-te-zayavku-na-remont.html |
+| Оставьте заявку на ремонт | lead-form | 5.7 KB | 95 | no | src/pages/grili-mangaly/sections/043-lead-form-ostav-te-zayavku-na-remont.html |
 | Цены на ремонт грилей, фритюрниц и вспомогательной техники | pricing | 5.2 KB | 108 | no | src/pages/grili-mangaly/sections/019-pricing-ceny-na-remont-griley-frityurnic-i-vspomogat.html |
 | Что говорят клиенты | proof | 5.2 KB | 132 | no | src/pages/grili-mangaly/sections/029-proof-chto-govoryat-klienty.html |
 | Частые вопросы | faq | 4.9 KB | 116 | no | src/pages/grili-mangaly/sections/039-faq-chastye-voprosy.html |
