@@ -1,0 +1,41 @@
+scope,term_or_phrase,recommended_level,auto_apply,rationale,review_rule
+global_review,квартира,adgroup_review,no,Отсекает бытовой спрос; применять осторожно на ventilation campaign/adgroup.,apply only after query->landing->action review; never mass-rewrite account
+global_review,ванная,adgroup_review,no,"Бытовая вентиляция санузла, не ресторан.",apply only after query->landing->action review; never mass-rewrite account
+global_review,туалет,adgroup_review,no,"Бытовая вентиляция санузла, не ресторан.",apply only after query->landing->action review; never mass-rewrite account
+global_review,санузел,adgroup_review,no,Бытовой спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,частный дом,adgroup_review,no,Не B2B кухня ресторана.,apply only after query->landing->action review; never mass-rewrite account
+global_review,гараж,adgroup_review,no,Не ресторанная кухня.,apply only after query->landing->action review; never mass-rewrite account
+global_review,погреб,adgroup_review,no,Не ресторанная кухня.,apply only after query->landing->action review; never mass-rewrite account
+global_review,своими руками,adgroup_review,no,DIY/информационный спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,как сделать,adgroup_review,no,DIY/информационный спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,схема,adgroup_review,no,Чаще информационный запрос; не резать если есть ресторан/кафе + ремонт.,apply only after query->landing->action review; never mass-rewrite account
+global_review,чертеж,adgroup_review,no,Чаще проектный/информационный спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,расчет онлайн,adgroup_review,no,"Информационный расчёт, не срочный ремонт.",apply only after query->landing->action review; never mass-rewrite account
+global_review,реферат,adgroup_review,no,Учебный спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,форум,adgroup_review,no,Информационный спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,видео,adgroup_review,no,Информационный спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,вакансия,adgroup_review,no,Поиск работы.,apply only after query->landing->action review; never mass-rewrite account
+global_review,работа,adgroup_review,no,Поиск работы; применять только в связке с вакансиями/трудоустройством.,apply only after query->landing->action review; never mass-rewrite account
+global_review,купить вентилятор,adgroup_review,no,Товарный спрос; не услуга ремонта.,apply only after query->landing->action review; never mass-rewrite account
+global_review,бытовая вытяжка,adgroup_review,no,Домашняя кухонная вытяжка.,apply only after query->landing->action review; never mass-rewrite account
+global_review,вытяжка для дома,adgroup_review,no,Бытовой спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,кухонная вытяжка в квартиру,adgroup_review,no,Бытовой спрос.,apply only after query->landing->action review; never mass-rewrite account
+global_review,авито,adgroup_review,no,Б/у/доски объявлений.,apply only after query->landing->action review; never mass-rewrite account
+global_review,б/у,adgroup_review,no,Покупка б/у оборудования.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,ресторан,do_not_apply_as_negative_globally,no,Целевой B2B-маркер.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,кафе,do_not_apply_as_negative_globally,no,Целевой B2B-маркер.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,столовая,do_not_apply_as_negative_globally,no,Целевой B2B-маркер.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,пищеблок,do_not_apply_as_negative_globally,no,Целевой B2B-маркер.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,ремонт,do_not_apply_as_negative_globally,no,Целевой service-intent.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,обслуживание,do_not_apply_as_negative_globally,no,Целевой service-intent.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,чистка,do_not_apply_as_negative_globally,no,Может быть коммерческим service-intent.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,диагностика,do_not_apply_as_negative_globally,no,Целевой service-intent.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,не тянет,do_not_apply_as_negative_globally,no,Целевой symptom-intent.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,дым,do_not_apply_as_negative_globally,no,Целевой symptom-intent.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,запах,do_not_apply_as_negative_globally,no,Целевой symptom-intent.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,приток,do_not_apply_as_negative_globally,no,Целевой technical service term.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,вытяжка,do_not_apply_as_negative_globally,no,Целевой technical service term.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,автоматика,do_not_apply_as_negative_globally,no,Целевой ремонтный узел.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,проект,do_not_apply_as_negative_globally,no,Не резать глобально: у управляющего ресторана может быть коммерческий запрос.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,нормы,do_not_apply_as_negative_globally,no,Не резать глобально: может быть B2B-проблема перед проверкой/ремонтом.,apply only after query->landing->action review; never mass-rewrite account
+do_not_cut_globally,акт,do_not_apply_as_negative_globally,no,Не резать глобально: может быть запрос на обслуживание/подтверждение работ.,apply only after query->landing->action review; never mass-rewrite account

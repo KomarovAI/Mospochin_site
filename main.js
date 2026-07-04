@@ -86,6 +86,7 @@ const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
       name: 'Холодильное оборудование',
     },
     { href: 'posudomoechnye-mashiny.html', icon: '🍽️', name: 'Посудомойки' },
+    { href: 'ventilyatsiya-restoranov.html', icon: '🌬️', name: 'Вентиляция ресторанов' },
     { href: 'grili-mangaly.html', icon: '🍳', name: 'Грили и фритюр' },
     { href: 'ice-machines.html', icon: '🧊', name: 'Льдогенераторы' },
   ],
@@ -99,6 +100,7 @@ const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
       label: 'Холодильное оборудование',
     },
     { href: 'posudomoechnye-mashiny.html', label: 'Посудомойки' },
+    { href: 'ventilyatsiya-restoranov.html', label: 'Вентиляция ресторанов' },
     { href: 'grili-mangaly.html', label: 'Грили и фритюр' },
     { href: 'ice-machines.html', label: 'Льдогенераторы' },
     { href: 'about.html', label: 'О компании' },
@@ -215,6 +217,10 @@ const RESTAURANT_PAGES = new Set([
   'posudomoechnye-mashiny',
   'grili-mangaly',
   'ice-machines',
+  'ventilyatsiya-restoranov',
+  'remont-ventilyatsii-restoranov',
+  'remont-vytyazhki-restorana',
+  'ventilyatsiya-restorana-ne-tyanet',
 ]);
 
 const HOUSEHOLD_PAGES = new Set([

@@ -27,15 +27,15 @@
 | Метрика | Значение |
 | --- | --- |
 | Pages | 63 |
-| Builder pages | 63 |
-| Total sections | 2770 |
-| src/pages files | 1692 |
-| src/pages HTML section files | 1629 |
+| Builder pages | 1 |
+| Total sections | 76 |
+| src/pages files | 1992 |
+| src/pages HTML section files | 1929 |
 | Shared component files | 48 |
-| Shared refs | 271 |
-| Shared coverage | 50.8% |
-| Average sections/page | 44.0 |
-| Average source files/page | 48.0 |
+| Shared refs | 0 |
+| Shared coverage | 0.0% |
+| Average sections/page | 76.0 |
+| Average source files/page | 80.0 |
 | AI component map entries | 12 |
 
 
@@ -51,32 +51,14 @@
 
 | Page | Sections | Local | Shared |
 | --- | --- | --- | --- |
-| parokonvektomat-abat.html | 79 | 23 | 15 |
-| parokonvektomat-convotherm.html | 79 | 23 | 15 |
-| parokonvektomat-electrolux.html | 78 | 24 | 13 |
-| parokonvektomat-lainox.html | 78 | 22 | 15 |
-| parokonvektomat-e02-e07-e10.html | 77 | 19 | 16 |
-| parokonvektomat-kod-oshibki.html | 77 | 19 | 16 |
-| parokonvektomat-ne-greet.html | 77 | 19 | 16 |
-| parokonvektomat-net-para.html | 77 | 19 | 16 |
-| parokonvektomat-rational-e9.html | 77 | 19 | 16 |
-| parokonvektomat-rational.html | 77 | 19 | 16 |
+| parokonvektomaty.html | 76 | 76 | 0 |
 
 
 ## Крупнейшие кандидаты на сжатие смысла
 
-- **high**: pricing: 262 локальных секций, shared ratio 32% — кандидат на параметризованный компонент + props.
-- **high**: proof: 235 локальных секций, shared ratio 24% — кандидат на параметризованный компонент + props.
-- **high**: mobile-contact: 161 локальных секций, shared ratio 33% — кандидат на параметризованный компонент + props.
-- **high**: raw: 151 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props.
-- **high**: related-links: 129 локальных секций, shared ratio 10% — кандидат на параметризованный компонент + props.
-- **high**: section: 103 локальных секций, shared ratio 11% — кандидат на параметризованный компонент + props.
-- **high**: faq: 81 локальных секций, shared ratio 19% — кандидат на параметризованный компонент + props.
-- **medium**: contact-cta: 70 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **medium**: lead-form: 51 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props.
-- **medium**: hero: 37 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **medium**: body-preamble: 25 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: parokonvektomat-abat.html: 79 секций — кандидат на page blueprint вместо длинного списка sections.
+- **medium**: raw: 29 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: parokonvektomaty.html: 76 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomaty.html: 29 raw-секций — стоит объединить/классифицировать, чтобы AI видел смысл блока.
 
 ## Команды digest/source compression
 

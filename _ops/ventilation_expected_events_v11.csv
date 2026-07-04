@@ -1,0 +1,15 @@
+event,required_for_budget_gate,smoke_method,notes
+page_view,supporting,HTML/JS readiness + analytics log review,keep separate Metrika JS-goal IDs; do not merge actions
+cta_view,supporting,HTML/JS readiness + analytics log review,keep separate Metrika JS-goal IDs; do not merge actions
+cta_click,supporting,HTML/JS readiness + analytics log review,keep separate Metrika JS-goal IDs; do not merge actions
+phone_click,yes,manual browser click + event log review,keep separate Metrika JS-goal IDs; do not merge actions
+whatsapp_click,yes,manual browser click + event log review,keep separate Metrika JS-goal IDs; do not merge actions
+telegram_click,supporting,HTML/JS readiness + analytics log review,keep separate Metrika JS-goal IDs; do not merge actions
+email_click,supporting,HTML/JS readiness + analytics log review,keep separate Metrika JS-goal IDs; do not merge actions
+form_open,yes,manual browser click + event log review,keep separate Metrika JS-goal IDs; do not merge actions
+form_start,yes,manual browser click + event log review,keep separate Metrika JS-goal IDs; do not merge actions
+form_submit_click,supporting,manual browser click + event log review,keep separate Metrika JS-goal IDs; do not merge actions
+form_validation_error,yes,HTML/JS readiness + analytics log review,keep separate Metrika JS-goal IDs; do not merge actions
+form_submit_attempt,yes,HTML/JS readiness + analytics log review,keep separate Metrika JS-goal IDs; do not merge actions
+form_submit_success,yes,verify in real site_events after controlled real form test or real lead; do not fake by default,keep separate Metrika JS-goal IDs; do not merge actions
+form_submit_error,yes,verify in real site_events after controlled real form test or real lead; do not fake by default,keep separate Metrika JS-goal IDs; do not merge actions

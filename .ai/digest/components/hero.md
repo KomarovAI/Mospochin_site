@@ -13,7 +13,7 @@
 
 | Total sections | Local | Shared refs | Shared % |
 | --- | --- | --- | --- |
-| 37 | 37 | 0 | 0% |
+| 1 | 1 | 0 | 0% |
 
 
 ## Risks

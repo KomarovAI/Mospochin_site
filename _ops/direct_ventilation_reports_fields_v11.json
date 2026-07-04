@@ -1,0 +1,25 @@
+{
+  "direct_reports_api": {
+    "method": "HTTPS POST",
+    "format": "TSV",
+    "source_url": "https://yandex.ru/dev/direct/doc/ru/reports",
+    "recommended_report_slices": [
+      "date,campaign,adgroup,criterion,search_query,impressions,clicks,cost,landing_url",
+      "utm_campaign,utm_content,page_slug,event_name,event_count",
+      "query,landing,phone_click,whatsapp_click,form_open,form_start,form_submit_attempt,form_submit_success"
+    ]
+  },
+  "local_mosanalytics_join_keys": [
+    "date",
+    "landing_path",
+    "utm_campaign",
+    "utm_content",
+    "page_slug",
+    "event_name"
+  ],
+  "must_not_log": [
+    "tokens",
+    "private keys",
+    "full configs with secrets"
+  ]
+}

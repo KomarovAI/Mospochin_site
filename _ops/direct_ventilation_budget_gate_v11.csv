@@ -1,0 +1,7 @@
+case,condition,diagnosis,decision,auto_apply
+A,high-intent query + correct landing + form_open/form_start + submit_attempt=0,landing/form/CTA friction,fix mobile UX/form copy; do not raise budget,no
+B,high-intent query + phone_click/whatsapp_click + leads_total=0,offline attribution gap,check calls/WhatsApp/offline conversions,no
+C,submit_attempt>0 + submit_success=0,backend or validation problem,check Telegram/Brevo/lead handler; do not scale,no
+D,info-intent query + clicks=0,observe only,do not scale; collect query data,no
+E,info-intent query + clicks>0 + action=0,waste query,add group-level negative after review,no
+F,submit_success>0 + backend lead confirmed,confirmed conversion,calculate CPL/CPA; only then consider +10-15% on exact cluster,no

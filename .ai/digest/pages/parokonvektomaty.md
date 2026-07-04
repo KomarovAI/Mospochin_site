@@ -4,23 +4,22 @@
 - Role: service
 - Title: Ремонт пароконвектоматов для ресторанов в Москве | MosPochin
 - Description: Ремонт и обслуживание пароконвектоматов для ресторанов, кафе и пекарен. Выезд инженера, смета до работ, договор и безнал.
-- H1: Ремонт пароконвектоматов для ресторанов, кафе и столовых
+- H1: Ремонт пароконвектоматов для ресторанов
 - Canonical: https://mospochin.ru/parokonvektomaty.html
 - Builder model: src/pages/parokonvektomaty/page.json
-- Sections: 77 (39 local, 10 shared refs, 7 raw)
-- Text words inside referenced sections: 3312
+- Sections: 76 (76 local, 0 shared refs, 29 raw)
+- Text words inside referenced sections: 3209
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| layout-fragment | 22 |
+| raw | 29 |
 | pricing | 12 |
 | proof | 9 |
-| raw | 7 |
-| related-links | 6 |
-| section | 6 |
-| mobile-contact | 3 |
+| related-links | 5 |
+| section | 5 |
+| mobile-contact | 4 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
@@ -35,14 +34,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем все марки пароконвектоматов | pricing | 15.8 KB | 98 | no | src/pages/parokonvektomaty/sections/043-pricing-remontiruem-vse-marki-parokonvektomatov.html |
-| Связанные страницы по пароконвектоматам | related-links | 13.2 KB | 237 | no | src/pages/parokonvektomaty/sections/064-related-links-svyazannye-stranicy-po-parokonvektomat.html |
-| Ремонт пароконвектоматов для ресторанов | hero | 12.4 KB | 110 | no | src/pages/parokonvektomaty/sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html |
-| Частые поломки пароконвектоматов | pricing | 11.4 KB | 205 | no | src/pages/parokonvektomaty/sections/029-pricing-chastye-polomki-parokonvektomatov.html |
-| Последние ремонты пароконвектоматов | pricing | 8.9 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html |
-| Ошибка на дисплее — повод не читать справочник, а быстро вернуть кухню в работу | lead-form | 8.7 KB | 162 | no | src/pages/parokonvektomaty/sections/010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc.html |
-| Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 133 | no | src/pages/parokonvektomaty/sections/017-pricing-remontiruem-vse-tipy-parokonvektomatov.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.3 KB | 107 | no | src/pages/parokonvektomaty/sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Связанные страницы по пароконвектоматам | related-links | 12.8 KB | 237 | no | src/pages/parokonvektomaty/sections/065-related-links-svyazannye-stranicy-po-parokonvektomat.html |
+| Ремонтируем все марки пароконвектоматов | pricing | 12.6 KB | 98 | no | src/pages/parokonvektomaty/sections/044-pricing-remontiruem-vse-marki-parokonvektomatov.html |
+| Ремонт пароконвектоматов для ресторанов | hero | 9.7 KB | 117 | no | src/pages/parokonvektomaty/sections/007-hero-remont-parokonvektomatov-dlya-restoranov.html |
+| Частые поломки пароконвектоматов | pricing | 8.8 KB | 205 | no | src/pages/parokonvektomaty/sections/030-pricing-chastye-polomki-parokonvektomatov.html |
+| Ошибка на дисплее — повод не читать справочник, а быстро вернуть кухню в работу | lead-form | 8.7 KB | 171 | no | src/pages/parokonvektomaty/sections/011-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.6 KB | 116 | no | src/pages/parokonvektomaty/sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | no | src/pages/parokonvektomaty/sections/059-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
+| Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 243 | no | src/pages/parokonvektomaty/sections/052-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
 
 
 ## Editable source files

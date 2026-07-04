@@ -1,0 +1,12 @@
+{
+  "run": "19_form_delivery_diagnosis",
+  "runtime_endpoint": "/api/send-telegram",
+  "frontend_posts_json_to_send_telegram": true,
+  "node_route_exists": true,
+  "node_default_host": "127.0.0.1",
+  "node_default_port": 3010,
+  "service_working_directory": "/var/www/mospochin-current",
+  "deploy_control_default_docroot": "/var/www/mospochin.ru",
+  "nginx_proxy_config_present_in_package": false,
+  "likely_root_cause": "backend/proxy/service mismatch for /api/send-telegram, not frontend HTML form markup"
+}
