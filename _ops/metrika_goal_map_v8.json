@@ -1,0 +1,100 @@
+[
+  {
+    "event_name": "cta_view",
+    "bucket": "micro_view",
+    "trigger": "IntersectionObserver: data-cta-id visible >=55%",
+    "decision_level": "diagnostic",
+    "notes": "Не цель оптимизации, только coverage CTA."
+  },
+  {
+    "event_name": "cta_click",
+    "bucket": "micro_action",
+    "trigger": "Click on generic data-cta-id/internal CTA",
+    "decision_level": "decision",
+    "notes": "Показывает, какие блоки/ссылки реально нажимают."
+  },
+  {
+    "event_name": "phone_click",
+    "bucket": "micro_conversion",
+    "trigger": "Click tel: link",
+    "decision_level": "decision",
+    "notes": "Быстрая коммерческая микроконверсия."
+  },
+  {
+    "event_name": "whatsapp_click",
+    "bucket": "micro_conversion",
+    "trigger": "Click wa.me/WhatsApp link",
+    "decision_level": "decision",
+    "notes": "Главная альтернатива форме для мобильных."
+  },
+  {
+    "event_name": "telegram_click",
+    "bucket": "micro_conversion",
+    "trigger": "Click telegram link",
+    "decision_level": "decision",
+    "notes": "Оставить, но не оптимизировать по нему без объёма."
+  },
+  {
+    "event_name": "email_click",
+    "bucket": "micro_conversion",
+    "trigger": "Click mailto link",
+    "decision_level": "decision",
+    "notes": "Редкий B2B-контакт, учитывать отдельно."
+  },
+  {
+    "event_name": "form_open",
+    "bucket": "micro_conversion",
+    "trigger": "Click on [data-form-open]",
+    "decision_level": "decision",
+    "notes": "Проверка интереса к форме."
+  },
+  {
+    "event_name": "form_start",
+    "bucket": "form_friction",
+    "trigger": "First focus inside tracked form",
+    "decision_level": "decision",
+    "notes": "Начал форму. Текущий обрыв был после этого шага."
+  },
+  {
+    "event_name": "form_submit_click",
+    "bucket": "form_friction",
+    "trigger": "Click submit button before browser validation",
+    "decision_level": "diagnostic",
+    "notes": "Ключевой новый сигнал: нажал кнопку или бросил до кнопки."
+  },
+  {
+    "event_name": "form_validation_error",
+    "bucket": "form_friction",
+    "trigger": "HTML5 invalid event on form field",
+    "decision_level": "diagnostic",
+    "notes": "Покажет, какое поле/consent блокирует отправку."
+  },
+  {
+    "event_name": "form_submit_attempt",
+    "bucket": "primary_attempt",
+    "trigger": "Submit event reached handler",
+    "decision_level": "decision",
+    "notes": "Submit дошёл до JS/backend pipeline."
+  },
+  {
+    "event_name": "form_submit_success",
+    "bucket": "primary_conversion",
+    "trigger": "Successful lead submit callback/backend success",
+    "decision_level": "primary",
+    "notes": "Главная online-конверсия."
+  },
+  {
+    "event_name": "form_submit_error",
+    "bucket": "backend_friction",
+    "trigger": "Submit failed/backend error",
+    "decision_level": "diagnostic",
+    "notes": "Если attempt есть, а success нет."
+  },
+  {
+    "event_name": "form_submit_blocked",
+    "bucket": "backend_friction",
+    "trigger": "telegram-form.js blocked before send",
+    "decision_level": "diagnostic",
+    "notes": "Покажет rate-limit/honeypot/too_fast/problem_too_long."
+  }
+]

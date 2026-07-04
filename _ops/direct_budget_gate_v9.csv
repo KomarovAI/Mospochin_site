@@ -1,0 +1,8 @@
+condition,next_action,budget_action,direct_action,site_action
+no form_submit_success and no phone/whatsapp_click,Do not scale,hold,review queries only,improve landing CTA and form
+form_start > 0 and form_submit_click = 0,Do not scale,hold,no apply,shorten form and add WhatsApp fallback
+form_submit_click > 0 and form_validation_error > 0,Do not scale,hold,no apply,fix validation/consent/phone
+form_submit_attempt > 0 and form_submit_success = 0,Do not scale,hold,no apply,debug backend/Telegram handler
+phone_click or whatsapp_click > 0 but no online lead,Check offline confirmations,hold or small test,only clean obvious bad queries,add offline conversion tracking
+form_submit_success > 0 and queries match commercial intent,Compute CPL/CPA,consider +10-15% only for cluster,query cleanup,scale winning landing
+query contains DIY/info words and no action,Exclude cautiously,hold,negative hypothesis not mass apply,keep SEO page but avoid paid traffic

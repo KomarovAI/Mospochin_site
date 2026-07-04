@@ -21,7 +21,7 @@
 | Shared/parametric coverage | 50.8% |
 | Average sections/page | 44.0 |
 | Average source files/page | 48.0 |
-| Root HTML bytes | 6.26 MB |
+| Root HTML bytes | 5.76 MB |
 | src/pages HTML bytes | 5.14 MB |
 | Shared HTML bytes | 203.9 KB |
 | Estimated duplicate bytes removed by shared components | 1.13 MB |

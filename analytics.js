@@ -2,8 +2,8 @@
     'use strict';
 
     var METRIKA_ID = '109138661';
-    var isMetrikaEnabled = /^\d+$/.test(String(METRIKA_ID));
-    var TRACK_ENDPOINT = '/api/track-event';
+    var isEnabled = /^\d+$/.test(String(METRIKA_ID));
+    var startedForms = new WeakSet();
     var ATTRIBUTION_STORAGE_KEY = 'mospochin_attribution_v1';
     var ATTRIBUTION_PARAMS = [
         'utm_source',
@@ -14,38 +14,16 @@
         'metrika_client_id',
         'yclid'
     ];
-    var CONTACT_EVENTS = {
-        phone: 'phone_click',
-        whatsapp: 'whatsapp_click',
-        telegram: 'telegram_click',
-        email: 'email_click'
-    };
-    var startedForms = new WeakSet();
-    var openedForms = new WeakSet();
-    var viewedCtas = new WeakSet();
-    var fallbackCtaIndex = 0;
 
-    function cleanText(value, limit) {
-        return String(value || '').replace(/\s+/g, ' ').trim().slice(0, limit || 160);
+    function cleanText(value) {
+        return (value || '').replace(/\s+/g, ' ').trim().slice(0, 160);
     }
 
     function cleanParam(value) {
-        return cleanText(value, 200);
-    }
-
-    function safeDataset(element) {
-        var result = {};
-        if (!element || !element.dataset) return result;
-        Object.keys(element.dataset).forEach(function (key) {
-            var value = cleanParam(element.dataset[key]);
-            if (value) result[key] = value;
-        });
-        return result;
+        return cleanText(value).slice(0, 120);
     }
 
     function pageSlug() {
-        var fromBody = document.body && document.body.dataset && document.body.dataset.pageSlug;
-        if (fromBody) return cleanParam(fromBody);
         var file = window.location.pathname.split('/').pop() || 'index.html';
         return file.replace(/\.html$/, '') || 'index';
     }
@@ -65,14 +43,20 @@
     }
 
     function pageType() {
-        var segment = document.body && document.body.dataset && document.body.dataset.commercialSegment;
-        if (segment === 'b2c_household') return 'b2c';
-        if (segment === 'b2b_kitchen') return 'b2b';
         var path = window.location.pathname;
-        if (path.indexOf('bytovaya') !== -1 || /holodilniki|stiralnye|posudomoyki|plity|microwaves|water-heaters|kompyutery|routery/.test(path)) {
+        if (path.indexOf('bytovaya') !== -1 ||
+            /holodilniki|stiralnye|posudomoyki|plity|microwaves|water-heaters|kompyutery|routery/.test(path)) {
             return 'b2c';
         }
         return 'b2b';
+    }
+
+    function params(extra) {
+        return Object.assign({
+            page: window.location.pathname,
+            page_type: pageType(),
+            page_slug: pageSlug()
+        }, attributionGoalParams(), extra || {});
     }
 
     function getCurrentTouch() {
@@ -151,127 +135,20 @@
             has_yclid: touch.yclid ? 'yes' : 'no'
         };
 
-        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'metrika_client_id', 'yclid'].forEach(function (name) {
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'metrika_client_id'].forEach(function (name) {
             if (touch[name]) result[name] = touch[name];
         });
 
         return result;
     }
 
-    function pageParams() {
-        return Object.assign({
-            page: window.location.pathname,
-            page_type: pageType(),
-            page_slug: pageSlug()
-        }, safeDataset(document.body), attributionGoalParams());
-    }
-
-    function uuid() {
-        if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
-        return String(Date.now()) + '-' + Math.random().toString(16).slice(2);
-    }
-
-    function sessionId() {
-        var key = 'mospochin_session_id_v1';
-        try {
-            var existing = window.sessionStorage.getItem(key);
-            if (existing) return existing;
-            var created = uuid();
-            window.sessionStorage.setItem(key, created);
-            return created;
-        } catch (error) {
-            return '';
-        }
-    }
-
-    function normalizeEventName(name) {
-        return cleanText(name, 80).replace(/[^a-z0-9_:-]/gi, '_').toLowerCase();
-    }
-
-    function sanitizePayload(value, depth) {
-        if (depth > 4) return undefined;
-        if (value == null) return '';
-        if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-            return cleanParam(value);
-        }
-        if (Array.isArray(value)) {
-            return value.slice(0, 20).map(function (item) { return sanitizePayload(item, depth + 1); });
-        }
-        if (typeof value === 'object') {
-            var result = {};
-            Object.keys(value).slice(0, 40).forEach(function (key) {
-                var cleanKey = cleanText(key, 60).replace(/[^a-z0-9_:-]/gi, '_');
-                if (!cleanKey) return;
-                var cleanValue = sanitizePayload(value[key], depth + 1);
-                if (cleanValue !== undefined) result[cleanKey] = cleanValue;
-            });
-            return result;
-        }
-        return '';
-    }
-
-    function sendEventToBackend(eventName, details) {
-        var payload = {
-            event_name: normalizeEventName(eventName),
-            event_id: uuid(),
-            occurred_at: new Date().toISOString(),
-            session_id: sessionId(),
-            page_url: window.location.href,
-            page_path: window.location.pathname,
-            page_referrer: document.referrer || '',
-            page: pageParams(),
-            details: sanitizePayload(details || {}, 0)
-        };
-        var body = JSON.stringify(payload);
-
-        try {
-            if (navigator.sendBeacon) {
-                var blob = new Blob([body], { type: 'application/json' });
-                if (navigator.sendBeacon(TRACK_ENDPOINT, blob)) return;
-            }
-        } catch (error) {
-            // Fall back to fetch.
-        }
-
-        try {
-            fetch(TRACK_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: body,
-                keepalive: true,
-                credentials: 'same-origin'
-            }).catch(function () {});
-        } catch (error) {
-            // Analytics must never block UX.
-        }
-    }
-
-    function trackMetrikaGoal(goalName, goalParams) {
-        if (!goalName || !isMetrikaEnabled || typeof window.ym !== 'function') return;
-        window.ym(METRIKA_ID, 'reachGoal', normalizeEventName(goalName), Object.assign(pageParams(), goalParams || {}));
-    }
-
     window.mospochinGetAttribution = function () {
         var attribution = readAttribution();
         return JSON.parse(JSON.stringify(attribution));
-    };
-
-    window.mospochinTrackEvent = function (eventName, eventParams) {
-        var normalized = normalizeEventName(eventName);
-        if (!normalized) return;
-        sendEventToBackend(normalized, eventParams || {});
-    };
-
-    window.mospochinTrackGoal = function (goalName, goalParams) {
-        var normalized = normalizeEventName(goalName);
-        if (!normalized) return;
-        var params = goalParams || {};
-        sendEventToBackend(normalized, params);
-        trackMetrikaGoal(normalized, params);
-    };
+    }
 
     function initMetrika() {
-        if (!isMetrikaEnabled) return;
+        if (!isEnabled) return;
 
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
@@ -304,164 +181,239 @@
         });
     }
 
-    function hrefGroup(link) {
-        var href = String(link.getAttribute('href') || '').toLowerCase();
-        if (href.indexOf('tel:') === 0) return 'phone';
-        if (href.indexOf('https://wa.me/') === 0 || href.indexOf('http://wa.me/') === 0 || href.indexOf('whatsapp') !== -1) return 'whatsapp';
-        if (href.indexOf('tg://') === 0 || href.indexOf('telegram') !== -1) return 'telegram';
-        if (href.indexOf('mailto:') === 0) return 'email';
-        if (href.indexOf('#') === 0) return 'anchor';
-        if (href.indexOf('/') === 0 || href.indexOf('.html') !== -1) return 'internal_link';
-        return '';
-    }
+    window.mospochinTrackGoal = function (goalName, goalParams) {
+        if (!goalName || !isEnabled || typeof window.ym !== 'function') return;
+        window.ym(METRIKA_ID, 'reachGoal', goalName, params(goalParams));
+    };
 
-    function ensureCtaMetadata(element, fallbackGroup) {
-        if (!element || !element.dataset) return;
-        var group = element.dataset.ctaGroup || fallbackGroup || '';
-        if (!group && element.matches && element.matches('button[type="submit"]')) group = 'form_submit';
-        if (!group && element.matches && element.matches('a[href]')) group = hrefGroup(element);
-        if (!group) return;
-        if (!element.dataset.ctaGroup) element.dataset.ctaGroup = group;
-        if (!element.dataset.ctaId) {
-            fallbackCtaIndex += 1;
-            element.dataset.ctaId = [pageSlug(), group, fallbackCtaIndex].join('_').replace(/[^a-z0-9_-]/gi, '_').toLowerCase();
-        }
-        if (!element.dataset.block) element.dataset.block = 'runtime_auto';
-    }
+    function trackContactClick(link) {
+        var href = link.getAttribute('href') || '';
+        var goal = '';
 
-    function ctaDetails(element, extra) {
-        ensureCtaMetadata(element);
-        return Object.assign({
-            cta_id: element.dataset.ctaId || '',
-            cta_group: element.dataset.ctaGroup || '',
-            block: element.dataset.block || '',
-            href: cleanText(element.getAttribute('href') || '', 220),
-            text: cleanText(element.textContent || '', 120)
-        }, extra || {});
-    }
+        if (href.indexOf('tel:') === 0) goal = 'phone_click';
+        if (href.indexOf('https://wa.me/') === 0 || href.indexOf('http://wa.me/') === 0) goal = 'whatsapp_click';
+        if (href.indexOf('tg://') === 0 || href.indexOf('telegram') !== -1) goal = 'telegram_click';
+        if (href.indexOf('mailto:') === 0) goal = 'email_click';
 
-    function formDetails(form, extra) {
-        return Object.assign({
-            form_id: form.dataset.formId || '',
-            form_context: form.dataset.formContext || '',
-            form_class: cleanText(form.className || '', 160),
-            action: cleanText(form.getAttribute('action') || '', 160),
-            method: cleanText(form.getAttribute('method') || '', 20)
-        }, extra || {});
-    }
+        if (!goal) return;
 
-    function inferFormFromTarget(target) {
-        if (!target || !target.closest) return null;
-        return target.closest('form.telegram-form, form[data-form-id], form');
-    }
-
-    function trackFormOpen(form, extra) {
-        if (!form || openedForms.has(form)) return;
-        openedForms.add(form);
-        window.mospochinTrackGoal('form_open', formDetails(form, extra));
+        window.mospochinTrackGoal(goal, {
+            contact_type: link.dataset.contactLink || goal.replace('_click', ''),
+            cta_text_length: cleanText(link.textContent).length
+        });
     }
 
     function trackFormStart(form) {
-        if (!form || startedForms.has(form)) return;
+        if (startedForms.has(form)) return;
         startedForms.add(form);
-        trackFormOpen(form, { reason: 'form_start' });
-        window.mospochinTrackGoal('form_start', formDetails(form));
-    }
-
-    function initCtaViews() {
-        var elements = Array.prototype.slice.call(document.querySelectorAll('[data-cta-id], a[href^="tel:"], a[href*="wa.me/"], a[href*="telegram"], a[href^="mailto:"], button[type="submit"]'));
-        elements.forEach(function (element) {
-            ensureCtaMetadata(element);
+        window.mospochinTrackGoal('form_start', {
+            form_class: form.className
         });
-
-        if (!('IntersectionObserver' in window)) {
-            elements.slice(0, 80).forEach(function (element) {
-                if (viewedCtas.has(element)) return;
-                viewedCtas.add(element);
-                window.mospochinTrackGoal('cta_view', ctaDetails(element, { observer: 'fallback' }));
-            });
-            return;
-        }
-
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (!entry.isIntersecting || entry.intersectionRatio < 0.2) return;
-                var element = entry.target;
-                if (viewedCtas.has(element)) return;
-                viewedCtas.add(element);
-                window.mospochinTrackGoal('cta_view', ctaDetails(element, { intersection_ratio: String(entry.intersectionRatio) }));
-                observer.unobserve(element);
-            });
-        }, { threshold: [0.2, 0.5, 0.8] });
-
-        elements.forEach(function (element) { observer.observe(element); });
     }
 
-    function initEventListeners() {
-        document.addEventListener('click', function (event) {
-            var cta = event.target.closest && event.target.closest('[data-cta-id], a[href], button[data-form-open], button[type="submit"]');
-            if (!cta) return;
-            ensureCtaMetadata(cta);
-            window.mospochinTrackGoal('cta_click', ctaDetails(cta));
+    document.addEventListener('click', function (event) {
+        var link = event.target.closest && event.target.closest('a[href]');
+        if (link) trackContactClick(link);
+    }, true);
 
-            var group = cta.dataset.ctaGroup || (cta.matches('a[href]') ? hrefGroup(cta) : '');
-            var contactEvent = CONTACT_EVENTS[group];
-            if (contactEvent) {
-                window.mospochinTrackGoal(contactEvent, ctaDetails(cta, {
-                    contact_type: group,
-                    cta_text_length: cleanText(cta.textContent).length
-                }));
-            }
+    document.addEventListener('focusin', function (event) {
+        var form = event.target.closest && event.target.closest('form.telegram-form');
+        if (form) trackFormStart(form);
+    });
 
-            if (cta.dataset && cta.dataset.formOpen) {
-                window.mospochinTrackGoal('form_open', ctaDetails(cta, {
-                    form_id: cta.dataset.formOpen,
-                    reason: 'form_open_cta'
-                }));
-            }
-        }, true);
+    document.addEventListener('submit', function (event) {
+        var form = event.target.closest && event.target.closest('form.telegram-form');
+        if (!form) return;
 
-        document.addEventListener('focusin', function (event) {
-            var form = inferFormFromTarget(event.target);
-            if (!form) return;
-            trackFormStart(form);
+        window.mospochinTrackGoal('form_submit_attempt', {
+            form_class: form.className
         });
-
-        document.addEventListener('input', function (event) {
-            var form = inferFormFromTarget(event.target);
-            if (!form) return;
-            trackFormStart(form);
-        }, true);
-
-        document.addEventListener('invalid', function (event) {
-            var form = inferFormFromTarget(event.target);
-            if (!form) return;
-            window.mospochinTrackGoal('form_validation_error', formDetails(form, {
-                field: cleanText(event.target.name || event.target.id || event.target.tagName || '', 80),
-                reason: 'browser_invalid'
-            }));
-        }, true);
-
-        document.addEventListener('submit', function (event) {
-            var form = inferFormFromTarget(event.target);
-            if (!form) return;
-            trackFormOpen(form, { reason: 'submit' });
-            window.mospochinTrackGoal('form_submit_attempt', formDetails(form, {
-                browser_valid: typeof form.checkValidity === 'function' ? String(form.checkValidity()) : 'unknown'
-            }));
-        }, true);
-    }
+    }, true);
 
     captureAttribution();
     initMetrika();
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () {
-            initEventListeners();
-            initCtaViews();
-        });
-    } else {
-        initEventListeners();
-        initCtaViews();
-    }
 })();
+
+/* MosPochin production site-events bridge — added 2026-07-04.
+   Sends decision events to /api/track-event and keeps Yandex Metrica reachGoal in parallel. */
+(function () {
+  'use strict';
+  if (window.__MOSPOCHIN_SITE_EVENTS_BRIDGE__) return;
+  window.__MOSPOCHIN_SITE_EVENTS_BRIDGE__ = '2026-07-04-run1';
+
+  var seenViews = new WeakSet();
+  var startedForms = new WeakSet();
+  var SESSION_KEY = 'mospochin_event_session_v1';
+
+  function safeText(value, max) {
+    return String(value || '').replace(/\s+/g, ' ').trim().slice(0, max || 180);
+  }
+  function getSessionId() {
+    try {
+      var id = window.sessionStorage.getItem(SESSION_KEY);
+      if (!id) {
+        id = 's_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+        window.sessionStorage.setItem(SESSION_KEY, id);
+      }
+      return id;
+    } catch (e) {
+      return 's_no_storage_' + Date.now().toString(36);
+    }
+  }
+  function bodyDataset() {
+    var b = document.body || {};
+    var d = b.dataset || {};
+    return {
+      page_slug: d.pageSlug || '',
+      page_intent: d.pageIntent || '',
+      equipment: d.equipment || '',
+      brand: d.brand || '',
+      error_code: d.errorCode || '',
+      service: d.service || '',
+      commercial_segment: d.commercialSegment || ''
+    };
+  }
+  function attribution() {
+    var result = {};
+    try {
+      var url = new URL(window.location.href);
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','yclid'].forEach(function (k) {
+        var v = url.searchParams.get(k);
+        if (v) result[k] = safeText(v, 160);
+      });
+    } catch (e) {}
+    try {
+      var stored = JSON.parse(window.localStorage.getItem('mospochin_attribution_v1') || '{}') || {};
+      var touch = stored.last_touch || stored.first_touch || {};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','yclid','metrika_client_id'].forEach(function (k) {
+        if (!result[k] && touch[k]) result[k] = safeText(touch[k], 160);
+      });
+    } catch (e) {}
+    return result;
+  }
+  function ctaPayload(el) {
+    var d = (el && el.dataset) || {};
+    return {
+      cta_id: d.ctaId || '',
+      cta_group: d.ctaGroup || '',
+      block: d.block || '',
+      cta_text: safeText(el ? el.textContent : '', 120),
+      href: safeText(el && el.getAttribute ? el.getAttribute('href') : '', 220)
+    };
+  }
+  function formPayload(form) {
+    var d = (form && form.dataset) || {};
+    return {
+      form_id: d.formId || d.formContext || '',
+      form_context: d.formContext || '',
+      block: d.block || '',
+      form_class: safeText(form ? form.className : '', 160)
+    };
+  }
+  function sendEvent(eventName, extra) {
+    if (!eventName) return;
+    var payload = Object.assign({
+      event: eventName,
+      session_id: getSessionId(),
+      page_url: window.location.href,
+      page_path: window.location.pathname,
+      referrer: document.referrer || '',
+      user_agent: navigator.userAgent || '',
+      ts: new Date().toISOString()
+    }, bodyDataset(), attribution(), extra || {});
+
+    try {
+      if (typeof window.mospochinTrackGoal === 'function') {
+        window.mospochinTrackGoal(eventName, payload);
+      }
+    } catch (e) {}
+
+    try {
+      var body = JSON.stringify(payload);
+      if (navigator.sendBeacon) {
+        var ok = navigator.sendBeacon('/api/track-event', new Blob([body], {type: 'application/json'}));
+        if (ok) return;
+      }
+      fetch('/api/track-event', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: body,
+        keepalive: true,
+        credentials: 'same-origin'
+      }).catch(function () {});
+    } catch (e) {}
+  }
+  window.mospochinTrackSiteEvent = sendEvent;
+
+  function inferContactEvent(link) {
+    var href = (link.getAttribute('href') || '').toLowerCase();
+    if (href.indexOf('tel:') === 0) return 'phone_click';
+    if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp') !== -1) return 'whatsapp_click';
+    if (href.indexOf('telegram') !== -1 || href.indexOf('tg:') === 0) return 'telegram_click';
+    if (href.indexOf('mailto:') === 0) return 'email_click';
+    return 'cta_click';
+  }
+
+  document.addEventListener('click', function (event) {
+    var submit = event.target.closest && event.target.closest('button[type="submit"], input[type="submit"]');
+    if (submit) {
+      var form = submit.closest('form');
+      sendEvent('form_submit_click', Object.assign(ctaPayload(submit), formPayload(form)));
+      return;
+    }
+    var cta = event.target.closest && event.target.closest('[data-cta-id], a[href^="tel:"], a[href*="wa.me/"], a[href^="mailto:"], [data-form-open]');
+    if (!cta) return;
+    var eventName = cta.hasAttribute('data-form-open') ? 'form_open' : inferContactEvent(cta);
+    sendEvent(eventName, ctaPayload(cta));
+  }, true);
+
+  document.addEventListener('focusin', function (event) {
+    var form = event.target.closest && event.target.closest('form[data-contact-form], form.telegram-form');
+    if (!form || startedForms.has(form)) return;
+    startedForms.add(form);
+    form.dataset.startedAt = form.dataset.startedAt || String(Date.now());
+    sendEvent('form_start', formPayload(form));
+  }, true);
+
+  document.addEventListener('submit', function (event) {
+    var form = event.target.closest && event.target.closest('form[data-contact-form], form.telegram-form');
+    if (!form) return;
+    sendEvent('form_submit_attempt', formPayload(form));
+  }, true);
+
+  document.addEventListener('invalid', function (event) {
+    var field = event.target;
+    var form = field && field.closest && field.closest('form[data-contact-form], form.telegram-form');
+    if (!form) return;
+    sendEvent('form_validation_error', Object.assign(formPayload(form), {
+      field_name: safeText(field.getAttribute('name') || field.id || field.tagName, 80),
+      field_type: safeText(field.getAttribute('type') || field.tagName, 40),
+      validation_message: safeText(field.validationMessage || '', 160)
+    }));
+  }, true);
+
+  function observeCtaViews() {
+    var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-cta-id]'));
+    if (!('IntersectionObserver' in window)) {
+      nodes.slice(0, 20).forEach(function (el) {
+        if (!seenViews.has(el)) { seenViews.add(el); sendEvent('cta_view', ctaPayload(el)); }
+      });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting || seenViews.has(entry.target)) return;
+        seenViews.add(entry.target);
+        sendEvent('cta_view', ctaPayload(entry.target));
+        io.unobserve(entry.target);
+      });
+    }, {threshold: 0.55});
+    nodes.forEach(function (el) { io.observe(el); });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeCtaViews);
+  } else {
+    observeCtaViews();
+  }
+})();
+

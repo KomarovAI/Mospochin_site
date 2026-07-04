@@ -1,0 +1,12 @@
+goal_id,event_name,priority,metrika_goal_type,why_it_exists,primary_or_micro
+phone_click,phone_click,P1,JavaScript event,Call intent from paid/organic traffic,microconversion
+whatsapp_click,whatsapp_click,P1,JavaScript event,Messenger contact intent,microconversion
+form_open,form_open,P1,JavaScript event,Form modal/open intent,microconversion
+form_start,form_start,P1,JavaScript event,User started typing in form,diagnostic
+form_submit_click,form_submit_click,P1,JavaScript event,User clicked submit before browser validation,diagnostic
+form_validation_error,form_validation_error,P1,JavaScript event,Form/consent/phone friction,diagnostic
+form_submit_attempt,form_submit_attempt,P1,JavaScript event,Submit reached handler,diagnostic
+form_submit_success,form_submit_success,P0,JavaScript event,Primary online lead,primary
+form_submit_error,form_submit_error,P1,JavaScript event,Backend/form failed after attempt,diagnostic
+telegram_click,telegram_click,P2,JavaScript event,Telegram contact,microconversion
+email_click,email_click,P2,JavaScript event,Email contact,microconversion

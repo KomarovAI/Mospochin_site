@@ -100,17 +100,13 @@ function trackFormGoal(goalName, form, extra = {}) {
     });
 }
 
-function trackFormBlocked(form, reason, extra = {}) {
-    trackFormGoal('form_submit_blocked', form, {
-        reason,
+function trackSiteEventBridge(eventName, form, extra = {}) {
+    window.mospochinTrackSiteEvent?.(eventName, {
+        form_id: form.dataset.formId?.trim() || form.dataset.formContext?.trim() || '',
+        form_context: form.dataset.formContext?.trim() || '',
+        block: form.dataset.block?.trim() || '',
         ...extra
     });
-    if (reason === 'invalid_phone' || reason === 'consent_required' || reason === 'problem_too_long') {
-        trackFormGoal('form_validation_error', form, {
-            reason,
-            ...extra
-        });
-    }
 }
 
 function getAttributionSnapshot() {
@@ -356,13 +352,13 @@ function initTelegramForms() {
             const lastSubmitAt = Number(safeGetLocalStorage(rateLimitKey) || 0);
 
             if (honeypotValue) {
-                trackFormBlocked(form, 'honeypot');
+                trackSiteEventBridge('form_submit_blocked', form, { reason: 'honeypot' });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 return;
             }
 
             if (fillMs < FORM_MIN_FILL_MS) {
-                trackFormBlocked(form, 'too_fast', { fill_ms: String(fillMs) });
+                trackSiteEventBridge('form_submit_blocked', form, { reason: 'too_fast', fill_ms: fillMs });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -374,7 +370,7 @@ function initTelegramForms() {
             }
 
             if (!consentChecked) {
-                trackFormBlocked(form, 'consent_required');
+                trackSiteEventBridge('form_validation_error', form, { reason: 'missing_consent', field_name: 'consent' });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -386,7 +382,7 @@ function initTelegramForms() {
             }
 
             if (!isValidPhone(formData.phone)) {
-                trackFormBlocked(form, 'invalid_phone');
+                trackSiteEventBridge('form_validation_error', form, { reason: 'invalid_phone', field_name: 'phone' });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -398,7 +394,7 @@ function initTelegramForms() {
             }
 
             if (formData.problem.length > FORM_MAX_PROBLEM_LENGTH) {
-                trackFormBlocked(form, 'problem_too_long', { problem_length: String(formData.problem.length) });
+                trackSiteEventBridge('form_validation_error', form, { reason: 'problem_too_long', field_name: 'problem' });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -410,7 +406,7 @@ function initTelegramForms() {
             }
 
             if (lastSubmitAt && Date.now() - lastSubmitAt < FORM_RATE_LIMIT_MS) {
-                trackFormBlocked(form, 'client_rate_limited');
+                trackSiteEventBridge('form_submit_blocked', form, { reason: 'rate_limited' });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 setTempButtonState(
                     btn,
@@ -427,6 +423,9 @@ function initTelegramForms() {
                     trackFormGoal('form_submit_success', form, {
                         form_type: formData.type || ''
                     });
+                    trackSiteEventBridge('form_submit_success', form, {
+                        form_type: formData.type || ''
+                    });
                     safeSetLocalStorage(rateLimitKey, String(Date.now()));
                     btn.innerHTML = '<i class="ri-check-line mr-2"></i>Отправлено! ✓';
                     btn.classList.remove('bg-brand-orange', 'bg-green-600');
@@ -441,6 +440,9 @@ function initTelegramForms() {
                 }
             } catch (error) {
                 trackFormGoal('form_submit_error', form, {
+                    error: 'submit_failed'
+                });
+                trackSiteEventBridge('form_submit_error', form, {
                     error: 'submit_failed'
                 });
                 btn.innerHTML = '<i class="ri-phone-line mr-2"></i>Позвоните нам!';

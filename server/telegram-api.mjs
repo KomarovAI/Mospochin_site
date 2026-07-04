@@ -33,24 +33,6 @@ const MAX_TYPE_LENGTH = 200;
 const MAX_CONTEXT_LENGTH = 120;
 const MAX_EXTRA_FIELDS = 6;
 const MAX_EXTRA_FIELD_LENGTH = 200;
-const TRACKING_EVENT_LOG_PATH = process.env.SITE_EVENTS_PATH || path.join(SITE_ROOT, 'site_events.jsonl');
-const TRACKING_REJECT_LOG_PATH = process.env.SITE_EVENT_REJECTS_PATH || path.join(SITE_ROOT, 'site_event_rejects.jsonl');
-const MAX_EVENT_BODY_BYTES = Number(process.env.MAX_EVENT_BODY_BYTES || 12 * 1024);
-const TRACKING_ALLOWED_EVENTS = new Set([
-  'cta_view',
-  'cta_click',
-  'phone_click',
-  'whatsapp_click',
-  'telegram_click',
-  'email_click',
-  'form_open',
-  'form_start',
-  'form_submit_attempt',
-  'form_submit_success',
-  'form_submit_error',
-  'form_validation_error',
-  'form_submit_blocked',
-]);
 
 const ipRateLimit = new Map();
 const globalRateLimit = new Map();
@@ -66,112 +48,13 @@ function sendJson(res, status, payload, extraHeaders = {}) {
   res.end(JSON.stringify(payload));
 }
 
-function appendJsonLine(filePath, payload) {
-  fs.appendFileSync(filePath, `${JSON.stringify(payload)}\n`, 'utf8');
-}
-
-function sanitizeEventName(value) {
-  return sanitizeString(value, 80).replace(/[^a-z0-9_:-]/gi, '_').toLowerCase();
-}
-
-function sanitizeTrackingObject(value, depth = 0) {
-  if (depth > 4) return undefined;
-  if (value == null) return '';
-  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-    return sanitizeString(value, 260);
-  }
-  if (Array.isArray(value)) {
-    return value.slice(0, 20).map((item) => sanitizeTrackingObject(item, depth + 1));
-  }
-  if (typeof value === 'object') {
-    const result = {};
-    for (const [rawKey, rawValue] of Object.entries(value).slice(0, 60)) {
-      const key = sanitizeString(rawKey, 70).replace(/[^a-z0-9_:-]/gi, '_');
-      if (!key) continue;
-      const sanitized = sanitizeTrackingObject(rawValue, depth + 1);
-      if (sanitized !== undefined) result[key] = sanitized;
-    }
-    return result;
-  }
-  return '';
-}
-
-function getOriginStatus(req) {
-  const origin = String(req.headers.origin || '').trim();
-  const host = String(req.headers.host || '').trim();
-  if (!origin) return 'same_origin_or_no_origin';
-  try {
-    return new URL(origin).host === host ? 'same_origin' : 'cross_origin';
-  } catch {
-    return 'bad_origin';
-  }
-}
-
-function buildTrackingReject(req, error, extra = {}) {
-  return {
-    rejected_at: new Date().toISOString(),
-    error,
-    method: req.method,
-    url: req.url,
-    ip: getClientIp(req),
-    user_agent: sanitizeString(req.headers['user-agent'], 260),
-    origin_status: getOriginStatus(req),
-    ...extra,
-  };
-}
-
-function validateTrackingEvent(body, req) {
-  if (!body || typeof body !== 'object' || Array.isArray(body)) {
-    return { error: 'invalid_event_body' };
-  }
-
-  const eventName = sanitizeEventName(body.event_name || body.event || body.name);
-  if (!eventName || !TRACKING_ALLOWED_EVENTS.has(eventName)) {
-    return { error: 'unknown_event', eventName };
-  }
-
-  const pagePath = sanitizeString(body.page_path || body.page?.page || '', 220);
-  if (!pagePath || !pagePath.startsWith('/')) {
-    return { error: 'invalid_page_path', eventName };
-  }
-
-  const userAgent = sanitizeString(req.headers['user-agent'], 260);
-  const originStatus = getOriginStatus(req);
-  const payload = {
-    ts: new Date().toISOString(),
-    received_at: new Date().toISOString(),
-    event: eventName,
-    event_name: eventName,
-    event_id: sanitizeString(body.event_id, 120),
-    occurred_at: sanitizeString(body.occurred_at, 80),
-    session_id: sanitizeString(body.session_id, 120),
-    page_url: sanitizeString(body.page_url, 500),
-    page_path: pagePath,
-    page_referrer: sanitizeString(body.page_referrer, 500),
-    page: sanitizeTrackingObject(body.page || {}),
-    details: sanitizeTrackingObject(body.details || {}),
-    cta_id: sanitizeString(body.cta_id || body.details?.cta_id || '', 180),
-    cta_group: sanitizeString(body.cta_group || body.details?.cta_group || '', 120),
-    block: sanitizeString(body.block || body.details?.block || '', 120),
-    form_id: sanitizeString(body.form_id || body.details?.form_id || '', 180),
-    form_context: sanitizeString(body.form_context || body.details?.form_context || '', 180),
-    ip: getClientIp(req),
-    user_agent: userAgent,
-    origin_status: originStatus,
-    quality: /bot|crawler|spider|curl|wget|python-requests/i.test(userAgent) ? 'bot_or_internal' : 'human_candidate',
-    is_decision_event: !/bot|crawler|spider|curl|wget|python-requests/i.test(userAgent) && originStatus !== 'cross_origin',
-  };
-
-  return { event: payload };
-}
-
-async function readJsonBody(req, maxBodyBytes = MAX_BODY_BYTES) {
+async function readJsonBody(req) {
   const chunks = [];
   let totalBytes = 0;
 
   for await (const chunk of req) {
     totalBytes += chunk.length;
-    if (totalBytes > maxBodyBytes) {
+    if (totalBytes > MAX_BODY_BYTES) {
       throw new Error('payload_too_large');
     }
     chunks.push(chunk);
@@ -639,36 +522,6 @@ const server = http.createServer(async (req, res) => {
         ok: true,
         service: 'mospochin-telegram-api',
       });
-      return;
-    }
-
-    const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-
-    if (req.method === 'POST' && parsedUrl.pathname === '/api/track-event') {
-      const contentType = String(req.headers['content-type'] || '').toLowerCase();
-      if (!contentType.startsWith('application/json') && !contentType.startsWith('text/plain')) {
-        appendJsonLine(TRACKING_REJECT_LOG_PATH, buildTrackingReject(req, 'wrong_content_type', { content_type: contentType }));
-        sendJson(res, 415, { ok: false, error: 'content_type_required' });
-        return;
-      }
-
-      const contentLength = Number(req.headers['content-length'] || 0);
-      if (Number.isFinite(contentLength) && contentLength > MAX_EVENT_BODY_BYTES) {
-        appendJsonLine(TRACKING_REJECT_LOG_PATH, buildTrackingReject(req, 'oversized_body', { content_length: contentLength }));
-        sendJson(res, 413, { ok: false, error: 'payload_too_large' });
-        return;
-      }
-
-      const body = await readJsonBody(req, MAX_EVENT_BODY_BYTES);
-      const validation = validateTrackingEvent(body, req);
-      if (validation.error) {
-        appendJsonLine(TRACKING_REJECT_LOG_PATH, buildTrackingReject(req, validation.error, { event_name: validation.eventName || '' }));
-        sendJson(res, 400, { ok: false, error: validation.error });
-        return;
-      }
-
-      appendJsonLine(TRACKING_EVENT_LOG_PATH, validation.event);
-      sendJson(res, 200, { ok: true });
       return;
     }
 

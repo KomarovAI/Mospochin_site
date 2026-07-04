@@ -1,0 +1,10 @@
+stage,check,command_or_file,expected,meaning
+local,unzip_test,unzip -t ZIP,no errors,release gate
+local,html_tracking,grep data-page/data-cta,all commercial pages have attrs,release gate
+remote_pre,font_audit,production_font_audit_v7.sh,font binaries present,blocks deploy if fail
+remote_pre,dry_run,safe_rsync_deploy_v7.sh dry-run part,no font deletion,blocks deploy if fail
+remote_post,analytics_js,curl /analytics.js,HTTP 200 and /api/track-event,blocks traffic review if fail
+remote_post,event_endpoint,POST /api/track-event,"{""ok"":true}",blocks traffic review if fail
+remote_post,event_tail,artikk_smoke_tail_v7.sh,smoke visible in site_events,blocks traffic review if fail
+daily,llm_zip,artikk_daily_run_check_v6.sh,event aggregate files visible,release analytics pass
+decision,form_friction,llm_form_friction_*.csv,form_submit_click or validation_error present,explains current drop

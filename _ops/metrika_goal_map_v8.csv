@@ -1,0 +1,15 @@
+event_name,bucket,trigger,decision_level,notes
+cta_view,micro_view,IntersectionObserver: data-cta-id visible >=55%,diagnostic,"Не цель оптимизации, только coverage CTA."
+cta_click,micro_action,Click on generic data-cta-id/internal CTA,decision,"Показывает, какие блоки/ссылки реально нажимают."
+phone_click,micro_conversion,Click tel: link,decision,Быстрая коммерческая микроконверсия.
+whatsapp_click,micro_conversion,Click wa.me/WhatsApp link,decision,Главная альтернатива форме для мобильных.
+telegram_click,micro_conversion,Click telegram link,decision,"Оставить, но не оптимизировать по нему без объёма."
+email_click,micro_conversion,Click mailto link,decision,"Редкий B2B-контакт, учитывать отдельно."
+form_open,micro_conversion,Click on [data-form-open],decision,Проверка интереса к форме.
+form_start,form_friction,First focus inside tracked form,decision,Начал форму. Текущий обрыв был после этого шага.
+form_submit_click,form_friction,Click submit button before browser validation,diagnostic,Ключевой новый сигнал: нажал кнопку или бросил до кнопки.
+form_validation_error,form_friction,HTML5 invalid event on form field,diagnostic,"Покажет, какое поле/consent блокирует отправку."
+form_submit_attempt,primary_attempt,Submit event reached handler,decision,Submit дошёл до JS/backend pipeline.
+form_submit_success,primary_conversion,Successful lead submit callback/backend success,primary,Главная online-конверсия.
+form_submit_error,backend_friction,Submit failed/backend error,diagnostic,"Если attempt есть, а success нет."
+form_submit_blocked,backend_friction,telegram-form.js blocked before send,diagnostic,Покажет rate-limit/honeypot/too_fast/problem_too_long.

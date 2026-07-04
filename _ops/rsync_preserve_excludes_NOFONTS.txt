@@ -1,0 +1,7 @@
+# Preserve existing production font binaries in NOFONTS deploy packages.
+# Do not use --delete-excluded with this file.
+assets/fonts/*.eot
+assets/fonts/*.svg
+assets/fonts/*.ttf
+assets/fonts/*.woff
+assets/fonts/*.woff2
