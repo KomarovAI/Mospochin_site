@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "contact.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "048e2898615df52e6bdab514fa01c8be8e3e838852041a1a0e9a35bcd938ea8f",
+    "hash": "f1c5b85afd517bafc1d3bdc52bb6eceee80926564e1539c3b15568b38cf71aa4",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -72,8 +72,8 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 651,
-      "hash": "be69b09b8010ba8b"
+      "bytes": 655,
+      "hash": "fdaed0d86078aa39"
     },
     {
       "id": "006-raw-html-fragment",
@@ -93,8 +93,8 @@
       "component": "hero",
       "label": "Связаться с MosPochin и быстро решить вопрос с ремонтом",
       "file": "sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html",
-      "bytes": 6422,
-      "hash": "b483924ba3d635d3"
+      "bytes": 6499,
+      "hash": "62eb0512dce67a89"
     },
     {
       "id": "008-raw-html-fragment",
@@ -114,8 +114,8 @@
       "component": "contact-cta",
       "label": "Контактный CTA",
       "file": "sections/009-contact-cta-kontaktnyy-cta.html",
-      "bytes": 1308,
-      "hash": "20e24e6105a18f2b"
+      "bytes": 1324,
+      "hash": "3502f3df055a7b51"
     },
     {
       "id": "010-raw-html-fragment",
@@ -130,8 +130,8 @@
       "component": "mobile-contact",
       "label": "Все способы связи",
       "file": "sections/011-mobile-contact-vse-sposoby-svyazi.html",
-      "bytes": 7290,
-      "hash": "f61a42668e4f6366"
+      "bytes": 7337,
+      "hash": "9316f1be70d8e29f"
     },
     {
       "id": "012-raw-html-fragment",
@@ -210,17 +210,8 @@
       "component": "contact-cta",
       "label": "Схема работы",
       "file": "sections/021-contact-cta-shema-raboty.html",
-      "bytes": 3738,
-      "hash": "71f46b04e74e65e9"
-    },
-    {
-      "id": "900-related-links-run7-conversion-path",
-      "component": "related-links",
-      "label": "Связанные маршруты ремонта",
-      "file": "sections/900-related-links-run7-conversion-path.html",
-      "bytes": 3824,
-      "hash": "54b25ec4f7cdc6a5",
-      "run": "p7-interlinking"
+      "bytes": 3758,
+      "hash": "e31de8cb92eb9564"
     },
     {
       "id": "022-faq-faq",
@@ -251,8 +242,8 @@
       "component": "mobile-contact",
       "label": "Нужно быстро понять, что делать с поломкой?",
       "file": "sections/025-mobile-contact-nuzhno-bystro-ponyat-chto-delat-s-pol.html",
-      "bytes": 2758,
-      "hash": "f203c4a7389d130e"
+      "bytes": 2869,
+      "hash": "b9e409787c999113"
     },
     {
       "id": "026-raw-html-fragment",
@@ -267,8 +258,8 @@
       "component": "lead-form",
       "label": "Оставьте заявку, и мы свяжемся по ремонту",
       "file": "sections/027-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon.html",
-      "bytes": 3628,
-      "hash": "84841e1d00699cb4"
+      "bytes": 3663,
+      "hash": "f4e71f090460793f"
     },
     {
       "id": "028-raw-html-fragment",
@@ -340,8 +331,8 @@
       "component": "noscript",
       "label": "Noscript fallback",
       "file": "sections/033-noscript-noscript-fallback.html",
-      "bytes": 1375,
-      "hash": "19330f9f1338c839"
+      "bytes": 1426,
+      "hash": "7cc8fd535fc96bb0"
     },
     {
       "id": "034-raw-html-fragment",
@@ -415,8 +406,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page contact.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page contact.html"
+    "npm run ai:semantic-diff -- --page contact.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

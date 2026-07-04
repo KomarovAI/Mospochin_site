@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomat-lainox.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "41f84214746b1f2370cec3a2a27778ce22e771c58fd848fd96c288f57c681046",
+    "hash": "6d05b0518ad79eb7a1d19b2f92fa84267107b280f6fd80cc8109f158eec9a736",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -77,8 +77,8 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 1022,
-      "hash": "8ca3d0117c33fd71"
+      "bytes": 1032,
+      "hash": "9611a8138f5610ba"
     },
     {
       "id": "006-raw-html-fragment",
@@ -98,8 +98,8 @@
       "component": "hero",
       "label": "Ремонт пароконвектоматов Lainox",
       "file": "sections/007-hero-remont-parokonvektomatov-lainox.html",
-      "bytes": 11058,
-      "hash": "984a9b994bae4f23"
+      "bytes": 11228,
+      "hash": "5a1c3e85784c66c1"
     },
     {
       "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
@@ -257,8 +257,8 @@
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
       "file": "sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
-      "bytes": 3347,
-      "hash": "9f93dc2f968432f6"
+      "bytes": 3363,
+      "hash": "7e3aeac412f04f49"
     },
     {
       "id": "022-pricing-ceny-stoimost",
@@ -297,8 +297,8 @@
       "component": "pricing",
       "label": "Выберите проблему — покажем цену",
       "file": "sections/025-pricing-vyberite-problemu-pokazhem-cenu.html",
-      "bytes": 5508,
-      "hash": "5a7b24da12d38071"
+      "bytes": 5651,
+      "hash": "13b1b5e8638dd4e9"
     },
     {
       "id": "026-raw-html-fragment",
@@ -600,15 +600,6 @@
       "sourceFile": "sections/050-raw-html-fragment.html"
     },
     {
-      "id": "900-related-links-run7-conversion-path",
-      "component": "related-links",
-      "label": "Связанные маршруты ремонта",
-      "file": "sections/900-related-links-run7-conversion-path.html",
-      "bytes": 4286,
-      "hash": "063ba4a0f4a60776",
-      "run": "p7-interlinking"
-    },
-    {
       "id": "051-faq-faq",
       "component": "faq",
       "label": "FAQ",
@@ -645,8 +636,8 @@
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
       "file": "sections/054-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
-      "bytes": 1968,
-      "hash": "a02050fca49fa3a7"
+      "bytes": 2053,
+      "hash": "ce9fed8b2081ed01"
     },
     {
       "id": "055-raw-html-fragment",
@@ -666,21 +657,16 @@
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
       "file": "sections/056-contact-cta-parokonvektomat-vstal.html",
-      "bytes": 3088,
-      "hash": "056a650ce9164d6c"
+      "bytes": 3108,
+      "hash": "fa4478cb667bb266"
     },
     {
       "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "bytes": 9287,
-      "hash": "f45dcf86e057b823",
-      "componentMode": "parametric",
-      "componentScope": "parametric",
-      "variant": "restaurant-parokonvektomat-b2b",
-      "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-      "propsRef": "content/components/lead-form/parokonvektomat-lainox.json",
-      "sourceFile": "sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
+      "file": "sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
+      "bytes": 7569,
+      "hash": "2ae6e8e07a0550b2"
     },
     {
       "id": "058-proof-dokazatel-stva-garantii",
@@ -735,8 +721,8 @@
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
       "file": "sections/064-related-links-esli-problema-v-drugom-restorannom-obo.html",
-      "bytes": 3283,
-      "hash": "553a30b0ec8ac3cc"
+      "bytes": 3344,
+      "hash": "e03fc6ba8fc593e0"
     },
     {
       "id": "065-related-links-svyazannye-stranicy",
@@ -751,8 +737,8 @@
       "component": "related-links",
       "label": "Связанные страницы по пароконвектоматам",
       "file": "sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
-      "bytes": 10253,
-      "hash": "ab6d5165e110debb"
+      "bytes": 10560,
+      "hash": "fc09582f12729059"
     },
     {
       "id": "067-raw-html-fragment",
@@ -899,8 +885,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page parokonvektomat-lainox.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page parokonvektomat-lainox.html"
+    "npm run ai:semantic-diff -- --page parokonvektomat-lainox.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

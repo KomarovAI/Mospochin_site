@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "kompyutery.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "a252e7e81ebe749963fa7a866fe095c9fffa1b64cc6c7032bd85de778a9f6052",
+    "hash": "767da812faaf49ec16ae6cf7e077649259ca4168f9c6affa566dcdd54e4bd774",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -59,16 +59,16 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 987,
-      "hash": "9298986a6a5b1002"
+      "bytes": 1006,
+      "hash": "9848490bda89fc38"
     },
     {
       "id": "005-hero-komp-yuter-ili-noutbuk-tormozit-shumit-ili-ne-v",
       "component": "hero",
       "label": "Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен",
       "file": "sections/005-hero-komp-yuter-ili-noutbuk-tormozit-shumit-ili-ne-v.html",
-      "bytes": 4533,
-      "hash": "0258a56a710a9566"
+      "bytes": 4610,
+      "hash": "eac323de44b3f952"
     },
     {
       "id": "006-proof-dokazatel-stva-garantii",
@@ -123,8 +123,8 @@
       "component": "contact-cta",
       "label": "Контактный CTA",
       "file": "sections/011-contact-cta-kontaktnyy-cta.html",
-      "bytes": 2680,
-      "hash": "338faf5784cb623d"
+      "bytes": 2696,
+      "hash": "e6870707d9a7a9d2"
     },
     {
       "id": "012-raw-html-fragment",
@@ -155,8 +155,8 @@
       "component": "pricing",
       "label": "Что случилось с компьютером?",
       "file": "sections/015-pricing-chto-sluchilos-s-komp-yuterom.html",
-      "bytes": 5778,
-      "hash": "ae1b9d88a002048a"
+      "bytes": 5921,
+      "hash": "e61428ba1f9460dc"
     },
     {
       "id": "016-raw-html-fragment",
@@ -171,8 +171,8 @@
       "component": "contact-cta",
       "label": "Реальные ремонты на этой неделе",
       "file": "sections/017-contact-cta-real-nye-remonty-na-etoy-nedele.html",
-      "bytes": 8042,
-      "hash": "179eda4bce018cb6"
+      "bytes": 8102,
+      "hash": "20d5b234cb5b4d10"
     },
     {
       "id": "018-raw-html-fragment",
@@ -353,8 +353,8 @@
       "component": "proof",
       "label": "Сначала сохраняем файлы, потом ремонтируем систему",
       "file": "sections/039-proof-snachala-sohranyaem-fayly-potom-remontiruem-si.html",
-      "bytes": 4590,
-      "hash": "91dd16a3df386a7d"
+      "bytes": 4616,
+      "hash": "b73b69846b9a7997"
     },
     {
       "id": "040-faq-faq",
@@ -385,8 +385,8 @@
       "component": "mobile-contact",
       "label": "Поможем спокойно вернуть компьютер в рабочее состояние",
       "file": "sections/043-mobile-contact-pomozhem-spokoyno-vernut-komp-yuter-v.html",
-      "bytes": 1933,
-      "hash": "015d8835b2d98aa6"
+      "bytes": 2018,
+      "hash": "4dba3f6fcce0cd1c"
     },
     {
       "id": "044-raw-html-fragment",
@@ -401,16 +401,16 @@
       "component": "contact-cta",
       "label": "Компьютер или ноутбук подвис?",
       "file": "sections/045-contact-cta-komp-yuter-ili-noutbuk-podvis.html",
-      "bytes": 3913,
-      "hash": "61aaad8976a4ac5c"
+      "bytes": 3933,
+      "hash": "820e29d5f3d01bf2"
     },
     {
       "id": "046-lead-form-ostav-te-zayavku-na-remont",
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/046-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 3392,
-      "hash": "e047680827dcb688"
+      "bytes": 3434,
+      "hash": "f3eb09649f7fc69c"
     },
     {
       "id": "047-raw-html-fragment",
@@ -425,8 +425,8 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/048-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 495,
-      "hash": "1d103a78c2fd786f"
+      "bytes": 523,
+      "hash": "48a4d1128d0f861b"
     },
     {
       "id": "049-raw-html-fragment",
@@ -446,8 +446,8 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 977,
-      "hash": "862ce0792540f27e"
+      "bytes": 1025,
+      "hash": "c498054749791153"
     },
     {
       "id": "051-footer-anchor-footer-mount-point",
@@ -519,8 +519,8 @@
     "npm run doctor:household-page -- --page kompyutery.html",
     "npm run doctor:page -- --page kompyutery.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page kompyutery.html"
+    "npm run ai:semantic-diff -- --page kompyutery.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "bytovaya-index.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "88a8bbaf298e3d057dd9255b6f256f19a92da87a1519259acbed0ee33ec88e03",
+    "hash": "eb955a2219be648dd4b967f8e0eec02a9c825ff8171d9041a58ad246e852428a",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -75,16 +75,16 @@
       "component": "hero",
       "label": "Ремонт бытовой техники на дому в Москве",
       "file": "sections/006-hero-remont-bytovoy-tehniki-na-domu-v-moskve.html",
-      "bytes": 9026,
-      "hash": "ebff53839fee0f97"
+      "bytes": 9103,
+      "hash": "342b3496aeb91799"
     },
     {
       "id": "007-section-snachala-vyberite-chto-slomalos",
       "component": "section",
       "label": "Сначала выберите, что сломалось",
       "file": "sections/007-section-snachala-vyberite-chto-slomalos.html",
-      "bytes": 5135,
-      "hash": "c34300f16cefc7af"
+      "bytes": 5233,
+      "hash": "1b6641555e964a2d"
     },
     {
       "id": "008-proof-dokazatel-stva-garantii",
@@ -115,8 +115,8 @@
       "component": "related-links",
       "label": "Популярные категории и типовые поломки",
       "file": "sections/011-related-links-populyarnye-kategorii-i-tipovye-polomk.html",
-      "bytes": 8584,
-      "hash": "081b3429d521445f"
+      "bytes": 8696,
+      "hash": "78ef227d8fc3c24c"
     },
     {
       "id": "012-proof-dokazatel-stva-garantii",
@@ -171,8 +171,8 @@
       "component": "pricing",
       "label": "Прозрачные цены без сюрпризов",
       "file": "sections/018-pricing-prozrachnye-ceny-bez-syurprizov.html",
-      "bytes": 7065,
-      "hash": "31ea03c2402b774f"
+      "bytes": 7135,
+      "hash": "629f4c5b41c4f4ab"
     },
     {
       "id": "019-raw-html-fragment",
@@ -227,8 +227,8 @@
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/025-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 4878,
-      "hash": "121439078a57eba8"
+      "bytes": 4928,
+      "hash": "be9f5cf0f81834d7"
     },
     {
       "id": "026-raw-html-fragment",
@@ -243,8 +243,8 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/027-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 1204,
-      "hash": "c78e1f5cd2510dab"
+      "bytes": 1289,
+      "hash": "ac00824d20300574"
     },
     {
       "id": "028-raw-html-fragment",
@@ -280,8 +280,8 @@
       "component": "noscript",
       "label": "Noscript fallback",
       "file": "sections/031-noscript-noscript-fallback.html",
-      "bytes": 1584,
-      "hash": "749ea8fa8f9e781a"
+      "bytes": 1661,
+      "hash": "ac415bc4b5b9c82a"
     },
     {
       "id": "032-raw-html-fragment",
@@ -347,8 +347,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page bytovaya-index.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page bytovaya-index.html"
+    "npm run ai:semantic-diff -- --page bytovaya-index.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

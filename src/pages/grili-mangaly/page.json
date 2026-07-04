@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "grili-mangaly.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "34f3915f75c1ccf5448907e5ec4cfd317d05e00a859dedcd16e6d662afcba741",
+    "hash": "7c96bc93374d6c3763e0da94e4bb0a76a5e5fdfb31098277429fe256f5264b8f",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -72,8 +72,8 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 997,
-      "hash": "b31ef6fbbb539d3c"
+      "bytes": 1007,
+      "hash": "50d392bd72523b2b"
     },
     {
       "id": "006-raw-html-fragment",
@@ -88,8 +88,8 @@
       "component": "hero",
       "label": "Грили или фритюрница встали? Починим за 1-3 часа",
       "file": "sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html",
-      "bytes": 8028,
-      "hash": "4c44bbe852e57cad"
+      "bytes": 8105,
+      "hash": "a5502f4914a2e422"
     },
     {
       "id": "008-raw-html-fragment",
@@ -191,8 +191,8 @@
       "component": "contact-cta",
       "label": "Контактный CTA",
       "file": "sections/017-contact-cta-kontaktnyy-cta.html",
-      "bytes": 2692,
-      "hash": "559bb3e35bfe03ed"
+      "bytes": 2708,
+      "hash": "250cd3beaeecab97"
     },
     {
       "id": "018-raw-html-fragment",
@@ -358,15 +358,6 @@
       "hash": "647f82b7fe7b4f86"
     },
     {
-      "id": "900-related-links-run7-conversion-path",
-      "component": "related-links",
-      "label": "Связанные маршруты ремонта",
-      "file": "sections/900-related-links-run7-conversion-path.html",
-      "bytes": 3521,
-      "hash": "f9363b32c5c709a4",
-      "run": "p7-interlinking"
-    },
-    {
       "id": "038-faq-faq",
       "component": "faq",
       "label": "FAQ",
@@ -395,8 +386,8 @@
       "component": "mobile-contact",
       "label": "Восстановим кухню за 1-3 часа",
       "file": "sections/041-mobile-contact-vosstanovim-kuhnyu-za-1-3-chasa.html",
-      "bytes": 1611,
-      "hash": "1233a4e0d9ce514c"
+      "bytes": 1691,
+      "hash": "3e83d804238a6abe"
     },
     {
       "id": "042-raw-html-fragment",
@@ -411,8 +402,8 @@
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/043-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 5817,
-      "hash": "0468f5234c3d17a6"
+      "bytes": 5865,
+      "hash": "2e9188075ecb5d64"
     },
     {
       "id": "044-proof-dokazatel-stva-garantii",
@@ -532,8 +523,8 @@
       "component": "noscript",
       "label": "Noscript fallback",
       "file": "sections/055-noscript-noscript-fallback.html",
-      "bytes": 1392,
-      "hash": "6f94e307a64b834c"
+      "bytes": 1445,
+      "hash": "16355453c1c40e79"
     },
     {
       "id": "056-raw-html-fragment",
@@ -613,8 +604,8 @@
     "npm run doctor:restaurant-page -- --page grili-mangaly.html",
     "npm run doctor:page -- --page grili-mangaly.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page grili-mangaly.html"
+    "npm run ai:semantic-diff -- --page grili-mangaly.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

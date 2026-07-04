@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "holodilnoe-oborudovanie.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "dd3ba3f60313785d2a7cd34ef38fba7d488e594543d88093c7f6f066e2182508",
+    "hash": "b91c5bbdd6affeafc49c78fba434d647d3a9c8ebe15b31fcee7fddf2928f2da8",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -72,8 +72,8 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 1038,
-      "hash": "2a6a72367f0d9b44"
+      "bytes": 1048,
+      "hash": "7c33da6d667f9d7d"
     },
     {
       "id": "006-raw-html-fragment",
@@ -93,8 +93,8 @@
       "component": "hero",
       "label": "Ремонт холодильного оборудования в Москве до того, как продукты и смена уйдут в минус",
       "file": "sections/007-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html",
-      "bytes": 9145,
-      "hash": "20c6a9c3e3bdbaf3"
+      "bytes": 9222,
+      "hash": "aae5c7989ddd4f8d"
     },
     {
       "id": "008-raw-html-fragment",
@@ -186,8 +186,8 @@
       "component": "contact-cta",
       "label": "Контактный CTA",
       "file": "sections/017-contact-cta-kontaktnyy-cta.html",
-      "bytes": 2902,
-      "hash": "3ffccfcdc112ebdc"
+      "bytes": 2918,
+      "hash": "e56e3652f4b99c37"
     },
     {
       "id": "018-pricing-ceny-stoimost",
@@ -390,15 +390,6 @@
       "hash": "39a4e9beca64e0d8"
     },
     {
-      "id": "900-related-links-run7-conversion-path",
-      "component": "related-links",
-      "label": "Связанные маршруты ремонта",
-      "file": "sections/900-related-links-run7-conversion-path.html",
-      "bytes": 3558,
-      "hash": "40952c4ff5838f68",
-      "run": "p7-interlinking"
-    },
-    {
       "id": "042-faq-faq",
       "component": "faq",
       "label": "FAQ",
@@ -432,8 +423,8 @@
       "component": "mobile-contact",
       "label": "Нужно быстро вернуть холод в работу?",
       "file": "sections/045-mobile-contact-nuzhno-bystro-vernut-holod-v-rabotu.html",
-      "bytes": 1856,
-      "hash": "378410e1bb5ff9da"
+      "bytes": 1936,
+      "hash": "d8cba7b93737923c"
     },
     {
       "id": "046-raw-html-fragment",
@@ -453,8 +444,8 @@
       "component": "lead-form",
       "label": "Оставьте заявку и получите понятный план действий",
       "file": "sections/047-lead-form-ostav-te-zayavku-i-poluchite-ponyatnyy-pla.html",
-      "bytes": 6396,
-      "hash": "511ee938d4a95df1"
+      "bytes": 6464,
+      "hash": "024f14f031ed0664"
     },
     {
       "id": "048-proof-dokazatel-stva-garantii",
@@ -647,8 +638,8 @@
     "npm run doctor:restaurant-page -- --page holodilnoe-oborudovanie.html",
     "npm run doctor:page -- --page holodilnoe-oborudovanie.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page holodilnoe-oborudovanie.html"
+    "npm run ai:semantic-diff -- --page holodilnoe-oborudovanie.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

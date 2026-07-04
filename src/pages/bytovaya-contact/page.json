@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "bytovaya-contact.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "f0c1b59fdd88307b72a9580bdb07074f50e8a2010153bbed49662a29f9279ada",
+    "hash": "f2ecb7d5234353128e8ecee0499eb5d3786774738479ea477ef81bd5ce2cb313",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -59,32 +59,32 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 976,
-      "hash": "c733b4fd61657686"
+      "bytes": 995,
+      "hash": "2089d389e71f5dc2"
     },
     {
       "id": "005-hero-svyazat-sya-po-remontu-bytovoy-tehniki",
       "component": "hero",
       "label": "Связаться по ремонту бытовой техники",
       "file": "sections/005-hero-svyazat-sya-po-remontu-bytovoy-tehniki.html",
-      "bytes": 12633,
-      "hash": "d3093105de69e577"
+      "bytes": 12769,
+      "hash": "a981efc77975f2eb"
     },
     {
       "id": "006-mobile-contact-kuda-pisat-i-zvonit-po-bytovoy-tehnik",
       "component": "mobile-contact",
       "label": "Куда писать и звонить по бытовой технике",
       "file": "sections/006-mobile-contact-kuda-pisat-i-zvonit-po-bytovoy-tehnik.html",
-      "bytes": 10037,
-      "hash": "829ce31d07d51426"
+      "bytes": 10032,
+      "hash": "024f4d273e5e40b2"
     },
     {
       "id": "007-contact-cta-servisnye-tochki-i-karta",
       "component": "contact-cta",
       "label": "Сервисные точки и карта",
       "file": "sections/007-contact-cta-servisnye-tochki-i-karta.html",
-      "bytes": 18693,
-      "hash": "043215449d31cc4f"
+      "bytes": 18712,
+      "hash": "686f6f7c77529ad0"
     },
     {
       "id": "008-proof-chto-klient-ponimaet-esche-do-priezda-mastera",
@@ -99,8 +99,8 @@
       "component": "mobile-contact",
       "label": "Когда лучше звонить, а когда писать",
       "file": "sections/009-mobile-contact-kogda-luchshe-zvonit-a-kogda-pisat.html",
-      "bytes": 13305,
-      "hash": "1704e07935b9de18"
+      "bytes": 13334,
+      "hash": "0d16386e5bae5148"
     },
     {
       "id": "010-pricing-vozrazheniya-kotorye-luchshe-snyat-esche-na-",
@@ -115,8 +115,8 @@
       "component": "contact-cta",
       "label": "Что лучше отправить сразу",
       "file": "sections/011-contact-cta-chto-luchshe-otpravit-srazu.html",
-      "bytes": 7584,
-      "hash": "12251f23df381d2b"
+      "bytes": 7604,
+      "hash": "847d49994ed1daa3"
     },
     {
       "id": "012-faq-chastye-voprosy",
@@ -131,8 +131,8 @@
       "component": "mobile-contact",
       "label": "Нужна помощь по технике?",
       "file": "sections/013-mobile-contact-nuzhna-pomosch-po-tehnike.html",
-      "bytes": 1769,
-      "hash": "7fa7531cf1f306ba"
+      "bytes": 1854,
+      "hash": "1c78eba5fc48eddc"
     },
     {
       "id": "014-footer-anchor-footer-mount-point",
@@ -203,8 +203,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page bytovaya-contact.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page bytovaya-contact.html"
+    "npm run ai:semantic-diff -- --page bytovaya-contact.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

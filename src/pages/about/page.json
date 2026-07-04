@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "about.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "4d6784e5f5bcded434db5b0ba4dc81dc250ac214f85b4dcd390661ff853a38be",
+    "hash": "42d397986f7e32ece4c3a4a46a72f7a5bbacca014a0c7922bb0b954c69803747",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -59,16 +59,16 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 512,
-      "hash": "4ddbbc6d9a6b6808"
+      "bytes": 518,
+      "hash": "61cdc62ba398ec7e"
     },
     {
       "id": "005-hero-o-kompanii-mospochin",
       "component": "hero",
       "label": "О компании MosPochin",
       "file": "sections/005-hero-o-kompanii-mospochin.html",
-      "bytes": 8523,
-      "hash": "dae380c260ddf0e3"
+      "bytes": 8563,
+      "hash": "bbdf1a20c19ce445"
     },
     {
       "id": "006-proof-dokazatel-stva-garantii",
@@ -155,25 +155,16 @@
       "component": "section",
       "label": "Ресторанное оборудование",
       "file": "sections/016-section-restorannoe-oborudovanie.html",
-      "bytes": 4652,
-      "hash": "5a2eebb35326305e"
-    },
-    {
-      "id": "900-related-links-run7-conversion-path",
-      "component": "related-links",
-      "label": "Связанные маршруты ремонта",
-      "file": "sections/900-related-links-run7-conversion-path.html",
-      "bytes": 3808,
-      "hash": "0e16dd78d09a1d79",
-      "run": "p7-interlinking"
+      "bytes": 4793,
+      "hash": "dec04c9e9f171743"
     },
     {
       "id": "017-lead-form-nuzhen-remont-ostav-te-zayavku-na-remont",
       "component": "lead-form",
       "label": "Нужен ремонт? Оставьте заявку на ремонт",
       "file": "sections/017-lead-form-nuzhen-remont-ostav-te-zayavku-na-remont.html",
-      "bytes": 3116,
-      "hash": "6d566015c6bbb61c"
+      "bytes": 3147,
+      "hash": "eb7c98fb2db419c9"
     },
     {
       "id": "018-faq-chastye-voprosy",
@@ -188,8 +179,8 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/019-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 941,
-      "hash": "67fb2ad3460707e4"
+      "bytes": 989,
+      "hash": "1b5a86b3e4a2f8d1"
     },
     {
       "id": "020-footer-anchor-footer-mount-point",
@@ -209,8 +200,8 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/021-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 407,
-      "hash": "d21dfaa9b1548ccf"
+      "bytes": 427,
+      "hash": "e05d5c40106de9bc"
     },
     {
       "id": "022-runtime-partials-podklyuchenie-partials-injector",
@@ -268,8 +259,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page about.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page about.html"
+    "npm run ai:semantic-diff -- --page about.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

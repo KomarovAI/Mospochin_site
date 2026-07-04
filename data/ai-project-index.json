@@ -48,23 +48,9 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
-        "404.html",
-        "src/site-builder.json",
-        "src/pages/404/page.json"
+        "404.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/404/page.json",
-        "slug": "404",
-        "sections": 7,
-        "sourceHash": "8062e761181339a1377f8f3fe72f70298bba1647a77cb6e9a404de31db257dda",
-        "commands": {
-          "preview": "npm run build:site -- --page 404.html",
-          "write": "npm run build:site -- --page 404.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages 404.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -73,8 +59,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page 404.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "about.html": {
@@ -95,23 +80,9 @@
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
         "data/restaurant-page-slots.json",
-        "about.html",
-        "src/site-builder.json",
-        "src/pages/about/page.json"
+        "about.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/about/page.json",
-        "slug": "about",
-        "sections": 26,
-        "sourceHash": "4d6784e5f5bcded434db5b0ba4dc81dc250ac214f85b4dcd390661ff853a38be",
-        "commands": {
-          "preview": "npm run build:site -- --page about.html",
-          "write": "npm run build:site -- --page about.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages about.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -120,8 +91,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page about.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "bytovaya-about.html": {
@@ -142,23 +112,9 @@
         "data/household-branch.json",
         "data/household-page-policy.json",
         "data/household-page-slots.json",
-        "bytovaya-about.html",
-        "src/site-builder.json",
-        "src/pages/bytovaya-about/page.json"
+        "bytovaya-about.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/bytovaya-about/page.json",
-        "slug": "bytovaya-about",
-        "sections": 49,
-        "sourceHash": "27e3b621ed1074b687212b65f956c3a9cb1e33af422ce8e19aebead4165e95c0",
-        "commands": {
-          "preview": "npm run build:site -- --page bytovaya-about.html",
-          "write": "npm run build:site -- --page bytovaya-about.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages bytovaya-about.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -167,8 +123,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page bytovaya-about.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "bytovaya-contact.html": {
@@ -189,23 +144,9 @@
         "data/household-branch.json",
         "data/household-page-policy.json",
         "data/household-page-slots.json",
-        "bytovaya-contact.html",
-        "src/site-builder.json",
-        "src/pages/bytovaya-contact/page.json"
+        "bytovaya-contact.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/bytovaya-contact/page.json",
-        "slug": "bytovaya-contact",
-        "sections": 18,
-        "sourceHash": "f0c1b59fdd88307b72a9580bdb07074f50e8a2010153bbed49662a29f9279ada",
-        "commands": {
-          "preview": "npm run build:site -- --page bytovaya-contact.html",
-          "write": "npm run build:site -- --page bytovaya-contact.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages bytovaya-contact.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -214,8 +155,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page bytovaya-contact.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "bytovaya-index.html": {
@@ -236,23 +176,9 @@
         "data/household-branch.json",
         "data/household-page-policy.json",
         "data/household-page-slots.json",
-        "bytovaya-index.html",
-        "src/site-builder.json",
-        "src/pages/bytovaya-index/page.json"
+        "bytovaya-index.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/bytovaya-index/page.json",
-        "slug": "bytovaya-index",
-        "sections": 36,
-        "sourceHash": "88a8bbaf298e3d057dd9255b6f256f19a92da87a1519259acbed0ee33ec88e03",
-        "commands": {
-          "preview": "npm run build:site -- --page bytovaya-index.html",
-          "write": "npm run build:site -- --page bytovaya-index.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages bytovaya-index.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -261,8 +187,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page bytovaya-index.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "bytovaya-uslugi.html": {
@@ -283,23 +208,9 @@
         "data/household-branch.json",
         "data/household-page-policy.json",
         "data/household-page-slots.json",
-        "bytovaya-uslugi.html",
-        "src/site-builder.json",
-        "src/pages/bytovaya-uslugi/page.json"
+        "bytovaya-uslugi.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/bytovaya-uslugi/page.json",
-        "slug": "bytovaya-uslugi",
-        "sections": 18,
-        "sourceHash": "cdb2c71c93a39456affdaaf244921f638c72a06987b06aceac93f5fb73688759",
-        "commands": {
-          "preview": "npm run build:site -- --page bytovaya-uslugi.html",
-          "write": "npm run build:site -- --page bytovaya-uslugi.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages bytovaya-uslugi.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -308,8 +219,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page bytovaya-uslugi.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "contact.html": {
@@ -330,23 +240,9 @@
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
         "data/restaurant-page-slots.json",
-        "contact.html",
-        "src/site-builder.json",
-        "src/pages/contact/page.json"
+        "contact.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/contact/page.json",
-        "slug": "contact",
-        "sections": 40,
-        "sourceHash": "048e2898615df52e6bdab514fa01c8be8e3e838852041a1a0e9a35bcd938ea8f",
-        "commands": {
-          "preview": "npm run build:site -- --page contact.html",
-          "write": "npm run build:site -- --page contact.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages contact.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -355,8 +251,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page contact.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "grili-mangaly.html": {
@@ -393,23 +288,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "grili-mangaly.html",
-        "src/site-builder.json",
-        "src/pages/grili-mangaly/page.json"
+        "grili-mangaly.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/grili-mangaly/page.json",
-        "slug": "grili-mangaly",
-        "sections": 62,
-        "sourceHash": "34f3915f75c1ccf5448907e5ec4cfd317d05e00a859dedcd16e6d662afcba741",
-        "commands": {
-          "preview": "npm run build:site -- --page grili-mangaly.html",
-          "write": "npm run build:site -- --page grili-mangaly.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages grili-mangaly.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -419,8 +300,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page grili-mangaly.html",
         "npm run doctor:page -- --page grili-mangaly.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "holodilniki.html": {
@@ -460,23 +340,9 @@
         "data/household-taxonomy.json",
         "data/household-proof-layer.json",
         "data/household-page-slots.json",
-        "holodilniki.html",
-        "src/site-builder.json",
-        "src/pages/holodilniki/page.json"
+        "holodilniki.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/holodilniki/page.json",
-        "slug": "holodilniki",
-        "sections": 51,
-        "sourceHash": "85a4e377a947dd40c4365c412332889ea944223b7183015a622a8522ba43c098",
-        "commands": {
-          "preview": "npm run build:site -- --page holodilniki.html",
-          "write": "npm run build:site -- --page holodilniki.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages holodilniki.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -486,8 +352,7 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page holodilniki.html",
         "npm run doctor:page -- --page holodilniki.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "holodilnoe-oborudovanie.html": {
@@ -524,23 +389,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "holodilnoe-oborudovanie.html",
-        "src/site-builder.json",
-        "src/pages/holodilnoe-oborudovanie/page.json"
+        "holodilnoe-oborudovanie.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/holodilnoe-oborudovanie/page.json",
-        "slug": "holodilnoe-oborudovanie",
-        "sections": 65,
-        "sourceHash": "dd3ba3f60313785d2a7cd34ef38fba7d488e594543d88093c7f6f066e2182508",
-        "commands": {
-          "preview": "npm run build:site -- --page holodilnoe-oborudovanie.html",
-          "write": "npm run build:site -- --page holodilnoe-oborudovanie.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages holodilnoe-oborudovanie.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -550,8 +401,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page holodilnoe-oborudovanie.html",
         "npm run doctor:page -- --page holodilnoe-oborudovanie.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "ice-machines.html": {
@@ -588,23 +438,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "ice-machines.html",
-        "src/site-builder.json",
-        "src/pages/ice-machines/page.json"
+        "ice-machines.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/ice-machines/page.json",
-        "slug": "ice-machines",
-        "sections": 65,
-        "sourceHash": "53b8b73240473d4f5e3d9b009b2b215e1a6df82e711012dd2e13c9e019eef3f4",
-        "commands": {
-          "preview": "npm run build:site -- --page ice-machines.html",
-          "write": "npm run build:site -- --page ice-machines.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages ice-machines.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -614,8 +450,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page ice-machines.html",
         "npm run doctor:page -- --page ice-machines.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "index.html": {
@@ -623,9 +458,9 @@
       "branch": "restaurant",
       "role": "branch",
       "htmlExists": true,
-      "title": "Ремонт оборудования для ресторанов, кафе и столовых — MosPochin",
-      "h1": "Ремонт оборудования для ресторанов, кафе и столовых в Москве и области",
-      "description": "Ремонт профессионального кухонного оборудования для ресторанов, кафе и столовых: пароконвектоматы, котлы, плиты, посудомойки, холодильное оборудование.",
+      "title": "Ремонт ресторанного оборудования в Москве — MosPochin",
+      "h1": "Ремонт профессионального кухонного оборудования для ресторанов, кафе и столовых",
+      "description": "Срочный ремонт пароконвектоматов, плит и холодильного оборудования для ресторанов и кафе. Выезд инженера, договор, гарантия.",
       "canonical": "https://mospochin.ru/",
       "hasForm": true,
       "service": null,
@@ -636,23 +471,9 @@
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
         "data/restaurant-page-slots.json",
-        "index.html",
-        "src/site-builder.json",
-        "src/pages/index/page.json"
+        "index.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/index/page.json",
-        "slug": "index",
-        "sections": 28,
-        "sourceHash": "dc2d140a43bf1b7c4c8855fa250b69a5c2c9d3016b26f9310e1858669da47ce0",
-        "commands": {
-          "preview": "npm run build:site -- --page index.html",
-          "write": "npm run build:site -- --page index.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages index.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -661,8 +482,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page index.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "kompyutery.html": {
@@ -701,23 +521,9 @@
         "data/household-services.json",
         "data/household-taxonomy.json",
         "data/household-proof-layer.json",
-        "kompyutery.html",
-        "src/site-builder.json",
-        "src/pages/kompyutery/page.json"
+        "kompyutery.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/kompyutery/page.json",
-        "slug": "kompyutery",
-        "sections": 55,
-        "sourceHash": "a252e7e81ebe749963fa7a866fe095c9fffa1b64cc6c7032bd85de778a9f6052",
-        "commands": {
-          "preview": "npm run build:site -- --page kompyutery.html",
-          "write": "npm run build:site -- --page kompyutery.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages kompyutery.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -727,8 +533,7 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page kompyutery.html",
         "npm run doctor:page -- --page kompyutery.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "microwaves.html": {
@@ -768,23 +573,9 @@
         "data/household-taxonomy.json",
         "data/household-proof-layer.json",
         "data/household-page-slots.json",
-        "microwaves.html",
-        "src/site-builder.json",
-        "src/pages/microwaves/page.json"
+        "microwaves.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/microwaves/page.json",
-        "slug": "microwaves",
-        "sections": 10,
-        "sourceHash": "908b4377c053011d3caaa084a6459c1b33cde8ff42e711535cb524bc1029d05c",
-        "commands": {
-          "preview": "npm run build:site -- --page microwaves.html",
-          "write": "npm run build:site -- --page microwaves.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages microwaves.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -794,8 +585,7 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page microwaves.html",
         "npm run doctor:page -- --page microwaves.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-abat.html": {
@@ -813,23 +603,9 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
-        "parokonvektomat-abat.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-abat/page.json"
+        "parokonvektomat-abat.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-abat/page.json",
-        "slug": "parokonvektomat-abat",
-        "sections": 79,
-        "sourceHash": "bb7123132616017aff4b52a2f569897377cd84597e53fd7fc7ae40dfba1fa45b",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-abat.html",
-          "write": "npm run build:site -- --page parokonvektomat-abat.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-abat.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -838,8 +614,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-abat.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-convotherm.html": {
@@ -847,9 +622,9 @@
       "branch": "neutral",
       "role": "neutral",
       "htmlExists": true,
-      "title": "Ремонт пароконвектоматов Convotherm — диагностика и выезд | MosPochin",
+      "title": "Ремонт пароконвектоматов Convotherm — C4, C6 | MosPochin",
       "h1": "Ремонт пароконвектоматов Convotherm",
-      "description": "Ремонт и диагностика пароконвектоматов Convotherm для ресторанов, кафе и столовых. Ошибки, нет пара, не греет, сбои датчиков, вентилятор, ТЭНы. Звонок и WhatsApp.",
+      "description": "Ремонт пароконвектоматов Convotherm C4, C6, mini, combiPro: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия 24 мес.",
       "canonical": "https://mospochin.ru/parokonvektomat-convotherm.html",
       "hasForm": true,
       "service": null,
@@ -857,23 +632,9 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
-        "parokonvektomat-convotherm.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-convotherm/page.json"
+        "parokonvektomat-convotherm.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-convotherm/page.json",
-        "slug": "parokonvektomat-convotherm",
-        "sections": 79,
-        "sourceHash": "5b386e165bb92bf8497f3c16130b7f069bf0721e95ddb7afe3093da95aa08dcf",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-convotherm.html",
-          "write": "npm run build:site -- --page parokonvektomat-convotherm.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-convotherm.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -882,8 +643,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-convotherm.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-e02-e07-e10.html": {
@@ -891,9 +651,9 @@
       "branch": "restaurant",
       "role": "branch",
       "htmlExists": true,
-      "title": "Ошибки E02, E07, E10 на пароконвектомате — диагностика и ремонт | MosPochin",
+      "title": "Ошибка E02, E07, E10 пароконвектомата Abat и Fagor — ремонт | MosPochin",
       "h1": "Ошибка E02 / E07 / E10",
-      "description": "Ошибки E02, E07 и E10 на пароконвектомате: датчики, нагрев, вода, парообразование или защита. Диагностика на объекте, WhatsApp с фото ошибки и форма заявки.",
+      "description": "Ошибки E02, E07, E10 на пароконвектоматах Abat, Абат и Fagor: диагностика на объекте, фото кода в WhatsApp, выезд инженера для ресторанов и кафе.",
       "canonical": "https://mospochin.ru/parokonvektomat-e02-e07-e10.html",
       "hasForm": true,
       "service": null,
@@ -903,23 +663,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomat-e02-e07-e10.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-e02-e07-e10/page.json"
+        "parokonvektomat-e02-e07-e10.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-e02-e07-e10/page.json",
-        "slug": "parokonvektomat-e02-e07-e10",
-        "sections": 77,
-        "sourceHash": "48da0d6bbf2075ff65413260b1a9e8030ef7777c8e4d75390c4aee32b49f956c",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-e02-e07-e10.html",
-          "write": "npm run build:site -- --page parokonvektomat-e02-e07-e10.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-e02-e07-e10.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -928,8 +674,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-e02-e07-e10.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-electrolux.html": {
@@ -947,23 +692,9 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
-        "parokonvektomat-electrolux.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-electrolux/page.json"
+        "parokonvektomat-electrolux.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-electrolux/page.json",
-        "slug": "parokonvektomat-electrolux",
-        "sections": 78,
-        "sourceHash": "f8e13ab9cad086ea6072836ae3ec5b9c35503ca31c3ab77a1cb335a1514963d7",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-electrolux.html",
-          "write": "npm run build:site -- --page parokonvektomat-electrolux.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-electrolux.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -972,8 +703,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-electrolux.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-kod-oshibki.html": {
@@ -993,23 +723,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomat-kod-oshibki.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-kod-oshibki/page.json"
+        "parokonvektomat-kod-oshibki.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-kod-oshibki/page.json",
-        "slug": "parokonvektomat-kod-oshibki",
-        "sections": 77,
-        "sourceHash": "b54fbeb383ab2e86cc370d269de5ec037384aa5f1c68fd51e98bc5d7f9e4d763",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-kod-oshibki.html",
-          "write": "npm run build:site -- --page parokonvektomat-kod-oshibki.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-kod-oshibki.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1018,8 +734,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-kod-oshibki.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-lainox.html": {
@@ -1037,23 +752,9 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
-        "parokonvektomat-lainox.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-lainox/page.json"
+        "parokonvektomat-lainox.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-lainox/page.json",
-        "slug": "parokonvektomat-lainox",
-        "sections": 78,
-        "sourceHash": "41f84214746b1f2370cec3a2a27778ce22e771c58fd848fd96c288f57c681046",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-lainox.html",
-          "write": "npm run build:site -- --page parokonvektomat-lainox.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-lainox.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1062,8 +763,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-lainox.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-ne-greet.html": {
@@ -1083,23 +783,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomat-ne-greet.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-ne-greet/page.json"
+        "parokonvektomat-ne-greet.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-ne-greet/page.json",
-        "slug": "parokonvektomat-ne-greet",
-        "sections": 77,
-        "sourceHash": "fac2720e84989146692de61dcc6a40d37b81c7e9eea2c7eeaa4a3a30940f8200",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-ne-greet.html",
-          "write": "npm run build:site -- --page parokonvektomat-ne-greet.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-ne-greet.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1108,8 +794,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-ne-greet.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-net-para.html": {
@@ -1129,23 +814,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomat-net-para.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-net-para/page.json"
+        "parokonvektomat-net-para.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-net-para/page.json",
-        "slug": "parokonvektomat-net-para",
-        "sections": 77,
-        "sourceHash": "d2332056d239e503ab5c34d2d0f417dfd105d8b0f9c7f31325938f09a43bdee9",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-net-para.html",
-          "write": "npm run build:site -- --page parokonvektomat-net-para.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-net-para.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1154,8 +825,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-net-para.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-obschuzhivanie.html": {
@@ -1173,23 +843,9 @@
         "data/page-metadata.json",
         "data/contact-config.json",
         "data/runtime-config.json",
-        "parokonvektomat-obschuzhivanie.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-obschuzhivanie/page.json"
+        "parokonvektomat-obschuzhivanie.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-obschuzhivanie/page.json",
-        "slug": "parokonvektomat-obschuzhivanie",
-        "sections": 35,
-        "sourceHash": "a8973e0c2cc38ff6b04e561a47be6df23021d6442f682748857d3236c85e7108",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-obschuzhivanie.html",
-          "write": "npm run build:site -- --page parokonvektomat-obschuzhivanie.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-obschuzhivanie.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1198,8 +854,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-obschuzhivanie.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-rational-e9.html": {
@@ -1219,23 +874,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomat-rational-e9.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-rational-e9/page.json"
+        "parokonvektomat-rational-e9.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-rational-e9/page.json",
-        "slug": "parokonvektomat-rational-e9",
-        "sections": 77,
-        "sourceHash": "ac1dc874d53b0c2da35a7f87d0876f8a8020b0e200a6262cc7e035d5afb4275b",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-rational-e9.html",
-          "write": "npm run build:site -- --page parokonvektomat-rational-e9.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-rational-e9.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1244,8 +885,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-rational-e9.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-rational.html": {
@@ -1265,23 +905,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomat-rational.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-rational/page.json"
+        "parokonvektomat-rational.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-rational/page.json",
-        "slug": "parokonvektomat-rational",
-        "sections": 77,
-        "sourceHash": "5a41573857ed98281288c31aac2beaf30a7a52d66c045c0a59fe40be935ded3e",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-rational.html",
-          "write": "npm run build:site -- --page parokonvektomat-rational.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-rational.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1290,8 +916,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-rational.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-unox-af02-af08.html": {
@@ -1311,23 +936,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomat-unox-af02-af08.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-unox-af02-af08/page.json"
+        "parokonvektomat-unox-af02-af08.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-unox-af02-af08/page.json",
-        "slug": "parokonvektomat-unox-af02-af08",
-        "sections": 77,
-        "sourceHash": "237c00729a4cc5d5e01c5875334ca6bf49e1e6bc9c578782cc029ab81f906ffd",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-unox-af02-af08.html",
-          "write": "npm run build:site -- --page parokonvektomat-unox-af02-af08.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-unox-af02-af08.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1336,8 +947,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-unox-af02-af08.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomat-unox.html": {
@@ -1357,23 +967,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomat-unox.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomat-unox/page.json"
+        "parokonvektomat-unox.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomat-unox/page.json",
-        "slug": "parokonvektomat-unox",
-        "sections": 77,
-        "sourceHash": "ae26ecc911f178cf23d70600289c6fd6badd2df242612c5a75424f6bb2546dbd",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomat-unox.html",
-          "write": "npm run build:site -- --page parokonvektomat-unox.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomat-unox.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1382,8 +978,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomat-unox.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomaty-promo.html": {
@@ -1403,23 +998,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomaty-promo.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomaty-promo/page.json"
+        "parokonvektomaty-promo.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomaty-promo/page.json",
-        "slug": "parokonvektomaty-promo",
-        "sections": 75,
-        "sourceHash": "648e8f99577b6f76478e5c3425ea4927eb45248e85c70bc9b69324c142b1ab07",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomaty-promo.html",
-          "write": "npm run build:site -- --page parokonvektomaty-promo.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomaty-promo.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1428,8 +1009,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomaty-promo.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "parokonvektomaty.html": {
@@ -1474,8 +1054,8 @@
         "status": "shared-component-baseline",
         "model": "src/pages/parokonvektomaty/page.json",
         "slug": "parokonvektomaty",
-        "sections": 77,
-        "sourceHash": "05ab4a202c6c67894478da1a7a97b9d23d9aee07bc800daab19c0287538b53c6",
+        "sections": 76,
+        "sourceHash": "93b2835375753ce4fe1511b9ae999bcbfa7cd0ec16be03ecd76c9ad30be449e8",
         "commands": {
           "preview": "npm run build:site -- --page parokonvektomaty.html",
           "write": "npm run build:site -- --page parokonvektomaty.html --write",
@@ -1530,23 +1110,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "pishevarochnye-kotly.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnye-kotly/page.json"
+        "pishevarochnye-kotly.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnye-kotly/page.json",
-        "slug": "pishevarochnye-kotly",
-        "sections": 44,
-        "sourceHash": "35180792b0dc2b7faf85fccd24e5c4015377792ffd2d817738ff04df7286a41c",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnye-kotly.html",
-          "write": "npm run build:site -- --page pishevarochnye-kotly.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnye-kotly.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1556,8 +1122,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page pishevarochnye-kotly.html",
         "npm run doctor:page -- --page pishevarochnye-kotly.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-abat-e01.html": {
@@ -1577,23 +1142,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-abat-e01.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-abat-e01/page.json"
+        "pishevarochnyj-kotel-abat-e01.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-abat-e01/page.json",
-        "slug": "pishevarochnyj-kotel-abat-e01",
-        "sections": 22,
-        "sourceHash": "3ff19d4258c05514936f129323d9a0a9d1a455820b831c4f1ff5edcb86ddbf38",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-abat-e01.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-abat-e01.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-abat-e01.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1602,8 +1153,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-abat-e01.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-abat-e02.html": {
@@ -1623,23 +1173,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-abat-e02.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-abat-e02/page.json"
+        "pishevarochnyj-kotel-abat-e02.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-abat-e02/page.json",
-        "slug": "pishevarochnyj-kotel-abat-e02",
-        "sections": 22,
-        "sourceHash": "d93d9d2af907ea64b8aead79f16c5a79d77ba0d75d70c8b5ae2fd6799e48d919",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-abat-e02.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-abat-e02.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-abat-e02.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1648,8 +1184,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-abat-e02.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-abat-e04.html": {
@@ -1669,23 +1204,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-abat-e04.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-abat-e04/page.json"
+        "pishevarochnyj-kotel-abat-e04.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-abat-e04/page.json",
-        "slug": "pishevarochnyj-kotel-abat-e04",
-        "sections": 22,
-        "sourceHash": "ac7b8b50b3796d2e4e46c3c1037f7bc8f0627b87a62ce3a5f89c9a5a05780a5e",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-abat-e04.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-abat-e04.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-abat-e04.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1694,8 +1215,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-abat-e04.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-abat-e17.html": {
@@ -1715,23 +1235,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-abat-e17.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-abat-e17/page.json"
+        "pishevarochnyj-kotel-abat-e17.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-abat-e17/page.json",
-        "slug": "pishevarochnyj-kotel-abat-e17",
-        "sections": 22,
-        "sourceHash": "e023dcd12c5dafdd17016483978c0527ab58cb83b4e33a5a3238e880b52b238c",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-abat-e17.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-abat-e17.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-abat-e17.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1740,8 +1246,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-abat-e17.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-abat-h20.html": {
@@ -1761,23 +1266,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-abat-h20.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-abat-h20/page.json"
+        "pishevarochnyj-kotel-abat-h20.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-abat-h20/page.json",
-        "slug": "pishevarochnyj-kotel-abat-h20",
-        "sections": 22,
-        "sourceHash": "219cafc7a16c0c625cbc428e5a1e473f53bbaa1115c79fe013073fc659837739",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-abat-h20.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-abat-h20.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-abat-h20.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1786,8 +1277,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-abat-h20.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-abat-kpem.html": {
@@ -1824,23 +1314,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "pishevarochnyj-kotel-abat-kpem.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-abat-kpem/page.json"
+        "pishevarochnyj-kotel-abat-kpem.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-abat-kpem/page.json",
-        "slug": "pishevarochnyj-kotel-abat-kpem",
-        "sections": 36,
-        "sourceHash": "785c664e60c48e6002912e6889f59aa5bcdf70010fe451cffd7da1c63d55db55",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-abat-kpem.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-abat-kpem.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-abat-kpem.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1850,8 +1326,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page pishevarochnyj-kotel-abat-kpem.html",
         "npm run doctor:page -- --page pishevarochnyj-kotel-abat-kpem.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-datchik-temperatury.html": {
@@ -1871,23 +1346,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-datchik-temperatury.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-datchik-temperatury/page.json"
+        "pishevarochnyj-kotel-datchik-temperatury.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-datchik-temperatury/page.json",
-        "slug": "pishevarochnyj-kotel-datchik-temperatury",
-        "sections": 25,
-        "sourceHash": "84cf11e8c2a9a95f8d9db9550f5316833f3618123637a3d1e9fe56d40f3530bb",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-datchik-temperatury.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-datchik-temperatury.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-datchik-temperatury.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1896,8 +1357,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-datchik-temperatury.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-dolgo-greet.html": {
@@ -1917,23 +1377,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-dolgo-greet.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-dolgo-greet/page.json"
+        "pishevarochnyj-kotel-dolgo-greet.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-dolgo-greet/page.json",
-        "slug": "pishevarochnyj-kotel-dolgo-greet",
-        "sections": 25,
-        "sourceHash": "abb68bad347c2e07c43bee374bdf19b513c02a45e1a5060dcf75652afbd53e01",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-dolgo-greet.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-dolgo-greet.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-dolgo-greet.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1942,8 +1388,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-dolgo-greet.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-kod-oshibki.html": {
@@ -1980,23 +1425,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "pishevarochnyj-kotel-kod-oshibki.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-kod-oshibki/page.json"
+        "pishevarochnyj-kotel-kod-oshibki.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-kod-oshibki/page.json",
-        "slug": "pishevarochnyj-kotel-kod-oshibki",
-        "sections": 36,
-        "sourceHash": "8ae41dc06ecb13ef3cac97d0399866dbd6963aea7253f717219f2118d7220077",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-kod-oshibki.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-kod-oshibki.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-kod-oshibki.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2006,8 +1437,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page pishevarochnyj-kotel-kod-oshibki.html",
         "npm run doctor:page -- --page pishevarochnyj-kotel-kod-oshibki.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-manometr.html": {
@@ -2027,23 +1457,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-manometr.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-manometr/page.json"
+        "pishevarochnyj-kotel-manometr.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-manometr/page.json",
-        "slug": "pishevarochnyj-kotel-manometr",
-        "sections": 25,
-        "sourceHash": "9a1f87253610e354efab71e625b67e3c13c3361f5b3787c21798849ca98fe78f",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-manometr.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-manometr.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-manometr.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2052,8 +1468,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-manometr.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-ne-greet.html": {
@@ -2090,23 +1505,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "pishevarochnyj-kotel-ne-greet.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-ne-greet/page.json"
+        "pishevarochnyj-kotel-ne-greet.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-ne-greet/page.json",
-        "slug": "pishevarochnyj-kotel-ne-greet",
-        "sections": 36,
-        "sourceHash": "0cd2cb8c25461237bd1b1beef8c27605bf86918263b95c40f5e4b299ec95620e",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-ne-greet.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-ne-greet.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-ne-greet.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2116,8 +1517,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page pishevarochnyj-kotel-ne-greet.html",
         "npm run doctor:page -- --page pishevarochnyj-kotel-ne-greet.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-ne-vklyuchaetsya.html": {
@@ -2137,23 +1537,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-ne-vklyuchaetsya.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/page.json"
+        "pishevarochnyj-kotel-ne-vklyuchaetsya.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/page.json",
-        "slug": "pishevarochnyj-kotel-ne-vklyuchaetsya",
-        "sections": 25,
-        "sourceHash": "e8574499165c4b6f7236a85e65b7b846bff0b45986ac628c7ff4bfa40cf44fe3",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-ne-vklyuchaetsya.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-ne-vklyuchaetsya.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-ne-vklyuchaetsya.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2162,8 +1548,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-ne-vklyuchaetsya.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-parovodyanaya-rubashka.html": {
@@ -2183,23 +1568,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-parovodyanaya-rubashka.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/page.json"
+        "pishevarochnyj-kotel-parovodyanaya-rubashka.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/page.json",
-        "slug": "pishevarochnyj-kotel-parovodyanaya-rubashka",
-        "sections": 25,
-        "sourceHash": "5e980be31bf915cb9b87f67532d2114375534272630bae1a3806a6d9424c2f2a",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-parovodyanaya-rubashka.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-parovodyanaya-rubashka.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-parovodyanaya-rubashka.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2208,8 +1579,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-parovodyanaya-rubashka.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-plata-upravleniya.html": {
@@ -2229,23 +1599,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-plata-upravleniya.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-plata-upravleniya/page.json"
+        "pishevarochnyj-kotel-plata-upravleniya.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-plata-upravleniya/page.json",
-        "slug": "pishevarochnyj-kotel-plata-upravleniya",
-        "sections": 25,
-        "sourceHash": "e2c411e5f84661d60e1c799ea650fea4e24f32c550c9019e361eda55dd5393dd",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-plata-upravleniya.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-plata-upravleniya.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-plata-upravleniya.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2254,8 +1610,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-plata-upravleniya.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-remont-slivnogo-krana.html": {
@@ -2275,23 +1630,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-remont-slivnogo-krana.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/page.json"
+        "pishevarochnyj-kotel-remont-slivnogo-krana.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/page.json",
-        "slug": "pishevarochnyj-kotel-remont-slivnogo-krana",
-        "sections": 25,
-        "sourceHash": "42e4bd905069ba9e1454dfc771e55235d7a5f13a43bb333261adb5c3b6014a31",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-remont-slivnogo-krana.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-remont-slivnogo-krana.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-remont-slivnogo-krana.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2300,8 +1641,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-remont-slivnogo-krana.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-suhoy-hod.html": {
@@ -2338,23 +1678,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "pishevarochnyj-kotel-suhoy-hod.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-suhoy-hod/page.json"
+        "pishevarochnyj-kotel-suhoy-hod.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-suhoy-hod/page.json",
-        "slug": "pishevarochnyj-kotel-suhoy-hod",
-        "sections": 36,
-        "sourceHash": "980c40ee9d9d3dc7be397574c1bebb975c6d198a0c67ff423a688c57965dfb9c",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-suhoy-hod.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-suhoy-hod.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-suhoy-hod.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2364,8 +1690,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page pishevarochnyj-kotel-suhoy-hod.html",
         "npm run doctor:page -- --page pishevarochnyj-kotel-suhoy-hod.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-techet.html": {
@@ -2402,23 +1727,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "pishevarochnyj-kotel-techet.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-techet/page.json"
+        "pishevarochnyj-kotel-techet.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-techet/page.json",
-        "slug": "pishevarochnyj-kotel-techet",
-        "sections": 36,
-        "sourceHash": "89864f79d04c7332d1caace002814b0379cae943f10101c7debe25b3f02fa722",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-techet.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-techet.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-techet.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2428,8 +1739,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page pishevarochnyj-kotel-techet.html",
         "npm run doctor:page -- --page pishevarochnyj-kotel-techet.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-vybivaet-avtomat.html": {
@@ -2466,23 +1776,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "pishevarochnyj-kotel-vybivaet-avtomat.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/page.json"
+        "pishevarochnyj-kotel-vybivaet-avtomat.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/page.json",
-        "slug": "pishevarochnyj-kotel-vybivaet-avtomat",
-        "sections": 36,
-        "sourceHash": "8cbda2f163d212182633fffa40c87df90ad5210e3b18d15393bbe6c8c5fea992",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-vybivaet-avtomat.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-vybivaet-avtomat.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-vybivaet-avtomat.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2492,8 +1788,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page pishevarochnyj-kotel-vybivaet-avtomat.html",
         "npm run doctor:page -- --page pishevarochnyj-kotel-vybivaet-avtomat.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "pishevarochnyj-kotel-zamena-tena.html": {
@@ -2513,23 +1808,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "pishevarochnyj-kotel-zamena-tena.html",
-        "src/site-builder.json",
-        "src/pages/pishevarochnyj-kotel-zamena-tena/page.json"
+        "pishevarochnyj-kotel-zamena-tena.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/pishevarochnyj-kotel-zamena-tena/page.json",
-        "slug": "pishevarochnyj-kotel-zamena-tena",
-        "sections": 25,
-        "sourceHash": "991a937c7ae3b057eb5cb515a8104d6deea81d751f974fb2986b49e214d00461",
-        "commands": {
-          "preview": "npm run build:site -- --page pishevarochnyj-kotel-zamena-tena.html",
-          "write": "npm run build:site -- --page pishevarochnyj-kotel-zamena-tena.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages pishevarochnyj-kotel-zamena-tena.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2538,8 +1819,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page pishevarochnyj-kotel-zamena-tena.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "plity-pechi.html": {
@@ -2576,23 +1856,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "plity-pechi.html",
-        "src/site-builder.json",
-        "src/pages/plity-pechi/page.json"
+        "plity-pechi.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/plity-pechi/page.json",
-        "slug": "plity-pechi",
-        "sections": 35,
-        "sourceHash": "00e0d4468fd2e6629d3c5d6c9a4c9be53287269f1f67bc4d890de0613951ab88",
-        "commands": {
-          "preview": "npm run build:site -- --page plity-pechi.html",
-          "write": "npm run build:site -- --page plity-pechi.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages plity-pechi.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2602,8 +1868,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page plity-pechi.html",
         "npm run doctor:page -- --page plity-pechi.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "plity.html": {
@@ -2643,23 +1908,9 @@
         "data/household-taxonomy.json",
         "data/household-proof-layer.json",
         "data/household-page-slots.json",
-        "plity.html",
-        "src/site-builder.json",
-        "src/pages/plity/page.json"
+        "plity.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/plity/page.json",
-        "slug": "plity",
-        "sections": 48,
-        "sourceHash": "7bcee9ac800f9b2206ce4291c9fa6fd7249ccfb21dd4b5679d97a586552cf61c",
-        "commands": {
-          "preview": "npm run build:site -- --page plity.html",
-          "write": "npm run build:site -- --page plity.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages plity.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2669,8 +1920,7 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page plity.html",
         "npm run doctor:page -- --page plity.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "posudomoechnye-mashiny.html": {
@@ -2707,23 +1957,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "posudomoechnye-mashiny.html",
-        "src/site-builder.json",
-        "src/pages/posudomoechnye-mashiny/page.json"
+        "posudomoechnye-mashiny.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/posudomoechnye-mashiny/page.json",
-        "slug": "posudomoechnye-mashiny",
-        "sections": 65,
-        "sourceHash": "45a3bf33c6ca551bdae2833869c3cde479746767e9a130f94cfbec4a5f5c7c55",
-        "commands": {
-          "preview": "npm run build:site -- --page posudomoechnye-mashiny.html",
-          "write": "npm run build:site -- --page posudomoechnye-mashiny.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages posudomoechnye-mashiny.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2733,8 +1969,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page posudomoechnye-mashiny.html",
         "npm run doctor:page -- --page posudomoechnye-mashiny.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "posudomoyki.html": {
@@ -2774,23 +2009,9 @@
         "data/household-taxonomy.json",
         "data/household-proof-layer.json",
         "data/household-page-slots.json",
-        "posudomoyki.html",
-        "src/site-builder.json",
-        "src/pages/posudomoyki/page.json"
+        "posudomoyki.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/posudomoyki/page.json",
-        "slug": "posudomoyki",
-        "sections": 53,
-        "sourceHash": "d1c0840364aac4c08928cf13a95f518a7c28fd93d79876921fe1264b1149bc02",
-        "commands": {
-          "preview": "npm run build:site -- --page posudomoyki.html",
-          "write": "npm run build:site -- --page posudomoyki.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages posudomoyki.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2800,8 +2021,7 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page posudomoyki.html",
         "npm run doctor:page -- --page posudomoyki.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "remont-oborudovaniya-restorana-parokonvektomat.html": {
@@ -2821,23 +2041,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "remont-oborudovaniya-restorana-parokonvektomat.html",
-        "src/site-builder.json",
-        "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json"
+        "remont-oborudovaniya-restorana-parokonvektomat.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json",
-        "slug": "remont-oborudovaniya-restorana-parokonvektomat",
-        "sections": 75,
-        "sourceHash": "f8a0f999248f616e58fea05f8e0255b7fa8283243aebf4b901310cb4b06cf387",
-        "commands": {
-          "preview": "npm run build:site -- --page remont-oborudovaniya-restorana-parokonvektomat.html",
-          "write": "npm run build:site -- --page remont-oborudovaniya-restorana-parokonvektomat.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages remont-oborudovaniya-restorana-parokonvektomat.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2846,8 +2052,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page remont-oborudovaniya-restorana-parokonvektomat.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "remont-pishevarochnyh-kotlov-abat.html": {
@@ -2867,23 +2072,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "remont-pishevarochnyh-kotlov-abat.html",
-        "src/site-builder.json",
-        "src/pages/remont-pishevarochnyh-kotlov-abat/page.json"
+        "remont-pishevarochnyh-kotlov-abat.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/remont-pishevarochnyh-kotlov-abat/page.json",
-        "slug": "remont-pishevarochnyh-kotlov-abat",
-        "sections": 19,
-        "sourceHash": "bd22160dc5030cc3d71532e8466738dbe158baf3762abdd499ecf2c87e884050",
-        "commands": {
-          "preview": "npm run build:site -- --page remont-pishevarochnyh-kotlov-abat.html",
-          "write": "npm run build:site -- --page remont-pishevarochnyh-kotlov-abat.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages remont-pishevarochnyh-kotlov-abat.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2892,8 +2083,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page remont-pishevarochnyh-kotlov-abat.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "remont-pishevarochnyh-kotlov-apach.html": {
@@ -2901,9 +2091,9 @@
       "branch": "restaurant",
       "role": "branch",
       "htmlExists": true,
-      "title": "Ремонт котлов Apach APKE — нагрев, кран, электрика | MosPochin",
+      "title": "Ремонт котлов Apach APKE в Москве — нагрев и электрика | MosPochin",
       "h1": "Ремонт пищеварочных котлов Apach APKE",
-      "description": "Ремонт пищеварочных котлов Apach APKE: нагрев, сливной кран, электрика, ТЭНы, термостат и диагностика на объекте общепита.",
+      "description": "Ремонт пищеварочных котлов Apach APKE: не греет, долго нагревает, течет сливной кран, выбивает автомат, диагностика ТЭНов, термостата и электрики.",
       "canonical": "https://mospochin.ru/remont-pishevarochnyh-kotlov-apach.html",
       "hasForm": true,
       "service": null,
@@ -2913,23 +2103,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "remont-pishevarochnyh-kotlov-apach.html",
-        "src/site-builder.json",
-        "src/pages/remont-pishevarochnyh-kotlov-apach/page.json"
+        "remont-pishevarochnyh-kotlov-apach.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/remont-pishevarochnyh-kotlov-apach/page.json",
-        "slug": "remont-pishevarochnyh-kotlov-apach",
-        "sections": 19,
-        "sourceHash": "d3e4fc5e53ff136ac4607d00310414fa97764e20788e2a83175d4e033f64aaad",
-        "commands": {
-          "preview": "npm run build:site -- --page remont-pishevarochnyh-kotlov-apach.html",
-          "write": "npm run build:site -- --page remont-pishevarochnyh-kotlov-apach.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages remont-pishevarochnyh-kotlov-apach.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2938,8 +2114,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page remont-pishevarochnyh-kotlov-apach.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "remont-pishevarochnyh-kotlov-atesy.html": {
@@ -2947,9 +2122,9 @@
       "branch": "restaurant",
       "role": "branch",
       "htmlExists": true,
-      "title": "Ремонт котлов Atesy / АТЕСИ для общепита | MosPochin",
+      "title": "Ремонт пищеварочных котлов Atesy / АТЕСИ | MosPochin",
       "h1": "Ремонт пищеварочных котлов Atesy / АТЕСИ",
-      "description": "Ремонт пищеварочных котлов Atesy / АТЕСИ: нагрев, кран, датчики, электрика, ТЭНы, заявка инженеру и WhatsApp с фото.",
+      "description": "Ремонт пищеварочных котлов Atesy / АТЕСИ для кафе, ресторанов, столовых и пищеблоков: нагрев, кран, датчики, электрика, ТЭНы и заявка инженеру.",
       "canonical": "https://mospochin.ru/remont-pishevarochnyh-kotlov-atesy.html",
       "hasForm": true,
       "service": null,
@@ -2959,23 +2134,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "remont-pishevarochnyh-kotlov-atesy.html",
-        "src/site-builder.json",
-        "src/pages/remont-pishevarochnyh-kotlov-atesy/page.json"
+        "remont-pishevarochnyh-kotlov-atesy.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/remont-pishevarochnyh-kotlov-atesy/page.json",
-        "slug": "remont-pishevarochnyh-kotlov-atesy",
-        "sections": 19,
-        "sourceHash": "5da583f90ec5d3dd93cfeaf5e845a4e6fc340c36ca18ff5ae210bcf8230316e5",
-        "commands": {
-          "preview": "npm run build:site -- --page remont-pishevarochnyh-kotlov-atesy.html",
-          "write": "npm run build:site -- --page remont-pishevarochnyh-kotlov-atesy.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages remont-pishevarochnyh-kotlov-atesy.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -2984,8 +2145,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page remont-pishevarochnyh-kotlov-atesy.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "remont-pishevarochnyh-kotlov-iterma.html": {
@@ -2993,9 +2153,9 @@
       "branch": "restaurant",
       "role": "branch",
       "htmlExists": true,
-      "title": "Ремонт котлов Iterma — ТЭНы, манометр, рубашка | MosPochin",
+      "title": "Ремонт пищеварочных котлов Iterma — ТЭНы и рубашка | MosPochin",
       "h1": "Ремонт пищеварочных котлов Iterma / Итерма",
-      "description": "Ремонт пищеварочных котлов Iterma / Итерма: давление рубашки, манометр, контакторы, ТЭНы, датчики и диагностика.",
+      "description": "Ремонт пищеварочных котлов Iterma / Итерма: не греет, давление рубашки, манометр, контакторы, датчики, ТЭНы, плата управления и срочная диагностика.",
       "canonical": "https://mospochin.ru/remont-pishevarochnyh-kotlov-iterma.html",
       "hasForm": true,
       "service": null,
@@ -3005,23 +2165,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "remont-pishevarochnyh-kotlov-iterma.html",
-        "src/site-builder.json",
-        "src/pages/remont-pishevarochnyh-kotlov-iterma/page.json"
+        "remont-pishevarochnyh-kotlov-iterma.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/remont-pishevarochnyh-kotlov-iterma/page.json",
-        "slug": "remont-pishevarochnyh-kotlov-iterma",
-        "sections": 19,
-        "sourceHash": "16bbfcfeb7abd08f55bb89606b98140fff01feba7d209a8593a1090783832933",
-        "commands": {
-          "preview": "npm run build:site -- --page remont-pishevarochnyh-kotlov-iterma.html",
-          "write": "npm run build:site -- --page remont-pishevarochnyh-kotlov-iterma.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages remont-pishevarochnyh-kotlov-iterma.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -3030,8 +2176,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page remont-pishevarochnyh-kotlov-iterma.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "remont-pishevarochnyh-kotlov-kpem.html": {
@@ -3051,23 +2196,9 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "remont-pishevarochnyh-kotlov-kpem.html",
-        "src/site-builder.json",
-        "src/pages/remont-pishevarochnyh-kotlov-kpem/page.json"
+        "remont-pishevarochnyh-kotlov-kpem.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/remont-pishevarochnyh-kotlov-kpem/page.json",
-        "slug": "remont-pishevarochnyh-kotlov-kpem",
-        "sections": 19,
-        "sourceHash": "48f3a7b4f7ebd6fcbb2ff6a90add6daf13c242f87ca8ea16c36059e14a0622c3",
-        "commands": {
-          "preview": "npm run build:site -- --page remont-pishevarochnyh-kotlov-kpem.html",
-          "write": "npm run build:site -- --page remont-pishevarochnyh-kotlov-kpem.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages remont-pishevarochnyh-kotlov-kpem.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -3076,8 +2207,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page remont-pishevarochnyh-kotlov-kpem.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "routery.html": {
@@ -3116,23 +2246,9 @@
         "data/household-services.json",
         "data/household-taxonomy.json",
         "data/household-proof-layer.json",
-        "routery.html",
-        "src/site-builder.json",
-        "src/pages/routery/page.json"
+        "routery.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/routery/page.json",
-        "slug": "routery",
-        "sections": 52,
-        "sourceHash": "b29309f1c99c71157bef95c51d2705777154477cdc819431e5bf8c2184719b99",
-        "commands": {
-          "preview": "npm run build:site -- --page routery.html",
-          "write": "npm run build:site -- --page routery.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages routery.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -3142,8 +2258,7 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page routery.html",
         "npm run doctor:page -- --page routery.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "stiralnye-mashiny.html": {
@@ -3181,23 +2296,9 @@
         "data/household-taxonomy.json",
         "data/household-proof-layer.json",
         "data/household-page-slots.json",
-        "stiralnye-mashiny.html",
-        "src/site-builder.json",
-        "src/pages/stiralnye-mashiny/page.json"
+        "stiralnye-mashiny.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/stiralnye-mashiny/page.json",
-        "slug": "stiralnye-mashiny",
-        "sections": 50,
-        "sourceHash": "c39abdc9c980c5692e3978fed52eb0948696baa5451e24fe7554bc8853d1417f",
-        "commands": {
-          "preview": "npm run build:site -- --page stiralnye-mashiny.html",
-          "write": "npm run build:site -- --page stiralnye-mashiny.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages stiralnye-mashiny.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -3207,8 +2308,7 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page stiralnye-mashiny.html",
         "npm run doctor:page -- --page stiralnye-mashiny.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "uslugi.html": {
@@ -3229,23 +2329,9 @@
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
         "data/restaurant-page-slots.json",
-        "uslugi.html",
-        "src/site-builder.json",
-        "src/pages/uslugi/page.json"
+        "uslugi.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/uslugi/page.json",
-        "slug": "uslugi",
-        "sections": 31,
-        "sourceHash": "529babd703509e8f3b0903868a9c7e5f3d6d5b45e6ad82afc0fefc9ae8a7dcd9",
-        "commands": {
-          "preview": "npm run build:site -- --page uslugi.html",
-          "write": "npm run build:site -- --page uslugi.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages uslugi.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -3254,8 +2340,7 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page uslugi.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "water-heaters.html": {
@@ -3295,23 +2380,9 @@
         "data/household-taxonomy.json",
         "data/household-proof-layer.json",
         "data/household-page-slots.json",
-        "water-heaters.html",
-        "src/site-builder.json",
-        "src/pages/water-heaters/page.json"
+        "water-heaters.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/water-heaters/page.json",
-        "slug": "water-heaters",
-        "sections": 49,
-        "sourceHash": "dbe5c9140bdfd6f6234942ccdd3467f5796e8ebb8f292821b7e8be9ae7f5d8fd",
-        "commands": {
-          "preview": "npm run build:site -- --page water-heaters.html",
-          "write": "npm run build:site -- --page water-heaters.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages water-heaters.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -3321,8 +2392,7 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page water-heaters.html",
         "npm run doctor:page -- --page water-heaters.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     }
   }

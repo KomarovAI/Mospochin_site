@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "microwaves.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "908b4377c053011d3caaa084a6459c1b33cde8ff42e711535cb524bc1029d05c",
+    "hash": "939548aa0a9b6ac579f3282ca57f7acdd812c2de00026d703f4345a23274384f",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -59,8 +59,8 @@
       "component": "lead-form",
       "label": "Ремонт встроенных СВЧ Neff, Miele и Bosch",
       "file": "sections/004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html",
-      "bytes": 54428,
-      "hash": "fe4b3b9730993783"
+      "bytes": 55177,
+      "hash": "392cb0bc69875a37"
     },
     {
       "id": "005-footer-anchor-footer-mount-point",
@@ -80,8 +80,8 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 566,
-      "hash": "f9131725f4adbfc4"
+      "bytes": 630,
+      "hash": "9ff3308158a06529"
     },
     {
       "id": "007-runtime-partials-podklyuchenie-partials-injector",
@@ -140,8 +140,8 @@
     "npm run doctor:household-page -- --page microwaves.html",
     "npm run doctor:page -- --page microwaves.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page microwaves.html"
+    "npm run ai:semantic-diff -- --page microwaves.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

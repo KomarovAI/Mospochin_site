@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomaty-promo.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "648e8f99577b6f76478e5c3425ea4927eb45248e85c70bc9b69324c142b1ab07",
+    "hash": "ff58745cf2c7d4db4d1c57e1b7f537149c141ee157cc0458c66f5f8786833fff",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -77,8 +77,8 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 1022,
-      "hash": "3e1eb590318c675d"
+      "bytes": 1032,
+      "hash": "5ced80bd90a7763a"
     },
     {
       "id": "006-raw-html-fragment",
@@ -98,8 +98,8 @@
       "component": "hero",
       "label": "Ошибка Rational / Unox / Abat",
       "file": "sections/007-hero-oshibka-rational-unox-abat.html",
-      "bytes": 11572,
-      "hash": "a8c71116302ac29c"
+      "bytes": 11742,
+      "hash": "8890dfdde4de14ba"
     },
     {
       "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
@@ -130,8 +130,8 @@
       "component": "related-links",
       "label": "Что важно по ошибке пароконвектомата",
       "file": "sections/010-related-links-chto-vazhno-po-oshibke-parokonvektomat.html",
-      "bytes": 17042,
-      "hash": "8a8a33c711193a29"
+      "bytes": 17487,
+      "hash": "74bf3b987768f912"
     },
     {
       "id": "011-raw-html-fragment",
@@ -270,8 +270,8 @@
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
       "file": "sections/022-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
-      "bytes": 3347,
-      "hash": "06afe62ce8fa7760"
+      "bytes": 3367,
+      "hash": "37b522a350c6f640"
     },
     {
       "id": "023-pricing-ceny-stoimost",
@@ -310,8 +310,8 @@
       "component": "pricing",
       "label": "Выберите проблему — покажем цену",
       "file": "sections/026-pricing-vyberite-problemu-pokazhem-cenu.html",
-      "bytes": 5508,
-      "hash": "bb922832f67b1017"
+      "bytes": 5658,
+      "hash": "2d5fa841b99d2903"
     },
     {
       "id": "027-raw-html-fragment",
@@ -649,8 +649,8 @@
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
       "file": "sections/055-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
-      "bytes": 2450,
-      "hash": "b03de2520a6db31a"
+      "bytes": 2535,
+      "hash": "a6eeaea3b4f675c2"
     },
     {
       "id": "056-raw-html-fragment",
@@ -670,21 +670,16 @@
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
       "file": "sections/057-contact-cta-parokonvektomat-vstal.html",
-      "bytes": 3088,
-      "hash": "f03e071b1b1e357c"
+      "bytes": 3108,
+      "hash": "9e11f162ea7ffc5f"
     },
     {
       "id": "058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "bytes": 9308,
-      "hash": "9ddbd91158751f59",
-      "componentMode": "parametric",
-      "componentScope": "parametric",
-      "variant": "restaurant-parokonvektomat-b2b",
-      "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-      "propsRef": "content/components/lead-form/parokonvektomaty-promo.json",
-      "sourceFile": "sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
+      "file": "sections/058-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
+      "bytes": 7594,
+      "hash": "d0a8f2f02a93503f"
     },
     {
       "id": "059-proof-dokazatel-stva-garantii",
@@ -726,8 +721,8 @@
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
       "file": "sections/063-related-links-esli-problema-v-drugom-restorannom-obo.html",
-      "bytes": 3286,
-      "hash": "a881177c78c49cc1"
+      "bytes": 3344,
+      "hash": "e45819bb5dd8e1b4"
     },
     {
       "id": "064-related-links-svyazannye-stranicy",
@@ -882,8 +877,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page parokonvektomaty-promo.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page parokonvektomaty-promo.html"
+    "npm run ai:semantic-diff -- --page parokonvektomaty-promo.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

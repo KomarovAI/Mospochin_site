@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "bytovaya-uslugi.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "cdb2c71c93a39456affdaaf244921f638c72a06987b06aceac93f5fb73688759",
+    "hash": "cb34aaa5248f7cd81d9a6e70477f060731cf5ee9ebb5ffb593237c6e13efcca5",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -59,32 +59,32 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 524,
-      "hash": "337800ef493522a3"
+      "bytes": 539,
+      "hash": "f654b1a9c5e27b3d"
     },
     {
       "id": "005-hero-remont-bytovoy-tehniki-na-domu",
       "component": "hero",
       "label": "Ремонт бытовой техники на дому",
       "file": "sections/005-hero-remont-bytovoy-tehniki-na-domu.html",
-      "bytes": 7348,
-      "hash": "1ff9f72c2b717647"
+      "bytes": 7425,
+      "hash": "28973d7e606e9477"
     },
     {
       "id": "006-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
       "file": "sections/006-contact-cta-kontaktnyy-cta.html",
-      "bytes": 1349,
-      "hash": "2ea9321a65490fba"
+      "bytes": 1365,
+      "hash": "d66196e779099d12"
     },
     {
       "id": "007-faq-snachala-vyberite-tip-tehniki",
       "component": "faq",
       "label": "Сначала выберите тип техники",
       "file": "sections/007-faq-snachala-vyberite-tip-tehniki.html",
-      "bytes": 14329,
-      "hash": "946f8cd1c505f7f2"
+      "bytes": 14415,
+      "hash": "a1e954af87e18f15"
     },
     {
       "id": "008-pricing-chto-progovarivaem-do-nachala-remonta",
@@ -123,16 +123,16 @@
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/012-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 4679,
-      "hash": "d9a8a6e15554f7c6"
+      "bytes": 4731,
+      "hash": "2aab4d528a67bdca"
     },
     {
       "id": "013-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/013-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 898,
-      "hash": "a2961bbc5dc6a71c"
+      "bytes": 944,
+      "hash": "8920291f35e71656"
     },
     {
       "id": "014-footer-anchor-footer-mount-point",
@@ -203,8 +203,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page bytovaya-uslugi.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page bytovaya-uslugi.html"
+    "npm run ai:semantic-diff -- --page bytovaya-uslugi.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

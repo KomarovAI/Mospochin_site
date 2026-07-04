@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomat-obschuzhivanie.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "a8973e0c2cc38ff6b04e561a47be6df23021d6442f682748857d3236c85e7108",
+    "hash": "e8716132ca0b7dab5f485fd9dc621fc223871d02a2256a88222d7404da99bf5e",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -77,8 +77,8 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 1387,
-      "hash": "e97c5b3d36492f76"
+      "bytes": 1414,
+      "hash": "7b275a055731b97a"
     },
     {
       "id": "006-raw-html-fragment",
@@ -93,8 +93,8 @@
       "component": "hero",
       "label": "Техническое обслуживание пароконвектоматов",
       "file": "sections/007-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html",
-      "bytes": 11294,
-      "hash": "138be8f267d936a5"
+      "bytes": 11480,
+      "hash": "c6b5d7c926aa63c1"
     },
     {
       "id": "008-raw-html-fragment",
@@ -217,15 +217,6 @@
       "hash": "d78927ab13bc4761"
     },
     {
-      "id": "900-related-links-run7-conversion-path",
-      "component": "related-links",
-      "label": "Связанные маршруты ремонта",
-      "file": "sections/900-related-links-run7-conversion-path.html",
-      "bytes": 4358,
-      "hash": "89d2f06ac23241e9",
-      "run": "p7-interlinking"
-    },
-    {
       "id": "023-faq-faq",
       "component": "faq",
       "label": "FAQ",
@@ -246,8 +237,8 @@
       "component": "related-links",
       "label": "Связанные страницы по пароконвектоматам",
       "file": "sections/025-related-links-svyazannye-stranicy-po-parokonvektomat.html",
-      "bytes": 11201,
-      "hash": "ed2bb70c39e617aa"
+      "bytes": 11545,
+      "hash": "77fbdf769d3b1360"
     },
     {
       "id": "026-raw-html-fragment",
@@ -262,8 +253,8 @@
       "component": "mobile-contact",
       "label": "Заключите договор на ТО и забудьте об аварийных простоях",
       "file": "sections/027-mobile-contact-zaklyuchite-dogovor-na-to-i-zabud-te-.html",
-      "bytes": 2255,
-      "hash": "5670fd88d0c051a6"
+      "bytes": 2340,
+      "hash": "110329fb5846bee3"
     },
     {
       "id": "028-raw-html-fragment",
@@ -278,8 +269,8 @@
       "component": "lead-form",
       "label": "Заключите договор на техническое обслуживание",
       "file": "sections/029-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html",
-      "bytes": 5573,
-      "hash": "62597f6237e2f286"
+      "bytes": 5682,
+      "hash": "488b6d55764064ab"
     },
     {
       "id": "030-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -350,8 +341,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page parokonvektomat-obschuzhivanie.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page parokonvektomat-obschuzhivanie.html"
+    "npm run ai:semantic-diff -- --page parokonvektomat-obschuzhivanie.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

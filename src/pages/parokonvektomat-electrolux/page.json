@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomat-electrolux.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "f8e13ab9cad086ea6072836ae3ec5b9c35503ca31c3ab77a1cb335a1514963d7",
+    "hash": "a55688df25222fe5efd26018ad226f4feb9299b78f4e7fbd31bdcc2a5a954065",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -77,8 +77,8 @@
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 1030,
-      "hash": "676e4b16ffe9395a"
+      "bytes": 1040,
+      "hash": "f5d3972914c230ad"
     },
     {
       "id": "006-raw-html-fragment",
@@ -98,8 +98,8 @@
       "component": "hero",
       "label": "Ремонт пароконвектоматов Electrolux Professional",
       "file": "sections/007-hero-remont-parokonvektomatov-electrolux-professiona.html",
-      "bytes": 11235,
-      "hash": "3df01058b7601657"
+      "bytes": 11413,
+      "hash": "6a45644c18dafff4"
     },
     {
       "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
@@ -254,8 +254,8 @@
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
       "file": "sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
-      "bytes": 3351,
-      "hash": "eeead1886a8e56b6"
+      "bytes": 3367,
+      "hash": "66c5e906882be06f"
     },
     {
       "id": "022-pricing-ceny-stoimost",
@@ -294,8 +294,8 @@
       "component": "pricing",
       "label": "Выберите проблему — покажем цену",
       "file": "sections/025-pricing-vyberite-problemu-pokazhem-cenu.html",
-      "bytes": 5532,
-      "hash": "bec1394b08f0bc32"
+      "bytes": 5675,
+      "hash": "5dfb8dcee4d75966"
     },
     {
       "id": "026-raw-html-fragment",
@@ -597,15 +597,6 @@
       "sourceFile": "sections/050-raw-html-fragment.html"
     },
     {
-      "id": "900-related-links-run7-conversion-path",
-      "component": "related-links",
-      "label": "Связанные маршруты ремонта",
-      "file": "sections/900-related-links-run7-conversion-path.html",
-      "bytes": 4322,
-      "hash": "9cb666f3b43d9953",
-      "run": "p7-interlinking"
-    },
-    {
       "id": "051-faq-faq",
       "component": "faq",
       "label": "FAQ",
@@ -639,8 +630,8 @@
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
       "file": "sections/054-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
-      "bytes": 1993,
-      "hash": "54a0e9c61f798781"
+      "bytes": 2078,
+      "hash": "20a4d58178ebfad4"
     },
     {
       "id": "055-raw-html-fragment",
@@ -660,21 +651,16 @@
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
       "file": "sections/056-contact-cta-parokonvektomat-vstal.html",
-      "bytes": 3092,
-      "hash": "6451a53ab5ca8103"
+      "bytes": 3112,
+      "hash": "ceab89be16f11774"
     },
     {
       "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "bytes": 9398,
-      "hash": "579136cafe048cd7",
-      "componentMode": "parametric",
-      "componentScope": "parametric",
-      "variant": "restaurant-parokonvektomat-b2b",
-      "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
-      "propsRef": "content/components/lead-form/parokonvektomat-electrolux.json",
-      "sourceFile": "sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
+      "file": "sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
+      "bytes": 7672,
+      "hash": "f729e7f89809af08"
     },
     {
       "id": "058-proof-dokazatel-stva-garantii",
@@ -729,8 +715,8 @@
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
       "file": "sections/064-related-links-esli-problema-v-drugom-restorannom-obo.html",
-      "bytes": 3295,
-      "hash": "686ada40c5212abc"
+      "bytes": 3356,
+      "hash": "3e6c2d5efb4fe816"
     },
     {
       "id": "065-related-links-svyazannye-stranicy",
@@ -745,8 +731,8 @@
       "component": "related-links",
       "label": "Связанные страницы по пароконвектоматам",
       "file": "sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
-      "bytes": 10316,
-      "hash": "13b4dc210c290866"
+      "bytes": 10619,
+      "hash": "b3f5cd973cd2fbf8"
     },
     {
       "id": "067-raw-html-fragment",
@@ -893,8 +879,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page parokonvektomat-electrolux.html",
     "npm run validate:site",
-    "npm run check:site-builder",
-    "npm run ai:semantic-diff -- --page parokonvektomat-electrolux.html"
+    "npm run ai:semantic-diff -- --page parokonvektomat-electrolux.html",
+    "npm run check:site-builder"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

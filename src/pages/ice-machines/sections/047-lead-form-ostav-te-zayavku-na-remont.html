@@ -6,7 +6,7 @@
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-3 sm:mb-4 heading-reveal">Оставьте заявку на ремонт</h2>
                 <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">Укажите модель льдогенератора и проблему — перезвоним за 5 минут</p>
             </div>
-            <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form" action="/api/send-telegram" method="post" data-form-id="ice-machines_telegram_form_1" data-form-context="repair">
+            <form class="telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form" action="/api/send-telegram" method="post" data-form-id="ice_machines_form_1" data-contact-form="ice_machines_form_1" data-form-page-slug="ice-machines">
 <!-- sync:request-overview:start owner="tools/restaurant-sync-fallbacks.mjs" source="data/restaurant-page-slots.json,data/restaurant-proof-layer.json,data/restaurant-services.json" -->
 <div data-sync-zone="request-overview" class="mb-6 rounded-3xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5 lg:p-6">
       <div class="flex flex-wrap items-center gap-2">
@@ -29,7 +29,7 @@
                     <div><label for="ice-machines-type" class="block text-sm font-medium text-slate-700 mb-2">Модель льдогенератора</label><input type="text" name="type" placeholder="Scotsman ICE 160" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="ice-machines-type"></div>
                     <div><label for="ice-machines-problem" class="block text-sm font-medium text-slate-700 mb-2">Что случилось?</label><input type="text" name="problem" placeholder="Не производит лед, ошибка E03..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition text-slate-700" id="ice-machines-problem"></div>
                 </div>
-                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5" data-cta-id="ice-machines_form_submit_1" data-cta-group="form_submit" data-block="auto">
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-base sm:text-lg font-bold px-5 py-3 sm:px-8 sm:py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5" data-cta-id="ice-machines_form_submit_button_1" data-cta-group="form_submit" data-block="form">
                     <i class="ri-send-plane-line mr-2"></i>Отправить заявку — диагностика при ремонте
                 </button>
                 <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
