@@ -10,16 +10,16 @@
     "recipes": "docs/AI_TASK_RECIPES.md"
   },
   "summary": {
-    "totalPages": 63,
+    "totalPages": 115,
     "byBranch": {
       "neutral": 6,
-      "restaurant": 45,
+      "restaurant": 97,
       "household": 12
     },
     "byRole": {
       "neutral": 6,
       "branch": 36,
-      "service": 21
+      "service": 73
     }
   },
   "sourceOfTruth": {
@@ -91,6 +91,60 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page about.html",
+        "npm run validate:site"
+      ]
+    },
+    "avtomatika-ventilyatsii-restorana.html": {
+      "page": "avtomatika-ventilyatsii-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Автоматика вентиляции ресторана: диагностика и ремонт",
+      "h1": "Автоматика вентиляции ресторана",
+      "description": "Проверка автоматики вентиляции кухни: пульты, щиты, датчики, управление вентилятором, блокировки и ошибки запуска.",
+      "canonical": "https://mospochin.ru/avtomatika-ventilyatsii-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "avtomatika-ventilyatsii-restorana",
+        "uiLabel": "Автоматика вентиляции ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Автоматика вентиляции ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vytyazhnaya-ventilyatsiya-restorana.html",
+          "pritochnaya-ventilyatsiya-restorana.html",
+          "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "avtomatika-ventilyatsii-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page avtomatika-ventilyatsii-restorana.html",
+        "npm run doctor:page -- --page avtomatika-ventilyatsii-restorana.html",
         "npm run validate:site"
       ]
     },
@@ -222,6 +276,222 @@
         "npm run validate:site"
       ]
     },
+    "chek-list-ventilyatsii-restorana.html": {
+      "page": "chek-list-ventilyatsii-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Чек-лист вентиляции ресторана для управляющего",
+      "h1": "Чек-лист вентиляции ресторана",
+      "description": "Краткий чек-лист: тяга, запахи, дым, шум, вибрация, фильтры, приток, конденсат, доступ к чистке и когда вызывать инженера.",
+      "canonical": "https://mospochin.ru/chek-list-ventilyatsii-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "chek-list-ventilyatsii-restorana",
+        "uiLabel": "Чек-лист вентиляции ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Чек-лист вентиляции ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "chek-list-ventilyatsii-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page chek-list-ventilyatsii-restorana.html",
+        "npm run doctor:page -- --page chek-list-ventilyatsii-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "chem-otlichaetsya-pritok-ot-vytyazhki.html": {
+      "page": "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Приток и вытяжка в ресторане: в чём разница",
+      "h1": "Чем приток отличается от вытяжки",
+      "description": "Вытяжка удаляет загрязнённый воздух, приток компенсирует удалённый объём. Почему без баланса появляются жар, запахи и слабая тяга.",
+      "canonical": "https://mospochin.ru/chem-otlichaetsya-pritok-ot-vytyazhki.html",
+      "hasForm": true,
+      "service": {
+        "slug": "chem-otlichaetsya-pritok-ot-vytyazhki",
+        "uiLabel": "Чем приток отличается от вытяжки",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Чем приток отличается от вытяжки",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "chem-otlichaetsya-pritok-ot-vytyazhki.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page chem-otlichaetsya-pritok-ot-vytyazhki.html",
+        "npm run doctor:page -- --page chem-otlichaetsya-pritok-ot-vytyazhki.html",
+        "npm run validate:site"
+      ]
+    },
+    "chistka-ventilyatsii-restoranov.html": {
+      "page": "chistka-ventilyatsii-restoranov.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Чистка вентиляции ресторанов и вытяжек кухни — MosPochin",
+      "h1": "Чистка вентиляции ресторанов и кафе",
+      "description": "Чистка доступных элементов вентиляции ресторана: зонты, фильтры, участки воздуховодов, загрязнения жиром и налётом. Диагностика причин слабой тяги.",
+      "canonical": "https://mospochin.ru/chistka-ventilyatsii-restoranov.html",
+      "hasForm": true,
+      "service": {
+        "slug": "chistka-ventilyatsii-restoranov",
+        "uiLabel": "Чистка вентиляции ресторанов и кафе",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Чистка вентиляции ресторанов и кафе",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "zhir-v-vozduhovodah-restorana.html",
+          "remont-zhirovyh-filtrov-vytyazhki.html",
+          "zasorilas-vytyazhka-restorana.html",
+          "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "chistka-ventilyatsii-restoranov.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page chistka-ventilyatsii-restoranov.html",
+        "npm run doctor:page -- --page chistka-ventilyatsii-restoranov.html",
+        "npm run validate:site"
+      ]
+    },
+    "chto-proveryaet-inzhener-ventilyatsii.html": {
+      "page": "chto-proveryaet-inzhener-ventilyatsii.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Что проверяет инженер вентиляции ресторана",
+      "h1": "Что проверяет инженер вентиляции",
+      "description": "Чек-лист диагностики вентиляции ресторана: вытяжка, приток, вентилятор, фильтры, автоматика, воздуховоды, шум и вибрация.",
+      "canonical": "https://mospochin.ru/chto-proveryaet-inzhener-ventilyatsii.html",
+      "hasForm": true,
+      "service": {
+        "slug": "chto-proveryaet-inzhener-ventilyatsii",
+        "uiLabel": "Что проверяет инженер вентиляции",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Что проверяет инженер вентиляции",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "chto-proveryaet-inzhener-ventilyatsii.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page chto-proveryaet-inzhener-ventilyatsii.html",
+        "npm run doctor:page -- --page chto-proveryaet-inzhener-ventilyatsii.html",
+        "npm run validate:site"
+      ]
+    },
     "contact.html": {
       "page": "contact.html",
       "branch": "restaurant",
@@ -251,6 +521,114 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page contact.html",
+        "npm run validate:site"
+      ]
+    },
+    "diagnostika-ventilyatsii-restorana.html": {
+      "page": "diagnostika-ventilyatsii-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Диагностика вентиляции ресторана — вытяжка, приток, автоматика",
+      "h1": "Диагностика вентиляции ресторана перед ремонтом",
+      "description": "Проверим вытяжку, приток, вентиляторы, фильтры, автоматику и причины дыма, запаха, жары или слабой тяги на кухне ресторана.",
+      "canonical": "https://mospochin.ru/diagnostika-ventilyatsii-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "diagnostika-ventilyatsii-restorana",
+        "uiLabel": "Диагностика вентиляции ресторана перед ремонтом",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Диагностика вентиляции ресторана перед ремонтом",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "chto-proveryaet-inzhener-ventilyatsii.html",
+          "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+          "remont-ventilyatsii-restoranov.html",
+          "ventilyatsiya-restorana-ne-tyanet.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "diagnostika-ventilyatsii-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page diagnostika-ventilyatsii-restorana.html",
+        "npm run doctor:page -- --page diagnostika-ventilyatsii-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "dym-na-kuhne-restorana.html": {
+      "page": "dym-na-kuhne-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Дым на кухне ресторана — что проверить и как устранить",
+      "h1": "Дым и гарь на кухне ресторана",
+      "description": "Дым, гарь и жар на кухне ресторана: проверка вытяжного зонта, тяги, фильтров, воздуховодов, вентилятора и приточного воздуха.",
+      "canonical": "https://mospochin.ru/dym-na-kuhne-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "dym-na-kuhne-restorana",
+        "uiLabel": "Дым и гарь на кухне ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Дым и гарь на кухне ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-vytyazhki-restorana.html",
+          "chistka-ventilyatsii-restoranov.html",
+          "zhir-v-vozduhovodah-restorana.html",
+          "ventilyatsiya-i-gril-v-restorane.html",
+          "mestnaya-vytyazhka-nad-oborudovaniem.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "dym-na-kuhne-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page dym-na-kuhne-restorana.html",
+        "npm run doctor:page -- --page dym-na-kuhne-restorana.html",
         "npm run validate:site"
       ]
     },
@@ -485,6 +863,222 @@
         "npm run validate:site"
       ]
     },
+    "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html": {
+      "page": "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Как подготовиться к выезду мастера по вентиляции",
+      "h1": "Как подготовиться к выезду мастера по вентиляции",
+      "description": "Что подготовить перед выездом инженера: фото шильдика, видео шума, описание симптомов, доступ к зонту, фильтрам, щиту и вентилятору.",
+      "canonical": "https://mospochin.ru/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+      "hasForm": true,
+      "service": {
+        "slug": "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii",
+        "uiLabel": "Как подготовиться к выезду мастера по вентиляции",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Как подготовиться к выезду мастера по вентиляции",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+        "npm run doctor:page -- --page kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+        "npm run validate:site"
+      ]
+    },
+    "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html": {
+      "page": "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Когда нужна чистка вентиляции ресторана",
+      "h1": "Как понять, что нужна чистка вентиляции",
+      "description": "Признаки загрязнения вентиляции ресторана: слабая тяга, запахи, жирный налёт, дым, шум, перегрев кухни и частые жалобы.",
+      "canonical": "https://mospochin.ru/kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+      "hasForm": true,
+      "service": {
+        "slug": "kak-ponyat-chto-nuzhna-chistka-ventilyatsii",
+        "uiLabel": "Как понять, что нужна чистка вентиляции",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Как понять, что нужна чистка вентиляции",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+        "npm run doctor:page -- --page kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+        "npm run validate:site"
+      ]
+    },
+    "kak-rabotaet-ventilyatsiya-restorana.html": {
+      "page": "kak-rabotaet-ventilyatsiya-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Как работает вентиляция ресторана: вытяжка, приток, зонты",
+      "h1": "Как работает вентиляция ресторана",
+      "description": "Простое объяснение работы вентиляции кухни ресторана: удаление дыма и жара, приток воздуха, зонты, фильтры, вентиляторы и автоматика.",
+      "canonical": "https://mospochin.ru/kak-rabotaet-ventilyatsiya-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "kak-rabotaet-ventilyatsiya-restorana",
+        "uiLabel": "Как работает вентиляция ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Как работает вентиляция ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "kak-rabotaet-ventilyatsiya-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page kak-rabotaet-ventilyatsiya-restorana.html",
+        "npm run doctor:page -- --page kak-rabotaet-ventilyatsiya-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "kanalnaya-ventilyatsiya-restorana.html": {
+      "page": "kanalnaya-ventilyatsiya-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Канальная вентиляция ресторана: вентиляторы и воздуховоды",
+      "h1": "Канальная вентиляция ресторана",
+      "description": "Канальные участки вентиляции кухни: воздуховоды, сопротивление, загрязнения, шум, слабая тяга и доступ к чистке.",
+      "canonical": "https://mospochin.ru/kanalnaya-ventilyatsiya-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "kanalnaya-ventilyatsiya-restorana",
+        "uiLabel": "Канальная вентиляция ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Канальная вентиляция ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vytyazhnaya-ventilyatsiya-restorana.html",
+          "pritochnaya-ventilyatsiya-restorana.html",
+          "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "kanalnaya-ventilyatsiya-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page kanalnaya-ventilyatsiya-restorana.html",
+        "npm run doctor:page -- --page kanalnaya-ventilyatsiya-restorana.html",
+        "npm run validate:site"
+      ]
+    },
     "kompyutery.html": {
       "page": "kompyutery.html",
       "branch": "household",
@@ -533,6 +1127,114 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page kompyutery.html",
         "npm run doctor:page -- --page kompyutery.html",
+        "npm run validate:site"
+      ]
+    },
+    "kryshnye-ventilyatory-restorana.html": {
+      "page": "kryshnye-ventilyatory-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Крышные вентиляторы ресторана: диагностика вытяжки",
+      "h1": "Крышные вентиляторы ресторана",
+      "description": "Крышные вытяжные вентиляторы кухни ресторана: слабая тяга, шум, вибрация, загрязнения, питание и автоматика.",
+      "canonical": "https://mospochin.ru/kryshnye-ventilyatory-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "kryshnye-ventilyatory-restorana",
+        "uiLabel": "Крышные вентиляторы ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Крышные вентиляторы ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vytyazhnaya-ventilyatsiya-restorana.html",
+          "pritochnaya-ventilyatsiya-restorana.html",
+          "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "kryshnye-ventilyatory-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page kryshnye-ventilyatory-restorana.html",
+        "npm run doctor:page -- --page kryshnye-ventilyatory-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "mestnaya-vytyazhka-nad-oborudovaniem.html": {
+      "page": "mestnaya-vytyazhka-nad-oborudovaniem.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Местная вытяжка над плитами, грилями и фритюрами",
+      "h1": "Местная вытяжка над оборудованием кухни",
+      "description": "Вытяжка над горячей линией: плиты, грили, фритюры, пароконвектоматы и котлы. Что проверять при дыме и жаре.",
+      "canonical": "https://mospochin.ru/mestnaya-vytyazhka-nad-oborudovaniem.html",
+      "hasForm": true,
+      "service": {
+        "slug": "mestnaya-vytyazhka-nad-oborudovaniem",
+        "uiLabel": "Местная вытяжка над оборудованием кухни",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Местная вытяжка над оборудованием кухни",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vytyazhnaya-ventilyatsiya-restorana.html",
+          "pritochnaya-ventilyatsiya-restorana.html",
+          "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "plity-pechi.html",
+          "grili-mangaly.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "mestnaya-vytyazhka-nad-oborudovaniem.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page mestnaya-vytyazhka-nad-oborudovaniem.html",
+        "npm run doctor:page -- --page mestnaya-vytyazhka-nad-oborudovaniem.html",
         "npm run validate:site"
       ]
     },
@@ -585,6 +1287,168 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page microwaves.html",
         "npm run doctor:page -- --page microwaves.html",
+        "npm run validate:site"
+      ]
+    },
+    "obratnaya-tyaga-v-restorane.html": {
+      "page": "obratnaya-tyaga-v-restorane.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Обратная тяга в вентиляции ресторана — диагностика",
+      "h1": "Обратная тяга в ресторане",
+      "description": "Причины обратной тяги: нехватка притока, проблемы с вытяжным каналом, вентилятором, заслонками, балансом воздуха и соседними системами.",
+      "canonical": "https://mospochin.ru/obratnaya-tyaga-v-restorane.html",
+      "hasForm": true,
+      "service": {
+        "slug": "obratnaya-tyaga-v-restorane",
+        "uiLabel": "Обратная тяга в ресторане",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Обратная тяга в ресторане",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "obratnaya-tyaga-v-restorane.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page obratnaya-tyaga-v-restorane.html",
+        "npm run doctor:page -- --page obratnaya-tyaga-v-restorane.html",
+        "npm run validate:site"
+      ]
+    },
+    "obsluzhivanie-ventilyatsii-restoranov.html": {
+      "page": "obsluzhivanie-ventilyatsii-restoranov.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Обслуживание вентиляции ресторанов и кафе — MosPochin",
+      "h1": "Обслуживание вентиляции ресторанов",
+      "description": "Плановое и разовое обслуживание вентиляции ресторанов: проверка вытяжки, притока, вентиляторов, фильтров, загрязнений и автоматики.",
+      "canonical": "https://mospochin.ru/obsluzhivanie-ventilyatsii-restoranov.html",
+      "hasForm": true,
+      "service": {
+        "slug": "obsluzhivanie-ventilyatsii-restoranov",
+        "uiLabel": "вентиляции ресторанов",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Обслуживание вентиляции ресторанов",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "chistka-ventilyatsii-restoranov.html",
+          "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+          "zhir-v-vozduhovodah-restorana.html",
+          "chto-proveryaet-inzhener-ventilyatsii.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "obsluzhivanie-ventilyatsii-restoranov.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page obsluzhivanie-ventilyatsii-restoranov.html",
+        "npm run doctor:page -- --page obsluzhivanie-ventilyatsii-restoranov.html",
+        "npm run validate:site"
+      ]
+    },
+    "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html": {
+      "page": "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ошибки эксплуатации вытяжки ресторана",
+      "h1": "Ошибки при эксплуатации вытяжки ресторана",
+      "description": "Какие действия ухудшают работу вытяжки: грязные фильтры, отключённый приток, закрытые решётки, перестановка оборудования и поздняя чистка.",
+      "canonical": "https://mospochin.ru/oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "oshibki-pri-ekspluatatsii-vytyazhki-restorana",
+        "uiLabel": "Ошибки при эксплуатации вытяжки ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Ошибки при эксплуатации вытяжки ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+        "npm run doctor:page -- --page oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
         "npm run validate:site"
       ]
     },
@@ -1074,6 +1938,60 @@
         "npm run doctor:page -- --page parokonvektomaty.html",
         "npm run validate:site",
         "npm run check:site-builder"
+      ]
+    },
+    "peregrev-kuhni-restorana.html": {
+      "page": "peregrev-kuhni-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Жарко на кухне ресторана — проверка вентиляции",
+      "h1": "Жарко на кухне ресторана",
+      "description": "Если на кухне ресторана постоянно жарко, проверяем вытяжку, приток, горячую линию, зонты, вентиляторы и баланс воздуха.",
+      "canonical": "https://mospochin.ru/peregrev-kuhni-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "peregrev-kuhni-restorana",
+        "uiLabel": "Жарко на кухне ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Жарко на кухне ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "peregrev-kuhni-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page peregrev-kuhni-restorana.html",
+        "npm run doctor:page -- --page peregrev-kuhni-restorana.html",
+        "npm run validate:site"
       ]
     },
     "pishevarochnye-kotly.html": {
@@ -1923,6 +2841,114 @@
         "npm run validate:site"
       ]
     },
+    "pochemu-vytyazhka-ne-tyanet-v-restorane.html": {
+      "page": "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Почему вытяжка ресторана плохо тянет: причины",
+      "h1": "Почему вытяжка не тянет в ресторане",
+      "description": "Основные причины слабой тяги вытяжки: загрязнение фильтров, воздуховодов, проблемы вентилятора, нехватка притока и ошибки эксплуатации.",
+      "canonical": "https://mospochin.ru/pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+      "hasForm": true,
+      "service": {
+        "slug": "pochemu-vytyazhka-ne-tyanet-v-restorane",
+        "uiLabel": "Почему вытяжка не тянет в ресторане",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Почему вытяжка не тянет в ресторане",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "pochemu-vytyazhka-ne-tyanet-v-restorane.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+        "npm run doctor:page -- --page pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+        "npm run validate:site"
+      ]
+    },
+    "posle-remonta-kuhni-ventilyatsiya-huzhe.html": {
+      "page": "posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "После ремонта кухни вентиляция стала хуже — диагностика",
+      "h1": "После ремонта кухни вентиляция стала хуже",
+      "description": "После перестановки оборудования, ремонта кухни или смены меню вентиляция может не справляться. Проверяем нагрузку, зонты, приток и вытяжку.",
+      "canonical": "https://mospochin.ru/posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+      "hasForm": true,
+      "service": {
+        "slug": "posle-remonta-kuhni-ventilyatsiya-huzhe",
+        "uiLabel": "После ремонта кухни вентиляция стала хуже",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "После ремонта кухни вентиляция стала хуже",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "posle-remonta-kuhni-ventilyatsiya-huzhe.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+        "npm run doctor:page -- --page posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+        "npm run validate:site"
+      ]
+    },
     "posudomoechnye-mashiny.html": {
       "page": "posudomoechnye-mashiny.html",
       "branch": "restaurant",
@@ -2021,6 +3047,114 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page posudomoyki.html",
         "npm run doctor:page -- --page posudomoyki.html",
+        "npm run validate:site"
+      ]
+    },
+    "pritochnaya-ventilyatsiya-restorana.html": {
+      "page": "pritochnaya-ventilyatsiya-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Приточная вентиляция ресторана: диагностика и ремонт",
+      "h1": "Приточная вентиляция ресторана",
+      "description": "Зачем кухне ресторана нужен приток воздуха, как он влияет на вытяжку, жару, запахи, двери и работу оборудования.",
+      "canonical": "https://mospochin.ru/pritochnaya-ventilyatsiya-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "pritochnaya-ventilyatsiya-restorana",
+        "uiLabel": "Приточная вентиляция ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Приточная вентиляция ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vytyazhnaya-ventilyatsiya-restorana.html",
+          "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "mestnaya-vytyazhka-nad-oborudovaniem.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "pritochnaya-ventilyatsiya-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page pritochnaya-ventilyatsiya-restorana.html",
+        "npm run doctor:page -- --page pritochnaya-ventilyatsiya-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "pritochno-vytyazhnaya-ventilyatsiya-restorana.html": {
+      "page": "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Приточно-вытяжная вентиляция ресторана — баланс притока и вытяжки",
+      "h1": "Приточно-вытяжная вентиляция ресторана",
+      "description": "Почему вытяжка и приток должны работать вместе: разрежение, слабая тяга, перегрев кухни и запахи в зале.",
+      "canonical": "https://mospochin.ru/pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "pritochno-vytyazhnaya-ventilyatsiya-restorana",
+        "uiLabel": "Приточно-вытяжная вентиляция ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Приточно-вытяжная вентиляция ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vytyazhnaya-ventilyatsiya-restorana.html",
+          "pritochnaya-ventilyatsiya-restorana.html",
+          "mestnaya-vytyazhka-nad-oborudovaniem.html",
+          "pishevarochnye-kotly.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "pritochno-vytyazhnaya-ventilyatsiya-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+        "npm run doctor:page -- --page pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
         "npm run validate:site"
       ]
     },
@@ -2210,6 +3344,330 @@
         "npm run validate:site"
       ]
     },
+    "remont-pritochnoj-ventilyatsii-restorana.html": {
+      "page": "remont-pritochnoj-ventilyatsii-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт приточной вентиляции ресторана и кафе — MosPochin",
+      "h1": "Ремонт приточной вентиляции ресторана",
+      "description": "Диагностика и ремонт приточной вентиляции кухни: слабый приток, жара, разрежение, проблемы с фильтрами, вентилятором и автоматикой.",
+      "canonical": "https://mospochin.ru/remont-pritochnoj-ventilyatsii-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "remont-pritochnoj-ventilyatsii-restorana",
+        "uiLabel": "приточной вентиляции ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Ремонт приточной вентиляции ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "pritochnaya-ventilyatsiya-restorana.html",
+          "slabyj-pritok-vozduha-restoran.html",
+          "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "peregrev-kuhni-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "remont-pritochnoj-ventilyatsii-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page remont-pritochnoj-ventilyatsii-restorana.html",
+        "npm run doctor:page -- --page remont-pritochnoj-ventilyatsii-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "remont-ventilyatora-vytyazhki-restorana.html": {
+      "page": "remont-ventilyatora-vytyazhki-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт вентилятора вытяжки ресторана и кафе",
+      "h1": "Ремонт вентилятора вытяжки ресторана",
+      "description": "Диагностика вытяжного вентилятора ресторана: не запускается, шумит, вибрирует, слабо тянет или выбивает автомат.",
+      "canonical": "https://mospochin.ru/remont-ventilyatora-vytyazhki-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "remont-ventilyatora-vytyazhki-restorana",
+        "uiLabel": "вентилятора вытяжки ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Ремонт вентилятора вытяжки ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "remont-vozduhovodov-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "remont-ventilyatora-vytyazhki-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page remont-ventilyatora-vytyazhki-restorana.html",
+        "npm run doctor:page -- --page remont-ventilyatora-vytyazhki-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "remont-ventilyatsii-restoranov.html": {
+      "page": "remont-ventilyatsii-restoranov.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт вентиляции ресторанов в Москве — выезд инженера",
+      "h1": "Ремонт вентиляции ресторанов и кафе",
+      "description": "Ремонт вытяжной и приточной вентиляции ресторанов, кафе и пищеблоков. Проверка тяги, вентилятора, автоматики, воздуховодов и фильтров.",
+      "canonical": "https://mospochin.ru/remont-ventilyatsii-restoranov.html",
+      "hasForm": true,
+      "service": {
+        "slug": "remont-ventilyatsii-restoranov",
+        "uiLabel": "вентиляции ресторанов и кафе",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Ремонт вентиляции ресторанов и кафе",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "remont-vytyazhki-restorana.html",
+          "remont-pritochnoj-ventilyatsii-restorana.html",
+          "obsluzhivanie-ventilyatsii-restoranov.html",
+          "avtomatika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "remont-ventilyatsii-restoranov.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page remont-ventilyatsii-restoranov.html",
+        "npm run doctor:page -- --page remont-ventilyatsii-restoranov.html",
+        "npm run validate:site"
+      ]
+    },
+    "remont-vozduhovodov-restorana.html": {
+      "page": "remont-vozduhovodov-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт воздуховодов вентиляции ресторана",
+      "h1": "Ремонт воздуховодов ресторана",
+      "description": "Проверка и восстановление участков воздуховодов ресторана: загрязнения, утечки, слабая тяга, шум, конденсат и доступ к чистке.",
+      "canonical": "https://mospochin.ru/remont-vozduhovodov-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "remont-vozduhovodov-restorana",
+        "uiLabel": "воздуховодов ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Ремонт воздуховодов ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "remont-vozduhovodov-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page remont-vozduhovodov-restorana.html",
+        "npm run doctor:page -- --page remont-vozduhovodov-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "remont-vytyazhki-restorana.html": {
+      "page": "remont-vytyazhki-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт вытяжки ресторана и кафе в Москве",
+      "h1": "Ремонт вытяжки на кухне ресторана",
+      "description": "Ремонт кухонной вытяжки ресторана: слабая тяга, шум, вибрация, не включается вентилятор, запахи и дым на кухне.",
+      "canonical": "https://mospochin.ru/remont-vytyazhki-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "remont-vytyazhki-restorana",
+        "uiLabel": "вытяжки на кухне ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Ремонт вытяжки на кухне ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vytyazhka-restorana-ne-rabotaet.html",
+          "ventilyatsiya-restorana-ne-tyanet.html",
+          "dym-na-kuhne-restorana.html",
+          "shumit-vytyazhka-restorana.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "parokonvektomaty.html",
+          "grili-mangaly.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "remont-vytyazhki-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page remont-vytyazhki-restorana.html",
+        "npm run doctor:page -- --page remont-vytyazhki-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "remont-zhirovyh-filtrov-vytyazhki.html": {
+      "page": "remont-zhirovyh-filtrov-vytyazhki.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Жировые фильтры вытяжки ресторана — обслуживание",
+      "h1": "Ремонт и обслуживание жировых фильтров вытяжки",
+      "description": "Проверка и обслуживание жировых фильтров кухонной вытяжки: загрязнение, неправильная установка, слабая тяга и запахи.",
+      "canonical": "https://mospochin.ru/remont-zhirovyh-filtrov-vytyazhki.html",
+      "hasForm": true,
+      "service": {
+        "slug": "remont-zhirovyh-filtrov-vytyazhki",
+        "uiLabel": "и обслуживание жировых фильтров вытяжки",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Ремонт и обслуживание жировых фильтров вытяжки",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "remont-zhirovyh-filtrov-vytyazhki.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page remont-zhirovyh-filtrov-vytyazhki.html",
+        "npm run doctor:page -- --page remont-zhirovyh-filtrov-vytyazhki.html",
+        "npm run validate:site"
+      ]
+    },
     "routery.html": {
       "page": "routery.html",
       "branch": "household",
@@ -2258,6 +3716,114 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page routery.html",
         "npm run doctor:page -- --page routery.html",
+        "npm run validate:site"
+      ]
+    },
+    "shumit-vytyazhka-restorana.html": {
+      "page": "shumit-vytyazhka-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Шумит вытяжка ресторана — диагностика вентилятора и воздуховодов",
+      "h1": "Шумит вытяжка ресторана",
+      "description": "Шум, гул и посторонние звуки вытяжки ресторана. Проверка вентилятора, креплений, подшипников, воздуховодов и автоматики.",
+      "canonical": "https://mospochin.ru/shumit-vytyazhka-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "shumit-vytyazhka-restorana",
+        "uiLabel": "Шумит вытяжка ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Шумит вытяжка ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vibriruet-ventilyator-vytyazhki.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "kanalnaya-ventilyatsiya-restorana.html",
+          "kryshnye-ventilyatory-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "shumit-vytyazhka-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page shumit-vytyazhka-restorana.html",
+        "npm run doctor:page -- --page shumit-vytyazhka-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "slabyj-pritok-vozduha-restoran.html": {
+      "page": "slabyj-pritok-vozduha-restoran.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Слабый приток воздуха в ресторане — диагностика",
+      "h1": "Слабый приток воздуха в ресторане",
+      "description": "Недостаток притока может ухудшать вытяжку, усиливать жар, запахи и разрежение. Проверка приточной вентиляции и баланса воздуха.",
+      "canonical": "https://mospochin.ru/slabyj-pritok-vozduha-restoran.html",
+      "hasForm": true,
+      "service": {
+        "slug": "slabyj-pritok-vozduha-restoran",
+        "uiLabel": "Слабый приток воздуха в ресторане",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Слабый приток воздуха в ресторане",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "slabyj-pritok-vozduha-restoran.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page slabyj-pritok-vozduha-restoran.html",
+        "npm run doctor:page -- --page slabyj-pritok-vozduha-restoran.html",
         "npm run validate:site"
       ]
     },
@@ -2311,6 +3877,60 @@
         "npm run validate:site"
       ]
     },
+    "techet-kondensat-iz-ventilyatsii.html": {
+      "page": "techet-kondensat-iz-ventilyatsii.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Конденсат из вентиляции ресторана — причины и диагностика",
+      "h1": "Конденсат из вентиляции на кухне ресторана",
+      "description": "Конденсат на вентиляции кухни: перепады температуры, загрязнения, изоляция, режим работы, воздуховоды и ошибки эксплуатации.",
+      "canonical": "https://mospochin.ru/techet-kondensat-iz-ventilyatsii.html",
+      "hasForm": true,
+      "service": {
+        "slug": "techet-kondensat-iz-ventilyatsii",
+        "uiLabel": "Конденсат из вентиляции на кухне ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Конденсат из вентиляции на кухне ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "techet-kondensat-iz-ventilyatsii.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page techet-kondensat-iz-ventilyatsii.html",
+        "npm run doctor:page -- --page techet-kondensat-iz-ventilyatsii.html",
+        "npm run validate:site"
+      ]
+    },
     "uslugi.html": {
       "page": "uslugi.html",
       "branch": "restaurant",
@@ -2340,6 +3960,978 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page uslugi.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyator-vytyazhki-ne-vklyuchaetsya.html": {
+      "page": "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентилятор вытяжки не включается — диагностика",
+      "h1": "Не включается вентилятор вытяжки ресторана",
+      "description": "Что проверить, если вытяжной вентилятор ресторана не запускается: питание, автомат, пульт, автоматика, двигатель, загрязнения.",
+      "canonical": "https://mospochin.ru/ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyator-vytyazhki-ne-vklyuchaetsya",
+        "uiLabel": "Не включается вентилятор вытяжки ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Не включается вентилятор вытяжки ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "remont-vozduhovodov-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyator-vytyazhki-ne-vklyuchaetsya.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+        "npm run doctor:page -- --page ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyator-vytyazhki-vybivaet-avtomat.html": {
+      "page": "ventilyator-vytyazhki-vybivaet-avtomat.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентилятор вытяжки выбивает автомат — причины и ремонт",
+      "h1": "Вентилятор вытяжки выбивает автомат",
+      "description": "Диагностика вытяжного вентилятора, который выбивает автомат: перегрузка, загрязнение, двигатель, кабель, автоматика или щит.",
+      "canonical": "https://mospochin.ru/ventilyator-vytyazhki-vybivaet-avtomat.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyator-vytyazhki-vybivaet-avtomat",
+        "uiLabel": "Вентилятор вытяжки выбивает автомат",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентилятор вытяжки выбивает автомат",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "remont-vozduhovodov-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyator-vytyazhki-vybivaet-avtomat.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyator-vytyazhki-vybivaet-avtomat.html",
+        "npm run doctor:page -- --page ventilyator-vytyazhki-vybivaet-avtomat.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsionnye-zonty-restorana.html": {
+      "page": "ventilyatsionnye-zonty-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляционные зонты ресторана: чистка, ремонт, диагностика",
+      "h1": "Вентиляционные зонты ресторана",
+      "description": "Зонты вытяжки ресторана: размеры, загрязнение, фильтры, тяга, дым, жир и причины попадания запахов в помещение.",
+      "canonical": "https://mospochin.ru/ventilyatsionnye-zonty-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsionnye-zonty-restorana",
+        "uiLabel": "Вентиляционные зонты ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляционные зонты ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "vytyazhnaya-ventilyatsiya-restorana.html",
+          "pritochnaya-ventilyatsiya-restorana.html",
+          "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsionnye-zonty-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsionnye-zonty-restorana.html",
+        "npm run doctor:page -- --page ventilyatsionnye-zonty-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-dark-kitchen.html": {
+      "page": "ventilyatsiya-dark-kitchen.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция dark kitchen: ремонт и обслуживание",
+      "h1": "Вентиляция dark kitchen",
+      "description": "Высокая нагрузка dark kitchen: вытяжка, приток, запахи, жар, работа нескольких зон и стабильность вентиляции в пиковые часы.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-dark-kitchen.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-dark-kitchen",
+        "uiLabel": "Вентиляция dark kitchen",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция dark kitchen",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "ventilyatsiya-kafe.html",
+          "ventilyatsiya-stolovoj.html",
+          "ventilyatsiya-pekarni.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-dark-kitchen.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-dark-kitchen.html",
+        "npm run doctor:page -- --page ventilyatsiya-dark-kitchen.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-fudkorta.html": {
+      "page": "ventilyatsiya-fudkorta.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция фудкорта: кухни, запахи, вытяжка и приток",
+      "h1": "Вентиляция фудкорта",
+      "description": "Проверка вентиляции точек фудкорта: запахи, дым, жара, общий вытяжной канал, локальные зонты и работа притока.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-fudkorta.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-fudkorta",
+        "uiLabel": "Вентиляция фудкорта",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция фудкорта",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "ventilyatsiya-kafe.html",
+          "ventilyatsiya-stolovoj.html",
+          "ventilyatsiya-pekarni.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-fudkorta.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-fudkorta.html",
+        "npm run doctor:page -- --page ventilyatsiya-fudkorta.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-i-gril-v-restorane.html": {
+      "page": "ventilyatsiya-i-gril-v-restorane.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция для гриля в ресторане: дым, жар, запахи",
+      "h1": "Вентиляция и гриль в ресторане",
+      "description": "Грили, мангалы и фритюр дают много дыма, жара и жира. Как вентиляция связана с работой горячей линии.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-i-gril-v-restorane.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-i-gril-v-restorane",
+        "uiLabel": "Вентиляция и гриль в ресторане",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция и гриль в ресторане",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-i-gril-v-restorane.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-i-gril-v-restorane.html",
+        "npm run doctor:page -- --page ventilyatsiya-i-gril-v-restorane.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-i-holodilnoe-oborudovanie.html": {
+      "page": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция и холодильное оборудование ресторана",
+      "h1": "Вентиляция и холодильное оборудование",
+      "description": "Жара и плохой воздухообмен ухудшают условия работы холодильного оборудования. Как связаны вентиляция, микроклимат и перегрев кухни.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-i-holodilnoe-oborudovanie.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-i-holodilnoe-oborudovanie",
+        "uiLabel": "Вентиляция и холодильное оборудование",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция и холодильное оборудование",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "holodilnoe-oborudovanie.html",
+          "grili-mangaly.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-i-holodilnoe-oborudovanie.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-i-holodilnoe-oborudovanie.html",
+        "npm run doctor:page -- --page ventilyatsiya-i-holodilnoe-oborudovanie.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-i-parokonvektomat.html": {
+      "page": "ventilyatsiya-i-parokonvektomat.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция рядом с пароконвектоматом: пар, жар, влажность",
+      "h1": "Вентиляция и пароконвектомат",
+      "description": "Пароконвектоматы дают пар и тепло. Как вентиляция кухни влияет на влажность, комфорт и работу оборудования.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-i-parokonvektomat.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-i-parokonvektomat",
+        "uiLabel": "Вентиляция и пароконвектомат",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция и пароконвектомат",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "parokonvektomaty.html",
+          "grili-mangaly.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-i-parokonvektomat.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-i-parokonvektomat.html",
+        "npm run doctor:page -- --page ventilyatsiya-i-parokonvektomat.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-i-posudomoechnaya-zona.html": {
+      "page": "ventilyatsiya-i-posudomoechnaya-zona.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция посудомоечной зоны: пар, влажность, конденсат",
+      "h1": "Вентиляция и посудомоечная зона",
+      "description": "Посудомоечная зона создаёт пар и влажность. Почему вытяжка и приток важны для моечной, стен, потолка и оборудования.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-i-posudomoechnaya-zona.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-i-posudomoechnaya-zona",
+        "uiLabel": "Вентиляция и посудомоечная зона",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция и посудомоечная зона",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-ventilyatsii-restoranov.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "posudomoechnye-mashiny.html",
+          "grili-mangaly.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-i-posudomoechnaya-zona.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-i-posudomoechnaya-zona.html",
+        "npm run doctor:page -- --page ventilyatsiya-i-posudomoechnaya-zona.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-kafe.html": {
+      "page": "ventilyatsiya-kafe.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция кафе: ремонт, обслуживание, диагностика",
+      "h1": "Вентиляция кафе",
+      "description": "Ремонт и обслуживание вентиляции кафе: вытяжка, приток, запахи, дым, жара, шум, фильтры, вентиляторы и воздуховоды.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-kafe.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-kafe",
+        "uiLabel": "Вентиляция кафе",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция кафе",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "ventilyatsiya-stolovoj.html",
+          "ventilyatsiya-pekarni.html",
+          "ventilyatsiya-dark-kitchen.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-kafe.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-kafe.html",
+        "npm run doctor:page -- --page ventilyatsiya-kafe.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-moechnoj-zony.html": {
+      "page": "ventilyatsiya-moechnoj-zony.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция моечной зоны ресторана и кафе",
+      "h1": "Вентиляция моечной зоны",
+      "description": "Моечная зона даёт влагу и пар. Проверяем вытяжку, приток, конденсат, запахи и связь с посудомоечным оборудованием.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-moechnoj-zony.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-moechnoj-zony",
+        "uiLabel": "Вентиляция моечной зоны",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция моечной зоны",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "ventilyatsiya-kafe.html",
+          "ventilyatsiya-stolovoj.html",
+          "ventilyatsiya-pekarni.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-moechnoj-zony.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-moechnoj-zony.html",
+        "npm run doctor:page -- --page ventilyatsiya-moechnoj-zony.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-pekarni.html": {
+      "page": "ventilyatsiya-pekarni.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция пекарни: жара, запахи, вытяжка и приток",
+      "h1": "Вентиляция пекарни",
+      "description": "Пекарням нужна вентиляция с учётом жара, запахов, муки, оборудования и режима работы. Проверка вытяжки и притока.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-pekarni.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-pekarni",
+        "uiLabel": "Вентиляция пекарни",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция пекарни",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "ventilyatsiya-kafe.html",
+          "ventilyatsiya-stolovoj.html",
+          "ventilyatsiya-dark-kitchen.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-pekarni.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-pekarni.html",
+        "npm run doctor:page -- --page ventilyatsiya-pekarni.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-restorana-ne-tyanet.html": {
+      "page": "ventilyatsiya-restorana-ne-tyanet.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция ресторана не тянет — диагностика и ремонт",
+      "h1": "Вентиляция ресторана не тянет",
+      "description": "Если вытяжка плохо тянет, на кухне дым, запах или жар — проверим фильтры, зонт, воздуховоды, вентилятор, приток и автоматику.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-restorana-ne-tyanet.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-restorana-ne-tyanet",
+        "uiLabel": "Вентиляция ресторана не тянет",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция ресторана не тянет",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "remont-vytyazhki-restorana.html",
+          "zasorilas-vytyazhka-restorana.html",
+          "slabyj-pritok-vozduha-restoran.html",
+          "obratnaya-tyaga-v-restorane.html",
+          "parokonvektomaty.html",
+          "grili-mangaly.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-restorana-ne-tyanet.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-restorana-ne-tyanet.html",
+        "npm run doctor:page -- --page ventilyatsiya-restorana-ne-tyanet.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-restoranov.html": {
+      "page": "ventilyatsiya-restoranov.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Ремонт вентиляции ресторанов и кафе в Москве — MosPochin",
+      "h1": "Ремонт и обслуживание вентиляции ресторанов, кафе и пищеблоков",
+      "description": "Диагностика, ремонт, обслуживание и чистка вентиляции ресторанов, кафе, столовых, пекарен и dark kitchen. Вытяжка, приток, зонты, вентиляторы, воздуховоды, автоматика.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-restoranov.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-restoranov",
+        "uiLabel": "Вентиляция ресторанов",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Ремонт и обслуживание вентиляции ресторанов, кафе и пищеблоков",
+        "relatedPages": [
+          "remont-ventilyatsii-restoranov.html",
+          "remont-vytyazhki-restorana.html",
+          "obsluzhivanie-ventilyatsii-restoranov.html",
+          "chistka-ventilyatsii-restoranov.html",
+          "ventilyatsiya-restorana-ne-tyanet.html",
+          "dym-na-kuhne-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-restoranov.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-restoranov.html",
+        "npm run doctor:page -- --page ventilyatsiya-restoranov.html",
+        "npm run validate:site"
+      ]
+    },
+    "ventilyatsiya-stolovoj.html": {
+      "page": "ventilyatsiya-stolovoj.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вентиляция столовой: вытяжка, приток, обслуживание",
+      "h1": "Вентиляция столовой",
+      "description": "Диагностика и обслуживание вентиляции столовых: горячий цех, моечная зона, вытяжные зонты, приток и запахи.",
+      "canonical": "https://mospochin.ru/ventilyatsiya-stolovoj.html",
+      "hasForm": true,
+      "service": {
+        "slug": "ventilyatsiya-stolovoj",
+        "uiLabel": "Вентиляция столовой",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вентиляция столовой",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "ventilyatsiya-kafe.html",
+          "ventilyatsiya-pekarni.html",
+          "ventilyatsiya-dark-kitchen.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "ventilyatsiya-stolovoj.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page ventilyatsiya-stolovoj.html",
+        "npm run doctor:page -- --page ventilyatsiya-stolovoj.html",
+        "npm run validate:site"
+      ]
+    },
+    "vibriruet-ventilyator-vytyazhki.html": {
+      "page": "vibriruet-ventilyator-vytyazhki.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вибрирует вентилятор вытяжки ресторана — диагностика",
+      "h1": "Вибрирует вентилятор вытяжки ресторана",
+      "description": "Вибрация вытяжного вентилятора на кухне ресторана: проверка креплений, крыльчатки, загрязнений, подшипников, воздуховодов и автоматики.",
+      "canonical": "https://mospochin.ru/vibriruet-ventilyator-vytyazhki.html",
+      "hasForm": true,
+      "service": {
+        "slug": "vibriruet-ventilyator-vytyazhki",
+        "uiLabel": "Вибрирует вентилятор вытяжки ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вибрирует вентилятор вытяжки ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "shumit-vytyazhka-restorana.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "kryshnye-ventilyatory-restorana.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "vibriruet-ventilyator-vytyazhki.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page vibriruet-ventilyator-vytyazhki.html",
+        "npm run doctor:page -- --page vibriruet-ventilyator-vytyazhki.html",
+        "npm run validate:site"
+      ]
+    },
+    "vytyazhka-restorana-ne-rabotaet.html": {
+      "page": "vytyazhka-restorana-ne-rabotaet.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Не работает вытяжка ресторана — ремонт и диагностика",
+      "h1": "Вытяжка ресторана не работает",
+      "description": "Вытяжка не включается, не удаляет дым, шумит или выбивает автомат. Диагностика вентилятора, питания, автоматики и загрязнений.",
+      "canonical": "https://mospochin.ru/vytyazhka-restorana-ne-rabotaet.html",
+      "hasForm": true,
+      "service": {
+        "slug": "vytyazhka-restorana-ne-rabotaet",
+        "uiLabel": "Вытяжка ресторана не работает",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вытяжка ресторана не работает",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "avtomatika-ventilyatsii-restorana.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "vytyazhka-restorana-ne-rabotaet.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page vytyazhka-restorana-ne-rabotaet.html",
+        "npm run doctor:page -- --page vytyazhka-restorana-ne-rabotaet.html",
+        "npm run validate:site"
+      ]
+    },
+    "vytyazhnaya-ventilyatsiya-restorana.html": {
+      "page": "vytyazhnaya-ventilyatsiya-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Вытяжная вентиляция ресторана: ремонт, обслуживание, диагностика",
+      "h1": "Вытяжная вентиляция ресторана",
+      "description": "Как работает вытяжная вентиляция кухни ресторана, какие узлы проверять при дыме, запахе, жаре и слабой тяге.",
+      "canonical": "https://mospochin.ru/vytyazhnaya-ventilyatsiya-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "vytyazhnaya-ventilyatsiya-restorana",
+        "uiLabel": "Вытяжная вентиляция ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Вытяжная вентиляция ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "pritochnaya-ventilyatsiya-restorana.html",
+          "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "mestnaya-vytyazhka-nad-oborudovaniem.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "vytyazhnaya-ventilyatsiya-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page vytyazhnaya-ventilyatsiya-restorana.html",
+        "npm run doctor:page -- --page vytyazhnaya-ventilyatsiya-restorana.html",
         "npm run validate:site"
       ]
     },
@@ -2392,6 +4984,222 @@
       "recommendedChecks": [
         "npm run doctor:household-page -- --page water-heaters.html",
         "npm run doctor:page -- --page water-heaters.html",
+        "npm run validate:site"
+      ]
+    },
+    "zapah-iz-kuhni-v-zal.html": {
+      "page": "zapah-iz-kuhni-v-zal.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Запах из кухни в зал ресторана — диагностика вентиляции",
+      "h1": "Запах из кухни попадает в зал",
+      "description": "Разбираем причины запаха из кухни в зал: слабая вытяжка, обратная тяга, недостаток притока, загрязнение фильтров и воздуховодов.",
+      "canonical": "https://mospochin.ru/zapah-iz-kuhni-v-zal.html",
+      "hasForm": true,
+      "service": {
+        "slug": "zapah-iz-kuhni-v-zal",
+        "uiLabel": "Запах из кухни попадает в зал",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Запах из кухни попадает в зал",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "obratnaya-tyaga-v-restorane.html",
+          "zhaloby-na-zapah-restorana.html",
+          "chistka-ventilyatsii-restoranov.html",
+          "slabyj-pritok-vozduha-restoran.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "zapah-iz-kuhni-v-zal.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page zapah-iz-kuhni-v-zal.html",
+        "npm run doctor:page -- --page zapah-iz-kuhni-v-zal.html",
+        "npm run validate:site"
+      ]
+    },
+    "zasorilas-vytyazhka-restorana.html": {
+      "page": "zasorilas-vytyazhka-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Засорилась вытяжка ресторана — что делать",
+      "h1": "Засорилась вытяжка ресторана",
+      "description": "Если вытяжка стала тянуть хуже, появился дым, запах или жирный налёт — проверяем зонт, фильтры, воздуховоды и вентилятор.",
+      "canonical": "https://mospochin.ru/zasorilas-vytyazhka-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "zasorilas-vytyazhka-restorana",
+        "uiLabel": "Засорилась вытяжка ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Засорилась вытяжка ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "zasorilas-vytyazhka-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page zasorilas-vytyazhka-restorana.html",
+        "npm run doctor:page -- --page zasorilas-vytyazhka-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "zhaloby-na-zapah-restorana.html": {
+      "page": "zhaloby-na-zapah-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Жалобы на запах из ресторана — проверка вентиляции",
+      "h1": "Жалобы на запах из ресторана",
+      "description": "Проверка причин запаха от кухни ресторана: слабая вытяжка, грязные фильтры, обратная тяга, выброс воздуха и недостаточный приток.",
+      "canonical": "https://mospochin.ru/zhaloby-na-zapah-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "zhaloby-na-zapah-restorana",
+        "uiLabel": "Жалобы на запах из ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Жалобы на запах из ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "zhaloby-na-zapah-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page zhaloby-na-zapah-restorana.html",
+        "npm run doctor:page -- --page zhaloby-na-zapah-restorana.html",
+        "npm run validate:site"
+      ]
+    },
+    "zhir-v-vozduhovodah-restorana.html": {
+      "page": "zhir-v-vozduhovodah-restorana.html",
+      "branch": "restaurant",
+      "role": "service",
+      "htmlExists": true,
+      "title": "Жир в воздуховодах ресторана — диагностика и чистка",
+      "h1": "Жир в воздуховодах ресторана",
+      "description": "Жировой налёт в вентиляции кухни снижает тягу, усиливает запахи и повышает риск проблем с вытяжкой. Проверка доступных участков.",
+      "canonical": "https://mospochin.ru/zhir-v-vozduhovodah-restorana.html",
+      "hasForm": true,
+      "service": {
+        "slug": "zhir-v-vozduhovodah-restorana",
+        "uiLabel": "Жир в воздуховодах ресторана",
+        "deviceName": "Вентиляция ресторанов и пищеблоков",
+        "serviceName": "Жир в воздуховодах ресторана",
+        "relatedPages": [
+          "ventilyatsiya-restoranov.html",
+          "remont-ventilyatora-vytyazhki-restorana.html",
+          "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "grili-mangaly.html",
+          "plity-pechi.html",
+          "parokonvektomaty.html",
+          "posudomoechnye-mashiny.html"
+        ],
+        "sectionIds": [
+          "request"
+        ]
+      },
+      "sources": [
+        "data/page-metadata.json",
+        "data/contact-config.json",
+        "data/runtime-config.json",
+        "data/restaurant-branch.json",
+        "data/restaurant-page-policy.json",
+        "data/restaurant-services.json",
+        "data/restaurant-taxonomy.json",
+        "data/restaurant-proof-layer.json",
+        "data/restaurant-page-slots.json",
+        "zhir-v-vozduhovodah-restorana.html"
+      ],
+      "siteBuilder": null,
+      "generatedBy": {
+        "metadata": "npm run sync:metadata",
+        "sitemap": "npm run generate:sitemap",
+        "deployManifest": "npm run generate:deploy-manifest",
+        "aiIndex": "npm run generate:ai-index"
+      },
+      "recommendedChecks": [
+        "npm run doctor:restaurant-page -- --page zhir-v-vozduhovodah-restorana.html",
+        "npm run doctor:page -- --page zhir-v-vozduhovodah-restorana.html",
         "npm run validate:site"
       ]
     }
