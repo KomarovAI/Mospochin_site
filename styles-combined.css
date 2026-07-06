@@ -2442,3 +2442,104 @@ body.page-microwaves .microwave-hero-shell {
   }
 }
 
+/* V11.1 VISUAL FIX PATCH — mobile typography, ventilation hero spacing, contrast */
+@media (max-width: 768px) {
+  body.page-index .hero-bg h1,
+  body.page-index header h1,
+  main[data-ventilation-page="true"] > section:first-child h1 {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: auto;
+    text-wrap: balance;
+  }
+
+  body.page-index .hero-bg h1,
+  body.page-index header h1 {
+    font-size: clamp(2.05rem, 8.8vw, 2.72rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.045em !important;
+    max-width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  body.page-index .hero-bg h1,
+  body.page-index header h1 {
+    max-width: 13.4ch;
+  }
+}
+
+@media (max-width: 640px) {
+  main[data-ventilation-page="true"] > section:first-child {
+    padding-top: 5.9rem !important;
+    padding-bottom: 4.15rem !important;
+  }
+
+  main[data-ventilation-page="true"] > section:first-child nav[aria-label="Breadcrumb"] {
+    margin-bottom: 1.35rem !important;
+  }
+
+  main[data-ventilation-page="true"] > section:first-child .inline-flex[class*="bg-brand-orange"] {
+    margin-bottom: 1.25rem !important;
+    line-height: 1.22 !important;
+    white-space: normal !important;
+    align-items: center;
+  }
+
+  main[data-ventilation-page="true"] > section:first-child h1 {
+    font-size: clamp(2.05rem, 9.2vw, 2.85rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.045em !important;
+    margin-bottom: 1.15rem !important;
+  }
+
+  main[data-ventilation-page="true"] > section:first-child p {
+    line-height: 1.58 !important;
+  }
+
+  main[data-ventilation-page="true"] > section:first-child a[data-block="hero"] {
+    width: 100%;
+    min-height: 50px;
+    padding-top: 0.95rem !important;
+    padding-bottom: 0.95rem !important;
+  }
+}
+
+main[data-ventilation-page="true"] > section:first-child div[class*="bg-white/10"][class*="border-white"] {
+  background: rgba(15, 23, 42, 0.76) !important;
+  border-color: rgba(255, 255, 255, 0.24) !important;
+}
+
+main[data-ventilation-page="true"] > section:first-child div[class*="bg-white/10"][class*="border-white"] h2,
+main[data-ventilation-page="true"] > section:first-child div[class*="bg-white/10"][class*="border-white"] li,
+main[data-ventilation-page="true"] > section:first-child div[class*="bg-white/10"][class*="border-white"] span {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+/* V11.1 RUN34 GLOBAL MOBILE H1 HARDENING — remove remaining anywhere wraps on non-ventilation hubs */
+@media (max-width: 768px) {
+  body.branch-restaurant h1.text-3xl,
+  body.branch-restaurant h1.text-4xl,
+  body.branch-restaurant h1.text-5xl,
+  body.branch-restaurant h1.font-display {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: auto;
+    text-wrap: balance;
+  }
+
+  body.page-uslugi h1,
+  body.page-contact h1 {
+    font-size: clamp(2rem, 8.4vw, 2.65rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.045em !important;
+    max-width: 100% !important;
+  }
+
+  body.page-contact main section:first-child,
+  body.page-uslugi main section:first-child {
+    overflow-x: clip;
+  }
+}

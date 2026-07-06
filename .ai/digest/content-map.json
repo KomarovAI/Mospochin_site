@@ -16,24 +16,24 @@
     "flexibleEditing": "docs/AI_FLEXIBLE_EDITING.md"
   },
   "summary": {
-    "rootHtmlPages": 63,
+    "rootHtmlPages": 115,
     "builderPages": 1,
-    "srcPageFiles": 1992,
-    "srcPageHtmlFiles": 1929,
+    "srcPageFiles": 1995,
+    "srcPageHtmlFiles": 1932,
     "sharedComponentFiles": 48,
     "parametricTemplateFiles": 86,
     "parametricPropsFiles": 14,
-    "totalSections": 76,
-    "localSections": 76,
+    "totalSections": 79,
+    "localSections": 79,
     "sharedSectionRefs": 0,
     "parametricSectionRefs": 0,
     "compressedSectionRefs": 0,
     "sharedCoverageRatio": 0,
-    "rootHtmlBytes": 6064050,
-    "srcPageHtmlBytes": 4738457,
+    "rootHtmlBytes": 7995583,
+    "srcPageHtmlBytes": 4742826,
     "sharedHtmlBytes": 208791,
-    "averageSectionsPerPage": 76,
-    "averageSourceFilesPerPage": 80,
+    "averageSectionsPerPage": 79,
+    "averageSourceFilesPerPage": 83,
     "estimatedSharedSavedBytes": 0,
     "componentMapComponents": 12
   },
@@ -45,16 +45,16 @@
       "h1": "Ремонт пароконвектоматов для ресторанов",
       "digest": ".ai/digest/pages/parokonvektomaty.md",
       "builderModel": "src/pages/parokonvektomaty/page.json",
-      "sections": 76,
-      "localSections": 76,
+      "sections": 79,
+      "localSections": 79,
       "sharedRefs": 0,
-      "rawSections": 29,
+      "rawSections": 31,
       "componentMix": {
-        "raw": 29,
+        "raw": 31,
         "pricing": 12,
         "proof": 9,
+        "section": 6,
         "related-links": 5,
-        "section": 5,
         "mobile-contact": 4,
         "breadcrumb": 2,
         "contact-cta": 2,
@@ -607,6 +607,27 @@
           "label": "HTML-фрагмент",
           "shared": false,
           "source": "src/pages/parokonvektomaty/sections/076-raw-html-fragment.html"
+        },
+        {
+          "id": "077-section-ventilyaciya-svyazana-s-rabotoy-parokonvekto",
+          "component": "section",
+          "label": "Вентиляция связана с работой пароконвектомата",
+          "shared": false,
+          "source": "src/pages/parokonvektomaty/sections/077-section-ventilyaciya-svyazana-s-rabotoy-parokonvekto.html"
+        },
+        {
+          "id": "078-raw-html-fragment",
+          "component": "raw",
+          "label": "HTML-фрагмент",
+          "shared": false,
+          "source": "src/pages/parokonvektomaty/sections/078-raw-html-fragment.html"
+        },
+        {
+          "id": "079-raw-html-fragment",
+          "component": "raw",
+          "label": "HTML-фрагмент",
+          "shared": false,
+          "source": "src/pages/parokonvektomaty/sections/079-raw-html-fragment.html"
         }
       ],
       "checks": [
@@ -853,19 +874,19 @@
       "type": "componentize-local-sections",
       "priority": "medium",
       "component": "raw",
-      "message": "raw: 29 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props."
+      "message": "raw: 31 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "page-blueprint",
       "priority": "high",
       "page": "parokonvektomaty.html",
-      "message": "parokonvektomaty.html: 76 секций — кандидат на page blueprint вместо длинного списка sections."
+      "message": "parokonvektomaty.html: 79 секций — кандидат на page blueprint вместо длинного списка sections."
     },
     {
       "type": "raw-section-reduction",
       "priority": "high",
       "page": "parokonvektomaty.html",
-      "message": "parokonvektomaty.html: 29 raw-секций — стоит объединить/классифицировать, чтобы AI видел смысл блока."
+      "message": "parokonvektomaty.html: 31 raw-секций — стоит объединить/классифицировать, чтобы AI видел смысл блока."
     }
   ]
 }

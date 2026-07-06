@@ -48,7 +48,7 @@
     "hash:deploy-content": "node tools/hash-deploy-content.mjs",
     "report:ads": "node tools/report-ads.mjs",
     "report:ads:local": "codex-secret run yandex/metrika/oauth YANDEX_METRIKA_TOKEN -- codex-secret run yandex/direct/oauth YANDEX_DIRECT_TOKEN -- node tools/report-ads.mjs",
-    "validate:site": "node tools/validate-site-v11-static-wrapper.mjs",
+    "validate:site": "node tools/validate-site.mjs",
     "lint": "npm run check:core && npm run check:ai",
     "ai:price": "node tools/ai-edit.mjs --price",
     "ai:text": "node tools/ai-edit.mjs --text",

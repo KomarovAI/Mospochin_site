@@ -1,0 +1,42 @@
+{
+  "run": "Run34 production-readiness polish",
+  "run34_patch_present": true,
+  "run34_patch_after_old_anywhere_rule": true,
+  "global_mobile_h1_normal_rule_present": true,
+  "uslugi_contact_h1_clamp_present": true,
+  "expected_mobile_h1_overflow_wrap_after_cascade": {
+    "index.html": "normal",
+    "uslugi.html": "normal",
+    "ventilyatsiya-restoranov.html": "normal",
+    "obsluzhivanie-ventilyatsii-restoranov.html": "normal",
+    "chistka-ventilyatsii-restoranov.html": "normal",
+    "diagnostika-ventilyatsii-restorana.html": "normal",
+    "dym-na-kuhne-restorana.html": "normal",
+    "avtomatika-ventilyatsii-restorana.html": "normal",
+    "contact.html": "normal"
+  },
+  "static_gate": {
+    "root_html": 115,
+    "total_files": 318,
+    "forms_total": 131,
+    "forms_with_tracking": 131,
+    "pages_with_data_page_slug": 115,
+    "pages_with_analytics_js": 115,
+    "pages_with_telegram_form_js": 114,
+    "cta_elements_total": 2867,
+    "cta_ids_unique": 2829,
+    "cta_duplicate_groups": 5,
+    "jsonld_scripts_total": 307,
+    "invalid_jsonld_total": 0,
+    "broken_internal_links": 0,
+    "broken_anchor_links": 0,
+    "missing_non_font_assets": 0,
+    "font_binaries": 0,
+    "visible_translit_hits": 0,
+    "css_patch_present": true,
+    "sitemap_urls": 110,
+    "v11_ventilation_pages_from_metadata": 52,
+    "v11_ventilation_urls_in_sitemap": 52
+  },
+  "status": "PASS"
+}

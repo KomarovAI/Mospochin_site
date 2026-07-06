@@ -26,16 +26,16 @@
 
 | Метрика | Значение |
 | --- | --- |
-| Pages | 63 |
+| Pages | 115 |
 | Builder pages | 1 |
-| Total sections | 76 |
-| src/pages files | 1992 |
-| src/pages HTML section files | 1929 |
+| Total sections | 79 |
+| src/pages files | 1995 |
+| src/pages HTML section files | 1932 |
 | Shared component files | 48 |
 | Shared refs | 0 |
 | Shared coverage | 0.0% |
-| Average sections/page | 76.0 |
-| Average source files/page | 80.0 |
+| Average sections/page | 79.0 |
+| Average source files/page | 83.0 |
 | AI component map entries | 12 |
 
 
@@ -51,14 +51,14 @@
 
 | Page | Sections | Local | Shared |
 | --- | --- | --- | --- |
-| parokonvektomaty.html | 76 | 76 | 0 |
+| parokonvektomaty.html | 79 | 79 | 0 |
 
 
 ## Крупнейшие кандидаты на сжатие смысла
 
-- **medium**: raw: 29 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: parokonvektomaty.html: 76 секций — кандидат на page blueprint вместо длинного списка sections.
-- **high**: parokonvektomaty.html: 29 raw-секций — стоит объединить/классифицировать, чтобы AI видел смысл блока.
+- **medium**: raw: 31 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: parokonvektomaty.html: 79 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomaty.html: 31 raw-секций — стоит объединить/классифицировать, чтобы AI видел смысл блока.
 
 ## Команды digest/source compression
 
