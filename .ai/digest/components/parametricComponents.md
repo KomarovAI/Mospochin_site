@@ -1,7 +1,7 @@
 # Component Digest — parametricComponents
 
 - Name: Parameterized components / template + props
-- Appears in: 63 pages
+- Appears in: 0 pages
 - Keywords: parametric, parameterized, templateRef, propsRef, content/components, параметризованные компоненты
 
 ## Related files
@@ -18,30 +18,6 @@
 
 ## Safe editing notes
 
-- Parametric refs: 1137, templates: 79, props files: 14.
+- Parametric refs: 0, templates: 0, props files: 0.
 - Для текста конкретной страницы меняй content/components/*/*.json; для разметки меняй template.html.
 - После правки запускай check:parameterized-components и check:site-builder.
-
-## Representative pages
-
-- 404.html
-- about.html
-- bytovaya-about.html
-- bytovaya-contact.html
-- bytovaya-index.html
-- bytovaya-uslugi.html
-- contact.html
-- grili-mangaly.html
-- holodilniki.html
-- holodilnoe-oborudovanie.html
-- ice-machines.html
-- index.html
-- kompyutery.html
-- microwaves.html
-- parokonvektomat-abat.html
-- parokonvektomat-convotherm.html
-- parokonvektomat-e02-e07-e10.html
-- parokonvektomat-electrolux.html
-- parokonvektomat-kod-oshibki.html
-- parokonvektomat-lainox.html
-- … ещё 43

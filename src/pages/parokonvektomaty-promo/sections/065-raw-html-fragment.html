@@ -1,0 +1,35 @@
+
+<script>
+    (function() {
+        const TIMER_KEY = 'parokonvektomaty_timer_end';
+        const DURATION = 60 * 60 * 1000;
+        let endTime = localStorage.getItem(TIMER_KEY);
+        if (!endTime || parseInt(endTime, 10) <= Date.now()) {
+            endTime = Date.now() + DURATION;
+            localStorage.setItem(TIMER_KEY, endTime);
+        }
+        endTime = parseInt(endTime, 10);
+        const minEls = document.querySelectorAll('[data-countdown-min]');
+        const secEls = document.querySelectorAll('[data-countdown-sec]');
+        if (!minEls.length || !secEls.length) return;
+        const updateSeconds = (element, value) => {
+            const prefix = element.getAttribute('data-countdown-sec') === 'colon' || element.textContent.trim().startsWith(':') ? ':' : '';
+            element.textContent = prefix + String(value).padStart(2, '0');
+        };
+        const tick = () => {
+            const remaining = Math.max(0, endTime - Date.now());
+            const min = Math.floor(remaining / 60000);
+            const sec = Math.floor((remaining % 60000) / 1000);
+            minEls.forEach((element) => {
+                element.textContent = String(min).padStart(2, '0');
+            });
+            secEls.forEach((element) => updateSeconds(element, sec));
+            if (remaining <= 0) {
+                endTime = Date.now() + DURATION;
+                localStorage.setItem(TIMER_KEY, endTime);
+            }
+        };
+        tick();
+        setInterval(tick, 1000);
+    })();
+    </script>

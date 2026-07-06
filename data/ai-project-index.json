@@ -1862,9 +1862,23 @@
         "data/runtime-config.json",
         "data/restaurant-branch.json",
         "data/restaurant-page-policy.json",
-        "parokonvektomaty-promo.html"
+        "parokonvektomaty-promo.html",
+        "src/site-builder.json",
+        "src/pages/parokonvektomaty-promo/page.json"
       ],
-      "siteBuilder": null,
+      "siteBuilder": {
+        "status": "shared-component-baseline",
+        "model": "src/pages/parokonvektomaty-promo/page.json",
+        "slug": "parokonvektomaty-promo",
+        "sections": 69,
+        "sourceHash": "54f18d2ea4bf6a98daccaf46400e246abc432321903579d6aa92c727bbfac655",
+        "commands": {
+          "preview": "npm run build:site -- --page parokonvektomaty-promo.html",
+          "write": "npm run build:site -- --page parokonvektomaty-promo.html --write",
+          "check": "npm run check:site-builder",
+          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomaty-promo.html"
+        }
+      },
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1873,7 +1887,8 @@
       },
       "recommendedChecks": [
         "npm run doctor:page -- --page parokonvektomaty-promo.html",
-        "npm run validate:site"
+        "npm run validate:site",
+        "npm run check:site-builder"
       ]
     },
     "parokonvektomaty.html": {
@@ -1910,23 +1925,9 @@
         "data/restaurant-taxonomy.json",
         "data/restaurant-proof-layer.json",
         "data/restaurant-page-slots.json",
-        "parokonvektomaty.html",
-        "src/site-builder.json",
-        "src/pages/parokonvektomaty/page.json"
+        "parokonvektomaty.html"
       ],
-      "siteBuilder": {
-        "status": "shared-component-baseline",
-        "model": "src/pages/parokonvektomaty/page.json",
-        "slug": "parokonvektomaty",
-        "sections": 79,
-        "sourceHash": "a937d09e88587ebe205a29e9c67dcf59a2a882cabfe42e3c61aacd9524f96b3c",
-        "commands": {
-          "preview": "npm run build:site -- --page parokonvektomaty.html",
-          "write": "npm run build:site -- --page parokonvektomaty.html --write",
-          "check": "npm run check:site-builder",
-          "resyncFromRoot": "npm run site-builder:bootstrap -- --pages parokonvektomaty.html"
-        }
-      },
+      "siteBuilder": null,
       "generatedBy": {
         "metadata": "npm run sync:metadata",
         "sitemap": "npm run generate:sitemap",
@@ -1936,8 +1937,7 @@
       "recommendedChecks": [
         "npm run doctor:restaurant-page -- --page parokonvektomaty.html",
         "npm run doctor:page -- --page parokonvektomaty.html",
-        "npm run validate:site",
-        "npm run check:site-builder"
+        "npm run validate:site"
       ]
     },
     "peregrev-kuhni-restorana.html": {

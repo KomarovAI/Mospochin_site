@@ -1,7 +1,7 @@
 # Component Digest — hero
 
 - Name: Hero / первый экран
-- Appears in: 38 pages
+- Appears in: 90 pages
 - Keywords: hero, первый экран, обложка, главный блок, заголовок, h1
 - CSS selectors: .hero-animate, .hero-animate-delay-*, header .glass-card
 
@@ -29,22 +29,22 @@
 
 - 404.html
 - about.html
+- avtomatika-ventilyatsii-restorana.html
 - bytovaya-about.html
 - bytovaya-contact.html
 - bytovaya-index.html
 - bytovaya-uslugi.html
+- chek-list-ventilyatsii-restorana.html
+- chem-otlichaetsya-pritok-ot-vytyazhki.html
+- chistka-ventilyatsii-restoranov.html
+- chto-proveryaet-inzhener-ventilyatsii.html
 - contact.html
+- diagnostika-ventilyatsii-restorana.html
+- dym-na-kuhne-restorana.html
 - grili-mangaly.html
 - holodilniki.html
 - holodilnoe-oborudovanie.html
 - ice-machines.html
 - index.html
-- kompyutery.html
-- microwaves.html
-- parokonvektomat-abat.html
-- parokonvektomat-convotherm.html
-- parokonvektomat-e02-e07-e10.html
-- parokonvektomat-electrolux.html
-- parokonvektomat-kod-oshibki.html
-- parokonvektomat-lainox.html
-- … ещё 18
+- kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
+- … ещё 70

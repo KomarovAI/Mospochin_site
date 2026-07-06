@@ -1,7 +1,7 @@
 # Component Digest — schemaJsonLd
 
 - Name: Schema.org JSON-LD
-- Appears in: 62 pages
+- Appears in: 114 pages
 - Keywords: schema, json-ld, ld+json, structured data, микроразметка
 
 ## Related files
@@ -23,23 +23,23 @@
 ## Representative pages
 
 - about.html
+- avtomatika-ventilyatsii-restorana.html
 - bytovaya-about.html
 - bytovaya-contact.html
 - bytovaya-index.html
 - bytovaya-uslugi.html
+- chek-list-ventilyatsii-restorana.html
+- chem-otlichaetsya-pritok-ot-vytyazhki.html
+- chistka-ventilyatsii-restoranov.html
+- chto-proveryaet-inzhener-ventilyatsii.html
 - contact.html
+- diagnostika-ventilyatsii-restorana.html
+- dym-na-kuhne-restorana.html
 - grili-mangaly.html
 - holodilniki.html
 - holodilnoe-oborudovanie.html
 - ice-machines.html
 - index.html
-- kompyutery.html
-- microwaves.html
-- parokonvektomat-abat.html
-- parokonvektomat-convotherm.html
-- parokonvektomat-e02-e07-e10.html
-- parokonvektomat-electrolux.html
-- parokonvektomat-kod-oshibki.html
-- parokonvektomat-lainox.html
-- parokonvektomat-ne-greet.html
-- … ещё 42
+- kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
+- kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html
+- … ещё 94
