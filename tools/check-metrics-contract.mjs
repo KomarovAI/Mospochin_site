@@ -70,15 +70,19 @@ containsAll('analytics.js', analytics, [
   'sendBeacon',
   'keepalive',
   'navigator.webdriver',
+  'bot\\b',
   'isTrusted',
   'reachGoal',
   'dataset?.pageIntent',
   'dataset?.equipment',
   'dataset?.brand',
-  'dataset?.commercialSegment'
+  'dataset?.commercialSegment',
+  'page_view',
+  'pageVersion'
 ]);
 
 containsAll('analytics.js goals', analytics, contract.metrika.goals);
+containsAll('analytics.js backend events', analytics, contract.events || []);
 containsAll('telegram-form.js goals', form, [
   'form_submit_attempt',
   'form_submit_success',
@@ -95,12 +99,14 @@ containsAll('server/telegram-api.mjs', server, [
   'unknown_event',
   'bad_origin',
   'rate_limited',
-  'shortHash'
+  'shortHash',
+  'bot_user_agent'
 ]);
 containsAll('server goals', server, contract.metrika.goals);
+containsAll('server backend events', server, [...(contract.events || []), ...(contract.backend_events || [])]);
 assertNoForbiddenPlaintextLogFields(server);
 
-if (!pkg.scripts?.['check:metrics'] || !pkg.scripts?.['smoke:metrics'] || !pkg.scripts?.['check:metrics-markup'] || !pkg.scripts?.['apply:metrics-markup']) {
+if (!pkg.scripts?.['check:metrics'] || !pkg.scripts?.['check:metrics-scorecard'] || !pkg.scripts?.['smoke:metrics'] || !pkg.scripts?.['smoke:metrics-bots'] || !pkg.scripts?.['check:metrics-markup'] || !pkg.scripts?.['apply:metrics-markup']) {
   fail('package.json missing metrics check/smoke/markup scripts');
 } else {
   pass('package.json exposes metrics check, smoke and markup scripts');
@@ -109,6 +115,7 @@ if (!pkg.scripts?.['check:metrics'] || !pkg.scripts?.['smoke:metrics'] || !pkg.s
 containsAll('metrics page context', JSON.stringify(pageContext), [
   'data-page-intent',
   'data-equipment',
+  'data-page-version',
   'data-cta-id',
   'parokonvektomat-kod-oshibki.html',
   'pishevarochnye-kotly.html'
@@ -116,6 +123,7 @@ containsAll('metrics page context', JSON.stringify(pageContext), [
 containsAll('apply markup tool', markupApply, [
   'data-page-intent',
   'data-equipment',
+  'data-page-version',
   'data-cta-id',
   'data-cta-group',
   'data-block'

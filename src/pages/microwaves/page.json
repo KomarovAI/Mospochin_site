@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "microwaves.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "939548aa0a9b6ac579f3282ca57f7acdd812c2de00026d703f4345a23274384f",
+    "hash": "4c2f3b2d9f41628820c99a09ccc444a2410791d81f10b8c177a4b4ad1c5a6c3d",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,49 +21,31 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "bytes": 208,
-      "hash": "468caad1f64721d4",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "yandex-metrika-pixel",
-      "templateRef": "src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html",
-      "props": {},
-      "sourceFile": "sections/001-noscript-noscript-fallback.html"
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 48,
+      "hash": "96856553c1715279"
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 52,
-      "hash": "805e06bac1530014",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "technical-fragment-805e06bac153",
-      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-805e06bac153.template.html",
-      "props": {},
-      "sourceFile": "sections/002-raw-html-fragment.html"
-    },
-    {
-      "id": "003-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/003-raw-html-fragment.html",
+      "file": "sections/002-raw-html-fragment.html",
       "bytes": 54,
       "hash": "26c5a9e988be8aff"
     },
     {
-      "id": "004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch",
+      "id": "003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch",
       "component": "lead-form",
       "label": "Ремонт встроенных СВЧ Neff, Miele и Bosch",
-      "file": "sections/004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html",
-      "bytes": 55177,
-      "hash": "392cb0bc69875a37"
+      "file": "sections/003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html",
+      "bytes": 55260,
+      "hash": "7d925bdc73454719"
     },
     {
-      "id": "005-footer-anchor-footer-mount-point",
+      "id": "004-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
       "bytes": 39,
@@ -73,18 +55,18 @@
       "variant": "footer-container-mount",
       "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-f6291c7cb9f5.template.html",
       "props": {},
-      "sourceFile": "sections/005-footer-anchor-footer-mount-point.html"
+      "sourceFile": "sections/004-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "file": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 630,
       "hash": "9ff3308158a06529"
     },
     {
-      "id": "007-runtime-partials-podklyuchenie-partials-injector",
+      "id": "006-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 51,
@@ -94,10 +76,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html",
       "props": {},
-      "sourceFile": "sections/007-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/006-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "008-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "007-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 41,
@@ -107,10 +89,10 @@
       "variant": "mobile-footer-container",
       "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
-      "sourceFile": "sections/008-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/007-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "009-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "008-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 42,
@@ -120,10 +102,10 @@
       "variant": "whatsapp-float-container",
       "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
-      "sourceFile": "sections/009-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/008-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "010-raw-html-fragment",
+      "id": "009-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -133,15 +115,15 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/010-raw-html-fragment.html"
+      "sourceFile": "sections/009-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:household-page -- --page microwaves.html",
     "npm run doctor:page -- --page microwaves.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page microwaves.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page microwaves.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

@@ -145,6 +145,17 @@ function getSourceFiles(branch, pageKind, doctorSummary) {
   return [...shared, `${doctorSummary.page} for unique HTML only`];
 }
 
+function getBuilderSource(page) {
+  const slug = page.replace(/\.html$/, '');
+  const modelPath = path.join(REPO_ROOT, 'src', 'pages', slug, 'page.json');
+  if (!fs.existsSync(modelPath)) return [];
+  return [
+    `src/pages/${slug}/page.json`,
+    `src/pages/${slug}/sections/*.html`,
+    'src/components/shared/* or src/components/parametric/*',
+  ];
+}
+
 function getAuditCoverage(page) {
   const representative = readJson(REPRESENTATIVE_AUDIT_PATH, 'data/screenshot-audit.json');
   const restaurant = readJson(RESTAURANT_AUDIT_PATH, 'data/restaurant-screenshot-audit.json');
@@ -184,6 +195,7 @@ function buildInspection(page) {
   const doctor = runDoctor(page);
   const branch = pageMeta?.branch ?? doctor.metadata?.branch ?? null;
   const pageKind = normalizePageKind(doctor);
+  const builderSource = getBuilderSource(page);
 
   return {
     page,
@@ -200,7 +212,7 @@ function buildInspection(page) {
       : null,
     issues: doctor.issues ?? [],
     editSurfaces: doctor.recommendedEditSurface ?? null,
-    sourceFiles: getSourceFiles(branch, pageKind, doctor),
+    sourceFiles: [...builderSource, ...getSourceFiles(branch, pageKind, doctor)],
     commands: getBranchCommands(branch, page, pageKind, doctor),
     recipes: getRecipes(branch, pageKind),
     screenshotAudit: getAuditCoverage(page),

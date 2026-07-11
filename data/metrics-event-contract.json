@@ -1,6 +1,19 @@
 {
   "version": "2026-06-20-run6-final-tz-compliance",
   "purpose": "MosPochin archive-only metrics contract. This file is the local source of truth for required website events, backend log fields, and clean LLM aggregates.",
+  "events": [
+    "page_view"
+  ],
+  "backend_events": [
+    "qualified_lead",
+    "call_answered",
+    "repair_order_created"
+  ],
+  "bot_policy": {
+    "frontend_hints": ["navigator.webdriver", "bot_user_agent", "headlesschrome"],
+    "backend_action": "reject_before_accepted_log",
+    "rejected_reason": "bot_user_agent"
+  },
   "metrika": {
     "counter_id": "109138661",
     "goal_type": "JavaScript event",
@@ -57,6 +70,8 @@
     "accepted_log": "/var/log/mospochin/site_events.jsonl",
     "rejected_log": "/var/log/mospochin/site_event_rejects.jsonl",
     "lead_log": "/var/log/mospochin/direct_leads.jsonl",
+    "outcome_endpoint": "/api/track-outcome",
+    "outcome_auth": "Bearer token from MOSPOCHIN_OUTCOME_TOKEN; never browser-side",
     "required_quality_values": [
       "human_candidate",
       "suspicious",
@@ -95,6 +110,8 @@
     "llm_offline_conversions_YYYY-MM-DD.csv",
     "llm_query_landing_actions_YYYY-MM-DD.csv",
     "llm_landing_mismatch_YYYY-MM-DD.csv",
+    "llm_page_scorecard_YYYY-MM-DD.csv",
+    "llm_page_improvement_actions_YYYY-MM-DD.csv",
     "llm_events_manifest_YYYY-MM-DD.json"
   ],
   "decision_policy": {
@@ -111,7 +128,9 @@
     ],
     "hard_conversion": [
       "form_submit_success",
-      "backend_lead_created"
+      "backend_lead_created",
+      "qualified_lead",
+      "repair_order_created"
     ],
     "qualified_conversion": [
       "lead_qualified",
@@ -127,7 +146,8 @@
       "data-page-intent",
       "data-equipment",
       "data-service",
-      "data-commercial-segment"
+      "data-commercial-segment",
+      "data-page-version"
     ],
     "optional_body_attrs": [
       "data-brand"

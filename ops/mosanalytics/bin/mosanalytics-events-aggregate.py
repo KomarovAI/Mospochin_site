@@ -28,6 +28,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 DECISION_QUALITY = {"human_candidate"}
+BUSINESS_OUTCOME_EVENTS = {"qualified_lead", "call_answered", "repair_order_created"}
 DECISION_EVENTS = {
     "phone_click",
     "whatsapp_click",
@@ -42,6 +43,10 @@ DECISION_EVENTS = {
     "form_submit_blocked",
     "cta_view",
     "cta_click",
+    "page_view",
+    "qualified_lead",
+    "call_answered",
+    "repair_order_created",
 }
 CONTACT_EVENTS = {"phone_click", "whatsapp_click", "telegram_click", "email_click"}
 FORM_EVENTS = {
@@ -75,6 +80,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--leads", default="", help="Path to direct_leads.jsonl override.")
     parser.add_argument("--direct-search", default="", help="Path to direct_search_queries TSV override.")
     parser.add_argument("--out", default="", help="Output directory override.")
+    parser.add_argument("--page-context", default="", help="Path to metrics-page-context.json override.")
+    parser.add_argument("--policy", default="", help="Path to metrics-scorecard-policy.json override.")
     parser.add_argument("--include-suspicious", action="store_true", help="Include suspicious quality rows in decision aggregates. Default: false.")
     return parser.parse_args()
 
@@ -91,6 +98,20 @@ def path_for(base: Path, kind: str, date: str) -> Path:
     if kind == "out":
         return base / "llm_brief" / "events"
     raise ValueError(kind)
+
+
+def first_existing(paths: List[Path]) -> Optional[Path]:
+    return next((path for path in paths if path.exists()), None)
+
+
+def read_json_file(path: Optional[Path]) -> Dict[str, Any]:
+    if not path or not path.exists():
+        return {}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return value if isinstance(value, dict) else {}
 
 
 def iter_jsonl(path: Path) -> Iterable[Dict[str, Any]]:
@@ -140,7 +161,7 @@ def is_clean_event(row: Dict[str, Any], include_suspicious: bool = False) -> boo
     if row.get("is_decision_event") is False:
         return False
     quality = clean_key(row.get("quality"), 80) or "human_candidate"
-    if quality in DECISION_QUALITY:
+    if quality in DECISION_QUALITY or (event in BUSINESS_OUTCOME_EVENTS and quality == "internal"):
         return True
     return include_suspicious and quality == "suspicious"
 
@@ -237,6 +258,10 @@ def build_event_funnel(date: str, events: List[Dict[str, Any]]) -> List[Dict[str
                 "page_path": page,
                 "page_intent": intent,
                 "sessions": 0,
+                "page_view": 0,
+                "qualified_lead": 0,
+                "call_answered": 0,
+                "repair_order_created": 0,
                 "cta_view": 0,
                 "cta_click": 0,
                 "phone_click": 0,
@@ -260,6 +285,235 @@ def build_event_funnel(date: str, events: List[Dict[str, Any]]) -> List[Dict[str
     for key, row in grouped.items():
         row["sessions"] = len(sessions[key])
     return sorted(grouped.values(), key=lambda r: (r["date"], r["page_path"], r["page_intent"]))
+
+
+def page_path_from_file(file_name: str) -> str:
+    file_name = clean_key(file_name, 240)
+    return "/" if file_name in {"", "index.html", "/"} else f"/{file_name.lstrip('/')}"
+
+
+def canonical_page_path(value: Any) -> str:
+    page = clean_key(value, 240)
+    if page in {"", "index.html", "/index.html"}:
+        return "/"
+    return page if page.startswith("/") else f"/{page}"
+
+
+def ratio(numerator: int, denominator: int) -> str:
+    return f"{(numerator / denominator) if denominator else 0:.4f}"
+
+
+def build_page_scorecard(
+    date: str,
+    events: List[Dict[str, Any]],
+    leads: List[Dict[str, Any]],
+    page_context: Dict[str, Any],
+    query_actions: List[Dict[str, Any]],
+    policy: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    pages: Dict[str, Dict[str, Any]] = {}
+    for file_name, context in (page_context.get("pages") or {}).items():
+        if not isinstance(context, dict):
+            continue
+        page_path = page_path_from_file(file_name)
+        pages[page_path] = {
+            "page_path": page_path,
+            "page_intent": clean_key(context.get("page_intent"), 80),
+            "equipment": clean_key(context.get("equipment"), 80),
+            "branch": clean_key(context.get("branch"), 40),
+            "page_version": clean_key(context.get("page_version"), 80),
+        }
+
+    event_groups: Dict[str, Dict[str, Any]] = {}
+    all_event_names = DECISION_EVENTS | {"page_view"}
+    for row in events:
+        page_path = canonical_page_path(row.get("page_path") or row.get("page"))
+        if page_path not in pages:
+            pages[page_path] = {"page_path": page_path}
+        item = event_groups.setdefault(page_path, {
+            "page_views": 0,
+            "page_view_sessions": set(),
+            "observed_sessions": set(),
+            "event_sessions": defaultdict(set),
+            "counts": Counter(),
+            "page_version": "",
+            "page_intent": "",
+            "equipment": "",
+        })
+        event = clean_key(row.get("event"), 80)
+        if event not in all_event_names:
+            continue
+        item["counts"][event] += 1
+        if event == "page_view":
+            item["page_views"] += 1
+        session = session_key(row)
+        if session:
+            item["observed_sessions"].add(session)
+            item["event_sessions"][event].add(session)
+            if event == "page_view":
+                item["page_view_sessions"].add(session)
+        item["page_version"] = item["page_version"] or clean_key(row.get("page_version"), 80)
+        item["page_intent"] = item["page_intent"] or clean_key(row.get("page_intent"), 80)
+        item["equipment"] = item["equipment"] or clean_key(row.get("equipment"), 80)
+
+    leads_by_page = Counter()
+    for row in leads:
+        if event_date(row) != date:
+            continue
+        status = clean_key(row.get("status") or row.get("lead_status") or "lead_created", 120)
+        if status not in {"lead_created", "delivered", "lead_qualified", "qualified"}:
+            continue
+        leads_by_page[canonical_page_path(row.get("page_path") or row.get("page"))] += 1
+
+    query_by_page = Counter()
+    mismatch_by_page = Counter()
+    for row in query_actions:
+        page_path = canonical_page_path(row.get("landing_path"))
+        if page_path == "/" and not clean_key(row.get("landing_path"), 240):
+            continue
+        query_by_page[page_path] += 1
+        if clean_key(row.get("mismatch"), 80) not in {"", "no", "unknown_no_landing_match"}:
+            mismatch_by_page[page_path] += 1
+
+    min_actionable = int(policy.get("minSessionsForActionable") or 5)
+    min_confidence = int(policy.get("minSessionsForConfidence") or 30)
+    thresholds = policy.get("thresholds") or {}
+    actions = policy.get("actions") or {}
+    rows = []
+    contact_events = CONTACT_EVENTS
+    for page_path, page in pages.items():
+        item = event_groups.get(page_path, {
+            "page_views": 0,
+            "page_view_sessions": set(),
+            "observed_sessions": set(),
+            "event_sessions": defaultdict(set),
+            "counts": Counter(),
+            "page_version": "",
+            "page_intent": "",
+            "equipment": "",
+        })
+        counts = item["counts"]
+        sessions = len(item["page_view_sessions"] or item["observed_sessions"]) or item["page_views"]
+        cta_view_sessions = len(item["event_sessions"].get("cta_view", set()))
+        cta_click_sessions = len(item["event_sessions"].get("cta_click", set()))
+        contact_sessions = set().union(*(item["event_sessions"].get(event, set()) for event in contact_events))
+        form_start_sessions = len(item["event_sessions"].get("form_start", set()))
+        action_sessions = len(set().union(
+            item["event_sessions"].get("cta_click", set()),
+            contact_sessions,
+            item["event_sessions"].get("form_start", set()),
+        ))
+        attempts = counts.get("form_submit_attempt", 0)
+        success = counts.get("form_submit_success", 0)
+        errors = counts.get("form_submit_error", 0) + counts.get("form_validation_error", 0)
+        blocked = counts.get("form_submit_blocked", 0)
+        blocked_or_error_rate = (errors + blocked) / attempts if attempts else 0
+        cta_visibility_rate = cta_view_sessions / sessions if sessions else 0
+        action_rate = action_sessions / sessions if sessions else 0
+        form_start_rate = form_start_sessions / sessions if sessions else 0
+        form_success_rate = success / attempts if attempts else 0
+        lead_count = leads_by_page.get(page_path, 0)
+        qualified_leads = counts.get("qualified_lead", 0)
+        calls_answered = counts.get("call_answered", 0)
+        repair_orders = counts.get("repair_order_created", 0)
+        outcome_sessions = len(set().union(*(
+            item["event_sessions"].get(event, set()) for event in BUSINESS_OUTCOME_EVENTS
+        )))
+
+        if sessions < min_actionable:
+            priority, action_code = "P3", "collect_more_data"
+            evidence = f"clean_sessions={sessions}<{min_actionable}"
+        elif item["page_views"] > 0 and cta_view_sessions == 0:
+            priority, action_code = "P1", "instrumentation_gap"
+            evidence = f"page_views={item['page_views']};cta_view_sessions=0"
+        elif item["page_views"] == 0 and item["observed_sessions"]:
+            priority, action_code = "P1", "instrumentation_gap"
+            evidence = f"events_without_page_view;observed_sessions={len(item['observed_sessions'])}"
+        elif attempts > 0 and success == 0 and blocked_or_error_rate >= float(thresholds.get("highBlockedOrErrorRate", 0.35)):
+            priority, action_code = "P0", "form_friction"
+            evidence = f"attempts={attempts};success=0;blocked_or_error_rate={blocked_or_error_rate:.4f}"
+        elif attempts > 0 and success == 0:
+            priority, action_code = "P0", "backend_delivery"
+            evidence = f"attempts={attempts};success=0"
+        elif form_start_sessions > 0 and success == 0:
+            priority, action_code = "P2", "form_friction"
+            evidence = f"form_start_sessions={form_start_sessions};success=0"
+        elif cta_view_sessions > 0 and action_sessions == 0:
+            priority, action_code = "P1", "cta_dead"
+            evidence = f"cta_view_sessions={cta_view_sessions};action_sessions=0"
+        elif cta_visibility_rate < float(thresholds.get("lowCtaVisibilityRate", 0.35)) or action_rate < float(thresholds.get("lowActionRate", 0.03)):
+            priority, action_code = "P1", "cta_dead"
+            evidence = f"cta_visibility_rate={cta_visibility_rate:.4f};action_rate={action_rate:.4f}"
+        else:
+            priority, action_code = "P3", "keep_monitoring"
+            evidence = f"clean_sessions={sessions};action_sessions={action_sessions};leads={lead_count}"
+
+        confidence = "high" if sessions >= min_confidence else "medium" if sessions >= min_actionable else "low"
+        rows.append({
+            "date": date,
+            "page_path": page_path,
+            "page_intent": page.get("page_intent") or item["page_intent"] or infer_landing_intent(page_path),
+            "equipment": page.get("equipment") or item["equipment"],
+            "branch": page.get("branch", ""),
+            "page_version": page.get("page_version") or item["page_version"],
+            "page_views": item["page_views"],
+            "sessions": sessions,
+            "cta_views": counts.get("cta_view", 0),
+            "cta_view_sessions": cta_view_sessions,
+            "cta_clicks": counts.get("cta_click", 0),
+            "contact_clicks": sum(counts.get(event, 0) for event in contact_events),
+            "action_sessions": action_sessions,
+            "form_starts": counts.get("form_start", 0),
+            "form_start_sessions": form_start_sessions,
+            "form_submit_attempt": attempts,
+            "form_submit_success": success,
+            "form_submit_error": counts.get("form_submit_error", 0),
+            "form_validation_error": counts.get("form_validation_error", 0),
+            "form_submit_blocked": blocked,
+            "leads": lead_count,
+            "qualified_leads": qualified_leads,
+            "calls_answered": calls_answered,
+            "repair_orders": repair_orders,
+            "outcome_sessions": outcome_sessions,
+            "direct_query_rows": query_by_page.get(page_path, 0),
+            "direct_mismatch_rows": mismatch_by_page.get(page_path, 0),
+            "cta_visibility_rate": ratio(cta_view_sessions, sessions),
+            "action_rate": ratio(action_sessions, sessions),
+            "form_start_rate": ratio(form_start_sessions, sessions),
+            "form_success_rate": ratio(success, attempts),
+            "lead_rate": ratio(lead_count, sessions),
+            "qualified_lead_rate": ratio(qualified_leads, sessions),
+            "repair_order_rate": ratio(repair_orders, sessions),
+            "blocked_or_error_rate": f"{blocked_or_error_rate:.4f}",
+            "confidence": confidence,
+            "priority": priority,
+            "action_code": action_code,
+            "evidence": evidence,
+            "recommendation": actions.get(action_code, "Review page metrics."),
+        })
+
+    priority_order = {value: index for index, value in enumerate(policy.get("priorityOrder") or ["P0", "P1", "P2", "P3"])}
+    return sorted(rows, key=lambda row: (priority_order.get(row["priority"], 99), -int(row["sessions"]), row["page_path"]))
+
+
+def build_page_improvement_actions(scorecard: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    return [
+        {
+            "date": row["date"],
+            "page_path": row["page_path"],
+            "page_intent": row["page_intent"],
+            "branch": row["branch"],
+            "page_version": row["page_version"],
+            "priority": row["priority"],
+            "confidence": row["confidence"],
+            "sessions": row["sessions"],
+            "action_code": row["action_code"],
+            "evidence": row["evidence"],
+            "next_step": row["recommendation"],
+        }
+        for row in scorecard
+        if row["priority"] in {"P0", "P1", "P2"}
+    ]
 
 
 def build_cta_performance(date: str, events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -370,7 +624,7 @@ def build_offline_conversions(date: str, leads: List[Dict[str, Any]]) -> List[Di
             continue
         lead_hash = clean_key(row.get("lead_id_hash") or row.get("phone_hash") or "", 120)
         yclid_hash = clean_key(row.get("yclid_hash") or "", 120)
-        status = clean_key(row.get("status") or "", 120)
+        status = clean_key(row.get("status") or row.get("lead_status") or "", 120)
         # This is a safe draft for internal CRM/LLM review. Real upload requires raw yclid/client_id and must not be sourced from hashes.
         rows.append({
             "date": date,
@@ -400,7 +654,7 @@ def build_query_landing_actions(date: str, events: List[Dict[str, Any]], direct_
         sess = session_key(row)
         if sess:
             event_sessions[key].add(sess)
-        if event == "form_submit_success":
+        if event == "form_submit_success" or event in BUSINESS_OUTCOME_EVENTS:
             event_leads[key] += 1
 
     query_rows = []
@@ -428,7 +682,7 @@ def build_query_landing_actions(date: str, events: List[Dict[str, Any]], direct_
                 "whatsapp_click": counter.get("whatsapp_click", 0),
                 "form_start": counter.get("form_start", 0),
                 "form_submit_success": counter.get("form_submit_success", 0),
-                "qualified_leads": "",
+                "qualified_leads": event_leads[(utm_campaign, utm_content, landing)],
             })
         return query_rows, mismatch_rows
 
@@ -494,6 +748,9 @@ def write_manifest(path: Path, date: str, files: List[Path], counts: Dict[str, i
             "no_raw_site_events_in_llm": True,
             "no_plain_personal_data": True,
             "decision_quality": sorted(DECISION_QUALITY),
+            "outcome_quality": ["internal"],
+            "page_scorecard_policy": "data/metrics-scorecard-policy.json",
+            "no_raw_page_scorecard": True,
         },
         "counts": counts,
         "sources": sources,
@@ -511,6 +768,16 @@ def main() -> int:
     leads_path = Path(args.leads) if args.leads else path_for(base, "leads", date)
     direct_path = Path(args.direct_search) if args.direct_search else path_for(base, "direct_search", date)
     out_dir = Path(args.out) if args.out else path_for(base, "out", date)
+    page_context_path = Path(args.page_context) if args.page_context else first_existing([
+        base / "raw" / "context" / "metrics-page-context.json",
+        base / "config" / "metrics-page-context.json",
+    ])
+    policy_path = Path(args.policy) if args.policy else first_existing([
+        base / "raw" / "context" / "metrics-scorecard-policy.json",
+        base / "config" / "metrics-scorecard-policy.json",
+    ])
+    page_context = read_json_file(page_context_path)
+    scorecard_policy = read_json_file(policy_path)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     all_events = [row for row in iter_jsonl(events_path) if event_date(row) == date]
@@ -523,7 +790,7 @@ def main() -> int:
 
     event_funnel = build_event_funnel(date, clean_events)
     p = out_dir / f"llm_event_funnel_{date}.csv"
-    write_csv(p, event_funnel, ["date", "page_path", "page_intent", "sessions", "cta_view", "cta_click", "phone_click", "whatsapp_click", "telegram_click", "email_click", "form_open", "form_start", "form_submit_attempt", "form_submit_success", "form_submit_error", "form_validation_error", "form_submit_blocked"])
+    write_csv(p, event_funnel, ["date", "page_path", "page_intent", "sessions", "page_view", "qualified_lead", "call_answered", "repair_order_created", "cta_view", "cta_click", "phone_click", "whatsapp_click", "telegram_click", "email_click", "form_open", "form_start", "form_submit_attempt", "form_submit_success", "form_submit_error", "form_validation_error", "form_submit_blocked"])
     outputs.append(p)
 
     cta = build_cta_performance(date, clean_events)
@@ -560,6 +827,26 @@ def main() -> int:
     write_csv(p, mismatch, ["date", "query", "detected_intent", "landing_path", "landing_intent", "mismatch", "clicks", "cost", "events", "leads"])
     outputs.append(p)
 
+    scorecard = build_page_scorecard(date, clean_events, leads, page_context, query_actions, scorecard_policy)
+    p = out_dir / f"llm_page_scorecard_{date}.csv"
+    write_csv(p, scorecard, [
+        "date", "page_path", "page_intent", "equipment", "branch", "page_version", "page_views", "sessions",
+        "cta_views", "cta_view_sessions", "cta_clicks", "contact_clicks", "action_sessions", "form_starts",
+        "form_start_sessions", "form_submit_attempt", "form_submit_success", "form_submit_error",
+        "form_validation_error", "form_submit_blocked", "leads", "qualified_leads", "calls_answered", "repair_orders", "outcome_sessions", "direct_query_rows", "direct_mismatch_rows",
+        "cta_visibility_rate", "action_rate", "form_start_rate", "form_success_rate", "lead_rate", "qualified_lead_rate", "repair_order_rate",
+        "blocked_or_error_rate", "confidence", "priority", "action_code", "evidence", "recommendation",
+    ])
+    outputs.append(p)
+
+    improvement_actions = build_page_improvement_actions(scorecard)
+    p = out_dir / f"llm_page_improvement_actions_{date}.csv"
+    write_csv(p, improvement_actions, [
+        "date", "page_path", "page_intent", "branch", "page_version", "priority", "confidence", "sessions",
+        "action_code", "evidence", "next_step",
+    ])
+    outputs.append(p)
+
     manifest = out_dir / f"llm_events_manifest_{date}.json"
     write_manifest(manifest, date, outputs, {
         "raw_events_for_date": len(all_events),
@@ -567,11 +854,17 @@ def main() -> int:
         "rejected_events_for_date": len(rejected),
         "leads_total_seen": len(leads),
         "direct_search_rows_seen": len(direct_rows),
+        "outcome_events_for_date": sum(1 for row in clean_events if clean_key(row.get("event"), 80) in BUSINESS_OUTCOME_EVENTS),
+        "page_context_pages": len(page_context.get("pages") or {}),
+        "scorecard_pages": len(scorecard),
+        "improvement_actions": len(improvement_actions),
     }, {
         "events": str(events_path),
         "rejected": str(rejected_path),
         "leads": str(leads_path),
         "direct_search": str(direct_path),
+        "page_context": str(page_context_path) if page_context_path else "",
+        "policy": str(policy_path) if policy_path else "",
     })
     outputs.append(manifest)
 

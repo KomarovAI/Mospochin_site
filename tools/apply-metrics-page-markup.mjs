@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const root = process.cwd();
 const contextPath = path.join(root, 'data', 'metrics-page-context.json');
@@ -16,6 +17,13 @@ const BRAND_PATTERNS = [
 
 function slugFromFile(file) {
   return file.replace(/\.html$/, '') || 'index';
+}
+
+function canonicalPageVersion(html) {
+  return crypto.createHash('sha256')
+    .update(String(html || '').replace(/\sdata-page-version=["'][^"']*["']/gi, ''))
+    .digest('hex')
+    .slice(0, 16);
 }
 
 function inferEquipment(file) {
@@ -62,6 +70,10 @@ function inferSegment(file) {
 function buildContext() {
   const pages = {};
   for (const file of htmlFiles) {
+    const html = fs.readFileSync(path.join(root, file), 'utf8');
+    const pageMetadata = fs.existsSync(path.join(root, 'data', 'page-metadata.json'))
+      ? JSON.parse(fs.readFileSync(path.join(root, 'data', 'page-metadata.json'), 'utf8')).pages?.[file] || {}
+      : {};
     pages[file] = {
       page_slug: slugFromFile(file),
       page_intent: inferPageIntent(file),
@@ -69,18 +81,21 @@ function buildContext() {
       brand: inferBrand(file),
       service: 'repair',
       commercial_segment: inferSegment(file),
+      branch: pageMetadata.branch || 'neutral',
+      page_version: canonicalPageVersion(html),
       source: 'run4_archive_only_inferred'
     };
   }
   return {
-    version: '2026-06-20-run4',
-    purpose: 'Archive-only page and CTA context map for clean MosPochin metrics. Generated from root HTML filenames and used by tools/apply-metrics-page-markup.mjs.',
+    version: '2026-07-11-page-scorecard-v1',
+    purpose: 'Page and CTA context map for clean MosPochin metrics. page_version is a stable content hash with its own markup field excluded.',
     required_body_attrs: [
       'data-page-slug',
       'data-page-intent',
       'data-equipment',
       'data-service',
-      'data-commercial-segment'
+      'data-commercial-segment',
+      'data-page-version'
     ],
     cta_required_attrs: [
       'data-cta-id',
@@ -98,9 +113,30 @@ function readContext() {
   return {
     ...generated,
     ...existing,
+    required_body_attrs: [...new Set([
+      ...(generated.required_body_attrs || []),
+      ...(existing.required_body_attrs || [])
+    ])],
     pages: {
-      ...generated.pages,
-      ...(existing.pages || {})
+      ...Object.fromEntries(Object.entries(generated.pages).map(([file, generatedPage]) => [
+        file,
+        {
+          ...(existing.pages?.[file] || {}),
+          ...generatedPage,
+          page_version: generatedPage.page_version,
+          branch: generatedPage.branch
+        }
+      ])),
+      ...(existing.pages || {}),
+      ...Object.fromEntries(Object.entries(generated.pages).map(([file, generatedPage]) => [
+        file,
+        {
+          ...(existing.pages?.[file] || {}),
+          ...generatedPage,
+          page_version: generatedPage.page_version,
+          branch: generatedPage.branch
+        }
+      ]))
     }
   };
 }
@@ -132,6 +168,17 @@ function addAttrs(tag, attrs) {
   return next.replace(/>$/, `${insertion}>`);
 }
 
+function upsertAttrs(tag, attrs) {
+  let next = tag;
+  for (const [name, value] of Object.entries(attrs)) {
+    if (value === undefined || value === null || String(value) === '') continue;
+    const pattern = new RegExp(`\\s${name}=["'][^"']*["']`, 'i');
+    const replacement = ` ${name}="${escapeAttr(value)}"`;
+    next = pattern.test(next) ? next.replace(pattern, replacement) : next.replace(/>$/, `${replacement}>`);
+  }
+  return next;
+}
+
 function classifyContact(tag) {
   const href = getAttr(tag, 'href').toLowerCase();
   const dataContact = getAttr(tag, 'data-contact-link').toLowerCase();
@@ -157,13 +204,14 @@ function annotateHtml(file, context) {
     return `${slug}_${type}_${String(count).padStart(2, '0')}`;
   }
 
-  html = html.replace(/<body\b[^>]*>/i, (tag) => addAttrs(tag, {
+  html = html.replace(/<body\b[^>]*>/i, (tag) => upsertAttrs(tag, {
     'data-page-slug': slug,
     'data-page-intent': page.page_intent,
     'data-equipment': page.equipment,
     'data-brand': page.brand,
     'data-service': page.service || 'repair',
-    'data-commercial-segment': page.commercial_segment
+    'data-commercial-segment': page.commercial_segment,
+    'data-page-version': page.page_version
   }));
 
   html = html.replace(/<a\b[^>]*>/gi, (tag) => {

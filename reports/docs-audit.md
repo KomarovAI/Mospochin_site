@@ -1,17 +1,24 @@
 # Docs audit
 
-Generated: 2026-06-06T08:58:10.614Z
+Generated: 2026-07-11T06:19:23.408Z
 
 ## Summary
 
-- Docs scanned: 33
-- Total docs size: 151.8 KB
-- Categories: active=13, reference=20
-- Actions: keep=33
+- Docs scanned: 41
+- Total docs size: 181.3 KB
+- Categories: active=13, reference=22, orphanCandidate=6
+- Actions: keep=35, reviewForPrune=6
 
 ## Review-for-prune candidates
 
-No docs currently marked as review-for-prune.
+| File | Category | Size | Refs | Why |
+|---|---:|---:|---:|---|
+| `docs/AI_VISUAL_REVIEW_WORKFLOW.md` | orphanCandidate | 5.1 KB | 0 | No references found in project text graph. |
+| `docs/ARCHIVE_HYGIENE.md` | orphanCandidate | 1.5 KB | 0 | No references found in project text graph. |
+| `docs/LIVE_VISUAL_PACK_MVP.md` | orphanCandidate | 0.8 KB | 0 | No references found in project text graph. |
+| `docs/VISUAL_CHECKS.md` | orphanCandidate | 3.0 KB | 0 | No references found in project text graph. |
+| `docs/cooking-kettles-run4-handoff-20260618.md` | orphanCandidate | 3.0 KB | 0 | No references found in project text graph. |
+| `docs/mospochin-deploy-handoff-run8-20260621.md` | orphanCandidate | 6.0 KB | 0 | No references found in project text graph. |
 
 ## Active docs
 

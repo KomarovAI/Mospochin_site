@@ -110,12 +110,13 @@ const criticalPages = [
 ];
 for (const page of criticalPages) {
   const html = read(page);
-  if (!html.includes('stage4-visual-nav')) fail(`${page}: missing stage4 visual CTA rail`);
   if (!html.includes('class="telegram-form')) fail(`${page}: missing telegram form`);
+  if (!html.includes('data-contact-form')) fail(`${page}: missing contact-form runtime marker`);
+  if (!html.includes('data-cta-id')) fail(`${page}: missing CTA identity marker`);
   if (!html.includes('data-contact-link="phone"')) fail(`${page}: missing phone contact markers`);
   if (!html.includes('data-contact-link="whatsapp"')) fail(`${page}: missing WhatsApp contact markers`);
 }
-ok(`critical Direct pages: CTA rails, forms and contact markers (${criticalPages.length})`);
+ok(`critical Direct pages: forms, CTA identity and contact markers (${criticalPages.length})`);
 
 if (process.exitCode) {
   console.error('\n❌ Conversion runtime guard failed');

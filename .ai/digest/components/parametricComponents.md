@@ -1,7 +1,7 @@
 # Component Digest — parametricComponents
 
 - Name: Parameterized components / template + props
-- Appears in: 0 pages
+- Appears in: 115 pages
 - Keywords: parametric, parameterized, templateRef, propsRef, content/components, параметризованные компоненты
 
 ## Related files
@@ -18,6 +18,30 @@
 
 ## Safe editing notes
 
-- Parametric refs: 0, templates: 0, props files: 0.
+- Parametric refs: 1319, templates: 106, props files: 0.
 - Для текста конкретной страницы меняй content/components/*/*.json; для разметки меняй template.html.
 - После правки запускай check:parameterized-components и check:site-builder.
+
+## Representative pages
+
+- 404.html
+- about.html
+- avtomatika-ventilyatsii-restorana.html
+- bytovaya-about.html
+- bytovaya-contact.html
+- bytovaya-index.html
+- bytovaya-uslugi.html
+- chek-list-ventilyatsii-restorana.html
+- chem-otlichaetsya-pritok-ot-vytyazhki.html
+- chistka-ventilyatsii-restoranov.html
+- chto-proveryaet-inzhener-ventilyatsii.html
+- contact.html
+- diagnostika-ventilyatsii-restorana.html
+- dym-na-kuhne-restorana.html
+- grili-mangaly.html
+- holodilniki.html
+- holodilnoe-oborudovanie.html
+- ice-machines.html
+- index.html
+- kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
+- … ещё 95

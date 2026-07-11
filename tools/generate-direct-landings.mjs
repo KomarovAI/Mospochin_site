@@ -106,8 +106,8 @@ function updateBodyClass(html, slug) {
 
   return replaceOrThrow(
     html,
-    /<body class="[^"]*">/,
-    `<body class="${bodyClass}">`,
+    /<body\b([^>]*)\sclass="[^"]*"([^>]*)>/,
+    `<body$1 class="${bodyClass}"$2>`,
     'body class',
   );
 }
@@ -277,7 +277,7 @@ ${links}
 }
 
 function renderAnalysisSection(page) {
-  const cards = page.analysisCards.map((card) => `
+  const cards = (Array.isArray(page.analysisCards) ? page.analysisCards : []).map((card) => `
                 <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                     <h3 class="font-display text-lg font-extrabold text-brand-blue">${escapeHtml(card.title)}</h3>
                     <p class="mt-2 text-sm leading-relaxed text-slate-600">${escapeHtml(card.text)}</p>

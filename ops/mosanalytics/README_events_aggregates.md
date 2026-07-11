@@ -17,6 +17,8 @@ ops/mosanalytics/bin/mosanalytics-events-aggregate.py
 /var/lib/mosanalytics/raw/events/site_event_rejects.jsonl
 /var/lib/mosanalytics/raw/leads/direct_leads.jsonl
 /var/lib/mosanalytics/raw/direct/direct_search_queries_YYYY-MM-DD_YYYY-MM-DD.tsv
+/var/lib/mosanalytics/raw/context/metrics-page-context.json
+/var/lib/mosanalytics/raw/context/metrics-scorecard-policy.json
 ```
 
 И пишет clean-файлы:
@@ -30,6 +32,8 @@ ops/mosanalytics/bin/mosanalytics-events-aggregate.py
 /var/lib/mosanalytics/llm_brief/events/llm_offline_conversions_YYYY-MM-DD.csv
 /var/lib/mosanalytics/llm_brief/events/llm_query_landing_actions_YYYY-MM-DD.csv
 /var/lib/mosanalytics/llm_brief/events/llm_landing_mismatch_YYYY-MM-DD.csv
+/var/lib/mosanalytics/llm_brief/events/llm_page_scorecard_YYYY-MM-DD.csv
+/var/lib/mosanalytics/llm_brief/events/llm_page_improvement_actions_YYYY-MM-DD.csv
 /var/lib/mosanalytics/llm_brief/events/llm_events_manifest_YYYY-MM-DD.json
 ```
 
@@ -42,6 +46,8 @@ page → CTA → form/contact → lead
 query → intent → landing → action
 traffic source → clean/suspicious/rejected quality
 form → friction/error reason
+page version → page scorecard → prioritized improvement action
+lead_created → qualified_lead → call_answered → repair_order_created
 ```
 
 ## Установка на artikk
@@ -53,7 +59,15 @@ sudo install -m 0755 ops/mosanalytics/bin/mosanalytics-events-aggregate.py \
 
 ## Добавить sync новых логов
 
-В `/opt/mosanalytics/bin/mossitesync` нужно добавить копирование с site VPS:
+Для единообразного sync используйте версионируемый скрипт:
+
+```bash
+SITE_SSH_ALIAS=mospochin-site \
+MOS_SITE_CONTEXT_DIR=/opt/mosanalytics/site-context \
+/opt/mosanalytics/bin/mospochin-metrics-sync.sh
+```
+
+Он копирует с site VPS только три runtime-лога и не переносит сырые nginx-логи:
 
 ```text
 /var/log/mospochin/site_events.jsonl
@@ -67,7 +81,7 @@ sudo install -m 0755 ops/mosanalytics/bin/mosanalytics-events-aggregate.py \
 /var/lib/mosanalytics/raw/events/site_event_rejects.jsonl
 ```
 
-Пример rsync-блока:
+Если скрипт не устанавливается, тот же контракт можно добавить в существующий `/opt/mosanalytics/bin/mossitesync`. Пример rsync-блока:
 
 ```bash
 mkdir -p "$MOS_BASE/raw/events"
@@ -77,6 +91,9 @@ rsync -avz --ignore-missing-args \
 rsync -avz --ignore-missing-args \
   "$SITE_SSH_ALIAS:/var/log/mospochin/site_event_rejects.jsonl" \
   "$MOS_BASE/raw/events/site_event_rejects.jsonl" || true
+rsync -avz --ignore-missing-args \
+  "$SITE_SSH_ALIAS:/var/log/mospochin/direct_leads.jsonl" \
+  "$MOS_BASE/raw/leads/direct_leads.jsonl" || true
 ```
 
 ## Запуск вручную
@@ -84,6 +101,16 @@ rsync -avz --ignore-missing-args \
 ```bash
 /opt/mosanalytics/bin/mosanalytics-events-aggregate.py --date "$(date +%F)"
 ```
+
+Для page scorecard на artikk должны быть доступны контекст страниц и политика порогов:
+
+```bash
+mkdir -p /var/lib/mosanalytics/raw/context
+rsync -av data/metrics-page-context.json data/metrics-scorecard-policy.json \
+  artikk:/var/lib/mosanalytics/raw/context/
+```
+
+Если файлы не скопированы, агрегатор всё равно создаст scorecard по наблюдаемым событиям, но без полного списка страниц и без надёжного `page_version`.
 
 Для теста на локальных файлах:
 
@@ -100,6 +127,7 @@ rsync -avz --ignore-missing-args \
 
 ```bash
 echo "== EVENTS CLEAN AGGREGATES =="
+/opt/mosanalytics/bin/mospochin-metrics-sync.sh
 /opt/mosanalytics/bin/mosanalytics-events-aggregate.py --date "$(date +%F)"
 ```
 
@@ -182,6 +210,16 @@ date,query,detected_intent,landing_path,landing_intent,mismatch,clicks,cost,even
 ```
 
 Скрипт не делает apply в Директе и не меняет сайт. Он только готовит факты.
+
+### `llm_page_scorecard_YYYY-MM-DD.csv`
+
+Единая строка по каждой странице: `page_path`, `page_intent`, `equipment`, `branch`, `page_version`, просмотры, clean-сессии, CTA, форма, лиды, rates, confidence, priority и recommendation.
+
+Дополнительные outcome-поля: `qualified_leads`, `calls_answered`, `repair_orders`, `qualified_lead_rate`, `repair_order_rate`. Они появляются после server-to-server отправки статусов через `/api/track-outcome`.
+
+### `llm_page_improvement_actions_YYYY-MM-DD.csv`
+
+Короткая очередь страниц с `P0/P1/P2`. Это рабочий список улучшений: сначала технические сбои формы, затем проблемы CTA/релевантности, затем UX формы. Страницы с малым объёмом данных остаются `P3` и не попадают в очередь.
 
 ## Важное ограничение по offline conversions
 

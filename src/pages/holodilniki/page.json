@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "holodilniki.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "17c205a52bc2d5990134070a20cc502e1d62fd2d5dcf37878bcf6d3ab4480134",
+    "hash": "a310a9123a1981c18149b617ba13fd852be801c5c9e939b64f97c88b9a15aaa1",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,28 +21,15 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "bytes": 208,
-      "hash": "468caad1f64721d4",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "yandex-metrika-pixel",
-      "templateRef": "src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html",
-      "props": {},
-      "sourceFile": "sections/001-noscript-noscript-fallback.html"
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 51,
+      "hash": "a78a0e797fa5e681"
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
-      "bytes": 55,
-      "hash": "cdf5277e3bf56e03"
-    },
-    {
-      "id": "003-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 48,
@@ -52,34 +39,34 @@
       "variant": "technical-fragment-96856553c171",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-96856553c171.template.html",
       "props": {},
-      "sourceFile": "sections/003-raw-html-fragment.html"
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
-      "id": "004-breadcrumb-hlebnye-kroshki",
+      "id": "003-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
+      "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
       "bytes": 992,
       "hash": "9ce58a282b8cb3e2"
     },
     {
-      "id": "005-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be",
+      "id": "004-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be",
       "component": "hero",
       "label": "Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене",
-      "file": "sections/005-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html",
+      "file": "sections/004-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html",
       "bytes": 6598,
       "hash": "c97add540e3bfb0f"
     },
     {
-      "id": "006-proof-dokazatel-stva-garantii",
+      "id": "005-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/006-proof-dokazatel-stva-garantii.html",
+      "file": "sections/005-proof-dokazatel-stva-garantii.html",
       "bytes": 190,
       "hash": "893113c08608f571"
     },
     {
-      "id": "007-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda",
+      "id": "006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda",
       "component": "proof",
       "label": "Что получаете по заявке до и после выезда",
       "bytes": 3219,
@@ -87,10 +74,10 @@
       "componentRef": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--0736ad0b9d07bbb7.html",
       "componentScope": "shared",
       "componentSignature": "0736ad0b9d07bbb7",
-      "sourceFile": "sections/007-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda.html"
+      "sourceFile": "sections/006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda.html"
     },
     {
-      "id": "008-raw-html-fragment",
+      "id": "007-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 40,
@@ -100,34 +87,34 @@
       "variant": "household-sync-service-kpi-end-6ea051972d91",
       "templateRef": "src/components/parametric/static/layout-fragment-household-sync-service-kpi-end-6ea051972d91.template.html",
       "props": {},
-      "sourceFile": "sections/008-raw-html-fragment.html"
+      "sourceFile": "sections/007-raw-html-fragment.html"
     },
     {
-      "id": "009-proof-po-kakim-scenariyam-lyudi-chasche-vsego-vyzyva",
+      "id": "008-proof-po-kakim-scenariyam-lyudi-chasche-vsego-vyzyva",
       "component": "proof",
       "label": "По каким сценариям люди чаще всего вызывают мастера именно сегодня",
-      "file": "sections/009-proof-po-kakim-scenariyam-lyudi-chasche-vsego-vyzyva.html",
+      "file": "sections/008-proof-po-kakim-scenariyam-lyudi-chasche-vsego-vyzyva.html",
       "bytes": 4613,
       "hash": "8fa6e96b7e4feb51"
     },
     {
-      "id": "010-pricing-kakie-problemy-holodil-nika-my-zakryvaem-za-",
+      "id": "009-pricing-kakie-problemy-holodil-nika-my-zakryvaem-za-",
       "component": "pricing",
       "label": "Какие проблемы холодильника мы закрываем за 1 визит",
-      "file": "sections/010-pricing-kakie-problemy-holodil-nika-my-zakryvaem-za-.html",
+      "file": "sections/009-pricing-kakie-problemy-holodil-nika-my-zakryvaem-za-.html",
       "bytes": 5223,
       "hash": "5420c924d7fe2fd5"
     },
     {
-      "id": "011-section-sekciya-stranicy",
+      "id": "010-section-sekciya-stranicy",
       "component": "section",
       "label": "Секция страницы",
-      "file": "sections/011-section-sekciya-stranicy.html",
+      "file": "sections/010-section-sekciya-stranicy.html",
       "bytes": 455,
       "hash": "3c53a1f306fe9693"
     },
     {
-      "id": "012-raw-html-fragment",
+      "id": "011-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 100,
@@ -137,26 +124,26 @@
       "variant": "блок-срочности-психология-потери-таймер-f8b561234dd8",
       "templateRef": "src/components/parametric/static/layout-fragment-блок-срочности-психология-потери-таймер-f8b561234dd8.template.html",
       "props": {},
-      "sourceFile": "sections/012-raw-html-fragment.html"
+      "sourceFile": "sections/011-raw-html-fragment.html"
     },
     {
-      "id": "013-contact-cta-kontaktnyy-cta",
+      "id": "012-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/013-contact-cta-kontaktnyy-cta.html",
+      "file": "sections/012-contact-cta-kontaktnyy-cta.html",
       "bytes": 3680,
       "hash": "88c776cea091f312"
     },
     {
-      "id": "014-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit",
+      "id": "013-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit",
       "component": "pricing",
       "label": "От чего зависит цена и как не переплатить",
-      "file": "sections/014-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit.html",
+      "file": "sections/013-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit.html",
       "bytes": 5432,
       "hash": "65de35281c8e75a9"
     },
     {
-      "id": "015-raw-html-fragment",
+      "id": "014-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 101,
@@ -166,18 +153,18 @@
       "variant": "блок-что-сломалось-кликабельные-иконки-0a8fea955983",
       "templateRef": "src/components/parametric/static/layout-fragment-блок-что-сломалось-кликабельные-иконки-0a8fea955983.template.html",
       "props": {},
-      "sourceFile": "sections/015-raw-html-fragment.html"
+      "sourceFile": "sections/014-raw-html-fragment.html"
     },
     {
-      "id": "016-pricing-kakie-simptomy-chasche-vsego-opisyvayut-po-t",
+      "id": "015-pricing-kakie-simptomy-chasche-vsego-opisyvayut-po-t",
       "component": "pricing",
       "label": "Какие симптомы чаще всего описывают по телефону",
-      "file": "sections/016-pricing-kakie-simptomy-chasche-vsego-opisyvayut-po-t.html",
+      "file": "sections/015-pricing-kakie-simptomy-chasche-vsego-opisyvayut-po-t.html",
       "bytes": 6092,
       "hash": "f1ede2927ffaab58"
     },
     {
-      "id": "017-raw-html-fragment",
+      "id": "016-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 97,
@@ -187,138 +174,138 @@
       "variant": "блок-реальные-истории-кейсы-из-москвы-16a1e0cccdc9",
       "templateRef": "src/components/parametric/static/layout-fragment-блок-реальные-истории-кейсы-из-москвы-16a1e0cccdc9.template.html",
       "props": {},
-      "sourceFile": "sections/017-raw-html-fragment.html"
+      "sourceFile": "sections/016-raw-html-fragment.html"
     },
     {
-      "id": "018-contact-cta-svezhie-keysy-po-remontu-holodil-nikov",
+      "id": "017-contact-cta-svezhie-keysy-po-remontu-holodil-nikov",
       "component": "contact-cta",
       "label": "Свежие кейсы по ремонту холодильников",
-      "file": "sections/018-contact-cta-svezhie-keysy-po-remontu-holodil-nikov.html",
+      "file": "sections/017-contact-cta-svezhie-keysy-po-remontu-holodil-nikov.html",
       "bytes": 8573,
       "hash": "0a1a310282697782"
     },
     {
-      "id": "019-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom",
+      "id": "018-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom",
       "component": "pricing",
       "label": "Какие поломки мы чаще всего чиним на дому",
-      "file": "sections/019-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom.html",
+      "file": "sections/018-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom.html",
       "bytes": 6158,
       "hash": "9bbd1b8e2e3319bc"
     },
     {
-      "id": "020-pricing-skol-ko-obychno-stoit-remont-holodil-nika",
+      "id": "019-pricing-skol-ko-obychno-stoit-remont-holodil-nika",
       "component": "pricing",
       "label": "Сколько обычно стоит ремонт холодильника",
-      "file": "sections/020-pricing-skol-ko-obychno-stoit-remont-holodil-nika.html",
+      "file": "sections/019-pricing-skol-ko-obychno-stoit-remont-holodil-nika.html",
       "bytes": 5548,
       "hash": "570916057c690164"
     },
     {
-      "id": "021-section-kogda-remont-holodil-nika-uzhe-nevygoden",
+      "id": "020-section-kogda-remont-holodil-nika-uzhe-nevygoden",
       "component": "section",
       "label": "Когда ремонт холодильника уже невыгоден",
-      "file": "sections/021-section-kogda-remont-holodil-nika-uzhe-nevygoden.html",
+      "file": "sections/020-section-kogda-remont-holodil-nika-uzhe-nevygoden.html",
       "bytes": 3270,
       "hash": "b1891deb097b469e"
     },
     {
-      "id": "022-faq-chto-obychno-proishodit-s-polomkoy-holodil-nika-",
+      "id": "021-faq-chto-obychno-proishodit-s-polomkoy-holodil-nika-",
       "component": "faq",
       "label": "Что обычно происходит с поломкой холодильника, если тянуть",
-      "file": "sections/022-faq-chto-obychno-proishodit-s-polomkoy-holodil-nika-.html",
+      "file": "sections/021-faq-chto-obychno-proishodit-s-polomkoy-holodil-nika-.html",
       "bytes": 5509,
       "hash": "55497e445eee47a9"
     },
     {
-      "id": "023-pricing-pochemu-nam-doveryayut-i-vyzyvayut-povtorno",
+      "id": "022-pricing-pochemu-nam-doveryayut-i-vyzyvayut-povtorno",
       "component": "pricing",
       "label": "Почему нам доверяют и вызывают повторно",
-      "file": "sections/023-pricing-pochemu-nam-doveryayut-i-vyzyvayut-povtorno.html",
+      "file": "sections/022-pricing-pochemu-nam-doveryayut-i-vyzyvayut-povtorno.html",
       "bytes": 4070,
       "hash": "41525dd4d7772c82"
     },
     {
-      "id": "024-pricing-otzyvy-po-remontu-holodil-nikov",
+      "id": "023-pricing-otzyvy-po-remontu-holodil-nikov",
       "component": "pricing",
       "label": "Отзывы по ремонту холодильников",
-      "file": "sections/024-pricing-otzyvy-po-remontu-holodil-nikov.html",
+      "file": "sections/023-pricing-otzyvy-po-remontu-holodil-nikov.html",
       "bytes": 5521,
       "hash": "dec09f08f508f5d0"
     },
     {
-      "id": "025-faq-esli-hochetsya-posmotret-real-nye-scenarii-remon",
+      "id": "024-faq-esli-hochetsya-posmotret-real-nye-scenarii-remon",
       "component": "faq",
       "label": "Если хочется посмотреть реальные сценарии ремонта",
-      "file": "sections/025-faq-esli-hochetsya-posmotret-real-nye-scenarii-remon.html",
+      "file": "sections/024-faq-esli-hochetsya-posmotret-real-nye-scenarii-remon.html",
       "bytes": 3988,
       "hash": "7ecaab49a0425af1"
     },
     {
-      "id": "026-pricing-kak-vernem-holodil-nik-v-stroy-bez-lishnih-t",
+      "id": "025-pricing-kak-vernem-holodil-nik-v-stroy-bez-lishnih-t",
       "component": "pricing",
       "label": "Как вернём холодильник в строй без лишних трат",
-      "file": "sections/026-pricing-kak-vernem-holodil-nik-v-stroy-bez-lishnih-t.html",
+      "file": "sections/025-pricing-kak-vernem-holodil-nik-v-stroy-bez-lishnih-t.html",
       "bytes": 3562,
       "hash": "5bbd1e927888ddba"
     },
     {
-      "id": "027-pricing-chto-vy-poluchaete-posle-remonta",
+      "id": "026-pricing-chto-vy-poluchaete-posle-remonta",
       "component": "pricing",
       "label": "Что вы получаете после ремонта",
-      "file": "sections/027-pricing-chto-vy-poluchaete-posle-remonta.html",
+      "file": "sections/026-pricing-chto-vy-poluchaete-posle-remonta.html",
       "bytes": 3084,
       "hash": "57c873f7117d3459"
     },
     {
-      "id": "028-pricing-kakie-brendy-i-modeli-berem-v-rabotu",
+      "id": "027-pricing-kakie-brendy-i-modeli-berem-v-rabotu",
       "component": "pricing",
       "label": "Какие бренды и модели берём в работу",
-      "file": "sections/028-pricing-kakie-brendy-i-modeli-berem-v-rabotu.html",
+      "file": "sections/027-pricing-kakie-brendy-i-modeli-berem-v-rabotu.html",
       "bytes": 19338,
       "hash": "6e176c71696207e0"
     },
     {
-      "id": "029-pricing-pochemu-nam-doveryayut-pri-remonte-holodil-n",
+      "id": "028-pricing-pochemu-nam-doveryayut-pri-remonte-holodil-n",
       "component": "pricing",
       "label": "Почему нам доверяют при ремонте холодильников",
-      "file": "sections/029-pricing-pochemu-nam-doveryayut-pri-remonte-holodil-n.html",
+      "file": "sections/028-pricing-pochemu-nam-doveryayut-pri-remonte-holodil-n.html",
       "bytes": 4382,
       "hash": "f15933eddb95591f"
     },
     {
-      "id": "030-section-vyezzhaem-po-moskve-i-mo-bez-dolgogo-ozhidan",
+      "id": "029-section-vyezzhaem-po-moskve-i-mo-bez-dolgogo-ozhidan",
       "component": "section",
       "label": "Выезжаем по Москве и МО без долгого ожидания",
-      "file": "sections/030-section-vyezzhaem-po-moskve-i-mo-bez-dolgogo-ozhidan.html",
+      "file": "sections/029-section-vyezzhaem-po-moskve-i-mo-bez-dolgogo-ozhidan.html",
       "bytes": 3238,
       "hash": "8658cacfdefd6a02"
     },
     {
-      "id": "031-proof-chto-sdelat-do-priezda-mastera-chtoby-ne-usugu",
+      "id": "030-proof-chto-sdelat-do-priezda-mastera-chtoby-ne-usugu",
       "component": "proof",
       "label": "Что сделать до приезда мастера, чтобы не усугубить поломку",
-      "file": "sections/031-proof-chto-sdelat-do-priezda-mastera-chtoby-ne-usugu.html",
+      "file": "sections/030-proof-chto-sdelat-do-priezda-mastera-chtoby-ne-usugu.html",
       "bytes": 3564,
       "hash": "e07d96dbffe666da"
     },
     {
-      "id": "032-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera",
+      "id": "031-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera",
       "component": "faq",
       "label": "Что обычно спрашивают перед вызовом мастера",
-      "file": "sections/032-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera.html",
+      "file": "sections/031-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera.html",
       "bytes": 4974,
       "hash": "8087a6b5a145aad0"
     },
     {
-      "id": "033-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-ho",
+      "id": "032-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-ho",
       "component": "mobile-contact",
       "label": "Когда лучше не откладывать ремонт холодильника",
-      "file": "sections/033-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-ho.html",
+      "file": "sections/032-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-ho.html",
       "bytes": 2148,
       "hash": "8c597b17d885e5cd"
     },
     {
-      "id": "034-raw-html-fragment",
+      "id": "033-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 37,
@@ -328,74 +315,74 @@
       "variant": "форма-заявки-8236da083005",
       "templateRef": "src/components/parametric/static/layout-fragment-форма-заявки-8236da083005.template.html",
       "props": {},
-      "sourceFile": "sections/034-raw-html-fragment.html"
+      "sourceFile": "sections/033-raw-html-fragment.html"
     },
     {
-      "id": "035-section-chto-vy-teryaete-esli-otlozhit-remont-holodi",
+      "id": "034-section-chto-vy-teryaete-esli-otlozhit-remont-holodi",
       "component": "section",
       "label": "Что вы теряете, если отложить ремонт холодильника до завтра",
-      "file": "sections/035-section-chto-vy-teryaete-esli-otlozhit-remont-holodi.html",
+      "file": "sections/034-section-chto-vy-teryaete-esli-otlozhit-remont-holodi.html",
       "bytes": 2334,
       "hash": "ba1063ed7b986162"
     },
     {
-      "id": "036-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku",
+      "id": "035-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku",
       "component": "lead-form",
       "label": "Оставьте заявку на звонок по холодильнику",
-      "file": "sections/036-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html",
-      "bytes": 8609,
-      "hash": "149d1db1cb50333b"
+      "file": "sections/035-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html",
+      "bytes": 8693,
+      "hash": "eebaeae162cfa9f6"
     },
     {
-      "id": "037-proof-dokazatel-stva-garantii",
+      "id": "036-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/037-proof-dokazatel-stva-garantii.html",
+      "file": "sections/036-proof-dokazatel-stva-garantii.html",
       "bytes": 197,
       "hash": "b5334e7d6338e9f2"
     },
     {
-      "id": "038-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
+      "id": "037-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
       "component": "pricing",
       "label": "Что клиент понимает ещё до начала работ",
-      "file": "sections/038-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+      "file": "sections/037-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
       "bytes": 13332,
       "hash": "648a35fd7e7abb8c"
+    },
+    {
+      "id": "038-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/038-proof-dokazatel-stva-garantii.html",
+      "bytes": 42,
+      "hash": "c9cde558065e3f95"
     },
     {
       "id": "039-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
       "file": "sections/039-proof-dokazatel-stva-garantii.html",
-      "bytes": 42,
-      "hash": "c9cde558065e3f95"
-    },
-    {
-      "id": "040-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/040-proof-dokazatel-stva-garantii.html",
       "bytes": 193,
       "hash": "fe3ed52bd318df25"
     },
     {
-      "id": "041-related-links-esli-problema-v-drugoy-tehnike",
+      "id": "040-related-links-esli-problema-v-drugoy-tehnike",
       "component": "related-links",
       "label": "Если проблема в другой технике",
-      "file": "sections/041-related-links-esli-problema-v-drugoy-tehnike.html",
+      "file": "sections/040-related-links-esli-problema-v-drugoy-tehnike.html",
       "bytes": 3242,
       "hash": "c41df486444fbcc5"
     },
     {
-      "id": "042-related-links-svyazannye-stranicy",
+      "id": "041-related-links-svyazannye-stranicy",
       "component": "related-links",
       "label": "Связанные страницы",
-      "file": "sections/042-related-links-svyazannye-stranicy.html",
+      "file": "sections/041-related-links-svyazannye-stranicy.html",
       "bytes": 42,
       "hash": "50ecf96d2596ed9c"
     },
     {
-      "id": "043-raw-html-fragment",
+      "id": "042-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 51,
@@ -405,18 +392,18 @@
       "variant": "мобильная-кнопка-whatsapp-97cba44fa873",
       "templateRef": "src/components/parametric/static/layout-fragment-мобильная-кнопка-whatsapp-97cba44fa873.template.html",
       "props": {},
-      "sourceFile": "sections/043-raw-html-fragment.html"
+      "sourceFile": "sections/042-raw-html-fragment.html"
     },
     {
-      "id": "044-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "043-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/044-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "file": "sections/043-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 524,
       "hash": "252ed3123c1f32c2"
     },
     {
-      "id": "045-raw-html-fragment",
+      "id": "044-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 59,
@@ -426,18 +413,18 @@
       "variant": "мобильная-нижняя-панель-7c19d64f7f93",
       "templateRef": "src/components/parametric/static/layout-fragment-мобильная-нижняя-панель-7c19d64f7f93.template.html",
       "props": {},
-      "sourceFile": "sections/045-raw-html-fragment.html"
+      "sourceFile": "sections/044-raw-html-fragment.html"
     },
     {
-      "id": "046-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "045-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "file": "sections/045-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 1027,
       "hash": "3b9e7106872f0c6f"
     },
     {
-      "id": "047-footer-anchor-footer-mount-point",
+      "id": "046-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
       "bytes": 39,
@@ -447,10 +434,10 @@
       "variant": "footer-container-mount",
       "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-f6291c7cb9f5.template.html",
       "props": {},
-      "sourceFile": "sections/047-footer-anchor-footer-mount-point.html"
+      "sourceFile": "sections/046-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "048-runtime-partials-podklyuchenie-partials-injector",
+      "id": "047-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 52,
@@ -460,10 +447,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-dc6e2e1a90ec.template.html",
       "props": {},
-      "sourceFile": "sections/048-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/047-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "049-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "048-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 41,
@@ -473,10 +460,10 @@
       "variant": "mobile-footer-container",
       "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
-      "sourceFile": "sections/049-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/048-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "050-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "049-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 42,
@@ -486,10 +473,10 @@
       "variant": "whatsapp-float-container",
       "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
-      "sourceFile": "sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/049-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "051-raw-html-fragment",
+      "id": "050-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -499,15 +486,15 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/051-raw-html-fragment.html"
+      "sourceFile": "sections/050-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:household-page -- --page holodilniki.html",
     "npm run doctor:page -- --page holodilniki.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page holodilniki.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page holodilniki.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

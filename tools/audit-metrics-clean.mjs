@@ -58,8 +58,8 @@ assert(server.includes('redactSensitiveText') && server.includes('sanitizeContac
 assert(analytics.includes('safeContactHref') && analytics.includes('redactContactText'), 'frontend redacts contact href/text before Metrika/local event payload');
 assert(/tel:\[redacted\]/.test(analytics) && /mailto:\[redacted\]/.test(analytics), 'frontend masks tel/mailto targets');
 assert(/tel:\[redacted\]/.test(server) && /mailto:\[redacted\]/.test(server), 'backend masks tel/mailto targets');
-assert(directGenerator.includes('analysisCards) || page.analysisCards.length === 0') || directGenerator.includes('!Array.isArray(page.analysisCards)'), 'direct landing generator tolerates pages without analysisCards');
-assert(/<body\(\[\^>\]\*\)\\sclass/.test(directGenerator) || directGenerator.includes('/<body([^>]*)\\sclass='), 'direct landing generator preserves body data attributes while replacing class');
+assert(directGenerator.includes('Array.isArray(page.analysisCards)'), 'direct landing generator tolerates pages without analysisCards');
+assert(directGenerator.includes('<body\\b([^>]*)\\sclass=') || directGenerator.includes('<body\\b([^>]*)\\sclass="'), 'direct landing generator preserves body attributes while replacing class');
 
 const staleRootFiles = fs.readdirSync(root).filter((name) => /^METRICS_RUN[1-4]_(CHECKS|CHANGED_FILES)_20260620\.txt$/.test(name));
 if (staleRootFiles.length) fail(`stale root metrics run artifacts remain: ${staleRootFiles.join(', ')}`);

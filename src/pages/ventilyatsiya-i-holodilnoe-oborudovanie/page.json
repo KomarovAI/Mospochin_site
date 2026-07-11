@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+  "slug": "ventilyatsiya-i-holodilnoe-oborudovanie",
+  "route": "/ventilyatsiya-i-holodilnoe-oborudovanie.html",
+  "branch": "restaurant",
+  "role": "service",
+  "title": "Вентиляция и холодильное оборудование ресторана",
+  "h1": "Вентиляция и холодильное оборудование",
+  "source": {
+    "extractedFrom": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "aa9a3a13bf9bcc1eeffeccc6b5a1fa0bca72f37411d0aea02a02a4a1dfe825b7",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 48,
+      "hash": "6c45e024a4e3965e"
+    },
+    {
+      "id": "002-breadcrumb-ventilyaciya-i-holodil-noe-oborudovanie",
+      "component": "breadcrumb",
+      "label": "Вентиляция и холодильное оборудование",
+      "file": "sections/002-breadcrumb-ventilyaciya-i-holodil-noe-oborudovanie.html",
+      "bytes": 58718,
+      "hash": "acd6ce5498eef9a7"
+    },
+    {
+      "id": "003-footer-anchor-footer-mount-point",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 34,
+      "hash": "06f3fb249f3476eb",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-06f3fb249f34.template.html",
+      "props": {},
+      "sourceFile": "sections/003-footer-anchor-footer-mount-point.html"
+    },
+    {
+      "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "006-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 46,
+      "hash": "52c8755076d4256e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-52c8755076d4",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-52c8755076d4.template.html",
+      "props": {},
+      "sourceFile": "sections/006-raw-html-fragment.html"
+    },
+    {
+      "id": "007-lead-form-forma-zayavki",
+      "component": "lead-form",
+      "label": "Форма заявки",
+      "file": "sections/007-lead-form-forma-zayavki.html",
+      "bytes": 50,
+      "hash": "f771578a5d50836c"
+    },
+    {
+      "id": "008-runtime-partials-podklyuchenie-partials-injector",
+      "component": "runtime-partials",
+      "label": "Подключение partials-injector",
+      "file": "sections/008-runtime-partials-podklyuchenie-partials-injector.html",
+      "bytes": 54,
+      "hash": "1714ff6d614671d3"
+    },
+    {
+      "id": "009-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 41,
+      "hash": "5b57bace79b19443",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-5b57bace79b1",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-5b57bace79b1.template.html",
+      "props": {},
+      "sourceFile": "sections/009-raw-html-fragment.html"
+    },
+    {
+      "id": "010-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 1,
+      "hash": "01ba4719c80b6fe9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-01ba4719c80b",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
+      "props": {},
+      "sourceFile": "sections/010-raw-html-fragment.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:restaurant-page -- --page ventilyatsiya-i-holodilnoe-oborudovanie.html",
+    "npm run doctor:page -- --page ventilyatsiya-i-holodilnoe-oborudovanie.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page ventilyatsiya-i-holodilnoe-oborudovanie.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

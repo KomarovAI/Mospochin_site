@@ -166,11 +166,12 @@ function replaceSyncZoneContent(html, zone, content) {
 }
 
 function buildFaqMarkup(faq) {
-  return (faq || [])
-  .map(
-    (item, index) => `                <details class="faq-item bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>${escapeHtml(item.question)}</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p></details>`
-  )
-  .join('\n');
+  const items = (faq || [])
+    .map(
+      (item, index) => `                <details class="faq-item bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>${escapeHtml(item.question)}</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p></details>`
+    )
+    .join('\n');
+  return `<div data-sync-zone="faq-items">\n${items}\n              </div>`;
 }
 
 function buildRequestOverview(service, slotEntry) {

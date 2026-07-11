@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "plity.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "4154a348fac1402a9b5c46745b6e07a6b30d3436098a51eee70768d526c26f2a",
+    "hash": "be870f64c7f4619a82bc3433d1d7ade86278abf2f471a3b2bf7a54c1aaa6b87f",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,55 +21,52 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "file": "sections/001-noscript-noscript-fallback.html",
-      "bytes": 208,
-      "hash": "468caad1f64721d4"
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 45,
+      "hash": "65bfb63c445b9cf0"
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
-      "bytes": 49,
-      "hash": "4e68705d163289c2"
-    },
-    {
-      "id": "003-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/003-raw-html-fragment.html",
       "bytes": 48,
-      "hash": "96856553c1715279"
+      "hash": "96856553c1715279",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-96856553c171",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-96856553c171.template.html",
+      "props": {},
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
-      "id": "004-breadcrumb-hlebnye-kroshki",
+      "id": "003-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
+      "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
       "bytes": 984,
       "hash": "cb88d04893393b70"
     },
     {
-      "id": "005-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim",
+      "id": "004-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim",
       "component": "hero",
       "label": "Плита не греет, искрит или пахнет газом? Починим дома без навязанных замен",
-      "file": "sections/005-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim.html",
+      "file": "sections/004-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim.html",
       "bytes": 4442,
       "hash": "94acf02d3327438c"
     },
     {
-      "id": "006-proof-dokazatel-stva-garantii",
+      "id": "005-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/006-proof-dokazatel-stva-garantii.html",
+      "file": "sections/005-proof-dokazatel-stva-garantii.html",
       "bytes": 190,
       "hash": "893113c08608f571"
     },
     {
-      "id": "007-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda",
+      "id": "006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda",
       "component": "proof",
       "label": "Что получаете по заявке до и после выезда",
       "bytes": 3219,
@@ -77,146 +74,161 @@
       "componentRef": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--0736ad0b9d07bbb7.html",
       "componentScope": "shared",
       "componentSignature": "0736ad0b9d07bbb7",
-      "sourceFile": "sections/007-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda.html"
+      "sourceFile": "sections/006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda.html"
     },
     {
-      "id": "008-raw-html-fragment",
-      "component": "raw",
+      "id": "007-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/008-raw-html-fragment.html",
       "bytes": 40,
-      "hash": "6ea051972d91dd2c"
+      "hash": "6ea051972d91dd2c",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "household-sync-service-kpi-end-6ea051972d91",
+      "templateRef": "src/components/parametric/static/layout-fragment-household-sync-service-kpi-end-6ea051972d91.template.html",
+      "props": {},
+      "sourceFile": "sections/007-raw-html-fragment.html"
     },
     {
-      "id": "009-pricing-chto-vy-poluchaete-krome-samogo-remonta",
+      "id": "008-pricing-chto-vy-poluchaete-krome-samogo-remonta",
       "component": "pricing",
       "label": "Что вы получаете, кроме самого ремонта",
-      "file": "sections/009-pricing-chto-vy-poluchaete-krome-samogo-remonta.html",
+      "file": "sections/008-pricing-chto-vy-poluchaete-krome-samogo-remonta.html",
       "bytes": 3844,
       "hash": "42a610929b6ac9be"
     },
     {
-      "id": "010-pricing-remontiruem-vse-tipy-plit-i-duhovok",
+      "id": "009-pricing-remontiruem-vse-tipy-plit-i-duhovok",
       "component": "pricing",
       "label": "Ремонтируем все типы плит и духовок",
-      "file": "sections/010-pricing-remontiruem-vse-tipy-plit-i-duhovok.html",
+      "file": "sections/009-pricing-remontiruem-vse-tipy-plit-i-duhovok.html",
       "bytes": 9971,
       "hash": "9bcb1150c8bb8cc0"
     },
     {
-      "id": "011-pricing-ceny-stoimost",
+      "id": "010-pricing-ceny-stoimost",
       "component": "pricing",
       "label": "Цены/стоимость",
-      "file": "sections/011-pricing-ceny-stoimost.html",
+      "file": "sections/010-pricing-ceny-stoimost.html",
       "bytes": 647,
       "hash": "f12532c43738b869"
     },
     {
-      "id": "012-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-",
+      "id": "011-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-",
       "component": "faq",
       "label": "Если хочется, можно быстро посмотреть похожие истории",
-      "file": "sections/012-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-.html",
+      "file": "sections/011-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-.html",
       "bytes": 3031,
       "hash": "fbabdbf859c31386"
     },
     {
-      "id": "013-faq-chto-obychno-proishodit-do-bolee-dorogogo-remont",
+      "id": "012-faq-chto-obychno-proishodit-do-bolee-dorogogo-remont",
       "component": "faq",
       "label": "Что обычно происходит до более дорогого ремонта плиты",
-      "file": "sections/013-faq-chto-obychno-proishodit-do-bolee-dorogogo-remont.html",
+      "file": "sections/012-faq-chto-obychno-proishodit-do-bolee-dorogogo-remont.html",
       "bytes": 3407,
       "hash": "f448ea30de755424"
     },
     {
-      "id": "014-contact-cta-kontaktnyy-cta",
+      "id": "013-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/014-contact-cta-kontaktnyy-cta.html",
+      "file": "sections/013-contact-cta-kontaktnyy-cta.html",
       "bytes": 2942,
       "hash": "53fe7aa3d61cc67c"
     },
     {
-      "id": "015-pricing-chto-vliyaet-na-stoimost-remonta",
+      "id": "014-pricing-chto-vliyaet-na-stoimost-remonta",
       "component": "pricing",
       "label": "Что влияет на стоимость ремонта",
-      "file": "sections/015-pricing-chto-vliyaet-na-stoimost-remonta.html",
+      "file": "sections/014-pricing-chto-vliyaet-na-stoimost-remonta.html",
       "bytes": 4918,
       "hash": "45310019afc53828"
     },
     {
-      "id": "016-raw-html-fragment",
-      "component": "raw",
+      "id": "015-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/016-raw-html-fragment.html",
       "bytes": 101,
-      "hash": "0a8fea9559830a00"
+      "hash": "0a8fea9559830a00",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "блок-что-сломалось-кликабельные-иконки-0a8fea955983",
+      "templateRef": "src/components/parametric/static/layout-fragment-блок-что-сломалось-кликабельные-иконки-0a8fea955983.template.html",
+      "props": {},
+      "sourceFile": "sections/015-raw-html-fragment.html"
     },
     {
-      "id": "017-pricing-chto-sluchilos-s-plitoy-ili-duhovkoy",
+      "id": "016-pricing-chto-sluchilos-s-plitoy-ili-duhovkoy",
       "component": "pricing",
       "label": "Что случилось с плитой или духовкой?",
-      "file": "sections/017-pricing-chto-sluchilos-s-plitoy-ili-duhovkoy.html",
+      "file": "sections/016-pricing-chto-sluchilos-s-plitoy-ili-duhovkoy.html",
       "bytes": 5912,
       "hash": "8196bb8349854432"
     },
     {
-      "id": "018-raw-html-fragment",
-      "component": "raw",
+      "id": "017-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/018-raw-html-fragment.html",
       "bytes": 97,
-      "hash": "16a1e0cccdc95d1c"
+      "hash": "16a1e0cccdc95d1c",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "блок-реальные-истории-кейсы-из-москвы-16a1e0cccdc9",
+      "templateRef": "src/components/parametric/static/layout-fragment-блок-реальные-истории-кейсы-из-москвы-16a1e0cccdc9.template.html",
+      "props": {},
+      "sourceFile": "sections/017-raw-html-fragment.html"
     },
     {
-      "id": "019-contact-cta-real-nye-remonty-na-etoy-nedele",
+      "id": "018-contact-cta-real-nye-remonty-na-etoy-nedele",
       "component": "contact-cta",
       "label": "Реальные ремонты на этой неделе",
-      "file": "sections/019-contact-cta-real-nye-remonty-na-etoy-nedele.html",
+      "file": "sections/018-contact-cta-real-nye-remonty-na-etoy-nedele.html",
       "bytes": 8758,
       "hash": "335f9b3f71cdd657"
     },
     {
-      "id": "020-pricing-chastye-polomki-plit-i-duhovok",
+      "id": "019-pricing-chastye-polomki-plit-i-duhovok",
       "component": "pricing",
       "label": "Частые поломки плит и духовок",
-      "file": "sections/020-pricing-chastye-polomki-plit-i-duhovok.html",
+      "file": "sections/019-pricing-chastye-polomki-plit-i-duhovok.html",
       "bytes": 6417,
       "hash": "f95c3e8b77ddafbc"
     },
     {
-      "id": "021-pricing-ceny-na-remont-plit-i-duhovok",
+      "id": "020-pricing-ceny-na-remont-plit-i-duhovok",
       "component": "pricing",
       "label": "Цены на ремонт плит и духовок",
-      "file": "sections/021-pricing-ceny-na-remont-plit-i-duhovok.html",
+      "file": "sections/020-pricing-ceny-na-remont-plit-i-duhovok.html",
       "bytes": 6215,
       "hash": "48c1fa57b9f06ec5"
     },
     {
-      "id": "022-proof-pochemu-0-klientov-vybrali-nas",
+      "id": "021-proof-pochemu-0-klientov-vybrali-nas",
       "component": "proof",
       "label": "Почему 0 клиентов выбрали нас",
-      "file": "sections/022-proof-pochemu-0-klientov-vybrali-nas.html",
+      "file": "sections/021-proof-pochemu-0-klientov-vybrali-nas.html",
       "bytes": 4213,
       "hash": "f9bf08458876df51"
     },
     {
-      "id": "023-proof-chto-govoryat-nashi-klienty",
+      "id": "022-proof-chto-govoryat-nashi-klienty",
       "component": "proof",
       "label": "Что говорят наши клиенты",
-      "file": "sections/023-proof-chto-govoryat-nashi-klienty.html",
+      "file": "sections/022-proof-chto-govoryat-nashi-klienty.html",
       "bytes": 5487,
       "hash": "7a5dff25a5554806"
     },
     {
-      "id": "024-proof-5-shagov-do-rabotayuschey-kuhni",
+      "id": "023-proof-5-shagov-do-rabotayuschey-kuhni",
       "component": "proof",
       "label": "5 шагов до работающей кухни",
-      "file": "sections/024-proof-5-shagov-do-rabotayuschey-kuhni.html",
+      "file": "sections/023-proof-5-shagov-do-rabotayuschey-kuhni.html",
       "bytes": 3515,
       "hash": "6e76502200ef8af5"
     },
     {
-      "id": "025-pricing-my-otvechaem-za-kachestvo",
+      "id": "024-pricing-my-otvechaem-za-kachestvo",
       "component": "pricing",
       "label": "Мы отвечаем за качество",
       "bytes": 2693,
@@ -224,18 +236,18 @@
       "componentRef": "src/components/shared/pricing/pricing-my-otvechaem-za-kachestvo--253189ff40c4523c.html",
       "componentScope": "shared",
       "componentSignature": "253189ff40c4523c",
-      "sourceFile": "sections/025-pricing-my-otvechaem-za-kachestvo.html"
+      "sourceFile": "sections/024-pricing-my-otvechaem-za-kachestvo.html"
     },
     {
-      "id": "026-pricing-remontiruem-vse-marki-plit-i-duhovok",
+      "id": "025-pricing-remontiruem-vse-marki-plit-i-duhovok",
       "component": "pricing",
       "label": "Ремонтируем все марки плит и духовок",
-      "file": "sections/026-pricing-remontiruem-vse-marki-plit-i-duhovok.html",
+      "file": "sections/025-pricing-remontiruem-vse-marki-plit-i-duhovok.html",
       "bytes": 19025,
       "hash": "c22dbdc5bc8fdcc3"
     },
     {
-      "id": "027-pricing-pochemu-nam-doveryayut",
+      "id": "026-pricing-pochemu-nam-doveryayut",
       "component": "pricing",
       "label": "Почему нам доверяют",
       "bytes": 3902,
@@ -243,183 +255,218 @@
       "componentRef": "src/components/shared/pricing/pricing-pochemu-nam-doveryayut--a016d4268be14b69.html",
       "componentScope": "shared",
       "componentSignature": "a016d4268be14b69",
-      "sourceFile": "sections/027-pricing-pochemu-nam-doveryayut.html"
+      "sourceFile": "sections/026-pricing-pochemu-nam-doveryayut.html"
     },
     {
-      "id": "028-section-rabotaem-po-vsey-moskve-i-mo",
+      "id": "027-section-rabotaem-po-vsey-moskve-i-mo",
       "component": "section",
       "label": "Работаем по всей Москве и МО",
-      "file": "sections/028-section-rabotaem-po-vsey-moskve-i-mo.html",
+      "file": "sections/027-section-rabotaem-po-vsey-moskve-i-mo.html",
       "bytes": 3192,
       "hash": "b7bcd303f7f02923"
     },
     {
-      "id": "029-pricing-sdelayte-eto-do-priezda-mastera",
+      "id": "028-pricing-sdelayte-eto-do-priezda-mastera",
       "component": "pricing",
       "label": "Сделайте это до приезда мастера",
-      "file": "sections/029-pricing-sdelayte-eto-do-priezda-mastera.html",
+      "file": "sections/028-pricing-sdelayte-eto-do-priezda-mastera.html",
       "bytes": 3548,
       "hash": "1160ba6e2d7e1c3f"
     },
     {
-      "id": "030-proof-kak-obychno-prohodit-remont-plity-na-domu",
+      "id": "029-proof-kak-obychno-prohodit-remont-plity-na-domu",
       "component": "proof",
       "label": "Как обычно проходит ремонт плиты на дому",
-      "file": "sections/030-proof-kak-obychno-prohodit-remont-plity-na-domu.html",
+      "file": "sections/029-proof-kak-obychno-prohodit-remont-plity-na-domu.html",
       "bytes": 3964,
       "hash": "79f17cb52007889b"
     },
     {
-      "id": "031-faq-chto-obychno-sprashivayut-pered-remontom-plity",
+      "id": "030-faq-chto-obychno-sprashivayut-pered-remontom-plity",
       "component": "faq",
       "label": "Что обычно спрашивают перед ремонтом плиты",
-      "file": "sections/031-faq-chto-obychno-sprashivayut-pered-remontom-plity.html",
+      "file": "sections/030-faq-chto-obychno-sprashivayut-pered-remontom-plity.html",
       "bytes": 4693,
       "hash": "828fe7b6c681d059"
     },
     {
-      "id": "032-contact-cta-ostav-te-zayavku-chtoby-spokoyno-razobra",
+      "id": "031-contact-cta-ostav-te-zayavku-chtoby-spokoyno-razobra",
       "component": "contact-cta",
       "label": "Оставьте заявку, чтобы спокойно разобраться с поломкой",
-      "file": "sections/032-contact-cta-ostav-te-zayavku-chtoby-spokoyno-razobra.html",
+      "file": "sections/031-contact-cta-ostav-te-zayavku-chtoby-spokoyno-razobra.html",
       "bytes": 1831,
       "hash": "93f41b1a2abfcafa"
     },
     {
-      "id": "033-raw-html-fragment",
-      "component": "raw",
+      "id": "032-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/033-raw-html-fragment.html",
       "bytes": 37,
-      "hash": "8236da083005e6d9"
+      "hash": "8236da083005e6d9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "форма-заявки-8236da083005",
+      "templateRef": "src/components/parametric/static/layout-fragment-форма-заявки-8236da083005.template.html",
+      "props": {},
+      "sourceFile": "sections/032-raw-html-fragment.html"
     },
     {
-      "id": "034-contact-cta-opishite-problemu-s-plitoy-ili-duhovkoy",
+      "id": "033-contact-cta-opishite-problemu-s-plitoy-ili-duhovkoy",
       "component": "contact-cta",
       "label": "Опишите проблему с плитой или духовкой",
-      "file": "sections/034-contact-cta-opishite-problemu-s-plitoy-ili-duhovkoy.html",
+      "file": "sections/033-contact-cta-opishite-problemu-s-plitoy-ili-duhovkoy.html",
       "bytes": 2458,
       "hash": "34ec88d35f59e462"
     },
     {
-      "id": "035-lead-form-poluchite-ponyatnyy-scenariy-remonta-plity",
+      "id": "034-lead-form-poluchite-ponyatnyy-scenariy-remonta-plity",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта плиты",
-      "file": "sections/035-lead-form-poluchite-ponyatnyy-scenariy-remonta-plity.html",
-      "bytes": 6890,
-      "hash": "aa0b3c72beb85f72"
+      "file": "sections/034-lead-form-poluchite-ponyatnyy-scenariy-remonta-plity.html",
+      "bytes": 6968,
+      "hash": "68cd1ad3ddb5391a"
     },
     {
-      "id": "036-raw-html-fragment",
-      "component": "raw",
+      "id": "035-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/036-raw-html-fragment.html",
       "bytes": 59,
-      "hash": "7c19d64f7f93c2e7"
+      "hash": "7c19d64f7f93c2e7",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "мобильная-нижняя-панель-7c19d64f7f93",
+      "templateRef": "src/components/parametric/static/layout-fragment-мобильная-нижняя-панель-7c19d64f7f93.template.html",
+      "props": {},
+      "sourceFile": "sections/035-raw-html-fragment.html"
     },
     {
-      "id": "037-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "036-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/037-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "file": "sections/036-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 1013,
       "hash": "94a4ce32dc5f0846"
     },
     {
-      "id": "038-proof-dokazatel-stva-garantii",
+      "id": "037-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/038-proof-dokazatel-stva-garantii.html",
+      "file": "sections/037-proof-dokazatel-stva-garantii.html",
       "bytes": 196,
       "hash": "3a401985ace50eb6"
     },
     {
-      "id": "039-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
+      "id": "038-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
       "component": "pricing",
       "label": "Что клиент понимает ещё до начала работ",
-      "file": "sections/039-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+      "file": "sections/038-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
       "bytes": 13339,
       "hash": "dfb243dd6412cb2d"
+    },
+    {
+      "id": "039-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/039-proof-dokazatel-stva-garantii.html",
+      "bytes": 42,
+      "hash": "c9cde558065e3f95"
     },
     {
       "id": "040-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
       "file": "sections/040-proof-dokazatel-stva-garantii.html",
-      "bytes": 42,
-      "hash": "c9cde558065e3f95"
-    },
-    {
-      "id": "041-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/041-proof-dokazatel-stva-garantii.html",
       "bytes": 193,
       "hash": "fe3ed52bd318df25"
     },
     {
-      "id": "042-related-links-esli-problema-v-drugoy-tehnike",
+      "id": "041-related-links-esli-problema-v-drugoy-tehnike",
       "component": "related-links",
       "label": "Если проблема в другой технике",
-      "file": "sections/042-related-links-esli-problema-v-drugoy-tehnike.html",
+      "file": "sections/041-related-links-esli-problema-v-drugoy-tehnike.html",
       "bytes": 3231,
       "hash": "814d6c245bbca2a1"
     },
     {
-      "id": "043-related-links-svyazannye-stranicy",
+      "id": "042-related-links-svyazannye-stranicy",
       "component": "related-links",
       "label": "Связанные страницы",
-      "file": "sections/043-related-links-svyazannye-stranicy.html",
+      "file": "sections/042-related-links-svyazannye-stranicy.html",
       "bytes": 42,
       "hash": "50ecf96d2596ed9c"
     },
     {
-      "id": "044-footer-anchor-footer-mount-point",
+      "id": "043-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
-      "file": "sections/044-footer-anchor-footer-mount-point.html",
       "bytes": 35,
-      "hash": "64173ac09ccc2ab2"
+      "hash": "64173ac09ccc2ab2",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-64173ac09ccc.template.html",
+      "props": {},
+      "sourceFile": "sections/043-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "045-runtime-partials-podklyuchenie-partials-injector",
+      "id": "044-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
-      "file": "sections/045-runtime-partials-podklyuchenie-partials-injector.html",
       "bytes": 52,
-      "hash": "dc6e2e1a90ecbd91"
+      "hash": "dc6e2e1a90ecbd91",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-dc6e2e1a90ec.template.html",
+      "props": {},
+      "sourceFile": "sections/044-runtime-partials-podklyuchenie-partials-injector.html"
+    },
+    {
+      "id": "045-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/045-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "046-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 41,
-      "hash": "b173d293386c47b4"
-    },
-    {
-      "id": "047-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/047-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "048-raw-html-fragment",
-      "component": "raw",
+      "id": "047-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/048-raw-html-fragment.html",
       "bytes": 1,
-      "hash": "01ba4719c80b6fe9"
+      "hash": "01ba4719c80b6fe9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-01ba4719c80b",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
+      "props": {},
+      "sourceFile": "sections/047-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:household-page -- --page plity.html",
     "npm run doctor:page -- --page plity.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page plity.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page plity.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

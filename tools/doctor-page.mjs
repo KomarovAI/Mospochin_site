@@ -93,6 +93,16 @@ function getFormRuntimeSummary(html, pageMeta, runtimeConfig) {
   };
 }
 
+function getBuilderEditSurface(page) {
+  const slug = page.replace(/\.html$/, '');
+  const model = path.join(SITE_ROOT, 'src', 'pages', slug, 'page.json');
+  if (!fs.existsSync(model)) return {};
+  return {
+    sourceModel: `Edit src/pages/${slug}/page.json and src/pages/${slug}/sections/*.html`,
+    generated: `Do not edit ${page}; rebuild with npm run build:site -- --page ${page} --write`,
+  };
+}
+
 function passthroughHouseholdDoctor(page, asJson) {
   const args = [HOUSEHOLD_DOCTOR_PATH, '--page', page];
   if (asJson) args.push('--json');
@@ -115,8 +125,10 @@ function passthroughHouseholdDoctor(page, asJson) {
 }
 
 function getRecommendedEditSurface({ page, pageType, registryEntry }) {
+  const builderSurface = getBuilderEditSurface(page);
   if (pageType === 'restaurant-branch-page') {
     return {
+      ...builderSurface,
       branchShell: 'Edit data/restaurant-branch.json for shared branch shell, nav, and route strips',
       slots: `Edit data/restaurant-page-slots.json for ${page} repeatable category/trust/contact sections and routing hint`,
       proof: `Edit data/restaurant-proof-layer.json for ${page} branch proof/review/case sections`,
@@ -127,6 +139,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
 
   if (pageType === 'restaurant-service-page' && registryEntry) {
     return {
+      ...builderSurface,
       slots: `Edit data/restaurant-page-slots.json for ${page} form hints, FAQ, request overview, and service KPI`,
       serviceKpi: `npm run restaurant:set-service-kpi -- --page ${page} --json '<json>'`,
       registry: `Edit data/restaurant-services.json for ${page} symptoms, brands, related pages, and service identity`,
@@ -138,8 +151,9 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
   }
 
   return {
+    ...builderSurface,
     metadata: 'Edit data/page-metadata.json',
-    html: `Edit ${page} directly`,
+    html: builderSurface.sourceModel ? `Edit ${page} only for emergency unique layout; otherwise use source sections` : `Edit ${page} directly`,
   };
 }
 

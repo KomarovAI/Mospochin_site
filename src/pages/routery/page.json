@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "routery.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "8a04085c7e8fb7ab5675115ab5d756abe0acfb73c98123ee4f50719df8f5a9d1",
+    "hash": "94d6daeeed74ecfae7edaafcd822fb480e234a782ed8a99b22d195a1be69dd91",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,63 +21,60 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "file": "sections/001-noscript-noscript-fallback.html",
-      "bytes": 208,
-      "hash": "468caad1f64721d4"
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 47,
+      "hash": "1c9349b0f438fb54"
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
-      "bytes": 51,
-      "hash": "e3c30b41e032e517"
-    },
-    {
-      "id": "003-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/003-raw-html-fragment.html",
       "bytes": 48,
-      "hash": "96856553c1715279"
+      "hash": "96856553c1715279",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-96856553c171",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-96856553c171.template.html",
+      "props": {},
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
-      "id": "004-breadcrumb-hlebnye-kroshki",
+      "id": "003-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
+      "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
       "bytes": 974,
       "hash": "32c5ecc0cda9b051"
     },
     {
-      "id": "005-hero-remont-i-nastroyka-routerov-v-moskve",
+      "id": "004-hero-remont-i-nastroyka-routerov-v-moskve",
       "component": "hero",
       "label": "Ремонт и настройка роутеров в Москве",
-      "file": "sections/005-hero-remont-i-nastroyka-routerov-v-moskve.html",
+      "file": "sections/004-hero-remont-i-nastroyka-routerov-v-moskve.html",
       "bytes": 6465,
       "hash": "80e826f529bea088"
     },
     {
-      "id": "006-contact-cta-kontaktnyy-cta",
+      "id": "005-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/006-contact-cta-kontaktnyy-cta.html",
+      "file": "sections/005-contact-cta-kontaktnyy-cta.html",
       "bytes": 1103,
       "hash": "e7fcc6725dd7b0d6"
     },
     {
-      "id": "007-proof-dokazatel-stva-garantii",
+      "id": "006-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/007-proof-dokazatel-stva-garantii.html",
+      "file": "sections/006-proof-dokazatel-stva-garantii.html",
       "bytes": 1442,
       "hash": "73e3083bb0e8920f"
     },
     {
-      "id": "008-proof-dokazatel-stva-garantii",
+      "id": "007-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
       "bytes": 1378,
@@ -85,242 +82,242 @@
       "componentRef": "src/components/shared/proof/proof-dokazatelstva-garantii--12169a27197f58eb.html",
       "componentScope": "shared",
       "componentSignature": "12169a27197f58eb",
-      "sourceFile": "sections/008-proof-dokazatel-stva-garantii.html"
+      "sourceFile": "sections/007-proof-dokazatel-stva-garantii.html"
     },
     {
-      "id": "009-raw-html-fragment",
+      "id": "008-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/009-raw-html-fragment.html",
+      "file": "sections/008-raw-html-fragment.html",
       "bytes": 45,
       "hash": "323c3d3b69cc8d0e"
     },
     {
-      "id": "010-pricing-nastraivaem-i-chinim-vse-setevoe",
+      "id": "009-pricing-nastraivaem-i-chinim-vse-setevoe",
       "component": "pricing",
       "label": "Настраиваем и чиним всё сетевое",
-      "file": "sections/010-pricing-nastraivaem-i-chinim-vse-setevoe.html",
+      "file": "sections/009-pricing-nastraivaem-i-chinim-vse-setevoe.html",
       "bytes": 13848,
       "hash": "d99a55faec355a57"
     },
     {
-      "id": "011-raw-html-fragment",
+      "id": "010-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/011-raw-html-fragment.html",
+      "file": "sections/010-raw-html-fragment.html",
       "bytes": 29,
       "hash": "c3d0be05bf3b7aca"
     },
     {
-      "id": "012-section-sekciya-stranicy",
+      "id": "011-section-sekciya-stranicy",
       "component": "section",
       "label": "Секция страницы",
-      "file": "sections/012-section-sekciya-stranicy.html",
+      "file": "sections/011-section-sekciya-stranicy.html",
       "bytes": 604,
       "hash": "95a9cecda901910b"
     },
     {
-      "id": "013-contact-cta-kontaktnyy-cta",
+      "id": "012-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/013-contact-cta-kontaktnyy-cta.html",
+      "file": "sections/012-contact-cta-kontaktnyy-cta.html",
       "bytes": 1682,
       "hash": "3bba6babcabd5bb0"
     },
     {
-      "id": "014-raw-html-fragment",
+      "id": "013-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/014-raw-html-fragment.html",
+      "file": "sections/013-raw-html-fragment.html",
       "bytes": 32,
       "hash": "1083564c4ada2a30"
     },
     {
-      "id": "015-pricing-chto-vliyaet-na-stoimost",
+      "id": "014-pricing-chto-vliyaet-na-stoimost",
       "component": "pricing",
       "label": "Что влияет на стоимость",
-      "file": "sections/015-pricing-chto-vliyaet-na-stoimost.html",
+      "file": "sections/014-pricing-chto-vliyaet-na-stoimost.html",
       "bytes": 5524,
       "hash": "75fb2e30d18b0701"
     },
     {
-      "id": "016-raw-html-fragment",
+      "id": "015-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/016-raw-html-fragment.html",
+      "file": "sections/015-raw-html-fragment.html",
       "bytes": 46,
       "hash": "d31ce0adfb77725e"
     },
     {
-      "id": "017-pricing-chto-sluchilos-s-routerom",
+      "id": "016-pricing-chto-sluchilos-s-routerom",
       "component": "pricing",
       "label": "Что случилось с роутером?",
-      "file": "sections/017-pricing-chto-sluchilos-s-routerom.html",
+      "file": "sections/016-pricing-chto-sluchilos-s-routerom.html",
       "bytes": 5868,
       "hash": "81d655c01b36b9ca"
     },
     {
-      "id": "018-raw-html-fragment",
+      "id": "017-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/018-raw-html-fragment.html",
+      "file": "sections/017-raw-html-fragment.html",
       "bytes": 51,
       "hash": "baf7f8bb1d43a1c7"
     },
     {
-      "id": "019-contact-cta-real-nye-vyzovy-na-etoy-nedele",
+      "id": "018-contact-cta-real-nye-vyzovy-na-etoy-nedele",
       "component": "contact-cta",
       "label": "Реальные вызовы на этой неделе",
-      "file": "sections/019-contact-cta-real-nye-vyzovy-na-etoy-nedele.html",
+      "file": "sections/018-contact-cta-real-nye-vyzovy-na-etoy-nedele.html",
       "bytes": 8538,
       "hash": "424ed3de227a646c"
     },
     {
-      "id": "020-raw-html-fragment",
+      "id": "019-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/020-raw-html-fragment.html",
+      "file": "sections/019-raw-html-fragment.html",
       "bytes": 44,
       "hash": "d28644440ab81ca1"
     },
     {
-      "id": "021-section-zaschitim-vashu-set-ot-vzloma",
+      "id": "020-section-zaschitim-vashu-set-ot-vzloma",
       "component": "section",
       "label": "Защитим вашу сеть от взлома",
-      "file": "sections/021-section-zaschitim-vashu-set-ot-vzloma.html",
+      "file": "sections/020-section-zaschitim-vashu-set-ot-vzloma.html",
       "bytes": 5219,
       "hash": "d41bd9c1403d4e4d"
     },
     {
-      "id": "022-raw-html-fragment",
+      "id": "021-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/022-raw-html-fragment.html",
+      "file": "sections/021-raw-html-fragment.html",
       "bytes": 51,
       "hash": "1c792bf0ad3272c3"
     },
     {
-      "id": "023-section-2-4ggc-vs-5ggc-vs-6ggc-chto-vybrat",
+      "id": "022-section-2-4ggc-vs-5ggc-vs-6ggc-chto-vybrat",
       "component": "section",
       "label": "2.4ГГц vs 5ГГц vs 6ГГц — что выбрать",
-      "file": "sections/023-section-2-4ggc-vs-5ggc-vs-6ggc-chto-vybrat.html",
+      "file": "sections/022-section-2-4ggc-vs-5ggc-vs-6ggc-chto-vybrat.html",
       "bytes": 6031,
       "hash": "6c6cb198a08c6de1"
     },
     {
-      "id": "024-raw-html-fragment",
+      "id": "023-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/024-raw-html-fragment.html",
+      "file": "sections/023-raw-html-fragment.html",
       "bytes": 60,
       "hash": "0bd783cfad68ba87"
     },
     {
-      "id": "025-pricing-chto-nel-zya-delat-s-routerom",
+      "id": "024-pricing-chto-nel-zya-delat-s-routerom",
       "component": "pricing",
       "label": "Что НЕЛЬЗЯ делать с роутером",
-      "file": "sections/025-pricing-chto-nel-zya-delat-s-routerom.html",
+      "file": "sections/024-pricing-chto-nel-zya-delat-s-routerom.html",
       "bytes": 5155,
       "hash": "1fc6efd27a9dd647"
     },
     {
-      "id": "026-raw-html-fragment",
+      "id": "025-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/026-raw-html-fragment.html",
+      "file": "sections/025-raw-html-fragment.html",
       "bytes": 49,
       "hash": "26440197d5ba5c6b"
     },
     {
-      "id": "027-section-kak-uluchshit-wi-fi-doma",
+      "id": "026-section-kak-uluchshit-wi-fi-doma",
       "component": "section",
       "label": "Как улучшить Wi-Fi дома",
-      "file": "sections/027-section-kak-uluchshit-wi-fi-doma.html",
+      "file": "sections/026-section-kak-uluchshit-wi-fi-doma.html",
       "bytes": 5452,
       "hash": "983b4ba77048eb2a"
     },
     {
-      "id": "028-proof-nastraivaem-internet-pod-kvartiru-dom-ili-ofis",
+      "id": "027-proof-nastraivaem-internet-pod-kvartiru-dom-ili-ofis",
       "component": "proof",
       "label": "Настраиваем интернет под квартиру, дом или офис, а не “по умолчанию”",
-      "file": "sections/028-proof-nastraivaem-internet-pod-kvartiru-dom-ili-ofis.html",
+      "file": "sections/027-proof-nastraivaem-internet-pod-kvartiru-dom-ili-ofis.html",
       "bytes": 4650,
       "hash": "2a16bc318c1962d0"
     },
     {
-      "id": "029-faq-faq",
+      "id": "028-faq-faq",
       "component": "faq",
       "label": "FAQ",
-      "file": "sections/029-faq-faq.html",
+      "file": "sections/028-faq-faq.html",
       "bytes": 22,
       "hash": "866a32d3f3e327fc"
     },
     {
-      "id": "030-faq-chastye-voprosy-pro-routery",
+      "id": "029-faq-chastye-voprosy-pro-routery",
       "component": "faq",
       "label": "Частые вопросы про роутеры",
-      "file": "sections/030-faq-chastye-voprosy-pro-routery.html",
+      "file": "sections/029-faq-chastye-voprosy-pro-routery.html",
       "bytes": 8201,
       "hash": "5fffb264a6671f5d"
     },
     {
-      "id": "031-pricing-chastye-polomki-routerov",
+      "id": "030-pricing-chastye-polomki-routerov",
       "component": "pricing",
       "label": "Частые поломки роутеров",
-      "file": "sections/031-pricing-chastye-polomki-routerov.html",
+      "file": "sections/030-pricing-chastye-polomki-routerov.html",
       "bytes": 6429,
       "hash": "d553b8708a4495b4"
     },
     {
-      "id": "032-pricing-ceny-na-remont-routerov",
+      "id": "031-pricing-ceny-na-remont-routerov",
       "component": "pricing",
       "label": "Цены на ремонт роутеров",
-      "file": "sections/032-pricing-ceny-na-remont-routerov.html",
+      "file": "sections/031-pricing-ceny-na-remont-routerov.html",
       "bytes": 3771,
       "hash": "7c76293df8cc58cb"
     },
     {
-      "id": "033-proof-pochemu-nam-doveryayut-nastroyku-i-remont-seti",
+      "id": "032-proof-pochemu-nam-doveryayut-nastroyku-i-remont-seti",
       "component": "proof",
       "label": "Почему нам доверяют настройку и ремонт сети дома",
-      "file": "sections/033-proof-pochemu-nam-doveryayut-nastroyku-i-remont-seti.html",
+      "file": "sections/032-proof-pochemu-nam-doveryayut-nastroyku-i-remont-seti.html",
       "bytes": 4025,
       "hash": "f5867f6dc1425b9e"
     },
     {
-      "id": "034-pricing-chto-govoryat-nashi-klienty",
+      "id": "033-pricing-chto-govoryat-nashi-klienty",
       "component": "pricing",
       "label": "Что говорят наши клиенты",
-      "file": "sections/034-pricing-chto-govoryat-nashi-klienty.html",
+      "file": "sections/033-pricing-chto-govoryat-nashi-klienty.html",
       "bytes": 5066,
       "hash": "f161fb7bf0162a80"
     },
     {
-      "id": "035-pricing-4-shaga-do-stabil-nogo-interneta",
+      "id": "034-pricing-4-shaga-do-stabil-nogo-interneta",
       "component": "pricing",
       "label": "4 шага до стабильного интернета",
-      "file": "sections/035-pricing-4-shaga-do-stabil-nogo-interneta.html",
+      "file": "sections/034-pricing-4-shaga-do-stabil-nogo-interneta.html",
       "bytes": 3337,
       "hash": "df3a2f7c4be2dc0f"
     },
     {
-      "id": "036-pricing-my-otvechaem-za-kachestvo",
+      "id": "035-pricing-my-otvechaem-za-kachestvo",
       "component": "pricing",
       "label": "Мы отвечаем за качество",
-      "file": "sections/036-pricing-my-otvechaem-za-kachestvo.html",
+      "file": "sections/035-pricing-my-otvechaem-za-kachestvo.html",
       "bytes": 2688,
       "hash": "815e645a8a18bc6b"
     },
     {
-      "id": "037-pricing-remontiruem-vse-marki-routerov",
+      "id": "036-pricing-remontiruem-vse-marki-routerov",
       "component": "pricing",
       "label": "Ремонтируем все марки роутеров",
-      "file": "sections/037-pricing-remontiruem-vse-marki-routerov.html",
+      "file": "sections/036-pricing-remontiruem-vse-marki-routerov.html",
       "bytes": 17328,
       "hash": "10de4f90c9a553b1"
     },
     {
-      "id": "038-pricing-pochemu-nam-doveryayut",
+      "id": "037-pricing-pochemu-nam-doveryayut",
       "component": "pricing",
       "label": "Почему нам доверяют",
       "bytes": 3902,
@@ -328,127 +325,152 @@
       "componentRef": "src/components/shared/pricing/pricing-pochemu-nam-doveryayut--a016d4268be14b69.html",
       "componentScope": "shared",
       "componentSignature": "a016d4268be14b69",
-      "sourceFile": "sections/038-pricing-pochemu-nam-doveryayut.html"
+      "sourceFile": "sections/037-pricing-pochemu-nam-doveryayut.html"
     },
     {
-      "id": "039-section-rabotaem-po-vsey-moskve-i-mo",
+      "id": "038-section-rabotaem-po-vsey-moskve-i-mo",
       "component": "section",
       "label": "Работаем по всей Москве и МО",
-      "file": "sections/039-section-rabotaem-po-vsey-moskve-i-mo.html",
+      "file": "sections/038-section-rabotaem-po-vsey-moskve-i-mo.html",
       "bytes": 3156,
       "hash": "41b436e4ef37d64b"
     },
     {
-      "id": "040-section-sekciya-stranicy",
+      "id": "039-section-sekciya-stranicy",
       "component": "section",
       "label": "Секция страницы",
-      "file": "sections/040-section-sekciya-stranicy.html",
+      "file": "sections/039-section-sekciya-stranicy.html",
       "bytes": 426,
       "hash": "9262b77d0b8016f4"
     },
     {
-      "id": "041-section-chastye-polomki-routerov",
+      "id": "040-section-chastye-polomki-routerov",
       "component": "section",
       "label": "Частые поломки Роутеров",
-      "file": "sections/041-section-chastye-polomki-routerov.html",
+      "file": "sections/040-section-chastye-polomki-routerov.html",
       "bytes": 2958,
       "hash": "88fc3be91350672e"
     },
     {
-      "id": "042-faq-nastroyka-i-remont-routerov",
+      "id": "041-faq-nastroyka-i-remont-routerov",
       "component": "faq",
       "label": "Настройка и ремонт роутеров",
-      "file": "sections/042-faq-nastroyka-i-remont-routerov.html",
+      "file": "sections/041-faq-nastroyka-i-remont-routerov.html",
       "bytes": 7464,
       "hash": "f0eb03a27025a7fe"
     },
     {
-      "id": "043-contact-cta-internet-doma-propal",
+      "id": "042-contact-cta-internet-doma-propal",
       "component": "contact-cta",
       "label": "Интернет дома пропал?",
-      "file": "sections/043-contact-cta-internet-doma-propal.html",
+      "file": "sections/042-contact-cta-internet-doma-propal.html",
       "bytes": 3650,
       "hash": "afba87004a3d2639"
     },
     {
-      "id": "044-mobile-contact-pochinim-za-1-3-chasa-na-domu",
+      "id": "043-mobile-contact-pochinim-za-1-3-chasa-na-domu",
       "component": "mobile-contact",
       "label": "Починим за 1-3 часа на дому",
-      "file": "sections/044-mobile-contact-pochinim-za-1-3-chasa-na-domu.html",
+      "file": "sections/043-mobile-contact-pochinim-za-1-3-chasa-na-domu.html",
       "bytes": 1850,
       "hash": "559d35f99d2aba4b"
     },
     {
-      "id": "045-lead-form-opishite-problemu-s-wi-fi",
+      "id": "044-lead-form-opishite-problemu-s-wi-fi",
       "component": "lead-form",
       "label": "Опишите проблему с Wi-Fi",
-      "file": "sections/045-lead-form-opishite-problemu-s-wi-fi.html",
-      "bytes": 3398,
-      "hash": "3d402643259a58eb"
+      "file": "sections/044-lead-form-opishite-problemu-s-wi-fi.html",
+      "bytes": 3478,
+      "hash": "ce5621374bd21536"
     },
     {
-      "id": "046-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "045-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "file": "sections/045-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 1140,
       "hash": "bcad445428e1dfe4"
     },
     {
-      "id": "047-footer-anchor-footer-mount-point",
+      "id": "046-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
-      "file": "sections/047-footer-anchor-footer-mount-point.html",
       "bytes": 38,
-      "hash": "d4bb19e48569789e"
+      "hash": "d4bb19e48569789e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-d4bb19e48569.template.html",
+      "props": {},
+      "sourceFile": "sections/046-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "048-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "047-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/048-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "file": "sections/047-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 610,
       "hash": "5f1c5afa31cb1b44"
     },
     {
-      "id": "049-runtime-partials-podklyuchenie-partials-injector",
+      "id": "048-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
-      "file": "sections/049-runtime-partials-podklyuchenie-partials-injector.html",
       "bytes": 51,
-      "hash": "a55dc22a049e1a0e"
+      "hash": "a55dc22a049e1a0e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html",
+      "props": {},
+      "sourceFile": "sections/048-runtime-partials-podklyuchenie-partials-injector.html"
+    },
+    {
+      "id": "049-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/049-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "050-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 41,
-      "hash": "b173d293386c47b4"
-    },
-    {
-      "id": "051-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/051-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "052-raw-html-fragment",
-      "component": "raw",
+      "id": "051-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/052-raw-html-fragment.html",
       "bytes": 1,
-      "hash": "01ba4719c80b6fe9"
+      "hash": "01ba4719c80b6fe9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-01ba4719c80b",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
+      "props": {},
+      "sourceFile": "sections/051-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:household-page -- --page routery.html",
     "npm run doctor:page -- --page routery.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page routery.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page routery.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

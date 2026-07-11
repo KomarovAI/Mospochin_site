@@ -25,8 +25,40 @@ mkdirp(outDir);
 const sessionA = hash('session-a');
 const yclidA = hash('yclid-a');
 const sessionB = hash('session-b');
+const sessionC = hash('session-c');
+const sessionD = hash('session-d');
+const sessionE = hash('session-e');
+const sessionF = hash('session-f');
+
+const pageViewRows = [sessionA, sessionC, sessionD, sessionE, sessionF].map((session, index) => ({
+  ts: `${date}T08:5${index}:00.000Z`,
+  event: 'page_view',
+  page_path: '/parokonvektomat-kod-oshibki.html',
+  page_intent: 'error_code',
+  page_version: 'smoke-v1',
+  page_title: 'Smoke page',
+  quality: 'human_candidate',
+  is_decision_event: true,
+  session_id_hash: session,
+  utm_source: 'yandex',
+  utm_campaign: 'parokonvektomaty_premium_b2b'
+}));
+pageViewRows.push({
+  ts: `${date}T10:09:00.000Z`,
+  event: 'page_view',
+  page_path: '/pishevarochnyj-kotel-ne-greet.html',
+  page_intent: 'symptom',
+  page_version: 'smoke-v1',
+  page_title: 'Smoke page',
+  quality: 'human_candidate',
+  is_decision_event: true,
+  session_id_hash: sessionB,
+  utm_source: 'yandex',
+  utm_campaign: 'pishevarochnye_kotly_premium_b2b_poisk_500'
+});
 
 writeJsonl(path.join(eventsDir, 'site_events.jsonl'), [
+  ...pageViewRows,
   {
     ts: `${date}T09:00:01.000Z`,
     event: 'cta_view',
@@ -74,6 +106,35 @@ writeJsonl(path.join(eventsDir, 'site_events.jsonl'), [
     utm_campaign: 'parokonvektomaty_premium_b2b',
     utm_content: 'ad_177_group_5749537779',
     utm_term: 'код ошибки пароконвектомата'
+  },
+  {
+    ts: `${date}T09:02:00.000Z`,
+    event: 'qualified_lead',
+    page_path: '/parokonvektomat-kod-oshibki.html',
+    page_intent: 'error_code',
+    page_version: 'smoke-v1',
+    lead_id_hash: hash('lead-a'),
+    outcome_source: 'crm_smoke',
+    quality: 'internal',
+    is_decision_event: true,
+    session_id_hash: sessionA,
+    utm_source: 'yandex',
+    utm_campaign: 'parokonvektomaty_premium_b2b'
+  },
+  {
+    ts: `${date}T09:20:00.000Z`,
+    event: 'repair_order_created',
+    page_path: '/parokonvektomat-kod-oshibki.html',
+    page_intent: 'error_code',
+    page_version: 'smoke-v1',
+    lead_id_hash: hash('lead-a'),
+    outcome_source: 'crm_smoke',
+    order_value_bucket: '50k_100k',
+    quality: 'internal',
+    is_decision_event: true,
+    session_id_hash: sessionA,
+    utm_source: 'yandex',
+    utm_campaign: 'parokonvektomaty_premium_b2b'
   },
   {
     ts: `${date}T10:10:00.000Z`,
@@ -136,7 +197,14 @@ fs.writeFileSync(
 );
 
 const script = path.join(root, 'ops', 'mosanalytics', 'bin', 'mosanalytics-events-aggregate.py');
-const result = spawnSync('python3', [script, '--date', date, '--base', base, '--out', outDir], {
+const result = spawnSync('python3', [
+  script,
+  '--date', date,
+  '--base', base,
+  '--out', outDir,
+  '--page-context', path.join(root, 'data', 'metrics-page-context.json'),
+  '--policy', path.join(root, 'data', 'metrics-scorecard-policy.json')
+], {
   cwd: root,
   encoding: 'utf8'
 });
@@ -156,6 +224,8 @@ const requiredFiles = [
   `llm_offline_conversions_${date}.csv`,
   `llm_query_landing_actions_${date}.csv`,
   `llm_landing_mismatch_${date}.csv`,
+  `llm_page_scorecard_${date}.csv`,
+  `llm_page_improvement_actions_${date}.csv`,
   `llm_events_manifest_${date}.json`
 ];
 
@@ -175,6 +245,16 @@ if (!funnel.includes('/parokonvektomat-kod-oshibki.html') || !funnel.includes('/
 const mismatch = fs.readFileSync(path.join(outDir, `llm_landing_mismatch_${date}.csv`), 'utf8');
 if (!mismatch.includes('ошибка у пароконвектомата унокс af01')) {
   throw new Error('mismatch output does not contain expected Direct query');
+}
+
+const scorecard = fs.readFileSync(path.join(outDir, `llm_page_scorecard_${date}.csv`), 'utf8');
+if (!scorecard.includes('/parokonvektomat-kod-oshibki.html') || !scorecard.includes('page_version') || !scorecard.includes('qualified_leads')) {
+  throw new Error('page scorecard output does not contain expected page/version/outcome fields');
+}
+
+const actions = fs.readFileSync(path.join(outDir, `llm_page_improvement_actions_${date}.csv`), 'utf8');
+if (!actions.includes('/parokonvektomat-kod-oshibki.html') || !actions.includes('P1')) {
+  throw new Error('page improvement actions output does not contain expected actionable page');
 }
 
 console.log(`Metrics local smoke passed. Temporary output: ${outDir}`);

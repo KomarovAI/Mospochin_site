@@ -1,14 +1,16 @@
 {
   "summary": {
-    "generatedAt": "2026-06-06T08:58:10.614Z",
-    "totalDocs": 33,
-    "totalBytes": 155393,
+    "generatedAt": "2026-07-11T06:19:23.408Z",
+    "totalDocs": 41,
+    "totalBytes": 185658,
     "byCategory": {
       "active": 13,
-      "reference": 20
+      "reference": 22,
+      "orphanCandidate": 6
     },
     "byAction": {
-      "keep": 33
+      "keep": 35,
+      "reviewForPrune": 6
     }
   },
   "docs": [
@@ -149,6 +151,10 @@
       "sizeBytes": 6537,
       "references": [
         {
+          "file": "README_CONVERSION_P0_PATCH.md",
+          "count": 2
+        },
+        {
           "file": "data/ai-editing-manifest.json",
           "count": 2
         },
@@ -177,7 +183,7 @@
           "count": 6
         }
       ],
-      "referenceCount": 20,
+      "referenceCount": 22,
       "headings": [
         "AI Change Log — MosPochin",
         "2026-06-03 — Parokonvektomat AI operating layer",
@@ -523,6 +529,40 @@
       ]
     },
     {
+      "file": "docs/AI_VISUAL_REVIEW_WORKFLOW.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 5212,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "MosPochin — AI visual review workflow",
+        "Главный принцип",
+        "нейронка открывает screenshots из reports/visual-ai-review/latest/AI_VISUAL_REVIEW.md",
+        "нейронка заполняет reports/visual-ai-review/latest/review.json",
+        "если есть issues — правки, build/sync/check, снова visual:ai-pack:smoke",
+        "затем AI review + повторный screenshot pass после исправлений",
+        "Что именно смотрит нейронка на скриншотах",
+        "Почему нужен review.json"
+      ]
+    },
+    {
+      "file": "docs/ARCHIVE_HYGIENE.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 1576,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Archive hygiene for MosPochin",
+        "Правило",
+        "Что исключается из полного project ZIP",
+        "Проверка размера"
+      ]
+    },
+    {
       "file": "docs/BRANDS_GUIDE.md",
       "category": "reference",
       "action": "keep",
@@ -847,6 +887,46 @@
         "Runtime Behavior",
         "Current Slot Surfaces",
         "Editing Rule"
+      ]
+    },
+    {
+      "file": "docs/LIVE_VISUAL_PACK_MVP.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 823,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "MosPochin Live Visual Pack MVP"
+      ]
+    },
+    {
+      "file": "docs/LOCAL_VISUAL_SCREENSHOT_PACK.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 5336,
+      "references": [
+        {
+          "file": "mospochin_prog13_local_python_visual_pack_changed_files.txt",
+          "count": 2
+        },
+        {
+          "file": "mospochin_stage6_prog13_local_python_visual_pack_report_20260609.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 4,
+      "headings": [
+        "MosPochin — локальный screenshot ZIP для проверки нейронкой",
+        "Быстрый запуск",
+        "Где будет ZIP",
+        "Режимы",
+        "Ключевой smoke: главная, услуги, контакты, hub, Rational/Unox, error/symptom",
+        "Весь пароконвектоматный кластер",
+        "Все root HTML-страницы",
+        "Одна/несколько страниц"
       ]
     },
     {
@@ -1217,7 +1297,7 @@
       "category": "reference",
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
-      "sizeBytes": 7708,
+      "sizeBytes": 8821,
       "references": [
         {
           "file": "data/docs-contracts.json",
@@ -1286,6 +1366,84 @@
         "Если root HTML был изменён вручную",
         "Почему это важно",
         "Правила"
+      ]
+    },
+    {
+      "file": "docs/VISUAL_CHECKS.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 3064,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Visual checks / screenshot audit",
+        "Быстрый маршрут",
+        "Полный visual по пароконвектоматному кластеру",
+        "или явно:",
+        "Что добавлено специально для AI/CI",
+        "Важные ограничения",
+        "Финальное правило для отчёта"
+      ]
+    },
+    {
+      "file": "docs/cooking-kettles-run4-handoff-20260618.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 3061,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "MosPochin — Cooking Kettles Cluster Run 4 Handoff",
+        "Область",
+        "Страницы кластера",
+        "Хаб и симптомы",
+        "Узлы ремонта",
+        "Abat / КПЭМ коды",
+        "Бренды",
+        "Перед деплоем"
+      ]
+    },
+    {
+      "file": "docs/metrics-analytics-run5-technical-audit-cleanup-20260620.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3927,
+      "references": [
+        {
+          "file": "METRICS_RUN5_CHANGED_FILES_20260620.txt",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
+      "headings": [
+        "MosPochin metrics Run5 — technical audit and cleanup",
+        "Что проверено",
+        "Исправления аудита",
+        "Что намеренно не удалялось",
+        "Политика логов после cleanup",
+        "Новая проверка"
+      ]
+    },
+    {
+      "file": "docs/mospochin-deploy-handoff-run8-20260621.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 6153,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "MosPochin — P8 Final Deploy Handoff",
+        "0. Что это за пакет",
+        "1. Inventory",
+        "2. Главный guardrail",
+        "3. Pre-deploy порядок",
+        "4. Deploy порядок",
+        "5. Ключевые страницы smoke-test",
+        "6. Ожидаемые события"
       ]
     }
   ]

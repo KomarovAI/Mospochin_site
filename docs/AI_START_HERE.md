@@ -31,6 +31,8 @@ npm run ai:route -- --task content --page parokonvektomat-rational.html
 
 ```text
 Правим source/data/generator слой, root HTML считаем production output.
+
+Для новой страницы начинай с `npm run page:create -- --branch <restaurant|household> ...`; для существующей страницы — `npm run page:edit -- --page <file.html>`, затем `npm run page:check -- --page <file.html>`.
 ```
 
 Обычно править:
@@ -199,4 +201,3 @@ reports/unused-assets.md
 Если аудит показывает `reviewForPrune`, сначала перенеси полезные решения в `docs/PROJECT_DECISIONS.md`, `docs/DOC_INDEX.md`, `reports/manual-review-backlog.md` или `CHANGELOG_AI.md`, потом удаляй.
 
 Legacy docs вроде старых `PROJECT_MAP.md`, `DOC_STATUS.md`, `STATIC_BUILDER_MIGRATION_PLAN.md`, `SOURCE_COMPRESSION_PLAN.md` после prune v2 не являются active entrypoint. Используй generated map и active docs выше.
-

@@ -42,7 +42,11 @@ jobs:
         run: npm ci
 
       - name: Validate site
+        env:
+          GITHUB_BASE_SHA: ${{ github.event.before }}
+          GITHUB_SHA: ${{ github.sha }}
         run: |
+          npm run check:generated-diff
           npm run check:core
           npm run check:ai || echo "::warning::AI/generated checks failed; deploy continues. Fix generated AI artifacts separately."
 

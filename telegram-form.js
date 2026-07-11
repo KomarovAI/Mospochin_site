@@ -6,7 +6,12 @@ const FORM_RATE_LIMIT_MS = 60000;
 const FORM_MAX_PROBLEM_LENGTH = 500;
 const TELEGRAM_PAGE_METADATA_PATH = '/data/page-metadata.json';
 const FORM_BASE_FIELDS = new Set(['name', 'phone', 'type', 'problem', 'website', 'consent']);
-const FORM_ATTRIBUTION_FIELDS = ['page_url', 'page_path', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'yclid', 'referrer'];
+const FORM_ATTRIBUTION_FIELDS = [
+    'page_url', 'page_path', 'page_title', 'referrer',
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+    'utm_service', 'utm_landing', 'yclid', 'gclid', 'metrika_client_id', 'ym_client_id'
+];
+const currentAttributionFields = FORM_ATTRIBUTION_FIELDS;
 
 let runtimeConfigPromise = null;
 let pageMetadataPromise = null;
@@ -109,9 +114,10 @@ function trackSiteEventBridge(eventName, form, extra = {}) {
     });
 }
 
-function getAttributionSnapshot() {
+function getAttributionSnapshot(fields = currentAttributionFields) {
     const attribution = window.mospochinGetAttribution?.();
     if (!attribution || typeof attribution !== 'object') return null;
+    if (!Array.isArray(fields) || fields.length === 0) return attribution;
     return attribution;
 }
 
@@ -126,12 +132,18 @@ function buildAttributionHiddenFields() {
     const fields = {
         page_url: window.location.href,
         page_path: window.location.pathname,
+        page_title: document.title || '',
         utm_source: params.get('utm_source') || touch.utm_source || '',
         utm_medium: params.get('utm_medium') || touch.utm_medium || '',
         utm_campaign: params.get('utm_campaign') || touch.utm_campaign || '',
         utm_content: params.get('utm_content') || touch.utm_content || '',
         utm_term: params.get('utm_term') || touch.utm_term || '',
+        utm_service: params.get('utm_service') || touch.utm_service || '',
+        utm_landing: params.get('utm_landing') || touch.utm_landing || '',
         yclid: params.get('yclid') || touch.yclid || '',
+        gclid: params.get('gclid') || touch.gclid || '',
+        metrika_client_id: touch.metrika_client_id || '',
+        ym_client_id: touch.ym_client_id || touch.metrika_client_id || '',
         referrer: document.referrer || touch.referrer_host || ''
     };
 
@@ -156,6 +168,14 @@ function ensureHiddenField(form, name, value) {
 function populateAttributionHiddenFields(form) {
     const fields = buildAttributionHiddenFields();
     Object.entries(fields).forEach(([name, value]) => ensureHiddenField(form, name, value));
+}
+
+function ensureAttributionFields(form) {
+    populateAttributionHiddenFields(form);
+}
+
+function fillAttributionFields(form) {
+    populateAttributionHiddenFields(form);
 }
 
 function collectExtraFields(form) {
@@ -224,11 +244,12 @@ async function sendToTelegram(formData) {
         type: formData.type,
         problem: formData.problem,
         page: getCurrentPageFile(),
+        pageVersion: document.body?.dataset?.pageVersion || '',
         branch,
         sourceLabel: getSourceLabel(branch),
         formContext: formData.formContext,
         extraFields: formData.extraFields,
-        attribution: formData.attribution,
+        attribution: getAttributionSnapshot(currentAttributionFields),
         website: formData.website,
         consent: true
     };
@@ -280,7 +301,7 @@ function enhanceTelegramForm(form) {
     form.dataset.telegramEnhanced = '1';
     form.dataset.startedAt = String(Date.now());
     form.classList.add('telegram-form-enhanced');
-    populateAttributionHiddenFields(form);
+    ensureAttributionFields(form);
 
     if (!form.querySelector('[name="website"]')) {
         const honeypot = document.createElement('input');
@@ -325,13 +346,16 @@ function initTelegramForms() {
             const btn = form.querySelector('button[type="submit"]');
             if (!btn) return;
 
+            trackFormGoal('form_submit_attempt', form);
+            trackSiteEventBridge('form_submit_attempt', form);
+
             const origText = btn.innerHTML;
             const hadBrandOrange = btn.classList.contains('bg-brand-orange');
             const hadGreen600 = btn.classList.contains('bg-green-600');
             btn.disabled = true;
             btn.innerHTML = '<i class="ri-loader-4-line mr-2"></i>Отправляю...';
 
-            populateAttributionHiddenFields(form);
+            fillAttributionFields(form);
             const honeypotValue = form.querySelector('[name="website"]')?.value.trim() || '';
             const consentChecked = Boolean(form.querySelector('[name="consent"]')?.checked);
             const extraFields = collectExtraFields(form);
@@ -342,7 +366,10 @@ function initTelegramForms() {
                 problem: buildProblemValue(form, extraFields),
                 formContext: form.dataset.formContext?.trim() || '',
                 extraFields,
-                attribution: getAttributionSnapshot(),
+                attribution: getAttributionSnapshot(currentAttributionFields),
+                leadQuality: form.dataset.leadQuality?.trim() || 'human_candidate',
+                pageIntent: document.body?.dataset?.pageIntent || '',
+                pageVersion: document.body?.dataset?.pageVersion || '',
                 website: honeypotValue
             };
 

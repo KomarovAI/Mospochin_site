@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "parokonvektomat-abat.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "f956e6b8055f7da023a94a4141eb0484e5c8e4afd1a3b7cdaf479d6e2830466f",
+    "hash": "9d90f9baf5cb0241d751de375b222d068a7fda3fd9450fff894f1594a78ab5ee",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,33 +21,15 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "bytes": 208,
-      "hash": "468caad1f64721d4",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "yandex-metrika-pixel",
-      "templateRef": "src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html",
-      "props": {},
-      "sourceFile": "sections/001-noscript-noscript-fallback.html"
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 56,
+      "hash": "0a6de6bc3903c593"
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 60,
-      "hash": "c4e39b16591556a8",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "normalized-layout-shell-parokonvektomaty-html-c4e39b165915",
-      "templateRef": "src/components/parametric/static/layout-fragment-normalized-layout-shell-parokonvektomaty-html-c4e39b165915.template.html",
-      "props": {},
-      "sourceFile": "sections/002-raw-html-fragment.html"
-    },
-    {
-      "id": "003-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 48,
@@ -57,10 +39,10 @@
       "variant": "technical-fragment-96856553c171",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-96856553c171.template.html",
       "props": {},
-      "sourceFile": "sections/003-raw-html-fragment.html"
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
-      "id": "004-breadcrumb-hlebnye-kroshki",
+      "id": "003-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "bytes": 165,
@@ -70,18 +52,18 @@
       "variant": "breadcrumb-marker",
       "templateRef": "src/components/parametric/static/breadcrumb-breadcrumb-marker-74dcb2256bb1.template.html",
       "props": {},
-      "sourceFile": "sections/004-breadcrumb-hlebnye-kroshki.html"
+      "sourceFile": "sections/003-breadcrumb-hlebnye-kroshki.html"
     },
     {
-      "id": "005-breadcrumb-hlebnye-kroshki",
+      "id": "004-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
+      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
       "bytes": 1028,
       "hash": "9c58ee16d8b4ed8d"
     },
     {
-      "id": "006-raw-html-fragment",
+      "id": "005-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 170,
@@ -91,29 +73,29 @@
       "variant": "section-1-hero-1809657971bd",
       "templateRef": "src/components/parametric/static/layout-fragment-section-1-hero-1809657971bd.template.html",
       "props": {},
-      "sourceFile": "sections/006-raw-html-fragment.html"
+      "sourceFile": "sections/005-raw-html-fragment.html"
     },
     {
-      "id": "007-hero-remont-parokonvektomatov-abat",
+      "id": "006-hero-remont-parokonvektomatov-abat",
       "component": "hero",
       "label": "Ремонт пароконвектоматов Abat",
-      "file": "sections/007-hero-remont-parokonvektomatov-abat.html",
-      "bytes": 11221,
-      "hash": "88f1f5d6d9921ac6"
+      "file": "sections/006-hero-remont-parokonvektomatov-abat.html",
+      "bytes": 11321,
+      "hash": "ed0535f876c20624"
     },
     {
-      "id": "008-section-restorany-kafe-pekarni-i-dark-kitchen",
+      "id": "007-section-restorany-kafe-pekarni-i-dark-kuhnya",
       "component": "section",
-      "label": "Рестораны, кафе, пекарни и dark kitchen",
-      "bytes": 2330,
-      "hash": "37ec220adfa298e3",
-      "componentRef": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kitchen--37ec220adfa298e3.html",
+      "label": "Рестораны, кафе, пекарни и дарк-кухня",
+      "bytes": 2337,
+      "hash": "acf30057306e6a6a",
+      "componentRef": "src/components/shared/section/section-restorany-kafe-pekarni-i-dark-kuhnya--acf30057306e6a6a.html",
       "componentScope": "shared",
-      "componentSignature": "37ec220adfa298e3",
-      "sourceFile": "sections/008-section-restorany-kafe-pekarni-i-dark-kitchen.html"
+      "componentSignature": "acf30057306e6a6a",
+      "sourceFile": "sections/007-section-restorany-kafe-pekarni-i-dark-kuhnya.html"
     },
     {
-      "id": "009-raw-html-fragment",
+      "id": "008-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 40,
@@ -123,18 +105,18 @@
       "variant": "direct-landing-analysis-start-1b776f333513",
       "templateRef": "src/components/parametric/static/layout-fragment-direct-landing-analysis-start-1b776f333513.template.html",
       "props": {},
-      "sourceFile": "sections/009-raw-html-fragment.html"
+      "sourceFile": "sections/008-raw-html-fragment.html"
     },
     {
-      "id": "010-section-chto-utochnyaem-po-abat",
+      "id": "009-section-chto-utochnyaem-po-abat",
       "component": "section",
       "label": "Что уточняем по Abat",
-      "file": "sections/010-section-chto-utochnyaem-po-abat.html",
+      "file": "sections/009-section-chto-utochnyaem-po-abat.html",
       "bytes": 1963,
       "hash": "483744a216c705ea"
     },
     {
-      "id": "011-raw-html-fragment",
+      "id": "010-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 37,
@@ -144,10 +126,10 @@
       "variant": "direct-landing-analysis-end-2d039682f147",
       "templateRef": "src/components/parametric/static/layout-fragment-direct-landing-analysis-end-2d039682f147.template.html",
       "props": {},
-      "sourceFile": "sections/011-raw-html-fragment.html"
+      "sourceFile": "sections/010-raw-html-fragment.html"
     },
     {
-      "id": "012-raw-html-fragment",
+      "id": "011-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 207,
@@ -157,18 +139,18 @@
       "variant": "section-2-cta-bar-оранжевая-полоса-0893a4a6d88b",
       "templateRef": "src/components/parametric/static/layout-fragment-section-2-cta-bar-оранжевая-полоса-0893a4a6d88b.template.html",
       "props": {},
-      "sourceFile": "sections/012-raw-html-fragment.html"
+      "sourceFile": "sections/011-raw-html-fragment.html"
     },
     {
-      "id": "013-proof-dokazatel-stva-garantii",
+      "id": "012-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/013-proof-dokazatel-stva-garantii.html",
+      "file": "sections/012-proof-dokazatel-stva-garantii.html",
       "bytes": 184,
       "hash": "71c473484096d7b5"
     },
     {
-      "id": "014-proof-kakie-metriki-derzhim-po-zayavke-restorana",
+      "id": "013-proof-kakie-metriki-derzhim-po-zayavke-restorana",
       "component": "proof",
       "label": "Какие метрики держим по заявке ресторана",
       "bytes": 3222,
@@ -176,10 +158,10 @@
       "componentRef": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html",
       "componentScope": "shared",
       "componentSignature": "49039622d5ec9ff8",
-      "sourceFile": "sections/014-proof-kakie-metriki-derzhim-po-zayavke-restorana.html"
+      "sourceFile": "sections/013-proof-kakie-metriki-derzhim-po-zayavke-restorana.html"
     },
     {
-      "id": "015-raw-html-fragment",
+      "id": "014-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 30,
@@ -189,10 +171,10 @@
       "variant": "sync-service-kpi-end-50381e403a85",
       "templateRef": "src/components/parametric/static/layout-fragment-sync-service-kpi-end-50381e403a85.template.html",
       "props": {},
-      "sourceFile": "sections/015-raw-html-fragment.html"
+      "sourceFile": "sections/014-raw-html-fragment.html"
     },
     {
-      "id": "016-raw-html-fragment",
+      "id": "015-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 209,
@@ -202,10 +184,10 @@
       "variant": "section-5-типы-пароконвектоматов-200ed15dedee",
       "templateRef": "src/components/parametric/static/layout-fragment-section-5-типы-пароконвектоматов-200ed15dedee.template.html",
       "props": {},
-      "sourceFile": "sections/016-raw-html-fragment.html"
+      "sourceFile": "sections/015-raw-html-fragment.html"
     },
     {
-      "id": "017-pricing-remontiruem-vse-tipy-parokonvektomatov",
+      "id": "016-pricing-remontiruem-vse-tipy-parokonvektomatov",
       "component": "pricing",
       "label": "Ремонтируем все типы пароконвектоматов",
       "bytes": 7583,
@@ -213,10 +195,10 @@
       "componentRef": "src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html",
       "componentScope": "shared",
       "componentSignature": "716e30e482bc8a8d",
-      "sourceFile": "sections/017-pricing-remontiruem-vse-tipy-parokonvektomatov.html"
+      "sourceFile": "sections/016-pricing-remontiruem-vse-tipy-parokonvektomatov.html"
     },
     {
-      "id": "018-raw-html-fragment",
+      "id": "017-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 175,
@@ -226,21 +208,21 @@
       "variant": "section-5b-seo-text-9da2aa3f2f77",
       "templateRef": "src/components/parametric/static/layout-fragment-section-5b-seo-text-9da2aa3f2f77.template.html",
       "props": {},
-      "sourceFile": "sections/018-raw-html-fragment.html"
+      "sourceFile": "sections/017-raw-html-fragment.html"
     },
     {
-      "id": "019-related-links-svyazannye-stranicy",
+      "id": "018-related-links-svyazannye-stranicy",
       "component": "related-links",
       "label": "Связанные страницы",
-      "bytes": 1020,
-      "hash": "473d3567b57fb087",
-      "componentRef": "src/components/shared/related-links/related-links-svyazannye-stranicy--473d3567b57fb087.html",
+      "bytes": 1027,
+      "hash": "a44feb9b1277f538",
+      "componentRef": "src/components/shared/related-links/related-links-svyazannye-stranicy--a44feb9b1277f538.html",
       "componentScope": "shared",
-      "componentSignature": "473d3567b57fb087",
-      "sourceFile": "sections/019-related-links-svyazannye-stranicy.html"
+      "componentSignature": "a44feb9b1277f538",
+      "sourceFile": "sections/018-related-links-svyazannye-stranicy.html"
     },
     {
-      "id": "020-raw-html-fragment",
+      "id": "019-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 47,
@@ -250,26 +232,26 @@
       "variant": "блок-срочности-0af241ed990c",
       "templateRef": "src/components/parametric/static/layout-fragment-блок-срочности-0af241ed990c.template.html",
       "props": {},
-      "sourceFile": "sections/020-raw-html-fragment.html"
+      "sourceFile": "sections/019-raw-html-fragment.html"
     },
     {
-      "id": "021-contact-cta-otkladyvat-remont-parokonvektomata-obych",
+      "id": "020-contact-cta-otkladyvat-remont-parokonvektomata-obych",
       "component": "contact-cta",
       "label": "Откладывать ремонт пароконвектомата обычно дороже",
-      "file": "sections/021-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
+      "file": "sections/020-contact-cta-otkladyvat-remont-parokonvektomata-obych.html",
       "bytes": 3361,
       "hash": "b5f64138fb11f825"
     },
     {
-      "id": "022-pricing-ceny-stoimost",
+      "id": "021-pricing-ceny-stoimost",
       "component": "pricing",
       "label": "Цены/стоимость",
-      "file": "sections/022-pricing-ceny-stoimost.html",
+      "file": "sections/021-pricing-ceny-stoimost.html",
       "bytes": 199,
       "hash": "fad148428ac5d99f"
     },
     {
-      "id": "023-pricing-faktory-stoimosti-remonta",
+      "id": "022-pricing-faktory-stoimosti-remonta",
       "component": "pricing",
       "label": "Факторы стоимости ремонта",
       "bytes": 5492,
@@ -277,10 +259,10 @@
       "componentRef": "src/components/shared/pricing/pricing-faktory-stoimosti-remonta--c35e37bf08c85b74.html",
       "componentScope": "shared",
       "componentSignature": "c35e37bf08c85b74",
-      "sourceFile": "sections/023-pricing-faktory-stoimosti-remonta.html"
+      "sourceFile": "sections/022-pricing-faktory-stoimosti-remonta.html"
     },
     {
-      "id": "024-raw-html-fragment",
+      "id": "023-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 232,
@@ -290,18 +272,18 @@
       "variant": "section-7-что-сломалось-кликабельные-иконки-0c6856d26210",
       "templateRef": "src/components/parametric/static/layout-fragment-section-7-что-сломалось-кликабельные-иконки-0c6856d26210.template.html",
       "props": {},
-      "sourceFile": "sections/024-raw-html-fragment.html"
+      "sourceFile": "sections/023-raw-html-fragment.html"
     },
     {
-      "id": "025-pricing-vyberite-problemu-pokazhem-cenu",
+      "id": "024-pricing-vyberite-problemu-pokazhem-cenu",
       "component": "pricing",
       "label": "Выберите проблему — покажем цену",
-      "file": "sections/025-pricing-vyberite-problemu-pokazhem-cenu.html",
+      "file": "sections/024-pricing-vyberite-problemu-pokazhem-cenu.html",
       "bytes": 5639,
       "hash": "a7667638bda3ef47"
     },
     {
-      "id": "026-raw-html-fragment",
+      "id": "025-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 210,
@@ -311,10 +293,10 @@
       "variant": "section-8-реальные-истории-кейсы-4e4269c907fb",
       "templateRef": "src/components/parametric/static/layout-fragment-section-8-реальные-истории-кейсы-4e4269c907fb.template.html",
       "props": {},
-      "sourceFile": "sections/026-raw-html-fragment.html"
+      "sourceFile": "sections/025-raw-html-fragment.html"
     },
     {
-      "id": "027-pricing-poslednie-remonty-parokonvektomatov",
+      "id": "026-pricing-poslednie-remonty-parokonvektomatov",
       "component": "pricing",
       "label": "Последние ремонты пароконвектоматов",
       "bytes": 9119,
@@ -322,10 +304,10 @@
       "componentRef": "src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--e1cca13f78f777a0.html",
       "componentScope": "shared",
       "componentSignature": "e1cca13f78f777a0",
-      "sourceFile": "sections/027-pricing-poslednie-remonty-parokonvektomatov.html"
+      "sourceFile": "sections/026-pricing-poslednie-remonty-parokonvektomatov.html"
     },
     {
-      "id": "028-raw-html-fragment",
+      "id": "027-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 231,
@@ -335,10 +317,10 @@
       "variant": "section-9-частые-поломки-детальные-карточки-52da4729a90a",
       "templateRef": "src/components/parametric/static/layout-fragment-section-9-частые-поломки-детальные-карточки-52da4729a90a.template.html",
       "props": {},
-      "sourceFile": "sections/028-raw-html-fragment.html"
+      "sourceFile": "sections/027-raw-html-fragment.html"
     },
     {
-      "id": "029-pricing-chastye-polomki-parokonvektomatov",
+      "id": "028-pricing-chastye-polomki-parokonvektomatov",
       "component": "pricing",
       "label": "Частые поломки пароконвектоматов",
       "bytes": 10822,
@@ -346,10 +328,10 @@
       "componentRef": "src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html",
       "componentScope": "shared",
       "componentSignature": "49df61a84592b2cf",
-      "sourceFile": "sections/029-pricing-chastye-polomki-parokonvektomatov.html"
+      "sourceFile": "sections/028-pricing-chastye-polomki-parokonvektomatov.html"
     },
     {
-      "id": "030-raw-html-fragment",
+      "id": "029-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 188,
@@ -359,10 +341,10 @@
       "variant": "section-10-таблица-цен-0b20dea97d2e",
       "templateRef": "src/components/parametric/static/layout-fragment-section-10-таблица-цен-0b20dea97d2e.template.html",
       "props": {},
-      "sourceFile": "sections/030-raw-html-fragment.html"
+      "sourceFile": "sections/029-raw-html-fragment.html"
     },
     {
-      "id": "031-pricing-ceny-na-remont-parokonvektomatov",
+      "id": "030-pricing-ceny-na-remont-parokonvektomatov",
       "component": "pricing",
       "label": "Цены на ремонт пароконвектоматов",
       "bytes": 6273,
@@ -370,18 +352,18 @@
       "componentRef": "src/components/shared/pricing/pricing-ceny-na-remont-parokonvektomatov--d39ef7445dadc813.html",
       "componentScope": "shared",
       "componentSignature": "d39ef7445dadc813",
-      "sourceFile": "sections/031-pricing-ceny-na-remont-parokonvektomatov.html"
+      "sourceFile": "sections/030-pricing-ceny-na-remont-parokonvektomatov.html"
     },
     {
-      "id": "032-proof-dokazatel-stva-garantii",
+      "id": "031-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/032-proof-dokazatel-stva-garantii.html",
+      "file": "sections/031-proof-dokazatel-stva-garantii.html",
       "bytes": 213,
       "hash": "f76a4803e4cc8766"
     },
     {
-      "id": "033-proof-pochemu-500-restoranov-vybrali-nas",
+      "id": "032-proof-pochemu-500-restoranov-vybrali-nas",
       "component": "proof",
       "label": "Почему 500+ ресторанов выбрали нас",
       "bytes": 5104,
@@ -389,10 +371,10 @@
       "componentRef": "src/components/shared/proof/proof-pochemu-500-restoranov-vybrali-nas--16061bbc70a958f9.html",
       "componentScope": "shared",
       "componentSignature": "16061bbc70a958f9",
-      "sourceFile": "sections/033-proof-pochemu-500-restoranov-vybrali-nas.html"
+      "sourceFile": "sections/032-proof-pochemu-500-restoranov-vybrali-nas.html"
     },
     {
-      "id": "034-raw-html-fragment",
+      "id": "033-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 179,
@@ -402,10 +384,10 @@
       "variant": "section-12-отзывы-8ee9a2fe20bc",
       "templateRef": "src/components/parametric/static/layout-fragment-section-12-отзывы-8ee9a2fe20bc.template.html",
       "props": {},
-      "sourceFile": "sections/034-raw-html-fragment.html"
+      "sourceFile": "sections/033-raw-html-fragment.html"
     },
     {
-      "id": "035-proof-chto-govoryat-shef-povara-i-upravlyayuschie",
+      "id": "034-proof-chto-govoryat-shef-povara-i-upravlyayuschie",
       "component": "proof",
       "label": "Что говорят шеф-повара и управляющие",
       "bytes": 5978,
@@ -413,10 +395,10 @@
       "componentRef": "src/components/shared/proof/proof-chto-govoryat-shef-povara-i-upravlyayuschie--e94fa2cfbc1265d5.html",
       "componentScope": "shared",
       "componentSignature": "e94fa2cfbc1265d5",
-      "sourceFile": "sections/035-proof-chto-govoryat-shef-povara-i-upravlyayuschie.html"
+      "sourceFile": "sections/034-proof-chto-govoryat-shef-povara-i-upravlyayuschie.html"
     },
     {
-      "id": "036-raw-html-fragment",
+      "id": "035-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 209,
@@ -426,10 +408,10 @@
       "variant": "section-13-процесс-работы-5-шагов-ad908f338595",
       "templateRef": "src/components/parametric/static/layout-fragment-section-13-процесс-работы-5-шагов-ad908f338595.template.html",
       "props": {},
-      "sourceFile": "sections/036-raw-html-fragment.html"
+      "sourceFile": "sections/035-raw-html-fragment.html"
     },
     {
-      "id": "037-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-",
+      "id": "036-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-",
       "component": "pricing",
       "label": "Как проходит ремонт без лишнего хаоса для кухни",
       "bytes": 3665,
@@ -437,18 +419,18 @@
       "componentRef": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--7df4ed8c17f2f042.html",
       "componentScope": "shared",
       "componentSignature": "7df4ed8c17f2f042",
-      "sourceFile": "sections/037-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-.html"
+      "sourceFile": "sections/036-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-.html"
     },
     {
-      "id": "038-proof-dokazatel-stva-garantii",
+      "id": "037-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/038-proof-dokazatel-stva-garantii.html",
+      "file": "sections/037-proof-dokazatel-stva-garantii.html",
       "bytes": 183,
       "hash": "6d3c692bfde4b913"
     },
     {
-      "id": "039-pricing-chto-poluchaet-kuhnya-posle-remonta",
+      "id": "038-pricing-chto-poluchaet-kuhnya-posle-remonta",
       "component": "pricing",
       "label": "Что получает кухня после ремонта",
       "bytes": 4036,
@@ -456,10 +438,10 @@
       "componentRef": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--28e81f493d341dd3.html",
       "componentScope": "shared",
       "componentSignature": "28e81f493d341dd3",
-      "sourceFile": "sections/039-pricing-chto-poluchaet-kuhnya-posle-remonta.html"
+      "sourceFile": "sections/038-pricing-chto-poluchaet-kuhnya-posle-remonta.html"
     },
     {
-      "id": "040-raw-html-fragment",
+      "id": "039-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 212,
@@ -469,10 +451,10 @@
       "variant": "запишите-код-ошибки-с-дисплея-b5bf73063d9c",
       "templateRef": "src/components/parametric/static/layout-fragment-запишите-код-ошибки-с-дисплея-b5bf73063d9c.template.html",
       "props": {},
-      "sourceFile": "sections/040-raw-html-fragment.html"
+      "sourceFile": "sections/039-raw-html-fragment.html"
     },
     {
-      "id": "041-raw-html-fragment",
+      "id": "040-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 240,
@@ -482,10 +464,10 @@
       "variant": "позвоните-нам-опишите-проблему-и-модель-7dc7b604dec4",
       "templateRef": "src/components/parametric/static/layout-fragment-позвоните-нам-опишите-проблему-и-модель-7dc7b604dec4.template.html",
       "props": {},
-      "sourceFile": "sections/041-raw-html-fragment.html"
+      "sourceFile": "sections/040-raw-html-fragment.html"
     },
     {
-      "id": "042-raw-html-fragment",
+      "id": "041-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 254,
@@ -495,10 +477,10 @@
       "variant": "подготовьте-документы-на-оборудование-если-есть-4a8503b64f13",
       "templateRef": "src/components/parametric/static/layout-fragment-подготовьте-документы-на-оборудование-если-есть-4a8503b64f13.template.html",
       "props": {},
-      "sourceFile": "sections/042-raw-html-fragment.html"
+      "sourceFile": "sections/041-raw-html-fragment.html"
     },
     {
-      "id": "043-raw-html-fragment",
+      "id": "042-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 30,
@@ -508,10 +490,10 @@
       "variant": "technical-fragment-b4295b5a1601",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-b4295b5a1601.template.html",
       "props": {},
-      "sourceFile": "sections/043-raw-html-fragment.html"
+      "sourceFile": "sections/042-raw-html-fragment.html"
     },
     {
-      "id": "044-raw-html-fragment",
+      "id": "043-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 27,
@@ -521,10 +503,10 @@
       "variant": "technical-fragment-6ed7e0b0325a",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-6ed7e0b0325a.template.html",
       "props": {},
-      "sourceFile": "sections/044-raw-html-fragment.html"
+      "sourceFile": "sections/043-raw-html-fragment.html"
     },
     {
-      "id": "045-raw-html-fragment",
+      "id": "044-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 23,
@@ -534,10 +516,10 @@
       "variant": "technical-fragment-40737d07601c",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-40737d07601c.template.html",
       "props": {},
-      "sourceFile": "sections/045-raw-html-fragment.html"
+      "sourceFile": "sections/044-raw-html-fragment.html"
     },
     {
-      "id": "046-raw-html-fragment",
+      "id": "045-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 38,
@@ -547,10 +529,10 @@
       "variant": "нельзя-f5a07223baab",
       "templateRef": "src/components/parametric/static/layout-fragment-нельзя-f5a07223baab.template.html",
       "props": {},
-      "sourceFile": "sections/046-raw-html-fragment.html"
+      "sourceFile": "sections/045-raw-html-fragment.html"
     },
     {
-      "id": "047-raw-kategoricheski-nel-zya",
+      "id": "046-raw-kategoricheski-nel-zya",
       "component": "raw",
       "label": "КАТЕГОРИЧЕСКИ НЕЛЬЗЯ",
       "bytes": 1719,
@@ -558,10 +540,10 @@
       "componentRef": "src/components/shared/raw/raw-kategoricheski-nelzya--bfbc4e71a327a4ac.html",
       "componentScope": "shared",
       "componentSignature": "bfbc4e71a327a4ac",
-      "sourceFile": "sections/047-raw-kategoricheski-nel-zya.html"
+      "sourceFile": "sections/046-raw-kategoricheski-nel-zya.html"
     },
     {
-      "id": "048-raw-html-fragment",
+      "id": "047-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 19,
@@ -571,10 +553,10 @@
       "variant": "technical-fragment-22227a54e2fb",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-22227a54e2fb.template.html",
       "props": {},
-      "sourceFile": "sections/048-raw-html-fragment.html"
+      "sourceFile": "sections/047-raw-html-fragment.html"
     },
     {
-      "id": "049-raw-html-fragment",
+      "id": "048-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 15,
@@ -584,10 +566,10 @@
       "variant": "technical-fragment-ccea41b333b5",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-ccea41b333b5.template.html",
       "props": {},
-      "sourceFile": "sections/049-raw-html-fragment.html"
+      "sourceFile": "sections/048-raw-html-fragment.html"
     },
     {
-      "id": "050-raw-html-fragment",
+      "id": "049-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 15,
@@ -597,18 +579,18 @@
       "variant": "technical-fragment-2eca4dbf4742",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-2eca4dbf4742.template.html",
       "props": {},
-      "sourceFile": "sections/050-raw-html-fragment.html"
+      "sourceFile": "sections/049-raw-html-fragment.html"
     },
     {
-      "id": "051-faq-faq",
+      "id": "050-faq-faq",
       "component": "faq",
       "label": "FAQ",
-      "file": "sections/051-faq-faq.html",
+      "file": "sections/050-faq-faq.html",
       "bytes": 170,
       "hash": "1495235c38756aab"
     },
     {
-      "id": "052-faq-chastye-voprosy-o-remonte-parokonvektomatov",
+      "id": "051-faq-chastye-voprosy-o-remonte-parokonvektomatov",
       "component": "faq",
       "label": "Частые вопросы о ремонте пароконвектоматов",
       "bytes": 6858,
@@ -616,10 +598,10 @@
       "componentRef": "src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--8a089715e4395424.html",
       "componentScope": "shared",
       "componentSignature": "8a089715e4395424",
-      "sourceFile": "sections/052-faq-chastye-voprosy-o-remonte-parokonvektomatov.html"
+      "sourceFile": "sections/051-faq-chastye-voprosy-o-remonte-parokonvektomatov.html"
     },
     {
-      "id": "053-raw-html-fragment",
+      "id": "052-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 189,
@@ -629,18 +611,18 @@
       "variant": "section-20-финальный-cta-492a13a41d81",
       "templateRef": "src/components/parametric/static/layout-fragment-section-20-финальный-cta-492a13a41d81.template.html",
       "props": {},
-      "sourceFile": "sections/053-raw-html-fragment.html"
+      "sourceFile": "sections/052-raw-html-fragment.html"
     },
     {
-      "id": "054-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l",
+      "id": "053-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l",
       "component": "mobile-contact",
       "label": "Вернём пароконвектомат в работу без лишнего простоя кухни",
-      "file": "sections/054-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
+      "file": "sections/053-mobile-contact-vernem-parokonvektomat-v-rabotu-bez-l.html",
       "bytes": 2043,
       "hash": "291c0dd5ba2ebbea"
     },
     {
-      "id": "055-raw-html-fragment",
+      "id": "054-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 190,
@@ -650,98 +632,98 @@
       "variant": "section-21-форма-заявки-f0c3d957f4f8",
       "templateRef": "src/components/parametric/static/layout-fragment-section-21-форма-заявки-f0c3d957f4f8.template.html",
       "props": {},
-      "sourceFile": "sections/055-raw-html-fragment.html"
+      "sourceFile": "sections/054-raw-html-fragment.html"
     },
     {
-      "id": "056-contact-cta-parokonvektomat-vstal",
+      "id": "055-contact-cta-parokonvektomat-vstal",
       "component": "contact-cta",
       "label": "Пароконвектомат встал?",
-      "file": "sections/056-contact-cta-parokonvektomat-vstal.html",
+      "file": "sections/055-contact-cta-parokonvektomat-vstal.html",
       "bytes": 3106,
       "hash": "3f4da83a650ce8ef"
     },
     {
-      "id": "057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
+      "id": "056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "file": "sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
-      "bytes": 7544,
-      "hash": "3e881c1a32217995"
+      "file": "sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
+      "bytes": 7644,
+      "hash": "7927a5a64c0ef733"
     },
     {
-      "id": "058-proof-dokazatel-stva-garantii",
+      "id": "057-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/058-proof-dokazatel-stva-garantii.html",
+      "file": "sections/057-proof-dokazatel-stva-garantii.html",
       "bytes": 182,
       "hash": "7aa05ccc83a83b5d"
     },
     {
-      "id": "059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte",
+      "id": "058-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte",
       "component": "proof",
       "label": "Что фиксируем до начала работ на объекте",
-      "file": "sections/059-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
+      "file": "sections/058-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
       "bytes": 6792,
       "hash": "4b4aee3050d42c09"
     },
     {
-      "id": "060-proof-dokazatel-stva-garantii",
+      "id": "059-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/060-proof-dokazatel-stva-garantii.html",
+      "file": "sections/059-proof-dokazatel-stva-garantii.html",
       "bytes": 32,
       "hash": "3ba619ca8d598e8b"
     },
     {
-      "id": "061-section-tipovye-polomki-abat-i-abat",
+      "id": "060-section-tipovye-polomki-abat-i-abat",
       "component": "section",
       "label": "Типовые поломки Abat и Абат",
-      "file": "sections/061-section-tipovye-polomki-abat-i-abat.html",
+      "file": "sections/060-section-tipovye-polomki-abat-i-abat.html",
       "bytes": 4749,
       "hash": "80197c4f25506fb2"
     },
     {
-      "id": "062-section-chto-chasche-vidim-po-abat-na-ob-ektah-obsch",
+      "id": "061-section-chto-chasche-vidim-po-abat-na-ob-ektah-obsch",
       "component": "section",
       "label": "Что чаще видим по Abat на объектах общепита",
-      "file": "sections/062-section-chto-chasche-vidim-po-abat-na-ob-ektah-obsch.html",
+      "file": "sections/061-section-chto-chasche-vidim-po-abat-na-ob-ektah-obsch.html",
       "bytes": 3131,
       "hash": "e113d8ed46c17d5d"
     },
     {
-      "id": "063-proof-dokazatel-stva-garantii",
+      "id": "062-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/063-proof-dokazatel-stva-garantii.html",
+      "file": "sections/062-proof-dokazatel-stva-garantii.html",
       "bytes": 182,
       "hash": "d0c02b385f4baba2"
     },
     {
-      "id": "064-related-links-esli-problema-v-drugom-restorannom-obo",
+      "id": "063-related-links-esli-problema-v-drugom-restorannom-obo",
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
-      "file": "sections/064-related-links-esli-problema-v-drugom-restorannom-obo.html",
+      "file": "sections/063-related-links-esli-problema-v-drugom-restorannom-obo.html",
       "bytes": 3338,
       "hash": "0c45b58d26e902af"
     },
     {
-      "id": "065-related-links-svyazannye-stranicy",
+      "id": "064-related-links-svyazannye-stranicy",
       "component": "related-links",
       "label": "Связанные страницы",
-      "file": "sections/065-related-links-svyazannye-stranicy.html",
+      "file": "sections/064-related-links-svyazannye-stranicy.html",
       "bytes": 32,
       "hash": "445698083184be8e"
     },
     {
-      "id": "066-related-links-svyazannye-stranicy-po-parokonvektomat",
+      "id": "065-related-links-svyazannye-stranicy-po-parokonvektomat",
       "component": "related-links",
       "label": "Связанные страницы по пароконвектоматам",
-      "file": "sections/066-related-links-svyazannye-stranicy-po-parokonvektomat.html",
+      "file": "sections/065-related-links-svyazannye-stranicy-po-parokonvektomat.html",
       "bytes": 11404,
       "hash": "387c4537d829a52f"
     },
     {
-      "id": "067-raw-html-fragment",
+      "id": "066-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 45,
@@ -751,10 +733,10 @@
       "variant": "mobile-footer-injected-via-js-85653c99b490",
       "templateRef": "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-85653c99b490.template.html",
       "props": {},
-      "sourceFile": "sections/067-raw-html-fragment.html"
+      "sourceFile": "sections/066-raw-html-fragment.html"
     },
     {
-      "id": "068-raw-html-fragment",
+      "id": "067-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 45,
@@ -764,10 +746,10 @@
       "variant": "whatsapp-float-injected-via-js-7c5d01e0cd0d",
       "templateRef": "src/components/parametric/static/layout-fragment-whatsapp-float-injected-via-js-7c5d01e0cd0d.template.html",
       "props": {},
-      "sourceFile": "sections/068-raw-html-fragment.html"
+      "sourceFile": "sections/067-raw-html-fragment.html"
     },
     {
-      "id": "069-raw-html-fragment",
+      "id": "068-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 21,
@@ -777,10 +759,10 @@
       "variant": "footer-17c44fb2bab2",
       "templateRef": "src/components/parametric/static/layout-fragment-footer-17c44fb2bab2.template.html",
       "props": {},
-      "sourceFile": "sections/069-raw-html-fragment.html"
+      "sourceFile": "sections/068-raw-html-fragment.html"
     },
     {
-      "id": "070-footer-anchor-footer-mount-point",
+      "id": "069-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
       "bytes": 38,
@@ -790,10 +772,10 @@
       "variant": "footer-container-mount",
       "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-d4bb19e48569.template.html",
       "props": {},
-      "sourceFile": "sections/070-footer-anchor-footer-mount-point.html"
+      "sourceFile": "sections/069-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "071-raw-html-fragment",
+      "id": "070-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 39,
@@ -803,10 +785,10 @@
       "variant": "noscript-fallback-inline-bf67e22492ee",
       "templateRef": "src/components/parametric/static/layout-fragment-noscript-fallback-inline-bf67e22492ee.template.html",
       "props": {},
-      "sourceFile": "sections/071-raw-html-fragment.html"
+      "sourceFile": "sections/070-raw-html-fragment.html"
     },
     {
-      "id": "072-raw-html-fragment",
+      "id": "071-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 37,
@@ -816,10 +798,10 @@
       "variant": "countdown-timer-script-dac583333c60",
       "templateRef": "src/components/parametric/static/layout-fragment-countdown-timer-script-dac583333c60.template.html",
       "props": {},
-      "sourceFile": "sections/072-raw-html-fragment.html"
+      "sourceFile": "sections/071-raw-html-fragment.html"
     },
     {
-      "id": "073-raw-html-fragment",
+      "id": "072-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
       "bytes": 1524,
@@ -827,10 +809,10 @@
       "componentRef": "src/components/shared/raw/raw-html-fragment--515914ccb7489562.html",
       "componentScope": "shared",
       "componentSignature": "515914ccb7489562",
-      "sourceFile": "sections/073-raw-html-fragment.html"
+      "sourceFile": "sections/072-raw-html-fragment.html"
     },
     {
-      "id": "074-runtime-partials-podklyuchenie-partials-injector",
+      "id": "073-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 55,
@@ -840,10 +822,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a0c0c2f23990.template.html",
       "props": {},
-      "sourceFile": "sections/074-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/073-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "075-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "074-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 41,
@@ -853,10 +835,10 @@
       "variant": "mobile-footer-container",
       "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
-      "sourceFile": "sections/075-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/074-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "076-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "075-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 42,
@@ -866,10 +848,10 @@
       "variant": "whatsapp-float-container",
       "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
-      "sourceFile": "sections/076-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/075-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "077-raw-html-fragment",
+      "id": "076-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -879,14 +861,14 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/077-raw-html-fragment.html"
+      "sourceFile": "sections/076-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:page -- --page parokonvektomat-abat.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page parokonvektomat-abat.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page parokonvektomat-abat.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

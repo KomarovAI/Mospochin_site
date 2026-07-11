@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "contact.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "f1c5b85afd517bafc1d3bdc52bb6eceee80926564e1539c3b15568b38cf71aa4",
+    "hash": "96da8b57264b577325ceebe7c91cdd07201dd6aa81f374f992c4c6ede3f0f61c",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,28 +21,15 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "bytes": 208,
-      "hash": "468caad1f64721d4",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "yandex-metrika-pixel",
-      "templateRef": "src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html",
-      "props": {},
-      "sourceFile": "sections/001-noscript-noscript-fallback.html"
-    },
-    {
-      "id": "002-contact-cta-kontaktnyy-cta",
+      "id": "001-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/002-contact-cta-kontaktnyy-cta.html",
-      "bytes": 51,
-      "hash": "ae351f58ccc7fc77"
+      "file": "sections/001-contact-cta-kontaktnyy-cta.html",
+      "bytes": 47,
+      "hash": "677dc35d27deae8f"
     },
     {
-      "id": "003-raw-html-fragment",
+      "id": "002-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 48,
@@ -52,10 +39,10 @@
       "variant": "technical-fragment-96856553c171",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-96856553c171.template.html",
       "props": {},
-      "sourceFile": "sections/003-raw-html-fragment.html"
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
-      "id": "004-breadcrumb-hlebnye-kroshki",
+      "id": "003-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "bytes": 25,
@@ -65,18 +52,18 @@
       "variant": "breadcrumb-marker",
       "templateRef": "src/components/parametric/static/breadcrumb-breadcrumb-marker-32deb5e28601.template.html",
       "props": {},
-      "sourceFile": "sections/004-breadcrumb-hlebnye-kroshki.html"
+      "sourceFile": "sections/003-breadcrumb-hlebnye-kroshki.html"
     },
     {
-      "id": "005-breadcrumb-hlebnye-kroshki",
+      "id": "004-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
+      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
       "bytes": 655,
       "hash": "fdaed0d86078aa39"
     },
     {
-      "id": "006-raw-html-fragment",
+      "id": "005-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 170,
@@ -86,18 +73,18 @@
       "variant": "section-1-hero-1809657971bd",
       "templateRef": "src/components/parametric/static/layout-fragment-section-1-hero-1809657971bd.template.html",
       "props": {},
-      "sourceFile": "sections/006-raw-html-fragment.html"
+      "sourceFile": "sections/005-raw-html-fragment.html"
     },
     {
-      "id": "007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-",
+      "id": "006-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-",
       "component": "hero",
       "label": "Связаться с MosPochin и быстро решить вопрос с ремонтом",
-      "file": "sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html",
+      "file": "sections/006-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html",
       "bytes": 6499,
       "hash": "62eb0512dce67a89"
     },
     {
-      "id": "008-raw-html-fragment",
+      "id": "007-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 33,
@@ -107,162 +94,196 @@
       "variant": "section-2-cta-bar-843d67e1d271",
       "templateRef": "src/components/parametric/static/layout-fragment-section-2-cta-bar-843d67e1d271.template.html",
       "props": {},
-      "sourceFile": "sections/008-raw-html-fragment.html"
+      "sourceFile": "sections/007-raw-html-fragment.html"
     },
     {
-      "id": "009-contact-cta-kontaktnyy-cta",
+      "id": "008-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/009-contact-cta-kontaktnyy-cta.html",
+      "file": "sections/008-contact-cta-kontaktnyy-cta.html",
       "bytes": 1324,
       "hash": "3502f3df055a7b51"
     },
     {
-      "id": "010-raw-html-fragment",
+      "id": "009-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/010-raw-html-fragment.html",
+      "file": "sections/009-raw-html-fragment.html",
       "bytes": 220,
       "hash": "a321454fcb75b391"
     },
     {
-      "id": "011-mobile-contact-vse-sposoby-svyazi",
+      "id": "010-mobile-contact-vse-sposoby-svyazi",
       "component": "mobile-contact",
       "label": "Все способы связи",
-      "file": "sections/011-mobile-contact-vse-sposoby-svyazi.html",
-      "bytes": 7337,
-      "hash": "9316f1be70d8e29f"
+      "file": "sections/010-mobile-contact-vse-sposoby-svyazi.html",
+      "bytes": 7457,
+      "hash": "28b0aec0d5ab3d4d"
     },
     {
-      "id": "012-raw-html-fragment",
+      "id": "011-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/012-raw-html-fragment.html",
+      "file": "sections/011-raw-html-fragment.html",
       "bytes": 209,
       "hash": "b2a0a87b0237663d"
     },
     {
-      "id": "013-pricing-rezhim-raboty",
+      "id": "012-pricing-rezhim-raboty",
       "component": "pricing",
       "label": "Режим работы",
-      "file": "sections/013-pricing-rezhim-raboty.html",
+      "file": "sections/012-pricing-rezhim-raboty.html",
       "bytes": 5415,
       "hash": "66df01a56c656f31"
     },
     {
-      "id": "014-raw-html-fragment",
+      "id": "013-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/014-raw-html-fragment.html",
+      "file": "sections/013-raw-html-fragment.html",
       "bytes": 204,
       "hash": "bb0c926d2ccfa3cc"
     },
     {
-      "id": "015-proof-kto-priedet-k-vam",
+      "id": "014-proof-kto-priedet-k-vam",
       "component": "proof",
       "label": "Кто приедет к вам",
-      "file": "sections/015-proof-kto-priedet-k-vam.html",
+      "file": "sections/014-proof-kto-priedet-k-vam.html",
       "bytes": 3985,
       "hash": "ace94ada9d94a572"
     },
     {
-      "id": "016-raw-html-fragment",
+      "id": "015-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/016-raw-html-fragment.html",
+      "file": "sections/015-raw-html-fragment.html",
       "bytes": 197,
       "hash": "efd8a1e39ebd00c0"
     },
     {
-      "id": "017-section-zona-obsluzhivaniya",
+      "id": "016-section-zona-obsluzhivaniya",
       "component": "section",
       "label": "Зона обслуживания",
-      "file": "sections/017-section-zona-obsluzhivaniya.html",
+      "file": "sections/016-section-zona-obsluzhivaniya.html",
       "bytes": 7161,
       "hash": "25a3e9785da92b12"
     },
     {
-      "id": "018-raw-html-fragment",
+      "id": "017-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/018-raw-html-fragment.html",
+      "file": "sections/017-raw-html-fragment.html",
       "bytes": 178,
       "hash": "e9ee763176318bf1"
     },
     {
-      "id": "019-proof-dlya-yuridicheskih-lic",
+      "id": "018-proof-dlya-yuridicheskih-lic",
       "component": "proof",
       "label": "Для юридических лиц",
-      "file": "sections/019-proof-dlya-yuridicheskih-lic.html",
+      "file": "sections/018-proof-dlya-yuridicheskih-lic.html",
       "bytes": 2761,
       "hash": "21a81a122fe0f5e2"
     },
     {
-      "id": "020-raw-html-fragment",
+      "id": "019-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/020-raw-html-fragment.html",
+      "file": "sections/019-raw-html-fragment.html",
       "bytes": 190,
       "hash": "dafb239e286872d5"
     },
     {
-      "id": "021-contact-cta-shema-raboty",
+      "id": "020-contact-cta-shema-raboty",
       "component": "contact-cta",
       "label": "Схема работы",
-      "file": "sections/021-contact-cta-shema-raboty.html",
+      "file": "sections/020-contact-cta-shema-raboty.html",
       "bytes": 3758,
       "hash": "e31de8cb92eb9564"
     },
     {
-      "id": "022-faq-faq",
+      "id": "021-faq-faq",
       "component": "faq",
       "label": "FAQ",
-      "file": "sections/022-faq-faq.html",
+      "file": "sections/021-faq-faq.html",
       "bytes": 169,
       "hash": "b312f0267c2ab723"
     },
     {
-      "id": "023-faq-chastye-voprosy",
+      "id": "022-faq-chastye-voprosy",
       "component": "faq",
       "label": "Частые вопросы",
-      "file": "sections/023-faq-chastye-voprosy.html",
+      "file": "sections/022-faq-chastye-voprosy.html",
       "bytes": 3766,
       "hash": "891a2736c8ab22bf"
     },
     {
-      "id": "024-raw-html-fragment",
+      "id": "023-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/024-raw-html-fragment.html",
+      "file": "sections/023-raw-html-fragment.html",
       "bytes": 189,
       "hash": "ccd28f403bcdf3fc"
     },
     {
-      "id": "025-mobile-contact-nuzhno-bystro-ponyat-chto-delat-s-pol",
+      "id": "024-mobile-contact-nuzhno-bystro-ponyat-chto-delat-s-pol",
       "component": "mobile-contact",
       "label": "Нужно быстро понять, что делать с поломкой?",
-      "file": "sections/025-mobile-contact-nuzhno-bystro-ponyat-chto-delat-s-pol.html",
+      "file": "sections/024-mobile-contact-nuzhno-bystro-ponyat-chto-delat-s-pol.html",
       "bytes": 2869,
       "hash": "b9e409787c999113"
     },
     {
-      "id": "026-raw-html-fragment",
+      "id": "025-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/026-raw-html-fragment.html",
+      "file": "sections/025-raw-html-fragment.html",
       "bytes": 177,
       "hash": "37a4e93e71743eaf"
     },
     {
-      "id": "027-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon",
+      "id": "026-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon",
       "component": "lead-form",
       "label": "Оставьте заявку, и мы свяжемся по ремонту",
-      "file": "sections/027-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon.html",
-      "bytes": 3663,
-      "hash": "f4e71f090460793f"
+      "file": "sections/026-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon.html",
+      "bytes": 3743,
+      "hash": "ea2c7826517d29f6"
     },
     {
-      "id": "028-raw-html-fragment",
+      "id": "027-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 43,
+      "hash": "5e6efb3ee7784923",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "v11-ventilation-crosslink-start-5e6efb3ee778",
+      "templateRef": "src/components/parametric/static/layout-fragment-v11-ventilation-crosslink-start-5e6efb3ee778.template.html",
+      "props": {},
+      "sourceFile": "sections/027-raw-html-fragment.html"
+    },
+    {
+      "id": "028-contact-cta-novoe-napravlenie-ventilyaciya-restorano",
+      "component": "contact-cta",
+      "label": "Новое направление: вентиляция ресторанов",
+      "file": "sections/028-contact-cta-novoe-napravlenie-ventilyaciya-restorano.html",
+      "bytes": 4188,
+      "hash": "e1f4e97dbca32357"
+    },
+    {
+      "id": "029-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 39,
+      "hash": "fe891914569c1168",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "v11-ventilation-crosslink-end-fe891914569c",
+      "templateRef": "src/components/parametric/static/layout-fragment-v11-ventilation-crosslink-end-fe891914569c.template.html",
+      "props": {},
+      "sourceFile": "sections/029-raw-html-fragment.html"
+    },
+    {
+      "id": "030-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 44,
@@ -272,10 +293,10 @@
       "variant": "mobile-footer-injected-via-js-9ddb40c7b689",
       "templateRef": "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-9ddb40c7b689.template.html",
       "props": {},
-      "sourceFile": "sections/028-raw-html-fragment.html"
+      "sourceFile": "sections/030-raw-html-fragment.html"
     },
     {
-      "id": "029-raw-html-fragment",
+      "id": "031-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 45,
@@ -285,10 +306,10 @@
       "variant": "whatsapp-float-injected-via-js-7c5d01e0cd0d",
       "templateRef": "src/components/parametric/static/layout-fragment-whatsapp-float-injected-via-js-7c5d01e0cd0d.template.html",
       "props": {},
-      "sourceFile": "sections/029-raw-html-fragment.html"
+      "sourceFile": "sections/031-raw-html-fragment.html"
     },
     {
-      "id": "030-raw-html-fragment",
+      "id": "032-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 21,
@@ -298,10 +319,10 @@
       "variant": "footer-17c44fb2bab2",
       "templateRef": "src/components/parametric/static/layout-fragment-footer-17c44fb2bab2.template.html",
       "props": {},
-      "sourceFile": "sections/030-raw-html-fragment.html"
+      "sourceFile": "sections/032-raw-html-fragment.html"
     },
     {
-      "id": "031-footer-anchor-footer-mount-point",
+      "id": "033-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
       "bytes": 38,
@@ -311,10 +332,10 @@
       "variant": "footer-container-mount",
       "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-d4bb19e48569.template.html",
       "props": {},
-      "sourceFile": "sections/031-footer-anchor-footer-mount-point.html"
+      "sourceFile": "sections/033-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "032-raw-html-fragment",
+      "id": "034-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 23,
@@ -324,34 +345,34 @@
       "variant": "noscript-a15fa3c36a6b",
       "templateRef": "src/components/parametric/static/layout-fragment-noscript-a15fa3c36a6b.template.html",
       "props": {},
-      "sourceFile": "sections/032-raw-html-fragment.html"
+      "sourceFile": "sections/034-raw-html-fragment.html"
     },
     {
-      "id": "033-noscript-noscript-fallback",
+      "id": "035-noscript-noscript-fallback",
       "component": "noscript",
       "label": "Noscript fallback",
-      "file": "sections/033-noscript-noscript-fallback.html",
+      "file": "sections/035-noscript-noscript-fallback.html",
       "bytes": 1426,
       "hash": "7cc8fd535fc96bb0"
     },
     {
-      "id": "034-raw-html-fragment",
+      "id": "036-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/034-raw-html-fragment.html",
+      "file": "sections/036-raw-html-fragment.html",
       "bytes": 36,
       "hash": "13d5d2f1516e81c8"
     },
     {
-      "id": "035-proof-dokazatel-stva-garantii",
+      "id": "037-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/035-proof-dokazatel-stva-garantii.html",
+      "file": "sections/037-proof-dokazatel-stva-garantii.html",
       "bytes": 775,
       "hash": "cb9d3156cb62f7b8"
     },
     {
-      "id": "036-runtime-partials-podklyuchenie-partials-injector",
+      "id": "038-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 55,
@@ -361,10 +382,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a0c0c2f23990.template.html",
       "props": {},
-      "sourceFile": "sections/036-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/038-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "037-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "039-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 41,
@@ -374,10 +395,10 @@
       "variant": "mobile-footer-container",
       "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
-      "sourceFile": "sections/037-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/039-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "038-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "040-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 42,
@@ -387,10 +408,10 @@
       "variant": "whatsapp-float-container",
       "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
-      "sourceFile": "sections/038-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/040-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "039-raw-html-fragment",
+      "id": "041-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -400,14 +421,14 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/039-raw-html-fragment.html"
+      "sourceFile": "sections/041-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:page -- --page contact.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page contact.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page contact.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

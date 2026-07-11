@@ -1,0 +1,59 @@
+
+    <section id="request" class="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="inline-block bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold mb-4">📝 ЗАЯВКА</span>
+                <h2 class="text-3xl lg:text-4xl font-display font-extrabold text-brand-blue mb-4 heading-reveal">Оставьте заявку на ремонт</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Свяжемся, чтобы уточнить модель, симптомы и удобное время визита</p>
+            </div>
+            <form class="telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal" data-slot="request-form" action="/api/send-telegram" method="post" data-form-id="water_heaters_form_1" data-contact-form="water_heaters_form_1" data-form-page-slug="water-heaters" data-cta-id="water-heaters_form_01" data-cta-group="lead_form" data-block="lead_form">
+                <!-- household-sync:request-overview:start owner="tools/household-sync-fallbacks.mjs" source="data/household-page-slots.json,data/household-proof-layer.json,data/household-services.json" -->
+<div data-sync-zone="request-overview" data-household-slot-zone="request-overview" class="mb-6 rounded-2xl border border-slate-200 bg-slate-50/90 p-4 sm:p-5">
+      <div class="mb-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Что полезно указать сразу</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Уточним риск по электрике и течи</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Подскажем безопасные действия до визита</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-orange/10 text-brand-orange">Согласуем выезд по Москве и МО</span>
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <p class="text-sm font-bold text-brand-blue">Частые симптомы</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">не греет</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">течет</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">выбивает автомат</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-slate-100 text-slate-700">не включается</span>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-brand-blue">Частые бренды</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-blue/10 text-brand-blue">Ariston</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-blue/10 text-brand-blue">Thermex</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-blue/10 text-brand-blue">Electrolux</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-blue/10 text-brand-blue">Bosch</span><span class="inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium bg-brand-blue/10 text-brand-blue">Atlantic</span>
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Пример описания: Водонагреватель Thermex не греет воду, Балашиха, нужен выезд на дом</p>
+    </div>
+<!-- household-sync:request-overview:end -->
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="water-heaters-name" class="block text-sm font-medium text-slate-700 mb-2">Ваше имя *</label>
+                        <input type="text" name="name" required placeholder="Алексей" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700" id="water-heaters-name" autocomplete="name">
+                    </div>
+                    <div>
+                        <label for="water-heaters-phone" class="block text-sm font-medium text-slate-700 mb-2">Телефон *</label>
+                        <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700" id="water-heaters-phone" autocomplete="tel" inputmode="tel">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="water-heaters-type" class="block text-sm font-medium text-slate-700 mb-2">Модель водонагревателя</label>
+                    <input type="text" name="type" placeholder="Thermex IF 80, Ariston ABS 50..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700" id="water-heaters-type">
+                </div>
+                <div class="mb-6">
+                    <label for="water-heaters-problem" class="block text-sm font-medium text-slate-700 mb-2">Что случилось?</label>
+                    <input type="text" name="problem" placeholder="Не греет, течёт, выбивает автомат..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition text-slate-700" id="water-heaters-problem">
+                </div>
+                <button type="submit" class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white text-lg font-bold px-8 py-4 rounded-xl transition shadow-lg" data-cta-id="water-heaters_form_submit_button_1" data-cta-group="form_submit" data-block="form">
+                    <i class="ri-send-plane-line mr-2"></i>Отправить заявку
+                </button>
+                <p class="text-center text-slate-400 text-sm mt-4"><i class="ri-lock-line mr-1"></i>Данные не передаются третьим лицам</p>
+            </form>
+        </div>
+    </section>

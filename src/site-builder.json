@@ -2,17 +2,815 @@
   "schemaVersion": 1,
   "generatedAt": "1970-01-01T00:00:00.000Z",
   "mode": "parallel-static-component-builder",
-  "status": "shared-component-baseline",
-  "note": "All indexed HTML pages are rebuilt from src/pages/* section components. Root HTML remains static production output.",
+  "status": "source-of-truth",
+  "note": "Every production HTML page has one byte-identical source model and is generated through the Static Component Builder.",
   "template": "sectioned-html-v1",
   "defaultOutputDir": "build/site-builder",
   "pages": [
     {
+      "page": "404.html",
+      "slug": "404",
+      "model": "src/pages/404/page.json",
+      "sections": 6,
+      "sourceHash": "9e6185371a3ac0f27879611ed739c175bcb039dfb3241da00cf2fc73ee1826dd"
+    },
+    {
+      "page": "about.html",
+      "slug": "about",
+      "model": "src/pages/about/page.json",
+      "sections": 24,
+      "sourceHash": "f8bd08bbad099087029754377fc72b697d1a7193312c269963ae6c1e74c14aa3"
+    },
+    {
+      "page": "avtomatika-ventilyatsii-restorana.html",
+      "slug": "avtomatika-ventilyatsii-restorana",
+      "model": "src/pages/avtomatika-ventilyatsii-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "86ced39bc5b1a9d0f9235e4258b9efdf9a6fecc49230eb033e4a8513bd55a9aa"
+    },
+    {
+      "page": "bytovaya-about.html",
+      "slug": "bytovaya-about",
+      "model": "src/pages/bytovaya-about/page.json",
+      "sections": 48,
+      "sourceHash": "98a787ad0808a23473b8998e5d876f565cf2d8ba15dcc937377baef33e571c0b"
+    },
+    {
+      "page": "bytovaya-contact.html",
+      "slug": "bytovaya-contact",
+      "model": "src/pages/bytovaya-contact/page.json",
+      "sections": 17,
+      "sourceHash": "39c2808c2c5d0c48a804966c1654ce3f4b6fdd7757f1bc1eaa5df44bbd669030"
+    },
+    {
+      "page": "bytovaya-index.html",
+      "slug": "bytovaya-index",
+      "model": "src/pages/bytovaya-index/page.json",
+      "sections": 35,
+      "sourceHash": "6f348ad427d9810b3b070bf346c3305ba91a02b03408f5407db40c347612ab84"
+    },
+    {
+      "page": "bytovaya-uslugi.html",
+      "slug": "bytovaya-uslugi",
+      "model": "src/pages/bytovaya-uslugi/page.json",
+      "sections": 17,
+      "sourceHash": "b1324937aba2d470898d94b360f855b609a13288965a99edb1c9618b967c6633"
+    },
+    {
+      "page": "chek-list-ventilyatsii-restorana.html",
+      "slug": "chek-list-ventilyatsii-restorana",
+      "model": "src/pages/chek-list-ventilyatsii-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "e0df7f23564617a7c7608b60d1b8078ea562125b87be9123d77bf1f804f7f740"
+    },
+    {
+      "page": "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+      "slug": "chem-otlichaetsya-pritok-ot-vytyazhki",
+      "model": "src/pages/chem-otlichaetsya-pritok-ot-vytyazhki/page.json",
+      "sections": 10,
+      "sourceHash": "f82407ba78a21df49cfb2b6456f47ad38d74d3527585080403c087d9243483b0"
+    },
+    {
+      "page": "chistka-ventilyatsii-restoranov.html",
+      "slug": "chistka-ventilyatsii-restoranov",
+      "model": "src/pages/chistka-ventilyatsii-restoranov/page.json",
+      "sections": 10,
+      "sourceHash": "33d0b952a662c5dc0f1b82b4ccc673909347fe3f2f2be98411b579650b3c306c"
+    },
+    {
+      "page": "chto-proveryaet-inzhener-ventilyatsii.html",
+      "slug": "chto-proveryaet-inzhener-ventilyatsii",
+      "model": "src/pages/chto-proveryaet-inzhener-ventilyatsii/page.json",
+      "sections": 10,
+      "sourceHash": "17410315b942e573c11f4a97a8a44ff3c55e7eed5e694d9a5cde5cb33dda8753"
+    },
+    {
+      "page": "contact.html",
+      "slug": "contact",
+      "model": "src/pages/contact/page.json",
+      "sections": 41,
+      "sourceHash": "96da8b57264b577325ceebe7c91cdd07201dd6aa81f374f992c4c6ede3f0f61c"
+    },
+    {
+      "page": "diagnostika-ventilyatsii-restorana.html",
+      "slug": "diagnostika-ventilyatsii-restorana",
+      "model": "src/pages/diagnostika-ventilyatsii-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "68ff6140739ab6fc5a1d880ea3c6cfdfb320a7e8a50a669e6c347880a296683a"
+    },
+    {
+      "page": "dym-na-kuhne-restorana.html",
+      "slug": "dym-na-kuhne-restorana",
+      "model": "src/pages/dym-na-kuhne-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "fa6e196b8d77ecf4abcc6e81e6f3c3e5cd609a49ae89c730a8bd395120d04f93"
+    },
+    {
+      "page": "grili-mangaly.html",
+      "slug": "grili-mangaly",
+      "model": "src/pages/grili-mangaly/page.json",
+      "sections": 63,
+      "sourceHash": "ba62ef0bbc28f88d95203dad3163bd9a0dedfea068761bfcc2f9689978e1026f"
+    },
+    {
+      "page": "holodilniki.html",
+      "slug": "holodilniki",
+      "model": "src/pages/holodilniki/page.json",
+      "sections": 50,
+      "sourceHash": "a310a9123a1981c18149b617ba13fd852be801c5c9e939b64f97c88b9a15aaa1"
+    },
+    {
+      "page": "holodilnoe-oborudovanie.html",
+      "slug": "holodilnoe-oborudovanie",
+      "model": "src/pages/holodilnoe-oborudovanie/page.json",
+      "sections": 66,
+      "sourceHash": "03e5a4b5fce2958c52bacbb9be3451ef6098237401ae758d80d4d8f16e058fe4"
+    },
+    {
+      "page": "ice-machines.html",
+      "slug": "ice-machines",
+      "model": "src/pages/ice-machines/page.json",
+      "sections": 63,
+      "sourceHash": "ebd50525976b52825c60567b29f33bbf3f2e638c5e12ec20f5fc1f5bfaa2b764"
+    },
+    {
+      "page": "index.html",
+      "slug": "index",
+      "model": "src/pages/index/page.json",
+      "sections": 26,
+      "sourceHash": "af165e24d147a7ffe006641a9a95b29ecabfcea99da1842af6b0b10e9e10bb1b"
+    },
+    {
+      "page": "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+      "slug": "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii",
+      "model": "src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/page.json",
+      "sections": 10,
+      "sourceHash": "0dc94f88911718c7e650ef7fad53755e5440351035ce5d1aa6c5a2740bab1da7"
+    },
+    {
+      "page": "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+      "slug": "kak-ponyat-chto-nuzhna-chistka-ventilyatsii",
+      "model": "src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/page.json",
+      "sections": 10,
+      "sourceHash": "8eb9b5c655efc321a95d74d8758a9b661ed8bd70a513d984f4c000fa2988363b"
+    },
+    {
+      "page": "kak-rabotaet-ventilyatsiya-restorana.html",
+      "slug": "kak-rabotaet-ventilyatsiya-restorana",
+      "model": "src/pages/kak-rabotaet-ventilyatsiya-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "88e1375be372ac2de5ac5bd180a01998a8ae7c1f7bd4ef47469d788fff7ae84e"
+    },
+    {
+      "page": "kanalnaya-ventilyatsiya-restorana.html",
+      "slug": "kanalnaya-ventilyatsiya-restorana",
+      "model": "src/pages/kanalnaya-ventilyatsiya-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "65581a4cf4d3674d71b5d5d674f321c85aa50c6b2e3cfc9bf2d298d71290b558"
+    },
+    {
+      "page": "kompyutery.html",
+      "slug": "kompyutery",
+      "model": "src/pages/kompyutery/page.json",
+      "sections": 54,
+      "sourceHash": "102c564f648c19773f0b1c7d91c34a27f680aeb24b9483e21bc9dc93de6d7da6"
+    },
+    {
+      "page": "kryshnye-ventilyatory-restorana.html",
+      "slug": "kryshnye-ventilyatory-restorana",
+      "model": "src/pages/kryshnye-ventilyatory-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "3eb4e807d428417d9b11f019f2ada5e32a0f496812f655049638a46718c31721"
+    },
+    {
+      "page": "mestnaya-vytyazhka-nad-oborudovaniem.html",
+      "slug": "mestnaya-vytyazhka-nad-oborudovaniem",
+      "model": "src/pages/mestnaya-vytyazhka-nad-oborudovaniem/page.json",
+      "sections": 10,
+      "sourceHash": "78c26b7c9ccb8ad6732edc88defa5691b161487927d45d2028f9179feb269988"
+    },
+    {
+      "page": "microwaves.html",
+      "slug": "microwaves",
+      "model": "src/pages/microwaves/page.json",
+      "sections": 9,
+      "sourceHash": "4c2f3b2d9f41628820c99a09ccc444a2410791d81f10b8c177a4b4ad1c5a6c3d"
+    },
+    {
+      "page": "obratnaya-tyaga-v-restorane.html",
+      "slug": "obratnaya-tyaga-v-restorane",
+      "model": "src/pages/obratnaya-tyaga-v-restorane/page.json",
+      "sections": 10,
+      "sourceHash": "74ada6e2918193a482975fbfaa0973b8988cef000cb8184022bbb66f63d0e7cb"
+    },
+    {
+      "page": "obsluzhivanie-ventilyatsii-restoranov.html",
+      "slug": "obsluzhivanie-ventilyatsii-restoranov",
+      "model": "src/pages/obsluzhivanie-ventilyatsii-restoranov/page.json",
+      "sections": 10,
+      "sourceHash": "ce739132bc749e5e10c688c48cf38a5a44de3bf6c3093b57468dd094de39d2d3"
+    },
+    {
+      "page": "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+      "slug": "oshibki-pri-ekspluatatsii-vytyazhki-restorana",
+      "model": "src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "4135875793aeb8b64cc569517468b1dad7a8a9335b5f03ccf4261cbf6f3f51ca"
+    },
+    {
+      "page": "parokonvektomat-abat.html",
+      "slug": "parokonvektomat-abat",
+      "model": "src/pages/parokonvektomat-abat/page.json",
+      "sections": 76,
+      "sourceHash": "9d90f9baf5cb0241d751de375b222d068a7fda3fd9450fff894f1594a78ab5ee"
+    },
+    {
+      "page": "parokonvektomat-convotherm.html",
+      "slug": "parokonvektomat-convotherm",
+      "model": "src/pages/parokonvektomat-convotherm/page.json",
+      "sections": 76,
+      "sourceHash": "94d14fbb2f7da811770461a006635b792d09e0b63b366f4525c8e9ad9ef159a0"
+    },
+    {
+      "page": "parokonvektomat-e02-e07-e10.html",
+      "slug": "parokonvektomat-e02-e07-e10",
+      "model": "src/pages/parokonvektomat-e02-e07-e10/page.json",
+      "sections": 68,
+      "sourceHash": "58f87ed75766dc98b40cea2b8beebb3f76290a9c0fe77920e6459121e35672c0"
+    },
+    {
+      "page": "parokonvektomat-electrolux.html",
+      "slug": "parokonvektomat-electrolux",
+      "model": "src/pages/parokonvektomat-electrolux/page.json",
+      "sections": 76,
+      "sourceHash": "58c41a8963b9cbb85d7d25b0f28e0c27ef78939b15afffc84d0c0b33bce68cc3"
+    },
+    {
+      "page": "parokonvektomat-kod-oshibki.html",
+      "slug": "parokonvektomat-kod-oshibki",
+      "model": "src/pages/parokonvektomat-kod-oshibki/page.json",
+      "sections": 68,
+      "sourceHash": "f5729fd7c7719ecd75369f6dd7a74bd352d5f24518269ae66029834893d064f0"
+    },
+    {
+      "page": "parokonvektomat-lainox.html",
+      "slug": "parokonvektomat-lainox",
+      "model": "src/pages/parokonvektomat-lainox/page.json",
+      "sections": 76,
+      "sourceHash": "c842589f1aaca5b2b97a7a6faafb5d739ca468aabb0f1f3bbee555cb4d411f28"
+    },
+    {
+      "page": "parokonvektomat-ne-greet.html",
+      "slug": "parokonvektomat-ne-greet",
+      "model": "src/pages/parokonvektomat-ne-greet/page.json",
+      "sections": 68,
+      "sourceHash": "6396eebda769a1b7f98d06086d2930f9c5c0d0e18cacfee29c1770c0b3c371f1"
+    },
+    {
+      "page": "parokonvektomat-net-para.html",
+      "slug": "parokonvektomat-net-para",
+      "model": "src/pages/parokonvektomat-net-para/page.json",
+      "sections": 68,
+      "sourceHash": "0a4fb68414de4c8ebd002d2eded8ff9f47c1a0d33ecf7464a7ad69fdcefda016"
+    },
+    {
+      "page": "parokonvektomat-obschuzhivanie.html",
+      "slug": "parokonvektomat-obschuzhivanie",
+      "model": "src/pages/parokonvektomat-obschuzhivanie/page.json",
+      "sections": 33,
+      "sourceHash": "a2d5ee794105c37460d2fe6b501a24644a13ced3c0b99ed86cd07e546aed490c"
+    },
+    {
+      "page": "parokonvektomat-rational-e9.html",
+      "slug": "parokonvektomat-rational-e9",
+      "model": "src/pages/parokonvektomat-rational-e9/page.json",
+      "sections": 68,
+      "sourceHash": "c02ab8e60e32e43707f24eafb3dc8cef4e8197b38a94e1da85bc451de695894b"
+    },
+    {
+      "page": "parokonvektomat-rational.html",
+      "slug": "parokonvektomat-rational",
+      "model": "src/pages/parokonvektomat-rational/page.json",
+      "sections": 68,
+      "sourceHash": "8f678e21584d0c2d272d7fdde9555da9b8ded962afb3f17b4a6bfcd68ea3caff"
+    },
+    {
+      "page": "parokonvektomat-unox-af02-af08.html",
+      "slug": "parokonvektomat-unox-af02-af08",
+      "model": "src/pages/parokonvektomat-unox-af02-af08/page.json",
+      "sections": 68,
+      "sourceHash": "71cfd3a5b8bbcdc396b5b69c5a806bf495ee0d3c561b828e42b23727ccb307e1"
+    },
+    {
+      "page": "parokonvektomat-unox.html",
+      "slug": "parokonvektomat-unox",
+      "model": "src/pages/parokonvektomat-unox/page.json",
+      "sections": 68,
+      "sourceHash": "aa7102938e4d303393d7bfa6da4e3651385fa5817b2c0b1c4fa1217356c2f117"
+    },
+    {
       "page": "parokonvektomaty-promo.html",
       "slug": "parokonvektomaty-promo",
       "model": "src/pages/parokonvektomaty-promo/page.json",
-      "sections": 69,
-      "sourceHash": "54f18d2ea4bf6a98daccaf46400e246abc432321903579d6aa92c727bbfac655"
+      "sections": 68,
+      "sourceHash": "899157936fcbbe570ded407ee831382ab291b2a32f6412b749a90526d17c1308"
+    },
+    {
+      "page": "parokonvektomaty.html",
+      "slug": "parokonvektomaty",
+      "model": "src/pages/parokonvektomaty/page.json",
+      "sections": 78,
+      "sourceHash": "93495529f57329d6d3934041f75d211bf9817da860cb780a7500fc1eb0459b1e"
+    },
+    {
+      "page": "peregrev-kuhni-restorana.html",
+      "slug": "peregrev-kuhni-restorana",
+      "model": "src/pages/peregrev-kuhni-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "8f0ec2c301d90da3cd67b77e0d297ba982df3d7b63ad758e94027082f8a49162"
+    },
+    {
+      "page": "pishevarochnye-kotly.html",
+      "slug": "pishevarochnye-kotly",
+      "model": "src/pages/pishevarochnye-kotly/page.json",
+      "sections": 45,
+      "sourceHash": "318f7a9656a259ee12afb223fe0af054561c74aa84e3730be45106ddaeb0a52c"
+    },
+    {
+      "page": "pishevarochnyj-kotel-abat-e01.html",
+      "slug": "pishevarochnyj-kotel-abat-e01",
+      "model": "src/pages/pishevarochnyj-kotel-abat-e01/page.json",
+      "sections": 20,
+      "sourceHash": "f7bc36eaef88d3d41a93084af600a80e6de8e5fdeb02903a3ac0ff96cdc027b8"
+    },
+    {
+      "page": "pishevarochnyj-kotel-abat-e02.html",
+      "slug": "pishevarochnyj-kotel-abat-e02",
+      "model": "src/pages/pishevarochnyj-kotel-abat-e02/page.json",
+      "sections": 20,
+      "sourceHash": "da4bc459f88565173393f05805fcd584a3301d6335aa90c6c2ec12d51b29df60"
+    },
+    {
+      "page": "pishevarochnyj-kotel-abat-e04.html",
+      "slug": "pishevarochnyj-kotel-abat-e04",
+      "model": "src/pages/pishevarochnyj-kotel-abat-e04/page.json",
+      "sections": 20,
+      "sourceHash": "349cabd73f6a89bdfc616ad957dabf346b61320c6057c231fe1f544811942a2e"
+    },
+    {
+      "page": "pishevarochnyj-kotel-abat-e17.html",
+      "slug": "pishevarochnyj-kotel-abat-e17",
+      "model": "src/pages/pishevarochnyj-kotel-abat-e17/page.json",
+      "sections": 20,
+      "sourceHash": "3e42ea6720eb8b81663f25f63289609bf4ac6cda0a9b71fe320101330e754d4f"
+    },
+    {
+      "page": "pishevarochnyj-kotel-abat-h20.html",
+      "slug": "pishevarochnyj-kotel-abat-h20",
+      "model": "src/pages/pishevarochnyj-kotel-abat-h20/page.json",
+      "sections": 20,
+      "sourceHash": "c47c1eaf87436f0b912150a5888cc7603e2d2547af344bb6b68a407df1b3af4c"
+    },
+    {
+      "page": "pishevarochnyj-kotel-abat-kpem.html",
+      "slug": "pishevarochnyj-kotel-abat-kpem",
+      "model": "src/pages/pishevarochnyj-kotel-abat-kpem/page.json",
+      "sections": 34,
+      "sourceHash": "60b204c88e192c6bf79c617e94739784b6834e29f9da5773b1217d449150cd77"
+    },
+    {
+      "page": "pishevarochnyj-kotel-datchik-temperatury.html",
+      "slug": "pishevarochnyj-kotel-datchik-temperatury",
+      "model": "src/pages/pishevarochnyj-kotel-datchik-temperatury/page.json",
+      "sections": 23,
+      "sourceHash": "7a904049dbd9068498182a867acba980c2059c8873298e4afcc67c461566feb1"
+    },
+    {
+      "page": "pishevarochnyj-kotel-dolgo-greet.html",
+      "slug": "pishevarochnyj-kotel-dolgo-greet",
+      "model": "src/pages/pishevarochnyj-kotel-dolgo-greet/page.json",
+      "sections": 23,
+      "sourceHash": "129af8c133f5a036bd3a0c8e5e679419783ce94f9b394cf3cddd50d6fbdd66b8"
+    },
+    {
+      "page": "pishevarochnyj-kotel-kod-oshibki.html",
+      "slug": "pishevarochnyj-kotel-kod-oshibki",
+      "model": "src/pages/pishevarochnyj-kotel-kod-oshibki/page.json",
+      "sections": 34,
+      "sourceHash": "96211874a241c18fc139a51219647a4921ae6ee1d134f4b6196706cc86f4d408"
+    },
+    {
+      "page": "pishevarochnyj-kotel-manometr.html",
+      "slug": "pishevarochnyj-kotel-manometr",
+      "model": "src/pages/pishevarochnyj-kotel-manometr/page.json",
+      "sections": 23,
+      "sourceHash": "d2a6907156cf60c966d0cfc9edb7bd3340bef5965db640acb354a64af8fafab6"
+    },
+    {
+      "page": "pishevarochnyj-kotel-ne-greet.html",
+      "slug": "pishevarochnyj-kotel-ne-greet",
+      "model": "src/pages/pishevarochnyj-kotel-ne-greet/page.json",
+      "sections": 34,
+      "sourceHash": "2e1260e06ae9f264e83d769445165ad638a13d83bd830dcfa93231198475a3b5"
+    },
+    {
+      "page": "pishevarochnyj-kotel-ne-vklyuchaetsya.html",
+      "slug": "pishevarochnyj-kotel-ne-vklyuchaetsya",
+      "model": "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/page.json",
+      "sections": 23,
+      "sourceHash": "5b9991589ac449ef1e59d69682d304d3873c2f652dd8d3c36095c89abec03f17"
+    },
+    {
+      "page": "pishevarochnyj-kotel-parovodyanaya-rubashka.html",
+      "slug": "pishevarochnyj-kotel-parovodyanaya-rubashka",
+      "model": "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/page.json",
+      "sections": 23,
+      "sourceHash": "ac2e1f0468f060e769890d892643a0f858305e1ae986027abfb7f086960af38f"
+    },
+    {
+      "page": "pishevarochnyj-kotel-plata-upravleniya.html",
+      "slug": "pishevarochnyj-kotel-plata-upravleniya",
+      "model": "src/pages/pishevarochnyj-kotel-plata-upravleniya/page.json",
+      "sections": 23,
+      "sourceHash": "1f318f886cfc511125970d4ea7f7ec2479bfb6a2b62f7e555a9a6c02cc5e274b"
+    },
+    {
+      "page": "pishevarochnyj-kotel-remont-slivnogo-krana.html",
+      "slug": "pishevarochnyj-kotel-remont-slivnogo-krana",
+      "model": "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/page.json",
+      "sections": 23,
+      "sourceHash": "9f6940a3ea36363dd13e18722a4c4694fdeb6c926757fc5e24c6336543f84476"
+    },
+    {
+      "page": "pishevarochnyj-kotel-suhoy-hod.html",
+      "slug": "pishevarochnyj-kotel-suhoy-hod",
+      "model": "src/pages/pishevarochnyj-kotel-suhoy-hod/page.json",
+      "sections": 34,
+      "sourceHash": "48d8333f78badf9367b03a69c71ea7521c878b7f1f8ea765a543a0cfa127abef"
+    },
+    {
+      "page": "pishevarochnyj-kotel-techet.html",
+      "slug": "pishevarochnyj-kotel-techet",
+      "model": "src/pages/pishevarochnyj-kotel-techet/page.json",
+      "sections": 34,
+      "sourceHash": "6ceff34c92d4e4095d70ab22f1cc1012c1b305501f389538c7a1d987c741bb0d"
+    },
+    {
+      "page": "pishevarochnyj-kotel-vybivaet-avtomat.html",
+      "slug": "pishevarochnyj-kotel-vybivaet-avtomat",
+      "model": "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/page.json",
+      "sections": 34,
+      "sourceHash": "981b089c339eb51d77381d4c6df11a68742200e771256a2b8b44106f485dcce6"
+    },
+    {
+      "page": "pishevarochnyj-kotel-zamena-tena.html",
+      "slug": "pishevarochnyj-kotel-zamena-tena",
+      "model": "src/pages/pishevarochnyj-kotel-zamena-tena/page.json",
+      "sections": 23,
+      "sourceHash": "a3b112fcf9f942fb2ae6807411c83099ba06637808b9fd7774e8285381874c2f"
+    },
+    {
+      "page": "plity-pechi.html",
+      "slug": "plity-pechi",
+      "model": "src/pages/plity-pechi/page.json",
+      "sections": 36,
+      "sourceHash": "b393b5e02a504c61b0842fbd3f9652996750d23b72424e979415a2a476eea444"
+    },
+    {
+      "page": "plity.html",
+      "slug": "plity",
+      "model": "src/pages/plity/page.json",
+      "sections": 47,
+      "sourceHash": "be870f64c7f4619a82bc3433d1d7ade86278abf2f471a3b2bf7a54c1aaa6b87f"
+    },
+    {
+      "page": "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+      "slug": "pochemu-vytyazhka-ne-tyanet-v-restorane",
+      "model": "src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/page.json",
+      "sections": 10,
+      "sourceHash": "8a44e83ac79b6330a522f0830eac78e5a28809f86d64d05cefb36c12aae37c75"
+    },
+    {
+      "page": "posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+      "slug": "posle-remonta-kuhni-ventilyatsiya-huzhe",
+      "model": "src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/page.json",
+      "sections": 10,
+      "sourceHash": "38b4f4e5112f037ec24b8060fe94897ac5c666c95ff62e8a1fb74a6487594075"
+    },
+    {
+      "page": "posudomoechnye-mashiny.html",
+      "slug": "posudomoechnye-mashiny",
+      "model": "src/pages/posudomoechnye-mashiny/page.json",
+      "sections": 66,
+      "sourceHash": "786248a6a07f6562cae5b7d752aa75bedb92b7e6b9b78782f8f70e63ee51aeb8"
+    },
+    {
+      "page": "posudomoyki.html",
+      "slug": "posudomoyki",
+      "model": "src/pages/posudomoyki/page.json",
+      "sections": 52,
+      "sourceHash": "d8c6b41fedefd5b6c9c1412cfbc197d521723fc4515683af109829dccb86fb5c"
+    },
+    {
+      "page": "pritochnaya-ventilyatsiya-restorana.html",
+      "slug": "pritochnaya-ventilyatsiya-restorana",
+      "model": "src/pages/pritochnaya-ventilyatsiya-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "6fdc1619cec7ed16ecff3255f38d737b34de4ba867befb893a07222535e31c24"
+    },
+    {
+      "page": "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+      "slug": "pritochno-vytyazhnaya-ventilyatsiya-restorana",
+      "model": "src/pages/pritochno-vytyazhnaya-ventilyatsiya-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "9f7e59d3ce71fc83ec621e92a405e917af69203d6743ef37a5f64293b7b82b4f"
+    },
+    {
+      "page": "remont-oborudovaniya-restorana-parokonvektomat.html",
+      "slug": "remont-oborudovaniya-restorana-parokonvektomat",
+      "model": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json",
+      "sections": 74,
+      "sourceHash": "fc3b9a457387d3f641b9795a3078680fce9f8184ee77a9bb8c54cc565751052d"
+    },
+    {
+      "page": "remont-pishevarochnyh-kotlov-abat.html",
+      "slug": "remont-pishevarochnyh-kotlov-abat",
+      "model": "src/pages/remont-pishevarochnyh-kotlov-abat/page.json",
+      "sections": 17,
+      "sourceHash": "feeed597cedb209fe50b58db46723566ceebccb89ef5f483b4c66099dc1c04b8"
+    },
+    {
+      "page": "remont-pishevarochnyh-kotlov-apach.html",
+      "slug": "remont-pishevarochnyh-kotlov-apach",
+      "model": "src/pages/remont-pishevarochnyh-kotlov-apach/page.json",
+      "sections": 17,
+      "sourceHash": "75ccb0af9e64f982462bda8034e611cf6646ac7ef457c8c3c77cda4669a17a66"
+    },
+    {
+      "page": "remont-pishevarochnyh-kotlov-atesy.html",
+      "slug": "remont-pishevarochnyh-kotlov-atesy",
+      "model": "src/pages/remont-pishevarochnyh-kotlov-atesy/page.json",
+      "sections": 17,
+      "sourceHash": "38f9c4d4ce8b4b285ebc8a707fc7165127b95878015233e4f09b3b4a407e06fb"
+    },
+    {
+      "page": "remont-pishevarochnyh-kotlov-iterma.html",
+      "slug": "remont-pishevarochnyh-kotlov-iterma",
+      "model": "src/pages/remont-pishevarochnyh-kotlov-iterma/page.json",
+      "sections": 17,
+      "sourceHash": "87a8a8ea26b37509864f1b18f628d1d453be972e595032ca8b8f29080f7f02f1"
+    },
+    {
+      "page": "remont-pishevarochnyh-kotlov-kpem.html",
+      "slug": "remont-pishevarochnyh-kotlov-kpem",
+      "model": "src/pages/remont-pishevarochnyh-kotlov-kpem/page.json",
+      "sections": 17,
+      "sourceHash": "923098b8fcddcc481fdef0be814a7fc7b508ce3fb62b2df38d5feccedbdf4409"
+    },
+    {
+      "page": "remont-pritochnoj-ventilyatsii-restorana.html",
+      "slug": "remont-pritochnoj-ventilyatsii-restorana",
+      "model": "src/pages/remont-pritochnoj-ventilyatsii-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "9f8bc3243b64ad89046b569b66aec102c5211349769cd36916a70a58fd2fe695"
+    },
+    {
+      "page": "remont-ventilyatora-vytyazhki-restorana.html",
+      "slug": "remont-ventilyatora-vytyazhki-restorana",
+      "model": "src/pages/remont-ventilyatora-vytyazhki-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "521ab35223c5a854f475c5f7336d9ab2ac1dbc34a63803576318a0f29a47eea1"
+    },
+    {
+      "page": "remont-ventilyatsii-restoranov.html",
+      "slug": "remont-ventilyatsii-restoranov",
+      "model": "src/pages/remont-ventilyatsii-restoranov/page.json",
+      "sections": 10,
+      "sourceHash": "d956b49ee4364f24f9b8711e7054707d302b48519fc20ac97f54783d94fc0435"
+    },
+    {
+      "page": "remont-vozduhovodov-restorana.html",
+      "slug": "remont-vozduhovodov-restorana",
+      "model": "src/pages/remont-vozduhovodov-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "7c1b7c534ce5fc45337b46f86d2d551076a94dfea7d446a56ff9a1b7cd62b2e8"
+    },
+    {
+      "page": "remont-vytyazhki-restorana.html",
+      "slug": "remont-vytyazhki-restorana",
+      "model": "src/pages/remont-vytyazhki-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "cdb3da86e2887cad546e314663c2c11bfdba8daf4416eb3688dc099ac9e9e87e"
+    },
+    {
+      "page": "remont-zhirovyh-filtrov-vytyazhki.html",
+      "slug": "remont-zhirovyh-filtrov-vytyazhki",
+      "model": "src/pages/remont-zhirovyh-filtrov-vytyazhki/page.json",
+      "sections": 10,
+      "sourceHash": "1abde5b7c54d152a4c4d1953c1d78df723cf5d1417e7c2206acfbac2ac65b8eb"
+    },
+    {
+      "page": "routery.html",
+      "slug": "routery",
+      "model": "src/pages/routery/page.json",
+      "sections": 51,
+      "sourceHash": "94d6daeeed74ecfae7edaafcd822fb480e234a782ed8a99b22d195a1be69dd91"
+    },
+    {
+      "page": "shumit-vytyazhka-restorana.html",
+      "slug": "shumit-vytyazhka-restorana",
+      "model": "src/pages/shumit-vytyazhka-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "9d90713eadd0914281e1074b84c1b5590eb9c695638a638c143df0a5b5ec154e"
+    },
+    {
+      "page": "slabyj-pritok-vozduha-restoran.html",
+      "slug": "slabyj-pritok-vozduha-restoran",
+      "model": "src/pages/slabyj-pritok-vozduha-restoran/page.json",
+      "sections": 10,
+      "sourceHash": "906519cbe3633ea2d23174731315ba3667bdf28620d48ed1263ed5d6dc03e617"
+    },
+    {
+      "page": "stiralnye-mashiny.html",
+      "slug": "stiralnye-mashiny",
+      "model": "src/pages/stiralnye-mashiny/page.json",
+      "sections": 49,
+      "sourceHash": "dcf4a518a05f3e8698f68f753cfa915a941cc013b538f338520f226a8fc20d39"
+    },
+    {
+      "page": "techet-kondensat-iz-ventilyatsii.html",
+      "slug": "techet-kondensat-iz-ventilyatsii",
+      "model": "src/pages/techet-kondensat-iz-ventilyatsii/page.json",
+      "sections": 10,
+      "sourceHash": "f55b137eecf2613a22a54bb43f739f8147574665620888fee68939a4effe5869"
+    },
+    {
+      "page": "uslugi.html",
+      "slug": "uslugi",
+      "model": "src/pages/uslugi/page.json",
+      "sections": 26,
+      "sourceHash": "d6059579e2ebebafe9b006f4133e36ffaf41f9c209788d4f3c540178d9955fd6"
+    },
+    {
+      "page": "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+      "slug": "ventilyator-vytyazhki-ne-vklyuchaetsya",
+      "model": "src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/page.json",
+      "sections": 10,
+      "sourceHash": "b3e258fe15a6eebcbe68ae415fcce426dfce8a598a8c972270b64ff715066931"
+    },
+    {
+      "page": "ventilyator-vytyazhki-vybivaet-avtomat.html",
+      "slug": "ventilyator-vytyazhki-vybivaet-avtomat",
+      "model": "src/pages/ventilyator-vytyazhki-vybivaet-avtomat/page.json",
+      "sections": 10,
+      "sourceHash": "0bf0efe0f631d4068c1f44b05fa7528bfd48e254c2e7634dd3f2a9b43a3c2011"
+    },
+    {
+      "page": "ventilyatsionnye-zonty-restorana.html",
+      "slug": "ventilyatsionnye-zonty-restorana",
+      "model": "src/pages/ventilyatsionnye-zonty-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "61216dda295d38fbe45c390ca63c35b85ce97fcc0039496303c2ba1e57aaf8c6"
+    },
+    {
+      "page": "ventilyatsiya-dark-kitchen.html",
+      "slug": "ventilyatsiya-dark-kitchen",
+      "model": "src/pages/ventilyatsiya-dark-kitchen/page.json",
+      "sections": 10,
+      "sourceHash": "c19858f2a8e261e5bd651db894c5d9ecc5bde1e46dd55dc40c2f1914faae2d73"
+    },
+    {
+      "page": "ventilyatsiya-fudkorta.html",
+      "slug": "ventilyatsiya-fudkorta",
+      "model": "src/pages/ventilyatsiya-fudkorta/page.json",
+      "sections": 10,
+      "sourceHash": "1ef85a276d0d5c2956d042bfc2f30d6615424f7c3cedcf186ac56f7caaf7bebf"
+    },
+    {
+      "page": "ventilyatsiya-i-gril-v-restorane.html",
+      "slug": "ventilyatsiya-i-gril-v-restorane",
+      "model": "src/pages/ventilyatsiya-i-gril-v-restorane/page.json",
+      "sections": 10,
+      "sourceHash": "fc16ab07d9b7a492bdf4301c514dc39e8a93db4967ea3dcc0accf1a6e03fe16e"
+    },
+    {
+      "page": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+      "slug": "ventilyatsiya-i-holodilnoe-oborudovanie",
+      "model": "src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/page.json",
+      "sections": 10,
+      "sourceHash": "aa9a3a13bf9bcc1eeffeccc6b5a1fa0bca72f37411d0aea02a02a4a1dfe825b7"
+    },
+    {
+      "page": "ventilyatsiya-i-parokonvektomat.html",
+      "slug": "ventilyatsiya-i-parokonvektomat",
+      "model": "src/pages/ventilyatsiya-i-parokonvektomat/page.json",
+      "sections": 10,
+      "sourceHash": "cc8b950c53f69e41f121b3a3431b6dc327a12bbfb7c684b9a3602a7e73a66eaa"
+    },
+    {
+      "page": "ventilyatsiya-i-posudomoechnaya-zona.html",
+      "slug": "ventilyatsiya-i-posudomoechnaya-zona",
+      "model": "src/pages/ventilyatsiya-i-posudomoechnaya-zona/page.json",
+      "sections": 10,
+      "sourceHash": "7ee924c28ea4d9f806b2abb9bfd8b447ea05166814fe0c17dca5b080faccd06f"
+    },
+    {
+      "page": "ventilyatsiya-kafe.html",
+      "slug": "ventilyatsiya-kafe",
+      "model": "src/pages/ventilyatsiya-kafe/page.json",
+      "sections": 10,
+      "sourceHash": "79a1601c77f152aad0cba2b1b6c03b94f5fcadd5ebd06253e061d7482cbaccad"
+    },
+    {
+      "page": "ventilyatsiya-moechnoj-zony.html",
+      "slug": "ventilyatsiya-moechnoj-zony",
+      "model": "src/pages/ventilyatsiya-moechnoj-zony/page.json",
+      "sections": 10,
+      "sourceHash": "f563cba7f928a5a6c0563fb4d354931b1ecf2786cecc28ae94e28d986b789bf9"
+    },
+    {
+      "page": "ventilyatsiya-pekarni.html",
+      "slug": "ventilyatsiya-pekarni",
+      "model": "src/pages/ventilyatsiya-pekarni/page.json",
+      "sections": 10,
+      "sourceHash": "26cb072e9c50343c431e80d86721a516f5a6d141f7a8c0b525839607b0812841"
+    },
+    {
+      "page": "ventilyatsiya-restorana-ne-tyanet.html",
+      "slug": "ventilyatsiya-restorana-ne-tyanet",
+      "model": "src/pages/ventilyatsiya-restorana-ne-tyanet/page.json",
+      "sections": 10,
+      "sourceHash": "f8aca9b5f32b7dbc442fc72e8aff709c99e67556fb4899326ba2f6e39cdd2d6c"
+    },
+    {
+      "page": "ventilyatsiya-restoranov.html",
+      "slug": "ventilyatsiya-restoranov",
+      "model": "src/pages/ventilyatsiya-restoranov/page.json",
+      "sections": 10,
+      "sourceHash": "e1d52abc16dc1206af1cecedb51a98f7df5d431b9714e239b7e47094dfe30d27"
+    },
+    {
+      "page": "ventilyatsiya-stolovoj.html",
+      "slug": "ventilyatsiya-stolovoj",
+      "model": "src/pages/ventilyatsiya-stolovoj/page.json",
+      "sections": 10,
+      "sourceHash": "3f5c2e505b8ac88911988196d6b3846e2cd0221fbbdfd934407eaa460578f55d"
+    },
+    {
+      "page": "vibriruet-ventilyator-vytyazhki.html",
+      "slug": "vibriruet-ventilyator-vytyazhki",
+      "model": "src/pages/vibriruet-ventilyator-vytyazhki/page.json",
+      "sections": 10,
+      "sourceHash": "c5a8dd09af312dd54efd2bdea0ed5e9d689ba75047cf91ee18adac863120ebcf"
+    },
+    {
+      "page": "vytyazhka-restorana-ne-rabotaet.html",
+      "slug": "vytyazhka-restorana-ne-rabotaet",
+      "model": "src/pages/vytyazhka-restorana-ne-rabotaet/page.json",
+      "sections": 10,
+      "sourceHash": "11b2b3267e01ed848d18439cb8e4e2952dd5c98aa641f4e2d4f46ae0fd803534"
+    },
+    {
+      "page": "vytyazhnaya-ventilyatsiya-restorana.html",
+      "slug": "vytyazhnaya-ventilyatsiya-restorana",
+      "model": "src/pages/vytyazhnaya-ventilyatsiya-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "1b40a65519ab5767c9846240edd8d31d9407326dc5a218f05dd4906d943af538"
+    },
+    {
+      "page": "water-heaters.html",
+      "slug": "water-heaters",
+      "model": "src/pages/water-heaters/page.json",
+      "sections": 48,
+      "sourceHash": "4868714dc0f26d9e99554812bb89ed1aa12532c8df31a0969d586570d16619b2"
+    },
+    {
+      "page": "zapah-iz-kuhni-v-zal.html",
+      "slug": "zapah-iz-kuhni-v-zal",
+      "model": "src/pages/zapah-iz-kuhni-v-zal/page.json",
+      "sections": 10,
+      "sourceHash": "1aa5ef94f853275790d9f5e43afaf2d8d1b3a239428ab643bd4f7d72277adb17"
+    },
+    {
+      "page": "zasorilas-vytyazhka-restorana.html",
+      "slug": "zasorilas-vytyazhka-restorana",
+      "model": "src/pages/zasorilas-vytyazhka-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "a87c8b78dd16f4ade62f1718bbed43a0bfc20ddee687ce44aa6bfd5b852f303a"
+    },
+    {
+      "page": "zhaloby-na-zapah-restorana.html",
+      "slug": "zhaloby-na-zapah-restorana",
+      "model": "src/pages/zhaloby-na-zapah-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "a17d9cd8d14ebd7cee9e5422d4f0e59bea65c6f210efd3a17cdbe51bbb070552"
+    },
+    {
+      "page": "zhir-v-vozduhovodah-restorana.html",
+      "slug": "zhir-v-vozduhovodah-restorana",
+      "model": "src/pages/zhir-v-vozduhovodah-restorana/page.json",
+      "sections": 10,
+      "sourceHash": "bfef4b9898d0cd7074f46cde4bdd25ae3d4dae14993e5b24f5f6ff256566404d"
     }
   ],
   "workflow": {
@@ -25,14 +823,29 @@
     "checkSharedComponents": "npm run check:shared-components",
     "editSharedComponent": "edit src/components/shared/*, then run npm run build:site -- --page <affected.html> --write and npm run check:site-builder"
   },
+  "migration": {
+    "mode": "unified-source-parity",
+    "generatedBy": "tools/sync-site-builder-manifest.mjs",
+    "rootHtmlPages": 115,
+    "modelPages": 115,
+    "registeredPages": 115,
+    "pendingModelPages": [],
+    "pendingModelReasons": {},
+    "legacyHtmlPages": [],
+    "rules": {
+      "registered": "src/pages/<slug> is the editable source; build-site may write root HTML after parity checks.",
+      "pendingModel": "Reconcile src/pages/<slug> with root HTML before adding the page to builder.pages.",
+      "legacyHtml": "Root HTML plus branch/data authoring helpers remain the source until a model is created and reconciled."
+    }
+  },
   "componentMode": "shared-section-components-v1",
   "sharedComponents": {
     "directory": "src/components/shared",
     "minBytes": 512,
     "minRefs": 2,
-    "componentFiles": 0,
-    "sharedSectionRefs": 0,
-    "estimatedDuplicateBytesRemoved": 0,
+    "componentFiles": 40,
+    "sharedSectionRefs": 271,
+    "estimatedDuplicateBytesRemoved": 978040,
     "note": "Identical repeated section fragments are stored once in src/components/shared and referenced from page.json. Builder output remains byte-identical."
   }
 }

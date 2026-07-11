@@ -27,15 +27,15 @@
 | Метрика | Значение |
 | --- | --- |
 | Pages | 115 |
-| Builder pages | 1 |
-| Total sections | 69 |
-| src/pages files | 2046 |
-| src/pages HTML section files | 1983 |
-| Shared component files | 48 |
-| Shared refs | 0 |
-| Shared coverage | 0.0% |
-| Average sections/page | 69.0 |
-| Average source files/page | 73.0 |
+| Builder pages | 115 |
+| Total sections | 3133 |
+| src/pages files | 2003 |
+| src/pages HTML section files | 1888 |
+| Shared component files | 67 |
+| Shared refs | 271 |
+| Shared coverage | 50.8% |
+| Average sections/page | 27.2 |
+| Average source files/page | 31.1 |
 | AI component map entries | 12 |
 
 
@@ -51,13 +51,32 @@
 
 | Page | Sections | Local | Shared |
 | --- | --- | --- | --- |
-| parokonvektomaty-promo.html | 69 | 69 | 0 |
+| parokonvektomaty.html | 78 | 43 | 10 |
+| parokonvektomat-abat.html | 76 | 23 | 15 |
+| parokonvektomat-convotherm.html | 76 | 23 | 15 |
+| parokonvektomat-electrolux.html | 76 | 25 | 13 |
+| parokonvektomat-lainox.html | 76 | 23 | 15 |
+| remont-oborudovaniya-restorana-parokonvektomat.html | 74 | 19 | 16 |
+| parokonvektomat-e02-e07-e10.html | 68 | 20 | 16 |
+| parokonvektomat-kod-oshibki.html | 68 | 20 | 16 |
+| parokonvektomat-ne-greet.html | 68 | 20 | 16 |
+| parokonvektomat-net-para.html | 68 | 20 | 16 |
 
 
 ## Крупнейшие кандидаты на сжатие смысла
 
-- **medium**: raw: 31 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: parokonvektomaty-promo.html: 31 raw-секций — стоит объединить/классифицировать, чтобы AI видел смысл блока.
+- **high**: pricing: 262 локальных секций, shared ratio 32% — кандидат на параметризованный компонент + props.
+- **high**: proof: 235 локальных секций, shared ratio 24% — кандидат на параметризованный компонент + props.
+- **high**: raw: 137 локальных секций, shared ratio 17% — кандидат на параметризованный компонент + props.
+- **high**: lead-form: 116 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: runtime-partials: 83 локальных секций, shared ratio 28% — кандидат на параметризованный компонент + props.
+- **high**: body-preamble: 113 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: breadcrumb: 87 локальных секций, shared ratio 20% — кандидат на параметризованный компонент + props.
+- **high**: faq: 81 локальных секций, shared ratio 19% — кандидат на параметризованный компонент + props.
+- **high**: related-links: 81 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props.
+- **medium**: section: 73 локальных секций, shared ratio 15% — кандидат на параметризованный компонент + props.
+- **medium**: contact-cta: 71 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **medium**: hero: 37 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 
 ## Команды digest/source compression
 
