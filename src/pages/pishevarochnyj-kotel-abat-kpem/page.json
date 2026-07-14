@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnyj-kotel-abat-kpem.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "8fe8551564dd4bdcdf3c6a11a8b1f6a239f1046512eb1c7d8fbcfbd28d73897f",
+    "hash": "9c5ca4feb0fad7a30d4e8f7065b1a82b8b6a6b3dce9e7887593653b3c9e54016",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -30,11 +30,16 @@
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
       "bytes": 38,
-      "hash": "2d69700825ff4140"
+      "hash": "2d69700825ff4140",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-2d69700825ff",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-2d69700825ff.template.html",
+      "props": {},
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
       "id": "003-mobile-contact-remont-pischevarochnyh-kotlov-abat-kp",
@@ -46,11 +51,16 @@
     },
     {
       "id": "004-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/004-raw-html-fragment.html",
       "bytes": 45,
-      "hash": "cb4934627c3c6833"
+      "hash": "cb4934627c3c6833",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-repair-bridge-start-cb4934627c3c",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-repair-bridge-start-cb4934627c3c.template.html",
+      "props": {},
+      "sourceFile": "sections/004-raw-html-fragment.html"
     },
     {
       "id": "005-mobile-contact-abat-kpem-remont-po-simptomu-kodu-i-k",
@@ -62,19 +72,29 @@
     },
     {
       "id": "006-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/006-raw-html-fragment.html",
       "bytes": 42,
-      "hash": "706d20dffd936c0c"
+      "hash": "706d20dffd936c0c",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-repair-bridge-end-706d20dffd93",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-repair-bridge-end-706d20dffd93.template.html",
+      "props": {},
+      "sourceFile": "sections/006-raw-html-fragment.html"
     },
     {
       "id": "007-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/007-raw-html-fragment.html",
       "bytes": 38,
-      "hash": "82df9bb61ced90c1"
+      "hash": "82df9bb61ced90c1",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-cluster-start-82df9bb61ced",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-cluster-start-82df9bb61ced.template.html",
+      "props": {},
+      "sourceFile": "sections/007-raw-html-fragment.html"
     },
     {
       "id": "008-pricing-razvodim-trafik-po-real-nomu-simptomu",
@@ -86,11 +106,16 @@
     },
     {
       "id": "009-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/009-raw-html-fragment.html",
       "bytes": 36,
-      "hash": "d69b8c392dd1c284"
+      "hash": "d69b8c392dd1c284",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-cluster-end-d69b8c392dd1",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-cluster-end-d69b8c392dd1.template.html",
+      "props": {},
+      "sourceFile": "sections/009-raw-html-fragment.html"
     },
     {
       "id": "010-proof-dokazatel-stva-garantii",
@@ -101,31 +126,41 @@
       "hash": "7f924712bc288e3e"
     },
     {
-      "id": "011-proof-kakie-metriki-derzhim-po-zayavke-restorana",
-      "component": "proof",
-      "label": "Какие метрики держим по заявке ресторана",
-      "bytes": 3222,
-      "hash": "49039622d5ec9ff8",
-      "componentRef": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html",
+      "id": "011-pricing-chto-fiksiruem-do-nachala-rabot",
+      "component": "pricing",
+      "label": "Что фиксируем до начала работ",
+      "bytes": 2880,
+      "hash": "8c35885ce8c1edec",
+      "componentRef": "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot--8c35885ce8c1edec.html",
       "componentScope": "shared",
-      "componentSignature": "49039622d5ec9ff8",
-      "sourceFile": "sections/011-proof-kakie-metriki-derzhim-po-zayavke-restorana.html"
+      "componentSignature": "8c35885ce8c1edec",
+      "sourceFile": "sections/011-pricing-chto-fiksiruem-do-nachala-rabot.html"
     },
     {
       "id": "012-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/012-raw-html-fragment.html",
       "bytes": 30,
-      "hash": "50381e403a8590bb"
+      "hash": "50381e403a8590bb",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "sync-service-kpi-end-50381e403a85",
+      "templateRef": "src/components/parametric/static/layout-fragment-sync-service-kpi-end-50381e403a85.template.html",
+      "props": {},
+      "sourceFile": "sections/012-raw-html-fragment.html"
     },
     {
       "id": "013-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/013-raw-html-fragment.html",
       "bytes": 53,
-      "hash": "5270e8458285ed8e"
+      "hash": "5270e8458285ed8e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-run3-brand-cluster-start-5270e8458285",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-run3-brand-cluster-start-5270e8458285.template.html",
+      "props": {},
+      "sourceFile": "sections/013-raw-html-fragment.html"
     },
     {
       "id": "014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at",
@@ -137,19 +172,29 @@
     },
     {
       "id": "015-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/015-raw-html-fragment.html",
       "bytes": 47,
-      "hash": "aa8ed5651058e152"
+      "hash": "aa8ed5651058e152",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-run3-brand-cluster-end-aa8ed5651058",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-run3-brand-cluster-end-aa8ed5651058.template.html",
+      "props": {},
+      "sourceFile": "sections/015-raw-html-fragment.html"
     },
     {
       "id": "016-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/016-raw-html-fragment.html",
       "bytes": 47,
-      "hash": "c0f51f809f5cad60"
+      "hash": "c0f51f809f5cad60",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-run2-abat-errors-start-c0f51f809f5c",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-run2-abat-errors-start-c0f51f809f5c.template.html",
+      "props": {},
+      "sourceFile": "sections/016-raw-html-fragment.html"
     },
     {
       "id": "017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam",
@@ -161,19 +206,29 @@
     },
     {
       "id": "018-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/018-raw-html-fragment.html",
       "bytes": 45,
-      "hash": "5c2bbde384f360d8"
+      "hash": "5c2bbde384f360d8",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-run2-abat-errors-end-5c2bbde384f3",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-run2-abat-errors-end-5c2bbde384f3.template.html",
+      "props": {},
+      "sourceFile": "sections/018-raw-html-fragment.html"
     },
     {
       "id": "019-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/019-raw-html-fragment.html",
       "bytes": 52,
-      "hash": "422298255a406f7e"
+      "hash": "422298255a406f7e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-run1-expanded-cluster-start-422298255a40",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-run1-expanded-cluster-start-422298255a40.template.html",
+      "props": {},
+      "sourceFile": "sections/019-raw-html-fragment.html"
     },
     {
       "id": "020-pricing-razveli-zayavki-po-simptomam-i-uzlam",
@@ -185,19 +240,24 @@
     },
     {
       "id": "021-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/021-raw-html-fragment.html",
       "bytes": 50,
-      "hash": "c07f57f38dc6a7cf"
+      "hash": "c07f57f38dc6a7cf",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "cooking-kettle-run1-expanded-cluster-end-c07f57f38dc6",
+      "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-run1-expanded-cluster-end-c07f57f38dc6.template.html",
+      "props": {},
+      "sourceFile": "sections/021-raw-html-fragment.html"
     },
     {
       "id": "022-lead-form-ostav-te-zayavku-na-remont",
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/022-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 6474,
-      "hash": "fd093544e35b8d5b"
+      "bytes": 6577,
+      "hash": "40008380f1325872"
     },
     {
       "id": "023-proof-dokazatel-stva-garantii",
@@ -212,8 +272,8 @@
       "component": "pricing",
       "label": "Что фиксируем до начала работ на объекте",
       "file": "sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
-      "bytes": 6790,
-      "hash": "2442f5ded6d1163a"
+      "bytes": 6828,
+      "hash": "67df607f54ce213a"
     },
     {
       "id": "025-proof-dokazatel-stva-garantii",
@@ -236,8 +296,8 @@
       "component": "pricing",
       "label": "Если проблема в другом ресторанном оборудовании",
       "file": "sections/027-pricing-esli-problema-v-drugom-restorannom-oborudova.html",
-      "bytes": 3006,
-      "hash": "e9f7919b89d160df"
+      "bytes": 3559,
+      "hash": "6d8713a0a88ecc3d"
     },
     {
       "id": "028-related-links-svyazannye-stranicy",
@@ -251,28 +311,38 @@
       "id": "029-faq-chastye-voprosy-po-remontu",
       "component": "faq",
       "label": "Частые вопросы по ремонту",
-      "bytes": 3495,
-      "hash": "08de6cea263988af",
-      "componentRef": "src/components/shared/faq/faq-chastye-voprosy-po-remontu--08de6cea263988af.html",
+      "bytes": 3549,
+      "hash": "f74d3505aafe0fc9",
+      "componentRef": "src/components/shared/faq/faq-chastye-voprosy-po-remontu--f74d3505aafe0fc9.html",
       "componentScope": "shared",
-      "componentSignature": "08de6cea263988af",
+      "componentSignature": "f74d3505aafe0fc9",
       "sourceFile": "sections/029-faq-chastye-voprosy-po-remontu.html"
     },
     {
       "id": "030-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
-      "file": "sections/030-footer-anchor-footer-mount-point.html",
       "bytes": 38,
-      "hash": "d4bb19e48569789e"
+      "hash": "d4bb19e48569789e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-d4bb19e48569.template.html",
+      "props": {},
+      "sourceFile": "sections/030-footer-anchor-footer-mount-point.html"
     },
     {
       "id": "031-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
-      "file": "sections/031-runtime-partials-podklyuchenie-partials-injector.html",
       "bytes": 55,
-      "hash": "a0c0c2f23990c35a"
+      "hash": "a0c0c2f23990c35a",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a0c0c2f23990.template.html",
+      "props": {},
+      "sourceFile": "sections/031-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
       "id": "032-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -292,19 +362,24 @@
     },
     {
       "id": "034-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/034-raw-html-fragment.html",
       "bytes": 1,
-      "hash": "01ba4719c80b6fe9"
+      "hash": "01ba4719c80b6fe9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-01ba4719c80b",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
+      "props": {},
+      "sourceFile": "sections/034-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:restaurant-page -- --page pishevarochnyj-kotel-abat-kpem.html",
     "npm run doctor:page -- --page pishevarochnyj-kotel-abat-kpem.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page pishevarochnyj-kotel-abat-kpem.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page pishevarochnyj-kotel-abat-kpem.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

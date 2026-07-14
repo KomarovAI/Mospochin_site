@@ -1,31 +1,12 @@
-# MosPochin Live Visual Pack MVP
+# Live Visual Pack MVP — historical compatibility note
 
-Этот пакет добавляет post-deploy visual capture для production `https://mospochin.ru`.
+Автоматический post-deploy visual capture не является действующей архитектурой.
 
-Что добавляется:
+Текущее решение:
 
-- `tools/visual-capture.config.json`
-- `tools/visual-capture-plan.mjs`
-- `tools/screenshot-live-site.mjs`
-- npm scripts `screenshots:live:*`
-- GitHub Actions шаги после production verify
-- artifact `reports/live-visual-pack/` с retention 5 дней
+1. Основной capture выполняется локально через system Chromium и `tools/visual-local-capture.mjs`.
+2. GitHub Actions visual workflows используются только вручную через `workflow_dispatch`.
+3. Visual capture не запускается автоматически после deploy, push или pull request.
+4. Полный контракт описан в `docs/VISUAL_CHECKS.md`.
 
-Что собирается:
-
-- `capture-plan.json/csv`
-- `manifest.csv`
-- `llm_visual_index.md`
-- `llm/llm_visual_pages.jsonl`
-- `llm/llm_visual_blocks.csv`
-- `llm/llm_visual_warnings.csv`
-- desktop/mobile screenshots для core/new/changed pages
-
-Не собирается в MVP:
-
-- video
-- trace
-- Firefox/WebKit
-- atomic full-site разбор
-- raw HTML dump
-- сырые логи
+Старые live-site tools могут использоваться только для отдельного явно запрошенного production-аудита и не должны добавляться в автоматические CI/deploy gates.

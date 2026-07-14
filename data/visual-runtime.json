@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Machine-readable contract for screenshot capture in AI/local environments.",
+  "primary": {
+    "mode": "local-native",
+    "runner": "tools/visual-local-capture.mjs",
+    "browser": "system-chromium",
+    "browserExecutableEnv": [
+      "PLAYWRIGHT_CHROMIUM_EXECUTABLE",
+      "CHROMIUM_PATH"
+    ],
+    "transport": "playwright-local-content",
+    "navigation": "page.setContent + route.fulfill",
+    "requiresLocalhost": false,
+    "requiresBrowserDownload": false,
+    "environmentCheck": "npm run check:visual-env"
+  },
+  "capture": {
+    "modes": [
+      "first-view",
+      "full-page",
+      "manifest",
+      "both"
+    ],
+    "defaultWorkers": {
+      "first-view": 2,
+      "full-page": 1
+    },
+    "workerTimeoutMs": 60000,
+    "retries": 1,
+    "resume": {
+      "enabled": true,
+      "fingerprintInputs": [
+        "manifest",
+        "page HTML",
+        "assets/**",
+        "root CSS/JS"
+      ],
+      "stateDirectory": ".state",
+      "logsDirectory": ".logs"
+    },
+    "fullPage": {
+      "desktop": "chromium-full-page",
+      "mobile": "chromium-viewport-chunks",
+      "stitcher": "python-pillow"
+    },
+    "artifactValidation": [
+      "PNG signature",
+      "non-empty size",
+      "SHA-256"
+    ]
+  },
+  "githubFallback": {
+    "enabled": true,
+    "manualOnly": true,
+    "trigger": "workflow_dispatch",
+    "workflows": [
+      ".github/workflows/visual-audit.yml",
+      ".github/workflows/visual-targeted-mobile.yml"
+    ],
+    "forbiddenTriggers": [
+      "push",
+      "pull_request",
+      "pull_request_target",
+      "schedule",
+      "workflow_call"
+    ],
+    "browser": "playwright-firefox",
+    "browserSetup": "npm run setup:visual:github",
+    "policyCheck": "npm run check:visual-workflows"
+  },
+  "sourceArtifacts": [
+    "tools/visual-local-runtime.mjs",
+    "tools/visual-local-capture.mjs",
+    "tools/audit-screenshots.mjs",
+    "tools/check-visual-env.mjs",
+    "tools/check-visual-contract.mjs",
+    "tools/check-visual-workflow-policy.mjs",
+    "data/*screenshot-audit.json",
+    "docs/VISUAL_CHECKS.md"
+  ],
+  "excludedFromSourcePack": [
+    ".artifacts/screenshots/**",
+    ".cache/ms-playwright/**",
+    "node_modules/**"
+  ]
+}

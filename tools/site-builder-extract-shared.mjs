@@ -130,7 +130,11 @@ function buildPlan() {
   for (const shared of sharedByHash.values()) sharedFiles.set(shared.sharedPath, shared.content);
 
   const nextManifest = JSON.parse(readCurrentManifestText());
-  nextManifest.status = 'shared-component-baseline';
+  nextManifest.status = nextManifest.migration?.mode === 'staged-source-parity'
+    ? 'staged-migration'
+    : nextManifest.migration?.mode === 'unified-source-parity'
+      ? 'source-of-truth'
+      : 'shared-component-baseline';
   nextManifest.componentMode = 'shared-section-components-v1';
   nextManifest.sharedComponents = {
     directory: SHARED_COMPONENTS_DIR,

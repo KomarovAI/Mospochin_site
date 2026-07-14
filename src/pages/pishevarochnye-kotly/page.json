@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnye-kotly.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "8d2abc8547fda250af4a7052583b9a96f56e494a36a1c6a77d81f554c703a807",
+    "hash": "4c8d20c074f6cb249ecc38ba4fca64a3d45ca2ba88ff8d80e199626e0ad41cd9",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -30,11 +30,16 @@
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
       "bytes": 48,
-      "hash": "6c45e024a4e3965e"
+      "hash": "6c45e024a4e3965e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-6c45e024a4e3",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-6c45e024a4e3.template.html",
+      "props": {},
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
       "id": "003-breadcrumb-hlebnye-kroshki",
@@ -49,16 +54,16 @@
       "component": "mobile-contact",
       "label": "Ремонт пищеварочных котлов для ресторанов и столовых",
       "file": "sections/004-mobile-contact-remont-pischevarochnyh-kotlov-dlya-re.html",
-      "bytes": 5983,
-      "hash": "21ec54dc723f2b88"
+      "bytes": 8294,
+      "hash": "d1ebd49ec7ffefa9"
     },
     {
       "id": "005-section-chto-berem-v-remont-na-kuhne",
       "component": "section",
       "label": "Что берем в ремонт на кухне",
       "file": "sections/005-section-chto-berem-v-remont-na-kuhne.html",
-      "bytes": 2470,
-      "hash": "36b0d52970a9659b"
+      "bytes": 2478,
+      "hash": "f5876c96fccf438a"
     },
     {
       "id": "006-raw-html-fragment",
@@ -69,20 +74,20 @@
       "hash": "83b20d25eb23900b"
     },
     {
-      "id": "007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e",
-      "component": "lead-form",
-      "label": "Разводим заявки по симптому: нагрев, течь, электрика, H2O и Abat КПЭМ",
-      "file": "sections/007-lead-form-razvodim-zayavki-po-simptomu-nagrev-tech-e.html",
-      "bytes": 4834,
-      "hash": "cf8f1699c073b68b"
+      "id": "007-mobile-contact-razvodim-zayavki-po-simptomu-nagrev-v",
+      "component": "mobile-contact",
+      "label": "Разводим заявки по симптому: нагрев, вода, давление, слив и электрика",
+      "file": "sections/007-mobile-contact-razvodim-zayavki-po-simptomu-nagrev-v.html",
+      "bytes": 5035,
+      "hash": "5564e4305b4f7287"
     },
     {
       "id": "008-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
       "file": "sections/008-raw-html-fragment.html",
-      "bytes": 42,
-      "hash": "706d20dffd936c0c"
+      "bytes": 43,
+      "hash": "ae270f5ce660dae6"
     },
     {
       "id": "009-raw-html-fragment",
@@ -97,16 +102,16 @@
       "component": "pricing",
       "label": "Разводим трафик по реальному симптому",
       "file": "sections/010-pricing-razvodim-trafik-po-real-nomu-simptomu.html",
-      "bytes": 5461,
-      "hash": "0f31748a32e7a630"
+      "bytes": 5512,
+      "hash": "7d6959d80ecb52e3"
     },
     {
       "id": "011-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
       "file": "sections/011-raw-html-fragment.html",
-      "bytes": 36,
-      "hash": "d69b8c392dd1c284"
+      "bytes": 37,
+      "hash": "062bacaa7433dfc6"
     },
     {
       "id": "012-contact-cta-s-chem-chasche-vsego-vyzyvayut-inzhenera",
@@ -141,23 +146,28 @@
       "hash": "7f924712bc288e3e"
     },
     {
-      "id": "016-proof-kakie-metriki-derzhim-po-zayavke-restorana",
-      "component": "proof",
-      "label": "Какие метрики держим по заявке ресторана",
-      "bytes": 3222,
-      "hash": "49039622d5ec9ff8",
-      "componentRef": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html",
+      "id": "016-pricing-chto-fiksiruem-do-nachala-rabot",
+      "component": "pricing",
+      "label": "Что фиксируем до начала работ",
+      "bytes": 2880,
+      "hash": "8c35885ce8c1edec",
+      "componentRef": "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot--8c35885ce8c1edec.html",
       "componentScope": "shared",
-      "componentSignature": "49039622d5ec9ff8",
-      "sourceFile": "sections/016-proof-kakie-metriki-derzhim-po-zayavke-restorana.html"
+      "componentSignature": "8c35885ce8c1edec",
+      "sourceFile": "sections/016-pricing-chto-fiksiruem-do-nachala-rabot.html"
     },
     {
       "id": "017-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/017-raw-html-fragment.html",
       "bytes": 30,
-      "hash": "50381e403a8590bb"
+      "hash": "50381e403a8590bb",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "sync-service-kpi-end-50381e403a85",
+      "templateRef": "src/components/parametric/static/layout-fragment-sync-service-kpi-end-50381e403a85.template.html",
+      "props": {},
+      "sourceFile": "sections/017-raw-html-fragment.html"
     },
     {
       "id": "018-raw-html-fragment",
@@ -220,24 +230,24 @@
       "component": "pricing",
       "label": "Развели заявки по симптомам и узлам",
       "file": "sections/025-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-      "bytes": 9547,
-      "hash": "af29e0eafcfb52c9"
+      "bytes": 11713,
+      "hash": "8f6993e78c5b9192"
     },
     {
       "id": "026-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
       "file": "sections/026-raw-html-fragment.html",
-      "bytes": 50,
-      "hash": "c07f57f38dc6a7cf"
+      "bytes": 51,
+      "hash": "8a2eece084077327"
     },
     {
       "id": "027-lead-form-soglasovat-vyezd-po-kotlu",
       "component": "lead-form",
       "label": "Согласовать выезд по котлу",
       "file": "sections/027-lead-form-soglasovat-vyezd-po-kotlu.html",
-      "bytes": 5628,
-      "hash": "a4745a06929c7cc4"
+      "bytes": 5698,
+      "hash": "bbf0b5a97975d1e3"
     },
     {
       "id": "028-proof-dokazatel-stva-garantii",
@@ -252,8 +262,8 @@
       "component": "pricing",
       "label": "Что фиксируем до начала работ на объекте",
       "file": "sections/029-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
-      "bytes": 6871,
-      "hash": "12e55a2ed629afcb"
+      "bytes": 6909,
+      "hash": "2e994c7d2729e9a7"
     },
     {
       "id": "030-proof-dokazatel-stva-garantii",
@@ -276,8 +286,8 @@
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
       "file": "sections/032-related-links-esli-problema-v-drugom-restorannom-obo.html",
-      "bytes": 2985,
-      "hash": "dd96f8ee1f6665a6"
+      "bytes": 5191,
+      "hash": "a9d1cce8e6f195bb"
     },
     {
       "id": "033-related-links-svyazannye-stranicy",
@@ -292,8 +302,8 @@
       "component": "faq",
       "label": "Частые вопросы по ремонту",
       "file": "sections/034-faq-chastye-voprosy-po-remontu.html",
-      "bytes": 6062,
-      "hash": "49b10fe9589c96ad"
+      "bytes": 6116,
+      "hash": "ce46ff22ba40eb18"
     },
     {
       "id": "035-mobile-contact-soglasuem-vyezd-inzhenera-po-pischeva",
@@ -301,15 +311,15 @@
       "label": "Согласуем выезд инженера по пищеварочному котлу",
       "file": "sections/035-mobile-contact-soglasuem-vyezd-inzhenera-po-pischeva.html",
       "bytes": 2063,
-      "hash": "ea0ae6168a70a4a7"
+      "hash": "f71bca302a1ba4ae"
     },
     {
       "id": "036-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/036-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 903,
-      "hash": "7bcdb67f7c5f86ca"
+      "bytes": 904,
+      "hash": "22a9c83e895544ee"
     },
     {
       "id": "037-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -323,9 +333,14 @@
       "id": "038-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
-      "file": "sections/038-footer-anchor-footer-mount-point.html",
       "bytes": 34,
-      "hash": "06f3fb249f3476eb"
+      "hash": "06f3fb249f3476eb",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-06f3fb249f34.template.html",
+      "props": {},
+      "sourceFile": "sections/038-footer-anchor-footer-mount-point.html"
     },
     {
       "id": "039-runtime-partials-podklyuchenie-partials-injector",
@@ -339,25 +354,59 @@
       "id": "040-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/040-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 41,
-      "hash": "b173d293386c47b4"
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/040-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "041-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/041-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/041-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "042-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
       "file": "sections/042-raw-html-fragment.html",
-      "bytes": 1,
-      "hash": "01ba4719c80b6fe9"
+      "bytes": 42,
+      "hash": "f07065b3fdc245d3"
+    },
+    {
+      "id": "043-section-par-teplo-i-balans-vytyazhki-na-kuhne",
+      "component": "section",
+      "label": "Пар, тепло и баланс вытяжки на кухне",
+      "file": "sections/043-section-par-teplo-i-balans-vytyazhki-na-kuhne.html",
+      "bytes": 4183,
+      "hash": "7447b28b65d3735d"
+    },
+    {
+      "id": "044-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/044-raw-html-fragment.html",
+      "bytes": 39,
+      "hash": "fe891914569c1168"
+    },
+    {
+      "id": "045-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/045-raw-html-fragment.html",
+      "bytes": 2,
+      "hash": "75a11da44c802486"
     }
   ],
   "recommendedChecks": [

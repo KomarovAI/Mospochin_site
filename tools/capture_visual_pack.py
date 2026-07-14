@@ -194,7 +194,7 @@ def environment_info(root: Path, manifest_path: Path, mode: str, pages: list[str
         "pages": len(pages),
         "viewports": [v.__dict__ for v in viewports],
         "env": {
-            "PLAYWRIGHT_CHROMIUM_EXECUTABLE": os.environ.get("PLAYWRIGHT_CHROMIUM_EXECUTABLE", ""),
+            "PLAYWRIGHT_FIREFOX_EXECUTABLE": os.environ.get("PLAYWRIGHT_FIREFOX_EXECUTABLE", ""),
         },
     }
 
@@ -346,7 +346,7 @@ def capture_screenshots(
         raise SystemExit(
             "Playwright for Python is not installed. Run:\n"
             "  pip install -r requirements-visual.txt\n"
-            "  python -m playwright install chromium\n"
+            "  python -m playwright install firefox\n"
             f"Original error: {exc}"
         ) from exc
 
@@ -360,26 +360,24 @@ def capture_screenshots(
     errors: list[dict[str, Any]] = []
     visual_warnings: list[dict[str, Any]] = []
 
-    launch_kwargs: dict[str, Any] = {
-        "headless": not headful,
-        "args": ["--no-sandbox", "--disable-dev-shm-usage"],
-    }
-    resolved_executable = executable_path or os.environ.get("PLAYWRIGHT_CHROMIUM_EXECUTABLE") or None
+    os.environ.setdefault("XDG_CACHE_HOME", "/tmp/mospochin-firefox-cache")
+    launch_kwargs: dict[str, Any] = {"headless": not headful}
+    resolved_executable = executable_path or os.environ.get("PLAYWRIGHT_FIREFOX_EXECUTABLE") or None
     if resolved_executable:
         launch_kwargs["executable_path"] = resolved_executable
-        logs.append(f"chromiumExecutable={resolved_executable}")
+        logs.append(f"firefoxExecutable={resolved_executable}")
 
     try:
         with sync_playwright() as p:
             try:
-                browser = p.chromium.launch(**launch_kwargs)
+                browser = p.firefox.launch(**launch_kwargs)
             except Exception as exc:  # pragma: no cover - local browser dependent
-                hint = """Could not launch Chromium. Try:
-  python -m playwright install chromium
+                hint = """Could not launch Firefox. Try:
+  python -m playwright install firefox
 or on Linux with missing libraries:
-  python -m playwright install --with-deps chromium
-or use system Chromium:
-  PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium python tools/capture_visual_pack.py --mode smoke --zip"""
+  python -m playwright install --with-deps firefox
+or use system Firefox:
+  PLAYWRIGHT_FIREFOX_EXECUTABLE=/usr/bin/firefox python tools/capture_visual_pack.py --mode smoke --zip"""
                 raise SystemExit(f"{hint}\nOriginal error: {exc}") from exc
             try:
                 for page_name in pages:
@@ -387,8 +385,6 @@ or use system Chromium:
                         context = browser.new_context(
                             viewport={"width": viewport.width, "height": viewport.height},
                             device_scale_factor=viewport.device_scale_factor,
-                            is_mobile=viewport.is_mobile,
-                            has_touch=viewport.has_touch,
                         )
                         page_obj = context.new_page()
                         url = f"{base_url}/{page_name}"
@@ -488,7 +484,7 @@ def main() -> int:
     parser.add_argument("--zip", action="store_true", help="Create a standalone ZIP pack.")
     parser.add_argument("--dry-run", action="store_true", help="Validate manifest/pages and create metadata without launching a browser.")
     parser.add_argument("--skip-html-snapshots", action="store_true")
-    parser.add_argument("--executable-path", default=None, help="Chromium executable path; also supports PLAYWRIGHT_CHROMIUM_EXECUTABLE env var.")
+    parser.add_argument("--executable-path", default=None, help="Firefox executable path; also supports PLAYWRIGHT_FIREFOX_EXECUTABLE env var.")
     parser.add_argument("--headful", action="store_true", help="Run browser in headed mode.")
     parser.add_argument("--overflow-tolerance-css-px", type=int, default=16, help="Warn when mobile document scrollWidth exceeds clientWidth by this many CSS pixels.")
     parser.add_argument("--fail-on-overflow", action="store_true", help="Exit with code 3 if mobile horizontal overflow warnings are detected.")

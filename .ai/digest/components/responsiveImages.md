@@ -1,7 +1,7 @@
 # Component Digest — responsiveImages
 
 - Name: Responsive images / srcset / WebP sidecars
-- Appears in: 34 pages
+- Appears in: 41 pages
 - Keywords: картинка, изображ, фото, srcset, webp, avif, responsive, hero image
 - CSS selectors: img[srcset], picture source
 
@@ -27,10 +27,14 @@
 - bytovaya-contact.html
 - bytovaya-index.html
 - bytovaya-uslugi.html
+- chistka-ventilyatsii-restoranov.html
+- diagnostika-ventilyatsii-restorana.html
 - grili-mangaly.html
 - holodilnoe-oborudovanie.html
+- ice-machines.html
 - kompyutery.html
 - microwaves.html
+- obsluzhivanie-ventilyatsii-restoranov.html
 - parokonvektomat-abat.html
 - parokonvektomat-convotherm.html
 - parokonvektomat-e02-e07-e10.html
@@ -38,8 +42,4 @@
 - parokonvektomat-kod-oshibki.html
 - parokonvektomat-lainox.html
 - parokonvektomat-ne-greet.html
-- parokonvektomat-net-para.html
-- parokonvektomat-obschuzhivanie.html
-- parokonvektomat-rational-e9.html
-- parokonvektomat-rational.html
-- … ещё 14
+- … ещё 21

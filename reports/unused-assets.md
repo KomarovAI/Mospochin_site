@@ -1,22 +1,40 @@
 # Unused assets audit
 
-Generated: 2026-06-21T17:34:28.683Z
+Generated: 2026-07-14T10:07:04.408Z
 
 ## Totals
 
 | Group | Files | Size |
 |---|---:|---:|
-| allAssets | 166 | 26.12 MB |
-| keepRuntime | 113 | 13.26 MB |
+| allAssets | 268 | 42.64 MB |
+| keepRuntime | 196 | 25.76 MB |
 | keepDeploy | 0 | 0.00 MB |
 | keepSource | 25 | 9.63 MB |
 | keepGenerated | 28 | 3.23 MB |
-| safeDelete | 0 | 0.00 MB |
+| safeDelete | 19 | 4.02 MB |
 | missingReferences | 0 | - |
 
 ## Safe delete candidates
 
-- none
+- assets/images/archive-combi/combi-oven-internals.jpg — 0.34 MB
+- assets/images/archive-combi/control-board-macro.jpg — 0.31 MB
+- assets/images/archive-combi/rear-insulation-fan.jpg — 0.29 MB
+- assets/images/archive-combi/combi-oven-chamber.jpg — 0.29 MB
+- assets/images/archive-combi/eka-open-side-repair.jpg — 0.26 MB
+- assets/images/archive-combi/eka-dual-fan-chamber.jpg — 0.25 MB
+- assets/images/archive-combi/unox-open-chamber.jpg — 0.24 MB
+- assets/images/archive-combi/control-board-wiring.jpg — 0.22 MB
+- assets/images/archive-combi/dirty-fan-assembly.jpg — 0.21 MB
+- assets/images/archive-combi/compact-oven-workstation.jpg — 0.21 MB
+- assets/images/archive-combi/eka-oven-front.jpg — 0.21 MB
+- assets/images/archive-combi/abat-combi-oven-front.jpg — 0.20 MB
+- assets/images/archive-combi/restaurant-ventilation-hero.jpg — 0.18 MB
+- assets/images/archive-combi/unox-combi-oven-front.jpg — 0.17 MB
+- assets/images/archive-combi/heating-element.jpg — 0.15 MB
+- assets/images/archive-combi/engineer-on-site-hero.jpg — 0.14 MB
+- assets/images/archive-combi/combi-oven-diagnostics-hero.jpg — 0.13 MB
+- assets/images/archive-combi/cooking-kettle-hero.jpg — 0.13 MB
+- assets/images/archive-combi/ice-machine-hero.jpg — 0.10 MB
 
 ## Kept source originals
 

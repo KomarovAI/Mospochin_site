@@ -37,6 +37,12 @@ jobs:
       - name: Build/check generated HTML parity
         run: npm run build:site -- --check
 
+      - name: Guard generated HTML ownership
+        env:
+          GITHUB_BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: npm run check:generated-diff
+
       - name: Validate site
         run: npm run validate:site
 

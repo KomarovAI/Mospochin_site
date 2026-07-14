@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { getFirefoxContextOptions, getFirefoxLaunchOptions } from './visual-firefox-config.mjs';
 
 const ROOT = process.cwd();
 const OUT_DIR = process.env.MOSPOCHIN_VISUAL_OUT_DIR || 'reports/live-visual-pack';
@@ -56,17 +56,6 @@ function normalizePagePath(value) {
 function pageUrl(pagePath) {
   if (pagePath === '/') return `${BASE_URL.replace(/\/$/, '')}/`;
   return `${BASE_URL.replace(/\/$/, '')}${pagePath}`;
-}
-
-function findChrome() {
-  const forced = process.env.MOSPOCHIN_CHROME_PATH || '';
-  if (forced) return forced;
-  for (const bin of ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser']) {
-    try {
-      return execFileSync('which', [bin], { encoding: 'utf8' }).trim();
-    } catch {}
-  }
-  return '';
 }
 
 async function ensureDir(dir) {
@@ -339,17 +328,6 @@ async function main() {
   await ensureDir(OUT_ROOT);
   await ensureDir(LLM_DIR);
 
-  const chromePath = findChrome();
-  if (!chromePath) {
-    console.log('VISUAL_ATOMIC_SKIP no_chrome');
-    await appendCsv(
-      path.join(LLM_DIR, 'llm_visual_atomic_warnings.csv'),
-      ['page_id', 'path', 'viewport', 'severity', 'code', 'message', 'selector', 'part'],
-      [['p999', pagePath, 'global', 'warning', 'no_chrome', 'No system Chrome found', '', 'atomic']]
-    );
-    return;
-  }
-
   let playwright;
   try {
     playwright = await import('playwright');
@@ -375,11 +353,7 @@ async function main() {
   const elementsRows = [];
   const pageJsonlRows = [];
 
-  const browser = await playwright.chromium.launch({
-    headless: true,
-    executablePath: chromePath,
-    args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
-  });
+  const browser = await playwright.firefox.launch(getFirefoxLaunchOptions());
 
   const domMap = {
     page_id: pageNo,
@@ -390,7 +364,7 @@ async function main() {
     depth: 'atomic',
     reason: 'manual_workflow_dispatch',
     generated_at: new Date().toISOString(),
-    chrome: chromePath,
+    browser: 'firefox',
     limits: {
       max_blocks: MAX_BLOCKS,
       max_elements: MAX_ELEMENTS,
@@ -403,9 +377,7 @@ async function main() {
   try {
     for (const [viewportName, vp] of Object.entries(VIEWPORTS)) {
       const context = await browser.newContext({
-        viewport: { width: vp.width, height: vp.height },
-        isMobile: Boolean(vp.isMobile),
-        hasTouch: Boolean(vp.hasTouch),
+        ...getFirefoxContextOptions(vp),
         deviceScaleFactor: 1,
         ignoreHTTPSErrors: true
       });
@@ -568,7 +540,7 @@ async function main() {
     'Depth: atomic',
     'Reason: manual_workflow_dispatch',
     `URL: ${url}`,
-    `Chrome: ${chromePath}`,
+    'Browser: Firefox',
     '',
     '## Main screenshots',
     '',

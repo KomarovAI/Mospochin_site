@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium } from 'playwright';
+import { firefox } from 'playwright';
+import { getFirefoxLaunchOptions } from './visual-firefox-config.mjs';
 
 const baseUrl = process.env.VISUAL_BASE_URL || 'https://mospochin.ru';
 const pagesInput = process.env.VISUAL_TARGET_PAGES || [
@@ -27,15 +28,6 @@ function safeName(p) {
   return p.replace(/^\//, '').replace(/\.html$/, '').replace(/[^a-zA-Z0-9_-]+/g, '_') || 'index';
 }
 
-function findChrome() {
-  return [
-    '/usr/bin/google-chrome',
-    '/usr/bin/google-chrome-stable',
-    '/usr/bin/chromium',
-    '/usr/bin/chromium-browser',
-  ].find(p => fs.existsSync(p));
-}
-
 function esc(v) {
   const s = String(v ?? '');
   return /[",\n]/.test(s) ? `"${s.replaceAll('"', '""')}"` : s;
@@ -54,11 +46,7 @@ async function safeShot(locator, file, opts = {}) {
   }
 }
 
-const browser = await chromium.launch({
-  headless: true,
-  executablePath: findChrome(),
-  args: ['--no-sandbox', '--disable-dev-shm-usage'],
-});
+const browser = await firefox.launch(getFirefoxLaunchOptions());
 
 const rows = [];
 const issues = [];
@@ -71,8 +59,6 @@ for (const pagePath of pages) {
   const context = await browser.newContext({
     viewport: { width: 390, height: 844 },
     deviceScaleFactor: 1,
-    isMobile: true,
-    hasTouch: true,
     userAgent: 'MosPochinTargetedMobileDeep/1.0',
   });
 

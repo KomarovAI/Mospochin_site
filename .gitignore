@@ -28,6 +28,12 @@ npm-debug.log*
 .deploy/*
 !.deploy/include-files.txt
 .artifacts/
+.cache/
+build/
+reports/visual-*/
+reports/visual-audit/
 .asset-archive/
 tools/tmp/
 tools/*.log
+**/__pycache__/
+*.zip

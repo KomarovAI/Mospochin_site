@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "cluster": "ventilyatsiya",
+  "purpose": "Page contract for AI navigation, SEO intent separation and visual regression of the restaurant ventilation cluster.",
+  "canonicalBase": "https://mospochin.ru/",
+  "defaults": {
+    "branch": "restaurant",
+    "indexable": true,
+    "minClusterLinks": 6
+  },
+  "families": {
+    "hub": [
+      "ventilyatsiya-restoranov.html"
+    ],
+    "service": [
+      "remont-ventilyatsii-restoranov.html",
+      "diagnostika-ventilyatsii-restorana.html",
+      "chistka-ventilyatsii-restoranov.html",
+      "obsluzhivanie-ventilyatsii-restoranov.html",
+      "remont-pritochnoj-ventilyatsii-restorana.html",
+      "remont-ventilyatora-vytyazhki-restorana.html",
+      "remont-vytyazhki-restorana.html",
+      "remont-vozduhovodov-restorana.html",
+      "remont-zhirovyh-filtrov-vytyazhki.html",
+      "zhir-v-vozduhovodah-restorana.html"
+    ],
+    "system": [
+      "avtomatika-ventilyatsii-restorana.html",
+      "vytyazhnaya-ventilyatsiya-restorana.html",
+      "pritochnaya-ventilyatsiya-restorana.html",
+      "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+      "mestnaya-vytyazhka-nad-oborudovaniem.html",
+      "ventilyatsionnye-zonty-restorana.html",
+      "kanalnaya-ventilyatsiya-restorana.html",
+      "kryshnye-ventilyatory-restorana.html"
+    ],
+    "symptom": [
+      "ventilyatsiya-restorana-ne-tyanet.html",
+      "vytyazhka-restorana-ne-rabotaet.html",
+      "dym-na-kuhne-restorana.html",
+      "zapah-iz-kuhni-v-zal.html",
+      "shumit-vytyazhka-restorana.html",
+      "vibriruet-ventilyator-vytyazhki.html",
+      "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+      "ventilyator-vytyazhki-vybivaet-avtomat.html",
+      "slabyj-pritok-vozduha-restoran.html",
+      "techet-kondensat-iz-ventilyatsii.html",
+      "peregrev-kuhni-restorana.html",
+      "zhaloby-na-zapah-restorana.html",
+      "zasorilas-vytyazhka-restorana.html",
+      "obratnaya-tyaga-v-restorane.html",
+      "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+      "posle-remonta-kuhni-ventilyatsiya-huzhe.html"
+    ],
+    "guide": [
+      "kak-rabotaet-ventilyatsiya-restorana.html",
+      "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+      "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+      "chto-proveryaet-inzhener-ventilyatsii.html",
+      "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+      "chek-list-ventilyatsii-restorana.html",
+      "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html"
+    ],
+    "audience": [
+      "ventilyatsiya-kafe.html",
+      "ventilyatsiya-stolovoj.html",
+      "ventilyatsiya-pekarni.html",
+      "ventilyatsiya-dark-kitchen.html",
+      "ventilyatsiya-fudkorta.html",
+      "ventilyatsiya-moechnoj-zony.html"
+    ],
+    "integration": [
+      "ventilyatsiya-i-gril-v-restorane.html",
+      "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+      "ventilyatsiya-i-parokonvektomat.html",
+      "ventilyatsiya-i-posudomoechnaya-zona.html"
+    ]
+  },
+  "pages": [
+    {
+      "page": "avtomatika-ventilyatsii-restorana.html",
+      "intent": "system",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "chek-list-ventilyatsii-restorana.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "chistka-ventilyatsii-restoranov.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "chto-proveryaet-inzhener-ventilyatsii.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "diagnostika-ventilyatsii-restorana.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "dym-na-kuhne-restorana.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "kak-rabotaet-ventilyatsiya-restorana.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "kanalnaya-ventilyatsiya-restorana.html",
+      "intent": "system",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "kryshnye-ventilyatory-restorana.html",
+      "intent": "system",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "mestnaya-vytyazhka-nad-oborudovaniem.html",
+      "intent": "system",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "obratnaya-tyaga-v-restorane.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "obsluzhivanie-ventilyatsii-restoranov.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "peregrev-kuhni-restorana.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "pritochnaya-ventilyatsiya-restorana.html",
+      "intent": "system",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+      "intent": "system",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "remont-pritochnoj-ventilyatsii-restorana.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "remont-ventilyatora-vytyazhki-restorana.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "remont-ventilyatsii-restoranov.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "remont-vozduhovodov-restorana.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "remont-vytyazhki-restorana.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "remont-zhirovyh-filtrov-vytyazhki.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "shumit-vytyazhka-restorana.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "slabyj-pritok-vozduha-restoran.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "techet-kondensat-iz-ventilyatsii.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyator-vytyazhki-vybivaet-avtomat.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsionnye-zonty-restorana.html",
+      "intent": "system",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-dark-kitchen.html",
+      "intent": "audience",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-fudkorta.html",
+      "intent": "audience",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-i-gril-v-restorane.html",
+      "intent": "integration",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+      "intent": "integration",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-i-parokonvektomat.html",
+      "intent": "integration",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-i-posudomoechnaya-zona.html",
+      "intent": "integration",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-kafe.html",
+      "intent": "audience",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-moechnoj-zony.html",
+      "intent": "audience",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-pekarni.html",
+      "intent": "audience",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-restorana-ne-tyanet.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-restoranov.html",
+      "intent": "hub",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "ventilyatsiya-stolovoj.html",
+      "intent": "audience",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "zhaloby-na-zapah-restorana.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "vibriruet-ventilyator-vytyazhki.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "vytyazhka-restorana-ne-rabotaet.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "vytyazhnaya-ventilyatsiya-restorana.html",
+      "intent": "system",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "zapah-iz-kuhni-v-zal.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "zasorilas-vytyazhka-restorana.html",
+      "intent": "symptom",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    },
+    {
+      "page": "zhir-v-vozduhovodah-restorana.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 6
+    }
+  ]
+}

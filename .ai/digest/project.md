@@ -26,16 +26,16 @@
 
 | Метрика | Значение |
 | --- | --- |
-| Pages | 115 |
-| Builder pages | 1 |
-| Total sections | 69 |
-| src/pages files | 2046 |
-| src/pages HTML section files | 1983 |
-| Shared component files | 48 |
-| Shared refs | 0 |
-| Shared coverage | 0.0% |
-| Average sections/page | 69.0 |
-| Average source files/page | 73.0 |
+| Pages | 136 |
+| Builder pages | 136 |
+| Total sections | 3331 |
+| src/pages files | 2281 |
+| src/pages HTML section files | 2145 |
+| Shared component files | 128 |
+| Shared refs | 269 |
+| Shared coverage | 47.9% |
+| Average sections/page | 24.5 |
+| Average source files/page | 28.4 |
 | AI component map entries | 12 |
 
 
@@ -51,13 +51,32 @@
 
 | Page | Sections | Local | Shared |
 | --- | --- | --- | --- |
-| parokonvektomaty-promo.html | 69 | 69 | 0 |
+| parokonvektomaty.html | 78 | 48 | 9 |
+| parokonvektomat-abat.html | 76 | 51 | 15 |
+| parokonvektomat-convotherm.html | 76 | 23 | 15 |
+| parokonvektomat-electrolux.html | 76 | 25 | 13 |
+| parokonvektomat-lainox.html | 76 | 23 | 15 |
+| remont-oborudovaniya-restorana-parokonvektomat.html | 74 | 21 | 14 |
+| parokonvektomat-e02-e07-e10.html | 68 | 20 | 16 |
+| parokonvektomat-kod-oshibki.html | 68 | 20 | 16 |
+| parokonvektomat-ne-greet.html | 68 | 20 | 16 |
+| parokonvektomat-net-para.html | 68 | 20 | 16 |
 
 
 ## Крупнейшие кандидаты на сжатие смысла
 
-- **medium**: raw: 31 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: parokonvektomaty-promo.html: 31 raw-секций — стоит объединить/классифицировать, чтобы AI видел смысл блока.
+- **high**: proof: 259 локальных секций, shared ratio 16% — кандидат на параметризованный компонент + props.
+- **high**: raw: 191 локальных секций, shared ratio 13% — кандидат на параметризованный компонент + props.
+- **high**: lead-form: 137 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: body-preamble: 134 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: faq: 101 локальных секций, shared ratio 17% — кандидат на параметризованный компонент + props.
+- **high**: breadcrumb: 87 локальных секций, shared ratio 20% — кандидат на параметризованный компонент + props.
+- **high**: related-links: 93 локальных секций, shared ratio 14% — кандидат на параметризованный компонент + props.
+- **medium**: section: 79 локальных секций, shared ratio 13% — кандидат на параметризованный компонент + props.
+- **medium**: contact-cta: 72 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **medium**: hero: 37 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: parokonvektomaty.html: 78 секций — кандидат на page blueprint вместо длинного списка sections.
+- **high**: parokonvektomat-abat.html: 76 секций — кандидат на page blueprint вместо длинного списка sections.
 
 ## Команды digest/source compression
 

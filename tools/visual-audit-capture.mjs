@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium } from 'playwright';
+import { firefox } from 'playwright';
+import { getFirefoxLaunchOptions } from './visual-firefox-config.mjs';
 
 const shard = Number.parseInt(process.env.SHARD || '0', 10);
 const planPath = 'reports/visual-audit/plan.json';
@@ -11,16 +12,6 @@ if (!bucket) throw new Error(`Shard ${shard} not found in plan`);
 const outDir = `reports/visual-audit/shards/shard-${shard}`;
 fs.mkdirSync(outDir, { recursive: true });
 
-function findChrome() {
-  const candidates = [
-    '/usr/bin/google-chrome',
-    '/usr/bin/google-chrome-stable',
-    '/usr/bin/chromium',
-    '/usr/bin/chromium-browser',
-  ];
-  return candidates.find(p => fs.existsSync(p));
-}
-
 function safeName(s) {
   return s.replace(/^\/$/, 'index').replace(/^\//, '').replace(/\.html$/, '').replace(/[^a-zA-Z0-9а-яА-Я_-]+/g, '_') || 'index';
 }
@@ -30,12 +21,7 @@ function csvEscape(v) {
   return /[",\n]/.test(s) ? `"${s.replaceAll('"', '""')}"` : s;
 }
 
-const executablePath = findChrome();
-const browser = await chromium.launch({
-  headless: true,
-  executablePath,
-  args: ['--no-sandbox', '--disable-dev-shm-usage'],
-});
+const browser = await firefox.launch(getFirefoxLaunchOptions());
 
 const manifest = [];
 const issues = [];

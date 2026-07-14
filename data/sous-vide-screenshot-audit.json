@@ -1,0 +1,122 @@
+{
+  "artifactRoot": ".artifacts/screenshots/sous-vide",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 2200
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "sous-vide-restoranov.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-sous-vide.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "sous-vide-termostaty.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "vakuumnye-upakovshiki-dlya-restorana.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-termostata-sous-vide.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-vakuumnogo-upakovshika.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "obsluzhivanie-sous-vide.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kak-rabotaet-sous-vide.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kak-vybrat-sous-vide-dlya-restorana.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "sous-vide-i-vakuumnaya-upakovka.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "bezopasnost-sous-vide.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "sous-vide-remont-moskva.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-termostata-sous-vide-reklama.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-vakuumnogo-upakovshika-reklama.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    }
+  ]
+}

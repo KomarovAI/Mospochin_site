@@ -5,7 +5,7 @@
 ## Directory Structure
 
 ```
-/home/artikk/Mospochin_site/
+<repository-root>/
 ├── assets/
 │   ├── css/
 │   │   ├── styles-built.css    # legacy built CSS copy; pages load the root file
@@ -26,7 +26,9 @@
 │       ├── fridge-*.jpg        # Refrigerator images
 │       ├── dishwasher-*.jpg    # Dishwasher images
 │       ├── microwave-*.jpeg    # Microwave images
-│       └── computer-*.jpeg     # Computer images
+│       ├── computer-*.jpeg     # Computer images
+│       ├── ventilation-*.jpg   # Canonical ventilation photo sources
+│       └── responsive/ventilation-*-*w.jpg(.webp) # Responsive production variants
 ├── bytovaya-index.html         # Главная (бытовая)
 ├── bytovaya-uslugi.html        # Услуги (бытовая)
 ├── bytovaya-about.html         # О нас (бытовая)
@@ -63,6 +65,7 @@
 - "Outside site reference graph" only means a tracked asset is not referenced by current HTML/CSS/JS/JSON; it remains a review candidate, not automatic deletion proof.
 - Unused raster images may be parked locally under ignored `.asset-archive/unused-images/` before final deletion.
 - `npm run check:image-budget` checks raster files included in the deploy manifest.
+- Ventilation photo ownership and page intent are recorded in `data/ventilation-photo-map.json`; rendered galleries use `data-architecture-contract="ventilation-photo-map-v1"`.
 
 ## Page Structure (LLM-readable)
 

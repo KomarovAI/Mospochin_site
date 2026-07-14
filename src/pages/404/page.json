@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "404.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "beea7393bfefca6d5b0469b1cf52f6c10a5a05b3d476d644ade6ca04e8aeb94d",
+    "hash": "9e6185371a3ac0f27879611ed739c175bcb039dfb3241da00cf2fc73ee1826dd",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,36 +21,23 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "bytes": 208,
-      "hash": "468caad1f64721d4",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "yandex-metrika-pixel",
-      "templateRef": "src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html",
-      "props": {},
-      "sourceFile": "sections/001-noscript-noscript-fallback.html"
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 43,
+      "hash": "f90daf94b79e2fbb"
     },
     {
-      "id": "002-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
-      "bytes": 47,
-      "hash": "2646981210d11046"
-    },
-    {
-      "id": "003-contact-cta-stranica-ne-naydena",
+      "id": "002-contact-cta-stranica-ne-naydena",
       "component": "contact-cta",
       "label": "Страница не найдена",
-      "file": "sections/003-contact-cta-stranica-ne-naydena.html",
+      "file": "sections/002-contact-cta-stranica-ne-naydena.html",
       "bytes": 1971,
       "hash": "feae4ff96c7edb5d"
     },
     {
-      "id": "004-runtime-partials-podklyuchenie-partials-injector",
+      "id": "003-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 51,
@@ -60,10 +47,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html",
       "props": {},
-      "sourceFile": "sections/004-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/003-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 41,
@@ -73,10 +60,10 @@
       "variant": "mobile-footer-container",
       "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
-      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 42,
@@ -86,10 +73,10 @@
       "variant": "whatsapp-float-container",
       "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
-      "sourceFile": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "007-raw-html-fragment",
+      "id": "006-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -99,14 +86,14 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/007-raw-html-fragment.html"
+      "sourceFile": "sections/006-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:page -- --page 404.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page 404.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page 404.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

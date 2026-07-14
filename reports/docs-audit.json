@@ -1,14 +1,17 @@
 {
   "summary": {
-    "generatedAt": "2026-06-06T08:58:10.614Z",
-    "totalDocs": 33,
-    "totalBytes": 155393,
+    "generatedAt": "2026-07-14T03:53:42.736Z",
+    "totalDocs": 44,
+    "totalBytes": 203254,
     "byCategory": {
       "active": 13,
-      "reference": 20
+      "reference": 23,
+      "orphanCandidate": 7,
+      "legacyCandidate": 1
     },
     "byAction": {
-      "keep": 33
+      "keep": 36,
+      "reviewForPrune": 8
     }
   },
   "docs": [
@@ -17,7 +20,7 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 6863,
+      "sizeBytes": 7631,
       "references": [
         {
           "file": "AI-CONTEXT.md",
@@ -146,8 +149,12 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 6537,
+      "sizeBytes": 8752,
       "references": [
+        {
+          "file": "README_CONVERSION_P0_PATCH.md",
+          "count": 2
+        },
         {
           "file": "data/ai-editing-manifest.json",
           "count": 2
@@ -177,16 +184,16 @@
           "count": 6
         }
       ],
-      "referenceCount": 20,
+      "referenceCount": 22,
       "headings": [
         "AI Change Log — MosPochin",
+        "2026-07-13 — workspace and AI-context cleanup",
+        "2026-07-13 — AI architecture and visual runner hardening",
         "2026-06-03 — Parokonvektomat AI operating layer",
         "2026-06-06 — low-resource/high-impact patch",
         "2026-06-06 — low-resource check hierarchy",
         "2026-06-06 — AI navigation pack",
-        "2026-06-06 — AI/docs prune pack",
-        "2026-06-06 — Safe assets prune pack",
-        "2026-06-06 — Maintenance audit pack"
+        "2026-06-06 — AI/docs prune pack"
       ]
     },
     {
@@ -255,7 +262,7 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 3182,
+      "sizeBytes": 3209,
       "references": [
         {
           "file": "CHANGELOG_AI.md",
@@ -339,7 +346,7 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 7742,
+      "sizeBytes": 8594,
       "references": [
         {
           "file": ".ai/digest/content-map.json",
@@ -399,7 +406,7 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 5342,
+      "sizeBytes": 5954,
       "references": [
         {
           "file": ".ai/digest/content-map.json",
@@ -520,6 +527,40 @@
         "Изменить контакты",
         "Добавить новую страницу услуги",
         "Изменить изображение или добавить новое"
+      ]
+    },
+    {
+      "file": "docs/AI_VISUAL_REVIEW_WORKFLOW.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 4790,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "MosPochin — AI visual review workflow",
+        "Главный принцип",
+        "нейронка индексирует доступные PNG через Work Mode",
+        "если есть issues — правки, build/sync/check, снова audit:visual-smoke",
+        "затем AI review + повторный screenshot pass после исправлений",
+        "Что именно смотрит нейронка на скриншотах",
+        "Что именно проверяет автоматический контракт",
+        "Если среда не умеет запускать браузер"
+      ]
+    },
+    {
+      "file": "docs/ARCHIVE_HYGIENE.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 1860,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Archive hygiene for MosPochin",
+        "Правило",
+        "Что исключается из полного project ZIP",
+        "Проверка размера"
       ]
     },
     {
@@ -659,7 +700,7 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 6458,
+      "sizeBytes": 7217,
       "references": [
         {
           "file": ".ai/digest/content-map.json",
@@ -707,7 +748,7 @@
         },
         {
           "file": "docs/README.md",
-          "count": 4
+          "count": 3
         },
         {
           "file": "docs/SITE_MAINTENANCE_MODEL.md",
@@ -722,7 +763,7 @@
           "count": 4
         }
       ],
-      "referenceCount": 63,
+      "referenceCount": 62,
       "headings": [
         "DOC_INDEX — статусы документации MosPochin",
         "Активные входы",
@@ -850,11 +891,51 @@
       ]
     },
     {
+      "file": "docs/LIVE_VISUAL_PACK_MVP.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 823,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "MosPochin Live Visual Pack MVP"
+      ]
+    },
+    {
+      "file": "docs/LOCAL_VISUAL_SCREENSHOT_PACK.md",
+      "category": "legacyCandidate",
+      "action": "reviewForPrune",
+      "reason": "Contains legacy/deprecated markers.",
+      "sizeBytes": 5426,
+      "references": [
+        {
+          "file": "mospochin_prog13_local_python_visual_pack_changed_files.txt",
+          "count": 2
+        },
+        {
+          "file": "mospochin_stage6_prog13_local_python_visual_pack_report_20260609.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 4,
+      "headings": [
+        "MosPochin — локальный screenshot ZIP для проверки нейронкой",
+        "Быстрый запуск",
+        "Где будет ZIP",
+        "Режимы",
+        "Ключевой smoke: главная, услуги, контакты, hub, Rational/Unox, error/symptom",
+        "Весь пароконвектоматный кластер",
+        "Все root HTML-страницы",
+        "Одна/несколько страниц"
+      ]
+    },
+    {
       "file": "docs/OPERATOR_ROUTING.md",
       "category": "reference",
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
-      "sizeBytes": 5076,
+      "sizeBytes": 5043,
       "references": [
         {
           "file": "data/docs-contracts.json",
@@ -862,14 +943,14 @@
         },
         {
           "file": "docs/README.md",
-          "count": 6
+          "count": 5
         },
         {
           "file": "docs/SITE_MAINTENANCE_MODEL.md",
-          "count": 6
+          "count": 5
         }
       ],
-      "referenceCount": 17,
+      "referenceCount": 15,
       "headings": [
         "Operator Routing",
         "Default Routes",
@@ -879,6 +960,22 @@
         "4. Run Representative Stabilization Audit",
         "5. Run Full Restaurant Stabilization Audit",
         "When Not To Go Deeper"
+      ]
+    },
+    {
+      "file": "docs/PAGE_IMPROVEMENT_METRICS.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 4028,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Page Improvement Metrics",
+        "Поток данных",
+        "Как читать scorecard",
+        "Где искать решение",
+        "Регламент изменения страницы"
       ]
     },
     {
@@ -937,6 +1034,10 @@
           "count": 2
         },
         {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
           "file": "data/docs-contracts.json",
           "count": 1
         },
@@ -961,19 +1062,15 @@
           "count": 4
         },
         {
-          "file": "tools/ai-task-router.mjs",
-          "count": 4
-        },
-        {
           "file": "tools/audit-docs.mjs",
           "count": 2
         },
         {
           "file": "tools/generate-ai-digest.mjs",
-          "count": 8
+          "count": 6
         }
       ],
-      "referenceCount": 43,
+      "referenceCount": 37,
       "headings": [
         "Parokonvektomat Cluster AI Guide",
         "1. Роль кластера",
@@ -983,6 +1080,54 @@
         "5. Где лежат важные блоки",
         "6. Перелинковка",
         "7. Контентные правила"
+      ]
+    },
+    {
+      "file": "docs/PISHEVAROCHNYE_KOTLY_CLUSTER_AI_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1961,
+      "references": [
+        {
+          "file": ".ai/digest/clusters/pishevarochnye-kotly.md",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/project-map.generated.json",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_START_HERE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-check.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 16,
+      "headings": [
+        "Пищеварочные котлы — AI cluster guide",
+        "Source of truth",
+        "Правила AI-правки",
+        "Минимальные проверки"
       ]
     },
     {
@@ -1046,7 +1191,7 @@
       "category": "reference",
       "action": "keep",
       "reason": "Referenced or useful reference documentation.",
-      "sizeBytes": 7131,
+      "sizeBytes": 6906,
       "references": [
         {
           "file": "data/docs-contracts.json",
@@ -1153,14 +1298,14 @@
         },
         {
           "file": "docs/README.md",
-          "count": 6
+          "count": 5
         },
         {
           "file": "docs/SITE_MAINTENANCE_MODEL.md",
           "count": 4
         }
       ],
-      "referenceCount": 23,
+      "referenceCount": 22,
       "headings": [
         "Restaurant Visual Audit Checklist",
         "Start",
@@ -1193,14 +1338,14 @@
         },
         {
           "file": "docs/README.md",
-          "count": 4
+          "count": 3
         },
         {
           "file": "tools/audit-docs.mjs",
           "count": 2
         }
       ],
-      "referenceCount": 12,
+      "referenceCount": 11,
       "headings": [
         "Scale Policy: controlled growth to 150 pages",
         "Решение",
@@ -1217,7 +1362,7 @@
       "category": "reference",
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
-      "sizeBytes": 7708,
+      "sizeBytes": 9614,
       "references": [
         {
           "file": "data/docs-contracts.json",
@@ -1229,14 +1374,14 @@
         },
         {
           "file": "docs/OPERATOR_ROUTING.md",
-          "count": 4
+          "count": 3
         },
         {
           "file": "docs/README.md",
-          "count": 4
+          "count": 3
         }
       ],
-      "referenceCount": 17,
+      "referenceCount": 15,
       "headings": [
         "Site Maintenance Model",
         "Source Of Truth",
@@ -1286,6 +1431,133 @@
         "Если root HTML был изменён вручную",
         "Почему это важно",
         "Правила"
+      ]
+    },
+    {
+      "file": "docs/VENTILATION_CLUSTER_AI_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3095,
+      "references": [
+        {
+          "file": ".ai/digest/clusters/ventilyatsiya.md",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": "AGENTS.md",
+          "count": 2
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/project-map.generated.json",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 4
+        }
+      ],
+      "referenceCount": 18,
+      "headings": [
+        "Вентиляция — AI cluster guide",
+        "Маршрут AI-правки",
+        "Слой SEO и перелинковки",
+        "Проверки"
+      ]
+    },
+    {
+      "file": "docs/VISUAL_CHECKS.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 5344,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "Visual checks / screenshot audit",
+        "Быстрый маршрут",
+        "Что реально можно сделать в текущей среде",
+        "Полный visual по пароконвектоматному кластеру",
+        "или явно:",
+        "Что добавлено специально для AI/CI",
+        "Важные ограничения",
+        "Финальное правило для отчёта"
+      ]
+    },
+    {
+      "file": "docs/cooking-kettles-run4-handoff-20260618.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 3060,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "MosPochin — Cooking Kettles Cluster Run 4 Handoff",
+        "Область",
+        "Страницы кластера",
+        "Хаб и симптомы",
+        "Узлы ремонта",
+        "Abat / КПЭМ коды",
+        "Бренды",
+        "Перед деплоем"
+      ]
+    },
+    {
+      "file": "docs/metrics-analytics-run5-technical-audit-cleanup-20260620.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 4440,
+      "references": [
+        {
+          "file": "METRICS_RUN5_CHANGED_FILES_20260620.txt",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
+      "headings": [
+        "MosPochin metrics Run5 — technical audit and cleanup",
+        "Что проверено",
+        "Исправления аудита",
+        "Что намеренно не удалялось",
+        "Политика логов после cleanup",
+        "Новая проверка"
+      ]
+    },
+    {
+      "file": "docs/mospochin-deploy-handoff-run8-20260621.md",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No references found in project text graph.",
+      "sizeBytes": 6153,
+      "references": [],
+      "referenceCount": 0,
+      "headings": [
+        "MosPochin — P8 Final Deploy Handoff",
+        "0. Что это за пакет",
+        "1. Inventory",
+        "2. Главный guardrail",
+        "3. Pre-deploy порядок",
+        "4. Deploy порядок",
+        "5. Ключевые страницы smoke-test",
+        "6. Ожидаемые события"
       ]
     }
   ]

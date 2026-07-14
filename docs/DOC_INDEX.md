@@ -11,13 +11,20 @@
 | `docs/AI_PROJECT_OPERATING_GUIDE.md` | active / architecture | Для source/data/generator/check workflow |
 | `data/project-map.generated.json` | generated / machine map | Быстро найти source, cluster, checks по странице |
 | `data/file-ownership.json` | active / machine contract | Понять manual/generated/danger zones |
+| `data/cluster-registry.json` | active / machine contract | Найти кластер, guide, digest, visual manifest и guard commands |
+| `data/visual-runtime.json` | active / machine contract | Проверить primary local screenshot runtime и manual-only GitHub fallback |
 | `docs/AI_CHANGE_CHECKLIST.md` | active / handoff | Перед ZIP / handoff |
 | `docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md` | active / cluster | Только для кластера пароконвектоматов |
+| `docs/PISHEVAROCHNYE_KOTLY_CLUSTER_AI_GUIDE.md` | active / cluster | Только для кластера пищеварочных котлов |
+| `docs/VENTILATION_CLUSTER_AI_GUIDE.md` | active / cluster | Для 52 страниц вентиляции ресторана |
 | `.ai/digest/clusters/parokonvektomaty.md` | generated / cluster digest | Быстрый AI digest по кластеру |
+| `.ai/digest/clusters/ventilyatsiya.md` | generated / cluster digest | Быстрый AI digest по кластеру вентиляции |
 | `.ai/digest/pages/*.md` | generated / page digest | Перед точечной правкой страницы |
 | `docs/AI_TASK_RECIPES.md` | reference / recipes | Когда нужна типовая последовательность правок |
 | `docs/DATA_CONTRACTS.md` | reference / data | При изменении data contracts |
 | `docs/SCALE_POLICY.md` | active / guardrail | Перед добавлением новых страниц |
+| `docs/VISUAL_CHECKS.md` | active / visual architecture | Перед screenshot capture, visual QA или изменением GitHub visual workflows |
+| `docs/AI_VISUAL_REVIEW_WORKFLOW.md` | active / visual review | Для цикла PNG → review → исправление → повторный capture |
 | `AI-CONTEXT.md` | compatibility stub | Только для старых tools/ссылок; не основной вход |
 
 ## Специальные reference-документы
@@ -67,6 +74,15 @@ data/parokonvektomat-conversion-pages.json
 .ai/digest/clusters/parokonvektomaty.md
 ```
 
+Для вентиляции добавить:
+
+```text
+docs/VENTILATION_CLUSTER_AI_GUIDE.md
+data/ventilation-cluster-pages.json
+data/ventilation-photo-map.json
+.ai/digest/clusters/ventilyatsiya.md
+```
+
 ## Что может устаревать
 
 Generated-документы и карты обновляются командой:
@@ -95,3 +111,8 @@ npm run audit:maintenance
 
 Эти отчёты не являются инструкцией к немедленному удалению. Они дают список кандидатов, которые надо проверять по правилу: минимум ресурсов, максимум импакта, без потери качества.
 
+## Sous-vide pilot
+
+- `docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md` — маршрут правок кластера.
+- `data/sous-vide-cluster-pages.json` — intent/indexing/conversion contract.
+- `data/sous-vide-screenshot-audit.json` — desktop/mobile visual manifest.

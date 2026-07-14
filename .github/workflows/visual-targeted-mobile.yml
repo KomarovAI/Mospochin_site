@@ -1,4 +1,6 @@
-name: Visual Targeted Mobile
+# Manual fallback only. Primary screenshots run locally through system Chromium.
+name: Visual Targeted Mobile (manual fallback)
+run-name: Manual targeted mobile fallback
 
 on:
   workflow_dispatch:
@@ -15,6 +17,7 @@ permissions:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   VISUAL_BASE_URL: https://mospochin.ru
+  VISUAL_EXECUTION_MODE: github-manual-fallback
 
 jobs:
   targeted-mobile:
@@ -27,10 +30,11 @@ jobs:
         with:
           node-version: 24
       - run: npm ci
+      - run: npm run setup:visual:github
       - env:
           VISUAL_TARGET_PAGES: ${{ inputs.pages }}
         timeout-minutes: 10
-        run: node tools/visual-targeted-mobile-deep.mjs
+        run: node tools/visual-runner.mjs tools/visual-targeted-mobile-deep.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: mospochin-targeted-mobile-deep-${{ github.sha }}-${{ github.run_id }}

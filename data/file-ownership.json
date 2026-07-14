@@ -15,9 +15,20 @@
     "data/direct-landing-pages.json",
     "data/parokonvektomat-conversion-pages.json",
     "data/parokonvektomat-screenshot-audit.json",
+    "data/ventilation-cluster-pages.json",
+    "data/ventilation-screenshot-audit.json",
+    "data/ventilation-photo-map.json",
     "data/ai-editing-manifest.json",
     "data/file-ownership.json",
-    "package.json"
+    "package.json",
+    "data/sous-vide-cluster-pages.json",
+    "data/sous-vide-screenshot-audit.json",
+    "data/screenshot-audit.json",
+    "data/visual-smoke-audit.json",
+    "data/restaurant-screenshot-audit.json",
+    "data/cooking-kettles-screenshot-audit.json",
+    "data/cluster-registry.json",
+    "data/visual-runtime.json"
   ],
   "generated": [
     "*.html",
@@ -45,13 +56,20 @@
     "main.js",
     "telegram-form.js",
     "analytics.js",
-    "styles-combined.css"
+    "styles-combined.css",
+    "tools/visual-local-runtime.mjs",
+    "tools/visual-local-capture.mjs",
+    "tools/audit-screenshots.mjs",
+    "tools/check-visual-env.mjs",
+    "tools/check-visual-contract.mjs",
+    "tools/check-visual-workflow-policy.mjs"
   ],
   "rules": [
     "Prefer manual/source files over root HTML.",
     "If generated files change, run npm run sync:generated and npm run check:handoff.",
     "Danger zones can be edited, but require a focused reason and check:handoff at minimum.",
     "Root *.html files are production output and must match the builder.",
-    "Use docs/AI_START_HERE.md as AI entrypoint; AI-CONTEXT.md is compatibility only."
+    "Use docs/AI_START_HERE.md as AI entrypoint; AI-CONTEXT.md is compatibility only.",
+    "Visual screenshots use local system Chromium first; GitHub visual workflows are manual fallback only."
   ]
 }

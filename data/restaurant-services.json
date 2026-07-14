@@ -24,7 +24,9 @@
       "relatedPages": [
         "plity-pechi.html",
         "grili-mangaly.html",
-        "posudomoechnye-mashiny.html"
+        "posudomoechnye-mashiny.html",
+        "holodilnoe-oborudovanie.html",
+        "ice-machines.html"
       ],
       "formExample": "пароконвектомат 6 уровней, ошибка E05, ресторан на Павелецкой, нужен срочный выезд и документы на юрлицо",
       "mobileHiddenSectionIds": [
@@ -60,7 +62,9 @@
       "relatedPages": [
         "parokonvektomaty.html",
         "grili-mangaly.html",
-        "holodilnoe-oborudovanie.html"
+        "holodilnoe-oborudovanie.html",
+        "posudomoechnye-mashiny.html",
+        "ice-machines.html"
       ],
       "formExample": "Плита Abat ПЭ-4Ш не греет одну конфорку, кухня в ЮАО, нужен выезд на объект",
       "mobileHiddenSectionIds": [
@@ -94,7 +98,9 @@
       "relatedPages": [
         "ice-machines.html",
         "plity-pechi.html",
-        "parokonvektomaty.html"
+        "parokonvektomaty.html",
+        "posudomoechnye-mashiny.html",
+        "grili-mangaly.html"
       ],
       "formExample": "Холодильный шкаф Polair ШХ-1.0 не морозит, температура +15°C, кафе на Арбате, нужен срочный выезд",
       "mobileHiddenSectionIds": [
@@ -129,7 +135,9 @@
       "relatedPages": [
         "parokonvektomaty.html",
         "plity-pechi.html",
-        "grili-mangaly.html"
+        "grili-mangaly.html",
+        "holodilnoe-oborudovanie.html",
+        "ice-machines.html"
       ],
       "formExample": "Winterhalter PT-L не сливает воду, ошибка E03, ресторан на Тверской, нужен срочный выезд",
       "mobileHiddenSectionIds": [
@@ -164,7 +172,9 @@
       "relatedPages": [
         "plity-pechi.html",
         "parokonvektomaty.html",
-        "ice-machines.html"
+        "ice-machines.html",
+        "holodilnoe-oborudovanie.html",
+        "posudomoechnye-mashiny.html"
       ],
       "formExample": "Гриль Electrolux не нагревает поверхность, кухня бургерной в САО, нужен выезд сегодня",
       "mobileHiddenSectionIds": [
@@ -198,7 +208,9 @@
       "relatedPages": [
         "holodilnoe-oborudovanie.html",
         "grili-mangaly.html",
-        "parokonvektomaty.html"
+        "parokonvektomaty.html",
+        "plity-pechi.html",
+        "posudomoechnye-mashiny.html"
       ],
       "formExample": "Scotsman ICE 160 не производит лед, ошибка E03, бар в ЦАО, нужен срочный выезд",
       "mobileHiddenSectionIds": [
@@ -238,7 +250,9 @@
       "relatedPages": [
         "plity-pechi.html",
         "parokonvektomaty.html",
-        "grili-mangaly.html"
+        "grili-mangaly.html",
+        "holodilnoe-oborudovanie.html",
+        "posudomoechnye-mashiny.html"
       ],
       "formExample": "Пищеварочный котел Abat КПЭМ не набирает температуру, столовая на Павелецкой, нужен выезд инженера и закрывающие документы",
       "mobileHiddenSectionIds": [
@@ -3322,6 +3336,214 @@
         "form_submit_attempt",
         "form_submit_success",
         "form_submit_error"
+      ]
+    },
+    {
+      "page": "parokonvektomat-techet-voda.html",
+      "slug": "parokonvektomat-techet-voda",
+      "uiLabel": "Пароконвектомат течёт",
+      "deviceName": "пароконвектомат",
+      "serviceName": "Ремонт пароконвектомата, если течёт вода",
+      "schemaName": "Ремонт пароконвектомата при протечке воды",
+      "isShadow": false,
+      "primarySymptoms": [
+        "течёт вода",
+        "протечка из-под двери",
+        "вода из дренажа",
+        "не держит пар"
+      ],
+      "brandCluster": [
+        "Rational",
+        "Unox",
+        "Abat",
+        "Convotherm",
+        "Lainox",
+        "Electrolux"
+      ],
+      "relatedPages": [
+        "parokonvektomaty.html",
+        "plity-pechi.html",
+        "grili-mangaly.html"
+      ],
+      "formExample": "пароконвектомат течёт вода, ресторан в Москве, нужен выезд инженера",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "parokonvektomat-ne-nabiraet-vodu.html",
+      "slug": "parokonvektomat-ne-nabiraet-vodu",
+      "uiLabel": "Не набирает воду",
+      "deviceName": "Пароконвектомат не набирает воду",
+      "serviceName": "Ремонт пароконвектоматов: не набирает воду",
+      "schemaName": "Диагностика подачи воды в пароконвектомате",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не набирает воду",
+        "ошибка подачи воды",
+        "нет пара"
+      ],
+      "brandCluster": [
+        "Rational",
+        "Unox",
+        "Abat",
+        "Convotherm",
+        "Electrolux",
+        "Lainox"
+      ],
+      "relatedPages": [
+        "parokonvektomaty.html",
+        "plity-pechi.html",
+        "grili-mangaly.html"
+      ],
+      "formExample": "Пароконвектомат не набирает воду не набирает воду, ресторан в Москве, нужен выезд инженера",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "parokonvektomat-ne-vklyuchaetsya.html",
+      "slug": "parokonvektomat-ne-vklyuchaetsya",
+      "uiLabel": "Не включается",
+      "deviceName": "Пароконвектомат не включается",
+      "serviceName": "Ремонт пароконвектоматов: не включается",
+      "schemaName": "Диагностика питания и запуска пароконвектомата",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не включается",
+        "не реагирует на кнопку",
+        "выбивает автомат"
+      ],
+      "brandCluster": [
+        "Rational",
+        "Unox",
+        "Abat",
+        "Convotherm",
+        "Electrolux",
+        "Lainox"
+      ],
+      "relatedPages": [
+        "parokonvektomaty.html",
+        "parokonvektomat-techet-voda.html",
+        "parokonvektomat-ne-nabiraet-vodu.html",
+        "parokonvektomat-net-para.html",
+        "parokonvektomat-ne-greet.html",
+        "parokonvektomat-kod-oshibki.html",
+        "parokonvektomat-rational.html",
+        "parokonvektomat-unox.html",
+        "parokonvektomat-obschuzhivanie.html"
+      ],
+      "formExample": "Пароконвектомат не включается, ресторан в Москве, нужен выезд инженера",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "pishevarochnyj-kotel-ne-nabiraet-vodu.html",
+      "slug": "pishevarochnyj-kotel-ne-nabiraet-vodu",
+      "uiLabel": "Котел не набирает воду",
+      "deviceName": "Пищеварочный котел",
+      "serviceName": "Ремонт пищеварочного котла, который не набирает воду",
+      "schemaName": "Ремонт пищеварочного котла: не набирает воду",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не набирает воду",
+        "H2O",
+        "Н20",
+        "сухой ход",
+        "не греет",
+        "уровень воды"
+      ],
+      "brandCluster": [
+        "Abat",
+        "Abat КПЭМ",
+        "Apach",
+        "Atesy",
+        "Iterma"
+      ],
+      "relatedPages": [
+        "pishevarochnye-kotly.html",
+        "pishevarochnyj-kotel-suhoy-hod.html",
+        "pishevarochnyj-kotel-techet.html",
+        "pishevarochnyj-kotel-kod-oshibki.html",
+        "pishevarochnyj-kotel-ne-derzhit-davlenie.html",
+        "pishevarochnyj-kotel-ne-greet.html"
+      ],
+      "formExample": "Пищеварочный котел не набирает воду, ресторан в Москве, нужен выезд инженера",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "pishevarochnyj-kotel-ne-derzhit-davlenie.html",
+      "slug": "pishevarochnyj-kotel-ne-derzhit-davlenie",
+      "uiLabel": "Котел не держит давление",
+      "deviceName": "Пищеварочный котел",
+      "serviceName": "Ремонт пищеварочного котла, который не держит давление",
+      "schemaName": "Ремонт пищеварочного котла: не держит давление",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не держит давление",
+        "манометр",
+        "пароводяная рубашка",
+        "E04",
+        "течет",
+        "клапаны"
+      ],
+      "brandCluster": [
+        "Abat",
+        "Abat КПЭМ",
+        "Apach",
+        "Atesy",
+        "Iterma"
+      ],
+      "relatedPages": [
+        "pishevarochnye-kotly.html",
+        "pishevarochnyj-kotel-techet.html",
+        "pishevarochnyj-kotel-kod-oshibki.html",
+        "pishevarochnyj-kotel-ne-nabiraet-vodu.html",
+        "pishevarochnyj-kotel-ne-slivaet-vodu.html",
+        "pishevarochnyj-kotel-abat-kpem.html"
+      ],
+      "formExample": "Пищеварочный котел не держит давление, ресторан в Москве, нужен выезд инженера",
+      "sectionIds": [
+        "request"
+      ]
+    },
+    {
+      "page": "pishevarochnyj-kotel-ne-slivaet-vodu.html",
+      "slug": "pishevarochnyj-kotel-ne-slivaet-vodu",
+      "uiLabel": "Котел не сливает воду",
+      "deviceName": "Пищеварочный котел",
+      "serviceName": "Ремонт пищеварочного котла, который не сливает воду",
+      "schemaName": "Ремонт пищеварочного котла: не сливает воду",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не сливает воду",
+        "сливной кран",
+        "засор",
+        "течет",
+        "прокладки",
+        "слив"
+      ],
+      "brandCluster": [
+        "Abat",
+        "Abat КПЭМ",
+        "Apach",
+        "Atesy",
+        "Iterma"
+      ],
+      "relatedPages": [
+        "pishevarochnye-kotly.html",
+        "pishevarochnyj-kotel-techet.html",
+        "pishevarochnyj-kotel-ne-nabiraet-vodu.html",
+        "pishevarochnyj-kotel-ne-derzhit-davlenie.html",
+        "pishevarochnyj-kotel-suhoy-hod.html",
+        "pishevarochnyj-kotel-ne-greet.html"
+      ],
+      "formExample": "Пищеварочный котел не сливает воду, ресторан в Москве, нужен выезд инженера",
+      "sectionIds": [
+        "request"
       ]
     }
   ],

@@ -2,17 +2,43 @@
     'use strict';
 
     var METRIKA_ID = '109138661';
-    var isEnabled = /^\d+$/.test(String(METRIKA_ID));
+    var MOSPOCHIN_ANALYTICS_ENABLED = true;
+    var PRODUCTION_HOSTS = ['mospochin.ru', 'www.mospochin.ru'];
+    var SESSION_STORAGE_KEY = 'mospochin_session_v1';
+    var BOT_USER_AGENT_RE = /bot\b|crawler|spider|slurp|bingpreview|headlesschrome|phantomjs|prerender|lighthouse/i;
+
+    function analyticsEnabled() {
+        if (!MOSPOCHIN_ANALYTICS_ENABLED) return false;
+        if (navigator.webdriver === true) return false;
+        if (BOT_USER_AGENT_RE.test(String(navigator.userAgent || ''))) return false;
+        return PRODUCTION_HOSTS.indexOf(window.location.hostname) !== -1 && /^\d+$/.test(String(METRIKA_ID));
+    }
+
+    var isEnabled = analyticsEnabled();
+    window.MOSPOCHIN_RUNTIME = window.MOSPOCHIN_RUNTIME || {};
+    window.MOSPOCHIN_RUNTIME.analyticsEnabled = isEnabled;
+    window.__MOSPOCHIN_RUNTIME__ = window.__MOSPOCHIN_RUNTIME__ || {};
+    window.__MOSPOCHIN_RUNTIME__.analyticsEnabled = isEnabled;
+    window.MOSPOCHIN_ANALYTICS_ENABLED = isEnabled;
     var startedForms = new WeakSet();
     var ATTRIBUTION_STORAGE_KEY = 'mospochin_attribution_v1';
     var ATTRIBUTION_PARAMS = [
         'utm_source',
         'utm_medium',
-        'utm_campaign',
-        'utm_content',
-        'utm_term',
+      'utm_campaign',
+      'utm_content',
+      'utm_term',
+        'utm_service',
+        'utm_landing',
         'metrika_client_id',
-        'yclid'
+        'yclid',
+        'gclid'
+    ];
+    var SITE_EVENT_NAMES = [
+        'phone_click', 'whatsapp_click', 'telegram_click', 'email_click',
+        'form_open', 'form_start', 'form_submit_attempt', 'form_submit_success',
+        'form_submit_error', 'form_validation_error', 'form_submit_blocked',
+        'cta_view', 'cta_click', 'form_submit_click'
     ];
 
     function cleanText(value) {
@@ -221,15 +247,6 @@
         if (form) trackFormStart(form);
     });
 
-    document.addEventListener('submit', function (event) {
-        var form = event.target.closest && event.target.closest('form.telegram-form');
-        if (!form) return;
-
-        window.mospochinTrackGoal('form_submit_attempt', {
-            form_class: form.className
-        });
-    }, true);
-
     captureAttribution();
     initMetrika();
 })();
@@ -242,11 +259,52 @@
   window.__MOSPOCHIN_SITE_EVENTS_BRIDGE__ = '2026-07-04-run1';
 
   var seenViews = new WeakSet();
+  var viewTimers = new WeakMap();
   var startedForms = new WeakSet();
-  var SESSION_KEY = 'mospochin_event_session_v1';
+  var SESSION_KEY = 'mospochin_session_v1';
+  var eventTimestamps = [];
+  var BOT_USER_AGENT_RE = /bot\b|crawler|spider|slurp|bingpreview|headlesschrome|phantomjs|prerender|lighthouse/i;
+  var SITE_EVENT_NAMES = [
+    'page_view',
+    'phone_click', 'whatsapp_click', 'telegram_click', 'email_click',
+    'form_open', 'form_start', 'form_submit_attempt', 'form_submit_success',
+    'form_submit_error', 'form_validation_error', 'form_submit_blocked',
+    'cta_view', 'cta_click', 'form_submit_click'
+  ];
+  var HUMAN_DECISION_EVENTS = [
+    'cta_click', 'phone_click', 'whatsapp_click', 'telegram_click', 'email_click',
+    'form_open', 'form_start', 'form_submit_attempt', 'form_submit_success'
+  ];
+
+  function bridgeAnalyticsEnabled() {
+    return window.MOSPOCHIN_RUNTIME?.analyticsEnabled === true;
+  }
+  function isBotLikeClient() {
+    return navigator.webdriver === true || BOT_USER_AGENT_RE.test(String(navigator.userAgent || ''));
+  }
 
   function safeText(value, max) {
     return String(value || '').replace(/\s+/g, ' ').trim().slice(0, max || 180);
+  }
+  function safeContactHref(value) {
+    var href = String(value || '').trim().toLowerCase();
+    if (href.indexOf('tel:') === 0) return 'tel:[redacted]';
+    if (href.indexOf('mailto:') === 0) return 'mailto:[redacted]';
+    if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) return 'whatsapp:[redacted]';
+    if (href.indexOf('telegram') !== -1 || href.indexOf('tg:') === 0) return 'telegram:[redacted]';
+    return href ? '[non-contact-link]' : '';
+  }
+  function redactContactText(value) {
+    return safeText(value, 120)
+      .replace(/(?:\+?\d[\d\s().-]{7,}\d)/g, '[phone:redacted]')
+      .replace(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/ig, '[email:redacted]');
+  }
+  function clientRateLimit() {
+    var now = Date.now();
+    eventTimestamps = eventTimestamps.filter(function (timestamp) { return now - timestamp < 60000; });
+    if (eventTimestamps.length >= 30) return false;
+    eventTimestamps.push(now);
+    return true;
   }
   function getSessionId() {
     try {
@@ -265,19 +323,20 @@
     var d = b.dataset || {};
     return {
       page_slug: d.pageSlug || '',
-      page_intent: d.pageIntent || '',
-      equipment: d.equipment || '',
-      brand: d.brand || '',
+      page_intent: document.body?.dataset?.pageIntent || '',
+      equipment: document.body?.dataset?.equipment || '',
+      brand: document.body?.dataset?.brand || '',
       error_code: d.errorCode || '',
       service: d.service || '',
-      commercial_segment: d.commercialSegment || ''
+      commercial_segment: document.body?.dataset?.commercialSegment || '',
+      page_version: document.body?.dataset?.pageVersion || ''
     };
   }
   function attribution() {
     var result = {};
     try {
       var url = new URL(window.location.href);
-      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','yclid'].forEach(function (k) {
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_service','utm_landing','yclid','gclid'].forEach(function (k) {
         var v = url.searchParams.get(k);
         if (v) result[k] = safeText(v, 160);
       });
@@ -285,7 +344,7 @@
     try {
       var stored = JSON.parse(window.localStorage.getItem('mospochin_attribution_v1') || '{}') || {};
       var touch = stored.last_touch || stored.first_touch || {};
-      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','yclid','metrika_client_id'].forEach(function (k) {
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_service','utm_landing','yclid','gclid','metrika_client_id'].forEach(function (k) {
         if (!result[k] && touch[k]) result[k] = safeText(touch[k], 160);
       });
     } catch (e) {}
@@ -297,8 +356,8 @@
       cta_id: d.ctaId || '',
       cta_group: d.ctaGroup || '',
       block: d.block || '',
-      cta_text: safeText(el ? el.textContent : '', 120),
-      href: safeText(el && el.getAttribute ? el.getAttribute('href') : '', 220)
+      cta_text: redactContactText(el ? el.textContent : ''),
+      href: safeContactHref(el && el.getAttribute ? el.getAttribute('href') : '')
     };
   }
   function formPayload(form) {
@@ -306,14 +365,19 @@
     return {
       form_id: d.formId || d.formContext || '',
       form_context: d.formContext || '',
+      form_variant: d.formVariant || d.formContext || '',
       block: d.block || '',
       form_class: safeText(form ? form.className : '', 160)
     };
   }
   function sendEvent(eventName, extra) {
-    if (!eventName) return;
+    if (!eventName || SITE_EVENT_NAMES.indexOf(eventName) === -1 || !bridgeAnalyticsEnabled() || isBotLikeClient() || !clientRateLimit()) return;
     var payload = Object.assign({
       event: eventName,
+      event_id: 'evt_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10),
+      client_event_ts: new Date().toISOString(),
+      event_class: eventName === 'page_view' || eventName === 'cta_view' ? 'visibility' : eventName.indexOf('form_') === 0 ? 'form_outcome' : 'micro_conversion',
+      is_decision_event: HUMAN_DECISION_EVENTS.indexOf(eventName) !== -1,
       session_id: getSessionId(),
       page_url: window.location.href,
       page_path: window.location.pathname,
@@ -323,7 +387,7 @@
     }, bodyDataset(), attribution(), extra || {});
 
     try {
-      if (typeof window.mospochinTrackGoal === 'function') {
+      if (eventName !== 'page_view' && typeof window.mospochinTrackGoal === 'function') {
         window.mospochinTrackGoal(eventName, payload);
       }
     } catch (e) {}
@@ -345,6 +409,12 @@
   }
   window.mospochinTrackSiteEvent = sendEvent;
 
+  function sendPageView() {
+    if (window.__MOSPOCHIN_PAGE_VIEW_SENT__) return;
+    window.__MOSPOCHIN_PAGE_VIEW_SENT__ = true;
+    sendEvent('page_view', {page_title: safeText(document.title || '', 240)});
+  }
+
   function inferContactEvent(link) {
     var href = (link.getAttribute('href') || '').toLowerCase();
     if (href.indexOf('tel:') === 0) return 'phone_click';
@@ -355,6 +425,7 @@
   }
 
   document.addEventListener('click', function (event) {
+    if (event.isTrusted === false) return;
     var submit = event.target.closest && event.target.closest('button[type="submit"], input[type="submit"]');
     if (submit) {
       var form = submit.closest('form');
@@ -368,6 +439,7 @@
   }, true);
 
   document.addEventListener('focusin', function (event) {
+    if (event.isTrusted === false) return;
     var form = event.target.closest && event.target.closest('form[data-contact-form], form.telegram-form');
     if (!form || startedForms.has(form)) return;
     startedForms.add(form);
@@ -375,13 +447,8 @@
     sendEvent('form_start', formPayload(form));
   }, true);
 
-  document.addEventListener('submit', function (event) {
-    var form = event.target.closest && event.target.closest('form[data-contact-form], form.telegram-form');
-    if (!form) return;
-    sendEvent('form_submit_attempt', formPayload(form));
-  }, true);
-
   document.addEventListener('invalid', function (event) {
+    if (event.isTrusted === false) return;
     var field = event.target;
     var form = field && field.closest && field.closest('form[data-contact-form], form.telegram-form');
     if (!form) return;
@@ -402,18 +469,32 @@
     }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (!entry.isIntersecting || seenViews.has(entry.target)) return;
-        seenViews.add(entry.target);
-        sendEvent('cta_view', ctaPayload(entry.target));
-        io.unobserve(entry.target);
+        if (!entry.isIntersecting || seenViews.has(entry.target)) {
+          if (!entry.isIntersecting && viewTimers.has(entry.target)) {
+            clearTimeout(viewTimers.get(entry.target));
+            viewTimers.delete(entry.target);
+          }
+          return;
+        }
+        if (viewTimers.has(entry.target)) return;
+        viewTimers.set(entry.target, setTimeout(function () {
+          if (seenViews.has(entry.target)) return;
+          seenViews.add(entry.target);
+          viewTimers.delete(entry.target);
+          sendEvent('cta_view', ctaPayload(entry.target));
+          io.unobserve(entry.target);
+        }, 900));
       });
-    }, {threshold: 0.55});
+    }, {threshold: 0.5});
     nodes.forEach(function (el) { io.observe(el); });
   }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', observeCtaViews);
+    document.addEventListener('DOMContentLoaded', function () {
+      sendPageView();
+      observeCtaViews();
+    });
   } else {
+    sendPageView();
     observeCtaViews();
   }
 })();
-

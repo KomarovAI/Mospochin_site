@@ -25,8 +25,41 @@ mkdirp(outDir);
 const sessionA = hash('session-a');
 const yclidA = hash('yclid-a');
 const sessionB = hash('session-b');
+const sessionC = hash('session-c');
+const sessionD = hash('session-d');
+const sessionE = hash('session-e');
+const sessionF = hash('session-f');
+const sessionG = hash('session-g');
+
+const pageViewRows = [sessionA, sessionC, sessionD, sessionE, sessionF].map((session, index) => ({
+  ts: `${date}T08:5${index}:00.000Z`,
+  event: 'page_view',
+  page_path: '/parokonvektomat-kod-oshibki.html',
+  page_intent: 'error_code',
+  page_version: 'smoke-v1',
+  page_title: 'Smoke page',
+  quality: 'human_candidate',
+  is_decision_event: false,
+  session_id_hash: session,
+  utm_source: 'yandex',
+  utm_campaign: 'parokonvektomaty_premium_b2b'
+}));
+pageViewRows.push({
+  ts: `${date}T10:09:00.000Z`,
+  event: 'page_view',
+  page_path: '/pishevarochnyj-kotel-ne-greet.html',
+  page_intent: 'symptom',
+  page_version: 'smoke-v1',
+  page_title: 'Smoke page',
+  quality: 'human_candidate',
+  is_decision_event: false,
+  session_id_hash: sessionB,
+  utm_source: 'yandex',
+  utm_campaign: 'pishevarochnye_kotly_premium_b2b_poisk_500'
+});
 
 writeJsonl(path.join(eventsDir, 'site_events.jsonl'), [
+  ...pageViewRows,
   {
     ts: `${date}T09:00:01.000Z`,
     event: 'cta_view',
@@ -35,7 +68,7 @@ writeJsonl(path.join(eventsDir, 'site_events.jsonl'), [
     cta_id: 'error_photo_whatsapp',
     block: 'error_bridge',
     quality: 'human_candidate',
-    is_decision_event: true,
+    is_decision_event: false,
     session_id_hash: sessionA,
     yclid_hash: yclidA,
     utm_source: 'yandex',
@@ -67,13 +100,56 @@ writeJsonl(path.join(eventsDir, 'site_events.jsonl'), [
     cta_id: 'error_photo_whatsapp',
     block: 'error_bridge',
     quality: 'human_candidate',
-    is_decision_event: true,
+    is_decision_event: false,
     session_id_hash: sessionA,
     yclid_hash: yclidA,
     utm_source: 'yandex',
     utm_campaign: 'parokonvektomaty_premium_b2b',
     utm_content: 'ad_177_group_5749537779',
     utm_term: 'код ошибки пароконвектомата'
+  },
+  {
+    ts: `${date}T09:02:00.000Z`,
+    event: 'qualified_lead',
+    page_path: '/parokonvektomat-kod-oshibki.html',
+    page_intent: 'error_code',
+    page_version: 'smoke-v1',
+    lead_id_hash: hash('lead-a'),
+    outcome_source: 'crm_smoke',
+    quality: 'internal',
+    is_decision_event: false,
+    session_id_hash: sessionA,
+    utm_source: 'yandex',
+    utm_campaign: 'parokonvektomaty_premium_b2b'
+  },
+  {
+    ts: `${date}T09:20:00.000Z`,
+    event: 'repair_order_created',
+    page_path: '/parokonvektomat-kod-oshibki.html',
+    page_intent: 'error_code',
+    page_version: 'smoke-v1',
+    lead_id_hash: hash('lead-a'),
+    outcome_source: 'crm_smoke',
+    order_value_bucket: '50k_100k',
+    quality: 'internal',
+    is_decision_event: true,
+    session_id_hash: sessionA,
+    utm_source: 'yandex',
+    utm_campaign: 'parokonvektomaty_premium_b2b'
+  },
+  {
+    ts: `${date}T09:25:00.000Z`,
+    event: 'service_contract_created',
+    page_path: '/parokonvektomat-kod-oshibki.html',
+    page_intent: 'error_code',
+    page_version: 'smoke-v1',
+    lead_id_hash: hash('lead-a'),
+    outcome_source: 'crm_smoke',
+    quality: 'internal',
+    is_decision_event: false,
+    session_id_hash: sessionA,
+    utm_source: 'yandex',
+    utm_campaign: 'parokonvektomaty_premium_b2b'
   },
   {
     ts: `${date}T10:10:00.000Z`,
@@ -98,12 +174,63 @@ writeJsonl(path.join(eventsDir, 'site_events.jsonl'), [
     field: 'phone',
     reason: 'invalid_phone',
     quality: 'human_candidate',
-    is_decision_event: true,
+    is_decision_event: false,
     session_id_hash: sessionB,
     utm_source: 'yandex',
     utm_campaign: 'pishevarochnye_kotly_premium_b2b_poisk_500',
     utm_content: 'ad_17756426593_group_5762090801',
     utm_term: 'пищеварочный котел не греет'
+  },
+  {
+    ts: `${date}T11:20:00.000Z`,
+    event: 'page_view',
+    page_path: '/remont-oborudovaniya-restorana.html',
+    page_intent: 'hub',
+    page_version: 'smoke-v1',
+    quality: 'human_candidate',
+    is_decision_event: false,
+    session_id_hash: sessionG
+  },
+  {
+    ts: `${date}T11:20:08.000Z`,
+    event: 'cta_view',
+    page_path: '/remont-oborudovaniya-restorana.html',
+    cta_id: 'restaurant_hub_internal_link_related_parokonvektomaty',
+    cta_group: 'internal_link',
+    block: 'related_categories',
+    quality: 'human_candidate',
+    is_decision_event: false,
+    session_id_hash: sessionG
+  },
+  {
+    ts: `${date}T11:20:12.000Z`,
+    event: 'cta_click',
+    page_path: '/remont-oborudovaniya-restorana.html',
+    cta_id: 'restaurant_hub_internal_link_related_parokonvektomaty',
+    cta_group: 'internal_link',
+    block: 'related_categories',
+    quality: 'human_candidate',
+    is_decision_event: true,
+    session_id_hash: sessionG
+  },
+  {
+    ts: `${date}T11:20:15.000Z`,
+    event: 'page_view',
+    page_path: '/parokonvektomaty.html',
+    page_intent: 'hub',
+    page_version: 'smoke-v1',
+    quality: 'human_candidate',
+    is_decision_event: false,
+    session_id_hash: sessionG
+  },
+  {
+    ts: `${date}T11:20:22.000Z`,
+    event: 'phone_click',
+    page_path: '/parokonvektomaty.html',
+    page_intent: 'hub',
+    quality: 'human_candidate',
+    is_decision_event: true,
+    session_id_hash: sessionG
   }
 ]);
 
@@ -136,7 +263,14 @@ fs.writeFileSync(
 );
 
 const script = path.join(root, 'ops', 'mosanalytics', 'bin', 'mosanalytics-events-aggregate.py');
-const result = spawnSync('python3', [script, '--date', date, '--base', base, '--out', outDir], {
+const result = spawnSync('python3', [
+  script,
+  '--date', date,
+  '--base', base,
+  '--out', outDir,
+  '--page-context', path.join(root, 'data', 'metrics-page-context.json'),
+  '--policy', path.join(root, 'data', 'metrics-scorecard-policy.json')
+], {
   cwd: root,
   encoding: 'utf8'
 });
@@ -150,12 +284,15 @@ if (result.status !== 0) {
 const requiredFiles = [
   `llm_event_funnel_${date}.csv`,
   `llm_cta_performance_${date}.csv`,
+  `llm_internal_link_funnel_${date}.csv`,
   `llm_form_friction_${date}.csv`,
   `llm_traffic_quality_${date}.csv`,
   `llm_rejected_events_summary_${date}.csv`,
   `llm_offline_conversions_${date}.csv`,
   `llm_query_landing_actions_${date}.csv`,
   `llm_landing_mismatch_${date}.csv`,
+  `llm_page_scorecard_${date}.csv`,
+  `llm_page_improvement_actions_${date}.csv`,
   `llm_events_manifest_${date}.json`
 ];
 
@@ -175,6 +312,21 @@ if (!funnel.includes('/parokonvektomat-kod-oshibki.html') || !funnel.includes('/
 const mismatch = fs.readFileSync(path.join(outDir, `llm_landing_mismatch_${date}.csv`), 'utf8');
 if (!mismatch.includes('ошибка у пароконвектомата унокс af01')) {
   throw new Error('mismatch output does not contain expected Direct query');
+}
+
+const scorecard = fs.readFileSync(path.join(outDir, `llm_page_scorecard_${date}.csv`), 'utf8');
+if (!scorecard.includes('/parokonvektomat-kod-oshibki.html') || !scorecard.includes('page_version') || !scorecard.includes('qualified_leads') || !scorecard.includes('service_contracts')) {
+  throw new Error('page scorecard output does not contain expected page/version/outcome fields');
+}
+
+const actions = fs.readFileSync(path.join(outDir, `llm_page_improvement_actions_${date}.csv`), 'utf8');
+if (!actions.includes('/parokonvektomat-kod-oshibki.html') || !actions.includes('P1')) {
+  throw new Error('page improvement actions output does not contain expected actionable page');
+}
+
+const internalLinks = fs.readFileSync(path.join(outDir, `llm_internal_link_funnel_${date}.csv`), 'utf8');
+if (!internalLinks.includes('restaurant_hub_internal_link_related_parokonvektomaty') || !internalLinks.includes('1.0000')) {
+  throw new Error('internal-link funnel output does not attribute the sample next-page contact');
 }
 
 console.log(`Metrics local smoke passed. Temporary output: ${outDir}`);

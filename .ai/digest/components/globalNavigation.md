@@ -1,7 +1,7 @@
 # Component Digest — globalNavigation
 
 - Name: Глобальная навигация / header
-- Appears in: 114 pages
+- Appears in: 129 pages
 - Keywords: меню, навигац, header, шапка, nav
 - CSS selectors: nav, .mobile-menu, [data-mobile-menu], .btn-click
 - JS hooks: mobile-menu, DOMContentLoaded
@@ -25,6 +25,7 @@
 - 404.html
 - about.html
 - avtomatika-ventilyatsii-restorana.html
+- bezopasnost-sous-vide.html
 - bytovaya-about.html
 - bytovaya-contact.html
 - bytovaya-index.html
@@ -41,5 +42,4 @@
 - holodilnoe-oborudovanie.html
 - ice-machines.html
 - kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
-- kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html
-- … ещё 94
+- … ещё 109

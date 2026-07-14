@@ -4,7 +4,7 @@ Short operational entrypoint for LLM/operator work in `Mospochin_site`.
 
 Use this doc to choose the default workflow fast. Use the branch docs only after the route is clear.
 
-The wider maintenance model stays in [docs/SITE_MAINTENANCE_MODEL.md](/home/artikk/Mospochin_site/docs/SITE_MAINTENANCE_MODEL.md).
+The wider maintenance model stays in [docs/SITE_MAINTENANCE_MODEL.md](SITE_MAINTENANCE_MODEL.md).
 The machine-readable route catalog lives in `data/operator-recipes.json`.
 The shortest machine-readable selector is `npm run recipe:select -- --intent <recipe-id-or-intent> [--page <file.html>] [--branch <household|restaurant|shared>] [--json]`.
 For a compact page preflight before editing, use `npm run inspect:page -- --page <file.html>`.

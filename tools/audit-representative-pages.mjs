@@ -39,11 +39,11 @@ try {
   }
 
   const artifactDir = getDefaultArtifactDir(manifest);
-  const screenshotArgs = ['--output', path.relative(SITE_ROOT, artifactDir)];
+  const screenshotArgs = ['--mode', 'manifest', '--output', path.relative(SITE_ROOT, artifactDir)];
   if (manifestPath) {
     screenshotArgs.push('--manifest', manifestPath);
   }
-  runNodeScript('tools/audit-screenshots.mjs', screenshotArgs);
+  runNodeScript('tools/visual-local-capture.mjs', screenshotArgs);
 
   console.log('Audit complete');
   console.log(`- pages checked: ${manifest.pages.map((entry) => entry.page).join(', ')}`);

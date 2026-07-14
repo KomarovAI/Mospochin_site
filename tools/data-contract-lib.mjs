@@ -284,7 +284,7 @@ function validateSchemaProfile(issues, data) {
   if (!isObject(data)) return error(issues, file, 'schema profile должен быть объектом');
   if (!isObject(data.global?.provider)) error(issues, file, 'global.provider обязателен');
   else {
-    for (const key of ['name', 'url', 'addressLocality', 'addressCountry', 'openingHours']) {
+    for (const key of ['name', 'url', 'addressLocality', 'addressCountry']) {
       if (!text(data.global.provider[key])) error(issues, file, `global.provider.${key} обязателен`);
     }
     if (text(data.global.provider.url) !== SITE_URL) warn(issues, file, `global.provider.url отличается от ${SITE_URL}`);

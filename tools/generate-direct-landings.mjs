@@ -11,8 +11,28 @@ const siteOrigin = 'https://mospochin.ru';
 const phone = '79990057172';
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-const basePath = path.join(rootDir, manifest.sourcePage);
-const baseHtml = fs.readFileSync(basePath, 'utf8');
+const pageFlagIndex = process.argv.indexOf('--page');
+const selectedPage = pageFlagIndex >= 0 ? process.argv[pageFlagIndex + 1] : null;
+const pagesToGenerate = selectedPage
+  ? manifest.pages.filter((page) => page.file === selectedPage)
+  : manifest.pages;
+if (selectedPage && pagesToGenerate.length === 0) {
+  throw new Error(`Direct landing not found in manifest: ${selectedPage}`);
+}
+const baseHtmlCache = new Map();
+
+function sourcePageFor(page) {
+  return page.sourcePage ?? manifest.sourcePage;
+}
+
+function baseHtmlFor(page) {
+  const sourcePage = sourcePageFor(page);
+  if (!sourcePage) throw new Error(`No sourcePage configured for ${page.file}`);
+  if (!baseHtmlCache.has(sourcePage)) {
+    baseHtmlCache.set(sourcePage, fs.readFileSync(path.join(rootDir, sourcePage), 'utf8'));
+  }
+  return baseHtmlCache.get(sourcePage);
+}
 const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
 
 if (!Array.isArray(manifest.pages) || manifest.pages.length === 0) {
@@ -49,10 +69,21 @@ function replaceOrThrow(html, pattern, replacement, label) {
   return html.replace(pattern, replacement);
 }
 
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function setMeta(html, selector, content) {
   const escaped = escapeAttr(content);
-  const pattern = new RegExp(`(<meta ${selector} content=")[^"]*(">)`);
-  return replaceOrThrow(html, pattern, `$1${escaped}$2`, selector);
+  const pattern = new RegExp(`<meta\\b(?=[^>]*${escapeRegExp(selector)})[^>]*>`, 'gi');
+  if (!pattern.test(html)) throw new Error(`Cannot update ${selector}`);
+  pattern.lastIndex = 0;
+  return html.replace(pattern, (tag) => {
+    if (/\bcontent=["'][^"']*["']/i.test(tag)) {
+      return tag.replace(/\bcontent=(["'])[^"']*\1/i, `content="${escaped}"`);
+    }
+    return tag.replace(/\s*\/?>(?=\s*$)/, ` content="${escaped}">`);
+  });
 }
 
 function setRobots(html, robots) {
@@ -106,8 +137,8 @@ function updateBodyClass(html, slug) {
 
   return replaceOrThrow(
     html,
-    /<body class="[^"]*">/,
-    `<body class="${bodyClass}">`,
+    /<body\b([^>]*)\sclass="[^"]*"([^>]*)>/,
+    `<body$1 class="${bodyClass}"$2>`,
     'body class',
   );
 }
@@ -277,7 +308,7 @@ ${links}
 }
 
 function renderAnalysisSection(page) {
-  const cards = page.analysisCards.map((card) => `
+  const cards = (Array.isArray(page.analysisCards) ? page.analysisCards : []).map((card) => `
                 <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                     <h3 class="font-display text-lg font-extrabold text-brand-blue">${escapeHtml(card.title)}</h3>
                     <p class="mt-2 text-sm leading-relaxed text-slate-600">${escapeHtml(card.text)}</p>
@@ -315,6 +346,103 @@ function updateAnalysisSection(html, page) {
   );
 }
 
+
+function renderCompactServicePage(page) {
+  const canonical = canonicalFor(page.file);
+  const slug = pageSlug(page.file);
+  const cards = (Array.isArray(page.analysisCards) ? page.analysisCards : []).map((card) => `
+              <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 class="font-display text-lg font-extrabold text-brand-blue">${escapeHtml(card.title)}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">${escapeHtml(card.text)}</p>
+              </article>`).join('');
+  const links = (Array.isArray(page.relatedLinks) ? page.relatedLinks : []).map((link) => `
+              <a class="block rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-brand-orange hover:bg-white" href="${escapeAttr(link.href)}">
+                <span class="font-display text-lg font-extrabold text-brand-blue">${escapeHtml(link.label)}</span>
+                <span class="mt-2 block text-sm leading-relaxed text-slate-600">${escapeHtml(link.description)}</span>
+              </a>`).join('');
+  const whatsappHref = `https://wa.me/${phone}?text=${encodeURIComponent(page.whatsappText)}`;
+  const faqItems = [
+    ['Что прислать инженеру?', 'Фото шильдика, панели управления, описание симптома и адрес объекта.'],
+    ['Можно ли назвать точную цену заранее?', 'Точная стоимость определяется после диагностики и согласуется до начала ремонта.'],
+    ['Работаете с ресторанами и юридическими лицами?', 'Да. Формат документов и порядок работ согласуются перед выездом.'],
+  ];
+  const faqMarkup = faqItems.map(([question, answer]) => `
+            <details class="rounded-2xl border border-slate-200 bg-white p-5">
+              <summary class="cursor-pointer font-bold text-brand-blue">${escapeHtml(question)}</summary>
+              <p class="mt-3 leading-relaxed text-slate-600">${escapeHtml(answer)}</p>
+            </details>`).join('');
+  const faqSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(([question, answer]) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  }, null, 2);
+  const serviceSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: page.title,
+    description: page.description,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'MosPochin',
+      telephone: '+79990057172',
+      url: 'https://mospochin.ru',
+    },
+    areaServed: { '@type': 'City', name: 'Москва' },
+  }, null, 2);
+  const breadcrumbSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://mospochin.ru/index.html' },
+      { '@type': 'ListItem', position: 2, name: page.title, item: canonical },
+    ],
+  }, null, 2);
+
+  return `<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/manrope.css" as="style"><link rel="stylesheet" href="/assets/fonts/manrope.css">
+  <link rel="preload" href="/assets/fonts/remixicon.css" as="style"><link rel="stylesheet" href="/assets/fonts/remixicon.css">
+  <link rel="preload" href="styles-combined.css" as="style"><link rel="stylesheet" href="styles-combined.css">
+  <script src="main.js" defer></script><script src="telegram-form.js" defer></script><script src="analytics.js" defer></script>
+  <title>${escapeHtml(page.title)}</title>
+  <meta name="description" content="${escapeAttr(page.description)}">
+  <meta property="og:title" content="${escapeAttr(page.title)}"><meta property="og:description" content="${escapeAttr(page.ogDescription ?? page.description)}">
+  <meta property="og:image" content="https://mospochin.ru/og-image.svg"><meta property="og:url" content="${escapeAttr(canonical)}"><meta property="og:type" content="website"><meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="${escapeAttr(canonical)}">
+  <meta name="robots" content="${escapeAttr(page.robots ?? 'noindex,follow')}">
+  <script type="application/ld+json">${serviceSchema}</script>
+  <script type="application/ld+json">${faqSchema}</script>
+  <script type="application/ld+json">${breadcrumbSchema}</script>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white branch-restaurant page-sous-vide page-direct-landing page-${slug}" data-page-slug="${slug}" data-page-intent="promo" data-equipment="sous_vide" data-service="repair" data-commercial-segment="b2b_kitchen" data-page-version="2026-07-14-sous-vide-pilot-v1">
+  <div id="header-container" class="mt-12"></div>
+  <main>
+    <section class="bg-gradient-to-br from-brand-blue via-slate-900 to-slate-800 pb-16 pt-32 text-white lg:pb-20 lg:pt-44">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div><p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-orange">Заявка из рекламы</p><h1 class="mt-4 text-3xl font-display font-extrabold leading-tight sm:text-5xl">${page.h1Html}</h1><p class="mt-5 text-lg leading-relaxed text-white/80">${escapeHtml(page.lead)} <strong class="text-white">${escapeHtml(page.leadStrong)}</strong></p><div class="mt-8 flex flex-wrap gap-3"><a class="rounded-xl bg-brand-orange px-6 py-4 font-extrabold text-white" href="#request" data-cta-id="${slug}_hero_form" data-cta-group="primary" data-block="hero">${escapeHtml(page.heroSubmitLabel)}</a><a class="rounded-xl border border-white/30 px-6 py-4 font-extrabold text-white" href="tel:+79990057172" data-contact-link="phone" data-cta-id="${slug}_hero_phone" data-cta-group="contact" data-block="hero">${escapeHtml(page.mobilePhoneLabel)}</a><a class="rounded-xl border border-green-400/40 bg-green-500/10 px-6 py-4 font-extrabold text-green-100" href="${escapeAttr(whatsappHref)}" data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" data-cta-id="${slug}_hero_whatsapp" data-cta-group="contact" data-block="hero">${escapeHtml(page.mobileWhatsappLabel)}</a></div></div>
+          <form id="request" class="telegram-form rounded-3xl border border-white/15 bg-white p-6 text-slate-800 shadow-2xl" data-contact-form="true" data-cta-id="${slug}_form_01" data-cta-group="lead_form" data-block="hero_form"><input type="hidden" name="problem" value="${escapeAttr(page.hiddenProblem)}"><h2 class="text-xl font-display font-extrabold text-brand-blue">${escapeHtml(page.quickFormTitle)}</h2><div class="mt-5 space-y-4"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="text" name="name" autocomplete="name" placeholder="Ваше имя"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="text" name="type" placeholder="${escapeAttr(page.typePlaceholder)}"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="text" name="details" placeholder="${escapeAttr(page.problemPlaceholder)}"></div><button class="mt-5 w-full rounded-xl bg-green-600 px-6 py-4 font-extrabold text-white" type="submit"><i class="ri-send-plane-line mr-2"></i>${escapeHtml(page.mainSubmitLabel)}</button></form>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white py-14 lg:py-20"><div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><div class="mx-auto max-w-3xl text-center"><p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-orange">Перед выездом</p><h2 class="mt-3 text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(page.analysisTitle)}</h2><p class="mt-4 leading-relaxed text-slate-600">${escapeHtml(page.analysisIntro)}</p></div><div class="mt-8 grid gap-4 md:grid-cols-3">${cards}</div></div></section>
+    <section class="bg-slate-50 py-14 lg:py-20"><div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><h2 class="text-3xl font-display font-extrabold text-brand-blue">По теме</h2><div class="mt-8 grid gap-4 md:grid-cols-3">${links}</div></div></section>
+    <section class="bg-white py-14"><div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"><h2 class="text-center text-3xl font-display font-extrabold text-brand-blue">Частые вопросы</h2><div class="mt-8 grid gap-4">${faqMarkup}</div></div></section>
+  </main>
+  <div id="footer-container"></div><div id="mobile-footer-container"></div><div id="whatsapp-float-container"></div><script src="partials-injector.js" defer></script>
+</body>
+</html>`;
+}
+
 function updateHead(html, page) {
   const canonical = canonicalFor(page.file);
   let updated = replaceOrThrow(html, /<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(page.title)}</title>`, 'title');
@@ -336,8 +464,9 @@ function updateHead(html, page) {
 }
 
 function buildPage(page) {
+  if (page.renderMode === 'compact-service-v1') return renderCompactServicePage(page);
   const slug = pageSlug(page.file);
-  let html = baseHtml;
+  let html = baseHtmlFor(page);
   html = updateHead(html, page);
   html = updateBodyClass(html, slug);
   html = updateHero(html, page);
@@ -366,7 +495,7 @@ function upsertMetadata(page) {
   metadata.pages[page.file] = record;
 }
 
-for (const page of manifest.pages) {
+for (const page of pagesToGenerate) {
   const outputPath = path.join(rootDir, page.file);
   fs.writeFileSync(outputPath, buildPage(page));
   upsertMetadata(page);
@@ -378,4 +507,5 @@ metadata.pages = Object.fromEntries(
 
 fs.writeFileSync(metadataPath, `${JSON.stringify(metadata, null, 2)}\n`);
 
-console.log(`Generated ${manifest.pages.length} Direct landing pages from ${manifest.sourcePage}`);
+const sourcePages = [...new Set(pagesToGenerate.map((page) => page.renderMode ?? sourcePageFor(page)))];
+console.log(`Generated ${pagesToGenerate.length} Direct landing page(s) using ${sourcePages.join(', ')}`);

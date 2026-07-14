@@ -1,7 +1,7 @@
 # Component Digest — floatingWhatsApp
 
 - Name: Floating WhatsApp CTA
-- Appears in: 115 pages
+- Appears in: 133 pages
 - Keywords: whatsapp float, плавающ, ватсап кнопка, whatsapp кнопка
 - CSS selectors: #whatsapp-float-container
 - JS hooks: whatsapp-float-container
@@ -24,6 +24,7 @@
 - 404.html
 - about.html
 - avtomatika-ventilyatsii-restorana.html
+- bezopasnost-sous-vide.html
 - bytovaya-about.html
 - bytovaya-contact.html
 - bytovaya-index.html
@@ -40,5 +41,4 @@
 - holodilnoe-oborudovanie.html
 - ice-machines.html
 - index.html
-- kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
-- … ещё 95
+- … ещё 113

@@ -8,6 +8,7 @@ const SITE_ROOT = path.resolve(__dirname, '..');
 const METADATA_PATH = path.join(SITE_ROOT, 'data/page-metadata.json');
 const HOUSEHOLD_SERVICES_PATH = path.join(SITE_ROOT, 'data/household-services.json');
 const SITEMAP_PATH = path.join(SITE_ROOT, 'sitemap.xml');
+const CHECK_ONLY = process.argv.includes('--check');
 
 const metadata = JSON.parse(fs.readFileSync(METADATA_PATH, 'utf8'));
 const householdServicesRegistry = JSON.parse(fs.readFileSync(HOUSEHOLD_SERVICES_PATH, 'utf8'));
@@ -78,5 +79,14 @@ const xml = [
   '',
 ].join('\n');
 
-fs.writeFileSync(SITEMAP_PATH, xml);
-console.log(`Generated sitemap.xml with ${urlEntries.length} URLs.`);
+if (CHECK_ONLY) {
+  const current = fs.existsSync(SITEMAP_PATH) ? fs.readFileSync(SITEMAP_PATH, 'utf8') : '';
+  if (current !== xml) {
+    console.error('sitemap.xml is out of date. Run npm run generate:sitemap.');
+    process.exit(1);
+  }
+  console.log(`sitemap.xml is up to date with ${urlEntries.length} URLs.`);
+} else {
+  fs.writeFileSync(SITEMAP_PATH, xml);
+  console.log(`Generated sitemap.xml with ${urlEntries.length} URLs.`);
+}

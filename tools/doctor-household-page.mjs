@@ -85,9 +85,21 @@ function getFormRuntimeSummary(html, pageMeta, runtimeConfig) {
   };
 }
 
+function getBuilderEditSurface(page) {
+  const slug = page.replace(/\.html$/, '');
+  const model = path.join(SITE_ROOT, 'src', 'pages', slug, 'page.json');
+  if (!fs.existsSync(model)) return {};
+  return {
+    sourceModel: `Edit src/pages/${slug}/page.json and src/pages/${slug}/sections/*.html`,
+    generated: `Do not edit ${page}; rebuild with npm run build:site -- --page ${page} --write`,
+  };
+}
+
 function getRecommendedEditSurface({ page, pageType, registryEntry }) {
+  const builderSurface = getBuilderEditSurface(page);
   if (pageType === 'branch-card-page') {
     return {
+      ...builderSurface,
       cardSections: 'Edit data/household-page-slots.json for branch card sections',
       routingHint: 'Edit data/household-page-slots.json for branch routing guidance',
       proofSections: 'Edit data/household-proof-layer.json for branch proof/review/case sections',
@@ -99,6 +111,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
 
   if (registryEntry.isShadow) {
     return {
+      ...builderSurface,
       note: 'Shadow page: public helper commands are disabled',
       registry: 'Edit data/household-services.json directly for identity/related data',
       metadata: 'Edit data/page-metadata.json directly for noindex/canonical metadata',
@@ -107,6 +120,7 @@ function getRecommendedEditSurface({ page, pageType, registryEntry }) {
   }
 
   return {
+    ...builderSurface,
     faq: `npm run household:set-faq -- --page ${page} ...`,
     formHints: `npm run household:set-form-hints -- --page ${page} ...`,
     serviceKpi: `npm run household:set-service-kpi -- --page ${page} --json '<json>'`,

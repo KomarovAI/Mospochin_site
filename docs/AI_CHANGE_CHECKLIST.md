@@ -62,6 +62,7 @@ npm run check:core
 
 ```bash
 npm run check:handoff
+npm run ai:change-manifest
 ```
 
 Для AI-сопровождения отдельно:

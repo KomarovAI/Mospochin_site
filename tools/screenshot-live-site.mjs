@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { chromium } from 'playwright';
+import { firefox } from 'playwright';
 import { buildCapturePlan } from './visual-capture-plan.mjs';
+import { getFirefoxContextOptions, getFirefoxLaunchOptions } from './visual-firefox-config.mjs';
 
 const ROOT = process.cwd();
 
@@ -132,7 +133,7 @@ async function main() {
   const pageMdLinks = [];
   const criticalFailures = [];
 
-  const browser = await chromium.launch({ headless: true });
+  const browser = await firefox.launch(getFirefoxLaunchOptions());
 
   try {
     for (const row of plan.rows) {
@@ -154,10 +155,8 @@ async function main() {
         if (!viewport) continue;
 
         const context = await browser.newContext({
-          viewport: { width: viewport.width, height: viewport.height },
+          ...getFirefoxContextOptions(viewport),
           deviceScaleFactor: viewport.deviceScaleFactor || 1,
-          isMobile: Boolean(viewport.isMobile),
-          hasTouch: Boolean(viewport.hasTouch),
           ignoreHTTPSErrors: true
         });
 

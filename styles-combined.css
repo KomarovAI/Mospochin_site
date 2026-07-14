@@ -1648,6 +1648,97 @@ details summary::-webkit-details-marker {
   }
 }
 
+/* Conversion visual audit follow-up: one mobile contact surface, safe focus space, and a calmer first viewport. */
+:root {
+  --mobile-sticky-safe-space: 6.25rem;
+  --mobile-header-safe-space: 6.75rem;
+}
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--brand-orange, #f97316);
+  outline-offset: 3px;
+}
+
+#mobile-footer-container {
+  padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+#mobile-footer-container a {
+  min-height: 3rem;
+}
+
+@media (max-width: 767px) {
+  /* Keep the decision CTA visible at entry and on reverse scroll, without covering long-form content while it is being read. */
+  #mobile-footer-container {
+    transition: transform 0.22s ease;
+    will-change: transform;
+  }
+
+  body.mobile-contact-hidden #mobile-footer-container {
+    transform: translate3d(0, calc(100% + env(safe-area-inset-bottom, 0px)), 0);
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mobile-footer-container {
+    transition: none;
+  }
+}
+
+#whatsapp-float-container {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  #header-container > div:first-child {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+    font-size: 0.82rem;
+  }
+
+  #navbar > div:first-child > div {
+    height: 3.5rem;
+  }
+
+  html {
+    scroll-padding-top: var(--mobile-header-safe-space);
+  }
+
+  [id] {
+    scroll-margin-top: var(--mobile-header-safe-space);
+  }
+
+  body.page-parokonvektomaty #header-container,
+  body.page-direct-landing #header-container {
+    margin-top: 2rem !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-actions {
+    display: flex;
+    margin-bottom: 1.25rem;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-actions a[data-contact-link="phone"],
+  body.page-parokonvektomaty .pariki-hero-actions a[data-form-open="true"] {
+    display: none;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-actions a[data-contact-link="whatsapp"] {
+    display: flex;
+    width: 100%;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card {
+    padding-bottom: 1.5rem;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card .telegram-form,
+  body.page-direct-landing .pariki-hero-card .telegram-form {
+    scroll-margin-bottom: var(--mobile-sticky-safe-space);
+  }
+}
+
 @media (min-width: 768px) {
   .fixed.bottom-24.right-4.z-50.md\:hidden {
     display: none !important;
@@ -2541,5 +2632,39 @@ main[data-ventilation-page="true"] > section:first-child div[class*="bg-white/10
   body.page-contact main section:first-child,
   body.page-uslugi main section:first-child {
     overflow-x: clip;
+  }
+}
+
+/* Final mobile conversion polish: keep the primary action visible after legacy page rules. */
+@media (max-width: 640px) {
+  body.page-parokonvektomaty .pariki-hero-actions {
+    display: flex !important;
+    margin-bottom: 1.25rem;
+  }
+
+  .glass-navbar {
+    background-color: #ffffff !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-title,
+  body.page-direct-landing .pariki-hero-title {
+    font-size: clamp(1.95rem, 9.2vw, 2.65rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.04em !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-actions a[data-contact-link="phone"],
+  body.page-parokonvektomaty .pariki-hero-actions a[data-form-open="true"] {
+    display: none !important;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-actions a[data-contact-link="whatsapp"] {
+    display: flex !important;
+    width: 100%;
+  }
+
+  body.page-parokonvektomaty .pariki-hero-card {
+    display: none !important;
   }
 }

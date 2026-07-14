@@ -2,14 +2,14 @@
 
 ## Canonical docs
 
-- Scale policy: [docs/SCALE_POLICY.md](/home/artikk/Mospochin_site/docs/SCALE_POLICY.md)
+- Scale policy: [docs/SCALE_POLICY.md](SCALE_POLICY.md)
 
-- Operator routing: [docs/OPERATOR_ROUTING.md](/home/artikk/Mospochin_site/docs/OPERATOR_ROUTING.md)
-- Site-wide maintenance model: [docs/SITE_MAINTENANCE_MODEL.md](/home/artikk/Mospochin_site/docs/SITE_MAINTENANCE_MODEL.md)
+- Operator routing: [docs/OPERATOR_ROUTING.md](OPERATOR_ROUTING.md)
+- Site-wide maintenance model: [docs/SITE_MAINTENANCE_MODEL.md](SITE_MAINTENANCE_MODEL.md)
 - Project map: `data/project-map.generated.json` (generated machine map)
-- Manual review backlog: [reports/manual-review-backlog.md](/home/artikk/Mospochin_site/reports/manual-review-backlog.md)
-- Restaurant visual audit checklist: [docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md](/home/artikk/Mospochin_site/docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md)
-- Doc taxonomy: [docs/DOC_INDEX.md](/home/artikk/Mospochin_site/docs/DOC_INDEX.md)
+- Manual review backlog: [reports/manual-review-backlog.md](../reports/manual-review-backlog.md)
+- Restaurant visual audit checklist: [docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md](RESTAURANT_VISUAL_AUDIT_CHECKLIST.md)
+- Doc taxonomy: [docs/DOC_INDEX.md](DOC_INDEX.md)
 - Household docs: `docs/HOUSEHOLD_*`
 - Restaurant docs: `docs/RESTAURANT_*`
 
@@ -20,8 +20,8 @@
 
 ## Source of truth
 
-- Canonical site source lives only in `/home/artikk/Mospochin_site`.
-- Matching HTML/CSS/JS files in `/home/artikk` are non-canonical workspace copies and must not be used for deploys or edits.
+- Canonical site source lives in the repository root containing this document.
+- Do not edit similarly named files outside the repository root; they are not part of the deploy source.
 - Start routine operator/LLM work from `docs/OPERATOR_ROUTING.md`; use the larger canonical docs only after the route is clear.
 - Machine-readable operator routing lives in `data/operator-recipes.json`.
 - Canonical shared contact contract now lives in `data/contact-config.json` (`phoneDisplay`, `phoneE164`, `whatsappNumber`, default WhatsApp text).
@@ -76,12 +76,12 @@
 
 ## Stabilization tracking
 
-- Confirmed rough edges and follow-up hardening work live in [reports/manual-review-backlog.md](/home/artikk/Mospochin_site/reports/manual-review-backlog.md).
+- Confirmed rough edges and follow-up hardening work live in [reports/manual-review-backlog.md](../reports/manual-review-backlog.md).
 - Representative screenshot audit coverage is defined only in `data/screenshot-audit.json`.
 - Full restaurant screenshot audit coverage is defined only in `data/restaurant-screenshot-audit.json`.
-- `npm run audit:screenshots` runs a local Playwright screenshot pass for the representative pages and stores artifacts under `.artifacts/screenshots/`.
+- `npm run audit:screenshots` runs the local-native system-Chromium/Playwright capture and stores artifacts under `.artifacts/screenshots/`.
 - `npm run audit:representative-pages` runs `doctor:page` for the same representative pages, then captures screenshots, and reminds the operator to log only confirmed issues in the backlog.
 - `npm run audit:restaurant-screenshots` runs the same screenshot flow for all restaurant pages and stores artifacts under `.artifacts/screenshots/restaurant/`.
 - `npm run audit:restaurant-branch` runs `doctor:page` across the whole restaurant branch, then captures screenshots, and routes review through `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md` before backlog logging.
-- This audit flow is a stabilization tool, not a branch authoring workflow or deploy gate.
+- This local-native audit flow is a stabilization tool, not a branch authoring workflow or automatic deploy gate. GitHub visual workflows are manual fallback only.
 - For service KPI edits on public service pages use branch helpers (`npm run household:set-service-kpi` / `npm run restaurant:set-service-kpi`) and then sync fallbacks.

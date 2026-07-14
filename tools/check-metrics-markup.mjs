@@ -94,7 +94,8 @@ for (const [file, page] of Object.entries(pages)) {
     'data-page-intent': page.page_intent,
     'data-equipment': page.equipment,
     'data-service': page.service,
-    'data-commercial-segment': page.commercial_segment
+    'data-commercial-segment': page.commercial_segment,
+    'data-page-version': page.page_version
   };
   for (const [attr, value] of Object.entries(expected)) {
     if (value && getAttr(body, attr) !== value) {

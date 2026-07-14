@@ -1,7 +1,7 @@
 # Component Digest — faqAccordion
 
 - Name: FAQ / аккордеон вопросов
-- Appears in: 114 pages
+- Appears in: 135 pages
 - Keywords: faq, вопрос, ответ, аккордеон, частые вопросы
 - CSS selectors: .faq, [onclick*="toggleFAQ"]
 - JS hooks: toggleFAQ
@@ -27,6 +27,7 @@
 
 - about.html
 - avtomatika-ventilyatsii-restorana.html
+- bezopasnost-sous-vide.html
 - bytovaya-about.html
 - bytovaya-contact.html
 - bytovaya-index.html
@@ -44,5 +45,4 @@
 - ice-machines.html
 - index.html
 - kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
-- kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html
-- … ещё 94
+- … ещё 115

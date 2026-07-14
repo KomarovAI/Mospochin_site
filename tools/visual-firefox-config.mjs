@@ -1,0 +1,57 @@
+import fs from 'node:fs';
+
+const FIREFOX_PREFS = {
+  'browser.shell.checkDefaultBrowser': false,
+  'browser.startup.page': 0,
+  'browser.startup.homepage': 'about:blank',
+  'toolkit.cosmeticAnimations.enabled': false,
+};
+
+function resolveFirefoxExecutable() {
+  const candidates = [
+    process.env.PLAYWRIGHT_FIREFOX_EXECUTABLE,
+    process.env.FIREFOX_BIN,
+    '/usr/bin/firefox',
+    '/usr/bin/firefox-esr',
+  ].filter(Boolean);
+
+  return candidates.find((candidate) => fs.existsSync(candidate)) || undefined;
+}
+
+/**
+ * One launch contract for every visual path in the project.
+ * Firefox remains the source of truth; Chromium is not a silent fallback.
+ */
+export function getFirefoxLaunchOptions({ headless = true } = {}) {
+  const executablePath = resolveFirefoxExecutable();
+  const options = {
+    headless,
+    timeout: 15000,
+    firefoxUserPrefs: { ...FIREFOX_PREFS },
+  };
+
+  if (executablePath) options.executablePath = executablePath;
+
+  // Firefox/fontconfig must have a writable cache in CI and restricted
+  // runners. Keep this outside the repository so browser binaries never end
+  // up in the project archive.
+  if (process.platform === 'linux') {
+    const cacheHome = process.env.XDG_CACHE_HOME || '/tmp/mospochin-firefox-cache';
+    fs.mkdirSync(cacheHome, { recursive: true });
+    options.env = {
+      ...process.env,
+      XDG_CACHE_HOME: cacheHome,
+    };
+  }
+
+  return options;
+}
+
+export function getFirefoxExecutable() {
+  return resolveFirefoxExecutable();
+}
+
+export function getFirefoxContextOptions(viewport = {}) {
+  const { isMobile: _isMobile, hasTouch: _hasTouch, ...supported } = viewport;
+  return supported;
+}

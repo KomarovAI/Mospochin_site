@@ -7,8 +7,13 @@
     "AGENTS.md",
     "data/project-map.generated.json",
     "data/file-ownership.json",
+    "data/cluster-registry.json",
+    "data/ventilation-cluster-pages.json",
+    "data/ventilation-photo-map.json",
     "docs/AI_PROJECT_OPERATING_GUIDE.md",
-    "AI-CONTEXT.md"
+    "AI-CONTEXT.md",
+    "data/sous-vide-cluster-pages.json",
+    "data/sous-vide-screenshot-audit.json"
   ],
   "sourceOfTruth": {
     "pageBuilder": "src/site-builder.json",
@@ -21,7 +26,8 @@
     "directLandings": "data/direct-landing-pages.json",
     "faq": "content/faq/*",
     "projectMap": "data/project-map.generated.json",
-    "fileOwnership": "data/file-ownership.json"
+    "fileOwnership": "data/file-ownership.json",
+    "clusterRegistry": "data/cluster-registry.json"
   },
   "generatedDoNotEditDirectly": [
     "root *.html unless syncing builder intentionally",
@@ -196,6 +202,135 @@
           "indexable": false,
           "branch": "restaurant",
           "minClusterLinks": 8
+        }
+      ]
+    },
+    "pishevarochnye-kotly": {
+      "guide": "docs/PISHEVAROCHNYE_KOTLY_CLUSTER_AI_GUIDE.md",
+      "manifest": "data/cooking-kettles-screenshot-audit.json",
+      "screenshotManifest": "data/cooking-kettles-screenshot-audit.json",
+      "digest": ".ai/digest/clusters/pishevarochnye-kotly.md",
+      "guardCommand": "npm run check:core"
+    },
+    "ventilyatsiya": {
+      "guide": "docs/VENTILATION_CLUSTER_AI_GUIDE.md",
+      "manifest": "data/ventilation-cluster-pages.json",
+      "screenshotManifest": "data/ventilation-screenshot-audit.json",
+      "digest": ".ai/digest/clusters/ventilyatsiya.md",
+      "guardCommand": "npm run check:visual-contract"
+    },
+    "sous-vide": {
+      "guide": "docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md",
+      "manifest": "data/sous-vide-cluster-pages.json",
+      "conversionManifest": "data/sous-vide-cluster-pages.json",
+      "screenshotManifest": "data/sous-vide-screenshot-audit.json",
+      "digest": ".ai/digest/clusters/sous-vide.md",
+      "guardCommand": "npm run check:conversion-ui",
+      "pages": [
+        {
+          "page": "sous-vide-restoranov.html",
+          "intent": "hub",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "remont-sous-vide.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-termostaty.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "vakuumnye-upakovshiki-dlya-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "remont-termostata-sous-vide.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "remont-vakuumnogo-upakovshika.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "obsluzhivanie-sous-vide.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "kak-rabotaet-sous-vide.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "kak-vybrat-sous-vide-dlya-restorana.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-i-vakuumnaya-upakovka.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "bezopasnost-sous-vide.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-remont-moskva.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "remont-termostata-sous-vide-reklama.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "remont-vakuumnogo-upakovshika-reklama.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant",
+          "minClusterLinks": 3
         }
       ]
     }

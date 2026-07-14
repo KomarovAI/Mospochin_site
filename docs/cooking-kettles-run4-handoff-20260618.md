@@ -68,7 +68,7 @@ npm audit --audit-level=moderate
 Опционально для визуального контроля:
 
 ```bash
-npx playwright install chromium
+npx playwright install firefox
 npm run audit:cooking-kettles-screenshots
 ```
 

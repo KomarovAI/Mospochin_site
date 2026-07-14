@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { getFirefoxContextOptions, getFirefoxLaunchOptions } from './visual-firefox-config.mjs';
 
 const ROOT = process.cwd();
 const BASE_URL = process.env.MOSPOCHIN_SCREENSHOT_BASE_URL || 'https://mospochin.ru';
@@ -31,17 +31,6 @@ function safeName(value) {
 function urlFor(pagePath) {
   if (pagePath === '/') return `${BASE_URL.replace(/\/$/, '')}/`;
   return `${BASE_URL.replace(/\/$/, '')}${pagePath}`;
-}
-
-function findChrome() {
-  const forced = process.env.MOSPOCHIN_CHROME_PATH || '';
-  if (forced) return forced;
-  for (const bin of ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser']) {
-    try {
-      return execFileSync('which', [bin], { encoding: 'utf8' }).trim();
-    } catch {}
-  }
-  return '';
 }
 
 async function ensureDir(dir) {
@@ -223,15 +212,8 @@ async function main() {
   await fs.writeFile(path.join(LLM_DIR, 'llm_visual_warnings.csv'), 'type,label,message\n');
   await fs.writeFile(path.join(LLM_DIR, 'llm_visual_dom_warnings.csv'), 'page_id,path,viewport,severity,code,message,selector,part\n');
 
-  const chromePath = findChrome();
-  if (!chromePath) throw new Error('No system Chrome found');
-
   const playwright = await import('playwright');
-  const browser = await playwright.chromium.launch({
-    headless: true,
-    executablePath: chromePath,
-    args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
-  });
+  const browser = await playwright.firefox.launch(getFirefoxLaunchOptions());
 
   const warnings = [];
   const planRows = [];
@@ -270,9 +252,7 @@ async function main() {
       });
 
       const context = await browser.newContext({
-        viewport: { width: vp.width, height: vp.height },
-        isMobile: Boolean(vp.isMobile),
-        hasTouch: Boolean(vp.hasTouch),
+        ...getFirefoxContextOptions(vp),
         deviceScaleFactor: 1,
         ignoreHTTPSErrors: true
       });

@@ -7,11 +7,11 @@
   "branch": "restaurant",
   "role": "service",
   "title": "Ремонт грилей и фритюрниц в Москве — MosPochin | от 500₽",
-  "h1": "Грили или фритюрница встали? Починим за 1-3 часа",
+  "h1": "Грили или фритюрница встали? Уточним поломку и согласуем ремонт",
   "source": {
     "extractedFrom": "grili-mangaly.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "7c96bc93374d6c3763e0da94e4bb0a76a5e5fdfb31098277429fe256f5264b8f",
+    "hash": "c14137132b63e5bb8e76fe8ba7b38c02968131e7558e939a7d78a7db45e03c3c",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,28 +21,15 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "bytes": 208,
-      "hash": "468caad1f64721d4",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "yandex-metrika-pixel",
-      "templateRef": "src/components/parametric/static/noscript-yandex-metrika-pixel-468caad1f647.template.html",
-      "props": {},
-      "sourceFile": "sections/001-noscript-noscript-fallback.html"
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 53,
+      "hash": "f2b397efe6b9ea38"
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
-      "bytes": 57,
-      "hash": "67cb054e3689e70a"
-    },
-    {
-      "id": "003-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 48,
@@ -52,10 +39,10 @@
       "variant": "technical-fragment-96856553c171",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-96856553c171.template.html",
       "props": {},
-      "sourceFile": "sections/003-raw-html-fragment.html"
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
-      "id": "004-breadcrumb-hlebnye-kroshki",
+      "id": "003-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
       "bytes": 25,
@@ -65,34 +52,34 @@
       "variant": "breadcrumb-marker",
       "templateRef": "src/components/parametric/static/breadcrumb-breadcrumb-marker-32deb5e28601.template.html",
       "props": {},
-      "sourceFile": "sections/004-breadcrumb-hlebnye-kroshki.html"
+      "sourceFile": "sections/003-breadcrumb-hlebnye-kroshki.html"
     },
     {
-      "id": "005-breadcrumb-hlebnye-kroshki",
+      "id": "004-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/005-breadcrumb-hlebnye-kroshki.html",
+      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
       "bytes": 1007,
       "hash": "50d392bd72523b2b"
     },
     {
-      "id": "006-raw-html-fragment",
+      "id": "005-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/006-raw-html-fragment.html",
+      "file": "sections/005-raw-html-fragment.html",
       "bytes": 30,
       "hash": "0fe85d545257c9b4"
     },
     {
-      "id": "007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch",
+      "id": "006-hero-grili-ili-frityurnica-vstali-utochnim-polomku-i",
       "component": "hero",
-      "label": "Грили или фритюрница встали? Починим за 1-3 часа",
-      "file": "sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html",
-      "bytes": 8105,
-      "hash": "a5502f4914a2e422"
+      "label": "Грили или фритюрница встали? Уточним поломку и согласуем ремонт",
+      "file": "sections/006-hero-grili-ili-frityurnica-vstali-utochnim-polomku-i.html",
+      "bytes": 8027,
+      "hash": "1e45609f3d7fb888"
     },
     {
-      "id": "008-raw-html-fragment",
+      "id": "007-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 33,
@@ -102,29 +89,29 @@
       "variant": "section-2-cta-bar-843d67e1d271",
       "templateRef": "src/components/parametric/static/layout-fragment-section-2-cta-bar-843d67e1d271.template.html",
       "props": {},
-      "sourceFile": "sections/008-raw-html-fragment.html"
+      "sourceFile": "sections/007-raw-html-fragment.html"
     },
     {
-      "id": "009-proof-dokazatel-stva-garantii",
+      "id": "008-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/009-proof-dokazatel-stva-garantii.html",
+      "file": "sections/008-proof-dokazatel-stva-garantii.html",
       "bytes": 184,
       "hash": "71c473484096d7b5"
     },
     {
-      "id": "010-proof-kakie-metriki-derzhim-po-zayavke-restorana",
-      "component": "proof",
-      "label": "Какие метрики держим по заявке ресторана",
-      "bytes": 3222,
-      "hash": "49039622d5ec9ff8",
-      "componentRef": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--49039622d5ec9ff8.html",
+      "id": "009-pricing-chto-fiksiruem-do-nachala-rabot",
+      "component": "pricing",
+      "label": "Что фиксируем до начала работ",
+      "bytes": 2880,
+      "hash": "8c35885ce8c1edec",
+      "componentRef": "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot--8c35885ce8c1edec.html",
       "componentScope": "shared",
-      "componentSignature": "49039622d5ec9ff8",
-      "sourceFile": "sections/010-proof-kakie-metriki-derzhim-po-zayavke-restorana.html"
+      "componentSignature": "8c35885ce8c1edec",
+      "sourceFile": "sections/009-pricing-chto-fiksiruem-do-nachala-rabot.html"
     },
     {
-      "id": "011-raw-html-fragment",
+      "id": "010-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 30,
@@ -134,26 +121,26 @@
       "variant": "sync-service-kpi-end-50381e403a85",
       "templateRef": "src/components/parametric/static/layout-fragment-sync-service-kpi-end-50381e403a85.template.html",
       "props": {},
-      "sourceFile": "sections/011-raw-html-fragment.html"
+      "sourceFile": "sections/010-raw-html-fragment.html"
     },
     {
-      "id": "012-raw-html-fragment",
+      "id": "011-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/012-raw-html-fragment.html",
+      "file": "sections/011-raw-html-fragment.html",
       "bytes": 215,
       "hash": "2a83a4bdd8042cc8"
     },
     {
-      "id": "013-pricing-remontiruem-grili-frityurnicy-i-teplovuyu-li",
+      "id": "012-pricing-remontiruem-grili-frityurnicy-i-teplovuyu-li",
       "component": "pricing",
       "label": "Ремонтируем грили, фритюрницы и тепловую линию кухни",
-      "file": "sections/013-pricing-remontiruem-grili-frityurnicy-i-teplovuyu-li.html",
+      "file": "sections/012-pricing-remontiruem-grili-frityurnicy-i-teplovuyu-li.html",
       "bytes": 21429,
       "hash": "4d167454fa9785d3"
     },
     {
-      "id": "014-raw-html-fragment",
+      "id": "013-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 35,
@@ -163,18 +150,18 @@
       "variant": "section-5b-seo-text-ea260849bdc1",
       "templateRef": "src/components/parametric/static/layout-fragment-section-5b-seo-text-ea260849bdc1.template.html",
       "props": {},
-      "sourceFile": "sections/014-raw-html-fragment.html"
+      "sourceFile": "sections/013-raw-html-fragment.html"
     },
     {
-      "id": "015-pricing-ceny-stoimost",
-      "component": "pricing",
-      "label": "Цены/стоимость",
-      "file": "sections/015-pricing-ceny-stoimost.html",
-      "bytes": 1008,
-      "hash": "b7aa75fc1e25648d"
+      "id": "014-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/014-section-sekciya-stranicy.html",
+      "bytes": 1033,
+      "hash": "66dd2043419ba8dd"
     },
     {
-      "id": "016-raw-html-fragment",
+      "id": "015-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 59,
@@ -184,277 +171,311 @@
       "variant": "section-6-срочность-таймер-463eb1fd93a6",
       "templateRef": "src/components/parametric/static/layout-fragment-section-6-срочность-таймер-463eb1fd93a6.template.html",
       "props": {},
-      "sourceFile": "sections/016-raw-html-fragment.html"
+      "sourceFile": "sections/015-raw-html-fragment.html"
     },
     {
-      "id": "017-contact-cta-kontaktnyy-cta",
+      "id": "016-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/017-contact-cta-kontaktnyy-cta.html",
-      "bytes": 2708,
-      "hash": "250cd3beaeecab97"
+      "file": "sections/016-contact-cta-kontaktnyy-cta.html",
+      "bytes": 2801,
+      "hash": "8b7e3193436381ac"
     },
     {
-      "id": "018-raw-html-fragment",
+      "id": "017-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/018-raw-html-fragment.html",
+      "file": "sections/017-raw-html-fragment.html",
       "bytes": 68,
       "hash": "c9b8cd1d3bb95ede"
     },
     {
-      "id": "019-pricing-ceny-na-remont-griley-frityurnic-i-vspomogat",
+      "id": "018-pricing-ceny-na-remont-griley-frityurnic-i-vspomogat",
       "component": "pricing",
       "label": "Цены на ремонт грилей, фритюрниц и вспомогательной техники",
-      "file": "sections/019-pricing-ceny-na-remont-griley-frityurnic-i-vspomogat.html",
-      "bytes": 5374,
-      "hash": "4694039d210ff512"
+      "file": "sections/018-pricing-ceny-na-remont-griley-frityurnic-i-vspomogat.html",
+      "bytes": 5407,
+      "hash": "5ebca0cf8aa65d10"
     },
     {
-      "id": "020-raw-html-fragment",
+      "id": "019-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/020-raw-html-fragment.html",
+      "file": "sections/019-raw-html-fragment.html",
       "bytes": 55,
       "hash": "28218c1f4893a409"
     },
     {
-      "id": "021-proof-chastye-polomki-kuhonnogo-oborudovaniya",
+      "id": "020-proof-chastye-polomki-kuhonnogo-oborudovaniya",
       "component": "proof",
       "label": "Частые поломки кухонного оборудования",
-      "file": "sections/021-proof-chastye-polomki-kuhonnogo-oborudovaniya.html",
-      "bytes": 4891,
-      "hash": "276f32124ab3f00a"
+      "file": "sections/020-proof-chastye-polomki-kuhonnogo-oborudovaniya.html",
+      "bytes": 4905,
+      "hash": "0db31c8215be5d43"
     },
     {
-      "id": "022-raw-html-fragment",
+      "id": "021-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/022-raw-html-fragment.html",
+      "file": "sections/021-raw-html-fragment.html",
       "bytes": 38,
       "hash": "44a9cfeda0dbada4"
     },
     {
-      "id": "023-section-remontiruem-vse-marki-kuhonnogo-oborudovaniy",
+      "id": "022-section-remontiruem-vse-marki-kuhonnogo-oborudovaniy",
       "component": "section",
       "label": "Ремонтируем все марки кухонного оборудования",
-      "file": "sections/023-section-remontiruem-vse-marki-kuhonnogo-oborudovaniy.html",
+      "file": "sections/022-section-remontiruem-vse-marki-kuhonnogo-oborudovaniy.html",
       "bytes": 8185,
       "hash": "ef8dadc3b726ec9d"
     },
     {
-      "id": "024-raw-html-fragment",
+      "id": "023-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/024-raw-html-fragment.html",
+      "file": "sections/023-raw-html-fragment.html",
       "bytes": 45,
       "hash": "ed8258794ad142d3"
     },
     {
-      "id": "025-pricing-pochemu-restorany-vozvraschayutsya-k-mospoch",
+      "id": "024-pricing-pochemu-restorany-vozvraschayutsya-k-mospoch",
       "component": "pricing",
       "label": "Почему рестораны возвращаются к MosPochin",
-      "bytes": 4180,
-      "hash": "a208246df53777df",
-      "componentRef": "src/components/shared/pricing/pricing-pochemu-restorany-vozvraschayutsya-k-mospochin--a208246df53777df.html",
+      "bytes": 4408,
+      "hash": "c794c9431c1d0446",
+      "componentRef": "src/components/shared/pricing/pricing-pochemu-restorany-vozvraschayutsya-k-mospochin--c794c9431c1d0446.html",
       "componentScope": "shared",
-      "componentSignature": "a208246df53777df",
-      "sourceFile": "sections/025-pricing-pochemu-restorany-vozvraschayutsya-k-mospoch.html"
+      "componentSignature": "c794c9431c1d0446",
+      "sourceFile": "sections/024-pricing-pochemu-restorany-vozvraschayutsya-k-mospoch.html"
     },
     {
-      "id": "026-proof-dokazatel-stva-garantii",
+      "id": "025-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/026-proof-dokazatel-stva-garantii.html",
+      "file": "sections/025-proof-dokazatel-stva-garantii.html",
       "bytes": 51,
       "hash": "9f248f85af6b6423"
     },
     {
-      "id": "027-proof-4-prichiny-vybrat-mospochin",
+      "id": "026-proof-4-prichiny-vybrat-mospochin",
       "component": "proof",
       "label": "4 причины выбрать MosPochin",
-      "file": "sections/027-proof-4-prichiny-vybrat-mospochin.html",
-      "bytes": 3147,
-      "hash": "2d920a546ab0c1d5"
+      "file": "sections/026-proof-4-prichiny-vybrat-mospochin.html",
+      "bytes": 3218,
+      "hash": "fc6e7c0372e1ac3f"
     },
     {
-      "id": "028-raw-html-fragment",
+      "id": "027-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/028-raw-html-fragment.html",
+      "file": "sections/027-raw-html-fragment.html",
       "bytes": 39,
       "hash": "cf71a3706564b642"
     },
     {
-      "id": "029-proof-chto-govoryat-klienty",
-      "component": "proof",
-      "label": "Что говорят клиенты",
-      "file": "sections/029-proof-chto-govoryat-klienty.html",
-      "bytes": 5327,
-      "hash": "65a2bed13a63781a"
+      "id": "028-pricing-chto-fiksiruem-do-remonta-grilya-ili-frityur",
+      "component": "pricing",
+      "label": "Что фиксируем до ремонта гриля или фритюрницы",
+      "file": "sections/028-pricing-chto-fiksiruem-do-remonta-grilya-ili-frityur.html",
+      "bytes": 3662,
+      "hash": "8fbd723445e1d323"
     },
     {
-      "id": "030-raw-html-fragment",
+      "id": "029-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/030-raw-html-fragment.html",
+      "file": "sections/029-raw-html-fragment.html",
       "bytes": 41,
       "hash": "43922e1527f2de8c"
     },
     {
-      "id": "031-pricing-5-shagov-do-rabotayuschego-oborudovaniya",
-      "component": "pricing",
+      "id": "030-proof-5-shagov-do-rabotayuschego-oborudovaniya",
+      "component": "proof",
       "label": "5 шагов до работающего оборудования",
-      "file": "sections/031-pricing-5-shagov-do-rabotayuschego-oborudovaniya.html",
-      "bytes": 3371,
-      "hash": "27e2041e3fc6ad66"
+      "file": "sections/030-proof-5-shagov-do-rabotayuschego-oborudovaniya.html",
+      "bytes": 3503,
+      "hash": "4a53582d7f1833a2"
     },
     {
-      "id": "032-proof-dokazatel-stva-garantii",
+      "id": "031-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/032-proof-dokazatel-stva-garantii.html",
+      "file": "sections/031-proof-dokazatel-stva-garantii.html",
       "bytes": 43,
       "hash": "45ba02ba9a84a358"
     },
     {
-      "id": "033-proof-3-garantii-mospochin",
+      "id": "032-proof-3-garantii-mospochin",
       "component": "proof",
       "label": "3 гарантии MosPochin",
-      "file": "sections/033-proof-3-garantii-mospochin.html",
-      "bytes": 2518,
-      "hash": "1f23efc8d1efe942"
+      "file": "sections/032-proof-3-garantii-mospochin.html",
+      "bytes": 2534,
+      "hash": "44bd26dd4c4b8f9b"
     },
     {
-      "id": "034-raw-html-fragment",
+      "id": "033-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/034-raw-html-fragment.html",
+      "file": "sections/033-raw-html-fragment.html",
       "bytes": 45,
       "hash": "ed2098e7eec0286b"
     },
     {
-      "id": "035-section-vyezzhaem-po-vsey-moskve-i-mo",
+      "id": "034-section-vyezzhaem-po-vsey-moskve-i-mo",
       "component": "section",
       "label": "Выезжаем по всей Москве и МО",
-      "file": "sections/035-section-vyezzhaem-po-vsey-moskve-i-mo.html",
+      "file": "sections/034-section-vyezzhaem-po-vsey-moskve-i-mo.html",
       "bytes": 3448,
       "hash": "d356b4d883cb9b98"
     },
     {
-      "id": "036-raw-html-fragment",
+      "id": "035-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/036-raw-html-fragment.html",
+      "file": "sections/035-raw-html-fragment.html",
       "bytes": 68,
       "hash": "8d58854c4734a688"
     },
     {
-      "id": "037-section-chto-delat-pri-polomke-kuhonnogo-oborudovani",
+      "id": "036-section-chto-delat-pri-polomke-kuhonnogo-oborudovani",
       "component": "section",
       "label": "Что делать при поломке кухонного оборудования",
-      "file": "sections/037-section-chto-delat-pri-polomke-kuhonnogo-oborudovani.html",
+      "file": "sections/036-section-chto-delat-pri-polomke-kuhonnogo-oborudovani.html",
       "bytes": 3670,
       "hash": "647f82b7fe7b4f86"
     },
     {
-      "id": "038-faq-faq",
+      "id": "037-faq-faq",
       "component": "faq",
       "label": "FAQ",
-      "file": "sections/038-faq-faq.html",
+      "file": "sections/037-faq-faq.html",
       "bytes": 30,
       "hash": "5394b236e1265ac1"
     },
     {
-      "id": "039-faq-chastye-voprosy",
+      "id": "038-faq-chastye-voprosy",
       "component": "faq",
       "label": "Частые вопросы",
-      "file": "sections/039-faq-chastye-voprosy.html",
-      "bytes": 5056,
-      "hash": "1558a8a8e08eafa8"
+      "file": "sections/038-faq-chastye-voprosy.html",
+      "bytes": 5254,
+      "hash": "94a535e5b6fa5349"
     },
     {
-      "id": "040-raw-html-fragment",
+      "id": "039-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/040-raw-html-fragment.html",
+      "file": "sections/039-raw-html-fragment.html",
       "bytes": 49,
       "hash": "50b2c3efb28de986"
     },
     {
-      "id": "041-mobile-contact-vosstanovim-kuhnyu-za-1-3-chasa",
+      "id": "040-mobile-contact-vosstanovim-kuhnyu-za-1-3-chasa",
       "component": "mobile-contact",
       "label": "Восстановим кухню за 1-3 часа",
-      "file": "sections/041-mobile-contact-vosstanovim-kuhnyu-za-1-3-chasa.html",
-      "bytes": 1691,
-      "hash": "3e83d804238a6abe"
+      "file": "sections/040-mobile-contact-vosstanovim-kuhnyu-za-1-3-chasa.html",
+      "bytes": 1697,
+      "hash": "48c65d07fc90e55f"
     },
     {
-      "id": "042-raw-html-fragment",
+      "id": "041-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/042-raw-html-fragment.html",
+      "file": "sections/041-raw-html-fragment.html",
       "bytes": 37,
       "hash": "30a63d1c2c957c6b"
     },
     {
-      "id": "043-lead-form-ostav-te-zayavku-na-remont",
+      "id": "042-lead-form-ostav-te-zayavku-na-remont",
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
-      "file": "sections/043-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 5865,
-      "hash": "2e9188075ecb5d64"
+      "file": "sections/042-lead-form-ostav-te-zayavku-na-remont.html",
+      "bytes": 5966,
+      "hash": "1cc437ba3b30b6c6"
     },
     {
-      "id": "044-proof-dokazatel-stva-garantii",
+      "id": "043-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/044-proof-dokazatel-stva-garantii.html",
-      "bytes": 182,
-      "hash": "7aa05ccc83a83b5d"
+      "file": "sections/043-proof-dokazatel-stva-garantii.html",
+      "bytes": 183,
+      "hash": "ebbaa436349f6e5c"
     },
     {
-      "id": "045-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte",
+      "id": "044-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte",
       "component": "pricing",
       "label": "Что фиксируем до начала работ на объекте",
-      "file": "sections/045-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
-      "bytes": 6851,
-      "hash": "e66eb56885602c71"
+      "file": "sections/044-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
+      "bytes": 6889,
+      "hash": "91ad472b7c9816e8"
+    },
+    {
+      "id": "045-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/045-proof-dokazatel-stva-garantii.html",
+      "bytes": 32,
+      "hash": "3ba619ca8d598e8b"
     },
     {
       "id": "046-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
       "file": "sections/046-proof-dokazatel-stva-garantii.html",
-      "bytes": 32,
-      "hash": "3ba619ca8d598e8b"
-    },
-    {
-      "id": "047-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/047-proof-dokazatel-stva-garantii.html",
       "bytes": 182,
       "hash": "d0c02b385f4baba2"
     },
     {
-      "id": "048-related-links-esli-problema-v-drugom-restorannom-obo",
+      "id": "047-related-links-esli-problema-v-drugom-restorannom-obo",
       "component": "related-links",
       "label": "Если проблема в другом ресторанном оборудовании",
-      "file": "sections/048-related-links-esli-problema-v-drugom-restorannom-obo.html",
-      "bytes": 2993,
-      "hash": "8b78c76b397ce641"
+      "file": "sections/047-related-links-esli-problema-v-drugom-restorannom-obo.html",
+      "bytes": 5163,
+      "hash": "ed38d4b21200bc10"
     },
     {
-      "id": "049-related-links-svyazannye-stranicy",
+      "id": "048-related-links-svyazannye-stranicy",
       "component": "related-links",
       "label": "Связанные страницы",
-      "file": "sections/049-related-links-svyazannye-stranicy.html",
+      "file": "sections/048-related-links-svyazannye-stranicy.html",
       "bytes": 32,
       "hash": "445698083184be8e"
     },
     {
-      "id": "050-raw-html-fragment",
+      "id": "049-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 42,
+      "hash": "f07065b3fdc245d3",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "v11-ventilation-crosslink-start-f07065b3fdc2",
+      "templateRef": "src/components/parametric/static/layout-fragment-v11-ventilation-crosslink-start-f07065b3fdc2.template.html",
+      "props": {},
+      "sourceFile": "sections/049-raw-html-fragment.html"
+    },
+    {
+      "id": "050-section-dym-zhir-i-zapah-svyazannye-raboty-po-ventil",
+      "component": "section",
+      "label": "Дым, жир и запах: связанные работы по вентиляции",
+      "file": "sections/050-section-dym-zhir-i-zapah-svyazannye-raboty-po-ventil.html",
+      "bytes": 4169,
+      "hash": "969cb3e264c18c22"
+    },
+    {
+      "id": "051-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 39,
+      "hash": "fe891914569c1168",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "v11-ventilation-crosslink-end-fe891914569c",
+      "templateRef": "src/components/parametric/static/layout-fragment-v11-ventilation-crosslink-end-fe891914569c.template.html",
+      "props": {},
+      "sourceFile": "sections/051-raw-html-fragment.html"
+    },
+    {
+      "id": "052-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 44,
@@ -464,10 +485,10 @@
       "variant": "mobile-footer-injected-via-js-9ddb40c7b689",
       "templateRef": "src/components/parametric/static/layout-fragment-mobile-footer-injected-via-js-9ddb40c7b689.template.html",
       "props": {},
-      "sourceFile": "sections/050-raw-html-fragment.html"
+      "sourceFile": "sections/052-raw-html-fragment.html"
     },
     {
-      "id": "051-raw-html-fragment",
+      "id": "053-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 45,
@@ -477,10 +498,10 @@
       "variant": "whatsapp-float-injected-via-js-7c5d01e0cd0d",
       "templateRef": "src/components/parametric/static/layout-fragment-whatsapp-float-injected-via-js-7c5d01e0cd0d.template.html",
       "props": {},
-      "sourceFile": "sections/051-raw-html-fragment.html"
+      "sourceFile": "sections/053-raw-html-fragment.html"
     },
     {
-      "id": "052-raw-html-fragment",
+      "id": "054-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 21,
@@ -490,10 +511,10 @@
       "variant": "footer-17c44fb2bab2",
       "templateRef": "src/components/parametric/static/layout-fragment-footer-17c44fb2bab2.template.html",
       "props": {},
-      "sourceFile": "sections/052-raw-html-fragment.html"
+      "sourceFile": "sections/054-raw-html-fragment.html"
     },
     {
-      "id": "053-footer-anchor-footer-mount-point",
+      "id": "055-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
       "bytes": 38,
@@ -503,10 +524,10 @@
       "variant": "footer-container-mount",
       "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-d4bb19e48569.template.html",
       "props": {},
-      "sourceFile": "sections/053-footer-anchor-footer-mount-point.html"
+      "sourceFile": "sections/055-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "054-raw-html-fragment",
+      "id": "056-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 23,
@@ -516,18 +537,18 @@
       "variant": "noscript-a15fa3c36a6b",
       "templateRef": "src/components/parametric/static/layout-fragment-noscript-a15fa3c36a6b.template.html",
       "props": {},
-      "sourceFile": "sections/054-raw-html-fragment.html"
+      "sourceFile": "sections/056-raw-html-fragment.html"
     },
     {
-      "id": "055-noscript-noscript-fallback",
+      "id": "057-noscript-noscript-fallback",
       "component": "noscript",
       "label": "Noscript fallback",
-      "file": "sections/055-noscript-noscript-fallback.html",
+      "file": "sections/057-noscript-noscript-fallback.html",
       "bytes": 1445,
       "hash": "16355453c1c40e79"
     },
     {
-      "id": "056-raw-html-fragment",
+      "id": "058-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 30,
@@ -537,18 +558,18 @@
       "variant": "countdown-timer-1a919ef6f8da",
       "templateRef": "src/components/parametric/static/layout-fragment-countdown-timer-1a919ef6f8da.template.html",
       "props": {},
-      "sourceFile": "sections/056-raw-html-fragment.html"
+      "sourceFile": "sections/058-raw-html-fragment.html"
     },
     {
-      "id": "057-raw-html-fragment",
+      "id": "059-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
-      "file": "sections/057-raw-html-fragment.html",
+      "file": "sections/059-raw-html-fragment.html",
       "bytes": 1513,
       "hash": "ad492c8fca3250d2"
     },
     {
-      "id": "058-runtime-partials-podklyuchenie-partials-injector",
+      "id": "060-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "bytes": 55,
@@ -558,10 +579,10 @@
       "variant": "partials-injector-script",
       "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a0c0c2f23990.template.html",
       "props": {},
-      "sourceFile": "sections/058-runtime-partials-podklyuchenie-partials-injector.html"
+      "sourceFile": "sections/060-runtime-partials-podklyuchenie-partials-injector.html"
     },
     {
-      "id": "059-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "061-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 41,
@@ -571,10 +592,10 @@
       "variant": "mobile-footer-container",
       "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
-      "sourceFile": "sections/059-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/061-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "060-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "062-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "bytes": 42,
@@ -584,10 +605,10 @@
       "variant": "whatsapp-float-container",
       "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
-      "sourceFile": "sections/060-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "sourceFile": "sections/062-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "061-raw-html-fragment",
+      "id": "063-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -597,15 +618,15 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/061-raw-html-fragment.html"
+      "sourceFile": "sections/063-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:restaurant-page -- --page grili-mangaly.html",
     "npm run doctor:page -- --page grili-mangaly.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page grili-mangaly.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page grili-mangaly.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

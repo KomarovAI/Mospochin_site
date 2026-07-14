@@ -218,7 +218,7 @@ function buildHtml({
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white branch-restaurant page-restaurant-service page-${slugToClass(slug)}">
     <!-- Normalized layout shell: ${page} -->
-    <div id="header-container"></div>
+    <div id="header-container" class="mt-12"></div>
     <section class="pt-24 pb-16 bg-gradient-to-br from-slate-50 via-white to-green-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">

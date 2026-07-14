@@ -2,7 +2,7 @@
 
 This document is the canonical high-level map for maintaining `Mospochin_site`.
 
-For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/home/artikk/Mospochin_site/docs/OPERATOR_ROUTING.md) and come back here when you need the wider model.
+For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](OPERATOR_ROUTING.md) and come back here when you need the wider model.
 
 ## Source Of Truth
 
@@ -20,6 +20,10 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - canonical service KPI defaults (`serviceKpiDefaults`) and optional page-level KPI override (`pages.<page>.serviceKpi`)
 - `server/telegram-api.mjs`
   - canonical production Telegram delivery backend
+- `analytics.js`, `telegram-form.js` and `data/metrics-event-contract.json`
+  - canonical conversion runtime, attribution payload and event/privacy contract
+- `data/metrics-scorecard-policy.json` and `ops/mosanalytics/bin/mosanalytics-events-aggregate.py`
+  - canonical page-level decision policy and clean scorecard/action outputs
 - `data/page-metadata.json`
   - canonical URLs, indexing, branch, page-level metadata
 - `data/screenshot-audit.json`
@@ -28,14 +32,20 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
   - canonical full restaurant branch audit coverage, viewport presets, and local screenshot pass settings
 - `data/site-page-contracts.json`
   - shared page-type contract across the whole site
+- `src/site-builder.json`
+  - canonical page registry and source/output parity contract
+- `src/pages/*/page.json` and `src/pages/*/sections/*`
+  - canonical editable source for every page
+- `src/components/shared/*` and `src/components/parametric/*`
+  - canonical reusable section/component layers
 - `data/household-*.json`
   - household branch shell, page policy, registry, slots, proof, taxonomy, card presets
 - `data/restaurant-*.json`
   - restaurant branch shell, page policy, registry, slots, proof, taxonomy
 - `main.js`
   - canonical shared runtime for branch/service hydration
-- HTML pages
-  - unique layout, hero, long-form narrative, slot hosts, sync-safe fallback zones
+- Root `*.html`
+  - generated production output; do not edit it as an independent source
 
 ## Branch Separation
 
@@ -45,16 +55,26 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
 
 ## Editing Rules
 
+- Для создания страницы использовать `npm run page:create`; для AI-контекста — `npm run page:edit`; для точечной проверки — `npm run page:check`.
+- Root HTML считается generated output: `check:generated-diff` блокирует изменение HTML без source/data/runtime-изменения.
+
 - Edit the smallest correct JSON source of truth first.
 - Use branch-specific doctor/helpers/sync commands for routine public page maintenance.
 - Use the screenshot audit flow only for stabilization review; it does not replace branch-specific authoring helpers.
-- Keep HTML edits limited to unique layout, narrative, and required slot/sync hosts.
+- Keep page edits inside `src/pages/<slug>/sections/*` and shared edits inside `src/components/shared/*` or the explicitly parameterized component layer.
+- Root HTML is generated output. If an emergency manual root edit is unavoidable, immediately re-bootstrap that page and run the parity checks.
 - Public service-page fallback zones are intentionally duplicated and must stay aligned through branch sync commands.
 - KPI/stat blocks on public service pages are a sync-managed fallback zone (`service-kpi`) and should be edited through slot contracts, not by direct hardcoded HTML counters.
 - Treat the form path as a concrete contract, not an abstract runtime note:
   - `telegram-form.js` owns client submission
   - `data/runtime-config.json` owns the site-relative endpoint
   - `server/telegram-api.mjs` owns the production delivery backend
+- Treat analytics as a concrete backend contract:
+  - `analytics.js` sends only allowlisted events to `/api/track-event`
+  - `server/telegram-api.mjs` writes redacted/hash-only JSONL rows
+  - `data/metrics-event-contract.json` is the source for event names and privacy rules
+  - `page_view` carries page context and stable `page_version`; artikk produces `llm_page_scorecard` and `llm_page_improvement_actions`
+  - `qualified_lead`, `call_answered`, and `repair_order_created` arrive only through the token-protected server-to-server outcome endpoint
 - Treat contact rendering as a concrete contract:
   - `data/contact-config.json` owns shared phone/WhatsApp values
   - HTML contact links expose `data-contact-link="phone|whatsapp"` for runtime hydration
@@ -69,13 +89,14 @@ For the shortest practical entrypoint, start with [docs/OPERATOR_ROUTING.md](/ho
 1. Run the narrow page doctor.
 2. Edit the smallest source-of-truth layer.
 3. Sync fallbacks when the branch workflow requires it.
-4. Run `npm run validate:site`.
-5. Run any narrow branch/page smoke checks needed for the risk surface.
-6. For representative stabilization passes, run `npm run audit:representative-pages`, review `.artifacts/screenshots/`, and add only confirmed findings to `reports/manual-review-backlog.md`.
-7. For full restaurant stabilization passes, run `npm run audit:restaurant-branch`, review `.artifacts/screenshots/restaurant/` through `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md`, and add only confirmed findings to `reports/manual-review-backlog.md`.
-8. Before merge, run `npm run doctor:changed-pages` (or rely on CI) so modified pages always pass `doctor:page`.
-9. If raster assets changed, run `npm run optimize:images` before `npm run check:image-budget`.
-10. Before deleting or pruning assets, run `npm run audit:assets` and treat "outside site reference graph" as a candidate list, not automatic deletion approval.
+4. Run `npm run build:site -- --page <page.html> --write` for the affected page, or the full build for a batch.
+5. Run `npm run check:architecture`, `npm run check:site-builder`, and `npm run validate:site`.
+6. Run any narrow branch/page smoke checks needed for the risk surface.
+7. For representative stabilization passes, run `npm run audit:representative-pages`, review `.artifacts/screenshots/`, and add only confirmed findings to `reports/manual-review-backlog.md`.
+8. For full restaurant stabilization passes, run `npm run audit:restaurant-branch`, review `.artifacts/screenshots/restaurant/` through `docs/RESTAURANT_VISUAL_AUDIT_CHECKLIST.md`, and add only confirmed findings to `reports/manual-review-backlog.md`.
+9. Before merge, run `npm run doctor:changed-pages` (or rely on CI) so modified pages always pass `doctor:page`.
+10. If raster assets changed, run `npm run optimize:images` before `npm run check:image-budget`.
+11. Before deleting or pruning assets, run `npm run audit:assets` and treat "outside site reference graph" as a candidate list, not automatic deletion approval.
 
 ## Screenshot Audit Workflow
 

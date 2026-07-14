@@ -76,3 +76,20 @@
 
 Не делать: не превращать content registry или blueprints в большой рискованный rewrite. Каждый новый component/registry должен проходить `sync:generated`, `check:site-builder`, `check:conversion-ui`, `check:ai`.
 
+
+## 2026-07-14 — Sous-vide pilot и multi-template Direct
+
+**Решение:** запускать новый кластер с четырёх разных intent-страниц и регистрировать blueprint до масштабирования. Direct-генератор сохраняет legacy-шаблон пароконвектоматов, но поддерживает page-level renderer для новых кластеров. Технологические материалы не содержат универсальных режимов пищевой безопасности без профильной проверки.
+
+## 2026-07-14 — Local-native Chromium is the primary visual runtime
+
+**Решение:** все штатные screenshot manifests выполняются локально через предустановленный системный Chromium, Playwright `page.setContent()` и local `route.fulfill()` для CSS/JS/images. Launcher изолирует страницы по worker-процессам, проверяет PNG, сохраняет fingerprint/state/logs и поддерживает возобновление после прерывания.
+
+**Причина:** управляемая среда блокирует навигацию `localhost`/`file://` через browser policy и может не позволять скачать Firefox. Local-content renderer использует настоящий Chromium без изменения policy и без сетевой зависимости.
+
+**GitHub policy:** `.github/workflows/*visual*.yml` являются только ручным резервом и могут иметь исключительно `workflow_dispatch`. Автоматические `push`, `pull_request`, `schedule` и `workflow_call` запрещены и проверяются `npm run check:visual-workflows`.
+
+**Не делать:** не возвращать Firefox/localhost как основной локальный путь, не устанавливать browser binaries в обычном AI-run, не считать GitHub visual автоматическим deploy/PR gate и не объявлять visual review успешным без созданных и просмотренных PNG.
+## 2026-07-14 — Sous-vide MVP без симптомных и брендовых разветвлений
+
+Решение: завершить MVP на уровне 15 страниц: hub, оборудование, ремонт, обслуживание, технологические связи и три рекламных landing. Симптомные и брендовые страницы не добавлять до отдельного blueprint и подтверждённого спроса. Direct landing остаются `noindex,follow` и исключаются из sitemap.

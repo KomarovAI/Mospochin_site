@@ -24,30 +24,30 @@ const HOUSEHOLD_REQUEST_FORM_CLASS =
   'telegram-form bg-white p-8 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal';
 
 const DEFAULT_HOUSEHOLD_SERVICE_KPI = {
-  badge: 'СЕРВИСНЫЕ ОРИЕНТИРЫ',
-  title: 'Что получаете по заявке до и после выезда',
+  badge: 'ПОНЯТНЫЙ СЦЕНАРИЙ',
+  title: 'Что уточняем по заявке',
   description:
-    'Фиксируем понятные метрики сервиса, чтобы решение о ремонте принималось по фактам, а не по обещаниям.',
+    'Собираем исходные данные, согласуем следующий шаг и фиксируем условия работ до ремонта.',
   items: [
     {
-      value: '15+',
-      label: 'Лет опыта',
-      note: 'Работаем с бытовыми категориями ежедневно по Москве и МО.',
+      value: 'Фото',
+      label: 'Ошибка или шильдик',
+      note: 'Помогают уточнить модель и первичный симптом.',
     },
     {
-      value: '5000+',
-      label: 'Ремонтов',
-      note: 'Закрытые заявки по домашней технике в рабочем контуре сервиса.',
+      value: 'Модель',
+      label: 'Тип техники',
+      note: 'Нужен, чтобы выбрать подходящий сценарий диагностики.',
     },
     {
-      value: '95%',
-      label: 'За 1 визит',
-      note: 'Типовой кейс закрываем без повторного выезда.',
+      value: 'Симптом',
+      label: 'Что произошло',
+      note: 'Короткое описание помогает подготовить вопросы к связи.',
     },
     {
-      value: '12 мес',
-      label: 'Гарантия',
-      note: 'Подтверждаем результат актом и гарантийной фиксацией.',
+      value: 'По договору',
+      label: 'Условия работ',
+      note: 'Фиксируем договором и актом в согласованном формате.',
     },
   ],
 };
@@ -207,17 +207,11 @@ export function buildHouseholdServiceSchema(service, pageMeta, slotEntry) {
       name: 'MosPochin',
       url: 'https://mospochin.ru',
       telephone: '+79990057172',
-      openingHours: 'Mo-Su 09:00-21:00',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Москва',
         addressCountry: 'RU',
       },
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '128',
     },
     offers: {
       '@type': 'Offer',
@@ -273,18 +267,22 @@ function normalizeServiceKpiConfig(defaults, override) {
 
 function renderKpiCounterValue(rawValue) {
   const value = String(rawValue || '').trim();
+  if (!value || /по подтверждённым данным/i.test(value)) {
+    return null;
+  }
+
   const match = value.match(/^(\d+)\s*(.*)$/);
   if (!match) {
     return escapeHtml(value);
   }
 
-  const target = Number.parseInt(match[1], 10);
-  if (!Number.isFinite(target)) {
-    return escapeHtml(value);
-  }
-
-  const suffix = match[2] || '';
-  return `<span class="counter" data-target="${target}" data-suffix="${escapeHtml(suffix)}">0</span>`;
+  const suffix = (match[2] || '').toLowerCase();
+  if (suffix.includes('₽')) return 'По смете';
+  if (suffix.includes('%')) return 'После осмотра';
+  if (suffix.includes('мес')) return 'По договору';
+  if (suffix.includes('+')) return null;
+  if (suffix.includes('мин')) return 'По согласованию';
+  return 'По согласованию';
 }
 
 export function renderHouseholdServiceKpi(slotEntry, slotsRoot) {
@@ -303,9 +301,11 @@ export function renderHouseholdServiceKpi(slotEntry, slotsRoot) {
           </div>
           <div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
             ${config.items
+              .map((item) => ({ item, value: renderKpiCounterValue(item.value) }))
+              .filter(({ value }) => value !== null)
               .map(
-                (item) => `<article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
-                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">${renderKpiCounterValue(item.value)}</p>
+                ({ item, value }) => `<article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">${value}</p>
                   <p class="mt-2 text-sm font-semibold text-brand-blue">${escapeHtml(item.label || '')}</p>
                   <p class="mt-2 text-xs text-slate-500">${escapeHtml(item.note || '')}</p>
                 </article>`
@@ -345,7 +345,7 @@ export function renderHouseholdServiceProof(service, proofLayer) {
           ${renderHouseholdSlaStrip(defaults.slaStrip)}
           ${defaults.priceClarity ? `<div class="mt-8">${renderHouseholdSlaStrip(defaults.priceClarity)}</div>` : ''}
           <div class="mt-8 flex flex-wrap items-center gap-2">
-            <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-3 py-1.5 text-sm font-semibold text-brand-orange">По категории ${escapeHtml(service.uiLabel)}</span>
+            <span class="inline-flex items-center rounded-full bg-brand-orange/10 px-3 py-1.5 text-sm font-semibold text-brand-orange">Тип техники: ${escapeHtml(service.uiLabel)}</span>
             ${renderHouseholdBadgeList((service.primarySymptoms || []).slice(0, 3), 'slate')}
           </div>
           <div class="mt-8 text-center">

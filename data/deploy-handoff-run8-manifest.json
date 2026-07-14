@@ -48,6 +48,7 @@
     "/remont-pishevarochnyh-kotlov-abat.html"
   ],
   "expected_events": [
+    "page_view",
     "cta_view",
     "cta_click",
     "phone_click",
@@ -89,6 +90,7 @@
   "production_success_criteria": {
     "first_24h": [
       "/api/track-event returns ok",
+      "page_view contains page_version and page context",
       "site_events.jsonl receives human_candidate events",
       "site_event_rejects.jsonl is not growing abnormally",
       "phone_click > 0 after manual smoke",
@@ -98,6 +100,7 @@
     ],
     "first_7_14_days": [
       "compare landing pages by cta_click, phone_click, whatsapp_click, form_start, form_submit_success",
+      "review llm_page_improvement_actions by P0/P1/P2 before changing page content",
       "do not change Direct until enough decision events exist",
       "exclude bots/internal/smoke/curl from decision slice"
     ]

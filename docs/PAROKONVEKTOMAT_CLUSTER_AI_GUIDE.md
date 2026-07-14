@@ -175,4 +175,4 @@ npm run setup:visual
 npm run audit:parokonvektomat-screenshots
 ```
 
-Если Playwright недоступен в среде, указать это в handoff и попросить прогнать на рабочей машине.
+`npm run setup:visual` выполняет реальный local-native Chromium probe без скачивания браузера. Если системного Chromium действительно нет, использовать только ручной GitHub workflow fallback.

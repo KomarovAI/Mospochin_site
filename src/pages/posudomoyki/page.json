@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "posudomoyki.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "170bd041625517aed4dc661ae6205f207b8b0eb57142b5aa6fa852bb871a57dd",
+    "hash": "01ebb85d943aafea65804a45f5f9ef1de2e5d5bf2edaa3444df882e2b942b60e",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,439 +21,501 @@
   },
   "sections": [
     {
-      "id": "001-noscript-noscript-fallback",
-      "component": "noscript",
-      "label": "Noscript fallback",
-      "file": "sections/001-noscript-noscript-fallback.html",
-      "bytes": 208,
-      "hash": "468caad1f64721d4"
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 51,
+      "hash": "53aa1860dc5a2d94"
     },
     {
       "id": "002-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
-      "bytes": 55,
-      "hash": "18a6d88f6ecdb614"
-    },
-    {
-      "id": "003-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/003-raw-html-fragment.html",
       "bytes": 48,
-      "hash": "96856553c1715279"
+      "hash": "96856553c1715279",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-96856553c171",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-96856553c171.template.html",
+      "props": {},
+      "sourceFile": "sections/002-raw-html-fragment.html"
     },
     {
-      "id": "004-breadcrumb-hlebnye-kroshki",
+      "id": "003-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
+      "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
       "bytes": 990,
       "hash": "bfcefd3a185f2bf9"
     },
     {
-      "id": "005-hero-posudomoyka-ne-slivaet-ne-moet-ili-techet-verne",
+      "id": "004-hero-posudomoyka-ne-slivaet-ne-moet-ili-techet-verne",
       "component": "hero",
       "label": "Посудомойка не сливает, не моет или течёт? Вернём мойку без лишних замен",
-      "file": "sections/005-hero-posudomoyka-ne-slivaet-ne-moet-ili-techet-verne.html",
-      "bytes": 5181,
-      "hash": "c77cb42eead20d11"
+      "file": "sections/004-hero-posudomoyka-ne-slivaet-ne-moet-ili-techet-verne.html",
+      "bytes": 5203,
+      "hash": "5d310da12a684abf"
     },
     {
-      "id": "006-proof-dokazatel-stva-garantii",
+      "id": "005-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/006-proof-dokazatel-stva-garantii.html",
+      "file": "sections/005-proof-dokazatel-stva-garantii.html",
       "bytes": 190,
       "hash": "893113c08608f571"
     },
     {
-      "id": "007-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda",
+      "id": "006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda",
       "component": "proof",
       "label": "Что получаете по заявке до и после выезда",
-      "bytes": 3219,
-      "hash": "0736ad0b9d07bbb7",
-      "componentRef": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--0736ad0b9d07bbb7.html",
+      "bytes": 2990,
+      "hash": "ae6b009ef8f59f6c",
+      "componentRef": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--ae6b009ef8f59f6c.html",
       "componentScope": "shared",
-      "componentSignature": "0736ad0b9d07bbb7",
-      "sourceFile": "sections/007-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda.html"
+      "componentSignature": "ae6b009ef8f59f6c",
+      "sourceFile": "sections/006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda.html"
     },
     {
-      "id": "008-raw-html-fragment",
-      "component": "raw",
+      "id": "007-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/008-raw-html-fragment.html",
       "bytes": 40,
-      "hash": "6ea051972d91dd2c"
+      "hash": "6ea051972d91dd2c",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "household-sync-service-kpi-end-6ea051972d91",
+      "templateRef": "src/components/parametric/static/layout-fragment-household-sync-service-kpi-end-6ea051972d91.template.html",
+      "props": {},
+      "sourceFile": "sections/007-raw-html-fragment.html"
     },
     {
-      "id": "009-pricing-chto-vy-poluchaete-krome-samogo-remonta",
+      "id": "008-pricing-chto-vy-poluchaete-krome-samogo-remonta",
       "component": "pricing",
       "label": "Что вы получаете, кроме самого ремонта",
-      "file": "sections/009-pricing-chto-vy-poluchaete-krome-samogo-remonta.html",
+      "file": "sections/008-pricing-chto-vy-poluchaete-krome-samogo-remonta.html",
       "bytes": 3785,
       "hash": "0151202460af9096"
     },
     {
-      "id": "010-pricing-kakie-problemy-posudomoyki-my-zakryvaem-za-1",
+      "id": "009-pricing-kakie-problemy-posudomoyki-my-zakryvaem-posl",
       "component": "pricing",
-      "label": "Какие проблемы посудомойки мы закрываем за 1 визит",
-      "file": "sections/010-pricing-kakie-problemy-posudomoyki-my-zakryvaem-za-1.html",
-      "bytes": 5295,
-      "hash": "56c86cc5a29aa74d"
+      "label": "Какие проблемы посудомойки мы закрываем после диагностики",
+      "file": "sections/009-pricing-kakie-problemy-posudomoyki-my-zakryvaem-posl.html",
+      "bytes": 5311,
+      "hash": "661c4373bebae66d"
     },
     {
-      "id": "011-pricing-ceny-stoimost",
+      "id": "010-pricing-ceny-stoimost",
       "component": "pricing",
       "label": "Цены/стоимость",
-      "file": "sections/011-pricing-ceny-stoimost.html",
+      "file": "sections/010-pricing-ceny-stoimost.html",
       "bytes": 508,
       "hash": "3f0268c493d9314a"
     },
     {
-      "id": "012-faq-chto-obychno-proishodit-do-dorogogo-remonta-posu",
+      "id": "011-faq-chto-obychno-proishodit-do-dorogogo-remonta-posu",
       "component": "faq",
       "label": "Что обычно происходит до дорогого ремонта посудомойки",
-      "file": "sections/012-faq-chto-obychno-proishodit-do-dorogogo-remonta-posu.html",
+      "file": "sections/011-faq-chto-obychno-proishodit-do-dorogogo-remonta-posu.html",
       "bytes": 3271,
       "hash": "bd77b4d1a2156b86"
     },
     {
-      "id": "013-raw-html-fragment",
-      "component": "raw",
+      "id": "012-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/013-raw-html-fragment.html",
       "bytes": 100,
-      "hash": "f8b561234dd82ba0"
+      "hash": "f8b561234dd82ba0",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "блок-срочности-психология-потери-таймер-f8b561234dd8",
+      "templateRef": "src/components/parametric/static/layout-fragment-блок-срочности-психология-потери-таймер-f8b561234dd8.template.html",
+      "props": {},
+      "sourceFile": "sections/012-raw-html-fragment.html"
     },
     {
-      "id": "014-contact-cta-kontaktnyy-cta",
+      "id": "013-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/014-contact-cta-kontaktnyy-cta.html",
+      "file": "sections/013-contact-cta-kontaktnyy-cta.html",
       "bytes": 2983,
       "hash": "3678edc1cfcc5bc4"
     },
     {
-      "id": "015-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-",
+      "id": "014-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-",
       "component": "faq",
       "label": "Если хочется, можно быстро посмотреть похожие истории",
-      "file": "sections/015-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-.html",
+      "file": "sections/014-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-.html",
       "bytes": 2797,
       "hash": "0deb3e056fe69c68"
     },
     {
-      "id": "016-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit",
+      "id": "015-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit",
       "component": "pricing",
       "label": "От чего зависит цена и как не переплатить",
-      "file": "sections/016-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit.html",
+      "file": "sections/015-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit.html",
       "bytes": 4963,
       "hash": "ce02c417de2def50"
     },
     {
-      "id": "017-raw-html-fragment",
-      "component": "raw",
+      "id": "016-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/017-raw-html-fragment.html",
       "bytes": 100,
-      "hash": "f8b561234dd82ba0"
+      "hash": "f8b561234dd82ba0",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "блок-срочности-психология-потери-таймер-f8b561234dd8",
+      "templateRef": "src/components/parametric/static/layout-fragment-блок-срочности-психология-потери-таймер-f8b561234dd8.template.html",
+      "props": {},
+      "sourceFile": "sections/016-raw-html-fragment.html"
     },
     {
-      "id": "018-contact-cta-kontaktnyy-cta",
+      "id": "017-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/018-contact-cta-kontaktnyy-cta.html",
+      "file": "sections/017-contact-cta-kontaktnyy-cta.html",
       "bytes": 2983,
       "hash": "f3c384252297b411"
     },
     {
-      "id": "019-raw-html-fragment",
-      "component": "raw",
+      "id": "018-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/019-raw-html-fragment.html",
       "bytes": 101,
-      "hash": "0a8fea9559830a00"
+      "hash": "0a8fea9559830a00",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "блок-что-сломалось-кликабельные-иконки-0a8fea955983",
+      "templateRef": "src/components/parametric/static/layout-fragment-блок-что-сломалось-кликабельные-иконки-0a8fea955983.template.html",
+      "props": {},
+      "sourceFile": "sections/018-raw-html-fragment.html"
     },
     {
-      "id": "020-pricing-kogda-posudomoyku-uzhe-nel-zya-otkladyvat",
+      "id": "019-pricing-kogda-posudomoyku-uzhe-nel-zya-otkladyvat",
       "component": "pricing",
       "label": "Когда посудомойку уже нельзя откладывать",
-      "file": "sections/020-pricing-kogda-posudomoyku-uzhe-nel-zya-otkladyvat.html",
+      "file": "sections/019-pricing-kogda-posudomoyku-uzhe-nel-zya-otkladyvat.html",
       "bytes": 6004,
       "hash": "481756c065837831"
     },
     {
-      "id": "021-raw-html-fragment",
-      "component": "raw",
+      "id": "020-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/021-raw-html-fragment.html",
       "bytes": 97,
-      "hash": "16a1e0cccdc95d1c"
+      "hash": "16a1e0cccdc95d1c",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "блок-реальные-истории-кейсы-из-москвы-16a1e0cccdc9",
+      "templateRef": "src/components/parametric/static/layout-fragment-блок-реальные-истории-кейсы-из-москвы-16a1e0cccdc9.template.html",
+      "props": {},
+      "sourceFile": "sections/020-raw-html-fragment.html"
     },
     {
-      "id": "022-contact-cta-svezhie-keysy-po-remontu-posudomoek",
+      "id": "021-contact-cta-svezhie-keysy-po-remontu-posudomoek",
       "component": "contact-cta",
       "label": "Свежие кейсы по ремонту посудомоек",
-      "file": "sections/022-contact-cta-svezhie-keysy-po-remontu-posudomoek.html",
+      "file": "sections/021-contact-cta-svezhie-keysy-po-remontu-posudomoek.html",
       "bytes": 8633,
       "hash": "d49e9b93dad66c79"
     },
     {
-      "id": "023-pricing-kakie-polomki-posudomoyki-my-chasche-vsego-c",
+      "id": "022-pricing-kakie-polomki-posudomoyki-my-chasche-vsego-c",
       "component": "pricing",
       "label": "Какие поломки посудомойки мы чаще всего чиним на дому",
-      "file": "sections/023-pricing-kakie-polomki-posudomoyki-my-chasche-vsego-c.html",
-      "bytes": 6013,
-      "hash": "e22f7c73a9701310"
+      "file": "sections/022-pricing-kakie-polomki-posudomoyki-my-chasche-vsego-c.html",
+      "bytes": 6029,
+      "hash": "ebf3fcdf94995bf9"
     },
     {
-      "id": "024-pricing-skol-ko-obychno-stoit-remont-posudomoyki",
+      "id": "023-pricing-skol-ko-obychno-stoit-remont-posudomoyki",
       "component": "pricing",
       "label": "Сколько обычно стоит ремонт посудомойки",
-      "file": "sections/024-pricing-skol-ko-obychno-stoit-remont-posudomoyki.html",
-      "bytes": 5597,
-      "hash": "5aefefaf85e5d1b8"
+      "file": "sections/023-pricing-skol-ko-obychno-stoit-remont-posudomoyki.html",
+      "bytes": 5819,
+      "hash": "9ddc77c76bb54b7f"
     },
     {
-      "id": "025-proof-pochemu-nam-doveryayut-pri-remonte-posudomoek",
+      "id": "024-proof-pochemu-nam-doveryayut-pri-remonte-posudomoek",
       "component": "proof",
       "label": "Почему нам доверяют при ремонте посудомоек",
-      "file": "sections/025-proof-pochemu-nam-doveryayut-pri-remonte-posudomoek.html",
-      "bytes": 4010,
-      "hash": "a5bf4a525f637104"
+      "file": "sections/024-proof-pochemu-nam-doveryayut-pri-remonte-posudomoek.html",
+      "bytes": 4170,
+      "hash": "565996e672979952"
     },
     {
-      "id": "026-pricing-otzyvy-po-remontu-posudomoek",
+      "id": "025-pricing-otzyvy-po-remontu-posudomoek",
       "component": "pricing",
       "label": "Отзывы по ремонту посудомоек",
-      "file": "sections/026-pricing-otzyvy-po-remontu-posudomoek.html",
-      "bytes": 5114,
-      "hash": "a4972a7c8712d90f"
+      "file": "sections/025-pricing-otzyvy-po-remontu-posudomoek.html",
+      "bytes": 5156,
+      "hash": "1eb027b7d6b458db"
     },
     {
-      "id": "027-pricing-kak-vernem-posudomoyku-v-stroy-bez-lishnih-z",
+      "id": "026-pricing-kak-vernem-posudomoyku-v-stroy-bez-lishnih-z",
       "component": "pricing",
       "label": "Как вернём посудомойку в строй без лишних затрат",
-      "file": "sections/027-pricing-kak-vernem-posudomoyku-v-stroy-bez-lishnih-z.html",
-      "bytes": 3398,
-      "hash": "10a7a1dda0157f0a"
+      "file": "sections/026-pricing-kak-vernem-posudomoyku-v-stroy-bez-lishnih-z.html",
+      "bytes": 3413,
+      "hash": "4d5b8a1e92ed9725"
     },
     {
-      "id": "028-pricing-chto-vy-poluchaete-posle-remonta",
-      "component": "pricing",
+      "id": "027-proof-chto-vy-poluchaete-posle-remonta",
+      "component": "proof",
       "label": "Что вы получаете после ремонта",
-      "file": "sections/028-pricing-chto-vy-poluchaete-posle-remonta.html",
-      "bytes": 2802,
-      "hash": "6e9dbd32935b754e"
+      "file": "sections/027-proof-chto-vy-poluchaete-posle-remonta.html",
+      "bytes": 2819,
+      "hash": "f709e252d511b50e"
     },
     {
-      "id": "029-pricing-remontiruem-vse-marki-posudomoechnyh-mashin",
+      "id": "028-pricing-remontiruem-vse-marki-posudomoechnyh-mashin",
       "component": "pricing",
       "label": "Ремонтируем все марки посудомоечных машин",
-      "file": "sections/029-pricing-remontiruem-vse-marki-posudomoechnyh-mashin.html",
+      "file": "sections/028-pricing-remontiruem-vse-marki-posudomoechnyh-mashin.html",
       "bytes": 19123,
       "hash": "58d65f9db7365c2d"
     },
     {
-      "id": "030-pricing-pochemu-nam-doveryayut-pri-remonte-posudomoe",
+      "id": "029-pricing-pochemu-nam-doveryayut-pri-remonte-posudomoe",
       "component": "pricing",
       "label": "Почему нам доверяют при ремонте посудомоек",
-      "file": "sections/030-pricing-pochemu-nam-doveryayut-pri-remonte-posudomoe.html",
-      "bytes": 3945,
-      "hash": "68b25178109dc22f"
+      "file": "sections/029-pricing-pochemu-nam-doveryayut-pri-remonte-posudomoe.html",
+      "bytes": 4005,
+      "hash": "07308735d58ba6ac"
     },
     {
-      "id": "031-section-vyezzhaem-po-moskve-i-mo-bez-dolgogo-ozhidan",
+      "id": "030-section-vyezzhaem-po-moskve-i-mo-bez-dolgogo-ozhidan",
       "component": "section",
       "label": "Выезжаем по Москве и МО без долгого ожидания",
-      "file": "sections/031-section-vyezzhaem-po-moskve-i-mo-bez-dolgogo-ozhidan.html",
+      "file": "sections/030-section-vyezzhaem-po-moskve-i-mo-bez-dolgogo-ozhidan.html",
       "bytes": 3156,
       "hash": "51c40e2ff4bf41d3"
     },
     {
-      "id": "032-proof-chto-sdelat-do-priezda-mastera-chtoby-ne-usugu",
+      "id": "031-proof-chto-sdelat-do-priezda-mastera-chtoby-ne-usugu",
       "component": "proof",
       "label": "Что сделать до приезда мастера, чтобы не усугубить поломку",
-      "file": "sections/032-proof-chto-sdelat-do-priezda-mastera-chtoby-ne-usugu.html",
+      "file": "sections/031-proof-chto-sdelat-do-priezda-mastera-chtoby-ne-usugu.html",
       "bytes": 4212,
       "hash": "d94b4ac9832c3018"
     },
     {
-      "id": "033-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera",
+      "id": "032-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera",
       "component": "faq",
       "label": "Что обычно спрашивают перед вызовом мастера",
-      "file": "sections/033-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera.html",
-      "bytes": 4782,
-      "hash": "167a070474773dea"
+      "file": "sections/032-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera.html",
+      "bytes": 4800,
+      "hash": "14dae0e2a85322e6"
     },
     {
-      "id": "034-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-po",
+      "id": "033-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-po",
       "component": "mobile-contact",
       "label": "Когда лучше не откладывать ремонт посудомойки",
-      "file": "sections/034-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-po.html",
+      "file": "sections/033-mobile-contact-kogda-luchshe-ne-otkladyvat-remont-po.html",
       "bytes": 2061,
       "hash": "7af9f0b1e142a1ba"
     },
     {
-      "id": "035-raw-html-fragment",
-      "component": "raw",
+      "id": "034-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/035-raw-html-fragment.html",
       "bytes": 37,
-      "hash": "8236da083005e6d9"
+      "hash": "8236da083005e6d9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "форма-заявки-8236da083005",
+      "templateRef": "src/components/parametric/static/layout-fragment-форма-заявки-8236da083005.template.html",
+      "props": {},
+      "sourceFile": "sections/034-raw-html-fragment.html"
     },
     {
-      "id": "036-contact-cta-snachala-poymem-chto-imenno-proishodit-s",
+      "id": "035-contact-cta-snachala-poymem-chto-imenno-proishodit-s",
       "component": "contact-cta",
       "label": "Сначала поймём, что именно происходит с посудомойкой",
-      "file": "sections/036-contact-cta-snachala-poymem-chto-imenno-proishodit-s.html",
+      "file": "sections/035-contact-cta-snachala-poymem-chto-imenno-proishodit-s.html",
       "bytes": 3896,
       "hash": "f1be85aa013f4b53"
     },
     {
-      "id": "037-section-chto-vy-teryaete-esli-otlozhit-remont-posudo",
+      "id": "036-section-chto-vy-teryaete-esli-otlozhit-remont-posudo",
       "component": "section",
       "label": "Что вы теряете, если отложить ремонт посудомойки до завтра",
-      "file": "sections/037-section-chto-vy-teryaete-esli-otlozhit-remont-posudo.html",
+      "file": "sections/036-section-chto-vy-teryaete-esli-otlozhit-remont-posudo.html",
       "bytes": 2300,
       "hash": "ea23583c0f84c73e"
     },
     {
-      "id": "038-lead-form-ostav-te-zayavku-na-remont-posudomoyki",
+      "id": "037-lead-form-ostav-te-zayavku-na-remont-posudomoyki",
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт посудомойки",
-      "file": "sections/038-lead-form-ostav-te-zayavku-na-remont-posudomoyki.html",
-      "bytes": 8390,
-      "hash": "0a97214b041b1f5c"
+      "file": "sections/037-lead-form-ostav-te-zayavku-na-remont-posudomoyki.html",
+      "bytes": 8474,
+      "hash": "12d4c3a49f241519"
     },
     {
-      "id": "039-proof-dokazatel-stva-garantii",
+      "id": "038-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
-      "file": "sections/039-proof-dokazatel-stva-garantii.html",
+      "file": "sections/038-proof-dokazatel-stva-garantii.html",
       "bytes": 197,
       "hash": "b5334e7d6338e9f2"
     },
     {
-      "id": "040-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
+      "id": "039-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
       "component": "pricing",
       "label": "Что клиент понимает ещё до начала работ",
-      "file": "sections/040-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
-      "bytes": 13325,
-      "hash": "72786712758c9db1"
+      "file": "sections/039-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+      "bytes": 13362,
+      "hash": "e9177d7964b17718"
+    },
+    {
+      "id": "040-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/040-proof-dokazatel-stva-garantii.html",
+      "bytes": 42,
+      "hash": "c9cde558065e3f95"
     },
     {
       "id": "041-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
       "file": "sections/041-proof-dokazatel-stva-garantii.html",
-      "bytes": 42,
-      "hash": "c9cde558065e3f95"
-    },
-    {
-      "id": "042-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/042-proof-dokazatel-stva-garantii.html",
       "bytes": 193,
       "hash": "fe3ed52bd318df25"
     },
     {
-      "id": "043-related-links-esli-problema-v-drugoy-tehnike",
+      "id": "042-related-links-esli-problema-v-drugoy-tehnike",
       "component": "related-links",
       "label": "Если проблема в другой технике",
-      "file": "sections/043-related-links-esli-problema-v-drugoy-tehnike.html",
+      "file": "sections/042-related-links-esli-problema-v-drugoy-tehnike.html",
       "bytes": 3249,
       "hash": "e95b54d0263df525"
     },
     {
-      "id": "044-related-links-svyazannye-stranicy",
+      "id": "043-related-links-svyazannye-stranicy",
       "component": "related-links",
       "label": "Связанные страницы",
-      "file": "sections/044-related-links-svyazannye-stranicy.html",
+      "file": "sections/043-related-links-svyazannye-stranicy.html",
       "bytes": 42,
       "hash": "50ecf96d2596ed9c"
     },
     {
-      "id": "045-raw-html-fragment",
-      "component": "raw",
+      "id": "044-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/045-raw-html-fragment.html",
       "bytes": 51,
-      "hash": "97cba44fa873fd6d"
+      "hash": "97cba44fa873fd6d",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "мобильная-кнопка-whatsapp-97cba44fa873",
+      "templateRef": "src/components/parametric/static/layout-fragment-мобильная-кнопка-whatsapp-97cba44fa873.template.html",
+      "props": {},
+      "sourceFile": "sections/044-raw-html-fragment.html"
     },
     {
-      "id": "046-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "045-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "file": "sections/045-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 524,
       "hash": "1a492cdd8b121b8e"
     },
     {
-      "id": "047-raw-html-fragment",
-      "component": "raw",
+      "id": "046-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/047-raw-html-fragment.html",
       "bytes": 59,
-      "hash": "7c19d64f7f93c2e7"
+      "hash": "7c19d64f7f93c2e7",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "мобильная-нижняя-панель-7c19d64f7f93",
+      "templateRef": "src/components/parametric/static/layout-fragment-мобильная-нижняя-панель-7c19d64f7f93.template.html",
+      "props": {},
+      "sourceFile": "sections/046-raw-html-fragment.html"
     },
     {
-      "id": "048-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "047-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/048-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "file": "sections/047-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 1167,
       "hash": "444744305bd5ece2"
     },
     {
-      "id": "049-footer-anchor-footer-mount-point",
+      "id": "048-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
-      "file": "sections/049-footer-anchor-footer-mount-point.html",
       "bytes": 39,
-      "hash": "f6291c7cb9f5554c"
+      "hash": "f6291c7cb9f5554c",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-f6291c7cb9f5.template.html",
+      "props": {},
+      "sourceFile": "sections/048-footer-anchor-footer-mount-point.html"
     },
     {
-      "id": "050-runtime-partials-podklyuchenie-partials-injector",
+      "id": "049-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
-      "file": "sections/050-runtime-partials-podklyuchenie-partials-injector.html",
       "bytes": 51,
-      "hash": "a55dc22a049e1a0e"
+      "hash": "a55dc22a049e1a0e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html",
+      "props": {},
+      "sourceFile": "sections/049-runtime-partials-podklyuchenie-partials-injector.html"
+    },
+    {
+      "id": "050-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "051-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/051-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 41,
-      "hash": "b173d293386c47b4"
-    },
-    {
-      "id": "052-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/052-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/051-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "053-raw-html-fragment",
-      "component": "raw",
+      "id": "052-raw-html-fragment",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/053-raw-html-fragment.html",
       "bytes": 1,
-      "hash": "01ba4719c80b6fe9"
+      "hash": "01ba4719c80b6fe9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-01ba4719c80b",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
+      "props": {},
+      "sourceFile": "sections/052-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:household-page -- --page posudomoyki.html",
     "npm run doctor:page -- --page posudomoyki.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page posudomoyki.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page posudomoyki.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

@@ -94,6 +94,7 @@ console.log(`✅ reports/handoff/${reportName} создан`);
 // Sync after report creation so AI index/digest/deploy manifest can include it without polluting the project root.
 if (args.sync) run(NPM, ['run', 'sync:generated']);
 if (args.check) run(NPM, ['run', 'check:handoff']);
+run(NPM, ['run', 'ai:change-manifest']);
 
 if (existsSync(zipPath)) run('rm', ['-f', zipPath]);
 if (existsSync(shaPath)) run('rm', ['-f', shaPath]);
@@ -105,6 +106,14 @@ run('zip', [
   '-x',
   `${PROJECT_DIR_NAME}/.git/*`,
   `${PROJECT_DIR_NAME}/node_modules/*`,
+  `${PROJECT_DIR_NAME}/.cache/*`,
+  `${PROJECT_DIR_NAME}/.artifacts/*`,
+  `${PROJECT_DIR_NAME}/.playwright-browsers/*`,
+  `${PROJECT_DIR_NAME}/build/*`,
+  `${PROJECT_DIR_NAME}/reports/visual-*/*`,
+  `${PROJECT_DIR_NAME}/reports/visual-audit/*`,
+  `${PROJECT_DIR_NAME}/**/__pycache__/*`,
+  `${PROJECT_DIR_NAME}/**/*.zip`,
   `${PROJECT_DIR_NAME}/.DS_Store`,
 ], parentDir);
 

@@ -1,0 +1,77 @@
+# Page Digest — water-heaters.html
+
+- Branch: household
+- Role: service
+- Title: Ремонт водонагревателей в Москве на дому — MosPochin
+- Description: Ремонт накопительных, проточных и газовых водонагревателей на дому в Москве. Диагностика, согласование работ и аккуратное восстановление техники с гарантией.
+- H1: Ремонт водонагревателей на дому в Москве
+- Canonical: https://mospochin.ru/water-heaters.html
+- Builder model: src/pages/water-heaters/page.json
+- Sections: 48 (35 local, 1 shared refs, 1 raw)
+- Text words inside referenced sections: 2533
+
+## Component mix
+
+| Component | Count |
+| --- | --- |
+| proof | 11 |
+| pricing | 9 |
+| layout-fragment | 8 |
+| mobile-contact | 5 |
+| contact-cta | 2 |
+| hero | 2 |
+| related-links | 2 |
+| section | 2 |
+| body-preamble | 1 |
+| breadcrumb | 1 |
+| faq | 1 |
+| footer-anchor | 1 |
+| lead-form | 1 |
+| raw | 1 |
+| runtime-partials | 1 |
+
+
+## Largest sections to inspect first
+
+| Section | Component | Bytes | Words | Shared | Source |
+| --- | --- | --- | --- | --- | --- |
+| Ремонтируем водонагреватели известных марок | hero | 17.5 KB | 130 | no | src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html |
+| Что клиент понимает ещё до начала работ | pricing | 13.1 KB | 427 | no | src/pages/water-heaters/sections/035-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
+| Ремонтируем все типы водонагревателей | pricing | 9.9 KB | 205 | no | src/pages/water-heaters/sections/008-pricing-remontiruem-vse-tipy-vodonagrevateley.html |
+| Реальные ремонты на этой неделе | contact-cta | 8.6 KB | 130 | no | src/pages/water-heaters/sections/015-contact-cta-real-nye-remonty-na-etoy-nedele.html |
+| Оставьте заявку на ремонт | lead-form | 6.7 KB | 80 | no | src/pages/water-heaters/sections/033-lead-form-ostav-te-zayavku-na-remont.html |
+| Частые поломки водонагревателей | pricing | 6.4 KB | 134 | no | src/pages/water-heaters/sections/016-pricing-chastye-polomki-vodonagrevateley.html |
+| Ремонт водонагревателей на дому в Москве | hero | 6.3 KB | 70 | no | src/pages/water-heaters/sections/004-hero-remont-vodonagrevateley-na-domu-v-moskve.html |
+| Цены на ремонт водонагревателей | pricing | 6.1 KB | 123 | no | src/pages/water-heaters/sections/017-pricing-ceny-na-remont-vodonagrevateley.html |
+
+
+## Editable source files
+
+- data/page-metadata.json
+- data/contact-config.json
+- data/runtime-config.json
+- data/household-branch.json
+- data/household-page-policy.json
+- data/household-services.json
+- data/household-taxonomy.json
+- data/household-proof-layer.json
+- data/household-page-slots.json
+- water-heaters.html
+- src/site-builder.json
+- src/pages/water-heaters/page.json
+- src/pages/water-heaters/sections/
+
+## Checks
+
+- npm run doctor:household-page -- --page water-heaters.html
+- npm run doctor:page -- --page water-heaters.html
+- npm run validate:site
+- npm run check:site-builder
+- npm run ai:semantic-diff -- --page water-heaters.html
+- npm run ai:check
+
+## AI notes
+
+- Для правки уникального блока открывай конкретный `sections/*.html`.
+- Для shared-блока сначала запускай `npm run ai:impact -- --files <componentRef>`, потому что он может затронуть несколько страниц.
+- Если много raw-секций, не переписывай их вслепую: сначала пойми границы блока по соседним секциям.

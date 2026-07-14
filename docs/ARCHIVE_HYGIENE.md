@@ -6,55 +6,54 @@
 
 Полный project ZIP должен содержать source/work layer проекта, но не должен тащить внутрь уже собранные deploy ZIP, browser screenshots, heavy logs и временные артефакты.
 
-Public deploy ZIP создаётся отдельно командой:
+Для source/handoff-архива используется:
 
 ```bash
-npm run deploy:pack
+npm run handoff:pack
 ```
 
-Полный source/handoff archive создаётся отдельно командой:
+Перед ним:
 
 ```bash
-npm run archive:project
+npm run check:handoff
+npm run ai:change-manifest
 ```
 
 ## Что исключается из полного project ZIP
 
-Главные исключения из `.project-archiveignore`:
+Handoff pack автоматически исключает:
 
 ```text
-.deploy/dist/
-.artifacts/
-.archives/
-reports/visual-ai-review/
-node_modules/
-.git/
-*.zip
-*.log
+.git/  node_modules/  .cache/  .artifacts/  build/
+reports/visual-*  reports/visual-audit/  **/__pycache__/
+*.zip  *.log
 ```
 
-Это защищает от ситуации, когда public deploy ZIP попадает внутрь полного project ZIP и каждый следующий прогон раздувает архив.
+Это защищает от попадания сборок, браузеров, старых скриншот-паков и вложенных ZIP в handoff.
 
 ## Проверка размера
 
 Перед передачей архива:
 
 ```bash
-npm run check:archive-hygiene
-npm run archive:project
+npm run clean:workspace
+npm run check:handoff
+npm run handoff:pack
 ```
 
-Если нужен public ZIP:
+Для реальной очистки только воспроизводимых локальных артефактов:
 
 ```bash
-npm run deploy:pack
+npm run clean:workspace:apply
 ```
+
+Команда удаляет `.artifacts/`, `.cache/`, `build/` и старые visual-паки, но сохраняет `reports/visual-p2-final-20260713`, `reports/handoff/`, source, data и assets.
 
 После этого отдавать два отдельных файла:
 
 ```text
-mospochin-site-project-*.zip        # source/project archive
-mospochin-public-deploy-*.zip       # public deploy pack
+mospochin-site-*.zip                # source/handoff archive
+mospochin-public-deploy-*.zip       # public deploy pack, если его создаёт deploy-процесс
 ```
 
 Не вкладывать один ZIP внутрь другого.

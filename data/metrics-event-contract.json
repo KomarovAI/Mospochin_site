@@ -1,6 +1,20 @@
 {
-  "version": "2026-06-20-run6-final-tz-compliance",
+  "version": "2026-07-12-conversion-p0-v1",
   "purpose": "MosPochin archive-only metrics contract. This file is the local source of truth for required website events, backend log fields, and clean LLM aggregates.",
+  "events": [
+    "page_view"
+  ],
+  "backend_events": [
+    "qualified_lead",
+    "call_answered",
+    "repair_order_created",
+    "service_contract_created"
+  ],
+  "bot_policy": {
+    "frontend_hints": ["navigator.webdriver", "bot_user_agent", "headlesschrome"],
+    "backend_action": "reject_before_accepted_log",
+    "rejected_reason": "bot_user_agent"
+  },
   "metrika": {
     "counter_id": "109138661",
     "goal_type": "JavaScript event",
@@ -47,6 +61,33 @@
       "minimum_visible_ms": 900,
       "dedupe": "once per CTA per page session"
     },
+    "event_semantics": {
+      "visibility": ["page_view", "cta_view"],
+      "decision": [
+        "cta_click",
+        "phone_click",
+        "whatsapp_click",
+        "telegram_click",
+        "email_click",
+        "form_open",
+        "form_start",
+        "form_submit_attempt",
+        "form_submit_success"
+      ],
+      "form_outcome": [
+        "form_submit_attempt",
+        "form_submit_success",
+        "form_submit_error",
+        "form_validation_error",
+        "form_submit_blocked"
+      ],
+      "business_outcome": [
+        "qualified_lead",
+        "call_answered",
+        "repair_order_created",
+        "service_contract_created"
+      ]
+    },
     "required_markup_scripts": [
       "tools/apply-metrics-page-markup.mjs",
       "tools/check-metrics-markup.mjs"
@@ -57,6 +98,32 @@
     "accepted_log": "/var/log/mospochin/site_events.jsonl",
     "rejected_log": "/var/log/mospochin/site_event_rejects.jsonl",
     "lead_log": "/var/log/mospochin/direct_leads.jsonl",
+    "outcome_endpoint": "/api/track-outcome",
+    "outcome_auth": "Bearer token from MOSPOCHIN_OUTCOME_TOKEN; never browser-side",
+    "required_log_fields": [
+      "event",
+      "ts",
+      "page_path",
+      "page_slug",
+      "page_version",
+      "page_intent",
+      "equipment",
+      "service",
+      "commercial_segment",
+      "cta_id",
+      "cta_group",
+      "form_variant",
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "utm_term",
+      "yclid_hash",
+      "referrer_host",
+      "session_id_hash",
+      "event_id",
+      "client_event_ts"
+    ],
     "required_quality_values": [
       "human_candidate",
       "suspicious",
@@ -89,12 +156,15 @@
   "llm_outputs": [
     "llm_event_funnel_YYYY-MM-DD.csv",
     "llm_cta_performance_YYYY-MM-DD.csv",
+    "llm_internal_link_funnel_YYYY-MM-DD.csv",
     "llm_form_friction_YYYY-MM-DD.csv",
     "llm_traffic_quality_YYYY-MM-DD.csv",
     "llm_rejected_events_summary_YYYY-MM-DD.csv",
     "llm_offline_conversions_YYYY-MM-DD.csv",
     "llm_query_landing_actions_YYYY-MM-DD.csv",
     "llm_landing_mismatch_YYYY-MM-DD.csv",
+    "llm_page_scorecard_YYYY-MM-DD.csv",
+    "llm_page_improvement_actions_YYYY-MM-DD.csv",
     "llm_events_manifest_YYYY-MM-DD.json"
   ],
   "decision_policy": {
@@ -111,13 +181,17 @@
     ],
     "hard_conversion": [
       "form_submit_success",
-      "backend_lead_created"
+      "backend_lead_created",
+      "qualified_lead",
+      "repair_order_created",
+      "service_contract_created"
     ],
     "qualified_conversion": [
       "lead_qualified",
       "call_answered",
       "whatsapp_dialog_started",
-      "repair_order_created"
+      "repair_order_created",
+      "service_contract_created"
     ]
   },
   "page_context": {
@@ -127,7 +201,8 @@
       "data-page-intent",
       "data-equipment",
       "data-service",
-      "data-commercial-segment"
+      "data-commercial-segment",
+      "data-page-version"
     ],
     "optional_body_attrs": [
       "data-brand"

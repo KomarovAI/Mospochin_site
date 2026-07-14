@@ -1,15 +1,18 @@
 {
   "summary": {
-    "generatedAt": "2026-06-06T08:58:13.069Z",
-    "totalTools": 79,
-    "totalBytes": 732715,
+    "generatedAt": "2026-07-14T03:53:43.404Z",
+    "totalTools": 120,
+    "totalBytes": 875524,
     "byCategory": {
-      "npmScriptEntry": 68,
-      "importedByTool": 10,
-      "deployUsed": 1
+      "npmScriptEntry": 86,
+      "importedByTool": 12,
+      "manualUtility": 3,
+      "orphanCandidate": 14,
+      "deployUsed": 5
     },
     "byAction": {
-      "keep": 79
+      "keep": 106,
+      "reviewForPrune": 14
     }
   },
   "tools": [
@@ -35,7 +38,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: ai:check",
-      "sizeBytes": 6373,
+      "sizeBytes": 6456,
       "scripts": [
         "ai:check"
       ],
@@ -62,7 +65,8 @@
         "tools/data-contract-lib.mjs"
       ],
       "textReferences": [
-        "package.json"
+        "package.json",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -227,7 +231,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: ai:route",
-      "sizeBytes": 5676,
+      "sizeBytes": 5738,
       "scripts": [
         "ai:route"
       ],
@@ -275,7 +279,27 @@
       "textReferences": [
         "package.json",
         "tools/ai-check.mjs",
-        "tools/check-profile.mjs"
+        "tools/check-profile.mjs",
+        "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/apply-metrics-page-markup.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: apply:metrics-markup",
+      "sizeBytes": 9040,
+      "scripts": [
+        "apply:metrics-markup"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/metrics-event-contract.json",
+        "data/metrics-page-context.json",
+        "package.json",
+        "tools/check-metrics-contract.mjs",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -325,6 +349,23 @@
       ]
     },
     {
+      "file": "tools/audit-metrics-clean.mjs",
+      "category": "manualUtility",
+      "action": "keep",
+      "reason": "Tool is retained as a manual utility or project helper.",
+      "sizeBytes": 4028,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "METRICS_RUN5_CHANGED_FILES_20260620.txt",
+        "METRICS_RUN5_CHECKS_20260620.txt",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
       "file": "tools/audit-representative-pages.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -346,16 +387,21 @@
       "file": "tools/audit-screenshots.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: audit:screenshots, audit:restaurant-screenshots, audit:parokonvektomat-screenshots",
-      "sizeBytes": 10296,
+      "reason": "Called by npm scripts: audit:screenshots, audit:visual-smoke, audit:visual-pariki, audit:restaurant-screenshots, audit:parokonvektomat-screenshots, audit:ventilation-screenshots, audit:cooking-kettles-screenshots",
+      "sizeBytes": 12746,
       "scripts": [
         "audit:screenshots",
+        "audit:visual-smoke",
+        "audit:visual-pariki",
         "audit:restaurant-screenshots",
-        "audit:parokonvektomat-screenshots"
+        "audit:parokonvektomat-screenshots",
+        "audit:ventilation-screenshots",
+        "audit:cooking-kettles-screenshots"
       ],
       "importedBy": [],
       "imports": [
-        "tools/screenshot-audit-lib.mjs"
+        "tools/screenshot-audit-lib.mjs",
+        "tools/visual-firefox-config.mjs"
       ],
       "textReferences": [
         "package.json",
@@ -417,7 +463,51 @@
         "tools/ai-check.mjs",
         "tools/ai-workspace.mjs",
         "tools/check-profile.mjs",
-        "tools/doctor-changed-pages.mjs"
+        "tools/doctor-changed-pages.mjs",
+        "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-ai-visual-review.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 2547,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
+      "file": "tools/check-architecture.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:architecture",
+      "sizeBytes": 5353,
+      "scripts": [
+        "check:architecture"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs",
+        "tools/validate-site.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-conversion-runtime.mjs",
+      "category": "manualUtility",
+      "action": "keep",
+      "reason": "Tool is retained as a manual utility or project helper.",
+      "sizeBytes": 5111,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "tools/check-profile.mjs"
       ]
     },
     {
@@ -437,6 +527,35 @@
       ]
     },
     {
+      "file": "tools/check-deploy-runtime.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 3789,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
+      "file": "tools/check-generated-diff.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:generated-diff",
+      "sizeBytes": 3025,
+      "scripts": [
+        "check:generated-diff"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
       "file": "tools/check-image-budget.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -444,6 +563,63 @@
       "sizeBytes": 3053,
       "scripts": [
         "check:image-budget"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-metrics-contract.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:metrics",
+      "sizeBytes": 4502,
+      "scripts": [
+        "check:metrics"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "METRICS_RUN5_CHECKS_20260620.txt",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-metrics-markup.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:metrics-markup",
+      "sizeBytes": 4630,
+      "scripts": [
+        "check:metrics-markup"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "METRICS_RUN5_CHECKS_20260620.txt",
+        "data/metrics-event-contract.json",
+        "package.json",
+        "tools/check-metrics-contract.mjs",
+        "tools/check-profile.mjs",
+        "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-metrics-scorecard.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:metrics-scorecard",
+      "sizeBytes": 2726,
+      "scripts": [
+        "check:metrics-scorecard"
       ],
       "importedBy": [],
       "imports": [],
@@ -473,7 +649,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: check:core, check:ai, check:assets, check:images, check:visual, check:handoff, check:full, check:doctor",
-      "sizeBytes": 3633,
+      "sizeBytes": 4412,
       "scripts": [
         "check:core",
         "check:ai",
@@ -489,7 +665,8 @@
       "textReferences": [
         "CHANGELOG_AI.md",
         "data/file-ownership.json",
-        "package.json"
+        "package.json",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -497,7 +674,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: guard:scale, guard:scale:strict",
-      "sizeBytes": 6856,
+      "sizeBytes": 6857,
       "scripts": [
         "guard:scale",
         "guard:scale:strict"
@@ -513,11 +690,84 @@
       ]
     },
     {
+      "file": "tools/check-visible-copy.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 11378,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
+      "file": "tools/check-visual-contract.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:visual-contract",
+      "sizeBytes": 1571,
+      "scripts": [
+        "check:visual-contract"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/screenshot-audit-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-visual-env.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:visual-env",
+      "sizeBytes": 3124,
+      "scripts": [
+        "check:visual-env"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-firefox-config.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/clean-workspace.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: clean:workspace, clean:workspace:apply",
+      "sizeBytes": 2495,
+      "scripts": [
+        "clean:workspace",
+        "clean:workspace:apply"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/create-ai-visual-review-pack.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 7656,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
       "file": "tools/data-contract-lib.mjs",
       "category": "importedByTool",
       "action": "keep",
       "reason": "Imported by: tools/ai-context.mjs, tools/validate-data.mjs",
-      "sizeBytes": 19756,
+      "sizeBytes": 19740,
       "scripts": [],
       "importedBy": [
         "tools/ai-context.mjs",
@@ -532,6 +782,17 @@
       ]
     },
     {
+      "file": "tools/deploy-pack.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 8035,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
       "file": "tools/dev-server.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -544,8 +805,10 @@
       "imports": [],
       "textReferences": [
         "docs/SITE_MAINTENANCE_MODEL.md",
+        "docs/VISUAL_CHECKS.md",
         "package.json",
-        "tools/audit-screenshots.mjs"
+        "tools/audit-screenshots.mjs",
+        "tools/check-visual-env.mjs"
       ]
     },
     {
@@ -569,7 +832,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: doctor:household-page",
-      "sizeBytes": 20073,
+      "sizeBytes": 20603,
       "scripts": [
         "doctor:household-page"
       ],
@@ -588,7 +851,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: doctor:page",
-      "sizeBytes": 18127,
+      "sizeBytes": 18767,
       "scripts": [
         "doctor:page"
       ],
@@ -599,7 +862,8 @@
         "tools/audit-representative-pages.mjs",
         "tools/doctor-changed-pages.mjs",
         "tools/doctor-restaurant-page.mjs",
-        "tools/inspect-page.mjs"
+        "tools/inspect-page.mjs",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -634,6 +898,21 @@
       ]
     },
     {
+      "file": "tools/generate-ai-change-manifest.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:change-manifest",
+      "sizeBytes": 3479,
+      "scripts": [
+        "ai:change-manifest"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
       "file": "tools/generate-ai-component-map.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -651,7 +930,8 @@
       "textReferences": [
         "package.json",
         "tools/ai-check.mjs",
-        "tools/check-profile.mjs"
+        "tools/check-profile.mjs",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -659,7 +939,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: ai:digest, check:ai-digest",
-      "sizeBytes": 19738,
+      "sizeBytes": 21747,
       "scripts": [
         "ai:digest",
         "check:ai-digest"
@@ -673,7 +953,8 @@
         "CHANGELOG_AI.md",
         "package.json",
         "tools/ai-check.mjs",
-        "tools/check-profile.mjs"
+        "tools/check-profile.mjs",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -694,7 +975,8 @@
         "docs/DATA_CONTRACTS.md",
         "package.json",
         "schemas/ai-project-index.schema.json",
-        "tools/check-profile.mjs"
+        "tools/check-profile.mjs",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -711,6 +993,7 @@
       "textReferences": [
         "package.json",
         "tools/generate-webp-sidecars.mjs",
+        "tools/page-lifecycle.mjs",
         "tools/report-size.mjs"
       ]
     },
@@ -719,18 +1002,24 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: generate:direct-landings",
-      "sizeBytes": 14234,
+      "sizeBytes": 14298,
       "scripts": [
         "generate:direct-landings"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
+        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "METRICS_RUN5_CHANGED_FILES_20260620.txt",
+        "METRICS_RUN5_CHECKS_20260620.txt",
         "data/file-ownership.json",
         "docs/AI_PROJECT_OPERATING_GUIDE.md",
         "docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md",
+        "docs/metrics-analytics-run5-technical-audit-cleanup-20260620.md",
         "package.json",
-        "tools/ai-task-router.mjs"
+        "tools/ai-task-router.mjs",
+        "tools/audit-metrics-clean.mjs"
       ]
     },
     {
@@ -765,7 +1054,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: generate:project-map, check:project-map",
-      "sizeBytes": 7223,
+      "sizeBytes": 7720,
       "scripts": [
         "generate:project-map",
         "check:project-map"
@@ -791,6 +1080,7 @@
         ".deploy/include-files.txt",
         ".github/workflows/deploy.yml",
         "deploy/post-activate.sh",
+        "tools/check-deploy-runtime.mjs",
         "tools/generate-deploy-manifest.mjs"
       ]
     },
@@ -821,14 +1111,15 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: generate:sitemap",
-      "sizeBytes": 2823,
+      "sizeBytes": 3207,
       "scripts": [
         "generate:sitemap"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "package.json"
+        "package.json",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -857,7 +1148,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: handoff:pack",
-      "sizeBytes": 4343,
+      "sizeBytes": 4705,
       "scripts": [
         "handoff:pack"
       ],
@@ -917,21 +1208,19 @@
       "file": "tools/household-fallback-sync-lib.mjs",
       "category": "importedByTool",
       "action": "keep",
-      "reason": "Imported by: tools/doctor-household-page.mjs, tools/household-sync-fallbacks.mjs, tools/validate-site.mjs",
-      "sizeBytes": 39280,
+      "reason": "Imported by: tools/doctor-household-page.mjs, tools/household-sync-fallbacks.mjs",
+      "sizeBytes": 39472,
       "scripts": [],
       "importedBy": [
         "tools/doctor-household-page.mjs",
-        "tools/household-sync-fallbacks.mjs",
-        "tools/validate-site.mjs"
+        "tools/household-sync-fallbacks.mjs"
       ],
       "imports": [
         "tools/household-authoring-lib.mjs"
       ],
       "textReferences": [
         "tools/doctor-household-page.mjs",
-        "tools/household-sync-fallbacks.mjs",
-        "tools/validate-site.mjs"
+        "tools/household-sync-fallbacks.mjs"
       ]
     },
     {
@@ -959,14 +1248,65 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: inspect:page",
-      "sizeBytes": 9262,
+      "sizeBytes": 9689,
       "scripts": [
         "inspect:page"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
+        "package.json",
+        "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/inspect-visual-workmode.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: visual:workmode",
+      "sizeBytes": 2731,
+      "scripts": [
+        "visual:workmode"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
         "package.json"
+      ]
+    },
+    {
+      "file": "tools/metrics-bot-smoke.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: smoke:metrics-bots",
+      "sizeBytes": 3507,
+      "scripts": [
+        "smoke:metrics-bots"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/metrics-local-smoke.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: smoke:metrics",
+      "sizeBytes": 11927,
+      "scripts": [
+        "smoke:metrics"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "METRICS_RUN5_CHECKS_20260620.txt",
+        "package.json",
+        "tools/check-profile.mjs"
       ]
     },
     {
@@ -980,6 +1320,41 @@
       ],
       "importedBy": [],
       "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/page-lifecycle.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: page:create, page:edit, page:check",
+      "sizeBytes": 5059,
+      "scripts": [
+        "page:create",
+        "page:edit",
+        "page:check"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/repair-restaurant-service-contract.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: repair:restaurant-service-contract, check:restaurant-service-contract",
+      "sizeBytes": 4121,
+      "scripts": [
+        "repair:restaurant-service-contract",
+        "check:restaurant-service-contract"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/restaurant-fallback-sync-lib.mjs"
+      ],
       "textReferences": [
         "package.json"
       ]
@@ -1048,19 +1423,19 @@
       "file": "tools/restaurant-fallback-sync-lib.mjs",
       "category": "importedByTool",
       "action": "keep",
-      "reason": "Imported by: tools/restaurant-sync-fallbacks.mjs, tools/validate-site.mjs",
-      "sizeBytes": 23589,
+      "reason": "Imported by: tools/repair-restaurant-service-contract.mjs, tools/restaurant-sync-fallbacks.mjs",
+      "sizeBytes": 24318,
       "scripts": [],
       "importedBy": [
-        "tools/restaurant-sync-fallbacks.mjs",
-        "tools/validate-site.mjs"
+        "tools/repair-restaurant-service-contract.mjs",
+        "tools/restaurant-sync-fallbacks.mjs"
       ],
       "imports": [
         "tools/restaurant-authoring-lib.mjs"
       ],
       "textReferences": [
-        "tools/restaurant-sync-fallbacks.mjs",
-        "tools/validate-site.mjs"
+        "tools/repair-restaurant-service-contract.mjs",
+        "tools/restaurant-sync-fallbacks.mjs"
       ]
     },
     {
@@ -1079,6 +1454,7 @@
       ],
       "textReferences": [
         "package.json",
+        "tools/repair-restaurant-service-contract.mjs",
         "tools/restaurant-fallback-sync-lib.mjs",
         "tools/scaffold-restaurant-service.mjs"
       ]
@@ -1095,7 +1471,8 @@
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "package.json"
+        "package.json",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -1110,26 +1487,43 @@
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "package.json"
+        "package.json",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
       "file": "tools/screenshot-audit-lib.mjs",
       "category": "importedByTool",
       "action": "keep",
-      "reason": "Imported by: tools/audit-representative-pages.mjs, tools/audit-screenshots.mjs, tools/validate-site.mjs",
+      "reason": "Imported by: tools/audit-representative-pages.mjs, tools/audit-screenshots.mjs, tools/check-visual-contract.mjs",
       "sizeBytes": 6694,
       "scripts": [],
       "importedBy": [
         "tools/audit-representative-pages.mjs",
         "tools/audit-screenshots.mjs",
-        "tools/validate-site.mjs"
+        "tools/check-visual-contract.mjs"
       ],
       "imports": [],
       "textReferences": [
         "tools/audit-representative-pages.mjs",
         "tools/audit-screenshots.mjs",
-        "tools/validate-site.mjs"
+        "tools/check-visual-contract.mjs"
+      ]
+    },
+    {
+      "file": "tools/screenshot-live-site.mjs",
+      "category": "manualUtility",
+      "action": "keep",
+      "reason": "Tool is retained as a manual utility or project helper.",
+      "sizeBytes": 14437,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-capture-plan.mjs",
+        "tools/visual-firefox-config.mjs"
+      ],
+      "textReferences": [
+        "docs/LIVE_VISUAL_PACK_MVP.md"
       ]
     },
     {
@@ -1367,7 +1761,8 @@
       ],
       "textReferences": [
         "package.json",
-        "tools/ai-check.mjs"
+        "tools/ai-check.mjs",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -1375,7 +1770,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: site-builder:extract-shared, check:shared-components",
-      "sizeBytes": 9292,
+      "sizeBytes": 9470,
       "scripts": [
         "site-builder:extract-shared",
         "check:shared-components"
@@ -1400,15 +1795,18 @@
       "file": "tools/site-builder-lib.mjs",
       "category": "importedByTool",
       "action": "keep",
-      "reason": "Imported by: tools/build-site.mjs, tools/generate-faq-registry.mjs, tools/site-builder-bootstrap.mjs, tools/site-builder-extract-shared.mjs, tools/site-builder-parameterize-core.mjs",
+      "reason": "Imported by: tools/build-site.mjs, tools/check-architecture.mjs, tools/check-generated-diff.mjs, tools/generate-faq-registry.mjs, tools/site-builder-bootstrap.mjs",
       "sizeBytes": 14603,
       "scripts": [],
       "importedBy": [
         "tools/build-site.mjs",
+        "tools/check-architecture.mjs",
+        "tools/check-generated-diff.mjs",
         "tools/generate-faq-registry.mjs",
         "tools/site-builder-bootstrap.mjs",
         "tools/site-builder-extract-shared.mjs",
-        "tools/site-builder-parameterize-core.mjs"
+        "tools/site-builder-parameterize-core.mjs",
+        "tools/sync-site-builder-manifest.mjs"
       ],
       "imports": [
         "tools/ai-maintenance-lib.mjs"
@@ -1421,12 +1819,15 @@
         "tools/ai-check.mjs",
         "tools/ai-workspace.mjs",
         "tools/build-site.mjs",
+        "tools/check-architecture.mjs",
+        "tools/check-generated-diff.mjs",
         "tools/doctor-changed-pages.mjs",
         "tools/generate-ai-component-map.mjs",
         "tools/generate-faq-registry.mjs",
         "tools/site-builder-bootstrap.mjs",
         "tools/site-builder-extract-shared.mjs",
-        "tools/site-builder-parameterize-core.mjs"
+        "tools/site-builder-parameterize-core.mjs",
+        "tools/sync-site-builder-manifest.mjs"
       ]
     },
     {
@@ -1434,7 +1835,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: site-builder:parameterize-core, check:parameterized-components",
-      "sizeBytes": 18844,
+      "sizeBytes": 19335,
       "scripts": [
         "site-builder:parameterize-core",
         "check:parameterized-components"
@@ -1454,6 +1855,17 @@
         "tools/doctor-changed-pages.mjs",
         "tools/generate-ai-component-map.mjs"
       ]
+    },
+    {
+      "file": "tools/smoke-production-conversion.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 5216,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
     },
     {
       "file": "tools/source-compression-lib.mjs",
@@ -1478,6 +1890,23 @@
       ]
     },
     {
+      "file": "tools/strip-legacy-metrika-noscript.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: cleanup:legacy-metrika, check:legacy-metrika",
+      "sizeBytes": 859,
+      "scripts": [
+        "cleanup:legacy-metrika",
+        "check:legacy-metrika"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
       "file": "tools/sync-page-metadata.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -1489,7 +1918,28 @@
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "package.json"
+        "package.json",
+        "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/sync-site-builder-manifest.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: site-builder:sync-manifest",
+      "sizeBytes": 4816,
+      "scripts": [
+        "site-builder:sync-manifest"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "src/site-builder.json",
+        "tools/check-profile.mjs",
+        "tools/page-lifecycle.mjs"
       ]
     },
     {
@@ -1514,23 +1964,247 @@
       ]
     },
     {
+      "file": "tools/validate-site-v11-static-wrapper.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 2617,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
       "file": "tools/validate-site.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: validate:site",
-      "sizeBytes": 129783,
+      "sizeBytes": 192,
       "scripts": [
         "validate:site"
       ],
       "importedBy": [],
-      "imports": [
-        "tools/household-fallback-sync-lib.mjs",
-        "tools/restaurant-fallback-sync-lib.mjs",
-        "tools/screenshot-audit-lib.mjs"
-      ],
+      "imports": [],
       "textReferences": [
         "package.json",
+        "tools/check-profile.mjs",
+        "tools/validate-site-v11-static-wrapper.mjs",
+        "tools/validate-site.strict.mjs"
+      ]
+    },
+    {
+      "file": "tools/validate-site.strict.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 2906,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
+      "file": "tools/visual-atomic-capture.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 23274,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-firefox-config.mjs"
+      ],
+      "textReferences": []
+    },
+    {
+      "file": "tools/visual-audit-capture.mjs",
+      "category": "deployUsed",
+      "action": "keep",
+      "reason": "Referenced by deploy/server/workflow files.",
+      "sizeBytes": 7168,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-firefox-config.mjs"
+      ],
+      "textReferences": [
+        ".github/workflows/visual-audit.yml"
+      ]
+    },
+    {
+      "file": "tools/visual-audit-merge.mjs",
+      "category": "deployUsed",
+      "action": "keep",
+      "reason": "Referenced by deploy/server/workflow files.",
+      "sizeBytes": 3655,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        ".github/workflows/visual-audit.yml"
+      ]
+    },
+    {
+      "file": "tools/visual-audit-plan.mjs",
+      "category": "deployUsed",
+      "action": "keep",
+      "reason": "Referenced by deploy/server/workflow files.",
+      "sizeBytes": 4148,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        ".github/workflows/visual-audit.yml"
+      ]
+    },
+    {
+      "file": "tools/visual-capture-plan.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/screenshot-live-site.mjs",
+      "sizeBytes": 10234,
+      "scripts": [],
+      "importedBy": [
+        "tools/screenshot-live-site.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "docs/LIVE_VISUAL_PACK_MVP.md",
+        "tools/screenshot-live-site.mjs"
+      ]
+    },
+    {
+      "file": "tools/visual-contact-sheets.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 15056,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
+      "file": "tools/visual-dom-dissector.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 19605,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-firefox-config.mjs"
+      ],
+      "textReferences": []
+    },
+    {
+      "file": "tools/visual-firefox-config.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/audit-screenshots.mjs, tools/check-visual-env.mjs, tools/screenshot-live-site.mjs, tools/visual-atomic-capture.mjs, tools/visual-audit-capture.mjs",
+      "sizeBytes": 1650,
+      "scripts": [],
+      "importedBy": [
+        "tools/audit-screenshots.mjs",
+        "tools/check-visual-env.mjs",
+        "tools/screenshot-live-site.mjs",
+        "tools/visual-atomic-capture.mjs",
+        "tools/visual-audit-capture.mjs",
+        "tools/visual-dom-dissector.mjs",
+        "tools/visual-shard-runner.mjs",
+        "tools/visual-targeted-mobile-deep.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "tools/audit-screenshots.mjs",
+        "tools/check-visual-env.mjs",
+        "tools/screenshot-live-site.mjs",
+        "tools/visual-atomic-capture.mjs",
+        "tools/visual-audit-capture.mjs",
+        "tools/visual-dom-dissector.mjs",
+        "tools/visual-shard-runner.mjs",
+        "tools/visual-targeted-mobile-deep.mjs"
+      ]
+    },
+    {
+      "file": "tools/visual-runner.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:screenshots, audit:representative-pages, setup:visual, setup:visual:browsers, check:visual-env, audit:visual-smoke, audit:visual-pariki, audit:restaurant-screenshots, audit:restaurant-branch, audit:parokonvektomat-screenshots, audit:ventilation-screenshots, audit:cooking-kettles-screenshots",
+      "sizeBytes": 2192,
+      "scripts": [
+        "audit:screenshots",
+        "audit:representative-pages",
+        "setup:visual",
+        "setup:visual:browsers",
+        "check:visual-env",
+        "audit:visual-smoke",
+        "audit:visual-pariki",
+        "audit:restaurant-screenshots",
+        "audit:restaurant-branch",
+        "audit:parokonvektomat-screenshots",
+        "audit:ventilation-screenshots",
+        "audit:cooking-kettles-screenshots"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        ".github/workflows/visual-audit.yml",
+        ".github/workflows/visual-targeted-mobile.yml",
+        "CHANGELOG_AI.md",
+        "docs/VISUAL_CHECKS.md",
+        "package.json",
         "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/visual-shard-merge.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 4145,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
+      "file": "tools/visual-shard-plan.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 4098,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
+      "file": "tools/visual-shard-runner.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 17017,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-firefox-config.mjs"
+      ],
+      "textReferences": []
+    },
+    {
+      "file": "tools/visual-targeted-mobile-deep.mjs",
+      "category": "deployUsed",
+      "action": "keep",
+      "reason": "Referenced by deploy/server/workflow files.",
+      "sizeBytes": 9611,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-firefox-config.mjs"
+      ],
+      "textReferences": [
+        ".github/workflows/visual-targeted-mobile.yml"
       ]
     }
   ]

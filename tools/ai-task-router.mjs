@@ -41,6 +41,7 @@ const args = parseArgs();
 const task = String(args.task || 'content').toLowerCase();
 const page = args.page || args.file || null;
 const map = readJson('data/project-map.generated.json');
+const clusterRegistry = readJson('data/cluster-registry.json') || { clusters: {} };
 
 if (!map) {
   console.error('❌ data/project-map.generated.json отсутствует. Запусти npm run generate:project-map');
@@ -62,9 +63,12 @@ const commands = [];
 if (pageInfo) {
   read.push(pageInfo.source.model, pageInfo.source.sectionsDir, `.ai/digest/pages/${page.replace(/\.html$/, '')}.md`);
   edit.push(pageInfo.source.model, `${pageInfo.source.sectionsDir}/*.html`);
-  if (pageInfo.cluster === 'parokonvektomaty') {
-    read.push('docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md', 'data/parokonvektomat-conversion-pages.json', '.ai/digest/clusters/parokonvektomaty.md');
-    commands.push('npm run check:conversion-ui');
+  if (pageInfo.cluster) {
+    const cluster = clusterRegistry.clusters?.[pageInfo.cluster];
+    if (cluster) {
+      read.push('data/cluster-registry.json', cluster.guide, cluster.manifest, cluster.digest, cluster.screenshotManifest);
+      commands.push(...(cluster.guardCommands || []));
+    }
   }
   if (pageInfo.directLanding) {
     read.push('data/direct-landing-pages.json');
@@ -90,9 +94,9 @@ const taskProfiles = {
     commands: ['npm run build:site -- --write', 'npm run check:conversion-ui', 'npm run check:core'],
   },
   cluster: {
-    read: ['docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md', 'data/parokonvektomat-conversion-pages.json'],
-    edit: ['data/parokonvektomat-conversion-pages.json', 'src/pages/<slug>/sections/*.html'],
-    commands: ['npm run build:site -- --write', 'npm run check:conversion-ui', 'npm run sync:generated', 'npm run check:handoff'],
+    read: ['data/cluster-registry.json', 'src/pages/<slug>/sections/*.html'],
+    edit: ['data/cluster-registry.json', 'src/pages/<slug>/sections/*.html'],
+    commands: ['npm run build:site -- --write', 'npm run sync:generated', 'npm run check:handoff'],
   },
   direct: {
     read: ['data/direct-landing-pages.json', 'tools/generate-direct-landings.mjs'],

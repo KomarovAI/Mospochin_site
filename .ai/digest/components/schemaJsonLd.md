@@ -1,7 +1,7 @@
 # Component Digest — schemaJsonLd
 
 - Name: Schema.org JSON-LD
-- Appears in: 114 pages
+- Appears in: 135 pages
 - Keywords: schema, json-ld, ld+json, structured data, микроразметка
 
 ## Related files
@@ -24,6 +24,7 @@
 
 - about.html
 - avtomatika-ventilyatsii-restorana.html
+- bezopasnost-sous-vide.html
 - bytovaya-about.html
 - bytovaya-contact.html
 - bytovaya-index.html
@@ -41,5 +42,4 @@
 - ice-machines.html
 - index.html
 - kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
-- kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html
-- … ещё 94
+- … ещё 115

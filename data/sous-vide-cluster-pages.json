@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "cluster": "sous-vide",
+  "purpose": "MVP contract for AI navigation, intent separation, conversion checks and visual regression of the restaurant sous-vide cluster.",
+  "canonicalBase": "https://mospochin.ru/",
+  "defaults": {
+    "branch": "restaurant",
+    "minForms": 1,
+    "minClusterLinks": 3,
+    "requirePhoneLink": true,
+    "requireWhatsappLink": true,
+    "requireAnalytics": true,
+    "requireTelegramFormScript": true,
+    "requireMobileContactContainers": true,
+    "requireFaqSchema": true,
+    "requireSingleH1": true,
+    "requireHiddenProblem": true
+  },
+  "families": {
+    "hub": [
+      "sous-vide-restoranov.html"
+    ],
+    "service": [
+      "remont-sous-vide.html",
+      "sous-vide-termostaty.html",
+      "vakuumnye-upakovshiki-dlya-restorana.html",
+      "remont-termostata-sous-vide.html",
+      "remont-vakuumnogo-upakovshika.html",
+      "obsluzhivanie-sous-vide.html"
+    ],
+    "guide": [
+      "kak-rabotaet-sous-vide.html",
+      "kak-vybrat-sous-vide-dlya-restorana.html",
+      "sous-vide-i-vakuumnaya-upakovka.html",
+      "sous-vide-i-shokovoe-okhlazhdenie.html",
+      "bezopasnost-sous-vide.html"
+    ],
+    "promo": [
+      "sous-vide-remont-moskva.html",
+      "remont-termostata-sous-vide-reklama.html",
+      "remont-vakuumnogo-upakovshika-reklama.html"
+    ]
+  },
+  "pages": [
+    {
+      "page": "sous-vide-restoranov.html",
+      "intent": "hub",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "hub",
+        "equipment": "sous_vide",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-sous-vide.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "sous_vide",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-termostaty.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "sous_vide_thermostat",
+        "service": "equipment_service",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vakuumnye-upakovshiki-dlya-restorana.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "vacuum_packer",
+        "service": "equipment_service",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-termostata-sous-vide.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-vakuumnogo-upakovshika.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "obsluzhivanie-sous-vide.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "sous_vide",
+        "service": "maintenance",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kak-rabotaet-sous-vide.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "sous_vide",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kak-vybrat-sous-vide-dlya-restorana.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "sous_vide",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-i-vakuumnaya-upakovka.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "sous_vide_vacuum_workflow",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "sous_vide_cooling_workflow",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "bezopasnost-sous-vide.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "sous_vide",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-remont-moskva.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "promo",
+        "equipment": "sous_vide",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-termostata-sous-vide-reklama.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "promo",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-vakuumnogo-upakovshika-reklama.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "promo",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    }
+  ],
+  "run5Policy": {
+    "titleMaxChars": 75,
+    "descriptionMinChars": 100,
+    "descriptionMaxChars": 160,
+    "requiredPrimarySchema": {
+      "hub": "CollectionPage",
+      "service": "Service",
+      "guide": "Article",
+      "promo": "Service"
+    },
+    "requireUniqueIndexableMetadata": true,
+    "requireUniqueFaqSet": true,
+    "internalLinkTracking": {
+      "ctaGroup": "internal_link",
+      "block": "related_cluster",
+      "requiredAttributes": [
+        "data-cta-id",
+        "data-cta-group",
+        "data-block"
+      ]
+    },
+    "breadcrumbHome": "https://mospochin.ru/",
+    "clusterHub": "sous-vide-restoranov.html"
+  }
+}

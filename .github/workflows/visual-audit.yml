@@ -1,4 +1,6 @@
-name: Visual Audit
+# Manual fallback only. Primary screenshots run locally through system Chromium.
+name: Visual Audit (manual fallback)
+run-name: Manual visual fallback — ${{ inputs.scope }} / ${{ inputs.viewports }}
 
 on:
   workflow_dispatch:
@@ -9,7 +11,7 @@ on:
         options: [smoke, sitemap, cluster, page]
         default: sitemap
       cluster:
-        description: 'Cluster: pariki/kettles/contacts/bytovaya/commercial'
+        description: 'Cluster: pariki/kettles/ventilation/contacts/bytovaya/commercial'
         type: string
         default: commercial
       page:
@@ -33,6 +35,7 @@ permissions:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   VISUAL_BASE_URL: https://mospochin.ru
+  VISUAL_EXECUTION_MODE: github-manual-fallback
 
 jobs:
   visual-plan:
@@ -75,13 +78,14 @@ jobs:
         with:
           node-version: 24
       - run: npm ci
+      - run: npm run setup:visual:github
       - uses: actions/download-artifact@v4
         with:
           name: mospochin-visual-audit-plan-${{ github.run_id }}
           path: reports/visual-audit
       - env:
           SHARD: ${{ matrix.shard }}
-        run: node tools/visual-audit-capture.mjs
+        run: node tools/visual-runner.mjs tools/visual-audit-capture.mjs --browser firefox
       - uses: actions/upload-artifact@v4
         with:
           name: mospochin-visual-audit-shard-${{ github.run_id }}-${{ matrix.shard }}

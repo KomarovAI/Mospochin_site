@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Deterministic page-level improvement scoring from clean events and leads.",
+  "minSessionsForActionable": 5,
+  "minSessionsForConfidence": 30,
+  "thresholds": {
+    "lowCtaVisibilityRate": 0.35,
+    "lowActionRate": 0.03,
+    "lowFormStartRate": 0.02,
+    "lowFormSuccessRate": 0.25,
+    "highBlockedOrErrorRate": 0.35
+  },
+  "priorityOrder": ["P0", "P1", "P2", "P3"],
+  "actions": {
+    "instrumentation_gap": "Проверить page_view/CTA-разметку и загрузку analytics на странице.",
+    "cta_dead": "Улучшить первый экран, CTA-текст, контраст и связку CTA с intent страницы.",
+    "form_friction": "Проверить форму, обязательные поля, антиспам и причины blocked/error.",
+    "backend_delivery": "Проверить /api/send-telegram, запись direct_leads и доставку заявки.",
+    "collect_more_data": "Недостаточно clean-сессий; не менять страницу до накопления данных.",
+    "keep_monitoring": "Есть подтверждённые действия; сохранить вариант и наблюдать динамику."
+  }
+}

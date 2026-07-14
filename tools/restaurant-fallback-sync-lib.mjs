@@ -19,32 +19,31 @@ export const RESTAURANT_SYNC_ZONES = [
 ];
 const RESTAURANT_REQUEST_FORM_CLASS =
   'telegram-form bg-white p-5 sm:p-6 lg:p-10 rounded-2xl shadow-lg border border-slate-200 scroll-reveal';
-
 const DEFAULT_RESTAURANT_SERVICE_KPI = {
-  badge: 'СЕРВИСНЫЕ ОРИЕНТИРЫ',
-  title: 'Какие метрики держим по заявке ресторана',
+  badge: 'ПОНЯТНЫЙ СЦЕНАРИЙ',
+  title: 'Что фиксируем до начала работ',
   description:
-    'Показываем операционные ориентиры заранее: скорость реакции, глубину закрытия и гарантийный финал по работам.',
+    'Сначала уточняем исходные данные, затем согласуем следующий шаг, смету и документы для объекта.',
   items: [
     {
-      value: '18+',
-      label: 'Лет практики',
-      note: 'Опыт по горячей линии, холоду и моечному контуру кухни.',
+      value: 'Фото',
+      label: 'Ошибка и шильдик',
+      note: 'Помогают уточнить модель и первичный симптом.',
     },
     {
-      value: '4000+',
-      label: 'Заявок',
-      note: 'Реальные кейсы по ресторанному оборудованию в полевых условиях.',
+      value: 'Адрес',
+      label: 'Объекта',
+      note: 'Нужен для согласования маршрута и времени связи.',
     },
     {
-      value: '97%',
-      label: 'За 1 выезд',
-      note: 'Типовые поломки закрываем без лишнего простоя смены.',
+      value: 'Смета',
+      label: 'До начала работ',
+      note: 'Объём и стоимость обсуждаем до ремонта.',
     },
     {
-      value: '24 мес',
-      label: 'Гарантия',
-      note: 'Фиксируем результат документами и гарантийным подтверждением.',
+      value: 'Документы',
+      label: 'Договор и акт',
+      note: 'Формат закрытия заявки согласуем с объектом.',
     },
   ],
 };
@@ -166,11 +165,12 @@ function replaceSyncZoneContent(html, zone, content) {
 }
 
 function buildFaqMarkup(faq) {
-  return (faq || [])
-  .map(
-    (item, index) => `                <details class="faq-item bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>${escapeHtml(item.question)}</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p></details>`
-  )
-  .join('\n');
+  const items = (faq || [])
+    .map(
+      (item, index) => `                <details class="faq-item bg-white p-4 sm:p-5 lg:p-6 rounded-2xl border-2 border-slate-100 cursor-pointer scroll-reveal" data-delay="${index + 1}"><summary class="font-bold text-brand-blue text-base sm:text-lg flex items-center justify-between"><span>${escapeHtml(item.question)}</span><span class="text-brand-orange transition-transform duration-300">+</span></summary><p class="mt-4 text-slate-600">${escapeHtml(item.answer)}</p></details>`
+    )
+    .join('\n');
+  return `<div data-sync-zone="faq-items">\n${items}\n              </div>`;
 }
 
 function buildRequestOverview(service, slotEntry) {
@@ -212,18 +212,22 @@ function normalizeServiceKpiConfig(defaults, override) {
 
 function renderKpiCounterValue(rawValue) {
   const value = String(rawValue || '').trim();
+  if (!value || /по подтверждённым данным/i.test(value)) {
+    return null;
+  }
+
   const match = value.match(/^(\d+)\s*(.*)$/);
   if (!match) {
     return escapeHtml(value);
   }
 
-  const target = Number.parseInt(match[1], 10);
-  if (!Number.isFinite(target)) {
-    return escapeHtml(value);
-  }
-
-  const suffix = match[2] || '';
-  return `<span class="counter" data-target="${target}" data-suffix="${escapeHtml(suffix)}">0</span>`;
+  const suffix = (match[2] || '').toLowerCase();
+  if (suffix.includes('₽')) return 'По смете';
+  if (suffix.includes('%')) return 'После осмотра';
+  if (suffix.includes('мес')) return 'По договору';
+  if (suffix.includes('+')) return null;
+  if (suffix.includes('мин')) return 'По согласованию';
+  return 'По согласованию';
 }
 
 function buildServiceKpi(slotEntry, slotsRoot) {
@@ -239,9 +243,11 @@ function buildServiceKpi(slotEntry, slotsRoot) {
           </div>
           <div class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
             ${config.items
+              .map((item) => ({ item, value: renderKpiCounterValue(item.value) }))
+              .filter(({ value }) => value !== null)
               .map(
-                (item) => `<article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
-                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">${renderKpiCounterValue(item.value)}</p>
+                ({ item, value }) => `<article class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 text-center">
+                  <p class="text-3xl sm:text-4xl font-display font-extrabold text-brand-orange">${value}</p>
                   <p class="mt-2 text-sm font-semibold text-brand-blue">${escapeHtml(item.label || '')}</p>
                   <p class="mt-2 text-xs text-slate-500">${escapeHtml(item.note || '')}</p>
                 </article>`
@@ -321,7 +327,7 @@ function buildServiceProof(service, proofLayer) {
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         ${buildSlaStrip(defaults.slaStrip)}
         <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
-          <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-3 py-1.5 text-sm font-semibold text-brand-blue">По категории ${escapeHtml(
+          <span class="inline-flex items-center rounded-full bg-brand-blue/10 px-3 py-1.5 text-sm font-semibold text-brand-blue">Тип техники: ${escapeHtml(
             service.uiLabel
           )}</span>
           ${renderBadgeList((service.primarySymptoms || []).slice(0, 3), 'slate')}
@@ -348,12 +354,17 @@ function buildRelatedLinks(service, registry) {
           <div class="grid gap-4 lg:grid-cols-3">
             ${related
               .map(
-                (entry) => `<a href="${entry.page}" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md">
+                (entry) => {
+                  const relatedPageKey = entry.page.replace(/\.html$/i, '').replace(/[^a-z0-9]+/gi, '_');
+                  const trackingAttrs = ` data-block="related_categories" data-cta-group="internal_link" data-cta-id="${service.slug}_internal_link_related_${relatedPageKey}"`;
+                  const actionLabel = 'Перейти к ремонту оборудования';
+                  return `<a href="${entry.page}" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md"${trackingAttrs}>
                   <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По ресторанной категории</p>
                   <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(entry.uiLabel)}</h3>
                   <p class="mt-3 text-sm text-slate-600">${escapeHtml((entry.primarySymptoms || []).slice(0, 3).join(', '))}</p>
-                  <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
-                </a>`
+                  <p class="mt-4 text-sm font-semibold text-slate-700">${actionLabel}</p>
+                </a>`;
+                }
               )
               .join('')}
           </div>
@@ -419,7 +430,6 @@ function buildServiceSchema({ pageMeta, service }) {
           "addressLocality": "Москва",
           "addressCountry": "RU"
         },
-        "openingHours": "Mo-Su 00:00-24:00"
       },
       "areaServed": {
         "@type": "AdministrativeArea",

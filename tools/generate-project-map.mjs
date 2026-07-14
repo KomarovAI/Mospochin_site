@@ -58,15 +58,23 @@ function directPageMap() {
 }
 
 function clusterMap() {
+  const registry = readJson('data/cluster-registry.json', { clusters: {} });
   const clusters = {};
-  const par = readJson('data/parokonvektomat-conversion-pages.json', null);
-  if (par?.pages) {
-    clusters.parokonvektomaty = {
-      manifest: 'data/parokonvektomat-conversion-pages.json',
-      guide: 'docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md',
-      screenshotManifest: 'data/parokonvektomat-screenshot-audit.json',
-      check: 'npm run check:conversion-ui',
-      pages: par.pages.map((p) => p.page),
+  for (const [name, config] of Object.entries(registry.clusters || {})) {
+    const manifest = readJson(config.manifest, null);
+    const pages = Array.isArray(manifest?.pages) ? manifest.pages : [];
+    clusters[name] = {
+      manifest: config.manifest,
+      guide: config.guide || null,
+      digest: config.digest || null,
+      screenshotManifest: config.screenshotManifest || null,
+      guardCommands: config.guardCommands || [],
+      pages: pages.filter((page) => page?.page).map((page) => ({
+        page: page.page,
+        intent: page.intent || page.pageType || null,
+        indexable: page.indexable,
+        branch: page.branch || null,
+      })),
     };
   }
   return clusters;
@@ -76,15 +84,15 @@ function pageClusters(clusters) {
   const map = new Map();
   for (const [clusterName, cluster] of Object.entries(clusters)) {
     for (const page of cluster.pages || []) {
-      map.set(page, clusterName);
+      map.set(typeof page === 'string' ? page : page.page, clusterName);
     }
   }
   return map;
 }
 
-function requiredChecksFor({ page, cluster, direct, indexable }) {
+function requiredChecksFor({ page, clusterInfo, direct, indexable }) {
   const checks = ['npm run check:core'];
-  if (cluster === 'parokonvektomaty') checks.push('npm run check:conversion-ui');
+  if (clusterInfo?.guardCommands?.length) checks.push(...clusterInfo.guardCommands);
   if (direct) checks.push('npm run generate:direct-landings');
   if (indexable !== undefined) checks.push('npm run generate:sitemap');
   checks.push('npm run sync:generated');
@@ -108,6 +116,7 @@ function buildProjectMap() {
     const meta = metadata[page] || {};
     const direct = directPages.get(page) || null;
     const cluster = pageToCluster.get(page) || null;
+    const clusterInfo = cluster ? clusters[cluster] : null;
     const robots = direct?.robots || meta.robots || null;
     const indexable = robots ? !/noindex/i.test(robots) : sitemapPages.has(page);
 
@@ -133,7 +142,7 @@ function buildProjectMap() {
       directLanding: Boolean(direct),
       indexable,
       inSitemap: sitemapPages.has(page),
-      requiredChecks: requiredChecksFor({ page, cluster, direct, indexable }),
+      requiredChecks: requiredChecksFor({ page, clusterInfo, direct, indexable }),
     };
   }
 
@@ -158,6 +167,7 @@ function buildProjectMap() {
       metadata: 'data/page-metadata.json',
       directLandings: 'data/direct-landing-pages.json',
       faq: 'content/faq/*',
+      clusterRegistry: 'data/cluster-registry.json',
     },
     commands: {
       afterSmallEdit: 'npm run check:core',

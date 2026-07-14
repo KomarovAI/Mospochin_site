@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Single machine-readable registry for AI navigation, cluster checks, SEO roles and visual manifests.",
+  "clusters": {
+    "parokonvektomaty": {
+      "manifest": "data/parokonvektomat-conversion-pages.json",
+      "guide": "docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/parokonvektomaty.md",
+      "screenshotManifest": "data/parokonvektomat-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:conversion-ui"
+      ],
+      "conversionManifest": "data/parokonvektomat-conversion-pages.json",
+      "visualCommand": "npm run audit:parokonvektomat-screenshots"
+    },
+    "pishevarochnye-kotly": {
+      "manifest": "data/cooking-kettles-screenshot-audit.json",
+      "guide": "docs/PISHEVAROCHNYE_KOTLY_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/pishevarochnye-kotly.md",
+      "screenshotManifest": "data/cooking-kettles-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:core"
+      ],
+      "visualCommand": "npm run audit:cooking-kettles-screenshots"
+    },
+    "ventilyatsiya": {
+      "manifest": "data/ventilation-cluster-pages.json",
+      "guide": "docs/VENTILATION_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/ventilyatsiya.md",
+      "screenshotManifest": "data/ventilation-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:conversion-ui",
+        "npm run check:visual-contract"
+      ],
+      "visualCommand": "npm run audit:ventilation-screenshots"
+    },
+    "sous-vide": {
+      "manifest": "data/sous-vide-cluster-pages.json",
+      "conversionManifest": "data/sous-vide-cluster-pages.json",
+      "guide": "docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/sous-vide.md",
+      "screenshotManifest": "data/sous-vide-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:conversion-ui",
+        "npm run check:visual-contract"
+      ],
+      "visualCommand": "npm run audit:sous-vide-screenshots"
+    }
+  },
+  "visualRuntime": "data/visual-runtime.json"
+}

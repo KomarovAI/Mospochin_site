@@ -46,6 +46,7 @@ function readSitemapPaths() {
 const clusterMatchers = {
   pariki: p => /parokonvektomat|rational|unox|abat|convotherm|electrolux|lainox/i.test(p),
   kettles: p => /pishevarochn|kotel|kotlov|kpem/i.test(p),
+  ventilation: p => /ventilyats|vytyazh|vozduh|zond|kondensat|pritok|obratnaya-tyaga|zhir-v|dym-na-kuhne|zapah-iz-kuhni|zhaloby-na-zapah|peregrev-kuhni|zasorilas-vytyazhka|shumit-vytyazhka|vibriruet-ventilyator/i.test(p),
   contacts: p => /contact/i.test(p),
   bytovaya: p => /bytovaya/i.test(p),
   commercial: p => !/about|politika|privacy|404/i.test(p),

@@ -2,6 +2,45 @@
 
 Краткая история AI-правок. Новые агенты должны добавлять запись при каждом handoff.
 
+## 2026-07-14 — sous-vide native visual audit and header correction
+
+- Added a policy-safe native visual path for the four-page sous-vide pilot: system Chromium + Playwright local-content routing, without localhost navigation or browser downloads.
+- Added `npm run audit:sous-vide-screenshots:native`; two parallel isolated workers produce and validate 8 full-page PNG files (desktop/mobile for four pages).
+- Extended `tools/audit-screenshots.mjs` with local-content routing, ordered page selection and bounded browser page batches for constrained containers.
+- Corrected the standard restaurant header offset on the three source-managed non-Direct sous-vide pages and updated `tools/scaffold-restaurant-service.mjs` so future pages keep the urgent bar and navbar fully visible.
+- Visual review passed for hero/header, forms, sticky mobile CTA, FAQ and footer regions. Canonical Firefox capture remains available for external Playwright runners.
+
+## 2026-07-14 — ventilation cluster and AI-maintenance hardening
+
+- Registered the 52-page ventilation cluster in `data/cluster-registry.json` with explicit hub/service/system/symptom/guide/audience/integration families.
+- Added `data/ventilation-cluster-pages.json`, `data/ventilation-screenshot-audit.json` and `docs/VENTILATION_CLUSTER_AI_GUIDE.md`; generated project-map and cluster digest now route ventilation edits directly.
+- Added ventilation photo/screenshot contracts to `data/file-ownership.json` and `data/ai-editing-manifest.json`, plus the canonical AI docs index/entrypoint references.
+- Added `npm run audit:ventilation-screenshots`, a `ventilation` visual-audit scope, and a visual-contract guard without requiring Firefox for every source edit.
+- Strengthened active GitHub validation with npm cache, concurrency, read-only permissions, builder parity and generated-diff guards.
+- Improved visual diagnostics: missing Playwright is actionable, and SIGBUS browser crashes are reported as an environment limitation.
+- Checks: `check:core`, `check:ai`, `check:handoff`, `check:ownership`, `check:visual-contract`, `audit:maintenance` passed. Local visual capture remains blocked by Firefox SIGBUS in the container; run it in GitHub Actions/Playwright image.
+
+## 2026-07-13 — workspace and AI-context cleanup
+
+- Added dry-run/apply workspace cleanup: `npm run clean:workspace` and `npm run clean:workspace:apply`.
+- Removed only reproducible local artifacts: `.artifacts/`, `.cache/`, `build/` and superseded visual packs; latest `reports/visual-p2-final-20260713` remains available for visual review.
+- Reduced `.ai/digest/content-map.json` from about 1.14 MB to about 248 KB by removing section previews duplicated by page digests.
+- Added `.gitignore` and handoff exclusions for build output, visual packs, Python caches and nested ZIPs.
+- Replaced stale visual/archive commands in active docs with the canonical Firefox/Work Mode and handoff commands.
+- Checks: `check:core`, `check:ai`, `check:handoff`, `check:visual-contract`, `audit:docs` passed; docs contain no references to missing `npm run` scripts.
+
+## 2026-07-13 — AI architecture and visual runner hardening
+
+- Added `tools/visual-runner.mjs` and routed visual npm/CI commands through one Firefox browser-cache contract.
+- Added `check:visual-contract` for manifest/registry validation without launching a browser; current Work Mode Firefox capture remains explicitly environment-limited by container sandbox.
+- Changed `check-generated-diff` so ZIP/no-Git mode checks builder parity for all 121 pages instead of silently skipping.
+- Added `reports/handoff/ai-change-manifest.json` snapshot generation for source/generated hashes when no Git baseline is present.
+- Added `data/cluster-registry.json` and registered the parokonvektomat and cooking-kettle clusters for AI routing, guides, digests, visual manifests and guard commands.
+- Added the cooking-kettle AI cluster guide and generated cluster digest.
+- Replaced hard-coded `/home/artikk/Mospochin_site` documentation links with repository-relative paths.
+- Updated handoff ZIP exclusions so browser caches, visual artifacts, nested archives and Python caches do not inflate the package.
+- Checks: `check:core`, `check:ai`, `check:handoff`, `check:visual-contract`, `check:ownership`, `validate:data`, `check:conversion-ui` passed. `check:visual-env` reaches the managed Firefox binary but is blocked by container sandbox `/proc/self/uid_map: EROFS`.
+
 ## 2026-06-03 — Parokonvektomat AI operating layer
 
 - Добавлены рабочие AI-гайды: `docs/AI_PROJECT_OPERATING_GUIDE.md`, `docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md`.
@@ -88,3 +127,33 @@ Checks to run:
 - Moved active visual/manual findings process to `reports/manual-review-backlog.md`.
 - Updated docs contracts, AI checks, digest generation and routing references to avoid deleted legacy docs.
 
+## Sous-vide pilot — 2026-07-14
+
+- Blueprint: `data/sous-vide-cluster-pages.json`.
+- AI guide: `docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md`.
+- Visual manifest: `data/sous-vide-screenshot-audit.json`.
+- Four-page pilot targets 125 total production pages.
+## 2026-07-14 — local-native visual runtime architecture
+
+- System Chromium + Playwright local-content is now the primary screenshot path.
+- Added resumable page workers, fingerprint/state/logs, timeout/retry and PNG SHA-256 validation.
+- Mobile full-page capture uses Chromium viewport chunks stitched by Python Pillow to avoid tall-page hangs.
+- Added `data/visual-runtime.json` and cluster `visualCommand` entries.
+- GitHub visual workflows are manual `workflow_dispatch` fallback only and guarded against automatic triggers.
+## 2026-07-14 — Sous-vide MVP expansion
+
+- Кластер расширен с 4 до 15 страниц и с 125 до 136 production HTML.
+- Добавлены 5 service-страниц, 4 guide/article и 2 noindex Direct landing.
+- Обновлены conversion manifest, screenshot manifest, Direct registry, restaurant taxonomy и source-builder.
+- Материалы по безопасности не содержат универсальных температур, времени охлаждения или хранения.
+
+## 2026-07-14 — Sous-vide Run 5 SEO/schema/analytics hardening
+
+- Added `npm run check:sous-vide-run5` and included it in core/handoff profiles.
+- Added machine-readable Run 5 SEO, schema, internal-link and metrics rules to the sous-vide cluster manifest.
+- Split FAQ out of monolithic page sections into first-class builder `faq` components for all 15 pages.
+- Moved all sous-vide FAQPage JSON-LD to the generated FAQ Registry; visible FAQ and schema are now contract-checked.
+- Added stable analytics IDs to every cluster link so internal-link funnel reports can observe the graph.
+- Removed indexable SEO links to noindex Direct landing pages.
+- Enriched Article, Service, CollectionPage and BreadcrumbList schema with canonical identity, language and hierarchy.
+- Corrected metrics semantics for informational, equipment-service, repair and maintenance intents.

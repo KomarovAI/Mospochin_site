@@ -12,7 +12,8 @@
     "parametricProps": "content/components/*/*.json",
     "metadata": "data/page-metadata.json",
     "directLandings": "data/direct-landing-pages.json",
-    "faq": "content/faq/*"
+    "faq": "content/faq/*",
+    "clusterRegistry": "data/cluster-registry.json"
   },
   "commands": {
     "afterSmallEdit": "npm run check:core",
@@ -24,47 +25,2241 @@
   },
   "ownership": {
     "manifest": "data/file-ownership.json",
-    "manualPatterns": 16,
+    "manualPatterns": 27,
     "generatedPatterns": 12,
-    "dangerZonePatterns": 12,
+    "dangerZonePatterns": 18,
     "check": "npm run check:ownership"
   },
   "summary": {
-    "pages": 1,
+    "pages": 136,
     "branches": {
-      "restaurant": 1
+      "neutral": 6,
+      "restaurant": 118,
+      "household": 12
     },
-    "sitemapPages": 110,
-    "clusters": 1,
-    "directLandingPages": 28
+    "sitemapPages": 128,
+    "clusters": 4,
+    "directLandingPages": 31
   },
   "clusters": {
     "parokonvektomaty": {
       "manifest": "data/parokonvektomat-conversion-pages.json",
       "guide": "docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/parokonvektomaty.md",
       "screenshotManifest": "data/parokonvektomat-screenshot-audit.json",
-      "check": "npm run check:conversion-ui",
+      "guardCommands": [
+        "npm run check:conversion-ui"
+      ],
       "pages": [
-        "parokonvektomaty.html",
-        "parokonvektomaty-promo.html",
-        "parokonvektomat-rational.html",
-        "parokonvektomat-rational-e9.html",
-        "parokonvektomat-unox.html",
-        "parokonvektomat-unox-af02-af08.html",
-        "parokonvektomat-kod-oshibki.html",
-        "parokonvektomat-e02-e07-e10.html",
-        "parokonvektomat-ne-greet.html",
-        "parokonvektomat-net-para.html",
-        "parokonvektomat-abat.html",
-        "parokonvektomat-convotherm.html",
-        "parokonvektomat-electrolux.html",
-        "parokonvektomat-lainox.html",
-        "parokonvektomat-obschuzhivanie.html",
-        "remont-oborudovaniya-restorana-parokonvektomat.html"
+        {
+          "page": "parokonvektomaty.html",
+          "intent": "hub",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomaty-promo.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-rational.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-rational-e9.html",
+          "intent": "error",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-unox.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-unox-af02-af08.html",
+          "intent": "error",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-kod-oshibki.html",
+          "intent": "error-hub",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-e02-e07-e10.html",
+          "intent": "error",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-ne-greet.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-net-para.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-techet-voda.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-ne-nabiraet-vodu.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-ne-vklyuchaetsya.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "parokonvektomat-abat.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "neutral"
+        },
+        {
+          "page": "parokonvektomat-convotherm.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "neutral"
+        },
+        {
+          "page": "parokonvektomat-electrolux.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "neutral"
+        },
+        {
+          "page": "parokonvektomat-lainox.html",
+          "intent": "brand",
+          "indexable": true,
+          "branch": "neutral"
+        },
+        {
+          "page": "parokonvektomat-obschuzhivanie.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "neutral"
+        },
+        {
+          "page": "remont-oborudovaniya-restorana-parokonvektomat.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant"
+        }
+      ]
+    },
+    "pishevarochnye-kotly": {
+      "manifest": "data/cooking-kettles-screenshot-audit.json",
+      "guide": "docs/PISHEVAROCHNYE_KOTLY_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/pishevarochnye-kotly.md",
+      "screenshotManifest": "data/cooking-kettles-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:core"
+      ],
+      "pages": [
+        {
+          "page": "pishevarochnye-kotly.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-ne-greet.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-dolgo-greet.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-techet.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-vybivaet-avtomat.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-ne-vklyuchaetsya.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-kod-oshibki.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-suhoy-hod.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-ne-nabiraet-vodu.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-ne-derzhit-davlenie.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-ne-slivaet-vodu.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-abat-kpem.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-zamena-tena.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-remont-slivnogo-krana.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-parovodyanaya-rubashka.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-datchik-temperatury.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-plata-upravleniya.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-manometr.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-abat-e01.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-abat-e02.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-abat-e04.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-abat-h20.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "pishevarochnyj-kotel-abat-e17.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-pishevarochnyh-kotlov-abat.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-pishevarochnyh-kotlov-kpem.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-pishevarochnyh-kotlov-apach.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-pishevarochnyh-kotlov-atesy.html",
+          "intent": "service",
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-pishevarochnyh-kotlov-iterma.html",
+          "intent": "service",
+          "branch": "restaurant"
+        }
+      ]
+    },
+    "ventilyatsiya": {
+      "manifest": "data/ventilation-cluster-pages.json",
+      "guide": "docs/VENTILATION_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/ventilyatsiya.md",
+      "screenshotManifest": "data/ventilation-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:conversion-ui",
+        "npm run check:visual-contract"
+      ],
+      "pages": [
+        {
+          "page": "avtomatika-ventilyatsii-restorana.html",
+          "intent": "system",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "chek-list-ventilyatsii-restorana.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "chistka-ventilyatsii-restoranov.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "chto-proveryaet-inzhener-ventilyatsii.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "diagnostika-ventilyatsii-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "dym-na-kuhne-restorana.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "kak-rabotaet-ventilyatsiya-restorana.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "kanalnaya-ventilyatsiya-restorana.html",
+          "intent": "system",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "kryshnye-ventilyatory-restorana.html",
+          "intent": "system",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "mestnaya-vytyazhka-nad-oborudovaniem.html",
+          "intent": "system",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "obratnaya-tyaga-v-restorane.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "obsluzhivanie-ventilyatsii-restoranov.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "peregrev-kuhni-restorana.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "pritochnaya-ventilyatsiya-restorana.html",
+          "intent": "system",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+          "intent": "system",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-pritochnoj-ventilyatsii-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-ventilyatora-vytyazhki-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-ventilyatsii-restoranov.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-vozduhovodov-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-vytyazhki-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-zhirovyh-filtrov-vytyazhki.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "shumit-vytyazhka-restorana.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "slabyj-pritok-vozduha-restoran.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "techet-kondensat-iz-ventilyatsii.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyator-vytyazhki-vybivaet-avtomat.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsionnye-zonty-restorana.html",
+          "intent": "system",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-dark-kitchen.html",
+          "intent": "audience",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-fudkorta.html",
+          "intent": "audience",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-i-gril-v-restorane.html",
+          "intent": "integration",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+          "intent": "integration",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-i-parokonvektomat.html",
+          "intent": "integration",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-i-posudomoechnaya-zona.html",
+          "intent": "integration",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-kafe.html",
+          "intent": "audience",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-moechnoj-zony.html",
+          "intent": "audience",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-pekarni.html",
+          "intent": "audience",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-restorana-ne-tyanet.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-restoranov.html",
+          "intent": "hub",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "ventilyatsiya-stolovoj.html",
+          "intent": "audience",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "zhaloby-na-zapah-restorana.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "vibriruet-ventilyator-vytyazhki.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "vytyazhka-restorana-ne-rabotaet.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "vytyazhnaya-ventilyatsiya-restorana.html",
+          "intent": "system",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "zapah-iz-kuhni-v-zal.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "zasorilas-vytyazhka-restorana.html",
+          "intent": "symptom",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "zhir-v-vozduhovodah-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        }
+      ]
+    },
+    "sous-vide": {
+      "manifest": "data/sous-vide-cluster-pages.json",
+      "guide": "docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/sous-vide.md",
+      "screenshotManifest": "data/sous-vide-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:conversion-ui",
+        "npm run check:visual-contract"
+      ],
+      "pages": [
+        {
+          "page": "sous-vide-restoranov.html",
+          "intent": "hub",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-sous-vide.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "sous-vide-termostaty.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "vakuumnye-upakovshiki-dlya-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-termostata-sous-vide.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-vakuumnogo-upakovshika.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "obsluzhivanie-sous-vide.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "kak-rabotaet-sous-vide.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "kak-vybrat-sous-vide-dlya-restorana.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "sous-vide-i-vakuumnaya-upakovka.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "bezopasnost-sous-vide.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant"
+        },
+        {
+          "page": "sous-vide-remont-moskva.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-termostata-sous-vide-reklama.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant"
+        },
+        {
+          "page": "remont-vakuumnogo-upakovshika-reklama.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant"
+        }
       ]
     }
   },
   "pages": {
+    "404.html": {
+      "slug": "404",
+      "rootHtml": "404.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/404/page.json",
+        "sectionsDir": "src/pages/404/sections",
+        "sourceHash": "9e6185371a3ac0f27879611ed739c175bcb039dfb3241da00cf2fc73ee1826dd",
+        "sections": 6
+      },
+      "metadata": {
+        "title": "404 — Страница не найдена | MosPochin",
+        "description": "Страница не найдена. Вернитесь на главную MosPochin — ремонт техники в Москве.",
+        "canonical": null,
+        "robots": "noindex,follow",
+        "branch": "neutral",
+        "hasForm": false
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "about.html": {
+      "slug": "about",
+      "rootHtml": "about.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/about/page.json",
+        "sectionsDir": "src/pages/about/sections",
+        "sourceHash": "21eabb6105bc745d49c6b25d82217f3f6eb616442733f39e9eff4ebe6d2574ea",
+        "sections": 24
+      },
+      "metadata": {
+        "title": "О компании MosPochin — с 2010 года ремонта техники в Москве",
+        "description": "MosPochin — ремонт ресторанного оборудования в Москве с 2010 года. Диагностика причины, согласование стоимости до работ, договор и гарантия по условиям ремонта.",
+        "canonical": "https://mospochin.ru/about.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "avtomatika-ventilyatsii-restorana.html": {
+      "slug": "avtomatika-ventilyatsii-restorana",
+      "rootHtml": "avtomatika-ventilyatsii-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/avtomatika-ventilyatsii-restorana/page.json",
+        "sectionsDir": "src/pages/avtomatika-ventilyatsii-restorana/sections",
+        "sourceHash": "d23d7d94033da4c430f54f01f57c127d36f27e1269baac3e14303a08352a8459",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Автоматика вентиляции ресторана: диагностика и ремонт",
+        "description": "Проверка автоматики вентиляции кухни: пульты, щиты, датчики, управление вентилятором, блокировки и ошибки запуска.",
+        "canonical": "https://mospochin.ru/avtomatika-ventilyatsii-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bezopasnost-sous-vide.html": {
+      "slug": "bezopasnost-sous-vide",
+      "rootHtml": "bezopasnost-sous-vide.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bezopasnost-sous-vide/page.json",
+        "sectionsDir": "src/pages/bezopasnost-sous-vide/sections",
+        "sourceHash": "c4709b9f5cc499aa2e3e1c48a3c2db6a61342fa15652c9c50d85ebc071c3fa84",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Безопасность sous-vide в ресторане: роли процесса и оборудования",
+        "description": "Безопасность sous-vide в ресторане: технологическая карта, проверка оборудования, упаковка, маркировка, контроль отклонений и разделение ответственности.",
+        "canonical": "https://mospochin.ru/bezopasnost-sous-vide.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bytovaya-about.html": {
+      "slug": "bytovaya-about",
+      "rootHtml": "bytovaya-about.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bytovaya-about/page.json",
+        "sectionsDir": "src/pages/bytovaya-about/sections",
+        "sourceHash": "3efe9797fc272997b9b4ae23ab5daf9a78ce7b4487ae09cfa8691799dd130fc0",
+        "sections": 48
+      },
+      "metadata": {
+        "title": "О MosPochin — ремонт бытовой техники в Москве",
+        "description": "MosPochin ремонтирует бытовую технику на дому в Москве: находим причину поломки, согласуем цену до работ и даём гарантию.",
+        "canonical": "https://mospochin.ru/bytovaya-about.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bytovaya-contact.html": {
+      "slug": "bytovaya-contact",
+      "rootHtml": "bytovaya-contact.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bytovaya-contact/page.json",
+        "sectionsDir": "src/pages/bytovaya-contact/sections",
+        "sourceHash": "806bb1138107d091795cb9b3bd75e46fbfb6895143bf99b6188370618e50aaa3",
+        "sections": 17
+      },
+      "metadata": {
+        "title": "Контакты MosPochin — сервисные точки в Москве и Балашихе",
+        "description": "Контакты MosPochin по бытовой технике: 8 (999) 005-71-72, WhatsApp, Telegram и сервисные точки в Москве и Балашихе. Работаем без выходных.",
+        "canonical": "https://mospochin.ru/bytovaya-contact.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bytovaya-index.html": {
+      "slug": "bytovaya-index",
+      "rootHtml": "bytovaya-index.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bytovaya-index/page.json",
+        "sectionsDir": "src/pages/bytovaya-index/sections",
+        "sourceHash": "f30a159eae9cd4e6d682b2084680e42353830dc7de0bca2ea044c135dd9e3691",
+        "sections": 35
+      },
+      "metadata": {
+        "title": "Ремонт бытовой техники на дому в Москве — MosPochin",
+        "description": "Ремонт бытовой техники на дому в Москве: холодильники, стиральные машины, посудомойки, плиты, микроволновки и водонагреватели.",
+        "canonical": "https://mospochin.ru/bytovaya-index.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "bytovaya-uslugi.html": {
+      "slug": "bytovaya-uslugi",
+      "rootHtml": "bytovaya-uslugi.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/bytovaya-uslugi/page.json",
+        "sectionsDir": "src/pages/bytovaya-uslugi/sections",
+        "sourceHash": "8fc47881e728c4d553a943e8696623038f3fbf8e35ce9e081a216ef1e61d1c35",
+        "sections": 17
+      },
+      "metadata": {
+        "title": "Услуги по ремонту бытовой техники — MosPochin",
+        "description": "Каталог услуг MosPochin: ремонт холодильников, стиральных машин, посудомоек, плит, микроволновок и водонагревателей на дому.",
+        "canonical": "https://mospochin.ru/bytovaya-uslugi.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "chek-list-ventilyatsii-restorana.html": {
+      "slug": "chek-list-ventilyatsii-restorana",
+      "rootHtml": "chek-list-ventilyatsii-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/chek-list-ventilyatsii-restorana/page.json",
+        "sectionsDir": "src/pages/chek-list-ventilyatsii-restorana/sections",
+        "sourceHash": "e36e35ff95060d0e541d4b929a9926b865f90565602dc1cbe3eca27b44afa297",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Чек-лист вентиляции ресторана для управляющего",
+        "description": "Краткий чек-лист: тяга, запахи, дым, шум, вибрация, фильтры, приток, конденсат, доступ к чистке и когда вызывать инженера.",
+        "canonical": "https://mospochin.ru/chek-list-ventilyatsii-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "chem-otlichaetsya-pritok-ot-vytyazhki.html": {
+      "slug": "chem-otlichaetsya-pritok-ot-vytyazhki",
+      "rootHtml": "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/chem-otlichaetsya-pritok-ot-vytyazhki/page.json",
+        "sectionsDir": "src/pages/chem-otlichaetsya-pritok-ot-vytyazhki/sections",
+        "sourceHash": "9712f3af246e913bf6f225e48e0fd5778ebcd053c43917bf685270ae1fdb99a9",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Приток и вытяжка в ресторане: в чём разница",
+        "description": "Вытяжка удаляет загрязнённый воздух, приток компенсирует удалённый объём. Почему без баланса появляются жар, запахи и слабая тяга.",
+        "canonical": "https://mospochin.ru/chem-otlichaetsya-pritok-ot-vytyazhki.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "chistka-ventilyatsii-restoranov.html": {
+      "slug": "chistka-ventilyatsii-restoranov",
+      "rootHtml": "chistka-ventilyatsii-restoranov.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/chistka-ventilyatsii-restoranov/page.json",
+        "sectionsDir": "src/pages/chistka-ventilyatsii-restoranov/sections",
+        "sourceHash": "22e2d205c904c08cddd0417ac5f983345a707e34c6e5d5d4cc63914f8902ca2a",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Чистка вентиляции ресторанов и вытяжек кухни — MosPochin",
+        "description": "Чистка доступных элементов вентиляции ресторана: зонты, фильтры, участки воздуховодов, загрязнения жиром и налётом. Диагностика причин слабой тяги.",
+        "canonical": "https://mospochin.ru/chistka-ventilyatsii-restoranov.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "chto-proveryaet-inzhener-ventilyatsii.html": {
+      "slug": "chto-proveryaet-inzhener-ventilyatsii",
+      "rootHtml": "chto-proveryaet-inzhener-ventilyatsii.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/chto-proveryaet-inzhener-ventilyatsii/page.json",
+        "sectionsDir": "src/pages/chto-proveryaet-inzhener-ventilyatsii/sections",
+        "sourceHash": "34fcb786654e2ba1c8555ffafde1dc816e0f40542c6d7d6b03909da2d0a99f06",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Что проверяет инженер вентиляции ресторана",
+        "description": "Чек-лист диагностики вентиляции ресторана: вытяжка, приток, вентилятор, фильтры, автоматика, воздуховоды, шум и вибрация.",
+        "canonical": "https://mospochin.ru/chto-proveryaet-inzhener-ventilyatsii.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "contact.html": {
+      "slug": "contact",
+      "rootHtml": "contact.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/contact/page.json",
+        "sectionsDir": "src/pages/contact/sections",
+        "sourceHash": "165c6dedd80776624beb852f7248e20b69f2b06376c23572322f549e6b37f22a",
+        "sections": 41
+      },
+      "metadata": {
+        "title": "Контакты MosPochin — телефон, WhatsApp, Telegram, адрес в Москве",
+        "description": "Телефон, WhatsApp, Telegram и адрес MosPochin в Москве. Принимаем заявки на ремонт ресторанного оборудования по согласованному графику.",
+        "canonical": "https://mospochin.ru/contact.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "diagnostika-ventilyatsii-restorana.html": {
+      "slug": "diagnostika-ventilyatsii-restorana",
+      "rootHtml": "diagnostika-ventilyatsii-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/diagnostika-ventilyatsii-restorana/page.json",
+        "sectionsDir": "src/pages/diagnostika-ventilyatsii-restorana/sections",
+        "sourceHash": "8adf8ab372df9e23a81e983c9af5c1faece2da7cde13e67645b7d034685ba8e6",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Диагностика вентиляции ресторана — вытяжка, приток, автоматика",
+        "description": "Проверим вытяжку, приток, вентиляторы, фильтры, автоматику и причины дыма, запаха, жары или слабой тяги на кухне ресторана.",
+        "canonical": "https://mospochin.ru/diagnostika-ventilyatsii-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "dym-na-kuhne-restorana.html": {
+      "slug": "dym-na-kuhne-restorana",
+      "rootHtml": "dym-na-kuhne-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/dym-na-kuhne-restorana/page.json",
+        "sectionsDir": "src/pages/dym-na-kuhne-restorana/sections",
+        "sourceHash": "e58610cc8ee6a744cad24b65284118b6c63fb97aac912b9a997fce059c9b854f",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Дым на кухне ресторана — что проверить и как устранить",
+        "description": "Дым, гарь и жар на кухне ресторана: проверка вытяжного зонта, тяги, фильтров, воздуховодов, вентилятора и приточного воздуха.",
+        "canonical": "https://mospochin.ru/dym-na-kuhne-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "grili-mangaly.html": {
+      "slug": "grili-mangaly",
+      "rootHtml": "grili-mangaly.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/grili-mangaly/page.json",
+        "sectionsDir": "src/pages/grili-mangaly/sections",
+        "sourceHash": "c14137132b63e5bb8e76fe8ba7b38c02968131e7558e939a7d78a7db45e03c3c",
+        "sections": 63
+      },
+      "metadata": {
+        "title": "Ремонт грилей и фритюрниц в Москве — MosPochin | от 500₽",
+        "description": "Ремонт грилей, фритюрниц, саламандр и мармитов. Выезд и смету согласуем после уточнения задачи. Условия по договору.",
+        "canonical": "https://mospochin.ru/grili-mangaly.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "holodilniki.html": {
+      "slug": "holodilniki",
+      "rootHtml": "holodilniki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/holodilniki/page.json",
+        "sectionsDir": "src/pages/holodilniki/sections",
+        "sourceHash": "f4ad1ce5944d85fab2c2ae030ee1365b11428e95e0f491b6a604d6f839b6599c",
+        "sections": 50
+      },
+      "metadata": {
+        "title": "Ремонт холодильников на дому в Москве — MosPochin",
+        "description": "Ремонт холодильников Bosch, Samsung, LG, Indesit на дому в Москве и МО. Диагностика причины, согласование работ и гарантия после ремонта.",
+        "canonical": "https://mospochin.ru/holodilniki.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "holodilnoe-oborudovanie.html": {
+      "slug": "holodilnoe-oborudovanie",
+      "rootHtml": "holodilnoe-oborudovanie.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/holodilnoe-oborudovanie/page.json",
+        "sectionsDir": "src/pages/holodilnoe-oborudovanie/sections",
+        "sourceHash": "f22139703977683df905a7726a33eef65f33f774b4374d5352bf20caa4db8ba6",
+        "sections": 66
+      },
+      "metadata": {
+        "title": "Ремонт холодильного оборудования в Москве — MosPochin | от 1 290₽",
+        "description": "Ремонт промышленных холодильных шкафов, морозильных камер и оборудования шоковой заморозки. Диагностика, смета до работ и выезд по согласованному времени.",
+        "canonical": "https://mospochin.ru/holodilnoe-oborudovanie.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ice-machines.html": {
+      "slug": "ice-machines",
+      "rootHtml": "ice-machines.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ice-machines/page.json",
+        "sectionsDir": "src/pages/ice-machines/sections",
+        "sourceHash": "d6389ab2c1a34535cf25bf98ec7432e24b41061204c73e06e4007f2b623b4e7b",
+        "sections": 63
+      },
+      "metadata": {
+        "title": "Ремонт льдогенераторов в Москве — MosPochin | от 800₽",
+        "description": "Ремонт льдогенераторов Scotsman, Manitowoc и Hoshizaki: кусковые, гранулярные и Gourmet-модели. Диагностика и смета до работ.",
+        "canonical": "https://mospochin.ru/ice-machines.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "index.html": {
+      "slug": "index",
+      "rootHtml": "index.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/index/page.json",
+        "sectionsDir": "src/pages/index/sections",
+        "sourceHash": "04bf37ff3dfb62eea7354a93aba1547ff3907b5f042f2bb6a4cb7a4389db6183",
+        "sections": 26
+      },
+      "metadata": {
+        "title": "Ремонт ресторанного оборудования в Москве — MosPochin",
+        "description": "Срочный ремонт пароконвектоматов, плит и холодильного оборудования для ресторанов и кафе. Выезд инженера, договор, гарантия.",
+        "canonical": "https://mospochin.ru/",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html": {
+      "slug": "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii",
+      "rootHtml": "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/page.json",
+        "sectionsDir": "src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections",
+        "sourceHash": "3978248874acfc906cfa10f14658d8094e838006955d0d3cd41b5959a5327798",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Как подготовиться к выезду мастера по вентиляции",
+        "description": "Что подготовить перед выездом инженера: фото шильдика, видео шума, описание симптомов, доступ к зонту, фильтрам, щиту и вентилятору.",
+        "canonical": "https://mospochin.ru/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html": {
+      "slug": "kak-ponyat-chto-nuzhna-chistka-ventilyatsii",
+      "rootHtml": "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/page.json",
+        "sectionsDir": "src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections",
+        "sourceHash": "8f4ab9186b0ccfc9588fffa6b34011e4f29827dbd402fefc8e3b348f3764d7a2",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Когда нужна чистка вентиляции ресторана",
+        "description": "Признаки загрязнения вентиляции ресторана: слабая тяга, запахи, жирный налёт, дым, шум, перегрев кухни и частые жалобы.",
+        "canonical": "https://mospochin.ru/kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kak-rabotaet-sous-vide.html": {
+      "slug": "kak-rabotaet-sous-vide",
+      "rootHtml": "kak-rabotaet-sous-vide.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kak-rabotaet-sous-vide/page.json",
+        "sectionsDir": "src/pages/kak-rabotaet-sous-vide/sections",
+        "sourceHash": "c1d291ded53f9dddeb0f5b1ef494c33ed4ca2799a240b63f635f8098ee4d8fee",
+        "sections": 8
+      },
+      "metadata": {
+        "title": "Как работает sous-vide: упаковка, нагрев и циркуляция воды",
+        "description": "Как устроен процесс sous-vide на профессиональной кухне: вакуумная упаковка, водяная среда, нагрев, датчик и циркуляция без универсальных режимов.",
+        "canonical": "https://mospochin.ru/kak-rabotaet-sous-vide.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kak-rabotaet-ventilyatsiya-restorana.html": {
+      "slug": "kak-rabotaet-ventilyatsiya-restorana",
+      "rootHtml": "kak-rabotaet-ventilyatsiya-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kak-rabotaet-ventilyatsiya-restorana/page.json",
+        "sectionsDir": "src/pages/kak-rabotaet-ventilyatsiya-restorana/sections",
+        "sourceHash": "99b5d4ccbaaaa3debed1b5afcda9d3a705f2b022c5e91054fa6ae35cb0bb5931",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Как работает вентиляция ресторана: вытяжка, приток, зонты",
+        "description": "Простое объяснение работы вентиляции кухни ресторана: удаление дыма и жара, приток воздуха, зонты, фильтры, вентиляторы и автоматика.",
+        "canonical": "https://mospochin.ru/kak-rabotaet-ventilyatsiya-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kak-vybrat-sous-vide-dlya-restorana.html": {
+      "slug": "kak-vybrat-sous-vide-dlya-restorana",
+      "rootHtml": "kak-vybrat-sous-vide-dlya-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kak-vybrat-sous-vide-dlya-restorana/page.json",
+        "sectionsDir": "src/pages/kak-vybrat-sous-vide-dlya-restorana/sections",
+        "sourceHash": "170d07229436d61798e15c7741c44d48175dd8269a614d90b181a802ba79bfbb",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Как выбрать sous-vide для ресторана: критерии оборудования",
+        "description": "Как выбирать оборудование sous-vide для ресторана: формат кухни, загрузка, ёмкость, циркуляция, установка, очистка, сервис и совместимость с процессом.",
+        "canonical": "https://mospochin.ru/kak-vybrat-sous-vide-dlya-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kanalnaya-ventilyatsiya-restorana.html": {
+      "slug": "kanalnaya-ventilyatsiya-restorana",
+      "rootHtml": "kanalnaya-ventilyatsiya-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kanalnaya-ventilyatsiya-restorana/page.json",
+        "sectionsDir": "src/pages/kanalnaya-ventilyatsiya-restorana/sections",
+        "sourceHash": "7af1be4d5b9c11afba8cdf58f41a3507148daff166528dac356f1b2396dd8cef",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Канальная вентиляция ресторана: вентиляторы и воздуховоды",
+        "description": "Канальные участки вентиляции кухни: воздуховоды, сопротивление, загрязнения, шум, слабая тяга и доступ к чистке.",
+        "canonical": "https://mospochin.ru/kanalnaya-ventilyatsiya-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kompyutery.html": {
+      "slug": "kompyutery",
+      "rootHtml": "kompyutery.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kompyutery/page.json",
+        "sectionsDir": "src/pages/kompyutery/sections",
+        "sourceHash": "e209954862c0d666584837477649307bc2a566a34ca270c6ae010c55a78253b3",
+        "sections": 54
+      },
+      "metadata": {
+        "title": "Ремонт компьютеров и ноутбуков в Москве на дому — MosPochin",
+        "description": "Ремонт компьютеров и ноутбуков на дому в Москве. Диагностика, согласование работ, аккуратная настройка и восстановление техники с гарантией.",
+        "canonical": "https://mospochin.ru/kompyutery.html",
+        "robots": "noindex,follow",
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "kryshnye-ventilyatory-restorana.html": {
+      "slug": "kryshnye-ventilyatory-restorana",
+      "rootHtml": "kryshnye-ventilyatory-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/kryshnye-ventilyatory-restorana/page.json",
+        "sectionsDir": "src/pages/kryshnye-ventilyatory-restorana/sections",
+        "sourceHash": "a512459bb69c3a7643c05f86986ff36d13a1e00ffbf52b36ea2d35958fd510f7",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Крышные вентиляторы ресторана: диагностика вытяжки",
+        "description": "Крышные вытяжные вентиляторы кухни ресторана: слабая тяга, шум, вибрация, загрязнения, питание и автоматика.",
+        "canonical": "https://mospochin.ru/kryshnye-ventilyatory-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "mestnaya-vytyazhka-nad-oborudovaniem.html": {
+      "slug": "mestnaya-vytyazhka-nad-oborudovaniem",
+      "rootHtml": "mestnaya-vytyazhka-nad-oborudovaniem.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/mestnaya-vytyazhka-nad-oborudovaniem/page.json",
+        "sectionsDir": "src/pages/mestnaya-vytyazhka-nad-oborudovaniem/sections",
+        "sourceHash": "94e33086cc44e95c1593e69fa055819b0459899ae264cea538044d42cb305605",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Местная вытяжка над плитами, грилями и фритюрами",
+        "description": "Вытяжка над горячей линией: плиты, грили, фритюры, пароконвектоматы и котлы. Что проверять при дыме и жаре.",
+        "canonical": "https://mospochin.ru/mestnaya-vytyazhka-nad-oborudovaniem.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "microwaves.html": {
+      "slug": "microwaves",
+      "rootHtml": "microwaves.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/microwaves/page.json",
+        "sectionsDir": "src/pages/microwaves/sections",
+        "sourceHash": "9562fa45fc8fae7cba692ba2a45e5780d3168d46e6057b378350cdf0962508fe",
+        "sections": 9
+      },
+      "metadata": {
+        "title": "Ремонт встроенных микроволновок — MosPochin",
+        "description": "Ремонт встраиваемых СВЧ Neff, Miele, Bosch, Siemens, Smeg и Gaggenau в Москве. Смета до работ и гарантия на ремонт.",
+        "canonical": "https://mospochin.ru/microwaves.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "obratnaya-tyaga-v-restorane.html": {
+      "slug": "obratnaya-tyaga-v-restorane",
+      "rootHtml": "obratnaya-tyaga-v-restorane.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/obratnaya-tyaga-v-restorane/page.json",
+        "sectionsDir": "src/pages/obratnaya-tyaga-v-restorane/sections",
+        "sourceHash": "33d7de8a12f340e2b1b6080f5a71550ce2f53ce8384ba89804313fed82504bc4",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Обратная тяга в вентиляции ресторана — диагностика",
+        "description": "Причины обратной тяги: нехватка притока, проблемы с вытяжным каналом, вентилятором, заслонками, балансом воздуха и соседними системами.",
+        "canonical": "https://mospochin.ru/obratnaya-tyaga-v-restorane.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "obsluzhivanie-sous-vide.html": {
+      "slug": "obsluzhivanie-sous-vide",
+      "rootHtml": "obsluzhivanie-sous-vide.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/obsluzhivanie-sous-vide/page.json",
+        "sectionsDir": "src/pages/obsluzhivanie-sous-vide/sections",
+        "sourceHash": "9189d36e8c580b4fec1452ddb1316e2eb07c88160ea7d742a6ccf0fac39fc413",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Обслуживание оборудования sous-vide для ресторанов | MosPochin",
+        "description": "Плановое обслуживание термостатов, водяных бань и вакуумных упаковщиков: осмотр, очистка доступных зон, проверка узлов и фиксация замечаний.",
+        "canonical": "https://mospochin.ru/obsluzhivanie-sous-vide.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "obsluzhivanie-ventilyatsii-restoranov.html": {
+      "slug": "obsluzhivanie-ventilyatsii-restoranov",
+      "rootHtml": "obsluzhivanie-ventilyatsii-restoranov.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/obsluzhivanie-ventilyatsii-restoranov/page.json",
+        "sectionsDir": "src/pages/obsluzhivanie-ventilyatsii-restoranov/sections",
+        "sourceHash": "d53b162b65af3bbb9c9360cfa765048bfc8371efd37e9880ad176c210351c8df",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Обслуживание вентиляции ресторанов и кафе — MosPochin",
+        "description": "Плановое и разовое обслуживание вентиляции ресторанов: проверка вытяжки, притока, вентиляторов, фильтров, загрязнений и автоматики.",
+        "canonical": "https://mospochin.ru/obsluzhivanie-ventilyatsii-restoranov.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html": {
+      "slug": "oshibki-pri-ekspluatatsii-vytyazhki-restorana",
+      "rootHtml": "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/page.json",
+        "sectionsDir": "src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/sections",
+        "sourceHash": "4f72148e75521ea82657ab03f974bb6aca3e020cf4252969b7e012b456bd7d1c",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Ошибки эксплуатации вытяжки ресторана",
+        "description": "Какие действия ухудшают работу вытяжки: грязные фильтры, отключённый приток, закрытые решётки, перестановка оборудования и поздняя чистка.",
+        "canonical": "https://mospochin.ru/oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-abat.html": {
+      "slug": "parokonvektomat-abat",
+      "rootHtml": "parokonvektomat-abat.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-abat/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-abat/sections",
+        "sourceHash": "a396c76a5ee72e5c8e59fe8b224f00275ccbc81e3a9d272c7fd0cebd31329187",
+        "sections": 76
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Abat — ПКА, КПЭ | MosPochin",
+        "description": "Ремонт пароконвектоматов Abat ПКА, КПЭ: ошибки E02, E07, E10, не греет, нет пара. Срочный выезд инженера по Москве. Договор, безнал, гарантия по договору",
+        "canonical": "https://mospochin.ru/parokonvektomat-abat.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-convotherm.html": {
+      "slug": "parokonvektomat-convotherm",
+      "rootHtml": "parokonvektomat-convotherm.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-convotherm/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-convotherm/sections",
+        "sourceHash": "0cc0da296b8bca5491daefb1475964e9ab74e13be4f3132ff5e9f4f4cc655097",
+        "sections": 76
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Convotherm — C4, C6 | MosPochin",
+        "description": "Ремонт пароконвектоматов Convotherm C4, C6, mini, combiPro: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия по договору",
+        "canonical": "https://mospochin.ru/parokonvektomat-convotherm.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-e02-e07-e10.html": {
+      "slug": "parokonvektomat-e02-e07-e10",
+      "rootHtml": "parokonvektomat-e02-e07-e10.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-e02-e07-e10/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-e02-e07-e10/sections",
+        "sourceHash": "ea827d09b669f884472873ccc08ef811baba86f5ce71b578635e7511d8c438d6",
+        "sections": 68
+      },
+      "metadata": {
+        "title": "Ошибка E02, E07, E10 пароконвектомата Abat и Fagor — ремонт | MosPochin",
+        "description": "Ошибки E02, E07, E10 на пароконвектоматах Abat, Абат и Fagor: диагностика на объекте, фото кода в WhatsApp, выезд инженера для ресторанов и кафе.",
+        "canonical": "https://mospochin.ru/parokonvektomat-e02-e07-e10.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-electrolux.html": {
+      "slug": "parokonvektomat-electrolux",
+      "rootHtml": "parokonvektomat-electrolux.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-electrolux/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-electrolux/sections",
+        "sourceHash": "61183128a9d5d6231c5ec7f1169c63b563247facc004a32a5bfefa9ec8c7e9ba",
+        "sections": 76
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Electrolux Professional | MosPochin",
+        "description": "Ремонт пароконвектоматов Electrolux Professional: air-o-steam, air-o-convect, SkyLine, thermaline. Ошибки, не греет, нет пара. Срочный выезд. Договор, безнал.",
+        "canonical": "https://mospochin.ru/parokonvektomat-electrolux.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-kod-oshibki.html": {
+      "slug": "parokonvektomat-kod-oshibki",
+      "rootHtml": "parokonvektomat-kod-oshibki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-kod-oshibki/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-kod-oshibki/sections",
+        "sourceHash": "2451c2059478247c5eb4c9eebfd6b568c3ce9beaae201c847d411079330c5da6",
+        "sections": 68
+      },
+      "metadata": {
+        "title": "Код ошибки пароконвектомата — расшифровка и выезд инженера | MosPochin",
+        "description": "Код ошибки пароконвектомата Rational, Unox, Abat, Fagor или Lainox: что означает, что проверить без разбора и когда нужен инженер на объект. Фото кода в WhatsApp.",
+        "canonical": "https://mospochin.ru/parokonvektomat-kod-oshibki.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-lainox.html": {
+      "slug": "parokonvektomat-lainox",
+      "rootHtml": "parokonvektomat-lainox.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-lainox/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-lainox/sections",
+        "sourceHash": "dc279d78aa5b9b0d91e93b23517f93c12b55daf719dbf3c74c5ec9a39d4e98e5",
+        "sections": 76
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Lainox — Naboo, Krea, Junior | MosPochin",
+        "description": "Ремонт пароконвектоматов Lainox Naboo, Krea, Junior: ошибки, не греет, нет пара. Премиум-сервис по Москве. Договор, безнал, гарантия по договору",
+        "canonical": "https://mospochin.ru/parokonvektomat-lainox.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-ne-greet.html": {
+      "slug": "parokonvektomat-ne-greet",
+      "rootHtml": "parokonvektomat-ne-greet.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-ne-greet/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-ne-greet/sections",
+        "sourceHash": "55e67cc44d5a4e0bb20df94f6d383a2717ed0ccccd33259edc68bb20f54537f4",
+        "sections": 68
+      },
+      "metadata": {
+        "title": "Пароконвектомат не греет — выезд инженера в Москве | MosPochin",
+        "description": "Пароконвектомат не греет или не набирает температуру: проверка ТЭНов, датчиков, SSR-реле, платы и питания. Выезд инженера для ресторанов.",
+        "canonical": "https://mospochin.ru/parokonvektomat-ne-greet.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-ne-nabiraet-vodu.html": {
+      "slug": "parokonvektomat-ne-nabiraet-vodu",
+      "rootHtml": "parokonvektomat-ne-nabiraet-vodu.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-ne-nabiraet-vodu/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-ne-nabiraet-vodu/sections",
+        "sourceHash": "f12fbbbe18bfab304ec29e356a32fd26387ba73bd764fd62b8723cfb9a3ddad3",
+        "sections": 16
+      },
+      "metadata": {
+        "title": "Пароконвектомат не набирает воду — диагностика | MosPochin",
+        "description": "Пароконвектомат не набирает воду: проверим подачу, фильтр, клапан, датчик уровня, слив и парогенератор. Фото ошибки и модели в WhatsApp.",
+        "canonical": "https://mospochin.ru/parokonvektomat-ne-nabiraet-vodu.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-ne-vklyuchaetsya.html": {
+      "slug": "parokonvektomat-ne-vklyuchaetsya",
+      "rootHtml": "parokonvektomat-ne-vklyuchaetsya.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-ne-vklyuchaetsya/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-ne-vklyuchaetsya/sections",
+        "sourceHash": "f894bab1b574ab7b3c31d84939683348d8241ce58cb451de6351a8c20fbd6c1e",
+        "sections": 16
+      },
+      "metadata": {
+        "title": "Пароконвектомат не включается — диагностика | MosPochin",
+        "description": "Пароконвектомат не включается или не реагирует на кнопку: проверим питание, автомат, плату управления, блокировки двери и нагрев. Фото модели и ошибки в WhatsApp.",
+        "canonical": "https://mospochin.ru/parokonvektomat-ne-vklyuchaetsya.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-net-para.html": {
+      "slug": "parokonvektomat-net-para",
+      "rootHtml": "parokonvektomat-net-para.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-net-para/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-net-para/sections",
+        "sourceHash": "132c4e9002372741dfeaa975648dde4cfcd1ac30502c756df4d5f795c9d8a7ba",
+        "sections": 68
+      },
+      "metadata": {
+        "title": "Нет пара в пароконвектомате — ремонт на объекте | MosPochin",
+        "description": "Пароконвектомат не подаёт пар или не держит влажность: проверка воды, клапанов, парогенератора, накипи и датчиков. Выезд инженера для ресторанов.",
+        "canonical": "https://mospochin.ru/parokonvektomat-net-para.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-obschuzhivanie.html": {
+      "slug": "parokonvektomat-obschuzhivanie",
+      "rootHtml": "parokonvektomat-obschuzhivanie.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-obschuzhivanie/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-obschuzhivanie/sections",
+        "sourceHash": "670d0bfcc62995065ba75c78b79e2b2b9bcd0190bee046030ff57d340595f908",
+        "sections": 33
+      },
+      "metadata": {
+        "title": "Техническое обслуживание пароконвектоматов | MosPochin",
+        "description": "Регулярное ТО пароконвектоматов Rational, Unox, Convotherm, Abat, Lainox и Electrolux. Договор, профилактика, декальцинация.",
+        "canonical": "https://mospochin.ru/parokonvektomat-obschuzhivanie.html",
+        "robots": null,
+        "branch": "neutral",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-rational-e9.html": {
+      "slug": "parokonvektomat-rational-e9",
+      "rootHtml": "parokonvektomat-rational-e9.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-rational-e9/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-rational-e9/sections",
+        "sourceHash": "b25d07cd3a7ea401d9a82f2d58d735e04ecf88cae675ffdda6c1b9feb3f3abe9",
+        "sections": 68
+      },
+      "metadata": {
+        "title": "Ошибка Rational E9 — ремонт пароконвектомата для ресторана | MosPochin",
+        "description": "Ошибка E9 на пароконвектомате Rational: фото кода и шильдика в WhatsApp, диагностика на объекте, выезд инженера для ресторанов, кафе и пекарен.",
+        "canonical": "https://mospochin.ru/parokonvektomat-rational-e9.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-rational.html": {
+      "slug": "parokonvektomat-rational",
+      "rootHtml": "parokonvektomat-rational.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-rational/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-rational/sections",
+        "sourceHash": "45b3c3892319024f5eeb68d92e62b08e0b86223b8a8bd670e4176841acb369af",
+        "sections": 68
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Rational в Москве — выезд инженера | MosPochin",
+        "description": "Ремонт пароконвектоматов Rational SCC и CMP для ресторанов и кафе: ошибки, нет пара, не греет, диагностика и выезд инженера.",
+        "canonical": "https://mospochin.ru/parokonvektomat-rational.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-techet-voda.html": {
+      "slug": "parokonvektomat-techet-voda",
+      "rootHtml": "parokonvektomat-techet-voda.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-techet-voda/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-techet-voda/sections",
+        "sourceHash": "5d494c8201d62f014b759f6eda4373a2f77d4058e53e6296c2341e5eb17f2a38",
+        "sections": 16
+      },
+      "metadata": {
+        "title": "Пароконвектомат течёт — ремонт и диагностика в Москве | MosPochin",
+        "description": "Пароконвектомат течёт из-под двери, корпуса или дренажа: диагностика уплотнителя, клапанов, слива и парогенератора на объекте. Фото в WhatsApp.",
+        "canonical": "https://mospochin.ru/parokonvektomat-techet-voda.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-unox-af02-af08.html": {
+      "slug": "parokonvektomat-unox-af02-af08",
+      "rootHtml": "parokonvektomat-unox-af02-af08.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-unox-af02-af08/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-unox-af02-af08/sections",
+        "sourceHash": "30fce6562b77c030f9c0efc3d09c161911060bd904c45dba07163d30b02bc7cb",
+        "sections": 68
+      },
+      "metadata": {
+        "title": "Ошибка Unox AF02 и AF08 — ремонт пароконвектомата | MosPochin",
+        "description": "Ошибки AF02 и AF08 на пароконвектоматах Unox: фото кода в WhatsApp, диагностика датчиков, пара, нагрева и платы, выезд инженера для ресторанов.",
+        "canonical": "https://mospochin.ru/parokonvektomat-unox-af02-af08.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomat-unox.html": {
+      "slug": "parokonvektomat-unox",
+      "rootHtml": "parokonvektomat-unox.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomat-unox/page.json",
+        "sectionsDir": "src/pages/parokonvektomat-unox/sections",
+        "sourceHash": "aa726bdc9d5de219892227428aa9c901d2bb43744a8c572121af5313dc709829",
+        "sections": 68
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов Unox в Москве — диагностика и выезд | MosPochin",
+        "description": "Ремонт пароконвектоматов Unox для ресторанов, кафе и пекарен: ошибки AF01, AF02, AF08, нет пара, не греет, выезд инженера.",
+        "canonical": "https://mospochin.ru/parokonvektomat-unox.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
     "parokonvektomaty-promo.html": {
       "slug": "parokonvektomaty-promo",
       "rootHtml": "parokonvektomaty-promo.html",
@@ -72,8 +2267,8 @@
       "source": {
         "model": "src/pages/parokonvektomaty-promo/page.json",
         "sectionsDir": "src/pages/parokonvektomaty-promo/sections",
-        "sourceHash": "54f18d2ea4bf6a98daccaf46400e246abc432321903579d6aa92c727bbfac655",
-        "sections": 69
+        "sourceHash": "4583822e8e54d2f3b52e2b092bf7b645227004381fcdc6e30e628a0303228f79",
+        "sections": 68
       },
       "metadata": {
         "title": "Ошибка пароконвектомата — выезд инженера Rational, Unox, Abat | MosPochin",
@@ -92,6 +2287,2589 @@
         "npm run check:core",
         "npm run check:handoff",
         "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "parokonvektomaty.html": {
+      "slug": "parokonvektomaty",
+      "rootHtml": "parokonvektomaty.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/parokonvektomaty/page.json",
+        "sectionsDir": "src/pages/parokonvektomaty/sections",
+        "sourceHash": "57fa649327343f9fad0ef881a7d99b683587f7d8db5c403d7b6b3cf9655c4aca",
+        "sections": 78
+      },
+      "metadata": {
+        "title": "Ремонт пароконвектоматов для ресторанов в Москве | MosPochin",
+        "description": "Ремонт и обслуживание пароконвектоматов для ресторанов, кафе и пекарен. Выезд инженера, смета до работ, договор и безнал.",
+        "canonical": "https://mospochin.ru/parokonvektomaty.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "peregrev-kuhni-restorana.html": {
+      "slug": "peregrev-kuhni-restorana",
+      "rootHtml": "peregrev-kuhni-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/peregrev-kuhni-restorana/page.json",
+        "sectionsDir": "src/pages/peregrev-kuhni-restorana/sections",
+        "sourceHash": "ca5f1378aea90e7d6cd083b4fb41a45c1ee3910c9cb9bd671d9751c5bf51fe8d",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Жарко на кухне ресторана — проверка вентиляции",
+        "description": "Если на кухне ресторана постоянно жарко, проверяем вытяжку, приток, горячую линию, зонты, вентиляторы и баланс воздуха.",
+        "canonical": "https://mospochin.ru/peregrev-kuhni-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnye-kotly.html": {
+      "slug": "pishevarochnye-kotly",
+      "rootHtml": "pishevarochnye-kotly.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnye-kotly/page.json",
+        "sectionsDir": "src/pages/pishevarochnye-kotly/sections",
+        "sourceHash": "4c8d20c074f6cb249ecc38ba4fca64a3d45ca2ba88ff8d80e199626e0ad41cd9",
+        "sections": 45
+      },
+      "metadata": {
+        "title": "Ремонт пищеварочных котлов в Москве — MosPochin",
+        "description": "Ремонт промышленных пищеварочных котлов для ресторанов, столовых и производств: не греет, течёт, ошибка, не держит температуру.",
+        "canonical": "https://mospochin.ru/pishevarochnye-kotly.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-abat-e01.html": {
+      "slug": "pishevarochnyj-kotel-abat-e01",
+      "rootHtml": "pishevarochnyj-kotel-abat-e01.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-abat-e01/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-abat-e01/sections",
+        "sourceHash": "faca2d3861e4141d39e913b0dd8528af2c3e1e5a7cca1b5ba804e4da94f82bb7",
+        "sections": 20
+      },
+      "metadata": {
+        "title": "Ошибка E01 на пищеварочном котле Abat КПЭМ — диагностика | MosPochin",
+        "description": "Ошибка E01 на пищеварочном котле Abat КПЭМ: датчик продукта, цепь датчика, контроллер, блокировка работы. Выезд инженера в Москве.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-abat-e01.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-abat-e02.html": {
+      "slug": "pishevarochnyj-kotel-abat-e02",
+      "rootHtml": "pishevarochnyj-kotel-abat-e02.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-abat-e02/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-abat-e02/sections",
+        "sourceHash": "62f7f03e6499a4a33a919ea47124cf66b80a81604ded4962bd5a29415b8d5473",
+        "sections": 20
+      },
+      "metadata": {
+        "title": "Ошибка E02 на пищеварочном котле Abat КПЭМ — датчик рубашки | MosPochin",
+        "description": "Ошибка E02 Abat КПЭМ: датчик пароводяной рубашки, цепь датчика, контроллер и блокировка нагрева. Диагностика пищеварочного котла в Москве.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-abat-e02.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-abat-e04.html": {
+      "slug": "pishevarochnyj-kotel-abat-e04",
+      "rootHtml": "pishevarochnyj-kotel-abat-e04.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-abat-e04/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-abat-e04/sections",
+        "sourceHash": "291ee220712accecd04b2447c3af578785021be46842e2a235d75092d4c20cc8",
+        "sections": 20
+      },
+      "metadata": {
+        "title": "Ошибка E04 на пищеварочном котле Abat КПЭМ — давление рубашки | MosPochin",
+        "description": "Ошибка E04 Abat КПЭМ: давление в пароводяной рубашке, электроконтактный манометр, клапаны, контроллер. Срочная диагностика в Москве.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-abat-e04.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-abat-e17.html": {
+      "slug": "pishevarochnyj-kotel-abat-e17",
+      "rootHtml": "pishevarochnyj-kotel-abat-e17.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-abat-e17/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-abat-e17/sections",
+        "sourceHash": "f216363a9d0d3927ae21b332e2d79f8b6a5f4b20baae50106a06e4685b556fec",
+        "sections": 20
+      },
+      "metadata": {
+        "title": "Ошибка E17 на пищеварочном котле Abat КПЭМ — привод мешалки | MosPochin",
+        "description": "Ошибка E17 Abat КПЭМ: сбой или неисправность привода мешалки, датчик крышки, частотный преобразователь, контроллер. Выезд инженера.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-abat-e17.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-abat-h20.html": {
+      "slug": "pishevarochnyj-kotel-abat-h20",
+      "rootHtml": "pishevarochnyj-kotel-abat-h20.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-abat-h20/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-abat-h20/sections",
+        "sourceHash": "a8eca1ab09b5ed30d94988f7c619975f3a52f99be2c292f3efa649e96866883a",
+        "sections": 20
+      },
+      "metadata": {
+        "title": "Ошибка H20 / Н20 на пищеварочном котле Abat КПЭМ — сухой ход | MosPochin",
+        "description": "Ошибка H20 или Н20 на Abat КПЭМ: низкий уровень воды в пароводяной рубашке, сухой ход, датчик уровня, клапан залива и защита ТЭНов.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-abat-h20.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-abat-kpem.html": {
+      "slug": "pishevarochnyj-kotel-abat-kpem",
+      "rootHtml": "pishevarochnyj-kotel-abat-kpem.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-abat-kpem/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-abat-kpem/sections",
+        "sourceHash": "9c5ca4feb0fad7a30d4e8f7065b1a82b8b6a6b3dce9e7887593653b3c9e54016",
+        "sections": 34
+      },
+      "metadata": {
+        "title": "Ремонт пищеварочных котлов Abat КПЭМ в Москве | MosPochin",
+        "description": "Ремонт котлов Abat КПЭМ: не греет, течет, H2O, E01, E02, E04, E17, мешалка, опрокидывание и паровая рубашка. Выезд инженера на объект.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-abat-kpem.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-datchik-temperatury.html": {
+      "slug": "pishevarochnyj-kotel-datchik-temperatury",
+      "rootHtml": "pishevarochnyj-kotel-datchik-temperatury.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-datchik-temperatury/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-datchik-temperatury/sections",
+        "sourceHash": "b32d7c677868304353745ecf7d42af734f285918361019ad737ebbd9805370e9",
+        "sections": 23
+      },
+      "metadata": {
+        "title": "Датчик температуры пищеварочного котла — диагностика и замена | MosPochin",
+        "description": "Диагностика датчика температуры пищеварочного котла: ошибка E01/E02, неверный нагрев, перегрев, не держит температуру или блокировка работы.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-datchik-temperatury.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-dolgo-greet.html": {
+      "slug": "pishevarochnyj-kotel-dolgo-greet",
+      "rootHtml": "pishevarochnyj-kotel-dolgo-greet.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-dolgo-greet/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-dolgo-greet/sections",
+        "sourceHash": "9cbbe86b5eda9540c94982d5b8d0f4e0a02520f6934732be0cbe9dc0127d87de",
+        "sections": 23
+      },
+      "metadata": {
+        "title": "Пищеварочный котел долго греет — диагностика в Москве | MosPochin",
+        "description": "Пищеварочный котел долго греет, медленно закипает или не держит темп смены: диагностика ТЭНов, рубашки, уровня воды, датчиков и питания на объекте.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-dolgo-greet.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-kod-oshibki.html": {
+      "slug": "pishevarochnyj-kotel-kod-oshibki",
+      "rootHtml": "pishevarochnyj-kotel-kod-oshibki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-kod-oshibki/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-kod-oshibki/sections",
+        "sourceHash": "83ce3f41a19a6beee0b3d9833c71eb40dfc8d6040ef1d1e3835aa58d564a77a9",
+        "sections": 34
+      },
+      "metadata": {
+        "title": "Код ошибки пищеварочного котла — Abat КПЭМ и другие | MosPochin",
+        "description": "Код ошибки пищеварочного котла Abat КПЭМ, Iterma или Kogast: пришлите фото дисплея и шильдика, подскажем риск простоя и согласуем выезд инженера.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-kod-oshibki.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-manometr.html": {
+      "slug": "pishevarochnyj-kotel-manometr",
+      "rootHtml": "pishevarochnyj-kotel-manometr.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-manometr/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-manometr/sections",
+        "sourceHash": "eaac3b5c2dd95e2b19e39eecd4cceeeb802e5eb017d51b732008a51121cda9a5",
+        "sections": 23
+      },
+      "metadata": {
+        "title": "Манометр пищеварочного котла и давление в рубашке — ремонт | MosPochin",
+        "description": "Диагностика манометра и давления пищеварочного котла: аварийное давление, неверные показания, проблемы рубашки, клапанов и автоматики.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-manometr.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-ne-derzhit-davlenie.html": {
+      "slug": "pishevarochnyj-kotel-ne-derzhit-davlenie",
+      "rootHtml": "pishevarochnyj-kotel-ne-derzhit-davlenie.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-ne-derzhit-davlenie/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-ne-derzhit-davlenie/sections",
+        "sourceHash": "14ba1a8a9c5092982f6cb22515c2e0a1fb0f485199edc65a6441e57c22779b02",
+        "sections": 13
+      },
+      "metadata": {
+        "title": "Пищеварочный котел не держит давление — ремонт в Москве | MosPochin",
+        "description": "Пищеварочный котел не держит давление в пароводяной рубашке или показывает нестабильный манометр: проверим рубашку, клапаны, манометр и автоматику.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-ne-derzhit-davlenie.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-ne-greet.html": {
+      "slug": "pishevarochnyj-kotel-ne-greet",
+      "rootHtml": "pishevarochnyj-kotel-ne-greet.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-ne-greet/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-ne-greet/sections",
+        "sourceHash": "265adfb0615f657d20cee1ee13efccd85d61e1d7d2187c33d6f7e0cee37f7144",
+        "sections": 34
+      },
+      "metadata": {
+        "title": "Пищеварочный котел не греет — ремонт в Москве | MosPochin",
+        "description": "Пищеварочный котел не греет, долго закипает или не держит температуру: проверка ТЭНов, контактора, датчиков, паровой рубашки и питания на объекте.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-ne-greet.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-ne-nabiraet-vodu.html": {
+      "slug": "pishevarochnyj-kotel-ne-nabiraet-vodu",
+      "rootHtml": "pishevarochnyj-kotel-ne-nabiraet-vodu.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-ne-nabiraet-vodu/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-ne-nabiraet-vodu/sections",
+        "sourceHash": "c02e296f71573bc13ebc8901f4c5c8dfb3a38ec6387502f311bea41cbfba75b0",
+        "sections": 13
+      },
+      "metadata": {
+        "title": "Пищеварочный котел не набирает воду — ремонт в Москве | MosPochin",
+        "description": "Пищеварочный котел не набирает воду в пароводяную рубашку или показывает H2O: проверим уровень, электрод, клапан залива и автоматику на объекте.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-ne-nabiraet-vodu.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-ne-slivaet-vodu.html": {
+      "slug": "pishevarochnyj-kotel-ne-slivaet-vodu",
+      "rootHtml": "pishevarochnyj-kotel-ne-slivaet-vodu.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-ne-slivaet-vodu/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-ne-slivaet-vodu/sections",
+        "sourceHash": "bc58d09500319f0d898e7eb2b14bba955f492b4b4d27ab71592679e65a939320",
+        "sections": 13
+      },
+      "metadata": {
+        "title": "Пищеварочный котел не сливает воду — ремонт в Москве | MosPochin",
+        "description": "Пищеварочный котел не сливает воду или продукт через кран: проверим сливной узел, засор, прокладки и безопасный доступ к системе на объекте.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-ne-slivaet-vodu.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-ne-vklyuchaetsya.html": {
+      "slug": "pishevarochnyj-kotel-ne-vklyuchaetsya",
+      "rootHtml": "pishevarochnyj-kotel-ne-vklyuchaetsya.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections",
+        "sourceHash": "3f0a0df8be6592398d05b28bcff04b9c7f22f30db871c4747bd75c8ba6b33e9d",
+        "sections": 23
+      },
+      "metadata": {
+        "title": "Пищеварочный котел не включается — ремонт в Москве | MosPochin",
+        "description": "Пищеварочный котел не включается, не запускает нагрев или панель не реагирует: диагностика питания, кнопок, автоматики, платы, контакторов и защит.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-ne-vklyuchaetsya.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-parovodyanaya-rubashka.html": {
+      "slug": "pishevarochnyj-kotel-parovodyanaya-rubashka",
+      "rootHtml": "pishevarochnyj-kotel-parovodyanaya-rubashka.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections",
+        "sourceHash": "0bf5cffc961d9ae1f24838631fb780c276f1222d69f701f45009f459c09312f1",
+        "sections": 23
+      },
+      "metadata": {
+        "title": "Пароводяная рубашка пищеварочного котла — диагностика и ремонт | MosPochin",
+        "description": "Диагностика пароводяной рубашки пищеварочного котла: уровень воды, сухой ход, давление, ТЭНы, клапаны, манометр и риск перегрева.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-parovodyanaya-rubashka.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-plata-upravleniya.html": {
+      "slug": "pishevarochnyj-kotel-plata-upravleniya",
+      "rootHtml": "pishevarochnyj-kotel-plata-upravleniya.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-plata-upravleniya/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-plata-upravleniya/sections",
+        "sourceHash": "1c3cb37c3ec0227bdc76628f87d07a10e7d5a4b5f377c6650e7871876bfaef2b",
+        "sections": 23
+      },
+      "metadata": {
+        "title": "Плата управления пищеварочного котла — диагностика и ремонт | MosPochin",
+        "description": "Диагностика платы управления пищеварочного котла: не включается, ошибки, не запускается нагрев, не реагирует панель, сбои автоматики.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-plata-upravleniya.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-remont-slivnogo-krana.html": {
+      "slug": "pishevarochnyj-kotel-remont-slivnogo-krana",
+      "rootHtml": "pishevarochnyj-kotel-remont-slivnogo-krana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-remont-slivnogo-krana/sections",
+        "sourceHash": "fd57985b89ade031bd91dd4b267fbf796ca8625a2ef89b7294fd9ebc66ad1dfe",
+        "sections": 23
+      },
+      "metadata": {
+        "title": "Ремонт сливного крана пищеварочного котла — Москва | MosPochin",
+        "description": "Ремонт и замена сливного крана пищеварочного котла: течь, капает, не закрывается, забился или прокладка не держит. Выезд на кухню в Москве.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-remont-slivnogo-krana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-suhoy-hod.html": {
+      "slug": "pishevarochnyj-kotel-suhoy-hod",
+      "rootHtml": "pishevarochnyj-kotel-suhoy-hod.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-suhoy-hod/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-suhoy-hod/sections",
+        "sourceHash": "075a14a59aa518e407c1b61b8e72774b0424eb3591746ef12d97120594903f8b",
+        "sections": 34
+      },
+      "metadata": {
+        "title": "Сухой ход пищеварочного котла / H2O — ремонт в Москве | MosPochin",
+        "description": "Пищеварочный котел показывает H2O, сухой ход или блокирует нагрев: проверка уровня воды в рубашке, датчика, электрода и автоматики на объекте.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-suhoy-hod.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-techet.html": {
+      "slug": "pishevarochnyj-kotel-techet",
+      "rootHtml": "pishevarochnyj-kotel-techet.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-techet/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-techet/sections",
+        "sourceHash": "7e6bd4a4ca27a822fa2f522cb276a95e24121a99ae16463e1e035aa59cee90bd",
+        "sections": 34
+      },
+      "metadata": {
+        "title": "Пищеварочный котел течет — ремонт крана, рубашки, прокладок | MosPochin",
+        "description": "Пищеварочный котел течет через сливной кран, рубашку, соединения или корпус: диагностика течи, прокладок, крана, клапанов и риска простоя кухни.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-techet.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-vybivaet-avtomat.html": {
+      "slug": "pishevarochnyj-kotel-vybivaet-avtomat",
+      "rootHtml": "pishevarochnyj-kotel-vybivaet-avtomat.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-vybivaet-avtomat/sections",
+        "sourceHash": "c436f557a2138c216c3766db1b91700307546426fcf5f87cc8ae98dbb40c40ac",
+        "sections": 34
+      },
+      "metadata": {
+        "title": "Пищеварочный котел выбивает автомат — диагностика электрики | MosPochin",
+        "description": "Пищеварочный котел выбивает автомат или УЗО: проверка ТЭНов, утечки, силовой цепи, контактора, платы и безопасности запуска на объекте.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-vybivaet-avtomat.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pishevarochnyj-kotel-zamena-tena.html": {
+      "slug": "pishevarochnyj-kotel-zamena-tena",
+      "rootHtml": "pishevarochnyj-kotel-zamena-tena.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pishevarochnyj-kotel-zamena-tena/page.json",
+        "sectionsDir": "src/pages/pishevarochnyj-kotel-zamena-tena/sections",
+        "sourceHash": "0c4af8928c1a190993b86702980a5a5a14d74ce78ee08e422b4e1cb90aba1dc5",
+        "sections": 23
+      },
+      "metadata": {
+        "title": "Замена ТЭНа пищеварочного котла — ремонт в Москве | MosPochin",
+        "description": "Замена и диагностика ТЭНов пищеварочного котла: нет нагрева, долгий нагрев, выбивает автомат, перегрев или сухой ход. Выезд на объект в Москве.",
+        "canonical": "https://mospochin.ru/pishevarochnyj-kotel-zamena-tena.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "plity-pechi.html": {
+      "slug": "plity-pechi",
+      "rootHtml": "plity-pechi.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/plity-pechi/page.json",
+        "sectionsDir": "src/pages/plity-pechi/sections",
+        "sourceHash": "fd78505ca0945209de25b83cf51c664f52ca6fa6c7758d13a65954dce2aceebf",
+        "sections": 36
+      },
+      "metadata": {
+        "title": "Ремонт промышленных плит и печей в Москве — MosPochin",
+        "description": "Ремонт газовых и электрических плит, индукционных поверхностей и жарочных шкафов для ресторанов и столовых. Смета до работ.",
+        "canonical": "https://mospochin.ru/plity-pechi.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "plity.html": {
+      "slug": "plity",
+      "rootHtml": "plity.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/plity/page.json",
+        "sectionsDir": "src/pages/plity/sections",
+        "sourceHash": "0ff502d58b63b21df5c9b85cb2b83a173889e296bc07b07c97d502b65dc96388",
+        "sections": 47
+      },
+      "metadata": {
+        "title": "Ремонт плит и духовок в Москве на дому — MosPochin",
+        "description": "Ремонт газовых, электрических и индукционных плит и духовок на дому в Москве. Согласуем работы до ремонта и даём гарантию.",
+        "canonical": "https://mospochin.ru/plity.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pochemu-vytyazhka-ne-tyanet-v-restorane.html": {
+      "slug": "pochemu-vytyazhka-ne-tyanet-v-restorane",
+      "rootHtml": "pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/page.json",
+        "sectionsDir": "src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/sections",
+        "sourceHash": "49a86454273da394ffe30cd19a4f22a6dad7ddabbc0480d3d6929469d8ae62c6",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Почему вытяжка ресторана плохо тянет: причины",
+        "description": "Основные причины слабой тяги вытяжки: загрязнение фильтров, воздуховодов, проблемы вентилятора, нехватка притока и ошибки эксплуатации.",
+        "canonical": "https://mospochin.ru/pochemu-vytyazhka-ne-tyanet-v-restorane.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "posle-remonta-kuhni-ventilyatsiya-huzhe.html": {
+      "slug": "posle-remonta-kuhni-ventilyatsiya-huzhe",
+      "rootHtml": "posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/page.json",
+        "sectionsDir": "src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/sections",
+        "sourceHash": "5297f6de7fc7d12d22b623d3b3961226ecb63ad3baf5ea1e3df38f842a057f8b",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "После ремонта кухни вентиляция стала хуже — диагностика",
+        "description": "После перестановки оборудования, ремонта кухни или смены меню вентиляция может не справляться. Проверяем нагрузку, зонты, приток и вытяжку.",
+        "canonical": "https://mospochin.ru/posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "posudomoechnye-mashiny.html": {
+      "slug": "posudomoechnye-mashiny",
+      "rootHtml": "posudomoechnye-mashiny.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/posudomoechnye-mashiny/page.json",
+        "sectionsDir": "src/pages/posudomoechnye-mashiny/sections",
+        "sourceHash": "0822dc8abebe2d0439c83b098b030b4d194968818b4ab1dd79e5959791b19a97",
+        "sections": 66
+      },
+      "metadata": {
+        "title": "Ремонт промышленных посудомоечных машин — MosPochin",
+        "description": "Ремонт купольных, конвейерных и фронтальных посудомоечных машин Winterhalter, Hobart и Meiko. Диагностика, смета до работ и документы по ремонту.",
+        "canonical": "https://mospochin.ru/posudomoechnye-mashiny.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "posudomoyki.html": {
+      "slug": "posudomoyki",
+      "rootHtml": "posudomoyki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/posudomoyki/page.json",
+        "sectionsDir": "src/pages/posudomoyki/sections",
+        "sourceHash": "01ebb85d943aafea65804a45f5f9ef1de2e5d5bf2edaa3444df882e2b942b60e",
+        "sections": 52
+      },
+      "metadata": {
+        "title": "Ремонт посудомоечных машин в Москве — MosPochin",
+        "description": "Ремонт посудомоечных машин на дому в Москве. Диагностика, согласование стоимости до ремонта и аккуратное восстановление без лишних замен.",
+        "canonical": "https://mospochin.ru/posudomoyki.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pritochnaya-ventilyatsiya-restorana.html": {
+      "slug": "pritochnaya-ventilyatsiya-restorana",
+      "rootHtml": "pritochnaya-ventilyatsiya-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pritochnaya-ventilyatsiya-restorana/page.json",
+        "sectionsDir": "src/pages/pritochnaya-ventilyatsiya-restorana/sections",
+        "sourceHash": "81f479e245be031a96bfc83566b9ca6099af8f524b4cfdcf308bc7d4e681d10d",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Приточная вентиляция ресторана: диагностика и ремонт",
+        "description": "Зачем кухне ресторана нужен приток воздуха, как он влияет на вытяжку, жару, запахи, двери и работу оборудования.",
+        "canonical": "https://mospochin.ru/pritochnaya-ventilyatsiya-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "pritochno-vytyazhnaya-ventilyatsiya-restorana.html": {
+      "slug": "pritochno-vytyazhnaya-ventilyatsiya-restorana",
+      "rootHtml": "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/pritochno-vytyazhnaya-ventilyatsiya-restorana/page.json",
+        "sectionsDir": "src/pages/pritochno-vytyazhnaya-ventilyatsiya-restorana/sections",
+        "sourceHash": "2a2e385f3b083257c893d02a908f0e9e0f3813c87fcd778c27dd0d2653566c26",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Приточно-вытяжная вентиляция ресторана — баланс притока и вытяжки",
+        "description": "Почему вытяжка и приток должны работать вместе: разрежение, слабая тяга, перегрев кухни и запахи в зале.",
+        "canonical": "https://mospochin.ru/pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-oborudovaniya-restorana-parokonvektomat.html": {
+      "slug": "remont-oborudovaniya-restorana-parokonvektomat",
+      "rootHtml": "remont-oborudovaniya-restorana-parokonvektomat.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json",
+        "sectionsDir": "src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections",
+        "sourceHash": "dfe052b7a6cb8d60d50b64be69cac0fe0d1cbc369cd878a34716f0b1d2cc84fc",
+        "sections": 74
+      },
+      "metadata": {
+        "title": "Ремонт кухни ресторана — пароконвектоматы Rational, Unox, Abat | MosPochin",
+        "description": "Рекламная посадочная для B2B-заявок по кухне ресторана: пароконвектоматы Rational, Unox, Abat, ошибки, нагрев, пар, срочный выезд, договор и безнал.",
+        "canonical": "https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html",
+        "robots": "noindex,follow",
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "parokonvektomaty",
+      "directLanding": true,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-pishevarochnyh-kotlov-abat.html": {
+      "slug": "remont-pishevarochnyh-kotlov-abat",
+      "rootHtml": "remont-pishevarochnyh-kotlov-abat.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-pishevarochnyh-kotlov-abat/page.json",
+        "sectionsDir": "src/pages/remont-pishevarochnyh-kotlov-abat/sections",
+        "sourceHash": "124a739269070b7709b09f5c55591f7a2f125c881dfaf99832221aa6254f28de",
+        "sections": 17
+      },
+      "metadata": {
+        "title": "Ремонт пищеварочных котлов Abat в Москве — КПЭМ, ТЭНы, рубашка | MosPochin",
+        "description": "Ремонт пищеварочных котлов Abat для ресторанов, кафе и столовых: КПЭМ, сухой ход, H20, E01/E02/E04/E17, ТЭНы, рубашка, манометр, сливной кран.",
+        "canonical": "https://mospochin.ru/remont-pishevarochnyh-kotlov-abat.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-pishevarochnyh-kotlov-apach.html": {
+      "slug": "remont-pishevarochnyh-kotlov-apach",
+      "rootHtml": "remont-pishevarochnyh-kotlov-apach.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-pishevarochnyh-kotlov-apach/page.json",
+        "sectionsDir": "src/pages/remont-pishevarochnyh-kotlov-apach/sections",
+        "sourceHash": "eb5eb4da38d675abbc06d1e6d5ff5891a753a5b5bd5cedcd61c48ad16d302993",
+        "sections": 17
+      },
+      "metadata": {
+        "title": "Ремонт котлов Apach APKE в Москве — нагрев и электрика | MosPochin",
+        "description": "Ремонт пищеварочных котлов Apach APKE: не греет, долго нагревает, течет сливной кран, выбивает автомат, диагностика ТЭНов, термостата и электрики.",
+        "canonical": "https://mospochin.ru/remont-pishevarochnyh-kotlov-apach.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-pishevarochnyh-kotlov-atesy.html": {
+      "slug": "remont-pishevarochnyh-kotlov-atesy",
+      "rootHtml": "remont-pishevarochnyh-kotlov-atesy.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-pishevarochnyh-kotlov-atesy/page.json",
+        "sectionsDir": "src/pages/remont-pishevarochnyh-kotlov-atesy/sections",
+        "sourceHash": "12011fd04e4f71a55066826ae11490fea12672e411ffb3c637283fbcaf12a504",
+        "sections": 17
+      },
+      "metadata": {
+        "title": "Ремонт пищеварочных котлов Atesy / АТЕСИ | MosPochin",
+        "description": "Ремонт пищеварочных котлов Atesy / АТЕСИ для кафе, ресторанов, столовых и пищеблоков: нагрев, кран, датчики, электрика, ТЭНы и заявка инженеру.",
+        "canonical": "https://mospochin.ru/remont-pishevarochnyh-kotlov-atesy.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-pishevarochnyh-kotlov-iterma.html": {
+      "slug": "remont-pishevarochnyh-kotlov-iterma",
+      "rootHtml": "remont-pishevarochnyh-kotlov-iterma.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-pishevarochnyh-kotlov-iterma/page.json",
+        "sectionsDir": "src/pages/remont-pishevarochnyh-kotlov-iterma/sections",
+        "sourceHash": "b9e7581f8ce23e1150d1c4f7bb6c65ec4d80e342aa7937c79e44dd5f225a40ef",
+        "sections": 17
+      },
+      "metadata": {
+        "title": "Ремонт пищеварочных котлов Iterma — ТЭНы и рубашка | MosPochin",
+        "description": "Ремонт пищеварочных котлов Iterma / Итерма: не греет, давление рубашки, манометр, контакторы, датчики, ТЭНы, плата управления и срочная диагностика.",
+        "canonical": "https://mospochin.ru/remont-pishevarochnyh-kotlov-iterma.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-pishevarochnyh-kotlov-kpem.html": {
+      "slug": "remont-pishevarochnyh-kotlov-kpem",
+      "rootHtml": "remont-pishevarochnyh-kotlov-kpem.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-pishevarochnyh-kotlov-kpem/page.json",
+        "sectionsDir": "src/pages/remont-pishevarochnyh-kotlov-kpem/sections",
+        "sourceHash": "4366c7108d9188b46c3fc42eccc71e82f1186ec4ab6682b0e55934b03cc71294",
+        "sections": 17
+      },
+      "metadata": {
+        "title": "Ремонт котлов КПЭМ Abat — сухой ход, рубашка, датчики, ошибки | MosPochin",
+        "description": "Ремонт пищеварочных котлов КПЭМ Abat: сухой ход, H20/Н20, E01, E02, E04, E17, ТЭНы, рубашка, манометр, мешалка и плата управления.",
+        "canonical": "https://mospochin.ru/remont-pishevarochnyh-kotlov-kpem.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "pishevarochnye-kotly",
+      "directLanding": true,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-pritochnoj-ventilyatsii-restorana.html": {
+      "slug": "remont-pritochnoj-ventilyatsii-restorana",
+      "rootHtml": "remont-pritochnoj-ventilyatsii-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-pritochnoj-ventilyatsii-restorana/page.json",
+        "sectionsDir": "src/pages/remont-pritochnoj-ventilyatsii-restorana/sections",
+        "sourceHash": "e4af63d548d0434809adb9689dab3944f5de35405e243e237d6e32b4cc29944f",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Ремонт приточной вентиляции ресторана и кафе — MosPochin",
+        "description": "Диагностика и ремонт приточной вентиляции кухни: слабый приток, жара, разрежение, проблемы с фильтрами, вентилятором и автоматикой.",
+        "canonical": "https://mospochin.ru/remont-pritochnoj-ventilyatsii-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-sous-vide.html": {
+      "slug": "remont-sous-vide",
+      "rootHtml": "remont-sous-vide.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-sous-vide/page.json",
+        "sectionsDir": "src/pages/remont-sous-vide/sections",
+        "sourceHash": "2322b63b863f56f9cc1484c4b3fbe1299533e3086180d27f9659b1a6caae2f2a",
+        "sections": 8
+      },
+      "metadata": {
+        "title": "Ремонт оборудования sous-vide в Москве — выезд инженера | MosPochin",
+        "description": "Диагностика и ремонт погружных термостатов и водяных бань sous-vide для ресторанов. Нагрев, циркуляция, датчики, питание и управление.",
+        "canonical": "https://mospochin.ru/remont-sous-vide.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-termostata-sous-vide-reklama.html": {
+      "slug": "remont-termostata-sous-vide-reklama",
+      "rootHtml": "remont-termostata-sous-vide-reklama.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-termostata-sous-vide-reklama/page.json",
+        "sectionsDir": "src/pages/remont-termostata-sous-vide-reklama/sections",
+        "sourceHash": "b21602f05937d0daa4491d97dbe5cafae9706d8e624f88776041ffd64ccbf491",
+        "sections": 8
+      },
+      "metadata": {
+        "title": "Ремонт термостата sous-vide — заявка инженеру | MosPochin",
+        "description": "Термостат sous-vide не включается, не нагревает или не циркулирует воду. Передайте модель, симптом и фото для согласования диагностики.",
+        "canonical": "https://mospochin.ru/remont-termostata-sous-vide-reklama.html",
+        "robots": "noindex,follow",
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": true,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-termostata-sous-vide.html": {
+      "slug": "remont-termostata-sous-vide",
+      "rootHtml": "remont-termostata-sous-vide.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-termostata-sous-vide/page.json",
+        "sectionsDir": "src/pages/remont-termostata-sous-vide/sections",
+        "sourceHash": "f69112bb0a0963279458c75557e3ccb3636d2e582dce53289fff87990ad672f8",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Ремонт термостата sous-vide в Москве — диагностика на объекте | MosPochin",
+        "description": "Ремонт профессиональных термостатов sous-vide: не включается, не нагревает, не держит заданное значение, нет циркуляции или появляется ошибка.",
+        "canonical": "https://mospochin.ru/remont-termostata-sous-vide.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-vakuumnogo-upakovshika-reklama.html": {
+      "slug": "remont-vakuumnogo-upakovshika-reklama",
+      "rootHtml": "remont-vakuumnogo-upakovshika-reklama.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-vakuumnogo-upakovshika-reklama/page.json",
+        "sectionsDir": "src/pages/remont-vakuumnogo-upakovshika-reklama/sections",
+        "sourceHash": "6f09d0538bf35687d89f3b79739389568d76c14365754ce75251034af3272335",
+        "sections": 8
+      },
+      "metadata": {
+        "title": "Ремонт вакуумного упаковщика — заявка инженеру | MosPochin",
+        "description": "Вакуумный упаковщик не создаёт вакуум, плохо запаивает или не завершает цикл. Отправьте модель, видео и симптом для диагностики.",
+        "canonical": "https://mospochin.ru/remont-vakuumnogo-upakovshika-reklama.html",
+        "robots": "noindex,follow",
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": true,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-vakuumnogo-upakovshika.html": {
+      "slug": "remont-vakuumnogo-upakovshika",
+      "rootHtml": "remont-vakuumnogo-upakovshika.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-vakuumnogo-upakovshika/page.json",
+        "sectionsDir": "src/pages/remont-vakuumnogo-upakovshika/sections",
+        "sourceHash": "b5d51170f9cdf883523aca1d0e0cbee1385412f7dd477a7123745c61fb784805",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Ремонт вакуумного упаковщика в Москве — выезд инженера | MosPochin",
+        "description": "Ремонт камерных вакуумных упаковщиков ресторанов: нет вакуума, слабая запайка, крышка не прижимается, насос шумит или цикл не завершается.",
+        "canonical": "https://mospochin.ru/remont-vakuumnogo-upakovshika.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-ventilyatora-vytyazhki-restorana.html": {
+      "slug": "remont-ventilyatora-vytyazhki-restorana",
+      "rootHtml": "remont-ventilyatora-vytyazhki-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-ventilyatora-vytyazhki-restorana/page.json",
+        "sectionsDir": "src/pages/remont-ventilyatora-vytyazhki-restorana/sections",
+        "sourceHash": "e339654b65d9e4e3426fbc73aa69a23306a574be9345a86f5d98340e39273d87",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Ремонт вентилятора вытяжки ресторана и кафе",
+        "description": "Диагностика вытяжного вентилятора ресторана: не запускается, шумит, вибрирует, слабо тянет или выбивает автомат.",
+        "canonical": "https://mospochin.ru/remont-ventilyatora-vytyazhki-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-ventilyatsii-restoranov.html": {
+      "slug": "remont-ventilyatsii-restoranov",
+      "rootHtml": "remont-ventilyatsii-restoranov.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-ventilyatsii-restoranov/page.json",
+        "sectionsDir": "src/pages/remont-ventilyatsii-restoranov/sections",
+        "sourceHash": "dddd3ad0ae91bcd529dfddfaf83a78ed138fe98d57dc8a17e0943be3000e3b54",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Ремонт вентиляции ресторанов в Москве — выезд инженера",
+        "description": "Ремонт вытяжной и приточной вентиляции ресторанов, кафе и пищеблоков. Проверка тяги, вентилятора, автоматики, воздуховодов и фильтров.",
+        "canonical": "https://mospochin.ru/remont-ventilyatsii-restoranov.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-vozduhovodov-restorana.html": {
+      "slug": "remont-vozduhovodov-restorana",
+      "rootHtml": "remont-vozduhovodov-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-vozduhovodov-restorana/page.json",
+        "sectionsDir": "src/pages/remont-vozduhovodov-restorana/sections",
+        "sourceHash": "e80524d7f7120bc8e54b671e194366f3c26a0b57ce4751473f9ea7a07142fbde",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Ремонт воздуховодов вентиляции ресторана",
+        "description": "Проверка и восстановление участков воздуховодов ресторана: загрязнения, утечки, слабая тяга, шум, конденсат и доступ к чистке.",
+        "canonical": "https://mospochin.ru/remont-vozduhovodov-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-vytyazhki-restorana.html": {
+      "slug": "remont-vytyazhki-restorana",
+      "rootHtml": "remont-vytyazhki-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-vytyazhki-restorana/page.json",
+        "sectionsDir": "src/pages/remont-vytyazhki-restorana/sections",
+        "sourceHash": "7101429bbf55543b925defbf7670d3b9792a359fb6766be1dfddaef40aba8efd",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Ремонт вытяжки ресторана и кафе в Москве",
+        "description": "Ремонт кухонной вытяжки ресторана: слабая тяга, шум, вибрация, не включается вентилятор, запахи и дым на кухне.",
+        "canonical": "https://mospochin.ru/remont-vytyazhki-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "remont-zhirovyh-filtrov-vytyazhki.html": {
+      "slug": "remont-zhirovyh-filtrov-vytyazhki",
+      "rootHtml": "remont-zhirovyh-filtrov-vytyazhki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/remont-zhirovyh-filtrov-vytyazhki/page.json",
+        "sectionsDir": "src/pages/remont-zhirovyh-filtrov-vytyazhki/sections",
+        "sourceHash": "aaa2375ccd9fd5efbca88e7a395df5b0132d5ba0545142cd80882720e423421c",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Жировые фильтры вытяжки ресторана — обслуживание",
+        "description": "Проверка и обслуживание жировых фильтров кухонной вытяжки: загрязнение, неправильная установка, слабая тяга и запахи.",
+        "canonical": "https://mospochin.ru/remont-zhirovyh-filtrov-vytyazhki.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "routery.html": {
+      "slug": "routery",
+      "rootHtml": "routery.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/routery/page.json",
+        "sectionsDir": "src/pages/routery/sections",
+        "sourceHash": "aaed53dd0078a462f52caa4418d24265b40a1782c8029f928db3353966610ffa",
+        "sections": 51
+      },
+      "metadata": {
+        "title": "Ремонт и настройка роутеров в Москве — MosPochin",
+        "description": "Ремонт и настройка Wi-Fi роутеров TP-Link, ASUS, D-Link и Keenetic в Москве. Диагностика, выезд мастера, аккуратная настройка домашней сети.",
+        "canonical": "https://mospochin.ru/routery.html",
+        "robots": "noindex,follow",
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "shumit-vytyazhka-restorana.html": {
+      "slug": "shumit-vytyazhka-restorana",
+      "rootHtml": "shumit-vytyazhka-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/shumit-vytyazhka-restorana/page.json",
+        "sectionsDir": "src/pages/shumit-vytyazhka-restorana/sections",
+        "sourceHash": "e6218a09db12d2368a9e7a7b4a425c5caf3a4ee9a0ead1e04c57c86ae3bff95a",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Шумит вытяжка ресторана — диагностика вентилятора и воздуховодов",
+        "description": "Шум, гул и посторонние звуки вытяжки ресторана. Проверка вентилятора, креплений, подшипников, воздуховодов и автоматики.",
+        "canonical": "https://mospochin.ru/shumit-vytyazhka-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "slabyj-pritok-vozduha-restoran.html": {
+      "slug": "slabyj-pritok-vozduha-restoran",
+      "rootHtml": "slabyj-pritok-vozduha-restoran.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/slabyj-pritok-vozduha-restoran/page.json",
+        "sectionsDir": "src/pages/slabyj-pritok-vozduha-restoran/sections",
+        "sourceHash": "a50747895ea61711d3ef214109420e08d2d886e470da1cf86544a3d15dd8a252",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Слабый приток воздуха в ресторане — диагностика",
+        "description": "Недостаток притока может ухудшать вытяжку, усиливать жар, запахи и разрежение. Проверка приточной вентиляции и баланса воздуха.",
+        "canonical": "https://mospochin.ru/slabyj-pritok-vozduha-restoran.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "sous-vide-i-shokovoe-okhlazhdenie.html": {
+      "slug": "sous-vide-i-shokovoe-okhlazhdenie",
+      "rootHtml": "sous-vide-i-shokovoe-okhlazhdenie.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/sous-vide-i-shokovoe-okhlazhdenie/page.json",
+        "sectionsDir": "src/pages/sous-vide-i-shokovoe-okhlazhdenie/sections",
+        "sourceHash": "e177d9218d38581c56da65d2d0aed3c8ea7015fbc86c4629a35df6f54fab7b4b",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Sous-vide и шоковое охлаждение: разделение оборудования и процессов",
+        "description": "Как связаны sous-vide и шоковое охлаждение на профессиональной кухне: роли термостата, упаковки, охлаждающего оборудования, маркировки и технологической карты.",
+        "canonical": "https://mospochin.ru/sous-vide-i-shokovoe-okhlazhdenie.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "sous-vide-i-vakuumnaya-upakovka.html": {
+      "slug": "sous-vide-i-vakuumnaya-upakovka",
+      "rootHtml": "sous-vide-i-vakuumnaya-upakovka.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/sous-vide-i-vakuumnaya-upakovka/page.json",
+        "sectionsDir": "src/pages/sous-vide-i-vakuumnaya-upakovka/sections",
+        "sourceHash": "d076ac337a7aaa111119d01da9cc189f73533c58bf5ceb2739766dc821a87b8a",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Sous-vide и вакуумная упаковка: как связаны процессы",
+        "description": "Связь sous-vide и вакуумной упаковки: подготовка пакета, работа камерного упаковщика, герметичный шов, маркировка и границы ответственности оборудования.",
+        "canonical": "https://mospochin.ru/sous-vide-i-vakuumnaya-upakovka.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "sous-vide-remont-moskva.html": {
+      "slug": "sous-vide-remont-moskva",
+      "rootHtml": "sous-vide-remont-moskva.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/sous-vide-remont-moskva/page.json",
+        "sectionsDir": "src/pages/sous-vide-remont-moskva/sections",
+        "sourceHash": "c3df4daa41a506ecfc2c681540f4bc67a2dcbafcb79678c24c5f39ed9fd90e20",
+        "sections": 8
+      },
+      "metadata": {
+        "title": "Ремонт sous-vide в Москве — заявка инженеру | MosPochin",
+        "description": "Не включается или не нагревает оборудование sous-vide. Передайте модель и симптом, отправьте фото в WhatsApp и согласуйте диагностику на объекте.",
+        "canonical": "https://mospochin.ru/sous-vide-remont-moskva.html",
+        "robots": "noindex,follow",
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": true,
+      "indexable": false,
+      "inSitemap": false,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:direct-landings",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "sous-vide-restoranov.html": {
+      "slug": "sous-vide-restoranov",
+      "rootHtml": "sous-vide-restoranov.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/sous-vide-restoranov/page.json",
+        "sectionsDir": "src/pages/sous-vide-restoranov/sections",
+        "sourceHash": "b013a749a6c6d41d624463c4affc93b14bdb7ccc1be276b93521b5aff7f0e369",
+        "sections": 8
+      },
+      "metadata": {
+        "title": "Sous-vide для ресторанов: оборудование, эксплуатация и сервис | MosPochin",
+        "description": "Кластер по sous-vide для ресторанов: погружные термостаты, водяные бани, вакуумные упаковщики, эксплуатация, диагностика и ремонт оборудования.",
+        "canonical": "https://mospochin.ru/sous-vide-restoranov.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "sous-vide-termostaty.html": {
+      "slug": "sous-vide-termostaty",
+      "rootHtml": "sous-vide-termostaty.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/sous-vide-termostaty/page.json",
+        "sectionsDir": "src/pages/sous-vide-termostaty/sections",
+        "sourceHash": "879550cec7c59848d7f57bed8d3fcad2f909473a1df07534bf6a9d6fdcfa3c7e",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Термостаты sous-vide для ресторанов: устройство и сервис | MosPochin",
+        "description": "Профессиональные термостаты sous-vide для ресторанов: погружные и стационарные решения, узлы оборудования, диагностика и сервис на объекте.",
+        "canonical": "https://mospochin.ru/sous-vide-termostaty.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "stiralnye-mashiny.html": {
+      "slug": "stiralnye-mashiny",
+      "rootHtml": "stiralnye-mashiny.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/stiralnye-mashiny/page.json",
+        "sectionsDir": "src/pages/stiralnye-mashiny/sections",
+        "sourceHash": "3d596dc05ab2bb36ef639879edd589ab46a7c8963f4296060b9982fead31090c",
+        "sections": 49
+      },
+      "metadata": {
+        "title": "Ремонт стиральных машин в Москве на дому — MosPochin",
+        "description": "Ремонт стиральных машин на дому в Москве. Диагностика, согласование стоимости до ремонта и честный бытовой сценарий без лишних замен.",
+        "canonical": "https://mospochin.ru/stiralnye-mashiny.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "techet-kondensat-iz-ventilyatsii.html": {
+      "slug": "techet-kondensat-iz-ventilyatsii",
+      "rootHtml": "techet-kondensat-iz-ventilyatsii.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/techet-kondensat-iz-ventilyatsii/page.json",
+        "sectionsDir": "src/pages/techet-kondensat-iz-ventilyatsii/sections",
+        "sourceHash": "1a6b12b15d3df450c70ffe5f059362bb55907f526b14daf6f55458f2459b1578",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Конденсат из вентиляции ресторана — причины и диагностика",
+        "description": "Конденсат на вентиляции кухни: перепады температуры, загрязнения, изоляция, режим работы, воздуховоды и ошибки эксплуатации.",
+        "canonical": "https://mospochin.ru/techet-kondensat-iz-ventilyatsii.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "uslugi.html": {
+      "slug": "uslugi",
+      "rootHtml": "uslugi.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/uslugi/page.json",
+        "sectionsDir": "src/pages/uslugi/sections",
+        "sourceHash": "c8d07887949bc3f1f1989fda9fed48dda2305878cefe8e036c22bf6d70bf892f",
+        "sections": 26
+      },
+      "metadata": {
+        "title": "Услуги по ремонту ресторанного оборудования — MosPochin | Цены",
+        "description": "Ремонт пароконвектоматов, плит, холодильного оборудования, посудомоек, грилей, фритюров и льдогенераторов. Диагностика и смета до работ.",
+        "canonical": "https://mospochin.ru/uslugi.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "vakuumnye-upakovshiki-dlya-restorana.html": {
+      "slug": "vakuumnye-upakovshiki-dlya-restorana",
+      "rootHtml": "vakuumnye-upakovshiki-dlya-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/vakuumnye-upakovshiki-dlya-restorana/page.json",
+        "sectionsDir": "src/pages/vakuumnye-upakovshiki-dlya-restorana/sections",
+        "sourceHash": "bd0c767da2d1eb91f3d8d2221196dc8c8be5ec97d0d2a893975a2a2cd6a739a7",
+        "sections": 7
+      },
+      "metadata": {
+        "title": "Вакуумные упаковщики для ресторана: оборудование и сервис | MosPochin",
+        "description": "Камерные вакуумные упаковщики для ресторанов: насос, камера, крышка, уплотнение, запаечная планка, эксплуатация и сервис оборудования.",
+        "canonical": "https://mospochin.ru/vakuumnye-upakovshiki-dlya-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "sous-vide",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyator-vytyazhki-ne-vklyuchaetsya.html": {
+      "slug": "ventilyator-vytyazhki-ne-vklyuchaetsya",
+      "rootHtml": "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/page.json",
+        "sectionsDir": "src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/sections",
+        "sourceHash": "3bfa75f7d9fbc84616098ca4b9412f6e9aefa08d9a4fc594e8f7f04a3b970a00",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентилятор вытяжки не включается — диагностика",
+        "description": "Что проверить, если вытяжной вентилятор ресторана не запускается: питание, автомат, пульт, автоматика, двигатель, загрязнения.",
+        "canonical": "https://mospochin.ru/ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyator-vytyazhki-vybivaet-avtomat.html": {
+      "slug": "ventilyator-vytyazhki-vybivaet-avtomat",
+      "rootHtml": "ventilyator-vytyazhki-vybivaet-avtomat.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyator-vytyazhki-vybivaet-avtomat/page.json",
+        "sectionsDir": "src/pages/ventilyator-vytyazhki-vybivaet-avtomat/sections",
+        "sourceHash": "7e84f35db830e0ba6ef1d5f70f65bf2fea3d07e870fc75aed20261c91a3bbe29",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентилятор вытяжки выбивает автомат — причины и ремонт",
+        "description": "Диагностика вытяжного вентилятора, который выбивает автомат: перегрузка, загрязнение, двигатель, кабель, автоматика или щит.",
+        "canonical": "https://mospochin.ru/ventilyator-vytyazhki-vybivaet-avtomat.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsionnye-zonty-restorana.html": {
+      "slug": "ventilyatsionnye-zonty-restorana",
+      "rootHtml": "ventilyatsionnye-zonty-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsionnye-zonty-restorana/page.json",
+        "sectionsDir": "src/pages/ventilyatsionnye-zonty-restorana/sections",
+        "sourceHash": "6328863f47f4d643e79ddd05b0721dd2be8e252d3bdcd99a1121176ab242bafb",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляционные зонты ресторана: чистка, ремонт, диагностика",
+        "description": "Зонты вытяжки ресторана: размеры, загрязнение, фильтры, тяга, дым, жир и причины попадания запахов в помещение.",
+        "canonical": "https://mospochin.ru/ventilyatsionnye-zonty-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-dark-kitchen.html": {
+      "slug": "ventilyatsiya-dark-kitchen",
+      "rootHtml": "ventilyatsiya-dark-kitchen.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-dark-kitchen/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-dark-kitchen/sections",
+        "sourceHash": "0b6140e3ae8f0111ea5db763047995c47cc41e4be8e2a038c6ef8810dddcbfb8",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция dark kitchen: ремонт и обслуживание",
+        "description": "Высокая нагрузка dark kitchen: вытяжка, приток, запахи, жар, работа нескольких зон и стабильность вентиляции в пиковые часы.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-dark-kitchen.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-fudkorta.html": {
+      "slug": "ventilyatsiya-fudkorta",
+      "rootHtml": "ventilyatsiya-fudkorta.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-fudkorta/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-fudkorta/sections",
+        "sourceHash": "8aa272fd3f0158ea742721b792b772d6f6aafcc8218f6299220fd8930ca7034e",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция фудкорта: кухни, запахи, вытяжка и приток",
+        "description": "Проверка вентиляции точек фудкорта: запахи, дым, жара, общий вытяжной канал, локальные зонты и работа притока.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-fudkorta.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-i-gril-v-restorane.html": {
+      "slug": "ventilyatsiya-i-gril-v-restorane",
+      "rootHtml": "ventilyatsiya-i-gril-v-restorane.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-i-gril-v-restorane/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-i-gril-v-restorane/sections",
+        "sourceHash": "98547c85cf3febb78822153a777077b508fe657b83e917924af28e824e057b71",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция для гриля в ресторане: дым, жар, запахи",
+        "description": "Грили, мангалы и фритюр дают много дыма, жара и жира. Как вентиляция связана с работой горячей линии.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-i-gril-v-restorane.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-i-holodilnoe-oborudovanie.html": {
+      "slug": "ventilyatsiya-i-holodilnoe-oborudovanie",
+      "rootHtml": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/sections",
+        "sourceHash": "0cf5a0a0f31d0c0dfa8977b7bddda4406bfc16f8439acd1355427b5625195370",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция и холодильное оборудование ресторана",
+        "description": "Жара и плохой воздухообмен ухудшают условия работы холодильного оборудования. Как связаны вентиляция, микроклимат и перегрев кухни.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-i-holodilnoe-oborudovanie.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-i-parokonvektomat.html": {
+      "slug": "ventilyatsiya-i-parokonvektomat",
+      "rootHtml": "ventilyatsiya-i-parokonvektomat.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-i-parokonvektomat/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-i-parokonvektomat/sections",
+        "sourceHash": "ff7a97c5a72cf94fff712a217a9d9c94f15cee5440f289e56a4aee37519b58dc",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция рядом с пароконвектоматом: пар, жар, влажность",
+        "description": "Пароконвектоматы дают пар и тепло. Как вентиляция кухни влияет на влажность, комфорт и работу оборудования.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-i-parokonvektomat.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-i-posudomoechnaya-zona.html": {
+      "slug": "ventilyatsiya-i-posudomoechnaya-zona",
+      "rootHtml": "ventilyatsiya-i-posudomoechnaya-zona.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-i-posudomoechnaya-zona/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-i-posudomoechnaya-zona/sections",
+        "sourceHash": "d4bfe4c59eb119cdc3b5ead084be68e3ec3720e9902b59cdbd9f7e90c164a26e",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция посудомоечной зоны: пар, влажность, конденсат",
+        "description": "Посудомоечная зона создаёт пар и влажность. Почему вытяжка и приток важны для моечной, стен, потолка и оборудования.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-i-posudomoechnaya-zona.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-kafe.html": {
+      "slug": "ventilyatsiya-kafe",
+      "rootHtml": "ventilyatsiya-kafe.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-kafe/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-kafe/sections",
+        "sourceHash": "b322f184afde78d4442477d9324ad3466caf712587900a22d6aa300892ecdf2c",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция кафе: ремонт, обслуживание, диагностика",
+        "description": "Ремонт и обслуживание вентиляции кафе: вытяжка, приток, запахи, дым, жара, шум, фильтры, вентиляторы и воздуховоды.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-kafe.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-moechnoj-zony.html": {
+      "slug": "ventilyatsiya-moechnoj-zony",
+      "rootHtml": "ventilyatsiya-moechnoj-zony.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-moechnoj-zony/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-moechnoj-zony/sections",
+        "sourceHash": "464b7bde146b4b0c44ae3343ba0830c4e603f97fc8de760452cdf4bf91f209df",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция моечной зоны ресторана и кафе",
+        "description": "Моечная зона даёт влагу и пар. Проверяем вытяжку, приток, конденсат, запахи и связь с посудомоечным оборудованием.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-moechnoj-zony.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-pekarni.html": {
+      "slug": "ventilyatsiya-pekarni",
+      "rootHtml": "ventilyatsiya-pekarni.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-pekarni/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-pekarni/sections",
+        "sourceHash": "ead3b2dbb04ea5a92e7059215b5e29db73d15b5152eb500494387b60c0f0ee08",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция пекарни: жара, запахи, вытяжка и приток",
+        "description": "Пекарням нужна вентиляция с учётом жара, запахов, муки, оборудования и режима работы. Проверка вытяжки и притока.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-pekarni.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-restorana-ne-tyanet.html": {
+      "slug": "ventilyatsiya-restorana-ne-tyanet",
+      "rootHtml": "ventilyatsiya-restorana-ne-tyanet.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-restorana-ne-tyanet/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-restorana-ne-tyanet/sections",
+        "sourceHash": "e6444e84b440341288f788d940f8535a231fa4b8e01c1468e324afcdc664d7a5",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция ресторана не тянет — диагностика и ремонт",
+        "description": "Если вытяжка плохо тянет, на кухне дым, запах или жар — проверим фильтры, зонт, воздуховоды, вентилятор, приток и автоматику.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-restorana-ne-tyanet.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-restoranov.html": {
+      "slug": "ventilyatsiya-restoranov",
+      "rootHtml": "ventilyatsiya-restoranov.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-restoranov/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-restoranov/sections",
+        "sourceHash": "d10ba80372b074472ca6483c24d02168b05c0673b43e144c575cd5e2c251060c",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Ремонт вентиляции ресторанов и кафе в Москве — MosPochin",
+        "description": "Диагностика, ремонт, обслуживание и чистка вентиляции ресторанов, кафе, столовых, пекарен и dark kitchen. Вытяжка, приток, зонты, вентиляторы, воздуховоды, автоматика.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-restoranov.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "ventilyatsiya-stolovoj.html": {
+      "slug": "ventilyatsiya-stolovoj",
+      "rootHtml": "ventilyatsiya-stolovoj.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/ventilyatsiya-stolovoj/page.json",
+        "sectionsDir": "src/pages/ventilyatsiya-stolovoj/sections",
+        "sourceHash": "2dc8b9d1578a700377bf3a07e7d9fd0ee0e9214bcc7d4760d35aabdc8cd85d89",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вентиляция столовой: вытяжка, приток, обслуживание",
+        "description": "Диагностика и обслуживание вентиляции столовых: горячий цех, моечная зона, вытяжные зонты, приток и запахи.",
+        "canonical": "https://mospochin.ru/ventilyatsiya-stolovoj.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "vibriruet-ventilyator-vytyazhki.html": {
+      "slug": "vibriruet-ventilyator-vytyazhki",
+      "rootHtml": "vibriruet-ventilyator-vytyazhki.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/vibriruet-ventilyator-vytyazhki/page.json",
+        "sectionsDir": "src/pages/vibriruet-ventilyator-vytyazhki/sections",
+        "sourceHash": "41c4baef8b7ef652e09dd1118320a1575e0bb3301c7abaa14b4a12bc5ee63ded",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вибрирует вентилятор вытяжки ресторана — диагностика",
+        "description": "Вибрация вытяжного вентилятора на кухне ресторана: проверка креплений, крыльчатки, загрязнений, подшипников, воздуховодов и автоматики.",
+        "canonical": "https://mospochin.ru/vibriruet-ventilyator-vytyazhki.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "vytyazhka-restorana-ne-rabotaet.html": {
+      "slug": "vytyazhka-restorana-ne-rabotaet",
+      "rootHtml": "vytyazhka-restorana-ne-rabotaet.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/vytyazhka-restorana-ne-rabotaet/page.json",
+        "sectionsDir": "src/pages/vytyazhka-restorana-ne-rabotaet/sections",
+        "sourceHash": "19072825bc4c5ec7fa0a28c4139abc7dd6a11cbe14749dfee828dc5a8e34b5ab",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Не работает вытяжка ресторана — ремонт и диагностика",
+        "description": "Вытяжка не включается, не удаляет дым, шумит или выбивает автомат. Диагностика вентилятора, питания, автоматики и загрязнений.",
+        "canonical": "https://mospochin.ru/vytyazhka-restorana-ne-rabotaet.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "vytyazhnaya-ventilyatsiya-restorana.html": {
+      "slug": "vytyazhnaya-ventilyatsiya-restorana",
+      "rootHtml": "vytyazhnaya-ventilyatsiya-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/vytyazhnaya-ventilyatsiya-restorana/page.json",
+        "sectionsDir": "src/pages/vytyazhnaya-ventilyatsiya-restorana/sections",
+        "sourceHash": "0639f91c6c6466b9daf066d4d2fa0cb020b73179b5758ee60a0a5e5f9fb54fa6",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Вытяжная вентиляция ресторана: ремонт, обслуживание, диагностика",
+        "description": "Как работает вытяжная вентиляция кухни ресторана, какие узлы проверять при дыме, запахе, жаре и слабой тяге.",
+        "canonical": "https://mospochin.ru/vytyazhnaya-ventilyatsiya-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "water-heaters.html": {
+      "slug": "water-heaters",
+      "rootHtml": "water-heaters.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/water-heaters/page.json",
+        "sectionsDir": "src/pages/water-heaters/sections",
+        "sourceHash": "158a64a7f1d21c2c0a36640a88981425825f64b2922df216079750a088638a2b",
+        "sections": 48
+      },
+      "metadata": {
+        "title": "Ремонт водонагревателей в Москве на дому — MosPochin",
+        "description": "Ремонт накопительных, проточных и газовых водонагревателей на дому в Москве. Диагностика, согласование работ и аккуратное восстановление техники с гарантией.",
+        "canonical": "https://mospochin.ru/water-heaters.html",
+        "robots": null,
+        "branch": "household",
+        "hasForm": true
+      },
+      "cluster": null,
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "zapah-iz-kuhni-v-zal.html": {
+      "slug": "zapah-iz-kuhni-v-zal",
+      "rootHtml": "zapah-iz-kuhni-v-zal.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/zapah-iz-kuhni-v-zal/page.json",
+        "sectionsDir": "src/pages/zapah-iz-kuhni-v-zal/sections",
+        "sourceHash": "b871bb11728381149ccde903b4b73bc134d43de7a64d4e58d4f85bb8933e0252",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Запах из кухни в зал ресторана — диагностика вентиляции",
+        "description": "Разбираем причины запаха из кухни в зал: слабая вытяжка, обратная тяга, недостаток притока, загрязнение фильтров и воздуховодов.",
+        "canonical": "https://mospochin.ru/zapah-iz-kuhni-v-zal.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "zasorilas-vytyazhka-restorana.html": {
+      "slug": "zasorilas-vytyazhka-restorana",
+      "rootHtml": "zasorilas-vytyazhka-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/zasorilas-vytyazhka-restorana/page.json",
+        "sectionsDir": "src/pages/zasorilas-vytyazhka-restorana/sections",
+        "sourceHash": "874726909a321f275a7d46ba319971f1426b2aa7205da2cd880fd674a470f174",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Засорилась вытяжка ресторана — что делать",
+        "description": "Если вытяжка стала тянуть хуже, появился дым, запах или жирный налёт — проверяем зонт, фильтры, воздуховоды и вентилятор.",
+        "canonical": "https://mospochin.ru/zasorilas-vytyazhka-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "zhaloby-na-zapah-restorana.html": {
+      "slug": "zhaloby-na-zapah-restorana",
+      "rootHtml": "zhaloby-na-zapah-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/zhaloby-na-zapah-restorana/page.json",
+        "sectionsDir": "src/pages/zhaloby-na-zapah-restorana/sections",
+        "sourceHash": "12933c8ac15bffd1a5201a01225edc27679d9f4cf02cfbf67f0f0d90823229f3",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Жалобы на запах из ресторана — проверка вентиляции",
+        "description": "Проверка причин запаха от кухни ресторана: слабая вытяжка, грязные фильтры, обратная тяга, выброс воздуха и недостаточный приток.",
+        "canonical": "https://mospochin.ru/zhaloby-na-zapah-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
+        "npm run generate:sitemap",
+        "npm run sync:generated"
+      ]
+    },
+    "zhir-v-vozduhovodah-restorana.html": {
+      "slug": "zhir-v-vozduhovodah-restorana",
+      "rootHtml": "zhir-v-vozduhovodah-restorana.html",
+      "rootExists": true,
+      "source": {
+        "model": "src/pages/zhir-v-vozduhovodah-restorana/page.json",
+        "sectionsDir": "src/pages/zhir-v-vozduhovodah-restorana/sections",
+        "sourceHash": "29ca39137ec2e18e3babff0269a80baa98ddae4e15a7cd97806f5a1ce3f6e045",
+        "sections": 10
+      },
+      "metadata": {
+        "title": "Жир в воздуховодах ресторана — диагностика и чистка",
+        "description": "Жировой налёт в вентиляции кухни снижает тягу, усиливает запахи и повышает риск проблем с вытяжкой. Проверка доступных участков.",
+        "canonical": "https://mospochin.ru/zhir-v-vozduhovodah-restorana.html",
+        "robots": null,
+        "branch": "restaurant",
+        "hasForm": true
+      },
+      "cluster": "ventilyatsiya",
+      "directLanding": false,
+      "indexable": true,
+      "inSitemap": true,
+      "requiredChecks": [
+        "npm run check:conversion-ui",
+        "npm run check:core",
+        "npm run check:handoff",
+        "npm run check:visual-contract",
         "npm run generate:sitemap",
         "npm run sync:generated"
       ]

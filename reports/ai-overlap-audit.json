@@ -1,71 +1,71 @@
 {
   "summary": {
-    "generatedAt": "2026-06-06T08:58:14.278Z",
+    "generatedAt": "2026-07-14T03:53:43.650Z",
     "pageCounts": {
-      "projectMap": 39,
-      "aiProjectIndex": 39,
-      "pageDigests": 39,
-      "clusterDigests": 1,
-      "overlapProjectIndex": 39,
-      "overlapProjectDigest": 39
+      "projectMap": 121,
+      "aiProjectIndex": 121,
+      "pageDigests": 121,
+      "clusterDigests": 3,
+      "overlapProjectIndex": 121,
+      "overlapProjectDigest": 121
     },
-    "totalBytes": 908283
+    "totalBytes": 930106
   },
   "inventory": [
     {
       "name": "projectMap",
       "file": "data/project-map.generated.json",
       "exists": true,
-      "sizeBytes": 51532,
+      "sizeBytes": 182948,
       "role": "primary machine-readable project map"
     },
     {
       "name": "aiEditingManifest",
       "file": "data/ai-editing-manifest.json",
       "exists": true,
-      "sizeBytes": 6257,
+      "sizeBytes": 7093,
       "role": "compatibility/editing hints; candidate for compaction"
     },
     {
       "name": "aiProjectIndex",
       "file": "data/ai-project-index.json",
       "exists": true,
-      "sizeBytes": 92812,
+      "sizeBytes": 340751,
       "role": "AI search/index layer; keep generated"
     },
     {
       "name": "aiComponentMap",
       "file": "data/ai-component-map.json",
       "exists": true,
-      "sizeBytes": 74457,
+      "sizeBytes": 127789,
       "role": "AI component index; keep generated"
     },
     {
       "name": "contentMap",
       "file": ".ai/digest/content-map.json",
       "exists": true,
-      "sizeBytes": 669596,
+      "sizeBytes": 256397,
       "role": "AI digest map; candidate for compaction if it duplicates project-map"
     },
     {
       "name": "aiStartHere",
       "file": "docs/AI_START_HERE.md",
       "exists": true,
-      "sizeBytes": 5342,
+      "sizeBytes": 5954,
       "role": "primary human AI entrypoint"
     },
     {
       "name": "docIndex",
       "file": "docs/DOC_INDEX.md",
       "exists": true,
-      "sizeBytes": 6458,
+      "sizeBytes": 7217,
       "role": "primary docs index"
     },
     {
       "name": "fileOwnership",
       "file": "data/file-ownership.json",
       "exists": true,
-      "sizeBytes": 1829,
+      "sizeBytes": 1957,
       "role": "primary ownership/generated/manual contract"
     }
   ],
@@ -73,13 +73,13 @@
     {
       "id": "project-map-vs-ai-index-pages",
       "severity": "info",
-      "summary": "39/39 project-map pages also appear in ai-project-index",
+      "summary": "121/121 project-map pages also appear in ai-project-index",
       "recommendation": "Keep both for now: project-map routes edits; ai-project-index supports semantic/project context."
     },
     {
       "id": "project-map-vs-page-digests",
       "severity": "info",
-      "summary": "39/39 project-map pages have page digests",
+      "summary": "121/121 project-map pages have page digests",
       "recommendation": "Keep page digests; they provide compact page summaries not present in project-map."
     },
     {
@@ -90,8 +90,8 @@
     },
     {
       "id": "content-map-size",
-      "severity": "review",
-      "summary": ".ai/digest/content-map.json size is 653.9 KB",
+      "severity": "info",
+      "summary": ".ai/digest/content-map.json size is 250.4 KB",
       "recommendation": "If still >500 KB, compact long excerpts and duplicated page metadata in a future AI generated compact step."
     }
   ]

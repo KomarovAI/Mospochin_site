@@ -6,7 +6,7 @@
 ## Что проверено
 
 - `analytics.js`, `telegram-form.js`, `server/telegram-api.mjs` проходят `node --check`.
-- `npm run verify:metrics`, `npm run verify:fast`, `npm run lint`, `npm run predeploy:check`, `npm audit` проходят.
+- На момент Run5 проходили тогдашние metrics-команды; для текущего проекта используйте `npm run check:metrics`, `npm run check:metrics-scorecard`, `npm run check:handoff` и `npm audit`.
 - Root HTML совпадает с site-builder output.
 - Метрики имеют production-only guard и не должны стрелять на localhost/preview/staging.
 - CTA visibility использует `IntersectionObserver`, а local event transport использует `sendBeacon` + `fetch keepalive` fallback.
@@ -39,13 +39,15 @@
 
 ## Новая проверка
 
-Добавлен скрипт:
+В историческом Run5-пакете упоминался скрипт:
 
 ```bash
-npm run audit:metrics-clean
+audit:metrics-clean (историческая команда, в текущем package.json отсутствует)
 ```
 
-Он проверяет:
+В текущем проекте этот исторический алиас удалён; актуальные проверки выполняются через `check:metrics`, `check:metrics-scorecard` и `check:handoff`.
+
+Исторически он проверял:
 
 - отсутствие старых metrics run1-run4 артефактов;
 - отсутствие известных дублей в backend;

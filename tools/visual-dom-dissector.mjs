@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { getFirefoxContextOptions, getFirefoxLaunchOptions } from './visual-firefox-config.mjs';
 
 const ROOT = process.cwd();
 const OUT_DIR = process.env.MOSPOCHIN_VISUAL_OUT_DIR || 'reports/live-visual-pack';
@@ -42,18 +42,6 @@ async function readJson(file, fallback) {
 
 async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true });
-}
-
-function findChrome() {
-  const forced = process.env.MOSPOCHIN_CHROME_PATH || '';
-  if (forced) return forced;
-
-  for (const bin of ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser']) {
-    try {
-      return execFileSync('which', [bin], { encoding: 'utf8' }).trim();
-    } catch {}
-  }
-  return '';
 }
 
 function normUrl(pagePath) {
@@ -375,14 +363,6 @@ async function main() {
   await ensureDir(path.join(ROOT, OUT_DIR, 'llm'));
 
   const warnings = [];
-  const chromePath = findChrome();
-
-  if (!chromePath) {
-    const warnFile = path.join(ROOT, OUT_DIR, 'llm', 'llm_visual_dom_warnings.csv');
-    await fs.writeFile(warnFile, 'page_id,path,viewport,severity,code,message,selector,part\n,,global,warning,no_chrome,No system Chrome found,,dom\n');
-    console.log('VISUAL_DOM_SKIP no_chrome');
-    return;
-  }
 
   let playwright;
   try {
@@ -407,11 +387,7 @@ async function main() {
     ['page_id', 'path', 'viewport', 'kind', 'file'].join(',')
   ];
 
-  const browser = await playwright.chromium.launch({
-    headless: true,
-    executablePath: chromePath,
-    args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
-  });
+  const browser = await playwright.firefox.launch(getFirefoxLaunchOptions());
 
   let totalBlocks = 0;
   let totalElements = 0;
@@ -436,16 +412,14 @@ async function main() {
         depth: pagePlan.depth,
         reason: pagePlan.reason,
         generated_at: new Date().toISOString(),
-        chrome: chromePath,
+        browser: 'firefox',
         viewports: {}
       };
 
       for (const viewportName of pagePlan.viewports.filter((v) => viewportConfig[v])) {
         const vp = viewportConfig[viewportName];
         const context = await browser.newContext({
-          viewport: { width: vp.width, height: vp.height },
-          isMobile: Boolean(vp.isMobile),
-          hasTouch: Boolean(vp.hasTouch),
+          ...getFirefoxContextOptions(vp),
           deviceScaleFactor: 1,
           ignoreHTTPSErrors: true
         });
@@ -573,7 +547,7 @@ async function main() {
   const summaryPath = path.join(ROOT, OUT_DIR, 'run-summary.md');
   try {
     let s = await fs.readFile(summaryPath, 'utf8');
-    s += `\n## DOM visual dissector\n\n- chrome: ${chromePath}\n- pages: ${rows.length}\n- blocks_indexed: ${totalBlocks}\n- elements_indexed: ${totalElements}\n- dom_files_indexed: ${totalFiles}\n- dom_warnings: ${warnings.length}\n`;
+    s += `\n## DOM visual dissector\n\n- browser: firefox\n- pages: ${rows.length}\n- blocks_indexed: ${totalBlocks}\n- elements_indexed: ${totalElements}\n- dom_files_indexed: ${totalFiles}\n- dom_warnings: ${warnings.length}\n`;
     await fs.writeFile(summaryPath, s);
   } catch {}
 

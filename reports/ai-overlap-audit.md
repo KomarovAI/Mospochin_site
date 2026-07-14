@@ -1,40 +1,40 @@
 # AI overlap audit
 
-Generated: 2026-06-06T08:58:14.278Z
+Generated: 2026-07-14T03:53:43.650Z
 
 ## Summary
 
-- Project-map pages: 39
-- AI project-index pages: 39
-- Page digests: 39
-- Cluster digests: 1
-- Tracked AI/map files size: 887.0 KB
+- Project-map pages: 121
+- AI project-index pages: 121
+- Page digests: 121
+- Cluster digests: 3
+- Tracked AI/map files size: 908.3 KB
 
 ## Inventory
 
 | File | Exists | Size | Role |
 |---|---:|---:|---|
-| `data/project-map.generated.json` | yes | 50.3 KB | primary machine-readable project map |
-| `data/ai-editing-manifest.json` | yes | 6.1 KB | compatibility/editing hints; candidate for compaction |
-| `data/ai-project-index.json` | yes | 90.6 KB | AI search/index layer; keep generated |
-| `data/ai-component-map.json` | yes | 72.7 KB | AI component index; keep generated |
-| `.ai/digest/content-map.json` | yes | 653.9 KB | AI digest map; candidate for compaction if it duplicates project-map |
-| `docs/AI_START_HERE.md` | yes | 5.2 KB | primary human AI entrypoint |
-| `docs/DOC_INDEX.md` | yes | 6.3 KB | primary docs index |
-| `data/file-ownership.json` | yes | 1.8 KB | primary ownership/generated/manual contract |
+| `data/project-map.generated.json` | yes | 178.7 KB | primary machine-readable project map |
+| `data/ai-editing-manifest.json` | yes | 6.9 KB | compatibility/editing hints; candidate for compaction |
+| `data/ai-project-index.json` | yes | 332.8 KB | AI search/index layer; keep generated |
+| `data/ai-component-map.json` | yes | 124.8 KB | AI component index; keep generated |
+| `.ai/digest/content-map.json` | yes | 250.4 KB | AI digest map; candidate for compaction if it duplicates project-map |
+| `docs/AI_START_HERE.md` | yes | 5.8 KB | primary human AI entrypoint |
+| `docs/DOC_INDEX.md` | yes | 7.0 KB | primary docs index |
+| `data/file-ownership.json` | yes | 1.9 KB | primary ownership/generated/manual contract |
 
 ## Findings
 
 ### project-map-vs-ai-index-pages
 
 - Severity: info
-- Summary: 39/39 project-map pages also appear in ai-project-index
+- Summary: 121/121 project-map pages also appear in ai-project-index
 - Recommendation: Keep both for now: project-map routes edits; ai-project-index supports semantic/project context.
 
 ### project-map-vs-page-digests
 
 - Severity: info
-- Summary: 39/39 project-map pages have page digests
+- Summary: 121/121 project-map pages have page digests
 - Recommendation: Keep page digests; they provide compact page summaries not present in project-map.
 
 ### ai-editing-manifest-overlap
@@ -45,8 +45,8 @@ Generated: 2026-06-06T08:58:14.278Z
 
 ### content-map-size
 
-- Severity: review
-- Summary: .ai/digest/content-map.json size is 653.9 KB
+- Severity: info
+- Summary: .ai/digest/content-map.json size is 250.4 KB
 - Recommendation: If still >500 KB, compact long excerpts and duplicated page metadata in a future AI generated compact step.
 
 ## Recommended future compaction order

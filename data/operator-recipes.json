@@ -244,9 +244,10 @@
       "branch": "household",
       "pageKind": "service-page",
       "intent": "Add a new household service page with the scaffold flow.",
-      "entryCommand": "npm run scaffold:household-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+      "entryCommand": "npm run page:create -- --branch household --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
       "allowedCommands": [
-        "npm run scaffold:household-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+        "npm run page:create -- --branch household --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+        "npm run page:check -- --page <file.html>",
         "npm run doctor:page -- --page <file.html>",
         "npm run household:sync-fallbacks -- --page <file.html>",
         "npm run validate:site"
@@ -265,9 +266,10 @@
       "branch": "restaurant",
       "pageKind": "service-page",
       "intent": "Add a new restaurant service page with the scaffold flow.",
-      "entryCommand": "npm run scaffold:restaurant-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+      "entryCommand": "npm run page:create -- --branch restaurant --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
       "allowedCommands": [
-        "npm run scaffold:restaurant-service -- --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+        "npm run page:create -- --branch restaurant --slug <slug> --device-name \"<device>\" --ui-label \"<label>\" --service-name \"<service>\" --family <family>",
+        "npm run page:check -- --page <file.html>",
         "npm run doctor:page -- --page <file.html>",
         "npm run restaurant:sync-fallbacks -- --page <file.html>",
         "npm run validate:site"

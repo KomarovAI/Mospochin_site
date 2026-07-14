@@ -1,0 +1,61 @@
+{
+  "version": "2026-07-12-conversion-p0-v1",
+  "policy": "unconfirmed_public_claims_hidden",
+  "description": "Единый реестр рекламных claims. Пока источник не подтверждён документом или операционной статистикой, claim не используется в публичном proof-блоке.",
+  "claims": [
+    {
+      "id": "arrival_45_minutes",
+      "claim": "45 минут",
+      "source": "операционная статистика",
+      "allowed_pages": ["главная", "service-pages"],
+      "status": "unconfirmed",
+      "public_action": "hidden",
+      "required_evidence": "выгрузка фактического времени реакции по заявкам"
+    },
+    {
+      "id": "dispatch_24_7",
+      "claim": "24/7",
+      "source": "расписание диспетчеризации",
+      "allowed_pages": ["главная", "emergency-pages"],
+      "status": "unconfirmed",
+      "public_action": "hidden",
+      "required_evidence": "актуальное расписание и ответственная смена"
+    },
+    {
+      "id": "warranty_24_months",
+      "claim": "гарантия до 24 месяцев",
+      "source": "гарантийный процесс",
+      "allowed_pages": ["repair-pages"],
+      "status": "unconfirmed",
+      "public_action": "hidden",
+      "required_evidence": "образец договора и гарантийного документа"
+    },
+    {
+      "id": "restaurants_500_plus",
+      "claim": "500+ ресторанов",
+      "source": "CRM и история заказов",
+      "allowed_pages": ["B2B-pages"],
+      "status": "unconfirmed",
+      "public_action": "hidden",
+      "required_evidence": "агрегированная CRM-выгрузка без персональных данных"
+    },
+    {
+      "id": "first_visit_97_percent",
+      "claim": "97% за 1 визит",
+      "source": "закрытые заказы",
+      "allowed_pages": ["service-pages"],
+      "status": "unconfirmed",
+      "public_action": "hidden",
+      "required_evidence": "выборка закрытых заказов с определением повторного выезда"
+    },
+    {
+      "id": "external_rating_4_9",
+      "claim": "рейтинг 4.9/5",
+      "source": "внешний источник",
+      "allowed_pages": ["trust-block"],
+      "status": "unconfirmed",
+      "public_action": "hidden",
+      "required_evidence": "ссылка на внешний источник и дата проверки"
+    }
+  ]
+}

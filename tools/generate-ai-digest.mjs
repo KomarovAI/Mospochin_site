@@ -5,22 +5,18 @@ import { parseArgs, ROOT_DIR } from './ai-maintenance-lib.mjs';
 import {
   DIGEST_DIR,
   analyzeSourceComplexity,
-  collectPageSectionMetrics,
   ensureDir,
   fileExists,
   formatBytes,
-  loadPageModelFromSlug,
   loadProjectMaps,
   readJson,
-  readProjectFile,
-  stripTags,
-  toPosix,
   walkFiles,
   writeProjectFile,
 } from './source-compression-lib.mjs';
 
 const args = parseArgs();
 const PAROKONVEKTOMAT_CLUSTER_MANIFEST = 'data/parokonvektomat-conversion-pages.json';
+const CLUSTER_REGISTRY = 'data/cluster-registry.json';
 
 function safeName(value) {
   return String(value || 'item')
@@ -47,6 +43,68 @@ function loadParokonvektomatCluster() {
   } catch {
     return null;
   }
+}
+
+function loadClusterRegistry() {
+  if (!fileExists(CLUSTER_REGISTRY)) return { clusters: {} };
+  try {
+    return readJson(CLUSTER_REGISTRY);
+  } catch {
+    return { clusters: {} };
+  }
+}
+
+function loadClusterManifest(config) {
+  if (!config?.manifest || !fileExists(config.manifest)) return null;
+  try {
+    return readJson(config.manifest);
+  } catch {
+    return null;
+  }
+}
+
+function renderGenericClusterDigest(name, config, manifest, index) {
+  const pages = Array.isArray(manifest?.pages) ? manifest.pages : [];
+  const lines = [];
+  lines.push(`# Cluster Digest — ${name}`);
+  lines.push('');
+  lines.push(`Машинная сводка кластера для AI-правок. Registry: \`data/cluster-registry.json\`. Контракт страниц: \`${config.manifest}\`.`);
+  lines.push('');
+  lines.push('## Summary');
+  lines.push('');
+  lines.push(mdTable(['Metric', 'Value'], [
+    ['Cluster', name],
+    ['Pages', pages.length],
+    ['Guide', config.guide || '—'],
+    ['Screenshot manifest', config.screenshotManifest || '—'],
+    ['Guard commands', (config.guardCommands || []).join(', ') || '—'],
+  ]));
+  lines.push('');
+  lines.push('## Pages');
+  lines.push('');
+  lines.push(mdTable(['Page', 'Intent/type', 'Branch', 'Digest'], pages.map((page) => [
+    page.page,
+    page.intent || page.pageType || '—',
+    page.branch || '—',
+    index.pages?.[page.page] ? `.ai/digest/pages/${safeName(page.page)}.md` : '—',
+  ])));
+  lines.push('');
+  lines.push('## AI editing rules');
+  lines.push('');
+  lines.push('- Определяй роль и поисковый интент страницы до добавления нового текста или URL.');
+  lines.push('- Новые страницы должны быть представлены в cluster registry/manifest и иметь релевантную перелинковку.');
+  lines.push('- Не дублируй общий технический текст между symptom/error/brand/service страницами.');
+  lines.push('- После source-правок обнови production output и generated AI layer.');
+  lines.push('');
+  lines.push('## Mandatory checks');
+  lines.push('');
+  lines.push('```bash');
+  for (const command of config.guardCommands || []) lines.push(command);
+  lines.push('npm run check:core');
+  lines.push('npm run check:ai');
+  lines.push('```');
+  lines.push('');
+  return lines.join('\n');
 }
 
 function renderParokonvektomatClusterDigest(cluster, index) {
@@ -105,11 +163,6 @@ function renderParokonvektomatClusterDigest(cluster, index) {
   lines.push('```');
   lines.push('');
   return lines.join('\n');
-}
-
-function firstTextFromHtml(html, selector = 'h2') {
-  const re = new RegExp(`<${selector}[^>]*>([\\s\\S]*?)<\\/${selector}>`, 'i');
-  return stripTags(html.match(re)?.[1] || '');
 }
 
 function componentRefPages(report) {
@@ -289,27 +342,6 @@ function renderComponentDigest(component, report, sharedByFile) {
   return lines.join('\n');
 }
 
-function extractSectionPreview(pageMetric) {
-  const pageModel = loadPageModelFromSlug(pageMetric.slug);
-  const out = [];
-  for (const section of (pageModel?.sections || []).slice(0, 120)) {
-    const path = section.componentRef || (section.file ? `src/pages/${pageMetric.slug}/${section.file}` : null);
-    let heading = section.label || section.id;
-    if (path && fileExists(path)) {
-      const html = readProjectFile(path);
-      heading = firstTextFromHtml(html, 'h1') || firstTextFromHtml(html, 'h2') || firstTextFromHtml(html, 'h3') || heading;
-    }
-    out.push({
-      id: section.id,
-      component: section.component || 'unknown',
-      label: heading,
-      shared: Boolean(section.componentRef),
-      source: path,
-    });
-  }
-  return out;
-}
-
 function buildContentMap(report, index, componentMap) {
   const pages = {};
   for (const p of report.pages) {
@@ -327,7 +359,6 @@ function buildContentMap(report, index, componentMap) {
       rawSections: p.rawSections,
       componentMix: p.byComponent,
       largestSectionSources: p.largestSections.map((s) => s.source).filter(Boolean),
-      sectionPreview: extractSectionPreview(p),
       checks: [...new Set([...(indexPage.recommendedChecks || []), 'npm run check:site-builder'])],
     };
   }
@@ -350,9 +381,9 @@ function buildContentMap(report, index, componentMap) {
     };
   }
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     generatedAt: '1970-01-01T00:00:00.000Z',
-    note: 'AI-readable digest index. Regenerate with npm run ai:digest after structure/content changes.',
+    note: 'Compact AI-readable digest index. Detailed section order and headings live in page digest files. Regenerate with npm run ai:digest after structure/content changes.',
     entrypoints: {
       projectDigest: `${DIGEST_DIR}/project.md`,
       sourceComplexity: 'reports/source-complexity.md',
@@ -363,6 +394,7 @@ function buildContentMap(report, index, componentMap) {
       aiContextCompatibility: 'AI-CONTEXT.md',
       aiOperatingGuide: 'docs/AI_PROJECT_OPERATING_GUIDE.md',
       aiEditingManifest: 'data/ai-editing-manifest.json',
+      clusterRegistry: CLUSTER_REGISTRY,
       parokonvektomatClusterGuide: 'docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md',
       flexibleEditing: 'docs/AI_FLEXIBLE_EDITING.md',
     },
@@ -370,16 +402,18 @@ function buildContentMap(report, index, componentMap) {
     pages,
     components,
     clusters: (() => {
-      const cluster = loadParokonvektomatCluster();
-      if (!cluster) return {};
-      return {
-        parokonvektomaty: {
-          guide: 'docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md',
-          manifest: PAROKONVEKTOMAT_CLUSTER_MANIFEST,
-          digest: `${DIGEST_DIR}/clusters/parokonvektomaty.md`,
-          pages: (cluster.pages || []).map((page) => page.page),
-        },
-      };
+      const registry = loadClusterRegistry();
+      return Object.fromEntries(Object.entries(registry.clusters || {}).map(([name, config]) => {
+        const manifest = loadClusterManifest(config);
+        return [name, {
+          guide: config.guide || null,
+          manifest: config.manifest,
+          digest: config.digest || `${DIGEST_DIR}/clusters/${safeName(name)}.md`,
+          screenshotManifest: config.screenshotManifest || null,
+          guardCommands: config.guardCommands || [],
+          pages: (manifest?.pages || []).map((page) => page.page).filter(Boolean),
+        }];
+      }));
     })(),
     compressionOpportunities: report.compressionOpportunities,
   };
@@ -401,9 +435,15 @@ function generateDigestFiles() {
     files.set(`${DIGEST_DIR}/components/${safeName(component.id)}.md`, renderComponentDigest(component, report, sharedByFile));
   }
 
-  const parokonvektomatCluster = loadParokonvektomatCluster();
-  if (parokonvektomatCluster) {
-    files.set(`${DIGEST_DIR}/clusters/parokonvektomaty.md`, renderParokonvektomatClusterDigest(parokonvektomatCluster, aiIndex));
+  const registry = loadClusterRegistry();
+  for (const [name, config] of Object.entries(registry.clusters || {})) {
+    const manifest = loadClusterManifest(config);
+    if (!manifest) continue;
+    const digestPath = config.digest || `${DIGEST_DIR}/clusters/${safeName(name)}.md`;
+    const content = name === 'parokonvektomaty'
+      ? renderParokonvektomatClusterDigest(manifest, aiIndex)
+      : renderGenericClusterDigest(name, config, manifest, aiIndex);
+    files.set(digestPath, content);
   }
 
   files.set(`${DIGEST_DIR}/content-map.json`, `${JSON.stringify(buildContentMap(report, aiIndex, componentMap), null, 2)}\n`);

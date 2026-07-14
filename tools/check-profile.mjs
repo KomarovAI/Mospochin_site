@@ -23,8 +23,20 @@ function cmd(command, args = []) {
 const commandSets = {
   core: [
     cmd(NODE, ['tools/validate-data.mjs']),
+    cmd(NODE, ['tools/sync-site-builder-manifest.mjs', '--check']),
+    cmd(NODE, ['tools/check-architecture.mjs']),
+    cmd(NODE, ['tools/check-generated-diff.mjs']),
     cmd(NODE, ['tools/validate-site.mjs']),
     cmd(NODE, ['tools/check-conversion-ui.mjs']),
+    cmd(NODE, ['tools/check-sous-vide-run5.mjs']),
+    cmd(NODE, ['tools/check-metrics-contract.mjs']),
+    cmd(NODE, ['tools/check-metrics-scorecard.mjs']),
+    cmd(NODE, ['tools/check-metrics-markup.mjs']),
+    cmd(NODE, ['tools/metrics-local-smoke.mjs']),
+    cmd(NODE, ['tools/metrics-bot-smoke.mjs']),
+    cmd(NODE, ['tools/check-conversion-runtime.mjs']),
+    cmd(NODE, ['tools/audit-metrics-clean.mjs']),
+    cmd(NODE, ['tools/strip-legacy-metrika-noscript.mjs', '--check']),
     cmd(NODE, ['tools/check-ownership.mjs']),
     cmd(NODE, ['tools/build-site.mjs', '--check']),
     cmd(NODE, ['tools/site-builder-extract-shared.mjs', '--check']),
@@ -52,7 +64,14 @@ const commandSets = {
     cmd(NODE, ['tools/check-image-budget.mjs']),
   ],
   visual: [
-    cmd(NODE, ['tools/audit-screenshots.mjs', '--manifest', 'data/parokonvektomat-screenshot-audit.json']),
+    cmd(NODE, ['tools/check-visual-env.mjs']),
+    cmd(NODE, ['tools/check-visual-contract.mjs']),
+    cmd(NODE, ['tools/check-visual-workflow-policy.mjs']),
+    cmd(NODE, ['tools/visual-local-capture.mjs', '--manifest', 'data/visual-smoke-audit.json', '--mode', 'first-view', '--output', '.artifacts/screenshots/visual-smoke/native-first-view']),
+  ],
+  visualContract: [
+    cmd(NODE, ['tools/check-visual-contract.mjs']),
+    cmd(NODE, ['tools/check-visual-workflow-policy.mjs']),
   ],
   npmAudit: [
     cmd(NPM, ['audit', '--audit-level=moderate']),
@@ -66,6 +85,7 @@ const profiles = {
   doctor: [...commandSets.doctor],
   images: [...commandSets.images],
   visual: [...commandSets.visual],
+  visualContract: [...commandSets.visualContract],
   handoff: [
     ...commandSets.core,
     ...commandSets.ai,

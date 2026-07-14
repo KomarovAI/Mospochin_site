@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T17:34:28.683Z",
+  "generatedAt": "2026-07-14T10:07:04.408Z",
   "policy": {
     "safeDelete": "not referenced, not in deploy manifest, not a responsive source original, and not a generated responsive derivative for a kept source",
     "keepSource": "original asset required to regenerate a referenced/deployed responsive derivative",
@@ -7,14 +7,14 @@
   },
   "totals": {
     "allAssets": {
-      "count": 166,
-      "bytes": 27384891,
-      "mb": 26.116
+      "count": 268,
+      "bytes": 44706918,
+      "mb": 42.636
     },
     "keepRuntime": {
-      "count": 113,
-      "bytes": 13907237,
-      "mb": 13.263
+      "count": 196,
+      "bytes": 27010950,
+      "mb": 25.76
     },
     "keepDeploy": {
       "count": 0,
@@ -32,9 +32,9 @@
       "mb": 3.227
     },
     "safeDelete": {
-      "count": 0,
-      "bytes": 0,
-      "mb": 0
+      "count": 19,
+      "bytes": 4218314,
+      "mb": 4.023
     },
     "missingReferences": {
       "count": 0
@@ -43,16 +43,70 @@
   "groups": {
     "keepRuntime": [
       {
+        "path": "assets/images/ventilation-greasy-duct-interior-depth.jpg",
+        "bytes": 762083,
+        "mb": 0.727,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-greasy-duct-interior-depth-768w.jpg",
+          "assets/images/responsive/ventilation-greasy-duct-interior-depth-768w.jpg.webp"
+        ],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/master-06-1600w.jpeg",
         "bytes": 593133,
         "mb": 0.566,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "src/pages/uslugi/sections/005-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html",
+          "src/pages/uslugi/sections/004-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html",
           "uslugi.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/master-06.jpeg"
+      },
+      {
+        "path": "assets/images/ventilation-grease-scraping-inside-duct.jpg",
+        "bytes": 592076,
+        "mb": 0.565,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-grease-scraping-inside-duct-768w.jpg",
+          "assets/images/responsive/ventilation-grease-scraping-inside-duct-768w.jpg.webp"
+        ],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/ventilation-greasy-duct-damper.jpg",
+        "bytes": 556523,
+        "mb": 0.531,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-greasy-duct-damper-1200w.jpg",
+          "assets/images/responsive/ventilation-greasy-duct-damper-1200w.jpg.webp",
+          "assets/images/responsive/ventilation-greasy-duct-damper-768w.jpg",
+          "assets/images/responsive/ventilation-greasy-duct-damper-768w.jpg.webp"
+        ],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/ventilation-damaged-duct-insulation.jpg",
+        "bytes": 525725,
+        "mb": 0.501,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-damaged-duct-insulation-768w.jpg",
+          "assets/images/responsive/ventilation-damaged-duct-insulation-768w.jpg.webp"
+        ],
+        "generatedFor": null
       },
       {
         "path": "assets/images/responsive/master-01-1600w.jpeg",
@@ -60,7 +114,7 @@
         "mb": 0.484,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "src/pages/uslugi/sections/005-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html",
+          "src/pages/uslugi/sections/004-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html",
           "uslugi.html"
         ],
         "sourceFor": [],
@@ -73,10 +127,23 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "posudomoyki.html",
-          "src/pages/posudomoyki/sections/005-hero-posudomoyka-ne-slivaet-ne-moet-ili-techet-verne.html"
+          "src/pages/posudomoyki/sections/004-hero-posudomoyka-ne-slivaet-ne-moet-ili-techet-verne.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/dishwasher-44.jpeg"
+      },
+      {
+        "path": "assets/images/ventilation-attic-spiral-duct-run.jpg",
+        "bytes": 474467,
+        "mb": 0.452,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-attic-spiral-duct-run-768w.jpg",
+          "assets/images/responsive/ventilation-attic-spiral-duct-run-768w.jpg.webp"
+        ],
+        "generatedFor": null
       },
       {
         "path": "assets/images/responsive/plita-22-1600w.jpeg",
@@ -88,11 +155,24 @@
           "plity-pechi.html",
           "plity.html",
           "src/pages/pishevarochnye-kotly/sections/004-mobile-contact-remont-pischevarochnyh-kotlov-dlya-re.html",
-          "src/pages/plity-pechi/sections/005-hero-remont-plit-i-pechey-v-moskve-bez-prostoya-kuhn.html",
-          "src/pages/plity/sections/005-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim.html"
+          "src/pages/plity-pechi/sections/004-hero-remont-plit-i-pechey-v-moskve-bez-prostoya-kuhn.html",
+          "src/pages/plity/sections/004-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/plita-22.jpeg"
+      },
+      {
+        "path": "assets/images/ventilation-insulated-duct-connection.jpg",
+        "bytes": 416047,
+        "mb": 0.397,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-insulated-duct-connection-768w.jpg",
+          "assets/images/responsive/ventilation-insulated-duct-connection-768w.jpg.webp"
+        ],
+        "generatedFor": null
       },
       {
         "path": "assets/images/responsive/master-10-1600w.jpeg",
@@ -101,10 +181,25 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "about.html",
-          "src/pages/about/sections/005-hero-o-kompanii-mospochin.html"
+          "src/pages/about/sections/004-hero-o-kompanii-mospochin.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/master-10.jpeg"
+      },
+      {
+        "path": "assets/images/ventilation-clean-duct-interior-with-damper.jpg",
+        "bytes": 377248,
+        "mb": 0.36,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-clean-duct-interior-with-damper-1200w.jpg",
+          "assets/images/responsive/ventilation-clean-duct-interior-with-damper-1200w.jpg.webp",
+          "assets/images/responsive/ventilation-clean-duct-interior-with-damper-768w.jpg",
+          "assets/images/responsive/ventilation-clean-duct-interior-with-damper-768w.jpg.webp"
+        ],
+        "generatedFor": null
       },
       {
         "path": "assets/images/responsive/water-heater-09-1200w.jpeg",
@@ -112,7 +207,7 @@
         "mb": 0.35,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "src/pages/water-heaters/sections/005-hero-remont-vodonagrevateley-na-domu-v-moskve.html",
+          "src/pages/water-heaters/sections/004-hero-remont-vodonagrevateley-na-domu-v-moskve.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -125,10 +220,65 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "holodilnoe-oborudovanie.html",
-          "src/pages/holodilnoe-oborudovanie/sections/007-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html"
+          "src/pages/holodilnoe-oborudovanie/sections/006-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/comm-fridge-13.jpeg"
+      },
+      {
+        "path": "assets/images/ventilation-exterior-ventilation-duct-route.jpg",
+        "bytes": 362387,
+        "mb": 0.346,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-exterior-ventilation-duct-route-768w.jpg",
+          "assets/images/responsive/ventilation-exterior-ventilation-duct-route-768w.jpg.webp"
+        ],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/ventilation-open-duct-joint-gap.jpg",
+        "bytes": 356769,
+        "mb": 0.34,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-open-duct-joint-gap-1200w.jpg",
+          "assets/images/responsive/ventilation-open-duct-joint-gap-1200w.jpg.webp",
+          "assets/images/responsive/ventilation-open-duct-joint-gap-768w.jpg",
+          "assets/images/responsive/ventilation-open-duct-joint-gap-768w.jpg.webp"
+        ],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/ventilation-clean-baffle-filters.jpg",
+        "bytes": 327606,
+        "mb": 0.312,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-clean-baffle-filters-1200w.jpg",
+          "assets/images/responsive/ventilation-clean-baffle-filters-1200w.jpg.webp",
+          "assets/images/responsive/ventilation-clean-baffle-filters-768w.jpg",
+          "assets/images/responsive/ventilation-clean-baffle-filters-768w.jpg.webp"
+        ],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-greasy-duct-interior-depth-768w.jpg",
+        "bytes": 318928,
+        "mb": 0.304,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "chistka-ventilyatsii-restoranov.html",
+          "src/pages/chistka-ventilyatsii-restoranov/sections/002-breadcrumb-chistka-ventilyacii-restoranov-i-kafe.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-greasy-duct-interior-depth.jpg"
       },
       {
         "path": "assets/images/responsive/master-01-1200w.jpeg",
@@ -136,7 +286,7 @@
         "mb": 0.296,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "src/pages/uslugi/sections/005-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html",
+          "src/pages/uslugi/sections/004-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html",
           "uslugi.html"
         ],
         "sourceFor": [],
@@ -149,7 +299,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "posudomoyki.html",
-          "src/pages/posudomoyki/sections/005-hero-posudomoyka-ne-slivaet-ne-moet-ili-techet-verne.html"
+          "src/pages/posudomoyki/sections/004-hero-posudomoyka-ne-slivaet-ne-moet-ili-techet-verne.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/dishwasher-46.jpeg"
@@ -165,13 +315,25 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/ventilation-greasy-duct-damper-1200w.jpg",
+        "bytes": 287407,
+        "mb": 0.274,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "chistka-ventilyatsii-restoranov.html",
+          "src/pages/chistka-ventilyatsii-restoranov/sections/002-breadcrumb-chistka-ventilyacii-restoranov-i-kafe.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-greasy-duct-damper.jpg"
+      },
+      {
         "path": "assets/images/responsive/plita-24-1200w.jpeg",
         "bytes": 285493,
         "mb": 0.272,
         "referencedBy": [
           ".deploy/include-files.txt",
           "plity.html",
-          "src/pages/plity/sections/005-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim.html"
+          "src/pages/plity/sections/004-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/plita-24.jpeg"
@@ -183,7 +345,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "posudomoechnye-mashiny.html",
-          "src/pages/posudomoechnye-mashiny/sections/007-hero-remont-promyshlennyh-posudomoechnyh-mashin-bez-.html"
+          "src/pages/posudomoechnye-mashiny/sections/006-hero-remont-promyshlennyh-posudomoechnyh-mashin-s-po.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/comm-dw-07.jpeg"
@@ -199,11 +361,66 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/ventilation-restaurant-hood-underside.jpg",
+        "bytes": 281387,
+        "mb": 0.268,
+        "referencedBy": [
+          "data/ventilation-photo-map.json"
+        ],
+        "sourceFor": [
+          "assets/images/responsive/ventilation-restaurant-hood-underside-1200w.jpg",
+          "assets/images/responsive/ventilation-restaurant-hood-underside-1200w.jpg.webp",
+          "assets/images/responsive/ventilation-restaurant-hood-underside-768w.jpg",
+          "assets/images/responsive/ventilation-restaurant-hood-underside-768w.jpg.webp"
+        ],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-internals-1200w.jpg",
+        "bytes": 260827,
+        "mb": 0.249,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-net-para.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-net-para/sections/006-hero-v-parokonvektomate-net-para.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/master-01-1600w.jpeg.webp",
         "bytes": 258310,
         "mb": 0.246,
         "referencedBy": [
           ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-grease-scraping-inside-duct-768w.jpg",
+        "bytes": 258252,
+        "mb": 0.246,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "chistka-ventilyatsii-restoranov.html",
+          "src/pages/chistka-ventilyatsii-restoranov/sections/002-breadcrumb-chistka-ventilyacii-restoranov-i-kafe.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-grease-scraping-inside-duct.jpg"
+      },
+      {
+        "path": "assets/images/responsive/control-board-macro-1200w.jpg",
+        "bytes": 250682,
+        "mb": 0.239,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-ne-vklyuchaetsya.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-ne-vklyuchaetsya/sections/003-mobile-contact-parokonvektomat-ne-vklyuchaetsya-nayd.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -215,7 +432,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "microwaves.html",
-          "src/pages/microwaves/sections/004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html"
+          "src/pages/microwaves/sections/003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/microwave-02.jpeg"
@@ -227,7 +444,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "posudomoechnye-mashiny.html",
-          "src/pages/posudomoechnye-mashiny/sections/007-hero-remont-promyshlennyh-posudomoechnyh-mashin-bez-.html"
+          "src/pages/posudomoechnye-mashiny/sections/006-hero-remont-promyshlennyh-posudomoechnyh-mashin-s-po.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/comm-dw-17.jpeg"
@@ -243,13 +460,39 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/combi-oven-chamber-1600w.jpg",
+        "bytes": 229966,
+        "mb": 0.219,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-ne-greet.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-ne-greet/sections/006-hero-parokonvektomat-ne-greet.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-damaged-duct-insulation-768w.jpg",
+        "bytes": 227177,
+        "mb": 0.217,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "remont-ventilyatsii-restoranov.html",
+          "src/pages/remont-ventilyatsii-restoranov/sections/002-breadcrumb-remont-ventilyacii-restoranov-i-kafe.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-damaged-duct-insulation.jpg"
+      },
+      {
         "path": "assets/images/responsive/comm-fridge-11-1200w.jpeg",
         "bytes": 222985,
         "mb": 0.213,
         "referencedBy": [
           ".deploy/include-files.txt",
           "holodilnoe-oborudovanie.html",
-          "src/pages/holodilnoe-oborudovanie/sections/007-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html"
+          "src/pages/holodilnoe-oborudovanie/sections/006-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/comm-fridge-11.jpeg"
@@ -260,7 +503,7 @@
         "mb": 0.212,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "src/pages/stiralnye-mashiny/sections/005-hero-stiral-naya-mashina-ne-slivaet-techet-ili-shumi.html",
+          "src/pages/stiralnye-mashiny/sections/004-hero-stiral-naya-mashina-ne-slivaet-techet-ili-shumi.html",
           "stiralnye-mashiny.html"
         ],
         "sourceFor": [],
@@ -275,6 +518,18 @@
         ],
         "sourceFor": [],
         "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-clean-duct-interior-with-damper-1200w.jpg",
+        "bytes": 213268,
+        "mb": 0.203,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "diagnostika-ventilyatsii-restorana.html",
+          "src/pages/diagnostika-ventilyatsii-restorana/sections/002-breadcrumb-diagnostika-ventilyacii-restorana-pered-r.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-clean-duct-interior-with-damper.jpg"
       },
       {
         "path": "assets/images/responsive/water-heater-09-1200w.jpeg.webp",
@@ -293,7 +548,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "grili-mangaly.html",
-          "src/pages/grili-mangaly/sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html"
+          "src/pages/grili-mangaly/sections/006-hero-grili-ili-frityurnica-vstali-utochnim-polomku-i.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/grill-25.jpeg"
@@ -309,16 +564,52 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/abat-combi-oven-front-1600w.jpg",
+        "bytes": 192187,
+        "mb": 0.183,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-abat.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-abat/sections/006-hero-remont-parokonvektomatov-abat.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-clean-baffle-filters-1200w.jpg",
+        "bytes": 190138,
+        "mb": 0.181,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "obsluzhivanie-ventilyatsii-restoranov.html",
+          "src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/002-breadcrumb-obsluzhivanie-ventilyacii-restoranov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-clean-baffle-filters.jpg"
+      },
+      {
         "path": "assets/images/responsive/computer-17-1600w.jpeg",
         "bytes": 190063,
         "mb": 0.181,
         "referencedBy": [
           ".deploy/include-files.txt",
           "kompyutery.html",
-          "src/pages/kompyutery/sections/005-hero-komp-yuter-ili-noutbuk-tormozit-shumit-ili-ne-v.html"
+          "src/pages/kompyutery/sections/004-hero-komp-yuter-ili-noutbuk-tormozit-shumit-ili-ne-v.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/computer-17.jpeg"
+      },
+      {
+        "path": "assets/images/responsive/ventilation-greasy-duct-interior-depth-768w.jpg.webp",
+        "bytes": 186226,
+        "mb": 0.178,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
       },
       {
         "path": "assets/images/responsive/router-19-1600w.jpeg",
@@ -327,10 +618,22 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/005-hero-remont-i-nastroyka-routerov-v-moskve.html"
+          "src/pages/routery/sections/004-hero-remont-i-nastroyka-routerov-v-moskve.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/router-19.jpeg"
+      },
+      {
+        "path": "assets/images/responsive/ventilation-open-duct-joint-gap-1200w.jpg",
+        "bytes": 185490,
+        "mb": 0.177,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "diagnostika-ventilyatsii-restorana.html",
+          "src/pages/diagnostika-ventilyatsii-restorana/sections/002-breadcrumb-diagnostika-ventilyacii-restorana-pered-r.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-open-duct-joint-gap.jpg"
       },
       {
         "path": "assets/images/responsive/comm-dw-07-1200w.jpeg",
@@ -339,10 +642,34 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "posudomoechnye-mashiny.html",
-          "src/pages/posudomoechnye-mashiny/sections/007-hero-remont-promyshlennyh-posudomoechnyh-mashin-bez-.html"
+          "src/pages/posudomoechnye-mashiny/sections/006-hero-remont-promyshlennyh-posudomoechnyh-mashin-s-po.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/comm-dw-07.jpeg"
+      },
+      {
+        "path": "assets/images/responsive/ventilation-insulated-duct-connection-768w.jpg",
+        "bytes": 180894,
+        "mb": 0.173,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "remont-ventilyatsii-restoranov.html",
+          "src/pages/remont-ventilyatsii-restoranov/sections/002-breadcrumb-remont-ventilyacii-restoranov-i-kafe.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-insulated-duct-connection.jpg"
+      },
+      {
+        "path": "assets/images/responsive/ventilation-attic-spiral-duct-run-768w.jpg",
+        "bytes": 180072,
+        "mb": 0.172,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "src/pages/ventilyatsiya-restoranov/sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html",
+          "ventilyatsiya-restoranov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-attic-spiral-duct-run.jpg"
       },
       {
         "path": "assets/images/responsive/dishwasher-46-1200w.jpeg.webp",
@@ -365,13 +692,23 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/ventilation-greasy-duct-damper-1200w.jpg.webp",
+        "bytes": 163034,
+        "mb": 0.155,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/router-10-1600w.jpeg",
         "bytes": 161929,
         "mb": 0.154,
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/005-hero-remont-i-nastroyka-routerov-v-moskve.html"
+          "src/pages/routery/sections/004-hero-remont-i-nastroyka-routerov-v-moskve.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/router-10.jpeg"
@@ -385,6 +722,40 @@
         ],
         "sourceFor": [],
         "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-damaged-duct-insulation-768w.jpg.webp",
+        "bytes": 158870,
+        "mb": 0.152,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-grease-scraping-inside-duct-768w.jpg.webp",
+        "bytes": 157912,
+        "mb": 0.151,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-restaurant-hood-underside-1200w.jpg",
+        "bytes": 157875,
+        "mb": 0.151,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "obsluzhivanie-ventilyatsii-restoranov.html",
+          "src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/002-breadcrumb-obsluzhivanie-ventilyacii-restoranov.html",
+          "src/pages/ventilyatsiya-restoranov/sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html",
+          "ventilyatsiya-restoranov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-restaurant-hood-underside.jpg"
       },
       {
         "path": "assets/fonts/remixicon.woff2",
@@ -405,10 +776,22 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "kompyutery.html",
-          "src/pages/kompyutery/sections/005-hero-komp-yuter-ili-noutbuk-tormozit-shumit-ili-ne-v.html"
+          "src/pages/kompyutery/sections/004-hero-komp-yuter-ili-noutbuk-tormozit-shumit-ili-ne-v.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/computer-12.jpeg"
+      },
+      {
+        "path": "assets/images/responsive/ventilation-exterior-ventilation-duct-route-768w.jpg",
+        "bytes": 153380,
+        "mb": 0.146,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "src/pages/ventilyatsiya-restoranov/sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html",
+          "ventilyatsiya-restoranov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-exterior-ventilation-duct-route.jpg"
       },
       {
         "path": "assets/images/responsive/microwave-02-1200w.jpeg",
@@ -417,7 +800,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "microwaves.html",
-          "src/pages/microwaves/sections/004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html"
+          "src/pages/microwaves/sections/003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/microwave-02.jpeg"
@@ -428,28 +811,42 @@
         "mb": 0.144,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "parokonvektomat-abat.html",
           "parokonvektomat-convotherm.html",
           "parokonvektomat-e02-e07-e10.html",
           "parokonvektomat-electrolux.html",
           "parokonvektomat-kod-oshibki.html",
           "parokonvektomat-lainox.html",
-          "parokonvektomat-ne-greet.html",
-          "parokonvektomat-net-para.html",
-          "parokonvektomat-obschuzhivanie.html",
           "parokonvektomat-rational-e9.html",
           "parokonvektomat-rational.html",
           "parokonvektomat-unox-af02-af08.html",
-          "parokonvektomat-unox.html",
           "parokonvektomaty-promo.html",
-          "parokonvektomaty.html",
           "remont-oborudovaniya-restorana-parokonvektomat.html",
-          "src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html",
-          "src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html",
-          "src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html"
+          "src/pages/parokonvektomat-convotherm/sections/006-hero-remont-parokonvektomatov-convotherm.html",
+          "src/pages/parokonvektomat-e02-e07-e10/sections/006-hero-oshibka-e02-e07-e10.html",
+          "src/pages/parokonvektomat-electrolux/sections/006-hero-remont-parokonvektomatov-electrolux-professiona.html",
+          "src/pages/parokonvektomat-kod-oshibki/sections/006-hero-kod-oshibki-prishlite-foto-displeya.html",
+          "src/pages/parokonvektomat-lainox/sections/006-hero-remont-parokonvektomatov-lainox.html",
+          "src/pages/parokonvektomat-rational-e9/sections/006-hero-oshibka-rational-e9.html",
+          "src/pages/parokonvektomat-rational/sections/006-hero-remont-parokonvektomatov-rational.html",
+          "src/pages/parokonvektomat-unox-af02-af08/sections/006-hero-oshibka-unox-af02-af08.html",
+          "src/pages/parokonvektomaty-promo/sections/006-hero-oshibka-rational-unox-abat.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/combi-oven-08.jpeg"
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-chamber-1200w.jpg",
+        "bytes": 150013,
+        "mb": 0.143,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-ne-greet.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-ne-greet/sections/006-hero-parokonvektomat-ne-greet.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
       },
       {
         "path": "assets/images/responsive/master-13-1600w.jpeg",
@@ -458,7 +855,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "about.html",
-          "src/pages/about/sections/005-hero-o-kompanii-mospochin.html"
+          "src/pages/about/sections/004-hero-o-kompanii-mospochin.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/master-13.jpeg"
@@ -479,7 +876,7 @@
         "mb": 0.133,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "src/pages/uslugi/sections/005-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html",
+          "src/pages/uslugi/sections/004-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html",
           "uslugi.html"
         ],
         "sourceFor": [],
@@ -496,16 +893,52 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/control-board-macro-768w.jpg",
+        "bytes": 137775,
+        "mb": 0.131,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-ne-vklyuchaetsya.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-ne-vklyuchaetsya/sections/003-mobile-contact-parokonvektomat-ne-vklyuchaetsya-nayd.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/water-heater-01-1200w.jpeg",
         "bytes": 134619,
         "mb": 0.128,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "src/pages/water-heaters/sections/005-hero-remont-vodonagrevateley-na-domu-v-moskve.html",
+          "src/pages/water-heaters/sections/004-hero-remont-vodonagrevateley-na-domu-v-moskve.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/water-heater-01.jpeg"
+      },
+      {
+        "path": "assets/images/responsive/unox-combi-oven-front-1200w.jpg",
+        "bytes": 134605,
+        "mb": 0.128,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-unox.html",
+          "src/pages/parokonvektomat-unox/sections/006-hero-remont-parokonvektomatov-unox.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-clean-duct-interior-with-damper-1200w.jpg.webp",
+        "bytes": 134432,
+        "mb": 0.128,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
       },
       {
         "path": "assets/fonts/remixicon.css",
@@ -515,23 +948,59 @@
           ".deploy/include-files.txt",
           "404.html",
           "about.html",
+          "avtomatika-ventilyatsii-restorana.html",
+          "bezopasnost-sous-vide.html",
           "bytovaya-about.html",
           "bytovaya-contact.html",
           "bytovaya-index.html",
           "bytovaya-uslugi.html",
+          "chek-list-ventilyatsii-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "chistka-ventilyatsii-restoranov.html",
+          "chto-proveryaet-inzhener-ventilyatsii.html",
           "contact.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "dym-na-kuhne-restorana.html",
           "grili-mangaly.html",
           "holodilniki.html",
           "holodilnoe-oborudovanie.html",
-          "ice-machines.html",
-          "index.html",
-          "kompyutery.html",
-          "microwaves.html",
-          "parokonvektomat-abat.html",
-          "parokonvektomat-convotherm.html",
-          "parokonvektomat-e02-e07-e10.html",
-          "parokonvektomat-electrolux.html",
-          "parokonvektomat-kod-oshibki.html"
+          "ice-machines.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-internals-768w.jpg",
+        "bytes": 131666,
+        "mb": 0.126,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-net-para.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-net-para/sections/006-hero-v-parokonvektomate-net-para.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-greasy-duct-damper-768w.jpg",
+        "bytes": 129223,
+        "mb": 0.123,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "chistka-ventilyatsii-restoranov.html",
+          "src/pages/chistka-ventilyatsii-restoranov/sections/002-breadcrumb-chistka-ventilyacii-restoranov-i-kafe.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-greasy-duct-damper.jpg"
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-internals-1200w.jpg.webp",
+        "bytes": 128760,
+        "mb": 0.123,
+        "referencedBy": [
+          ".deploy/include-files.txt"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -547,13 +1016,59 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/abat-combi-oven-front-1200w.jpg",
+        "bytes": 127050,
+        "mb": 0.121,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-abat.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-abat/sections/006-hero-remont-parokonvektomatov-abat.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/restaurant-ventilation-hero-1200w.jpg",
+        "bytes": 122985,
+        "mb": 0.117,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "src/pages/ventilyatsiya-restoranov/sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html",
+          "ventilyatsiya-restoranov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/control-board-macro-1200w.jpg.webp",
+        "bytes": 122582,
+        "mb": 0.117,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-insulated-duct-connection-768w.jpg.webp",
+        "bytes": 121976,
+        "mb": 0.116,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/comm-fridge-11-768w.jpeg",
         "bytes": 118904,
         "mb": 0.113,
         "referencedBy": [
           ".deploy/include-files.txt",
           "holodilnoe-oborudovanie.html",
-          "src/pages/holodilnoe-oborudovanie/sections/007-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html"
+          "src/pages/holodilnoe-oborudovanie/sections/006-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/comm-fridge-11.jpeg"
@@ -594,12 +1109,32 @@
         "mb": 0.108,
         "referencedBy": [
           "bytovaya-index.html",
-          "src/pages/bytovaya-index/sections/005-proof-dokazatel-stva-garantii.html"
+          "src/pages/bytovaya-index/sections/004-proof-dokazatel-stva-garantii.html"
         ],
         "sourceFor": [
           "assets/images/responsive/hero-05-768w.jpg",
           "assets/images/responsive/hero-05-768w.jpg.webp"
         ],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-chamber-1600w.jpg.webp",
+        "bytes": 112046,
+        "mb": 0.107,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-attic-spiral-duct-run-768w.jpg.webp",
+        "bytes": 110392,
+        "mb": 0.105,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
         "generatedFor": null
       },
       {
@@ -609,7 +1144,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "grili-mangaly.html",
-          "src/pages/grili-mangaly/sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html"
+          "src/pages/grili-mangaly/sections/006-hero-grili-ili-frityurnica-vstali-utochnim-polomku-i.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/grill-21.jpeg"
@@ -625,13 +1160,45 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/ventilation-open-duct-joint-gap-1200w.jpg.webp",
+        "bytes": 105344,
+        "mb": 0.1,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-clean-baffle-filters-1200w.jpg.webp",
+        "bytes": 104368,
+        "mb": 0.1,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-clean-duct-interior-with-damper-768w.jpg",
+        "bytes": 103371,
+        "mb": 0.099,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "diagnostika-ventilyatsii-restorana.html",
+          "src/pages/diagnostika-ventilyatsii-restorana/sections/002-breadcrumb-diagnostika-ventilyacii-restorana-pered-r.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-clean-duct-interior-with-damper.jpg"
+      },
+      {
         "path": "assets/images/responsive/master-13-1200w.jpeg",
         "bytes": 99458,
         "mb": 0.095,
         "referencedBy": [
           ".deploy/include-files.txt",
           "about.html",
-          "src/pages/about/sections/005-hero-o-kompanii-mospochin.html"
+          "src/pages/about/sections/004-hero-o-kompanii-mospochin.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/master-13.jpeg"
@@ -642,25 +1209,25 @@
         "mb": 0.094,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "parokonvektomat-abat.html",
           "parokonvektomat-convotherm.html",
           "parokonvektomat-e02-e07-e10.html",
           "parokonvektomat-electrolux.html",
           "parokonvektomat-kod-oshibki.html",
           "parokonvektomat-lainox.html",
-          "parokonvektomat-ne-greet.html",
-          "parokonvektomat-net-para.html",
-          "parokonvektomat-obschuzhivanie.html",
           "parokonvektomat-rational-e9.html",
           "parokonvektomat-rational.html",
           "parokonvektomat-unox-af02-af08.html",
-          "parokonvektomat-unox.html",
           "parokonvektomaty-promo.html",
-          "parokonvektomaty.html",
           "remont-oborudovaniya-restorana-parokonvektomat.html",
-          "src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html",
-          "src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html",
-          "src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html"
+          "src/pages/parokonvektomat-convotherm/sections/006-hero-remont-parokonvektomatov-convotherm.html",
+          "src/pages/parokonvektomat-e02-e07-e10/sections/006-hero-oshibka-e02-e07-e10.html",
+          "src/pages/parokonvektomat-electrolux/sections/006-hero-remont-parokonvektomatov-electrolux-professiona.html",
+          "src/pages/parokonvektomat-kod-oshibki/sections/006-hero-kod-oshibki-prishlite-foto-displeya.html",
+          "src/pages/parokonvektomat-lainox/sections/006-hero-remont-parokonvektomatov-lainox.html",
+          "src/pages/parokonvektomat-rational-e9/sections/006-hero-oshibka-rational-e9.html",
+          "src/pages/parokonvektomat-rational/sections/006-hero-remont-parokonvektomatov-rational.html",
+          "src/pages/parokonvektomat-unox-af02-af08/sections/006-hero-oshibka-unox-af02-af08.html",
+          "src/pages/parokonvektomaty-promo/sections/006-hero-oshibka-rational-unox-abat.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/combi-oven-08.jpeg"
@@ -685,11 +1252,11 @@
           "parokonvektomat-unox-af02-af08.html",
           "parokonvektomat-unox.html",
           "parokonvektomaty-promo.html",
-          "parokonvektomaty.html",
           "remont-oborudovaniya-restorana-parokonvektomat.html",
-          "src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html",
-          "src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html",
-          "src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html"
+          "src/pages/parokonvektomat-abat/sections/006-hero-remont-parokonvektomatov-abat.html",
+          "src/pages/parokonvektomat-convotherm/sections/006-hero-remont-parokonvektomatov-convotherm.html",
+          "src/pages/parokonvektomat-e02-e07-e10/sections/006-hero-oshibka-e02-e07-e10.html",
+          "src/pages/parokonvektomat-electrolux/sections/006-hero-remont-parokonvektomatov-electrolux-professiona.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/combi-oven-09.jpeg"
@@ -703,6 +1270,18 @@
         ],
         "sourceFor": [],
         "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-clean-baffle-filters-768w.jpg",
+        "bytes": 95921,
+        "mb": 0.091,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "obsluzhivanie-ventilyatsii-restoranov.html",
+          "src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/002-breadcrumb-obsluzhivanie-ventilyacii-restoranov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-clean-baffle-filters.jpg"
       },
       {
         "path": "assets/images/responsive/computer-17-1600w.jpeg.webp",
@@ -765,6 +1344,20 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/engineer-on-site-hero-1200w.jpg",
+        "bytes": 94563,
+        "mb": 0.09,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-obschuzhivanie.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-obschuzhivanie/sections/006-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html",
+          "src/pages/parokonvektomaty/sections/006-hero-parokonvektomat-vstal-prishlite-foto-oshibki.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/computer-12-1200w.jpeg.webp",
         "bytes": 93204,
         "mb": 0.089,
@@ -781,10 +1374,42 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "posudomoechnye-mashiny.html",
-          "src/pages/posudomoechnye-mashiny/sections/007-hero-remont-promyshlennyh-posudomoechnyh-mashin-bez-.html"
+          "src/pages/posudomoechnye-mashiny/sections/006-hero-remont-promyshlennyh-posudomoechnyh-mashin-s-po.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/comm-dw-07.jpeg"
+      },
+      {
+        "path": "assets/images/responsive/abat-combi-oven-front-1600w.jpg.webp",
+        "bytes": 88944,
+        "mb": 0.085,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-diagnostics-hero-1200w.jpg",
+        "bytes": 88333,
+        "mb": 0.084,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomaty/sections/006-hero-parokonvektomat-vstal-prishlite-foto-oshibki.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-exterior-ventilation-duct-route-768w.jpg.webp",
+        "bytes": 87950,
+        "mb": 0.084,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
       },
       {
         "path": "assets/images/responsive/hero-bg-a1-1200w.jpg",
@@ -795,12 +1420,34 @@
           "bytovaya-about.html",
           "bytovaya-contact.html",
           "bytovaya-uslugi.html",
-          "src/pages/bytovaya-about/sections/007-hero-pomogaem-spokoyno-reshit-polomku-bytovoy-tehnik.html",
-          "src/pages/bytovaya-contact/sections/005-hero-svyazat-sya-po-remontu-bytovoy-tehniki.html",
-          "src/pages/bytovaya-uslugi/sections/005-hero-remont-bytovoy-tehniki-na-domu.html"
+          "src/pages/bytovaya-about/sections/006-hero-pomogaem-spokoyno-reshit-polomku-bytovoy-tehnik.html",
+          "src/pages/bytovaya-contact/sections/004-hero-svyazat-sya-po-remontu-bytovoy-tehniki.html",
+          "src/pages/bytovaya-uslugi/sections/004-hero-remont-bytovoy-tehniki-na-domu.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/hero-bg-a1.jpg"
+      },
+      {
+        "path": "assets/images/responsive/ventilation-open-duct-joint-gap-768w.jpg",
+        "bytes": 84796,
+        "mb": 0.081,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "diagnostika-ventilyatsii-restorana.html",
+          "src/pages/diagnostika-ventilyatsii-restorana/sections/002-breadcrumb-diagnostika-ventilyacii-restorana-pered-r.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-open-duct-joint-gap.jpg"
+      },
+      {
+        "path": "assets/images/responsive/ventilation-restaurant-hood-underside-1200w.jpg.webp",
+        "bytes": 84748,
+        "mb": 0.081,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
       },
       {
         "path": "assets/images/fridge-19.jpg",
@@ -809,7 +1456,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "holodilniki.html",
-          "src/pages/holodilniki/sections/005-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html"
+          "src/pages/holodilniki/sections/004-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -845,6 +1492,20 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/ventilation-restaurant-hood-underside-768w.jpg",
+        "bytes": 77210,
+        "mb": 0.074,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "obsluzhivanie-ventilyatsii-restoranov.html",
+          "src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/002-breadcrumb-obsluzhivanie-ventilyacii-restoranov.html",
+          "src/pages/ventilyatsiya-restoranov/sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html",
+          "ventilyatsiya-restoranov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": "assets/images/ventilation-restaurant-hood-underside.jpg"
+      },
+      {
         "path": "assets/images/responsive/microwave-02-1200w.jpeg.webp",
         "bytes": 77168,
         "mb": 0.074,
@@ -875,11 +1536,45 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/combi-oven-chamber-1200w.jpg.webp",
+        "bytes": 74082,
+        "mb": 0.071,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/fridge-19.jpg.webp",
         "bytes": 73556,
         "mb": 0.07,
         "referencedBy": [
           ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-greasy-duct-damper-768w.jpg.webp",
+        "bytes": 72942,
+        "mb": 0.07,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-chamber-768w.jpg",
+        "bytes": 72295,
+        "mb": 0.069,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-ne-greet.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-ne-greet/sections/006-hero-parokonvektomat-ne-greet.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -891,7 +1586,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "bytovaya-index.html",
-          "src/pages/bytovaya-index/sections/006-hero-remont-bytovoy-tehniki-na-domu-v-moskve.html"
+          "src/pages/bytovaya-index/sections/005-hero-remont-bytovoy-tehniki-na-domu-v-moskve.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/hero-05.jpg"
@@ -904,12 +1599,22 @@
           ".deploy/include-files.txt",
           ".github/workflows/deploy.yml",
           "contact.html",
-          "ice-machines.html",
           "index.html",
-          "src/pages/contact/sections/007-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html",
-          "src/pages/ice-machines/sections/007-hero-l-dogenerator-vstal-pochinim-za-1-3-chasa.html",
-          "src/pages/index/sections/004-hero-remont-restorannogo-oborudovaniya-v-moskve-bez-.html",
+          "src/pages/contact/sections/006-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html",
+          "src/pages/index/sections/003-hero-oborudovanie-vstalo-prishlite-foto-oshibki-ili-.html",
           "styles-combined.css"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/unox-combi-oven-front-768w.jpg",
+        "bytes": 69285,
+        "mb": 0.066,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-unox.html",
+          "src/pages/parokonvektomat-unox/sections/006-hero-remont-parokonvektomatov-unox.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -921,15 +1626,93 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "microwaves.html",
-          "src/pages/microwaves/sections/004-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html"
+          "src/pages/microwaves/sections/003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/microwave-02.jpeg"
       },
       {
+        "path": "assets/images/responsive/control-board-macro-768w.jpg.webp",
+        "bytes": 67688,
+        "mb": 0.065,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ice-machine-hero-1200w.jpg",
+        "bytes": 67267,
+        "mb": 0.064,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "ice-machines.html",
+          "src/pages/ice-machines/sections/006-hero-l-dogenerator-vstal-prishlite-foto-utochnim-sle.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-clean-duct-interior-with-damper-768w.jpg.webp",
+        "bytes": 65942,
+        "mb": 0.063,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/abat-combi-oven-front-768w.jpg",
+        "bytes": 65907,
+        "mb": 0.063,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-abat.html",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomat-abat/sections/006-hero-remont-parokonvektomatov-abat.html",
+          "src/pages/parokonvektomaty/sections/032-pricing-chto-inzhener-smotrit-na-diagnostike.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/comm-fridge-11-768w.jpeg.webp",
         "bytes": 65058,
         "mb": 0.062,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/restaurant-ventilation-hero-768w.jpg",
+        "bytes": 64497,
+        "mb": 0.062,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "src/pages/ventilyatsiya-restoranov/sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html",
+          "ventilyatsiya-restoranov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-internals-768w.jpg.webp",
+        "bytes": 63506,
+        "mb": 0.061,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/unox-combi-oven-front-1200w.jpg.webp",
+        "bytes": 63106,
+        "mb": 0.06,
         "referencedBy": [
           ".deploy/include-files.txt"
         ],
@@ -947,13 +1730,33 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/abat-combi-oven-front-1200w.jpg.webp",
+        "bytes": 59516,
+        "mb": 0.057,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/restaurant-ventilation-hero-1200w.jpg.webp",
+        "bytes": 57310,
+        "mb": 0.055,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/grill-21-768w.jpeg",
         "bytes": 57222,
         "mb": 0.055,
         "referencedBy": [
           ".deploy/include-files.txt",
           "grili-mangaly.html",
-          "src/pages/grili-mangaly/sections/007-hero-grili-ili-frityurnica-vstali-pochinim-za-1-3-ch.html"
+          "src/pages/grili-mangaly/sections/006-hero-grili-ili-frityurnica-vstali-utochnim-polomku-i.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/grill-21.jpeg"
@@ -975,7 +1778,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "about.html",
-          "src/pages/about/sections/005-hero-o-kompanii-mospochin.html"
+          "src/pages/about/sections/004-hero-o-kompanii-mospochin.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/master-13.jpeg"
@@ -991,30 +1794,40 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/ventilation-clean-baffle-filters-768w.jpg.webp",
+        "bytes": 53650,
+        "mb": 0.051,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/combi-oven-08-768w.jpeg",
         "bytes": 52572,
         "mb": 0.05,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "parokonvektomat-abat.html",
           "parokonvektomat-convotherm.html",
           "parokonvektomat-e02-e07-e10.html",
           "parokonvektomat-electrolux.html",
           "parokonvektomat-kod-oshibki.html",
           "parokonvektomat-lainox.html",
-          "parokonvektomat-ne-greet.html",
-          "parokonvektomat-net-para.html",
-          "parokonvektomat-obschuzhivanie.html",
           "parokonvektomat-rational-e9.html",
           "parokonvektomat-rational.html",
           "parokonvektomat-unox-af02-af08.html",
-          "parokonvektomat-unox.html",
           "parokonvektomaty-promo.html",
-          "parokonvektomaty.html",
           "remont-oborudovaniya-restorana-parokonvektomat.html",
-          "src/pages/parokonvektomat-abat/sections/007-hero-remont-parokonvektomatov-abat.html",
-          "src/pages/parokonvektomat-convotherm/sections/007-hero-remont-parokonvektomatov-convotherm.html",
-          "src/pages/parokonvektomat-e02-e07-e10/sections/007-hero-oshibka-e02-e07-e10.html"
+          "src/pages/parokonvektomat-convotherm/sections/006-hero-remont-parokonvektomatov-convotherm.html",
+          "src/pages/parokonvektomat-e02-e07-e10/sections/006-hero-oshibka-e02-e07-e10.html",
+          "src/pages/parokonvektomat-electrolux/sections/006-hero-remont-parokonvektomatov-electrolux-professiona.html",
+          "src/pages/parokonvektomat-kod-oshibki/sections/006-hero-kod-oshibki-prishlite-foto-displeya.html",
+          "src/pages/parokonvektomat-lainox/sections/006-hero-remont-parokonvektomatov-lainox.html",
+          "src/pages/parokonvektomat-rational-e9/sections/006-hero-oshibka-rational-e9.html",
+          "src/pages/parokonvektomat-rational/sections/006-hero-remont-parokonvektomatov-rational.html",
+          "src/pages/parokonvektomat-unox-af02-af08/sections/006-hero-oshibka-unox-af02-af08.html",
+          "src/pages/parokonvektomaty-promo/sections/006-hero-oshibka-rational-unox-abat.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/combi-oven-08.jpeg"
@@ -1035,7 +1848,7 @@
         "mb": 0.049,
         "referencedBy": [
           ".deploy/include-files.txt",
-          "src/pages/stiralnye-mashiny/sections/005-hero-stiral-naya-mashina-ne-slivaet-techet-ili-shumi.html",
+          "src/pages/stiralnye-mashiny/sections/004-hero-stiral-naya-mashina-ne-slivaet-techet-ili-shumi.html",
           "stiralnye-mashiny.html"
         ],
         "sourceFor": [],
@@ -1052,9 +1865,31 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/engineer-on-site-hero-768w.jpg",
+        "bytes": 49309,
+        "mb": 0.047,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomat-obschuzhivanie.html",
+          "src/pages/parokonvektomat-obschuzhivanie/sections/006-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/hero-bg-a1-1200w.jpg.webp",
         "bytes": 49026,
         "mb": 0.047,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ventilation-open-duct-joint-gap-768w.jpg.webp",
+        "bytes": 48730,
+        "mb": 0.046,
         "referencedBy": [
           ".deploy/include-files.txt"
         ],
@@ -1069,8 +1904,20 @@
           ".deploy/include-files.txt",
           "bytovaya-index.html",
           "bytovaya-uslugi.html",
-          "src/pages/bytovaya-index/sections/006-hero-remont-bytovoy-tehniki-na-domu-v-moskve.html",
-          "src/pages/bytovaya-uslugi/sections/005-hero-remont-bytovoy-tehniki-na-domu.html"
+          "src/pages/bytovaya-index/sections/005-hero-remont-bytovoy-tehniki-na-domu-v-moskve.html",
+          "src/pages/bytovaya-uslugi/sections/004-hero-remont-bytovoy-tehniki-na-domu.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-diagnostics-hero-768w.jpg",
+        "bytes": 45582,
+        "mb": 0.043,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "parokonvektomaty.html",
+          "src/pages/parokonvektomaty/sections/006-hero-parokonvektomat-vstal-prishlite-foto-oshibki.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1078,6 +1925,16 @@
       {
         "path": "assets/images/hero-restaurant.jpg.webp",
         "bytes": 43238,
+        "mb": 0.041,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/engineer-on-site-hero-1200w.jpg.webp",
+        "bytes": 43232,
         "mb": 0.041,
         "referencedBy": [
           ".deploy/include-files.txt"
@@ -1096,9 +1953,29 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/ventilation-restaurant-hood-underside-768w.jpg.webp",
+        "bytes": 42386,
+        "mb": 0.04,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/hero-05-768w.jpg.webp",
         "bytes": 40440,
         "mb": 0.039,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-diagnostics-hero-1200w.jpg.webp",
+        "bytes": 39944,
+        "mb": 0.038,
         "referencedBy": [
           ".deploy/include-files.txt"
         ],
@@ -1116,6 +1993,16 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/combi-oven-chamber-768w.jpg.webp",
+        "bytes": 36506,
+        "mb": 0.035,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/hero-bg-a1-768w.jpg",
         "bytes": 34945,
         "mb": 0.033,
@@ -1123,11 +2010,21 @@
           ".deploy/include-files.txt",
           "bytovaya-about.html",
           "bytovaya-uslugi.html",
-          "src/pages/bytovaya-about/sections/007-hero-pomogaem-spokoyno-reshit-polomku-bytovoy-tehnik.html",
-          "src/pages/bytovaya-uslugi/sections/005-hero-remont-bytovoy-tehniki-na-domu.html"
+          "src/pages/bytovaya-about/sections/006-hero-pomogaem-spokoyno-reshit-polomku-bytovoy-tehnik.html",
+          "src/pages/bytovaya-uslugi/sections/004-hero-remont-bytovoy-tehniki-na-domu.html"
         ],
         "sourceFor": [],
         "generatedFor": "assets/images/hero-bg-a1.jpg"
+      },
+      {
+        "path": "assets/images/responsive/unox-combi-oven-front-768w.jpg.webp",
+        "bytes": 33908,
+        "mb": 0.032,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
       },
       {
         "path": "assets/images/hero-bg-19.jpg.webp",
@@ -1150,9 +2047,51 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/ice-machine-hero-768w.jpg",
+        "bytes": 32009,
+        "mb": 0.031,
+        "referencedBy": [
+          ".deploy/include-files.txt",
+          "ice-machines.html",
+          "src/pages/ice-machines/sections/006-hero-l-dogenerator-vstal-prishlite-foto-utochnim-sle.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/abat-combi-oven-front-768w.jpg.webp",
+        "bytes": 31826,
+        "mb": 0.03,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/restaurant-ventilation-hero-768w.jpg.webp",
+        "bytes": 30900,
+        "mb": 0.029,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/images/responsive/grill-21-768w.jpeg.webp",
         "bytes": 30622,
         "mb": 0.029,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/ice-machine-hero-1200w.jpg.webp",
+        "bytes": 29460,
+        "mb": 0.028,
         "referencedBy": [
           ".deploy/include-files.txt"
         ],
@@ -1176,7 +2115,27 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "holodilniki.html",
-          "src/pages/holodilniki/sections/005-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html"
+          "src/pages/holodilniki/sections/004-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/engineer-on-site-hero-768w.jpg.webp",
+        "bytes": 22996,
+        "mb": 0.022,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/responsive/combi-oven-diagnostics-hero-768w.jpg.webp",
+        "bytes": 21504,
+        "mb": 0.021,
+        "referencedBy": [
+          ".deploy/include-files.txt"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1202,13 +2161,23 @@
         "generatedFor": null
       },
       {
+        "path": "assets/images/responsive/ice-machine-hero-768w.jpg.webp",
+        "bytes": 14472,
+        "mb": 0.014,
+        "referencedBy": [
+          ".deploy/include-files.txt"
+        ],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
         "path": "assets/brand-logos/water-heaters/ariston.svg",
         "bytes": 11458,
         "mb": 0.011,
         "referencedBy": [
           ".deploy/include-files.txt",
           "data/household-page-slots.json",
-          "src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
+          "src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -1221,7 +2190,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "data/household-page-slots.json",
-          "src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
+          "src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -1234,7 +2203,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "data/household-page-slots.json",
-          "src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
+          "src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -1247,7 +2216,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "data/household-page-slots.json",
-          "src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
+          "src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -1260,7 +2229,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "data/household-page-slots.json",
-          "src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
+          "src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -1273,7 +2242,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "data/household-page-slots.json",
-          "src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
+          "src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -1286,7 +2255,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "data/household-page-slots.json",
-          "src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
+          "src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -1298,25 +2267,25 @@
         "mb": 0.001,
         "referencedBy": [
           ".deploy/include-files.txt",
+          "avtomatika-ventilyatsii-restorana.html",
+          "bezopasnost-sous-vide.html",
           "bytovaya-about.html",
           "bytovaya-index.html",
           "bytovaya-uslugi.html",
+          "chek-list-ventilyatsii-restorana.html",
+          "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+          "chistka-ventilyatsii-restoranov.html",
+          "chto-proveryaet-inzhener-ventilyatsii.html",
+          "diagnostika-ventilyatsii-restorana.html",
+          "dym-na-kuhne-restorana.html",
           "holodilniki.html",
-          "kompyutery.html",
-          "microwaves.html",
-          "pishevarochnye-kotly.html",
-          "pishevarochnyj-kotel-abat-e01.html",
-          "pishevarochnyj-kotel-abat-e02.html",
-          "pishevarochnyj-kotel-abat-e04.html",
-          "pishevarochnyj-kotel-abat-e17.html",
-          "pishevarochnyj-kotel-abat-h20.html",
-          "pishevarochnyj-kotel-abat-kpem.html",
-          "pishevarochnyj-kotel-datchik-temperatury.html",
-          "pishevarochnyj-kotel-dolgo-greet.html",
-          "pishevarochnyj-kotel-kod-oshibki.html",
-          "pishevarochnyj-kotel-manometr.html",
-          "pishevarochnyj-kotel-ne-greet.html",
-          "pishevarochnyj-kotel-ne-vklyuchaetsya.html"
+          "kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html",
+          "kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html",
+          "kak-rabotaet-sous-vide.html",
+          "kak-rabotaet-ventilyatsiya-restorana.html",
+          "kak-vybrat-sous-vide-dlya-restorana.html",
+          "kanalnaya-ventilyatsiya-restorana.html",
+          "kompyutery.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1328,7 +2297,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "data/household-page-slots.json",
-          "src/pages/water-heaters/sections/024-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
+          "src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html",
           "water-heaters.html"
         ],
         "sourceFor": [],
@@ -1341,7 +2310,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/037-pricing-remontiruem-vse-marki-routerov.html"
+          "src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1353,7 +2322,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/037-pricing-remontiruem-vse-marki-routerov.html"
+          "src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1365,7 +2334,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/037-pricing-remontiruem-vse-marki-routerov.html"
+          "src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1377,7 +2346,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/037-pricing-remontiruem-vse-marki-routerov.html"
+          "src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1389,7 +2358,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/037-pricing-remontiruem-vse-marki-routerov.html"
+          "src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1401,7 +2370,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/037-pricing-remontiruem-vse-marki-routerov.html"
+          "src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1413,7 +2382,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/037-pricing-remontiruem-vse-marki-routerov.html"
+          "src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1425,7 +2394,7 @@
         "referencedBy": [
           ".deploy/include-files.txt",
           "routery.html",
-          "src/pages/routery/sections/037-pricing-remontiruem-vse-marki-routerov.html"
+          "src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html"
         ],
         "sourceFor": [],
         "generatedFor": null
@@ -1961,7 +2930,160 @@
         "generatedFor": "assets/images/combi-oven-09.jpeg"
       }
     ],
-    "safeDelete": []
+    "safeDelete": [
+      {
+        "path": "assets/images/archive-combi/combi-oven-internals.jpg",
+        "bytes": 354019,
+        "mb": 0.338,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/control-board-macro.jpg",
+        "bytes": 325291,
+        "mb": 0.31,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/rear-insulation-fan.jpg",
+        "bytes": 301644,
+        "mb": 0.288,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/combi-oven-chamber.jpg",
+        "bytes": 301522,
+        "mb": 0.288,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/eka-open-side-repair.jpg",
+        "bytes": 273643,
+        "mb": 0.261,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/eka-dual-fan-chamber.jpg",
+        "bytes": 261028,
+        "mb": 0.249,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/unox-open-chamber.jpg",
+        "bytes": 251235,
+        "mb": 0.24,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/control-board-wiring.jpg",
+        "bytes": 234314,
+        "mb": 0.223,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/dirty-fan-assembly.jpg",
+        "bytes": 222097,
+        "mb": 0.212,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/compact-oven-workstation.jpg",
+        "bytes": 217303,
+        "mb": 0.207,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/eka-oven-front.jpg",
+        "bytes": 216103,
+        "mb": 0.206,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/abat-combi-oven-front.jpg",
+        "bytes": 212400,
+        "mb": 0.203,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/restaurant-ventilation-hero.jpg",
+        "bytes": 187205,
+        "mb": 0.179,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/unox-combi-oven-front.jpg",
+        "bytes": 181197,
+        "mb": 0.173,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/heating-element.jpg",
+        "bytes": 157260,
+        "mb": 0.15,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/engineer-on-site-hero.jpg",
+        "bytes": 145275,
+        "mb": 0.139,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/combi-oven-diagnostics-hero.jpg",
+        "bytes": 134242,
+        "mb": 0.128,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/cooking-kettle-hero.jpg",
+        "bytes": 133190,
+        "mb": 0.127,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      },
+      {
+        "path": "assets/images/archive-combi/ice-machine-hero.jpg",
+        "bytes": 109346,
+        "mb": 0.104,
+        "referencedBy": [],
+        "sourceFor": [],
+        "generatedFor": null
+      }
+    ]
   },
   "missingReferences": []
 }

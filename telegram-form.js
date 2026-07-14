@@ -6,7 +6,14 @@ const FORM_RATE_LIMIT_MS = 60000;
 const FORM_MAX_PROBLEM_LENGTH = 500;
 const TELEGRAM_PAGE_METADATA_PATH = '/data/page-metadata.json';
 const FORM_BASE_FIELDS = new Set(['name', 'phone', 'type', 'problem', 'website', 'consent']);
-const FORM_ATTRIBUTION_FIELDS = ['page_url', 'page_path', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'yclid', 'referrer'];
+const FALLBACK_PHONE = '+79990057172';
+const FALLBACK_WHATSAPP = 'https://wa.me/79990057172';
+const FORM_ATTRIBUTION_FIELDS = [
+    'page_url', 'page_path', 'page_title', 'referrer',
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+    'utm_service', 'utm_landing', 'yclid', 'gclid', 'metrika_client_id', 'ym_client_id'
+];
+const currentAttributionFields = FORM_ATTRIBUTION_FIELDS;
 
 let runtimeConfigPromise = null;
 let pageMetadataPromise = null;
@@ -92,6 +99,18 @@ function getSourceLabel(branch) {
     return 'Общий сайт';
 }
 
+function getFormVariant(form) {
+    return form.dataset.formVariant?.trim()
+        || form.dataset.formContext?.trim()
+        || document.body?.dataset?.pageIntent?.trim()
+        || 'generic';
+}
+
+function makeIdempotencyKey() {
+    if (window.crypto?.randomUUID) return window.crypto.randomUUID();
+    return `lead_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 12)}`;
+}
+
 function trackFormGoal(goalName, form, extra = {}) {
     window.mospochinTrackGoal?.(goalName, {
         form_context: form.dataset.formContext?.trim() || '',
@@ -109,9 +128,10 @@ function trackSiteEventBridge(eventName, form, extra = {}) {
     });
 }
 
-function getAttributionSnapshot() {
+function getAttributionSnapshot(fields = currentAttributionFields) {
     const attribution = window.mospochinGetAttribution?.();
     if (!attribution || typeof attribution !== 'object') return null;
+    if (!Array.isArray(fields) || fields.length === 0) return attribution;
     return attribution;
 }
 
@@ -126,12 +146,18 @@ function buildAttributionHiddenFields() {
     const fields = {
         page_url: window.location.href,
         page_path: window.location.pathname,
+        page_title: document.title || '',
         utm_source: params.get('utm_source') || touch.utm_source || '',
         utm_medium: params.get('utm_medium') || touch.utm_medium || '',
         utm_campaign: params.get('utm_campaign') || touch.utm_campaign || '',
         utm_content: params.get('utm_content') || touch.utm_content || '',
         utm_term: params.get('utm_term') || touch.utm_term || '',
+        utm_service: params.get('utm_service') || touch.utm_service || '',
+        utm_landing: params.get('utm_landing') || touch.utm_landing || '',
         yclid: params.get('yclid') || touch.yclid || '',
+        gclid: params.get('gclid') || touch.gclid || '',
+        metrika_client_id: touch.metrika_client_id || '',
+        ym_client_id: touch.ym_client_id || touch.metrika_client_id || '',
         referrer: document.referrer || touch.referrer_host || ''
     };
 
@@ -156,6 +182,14 @@ function ensureHiddenField(form, name, value) {
 function populateAttributionHiddenFields(form) {
     const fields = buildAttributionHiddenFields();
     Object.entries(fields).forEach(([name, value]) => ensureHiddenField(form, name, value));
+}
+
+function ensureAttributionFields(form) {
+    populateAttributionHiddenFields(form);
+}
+
+function fillAttributionFields(form) {
+    populateAttributionHiddenFields(form);
 }
 
 function collectExtraFields(form) {
@@ -224,13 +258,18 @@ async function sendToTelegram(formData) {
         type: formData.type,
         problem: formData.problem,
         page: getCurrentPageFile(),
+        pageVersion: document.body?.dataset?.pageVersion || '',
         branch,
         sourceLabel: getSourceLabel(branch),
         formContext: formData.formContext,
+        formVariant: formData.formVariant,
         extraFields: formData.extraFields,
-        attribution: formData.attribution,
+        attribution: getAttributionSnapshot(currentAttributionFields),
+        leadQuality: formData.leadQuality,
+        pageIntent: formData.pageIntent,
+        idempotencyKey: formData.idempotencyKey,
         website: formData.website,
-        consent: true
+        consent: formData.consent
     };
 
     try {
@@ -275,12 +314,35 @@ function resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600) {
     if (hadBrandOrange) btn.classList.add('bg-brand-orange');
 }
 
+function setFormStatus(form, kind, message) {
+    let status = form.querySelector('[data-form-status]');
+    if (!status) {
+        status = document.createElement('p');
+        status.dataset.formStatus = '1';
+        status.className = 'mt-3 text-sm';
+        status.setAttribute('aria-live', 'polite');
+        form.append(status);
+    }
+    status.className = `mt-3 text-sm ${kind === 'success' ? 'text-green-700' : 'text-red-700'}`;
+    status.textContent = message;
+}
+
+function setFormFallback(form) {
+    setFormStatus(
+        form,
+        'error',
+        `Не удалось отправить форму. Позвоните инженеру: ${FALLBACK_PHONE} или отправьте фото в WhatsApp: ${FALLBACK_WHATSAPP}`
+    );
+}
+
 function enhanceTelegramForm(form) {
     if (form.dataset.telegramEnhanced === '1') return;
     form.dataset.telegramEnhanced = '1';
     form.dataset.startedAt = String(Date.now());
+    form.dataset.idempotencyKey = form.dataset.idempotencyKey || makeIdempotencyKey();
+    form.noValidate = true;
     form.classList.add('telegram-form-enhanced');
-    populateAttributionHiddenFields(form);
+    ensureAttributionFields(form);
 
     if (!form.querySelector('[name="website"]')) {
         const honeypot = document.createElement('input');
@@ -331,7 +393,7 @@ function initTelegramForms() {
             btn.disabled = true;
             btn.innerHTML = '<i class="ri-loader-4-line mr-2"></i>Отправляю...';
 
-            populateAttributionHiddenFields(form);
+            fillAttributionFields(form);
             const honeypotValue = form.querySelector('[name="website"]')?.value.trim() || '';
             const consentChecked = Boolean(form.querySelector('[name="consent"]')?.checked);
             const extraFields = collectExtraFields(form);
@@ -341,9 +403,15 @@ function initTelegramForms() {
                 type: form.querySelector('[name="type"]')?.value.trim() || '',
                 problem: buildProblemValue(form, extraFields),
                 formContext: form.dataset.formContext?.trim() || '',
+                formVariant: getFormVariant(form),
                 extraFields,
-                attribution: getAttributionSnapshot(),
-                website: honeypotValue
+                attribution: getAttributionSnapshot(currentAttributionFields),
+                leadQuality: form.dataset.leadQuality?.trim() || 'human_candidate',
+                pageIntent: document.body?.dataset?.pageIntent || '',
+                pageVersion: document.body?.dataset?.pageVersion || '',
+                website: honeypotValue,
+                consent: consentChecked,
+                idempotencyKey: form.dataset.idempotencyKey || makeIdempotencyKey()
             };
 
             const startedAt = Number(form.dataset.startedAt || Date.now());
@@ -354,6 +422,7 @@ function initTelegramForms() {
             if (honeypotValue) {
                 trackSiteEventBridge('form_submit_blocked', form, { reason: 'honeypot' });
                 resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
+                setFormStatus(form, 'error', 'Не удалось отправить форму.');
                 return;
             }
 
@@ -366,6 +435,7 @@ function initTelegramForms() {
                     ['bg-brand-orange', 'bg-green-600'],
                     ['bg-red-500']
                 );
+                setFormStatus(form, 'error', 'Пожалуйста, заполните форму чуть медленнее.');
                 return;
             }
 
@@ -378,6 +448,7 @@ function initTelegramForms() {
                     ['bg-brand-orange', 'bg-green-600'],
                     ['bg-red-500']
                 );
+                setFormStatus(form, 'error', 'Подтвердите согласие на связь по заявке.');
                 return;
             }
 
@@ -390,6 +461,7 @@ function initTelegramForms() {
                     ['bg-brand-orange', 'bg-green-600'],
                     ['bg-red-500']
                 );
+                setFormStatus(form, 'error', 'Введите корректный номер телефона.');
                 return;
             }
 
@@ -402,6 +474,7 @@ function initTelegramForms() {
                     ['bg-brand-orange', 'bg-green-600'],
                     ['bg-red-500']
                 );
+                setFormStatus(form, 'error', 'Сократите описание проблемы.');
                 return;
             }
 
@@ -414,17 +487,21 @@ function initTelegramForms() {
                     ['bg-brand-orange', 'bg-green-600'],
                     ['bg-red-500']
                 );
+                setFormStatus(form, 'error', 'Повторная отправка будет доступна через минуту.');
                 return;
             }
+
+            trackSiteEventBridge('form_submit_attempt', form, {
+                form_type: formData.type || '',
+                form_variant: formData.formVariant
+            });
 
             try {
                 const response = await sendToTelegram(formData);
                 if (response.ok) {
-                    trackFormGoal('form_submit_success', form, {
-                        form_type: formData.type || ''
-                    });
                     trackSiteEventBridge('form_submit_success', form, {
-                        form_type: formData.type || ''
+                        form_type: formData.type || '',
+                        form_variant: formData.formVariant
                     });
                     safeSetLocalStorage(rateLimitKey, String(Date.now()));
                     btn.innerHTML = '<i class="ri-check-line mr-2"></i>Отправлено! ✓';
@@ -432,6 +509,8 @@ function initTelegramForms() {
                     btn.classList.add('bg-green-500');
                     form.reset();
                     form.dataset.startedAt = String(Date.now());
+                    form.dataset.idempotencyKey = makeIdempotencyKey();
+                    setFormStatus(form, 'success', 'Заявка принята. Инженер свяжется с вами по указанному номеру.');
                     setTimeout(() => {
                         resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                     }, 3000);
@@ -439,15 +518,14 @@ function initTelegramForms() {
                     throw new Error('Failed');
                 }
             } catch (error) {
-                trackFormGoal('form_submit_error', form, {
-                    error: 'submit_failed'
-                });
                 trackSiteEventBridge('form_submit_error', form, {
-                    error: 'submit_failed'
+                    error: error?.code || 'submit_failed',
+                    form_variant: formData.formVariant
                 });
                 btn.innerHTML = '<i class="ri-phone-line mr-2"></i>Позвоните нам!';
                 btn.classList.remove('bg-brand-orange', 'bg-green-600');
                 btn.classList.add('bg-red-500');
+                setFormFallback(form);
                 setTimeout(() => {
                     resetSubmitButton(btn, origText, hadBrandOrange, hadGreen600);
                 }, 3000);
@@ -459,6 +537,6 @@ function initTelegramForms() {
 document.addEventListener('DOMContentLoaded', () => {
     void loadRuntimeConfig();
     void loadCurrentPageMetadata();
-    setTimeout(initTelegramForms, 200);
+    initTelegramForms();
 });
 })();

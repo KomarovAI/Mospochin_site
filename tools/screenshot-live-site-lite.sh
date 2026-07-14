@@ -27,13 +27,13 @@ echo "page_id,path,viewport,block_id,selector,tag,data_block,role,x,y,w,h,text" 
 : > "$PAGES_JSONL"
 : > "$LOG"
 
-chrome_bin=""
-for bin in google-chrome google-chrome-stable chromium chromium-browser; do
-  if command -v "$bin" >/dev/null 2>&1; then
-    chrome_bin="$(command -v "$bin")"
-    break
-  fi
-done
+firefox_bin="${PLAYWRIGHT_FIREFOX_EXECUTABLE:-}"
+if [ -z "$firefox_bin" ] && command -v firefox >/dev/null 2>&1; then
+  firefox_bin="$(command -v firefox)"
+fi
+if [ -z "$firefox_bin" ] && command -v firefox-esr >/dev/null 2>&1; then
+  firefox_bin="$(command -v firefox-esr)"
+fi
 
 csv_escape() {
   python3 - "$1" <<'PY'
@@ -82,23 +82,23 @@ PAGES=(
 VIEWPORT_NAMES=("desktop" "mobile")
 VIEWPORT_SIZES=("1440,1200" "390,844")
 
-if [ -z "$chrome_bin" ]; then
-  echo "warning,no_chrome,No google-chrome/chromium binary found on runner" >> "$WARN"
+if [ -z "$firefox_bin" ]; then
+  echo "warning,no_firefox,No Firefox binary found on runner" >> "$WARN"
   cat > "$SUMMARY_MD" <<MD
 # Live Visual Pack Lite
 
 - status: skipped
-- reason: no Chrome/Chromium binary found
+- reason: no Firefox binary found
 - base_url: $BASE_URL
 - run_id: $RUN_ID
 - commit: $COMMIT_SHA
 MD
-  echo "LIVE_VISUAL_PACK_LITE_SKIPPED_NO_CHROME"
+  echo "LIVE_VISUAL_PACK_LITE_SKIPPED_NO_FIREFOX"
   exit 0
 fi
 
-echo "Chrome: $chrome_bin" | tee -a "$LOG"
-"$chrome_bin" --version | tee -a "$LOG" || true
+echo "Firefox: $firefox_bin" | tee -a "$LOG"
+"$firefox_bin" --version | tee -a "$LOG" || true
 
 echo "# MosPochin Live Visual Pack Lite" > "$INDEX_MD"
 echo "" >> "$INDEX_MD"
@@ -107,7 +107,7 @@ echo "- base_url: $BASE_URL" >> "$INDEX_MD"
 echo "- run_id: $RUN_ID" >> "$INDEX_MD"
 echo "- run_number: $RUN_NUMBER" >> "$INDEX_MD"
 echo "- commit: $COMMIT_SHA" >> "$INDEX_MD"
-echo "- mode: chrome-headless-cli-lite" >> "$INDEX_MD"
+echo "- mode: firefox-headless-cli-lite" >> "$INDEX_MD"
 echo "" >> "$INDEX_MD"
 echo "## Pages" >> "$INDEX_MD"
 echo "" >> "$INDEX_MD"
@@ -142,7 +142,7 @@ for p in "${PAGES[@]}"; do
     echo "- class: $class"
     echo "- reason: $reason"
     echo "- depth: $depth"
-    echo "- mode: chrome-headless-cli-lite"
+    echo "- mode: firefox-headless-cli-lite"
     echo ""
   } > "$page_md"
 
@@ -159,25 +159,21 @@ for p in "${PAGES[@]}"; do
     echo "== capture $p $vp $size ==" | tee -a "$LOG"
 
     set +e
-    timeout 25s "$chrome_bin" \
-      --headless=new \
-      --disable-gpu \
-      --no-sandbox \
-      --hide-scrollbars \
-      --disable-dev-shm-usage \
+    timeout 25s "$firefox_bin" \
+      --headless \
+      --no-remote \
       --window-size="$size" \
-      --virtual-time-budget=2500 \
       --screenshot="$shot" \
       "$url" >> "$LOG" 2>&1
     rc=$?
     set -e
 
     if [ "$rc" -eq 0 ] && [ -s "$shot" ]; then
-      echo "$pid,$p,$vp,viewport,chrome-headless,$rel,ok,0,0,${size%,*},${size#*,},http_$http_code" >> "$MANIFEST"
+      echo "$pid,$p,$vp,viewport,firefox-headless,$rel,ok,0,0,${size%,*},${size#*,},http_$http_code" >> "$MANIFEST"
       manifest_count=$((manifest_count + 1))
       echo "- $vp: $rel" >> "$page_md"
     else
-      echo "capture_fail,$p:$vp,chrome rc=$rc http=$http_code" >> "$WARN"
+      echo "capture_fail,$p:$vp,firefox rc=$rc http=$http_code" >> "$WARN"
       warning_count=$((warning_count + 1))
       echo "- $vp: capture failed rc=$rc http=$http_code" >> "$page_md"
     fi
@@ -214,7 +210,7 @@ for line in csv_path.read_text().splitlines()[1:]:
 print(json.dumps({
     "generated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
     "base_url": "$BASE_URL",
-    "mode": "chrome-headless-cli-lite",
+    "mode": "firefox-headless-cli-lite",
     "run_id": "$RUN_ID",
     "run_number": "$RUN_NUMBER",
     "commit": "$COMMIT_SHA",
@@ -228,8 +224,8 @@ cat > "$SUMMARY_MD" <<MD
 
 - generated_at: $(date -u +%Y-%m-%dT%H:%M:%SZ)
 - base_url: $BASE_URL
-- mode: chrome-headless-cli-lite
-- chrome: $chrome_bin
+- mode: firefox-headless-cli-lite
+- firefox: $firefox_bin
 - pages_planned: $page_index
 - manifest_rows: $manifest_count
 - warnings: $warning_count

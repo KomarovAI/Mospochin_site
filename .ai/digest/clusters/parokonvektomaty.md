@@ -7,7 +7,7 @@
 | Metric | Value |
 | --- | --- |
 | Cluster | parokonvektomaty |
-| Pages | 16 |
+| Pages | 19 |
 | Canonical base | https://mospochin.ru/ |
 | Default min forms | 1 |
 | Default min cluster links | 8 |
@@ -28,6 +28,9 @@
 | parokonvektomat-e02-e07-e10.html | error | index | restaurant | .ai/digest/pages/parokonvektomat-e02-e07-e10.md |
 | parokonvektomat-ne-greet.html | symptom | index | restaurant | .ai/digest/pages/parokonvektomat-ne-greet.md |
 | parokonvektomat-net-para.html | symptom | index | restaurant | .ai/digest/pages/parokonvektomat-net-para.md |
+| parokonvektomat-techet-voda.html | symptom | index | restaurant | .ai/digest/pages/parokonvektomat-techet-voda.md |
+| parokonvektomat-ne-nabiraet-vodu.html | symptom | index | restaurant | .ai/digest/pages/parokonvektomat-ne-nabiraet-vodu.md |
+| parokonvektomat-ne-vklyuchaetsya.html | symptom | index | restaurant | .ai/digest/pages/parokonvektomat-ne-vklyuchaetsya.md |
 | parokonvektomat-abat.html | brand | index | neutral | .ai/digest/pages/parokonvektomat-abat.md |
 | parokonvektomat-convotherm.html | brand | index | neutral | .ai/digest/pages/parokonvektomat-convotherm.md |
 | parokonvektomat-electrolux.html | brand | index | neutral | .ai/digest/pages/parokonvektomat-electrolux.md |
@@ -44,7 +47,7 @@
 - **hub**: parokonvektomaty.html
 - **promo**: parokonvektomaty-promo.html, remont-oborudovaniya-restorana-parokonvektomat.html
 - **service**: parokonvektomat-obschuzhivanie.html
-- **symptom**: parokonvektomat-ne-greet.html, parokonvektomat-net-para.html
+- **symptom**: parokonvektomat-ne-greet.html, parokonvektomat-net-para.html, parokonvektomat-techet-voda.html, parokonvektomat-ne-nabiraet-vodu.html, parokonvektomat-ne-vklyuchaetsya.html
 
 ## AI editing rules
 

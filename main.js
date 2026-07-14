@@ -69,12 +69,12 @@ const DEFAULT_SCHEMA_PROFILE = Object.freeze({
   pages: {},
 });
 const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
-  subtitle: '🔧 Ресторанное оборудование',
-  contactHint: '⚡ Работаем 24/7',
+  subtitle: 'Ресторанное оборудование',
+    contactHint: 'Работаем по согласованному графику',
   topBarText: {
     icon: 'ri-flashlight-fill',
-    text: '🚨 АВАРИЙНЫЙ ВЫЕЗД',
-    sub: 'Мастер будет через 45 минут',
+    text: 'СРОЧНАЯ ЗАЯВКА',
+    sub: 'Следующий шаг согласуем после уточнения задачи',
   },
   services: [
     { href: 'uslugi.html', icon: '🔧', name: 'Все услуги' },
@@ -176,12 +176,12 @@ const DEFAULT_RESTAURANT_BRANCH = Object.freeze({
   },
 });
 const DEFAULT_HOUSEHOLD_BRANCH = Object.freeze({
-  subtitle: '🏠 Бытовая техника',
-  contactHint: '🏠 Выезд на дом',
+  subtitle: 'Бытовая техника',
+  contactHint: 'Выезд на дом',
   topBarText: {
     icon: 'ri-flashlight-fill',
-    text: '🚨 СРОЧНЫЙ ВЫЕЗД НА ДОМ',
-    sub: 'Мастер будет через 60 минут',
+    text: 'ЗАЯВКА НА РЕМОНТ',
+    sub: 'Время визита согласуем после уточнения задачи',
   },
   services: [
     { href: 'bytovaya-uslugi.html', icon: '🏠', name: 'Все услуги' },
@@ -724,8 +724,8 @@ const Components = {
       servicesLink: isBytovaya ? 'bytovaya-uslugi.html' : 'uslugi.html',
       branchSwitchLink: isBytovaya ? 'index.html' : 'bytovaya-index.html',
       branchSwitchLabel: isBytovaya
-        ? '🔧 Ресторанное оборудование'
-        : '🏠 Бытовая техника',
+        ? 'Ресторанное оборудование'
+        : 'Бытовая техника',
       isBytovaya,
       services: isBytovaya ? householdBranch.services : restaurantBranch.services,
       primaryServices: isBytovaya
@@ -876,21 +876,21 @@ const Components = {
       </div>
 
       <div>
-        <h5 class="text-white font-bold mb-4">🔧 Ресторанное</h5>
+        <h5 class="text-white font-bold mb-4">Ресторанное оборудование</h5>
         <ul class="space-y-2 text-sm">
           ${restaurantLinks}
         </ul>
       </div>
 
       <div>
-        <h5 class="text-white font-bold mb-4">🏠 Бытовая техника</h5>
+        <h5 class="text-white font-bold mb-4">Бытовая техника</h5>
         <ul class="space-y-2 text-sm">
           ${householdLinks}
         </ul>
       </div>
 
       <div>
-        <h5 class="text-white font-bold mb-4">📞 Контакты</h5>
+        <h5 class="text-white font-bold mb-4">Контакты</h5>
         <ul class="space-y-3 text-sm">
           <li class="flex items-center gap-2">
             <i class="ri-phone-line text-brand-orange"></i>
@@ -975,6 +975,92 @@ const Components = {
         btn.setAttribute('aria-expanded', 'false');
       });
     });
+  },
+
+  initMobileContactBehavior() {
+    const mobileQuery = window.matchMedia && window.matchMedia('(max-width: 767px)');
+    if (!mobileQuery) return;
+
+    let lastScrollY = window.scrollY || 0;
+    let attached = false;
+    let scrollHidden = false;
+    let heroCtaVisible = false;
+
+    const setVisible = (visible) => {
+      if (!document.body) return;
+      document.body.classList.toggle('mobile-contact-hidden', !visible);
+    };
+
+    const syncVisibility = () => {
+      setVisible(!scrollHidden && !heroCtaVisible);
+    };
+
+    const bindFooter = () => {
+      const footer = document.getElementById('mobile-footer-container');
+      if (!footer || footer.dataset.mobileContactBound === 'true') return;
+      footer.dataset.mobileContactBound = 'true';
+      footer.addEventListener('focusin', () => setVisible(true));
+      footer.addEventListener('click', () => setVisible(true));
+      if (!attached) syncVisibility();
+      attached = true;
+    };
+
+    const onScroll = () => {
+      if (!mobileQuery.matches) {
+        setVisible(true);
+        lastScrollY = window.scrollY || 0;
+        return;
+      }
+
+      const currentY = Math.max(window.scrollY || 0, 0);
+      const delta = currentY - lastScrollY;
+      if (currentY < 120 || delta < -8) {
+        scrollHidden = false;
+      } else if (currentY > 220 && delta > 16) {
+        scrollHidden = true;
+      }
+      syncVisibility();
+      lastScrollY = currentY;
+    };
+
+    bindFooter();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', bindFooter, { passive: true });
+    if (typeof mobileQuery.addEventListener === 'function') {
+      mobileQuery.addEventListener('change', () => {
+        scrollHidden = false;
+        heroCtaVisible = false;
+        syncVisibility();
+        lastScrollY = window.scrollY || 0;
+        bindFooter();
+      });
+    }
+
+    const heroCtas = Array.from(document.querySelectorAll(
+      'main > section:first-of-type [data-contact-link], [data-block="hero"][data-contact-link]'
+    ))
+      .filter((element) => {
+        const styles = window.getComputedStyle(element);
+        return styles.display !== 'none' && styles.visibility !== 'hidden';
+      })
+      .slice(0, 2);
+    if (heroCtas.length && typeof IntersectionObserver === 'function') {
+      heroCtaVisible = heroCtas.some((element) => {
+        const rect = element.getBoundingClientRect();
+        return rect.bottom > 0 && rect.top < window.innerHeight;
+      });
+      syncVisibility();
+      const heroObserver = new IntersectionObserver((entries) => {
+        heroCtaVisible = entries.some((entry) => entry.isIntersecting && entry.intersectionRatio > 0);
+        syncVisibility();
+      }, { threshold: 0.1 });
+      heroCtas.forEach((element) => heroObserver.observe(element));
+    }
+
+    if (document.body && typeof MutationObserver === 'function') {
+      const observer = new MutationObserver(bindFooter);
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
   },
 
   initScrollEffect() {
@@ -2296,6 +2382,7 @@ const Components = {
   hydrateRestaurantFaq(slotEntry) {
     const faqZone = document.querySelector('[data-sync-zone="faq-items"]');
     if (!faqZone || !Array.isArray(slotEntry?.faq)) return;
+    if (faqZone.dataset.syncRuntime === 'preserve') return;
 
     faqZone.innerHTML = slotEntry.faq
       .map(
@@ -2317,6 +2404,7 @@ const Components = {
     if (!defaults || !anchorForm) return;
 
     let proofSection = document.querySelector('[data-sync-zone="service-proof"]');
+    if (proofSection?.dataset.syncRuntime === 'preserve') return;
     if (!proofSection) {
       proofSection = document.createElement('section');
       anchorForm.closest('section')?.insertAdjacentElement('afterend', proofSection);
@@ -2359,6 +2447,7 @@ const Components = {
       .filter((entry) => entry && !entry.isShadow);
 
     let relatedSection = document.querySelector('[data-sync-zone="related-links"]');
+    if (relatedSection?.dataset.syncRuntime === 'preserve') return;
     if (!relatedSection) {
       relatedSection = document.createElement('section');
       const proofSection = document.querySelector('[data-sync-zone="service-proof"]');
@@ -2381,14 +2470,20 @@ const Components = {
             <div class="grid gap-4 lg:grid-cols-3">
               ${relatedServices
                 .map(
-                  (entry) => `
-                    <a href="${entry.page}" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md">
+                  (entry) => {
+                    const relatedPageKey = String(entry.page || '')
+                      .replace(/\.html$/i, '')
+                      .replace(/[^a-z0-9]+/gi, '_');
+                    const relatedCtaId = `${service.slug}_internal_link_related_${relatedPageKey}`;
+                    return `
+                    <a href="${entry.page}" class="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 transition hover:-translate-y-0.5 hover:shadow-md" data-block="related_categories" data-cta-group="internal_link" data-cta-id="${relatedCtaId}">
                       <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">По ресторанной категории</p>
                       <h3 class="mt-3 text-xl font-display font-extrabold text-brand-blue">${escapeHtml(entry.uiLabel)}</h3>
                       <p class="mt-3 text-sm text-slate-600">${escapeHtml((entry.primarySymptoms || []).slice(0, 3).join(', '))}</p>
-                      <p class="mt-4 text-sm font-semibold text-slate-700">Открыть страницу</p>
+                      <p class="mt-4 text-sm font-semibold text-slate-700">Перейти к ремонту оборудования</p>
                     </a>
-                  `
+                  `;
+                  }
                 )
                 .join('')}
             </div>
@@ -2544,6 +2639,7 @@ const Components = {
     await this.initRestaurantServiceSlots();
 
     this.initMobileMenu();
+    this.initMobileContactBehavior();
     this.initSmoothScroll();
 
     const runDeferredUi = () => {
