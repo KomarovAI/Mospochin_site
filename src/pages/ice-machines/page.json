@@ -437,6 +437,14 @@
       "hash": "3ba619ca8d598e8b"
     },
     {
+      "id": "049-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/049-proof-dokazatel-stva-garantii.html",
+      "bytes": 32,
+      "hash": "3ba619ca8d598e8b"
+    },
+    {
       "id": "050-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
@@ -578,8 +586,8 @@
     "npm run doctor:restaurant-page -- --page ice-machines.html",
     "npm run doctor:page -- --page ice-machines.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page ice-machines.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page ice-machines.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

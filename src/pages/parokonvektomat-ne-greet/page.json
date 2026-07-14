@@ -98,12 +98,12 @@
       "id": "008-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "bytes": 40,
-      "hash": "1b776f3335139a3b",
+      "bytes": 39,
+      "hash": "fa905ddd69a48c0e",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
-      "variant": "direct-landing-analysis-start-1b776f333513",
-      "templateRef": "src/components/parametric/static/layout-fragment-direct-landing-analysis-start-1b776f333513.template.html",
+      "variant": "direct-landing-analysis-start-fa905ddd69a4",
+      "templateRef": "src/components/parametric/static/layout-fragment-direct-landing-analysis-start-fa905ddd69a4.template.html",
       "props": {},
       "sourceFile": "sections/008-raw-html-fragment.html"
     },
@@ -776,8 +776,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page parokonvektomat-ne-greet.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page parokonvektomat-ne-greet.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page parokonvektomat-ne-greet.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

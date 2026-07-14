@@ -387,6 +387,9 @@ function initTelegramForms() {
             const btn = form.querySelector('button[type="submit"]');
             if (!btn) return;
 
+            trackFormGoal('form_submit_attempt', form);
+            trackSiteEventBridge('form_submit_attempt', form);
+
             const origText = btn.innerHTML;
             const hadBrandOrange = btn.classList.contains('bg-brand-orange');
             const hadGreen600 = btn.classList.contains('bg-green-600');

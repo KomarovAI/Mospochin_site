@@ -40,6 +40,12 @@
         'form_submit_error', 'form_validation_error', 'form_submit_blocked',
         'cta_view', 'cta_click', 'form_submit_click'
     ];
+    var SITE_EVENT_NAMES = [
+        'phone_click', 'whatsapp_click', 'telegram_click', 'email_click',
+        'form_open', 'form_start', 'form_submit_attempt', 'form_submit_success',
+        'form_submit_error', 'form_validation_error', 'form_submit_blocked',
+        'cta_view', 'cta_click', 'form_submit_click'
+    ];
 
     function cleanText(value) {
         return (value || '').replace(/\s+/g, ' ').trim().slice(0, 160);

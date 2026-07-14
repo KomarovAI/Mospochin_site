@@ -853,8 +853,8 @@
   "recommendedChecks": [
     "npm run doctor:page -- --page remont-oborudovaniya-restorana-parokonvektomat.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page remont-oborudovaniya-restorana-parokonvektomat.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page remont-oborudovaniya-restorana-parokonvektomat.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

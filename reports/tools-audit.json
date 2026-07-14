@@ -303,6 +303,24 @@
       ]
     },
     {
+      "file": "tools/apply-metrics-page-markup.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: apply:metrics-markup",
+      "sizeBytes": 7655,
+      "scripts": [
+        "apply:metrics-markup"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/metrics-event-contract.json",
+        "data/metrics-page-context.json",
+        "package.json",
+        "tools/check-metrics-contract.mjs"
+      ]
+    },
+    {
       "file": "tools/audit-ai-overlap.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -465,6 +483,49 @@
         "tools/check-profile.mjs",
         "tools/doctor-changed-pages.mjs",
         "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-ai-visual-review.mjs",
+      "category": "orphanCandidate",
+      "action": "reviewForPrune",
+      "reason": "No project text references found outside the tool itself.",
+      "sizeBytes": 2547,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": []
+    },
+    {
+      "file": "tools/check-architecture.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:architecture",
+      "sizeBytes": 5353,
+      "scripts": [
+        "check:architecture"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs",
+        "tools/validate-site.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-conversion-runtime.mjs",
+      "category": "manualUtility",
+      "action": "keep",
+      "reason": "Tool is retained as a manual utility or project helper.",
+      "sizeBytes": 5111,
+      "scripts": [],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "tools/check-profile.mjs"
       ]
     },
     {
@@ -1940,6 +2001,25 @@
         "src/site-builder.json",
         "tools/check-profile.mjs",
         "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/sync-site-builder-manifest.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: site-builder:sync-manifest",
+      "sizeBytes": 4816,
+      "scripts": [
+        "site-builder:sync-manifest"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "src/site-builder.json",
+        "tools/check-profile.mjs"
       ]
     },
     {
