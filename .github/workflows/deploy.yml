@@ -16,7 +16,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -33,50 +33,30 @@ jobs:
       - name: Setup SSH
         run: |
           set -euo pipefail
+
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" \
+            > ~/.ssh/deploy_key
+
           chmod 600 ~/.ssh/deploy_key
+
           ssh-keyscan \
             -p "${{ secrets.DEPLOY_PORT }}" \
             "${{ secrets.DEPLOY_HOST }}" \
             >> ~/.ssh/known_hosts
 
-      - name: Check deployed content hash
-        id: deploy_hash
+      - name: Force deploy on VPS
+        timeout-minutes: 8
         run: |
           set -euo pipefail
 
-          local_hash="$(cat .deploy/content.sha256)"
+          CONTENT_HASH="$(cat .deploy/content.sha256)"
 
-          remote_hash="$(
-            ssh \
-              -i ~/.ssh/deploy_key \
-              -p "${{ secrets.DEPLOY_PORT }}" \
-              -o IdentitiesOnly=yes \
-              -o BatchMode=yes \
-              -o StrictHostKeyChecking=yes \
-              -o ConnectTimeout=15 \
-              "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-              "cat /var/www/mospochin-shared/current-content.sha256 2>/dev/null || true"
-          )"
-
-          echo "local_hash=$local_hash" >> "$GITHUB_OUTPUT"
-          echo "remote_hash=${remote_hash:-none}" >> "$GITHUB_OUTPUT"
-
-          if [[ "$local_hash" == "$remote_hash" ]]; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Production content is already identical."
-          else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Content changed. Deploy required."
-          fi
-
-      - name: Deploy on VPS
-        if: steps.deploy_hash.outputs.skip != 'true'
-        timeout-minutes: 5
-        run: |
-          set -euo pipefail
+          echo "Commit: ${GITHUB_SHA}"
+          echo "Run: ${GITHUB_RUN_ID}"
+          echo "Content hash: ${CONTENT_HASH}"
 
           ssh \
             -i ~/.ssh/deploy_key \
@@ -86,21 +66,89 @@ jobs:
             -o StrictHostKeyChecking=yes \
             -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "sudo /usr/local/sbin/mospochin-deploy-git \
-              '${GITHUB_SHA}' \
-              '${GITHUB_RUN_ID}' \
-              '${GITHUB_RUN_NUMBER}' \
-              '$(cat .deploy/content.sha256)'"
+            "set -e;
+             if [ -f /var/www/mospochin-shared/current-content.sha256 ]; then
+               sudo cp \
+                 /var/www/mospochin-shared/current-content.sha256 \
+                 /var/www/mospochin-shared/current-content.sha256.before-${GITHUB_RUN_ID};
+             fi;
+             sudo rm -f /var/www/mospochin-shared/current-content.sha256;
+             sudo /usr/local/sbin/mospochin-deploy-git \
+               '${GITHUB_SHA}' \
+               '${GITHUB_RUN_ID}' \
+               '${GITHUB_RUN_NUMBER}' \
+               '${CONTENT_HASH}'"
+
+      - name: Verify production commit
+        timeout-minutes: 3
+        run: |
+          set -euo pipefail
+
+          VERSION=""
+
+          for attempt in $(seq 1 30); do
+            VERSION="$(
+              curl \
+                -fsS \
+                --connect-timeout 5 \
+                --max-time 15 \
+                -H 'Cache-Control: no-cache' \
+                "https://mospochin.ru/version.json?run=${GITHUB_RUN_ID}" \
+              || true
+            )"
+
+            if printf '%s' "$VERSION" | grep -q "$GITHUB_SHA"; then
+              echo "Production commit activated: $GITHUB_SHA"
+              printf '%s\n' "$VERSION"
+              break
+            fi
+
+            echo "Waiting for production activation: attempt $attempt/30"
+            sleep 4
+          done
+
+          if ! printf '%s' "$VERSION" | grep -q "$GITHUB_SHA"; then
+            echo "ERROR: production version is not current commit"
+            printf '%s\n' "$VERSION"
+            exit 1
+          fi
+
+      - name: Verify production pages
+        timeout-minutes: 3
+        run: |
+          set -euo pipefail
+
+          pages=(
+            "/"
+            "/sous-vide-restoranov.html"
+            "/remont-sous-vide.html"
+            "/remont-termostata-sous-vide.html"
+            "/remont-termostata-sous-vide-reklama.html"
+            "/remont-vakuumnogo-upakovshika.html"
+          )
+
+          for page in "${pages[@]}"; do
+            echo "Checking $page"
+
+            curl \
+              -fsS \
+              --retry 5 \
+              --retry-delay 3 \
+              --connect-timeout 5 \
+              --max-time 20 \
+              "https://mospochin.ru${page}?run=${GITHUB_RUN_ID}" \
+              >/dev/null
+          done
 
       - name: Write summary
         if: always()
         run: |
           {
-            echo "## MosPochin production deploy"
+            echo "## MosPochin force deploy"
             echo
             echo "- Commit: \`${GITHUB_SHA}\`"
             echo "- Run: \`${GITHUB_RUN_ID}\`"
-            echo "- Content unchanged: \`${{ steps.deploy_hash.outputs.skip || 'unknown' }}\`"
-            echo "- Local hash: \`${{ steps.deploy_hash.outputs.local_hash || 'unknown' }}\`"
-            echo "- Remote hash: \`${{ steps.deploy_hash.outputs.remote_hash || 'unknown' }}\`"
+            echo "- Content hash skip: disabled"
+            echo "- Production version verification: required"
+            echo "- Sous-Vide HTTP verification: required"
           } >> "$GITHUB_STEP_SUMMARY"
