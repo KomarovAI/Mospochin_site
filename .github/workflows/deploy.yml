@@ -47,7 +47,7 @@ jobs:
             "${{ secrets.DEPLOY_HOST }}" \
             >> ~/.ssh/known_hosts
 
-      - name: Force deploy on VPS
+      - name: Deploy on VPS
         timeout-minutes: 8
         run: |
           set -euo pipefail
@@ -66,18 +66,11 @@ jobs:
             -o StrictHostKeyChecking=yes \
             -o ConnectTimeout=15 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
-            "set -e;
-             if [ -f /var/www/mospochin-shared/current-content.sha256 ]; then
-               sudo cp \
-                 /var/www/mospochin-shared/current-content.sha256 \
-                 /var/www/mospochin-shared/current-content.sha256.before-${GITHUB_RUN_ID};
-             fi;
-             sudo rm -f /var/www/mospochin-shared/current-content.sha256;
-             sudo /usr/local/sbin/mospochin-deploy-git \
-               '${GITHUB_SHA}' \
-               '${GITHUB_RUN_ID}' \
-               '${GITHUB_RUN_NUMBER}' \
-               '${CONTENT_HASH}'"
+            "sudo -n /usr/local/sbin/mospochin-deploy-git \
+              '${GITHUB_SHA}' \
+              '${GITHUB_RUN_ID}' \
+              '${GITHUB_RUN_NUMBER}' \
+              '${CONTENT_HASH}'"
 
       - name: Verify production commit
         timeout-minutes: 3
@@ -97,23 +90,21 @@ jobs:
               || true
             )"
 
-            if printf '%s' "$VERSION" | grep -q "$GITHUB_SHA"; then
-              echo "Production commit activated: $GITHUB_SHA"
+            if printf '%s' "$VERSION" | grep -Fq "$GITHUB_SHA"; then
+              echo "Production commit activated:"
               printf '%s\n' "$VERSION"
-              break
+              exit 0
             fi
 
-            echo "Waiting for production activation: attempt $attempt/30"
+            echo "Ожидаем активацию production: $attempt/30"
             sleep 4
           done
 
-          if ! printf '%s' "$VERSION" | grep -q "$GITHUB_SHA"; then
-            echo "ERROR: production version is not current commit"
-            printf '%s\n' "$VERSION"
-            exit 1
-          fi
+          echo "ОШИБКА: production остался на другом commit"
+          printf '%s\n' "$VERSION"
+          exit 1
 
-      - name: Verify production pages
+      - name: Verify Sous-Vide pages
         timeout-minutes: 3
         run: |
           set -euo pipefail
@@ -128,7 +119,7 @@ jobs:
           )
 
           for page in "${pages[@]}"; do
-            echo "Checking $page"
+            echo "GET $page"
 
             curl \
               -fsS \
@@ -144,11 +135,10 @@ jobs:
         if: always()
         run: |
           {
-            echo "## MosPochin force deploy"
+            echo "## MosPochin deploy"
             echo
             echo "- Commit: \`${GITHUB_SHA}\`"
             echo "- Run: \`${GITHUB_RUN_ID}\`"
-            echo "- Content hash skip: disabled"
-            echo "- Production version verification: required"
-            echo "- Sous-Vide HTTP verification: required"
+            echo "- Deployment command: \`mospochin-deploy-git\`"
+            echo "- Arbitrary sudo commands: disabled"
           } >> "$GITHUB_STEP_SUMMARY"
