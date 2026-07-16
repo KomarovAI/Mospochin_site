@@ -275,13 +275,28 @@ let householdProofLayerPromise = null;
 let contactConfigPromise = null;
 let schemaProfilePromise = null;
 
-async function loadJson(path) {
-  const response = await fetch(path, { cache: 'no-store' });
-  if (!response.ok) {
-    throw new Error(`${path} ${response.status}`);
+function getSharedJsonPromiseRegistry() {
+  if (!(window.__MOSPOCHIN_JSON_PROMISES__ instanceof Map)) {
+    window.__MOSPOCHIN_JSON_PROMISES__ = new Map();
   }
+  return window.__MOSPOCHIN_JSON_PROMISES__;
+}
 
-  return response.json();
+async function loadJson(path) {
+  const registry = getSharedJsonPromiseRegistry();
+  if (!registry.has(path)) {
+    const request = fetch(path, { cache: 'default', credentials: 'same-origin' })
+      .then((response) => {
+        if (!response.ok) throw new Error(`${path} ${response.status}`);
+        return response.json();
+      })
+      .catch((error) => {
+        registry.delete(path);
+        throw error;
+      });
+    registry.set(path, request);
+  }
+  return registry.get(path);
 }
 
 async function loadCurrentPageMetadata() {
@@ -931,10 +946,13 @@ const Components = {
       )
       .join('');
 
-    items.innerHTML = `
+    // Static-shell pages already contain the authoritative mobile menu. Keep
+    // dynamic rendering only as a fallback for legacy pages without it.
+    if (!items.children.length) {
+      items.innerHTML = `
 <a href="${branch.homeLink}" class="block px-3 py-2 text-base font-medium ${this.isActivePage('index') ? 'text-brand-orange bg-orange-50' : 'text-slate-700 hover:bg-slate-50'} rounded-lg">🏠 Главная</a>
 <div class="mt-3">
-  <button class="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg" id="mobile-services-toggle">
+  <button class="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg" id="mobile-services-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-list">
     <span>🔧 Услуги</span>
     <i class="ri-arrow-down-s-line text-xs transition-transform" id="mobile-services-icon"></i>
   </button>
@@ -950,6 +968,7 @@ const Components = {
 <a href="${branch.branchSwitchLink}" class="block w-full text-center bg-brand-orange/10 text-brand-orange px-4 py-3 rounded-lg font-bold text-sm border-2 border-brand-orange/30">
   ${branch.isBytovaya ? '🔧 Перейти: Ресторанное оборудование' : '🏠 Перейти: Бытовая техника'}
 </a>`;
+    }
 
     const servicesToggle = document.getElementById('mobile-services-toggle');
     const servicesList = document.getElementById('mobile-services-list');
@@ -958,9 +977,9 @@ const Components = {
     if (servicesToggle && servicesList && servicesIcon) {
       servicesToggle.addEventListener('click', () => {
         servicesList.classList.toggle('hidden');
-        servicesIcon.style.transform = servicesList.classList.contains('hidden')
-          ? 'rotate(0deg)'
-          : 'rotate(180deg)';
+        const expanded = !servicesList.classList.contains('hidden');
+        servicesToggle.setAttribute('aria-expanded', String(expanded));
+        servicesIcon.style.transform = expanded ? 'rotate(180deg)' : 'rotate(0deg)';
       });
     }
 
@@ -2630,8 +2649,8 @@ const Components = {
     this.contactConfig = contactConfig;
     this.schemaProfile = schemaProfile;
 
-    if (header) header.innerHTML = this.getHeader();
-    if (footer) footer.innerHTML = this.getFooter();
+    if (header && header.dataset.staticShell !== 'true') header.innerHTML = this.getHeader();
+    if (footer && footer.dataset.staticShell !== 'true') footer.innerHTML = this.getFooter();
     this.hydrateContactLinks();
     this.initBranchRouteStrips();
     await this.initRestaurantBranchSlots();

@@ -22,6 +22,7 @@ const PORT = Number(process.env.PORT || 3010);
 const HOST = process.env.HOST || '127.0.0.1';
 const BOT_TOKEN = String(process.env.TELEGRAM_BOT_TOKEN || '').trim();
 const CHAT_ID = String(process.env.TELEGRAM_CHAT_ID || '').trim();
+const TELEGRAM_TEST_MODE = String(process.env.MOSPOCHIN_TELEGRAM_TEST_MODE || '') === '1';
 const REQUEST_TIMEOUT_MS = Number(process.env.TELEGRAM_REQUEST_TIMEOUT_MS || 10000);
 const MAX_BODY_BYTES = Number(process.env.MAX_BODY_BYTES || 16 * 1024);
 const TELEGRAM_PROXY = String(process.env.TELEGRAM_PROXY || 'socks5h://127.0.0.1:58161').trim();
@@ -46,7 +47,7 @@ const ipRateLimit = new Map();
 const globalRateLimit = new Map();
 const eventRateLimit = new Map();
 const eventDedupe = new Map();
-const leadDedupe = new Map();
+const leadDedupe = new Map(); // idempotency hash -> { timestamp, payloadFingerprintHash, leadId, requestId }
 const pendingLeadDeliveries = new Map();
 let leadDedupeHydrated = false;
 const RATE_LIMIT_CLEANUP_INTERVAL_MS = Math.max(1000, Math.min(RATE_LIMIT_WINDOW_MS, GLOBAL_RATE_LIMIT_WINDOW_MS, EVENT_RATE_LIMIT_WINDOW_MS));
@@ -66,9 +67,21 @@ const ALLOWED_EVENTS = new Set([
   'cta_view',
   'cta_click',
   'form_submit_click',
+  'symptom_selfcheck_started',
+  'symptom_selfcheck_completed',
+  'symptom_decision_branch_selected',
+  'symptom_cause_matrix_viewed',
+  'error_code_entered',
+  'equipment_model_entered',
+  'diagnostic_media_added',
+  'cta_after_selfcheck',
+  'cta_after_cause_matrix',
+  'symptom_service_lead',
+  'web_vital',
 ]);
 const OUTCOME_EVENTS = new Set(['qualified_lead', 'call_answered', 'repair_order_created', 'service_contract_created']);
 const VISIBILITY_EVENTS = new Set(['page_view', 'cta_view']);
+const PERFORMANCE_EVENTS = new Set(['web_vital']);
 const HUMAN_DECISION_EVENTS = new Set([
   'cta_click', 'phone_click', 'whatsapp_click', 'telegram_click', 'email_click',
   'form_open', 'form_start', 'form_submit_attempt', 'form_submit_success',
@@ -313,6 +326,7 @@ async function postJson(urlString, requestBody) {
 }
 
 async function deliverToTelegram(message) {
+  if (TELEGRAM_TEST_MODE) return 1;
   if (!BOT_TOKEN || !CHAT_ID) {
     throw new Error('telegram_credentials_missing');
   }
@@ -387,9 +401,14 @@ function isDecisionEvent(event) {
 }
 
 function eventClass(event) {
+  if (PERFORMANCE_EVENTS.has(event)) return 'performance';
   if (VISIBILITY_EVENTS.has(event)) return 'visibility';
-  if (event.startsWith('form_')) return 'form_outcome';
-  return 'micro_conversion';
+  if (event === 'cta_click') return 'engagement';
+  if (['phone_click', 'whatsapp_click', 'telegram_click', 'email_click', 'form_open', 'form_start'].includes(event)) return 'micro_conversion';
+  if (event === 'form_submit_attempt') return 'conversion_step';
+  if (event === 'form_submit_success') return 'conversion';
+  if (['form_submit_error', 'form_validation_error', 'form_submit_blocked'].includes(event)) return 'error';
+  return 'legacy_event';
 }
 
 function safeEventId(value) {
@@ -408,7 +427,12 @@ function hydrateLeadDedupe() {
       try {
         const row = JSON.parse(line);
         if (row.idempotency_key_hash && row.lead_status === 'lead_created') {
-          leadDedupe.set(row.idempotency_key_hash, Date.now());
+          leadDedupe.set(row.idempotency_key_hash, {
+            timestamp: Date.parse(row.ts) || Date.now(),
+            payloadFingerprintHash: optionalString(row.payload_fingerprint_hash, 64),
+            leadId: optionalString(row.lead_id, 160),
+            requestId: optionalString(row.request_id, 160),
+          });
         }
       } catch {
         // Ignore malformed historical lines.
@@ -419,8 +443,44 @@ function hydrateLeadDedupe() {
   }
 }
 
+function optionalString(value, maxLength = 4096) {
+  if (typeof value !== 'string' && typeof value !== 'number') return null;
+  const cleaned = String(value).trim().replace(/\s+/g, ' ');
+  if (!cleaned || cleaned === 'undefined' || cleaned === 'null') return null;
+  return cleaned.slice(0, maxLength);
+}
+
 function shortHash(value) {
-  return crypto.createHash('sha256').update(`${METRICS_HASH_SALT}:${String(value || '')}`).digest('hex').slice(0, 24);
+  const normalized = optionalString(value, 8192);
+  if (!normalized) throw new Error('hash_value_required');
+  return crypto.createHash('sha256').update(`${METRICS_HASH_SALT}:${normalized}`).digest('hex').slice(0, 24);
+}
+
+function optionalHash(value) {
+  const normalized = optionalString(value, 8192);
+  return normalized ? shortHash(normalized) : null;
+}
+
+function createPublicId(prefix) {
+  return `${prefix}_${crypto.randomUUID().replace(/-/g, '')}`;
+}
+
+function getRequestId(req) {
+  return optionalString(req.headers['x-request-id'], 160) || createPublicId('request');
+}
+
+function canonicalLeadFingerprint(submission) {
+  const canonical = JSON.stringify({
+    page: submission.page,
+    phone: submission.phone,
+    name: submission.name || null,
+    type: submission.type || null,
+    problem: submission.problem || null,
+    form_id: submission.formId || null,
+    form_variant: submission.formVariant || null,
+    extra_fields: submission.extraFields || {},
+  });
+  return shortHash(canonical);
 }
 
 function appendJsonLine(fileName, row) {
@@ -506,47 +566,69 @@ function cleanReferrerHost(value) {
 function buildMetricRow(body, req) {
   const userAgent = String(body.user_agent || req.headers['user-agent'] || '');
   const attribution = body.attribution && typeof body.attribution === 'object' ? body.attribution : {};
+  const firstTouch = body.first_touch && typeof body.first_touch === 'object' ? body.first_touch : attribution.first_touch || {};
+  const lastTouch = body.last_touch && typeof body.last_touch === 'object' ? body.last_touch : attribution.last_touch || {};
   const leadId = body.lead_id_hash || body.lead_id;
+  const event = sanitizeString(body.event, 80);
   const row = {
     ts: new Date().toISOString(),
-    event: sanitizeString(body.event, 80),
+    schema_version: optionalString(body.schema_version, 80),
+    tracking_version: optionalString(body.tracking_version, 80),
+    site_release: optionalString(body.site_release, 160),
+    analytics_release: optionalString(body.analytics_release, 160),
+    form_release: optionalString(body.form_release, 160),
+    event,
     event_id: safeEventId(body.event_id),
     client_event_ts: sanitizeString(body.client_event_ts, 80) || new Date().toISOString(),
-    event_class: eventClass(sanitizeString(body.event, 80)),
-    is_decision_event: isDecisionEvent(sanitizeString(body.event, 80)),
+    event_class: eventClass(event),
+    is_decision_event: isDecisionEvent(event),
+    trace_id: optionalString(body.trace_id, 160),
+    request_id: optionalString(body.request_id, 160),
+    submit_attempt_event_id: optionalString(body.submit_attempt_event_id, 160),
     page_path: cleanPagePath(body.page_path || body.page_url),
     page_slug: sanitizeString(body.page_slug, 120) || cleanPagePath(body.page_path || body.page_url).replace(/^\//, '').replace(/\.html$/, '') || 'index',
     page_intent: sanitizeString(body.page_intent, 80),
     page_version: sanitizeString(body.page_version, 80),
-    lead_id_hash: leadId ? shortHash(leadId) : '',
+    landing_path: optionalString(body.landing_path || firstTouch.landing_path || firstTouch.landing_page, 1024),
+    lead_id_hash: optionalHash(leadId),
     outcome_source: sanitizeString(body.outcome_source, 80),
     order_value_bucket: sanitizeString(body.order_value_bucket, 40),
     equipment: sanitizeString(body.equipment, 80),
     brand: sanitizeString(body.brand, 80),
     service: sanitizeString(body.service, 80),
     commercial_segment: sanitizeString(body.commercial_segment, 80),
-    cta_id: sanitizeString(body.cta_id, 120),
-    cta_group: sanitizeString(body.cta_group, 120),
-    block: sanitizeString(body.block, 120),
-    form_id: sanitizeString(body.form_id, 120),
-    form_context: sanitizeString(body.form_context, 120),
-    form_variant: sanitizeString(body.form_variant || body.form_context, 120),
+    symptom_id: sanitizeString(body.symptom_id, 120),
+    equipment_family: sanitizeString(body.equipment_family, 120),
+    probable_node: sanitizeString(body.probable_node, 120),
+    error_code: sanitizeString(body.error_code, 80),
+    cta_position: sanitizeString(body.cta_position, 120),
+    cta_id: sanitizeString(body.cta_id, 256),
+    cta_group: sanitizeString(body.cta_group, 128),
+    block: sanitizeString(body.block, 128),
+    form_id: sanitizeString(body.form_id, 256),
+    form_context: sanitizeString(body.form_context, 256),
+    form_variant: sanitizeString(body.form_variant || body.form_context, 256),
     cta_text: redactSensitiveText(body.cta_text),
     contact_target: sanitizeContactHref(body.href || body.contact_target),
     field_name: sanitizeString(body.field_name, 80),
-    reason: redactSensitiveText(body.reason || body.validation_message),
+    reason: redactSensitiveText(body.reason || body.validation_message || body.error_code || body.block_reason),
     referrer_host: cleanReferrerHost(body.referrer || body.referrer_host),
-    utm_source: sanitizeString(body.utm_source || attribution.utm_source, 160),
-    utm_medium: sanitizeString(body.utm_medium || attribution.utm_medium, 160),
-    utm_campaign: sanitizeString(body.utm_campaign || attribution.utm_campaign, 200),
-    utm_content: sanitizeString(body.utm_content || attribution.utm_content, 200),
-    utm_term: redactSensitiveText(body.utm_term || attribution.utm_term),
-    utm_service: sanitizeString(body.utm_service || attribution.utm_service, 160),
-    utm_landing: sanitizeString(body.utm_landing || attribution.utm_landing || attribution.landing_page, 240),
-    session_id_hash: shortHash(body.session_id),
-    yclid_hash: shortHash(body.yclid || attribution.yclid),
-    gclid_hash: shortHash(body.gclid || attribution.gclid),
-    ip_hash: shortHash(getClientIp(req)),
+    utm_source: sanitizeString(body.utm_source || lastTouch.utm_source || firstTouch.utm_source, 160),
+    utm_medium: sanitizeString(body.utm_medium || lastTouch.utm_medium || firstTouch.utm_medium, 160),
+    utm_campaign: sanitizeString(body.utm_campaign || lastTouch.utm_campaign || firstTouch.utm_campaign, 200),
+    utm_content: sanitizeString(body.utm_content || lastTouch.utm_content || firstTouch.utm_content, 200),
+    utm_term: redactSensitiveText(body.utm_term || lastTouch.utm_term || firstTouch.utm_term),
+    utm_service: sanitizeString(body.utm_service || lastTouch.utm_service || firstTouch.utm_service, 160),
+    visitor_id_hash: optionalHash(body.visitor_id),
+    session_id_hash: optionalHash(body.session_id),
+    tab_id_hash: optionalHash(body.tab_id),
+    metrika_client_id_hash: optionalHash(body.metrika_client_id),
+    first_touch_yclid_hash: optionalHash(body.first_touch_yclid || firstTouch.yclid),
+    last_touch_yclid_hash: optionalHash(body.last_touch_yclid || lastTouch.yclid),
+    yclid_for_offline_hash: optionalHash(body.yclid_for_offline),
+    yclid_source: optionalString(body.yclid_source, 32),
+    gclid_hash: optionalHash(body.gclid || lastTouch.gclid || firstTouch.gclid),
+    ip_hash: optionalHash(getClientIp(req)),
     user_agent_family: userAgentFamily(userAgent),
     quality: eventQuality(body, userAgent),
     bot_flags: body.navigator_webdriver === true ? ['navigator.webdriver'] : [],
@@ -574,47 +656,84 @@ function writeRejectedEvent(reason, body, req) {
   });
 }
 
-function writeDirectLead(submission, req, messageId = null) {
-  const touch = submission.attribution?.last_touch || submission.attribution?.first_touch || {};
-  appendJsonLine('direct_leads.jsonl', {
+function summarizeTouchForLog(touch) {
+  if (!touch || typeof touch !== 'object') return null;
+  const summary = {
+    captured_at: optionalString(touch.captured_at, 80),
+    landing_path: optionalString(touch.landing_path || touch.landing_page, 1024),
+    utm_source: optionalString(touch.utm_source, 160),
+    utm_medium: optionalString(touch.utm_medium, 160),
+    utm_campaign: optionalString(touch.utm_campaign, 200),
+    utm_content: optionalString(touch.utm_content, 200),
+    utm_term: optionalString(touch.utm_term, 200),
+    utm_service: optionalString(touch.utm_service, 160),
+    utm_geo: optionalString(touch.utm_geo, 160),
+    yclid_hash: optionalHash(touch.yclid),
+    gclid_hash: optionalHash(touch.gclid),
+  };
+  const filtered = Object.fromEntries(Object.entries(summary).filter(([, value]) => value !== null && value !== ''));
+  return Object.keys(filtered).length ? filtered : null;
+}
+
+function writeDirectLead(submission, req, delivery) {
+  const row = {
     ts: new Date().toISOString(),
-    lead_id_hash: shortHash(`${submission.page}:${submission.phone}:${Date.now()}`),
-    page_path: `/${submission.page}`,
-    page_slug: submission.page.replace(/\.html$/, ''),
+    schema_version: submission.schemaVersion || 'mospochin.lead.v3',
+    tracking_version: submission.trackingVersion || '2026-07-15',
+    site_release: submission.siteRelease,
+    analytics_release: submission.analyticsRelease,
+    form_release: submission.formRelease,
+    lead_id: delivery.leadId,
+    lead_id_hash: optionalHash(delivery.leadId),
+    request_id: delivery.requestId,
+    trace_id: submission.traceId,
+    submit_attempt_event_id: submission.submitAttemptEventId,
+    page_path: submission.pagePath || `/${submission.page}`,
+    page_slug: submission.pageSlug || submission.page.replace(/\.html$/, ''),
     page_version: submission.pageVersion,
+    landing_path: submission.landingPath,
     branch: submission.branch,
+    form_id: submission.formId,
     form_context: submission.formContext,
     form_variant: submission.formVariant,
     idempotency_key_hash: submission.idempotencyKeyHash,
-    phone_hash: shortHash(submission.phone),
-    name_hash: shortHash(submission.name),
-    problem_hash: shortHash(submission.problem),
-    session_id_hash: shortHash(touch.session_id || req.headers['x-session-id']),
-    yclid_hash: shortHash(touch.yclid),
-    utm_source: sanitizeString(touch.utm_source, 160),
-    utm_medium: sanitizeString(touch.utm_medium, 160),
-    utm_campaign: sanitizeString(touch.utm_campaign, 200),
-    utm_content: sanitizeString(touch.utm_content, 200),
-    utm_service: sanitizeString(touch.utm_service, 160),
-    utm_landing: sanitizeString(touch.utm_landing || touch.landing_page, 240),
-    gclid_hash: shortHash(touch.gclid),
-    telegram_message_id: messageId,
+    payload_fingerprint_hash: delivery.payloadFingerprintHash,
+    phone_hash: optionalHash(submission.phone),
+    name_present: Boolean(submission.name),
+    problem_present: Boolean(submission.problem),
+    visitor_id_hash: optionalHash(submission.visitorId),
+    session_id_hash: optionalHash(submission.sessionId || req.headers['x-session-id']),
+    tab_id_hash: optionalHash(submission.tabId),
+    metrika_client_id_hash: optionalHash(submission.metrikaClientId),
+    first_touch_yclid_hash: optionalHash(submission.firstTouchYclid),
+    last_touch_yclid_hash: optionalHash(submission.lastTouchYclid),
+    yclid_for_offline_hash: optionalHash(submission.yclidForOffline),
+    yclid_source: submission.yclidSource,
+    gclid_hash: optionalHash(submission.gclid),
+    first_touch: summarizeTouchForLog(submission.attribution?.first_touch),
+    last_touch: summarizeTouchForLog(submission.attribution?.last_touch),
+    telegram_ok: true,
+    telegram_message_id: delivery.messageId,
     lead_status: 'lead_created',
     quality: 'human_candidate',
-  });
+  };
+  appendJsonLine('direct_leads.jsonl', Object.fromEntries(Object.entries(row).filter(([, value]) => value !== '' && value !== null)));
+  return row;
 }
 
 function writeLeadDeliveryFailure(submission, reason) {
   appendJsonLine('lead_delivery_failures.jsonl', {
     ts: new Date().toISOString(),
-    page_slug: submission.page.replace(/\.html$/, ''),
+    schema_version: submission.schemaVersion || 'mospochin.lead.v3',
+    trace_id: submission.traceId,
+    page_slug: submission.pageSlug || submission.page.replace(/\.html$/, ''),
     page_version: submission.pageVersion,
     branch: submission.branch,
     form_variant: submission.formVariant,
     idempotency_key_hash: submission.idempotencyKeyHash,
-    phone_hash: shortHash(submission.phone),
-    name_hash: shortHash(submission.name),
-    problem_hash: shortHash(submission.problem),
+    phone_hash: optionalHash(submission.phone),
+    name_present: Boolean(submission.name),
+    problem_present: Boolean(submission.problem),
     failure_code: sanitizeString(reason, 120),
   });
 }
@@ -654,27 +773,29 @@ function sanitizeAttribution(value) {
   const sanitizeTouch = (touch) => {
     if (!touch || typeof touch !== 'object' || Array.isArray(touch)) return null;
     const allowed = {
-      page_url: 800,
-      page_path: 240,
+      page_url: 4096,
+      page_path: 1024,
       page_title: 240,
-      landing_page: 240,
+      landing_path: 1024,
+      landing_url: 4096,
+      landing_page: 1024,
+      referrer: 4096,
       referrer_host: 120,
-      utm_source: 160,
-      utm_medium: 160,
-      utm_campaign: 200,
-      utm_content: 200,
-      utm_term: 200,
-      utm_service: 160,
-      utm_landing: 240,
-      metrika_client_id: 160,
-      ym_client_id: 160,
-      yclid: 200,
-      gclid: 200,
+      utm_source: 1024,
+      utm_medium: 1024,
+      utm_campaign: 1024,
+      utm_content: 1024,
+      utm_term: 1024,
+      utm_service: 1024,
+      utm_geo: 1024,
+      etext: 1024,
+      yclid: 256,
+      gclid: 256,
       captured_at: 80,
     };
     const result = {};
     for (const [key, maxLength] of Object.entries(allowed)) {
-      const safeValue = sanitizeString(touch[key], maxLength);
+      const safeValue = optionalString(touch[key], maxLength);
       if (safeValue) result[key] = safeValue;
     }
     return Object.keys(result).length ? result : null;
@@ -683,11 +804,7 @@ function sanitizeAttribution(value) {
   const firstTouch = sanitizeTouch(value.first_touch);
   const lastTouch = sanitizeTouch(value.last_touch);
   if (!firstTouch && !lastTouch) return null;
-
-  return {
-    first_touch: firstTouch,
-    last_touch: lastTouch,
-  };
+  return { first_touch: firstTouch, last_touch: lastTouch };
 }
 
 function getSourceLabel(branch) {
@@ -745,60 +862,71 @@ function buildTelegramMessage(submission) {
 }
 
 function validateSubmission(body) {
-  const page = sanitizeString(body.page, 80);
+  const page = sanitizeString(body.page || cleanPagePath(body.page_path || body.page_url).replace(/^\//, ''), 128);
   const pageMetadata = PAGE_METADATA.pages?.[page] || null;
   const branch = sanitizeString(body.branch, 20);
-  const name = sanitizeString(body.name, MAX_NAME_LENGTH);
+  const name = optionalString(body.name, MAX_NAME_LENGTH);
   const phone = normalizePhone(body.phone);
-  const type = sanitizeString(body.type, MAX_TYPE_LENGTH);
-  const problem = sanitizeString(body.problem, 500);
-  const formContext = sanitizeString(body.formContext, MAX_CONTEXT_LENGTH);
-  const formVariant = sanitizeString(body.formVariant || body.formContext, MAX_CONTEXT_LENGTH) || 'generic';
-  const idempotencyKey = sanitizeString(body.idempotencyKey || body.idempotency_key, 160);
-  const pageVersion = sanitizeString(body.pageVersion, 80);
-  const website = sanitizeString(body.website, 80);
-  const extraFields = sanitizeExtraFields(body.extraFields);
-  const attribution = sanitizeAttribution(body.attribution);
+  const type = optionalString(body.type, MAX_TYPE_LENGTH);
+  const problem = optionalString(body.problem, 4000);
+  const formId = optionalString(body.form_id || body.formId || body.form_context || body.formContext, 256);
+  const formContext = optionalString(body.form_context || body.formContext, 256);
+  const formVariant = optionalString(body.form_variant || body.formVariant || body.form_context || body.formContext, 256) || 'generic';
+  const idempotencyKey = optionalString(body.idempotency_key || body.idempotencyKey, 160);
+  const pageVersion = optionalString(body.page_version || body.pageVersion, 128);
+  const website = optionalString(body.website, 80);
+  const extraFields = sanitizeExtraFields(body.extra_fields || body.extraFields);
+  const attribution = sanitizeAttribution(body.attribution || { first_touch: body.first_touch, last_touch: body.last_touch });
   const consent = body.consent === true;
+  const schemaVersion = optionalString(body.schema_version, 80);
 
-  if (website) {
-    return { error: 'spam_detected' };
-  }
+  if (website) return { error: 'spam_detected' };
+  if (!consent) return { error: 'consent_required' };
+  if (!page || !pageMetadata || pageMetadata.hasForm !== true) return { error: 'invalid_page' };
+  if (!VALID_BRANCHES.has(pageMetadata.branch)) return { error: 'invalid_page_branch' };
+  if (branch && branch !== pageMetadata.branch) return { error: 'branch_mismatch' };
+  if (!isValidPhone(phone)) return { error: 'invalid_phone' };
+  if (schemaVersion === 'mospochin.lead.v3' && !idempotencyKey) return { error: 'idempotency_required' };
 
-  if (!consent) {
-    return { error: 'consent_required' };
-  }
-
-  if (!page || !pageMetadata || pageMetadata.hasForm !== true) {
-    return { error: 'invalid_page' };
-  }
-
-  if (!VALID_BRANCHES.has(pageMetadata.branch)) {
-    return { error: 'invalid_page_branch' };
-  }
-
-  if (branch && branch !== pageMetadata.branch) {
-    return { error: 'branch_mismatch' };
-  }
-
-  if (!isValidPhone(phone)) {
-    return { error: 'invalid_phone' };
-  }
+  const firstTouchYclid = optionalString(body.first_touch_yclid || attribution?.first_touch?.yclid, 256);
+  const lastTouchYclid = optionalString(body.last_touch_yclid || attribution?.last_touch?.yclid, 256);
+  const yclidForOffline = optionalString(body.yclid_for_offline, 256) || lastTouchYclid || firstTouchYclid;
 
   return {
     submission: {
+      schemaVersion: schemaVersion || 'mospochin.lead.v1',
+      trackingVersion: optionalString(body.tracking_version, 80),
+      siteRelease: optionalString(body.site_release, 160),
+      analyticsRelease: optionalString(body.analytics_release, 160),
+      formRelease: optionalString(body.form_release, 160),
       page,
+      pagePath: cleanPagePath(body.page_path || `/${page}`),
+      pageSlug: optionalString(body.page_slug, 256) || page.replace(/\.html$/, ''),
       branch: pageMetadata.branch,
       name,
       phone,
       type,
       problem,
+      formId,
       formContext,
       formVariant,
-      idempotencyKeyHash: idempotencyKey ? shortHash(idempotencyKey) : '',
+      idempotencyKey,
+      idempotencyKeyHash: optionalHash(idempotencyKey),
       pageVersion,
       extraFields,
       attribution,
+      landingPath: optionalString(body.landing_path || attribution?.first_touch?.landing_path || attribution?.first_touch?.landing_page, 1024),
+      visitorId: optionalString(body.visitor_id, 128),
+      sessionId: optionalString(body.session_id, 128),
+      tabId: optionalString(body.tab_id, 128),
+      metrikaClientId: optionalString(body.metrika_client_id, 128),
+      firstTouchYclid,
+      lastTouchYclid,
+      yclidForOffline,
+      yclidSource: optionalString(body.yclid_source, 32) || (lastTouchYclid ? 'last_touch' : firstTouchYclid ? 'first_touch' : null),
+      gclid: optionalString(body.gclid || attribution?.last_touch?.gclid || attribution?.first_touch?.gclid, 256),
+      traceId: optionalString(body.trace_id, 160) || createPublicId('trace'),
+      submitAttemptEventId: optionalString(body.submit_attempt_event_id, 160),
     }
   };
 }
@@ -985,42 +1113,88 @@ const server = http.createServer(async (req, res) => {
       }
 
       hydrateLeadDedupe();
-      const idempotencyKeyHash = validation.submission.idempotencyKeyHash;
-      if (idempotencyKeyHash && leadDedupe.has(idempotencyKeyHash)) {
-        sendJson(res, 200, { ok: true, delivered: true, duplicate: true });
+      const submission = validation.submission;
+      const idempotencyKeyHash = submission.idempotencyKeyHash;
+      const payloadFingerprintHash = canonicalLeadFingerprint(submission);
+      const currentRequestId = getRequestId(req);
+      const existing = idempotencyKeyHash ? leadDedupe.get(idempotencyKeyHash) : null;
+
+      if (existing) {
+        if (existing.payloadFingerprintHash && existing.payloadFingerprintHash !== payloadFingerprintHash) {
+          sendJson(res, 409, {
+            ok: false,
+            error: 'idempotency_conflict',
+            request_id: currentRequestId,
+          });
+          return;
+        }
+        sendJson(res, 200, {
+          ok: true,
+          lead_id: existing.leadId || createPublicId('lead_legacy'),
+          request_id: existing.requestId || currentRequestId,
+          status: 'lead_created',
+          deduplicated: true,
+        });
         return;
       }
 
-      const pendingKey = idempotencyKeyHash || `request:${shortHash(`${validation.submission.page}:${validation.submission.phone}:${Date.now()}`)}`;
-      let deliveryPromise = pendingLeadDeliveries.get(pendingKey);
+      const pendingKey = idempotencyKeyHash || `request:${shortHash(`${submission.page}:${submission.phone}:${Date.now()}`)}`;
+      const pending = pendingLeadDeliveries.get(pendingKey);
+      if (pending && pending.payloadFingerprintHash !== payloadFingerprintHash) {
+        sendJson(res, 409, {
+          ok: false,
+          error: 'idempotency_conflict',
+          request_id: currentRequestId,
+        });
+        return;
+      }
+
+      let deliveryPromise = pending?.promise;
+      const joinedPending = Boolean(deliveryPromise);
       if (!deliveryPromise) {
+        const delivery = {
+          leadId: createPublicId('lead_public'),
+          requestId: currentRequestId,
+          payloadFingerprintHash,
+          messageId: null,
+        };
         deliveryPromise = (async () => {
-          const messageId = await deliverToTelegram(buildTelegramMessage(validation.submission));
-          writeDirectLead(validation.submission, req, messageId);
-          if (idempotencyKeyHash) leadDedupe.set(idempotencyKeyHash, Date.now());
-          return messageId;
+          delivery.messageId = await deliverToTelegram(buildTelegramMessage(submission));
+          writeDirectLead(submission, req, delivery);
+          if (idempotencyKeyHash) {
+            leadDedupe.set(idempotencyKeyHash, {
+              timestamp: Date.now(),
+              payloadFingerprintHash,
+              leadId: delivery.leadId,
+              requestId: delivery.requestId,
+            });
+          }
+          return delivery;
         })();
-        pendingLeadDeliveries.set(pendingKey, deliveryPromise);
+        pendingLeadDeliveries.set(pendingKey, { payloadFingerprintHash, promise: deliveryPromise });
         deliveryPromise.finally(() => pendingLeadDeliveries.delete(pendingKey)).catch(() => {});
       }
 
       try {
-        const messageId = await deliveryPromise;
+        const delivery = await deliveryPromise;
         sendJson(res, 200, {
           ok: true,
-          delivered: true,
-          messageId,
+          lead_id: delivery.leadId,
+          request_id: delivery.requestId,
+          status: 'lead_created',
+          deduplicated: joinedPending,
         });
       } catch (error) {
         console.error('Telegram delivery failed:', error.message);
         try {
-          writeLeadDeliveryFailure(validation.submission, error.message || 'telegram_delivery_failed');
+          writeLeadDeliveryFailure(submission, error.message || 'delivery_failed');
         } catch (queueError) {
           console.error('Lead delivery failure queue write failed:', queueError.message);
         }
         sendJson(res, 502, {
           ok: false,
-          error: 'telegram_delivery_failed',
+          error: 'delivery_failed',
+          request_id: currentRequestId,
         });
       }
       return;
