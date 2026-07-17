@@ -3,11 +3,12 @@
  * Safe handoff packer: write a compact report, sync generated artifacts, run
  * the handoff check profile, zip the project, and write SHA256.
  */
-import { existsSync, writeFileSync, readFileSync, mkdirSync } from 'fs';
+import { existsSync, writeFileSync, readFileSync, mkdirSync, unlinkSync } from 'fs';
 import path from 'path';
 import { spawnSync } from 'child_process';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { createArtifactContract, stableJson } from './artifact-contract-lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT_DIR = path.resolve(path.dirname(__filename), '..');
@@ -96,6 +97,28 @@ if (args.sync) run(NPM, ['run', 'sync:generated']);
 if (args.check) run(NPM, ['run', 'check:handoff']);
 run(NPM, ['run', 'ai:change-manifest']);
 
+const artifactPath = path.join(ROOT_DIR, 'artifact.json');
+const previousArtifact = existsSync(artifactPath) ? readFileSync(artifactPath) : null;
+const artifact = createArtifactContract({
+  artifactType: 'source-handoff',
+  deployable: false,
+  packageVersion: JSON.parse(readFileSync(path.join(ROOT_DIR, 'package.json'), 'utf8')).version || '0.0.0',
+  contents: {
+    description: 'Full MosPochin source handoff including media masters.',
+  },
+  notes: ['Do not deploy this source archive directly. Build a public-deploy artifact first.'],
+});
+writeFileSync(artifactPath, stableJson(artifact));
+process.on('exit', () => {
+  try {
+    if (previousArtifact === null) {
+      if (existsSync(artifactPath)) unlinkSync(artifactPath);
+    } else {
+      writeFileSync(artifactPath, previousArtifact);
+    }
+  } catch {}
+});
+
 if (existsSync(zipPath)) run('rm', ['-f', zipPath]);
 if (existsSync(shaPath)) run('rm', ['-f', shaPath]);
 
@@ -108,6 +131,8 @@ run('zip', [
   `${PROJECT_DIR_NAME}/node_modules/*`,
   `${PROJECT_DIR_NAME}/.cache/*`,
   `${PROJECT_DIR_NAME}/.artifacts/*`,
+  `${PROJECT_DIR_NAME}/.archives/*`,
+  `${PROJECT_DIR_NAME}/.deploy/dist/*`,
   `${PROJECT_DIR_NAME}/.playwright-browsers/*`,
   `${PROJECT_DIR_NAME}/build/*`,
   `${PROJECT_DIR_NAME}/reports/visual-*/*`,

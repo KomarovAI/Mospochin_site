@@ -11,6 +11,7 @@ import path from 'path';
 import crypto from 'crypto';
 import { spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
+import { createArtifactContract, stableJson } from './artifact-contract-lib.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -106,7 +107,7 @@ function buildVersionJson(files, copiedFiles) {
       sha256: manifestHash,
     },
     runtime: {
-      files: copiedFiles.length + 1,
+      files: copiedFiles.length + 2,
       sha256: runtimeHash,
     },
   };
@@ -213,8 +214,27 @@ function main() {
   }
 
   const version = buildVersionJson(files, copiedFiles);
-  fs.writeFileSync(path.join(STAGE_DIR, 'version.json'), `${JSON.stringify(version, null, 2)}\n`);
-  const generatedFiles = ['version.json'];
+  fs.writeFileSync(path.join(STAGE_DIR, 'version.json'), `${JSON.stringify(version, null, 2)}
+`);
+
+  const artifact = createArtifactContract({
+    artifactType: 'public-deploy',
+    deployable: true,
+    packageVersion: PACKAGE_JSON.version || '0.0.0',
+    contents: {
+      manifestPath: version.manifest.path,
+      manifestFiles: version.manifest.files,
+      manifestSha256: version.manifest.sha256,
+      runtimeFiles: version.runtime.files,
+      runtimePayloadSha256: version.runtime.sha256,
+    },
+    notes: [
+      'Production runtime artifact. Verify artifact.json and the external SHA256 before activation.',
+      'This ZIP is built strictly from .deploy/include-files.txt plus version.json and artifact.json.',
+    ],
+  });
+  fs.writeFileSync(path.join(STAGE_DIR, 'artifact.json'), stableJson(artifact));
+  const generatedFiles = ['version.json', 'artifact.json'];
 
   const zipPath = path.join(DIST_DIR, name);
   runZip(zipPath);

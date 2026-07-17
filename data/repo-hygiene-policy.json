@@ -86,7 +86,9 @@
   "archiveExemptions": [
     "docs/archive",
     ".artifacts",
-    "reports/handoff"
+    "reports/handoff",
+    ".archives",
+    ".deploy/dist"
   ],
   "grandfatheredTextFiles": [
     ".ai/CURRENT.md",
@@ -240,6 +242,7 @@
     "docs/exec-plans/active",
     "docs/exec-plans/completed",
     ".ai/digest",
-    "reports/handoff"
+    "reports/handoff",
+    "reports/deploy"
   ]
 }

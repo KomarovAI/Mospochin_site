@@ -1,0 +1,16 @@
+{
+  "artifactRoot": ".artifacts/screenshots/core-pages-css-fix",
+  "browser": "chromium",
+  "server": {"host": "127.0.0.1", "port": 9998},
+  "waitStrategy": {"networkIdleTimeoutMs": 1500, "postLoadDelayMs": 800},
+  "viewports": [
+    {"id": "desktop", "label": "Desktop", "width": 1440, "height": 1000, "deviceScaleFactor": 1},
+    {"id": "mobile", "label": "Mobile", "width": 390, "height": 844, "deviceScaleFactor": 1, "isMobile": true, "hasTouch": true}
+  ],
+  "pages": [
+    {"page": "index.html", "branch": "restaurant", "pageType": "branch", "fullPage": false},
+    {"page": "uslugi.html", "branch": "restaurant", "pageType": "branch", "fullPage": false},
+    {"page": "about.html", "branch": "restaurant", "pageType": "branch", "fullPage": false},
+    {"page": "contact.html", "branch": "restaurant", "pageType": "branch", "fullPage": false}
+  ]
+}

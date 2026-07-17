@@ -1,0 +1,17 @@
+{
+  "artifactRoot": ".artifacts/screenshots/core-pages-control",
+  "browser": "chromium",
+  "server": {"host": "127.0.0.1", "port": 9998},
+  "waitStrategy": {"networkIdleTimeoutMs": 1500, "postLoadDelayMs": 800},
+  "viewports": [
+    {"id": "desktop", "label": "Desktop", "width": 1440, "height": 1000, "deviceScaleFactor": 1},
+    {"id": "mobile", "label": "Mobile", "width": 390, "height": 844, "deviceScaleFactor": 1, "isMobile": true, "hasTouch": true}
+  ],
+  "pages": [
+    {"page": "holodilnoe-oborudovanie.html", "branch": "restaurant", "pageType": "service", "fullPage": false},
+    {"page": "parokonvektomaty.html", "branch": "restaurant", "pageType": "service", "fullPage": false},
+    {"page": "posudomoechnye-mashiny.html", "branch": "restaurant", "pageType": "service", "fullPage": false},
+    {"page": "ventilyatsiya-restoranov.html", "branch": "restaurant", "pageType": "service", "fullPage": false},
+    {"page": "bytovaya-index.html", "branch": "household", "pageType": "branch", "fullPage": false}
+  ]
+}

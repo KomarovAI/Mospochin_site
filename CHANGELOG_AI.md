@@ -201,3 +201,11 @@ Checks to run:
 - Injected consent checkbox is guaranteed to be at least 24×24 CSS px.
 - K9 checks are part of core and handoff.
 
+
+## 2026-07-17 — P0 core pages CSS repair
+
+- restored reproducible Tailwind CSS 3.4.19 build;
+- rebuilt `styles-combined.css` from current HTML/source files;
+- fixed broken hero rendering on `index.html`, `uslugi.html`, `about.html`, `contact.html`;
+- added core CSS selector guard and desktop/mobile visual-smoke manifests;
+- verified builder parity, control pages and zero npm audit vulnerabilities.

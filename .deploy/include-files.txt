@@ -499,9 +499,13 @@ data/runtime-config.json
 data/schema-profile.json
 data/site-page-contracts.json
 deploy/env/telegram.env.example
+deploy/nginx/apply-nginx.sh
+deploy/nginx/mospochin-csp.conf
+deploy/nginx/mospochin-runtime-hardening.conf
 deploy/post-activate.sh
 deploy/systemd/mospochin-telegram-api.service
 deploy/systemd/mospochin-telegram-tunnel.service
+deploy/verify-artifact.sh
 diagnostika-holodilnogo-oborudovaniya.html
 diagnostika-kuttera.html
 diagnostika-promyshlennoy-posudomoechnoy-mashiny.html

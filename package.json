@@ -287,9 +287,21 @@
     "test:ai-control-lite-r5": "node tools/test-ai-control-lite-r5.mjs",
     "setup:git-hooks": "git config core.hooksPath .githooks",
     "precommit:ai-hygiene": "npm run check:instruction-hygiene && npm run check:repo-hygiene && npm run check:ai-current-state",
-    "apply:ai-control-lite-r5": "node tools/apply-ai-control-lite-r5.mjs"
+    "apply:ai-control-lite-r5": "node tools/apply-ai-control-lite-r5.mjs",
+    "build:css": "tailwindcss -c tailwind.config.cjs -i ./src/styles/site.css -o ./styles-combined.css --minify",
+    "check:css-core": "node tools/check-core-css.mjs",
+    "build": "npm run build:site && npm run build:css && npm run check:css-core",
+    "audit:core-pages-css": "node tools/visual-local-capture.mjs --manifest data/core-pages-visual-smoke.json --mode first-view --output .artifacts/screenshots/core-pages-css-fix --fresh",
+    "audit:core-pages-control": "node tools/visual-local-capture.mjs --manifest data/core-pages-control-visual-smoke.json --mode first-view --output .artifacts/screenshots/core-pages-control --fresh",
+    "artifact:write": "node tools/write-artifact-contract.mjs",
+    "artifact:verify": "node tools/verify-artifact.mjs",
+    "handoff:lite": "node tools/handoff-lite-pack.mjs",
+    "media:pack": "node tools/media-pack.mjs",
+    "release:prepare": "node tools/release-prepare.mjs",
+    "check:nginx-hardening": "node tools/check-nginx-hardening.mjs"
   },
   "devDependencies": {
-    "playwright": "^1.59.1"
+    "playwright": "^1.59.1",
+    "tailwindcss": "3.4.19"
   }
 }

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "project": "mospochin-site",
+  "artifactType": "source-handoff",
+  "deployable": false,
+  "createdAt": "2026-07-17T10:14:16.634Z",
+  "packageVersion": "1.0.0",
+  "source": {
+    "githubSha": "",
+    "githubRef": "",
+    "node": "v22.16.0"
+  },
+  "contents": {
+    "description": "Full MosPochin source handoff including media masters."
+  },
+  "requirements": {
+    "requiredWorkflow": "Deploy to VPS",
+    "minimumNodeMajor": 20
+  },
+  "notes": [
+    "Do not deploy this source archive directly. Build a public-deploy artifact first."
+  ]
+}
