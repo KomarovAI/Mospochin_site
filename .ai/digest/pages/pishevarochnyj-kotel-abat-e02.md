@@ -7,8 +7,8 @@
 - H1: Ошибка E02 на пищеварочном котле Abat КПЭМ
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-abat-e02.html
 - Builder model: src/pages/pishevarochnyj-kotel-abat-e02/page.json
-- Sections: 20 (11 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 775
+- Sections: 20 (9 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 778
 
 ## Component mix
 
@@ -29,10 +29,10 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Переходы по симптомам, узлам и кодам | pricing | 7.4 KB | 135 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/007-pricing-perehody-po-simptomam-uzlam-i-kodam.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.1 KB | 199 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.2 KB | 207 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
 | Отправьте код и шильдик инженеру | lead-form | 5.8 KB | 82 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/014-lead-form-otprav-te-kod-i-shil-dik-inzheneru.html |
 | Не просто сбросить ошибку, а найти причину | mobile-contact | 5.2 KB | 102 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/005-mobile-contact-ne-prosto-sbrosit-oshibku-a-nayti-pri.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 4.4 KB | 113 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 4.5 KB | 108 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Ошибка E02 на пищеварочном котле Abat КПЭМ | mobile-contact | 4.2 KB | 74 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/003-mobile-contact-oshibka-e02-na-pischevarochnom-kotle-.html |
 | Частые вопросы по E02 | faq | 2.7 KB | 70 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/015-faq-chastye-voprosy-po-e02.html |
 | Секция 1 | body-preamble | 73 B | 0 | no | src/pages/pishevarochnyj-kotel-abat-e02/sections/001-body-preamble-sekciya-1.html |

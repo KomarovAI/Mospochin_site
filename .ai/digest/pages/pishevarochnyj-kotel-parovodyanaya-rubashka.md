@@ -7,8 +7,8 @@
 - H1: Диагностика пароводяной рубашки пищеварочного котла
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-parovodyanaya-rubashka.html
 - Builder model: src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/page.json
-- Sections: 23 (11 local, 1 shared refs, 0 raw)
-- Text words inside referenced sections: 854
+- Sections: 23 (9 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 847
 
 ## Component mix
 
@@ -29,11 +29,11 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 10.3 KB | 161 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.1 KB | 199 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Развели заявки по симптомам и узлам | pricing | 10.3 KB | 151 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.2 KB | 207 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
 | Оставьте заявку на диагностику | lead-form | 5.8 KB | 69 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
 | Симптом → узел → риск простоя → диагностика | mobile-contact | 5.5 KB | 106 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.4 KB | 129 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.4 KB | 124 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Диагностика пароводяной рубашки пищеварочного котла | mobile-contact | 3.1 KB | 41 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/003-mobile-contact-diagnostika-parovodyanoy-rubashki-pis.html |
 | Частые вопросы по этой неисправности | faq | 2.9 KB | 80 | no | src/pages/pishevarochnyj-kotel-parovodyanaya-rubashka/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html |
 | Не просто статья, а страница под заявку | proof | 2.1 KB | 69 | yes | src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html |

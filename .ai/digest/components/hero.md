@@ -1,7 +1,7 @@
 # Component Digest — hero
 
 - Name: Hero / первый экран
-- Appears in: 36 pages
+- Appears in: 31 pages
 - Keywords: hero, первый экран, обложка, главный блок, заголовок, h1
 - CSS selectors: .hero-animate, .hero-animate-delay-*, header .glass-card
 
@@ -13,7 +13,7 @@
 
 | Total sections | Local | Shared refs | Shared % |
 | --- | --- | --- | --- |
-| 37 | 37 | 0 | 0% |
+| 56 | 56 | 0 | 0% |
 
 
 ## Risks
@@ -32,11 +32,8 @@
 - bytovaya-contact.html
 - bytovaya-index.html
 - bytovaya-uslugi.html
-- contact.html
 - grili-mangaly.html
 - holodilniki.html
-- holodilnoe-oborudovanie.html
-- ice-machines.html
 - index.html
 - kompyutery.html
 - parokonvektomat-abat.html
@@ -47,4 +44,7 @@
 - parokonvektomat-lainox.html
 - parokonvektomat-ne-greet.html
 - parokonvektomat-net-para.html
-- … ещё 16
+- parokonvektomat-obschuzhivanie.html
+- parokonvektomat-rational-e9.html
+- parokonvektomat-rational.html
+- … ещё 11

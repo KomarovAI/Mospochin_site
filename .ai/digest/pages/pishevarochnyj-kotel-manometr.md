@@ -7,8 +7,8 @@
 - H1: Манометр и давление пищеварочного котла
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-manometr.html
 - Builder model: src/pages/pishevarochnyj-kotel-manometr/page.json
-- Sections: 23 (11 local, 1 shared refs, 0 raw)
-- Text words inside referenced sections: 843
+- Sections: 23 (9 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 836
 
 ## Component mix
 
@@ -29,11 +29,11 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 10.2 KB | 160 | no | src/pages/pishevarochnyj-kotel-manometr/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.1 KB | 199 | no | src/pages/pishevarochnyj-kotel-manometr/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Развели заявки по симптомам и узлам | pricing | 10.2 KB | 150 | no | src/pages/pishevarochnyj-kotel-manometr/sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.2 KB | 207 | no | src/pages/pishevarochnyj-kotel-manometr/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
 | Оставьте заявку на диагностику | lead-form | 5.7 KB | 70 | no | src/pages/pishevarochnyj-kotel-manometr/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
 | Симптом → узел → риск простоя → диагностика | mobile-contact | 5.5 KB | 103 | no | src/pages/pishevarochnyj-kotel-manometr/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.3 KB | 129 | no | src/pages/pishevarochnyj-kotel-manometr/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.4 KB | 124 | no | src/pages/pishevarochnyj-kotel-manometr/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Манометр и давление пищеварочного котла | mobile-contact | 3.1 KB | 41 | no | src/pages/pishevarochnyj-kotel-manometr/sections/003-mobile-contact-manometr-i-davlenie-pischevarochnogo-.html |
 | Частые вопросы по этой неисправности | faq | 2.8 KB | 72 | no | src/pages/pishevarochnyj-kotel-manometr/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html |
 | Не просто статья, а страница под заявку | proof | 2.1 KB | 69 | yes | src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html |

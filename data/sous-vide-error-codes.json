@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "rule": "Codes are model-scoped and must never be generalized across manufacturers or model families.",
+  "codes": [
+    {
+      "manufacturer": "Anova",
+      "modelFamily": "Precision Cooker Nano",
+      "exactCode": "LO",
+      "officialMeaning": "Уровень воды ниже отметки MIN.",
+      "manufacturerAction": "Добавить воду до рабочего диапазона.",
+      "safeSiteWording": "Проверьте уровень воды по меткам конкретной модели.",
+      "evidenceId": "anova.nano.alerts",
+      "checkedAt": "2026-07-14"
+    },
+    {
+      "manufacturer": "Anova",
+      "modelFamily": "Precision Cooker Nano",
+      "exactCode": "STOP",
+      "officialMeaning": "Водяной вентилятор/крыльчатка в нижней части застрял.",
+      "manufacturerAction": "Остановить прибор и устранить блокировку согласно руководству либо обратиться в сервис.",
+      "safeSiteWording": "Отключите прибор; не пытайтесь обходить защиту.",
+      "evidenceId": "anova.nano.alerts",
+      "checkedAt": "2026-07-14"
+    },
+    {
+      "manufacturer": "Anova",
+      "modelFamily": "Precision Cooker Nano",
+      "exactCode": "----",
+      "officialMeaning": "Аппаратная неисправность.",
+      "manufacturerAction": "Прекратить использование и обратиться в поддержку/сервис.",
+      "safeSiteWording": "Прекратите использование до диагностики.",
+      "evidenceId": "anova.nano.alerts",
+      "checkedAt": "2026-07-14"
+    },
+    {
+      "manufacturer": "Anova",
+      "modelFamily": "Precision Cooker Pro",
+      "exactCode": "LO",
+      "officialMeaning": "Уровень воды ниже отметки MIN.",
+      "manufacturerAction": "Добавить воду до рабочего диапазона.",
+      "safeSiteWording": "Проверьте уровень воды по меткам конкретной модели.",
+      "evidenceId": "anova.pro.alerts",
+      "checkedAt": "2026-07-14"
+    },
+    {
+      "manufacturer": "Anova",
+      "modelFamily": "Precision Cooker Pro",
+      "exactCode": "----",
+      "officialMeaning": "Аппаратная неисправность.",
+      "manufacturerAction": "Прекратить использование и обратиться в поддержку/сервис.",
+      "safeSiteWording": "Прекратите использование до диагностики.",
+      "evidenceId": "anova.pro.alerts",
+      "checkedAt": "2026-07-14"
+    }
+  ]
+}

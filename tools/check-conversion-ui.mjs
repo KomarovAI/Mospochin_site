@@ -36,8 +36,14 @@ function normalizeLocalHtmlHref(href) {
   return value;
 }
 
-function extractHrefs(html) {
-  return Array.from(html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi), (match) => match[1]);
+function extractAnchors(html) {
+  return Array.from(html.matchAll(/<a\b([^>]*)href=["']([^"']+)["']([^>]*)>/gi), (match) => {
+    const attributes = `${match[1] ?? ''} ${match[3] ?? ''}`;
+    return {
+      href: match[2],
+      isCurrent: /\baria-current=["']page["']/i.test(attributes),
+    };
+  });
 }
 
 function hasMetaNoindex(html) {
@@ -45,7 +51,13 @@ function hasMetaNoindex(html) {
 }
 
 function canonicalHref(html) {
-  return html.match(/<link\s+[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)?.[1] ?? null;
+  const tags = html.match(/<link\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    const rel = tag.match(/\srel=["']([^"']+)["']/i)?.[1] || '';
+    if (!rel.split(/\s+/).includes('canonical')) continue;
+    return tag.match(/\shref=["']([^"']+)["']/i)?.[1] ?? null;
+  }
+  return null;
 }
 
 function metaDescription(html) {
@@ -120,7 +132,7 @@ function validatePage(entry, manifest, metadata, sitemap, clusterPages) {
   const minForms = entry.minForms ?? defaults.minForms ?? 0;
   if (formCount < minForms) errors.push(`${entry.page}: expected at least ${minForms} form(s), found ${formCount}`);
   if (minForms > 0 && !/<form\b[^>]*class=["'][^"']*telegram-form/i.test(html)) errors.push(`${entry.page}: missing .telegram-form`);
-  if (defaults.requireHiddenProblem && !/<input\b[^>]*type=["']hidden["'][^>]*name=["']problem["']/i.test(html)) errors.push(`${entry.page}: missing hidden problem input`);
+  if (defaults.requireHiddenProblem && !/<input\b(?=[^>]*\btype=["']hidden["'])(?=[^>]*\bname=["']problem["'])[^>]*>/i.test(html)) errors.push(`${entry.page}: missing hidden problem input`);
   if (minForms > 0 && !/<input\b[^>]*name=["']phone["'][^>]*required/i.test(html) && !/<input\b[^>]*required[^>]*name=["']phone["']/i.test(html)) errors.push(`${entry.page}: missing required phone input`);
   if (minForms > 0 && !/<button\b[^>]*type=["']submit["']/i.test(html)) errors.push(`${entry.page}: missing submit button`);
   if (defaults.requirePhoneLink && !/href=["']tel:\+?\d+/i.test(html)) errors.push(`${entry.page}: missing tel: CTA link`);
@@ -130,13 +142,17 @@ function validatePage(entry, manifest, metadata, sitemap, clusterPages) {
   if (defaults.requireMobileContactContainers) {
     if (!/id=["']mobile-footer-container["']/i.test(html)) errors.push(`${entry.page}: missing #mobile-footer-container`);
     if (!/id=["']whatsapp-float-container["']/i.test(html)) errors.push(`${entry.page}: missing #whatsapp-float-container`);
-    if (!/src=["']partials-injector\.js["']/i.test(html)) errors.push(`${entry.page}: missing partials-injector.js`);
+    if (/src=["']partials-injector\.js["']/i.test(html)) errors.push(`${entry.page}: retired partials-injector.js must not be loaded`);
   }
   if (defaults.requireFaqSchema && !/"@type"\s*:\s*"FAQPage"/i.test(html)) errors.push(`${entry.page}: missing FAQPage schema`);
-  const localHtmlLinks = extractHrefs(html).map(normalizeLocalHtmlHref).filter(Boolean);
+  const localAnchors = extractAnchors(html)
+    .map((anchor) => ({ ...anchor, normalizedHref: normalizeLocalHtmlHref(anchor.href) }))
+    .filter((anchor) => Boolean(anchor.normalizedHref));
+  const localHtmlLinks = localAnchors.map((anchor) => anchor.normalizedHref);
   const broken = [...new Set(localHtmlLinks.filter((href) => !fs.existsSync(path.join(SITE_ROOT, href))))];
   if (broken.length) errors.push(`${entry.page}: broken local HTML links: ${broken.join(', ')}`);
-  if (localHtmlLinks.includes(entry.page)) errors.push(`${entry.page}: self-link detected`);
+  const invalidSelfLinks = localAnchors.filter((anchor) => anchor.normalizedHref === entry.page && !anchor.isCurrent);
+  if (invalidSelfLinks.length) errors.push(`${entry.page}: self-link detected outside aria-current navigation`);
   const clusterLinks = [...new Set(localHtmlLinks.filter((href) => clusterPages.has(href) && href !== entry.page))];
   const minClusterLinks = entry.minClusterLinks ?? defaults.minClusterLinks ?? 0;
   if (clusterLinks.length < minClusterLinks) errors.push(`${entry.page}: expected at least ${minClusterLinks} cluster links, found ${clusterLinks.length}`);

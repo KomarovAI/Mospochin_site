@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Keep AI instruction files short, stable and free of task output or unrelated content.",
+  "marker": "<!-- ai-instruction-file: true -->",
+  "approvedFiles": {
+    "AGENTS.md": {
+      "maxLines": 100,
+      "maxBytes": 6000,
+      "headings": [
+        "# Repository Instructions",
+        "## Start",
+        "## Source of truth",
+        "## Editing rules",
+        "## Verification",
+        "## Instruction hygiene",
+        "## Risky zones",
+        "## Handoff"
+      ]
+    },
+    "src/pages/AGENTS.md": {
+      "maxLines": 55,
+      "maxBytes": 3500,
+      "headings": [
+        "# Page Authoring Instructions",
+        "## Scope",
+        "## Edit",
+        "## Build",
+        "## Verify",
+        "## Do not add"
+      ]
+    },
+    "data/AGENTS.md": {
+      "maxLines": 55,
+      "maxBytes": 3500,
+      "headings": [
+        "# Data Instructions",
+        "## Scope",
+        "## Edit",
+        "## Generate",
+        "## Verify",
+        "## Do not add"
+      ]
+    },
+    "server/AGENTS.md": {
+      "maxLines": 55,
+      "maxBytes": 3500,
+      "headings": [
+        "# Server Instructions",
+        "## Scope",
+        "## Edit",
+        "## Verify",
+        "## Do not add"
+      ]
+    },
+    "docs/AGENTS.md": {
+      "maxLines": 40,
+      "maxBytes": 2600,
+      "headings": [
+        "# Documentation Instructions",
+        "## Scope",
+        "## Edit",
+        "## Verify",
+        "## Do not add"
+      ]
+    },
+    ".github/copilot-instructions.md": {
+      "maxLines": 35,
+      "maxBytes": 2200,
+      "headings": [
+        "# Copilot Repository Instructions",
+        "## Start",
+        "## Edit",
+        "## Verify",
+        "## Do not add"
+      ]
+    },
+    "assets/AGENTS.md": {
+      "maxLines": 40,
+      "maxBytes": 2600,
+      "headings": [
+        "# Asset Instructions",
+        "## Scope",
+        "## Edit",
+        "## Verify",
+        "## Do not add"
+      ]
+    }
+  },
+  "forbiddenPatterns": [
+    {
+      "name": "dated status",
+      "source": "\\b20\\d{2}[-/.]\\d{2}[-/.]\\d{2}\\b",
+      "flags": "u"
+    },
+    {
+      "name": "release checksum",
+      "source": "sha-?256|checksum",
+      "flags": "iu"
+    },
+    {
+      "name": "task result heading",
+      "source": "^#{1,6}\\s+(status|results?|result|what changed|summary|итог|статус|результат|что изменено)\\b",
+      "flags": "imu"
+    },
+    {
+      "name": "terminal transcript",
+      "source": "^[\\w.-]+@[\\w.-]+:.*[$#]\\s",
+      "flags": "mu"
+    },
+    {
+      "name": "sandbox or file citation",
+      "source": "sandbox:|filecite|turn\\d+(file|search|view)",
+      "flags": "iu"
+    },
+    {
+      "name": "external URL",
+      "source": "https?://",
+      "flags": "iu"
+    },
+    {
+      "name": "markdown table",
+      "source": "^\\s*\\|.*\\|\\s*$",
+      "flags": "mu"
+    },
+    {
+      "name": "task completion prose",
+      "source": "\\b(готово|завершено|completed|done)\\b.{0,40}\\b(release|релиз|страниц|pages|проверок|checks)\\b",
+      "flags": "iu"
+    }
+  ],
+  "maxCodeFenceLines": 14,
+  "unknownInstructionFiles": "error"
+}

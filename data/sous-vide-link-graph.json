@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-14",
+  "hubPage": "sous-vide-restoranov.html",
+  "hubSectionFile": "src/pages/sous-vide-restoranov/sections/002-lead-form-sous-vide-dlya-restoranov-oborudovanie-i-s.html",
+  "equipmentFamilies": {
+    "immersion_circulator": {
+      "label": "Термостаты и водяные бани",
+      "overviewPage": "sous-vide-termostaty.html",
+      "overviewLabel": "Термостаты sous-vide",
+      "overviewDescription": "Типы оборудования, рабочие узлы и условия установки.",
+      "repairPage": "remont-termostata-sous-vide.html",
+      "repairLabel": "Ремонт термостата sous-vide",
+      "repairDescription": "Диагностика нагрева, циркуляции, датчиков и электроники."
+    },
+    "chamber_vacuum_packer": {
+      "label": "Камерные вакуумные упаковщики",
+      "overviewPage": "vakuumnye-upakovshiki-dlya-restorana.html",
+      "overviewLabel": "Вакуумные упаковщики",
+      "overviewDescription": "Камера, насос, крышка, герметичность и запаечная планка.",
+      "repairPage": "remont-vakuumnogo-upakovshika.html",
+      "repairLabel": "Ремонт вакууматора",
+      "repairDescription": "Диагностика насоса, вакуумного тракта и запаечного контура."
+    }
+  },
+  "contextualGuideLinks": {
+    "circulator.no_power": [
+      {
+        "target": "bezopasnost-sous-vide.html",
+        "label": "Безопасность sous-vide",
+        "description": "Что делать при запахе гари, воде в электрической части и срабатывании защиты."
+      }
+    ],
+    "circulator.trips_breaker": [
+      {
+        "target": "bezopasnost-sous-vide.html",
+        "label": "Безопасность sous-vide",
+        "description": "Когда оборудование нужно отключить и не запускать повторно до диагностики."
+      }
+    ],
+    "circulator.stops_during_work": [
+      {
+        "target": "bezopasnost-sous-vide.html",
+        "label": "Безопасность sous-vide",
+        "description": "Граница между безопасной проверкой и обязательной остановкой оборудования."
+      }
+    ],
+    "vacuum.liquid_ingress": [
+      {
+        "target": "bezopasnost-sous-vide.html",
+        "label": "Безопасность sous-vide",
+        "description": "Как действовать после попадания жидкости и когда прекращать эксплуатацию."
+      }
+    ],
+    "vacuum.no_vacuum": [
+      {
+        "target": "sous-vide-i-vakuumnaya-upakovka.html",
+        "label": "Sous-vide и вакуумная упаковка",
+        "description": "Как упаковочный контур связан с последующим технологическим процессом."
+      }
+    ],
+    "vacuum.no_seal": [
+      {
+        "target": "sous-vide-i-vakuumnaya-upakovka.html",
+        "label": "Sous-vide и вакуумная упаковка",
+        "description": "Почему качество шва критично до начала температурной обработки."
+      }
+    ]
+  },
+  "quality": {
+    "minimumRelatedSymptoms": 3,
+    "minimumInboundIndexable": 2,
+    "requireSameEquipmentFamily": true,
+    "requireDescriptiveAnchors": true,
+    "forbidIndexableToPromoLinks": true
+  }
+}

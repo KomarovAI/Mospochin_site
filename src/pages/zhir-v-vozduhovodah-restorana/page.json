@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "zhir-v-vozduhovodah-restorana.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "29ca39137ec2e18e3babff0269a80baa98ddae4e15a7cd97806f5a1ce3f6e045",
+    "hash": "7fad8119e98f5ad8210f00752243ac1d3c491abc3eb65296692a7ba6c37cea8c",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,33 +21,28 @@
   },
   "sections": [
     {
-      "id": "001-body-preamble-sekciya-1",
-      "component": "body-preamble",
-      "label": "Секция 1",
-      "file": "sections/001-body-preamble-sekciya-1.html",
-      "bytes": 48,
-      "hash": "6c45e024a4e3965e"
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9388,
+      "hash": "11005d6169797b1f"
     },
     {
       "id": "002-breadcrumb-zhir-v-vozduhovodah-restorana",
       "component": "breadcrumb",
       "label": "Жир в воздуховодах ресторана",
       "file": "sections/002-breadcrumb-zhir-v-vozduhovodah-restorana.html",
-      "bytes": 58698,
-      "hash": "14421c9aec3b786a"
+      "bytes": 39151,
+      "hash": "9571f1afb24da696"
     },
     {
-      "id": "003-footer-anchor-footer-mount-point",
-      "component": "footer-anchor",
-      "label": "Footer mount point",
-      "bytes": 34,
-      "hash": "06f3fb249f3476eb",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "footer-container-mount",
-      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-06f3fb249f34.template.html",
-      "props": {},
-      "sourceFile": "sections/003-footer-anchor-footer-mount-point.html"
+      "id": "003-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4961,
+      "hash": "9d8312a1e182a1f9"
     },
     {
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -97,28 +92,20 @@
       "hash": "f771578a5d50836c"
     },
     {
-      "id": "008-runtime-partials-podklyuchenie-partials-injector",
-      "component": "runtime-partials",
-      "label": "Подключение partials-injector",
-      "file": "sections/008-runtime-partials-podklyuchenie-partials-injector.html",
-      "bytes": 54,
-      "hash": "1714ff6d614671d3"
+      "id": "008-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 42,
+      "hash": "47228a35947e03f3",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-47228a35947e",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html",
+      "props": {},
+      "sourceFile": "sections/008-raw-html-fragment.html"
     },
     {
       "id": "009-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 41,
-      "hash": "5b57bace79b19443",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "technical-fragment-5b57bace79b1",
-      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-5b57bace79b1.template.html",
-      "props": {},
-      "sourceFile": "sections/009-raw-html-fragment.html"
-    },
-    {
-      "id": "010-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -128,7 +115,7 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/010-raw-html-fragment.html"
+      "sourceFile": "sections/009-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [

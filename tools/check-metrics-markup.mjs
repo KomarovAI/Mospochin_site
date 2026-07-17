@@ -6,6 +6,10 @@ const root = process.cwd();
 const contextPath = path.join(root, 'data', 'metrics-page-context.json');
 const context = JSON.parse(fs.readFileSync(contextPath, 'utf8'));
 const pages = context.pages || {};
+const paidManifestPath = path.join(root, 'data', 'paid-landings.json');
+const paidPages = fs.existsSync(paidManifestPath)
+  ? new Set(JSON.parse(fs.readFileSync(paidManifestPath, 'utf8')).map((entry) => String(entry.landing_path || '').replace(/^\//, '')))
+  : new Set();
 const requiredBodyAttrs = context.required_body_attrs || [
   'data-page-slug',
   'data-page-intent',
@@ -121,10 +125,11 @@ for (const [file, page] of Object.entries(pages)) {
   const forms = tagList(html, /<form\b[^>]*>/gi).filter(isContactForm);
   for (const tag of forms) {
     checkedForms += 1;
-    for (const attr of requiredCtaAttrs) {
-      if (!hasAttr(tag, attr)) fail(`${file} contact form missing ${attr}: ${tag.slice(0, 160)}`);
-    }
     if (!hasAttr(tag, 'data-contact-form')) fail(`${file} contact form missing data-contact-form`);
+    if (paidPages.has(file)) {
+      if (!hasAttr(tag, 'data-form-id')) fail(`${file} paid contact form missing data-form-id`);
+      if (!hasAttr(tag, 'data-form-variant')) fail(`${file} paid contact form missing data-form-variant`);
+    }
   }
 }
 

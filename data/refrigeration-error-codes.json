@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "checkedAt": "2026-07-15",
+  "policy": {
+    "universalCodesForbidden": true,
+    "controllerScopeRequired": true,
+    "applianceBrandInferenceForbidden": true,
+    "ambiguousRowsExcluded": true
+  },
+  "codes": [
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "E29",
+      "officialMeaning": "Sair air-temperature sensor error",
+      "safeChecks": [
+        "Зафиксировать код и модель контроллера",
+        "Проверить, не повреждён ли доступный кабель датчика без вскрытия панели"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить датчик Sair и его сопротивление",
+        "Проверить соединение входа Sair на контроллере"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "E27",
+      "officialMeaning": "S5 evaporator/defrost sensor error",
+      "safeChecks": [
+        "Зафиксировать код и контроллер",
+        "Не снимать лёд острыми предметами"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить датчик S5",
+        "Проверить цепь и конфигурацию входа оттайки"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "E30",
+      "officialMeaning": "Sc condenser sensor error",
+      "safeChecks": [
+        "Зафиксировать код",
+        "Проверить доступность воздушного потока конденсатора"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить датчик Sc",
+        "Проверить вход и конфигурацию датчика конденсатора"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "A01",
+      "officialMeaning": "High cabinet temperature alarm",
+      "safeChecks": [
+        "Записать заданную и фактическую температуру",
+        "Проверить, закрыта ли дверь"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить причины высокой температуры и задержки alarm",
+        "Проверить холодильный контур и воздушный поток"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "A02",
+      "officialMeaning": "Low cabinet temperature alarm",
+      "safeChecks": [
+        "Записать заданную и фактическую температуру",
+        "Не менять параметры контроллера без документации"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить датчик и уставки",
+        "Проверить зависание выхода компрессора"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "A61",
+      "officialMeaning": "High condenser temperature alarm",
+      "safeChecks": [
+        "Осмотреть доступный конденсатор и вентиляционные зазоры",
+        "Остановить оборудование при запахе перегрева"
+      ],
+      "serviceOnlyChecks": [
+        "Измерить температуру конденсатора и воздушный поток",
+        "Проверить вентилятор и загрязнение теплообменника"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "A80",
+      "officialMeaning": "Condenser block alarm requiring manual reset",
+      "safeChecks": [
+        "Не выполнять многократные перезапуски",
+        "Зафиксировать условия возникновения"
+      ],
+      "serviceOnlyChecks": [
+        "Устранить причину перегрева до сброса",
+        "Проверить датчик Sc, вентилятор и конденсатор"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "A04",
+      "officialMeaning": "Door open too long alarm",
+      "safeChecks": [
+        "Проверить закрытие двери и уплотнение",
+        "Зафиксировать, срабатывает ли дверной выключатель"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить вход двери и задержку alarm",
+        "Проверить геометрию двери и выключатель"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "A99",
+      "officialMeaning": "High supply voltage compressor-protection alarm",
+      "safeChecks": [
+        "Отключить оборудование при нестабильном питании",
+        "Зафиксировать код и время возникновения"
+      ],
+      "serviceOnlyChecks": [
+        "Измерить напряжение питания",
+        "Проверить настройки voltage protection"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    },
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 211 / ERC 213 / ERC 214 controller family",
+      "code": "AA1",
+      "officialMeaning": "Low supply voltage compressor-protection alarm",
+      "safeChecks": [
+        "Не выполнять повторные запуски при просадке напряжения",
+        "Зафиксировать другие нагрузки линии"
+      ],
+      "serviceOnlyChecks": [
+        "Измерить напряжение под нагрузкой",
+        "Проверить питание и настройки защиты"
+      ],
+      "sourceEvidenceId": "danfoss.erc21x"
+    }
+  ],
+  "excludedAmbiguities": [
+    {
+      "manufacturer": "Danfoss",
+      "modelScope": "ERC 21X display codes",
+      "code": "Err",
+      "reason": "Общий display code означает, что температура не может отображаться из-за ошибки датчика, но не определяет конкретный вход; публиковать его как отдельную причину нельзя без E27/E29/E30.",
+      "sourceEvidenceId": "danfoss.erc21x"
+    }
+  ]
+}

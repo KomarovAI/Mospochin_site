@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "status": "active",
+  "artifactRoot": ".artifacts/screenshots/dishwasher/dw6-first-view",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 2200
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "remont-posudomoechnyh-mashin-winterhalter.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-posudomoechnyh-mashin-hobart.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-posudomoechnyh-mashin-meiko.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-posudomoechnyh-mashin-electrolux-professional.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-posudomoechnyh-mashin-abat.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-posudomoechnyh-mashin-dihr.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ],
+  "checkedAt": "2026-07-15"
+}

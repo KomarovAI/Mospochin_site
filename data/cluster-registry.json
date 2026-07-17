@@ -42,9 +42,122 @@
       "screenshotManifest": "data/sous-vide-screenshot-audit.json",
       "guardCommands": [
         "npm run check:conversion-ui",
-        "npm run check:visual-contract"
+        "npm run check:visual-contract",
+        "npm run check:sous-vide-fault-taxonomy",
+        "npm run check:sous-vide-evidence",
+        "npm run check:symptom-service-pages",
+        "npm run check:symptom-cannibalization",
+        "npm run check:sous-vide-seo-layer",
+        "npm run check:sous-vide-seo-content",
+        "npm run check:sous-vide-link-graph",
+        "npm run check:sous-vide-seo-report"
       ],
-      "visualCommand": "npm run audit:sous-vide-screenshots"
+      "visualCommand": "npm run audit:sous-vide-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/sous-vide-fault-taxonomy.json",
+        "evidence": "data/sous-vide-fault-evidence.json",
+        "pageRegistry": "data/sous-vide-symptom-pages.json",
+        "errorCodes": "data/sous-vide-error-codes.json",
+        "blueprint": "src/components/parametric/symptom-service/blueprint.json"
+      },
+      "seoGuide": "docs/SOUS_VIDE_SEO_LINKING_GUIDE.md",
+      "linkGraph": "data/sous-vide-link-graph.json",
+      "backlogManifest": "data/sous-vide-p2-backlog.json"
+    },
+    "kutter": {
+      "manifest": "data/kutter-cluster-pages.json",
+      "guide": "docs/KUTTER_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/kutter.md",
+      "screenshotManifest": "data/kutter-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:kutter-evidence",
+        "npm run check:kutter-fault-taxonomy",
+        "npm run check:kutter-brand-models",
+        "npm run check:kutter-brand-pages",
+        "npm run check:kutter-direct-pages",
+        "npm run check:kutter-error-codes",
+        "npm run check:kutter-pages",
+        "npm run check:kutter-images",
+        "npm run check:kutter-link-graph-layer",
+        "npm run check:kutter-link-graph",
+        "npm run check:kutter-seo-report",
+        "npm run check:kutter-seo-content",
+        "npm run check:kutter-cannibalization"
+      ],
+      "visualCommand": "npm run audit:kutter-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/kutter-fault-taxonomy.json",
+        "evidence": "data/kutter-fault-evidence.json",
+        "pageRegistry": "data/kutter-symptom-pages.json",
+        "errorCodes": "data/kutter-error-codes.json",
+        "brandModels": "data/kutter-brand-models.json",
+        "blueprint": "src/components/parametric/kutter-symptom-service/blueprint.json"
+      },
+      "linkGraph": "data/kutter-link-graph.json",
+      "status": "active",
+      "conversionManifest": "data/kutter-conversion-pages.json",
+      "seoReport": "reports/kutter-seo-cluster-audit.json",
+      "seoGuide": "docs/KUTTER_SEO_LINKING_GUIDE.md",
+      "imageLibrary": "data/kutter-image-library.json",
+      "imageGuide": "docs/KUTTER_IMAGE_INTEGRATION.md"
+    },
+    "dishwasher": {
+      "manifest": "data/dishwasher-cluster-pages.json",
+      "guide": "docs/DISHWASHER_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/dishwasher.md",
+      "screenshotManifest": "data/dishwasher-screenshot-audit.json",
+      "status": "active",
+      "guardCommands": [
+        "npm run check:dishwasher-evidence",
+        "npm run check:dishwasher-fault-taxonomy",
+        "npm run check:dishwasher-brand-models",
+        "npm run check:dishwasher-brand-pages",
+        "npm run check:dishwasher-error-codes",
+        "npm run check:dishwasher-pages",
+        "npm run check:dishwasher-images",
+        "npm run check:dishwasher-intent-boundaries",
+        "npm run check:dishwasher-link-graph",
+        "npm run check:dishwasher-direct-pages",
+        "npm run check:dishwasher-cannibalization"
+      ],
+      "visualCommand": "npm run audit:dishwasher-screenshots",
+      "conversionManifest": "data/dishwasher-conversion-pages.json",
+      "imageLibrary": "data/dishwasher-image-library.json",
+      "imageGuide": "docs/DISHWASHER_IMAGE_INTEGRATION.md"
+    },
+    "refrigeration": {
+      "manifest": "data/refrigeration-cluster-pages.json",
+      "guide": "docs/REFRIGERATION_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/refrigeration.md",
+      "screenshotManifest": "data/refrigeration-screenshot-audit.json",
+      "status": "image-r1",
+      "guardCommands": [
+        "npm run check:refrigeration-evidence",
+        "npm run check:refrigeration-fault-taxonomy",
+        "npm run check:refrigeration-brand-models",
+        "npm run check:refrigeration-brand-pages",
+        "npm run check:refrigeration-direct-pages",
+        "npm run check:refrigeration-error-codes",
+        "npm run check:refrigeration-pages",
+        "npm run check:refrigeration-images",
+        "npm run check:refrigeration-intent-boundaries",
+        "npm run check:refrigeration-link-graph",
+        "npm run check:refrigeration-cannibalization"
+      ],
+      "visualCommand": "npm run audit:refrigeration-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/refrigeration-fault-taxonomy.json",
+        "evidence": "data/refrigeration-fault-evidence.json",
+        "pageRegistry": "data/refrigeration-symptom-pages.json",
+        "errorCodes": "data/refrigeration-error-codes.json",
+        "brandModels": "data/refrigeration-brand-models.json"
+      },
+      "linkGraph": "data/refrigeration-link-graph.json",
+      "seoGuide": "docs/REFRIGERATION_SEO_LINKING_GUIDE.md",
+      "evidenceGuide": "docs/REFRIGERATION_EVIDENCE_GUIDE.md",
+      "visualGuide": "docs/REFRIGERATION_VISUAL_GUIDE.md",
+      "imageLibrary": "data/refrigeration-image-library.json",
+      "imageGuide": "docs/REFRIGERATION_IMAGE_INTEGRATION.md"
     }
   },
   "visualRuntime": "data/visual-runtime.json"

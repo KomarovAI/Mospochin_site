@@ -1,0 +1,34 @@
+MosPochin paid tracking v3 — final local/source acceptance
+Date: 2026-07-16
+Release: site-paid-tracking-v3-20260716
+
+PASS  paid commercial audit: 5/5
+PASS  paid contract JSON schemas and fixtures
+PASS  attribution v3 cross-tab identity
+PASS  form idempotency: duplicate HTTP 200, conflict HTTP 409
+PASS  mobile first screen 360x800: 5/5
+PASS  performance guard: baseline=11685 gzip bytes, current=13135, delta=1450, budget=20480
+PASS  legacy Kutter lead smoke: 23/23
+PASS  builder parity: 296/296
+PASS  crawl: 296 HTML, 278 sitemap URLs, 0 issues
+PASS  shared components: 45 files, 270 refs
+PASS  parameterized components: 1708
+PASS  FAQ registry: 214 pages, 827 items
+PASS  metrics markup: 295 pages, 2102 CTAs, 366 forms
+PASS  metrics contract v3
+PASS  conversion runtime v3
+PASS  clean metrics audit: 0 errors, 0 warnings
+PASS  AI profile
+PASS  asset profile
+PASS  npm audit: 0 vulnerabilities
+
+NOTE  check:core wrapper exceeded the execution limit during a long sequential run.
+      The browser smoke and every remaining core step were rerun individually and passed.
+
+NOT RUN AGAINST PRODUCTION
+- HTTP 202 /api/track-event
+- HTTP 200 /api/send-telegram
+- Telegram real delivery
+- JSONL lead/event log inspection
+- Quality Guard counters
+- Metrica goal verification

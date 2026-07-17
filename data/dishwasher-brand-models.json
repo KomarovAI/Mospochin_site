@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "cluster": "dishwasher",
+  "checkedAt": "2026-07-14",
+  "brands": [
+    {
+      "brandId": "winterhalter",
+      "brand": "Winterhalter",
+      "officialUrl": "https://www.winterhalter.com/",
+      "series": [
+        {
+          "name": "UC / U50",
+          "family": "undercounter",
+          "evidenceIds": [
+            "winterhalter.undercounter.range",
+            "winterhalter.download.centre"
+          ]
+        },
+        {
+          "name": "PT",
+          "family": "hood",
+          "evidenceIds": [
+            "winterhalter.passthrough.pt",
+            "winterhalter.download.centre"
+          ]
+        },
+        {
+          "name": "CTR / C50",
+          "family": "rack_conveyor",
+          "evidenceIds": [
+            "winterhalter.rack.ctr",
+            "winterhalter.rack.c50"
+          ]
+        }
+      ]
+    },
+    {
+      "brandId": "hobart",
+      "brand": "HOBART",
+      "officialUrl": "https://www.hobart-export.com/",
+      "series": [
+        {
+          "name": "PROFI FX / FXL",
+          "family": "undercounter",
+          "evidenceIds": [
+            "hobart.undercounter.fx"
+          ]
+        },
+        {
+          "name": "PREMAX CP / PROFI CN",
+          "family": "rack_conveyor",
+          "evidenceIds": [
+            "hobart.rack.cp_cn"
+          ]
+        },
+        {
+          "name": "FLOW Line",
+          "family": "flight_conveyor",
+          "evidenceIds": [
+            "hobart.flow.dosing",
+            "hobart.water.hydroline"
+          ]
+        }
+      ]
+    },
+    {
+      "brandId": "meiko",
+      "brand": "MEIKO",
+      "officialUrl": "https://www.meiko.com/",
+      "series": [
+        {
+          "name": "M-iClean U / UPster U",
+          "family": "undercounter",
+          "evidenceIds": [
+            "meiko.undercounter.range"
+          ]
+        },
+        {
+          "name": "M-iClean H / UPster H",
+          "family": "hood",
+          "evidenceIds": [
+            "meiko.hood.range"
+          ]
+        }
+      ]
+    },
+    {
+      "brandId": "electrolux-professional",
+      "brand": "Electrolux Professional",
+      "officialUrl": "https://www.electroluxprofessional.com/",
+      "series": [
+        {
+          "name": "PM00483 document scope",
+          "family": "undercounter",
+          "evidenceIds": [
+            "electrolux.pm00483.manual"
+          ]
+        },
+        {
+          "name": "EUCA060 / ZUCA060",
+          "family": "undercounter",
+          "evidenceIds": [
+            "electrolux.euca060.manual"
+          ]
+        }
+      ]
+    },
+    {
+      "brandId": "abat",
+      "brand": "Abat",
+      "officialUrl": "https://abat.ru/",
+      "series": [
+        {
+          "name": "МПК-500Ф",
+          "family": "front_loading",
+          "evidenceIds": [
+            "abat.mpk500f.product",
+            "abat.technical.docs"
+          ]
+        },
+        {
+          "name": "МПК-700К",
+          "family": "hood",
+          "evidenceIds": [
+            "abat.mpk700k01.product",
+            "abat.technical.docs"
+          ]
+        }
+      ]
+    },
+    {
+      "brandId": "dihr",
+      "brand": "DIHR",
+      "officialUrl": "https://www.dihr.com/",
+      "series": [
+        {
+          "name": "GS",
+          "family": "undercounter_glasswasher",
+          "evidenceIds": [
+            "dihr.gs.spec",
+            "dihr.range"
+          ]
+        },
+        {
+          "name": "HT 10",
+          "family": "hood",
+          "evidenceIds": [
+            "dihr.ht10.spec",
+            "dihr.range"
+          ]
+        },
+        {
+          "name": "RX",
+          "family": "rack_conveyor",
+          "evidenceIds": [
+            "dihr.range"
+          ]
+        }
+      ]
+    }
+  ]
+}

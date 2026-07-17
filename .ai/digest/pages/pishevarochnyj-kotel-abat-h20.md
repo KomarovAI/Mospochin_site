@@ -7,8 +7,8 @@
 - H1: Ошибка H20 / Н20 на пищеварочном котле Abat КПЭМ
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-abat-h20.html
 - Builder model: src/pages/pishevarochnyj-kotel-abat-h20/page.json
-- Sections: 20 (11 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 803
+- Sections: 20 (9 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 806
 
 ## Component mix
 
@@ -29,10 +29,10 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Переходы по симптомам, узлам и кодам | pricing | 7.4 KB | 132 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/007-pricing-perehody-po-simptomam-uzlam-i-kodam.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.1 KB | 199 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.2 KB | 207 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
 | Отправьте код и шильдик инженеру | lead-form | 5.8 KB | 83 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/014-lead-form-otprav-te-kod-i-shil-dik-inzheneru.html |
 | Не просто сбросить ошибку, а найти причину | mobile-contact | 5.3 KB | 115 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/005-mobile-contact-ne-prosto-sbrosit-oshibku-a-nayti-pri.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 4.4 KB | 108 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 4.5 KB | 103 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Ошибка H20 / Н20 на пищеварочном котле Abat КПЭМ | mobile-contact | 4.2 KB | 87 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/003-mobile-contact-oshibka-h20-n20-na-pischevarochnom-ko.html |
 | Частые вопросы по H20 / Н20 | faq | 2.8 KB | 79 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/015-faq-chastye-voprosy-po-h20-n20.html |
 | Секция 1 | body-preamble | 73 B | 0 | no | src/pages/pishevarochnyj-kotel-abat-h20/sections/001-body-preamble-sekciya-1.html |

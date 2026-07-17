@@ -2,32 +2,23 @@
 
 - Branch: restaurant
 - Role: service
-- Title: Ремонт льдогенераторов в Москве — MosPochin | от 800₽
-- Description: Ремонт льдогенераторов Scotsman, Manitowoc и Hoshizaki: кусковые, гранулярные и Gourmet-модели. Диагностика и смета до работ.
-- H1: Льдогенератор встал? Пришлите фото — уточним следующий шаг
+- Title: Ремонт профессиональных льдогенераторов в Москве | MosPochin
+- Description: Ремонт профессиональных льдогенераторов: кубиковые, гранулированные и чешуйчатые модели, диагностика воды, замораживания, сброса и дренажа.
+- H1: Ремонт профессиональных льдогенераторов
 - Canonical: https://mospochin.ru/ice-machines.html
 - Builder model: src/pages/ice-machines/page.json
-- Sections: 63 (52 local, 3 shared refs, 22 raw)
-- Text words inside referenced sections: 2039
+- Sections: 7 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 925
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 22 |
-| proof | 11 |
-| pricing | 9 |
-| layout-fragment | 3 |
-| mobile-contact | 3 |
-| section | 3 |
-| breadcrumb | 2 |
-| faq | 2 |
-| related-links | 2 |
-| body-preamble | 1 |
+| mobile-contact | 2 |
+| breadcrumb | 1 |
 | contact-cta | 1 |
+| faq | 1 |
 | footer-anchor | 1 |
-| hero | 1 |
-| lead-form | 1 |
 | runtime-partials | 1 |
 
 
@@ -35,14 +26,13 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем все типы льдогенераторов | pricing | 15.3 KB | 320 | no | src/pages/ice-machines/sections/012-pricing-remontiruem-vse-tipy-l-dogeneratorov.html |
-| Ремонтируем все марки льдогенераторов | section | 13.0 KB | 72 | no | src/pages/ice-machines/sections/026-section-remontiruem-vse-marki-l-dogeneratorov.html |
-| Льдогенератор встал? Пришлите фото — уточним следующий шаг | hero | 7.6 KB | 75 | no | src/pages/ice-machines/sections/006-hero-l-dogenerator-vstal-prishlite-foto-utochnim-sle.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 180 | no | src/pages/ice-machines/sections/048-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
-| Частые вопросы о ремонте льдогенераторов | faq | 6.0 KB | 191 | no | src/pages/ice-machines/sections/042-faq-chastye-voprosy-o-remonte-l-dogeneratorov.html |
-| Оставьте заявку на ремонт | lead-form | 5.7 KB | 92 | no | src/pages/ice-machines/sections/046-lead-form-ostav-te-zayavku-na-remont.html |
-| Примеры ремонта льдогенераторов | pricing | 5.4 KB | 134 | no | src/pages/ice-machines/sections/024-pricing-primery-remonta-l-dogeneratorov.html |
-| Если проблема в другом ресторанном оборудовании | related-links | 5.0 KB | 94 | no | src/pages/ice-machines/sections/051-related-links-esli-problema-v-drugom-restorannom-obo.html |
+| Ремонт профессиональных льдогенераторов | breadcrumb | 46.2 KB | 861 | no | src/pages/ice-machines/sections/002-breadcrumb-remont-professional-nyh-l-dogeneratorov.html |
+| Частые вопросы | faq | 1.8 KB | 64 | no | src/pages/ice-machines/sections/003-faq-chastye-voprosy.html |
+| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/ice-machines/sections/001-contact-cta-kontaktnyy-cta.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
+| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
+| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/pages/ice-machines/sections/007-runtime-partials-podklyuchenie-partials-injector.html |
 
 
 ## Editable source files

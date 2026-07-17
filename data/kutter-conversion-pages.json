@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "cluster": "kutter",
+  "purpose": "Published K8 conversion contract for all 45 professional cutter pages, including 3 Direct/noindex landings.",
+  "canonicalBase": "https://mospochin.ru/",
+  "defaults": {
+    "branch": "restaurant",
+    "minForms": 1,
+    "minClusterLinks": 3,
+    "requirePhoneLink": true,
+    "requireWhatsappLink": true,
+    "requireAnalytics": true,
+    "requireTelegramFormScript": true,
+    "requireMobileContactContainers": true,
+    "requireFaqSchema": true,
+    "requireSingleH1": true,
+    "requireHiddenProblem": true
+  },
+  "pages": [
+    {
+      "page": "blixery-dlya-restoranov.html",
+      "intent": "blixer-equipment",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "equipment_family",
+        "equipment": "professional_cutter",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "chistka-i-dezinfekciya-kuttera.html",
+      "intent": "cleaning",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "professional_cutter",
+        "service": "maintenance",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "diagnostika-kuttera.html",
+      "intent": "diagnostics",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "professional_cutter",
+        "service": "diagnostics",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kak-rabotaet-professionalnyy-kutter.html",
+      "intent": "how-it-works",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "professional_cutter",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kak-vybrat-kutter-dlya-restorana.html",
+      "intent": "selection",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "professional_cutter",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kombinirovannye-kuttery-ovoshherezki.html",
+      "intent": "combi-equipment",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "equipment_family",
+        "equipment": "professional_cutter",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kryshka-kuttera-ne-zakryvaetsya.html",
+      "intent": "cutter.lid_not_closing",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-mazhet-produkt-vmesto-izmelcheniya.html",
+      "intent": "cutter.smears_product",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-ne-emulgiruet.html",
+      "intent": "cutter.no_emulsification",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-ne-vidit-chashu.html",
+      "intent": "cutter.bowl_detection",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-ne-vklyuchaetsya-remont-moskva.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "promo",
+        "equipment": "professional_cutter",
+        "brand": "",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-ne-vklyuchaetsya.html",
+      "intent": "cutter.no_power",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      },
+      "symptomId": "cutter.no_power",
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "page": "kutter-ne-zapuskaetsya-s-kryshkoy.html",
+      "intent": "cutter.lid_interlock",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      },
+      "symptomId": "cutter.lid_interlock",
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety",
+        "sammic.k41.safety"
+      ]
+    },
+    {
+      "page": "kutter-ostanavlivaetsya-pod-nagruzkoy.html",
+      "intent": "cutter.stops_under_load",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-peregrevaetsya.html",
+      "intent": "cutter.overheats",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-ploho-izmelchaet.html",
+      "intent": "cutter.poor_cut",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      },
+      "symptomId": "cutter.poor_cut",
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "robot-coupe.r10.spec",
+        "sammic.k41.safety"
+      ]
+    },
+    {
+      "page": "kutter-remont-moskva.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "promo",
+        "equipment": "professional_cutter",
+        "brand": "",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-shumit-i-vibriruet.html",
+      "intent": "cutter.noise_vibration",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-techet.html",
+      "intent": "cutter.leak",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-teryaet-oboroty.html",
+      "intent": "cutter.loses_speed",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kutter-vybivaet-avtomat.html",
+      "intent": "cutter.trips_breaker",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kuttery-dlya-restoranov.html",
+      "intent": "hub",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "hub",
+        "equipment": "professional_cutter",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kuttery-emulgatory.html",
+      "intent": "emulsifier-equipment",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "equipment_family",
+        "equipment": "professional_cutter",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "motor-kuttera-gudit-no-nozhi-ne-krutatsya.html",
+      "intent": "cutter.motor_hums_blade_still",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      },
+      "symptomId": "cutter.motor_hums_blade_still",
+      "evidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r4.drive"
+      ]
+    },
+    {
+      "page": "nastolnye-kuttery.html",
+      "intent": "tabletop-equipment",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "equipment_family",
+        "equipment": "professional_cutter",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ne-rabotaet-impulsnyy-rezhim-kuttera.html",
+      "intent": "cutter.pulse_failure",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ne-rabotaet-taymer-kuttera.html",
+      "intent": "cutter.timer_failure",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ne-rabotaet-vtoraya-skorost-kuttera.html",
+      "intent": "cutter.second_speed_failure",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ne-reguliruetsya-skorost-kuttera.html",
+      "intent": "cutter.variable_speed_failure",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "nozh-kuttera-ne-ostanavlivaetsya.html",
+      "intent": "cutter.brake_failure",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "nozh-kuttera-zaklinilo.html",
+      "intent": "cutter.blade_jam",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "obsluzhivanie-kutterov.html",
+      "intent": "maintenance",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "professional_cutter",
+        "service": "maintenance",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "posle-moyki-kutter-ne-vklyuchaetsya.html",
+      "intent": "cutter.no_start_after_wash",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "produkt-nagrevaetsya-v-kuttere.html",
+      "intent": "cutter.product_heating",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-kuttera-robot-coupe-moskva.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "promo",
+        "equipment": "professional_cutter",
+        "brand": "robot_coupe",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-kutterov-hallde.html",
+      "intent": "brand-hallde",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "brand_service",
+        "equipment": "professional_cutter",
+        "brand": "hallde",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      },
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "hallde.vcm.parts",
+        "hallde.vcm41.product",
+        "hallde.cc.combi",
+        "hallde.vcm.cleaning.water"
+      ]
+    },
+    {
+      "page": "remont-kutterov-robot-coupe.html",
+      "intent": "brand-robot-coupe",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "brand_service",
+        "equipment": "professional_cutter",
+        "brand": "robot_coupe",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      },
+      "evidenceIds": [
+        "robot-coupe.r4.drive",
+        "robot-coupe.r401.official",
+        "robot-coupe.r10.spec",
+        "robot-coupe.blixer.scraper",
+        "robot-coupe.blixer4.official",
+        "robot-coupe.r402.combination"
+      ]
+    },
+    {
+      "page": "remont-kutterov-sammic.html",
+      "intent": "brand-sammic",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "brand_service",
+        "equipment": "professional_cutter",
+        "brand": "sammic",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      },
+      "evidenceIds": [
+        "sammic.k41.safety",
+        "sammic.k82.performance",
+        "sammic.ke4v.official",
+        "sammic.ke5v.variable",
+        "sammic.ck35v.combi"
+      ]
+    },
+    {
+      "page": "remont-kutterov-sirman.html",
+      "intent": "brand-sirman",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "brand_service",
+        "equipment": "professional_cutter",
+        "brand": "sirman",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      },
+      "evidenceIds": [
+        "sirman.ctronic.safety",
+        "sirman.ctronic.process",
+        "sirman.ctronic9.official",
+        "sirman.katana.cleaning",
+        "sirman.katana.liquid.protection"
+      ]
+    },
+    {
+      "page": "remont-kutterov.html",
+      "intent": "repair",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "skreber-kuttera-ne-rabotaet.html",
+      "intent": "cutter.scraper_failure",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "tupye-ili-povrezhdennye-nozhi-kuttera.html",
+      "intent": "cutter.damaged_blades",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vertikalnye-kuttery-miksery.html",
+      "intent": "vertical-equipment",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 4,
+      "metrics": {
+        "pageIntent": "equipment_family",
+        "equipment": "professional_cutter",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "voda-popala-v-motornyy-blok-kuttera.html",
+      "intent": "cutter.water_in_motor",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "zapah-gari-ili-dym-iz-kuttera.html",
+      "intent": "cutter.smoke_burning",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 7,
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "professional_cutter",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    }
+  ]
+}

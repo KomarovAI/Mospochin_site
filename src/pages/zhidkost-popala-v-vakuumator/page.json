@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "zhidkost-popala-v-vakuumator.html",
+  "slug": "zhidkost-popala-v-vakuumator",
+  "route": "/zhidkost-popala-v-vakuumator.html",
+  "branch": "restaurant",
+  "role": "symptom-service",
+  "title": "Жидкость попала в вакууматор — что делать и диагностика | MosPochin",
+  "h1": "Жидкость попала в вакууматор",
+  "source": {
+    "extractedFrom": "zhidkost-popala-v-vakuumator.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "20ff2c0c2eeb661d680b8165f78371aa728252f24c6bce75f6a1f05afc76f187",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble",
+      "component": "body-preamble",
+      "label": "Преамбула",
+      "file": "sections/001-body-preamble.html",
+      "bytes": 60,
+      "hash": "3b5244e9cdb0a353"
+    },
+    {
+      "id": "010-hero",
+      "component": "hero",
+      "label": "Первый экран",
+      "file": "sections/010-hero.html",
+      "bytes": 1747,
+      "hash": "6a3d192191f87449"
+    },
+    {
+      "id": "020-stop-use",
+      "component": "stop-use",
+      "label": "Условия остановки",
+      "file": "sections/020-stop-use.html",
+      "bytes": 1072,
+      "hash": "797fe7ade23a594f"
+    },
+    {
+      "id": "030-safe-self-check",
+      "component": "safe-self-check",
+      "label": "Безопасная проверка",
+      "file": "sections/030-safe-self-check.html",
+      "bytes": 1882,
+      "hash": "13fb6a4088d7ed6d"
+    },
+    {
+      "id": "040-decision-tree",
+      "component": "decision-tree",
+      "label": "Дерево решений",
+      "file": "sections/040-decision-tree.html",
+      "bytes": 1577,
+      "hash": "617d3d0feb0aaf16"
+    },
+    {
+      "id": "050-cause-matrix",
+      "component": "cause-matrix",
+      "label": "Матрица причин",
+      "file": "sections/050-cause-matrix.html",
+      "bytes": 2766,
+      "hash": "9ce92c5a935b9c38"
+    },
+    {
+      "id": "060-service-diagnostics",
+      "component": "service-diagnostics",
+      "label": "Сервисная диагностика",
+      "bytes": 1773,
+      "hash": "eae9d6f0e3273b80",
+      "componentRef": "src/components/shared/service-diagnostics/service-diagnostics-servisnaya-diagnostika--eae9d6f0e3273b80.html",
+      "componentScope": "shared",
+      "componentSignature": "eae9d6f0e3273b80",
+      "sourceFile": "sections/060-service-diagnostics.html"
+    },
+    {
+      "id": "070-repair-scope",
+      "component": "repair-scope",
+      "label": "Ремонтируемые узлы",
+      "file": "sections/070-repair-scope.html",
+      "bytes": 2449,
+      "hash": "0af78bad7778cd13"
+    },
+    {
+      "id": "080-lead-form",
+      "component": "lead-form",
+      "label": "Форма заявки",
+      "file": "sections/080-lead-form.html",
+      "bytes": 3440,
+      "hash": "16f104ae9553eb68"
+    },
+    {
+      "id": "090-faq",
+      "component": "faq",
+      "label": "FAQ — частые вопросы",
+      "file": "sections/090-faq.html",
+      "bytes": 1800,
+      "hash": "e3b9a957023b5be5"
+    },
+    {
+      "id": "100-related-symptoms",
+      "component": "related-symptoms",
+      "label": "Связанные симптомы",
+      "file": "sections/100-related-symptoms.html",
+      "bytes": 4857,
+      "hash": "056659989fedb401"
+    },
+    {
+      "id": "110-sources-note",
+      "component": "sources-note",
+      "label": "Источники",
+      "file": "sections/110-sources-note.html",
+      "bytes": 1522,
+      "hash": "c7cac9d7bcf0f388"
+    },
+    {
+      "id": "120-footer-anchor",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 33,
+      "hash": "e290e2b6541c5f25",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html",
+      "props": {},
+      "sourceFile": "sections/120-footer-anchor.html"
+    },
+    {
+      "id": "130-mobile-contact",
+      "component": "mobile-contact",
+      "label": "Мобильные контакты",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/130-mobile-contact.html"
+    },
+    {
+      "id": "131-mobile-contact",
+      "component": "mobile-contact",
+      "label": "Мобильная навигация",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/131-mobile-contact.html"
+    },
+    {
+      "id": "140-runtime-partials",
+      "component": "runtime-partials",
+      "label": "Partials injector",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html",
+      "props": {},
+      "sourceFile": "sections/140-runtime-partials.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run check:symptom-service-pages",
+    "npm run page:check -- --page zhidkost-popala-v-vakuumator.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Edit taxonomy/evidence before technical claims.",
+    "Root HTML is generated from this model."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

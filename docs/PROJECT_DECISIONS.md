@@ -93,3 +93,9 @@
 ## 2026-07-14 — Sous-vide MVP без симптомных и брендовых разветвлений
 
 Решение: завершить MVP на уровне 15 страниц: hub, оборудование, ремонт, обслуживание, технологические связи и три рекламных landing. Симптомные и брендовые страницы не добавлять до отдельного blueprint и подтверждённого спроса. Direct landing остаются `noindex,follow` и исключаются из sitemap.
+## 2026-07-14 — Quality-gated growth and symptom-service pages
+
+- Removed the artificial 150-page hard stop. Site growth is blocked only by measurable quality failures.
+- Technical symptom pages require an official evidence record and machine-readable taxonomy entry.
+- Manufacturer error codes are model-scoped and may not be generalized.
+- GitHub visual capture remains manual fallback; local system Chromium is primary.

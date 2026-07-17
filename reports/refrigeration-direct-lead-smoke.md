@@ -1,0 +1,72 @@
+# Refrigeration RF9 Direct lead smoke
+
+- Pages: **4**
+- Browser checks: **62/62**
+- Issues: **0**
+
+## Static
+- ✅ Static contracts passed.
+
+## Browser
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: one request — requests=1
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: page payload — remont-holodilnogo-oborudovaniya-moskva.html
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: yandex attribution
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: campaign id — refrigeration_repair_moscow
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: ad group id — general_repair
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: Direct IDs — refrigeration-general-repair-moscow-20260715
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: payload equipment_model
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: payload serial_number
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: payload controller
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: payload error_code
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: payload cycle_stage
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: payload cycle_conditions
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: payload details
+- ✅ remont-holodilnogo-oborudovaniya-moskva.html: idempotency key
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: one request — requests=1
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: page payload — holodilnaya-kamera-ne-holodit-remont-moskva.html
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: yandex attribution
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: campaign id — cold_room_repair_moscow
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: ad group id — no_cooling
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: Direct IDs — cold-room-no-cooling-moscow-20260715
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: payload equipment_model
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: payload serial_number
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: payload controller
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: payload error_code
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: payload cycle_stage
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: payload cycle_conditions
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: payload details
+- ✅ holodilnaya-kamera-ne-holodit-remont-moskva.html: idempotency key
+- ✅ remont-shokera-moskva.html: one request — requests=1
+- ✅ remont-shokera-moskva.html: page payload — remont-shokera-moskva.html
+- ✅ remont-shokera-moskva.html: yandex attribution
+- ✅ remont-shokera-moskva.html: campaign id — blast_chiller_repair_moscow
+- ✅ remont-shokera-moskva.html: ad group id — general_repair
+- ✅ remont-shokera-moskva.html: Direct IDs — blast-chiller-repair-moscow-20260715
+- ✅ remont-shokera-moskva.html: payload equipment_model
+- ✅ remont-shokera-moskva.html: payload serial_number
+- ✅ remont-shokera-moskva.html: payload controller
+- ✅ remont-shokera-moskva.html: payload error_code
+- ✅ remont-shokera-moskva.html: payload cycle_stage
+- ✅ remont-shokera-moskva.html: payload cycle_conditions
+- ✅ remont-shokera-moskva.html: payload details
+- ✅ remont-shokera-moskva.html: idempotency key
+- ✅ remont-ldogeneratora-moskva.html: one request — requests=1
+- ✅ remont-ldogeneratora-moskva.html: page payload — remont-ldogeneratora-moskva.html
+- ✅ remont-ldogeneratora-moskva.html: yandex attribution
+- ✅ remont-ldogeneratora-moskva.html: campaign id — ice_machine_repair_moscow
+- ✅ remont-ldogeneratora-moskva.html: ad group id — general_repair
+- ✅ remont-ldogeneratora-moskva.html: Direct IDs — ice-machine-repair-moscow-20260715
+- ✅ remont-ldogeneratora-moskva.html: payload equipment_model
+- ✅ remont-ldogeneratora-moskva.html: payload serial_number
+- ✅ remont-ldogeneratora-moskva.html: payload controller
+- ✅ remont-ldogeneratora-moskva.html: payload error_code
+- ✅ remont-ldogeneratora-moskva.html: payload cycle_stage
+- ✅ remont-ldogeneratora-moskva.html: payload cycle_conditions
+- ✅ remont-ldogeneratora-moskva.html: payload details
+- ✅ remont-ldogeneratora-moskva.html: idempotency key
+- ✅ invalid phone message
+- ✅ invalid phone no request
+- ✅ missing consent message
+- ✅ missing consent no request
+- ✅ network fallback one request
+- ✅ network fallback contacts — Не удалось отправить форму. Позвоните инженеру: +79990057172 или отправьте фото в WhatsApp: https://wa.me/79990057172

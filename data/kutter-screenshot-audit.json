@@ -1,0 +1,303 @@
+{
+  "status": "active",
+  "artifactRoot": ".artifacts/screenshots/kutter/native",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 2200
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "kuttery-dlya-restoranov.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-kutterov.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "obsluzhivanie-kutterov.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kak-rabotaet-professionalnyy-kutter.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-ne-vklyuchaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-ne-zapuskaetsya-s-kryshkoy.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "motor-kuttera-gudit-no-nozhi-ne-krutatsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-ploho-izmelchaet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "diagnostika-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "nastolnye-kuttery.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "vertikalnye-kuttery-miksery.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kuttery-emulgatory.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "blixery-dlya-restoranov.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kombinirovannye-kuttery-ovoshherezki.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kak-vybrat-kutter-dlya-restorana.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "chistka-i-dezinfekciya-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-ne-vidit-chashu.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-ostanavlivaetsya-pod-nagruzkoy.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-shumit-i-vibriruet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-techet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-vybivaet-avtomat.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-peregrevaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-teryaet-oboroty.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "nozh-kuttera-zaklinilo.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ne-rabotaet-vtoraya-skorost-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ne-reguliruetsya-skorost-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ne-rabotaet-impulsnyy-rezhim-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ne-rabotaet-taymer-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "skreber-kuttera-ne-rabotaet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "nozh-kuttera-ne-ostanavlivaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-ne-emulgiruet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-mazhet-produkt-vmesto-izmelcheniya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "produkt-nagrevaetsya-v-kuttere.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "tupye-ili-povrezhdennye-nozhi-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "posle-moyki-kutter-ne-vklyuchaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "voda-popala-v-motornyy-blok-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "zapah-gari-ili-dym-iz-kuttera.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kryshka-kuttera-ne-zakryvaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-kutterov-robot-coupe.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-kutterov-sammic.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-kutterov-hallde.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-kutterov-sirman.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-remont-moskva.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kutter-ne-vklyuchaetsya-remont-moskva.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "remont-kuttera-robot-coupe-moskva.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    }
+  ]
+}

@@ -1,0 +1,1360 @@
+{
+  "schemaVersion": 1,
+  "cluster": "kutter",
+  "equipmentFamilies": [
+    "tabletop_cutter",
+    "vertical_cutter_mixer",
+    "cutter_emulsifier",
+    "blixer",
+    "combination_cutter_vegprep"
+  ],
+  "symptoms": [
+    {
+      "symptomId": "cutter.no_power",
+      "slug": "kutter-ne-vklyuchaetsya",
+      "wave": "P0",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер не включается",
+      "userSymptoms": [
+        "Панель и индикация не работают",
+        "Аппарат не реагирует на кнопку запуска"
+      ],
+      "safeChecks": [
+        "Проверить розетку и автомат без вскрытия",
+        "Проверить штатное положение выключателя",
+        "Обесточить и проверить видимые повреждения кабеля"
+      ],
+      "stopUseConditions": [
+        "Выбивает автомат или УЗО",
+        "Есть запах гари или дым"
+      ],
+      "probableNodes": [
+        "power_input",
+        "fuse_or_contactor",
+        "no_voltage_protection",
+        "motor_control"
+      ],
+      "probableNodeLabels": [
+        "ввод питания",
+        "предохранитель или контактор",
+        "защита от повторного пуска",
+        "цепь управления двигателем"
+      ],
+      "technicianChecks": [
+        "Проверка напряжения под нагрузкой",
+        "Проверка защитной цепи и контактора"
+      ],
+      "relatedSymptoms": [
+        "cutter.lid_interlock",
+        "cutter.trips_breaker"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.manual",
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "symptomId": "cutter.lid_interlock",
+      "slug": "kutter-ne-zapuskaetsya-s-kryshkoy",
+      "wave": "P0",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер не запускается с закрытой крышкой",
+      "userSymptoms": [
+        "Чаша и крышка установлены, но мотор не стартует",
+        "Запуск зависит от положения крышки или рычага"
+      ],
+      "safeChecks": [
+        "Обесточить аппарат и повторно установить крышку",
+        "Проверить штатное положение защитного рычага",
+        "Удалить видимое загрязнение в зоне посадки без доступа к проводке"
+      ],
+      "stopUseConditions": [
+        "Защита не останавливает ножи при открытии",
+        "Крышка или рычаг повреждены"
+      ],
+      "probableNodes": [
+        "lid_interlock",
+        "safety_arm",
+        "magnetic_switch",
+        "safety_microswitch"
+      ],
+      "probableNodeLabels": [
+        "блокировка крышки",
+        "защитный рычаг",
+        "магнитный датчик",
+        "защитный микровыключатель"
+      ],
+      "technicianChecks": [
+        "Проверка срабатывания защитной блокировки по схеме модели",
+        "Проверка механики рычага и датчиков"
+      ],
+      "relatedSymptoms": [
+        "cutter.bowl_detection",
+        "cutter.brake_failure"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.manual",
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety",
+        "sammic.k41.safety"
+      ]
+    },
+    {
+      "symptomId": "cutter.bowl_detection",
+      "slug": "kutter-ne-vidit-chashu",
+      "wave": "P0",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер не видит чашу",
+      "userSymptoms": [
+        "Аппарат не стартует после установки чаши",
+        "Индикация меняется при повороте или прижатии чаши"
+      ],
+      "safeChecks": [
+        "Обесточить и снять чашу штатным способом",
+        "Очистить посадочную поверхность чаши",
+        "Установить чашу до штатной фиксации"
+      ],
+      "stopUseConditions": [
+        "Чаша или фиксатор имеют трещину",
+        "Для запуска приходится удерживать чашу рукой"
+      ],
+      "probableNodes": [
+        "bowl_lock",
+        "bowl_position_switch",
+        "activator_pin",
+        "safety_circuit"
+      ],
+      "probableNodeLabels": [
+        "замок чаши",
+        "датчик положения чаши",
+        "активатор защитного датчика",
+        "защитная цепь"
+      ],
+      "technicianChecks": [
+        "Проверка геометрии фиксации чаши",
+        "Проверка датчика положения и проводки"
+      ],
+      "relatedSymptoms": [
+        "cutter.lid_interlock",
+        "cutter.no_power"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "sammic.k41.safety",
+        "sammic.ck241.safety",
+        "hallde.vcm.parts"
+      ]
+    },
+    {
+      "symptomId": "cutter.motor_hums_blade_still",
+      "slug": "motor-kuttera-gudit-no-nozhi-ne-krutatsya",
+      "wave": "P0",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Мотор куттера гудит, но ножи не вращаются",
+      "userSymptoms": [
+        "При запуске слышен гул без вращения ножей",
+        "Ножевой блок стартует рывком или остаётся неподвижным"
+      ],
+      "safeChecks": [
+        "Немедленно выключить аппарат",
+        "После полной остановки проверить правильность установки ножевого блока",
+        "Уменьшить загрузку и не проворачивать вал инструментом"
+      ],
+      "stopUseConditions": [
+        "Продолжительный гул двигателя",
+        "Запах гари или нагрев корпуса"
+      ],
+      "probableNodes": [
+        "knife_jam",
+        "shaft_bearings",
+        "starting_circuit",
+        "motor_rotor"
+      ],
+      "probableNodeLabels": [
+        "заклинивание ножевого блока",
+        "вал и подшипники",
+        "пусковая цепь",
+        "ротор двигателя"
+      ],
+      "technicianChecks": [
+        "Проверка свободного хода после безопасной разборки специалистом",
+        "Измерение пускового контура и тока двигателя"
+      ],
+      "relatedSymptoms": [
+        "cutter.blade_jam",
+        "cutter.stops_under_load"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r4.drive"
+      ]
+    },
+    {
+      "symptomId": "cutter.stops_under_load",
+      "slug": "kutter-ostanavlivaetsya-pod-nagruzkoy",
+      "wave": "P0",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер останавливается под нагрузкой",
+      "userSymptoms": [
+        "На холостом ходу работает, с продуктом останавливается",
+        "После паузы аппарат снова запускается"
+      ],
+      "safeChecks": [
+        "Уменьшить размер партии",
+        "Проверить, что продукт предварительно нарезан",
+        "Дать оборудованию остыть согласно руководству модели"
+      ],
+      "stopUseConditions": [
+        "Повторные отключения при малой загрузке",
+        "Запах гари или выбивание защиты"
+      ],
+      "probableNodes": [
+        "thermal_protection",
+        "overload_protection",
+        "dull_blades",
+        "motor_current"
+      ],
+      "probableNodeLabels": [
+        "термозащита двигателя",
+        "защита от перегрузки",
+        "затупленные ножи",
+        "ток двигателя под нагрузкой"
+      ],
+      "technicianChecks": [
+        "Измерение тока и температуры двигателя",
+        "Проверка ножей и нагрузки в контрольном цикле"
+      ],
+      "relatedSymptoms": [
+        "cutter.overheats",
+        "cutter.loses_speed"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.manual",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "symptomId": "cutter.noise_vibration",
+      "slug": "kutter-shumit-i-vibriruet",
+      "wave": "P0",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер шумит и вибрирует",
+      "userSymptoms": [
+        "Появился металлический шум или стук",
+        "Корпус и чаша заметно вибрируют"
+      ],
+      "safeChecks": [
+        "Остановить аппарат и обесточить",
+        "Осмотреть ножи на сколы и деформацию",
+        "Проверить устойчивость аппарата и правильную сборку чаши"
+      ],
+      "stopUseConditions": [
+        "Нож повреждён или касается чаши",
+        "Вибрация быстро усиливается"
+      ],
+      "probableNodes": [
+        "blade_balance",
+        "shaft_bearings",
+        "bowl_lock",
+        "rubber_feet"
+      ],
+      "probableNodeLabels": [
+        "баланс ножевого блока",
+        "подшипники вала",
+        "фиксация чаши",
+        "опорные ножки"
+      ],
+      "technicianChecks": [
+        "Проверка биения ножевого вала",
+        "Диагностика подшипников и креплений"
+      ],
+      "relatedSymptoms": [
+        "cutter.damaged_blades",
+        "cutter.blade_jam"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r4.drive"
+      ]
+    },
+    {
+      "symptomId": "cutter.poor_cut",
+      "slug": "kutter-ploho-izmelchaet",
+      "wave": "P0",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер плохо измельчает",
+      "userSymptoms": [
+        "Продукт остаётся крупным или неоднородным",
+        "Для результата требуется заметно больше времени"
+      ],
+      "safeChecks": [
+        "Проверить состояние ножей без касания режущей кромки",
+        "Уменьшить загрузку и размер исходных кусков",
+        "Использовать штатный скребок и подходящий режим модели"
+      ],
+      "stopUseConditions": [
+        "Нож имеет сколы или деформацию",
+        "Рабочий узел касается чаши"
+      ],
+      "probableNodes": [
+        "blade_sharpness",
+        "blade_configuration",
+        "scraper_system",
+        "speed_and_batch"
+      ],
+      "probableNodeLabels": [
+        "острота ножей",
+        "конфигурация ножевого блока",
+        "система скребка",
+        "скорость и объём партии"
+      ],
+      "technicianChecks": [
+        "Оценка режущих кромок и геометрии ножей",
+        "Контроль результата на штатной загрузке"
+      ],
+      "relatedSymptoms": [
+        "cutter.no_emulsification",
+        "cutter.smears_product"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.manual",
+        "robot-coupe.r10.spec",
+        "sammic.k41.safety"
+      ]
+    },
+    {
+      "symptomId": "cutter.leak",
+      "slug": "kutter-techet",
+      "wave": "P0",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер течёт",
+      "userSymptoms": [
+        "Жидкость появляется под чашей или моторным блоком",
+        "Продукт выходит через крышку или вал"
+      ],
+      "safeChecks": [
+        "Остановить и обесточить аппарат",
+        "Проверить допустимый объём жидкости по руководству модели",
+        "Осмотреть видимые уплотнения крышки и правильность сборки"
+      ],
+      "stopUseConditions": [
+        "Жидкость попала к моторному блоку",
+        "Есть повреждение чаши или вала"
+      ],
+      "probableNodes": [
+        "lid_seal",
+        "shaft_seal",
+        "bowl_damage",
+        "scraper_or_lid_fit"
+      ],
+      "probableNodeLabels": [
+        "уплотнение крышки",
+        "уплотнение вала",
+        "повреждение чаши",
+        "посадка крышки или скребка"
+      ],
+      "technicianChecks": [
+        "Локализация пути протечки",
+        "Проверка вала, уплотнений и геометрии чаши"
+      ],
+      "relatedSymptoms": [
+        "cutter.water_in_motor",
+        "cutter.lid_not_closing"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "sirman.ctronic.safety",
+        "hallde.vcm.parts",
+        "robot-coupe.blixer.scraper"
+      ]
+    },
+    {
+      "symptomId": "cutter.trips_breaker",
+      "slug": "kutter-vybivaet-avtomat",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер выбивает автомат",
+      "userSymptoms": [
+        "Защита отключается при запуске",
+        "Автомат срабатывает во время работы"
+      ],
+      "safeChecks": [
+        "Не включать аппарат повторно",
+        "Отключить вилку от сети",
+        "Зафиксировать момент срабатывания: сразу или под нагрузкой"
+      ],
+      "stopUseConditions": [
+        "Повторное срабатывание автомата",
+        "Запах гари, дым или следы воды"
+      ],
+      "probableNodes": [
+        "power_cable",
+        "motor_winding",
+        "contactor",
+        "water_ingress"
+      ],
+      "probableNodeLabels": [
+        "кабель питания",
+        "обмотки двигателя",
+        "контактор",
+        "попадание воды"
+      ],
+      "technicianChecks": [
+        "Измерение изоляции и тока утечки",
+        "Проверка двигателя и силовой цепи"
+      ],
+      "relatedSymptoms": [
+        "cutter.no_power",
+        "cutter.water_in_motor"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "symptomId": "cutter.overheats",
+      "slug": "kutter-peregrevaetsya",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер перегревается",
+      "userSymptoms": [
+        "Корпус двигателя становится необычно горячим",
+        "Аппарат отключается после нескольких партий"
+      ],
+      "safeChecks": [
+        "Уменьшить партию и длительность цикла",
+        "Очистить доступные вентиляционные зоны",
+        "Дать аппарату полностью остыть"
+      ],
+      "stopUseConditions": [
+        "Запах нагретой изоляции",
+        "Отключение при небольшой нагрузке"
+      ],
+      "probableNodes": [
+        "thermal_protection",
+        "ventilation",
+        "motor_current",
+        "bearings"
+      ],
+      "probableNodeLabels": [
+        "термозащита",
+        "вентиляция двигателя",
+        "ток двигателя",
+        "подшипники"
+      ],
+      "technicianChecks": [
+        "Контроль температуры и тока",
+        "Проверка вентиляции, подшипников и нагрузки"
+      ],
+      "relatedSymptoms": [
+        "cutter.stops_under_load",
+        "cutter.loses_speed"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.manual",
+        "sirman.ctronic.process"
+      ]
+    },
+    {
+      "symptomId": "cutter.loses_speed",
+      "slug": "kutter-teryaet-oboroty",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер теряет обороты",
+      "userSymptoms": [
+        "Под нагрузкой ножи заметно замедляются",
+        "Скорость плавает в одном режиме"
+      ],
+      "safeChecks": [
+        "Уменьшить загрузку",
+        "Проверить подходящий режим скорости",
+        "Остановить аппарат при постороннем шуме"
+      ],
+      "stopUseConditions": [
+        "Резкое падение оборотов с запахом гари",
+        "Заклинивание ножевого блока"
+      ],
+      "probableNodes": [
+        "speed_control",
+        "motor_current",
+        "blade_load",
+        "bearings"
+      ],
+      "probableNodeLabels": [
+        "регулятор скорости",
+        "ток двигателя",
+        "нагрузка ножевого блока",
+        "подшипники"
+      ],
+      "technicianChecks": [
+        "Измерение оборотов и тока под нагрузкой",
+        "Проверка привода и контроллера скорости"
+      ],
+      "relatedSymptoms": [
+        "cutter.second_speed_failure",
+        "cutter.variable_speed_failure"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "sirman.ctronic.process",
+        "sammic.ke5v.variable"
+      ]
+    },
+    {
+      "symptomId": "cutter.blade_jam",
+      "slug": "nozh-kuttera-zaklinilo",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Нож куттера заклинило",
+      "userSymptoms": [
+        "Ножевой блок не снимается или не вращается",
+        "После остановки рабочий узел остаётся зажатым"
+      ],
+      "safeChecks": [
+        "Отключить питание и дождаться полной остановки",
+        "Не использовать рычаги и ударный инструмент",
+        "Проверить видимые остатки продукта только после безопасного снятия чаши"
+      ],
+      "stopUseConditions": [
+        "Нож треснул или деформирован",
+        "Вал имеет люфт или следы перегрева"
+      ],
+      "probableNodes": [
+        "knife_unit",
+        "shaft",
+        "bearings",
+        "product_wedging"
+      ],
+      "probableNodeLabels": [
+        "ножевой блок",
+        "вал",
+        "подшипники",
+        "заклинивание продуктом"
+      ],
+      "technicianChecks": [
+        "Безопасное снятие и дефектовка ножевого блока",
+        "Проверка вала и подшипников"
+      ],
+      "relatedSymptoms": [
+        "cutter.motor_hums_blade_still",
+        "cutter.damaged_blades"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r10.spec"
+      ]
+    },
+    {
+      "symptomId": "cutter.second_speed_failure",
+      "slug": "ne-rabotaet-vtoraya-skorost-kuttera",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Не работает вторая скорость куттера",
+      "userSymptoms": [
+        "Первая скорость работает, вторая не включается",
+        "На обеих позициях скорость одинакова"
+      ],
+      "safeChecks": [
+        "Проверить режим по руководству модели",
+        "Остановить аппарат перед переключением, если это требует инструкция",
+        "Зафиксировать индикацию и поведение без вскрытия"
+      ],
+      "stopUseConditions": [
+        "Переключение сопровождается искрением или запахом",
+        "Аппарат самопроизвольно меняет скорость"
+      ],
+      "probableNodes": [
+        "speed_selector",
+        "contactor",
+        "motor_winding",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "переключатель скоростей",
+        "контактор",
+        "обмотки двигателя",
+        "плата управления"
+      ],
+      "technicianChecks": [
+        "Проверка переключателя и контакторов",
+        "Измерение моторных цепей разных скоростей"
+      ],
+      "relatedSymptoms": [
+        "cutter.variable_speed_failure",
+        "cutter.loses_speed"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "robot-coupe.r10.spec",
+        "sammic.k82.performance",
+        "hallde.vcm.parts"
+      ]
+    },
+    {
+      "symptomId": "cutter.variable_speed_failure",
+      "slug": "ne-reguliruetsya-skorost-kuttera",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Не регулируется скорость куттера",
+      "userSymptoms": [
+        "Регулятор не меняет обороты",
+        "Обороты скачут или не соответствуют установке"
+      ],
+      "safeChecks": [
+        "Проверить допустимый диапазон модели",
+        "Зафиксировать положение регулятора и фактическое поведение",
+        "Не продолжать работу при рывках и запахе гари"
+      ],
+      "stopUseConditions": [
+        "Самопроизвольный разгон",
+        "Ошибки контроллера или перегрев"
+      ],
+      "probableNodes": [
+        "speed_controller",
+        "speed_sensor",
+        "control_knob",
+        "motor_drive"
+      ],
+      "probableNodeLabels": [
+        "контроллер скорости",
+        "датчик скорости",
+        "регулятор",
+        "привод двигателя"
+      ],
+      "technicianChecks": [
+        "Проверка управляющего сигнала и обратной связи",
+        "Контроль оборотов во всём диапазоне"
+      ],
+      "relatedSymptoms": [
+        "cutter.second_speed_failure",
+        "cutter.loses_speed"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "sirman.ctronic.process",
+        "sammic.ke5v.variable"
+      ]
+    },
+    {
+      "symptomId": "cutter.pulse_failure",
+      "slug": "ne-rabotaet-impulsnyy-rezhim-kuttera",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Не работает импульсный режим куттера",
+      "userSymptoms": [
+        "Непрерывный режим работает, PULSE не реагирует",
+        "Импульсный режим не отключается после отпускания"
+      ],
+      "safeChecks": [
+        "Прекратить использование при залипании кнопки",
+        "Проверить сухость и чистоту панели снаружи",
+        "Сравнить работу непрерывного режима без вскрытия"
+      ],
+      "stopUseConditions": [
+        "Кнопка не возвращается",
+        "Ножи продолжают вращаться после отпускания"
+      ],
+      "probableNodes": [
+        "pulse_switch",
+        "control_keypad",
+        "control_relay",
+        "safety_circuit"
+      ],
+      "probableNodeLabels": [
+        "кнопка импульсного режима",
+        "панель управления",
+        "управляющее реле",
+        "защитная цепь"
+      ],
+      "technicianChecks": [
+        "Проверка кнопки и сигнала управления",
+        "Проверка реле и защитной логики"
+      ],
+      "relatedSymptoms": [
+        "cutter.timer_failure",
+        "cutter.brake_failure"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "robot-coupe.r10.spec",
+        "sirman.ctronic.process",
+        "hallde.vcm.parts"
+      ]
+    },
+    {
+      "symptomId": "cutter.timer_failure",
+      "slug": "ne-rabotaet-taymer-kuttera",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Не работает таймер куттера",
+      "userSymptoms": [
+        "Таймер не запускает или не завершает цикл",
+        "Отсчёт идёт неверно"
+      ],
+      "safeChecks": [
+        "Проверить выбранный режим",
+        "Зафиксировать отклонение времени",
+        "Не использовать таймер как защиту при неисправном тормозе"
+      ],
+      "stopUseConditions": [
+        "Аппарат не останавливается по завершении цикла",
+        "Панель нагревается или пахнет гарью"
+      ],
+      "probableNodes": [
+        "timer_module",
+        "control_board",
+        "selector",
+        "output_relay"
+      ],
+      "probableNodeLabels": [
+        "модуль таймера",
+        "плата управления",
+        "переключатель режима",
+        "выходное реле"
+      ],
+      "technicianChecks": [
+        "Проверка таймера и управляющего выхода",
+        "Контроль фактического времени цикла"
+      ],
+      "relatedSymptoms": [
+        "cutter.pulse_failure",
+        "cutter.brake_failure"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r10.spec"
+      ]
+    },
+    {
+      "symptomId": "cutter.scraper_failure",
+      "slug": "skreber-kuttera-ne-rabotaet",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Скребок куттера не работает",
+      "userSymptoms": [
+        "Скребок не очищает стенки чаши",
+        "Лопатки не вращаются или задевают крышку"
+      ],
+      "safeChecks": [
+        "Остановить аппарат перед осмотром",
+        "Проверить правильную сборку скребка",
+        "Осмотреть лопатки на износ и деформацию"
+      ],
+      "stopUseConditions": [
+        "Скребок касается ножей",
+        "Повреждена крышка или ось скребка"
+      ],
+      "probableNodes": [
+        "scraper_blades",
+        "scraper_shaft",
+        "lid_fit",
+        "scraper_drive"
+      ],
+      "probableNodeLabels": [
+        "лопатки скребка",
+        "ось скребка",
+        "посадка крышки",
+        "привод скребка"
+      ],
+      "technicianChecks": [
+        "Проверка геометрии и износа скребка",
+        "Контроль взаимодействия скребка с чашей и крышкой"
+      ],
+      "relatedSymptoms": [
+        "cutter.poor_cut",
+        "cutter.no_emulsification"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "robot-coupe.blixer.scraper",
+        "sammic.k82.performance",
+        "hallde.vcm.parts"
+      ]
+    },
+    {
+      "symptomId": "cutter.brake_failure",
+      "slug": "nozh-kuttera-ne-ostanavlivaetsya",
+      "wave": "P1",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Нож куттера не останавливается штатно",
+      "userSymptoms": [
+        "Ножи продолжают долго вращаться после выключения",
+        "Открытие защитного рычага не даёт штатной остановки"
+      ],
+      "safeChecks": [
+        "Немедленно вывести аппарат из эксплуатации",
+        "Отключить питание и дождаться полной остановки",
+        "Не пытаться тормозить ножевой блок вручную"
+      ],
+      "stopUseConditions": [
+        "Любой отказ тормоза или защитной блокировки",
+        "Возможен доступ к вращающемуся ножу"
+      ],
+      "probableNodes": [
+        "motor_brake",
+        "safety_interlocks",
+        "contactor",
+        "control_logic"
+      ],
+      "probableNodeLabels": [
+        "моторный тормоз",
+        "защитные блокировки",
+        "контактор",
+        "логика управления"
+      ],
+      "technicianChecks": [
+        "Измерение времени остановки",
+        "Проверка тормоза и всей цепи безопасности"
+      ],
+      "relatedSymptoms": [
+        "cutter.lid_interlock",
+        "cutter.pulse_failure"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "robot-coupe.r10.spec",
+        "hallde.vcm.manual",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "symptomId": "cutter.no_emulsification",
+      "slug": "kutter-ne-emulgiruet",
+      "wave": "P2",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер не эмульгирует продукт",
+      "userSymptoms": [
+        "Масса остаётся неоднородной",
+        "Эмульсия расслаивается или содержит крупные частицы"
+      ],
+      "safeChecks": [
+        "Проверить тип ножей и скребка для модели",
+        "Проверить загрузку и выбранную скорость",
+        "Сократить цикл при перегреве продукта"
+      ],
+      "stopUseConditions": [
+        "Нож повреждён",
+        "Есть посторонний шум или люфт вала"
+      ],
+      "probableNodes": [
+        "blade_configuration",
+        "scraper_system",
+        "speed_control",
+        "product_temperature"
+      ],
+      "probableNodeLabels": [
+        "конфигурация ножей",
+        "система скребка",
+        "режим скорости",
+        "температура продукта"
+      ],
+      "technicianChecks": [
+        "Проверка ножей, скребка и оборотов",
+        "Контроль результата на технологической пробе"
+      ],
+      "relatedSymptoms": [
+        "cutter.poor_cut",
+        "cutter.smears_product"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "sammic.ke5v.variable",
+        "robot-coupe.blixer.scraper",
+        "robot-coupe.r502.blade.quality"
+      ]
+    },
+    {
+      "symptomId": "cutter.smears_product",
+      "slug": "kutter-mazhet-produkt-vmesto-izmelcheniya",
+      "wave": "P2",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Куттер размазывает продукт вместо измельчения",
+      "userSymptoms": [
+        "Продукт мнётся и превращается в пасту",
+        "Рез получается нечистым, масса быстро нагревается"
+      ],
+      "safeChecks": [
+        "Проверить остроту и тип ножей",
+        "Сократить время обработки",
+        "Уменьшить партию и контролировать температуру продукта"
+      ],
+      "stopUseConditions": [
+        "Нож имеет повреждения",
+        "Вал вибрирует или перегревается"
+      ],
+      "probableNodes": [
+        "dull_blades",
+        "wrong_blade_type",
+        "excess_cycle_time",
+        "low_speed_under_load"
+      ],
+      "probableNodeLabels": [
+        "затупленные ножи",
+        "неподходящий тип ножа",
+        "слишком длинный цикл",
+        "падение оборотов под нагрузкой"
+      ],
+      "technicianChecks": [
+        "Оценка режущей кромки",
+        "Контроль скорости, времени и температуры"
+      ],
+      "relatedSymptoms": [
+        "cutter.product_heating",
+        "cutter.poor_cut"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.manual",
+        "robot-coupe.r4.drive",
+        "sammic.k41.safety",
+        "robot-coupe.r502.blade.quality"
+      ]
+    },
+    {
+      "symptomId": "cutter.product_heating",
+      "slug": "produkt-nagrevaetsya-v-kuttere",
+      "wave": "P2",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Продукт нагревается в куттере",
+      "userSymptoms": [
+        "Температура продукта быстро растёт",
+        "Консистенция ухудшается к концу цикла"
+      ],
+      "safeChecks": [
+        "Сократить длительность цикла",
+        "Уменьшить загрузку",
+        "Проверить остроту ножей и подходящую скорость"
+      ],
+      "stopUseConditions": [
+        "Перегревается и моторный блок",
+        "Есть запах гари или остановки по защите"
+      ],
+      "probableNodes": [
+        "blade_sharpness",
+        "cycle_time",
+        "motor_heat_transfer",
+        "speed_and_load"
+      ],
+      "probableNodeLabels": [
+        "острота ножей",
+        "длительность цикла",
+        "теплопередача от двигателя",
+        "скорость и загрузка"
+      ],
+      "technicianChecks": [
+        "Измерение оборотов и температуры",
+        "Проверка ножей, двигателя и режима"
+      ],
+      "relatedSymptoms": [
+        "cutter.overheats",
+        "cutter.smears_product"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "sirman.ctronic.process",
+        "sammic.k41.safety",
+        "sirman.ctronic.food.heat"
+      ]
+    },
+    {
+      "symptomId": "cutter.damaged_blades",
+      "slug": "tupye-ili-povrezhdennye-nozhi-kuttera",
+      "wave": "P2",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Тупые или повреждённые ножи куттера",
+      "userSymptoms": [
+        "Режущая кромка затуплена или имеет скол",
+        "После работы появились вибрация и плохой результат"
+      ],
+      "safeChecks": [
+        "Не касаться режущих кромок руками",
+        "Не использовать нож со сколом или трещиной",
+        "Зафиксировать маркировку ножевого блока"
+      ],
+      "stopUseConditions": [
+        "Трещина, деформация или отсутствующий фрагмент",
+        "Нож касается чаши"
+      ],
+      "probableNodes": [
+        "blade_edges",
+        "blade_fasteners",
+        "blade_balance",
+        "knife_head"
+      ],
+      "probableNodeLabels": [
+        "режущие кромки",
+        "крепление ножей",
+        "баланс ножевого блока",
+        "держатель ножей"
+      ],
+      "technicianChecks": [
+        "Дефектовка ножей и креплений",
+        "Проверка совместимости и балансировки"
+      ],
+      "relatedSymptoms": [
+        "cutter.noise_vibration",
+        "cutter.poor_cut"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r10.spec",
+        "robot-coupe.r502.blade.quality"
+      ]
+    },
+    {
+      "symptomId": "cutter.no_start_after_wash",
+      "slug": "posle-moyki-kutter-ne-vklyuchaetsya",
+      "wave": "P2",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "После мойки куттер не включается",
+      "userSymptoms": [
+        "После очистки аппарат не реагирует на запуск",
+        "Неисправность появилась сразу после попадания влаги"
+      ],
+      "safeChecks": [
+        "Отключить аппарат от сети",
+        "Не сушить электронику нагревателем",
+        "Оставить оборудование выключенным до диагностики"
+      ],
+      "stopUseConditions": [
+        "Влага попала в моторный блок или панель",
+        "Выбивает автомат или УЗО"
+      ],
+      "probableNodes": [
+        "moisture_ingress",
+        "safety_switches",
+        "control_keypad",
+        "insulation"
+      ],
+      "probableNodeLabels": [
+        "попадание влаги",
+        "защитные датчики",
+        "панель управления",
+        "изоляция электрических цепей"
+      ],
+      "technicianChecks": [
+        "Проверка влажности и сопротивления изоляции",
+        "Осмотр панели, датчиков и разъёмов"
+      ],
+      "relatedSymptoms": [
+        "cutter.water_in_motor",
+        "cutter.trips_breaker"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.manual",
+        "sirman.ctronic.process",
+        "hallde.vcm.cleaning.water"
+      ]
+    },
+    {
+      "symptomId": "cutter.water_in_motor",
+      "slug": "voda-popala-v-motornyy-blok-kuttera",
+      "wave": "P2",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Вода попала в моторный блок куттера",
+      "userSymptoms": [
+        "Жидкость пролилась на основание",
+        "Влага появилась под панелью или мотором"
+      ],
+      "safeChecks": [
+        "Немедленно отключить питание",
+        "Не включать для проверки",
+        "Не разбирать и не сушить под напряжением"
+      ],
+      "stopUseConditions": [
+        "Любое подтверждённое попадание воды внутрь",
+        "Срабатывание защиты, запах или дым"
+      ],
+      "probableNodes": [
+        "insulation",
+        "motor_winding",
+        "control_board",
+        "bearings_and_seals"
+      ],
+      "probableNodeLabels": [
+        "изоляция",
+        "обмотки двигателя",
+        "плата управления",
+        "подшипники и уплотнения"
+      ],
+      "technicianChecks": [
+        "Измерение сопротивления изоляции",
+        "Разборка, сушка и дефектовка специалистом"
+      ],
+      "relatedSymptoms": [
+        "cutter.no_start_after_wash",
+        "cutter.trips_breaker"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "sirman.ctronic.safety",
+        "hallde.vcm.manual",
+        "hallde.vcm.cleaning.water",
+        "sirman.katana.liquid.protection"
+      ]
+    },
+    {
+      "symptomId": "cutter.smoke_burning",
+      "slug": "zapah-gari-ili-dym-iz-kuttera",
+      "wave": "P2",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Запах гари или дым из куттера",
+      "userSymptoms": [
+        "Появился запах нагретой изоляции",
+        "Из корпуса выходит дым"
+      ],
+      "safeChecks": [
+        "Немедленно отключить питание",
+        "Не запускать повторно",
+        "Проветрить помещение и исключить доступ к аппарату"
+      ],
+      "stopUseConditions": [
+        "Дым, искрение или плавление",
+        "Нагрев кабеля или вилки"
+      ],
+      "probableNodes": [
+        "motor_winding",
+        "power_cable",
+        "contactor",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "обмотки двигателя",
+        "кабель питания",
+        "контактор",
+        "плата управления"
+      ],
+      "technicianChecks": [
+        "Проверка места перегрева",
+        "Измерение изоляции и силовых цепей"
+      ],
+      "relatedSymptoms": [
+        "cutter.trips_breaker",
+        "cutter.overheats"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety",
+        "sirman.katana.liquid.protection"
+      ]
+    },
+    {
+      "symptomId": "cutter.lid_not_closing",
+      "slug": "kryshka-kuttera-ne-zakryvaetsya",
+      "wave": "P2",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "tabletop_cutter",
+        "vertical_cutter_mixer",
+        "cutter_emulsifier"
+      ],
+      "label": "Крышка куттера не закрывается",
+      "userSymptoms": [
+        "Крышка не садится на чашу",
+        "Защитный рычаг не фиксируется"
+      ],
+      "safeChecks": [
+        "Обесточить аппарат",
+        "Проверить правильную установку чаши, ножа и скребка",
+        "Удалить видимые остатки продукта из посадочных зон"
+      ],
+      "stopUseConditions": [
+        "Крышка, шарнир или рычаг треснули",
+        "Для фиксации требуется чрезмерное усилие"
+      ],
+      "probableNodes": [
+        "lid_geometry",
+        "bowl_position",
+        "scraper_assembly",
+        "safety_arm"
+      ],
+      "probableNodeLabels": [
+        "геометрия крышки",
+        "положение чаши",
+        "сборка скребка",
+        "защитный рычаг"
+      ],
+      "technicianChecks": [
+        "Проверка геометрии и фиксаторов",
+        "Контроль срабатывания цепи безопасности после ремонта"
+      ],
+      "relatedSymptoms": [
+        "cutter.lid_interlock",
+        "cutter.leak"
+      ],
+      "serviceType": "repair",
+      "sourceEvidenceIds": [
+        "hallde.vcm.manual",
+        "robot-coupe.blixer.scraper",
+        "sirman.ctronic.safety",
+        "sirman.ctronic.food.heat"
+      ]
+    }
+  ]
+}

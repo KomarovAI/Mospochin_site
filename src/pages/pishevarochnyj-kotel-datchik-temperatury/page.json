@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnyj-kotel-datchik-temperatury.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "b32d7c677868304353745ecf7d42af734f285918361019ad737ebbd9805370e9",
+    "hash": "c4b86070a398d5829e78df6e03dab17d64462f2076262def67162edb42721a4c",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -32,8 +32,8 @@
       "id": "002-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "bytes": 38,
-      "hash": "2d69700825ff4140",
+      "bytes": 35,
+      "hash": "e8cee9634454ca04",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
       "variant": "technical-fragment-2d69700825ff",
@@ -112,8 +112,8 @@
       "component": "pricing",
       "label": "Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma",
       "file": "sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html",
-      "bytes": 6264,
-      "hash": "021ba0289cbf53b9"
+      "bytes": 6375,
+      "hash": "e796ba4aaed5dcfd"
     },
     {
       "id": "010-raw-html-fragment",
@@ -146,8 +146,8 @@
       "component": "pricing",
       "label": "Развели ошибки КПЭМ по отдельным сценариям",
       "file": "sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html",
-      "bytes": 5477,
-      "hash": "f2300437491e70e3"
+      "bytes": 5536,
+      "hash": "20d4473dacf9074b"
     },
     {
       "id": "013-raw-html-fragment",
@@ -180,8 +180,8 @@
       "component": "pricing",
       "label": "Развели заявки по симптомам и узлам",
       "file": "sections/015-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-      "bytes": 10571,
-      "hash": "c0932d9b68561364"
+      "bytes": 10561,
+      "hash": "aa68010316e1e7f7"
     },
     {
       "id": "016-raw-html-fragment",
@@ -216,8 +216,8 @@
       "id": "019-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
-      "bytes": 38,
-      "hash": "d4bb19e48569789e",
+      "bytes": 35,
+      "hash": "97f3485506f6a966",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
       "variant": "footer-container-mount",
@@ -230,24 +230,34 @@
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
       "file": "sections/020-runtime-partials-podklyuchenie-partials-injector.html",
-      "bytes": 49,
-      "hash": "9e9feb3d41295cd9"
+      "bytes": 5,
+      "hash": "4dc501d66cd78903"
     },
     {
       "id": "021-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/021-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 45,
-      "hash": "b0eb9b3368bc8f56"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/021-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "022-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/022-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 46,
-      "hash": "a95192064ee78a08"
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/022-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "023-raw-html-fragment",

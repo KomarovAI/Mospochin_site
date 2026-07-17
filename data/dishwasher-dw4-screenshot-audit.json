@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "cluster": "dishwasher",
+  "checkedAt": "2026-07-14",
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "promyshlennaya-posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-zapuskaet-cikl.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "posudomoechnaya-mashina-postoyanno-nabiraet-vodu.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "promyshlennaya-posudomoechnaya-mashina-techet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-greet-vodu.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "posudomoechnaya-mashina-vybivaet-avtomat.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "posudomoechnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kody-oshibok-promyshlennyh-posudomoechnyh-mashin.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    }
+  ],
+  "status": "active",
+  "artifactRoot": ".artifacts/screenshots/dishwasher/dw4-first-view",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 2200
+  },
+  "id": "dishwasher-dw4-symptom-p0"
+}

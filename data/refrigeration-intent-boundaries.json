@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "restaurant": {
+    "page": "holodilnoe-oborudovanie.html",
+    "requiredBodyClass": "branch-restaurant",
+    "requiredCommercialSegment": "b2b_kitchen",
+    "requiredPrimaryTerms": [
+      "холодильного оборудования"
+    ],
+    "forbiddenPrimaryTerms": [
+      "на дому"
+    ]
+  },
+  "iceSubhub": {
+    "page": "ice-machines.html",
+    "requiredBodyClass": "branch-restaurant",
+    "requiredCommercialSegment": "b2b_kitchen",
+    "requiredPrimaryTerms": [
+      "льдогенератор"
+    ],
+    "forbiddenPrimaryTerms": [
+      "бытовой льдогенератор"
+    ]
+  },
+  "household": {
+    "page": "holodilniki.html",
+    "requiredBodyClass": "page-household-service",
+    "requiredCommercialSegment": "b2c_home",
+    "requiredPrimaryTerms": [
+      "холодильник",
+      "на дому"
+    ],
+    "forbiddenPrimaryTerms": [
+      "холодильная камера для ресторана"
+    ]
+  },
+  "adjacentPages": [
+    {
+      "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
+      "role": "external_adjacent_not_cluster_member"
+    },
+    {
+      "page": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+      "role": "external_adjacent_not_cluster_member"
+    }
+  ]
+}

@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "bezopasnost-sous-vide.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "3a056145080f72447944902581b0c0bd896b3af2c2c4fdfc9d3a69b2ea9093c7",
+    "hash": "985d720086753455fb51c9cf6245e799ff89f77c7e5861470b9160a250bc4dca",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -26,15 +26,15 @@
       "label": "Секция 1",
       "file": "sections/001-body-preamble-sekciya-1.html",
       "bytes": 47,
-      "hash": "eaddf123de50c211"
+      "hash": "848c21ac460f3aba"
     },
     {
       "id": "002-lead-form-bezopasnost-sous-vide-v-restorane",
       "component": "lead-form",
       "label": "Безопасность sous-vide в ресторане",
       "file": "sections/002-lead-form-bezopasnost-sous-vide-v-restorane.html",
-      "bytes": 12630,
-      "hash": "3fb56ee7393a55db"
+      "bytes": 13309,
+      "hash": "3fef41e82c3047b1"
     },
     {
       "id": "002b-faq-chastye-voprosy",
@@ -61,24 +61,34 @@
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 40,
-      "hash": "5984ebe80b6e73f2"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 41,
-      "hash": "8e4830584f7baecb"
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "006-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
-      "bytes": 50,
-      "hash": "55fc50b4acf9af97",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
       "variant": "partials-injector-script",

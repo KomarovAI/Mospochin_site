@@ -1,7 +1,7 @@
 # Component Digest — countdown
 
 - Name: Countdown / таймер акции
-- Appears in: 20 pages
+- Appears in: 17 pages
 - Keywords: таймер, countdown, акция, минут, секунд, скидк
 - CSS selectors: [data-countdown-min], [data-countdown-sec]
 - JS hooks: data-countdown-min, data-countdown-sec, querySelectorAll
@@ -21,8 +21,6 @@
 ## Representative pages
 
 - grili-mangaly.html
-- holodilnoe-oborudovanie.html
-- ice-machines.html
 - parokonvektomat-abat.html
 - parokonvektomat-convotherm.html
 - parokonvektomat-e02-e07-e10.html
@@ -37,6 +35,5 @@
 - parokonvektomat-unox.html
 - parokonvektomaty-promo.html
 - parokonvektomaty.html
-- posudomoechnye-mashiny.html
 - remont-oborudovaniya-restorana-parokonvektomat.html
 - routery.html

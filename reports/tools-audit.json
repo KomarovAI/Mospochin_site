@@ -1,21 +1,36 @@
 {
   "summary": {
-    "generatedAt": "2026-07-14T03:53:43.404Z",
-    "totalTools": 120,
-    "totalBytes": 875524,
+    "generatedAt": "2026-07-17T06:46:13.697Z",
+    "totalTools": 211,
+    "totalBytes": 2046517,
     "byCategory": {
-      "npmScriptEntry": 86,
-      "importedByTool": 12,
-      "manualUtility": 3,
-      "orphanCandidate": 14,
-      "deployUsed": 5
+      "npmScriptEntry": 188,
+      "importedByTool": 18,
+      "manualUtility": 4,
+      "deployUsed": 1
     },
     "byAction": {
-      "keep": 106,
-      "reviewForPrune": 14
+      "keep": 211
     }
   },
   "tools": [
+    {
+      "file": "tools/ai-brief.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:brief",
+      "sizeBytes": 5362,
+      "scripts": [
+        "ai:brief"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-ai-control-lite-r5.mjs"
+      ]
+    },
     {
       "file": "tools/ai-changed.mjs",
       "category": "npmScriptEntry",
@@ -73,14 +88,15 @@
       "file": "tools/ai-edit.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: ai:price, ai:text, ai:faq-add, ai:contact, ai:help",
+      "reason": "Called by npm scripts: ai:contact, ai:faq-add, ai:help, ai:price, ai:text, ai:edit",
       "sizeBytes": 5728,
       "scripts": [
+        "ai:contact",
+        "ai:faq-add",
+        "ai:help",
         "ai:price",
         "ai:text",
-        "ai:faq-add",
-        "ai:contact",
-        "ai:help"
+        "ai:edit"
       ],
       "importedBy": [],
       "imports": [],
@@ -125,6 +141,7 @@
         "tools/ai-workspace.mjs",
         "tools/analyze-source-complexity.mjs",
         "tools/build-site.mjs",
+        "tools/check-restaurant-shell-v2.mjs",
         "tools/check-scale-policy.mjs",
         "tools/data-contract-lib.mjs",
         "tools/generate-ai-component-map.mjs",
@@ -136,6 +153,7 @@
         "tools/site-builder-lib.mjs",
         "tools/site-builder-parameterize-core.mjs",
         "tools/source-compression-lib.mjs",
+        "tools/static-shell-lib.mjs",
         "tools/validate-data.mjs"
       ],
       "imports": [],
@@ -150,6 +168,7 @@
         "tools/ai-workspace.mjs",
         "tools/analyze-source-complexity.mjs",
         "tools/build-site.mjs",
+        "tools/check-restaurant-shell-v2.mjs",
         "tools/check-scale-policy.mjs",
         "tools/data-contract-lib.mjs",
         "tools/generate-ai-component-map.mjs",
@@ -158,8 +177,22 @@
         "tools/generate-faq-registry.mjs",
         "tools/site-builder-bootstrap.mjs",
         "tools/site-builder-extract-shared.mjs",
-        "tools/site-builder-lib.mjs",
-        "tools/site-builder-parameterize-core.mjs"
+        "tools/site-builder-lib.mjs"
+      ]
+    },
+    {
+      "file": "tools/ai-release.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:release",
+      "sizeBytes": 615,
+      "scripts": [
+        "ai:release"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
       ]
     },
     {
@@ -243,6 +276,23 @@
       ]
     },
     {
+      "file": "tools/ai-verify.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: ai:verify",
+      "sizeBytes": 5346,
+      "scripts": [
+        "ai:verify"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-ai-control-lite-r5.mjs"
+      ]
+    },
+    {
       "file": "tools/ai-workspace.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -284,11 +334,83 @@
       ]
     },
     {
+      "file": "tools/apply-ai-control-lite-r5.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: apply:ai-control-lite-r5",
+      "sizeBytes": 1514,
+      "scripts": [
+        "apply:ai-control-lite-r5"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/test-ai-control-lite-r5.mjs"
+      ]
+    },
+    {
+      "file": "tools/apply-dishwasher-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: apply:dishwasher-images",
+      "sizeBytes": 4964,
+      "scripts": [
+        "apply:dishwasher-images"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_DISHWASHER_IMAGE_INTEGRATION_20260715.md",
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/apply-dishwasher-metrics-markup.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: apply:dishwasher-metrics, generate:dishwasher-dw4, generate:dishwasher-dw5, generate:dishwasher-dw6, generate:dishwasher-dw7",
+      "sizeBytes": 2195,
+      "scripts": [
+        "apply:dishwasher-metrics",
+        "generate:dishwasher-dw4",
+        "generate:dishwasher-dw5",
+        "generate:dishwasher-dw6",
+        "generate:dishwasher-dw7"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/generate-dishwasher-dw7.mjs"
+      ]
+    },
+    {
+      "file": "tools/apply-legacy-claims-cleanup-r2.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: apply:legacy-claims-r2",
+      "sizeBytes": 19555,
+      "scripts": [
+        "apply:legacy-claims-r2"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
       "file": "tools/apply-metrics-page-markup.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: apply:metrics-markup",
-      "sizeBytes": 9040,
+      "sizeBytes": 9558,
       "scripts": [
         "apply:metrics-markup"
       ],
@@ -303,21 +425,52 @@
       ]
     },
     {
-      "file": "tools/apply-metrics-page-markup.mjs",
+      "file": "tools/apply-refrigeration-images.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: apply:metrics-markup",
-      "sizeBytes": 7655,
+      "reason": "Called by npm scripts: apply:refrigeration-images",
+      "sizeBytes": 5121,
       "scripts": [
-        "apply:metrics-markup"
+        "apply:refrigeration-images"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_IMAGE_R1_20260716.md",
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/apply-refrigeration-metrics-markup.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: apply:refrigeration-metrics",
+      "sizeBytes": 2207,
+      "scripts": [
+        "apply:refrigeration-metrics"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "data/metrics-event-contract.json",
-        "data/metrics-page-context.json",
         "package.json",
-        "tools/check-metrics-contract.mjs"
+        "tools/generate-refrigeration-rf9.mjs"
+      ]
+    },
+    {
+      "file": "tools/apply-ventilation-template-dedup-r3.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: apply:ventilation-dedup-r3",
+      "sizeBytes": 5262,
+      "scripts": [
+        "apply:ventilation-dedup-r3"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
       ]
     },
     {
@@ -371,15 +524,15 @@
       "category": "manualUtility",
       "action": "keep",
       "reason": "Tool is retained as a manual utility or project helper.",
-      "sizeBytes": 4028,
+      "sizeBytes": 4030,
       "scripts": [],
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
-        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
-        "METRICS_RUN5_CHANGED_FILES_20260620.txt",
-        "METRICS_RUN5_CHECKS_20260620.txt",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "docs/archive/root-history/METRICS_RUN5_CHANGED_FILES_20260620.txt",
+        "docs/archive/root-history/METRICS_RUN5_CHECKS_20260620.txt",
         "tools/check-profile.mjs"
       ]
     },
@@ -388,7 +541,7 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: audit:representative-pages, audit:restaurant-branch",
-      "sizeBytes": 1788,
+      "sizeBytes": 1813,
       "scripts": [
         "audit:representative-pages",
         "audit:restaurant-branch"
@@ -403,28 +556,23 @@
     },
     {
       "file": "tools/audit-screenshots.mjs",
-      "category": "npmScriptEntry",
+      "category": "manualUtility",
       "action": "keep",
-      "reason": "Called by npm scripts: audit:screenshots, audit:visual-smoke, audit:visual-pariki, audit:restaurant-screenshots, audit:parokonvektomat-screenshots, audit:ventilation-screenshots, audit:cooking-kettles-screenshots",
-      "sizeBytes": 12746,
-      "scripts": [
-        "audit:screenshots",
-        "audit:visual-smoke",
-        "audit:visual-pariki",
-        "audit:restaurant-screenshots",
-        "audit:parokonvektomat-screenshots",
-        "audit:ventilation-screenshots",
-        "audit:cooking-kettles-screenshots"
-      ],
+      "reason": "Tool is retained as a manual utility or project helper.",
+      "sizeBytes": 23854,
+      "scripts": [],
       "importedBy": [],
       "imports": [
         "tools/screenshot-audit-lib.mjs",
-        "tools/visual-firefox-config.mjs"
+        "tools/visual-firefox-config.mjs",
+        "tools/visual-local-runtime.mjs"
       ],
       "textReferences": [
-        "package.json",
-        "tools/audit-representative-pages.mjs",
-        "tools/check-profile.mjs"
+        "CHANGELOG_AI.md",
+        "data/file-ownership.json",
+        "data/visual-runtime.json",
+        "docs/VISUAL_CHECKS.md",
+        "tools/visual-local-capture.mjs"
       ]
     },
     {
@@ -486,15 +634,97 @@
       ]
     },
     {
-      "file": "tools/check-ai-visual-review.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 2547,
+      "file": "tools/capture-dishwasher-media-review.mjs",
+      "category": "manualUtility",
+      "action": "keep",
+      "reason": "Tool is retained as a manual utility or project helper.",
+      "sizeBytes": 3590,
       "scripts": [],
       "importedBy": [],
+      "imports": [
+        "tools/visual-local-runtime.mjs"
+      ],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_DISHWASHER_IMAGE_INTEGRATION_20260715.md"
+      ]
+    },
+    {
+      "file": "tools/capture-refrigeration-media-review.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:refrigeration-media-review",
+      "sizeBytes": 3790,
+      "scripts": [
+        "audit:refrigeration-media-review"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-local-runtime.mjs"
+      ],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_IMAGE_R1_20260716.md",
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/capture-refrigeration-rf6-review-fast.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:refrigeration-rf6-review",
+      "sizeBytes": 2593,
+      "scripts": [
+        "audit:refrigeration-rf6-review"
+      ],
+      "importedBy": [],
       "imports": [],
-      "textReferences": []
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/capture-refrigeration-rf8-review-fast.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:refrigeration-rf8-review",
+      "sizeBytes": 2710,
+      "scripts": [
+        "audit:refrigeration-rf8-review"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/capture-refrigeration-rf9-review-fast.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:refrigeration-rf9-review",
+      "sizeBytes": 2710,
+      "scripts": [
+        "audit:refrigeration-rf9-review"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/check-ai-control-lite-r5.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:ai-control-lite-r5",
+      "sizeBytes": 983,
+      "scripts": [
+        "check:ai-control-lite-r5"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
     },
     {
       "file": "tools/check-architecture.mjs",
@@ -516,46 +746,18 @@
       ]
     },
     {
-      "file": "tools/check-conversion-runtime.mjs",
-      "category": "manualUtility",
-      "action": "keep",
-      "reason": "Tool is retained as a manual utility or project helper.",
-      "sizeBytes": 5111,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": [
-        "tools/check-profile.mjs"
-      ]
-    },
-    {
-      "file": "tools/check-ai-visual-review.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 2547,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": []
-    },
-    {
-      "file": "tools/check-architecture.mjs",
+      "file": "tools/check-archive-hygiene-r4.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: check:architecture",
-      "sizeBytes": 5353,
+      "reason": "Called by npm scripts: check:archive-hygiene-r4",
+      "sizeBytes": 3629,
       "scripts": [
-        "check:architecture"
+        "check:archive-hygiene-r4"
       ],
       "importedBy": [],
-      "imports": [
-        "tools/site-builder-lib.mjs"
-      ],
+      "imports": [],
       "textReferences": [
-        "package.json",
-        "tools/check-profile.mjs",
-        "tools/validate-site.mjs"
+        "package.json"
       ]
     },
     {
@@ -563,7 +765,7 @@
       "category": "manualUtility",
       "action": "keep",
       "reason": "Tool is retained as a manual utility or project helper.",
-      "sizeBytes": 5111,
+      "sizeBytes": 5447,
       "scripts": [],
       "importedBy": [],
       "imports": [],
@@ -576,9 +778,59 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: check:conversion-ui",
-      "sizeBytes": 9778,
+      "sizeBytes": 11170,
       "scripts": [
         "check:conversion-ui"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-core-pages-content-r1.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:core-pages-content-r1",
+      "sizeBytes": 2313,
+      "scripts": [
+        "check:core-pages-content-r1"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-brand-models.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-brand-models",
+      "sizeBytes": 1029,
+      "scripts": [
+        "check:dishwasher-brand-models"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/dishwasher-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-brand-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-brand-pages",
+      "sizeBytes": 2354,
+      "scripts": [
+        "check:dishwasher-brand-pages"
       ],
       "importedBy": [],
       "imports": [],
@@ -588,15 +840,163 @@
       ]
     },
     {
-      "file": "tools/check-deploy-runtime.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 3789,
-      "scripts": [],
+      "file": "tools/check-dishwasher-cannibalization.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-cannibalization",
+      "sizeBytes": 1976,
+      "scripts": [
+        "check:dishwasher-cannibalization"
+      ],
       "importedBy": [],
       "imports": [],
-      "textReferences": []
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_DISHWASHER_DW7_20260715.md",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-direct-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-direct-pages",
+      "sizeBytes": 4205,
+      "scripts": [
+        "check:dishwasher-direct-pages"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_DISHWASHER_DW7_20260715.md",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-error-codes.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-error-codes",
+      "sizeBytes": 1410,
+      "scripts": [
+        "check:dishwasher-error-codes"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/dishwasher-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-evidence.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-evidence",
+      "sizeBytes": 930,
+      "scripts": [
+        "check:dishwasher-evidence"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/dishwasher-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-fault-taxonomy.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-fault-taxonomy",
+      "sizeBytes": 2021,
+      "scripts": [
+        "check:dishwasher-fault-taxonomy"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/dishwasher-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-images",
+      "sizeBytes": 383,
+      "scripts": [
+        "check:dishwasher-images"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_DISHWASHER_IMAGE_INTEGRATION_20260715.md",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-intent-boundaries.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-intent-boundaries",
+      "sizeBytes": 1081,
+      "scripts": [
+        "check:dishwasher-intent-boundaries"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/dishwasher-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-link-graph.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-link-graph",
+      "sizeBytes": 3215,
+      "scripts": [
+        "check:dishwasher-link-graph"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/dishwasher-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-dishwasher-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:dishwasher-pages",
+      "sizeBytes": 5752,
+      "scripts": [
+        "check:dishwasher-pages"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/dishwasher-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
     },
     {
       "file": "tools/check-generated-diff.mjs",
@@ -617,11 +1017,27 @@
       ]
     },
     {
+      "file": "tools/check-html-head.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:html-head",
+      "sizeBytes": 1441,
+      "scripts": [
+        "check:html-head"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
       "file": "tools/check-image-budget.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: check:image-budget",
-      "sizeBytes": 3053,
+      "sizeBytes": 5949,
       "scripts": [
         "check:image-budget"
       ],
@@ -633,20 +1049,255 @@
       ]
     },
     {
+      "file": "tools/check-instruction-hygiene.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:instruction-hygiene",
+      "sizeBytes": 3462,
+      "scripts": [
+        "check:instruction-hygiene"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/ai-verify.mjs",
+        "tools/check-ai-control-lite-r5.mjs",
+        "tools/check-profile.mjs",
+        "tools/test-ai-control-lite-r5.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-brand-models.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-brand-models",
+      "sizeBytes": 815,
+      "scripts": [
+        "check:kutter-brand-models"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/kutter-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-brand-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-brand-pages",
+      "sizeBytes": 4886,
+      "scripts": [
+        "check:kutter-brand-pages"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/kutter-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-cannibalization.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-cannibalization",
+      "sizeBytes": 1089,
+      "scripts": [
+        "check:kutter-cannibalization"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/kutter-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-direct-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-direct-pages",
+      "sizeBytes": 3482,
+      "scripts": [
+        "check:kutter-direct-pages"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-error-codes.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-error-codes",
+      "sizeBytes": 677,
+      "scripts": [
+        "check:kutter-error-codes"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/kutter-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-evidence.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-evidence",
+      "sizeBytes": 737,
+      "scripts": [
+        "check:kutter-evidence"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/kutter-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-fault-taxonomy.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-fault-taxonomy",
+      "sizeBytes": 1831,
+      "scripts": [
+        "check:kutter-fault-taxonomy"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/kutter-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-images",
+      "sizeBytes": 418,
+      "scripts": [
+        "check:kutter-images"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_KUTTER_IMAGE_INTEGRATION_20260714.md",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-link-graph.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-link-graph",
+      "sizeBytes": 2763,
+      "scripts": [
+        "check:kutter-link-graph"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/kutter-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-pages",
+      "sizeBytes": 6067,
+      "scripts": [
+        "check:kutter-pages"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/kutter-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-kutter-seo-content.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-seo-content",
+      "sizeBytes": 1566,
+      "scripts": [
+        "check:kutter-seo-content"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-legacy-claims-cleanup-r2.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:legacy-claims-r2",
+      "sizeBytes": 2378,
+      "scripts": [
+        "check:legacy-claims-r2"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
       "file": "tools/check-metrics-contract.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: check:metrics",
-      "sizeBytes": 4502,
+      "sizeBytes": 3601,
       "scripts": [
         "check:metrics"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
-        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
-        "METRICS_RUN5_CHECKS_20260620.txt",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "docs/archive/root-history/METRICS_RUN5_CHECKS_20260620.txt",
         "package.json",
         "tools/check-profile.mjs"
       ]
@@ -656,17 +1307,17 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: check:metrics-markup",
-      "sizeBytes": 4630,
+      "sizeBytes": 4995,
       "scripts": [
         "check:metrics-markup"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
-        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
-        "METRICS_RUN5_CHECKS_20260620.txt",
         "data/metrics-event-contract.json",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "docs/archive/root-history/METRICS_RUN5_CHECKS_20260620.txt",
         "package.json",
         "tools/check-metrics-contract.mjs",
         "tools/check-profile.mjs",
@@ -690,11 +1341,27 @@
       ]
     },
     {
+      "file": "tools/check-npm-audit.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:npm-audit",
+      "sizeBytes": 2633,
+      "scripts": [
+        "check:npm-audit"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
       "file": "tools/check-ownership.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: check:ownership",
-      "sizeBytes": 3849,
+      "sizeBytes": 4035,
       "scripts": [
         "check:ownership"
       ],
@@ -709,17 +1376,17 @@
       "file": "tools/check-profile.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: check:core, check:ai, check:assets, check:images, check:visual, check:handoff, check:full, check:doctor",
-      "sizeBytes": 4412,
+      "reason": "Called by npm scripts: check:ai, check:assets, check:core, check:doctor, check:full, check:handoff, check:images, check:visual",
+      "sizeBytes": 7853,
       "scripts": [
-        "check:core",
         "check:ai",
         "check:assets",
-        "check:images",
-        "check:visual",
-        "check:handoff",
+        "check:core",
+        "check:doctor",
         "check:full",
-        "check:doctor"
+        "check:handoff",
+        "check:images",
+        "check:visual"
       ],
       "importedBy": [],
       "imports": [],
@@ -731,19 +1398,33 @@
       ]
     },
     {
-      "file": "tools/check-scale-policy.mjs",
+      "file": "tools/check-public-copy.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: guard:scale, guard:scale:strict",
-      "sizeBytes": 6857,
+      "reason": "Called by npm scripts: check:public-copy",
+      "sizeBytes": 1586,
       "scripts": [
-        "guard:scale",
-        "guard:scale:strict"
+        "check:public-copy"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-brand-models.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-brand-models",
+      "sizeBytes": 1072,
+      "scripts": [
+        "check:refrigeration-brand-models"
       ],
       "importedBy": [],
       "imports": [
-        "tools/ai-maintenance-lib.mjs",
-        "tools/source-compression-lib.mjs"
+        "tools/refrigeration-fault-lib.mjs"
       ],
       "textReferences": [
         "package.json",
@@ -751,22 +1432,434 @@
       ]
     },
     {
-      "file": "tools/check-visible-copy.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 11378,
-      "scripts": [],
+      "file": "tools/check-refrigeration-brand-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-brand-pages",
+      "sizeBytes": 3262,
+      "scripts": [
+        "check:refrigeration-brand-pages"
+      ],
       "importedBy": [],
       "imports": [],
-      "textReferences": []
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-cannibalization.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-cannibalization",
+      "sizeBytes": 1580,
+      "scripts": [
+        "check:refrigeration-cannibalization"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/refrigeration-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-direct-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-direct-pages",
+      "sizeBytes": 4603,
+      "scripts": [
+        "check:refrigeration-direct-pages"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-error-codes.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-error-codes",
+      "sizeBytes": 1552,
+      "scripts": [
+        "check:refrigeration-error-codes"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/refrigeration-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-evidence.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-evidence",
+      "sizeBytes": 1127,
+      "scripts": [
+        "check:refrigeration-evidence"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/refrigeration-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-fault-taxonomy.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-fault-taxonomy",
+      "sizeBytes": 2252,
+      "scripts": [
+        "check:refrigeration-fault-taxonomy"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/refrigeration-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-images",
+      "sizeBytes": 386,
+      "scripts": [
+        "check:refrigeration-images"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_IMAGE_R1_20260716.md",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-intent-boundaries.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-intent-boundaries",
+      "sizeBytes": 1270,
+      "scripts": [
+        "check:refrigeration-intent-boundaries"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/refrigeration-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-link-graph.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-link-graph",
+      "sizeBytes": 1768,
+      "scripts": [
+        "check:refrigeration-link-graph"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/refrigeration-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-refrigeration-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:refrigeration-pages",
+      "sizeBytes": 3008,
+      "scripts": [
+        "check:refrigeration-pages"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/refrigeration-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-repo-hygiene.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:repo-hygiene",
+      "sizeBytes": 3532,
+      "scripts": [
+        "check:repo-hygiene"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/ai-verify.mjs",
+        "tools/check-ai-control-lite-r5.mjs",
+        "tools/check-profile.mjs",
+        "tools/test-ai-control-lite-r5.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-restaurant-shell-v2.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:restaurant-shell-v2",
+      "sizeBytes": 3044,
+      "scripts": [
+        "check:restaurant-shell-v2"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/check-safe-native-runtime.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:safe-native",
+      "sizeBytes": 2260,
+      "scripts": [
+        "check:safe-native"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/check-scale-policy.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: guard:scale, guard:scale:strict",
+      "sizeBytes": 1163,
+      "scripts": [
+        "guard:scale",
+        "guard:scale:strict"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs",
+        "tools/scale-policy-lib.mjs",
+        "tools/source-compression-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-sous-vide-error-codes.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:sous-vide-error-codes",
+      "sizeBytes": 658,
+      "scripts": [
+        "check:sous-vide-error-codes"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/sous-vide-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-sous-vide-evidence.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:sous-vide-evidence",
+      "sizeBytes": 684,
+      "scripts": [
+        "check:sous-vide-evidence"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/sous-vide-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-sous-vide-fault-taxonomy.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:sous-vide-fault-taxonomy",
+      "sizeBytes": 1333,
+      "scripts": [
+        "check:sous-vide-fault-taxonomy"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/sous-vide-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-sous-vide-link-graph.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:sous-vide-link-graph",
+      "sizeBytes": 7005,
+      "scripts": [
+        "check:sous-vide-link-graph"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-sous-vide-run5.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:sous-vide-run5",
+      "sizeBytes": 15461,
+      "scripts": [
+        "check:sous-vide-run5"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-sous-vide-seo-content.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:sous-vide-seo-content",
+      "sizeBytes": 4884,
+      "scripts": [
+        "check:sous-vide-seo-content"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-static-shell.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:static-shell",
+      "sizeBytes": 1151,
+      "scripts": [
+        "check:static-shell"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-symptom-cannibalization.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:symptom-cannibalization",
+      "sizeBytes": 862,
+      "scripts": [
+        "check:symptom-cannibalization"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/sous-vide-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-symptom-service-pages.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:symptom-service-pages",
+      "sizeBytes": 2685,
+      "scripts": [
+        "check:symptom-service-pages"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/sous-vide-fault-lib.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-ventilation-template-dedup-r3.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:ventilation-dedup-r3",
+      "sizeBytes": 2921,
+      "scripts": [
+        "check:ventilation-dedup-r3"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
     },
     {
       "file": "tools/check-visual-contract.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: check:visual-contract",
-      "sizeBytes": 1571,
+      "sizeBytes": 5078,
       "scripts": [
         "check:visual-contract"
       ],
@@ -775,6 +1868,8 @@
         "tools/screenshot-audit-lib.mjs"
       ],
       "textReferences": [
+        "data/file-ownership.json",
+        "data/visual-runtime.json",
         "package.json",
         "tools/check-profile.mjs"
       ]
@@ -784,16 +1879,39 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: check:visual-env",
-      "sizeBytes": 3124,
+      "sizeBytes": 4765,
       "scripts": [
         "check:visual-env"
       ],
       "importedBy": [],
       "imports": [
-        "tools/visual-firefox-config.mjs"
+        "tools/visual-local-runtime.mjs"
       ],
       "textReferences": [
-        "package.json"
+        "data/file-ownership.json",
+        "data/visual-runtime.json",
+        "package.json",
+        "tools/check-profile.mjs",
+        "tools/check-visual-contract.mjs"
+      ]
+    },
+    {
+      "file": "tools/check-visual-workflow-policy.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:visual-workflows",
+      "sizeBytes": 1343,
+      "scripts": [
+        "check:visual-workflows"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "data/visual-runtime.json",
+        "package.json",
+        "tools/check-profile.mjs",
+        "tools/check-visual-contract.mjs"
       ]
     },
     {
@@ -813,15 +1931,21 @@
       ]
     },
     {
-      "file": "tools/create-ai-visual-review-pack.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 7656,
-      "scripts": [],
+      "file": "tools/crawl-site.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:site-crawl, crawl:site",
+      "sizeBytes": 16253,
+      "scripts": [
+        "check:site-crawl",
+        "crawl:site"
+      ],
       "importedBy": [],
       "imports": [],
-      "textReferences": []
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
     },
     {
       "file": "tools/data-contract-lib.mjs",
@@ -844,14 +1968,18 @@
     },
     {
       "file": "tools/deploy-pack.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: deploy:pack",
       "sizeBytes": 8035,
-      "scripts": [],
+      "scripts": [
+        "deploy:pack"
+      ],
       "importedBy": [],
       "imports": [],
-      "textReferences": []
+      "textReferences": [
+        "package.json"
+      ]
     },
     {
       "file": "tools/dev-server.mjs",
@@ -866,10 +1994,36 @@
       "imports": [],
       "textReferences": [
         "docs/SITE_MAINTENANCE_MODEL.md",
-        "docs/VISUAL_CHECKS.md",
         "package.json",
         "tools/audit-screenshots.mjs",
-        "tools/check-visual-env.mjs"
+        "tools/crawl-site.mjs"
+      ]
+    },
+    {
+      "file": "tools/dishwasher-fault-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/check-dishwasher-brand-models.mjs, tools/check-dishwasher-error-codes.mjs, tools/check-dishwasher-evidence.mjs, tools/check-dishwasher-fault-taxonomy.mjs, tools/check-dishwasher-intent-boundaries.mjs",
+      "sizeBytes": 946,
+      "scripts": [],
+      "importedBy": [
+        "tools/check-dishwasher-brand-models.mjs",
+        "tools/check-dishwasher-error-codes.mjs",
+        "tools/check-dishwasher-evidence.mjs",
+        "tools/check-dishwasher-fault-taxonomy.mjs",
+        "tools/check-dishwasher-intent-boundaries.mjs",
+        "tools/check-dishwasher-link-graph.mjs",
+        "tools/check-dishwasher-pages.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "tools/check-dishwasher-brand-models.mjs",
+        "tools/check-dishwasher-error-codes.mjs",
+        "tools/check-dishwasher-evidence.mjs",
+        "tools/check-dishwasher-fault-taxonomy.mjs",
+        "tools/check-dishwasher-intent-boundaries.mjs",
+        "tools/check-dishwasher-link-graph.mjs",
+        "tools/check-dishwasher-pages.mjs"
       ]
     },
     {
@@ -959,6 +2113,23 @@
       ]
     },
     {
+      "file": "tools/finalize-legacy-claims-cleanup-r2.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: finalize:legacy-claims-r2",
+      "sizeBytes": 20877,
+      "scripts": [
+        "finalize:legacy-claims-r2"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
       "file": "tools/generate-ai-change-manifest.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -977,11 +2148,11 @@
       "file": "tools/generate-ai-component-map.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: generate:ai-component-map, check:ai-component-map",
+      "reason": "Called by npm scripts: check:ai-component-map, generate:ai-component-map",
       "sizeBytes": 14036,
       "scripts": [
-        "generate:ai-component-map",
-        "check:ai-component-map"
+        "check:ai-component-map",
+        "generate:ai-component-map"
       ],
       "importedBy": [],
       "imports": [
@@ -993,6 +2164,27 @@
         "tools/ai-check.mjs",
         "tools/check-profile.mjs",
         "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-ai-current-state.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:ai-current-state, check:ai-current-state",
+      "sizeBytes": 3942,
+      "scripts": [
+        "generate:ai-current-state",
+        "check:ai-current-state"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/ai-current-state.json",
+        "data/file-ownership.json",
+        "package.json",
+        "tools/ai-verify.mjs",
+        "tools/check-ai-control-lite-r5.mjs",
+        "tools/check-profile.mjs"
       ]
     },
     {
@@ -1022,11 +2214,11 @@
       "file": "tools/generate-ai-index.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: generate:ai-index, check:ai-index",
+      "reason": "Called by npm scripts: check:ai-index, generate:ai-index",
       "sizeBytes": 916,
       "scripts": [
-        "generate:ai-index",
-        "check:ai-index"
+        "check:ai-index",
+        "generate:ai-index"
       ],
       "importedBy": [],
       "imports": [
@@ -1063,35 +2255,131 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: generate:direct-landings",
-      "sizeBytes": 14298,
+      "sizeBytes": 26120,
       "scripts": [
         "generate:direct-landings"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
-        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
-        "METRICS_RUN5_CHANGED_FILES_20260620.txt",
-        "METRICS_RUN5_CHECKS_20260620.txt",
         "data/file-ownership.json",
         "docs/AI_PROJECT_OPERATING_GUIDE.md",
         "docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md",
+        "docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "docs/archive/root-history/METRICS_RUN5_CHANGED_FILES_20260620.txt",
+        "docs/archive/root-history/METRICS_RUN5_CHECKS_20260620.txt",
         "docs/metrics-analytics-run5-technical-audit-cleanup-20260620.md",
         "package.json",
         "tools/ai-task-router.mjs",
-        "tools/audit-metrics-clean.mjs"
+        "tools/audit-metrics-clean.mjs",
+        "tools/check-safe-native-runtime.mjs",
+        "tools/generate-dishwasher-dw7.mjs",
+        "tools/generate-refrigeration-rf9.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-dishwasher-dw3.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:dishwasher-dw3",
+      "sizeBytes": 90066,
+      "scripts": [
+        "generate:dishwasher-dw3"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-dishwasher-dw4.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:dishwasher-dw4",
+      "sizeBytes": 132219,
+      "scripts": [
+        "generate:dishwasher-dw4"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-dishwasher-dw5.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:dishwasher-dw5",
+      "sizeBytes": 184805,
+      "scripts": [
+        "generate:dishwasher-dw5"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-dishwasher-dw6.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:dishwasher-dw6",
+      "sizeBytes": 214936,
+      "scripts": [
+        "generate:dishwasher-dw6"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-dishwasher-dw7.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:dishwasher-dw7",
+      "sizeBytes": 22048,
+      "scripts": [
+        "generate:dishwasher-dw7"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-dishwasher-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:dishwasher-images",
+      "sizeBytes": 6737,
+      "scripts": [
+        "generate:dishwasher-images"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_DISHWASHER_IMAGE_INTEGRATION_20260715.md",
+        "package.json",
+        "tools/check-dishwasher-images.mjs"
       ]
     },
     {
       "file": "tools/generate-faq-registry.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: generate:faq-registry, check:faq-registry",
+      "reason": "Called by npm scripts: check:faq-registry, generate:faq-registry",
       "sizeBytes": 16237,
       "scripts": [
-        "generate:faq-registry",
-        "check:faq-registry"
+        "check:faq-registry",
+        "generate:faq-registry"
       ],
       "importedBy": [],
       "imports": [
@@ -1111,14 +2399,65 @@
       ]
     },
     {
+      "file": "tools/generate-kutter-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:kutter-images",
+      "sizeBytes": 7276,
+      "scripts": [
+        "generate:kutter-images"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_KUTTER_IMAGE_INTEGRATION_20260714.md",
+        "package.json",
+        "tools/check-kutter-images.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-kutter-link-graph.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-link-graph-layer, generate:kutter-link-graph",
+      "sizeBytes": 2981,
+      "scripts": [
+        "check:kutter-link-graph-layer",
+        "generate:kutter-link-graph"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-kutter-seo-report.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-seo-report, report:kutter-seo",
+      "sizeBytes": 10048,
+      "scripts": [
+        "check:kutter-seo-report",
+        "report:kutter-seo"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
       "file": "tools/generate-project-map.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: generate:project-map, check:project-map",
+      "reason": "Called by npm scripts: check:project-map, generate:project-map",
       "sizeBytes": 7720,
       "scripts": [
-        "generate:project-map",
-        "check:project-map"
+        "check:project-map",
+        "generate:project-map"
       ],
       "importedBy": [],
       "imports": [],
@@ -1139,21 +2478,156 @@
       "imports": [],
       "textReferences": [
         ".deploy/include-files.txt",
-        ".github/workflows/deploy.yml",
         "deploy/post-activate.sh",
-        "tools/check-deploy-runtime.mjs",
         "tools/generate-deploy-manifest.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-images.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-images",
+      "sizeBytes": 7040,
+      "scripts": [
+        "generate:refrigeration-images"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_IMAGE_R1_20260716.md",
+        "package.json",
+        "tools/check-refrigeration-images.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-rf2.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-rf2",
+      "sizeBytes": 62803,
+      "scripts": [
+        "generate:refrigeration-rf2"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-rf3.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-rf3",
+      "sizeBytes": 49260,
+      "scripts": [
+        "generate:refrigeration-rf3"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-rf4.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-rf4",
+      "sizeBytes": 67958,
+      "scripts": [
+        "generate:refrigeration-rf4"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-rf5.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-rf5",
+      "sizeBytes": 22702,
+      "scripts": [
+        "generate:refrigeration-rf5"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-rf6.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-rf6",
+      "sizeBytes": 23231,
+      "scripts": [
+        "generate:refrigeration-rf6"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-rf7.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-rf7",
+      "sizeBytes": 24896,
+      "scripts": [
+        "generate:refrigeration-rf7"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-rf8.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-rf8",
+      "sizeBytes": 21591,
+      "scripts": [
+        "generate:refrigeration-rf8"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/generate-refrigeration-rf9.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: generate:refrigeration-rf9",
+      "sizeBytes": 4277,
+      "scripts": [
+        "generate:refrigeration-rf9"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
       ]
     },
     {
       "file": "tools/generate-responsive-images.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: generate:responsive-images, check:responsive-images",
+      "reason": "Called by npm scripts: check:responsive-images, generate:responsive-images",
       "sizeBytes": 16095,
       "scripts": [
-        "generate:responsive-images",
-        "check:responsive-images"
+        "check:responsive-images",
+        "generate:responsive-images"
       ],
       "importedBy": [],
       "imports": [],
@@ -1180,18 +2654,55 @@
       "imports": [],
       "textReferences": [
         "package.json",
+        "tools/generate-refrigeration-rf9.mjs",
         "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-sous-vide-seo-layer.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:sous-vide-seo-layer, generate:sous-vide-seo-layer",
+      "sizeBytes": 8769,
+      "scripts": [
+        "check:sous-vide-seo-layer",
+        "generate:sous-vide-seo-layer"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/generate-sous-vide-seo-report.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:sous-vide-seo-report, report:sous-vide-seo",
+      "sizeBytes": 14185,
+      "scripts": [
+        "check:sous-vide-seo-report",
+        "report:sous-vide-seo"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "package.json",
+        "tools/check-profile.mjs"
       ]
     },
     {
       "file": "tools/generate-webp-sidecars.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: generate:webp-sidecars, check:webp-sidecars",
+      "reason": "Called by npm scripts: check:webp-sidecars, generate:webp-sidecars",
       "sizeBytes": 6555,
       "scripts": [
-        "generate:webp-sidecars",
-        "check:webp-sidecars"
+        "check:webp-sidecars",
+        "generate:webp-sidecars"
       ],
       "importedBy": [],
       "imports": [],
@@ -1336,6 +2847,36 @@
       ]
     },
     {
+      "file": "tools/kutter-fault-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/check-kutter-brand-models.mjs, tools/check-kutter-brand-pages.mjs, tools/check-kutter-cannibalization.mjs, tools/check-kutter-error-codes.mjs, tools/check-kutter-evidence.mjs",
+      "sizeBytes": 584,
+      "scripts": [],
+      "importedBy": [
+        "tools/check-kutter-brand-models.mjs",
+        "tools/check-kutter-brand-pages.mjs",
+        "tools/check-kutter-cannibalization.mjs",
+        "tools/check-kutter-error-codes.mjs",
+        "tools/check-kutter-evidence.mjs",
+        "tools/check-kutter-fault-taxonomy.mjs",
+        "tools/check-kutter-link-graph.mjs",
+        "tools/check-kutter-pages.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "tools/check-kutter-brand-models.mjs",
+        "tools/check-kutter-brand-pages.mjs",
+        "tools/check-kutter-cannibalization.mjs",
+        "tools/check-kutter-error-codes.mjs",
+        "tools/check-kutter-evidence.mjs",
+        "tools/check-kutter-fault-taxonomy.mjs",
+        "tools/check-kutter-link-graph.mjs",
+        "tools/check-kutter-pages.mjs"
+      ]
+    },
+    {
       "file": "tools/metrics-bot-smoke.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -1363,11 +2904,28 @@
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        "FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
-        "FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
-        "METRICS_RUN5_CHECKS_20260620.txt",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+        "docs/archive/root-history/FINAL_TZ_COMPLIANCE_CHECKS_20260620.txt",
+        "docs/archive/root-history/METRICS_RUN5_CHECKS_20260620.txt",
         "package.json",
         "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/normalize-parametric-hashes-r4.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: sync:parametric-hashes-r4",
+      "sizeBytes": 1480,
+      "scripts": [
+        "sync:parametric-hashes-r4"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
       ]
     },
     {
@@ -1389,12 +2947,12 @@
       "file": "tools/page-lifecycle.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: page:create, page:edit, page:check",
+      "reason": "Called by npm scripts: page:check, page:create, page:edit",
       "sizeBytes": 5059,
       "scripts": [
+        "page:check",
         "page:create",
-        "page:edit",
-        "page:check"
+        "page:edit"
       ],
       "importedBy": [],
       "imports": [],
@@ -1403,14 +2961,61 @@
       ]
     },
     {
+      "file": "tools/refrigeration-fault-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/check-refrigeration-brand-models.mjs, tools/check-refrigeration-cannibalization.mjs, tools/check-refrigeration-error-codes.mjs, tools/check-refrigeration-evidence.mjs, tools/check-refrigeration-fault-taxonomy.mjs",
+      "sizeBytes": 958,
+      "scripts": [],
+      "importedBy": [
+        "tools/check-refrigeration-brand-models.mjs",
+        "tools/check-refrigeration-cannibalization.mjs",
+        "tools/check-refrigeration-error-codes.mjs",
+        "tools/check-refrigeration-evidence.mjs",
+        "tools/check-refrigeration-fault-taxonomy.mjs",
+        "tools/check-refrigeration-intent-boundaries.mjs",
+        "tools/check-refrigeration-link-graph.mjs",
+        "tools/check-refrigeration-pages.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF01_20260715.md",
+        "tools/check-refrigeration-brand-models.mjs",
+        "tools/check-refrigeration-cannibalization.mjs",
+        "tools/check-refrigeration-error-codes.mjs",
+        "tools/check-refrigeration-evidence.mjs",
+        "tools/check-refrigeration-fault-taxonomy.mjs",
+        "tools/check-refrigeration-intent-boundaries.mjs",
+        "tools/check-refrigeration-link-graph.mjs",
+        "tools/check-refrigeration-pages.mjs"
+      ]
+    },
+    {
+      "file": "tools/repair-canonical-duplicates.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:canonical-duplicates, repair:canonical-duplicates",
+      "sizeBytes": 1375,
+      "scripts": [
+        "check:canonical-duplicates",
+        "repair:canonical-duplicates"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
       "file": "tools/repair-restaurant-service-contract.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: repair:restaurant-service-contract, check:restaurant-service-contract",
+      "reason": "Called by npm scripts: check:restaurant-service-contract, repair:restaurant-service-contract",
       "sizeBytes": 4121,
       "scripts": [
-        "repair:restaurant-service-contract",
-        "check:restaurant-service-contract"
+        "check:restaurant-service-contract",
+        "repair:restaurant-service-contract"
       ],
       "importedBy": [],
       "imports": [
@@ -1541,50 +3146,55 @@
       "category": "npmScriptEntry",
       "action": "keep",
       "reason": "Called by npm scripts: scaffold:restaurant-service",
-      "sizeBytes": 19055,
+      "sizeBytes": 19069,
       "scripts": [
         "scaffold:restaurant-service"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
+        "CHANGELOG_AI.md",
         "package.json",
         "tools/page-lifecycle.mjs"
+      ]
+    },
+    {
+      "file": "tools/scale-policy-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/check-scale-policy.mjs, tools/test-scale-policy-fixtures.mjs",
+      "sizeBytes": 3366,
+      "scripts": [],
+      "importedBy": [
+        "tools/check-scale-policy.mjs",
+        "tools/test-scale-policy-fixtures.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "tools/check-scale-policy.mjs",
+        "tools/test-scale-policy-fixtures.mjs"
       ]
     },
     {
       "file": "tools/screenshot-audit-lib.mjs",
       "category": "importedByTool",
       "action": "keep",
-      "reason": "Imported by: tools/audit-representative-pages.mjs, tools/audit-screenshots.mjs, tools/check-visual-contract.mjs",
-      "sizeBytes": 6694,
+      "reason": "Imported by: tools/audit-representative-pages.mjs, tools/audit-screenshots.mjs, tools/check-visual-contract.mjs, tools/visual-local-capture.mjs",
+      "sizeBytes": 6815,
       "scripts": [],
       "importedBy": [
         "tools/audit-representative-pages.mjs",
         "tools/audit-screenshots.mjs",
-        "tools/check-visual-contract.mjs"
+        "tools/check-visual-contract.mjs",
+        "tools/visual-local-capture.mjs"
       ],
       "imports": [],
       "textReferences": [
         "tools/audit-representative-pages.mjs",
         "tools/audit-screenshots.mjs",
-        "tools/check-visual-contract.mjs"
-      ]
-    },
-    {
-      "file": "tools/screenshot-live-site.mjs",
-      "category": "manualUtility",
-      "action": "keep",
-      "reason": "Tool is retained as a manual utility or project helper.",
-      "sizeBytes": 14437,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [
-        "tools/visual-capture-plan.mjs",
-        "tools/visual-firefox-config.mjs"
-      ],
-      "textReferences": [
-        "docs/LIVE_VISUAL_PACK_MVP.md"
+        "tools/check-visual-contract.mjs",
+        "tools/visual-local-capture.mjs"
       ]
     },
     {
@@ -1830,11 +3440,11 @@
       "file": "tools/site-builder-extract-shared.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: site-builder:extract-shared, check:shared-components",
+      "reason": "Called by npm scripts: check:shared-components, site-builder:extract-shared",
       "sizeBytes": 9470,
       "scripts": [
-        "site-builder:extract-shared",
-        "check:shared-components"
+        "check:shared-components",
+        "site-builder:extract-shared"
       ],
       "importedBy": [],
       "imports": [
@@ -1856,21 +3466,29 @@
       "file": "tools/site-builder-lib.mjs",
       "category": "importedByTool",
       "action": "keep",
-      "reason": "Imported by: tools/build-site.mjs, tools/check-architecture.mjs, tools/check-generated-diff.mjs, tools/generate-faq-registry.mjs, tools/site-builder-bootstrap.mjs",
-      "sizeBytes": 14603,
+      "reason": "Imported by: tools/apply-dishwasher-images.mjs, tools/apply-legacy-claims-cleanup-r2.mjs, tools/apply-refrigeration-images.mjs, tools/build-site.mjs, tools/check-architecture.mjs",
+      "sizeBytes": 14694,
       "scripts": [],
       "importedBy": [
+        "tools/apply-dishwasher-images.mjs",
+        "tools/apply-legacy-claims-cleanup-r2.mjs",
+        "tools/apply-refrigeration-images.mjs",
         "tools/build-site.mjs",
         "tools/check-architecture.mjs",
         "tools/check-generated-diff.mjs",
+        "tools/finalize-legacy-claims-cleanup-r2.mjs",
         "tools/generate-faq-registry.mjs",
+        "tools/normalize-parametric-hashes-r4.mjs",
         "tools/site-builder-bootstrap.mjs",
         "tools/site-builder-extract-shared.mjs",
         "tools/site-builder-parameterize-core.mjs",
-        "tools/sync-site-builder-manifest.mjs"
+        "tools/sync-page-versions-r2.mjs",
+        "tools/sync-site-builder-manifest.mjs",
+        "tools/sync-ventilation-page-versions-r3.mjs"
       ],
       "imports": [
-        "tools/ai-maintenance-lib.mjs"
+        "tools/ai-maintenance-lib.mjs",
+        "tools/static-shell-lib.mjs"
       ],
       "textReferences": [
         ".ai/digest/components/parametricComponents.md",
@@ -1879,27 +3497,31 @@
         "data/ai-component-map.json",
         "tools/ai-check.mjs",
         "tools/ai-workspace.mjs",
+        "tools/apply-dishwasher-images.mjs",
+        "tools/apply-legacy-claims-cleanup-r2.mjs",
+        "tools/apply-refrigeration-images.mjs",
         "tools/build-site.mjs",
         "tools/check-architecture.mjs",
         "tools/check-generated-diff.mjs",
         "tools/doctor-changed-pages.mjs",
+        "tools/finalize-legacy-claims-cleanup-r2.mjs",
         "tools/generate-ai-component-map.mjs",
         "tools/generate-faq-registry.mjs",
+        "tools/normalize-parametric-hashes-r4.mjs",
         "tools/site-builder-bootstrap.mjs",
         "tools/site-builder-extract-shared.mjs",
-        "tools/site-builder-parameterize-core.mjs",
-        "tools/sync-site-builder-manifest.mjs"
+        "tools/site-builder-parameterize-core.mjs"
       ]
     },
     {
       "file": "tools/site-builder-parameterize-core.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: site-builder:parameterize-core, check:parameterized-components",
-      "sizeBytes": 19335,
+      "reason": "Called by npm scripts: check:parameterized-components, site-builder:parameterize-core",
+      "sizeBytes": 20032,
       "scripts": [
-        "site-builder:parameterize-core",
-        "check:parameterized-components"
+        "check:parameterized-components",
+        "site-builder:parameterize-core"
       ],
       "importedBy": [],
       "imports": [
@@ -1918,22 +3540,47 @@
       ]
     },
     {
-      "file": "tools/smoke-production-conversion.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 5216,
-      "scripts": [],
+      "file": "tools/smoke-kutter-leads.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: check:kutter-lead-smoke, smoke:kutter-leads",
+      "sizeBytes": 17909,
+      "scripts": [
+        "check:kutter-lead-smoke",
+        "smoke:kutter-leads"
+      ],
       "importedBy": [],
-      "imports": [],
-      "textReferences": []
+      "imports": [
+        "tools/visual-local-runtime.mjs"
+      ],
+      "textReferences": [
+        "package.json",
+        "tools/check-profile.mjs"
+      ]
+    },
+    {
+      "file": "tools/smoke-refrigeration-direct-leads.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: smoke:refrigeration-direct-leads",
+      "sizeBytes": 9430,
+      "scripts": [
+        "smoke:refrigeration-direct-leads"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/visual-local-runtime.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
     },
     {
       "file": "tools/source-compression-lib.mjs",
       "category": "importedByTool",
       "action": "keep",
       "reason": "Imported by: tools/analyze-source-complexity.mjs, tools/check-scale-policy.mjs, tools/generate-ai-digest.mjs",
-      "sizeBytes": 20249,
+      "sizeBytes": 20323,
       "scripts": [],
       "importedBy": [
         "tools/analyze-source-complexity.mjs",
@@ -1951,14 +3598,54 @@
       ]
     },
     {
+      "file": "tools/sous-vide-fault-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/check-sous-vide-error-codes.mjs, tools/check-sous-vide-evidence.mjs, tools/check-sous-vide-fault-taxonomy.mjs, tools/check-symptom-cannibalization.mjs, tools/check-symptom-service-pages.mjs",
+      "sizeBytes": 661,
+      "scripts": [],
+      "importedBy": [
+        "tools/check-sous-vide-error-codes.mjs",
+        "tools/check-sous-vide-evidence.mjs",
+        "tools/check-sous-vide-fault-taxonomy.mjs",
+        "tools/check-symptom-cannibalization.mjs",
+        "tools/check-symptom-service-pages.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "tools/check-sous-vide-error-codes.mjs",
+        "tools/check-sous-vide-evidence.mjs",
+        "tools/check-sous-vide-fault-taxonomy.mjs",
+        "tools/check-symptom-cannibalization.mjs",
+        "tools/check-symptom-service-pages.mjs"
+      ]
+    },
+    {
+      "file": "tools/static-shell-lib.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/site-builder-lib.mjs",
+      "sizeBytes": 17386,
+      "scripts": [],
+      "importedBy": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "imports": [
+        "tools/ai-maintenance-lib.mjs"
+      ],
+      "textReferences": [
+        "tools/site-builder-lib.mjs"
+      ]
+    },
+    {
       "file": "tools/strip-legacy-metrika-noscript.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: cleanup:legacy-metrika, check:legacy-metrika",
+      "reason": "Called by npm scripts: check:legacy-metrika, cleanup:legacy-metrika",
       "sizeBytes": 859,
       "scripts": [
-        "cleanup:legacy-metrika",
-        "check:legacy-metrika"
+        "check:legacy-metrika",
+        "cleanup:legacy-metrika"
       ],
       "importedBy": [],
       "imports": [],
@@ -1984,6 +3671,38 @@
       ]
     },
     {
+      "file": "tools/sync-page-versions-r2.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: sync:page-versions-r2",
+      "sizeBytes": 2671,
+      "scripts": [
+        "sync:page-versions-r2"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/site-builder-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/sync-refrigeration-link-graph.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: sync:refrigeration-link-graph",
+      "sizeBytes": 1435,
+      "scripts": [
+        "sync:refrigeration-link-graph"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
+        "package.json"
+      ]
+    },
+    {
       "file": "tools/sync-site-builder-manifest.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -2004,21 +3723,53 @@
       ]
     },
     {
-      "file": "tools/sync-site-builder-manifest.mjs",
+      "file": "tools/sync-ventilation-page-versions-r3.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: site-builder:sync-manifest",
-      "sizeBytes": 4816,
+      "reason": "Called by npm scripts: sync:ventilation-page-versions-r3",
+      "sizeBytes": 2798,
       "scripts": [
-        "site-builder:sync-manifest"
+        "sync:ventilation-page-versions-r3"
       ],
       "importedBy": [],
       "imports": [
         "tools/site-builder-lib.mjs"
       ],
       "textReferences": [
+        "package.json"
+      ]
+    },
+    {
+      "file": "tools/test-ai-control-lite-r5.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: test:ai-control-lite-r5",
+      "sizeBytes": 3496,
+      "scripts": [
+        "test:ai-control-lite-r5"
+      ],
+      "importedBy": [],
+      "imports": [],
+      "textReferences": [
         "package.json",
-        "src/site-builder.json",
+        "tools/check-ai-control-lite-r5.mjs"
+      ]
+    },
+    {
+      "file": "tools/test-scale-policy-fixtures.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: test:scale-policy-fixtures",
+      "sizeBytes": 811,
+      "scripts": [
+        "test:scale-policy-fixtures"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/scale-policy-lib.mjs"
+      ],
+      "textReferences": [
+        "package.json",
         "tools/check-profile.mjs"
       ]
     },
@@ -2044,17 +3795,6 @@
       ]
     },
     {
-      "file": "tools/validate-site-v11-static-wrapper.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 2617,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": []
-    },
-    {
       "file": "tools/validate-site.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
@@ -2067,224 +3807,121 @@
       "imports": [],
       "textReferences": [
         "package.json",
-        "tools/check-profile.mjs",
-        "tools/validate-site-v11-static-wrapper.mjs",
-        "tools/validate-site.strict.mjs"
+        "tools/check-profile.mjs"
       ]
-    },
-    {
-      "file": "tools/validate-site.strict.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 2906,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": []
-    },
-    {
-      "file": "tools/visual-atomic-capture.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 23274,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [
-        "tools/visual-firefox-config.mjs"
-      ],
-      "textReferences": []
-    },
-    {
-      "file": "tools/visual-audit-capture.mjs",
-      "category": "deployUsed",
-      "action": "keep",
-      "reason": "Referenced by deploy/server/workflow files.",
-      "sizeBytes": 7168,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [
-        "tools/visual-firefox-config.mjs"
-      ],
-      "textReferences": [
-        ".github/workflows/visual-audit.yml"
-      ]
-    },
-    {
-      "file": "tools/visual-audit-merge.mjs",
-      "category": "deployUsed",
-      "action": "keep",
-      "reason": "Referenced by deploy/server/workflow files.",
-      "sizeBytes": 3655,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": [
-        ".github/workflows/visual-audit.yml"
-      ]
-    },
-    {
-      "file": "tools/visual-audit-plan.mjs",
-      "category": "deployUsed",
-      "action": "keep",
-      "reason": "Referenced by deploy/server/workflow files.",
-      "sizeBytes": 4148,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": [
-        ".github/workflows/visual-audit.yml"
-      ]
-    },
-    {
-      "file": "tools/visual-capture-plan.mjs",
-      "category": "importedByTool",
-      "action": "keep",
-      "reason": "Imported by: tools/screenshot-live-site.mjs",
-      "sizeBytes": 10234,
-      "scripts": [],
-      "importedBy": [
-        "tools/screenshot-live-site.mjs"
-      ],
-      "imports": [],
-      "textReferences": [
-        "docs/LIVE_VISUAL_PACK_MVP.md",
-        "tools/screenshot-live-site.mjs"
-      ]
-    },
-    {
-      "file": "tools/visual-contact-sheets.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 15056,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": []
-    },
-    {
-      "file": "tools/visual-dom-dissector.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 19605,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [
-        "tools/visual-firefox-config.mjs"
-      ],
-      "textReferences": []
     },
     {
       "file": "tools/visual-firefox-config.mjs",
       "category": "importedByTool",
       "action": "keep",
-      "reason": "Imported by: tools/audit-screenshots.mjs, tools/check-visual-env.mjs, tools/screenshot-live-site.mjs, tools/visual-atomic-capture.mjs, tools/visual-audit-capture.mjs",
+      "reason": "Imported by: tools/audit-screenshots.mjs",
       "sizeBytes": 1650,
       "scripts": [],
       "importedBy": [
-        "tools/audit-screenshots.mjs",
-        "tools/check-visual-env.mjs",
-        "tools/screenshot-live-site.mjs",
-        "tools/visual-atomic-capture.mjs",
-        "tools/visual-audit-capture.mjs",
-        "tools/visual-dom-dissector.mjs",
-        "tools/visual-shard-runner.mjs",
-        "tools/visual-targeted-mobile-deep.mjs"
+        "tools/audit-screenshots.mjs"
       ],
       "imports": [],
       "textReferences": [
+        "tools/audit-screenshots.mjs"
+      ]
+    },
+    {
+      "file": "tools/visual-local-capture.mjs",
+      "category": "npmScriptEntry",
+      "action": "keep",
+      "reason": "Called by npm scripts: audit:cooking-kettles-screenshots, audit:dishwasher-dw6-screenshots, audit:dishwasher-dw7-screenshots, audit:dishwasher-screenshots, audit:k9:visual, audit:kutter-screenshots, audit:parokonvektomat-screenshots, audit:refrigeration-screenshots, audit:restaurant-screenshots, audit:screenshots, audit:sous-vide-screenshots, audit:sous-vide-screenshots:native, audit:sous-vide-screenshots:native:first-view, audit:sous-vide-symptom-p0, audit:sous-vide-symptom-p1, audit:ventilation-screenshots, audit:visual-pariki, audit:visual-smoke, audit:visual-smoke:full, visual:capture, audit:refrigeration-rf4-screenshots, audit:refrigeration-rf5-screenshots, audit:refrigeration-rf6-screenshots, audit:refrigeration-rf7-screenshots, audit:refrigeration-rf8-screenshots, audit:refrigeration-rf9-screenshots",
+      "sizeBytes": 17726,
+      "scripts": [
+        "audit:cooking-kettles-screenshots",
+        "audit:dishwasher-dw6-screenshots",
+        "audit:dishwasher-dw7-screenshots",
+        "audit:dishwasher-screenshots",
+        "audit:k9:visual",
+        "audit:kutter-screenshots",
+        "audit:parokonvektomat-screenshots",
+        "audit:refrigeration-screenshots",
+        "audit:restaurant-screenshots",
+        "audit:screenshots",
+        "audit:sous-vide-screenshots",
+        "audit:sous-vide-screenshots:native",
+        "audit:sous-vide-screenshots:native:first-view",
+        "audit:sous-vide-symptom-p0",
+        "audit:sous-vide-symptom-p1",
+        "audit:ventilation-screenshots",
+        "audit:visual-pariki",
+        "audit:visual-smoke",
+        "audit:visual-smoke:full",
+        "visual:capture",
+        "audit:refrigeration-rf4-screenshots",
+        "audit:refrigeration-rf5-screenshots",
+        "audit:refrigeration-rf6-screenshots",
+        "audit:refrigeration-rf7-screenshots",
+        "audit:refrigeration-rf8-screenshots",
+        "audit:refrigeration-rf9-screenshots"
+      ],
+      "importedBy": [],
+      "imports": [
+        "tools/screenshot-audit-lib.mjs",
+        "tools/visual-local-runtime.mjs"
+      ],
+      "textReferences": [
+        "data/file-ownership.json",
+        "data/visual-runtime.json",
+        "docs/VISUAL_CHECKS.md",
+        "package.json",
+        "tools/audit-representative-pages.mjs",
+        "tools/audit-sous-vide-native.sh",
+        "tools/check-profile.mjs",
+        "tools/check-visual-contract.mjs",
+        "tools/visual-runner.mjs"
+      ]
+    },
+    {
+      "file": "tools/visual-local-runtime.mjs",
+      "category": "importedByTool",
+      "action": "keep",
+      "reason": "Imported by: tools/audit-screenshots.mjs, tools/capture-dishwasher-media-review.mjs, tools/capture-refrigeration-media-review.mjs, tools/check-visual-env.mjs, tools/smoke-kutter-leads.mjs",
+      "sizeBytes": 1678,
+      "scripts": [],
+      "importedBy": [
         "tools/audit-screenshots.mjs",
+        "tools/capture-dishwasher-media-review.mjs",
+        "tools/capture-refrigeration-media-review.mjs",
         "tools/check-visual-env.mjs",
-        "tools/screenshot-live-site.mjs",
-        "tools/visual-atomic-capture.mjs",
-        "tools/visual-audit-capture.mjs",
-        "tools/visual-dom-dissector.mjs",
-        "tools/visual-shard-runner.mjs",
-        "tools/visual-targeted-mobile-deep.mjs"
+        "tools/smoke-kutter-leads.mjs",
+        "tools/smoke-refrigeration-direct-leads.mjs",
+        "tools/visual-local-capture.mjs"
+      ],
+      "imports": [],
+      "textReferences": [
+        "data/file-ownership.json",
+        "data/visual-runtime.json",
+        "docs/VISUAL_CHECKS.md",
+        "tools/audit-screenshots.mjs",
+        "tools/capture-dishwasher-media-review.mjs",
+        "tools/capture-refrigeration-media-review.mjs",
+        "tools/check-visual-contract.mjs",
+        "tools/check-visual-env.mjs",
+        "tools/smoke-kutter-leads.mjs",
+        "tools/smoke-refrigeration-direct-leads.mjs",
+        "tools/visual-local-capture.mjs"
       ]
     },
     {
       "file": "tools/visual-runner.mjs",
       "category": "npmScriptEntry",
       "action": "keep",
-      "reason": "Called by npm scripts: audit:screenshots, audit:representative-pages, setup:visual, setup:visual:browsers, check:visual-env, audit:visual-smoke, audit:visual-pariki, audit:restaurant-screenshots, audit:restaurant-branch, audit:parokonvektomat-screenshots, audit:ventilation-screenshots, audit:cooking-kettles-screenshots",
-      "sizeBytes": 2192,
+      "reason": "Called by npm scripts: setup:visual:github",
+      "sizeBytes": 2142,
       "scripts": [
-        "audit:screenshots",
-        "audit:representative-pages",
-        "setup:visual",
-        "setup:visual:browsers",
-        "check:visual-env",
-        "audit:visual-smoke",
-        "audit:visual-pariki",
-        "audit:restaurant-screenshots",
-        "audit:restaurant-branch",
-        "audit:parokonvektomat-screenshots",
-        "audit:ventilation-screenshots",
-        "audit:cooking-kettles-screenshots"
+        "setup:visual:github"
       ],
       "importedBy": [],
       "imports": [],
       "textReferences": [
-        ".github/workflows/visual-audit.yml",
-        ".github/workflows/visual-targeted-mobile.yml",
         "CHANGELOG_AI.md",
-        "docs/VISUAL_CHECKS.md",
         "package.json",
-        "tools/check-profile.mjs"
-      ]
-    },
-    {
-      "file": "tools/visual-shard-merge.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 4145,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": []
-    },
-    {
-      "file": "tools/visual-shard-plan.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 4098,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [],
-      "textReferences": []
-    },
-    {
-      "file": "tools/visual-shard-runner.mjs",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No project text references found outside the tool itself.",
-      "sizeBytes": 17017,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [
-        "tools/visual-firefox-config.mjs"
-      ],
-      "textReferences": []
-    },
-    {
-      "file": "tools/visual-targeted-mobile-deep.mjs",
-      "category": "deployUsed",
-      "action": "keep",
-      "reason": "Referenced by deploy/server/workflow files.",
-      "sizeBytes": 9611,
-      "scripts": [],
-      "importedBy": [],
-      "imports": [
-        "tools/visual-firefox-config.mjs"
-      ],
-      "textReferences": [
-        ".github/workflows/visual-targeted-mobile.yml"
+        "tools/check-visual-contract.mjs"
       ]
     }
   ]

@@ -7,7 +7,7 @@
 - H1: Ремонт термостата sous-vide
 - Canonical: https://mospochin.ru/remont-termostata-sous-vide.html
 - Builder model: src/pages/remont-termostata-sous-vide/page.json
-- Sections: 7 (5 local, 0 shared refs, 0 raw)
+- Sections: 7 (3 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 305
 
 ## Component mix
@@ -28,11 +28,11 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонт термостата sous-vide | lead-form | 13.0 KB | 244 | no | src/pages/remont-termostata-sous-vide/sections/002-lead-form-remont-termostata-sous-vide.html |
 | Частые вопросы | faq | 1.8 KB | 61 | no | src/pages/remont-termostata-sous-vide/sections/002b-faq-chastye-voprosy.html |
-| Подключение partials-injector | runtime-partials | 50 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html |
 | Секция 1 | body-preamble | 47 B | 0 | no | src/pages/remont-termostata-sous-vide/sections/001-body-preamble-sekciya-1.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/pages/remont-termostata-sous-vide/sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/pages/remont-termostata-sous-vide/sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
 | Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
+| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html |
 
 
 ## Editable source files

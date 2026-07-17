@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 1,
+  "pageType": "symptom_service",
+  "requiredBlocks": [
+    "hero",
+    "stop-use",
+    "safe-self-check",
+    "decision-tree",
+    "cause-matrix",
+    "service-diagnostics",
+    "repair-scope",
+    "lead-form",
+    "faq",
+    "related-symptoms",
+    "sources-note"
+  ],
+  "pages": [
+    {
+      "page": "sous-vide-ne-greet-vodu.html",
+      "symptomId": "circulator.no_heat",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.power.troubleshooting",
+        "anova.cleaning.internal"
+      ]
+    },
+    {
+      "page": "sous-vide-ne-cirkuliruet-voda.html",
+      "symptomId": "circulator.no_flow",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.nano.alerts",
+        "anova.noise.gurgling",
+        "anova.cleaning.internal"
+      ]
+    },
+    {
+      "page": "sous-vide-oshibka-urovnya-vody.html",
+      "symptomId": "circulator.low_water_alarm",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.nano.alerts",
+        "anova.pro.alerts"
+      ]
+    },
+    {
+      "page": "sous-vide-ne-vklyuchaetsya.html",
+      "symptomId": "circulator.no_power",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.power.troubleshooting",
+        "anova.nano.alerts",
+        "anova.pro.alerts"
+      ]
+    },
+    {
+      "page": "vakuumator-ne-otkachivaet-vozduh.html",
+      "symptomId": "vacuum.no_vacuum",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.maintenance.core",
+        "henkelman.pump.moisture"
+      ]
+    },
+    {
+      "page": "vakuumator-ne-zapaivaet-paket.html",
+      "symptomId": "vacuum.no_seal",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.maintenance.core",
+        "henkelman.sealbar.parts"
+      ]
+    },
+    {
+      "page": "nasos-vakuumatora-shumit-peregrevaetsya.html",
+      "symptomId": "vacuum.pump_noise_overheat",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.maintenance.core",
+        "henkelman.pump.moisture"
+      ]
+    },
+    {
+      "page": "zhidkost-popala-v-vakuumator.html",
+      "symptomId": "vacuum.liquid_ingress",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.liquid.control",
+        "henkelman.pump.moisture",
+        "henkelman.maintenance.core"
+      ]
+    },
+    {
+      "page": "sous-vide-medlenno-nagrevaet-vodu.html",
+      "symptomId": "circulator.slow_heat",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.temperature.stuck",
+        "anova.cleaning.internal",
+        "anova.temperature.mismatch"
+      ]
+    },
+    {
+      "page": "sous-vide-ne-derzhit-temperaturu.html",
+      "symptomId": "circulator.unstable_temperature",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.temperature.mismatch",
+        "anova.temperature.stuck",
+        "anova.cleaning.internal"
+      ]
+    },
+    {
+      "page": "sous-vide-peregrevaet-vodu.html",
+      "symptomId": "circulator.overheat",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.temperature.mismatch",
+        "anova.nano.alerts",
+        "anova.safety.electrical"
+      ]
+    },
+    {
+      "page": "sous-vide-vyklyuchaetsya-vo-vremya-raboty.html",
+      "symptomId": "circulator.stops_during_work",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.random.reboot",
+        "anova.safety.electrical",
+        "anova.nano.alerts"
+      ]
+    },
+    {
+      "page": "sous-vide-shumit-bulkaet-vibriruet.html",
+      "symptomId": "circulator.noise_gurgle_vibration",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.noise.details",
+        "anova.cleaning.internal",
+        "anova.nano.alerts"
+      ]
+    },
+    {
+      "page": "sous-vide-vybivaet-avtomat.html",
+      "symptomId": "circulator.trips_breaker",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.safety.electrical",
+        "anova.nano.alerts",
+        "anova.power.troubleshooting"
+      ]
+    },
+    {
+      "page": "kody-oshibok-sous-vide.html",
+      "symptomId": "circulator.error_codes",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "anova.nano.alerts",
+        "anova.pro.alerts",
+        "henkelman.manuals.series"
+      ]
+    },
+    {
+      "page": "vakuumator-ne-zapuskaet-cikl.html",
+      "symptomId": "vacuum.cycle_no_start",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.manuals.series",
+        "sammic.vacuum.safety",
+        "henkelman.vacuum.process"
+      ]
+    },
+    {
+      "page": "vakuumator-medlenno-nabiraet-vakuum.html",
+      "symptomId": "vacuum.slow_vacuum",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.maintenance.core",
+        "sammic.oil.service",
+        "henkelman.pump.moisture",
+        "henkelman.manuals.series"
+      ]
+    },
+    {
+      "page": "vakuumator-ne-dostigaet-zadannogo-vakuuma.html",
+      "symptomId": "vacuum.target_not_reached",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.sensor.control",
+        "sammic.vacuum.safety",
+        "henkelman.maintenance.core"
+      ]
+    },
+    {
+      "page": "paket-nabiraet-vozduh-posle-vakuumirovaniya.html",
+      "symptomId": "vacuum.package_reinflates",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.vacuum.process",
+        "henkelman.softair",
+        "henkelman.sealbar.parts",
+        "sammic.maintenance.kit"
+      ]
+    },
+    {
+      "page": "slabyy-ili-nerovnyy-shov-vakuumatora.html",
+      "symptomId": "vacuum.weak_uneven_seal",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.sealbar.parts",
+        "henkelman.maintenance.core",
+        "sammic.maintenance.kit"
+      ]
+    },
+    {
+      "page": "vakuumator-prozhigaet-paket.html",
+      "symptomId": "vacuum.burns_bag",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.sealbar.parts",
+        "henkelman.maintenance.core",
+        "sammic.maintenance.kit"
+      ]
+    },
+    {
+      "page": "mutnoe-maslo-vakuumatora.html",
+      "symptomId": "vacuum.cloudy_oil",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [
+        "henkelman.pump.moisture",
+        "sammic.oil.service",
+        "sammic.vacuum.safety",
+        "henkelman.liquid.control"
+      ]
+    },
+    {
+      "page": "sous-vide-nakip-i-chistka.html",
+      "symptomId": "circulator.scale_cleaning",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "vodyanaya-banya-ne-greet.html",
+      "symptomId": "bath.no_heat",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "vodyanaya-banya-ne-derzhit-temperaturu.html",
+      "symptomId": "bath.unstable_temperature",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "vodyanaya-banya-peregrevaet.html",
+      "symptomId": "bath.overheat",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "vodyanaya-banya-techet.html",
+      "symptomId": "bath.leak",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "vodyanaya-banya-oshibka-datchika.html",
+      "symptomId": "bath.sensor_error",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "obsluzhivanie-vodyanoy-bani.html",
+      "symptomId": "bath.maintenance",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "skladki-ili-vlaga-v-zone-zapayki.html",
+      "symptomId": "vacuum.seal_area_wet_folded",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "kryshka-vakuumatora-ne-otkryvaetsya.html",
+      "symptomId": "vacuum.lid_not_opening",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "zamena-masla-i-filtra-vakuumatora.html",
+      "symptomId": "vacuum.oil_filter_service",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "kody-oshibok-vakuumatora.html",
+      "symptomId": "vacuum.error_codes",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    },
+    {
+      "page": "vakuumator-dymit-maslyanym-tumanom.html",
+      "symptomId": "vacuum.oil_mist",
+      "wave": "P2",
+      "status": "planned",
+      "indexable": false,
+      "requiredPrimarySchema": "Service",
+      "evidenceIds": [],
+      "releaseState": "deferred_backlog",
+      "publicationDecision": "not_in_current_release",
+      "deferredAt": "2026-07-17"
+    }
+  ],
+  "backlogPolicy": {
+    "status": "deferred",
+    "currentPublishedScopeComplete": true,
+    "plannedCount": 12,
+    "backlogManifest": "data/sous-vide-p2-backlog.json",
+    "note": "P2 research backlog is intentionally excluded from the current published release until official evidence and a separate release decision exist."
+  }
+}

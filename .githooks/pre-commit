@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+npm run check:instruction-hygiene
+npm run check:repo-hygiene
+npm run check:ai-current-state

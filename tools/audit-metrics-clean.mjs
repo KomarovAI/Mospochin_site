@@ -55,7 +55,7 @@ assert(!server.includes('...extraHeaders,\n    ...extraHeaders'), 'server sendJs
 assert(!server.includes('decodedChunks.push(bodyBuffer.slice(offset, offset + chunkSize));\n    decodedChunks.push(bodyBuffer.slice(offset, offset + chunkSize));'), 'chunked decoder does not duplicate chunks');
 assert(!server.includes('extra_field_keys: Object.keys(submission.extraFields || {}).slice(0, MAX_EXTRA_FIELDS),\n    extra_field_keys:'), 'lead log object has no duplicate extra_field_keys key');
 assert(server.includes('redactSensitiveText') && server.includes('sanitizeContactHref'), 'backend redacts contact href/text before event log');
-assert(analytics.includes('safeContactHref') && analytics.includes('redactContactText'), 'frontend redacts contact href/text before Metrika/local event payload');
+assert(analytics.includes('safeContactTarget') && analytics.includes('redactContactText'), 'frontend redacts contact href/text before Metrika/local event payload');
 assert(/tel:\[redacted\]/.test(analytics) && /mailto:\[redacted\]/.test(analytics), 'frontend masks tel/mailto targets');
 assert(/tel:\[redacted\]/.test(server) && /mailto:\[redacted\]/.test(server), 'backend masks tel/mailto targets');
 assert(directGenerator.includes('Array.isArray(page.analysisCards)'), 'direct landing generator tolerates pages without analysisCards');

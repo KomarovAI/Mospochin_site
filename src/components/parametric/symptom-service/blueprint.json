@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "pageType": "symptom_service",
+  "requiredComponents": [
+    "hero",
+    "stop-use",
+    "safe-self-check",
+    "decision-tree",
+    "cause-matrix",
+    "service-diagnostics",
+    "repair-scope",
+    "lead-form",
+    "faq",
+    "related-symptoms",
+    "sources-note"
+  ],
+  "requiredSchemas": [
+    "WebPage",
+    "Service",
+    "FAQPage",
+    "BreadcrumbList"
+  ],
+  "forbiddenSchemas": [
+    "Product",
+    "Offer"
+  ],
+  "contentRules": {
+    "minimumSafeChecks": 3,
+    "minimumProbableNodes": 3,
+    "minimumTrackedInternalLinks": 5,
+    "requireEvidenceIds": true,
+    "requireUniqueFaq": true,
+    "requireStopUseConditions": true,
+    "requireLeadFormFields": [
+      "equipment_model",
+      "error_code",
+      "problem",
+      "phone"
+    ]
+  },
+  "visualRules": {
+    "viewports": [
+      "desktop",
+      "mobile"
+    ],
+    "modes": [
+      "first-view",
+      "full-page"
+    ],
+    "hideFixedContactInMobileFullPage": true
+  }
+}

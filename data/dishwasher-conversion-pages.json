@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "cluster": "dishwasher",
+  "checkedAt": "2026-07-15",
+  "status": "published",
+  "pages": [
+    {
+      "page": "remont-promyshlennyh-posudomoechnyh-mashin-moskva.html",
+      "status": "published",
+      "indexable": false,
+      "renderMode": "compact-service-v1",
+      "intent": "direct-general-repair",
+      "branch": "restaurant",
+      "minForms": 1,
+      "minClusterLinks": 0
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-slivaet-remont-moskva.html",
+      "status": "published",
+      "indexable": false,
+      "renderMode": "compact-service-v1",
+      "intent": "direct-no-drain",
+      "branch": "restaurant",
+      "minForms": 1,
+      "minClusterLinks": 0
+    },
+    {
+      "page": "remont-posudomoechnoy-mashiny-winterhalter-moskva.html",
+      "status": "published",
+      "indexable": false,
+      "renderMode": "compact-service-v1",
+      "intent": "direct-brand-winterhalter",
+      "branch": "restaurant",
+      "minForms": 1,
+      "minClusterLinks": 0
+    }
+  ],
+  "canonicalBase": "https://mospochin.ru/",
+  "defaults": {
+    "branch": "restaurant",
+    "minForms": 1,
+    "minClusterLinks": 0,
+    "requirePhoneLink": true,
+    "requireWhatsappLink": true,
+    "requireAnalytics": true,
+    "requireTelegramFormScript": true,
+    "requireMobileContactContainers": true,
+    "requireFaqSchema": true,
+    "requireSingleH1": true,
+    "requireHiddenProblem": true
+  }
+}

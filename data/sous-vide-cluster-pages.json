@@ -39,97 +39,43 @@
       "sous-vide-remont-moskva.html",
       "remont-termostata-sous-vide-reklama.html",
       "remont-vakuumnogo-upakovshika-reklama.html"
+    ],
+    "symptom_service": [
+      "kody-oshibok-sous-vide.html",
+      "mutnoe-maslo-vakuumatora.html",
+      "nasos-vakuumatora-shumit-peregrevaetsya.html",
+      "paket-nabiraet-vozduh-posle-vakuumirovaniya.html",
+      "slabyy-ili-nerovnyy-shov-vakuumatora.html",
+      "sous-vide-medlenno-nagrevaet-vodu.html",
+      "sous-vide-ne-cirkuliruet-voda.html",
+      "sous-vide-ne-derzhit-temperaturu.html",
+      "sous-vide-ne-greet-vodu.html",
+      "sous-vide-ne-vklyuchaetsya.html",
+      "sous-vide-oshibka-urovnya-vody.html",
+      "sous-vide-peregrevaet-vodu.html",
+      "sous-vide-shumit-bulkaet-vibriruet.html",
+      "sous-vide-vybivaet-avtomat.html",
+      "sous-vide-vyklyuchaetsya-vo-vremya-raboty.html",
+      "vakuumator-medlenno-nabiraet-vakuum.html",
+      "vakuumator-ne-dostigaet-zadannogo-vakuuma.html",
+      "vakuumator-ne-otkachivaet-vozduh.html",
+      "vakuumator-ne-zapaivaet-paket.html",
+      "vakuumator-ne-zapuskaet-cikl.html",
+      "vakuumator-prozhigaet-paket.html",
+      "zhidkost-popala-v-vakuumator.html"
     ]
   },
   "pages": [
     {
-      "page": "sous-vide-restoranov.html",
-      "intent": "hub",
+      "page": "bezopasnost-sous-vide.html",
+      "intent": "guide",
       "indexable": true,
       "branch": "restaurant",
       "minClusterLinks": 3,
       "metrics": {
-        "pageIntent": "hub",
+        "pageIntent": "guide",
         "equipment": "sous_vide",
         "service": "information",
-        "commercialSegment": "b2b_kitchen"
-      }
-    },
-    {
-      "page": "remont-sous-vide.html",
-      "intent": "service",
-      "indexable": true,
-      "branch": "restaurant",
-      "minClusterLinks": 3,
-      "metrics": {
-        "pageIntent": "service",
-        "equipment": "sous_vide",
-        "service": "repair",
-        "commercialSegment": "b2b_kitchen"
-      }
-    },
-    {
-      "page": "sous-vide-termostaty.html",
-      "intent": "service",
-      "indexable": true,
-      "branch": "restaurant",
-      "minClusterLinks": 3,
-      "metrics": {
-        "pageIntent": "service",
-        "equipment": "sous_vide_thermostat",
-        "service": "equipment_service",
-        "commercialSegment": "b2b_kitchen"
-      }
-    },
-    {
-      "page": "vakuumnye-upakovshiki-dlya-restorana.html",
-      "intent": "service",
-      "indexable": true,
-      "branch": "restaurant",
-      "minClusterLinks": 3,
-      "metrics": {
-        "pageIntent": "service",
-        "equipment": "vacuum_packer",
-        "service": "equipment_service",
-        "commercialSegment": "b2b_kitchen"
-      }
-    },
-    {
-      "page": "remont-termostata-sous-vide.html",
-      "intent": "service",
-      "indexable": true,
-      "branch": "restaurant",
-      "minClusterLinks": 3,
-      "metrics": {
-        "pageIntent": "service",
-        "equipment": "sous_vide_thermostat",
-        "service": "repair",
-        "commercialSegment": "b2b_kitchen"
-      }
-    },
-    {
-      "page": "remont-vakuumnogo-upakovshika.html",
-      "intent": "service",
-      "indexable": true,
-      "branch": "restaurant",
-      "minClusterLinks": 3,
-      "metrics": {
-        "pageIntent": "service",
-        "equipment": "vacuum_packer",
-        "service": "repair",
-        "commercialSegment": "b2b_kitchen"
-      }
-    },
-    {
-      "page": "obsluzhivanie-sous-vide.html",
-      "intent": "service",
-      "indexable": true,
-      "branch": "restaurant",
-      "minClusterLinks": 3,
-      "metrics": {
-        "pageIntent": "service",
-        "equipment": "sous_vide",
-        "service": "maintenance",
         "commercialSegment": "b2b_kitchen"
       }
     },
@@ -160,52 +106,103 @@
       }
     },
     {
-      "page": "sous-vide-i-vakuumnaya-upakovka.html",
-      "intent": "guide",
+      "page": "kody-oshibok-sous-vide.html",
+      "intent": "symptom_service",
       "indexable": true,
       "branch": "restaurant",
-      "minClusterLinks": 3,
+      "minClusterLinks": 5,
+      "symptomId": "circulator.error_codes",
+      "evidenceIds": [
+        "anova.nano.alerts",
+        "anova.pro.alerts",
+        "henkelman.manuals.series"
+      ],
       "metrics": {
-        "pageIntent": "guide",
-        "equipment": "sous_vide_vacuum_workflow",
-        "service": "information",
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
         "commercialSegment": "b2b_kitchen"
       }
     },
     {
-      "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
-      "intent": "guide",
+      "page": "mutnoe-maslo-vakuumatora.html",
+      "intent": "symptom_service",
       "indexable": true,
       "branch": "restaurant",
-      "minClusterLinks": 3,
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.cloudy_oil",
+      "evidenceIds": [
+        "henkelman.pump.moisture",
+        "sammic.oil.service",
+        "sammic.vacuum.safety",
+        "henkelman.liquid.control"
+      ],
       "metrics": {
-        "pageIntent": "guide",
-        "equipment": "sous_vide_cooling_workflow",
-        "service": "information",
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
         "commercialSegment": "b2b_kitchen"
       }
     },
     {
-      "page": "bezopasnost-sous-vide.html",
-      "intent": "guide",
+      "page": "nasos-vakuumatora-shumit-peregrevaetsya.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.pump_noise_overheat",
+      "evidenceIds": [
+        "henkelman.maintenance.core",
+        "henkelman.pump.moisture"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "obsluzhivanie-sous-vide.html",
+      "intent": "service",
       "indexable": true,
       "branch": "restaurant",
       "minClusterLinks": 3,
       "metrics": {
-        "pageIntent": "guide",
+        "pageIntent": "service",
         "equipment": "sous_vide",
-        "service": "information",
+        "service": "maintenance",
         "commercialSegment": "b2b_kitchen"
       }
     },
     {
-      "page": "sous-vide-remont-moskva.html",
-      "intent": "promo",
-      "indexable": false,
+      "page": "paket-nabiraet-vozduh-posle-vakuumirovaniya.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.package_reinflates",
+      "evidenceIds": [
+        "henkelman.vacuum.process",
+        "henkelman.softair",
+        "henkelman.sealbar.parts",
+        "sammic.maintenance.kit"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-sous-vide.html",
+      "intent": "service",
+      "indexable": true,
       "branch": "restaurant",
       "minClusterLinks": 3,
       "metrics": {
-        "pageIntent": "promo",
+        "pageIntent": "service",
         "equipment": "sous_vide",
         "service": "repair",
         "commercialSegment": "b2b_kitchen"
@@ -225,6 +222,19 @@
       }
     },
     {
+      "page": "remont-termostata-sous-vide.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
       "page": "remont-vakuumnogo-upakovshika-reklama.html",
       "intent": "promo",
       "indexable": false,
@@ -232,6 +242,436 @@
       "minClusterLinks": 3,
       "metrics": {
         "pageIntent": "promo",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-vakuumnogo-upakovshika.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "slabyy-ili-nerovnyy-shov-vakuumatora.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.weak_uneven_seal",
+      "evidenceIds": [
+        "henkelman.sealbar.parts",
+        "henkelman.maintenance.core",
+        "sammic.maintenance.kit"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "sous_vide_cooling_workflow",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-i-vakuumnaya-upakovka.html",
+      "intent": "guide",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "guide",
+        "equipment": "sous_vide_vacuum_workflow",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-medlenno-nagrevaet-vodu.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.slow_heat",
+      "evidenceIds": [
+        "anova.temperature.stuck",
+        "anova.cleaning.internal",
+        "anova.temperature.mismatch"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-ne-cirkuliruet-voda.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.no_flow",
+      "evidenceIds": [
+        "anova.nano.alerts",
+        "anova.noise.gurgling",
+        "anova.cleaning.internal"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-ne-derzhit-temperaturu.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.unstable_temperature",
+      "evidenceIds": [
+        "anova.temperature.mismatch",
+        "anova.temperature.stuck",
+        "anova.cleaning.internal"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-ne-greet-vodu.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.no_heat",
+      "evidenceIds": [
+        "anova.power.troubleshooting",
+        "anova.cleaning.internal"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-ne-vklyuchaetsya.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.no_power",
+      "evidenceIds": [
+        "anova.power.troubleshooting",
+        "anova.nano.alerts",
+        "anova.pro.alerts"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-oshibka-urovnya-vody.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.low_water_alarm",
+      "evidenceIds": [
+        "anova.nano.alerts",
+        "anova.pro.alerts"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-peregrevaet-vodu.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.overheat",
+      "evidenceIds": [
+        "anova.temperature.mismatch",
+        "anova.nano.alerts",
+        "anova.safety.electrical"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-remont-moskva.html",
+      "intent": "promo",
+      "indexable": false,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "promo",
+        "equipment": "sous_vide",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-restoranov.html",
+      "intent": "hub",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "hub",
+        "equipment": "sous_vide",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-shumit-bulkaet-vibriruet.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.noise_gurgle_vibration",
+      "evidenceIds": [
+        "anova.noise.details",
+        "anova.cleaning.internal",
+        "anova.nano.alerts"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-termostaty.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "sous_vide_thermostat",
+        "service": "equipment_service",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-vybivaet-avtomat.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.trips_breaker",
+      "evidenceIds": [
+        "anova.safety.electrical",
+        "anova.nano.alerts",
+        "anova.power.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "sous-vide-vyklyuchaetsya-vo-vremya-raboty.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "circulator.stops_during_work",
+      "evidenceIds": [
+        "anova.random.reboot",
+        "anova.safety.electrical",
+        "anova.nano.alerts"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "sous_vide_thermostat",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vakuumator-medlenno-nabiraet-vakuum.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.slow_vacuum",
+      "evidenceIds": [
+        "henkelman.maintenance.core",
+        "sammic.oil.service",
+        "henkelman.pump.moisture",
+        "henkelman.manuals.series"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vakuumator-ne-dostigaet-zadannogo-vakuuma.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.target_not_reached",
+      "evidenceIds": [
+        "henkelman.sensor.control",
+        "sammic.vacuum.safety",
+        "henkelman.maintenance.core"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vakuumator-ne-otkachivaet-vozduh.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.no_vacuum",
+      "evidenceIds": [
+        "henkelman.maintenance.core",
+        "henkelman.pump.moisture"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vakuumator-ne-zapaivaet-paket.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.no_seal",
+      "evidenceIds": [
+        "henkelman.maintenance.core",
+        "henkelman.sealbar.parts"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vakuumator-ne-zapuskaet-cikl.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.cycle_no_start",
+      "evidenceIds": [
+        "henkelman.manuals.series",
+        "sammic.vacuum.safety",
+        "henkelman.vacuum.process"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vakuumator-prozhigaet-paket.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.burns_bag",
+      "evidenceIds": [
+        "henkelman.sealbar.parts",
+        "henkelman.maintenance.core",
+        "sammic.maintenance.kit"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
+        "equipment": "vacuum_packer",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vakuumnye-upakovshiki-dlya-restorana.html",
+      "intent": "service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 3,
+      "metrics": {
+        "pageIntent": "service",
+        "equipment": "vacuum_packer",
+        "service": "equipment_service",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "zhidkost-popala-v-vakuumator.html",
+      "intent": "symptom_service",
+      "indexable": true,
+      "branch": "restaurant",
+      "minClusterLinks": 5,
+      "symptomId": "vacuum.liquid_ingress",
+      "evidenceIds": [
+        "henkelman.liquid.control",
+        "henkelman.pump.moisture",
+        "henkelman.maintenance.core"
+      ],
+      "metrics": {
+        "pageIntent": "symptom_service",
         "equipment": "vacuum_packer",
         "service": "repair",
         "commercialSegment": "b2b_kitchen"
@@ -246,7 +686,8 @@
       "hub": "CollectionPage",
       "service": "Service",
       "guide": "Article",
-      "promo": "Service"
+      "promo": "Service",
+      "symptom_service": "Service"
     },
     "requireUniqueIndexableMetadata": true,
     "requireUniqueFaqSet": true,

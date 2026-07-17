@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "stiralnye-mashiny.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "3d596dc05ab2bb36ef639879edd589ab46a7c8963f4296060b9982fead31090c",
+    "hash": "215fb767210b5da82e9a107bfbdcd0d6ada57e4253a0da40a5d316c8798e7709",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -29,17 +29,12 @@
       "hash": "33dfe534b940fbc2"
     },
     {
-      "id": "002-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 48,
-      "hash": "96856553c1715279",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "technical-fragment-96856553c171",
-      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-96856553c171.template.html",
-      "props": {},
-      "sourceFile": "sections/002-raw-html-fragment.html"
+      "id": "002-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 7385,
+      "hash": "2e4903fbfb70029b"
     },
     {
       "id": "003-breadcrumb-hlebnye-kroshki",
@@ -54,8 +49,8 @@
       "component": "hero",
       "label": "Стиральная машина не сливает, течёт или шумит? Вернём стирку без лишних замен",
       "file": "sections/004-hero-stiral-naya-mashina-ne-slivaet-techet-ili-shumi.html",
-      "bytes": 5506,
-      "hash": "982d2500455263a2"
+      "bytes": 5505,
+      "hash": "38b7997324e32acb"
     },
     {
       "id": "005-proof-dokazatel-stva-garantii",
@@ -69,11 +64,11 @@
       "id": "006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda",
       "component": "proof",
       "label": "Что получаете по заявке до и после выезда",
-      "bytes": 2990,
-      "hash": "ae6b009ef8f59f6c",
-      "componentRef": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--ae6b009ef8f59f6c.html",
+      "bytes": 2619,
+      "hash": "fe5022e30cc0dcfb",
+      "componentRef": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--fe5022e30cc0dcfb.html",
       "componentScope": "shared",
-      "componentSignature": "ae6b009ef8f59f6c",
+      "componentSignature": "fe5022e30cc0dcfb",
       "sourceFile": "sections/006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda.html"
     },
     {
@@ -102,32 +97,37 @@
       "component": "pricing",
       "label": "Когда стиральную машину уже нельзя откладывать",
       "file": "sections/009-pricing-kogda-stiral-nuyu-mashinu-uzhe-nel-zya-otkla.html",
-      "bytes": 5229,
-      "hash": "2b8438522eb8dd16"
+      "bytes": 5309,
+      "hash": "68a35cbb3585c69e"
     },
     {
       "id": "010-pricing-kakie-problemy-stiral-noy-mashiny-my-zakryva",
       "component": "pricing",
       "label": "Какие проблемы стиральной машины мы закрываем после диагностики",
       "file": "sections/010-pricing-kakie-problemy-stiral-noy-mashiny-my-zakryva.html",
-      "bytes": 5877,
-      "hash": "03a746b3d67db578"
+      "bytes": 6123,
+      "hash": "ba9f6025aa371a89"
     },
     {
-      "id": "011-section-sekciya-stranicy",
-      "component": "section",
-      "label": "Секция страницы",
-      "file": "sections/011-section-sekciya-stranicy.html",
-      "bytes": 1220,
-      "hash": "d1dea67646e7b04f"
+      "id": "011-pricing-kak-formiruyutsya-stoimost-i-srok-remonta",
+      "component": "pricing",
+      "label": "Как формируются стоимость и срок ремонта",
+      "file": "sections/011-pricing-kak-formiruyutsya-stoimost-i-srok-remonta.html",
+      "bytes": 1954,
+      "hash": "934de4fc026f2dd5"
     },
     {
       "id": "012-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/012-raw-html-fragment.html",
-      "bytes": 97,
-      "hash": "b49e10259889fc24"
+      "bytes": 96,
+      "hash": "d9ee90b8588d1f92",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "блок-срочности-психология-потери-таймер-d9ee90b8588d",
+      "templateRef": "src/components/parametric/static/layout-fragment-блок-срочности-психология-потери-таймер-d9ee90b8588d.template.html",
+      "props": {},
+      "sourceFile": "sections/012-raw-html-fragment.html"
     },
     {
       "id": "013-contact-cta-kontaktnyy-cta",
@@ -142,24 +142,24 @@
       "component": "faq",
       "label": "Если хочется, можно быстро посмотреть похожие истории",
       "file": "sections/014-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-.html",
-      "bytes": 2518,
-      "hash": "e19934d705f51686"
+      "bytes": 2478,
+      "hash": "14db29509aa9074e"
     },
     {
       "id": "015-faq-chto-obychno-proishodit-do-dorogogo-remonta-stir",
       "component": "faq",
       "label": "Что обычно происходит до дорогого ремонта стиральной машины",
       "file": "sections/015-faq-chto-obychno-proishodit-do-dorogogo-remonta-stir.html",
-      "bytes": 3145,
-      "hash": "d85f0190e64d4c0b"
+      "bytes": 3105,
+      "hash": "8b1d9e5909efd13f"
     },
     {
       "id": "016-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit",
       "component": "pricing",
       "label": "От чего зависит цена и как не переплатить",
       "file": "sections/016-pricing-ot-chego-zavisit-cena-i-kak-ne-pereplatit.html",
-      "bytes": 4153,
-      "hash": "113e053ec6bf6193"
+      "bytes": 4281,
+      "hash": "c4033086008ef4f5"
     },
     {
       "id": "017-mobile-contact-kak-ne-popast-na-razvod-pri-remonte-s",
@@ -171,27 +171,32 @@
     },
     {
       "id": "018-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/018-raw-html-fragment.html",
-      "bytes": 94,
-      "hash": "466c24b0b0fbd1e2"
+      "bytes": 93,
+      "hash": "e192ec34a9cc0f49",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "блок-реальные-истории-кейсы-из-москвы-e192ec34a9cc",
+      "templateRef": "src/components/parametric/static/layout-fragment-блок-реальные-истории-кейсы-из-москвы-e192ec34a9cc.template.html",
+      "props": {},
+      "sourceFile": "sections/018-raw-html-fragment.html"
     },
     {
-      "id": "019-contact-cta-svezhie-vyezdy-chtoby-srazu-ponimat-scen",
-      "component": "contact-cta",
-      "label": "Свежие выезды, чтобы сразу понимать сценарий ремонта",
-      "file": "sections/019-contact-cta-svezhie-vyezdy-chtoby-srazu-ponimat-scen.html",
-      "bytes": 6630,
-      "hash": "d8affc94e648f4a7"
+      "id": "019-pricing-tipovye-obrascheniya-po-remontu-oborudovaniy",
+      "component": "pricing",
+      "label": "Типовые обращения по ремонту оборудования",
+      "file": "sections/019-pricing-tipovye-obrascheniya-po-remontu-oborudovaniy.html",
+      "bytes": 2672,
+      "hash": "be15b07e44caa7c4"
     },
     {
       "id": "020-faq-chto-obychno-proishodit-so-stiralkoy-do-vyzova-m",
       "component": "faq",
       "label": "Что обычно происходит со стиралкой до вызова мастера",
       "file": "sections/020-faq-chto-obychno-proishodit-so-stiralkoy-do-vyzova-m.html",
-      "bytes": 3173,
-      "hash": "3f0e36210ba346a8"
+      "bytes": 3133,
+      "hash": "0ae5e890a0e366ff"
     },
     {
       "id": "021-pricing-kogda-stiralku-vygodno-remontirovat-a-kogda-",
@@ -202,68 +207,71 @@
       "hash": "7e2520b0684b5581"
     },
     {
-      "id": "022-pricing-skol-ko-obychno-stoit-remont-stiral-noy-mash",
+      "id": "022-pricing-kak-formiruyutsya-stoimost-i-srok-remonta",
       "component": "pricing",
-      "label": "Сколько обычно стоит ремонт стиральной машины",
-      "file": "sections/022-pricing-skol-ko-obychno-stoit-remont-stiral-noy-mash.html",
-      "bytes": 5525,
-      "hash": "e6e381f79d6d8dd9"
+      "label": "Как формируются стоимость и срок ремонта",
+      "bytes": 1954,
+      "hash": "a0ff67c4509ce8ec",
+      "componentRef": "src/components/shared/pricing/pricing-kak-formiruyutsya-stoimost-i-srok-remonta--a0ff67c4509ce8ec.html",
+      "componentScope": "shared",
+      "componentSignature": "a0ff67c4509ce8ec",
+      "sourceFile": "sections/022-pricing-kak-formiruyutsya-stoimost-i-srok-remonta.html"
     },
     {
-      "id": "023-proof-pochemu-nas-sovetuyut-posle-pervogo-remonta",
-      "component": "proof",
+      "id": "023-pricing-pochemu-nas-sovetuyut-posle-pervogo-remonta",
+      "component": "pricing",
       "label": "Почему нас советуют после первого ремонта",
-      "file": "sections/023-proof-pochemu-nas-sovetuyut-posle-pervogo-remonta.html",
-      "bytes": 4178,
-      "hash": "a6c1b825d8b422cd"
+      "file": "sections/023-pricing-pochemu-nas-sovetuyut-posle-pervogo-remonta.html",
+      "bytes": 4280,
+      "hash": "901dd3d03cff06c0"
     },
     {
       "id": "024-proof-chto-govoryat-posle-remonta-stiral-noy-mashiny",
       "component": "proof",
       "label": "Что говорят после ремонта стиральной машины",
       "file": "sections/024-proof-chto-govoryat-posle-remonta-stiral-noy-mashiny.html",
-      "bytes": 4784,
-      "hash": "4ffbe2368c0b0526"
+      "bytes": 4781,
+      "hash": "663be6126ef2e323"
     },
     {
       "id": "025-pricing-kak-prohodit-remont-bez-syurprizov",
       "component": "pricing",
       "label": "Как проходит ремонт без сюрпризов",
       "file": "sections/025-pricing-kak-prohodit-remont-bez-syurprizov.html",
-      "bytes": 3317,
-      "hash": "5b067da5876c03ff"
+      "bytes": 3410,
+      "hash": "b65547432c5458ea"
     },
     {
       "id": "026-proof-chto-vy-poluchaete-posle-remonta",
       "component": "proof",
       "label": "Что вы получаете после ремонта",
       "file": "sections/026-proof-chto-vy-poluchaete-posle-remonta.html",
-      "bytes": 2808,
-      "hash": "aa1c78b76d39f1f6"
+      "bytes": 2800,
+      "hash": "74ecb721c55f3c42"
     },
     {
       "id": "027-proof-chto-luchshe-sdelat-srazu-chtoby-ne-popast-na-",
       "component": "proof",
       "label": "Что лучше сделать сразу, чтобы не попасть на больший ремонт",
       "file": "sections/027-proof-chto-luchshe-sdelat-srazu-chtoby-ne-popast-na-.html",
-      "bytes": 1779,
-      "hash": "2e88ca61095321ac"
+      "bytes": 1778,
+      "hash": "97eafa1d943985eb"
     },
     {
       "id": "028-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera",
       "component": "faq",
       "label": "Что обычно спрашивают перед вызовом мастера",
       "file": "sections/028-faq-chto-obychno-sprashivayut-pered-vyzovom-mastera.html",
-      "bytes": 4736,
-      "hash": "e72103e39baac282"
+      "bytes": 4120,
+      "hash": "9a84d792a2190015"
     },
     {
       "id": "029-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/029-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 2135,
-      "hash": "d766e8e956e3d2b2"
+      "bytes": 2134,
+      "hash": "1e2ee0b46b9d36f8"
     },
     {
       "id": "030-raw-html-fragment",
@@ -278,40 +286,32 @@
       "component": "mobile-contact",
       "label": "Не откладывайте заявку, если стиралка уже встала",
       "file": "sections/031-mobile-contact-ne-otkladyvayte-zayavku-esli-stiralka.html",
-      "bytes": 5088,
-      "hash": "511391a47a892a5b"
+      "bytes": 4974,
+      "hash": "010ef51924a0cdf2"
     },
     {
       "id": "032-lead-form-opishite-problemu-i-poluchite-ponyatnyy-sc",
       "component": "lead-form",
       "label": "Опишите проблему и получите понятный сценарий ремонта",
       "file": "sections/032-lead-form-opishite-problemu-i-poluchite-ponyatnyy-sc.html",
-      "bytes": 8933,
-      "hash": "70ab63035d0bcf86"
+      "bytes": 8811,
+      "hash": "ef1daf89f0503a2c"
     },
     {
       "id": "033-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
       "file": "sections/033-proof-dokazatel-stva-garantii.html",
-      "bytes": 194,
-      "hash": "9a397bd8dd21c2b2"
+      "bytes": 189,
+      "hash": "d3f5537264a267de"
     },
     {
       "id": "034-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
       "component": "pricing",
       "label": "Что клиент понимает ещё до начала работ",
       "file": "sections/034-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
-      "bytes": 13370,
-      "hash": "8eaadbfd5ae89485"
-    },
-    {
-      "id": "035-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/035-proof-dokazatel-stva-garantii.html",
-      "bytes": 42,
-      "hash": "c9cde558065e3f95"
+      "bytes": 11835,
+      "hash": "261f5fca43e94b44"
     },
     {
       "id": "035-proof-dokazatel-stva-garantii",
@@ -326,16 +326,16 @@
       "component": "proof",
       "label": "Доказательства/гарантии",
       "file": "sections/036-proof-dokazatel-stva-garantii.html",
-      "bytes": 193,
-      "hash": "fe3ed52bd318df25"
+      "bytes": 189,
+      "hash": "07f68605479a5cc5"
     },
     {
       "id": "037-related-links-esli-problema-v-drugoy-tehnike",
       "component": "related-links",
       "label": "Если проблема в другой технике",
       "file": "sections/037-related-links-esli-problema-v-drugoy-tehnike.html",
-      "bytes": 3220,
-      "hash": "f49ded5389788696"
+      "bytes": 2790,
+      "hash": "be9c0b676c5ad138"
     },
     {
       "id": "038-related-links-svyazannye-stranicy",
@@ -368,11 +368,16 @@
     },
     {
       "id": "041-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/041-raw-html-fragment.html",
-      "bytes": 56,
-      "hash": "e7c9227c6446e45d"
+      "bytes": 55,
+      "hash": "ae7664dc3522f963",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "мобильная-нижняя-панель-ae7664dc3522",
+      "templateRef": "src/components/parametric/static/layout-fragment-мобильная-нижняя-панель-ae7664dc3522.template.html",
+      "props": {},
+      "sourceFile": "sections/041-raw-html-fragment.html"
     },
     {
       "id": "042-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -383,75 +388,47 @@
       "hash": "31f7d51f1f77d9d5"
     },
     {
-      "id": "043-footer-anchor-footer-mount-point",
-      "component": "footer-anchor",
-      "label": "Footer mount point",
-      "bytes": 36,
-      "hash": "061700e6f455fe34",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "footer-container-mount",
-      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-061700e6f455.template.html",
-      "props": {},
-      "sourceFile": "sections/043-footer-anchor-footer-mount-point.html"
+      "id": "043-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/043-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4291,
+      "hash": "af56e0bc4eab6f1b"
     },
     {
       "id": "044-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
       "file": "sections/044-raw-html-fragment.html",
-      "bytes": 62,
-      "hash": "42b46967f5068755"
+      "bytes": 61,
+      "hash": "644213e6cb194463"
     },
     {
       "id": "045-lead-form-forma-zayavki",
       "component": "lead-form",
       "label": "Форма заявки",
       "file": "sections/045-lead-form-forma-zayavki.html",
-      "bytes": 930,
-      "hash": "ab5adb31c827fe4d"
+      "bytes": 915,
+      "hash": "0a037527092b985e"
     },
     {
-      "id": "046-runtime-partials-podklyuchenie-partials-injector",
-      "component": "runtime-partials",
-      "label": "Подключение partials-injector",
-      "bytes": 51,
-      "hash": "a55dc22a049e1a0e",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "partials-injector-script",
-      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html",
-      "props": {},
-      "sourceFile": "sections/046-runtime-partials-podklyuchenie-partials-injector.html"
+      "id": "046-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/046-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 42,
+      "hash": "2b586b01fca76adb"
     },
     {
       "id": "047-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "bytes": 41,
-      "hash": "b173d293386c47b4",
-      "componentMode": "parametric",
-      "componentScope": "parametric",
-      "variant": "mobile-footer-container",
-      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
-      "props": {},
-      "sourceFile": "sections/047-mobile-contact-mobil-nye-kontaktnye-elementy.html"
-    },
-    {
-      "id": "048-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
+      "file": "sections/047-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86",
-      "componentMode": "parametric",
-      "componentScope": "parametric",
-      "variant": "whatsapp-float-container",
-      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
-      "props": {},
-      "sourceFile": "sections/048-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+      "hash": "e7df22d1cd35cc86"
     },
     {
-      "id": "049-raw-html-fragment",
+      "id": "048-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -461,7 +438,7 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/049-raw-html-fragment.html"
+      "sourceFile": "sections/048-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
@@ -477,7 +454,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 1,
+    "sharedSectionRefs": 2,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

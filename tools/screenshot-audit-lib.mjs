@@ -66,8 +66,10 @@ export function getAuditContractSummary(manifestPath = AUDIT_MANIFEST_PATH) {
     return { manifest: null, metadata, errors };
   }
 
-  if (!Array.isArray(manifest.pages) || manifest.pages.length === 0) {
-    errors.push(`${manifestLabel}: pages must be a non-empty array`);
+  if (!Array.isArray(manifest.pages)) {
+    errors.push(`${manifestLabel}: pages must be an array`);
+  } else if (manifest.pages.length === 0 && manifest.status !== 'planned') {
+    errors.push(`${manifestLabel}: pages must be non-empty unless status=planned`);
   }
 
   if (!Array.isArray(manifest.viewports) || manifest.viewports.length === 0) {

@@ -2,32 +2,23 @@
 
 - Branch: restaurant
 - Role: service
-- Title: Ремонт холодильного оборудования в Москве — MosPochin | от 1 290₽
-- Description: Ремонт промышленных холодильных шкафов, морозильных камер и оборудования шоковой заморозки. Диагностика, смета до работ и выезд по согласованному времени.
-- H1: Ремонт холодильного оборудования в Москве до того, как продукты и смена уйдут в минус
+- Title: Ремонт профессионального холодильного оборудования в Москве | MosPochin
+- Description: Ремонт профессионального холодильного оборудования в Москве: шкафы, столы, камеры, моноблоки, сплит-системы, шокеры и льдогенераторы.
+- H1: Ремонт профессионального холодильного оборудования
 - Canonical: https://mospochin.ru/holodilnoe-oborudovanie.html
 - Builder model: src/pages/holodilnoe-oborudovanie/page.json
-- Sections: 66 (44 local, 2 shared refs, 12 raw)
-- Text words inside referenced sections: 2288
+- Sections: 7 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 976
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| layout-fragment | 15 |
-| raw | 12 |
-| pricing | 11 |
-| proof | 9 |
-| mobile-contact | 3 |
-| related-links | 3 |
-| section | 3 |
-| breadcrumb | 2 |
-| faq | 2 |
-| body-preamble | 1 |
+| mobile-contact | 2 |
+| breadcrumb | 1 |
 | contact-cta | 1 |
+| faq | 1 |
 | footer-anchor | 1 |
-| hero | 1 |
-| lead-form | 1 |
 | runtime-partials | 1 |
 
 
@@ -35,14 +26,13 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем все марки холодильного оборудования | related-links | 18.0 KB | 92 | no | src/pages/holodilnoe-oborudovanie/sections/026-related-links-remontiruem-vse-marki-holodil-nogo-obo.html |
-| Ремонтируем все виды холодильного оборудования | pricing | 14.0 KB | 264 | no | src/pages/holodilnoe-oborudovanie/sections/012-pricing-remontiruem-vse-vidy-holodil-nogo-oborudovan.html |
-| Ремонт холодильного оборудования в Москве до того, как продукты и смена уйдут в минус | hero | 8.8 KB | 103 | no | src/pages/holodilnoe-oborudovanie/sections/006-hero-remont-holodil-nogo-oborudovaniya-v-moskve-do-t.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.8 KB | 180 | no | src/pages/holodilnoe-oborudovanie/sections/048-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
-| Частые вопросы о ремонте холодильного оборудования | faq | 6.6 KB | 228 | no | src/pages/holodilnoe-oborudovanie/sections/042-faq-chastye-voprosy-o-remonte-holodil-nogo-oborudova.html |
-| Оставьте заявку и получите понятный план действий | lead-form | 6.4 KB | 108 | no | src/pages/holodilnoe-oborudovanie/sections/046-lead-form-ostav-te-zayavku-i-poluchite-ponyatnyy-pla.html |
-| Примеры ремонта холодильного оборудования | pricing | 5.4 KB | 131 | no | src/pages/holodilnoe-oborudovanie/sections/024-pricing-primery-remonta-holodil-nogo-oborudovaniya.html |
-| Почему рестораны возвращаются к MosPochin | pricing | 5.4 KB | 91 | no | src/pages/holodilnoe-oborudovanie/sections/028-pricing-pochemu-restorany-vozvraschayutsya-k-mospoch.html |
+| Ремонт профессионального холодильного оборудования | breadcrumb | 49.4 KB | 909 | no | src/pages/holodilnoe-oborudovanie/sections/002-breadcrumb-remont-professional-nogo-holodil-nogo-obo.html |
+| Частые вопросы | faq | 1.9 KB | 67 | no | src/pages/holodilnoe-oborudovanie/sections/003-faq-chastye-voprosy.html |
+| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/holodilnoe-oborudovanie/sections/001-contact-cta-kontaktnyy-cta.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
+| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
+| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/pages/holodilnoe-oborudovanie/sections/007-runtime-partials-podklyuchenie-partials-injector.html |
 
 
 ## Editable source files

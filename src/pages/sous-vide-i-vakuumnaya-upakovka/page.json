@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "sous-vide-i-vakuumnaya-upakovka.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "841fe19261a7fe92642dc27ea97bb6c6749884c3acf461b138b50f429309a8f1",
+    "hash": "2bb2bd812c4c448bf78709ab962743dbdd46f2342b01268ad11154a439ce791a",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -26,15 +26,15 @@
       "label": "Секция 1",
       "file": "sections/001-body-preamble-sekciya-1.html",
       "bytes": 47,
-      "hash": "eaddf123de50c211"
+      "hash": "848c21ac460f3aba"
     },
     {
       "id": "002-lead-form-sous-vide-i-vakuumnaya-upakovka",
       "component": "lead-form",
       "label": "Sous-vide и вакуумная упаковка",
       "file": "sections/002-lead-form-sous-vide-i-vakuumnaya-upakovka.html",
-      "bytes": 12255,
-      "hash": "ba40c609566e8197"
+      "bytes": 12932,
+      "hash": "d121411ced74abe9"
     },
     {
       "id": "002b-faq-chastye-voprosy",
@@ -61,24 +61,34 @@
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 40,
-      "hash": "5984ebe80b6e73f2"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 41,
-      "hash": "8e4830584f7baecb"
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "006-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
-      "bytes": 50,
-      "hash": "55fc50b4acf9af97",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
       "variant": "partials-injector-script",

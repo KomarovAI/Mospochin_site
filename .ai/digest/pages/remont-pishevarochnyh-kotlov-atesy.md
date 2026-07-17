@@ -7,8 +7,8 @@
 - H1: Ремонт пищеварочных котлов Atesy / АТЕСИ
 - Canonical: https://mospochin.ru/remont-pishevarochnyh-kotlov-atesy.html
 - Builder model: src/pages/remont-pishevarochnyh-kotlov-atesy/page.json
-- Sections: 17 (10 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 681
+- Sections: 17 (8 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 690
 
 ## Component mix
 
@@ -31,8 +31,8 @@
 | Куда перейти дальше по Atesy / АТЕСИ | pricing | 7.4 KB | 131 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/007-pricing-kuda-pereyti-dal-she-po-atesy-atesi.html |
 | Отправьте модель, симптом и фото шильдика | lead-form | 6.9 KB | 85 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/011-lead-form-otprav-te-model-simptom-i-foto-shil-dika.html |
 | Atesy: модель, узлы и симптомы | mobile-contact | 5.5 KB | 115 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/005-mobile-contact-brendovaya-stranica-bez-tonkogo-seo.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.1 KB | 166 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
-| Ремонт пищеварочных котлов Atesy / АТЕСИ | mobile-contact | 4.4 KB | 96 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-atesy-a.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.2 KB | 174 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/009-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Ремонт пищеварочных котлов Atesy / АТЕСИ | mobile-contact | 4.4 KB | 97 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/003-mobile-contact-remont-pischevarochnyh-kotlov-atesy-a.html |
 | Частые вопросы по Atesy / АТЕСИ | faq | 2.9 KB | 88 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/012-faq-chastye-voprosy-po-atesy-atesi.html |
 | Секция 1 | body-preamble | 78 B | 0 | no | src/pages/remont-pishevarochnyh-kotlov-atesy/sections/001-body-preamble-sekciya-1.html |
 | HTML-фрагмент | layout-fragment | 51 B | 0 | no | src/components/parametric/static/layout-fragment-cooking-kettle-brand-repair-bridge-start-8ab502f37162.template.html |

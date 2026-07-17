@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "tools/generate-ai-current-state.mjs",
+  "activeControlProfile": "ai-control-lite-r5",
+  "project": "mospochin-site",
+  "counts": {
+    "rootHtml": 296,
+    "indexable": 278,
+    "noindex": 18,
+    "sitemapUrls": 278,
+    "uniqueSitemapUrls": 278,
+    "builderPages": 296,
+    "sourcePageModels": 296
+  },
+  "activeBacklog": {
+    "sousVideP2": 12,
+    "source": "data/sous-vide-p2-backlog.json"
+  },
+  "entrypoints": {
+    "instructions": "AGENTS.md",
+    "operatingGuide": "docs/AI_CONTROL_LITE.md",
+    "taskBrief": "npm run ai:brief",
+    "iterationCheck": "npm run ai:verify -- --changed",
+    "releaseCheck": "npm run ai:release"
+  },
+  "knownLimitations": [
+    "Browser-only smoke requires an available Chromium runtime and may be skipped in restricted environments."
+  ]
+}

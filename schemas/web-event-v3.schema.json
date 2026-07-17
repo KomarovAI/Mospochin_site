@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/web-event-v3.schema.json",
+  "title": "MosPochin web event v3",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "tracking_version", "event", "event_id", "client_event_ts", "event_class", "is_decision_event", "page_path", "session_id", "tab_id"],
+  "properties": {
+    "schema_version": {"const": "mospochin.web.v3"},
+    "tracking_version": {"const": "2026-07-15"},
+    "event": {"enum": ["page_view", "cta_view", "cta_click", "phone_click", "whatsapp_click", "telegram_click", "email_click", "form_open", "form_start", "form_submit_attempt", "form_submit_success", "form_submit_error", "form_validation_error", "form_submit_blocked"]},
+    "event_id": {"type": "string", "minLength": 8, "maxLength": 160},
+    "client_event_ts": {"type": "string", "format": "date-time"},
+    "event_class": {"enum": ["visibility", "engagement", "micro_conversion", "conversion_step", "conversion", "error"]},
+    "is_decision_event": {"type": "boolean"},
+    "page_path": {"type": "string", "minLength": 1, "maxLength": 1024},
+    "visitor_id": {"type": ["string", "null"], "maxLength": 128},
+    "session_id": {"type": "string", "minLength": 8, "maxLength": 128},
+    "tab_id": {"type": "string", "minLength": 8, "maxLength": 128},
+    "metrika_client_id": {"type": ["string", "null"], "maxLength": 128},
+    "landing_path": {"type": ["string", "null"], "maxLength": 1024},
+    "first_touch_yclid": {"type": ["string", "null"], "maxLength": 256},
+    "last_touch_yclid": {"type": ["string", "null"], "maxLength": 256},
+    "yclid_for_offline": {"type": ["string", "null"], "maxLength": 256},
+    "yclid_source": {"enum": ["first_touch", "last_touch", null]},
+    "gclid": {"type": ["string", "null"], "maxLength": 256}
+  }
+}

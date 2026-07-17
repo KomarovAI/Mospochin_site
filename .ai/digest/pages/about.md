@@ -2,44 +2,42 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: О компании MosPochin — с 2010 года ремонта техники в Москве
-- Description: MosPochin — ремонт ресторанного оборудования в Москве с 2010 года. Диагностика причины, согласование стоимости до работ, договор и гарантия по условиям ремонта.
-- H1: О компании MosPochin
+- Title: О сервисе MosPochin — ремонт ресторанного оборудования
+- Description: О сервисе MosPochin: специализация, порядок обработки технической заявки, проверяемые контакты и реквизиты без неподтверждённых обещаний.
+- H1: Сервис профессионального оборудования ресторанов
 - Canonical: https://mospochin.ru/about.html
 - Builder model: src/pages/about/page.json
-- Sections: 24 (18 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 778
+- Sections: 15 (12 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 543
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| proof | 7 |
-| mobile-contact | 4 |
-| layout-fragment | 2 |
+| mobile-contact | 5 |
 | pricing | 2 |
-| section | 2 |
 | body-preamble | 1 |
-| breadcrumb | 1 |
+| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
+| layout-fragment | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
+| navigation | 1 |
+| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| О компании MosPochin | hero | 8.4 KB | 97 | no | src/pages/about/sections/004-hero-o-kompanii-mospochin.html |
-| Почему нам доверяют | pricing | 5.0 KB | 110 | no | src/pages/about/sections/007-pricing-pochemu-nam-doveryayut.html |
-| Как формировалась команда специалистов | proof | 4.9 KB | 102 | no | src/pages/about/sections/011-proof-kak-formirovalas-komanda-specialistov.html |
-| Ресторанное оборудование | section | 4.7 KB | 20 | no | src/pages/about/sections/015-section-restorannoe-oborudovanie.html |
-| Наши мастера | proof | 4.6 KB | 71 | no | src/pages/about/sections/010-proof-nashi-mastera.html |
-| Оригинальные запчасти всегда в наличии | proof | 3.7 KB | 64 | no | src/pages/about/sections/008-proof-original-nye-zapchasti-vsegda-v-nalichii.html |
-| Наши клиенты | proof | 3.3 KB | 23 | no | src/pages/about/sections/013-proof-nashi-klienty.html |
-| Нужен ремонт? Оставьте заявку на ремонт | lead-form | 3.1 KB | 25 | no | src/pages/about/sections/016-lead-form-nuzhen-remont-ostav-te-zayavku-na-remont.html |
+| Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/about/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/about/sections/011-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Обсудить задачу по оборудованию | lead-form | 2.7 KB | 34 | no | src/pages/about/sections/009-lead-form-obsudit-zadachu-po-oborudovaniyu.html |
+| Сервис профессионального оборудования ресторанов | hero | 2.4 KB | 35 | no | src/pages/about/sections/004-hero-servis-professional-nogo-oborudovaniya-restoran.html |
+| Что можно подтвердить на сайте | pricing | 2.3 KB | 54 | no | src/pages/about/sections/007-pricing-chto-mozhno-podtverdit-na-sayte.html |
+| Частые вопросы | faq | 2.2 KB | 67 | no | src/pages/about/sections/010-faq-chastye-voprosy.html |
+| Профессиональная кухня и инженерные системы | section | 2.2 KB | 62 | no | src/pages/about/sections/005-section-professional-naya-kuhnya-i-inzhenernye-siste.html |
+| Сначала данные, затем решение | pricing | 1.9 KB | 69 | no | src/pages/about/sections/006-pricing-snachala-dannye-zatem-reshenie.html |
 
 
 ## Editable source files

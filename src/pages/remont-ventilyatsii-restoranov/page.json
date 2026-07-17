@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "remont-ventilyatsii-restoranov.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "754bb6e022b1093ce2475217f06ee74f7f6c6b3a080b31a1b6e39bb485962c98",
+    "hash": "af7b65d5dc6e06109ed1e619adda6562471b61e271a289b7cdc8fdfc89d8b207",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,33 +21,28 @@
   },
   "sections": [
     {
-      "id": "001-body-preamble-sekciya-1",
-      "component": "body-preamble",
-      "label": "Секция 1",
-      "file": "sections/001-body-preamble-sekciya-1.html",
-      "bytes": 48,
-      "hash": "6c45e024a4e3965e"
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9392,
+      "hash": "f26e04c26f852fd8"
     },
     {
       "id": "002-breadcrumb-remont-ventilyacii-restoranov-i-kafe",
       "component": "breadcrumb",
       "label": "Ремонт вентиляции ресторанов и кафе",
       "file": "sections/002-breadcrumb-remont-ventilyacii-restoranov-i-kafe.html",
-      "bytes": 60961,
-      "hash": "1f3f41a2b8fc611a"
+      "bytes": 44480,
+      "hash": "a22725385b3d271c"
     },
     {
-      "id": "003-footer-anchor-footer-mount-point",
-      "component": "footer-anchor",
-      "label": "Footer mount point",
-      "bytes": 34,
-      "hash": "06f3fb249f3476eb",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "footer-container-mount",
-      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-06f3fb249f34.template.html",
-      "props": {},
-      "sourceFile": "sections/003-footer-anchor-footer-mount-point.html"
+      "id": "003-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4965,
+      "hash": "1b279c96911d1178"
     },
     {
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -97,28 +92,20 @@
       "hash": "f771578a5d50836c"
     },
     {
-      "id": "008-runtime-partials-podklyuchenie-partials-injector",
-      "component": "runtime-partials",
-      "label": "Подключение partials-injector",
-      "file": "sections/008-runtime-partials-podklyuchenie-partials-injector.html",
-      "bytes": 54,
-      "hash": "1714ff6d614671d3"
+      "id": "008-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 42,
+      "hash": "47228a35947e03f3",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-47228a35947e",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html",
+      "props": {},
+      "sourceFile": "sections/008-raw-html-fragment.html"
     },
     {
       "id": "009-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 41,
-      "hash": "5b57bace79b19443",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "technical-fragment-5b57bace79b1",
-      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-5b57bace79b1.template.html",
-      "props": {},
-      "sourceFile": "sections/009-raw-html-fragment.html"
-    },
-    {
-      "id": "010-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -128,7 +115,7 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/010-raw-html-fragment.html"
+      "sourceFile": "sections/009-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [

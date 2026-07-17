@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "release": "site-paid-tracking-v3-20260716",
+  "checkedAt": "2026-07-17T05:09:34.253Z",
+  "scripts": {
+    "analytics.js": {
+      "rawBytes": 26721,
+      "gzipBytes": 6543,
+      "baselineGzipBytes": 5943,
+      "deltaGzipBytes": 600
+    },
+    "telegram-form.js": {
+      "rawBytes": 24146,
+      "gzipBytes": 6755,
+      "baselineGzipBytes": 5742,
+      "deltaGzipBytes": 1013
+    }
+  },
+  "paidPages": [
+    {
+      "page": "oshibki-pri-ekspluatatsii-vytyazhki-restorana.html",
+      "analyticsCount": 1,
+      "formCount": 1,
+      "defer": true
+    },
+    {
+      "page": "diagnostika-ventilyatsii-restorana.html",
+      "analyticsCount": 1,
+      "formCount": 1,
+      "defer": true
+    },
+    {
+      "page": "parokonvektomat-kod-oshibki.html",
+      "analyticsCount": 1,
+      "formCount": 1,
+      "defer": true
+    },
+    {
+      "page": "parokonvektomat-ne-greet.html",
+      "analyticsCount": 1,
+      "formCount": 1,
+      "defer": true
+    },
+    {
+      "page": "parokonvektomat-net-para.html",
+      "analyticsCount": 1,
+      "formCount": 1,
+      "defer": true
+    }
+  ],
+  "combined": {
+    "baselineGzipBytes": 11685,
+    "currentGzipBytes": 13298,
+    "deltaGzipBytes": 1613,
+    "budgetGzipBytes": 20480
+  }
+}

@@ -1,7 +1,21 @@
-# Assets Rules
+<!-- ai-instruction-file: true -->
+# Asset Instructions
 
-- Edit source assets first: `assets/css/styles.css`, images, icons, fonts.
-- Treat `assets/css/styles-built.css` as generated unless the task explicitly targets the built file.
-- Keep asset names, paths, and paired original/optimized variants consistent.
-- Do not rename or move shared assets casually; pages may reference them directly.
-- After relevant changes, run `npm run validate:site` and any matching repo-level regeneration command.
+## Scope
+
+These rules apply to images, icons, fonts and asset styles under `assets/`.
+
+## Edit
+
+- Preserve stable asset paths unless the task explicitly includes a migration.
+- Keep master sources and generated responsive derivatives distinct.
+- Use existing image generators for WebP and responsive variants.
+- Do not manually create duplicate optimized copies with ad hoc names.
+
+## Verify
+
+Run `npm run check:images`, `npm run check:assets` and `npm run ai:verify -- --changed`.
+
+## Do not add
+
+Do not place screenshots, comparison exports, ZIP files, temporary conversions, notes or additional instruction files under `assets/`.

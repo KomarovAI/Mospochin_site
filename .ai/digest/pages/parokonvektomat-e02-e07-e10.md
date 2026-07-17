@@ -7,42 +7,40 @@
 - H1: Ошибка E02 / E07 / E10
 - Canonical: https://mospochin.ru/parokonvektomat-e02-e07-e10.html
 - Builder model: src/pages/parokonvektomat-e02-e07-e10/page.json
-- Sections: 68 (20 local, 16 shared refs, 2 raw)
-- Text words inside referenced sections: 2506
+- Sections: 67 (23 local, 16 shared refs, 2 raw)
+- Text words inside referenced sections: 2535
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| layout-fragment | 28 |
-| pricing | 11 |
-| proof | 8 |
+| layout-fragment | 27 |
+| pricing | 10 |
+| proof | 7 |
+| mobile-contact | 5 |
 | related-links | 4 |
-| mobile-contact | 3 |
+| section | 3 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
 | body-preamble | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
-| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Что может стоять за E02 / E07 / E10 | related-links | 11.9 KB | 372 | no | src/pages/parokonvektomat-e02-e07-e10/sections/009-related-links-chto-mozhet-stoyat-za-e02-e07-e10.html |
-| Ошибка E02 / E07 / E10 | hero | 9.2 KB | 105 | no | src/pages/parokonvektomat-e02-e07-e10/sections/006-hero-oshibka-e02-e07-e10.html |
-| Частые поломки пароконвектоматов | pricing | 8.1 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--e1e987fb23638159.html |
-| Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 247 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--3ca79656ae34529a.html |
+| Что может стоять за E02 / E07 / E10 | related-links | 11.9 KB | 367 | no | src/pages/parokonvektomat-e02-e07-e10/sections/009-related-links-chto-mozhet-stoyat-za-e02-e07-e10.html |
+| Ошибка E02 / E07 / E10 | hero | 9.1 KB | 105 | no | src/pages/parokonvektomat-e02-e07-e10/sections/006-hero-oshibka-e02-e07-e10.html |
+| Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/parokonvektomat-e02-e07-e10/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Частые поломки пароконвектоматов | section | 8.5 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--16d8721c09cebb16.html |
+| Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 240 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--9302e2410efc79af.html |
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.6 KB | 103 | no | src/pages/parokonvektomat-e02-e07-e10/sections/051-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
-| Последние ремонты пароконвектоматов | pricing | 6.2 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--7f0901fe41d1f650.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.0 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--179e76b534feb278.html |
-| Ремонтируем все типы пароконвектоматов | pricing | 5.8 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--08947d2913b4455f.html |
+| Ремонтируем все типы пароконвектоматов | section | 5.9 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--5ce5c0ec71cc04c7.html |
 
 
 ## Editable source files

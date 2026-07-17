@@ -1,0 +1,1154 @@
+{
+  "schemaVersion": 1,
+  "cluster": "dishwasher",
+  "checkedAt": "2026-07-14",
+  "symptoms": [
+    {
+      "symptomId": "dishwasher.no_power",
+      "slug": "promyshlennaya-posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+      "title": "Промышленная посудомоечная машина не включается",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Промышленная посудомоечная машина не включается",
+        "Сбой повторяется на этапе: no power"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "external_power",
+        "main_switch",
+        "power_supply",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "Внешнее питание",
+        "Главный выключатель",
+        "Блок питания",
+        "Плата управления"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_cycle_start",
+        "dishwasher.breaker_trip"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.pm00483.manual",
+        "hobart.undercounter.fx"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.no_cycle_start",
+      "slug": "posudomoechnaya-mashina-ne-zapuskaet-cikl.html",
+      "title": "Посудомоечная машина не запускает цикл",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood"
+      ],
+      "userSymptoms": [
+        "Посудомоечная машина не запускает цикл",
+        "Сбой повторяется на этапе: no cycle start"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "door_interlock",
+        "hood_interlock",
+        "start_button",
+        "water_level",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "Блокировка двери",
+        "Блокировка купола",
+        "Кнопка запуска",
+        "Контроль уровня",
+        "Плата управления"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_power",
+        "dishwasher.hood_not_closing"
+      ],
+      "sourceEvidenceIds": [
+        "winterhalter.passthrough.pt",
+        "abat.mpk700k01.product",
+        "electrolux.euca060.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.no_fill",
+      "slug": "posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+      "title": "Посудомоечная машина не набирает воду",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor"
+      ],
+      "userSymptoms": [
+        "Посудомоечная машина не набирает воду",
+        "Сбой повторяется на этапе: no fill"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "water_supply",
+        "inlet_filter",
+        "inlet_valve",
+        "level_sensor",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "Водоснабжение",
+        "Входной фильтр",
+        "Впускной клапан",
+        "Датчик уровня",
+        "Плата управления"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.continuous_fill",
+        "dishwasher.no_cycle_start"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.euca060.manual",
+        "fagor.dishwashing.catalogue"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.continuous_fill",
+      "slug": "posudomoechnaya-mashina-postoyanno-nabiraet-vodu.html",
+      "title": "Посудомоечная машина постоянно набирает воду",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood"
+      ],
+      "userSymptoms": [
+        "Посудомоечная машина постоянно набирает воду",
+        "Сбой повторяется на этапе: continuous fill"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "inlet_valve",
+        "level_sensor",
+        "pressure_tube",
+        "overflow",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "Впускной клапан",
+        "Датчик уровня",
+        "Трубка контроля уровня",
+        "Перелив",
+        "Плата управления"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_fill",
+        "dishwasher.leak"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.euca060.manual",
+        "fagor.dishwashing.catalogue"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.no_drain",
+      "slug": "posudomoechnaya-mashina-ne-slivaet-vodu.html",
+      "title": "Посудомоечная машина не сливает воду",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor"
+      ],
+      "userSymptoms": [
+        "Посудомоечная машина не сливает воду",
+        "Сбой повторяется на этапе: no drain"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "drain_filter",
+        "overflow_pipe",
+        "drain_hose",
+        "drain_pump",
+        "level_sensor"
+      ],
+      "probableNodeLabels": [
+        "Сливной фильтр",
+        "Переливная трубка",
+        "Сливной шланг",
+        "Сливной насос",
+        "Датчик уровня"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.continuous_fill",
+        "dishwasher.cycle_stops"
+      ],
+      "sourceEvidenceIds": [
+        "winterhalter.passthrough.pt",
+        "electrolux.pm00483.manual",
+        "fagor.dishwashing.catalogue"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.leak",
+      "slug": "promyshlennaya-posudomoechnaya-mashina-techet.html",
+      "title": "Промышленная посудомоечная машина течёт",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor",
+        "potwasher"
+      ],
+      "userSymptoms": [
+        "Промышленная посудомоечная машина течёт",
+        "Сбой повторяется на этапе: leak"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Вода попадает к кабелям, клеммам или платам",
+        "Утечка не прекращается после штатного отключения"
+      ],
+      "probableNodes": [
+        "door_seal",
+        "hood_seal",
+        "hoses",
+        "pump_seal",
+        "tank",
+        "overflow"
+      ],
+      "probableNodeLabels": [
+        "Уплотнение двери",
+        "Уплотнение купола",
+        "Шланги",
+        "Уплотнение насоса",
+        "Бак",
+        "Перелив"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.continuous_fill",
+        "dishwasher.breaker_trip"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.euca060.manual",
+        "dihr.range"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.no_heat",
+      "slug": "posudomoechnaya-mashina-ne-greet-vodu.html",
+      "title": "Посудомоечная машина не греет воду",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Посудомоечная машина не греет воду",
+        "Сбой повторяется на этапе: no heat"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "tank_heater",
+        "boiler_heater",
+        "temperature_sensor",
+        "contactor",
+        "safety_thermostat",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "ТЭН бака",
+        "ТЭН бойлера",
+        "Датчик температуры",
+        "Контактор",
+        "Защитный термостат",
+        "Плата управления"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.poor_wash",
+        "dishwasher.no_dry"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.pm00483.manual",
+        "hobart.undercounter.fx",
+        "fagor.dishwashing.catalogue"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.breaker_trip",
+      "slug": "posudomoechnaya-mashina-vybivaet-avtomat.html",
+      "title": "Посудомоечная машина выбивает автомат",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor",
+        "potwasher"
+      ],
+      "userSymptoms": [
+        "Посудомоечная машина выбивает автомат",
+        "Сбой повторяется на этапе: breaker trip"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Автомат срабатывает повторно",
+        "Есть запах гари, дым или нагрев кабеля"
+      ],
+      "probableNodes": [
+        "heater_insulation",
+        "pump_motor",
+        "wiring",
+        "contactor",
+        "water_ingress"
+      ],
+      "probableNodeLabels": [
+        "Изоляция ТЭНа",
+        "Двигатель насоса",
+        "Проводка",
+        "Контактор",
+        "Попадание воды"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_power",
+        "dishwasher.leak"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.euca060.manual",
+        "hobart.undercounter.fx"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.cycle_stops",
+      "slug": "posudomoechnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "title": "Посудомоечная машина останавливается в цикле",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor"
+      ],
+      "userSymptoms": [
+        "Посудомоечная машина останавливается в цикле",
+        "Сбой повторяется на этапе: cycle stops"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "door_interlock",
+        "water_level",
+        "temperature_control",
+        "pump_protection",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "Блокировка двери или купола",
+        "Контроль уровня",
+        "Контроль температуры",
+        "Защита насоса",
+        "Плата управления"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_cycle_start",
+        "dishwasher.no_heat"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.pm00483.manual",
+        "winterhalter.rack.ctr"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.error_codes",
+      "slug": "kody-oshibok-promyshlennyh-posudomoechnyh-mashin.html",
+      "title": "Коды ошибок промышленных посудомоечных машин",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Коды ошибок промышленных посудомоечных машин",
+        "Сбой повторяется на этапе: error codes"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "display",
+        "sensors",
+        "heating",
+        "communication",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "Дисплей",
+        "Датчики",
+        "Нагрев",
+        "Связь модулей",
+        "Плата управления"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_heat",
+        "dishwasher.cycle_stops"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.pm00483.manual",
+        "winterhalter.download.centre",
+        "abat.technical.docs",
+        "meiko.dv802.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.poor_wash",
+      "slug": "promyshlennaya-posudomoechnaya-mashina-ploho-moet.html",
+      "title": "Промышленная посудомоечная машина плохо моет",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor",
+        "potwasher"
+      ],
+      "userSymptoms": [
+        "Промышленная посудомоечная машина плохо моет",
+        "Сбой повторяется на этапе: poor wash"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "filters",
+        "wash_arms",
+        "wash_pump",
+        "water_temperature",
+        "detergent_dosing",
+        "water_quality"
+      ],
+      "probableNodeLabels": [
+        "Фильтры",
+        "Моечные рукава",
+        "Моечный насос",
+        "Температура воды",
+        "Дозатор моющего средства",
+        "Качество воды"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.low_pressure",
+        "dishwasher.foam",
+        "dishwasher.streaks"
+      ],
+      "sourceEvidenceIds": [
+        "meiko.cleaning.maintenance",
+        "hobart.flow.dosing",
+        "hobart.water.hydroline"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.low_pressure",
+      "slug": "nizkoe-davlenie-v-posudomoechnoy-mashine.html",
+      "title": "Низкое давление в посудомоечной машине",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Низкое давление в посудомоечной машине",
+        "Сбой повторяется на этапе: low pressure"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "filters",
+        "wash_pump",
+        "impeller",
+        "wash_arms",
+        "hydraulic_leak"
+      ],
+      "probableNodeLabels": [
+        "Фильтры",
+        "Моечный насос",
+        "Рабочее колесо",
+        "Моечные рукава",
+        "Утечка в гидравлике"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.poor_wash",
+        "dishwasher.arms_not_rotating"
+      ],
+      "sourceEvidenceIds": [
+        "meiko.miclean.manual",
+        "electrolux.rack.59566qm02.manual",
+        "hobart.performance.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.arms_not_rotating",
+      "slug": "koromysla-posudomoechnoy-mashiny-ne-vrashchayutsya.html",
+      "title": "Коромысла посудомоечной машины не вращаются",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood"
+      ],
+      "userSymptoms": [
+        "Коромысла посудомоечной машины не вращаются",
+        "Сбой повторяется на этапе: arms not rotating"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "wash_arm_jets",
+        "wash_arm_bearing",
+        "filters",
+        "wash_pump",
+        "foreign_object"
+      ],
+      "probableNodeLabels": [
+        "Форсунки рукава",
+        "Опора рукава",
+        "Фильтры",
+        "Моечный насос",
+        "Посторонний предмет"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.low_pressure",
+        "dishwasher.poor_wash"
+      ],
+      "sourceEvidenceIds": [
+        "meiko.miclean.manual",
+        "hobart.performance.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.no_dry",
+      "slug": "posudomoechnaya-mashina-ne-sushit-posudu.html",
+      "title": "Посудомоечная машина не сушит посуду",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Посудомоечная машина не сушит посуду",
+        "Сбой повторяется на этапе: no dry"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "rinse_temperature",
+        "rinse_aid_dosing",
+        "water_quality",
+        "drying_module",
+        "loading"
+      ],
+      "probableNodeLabels": [
+        "Температура ополаскивания",
+        "Дозатор ополаскивателя",
+        "Качество воды",
+        "Модуль сушки",
+        "Загрузка"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.streaks",
+        "dishwasher.no_heat"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.rack.59566qm02.manual",
+        "winterhalter.glasswashing.whitepaper",
+        "meiko.fv1302.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.streaks",
+      "slug": "pyatna-i-razvody-posle-posudomoechnoy-mashiny.html",
+      "title": "Пятна и разводы после посудомоечной машины",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Пятна и разводы после посудомоечной машины",
+        "Сбой повторяется на этапе: streaks"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "water_hardness",
+        "conductivity",
+        "rinse_aid_dosing",
+        "rinse_temperature",
+        "loading"
+      ],
+      "probableNodeLabels": [
+        "Жёсткость воды",
+        "Электропроводность воды",
+        "Дозатор ополаскивателя",
+        "Температура ополаскивания",
+        "Загрузка"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_rinse_aid",
+        "dishwasher.poor_wash"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.rack.59566qm02.manual",
+        "winterhalter.glasswashing.whitepaper",
+        "meiko.fv1302.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.foam",
+      "slug": "pena-v-bake-posudomoechnoy-mashiny.html",
+      "title": "Пена в баке посудомоечной машины",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor"
+      ],
+      "userSymptoms": [
+        "Пена в баке посудомоечной машины",
+        "Сбой повторяется на этапе: foam"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "wrong_chemical",
+        "detergent_dosing",
+        "manual_detergent_residue",
+        "water_change",
+        "rinse_aid_dosing"
+      ],
+      "probableNodeLabels": [
+        "Неподходящая химия",
+        "Дозатор моющего средства",
+        "Остатки ручного средства",
+        "Смена воды",
+        "Дозатор ополаскивателя"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_detergent",
+        "dishwasher.poor_wash"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.rack.59566qm02.manual",
+        "winterhalter.glasswashing.whitepaper",
+        "meiko.miclean.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.no_detergent",
+      "slug": "ne-podaetsya-moyushchee-sredstvo.html",
+      "title": "Не подаётся моющее средство",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Не подаётся моющее средство",
+        "Сбой повторяется на этапе: no detergent"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "chemical_container",
+        "suction_tube",
+        "peristaltic_pump",
+        "injector",
+        "dosing_control"
+      ],
+      "probableNodeLabels": [
+        "Канистра",
+        "Заборная трубка",
+        "Перистальтический насос",
+        "Инжектор",
+        "Управление дозированием"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.foam",
+        "dishwasher.poor_wash"
+      ],
+      "sourceEvidenceIds": [
+        "meiko.miclean.manual",
+        "meiko.fv1302.manual",
+        "winterhalter.dosing.technology"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.no_rinse_aid",
+      "slug": "ne-podaetsya-opolaskivatel.html",
+      "title": "Не подаётся ополаскиватель",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "undercounter",
+        "front_loading",
+        "hood",
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Не подаётся ополаскиватель",
+        "Сбой повторяется на этапе: no rinse aid"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "rinse_aid_container",
+        "suction_tube",
+        "dosing_pump",
+        "injector",
+        "dosing_setting"
+      ],
+      "probableNodeLabels": [
+        "Канистра ополаскивателя",
+        "Заборная трубка",
+        "Дозирующий насос",
+        "Инжектор",
+        "Настройка дозирования"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.streaks",
+        "dishwasher.no_dry"
+      ],
+      "sourceEvidenceIds": [
+        "meiko.miclean.manual",
+        "meiko.fv1302.manual",
+        "winterhalter.dosing.technology"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.conveyor_stops",
+      "slug": "konveyer-posudomoechnoy-mashiny-ne-dvizhetsya.html",
+      "title": "Конвейер посудомоечной машины не движется",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "rack_conveyor",
+        "flight_conveyor"
+      ],
+      "userSymptoms": [
+        "Конвейер посудомоечной машины не движется",
+        "Сбой повторяется на этапе: conveyor stops"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "conveyor_motor",
+        "gearbox",
+        "drive_chain",
+        "rack_sensor",
+        "safety_interlock",
+        "control_board"
+      ],
+      "probableNodeLabels": [
+        "Двигатель конвейера",
+        "Редуктор",
+        "Приводная цепь",
+        "Датчик кассеты",
+        "Защитная блокировка",
+        "Плата управления"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.cycle_stops",
+        "dishwasher.poor_wash"
+      ],
+      "sourceEvidenceIds": [
+        "electrolux.rack.59566qm02.manual",
+        "winterhalter.rack.ctr",
+        "hobart.rack.cp_cn"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    },
+    {
+      "symptomId": "dishwasher.hood_not_closing",
+      "slug": "kupol-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+      "title": "Купол посудомоечной машины не закрывается",
+      "status": "published",
+      "publicationState": "published",
+      "equipmentFamilies": [
+        "hood"
+      ],
+      "userSymptoms": [
+        "Купол посудомоечной машины не закрывается",
+        "Сбой повторяется на этапе: hood not closing"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель и серийный номер по шильдику",
+        "Записать код или этап остановки цикла",
+        "Проверить доступный внешний кран, автомат и видимые фильтры без разборки"
+      ],
+      "stopUseConditions": [
+        "Есть вода рядом с электрическими компонентами",
+        "Повторно срабатывает автомат или появляется запах гари"
+      ],
+      "probableNodes": [
+        "hood_mechanism",
+        "springs",
+        "guides",
+        "hood_sensor",
+        "automatic_hood_drive"
+      ],
+      "probableNodeLabels": [
+        "Механизм купола",
+        "Пружины",
+        "Направляющие",
+        "Датчик купола",
+        "Автоматический привод купола"
+      ],
+      "technicianChecks": [
+        "Проверить питание и сигналы узлов по схеме конкретной модели",
+        "Проверить гидравлический тракт, датчики и исполнительные механизмы"
+      ],
+      "relatedSymptoms": [
+        "dishwasher.no_cycle_start",
+        "dishwasher.leak"
+      ],
+      "sourceEvidenceIds": [
+        "meiko.dv802.manual",
+        "winterhalter.passthrough.pt",
+        "abat.mpk700k01.product"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не применять коды ошибок без бренда, серии и модели"
+      ]
+    }
+  ]
+}

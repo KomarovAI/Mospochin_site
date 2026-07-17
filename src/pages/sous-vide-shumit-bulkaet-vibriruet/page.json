@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "sous-vide-shumit-bulkaet-vibriruet.html",
+  "slug": "sous-vide-shumit-bulkaet-vibriruet",
+  "route": "/sous-vide-shumit-bulkaet-vibriruet.html",
+  "branch": "restaurant",
+  "role": "symptom-service",
+  "title": "Су-вид шумит, булькает или вибрирует — диагностика | MosPochin",
+  "h1": "Су-вид шумит, булькает или вибрирует",
+  "source": {
+    "extractedFrom": "sous-vide-shumit-bulkaet-vibriruet.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "6e55459b0d737877dc50b7c0d418ad381ba791b57a2b2a1e7f6aac8baeaf76bb",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble",
+      "component": "body-preamble",
+      "label": "Преамбула",
+      "file": "sections/001-body-preamble.html",
+      "bytes": 60,
+      "hash": "3b5244e9cdb0a353"
+    },
+    {
+      "id": "010-hero",
+      "component": "hero",
+      "label": "Первый экран",
+      "file": "sections/010-hero.html",
+      "bytes": 1853,
+      "hash": "4ea6524a88e8b4c4"
+    },
+    {
+      "id": "020-stop-use",
+      "component": "stop-use",
+      "label": "Условия остановки",
+      "file": "sections/020-stop-use.html",
+      "bytes": 1114,
+      "hash": "6e82b7f9ce1bcc7b"
+    },
+    {
+      "id": "030-safe-self-check",
+      "component": "safe-self-check",
+      "label": "Безопасная проверка",
+      "file": "sections/030-safe-self-check.html",
+      "bytes": 1997,
+      "hash": "27b6c5381152707c"
+    },
+    {
+      "id": "040-decision-tree",
+      "component": "decision-tree",
+      "label": "Дерево решений",
+      "file": "sections/040-decision-tree.html",
+      "bytes": 1608,
+      "hash": "2ee78d200ddbbd08"
+    },
+    {
+      "id": "050-cause-matrix",
+      "component": "cause-matrix",
+      "label": "Матрица причин",
+      "file": "sections/050-cause-matrix.html",
+      "bytes": 3338,
+      "hash": "65f7718746e9a903"
+    },
+    {
+      "id": "060-service-diagnostics",
+      "component": "service-diagnostics",
+      "label": "Сервисная диагностика",
+      "file": "sections/060-service-diagnostics.html",
+      "bytes": 1862,
+      "hash": "f9d32dc24b51956c"
+    },
+    {
+      "id": "070-repair-scope",
+      "component": "repair-scope",
+      "label": "Ремонтируемые узлы",
+      "file": "sections/070-repair-scope.html",
+      "bytes": 2851,
+      "hash": "3defd74fcddbd455"
+    },
+    {
+      "id": "080-lead-form",
+      "component": "lead-form",
+      "label": "Форма заявки",
+      "file": "sections/080-lead-form.html",
+      "bytes": 3484,
+      "hash": "2130c76951c9528c"
+    },
+    {
+      "id": "090-faq",
+      "component": "faq",
+      "label": "FAQ — частые вопросы",
+      "file": "sections/090-faq.html",
+      "bytes": 1967,
+      "hash": "ce05e214805210e9"
+    },
+    {
+      "id": "100-related-symptoms",
+      "component": "related-symptoms",
+      "label": "Связанные симптомы",
+      "file": "sections/100-related-symptoms.html",
+      "bytes": 4236,
+      "hash": "22e96ddefc9d60a1"
+    },
+    {
+      "id": "110-sources-note",
+      "component": "sources-note",
+      "label": "Источники",
+      "file": "sections/110-sources-note.html",
+      "bytes": 1706,
+      "hash": "976a50ece40708b8"
+    },
+    {
+      "id": "120-footer-anchor",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 33,
+      "hash": "e290e2b6541c5f25",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html",
+      "props": {},
+      "sourceFile": "sections/120-footer-anchor.html"
+    },
+    {
+      "id": "130-mobile-contact",
+      "component": "mobile-contact",
+      "label": "Мобильные контакты",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/130-mobile-contact.html"
+    },
+    {
+      "id": "131-mobile-contact",
+      "component": "mobile-contact",
+      "label": "Мобильная навигация",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/131-mobile-contact.html"
+    },
+    {
+      "id": "140-runtime-partials",
+      "component": "runtime-partials",
+      "label": "Partials injector",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html",
+      "props": {},
+      "sourceFile": "sections/140-runtime-partials.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run check:symptom-service-pages",
+    "npm run page:check -- --page sous-vide-shumit-bulkaet-vibriruet.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Edit taxonomy/evidence before technical claims.",
+    "Root HTML is generated from this model."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

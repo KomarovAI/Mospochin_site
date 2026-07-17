@@ -7,42 +7,40 @@
 - H1: Ремонт кухни ресторана: пароконвектоматы
 - Canonical: https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html
 - Builder model: src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json
-- Sections: 74 (21 local, 14 shared refs, 2 raw)
-- Text words inside referenced sections: 2453
+- Sections: 73 (25 local, 14 shared refs, 2 raw)
+- Text words inside referenced sections: 2488
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| layout-fragment | 34 |
-| pricing | 11 |
-| proof | 8 |
+| layout-fragment | 33 |
+| pricing | 10 |
+| proof | 7 |
+| mobile-contact | 5 |
 | related-links | 4 |
-| mobile-contact | 3 |
+| section | 3 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
 | body-preamble | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
-| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Когда кухня ресторана теряет смену | related-links | 14.4 KB | 330 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/009-related-links-kogda-kuhnya-restorana-teryaet-smenu.html |
-| Ремонт кухни ресторана: пароконвектоматы | hero | 11.9 KB | 99 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/006-hero-remont-kuhni-restorana-parokonvektomaty.html |
-| Частые поломки пароконвектоматов | pricing | 10.6 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--49df61a84592b2cf.html |
-| Последние ремонты пароконвектоматов | pricing | 9.0 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--d9c65198c0224dfe.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.7 KB | 104 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
-| Ремонтируем все типы пароконвектоматов | pricing | 7.4 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--716e30e482bc8a8d.html |
-| Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 240 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/052-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/059-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
+| Когда кухня ресторана теряет смену | related-links | 12.6 KB | 331 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/009-related-links-kogda-kuhnya-restorana-teryaet-smenu.html |
+| Ремонт кухни ресторана: пароконвектоматы | hero | 9.5 KB | 99 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/006-hero-remont-kuhni-restorana-parokonvektomaty.html |
+| Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Частые поломки пароконвектоматов | section | 8.6 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--92107a1adc63b709.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.8 KB | 104 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Частые вопросы о ремонте пароконвектоматов | faq | 6.4 KB | 233 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/052-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
+| Что фиксируем до начала работ на объекте | pricing | 6.1 KB | 179 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/059-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
+| Ремонтируем все типы пароконвектоматов | section | 6.0 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--66391bf17107a40d.html |
 
 
 ## Editable source files

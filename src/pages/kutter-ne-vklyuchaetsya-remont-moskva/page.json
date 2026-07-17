@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "kutter-ne-vklyuchaetsya-remont-moskva.html",
+  "slug": "kutter-ne-vklyuchaetsya-remont-moskva",
+  "route": "/kutter-ne-vklyuchaetsya-remont-moskva.html",
+  "branch": "unknown",
+  "role": "unknown",
+  "title": null,
+  "h1": null,
+  "source": {
+    "extractedFrom": "kutter-ne-vklyuchaetsya-remont-moskva.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "f72a8703e741dd100de903309d8d1bafa0d41bf4ec0f8d8c8ae38f6ebb37f7d2",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 48,
+      "hash": "6c45e024a4e3965e"
+    },
+    {
+      "id": "002-lead-form-kutter-ne-zapuskaetsya-zayavka-inzheneru",
+      "component": "lead-form",
+      "label": "Куттер не запускается — заявка инженеру",
+      "file": "sections/002-lead-form-kutter-ne-zapuskaetsya-zayavka-inzheneru.html",
+      "bytes": 11788,
+      "hash": "b31d902572aba655"
+    },
+    {
+      "id": "003-footer-anchor-footer-mount-point",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 36,
+      "hash": "7e779f23d41c388a",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-7e779f23d41c.template.html",
+      "props": {},
+      "sourceFile": "sections/003-footer-anchor-footer-mount-point.html"
+    },
+    {
+      "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "006-runtime-partials-podklyuchenie-partials-injector",
+      "component": "runtime-partials",
+      "label": "Подключение partials-injector",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html",
+      "props": {},
+      "sourceFile": "sections/006-runtime-partials-podklyuchenie-partials-injector.html"
+    },
+    {
+      "id": "007-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 1,
+      "hash": "01ba4719c80b6fe9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-01ba4719c80b",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
+      "props": {},
+      "sourceFile": "sections/007-raw-html-fragment.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page kutter-ne-vklyuchaetsya-remont-moskva.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

@@ -164,9 +164,12 @@ export function collectPageSectionMetrics(pageEntry) {
     const component = section.component || 'unknown';
     byComponent[component] = (byComponent[component] || 0) + 1;
     const path = sectionSourcePath(slug, section);
-    for (const sourcePath of sectionSourcePaths(slug, section)) sourceFiles.add(sourcePath);
+    const declaredSources = sectionSourcePaths(slug, section);
+    for (const sourcePath of declaredSources) {
+      sourceFiles.add(sourcePath);
+      if (!fileExists(sourcePath)) missing.push(sourcePath);
+    }
     const content = sectionContent(slug, section);
-    if (!content && path) missing.push(path);
     const bytes = Buffer.byteLength(content || '', 'utf8') || section.bytes || 0;
     const words = wordCount(stripTags(content));
     textWords += words;

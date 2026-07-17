@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "scope": "45-kutter-pages-and-representative-browser-e2e",
+  "summary": {
+    "pages": 45,
+    "forms": 45,
+    "phoneLinks": 225,
+    "whatsappLinks": 135,
+    "browserTotal": 23,
+    "browserPassed": 23,
+    "issues": 0
+  },
+  "staticIssues": [],
+  "browserScenarios": [
+    {
+      "name": "invalid_phone_message",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid_phone_aria",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid_phone_focus",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid_phone_no_request",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "missing_consent_message",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "missing_consent_aria",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "missing_consent_focus",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "consent_target_24px",
+      "passed": true,
+      "detail": "{\"w\":24,\"h\":24}"
+    },
+    {
+      "name": "missing_consent_no_request",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "too_fast_message",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "too_fast_no_request",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "success_one_request",
+      "passed": true,
+      "detail": "requests=1"
+    },
+    {
+      "name": "success_page_slug",
+      "passed": true,
+      "detail": "kutter-remont-moskva.html"
+    },
+    {
+      "name": "success_utm_source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "success_utm_campaign",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "success_campaign_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "success_ad_group_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "success_direct_ad_ids",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "success_idempotency_key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "rate_limit_message",
+      "passed": true,
+      "detail": "Повторите отправку через минуту."
+    },
+    {
+      "name": "rate_limit_no_second_request",
+      "passed": true,
+      "detail": "requests=1"
+    },
+    {
+      "name": "network_error_one_request",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "network_error_fallback_contacts",
+      "passed": true,
+      "detail": "Не удалось отправить заявку. Проверьте соединение и повторите отправку. Также можно позвонить: +79990057172 или написать: https://wa.me/79990057172."
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "checkedAt": "2026-07-15",
+  "pages": [
+    {
+      "symptomId": "refrigeration.no_cooling",
+      "page": "holodilnoe-oborudovanie-ne-holodit.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.slow_pull_down",
+      "page": "holodilnoe-oborudovanie-medlenno-nabiraet-temperaturu.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.overcooling",
+      "page": "holodilnoe-oborudovanie-peremorazhivaet-produkty.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.compressor_no_start",
+      "page": "kompressor-holodilnogo-oborudovaniya-ne-zapuskaetsya.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.compressor_continuous",
+      "page": "kompressor-holodilnogo-oborudovaniya-rabotaet-bez-ostanovki.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.short_cycle",
+      "page": "holodilnoe-oborudovanie-chasto-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.high_temp_cold_room",
+      "page": "vysokaya-temperatura-v-holodilnoy-kamere.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.error_codes",
+      "page": "kody-oshibok-holodilnogo-oborudovaniya.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.evaporator_iced",
+      "page": "isparitel-holodilnogo-oborudovaniya-pokryvaetsya-ldom.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.defrost_failure",
+      "page": "ne-rabotaet-ottaika-holodilnogo-oborudovaniya.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.condenser_overheat",
+      "page": "kondensator-holodilnogo-oborudovaniya-peregrevaetsya.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.fan_failure",
+      "page": "ventilyator-holodilnogo-oborudovaniya-ne-rabotaet.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.noise_vibration",
+      "page": "holodilnoe-oborudovanie-shumit-i-vibriruet.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.water_leak",
+      "page": "techet-voda-iz-holodilnogo-oborudovaniya.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.breaker_trip",
+      "page": "holodilnoe-oborudovanie-vybivaet-avtomat.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.door_not_closing",
+      "page": "dver-holodilnogo-shkafa-ne-zakryvaetsya.html",
+      "status": "published",
+      "group": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ]
+    },
+    {
+      "symptomId": "blast.slow_chilling",
+      "page": "shoker-medlenno-okhlazhdaet.html",
+      "status": "published",
+      "group": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ]
+    },
+    {
+      "symptomId": "blast.no_minus18",
+      "page": "shoker-ne-zamorazhivaet-do-minus-18.html",
+      "status": "published",
+      "group": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ]
+    },
+    {
+      "symptomId": "blast.probe_not_detected",
+      "page": "shoker-ne-vidit-termoshchup.html",
+      "status": "published",
+      "group": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ]
+    },
+    {
+      "symptomId": "blast.fan_failure",
+      "page": "ventilyator-shokera-ne-rabotaet.html",
+      "status": "published",
+      "group": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ]
+    },
+    {
+      "symptomId": "blast.cycle_no_start",
+      "page": "shoker-ne-zapuskaet-cikl.html",
+      "status": "published",
+      "group": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ]
+    },
+    {
+      "symptomId": "blast.cycle_error_stop",
+      "page": "shoker-ostanavlivaetsya-s-oshibkoy.html",
+      "status": "published",
+      "group": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ]
+    },
+    {
+      "symptomId": "blast.probe_air_mismatch",
+      "page": "temperatura-termoshchupa-ne-sovpadaet-s-kameroy.html",
+      "status": "published",
+      "group": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ]
+    },
+    {
+      "symptomId": "ice.no_production",
+      "page": "ldogenerator-ne-proizvodit-led.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ]
+    },
+    {
+      "symptomId": "ice.slow_production",
+      "page": "ldogenerator-medlenno-delaet-led.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ]
+    },
+    {
+      "symptomId": "ice.no_water",
+      "page": "ldogenerator-ne-nabiraet-vodu.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ]
+    },
+    {
+      "symptomId": "ice.no_harvest",
+      "page": "ldogenerator-ne-sbrasyvaet-led.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ]
+    },
+    {
+      "symptomId": "ice.no_drain",
+      "page": "ldogenerator-ne-slivaet-vodu.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ]
+    },
+    {
+      "symptomId": "ice.bad_shape",
+      "page": "ldogenerator-delaet-melkiy-ili-pustotelyy-led.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ]
+    },
+    {
+      "symptomId": "ice.dirty_ice",
+      "page": "gryaznyy-mutnyy-ili-s-zapahom-led.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ]
+    },
+    {
+      "symptomId": "ice.water_leak",
+      "page": "ldogenerator-techet.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ]
+    },
+    {
+      "symptomId": "ice.auger_noise",
+      "page": "shnek-ldogeneratora-shumit-ili-zaklinil.html",
+      "status": "published",
+      "group": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine_auger"
+      ]
+    }
+  ]
+}

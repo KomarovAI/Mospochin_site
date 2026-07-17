@@ -7,34 +7,31 @@
 - H1: Вентиляция моечной зоны
 - Canonical: https://mospochin.ru/ventilyatsiya-moechnoj-zony.html
 - Builder model: src/pages/ventilyatsiya-moechnoj-zony/page.json
-- Sections: 10 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1412
+- Sections: 9 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1202
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| mobile-contact | 4 |
 | layout-fragment | 3 |
-| mobile-contact | 2 |
-| body-preamble | 1 |
 | breadcrumb | 1 |
-| footer-anchor | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция моечной зоны | breadcrumb | 56.7 KB | 1412 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/002-breadcrumb-ventilyaciya-moechnoy-zony.html |
-| Подключение partials-injector | runtime-partials | 54 B | 0 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/008-runtime-partials-podklyuchenie-partials-injector.html |
+| Вентиляция моечной зоны | breadcrumb | 37.8 KB | 1015 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/002-breadcrumb-ventilyaciya-moechnoy-zony.html |
+| Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/007-lead-form-forma-zayavki.html |
-| Секция 1 | body-preamble | 48 B | 0 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/001-body-preamble-sekciya-1.html |
 | HTML-фрагмент | layout-fragment | 46 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-52c8755076d4.template.html |
 | Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| HTML-фрагмент | layout-fragment | 42 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html |
 | Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
-| HTML-фрагмент | layout-fragment | 41 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-5b57bace79b1.template.html |
 
 
 ## Editable source files

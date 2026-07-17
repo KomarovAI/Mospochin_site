@@ -47,3 +47,12 @@ build/site-builder/
 !reports/source-complexity.json
 !.ai/digest/
 !.ai/digest/**
+
+# Large generated navigation maps are consumed by ai:brief, not opened directly.
+data/project-map.generated.json
+data/ai-project-index.json
+data/ai-component-map.json
+.ai/digest/content-map.json
+
+# Historical documents are not active context.
+docs/archive/

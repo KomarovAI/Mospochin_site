@@ -7,42 +7,40 @@
 - H1: Ремонт пароконвектоматов Unox
 - Canonical: https://mospochin.ru/parokonvektomat-unox.html
 - Builder model: src/pages/parokonvektomat-unox/page.json
-- Sections: 68 (20 local, 16 shared refs, 2 raw)
-- Text words inside referenced sections: 2599
+- Sections: 67 (23 local, 16 shared refs, 2 raw)
+- Text words inside referenced sections: 2629
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| layout-fragment | 28 |
-| pricing | 11 |
-| proof | 8 |
-| mobile-contact | 3 |
+| layout-fragment | 27 |
+| pricing | 10 |
+| proof | 7 |
+| mobile-contact | 5 |
+| section | 4 |
 | related-links | 3 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
-| section | 2 |
 | body-preamble | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Что проверяем у пароконвектомата Unox | section | 14.8 KB | 471 | no | src/pages/parokonvektomat-unox/sections/009-section-chto-proveryaem-u-parokonvektomata-unox.html |
-| Ремонт пароконвектоматов Unox | hero | 9.1 KB | 100 | no | src/pages/parokonvektomat-unox/sections/006-hero-remont-parokonvektomatov-unox.html |
-| Частые поломки пароконвектоматов | pricing | 8.1 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--e1e987fb23638159.html |
-| Частые вопросы о ремонте пароконвектоматов | faq | 6.7 KB | 247 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--3ca79656ae34529a.html |
+| Что проверяем у пароконвектомата Unox | section | 14.8 KB | 467 | no | src/pages/parokonvektomat-unox/sections/009-section-chto-proveryaem-u-parokonvektomata-unox.html |
+| Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/parokonvektomat-unox/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Ремонт пароконвектоматов Unox | hero | 9.0 KB | 100 | no | src/pages/parokonvektomat-unox/sections/006-hero-remont-parokonvektomatov-unox.html |
+| Частые поломки пароконвектоматов | section | 8.5 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--16d8721c09cebb16.html |
+| Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 240 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--9302e2410efc79af.html |
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.5 KB | 102 | no | src/pages/parokonvektomat-unox/sections/051-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
-| Последние ремонты пароконвектоматов | pricing | 6.2 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--7f0901fe41d1f650.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.0 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--179e76b534feb278.html |
-| Ремонтируем все типы пароконвектоматов | pricing | 5.8 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--08947d2913b4455f.html |
+| Ремонтируем все типы пароконвектоматов | section | 5.9 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--5ce5c0ec71cc04c7.html |
 
 
 ## Editable source files

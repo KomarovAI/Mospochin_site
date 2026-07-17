@@ -7,8 +7,8 @@
 - H1: Ремонт пищеварочного котла при течи
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-techet.html
 - Builder model: src/pages/pishevarochnyj-kotel-techet/page.json
-- Sections: 34 (17 local, 2 shared refs, 0 raw)
-- Text words inside referenced sections: 1261
+- Sections: 34 (15 local, 2 shared refs, 0 raw)
+- Text words inside referenced sections: 1254
 
 ## Component mix
 
@@ -30,12 +30,12 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 10.2 KB | 159 | no | src/pages/pishevarochnyj-kotel-techet/sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
+| Развели заявки по симптомам и узлам | pricing | 10.2 KB | 149 | no | src/pages/pishevarochnyj-kotel-techet/sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 180 | no | src/pages/pishevarochnyj-kotel-techet/sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Оставьте заявку на ремонт | lead-form | 6.5 KB | 94 | no | src/pages/pishevarochnyj-kotel-techet/sections/022-lead-form-ostav-te-zayavku-na-remont.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.1 KB | 199 | no | src/pages/pishevarochnyj-kotel-techet/sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.2 KB | 207 | no | src/pages/pishevarochnyj-kotel-techet/sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
 | Разводим трафик по реальному симптому | pricing | 5.8 KB | 124 | no | src/pages/pishevarochnyj-kotel-techet/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.3 KB | 129 | no | src/pages/pishevarochnyj-kotel-techet/sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.3 KB | 124 | no | src/pages/pishevarochnyj-kotel-techet/sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Котел течет — сначала определяем, откуда вода или продукт | mobile-contact | 4.9 KB | 115 | no | src/pages/pishevarochnyj-kotel-techet/sections/005-mobile-contact-kotel-techet-snachala-opredelyaem-otk.html |
 | Если проблема в другом ресторанном оборудовании | related-links | 3.5 KB | 65 | no | src/pages/pishevarochnyj-kotel-techet/sections/027-related-links-esli-problema-v-drugom-restorannom-obo.html |
 

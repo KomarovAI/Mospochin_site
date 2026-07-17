@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "status": "rf7-new-pages",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/refrigeration/rf7",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 2200
+  },
+  "pages": [
+    {
+      "page": "ldogenerator-medlenno-delaet-led.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ldogenerator-ne-nabiraet-vodu.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ldogenerator-ne-sbrasyvaet-led.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ldogenerator-ne-slivaet-vodu.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ldogenerator-delaet-melkiy-ili-pustotelyy-led.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "gryaznyy-mutnyy-ili-s-zapahom-led.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ldogenerator-techet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "shnek-ldogeneratora-shumit-ili-zaklinil.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    }
+  ],
+  "checkedAt": "2026-07-15",
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "browser": "chromium"
+}

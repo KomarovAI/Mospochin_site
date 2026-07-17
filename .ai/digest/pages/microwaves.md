@@ -7,34 +7,31 @@
 - H1: Ремонт встроенных СВЧ Neff, Miele и Bosch
 - Canonical: https://mospochin.ru/microwaves.html
 - Builder model: src/pages/microwaves/page.json
-- Sections: 9 (4 local, 0 shared refs, 1 raw)
-- Text words inside referenced sections: 1319
+- Sections: 8 (7 local, 0 shared refs, 1 raw)
+- Text words inside referenced sections: 1458
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| mobile-contact | 3 |
-| body-preamble | 1 |
-| footer-anchor | 1 |
+| mobile-contact | 5 |
 | layout-fragment | 1 |
 | lead-form | 1 |
 | raw | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонт встроенных СВЧ Neff, Miele и Bosch | lead-form | 54.0 KB | 1319 | no | src/pages/microwaves/sections/003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html |
-| Мобильные контактные элементы | mobile-contact | 630 B | 0 | no | src/pages/microwaves/sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| HTML-фрагмент | raw | 54 B | 0 | no | src/pages/microwaves/sections/002-raw-html-fragment.html |
-| Подключение partials-injector | runtime-partials | 51 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-a55dc22a049e.template.html |
-| Секция 1 | body-preamble | 48 B | 0 | no | src/pages/microwaves/sections/001-body-preamble-sekciya-1.html |
-| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
-| Footer mount point | footer-anchor | 39 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-f6291c7cb9f5.template.html |
+| Ремонт встроенных СВЧ Neff, Miele и Bosch | lead-form | 45.4 KB | 1319 | no | src/pages/microwaves/sections/003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html |
+| Мобильные контактные элементы | mobile-contact | 7.2 KB | 78 | no | src/pages/microwaves/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/pages/microwaves/sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 599 B | 0 | no | src/pages/microwaves/sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| HTML-фрагмент | raw | 51 B | 0 | no | src/pages/microwaves/sections/002-raw-html-fragment.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/pages/microwaves/sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/pages/microwaves/sections/007-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| HTML-фрагмент | layout-fragment | 1 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html |
 
 
 ## Editable source files

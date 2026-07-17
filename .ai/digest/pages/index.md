@@ -3,43 +3,39 @@
 - Branch: restaurant
 - Role: branch
 - Title: Ремонт ресторанного оборудования в Москве — MosPochin
-- Description: Срочный ремонт пароконвектоматов, плит и холодильного оборудования для ресторанов и кафе. Выезд инженера, договор, гарантия.
-- H1: Оборудование встало? Пришлите фото ошибки или шильдика
+- Description: Ремонт профессионального оборудования ресторанов и пищеблоков в Москве и Московской области. Каталог направлений, быстрый выбор по симптому, телефон и WhatsApp.
+- H1: Ремонт профессионального оборудования ресторанов в Москве
 - Canonical: https://mospochin.ru/
 - Builder model: src/pages/index/page.json
-- Sections: 26 (21 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1162
+- Sections: 14 (11 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 711
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| mobile-contact | 6 |
-| pricing | 6 |
-| proof | 4 |
-| layout-fragment | 2 |
+| mobile-contact | 5 |
+| pricing | 2 |
+| section | 2 |
 | body-preamble | 1 |
-| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
+| layout-fragment | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
-| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Работаем со всеми производителями | pricing | 19.1 KB | 108 | no | src/pages/index/sections/012-pricing-rabotaem-so-vsemi-proizvoditelyami.html |
-| Ключевые направления по типу поломки и оборудования | pricing | 9.1 KB | 99 | no | src/pages/index/sections/006-pricing-klyuchevye-napravleniya-po-tipu-polomki-i-ob.html |
-| Оборудование встало? Пришлите фото ошибки или шильдика | hero | 6.5 KB | 104 | no | src/pages/index/sections/003-hero-oborudovanie-vstalo-prishlite-foto-oshibki-ili-.html |
-| Почему рестораны возвращаются к MosPochin | pricing | 5.4 KB | 117 | no | src/pages/index/sections/007-pricing-pochemu-restorany-vozvraschayutsya-k-mospoch.html |
-| Оставьте заявку на ремонт | lead-form | 4.3 KB | 70 | no | src/pages/index/sections/018-lead-form-ostav-te-zayavku-na-remont.html |
-| Каждая минута простоя = потеря денег и смены | contact-cta | 4.0 KB | 77 | no | src/pages/index/sections/005-contact-cta-kazhdaya-minuta-prostoya-poterya-deneg-i.html |
-| Если уже знаете симптом, переходите сразу | section | 3.5 KB | 61 | no | src/pages/index/sections/004-section-esli-uzhe-znaete-simptom-perehodite-srazu.html |
-| Что получает заказчик после выезда | pricing | 3.3 KB | 98 | no | src/pages/index/sections/016-pricing-chto-poluchaet-zakazchik-posle-vyezda.html |
+| Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/index/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Выберите нужное направление | section | 9.0 KB | 131 | no | src/pages/index/sections/004-section-vyberite-nuzhnoe-napravlenie.html |
+| Мобильные контактные элементы | mobile-contact | 4.7 KB | 77 | no | src/pages/index/sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Ремонт профессионального оборудования ресторанов в Москве | hero | 3.5 KB | 54 | no | src/pages/index/sections/003-hero-remont-professional-nogo-oborudovaniya-restoran.html |
+| Если симптом уже известен | section | 2.8 KB | 78 | no | src/pages/index/sections/005-section-esli-simptom-uzhe-izvesten.html |
+| Частые вопросы | faq | 2.7 KB | 91 | no | src/pages/index/sections/009-faq-chastye-voprosy.html |
+| Передать задачу инженеру | lead-form | 2.7 KB | 33 | no | src/pages/index/sections/008-lead-form-peredat-zadachu-inzheneru.html |
+| Понятная передача задачи и результата | pricing | 2.6 KB | 83 | no | src/pages/index/sections/007-pricing-ponyatnaya-peredacha-zadachi-i-rezul-tata.html |
 
 
 ## Editable source files

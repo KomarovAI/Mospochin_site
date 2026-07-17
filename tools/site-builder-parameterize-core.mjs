@@ -71,7 +71,10 @@ function extractB2bProps(page, slug, html) {
       address: inputAttribute(html, 'address', 'placeholder'),
       businessType: inputAttribute(html, 'business_type', 'placeholder'),
     },
-    submitText: matchOne(html, /<i class="ri-send-plane-line mr-2"><\/i>([^\n<]+)\n\s*<\/button>/, 'submit text').trim(),
+    submitText: matchOne(html, /<button\b[^>]*data-cta-id="[^"]+"[^>]*>([\s\S]*?)<\/button>/i, 'submit button')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim(),
   };
   return props;
 }
@@ -105,7 +108,7 @@ function classifyStaticCoreSection(component, html) {
   if (component === 'noscript' && /^\s*<noscript><div><img src="https:\/\/mc\.yandex\.ru\/watch\/[0-9]+"[\s\S]*?<\/noscript>\s*$/.test(html)) {
     return { component: 'noscript', variant: 'yandex-metrika-pixel', templateRef: templatePathForHash('noscript', 'yandex-metrika-pixel', html) };
   }
-  if (component === 'runtime-partials' && /^\s*<script src="partials-injector\.js" defer><\/script>\s*$/.test(html)) {
+  if (component === 'runtime-partials' && /^\s*<script\b(?=[^>]*\bsrc=["']partials-injector\.js["'])(?=[^>]*\bdefer(?:=["']["'])?)[^>]*><\/script>\s*$/i.test(html)) {
     return { component: 'runtime-partials', variant: 'partials-injector-script', templateRef: templatePathForHash('runtime-partials', 'partials-injector-script', html) };
   }
   if (component === 'footer-anchor' && /^\s*<div id="footer-container"><\/div>\s*$/.test(html)) {
@@ -305,6 +308,8 @@ function applyParameterization() {
           section.templateRef = LEAD_TEMPLATE;
           section.propsRef = propsPath;
           section.sourceFile = section.sourceFile || section.file;
+          section.bytes = Buffer.byteLength(rendered, 'utf8');
+          section.hash = hashContent(rendered).slice(0, 16);
           delete section.file;
           delete section.componentRef;
           removeProjectFile(originalPath);
@@ -315,15 +320,19 @@ function applyParameterization() {
       }
       if (section.component === 'mobile-contact') {
         let templateRef = null;
-        if (html === '\n<div id="mobile-footer-container"></div>') templateRef = MOBILE_FOOTER_TEMPLATE;
-        if (html === '\n<div id="whatsapp-float-container"></div>') templateRef = WHATSAPP_TEMPLATE;
+        const normalizedMobile = html.trim();
+        if (normalizedMobile === '<div id="mobile-footer-container"></div>') templateRef = MOBILE_FOOTER_TEMPLATE;
+        if (normalizedMobile === '<div id="whatsapp-float-container"></div>') templateRef = WHATSAPP_TEMPLATE;
         if (templateRef) {
           section.componentMode = 'parametric';
           section.componentScope = 'parametric';
           section.variant = templateRef.includes('whatsapp') ? 'whatsapp-float-container' : 'mobile-footer-container';
           section.templateRef = templateRef;
           section.props = {};
+          const rendered = read(templateRef);
           section.sourceFile = section.sourceFile || section.file;
+          section.bytes = Buffer.byteLength(rendered, 'utf8');
+          section.hash = hashContent(rendered).slice(0, 16);
           delete section.file;
           delete section.componentRef;
           removeProjectFile(originalPath);
@@ -342,6 +351,8 @@ function applyParameterization() {
         section.templateRef = repeatedRawSection.templateRef;
         section.props = {};
         section.sourceFile = section.sourceFile || section.file;
+        section.bytes = Buffer.byteLength(html, 'utf8');
+        section.hash = hashContent(html).slice(0, 16);
         delete section.file;
         delete section.componentRef;
         removeProjectFile(originalPath);
@@ -359,6 +370,8 @@ function applyParameterization() {
         section.templateRef = staticSection.templateRef;
         section.props = {};
         section.sourceFile = section.sourceFile || section.file;
+        section.bytes = Buffer.byteLength(html, 'utf8');
+        section.hash = hashContent(html).slice(0, 16);
         delete section.file;
         delete section.componentRef;
         removeProjectFile(originalPath);

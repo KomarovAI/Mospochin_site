@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "ventilyatsiya-restorana-ne-tyanet.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "e6444e84b440341288f788d940f8535a231fa4b8e01c1468e324afcdc664d7a5",
+    "hash": "5cc116c559c0a331e60ee1a42069a76387c9b0492261a1539e19af11d692c03b",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,33 +21,28 @@
   },
   "sections": [
     {
-      "id": "001-body-preamble-sekciya-1",
-      "component": "body-preamble",
-      "label": "Секция 1",
-      "file": "sections/001-body-preamble-sekciya-1.html",
-      "bytes": 48,
-      "hash": "6c45e024a4e3965e"
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9404,
+      "hash": "1b7e59e2b12cfe4d"
     },
     {
       "id": "002-breadcrumb-ventilyaciya-restorana-ne-tyanet",
       "component": "breadcrumb",
       "label": "Вентиляция ресторана не тянет",
       "file": "sections/002-breadcrumb-ventilyaciya-restorana-ne-tyanet.html",
-      "bytes": 60702,
-      "hash": "621f83a4b494b2de"
+      "bytes": 41171,
+      "hash": "d9eff8279f8a9a9b"
     },
     {
-      "id": "003-footer-anchor-footer-mount-point",
-      "component": "footer-anchor",
-      "label": "Footer mount point",
-      "bytes": 34,
-      "hash": "06f3fb249f3476eb",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "footer-container-mount",
-      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-06f3fb249f34.template.html",
-      "props": {},
-      "sourceFile": "sections/003-footer-anchor-footer-mount-point.html"
+      "id": "003-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4973,
+      "hash": "3f5cfd66bccbc3fb"
     },
     {
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -97,28 +92,20 @@
       "hash": "f771578a5d50836c"
     },
     {
-      "id": "008-runtime-partials-podklyuchenie-partials-injector",
-      "component": "runtime-partials",
-      "label": "Подключение partials-injector",
-      "file": "sections/008-runtime-partials-podklyuchenie-partials-injector.html",
-      "bytes": 54,
-      "hash": "1714ff6d614671d3"
+      "id": "008-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 42,
+      "hash": "47228a35947e03f3",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-47228a35947e",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html",
+      "props": {},
+      "sourceFile": "sections/008-raw-html-fragment.html"
     },
     {
       "id": "009-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 41,
-      "hash": "5b57bace79b19443",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "technical-fragment-5b57bace79b1",
-      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-5b57bace79b1.template.html",
-      "props": {},
-      "sourceFile": "sections/009-raw-html-fragment.html"
-    },
-    {
-      "id": "010-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -128,7 +115,7 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/010-raw-html-fragment.html"
+      "sourceFile": "sections/009-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [

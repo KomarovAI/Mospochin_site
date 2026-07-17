@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "remont-shokerov-coldline.html",
+  "slug": "remont-shokerov-coldline",
+  "route": "/remont-shokerov-coldline.html",
+  "branch": "restaurant",
+  "role": "branch",
+  "title": "Ремонт шокеров Coldline в Москве | MosPochin",
+  "h1": "Ремонт шокеров Coldline",
+  "source": {
+    "extractedFrom": "remont-shokerov-coldline.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "853df447edb2a763081db5bb5e3de3d9ecc613923a201a2d789ddafceea0744b",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "file": "sections/001-contact-cta-kontaktnyy-cta.html",
+      "bytes": 47,
+      "hash": "848c21ac460f3aba"
+    },
+    {
+      "id": "002-breadcrumb-remont-shokerov-coldline",
+      "component": "breadcrumb",
+      "label": "Ремонт шокеров Coldline",
+      "file": "sections/002-breadcrumb-remont-shokerov-coldline.html",
+      "bytes": 43296,
+      "hash": "e957766172b8b2a4"
+    },
+    {
+      "id": "003-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/003-faq-chastye-voprosy.html",
+      "bytes": 1727,
+      "hash": "56f816d4eb38f620"
+    },
+    {
+      "id": "004-footer-anchor-footer-mount-point",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 33,
+      "hash": "e290e2b6541c5f25",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html",
+      "props": {},
+      "sourceFile": "sections/004-footer-anchor-footer-mount-point.html"
+    },
+    {
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "007-runtime-partials-podklyuchenie-partials-injector",
+      "component": "runtime-partials",
+      "label": "Подключение partials-injector",
+      "file": "sections/007-runtime-partials-podklyuchenie-partials-injector.html",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:page -- --page remont-shokerov-coldline.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page remont-shokerov-coldline.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

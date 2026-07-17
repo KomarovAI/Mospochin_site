@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/paid-landings.schema.json",
+  "title": "MosPochin paid landing manifest",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["ad_group_id", "cluster", "landing_path", "page_slug", "page_intent", "equipment", "form_variant", "ad_eligible"],
+    "properties": {
+      "ad_group_id": {"type": "integer", "minimum": 1},
+      "cluster": {"type": "string", "minLength": 1, "maxLength": 128},
+      "landing_path": {"type": "string", "pattern": "^/[a-z0-9-]+\\.html$"},
+      "page_slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+      "page_intent": {"type": "string", "minLength": 1, "maxLength": 128},
+      "equipment": {"type": "string", "minLength": 1, "maxLength": 128},
+      "form_variant": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+      "ad_eligible": {"const": true}
+    }
+  }
+}

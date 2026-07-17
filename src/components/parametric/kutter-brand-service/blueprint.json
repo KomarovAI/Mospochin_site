@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "pageType": "brand_service",
+  "requiredComponents": [
+    "hero",
+    "official-series",
+    "model-differences",
+    "brand-symptoms",
+    "diagnostic-process",
+    "lead-form",
+    "faq",
+    "sources-note"
+  ],
+  "requiredSchemas": [
+    "WebPage",
+    "Service",
+    "FAQPage",
+    "BreadcrumbList"
+  ],
+  "contentRules": {
+    "minimumOfficialSeries": 2,
+    "requireEvidenceIds": true,
+    "forbidUnscopedErrorCodes": true
+  }
+}

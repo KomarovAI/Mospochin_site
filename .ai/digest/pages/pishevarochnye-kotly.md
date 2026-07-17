@@ -7,8 +7,8 @@
 - H1: Ремонт пищеварочных котлов для ресторанов и столовых
 - Canonical: https://mospochin.ru/pishevarochnye-kotly.html
 - Builder model: src/pages/pishevarochnye-kotly/page.json
-- Sections: 45 (39 local, 1 shared refs, 13 raw)
-- Text words inside referenced sections: 1937
+- Sections: 45 (38 local, 1 shared refs, 13 raw)
+- Text words inside referenced sections: 1930
 
 ## Component mix
 
@@ -34,11 +34,11 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 11.4 KB | 200 | no | src/pages/pishevarochnye-kotly/sections/025-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
+| Развели заявки по симптомам и узлам | pricing | 11.4 KB | 190 | no | src/pages/pishevarochnye-kotly/sections/025-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
 | Ремонт пищеварочных котлов для ресторанов и столовых | mobile-contact | 8.1 KB | 150 | no | src/pages/pishevarochnye-kotly/sections/004-mobile-contact-remont-pischevarochnyh-kotlov-dlya-re.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 181 | no | src/pages/pishevarochnye-kotly/sections/029-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Частые вопросы по ремонту | faq | 6.0 KB | 193 | no | src/pages/pishevarochnye-kotly/sections/034-faq-chastye-voprosy-po-remontu.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.7 KB | 199 | no | src/pages/pishevarochnye-kotly/sections/019-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 5.8 KB | 207 | no | src/pages/pishevarochnye-kotly/sections/019-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
 | Согласовать выезд по котлу | lead-form | 5.6 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/027-lead-form-soglasovat-vyezd-po-kotlu.html |
 | Разводим трафик по реальному симптому | pricing | 5.4 KB | 126 | no | src/pages/pishevarochnye-kotly/sections/010-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
 | Если проблема в другом ресторанном оборудовании | related-links | 5.1 KB | 94 | no | src/pages/pishevarochnye-kotly/sections/032-related-links-esli-problema-v-drugom-restorannom-obo.html |

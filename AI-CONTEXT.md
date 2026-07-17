@@ -1,68 +1,12 @@
-# AI-CONTEXT — compatibility stub
+# AI Context Compatibility Stub
 
-Этот файл оставлен только для обратной совместимости старых AI-команд и ссылок.
+The active entrypoint is `AGENTS.md`.
 
-## Актуальный маршрут
-
-Новая точка входа:
-
-```text
-docs/AI_START_HERE.md
-```
-
-Дальше использовать:
-
-```text
-AGENTS.md
-docs/DOC_INDEX.md
-data/project-map.generated.json
-data/file-ownership.json
-.ai/digest/pages/*.md
-```
-
-## Быстрый workflow
+Use:
 
 ```bash
-npm run ai:route -- --task content --page <file.html>
-npm run check:core
+npm run ai:brief -- --task content --page example.html
+npm run ai:verify -- --changed
 ```
 
-Если менялись generated/AI-артефакты:
-
-```bash
-npm run sync:generated
-npm run check:handoff
-```
-
-## Source of truth
-
-Править source/data слой, а не root HTML напрямую:
-
-```text
-src/pages/<slug>/page.json
-src/pages/<slug>/sections/*.html
-src/components/shared/*
-src/components/parametric/*/*.template.html
-content/components/*/*.json
-data/page-metadata.json
-data/direct-landing-pages.json
-content/faq/*
-```
-
-Generated/не править руками:
-
-```text
-root *.html
-sitemap.xml
-.deploy/include-files.txt
-data/ai-project-index.json
-data/ai-component-map.json
-data/project-map.generated.json
-.ai/digest/*
-reports/source-complexity.*
-content/faq/page-faq-registry.json
-```
-
-## Почему файл короткий
-
-Подробный старый контекст был схлопнут, чтобы следующая нейронка не читала устаревшие маршруты. Актуальная карта проекта теперь машинная: `data/project-map.generated.json`.
+Current generated state is in `.ai/CURRENT.md`. The canonical operating guide is `docs/AI_CONTROL_LITE.md`.

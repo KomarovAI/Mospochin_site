@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "kody-oshibok-sous-vide.html",
+  "slug": "kody-oshibok-sous-vide",
+  "route": "/kody-oshibok-sous-vide.html",
+  "branch": "restaurant",
+  "role": "symptom-service",
+  "title": "Коды ошибок sous-vide по брендам и моделям | MosPochin",
+  "h1": "Коды ошибок sous-vide",
+  "source": {
+    "extractedFrom": "kody-oshibok-sous-vide.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "a7277c381a7006d8cfe10533b8943dae2dde7cf1f74b523fe3637437cf8a5f3f",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble",
+      "component": "body-preamble",
+      "label": "Преамбула",
+      "file": "sections/001-body-preamble.html",
+      "bytes": 60,
+      "hash": "3b5244e9cdb0a353"
+    },
+    {
+      "id": "010-hero",
+      "component": "hero",
+      "label": "Первый экран",
+      "file": "sections/010-hero.html",
+      "bytes": 1769,
+      "hash": "8941dd602b822ad7"
+    },
+    {
+      "id": "020-stop-use",
+      "component": "stop-use",
+      "label": "Условия остановки",
+      "file": "sections/020-stop-use.html",
+      "bytes": 1169,
+      "hash": "ca17af43fba83f38"
+    },
+    {
+      "id": "030-safe-self-check",
+      "component": "safe-self-check",
+      "label": "Безопасная проверка",
+      "file": "sections/030-safe-self-check.html",
+      "bytes": 1938,
+      "hash": "2fedff25f05d186a"
+    },
+    {
+      "id": "040-decision-tree",
+      "component": "decision-tree",
+      "label": "Дерево решений",
+      "file": "sections/040-decision-tree.html",
+      "bytes": 1612,
+      "hash": "0e3fa6bbe5640481"
+    },
+    {
+      "id": "050-cause-matrix",
+      "component": "cause-matrix",
+      "label": "Матрица причин",
+      "file": "sections/050-cause-matrix.html",
+      "bytes": 3323,
+      "hash": "b9d4d9cf4b315f3c"
+    },
+    {
+      "id": "060-service-diagnostics",
+      "component": "service-diagnostics",
+      "label": "Сервисная диагностика",
+      "file": "sections/060-service-diagnostics.html",
+      "bytes": 1919,
+      "hash": "915876b67a4d1242"
+    },
+    {
+      "id": "070-repair-scope",
+      "component": "repair-scope",
+      "label": "Ремонтируемые узлы",
+      "file": "sections/070-repair-scope.html",
+      "bytes": 2857,
+      "hash": "6c3cb11977179ce4"
+    },
+    {
+      "id": "080-lead-form",
+      "component": "lead-form",
+      "label": "Форма заявки",
+      "file": "sections/080-lead-form.html",
+      "bytes": 3378,
+      "hash": "326f248d71420756"
+    },
+    {
+      "id": "090-faq",
+      "component": "faq",
+      "label": "FAQ — частые вопросы",
+      "file": "sections/090-faq.html",
+      "bytes": 2033,
+      "hash": "89928aea067cdcba"
+    },
+    {
+      "id": "100-related-symptoms",
+      "component": "related-symptoms",
+      "label": "Связанные симптомы",
+      "file": "sections/100-related-symptoms.html",
+      "bytes": 4071,
+      "hash": "fb65683c435f6171"
+    },
+    {
+      "id": "110-sources-note",
+      "component": "sources-note",
+      "label": "Источники",
+      "file": "sections/110-sources-note.html",
+      "bytes": 1704,
+      "hash": "6176ac322e7439bc"
+    },
+    {
+      "id": "120-footer-anchor",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 33,
+      "hash": "e290e2b6541c5f25",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html",
+      "props": {},
+      "sourceFile": "sections/120-footer-anchor.html"
+    },
+    {
+      "id": "130-mobile-contact",
+      "component": "mobile-contact",
+      "label": "Мобильные контакты",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/130-mobile-contact.html"
+    },
+    {
+      "id": "131-mobile-contact",
+      "component": "mobile-contact",
+      "label": "Мобильная навигация",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/131-mobile-contact.html"
+    },
+    {
+      "id": "140-runtime-partials",
+      "component": "runtime-partials",
+      "label": "Partials injector",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html",
+      "props": {},
+      "sourceFile": "sections/140-runtime-partials.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run check:symptom-service-pages",
+    "npm run page:check -- --page kody-oshibok-sous-vide.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Edit taxonomy/evidence before technical claims.",
+    "Root HTML is generated from this model."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

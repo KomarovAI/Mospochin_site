@@ -10,6 +10,11 @@ const htmlFiles = fs.readdirSync(root)
   .filter((name) => name !== '404.html')
   .sort();
 
+const dishwasherManifestPath = path.join(root, 'data', 'dishwasher-cluster-pages.json');
+const dishwasherMetrics = fs.existsSync(dishwasherManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(dishwasherManifestPath, 'utf8')).pages || []).map((page) => [page.page, page.metrics || {}]))
+  : new Map();
+
 const BRAND_PATTERNS = [
   'rational', 'unox', 'abat', 'kpem', 'apach', 'atesy', 'iterma',
   'mkn', 'alphatech', 'convotherm', 'electrolux', 'lainox'
@@ -74,16 +79,17 @@ function buildContext() {
     const pageMetadata = fs.existsSync(path.join(root, 'data', 'page-metadata.json'))
       ? JSON.parse(fs.readFileSync(path.join(root, 'data', 'page-metadata.json'), 'utf8')).pages?.[file] || {}
       : {};
+    const dishwasher = dishwasherMetrics.get(file) || {};
     pages[file] = {
       page_slug: slugFromFile(file),
-      page_intent: inferPageIntent(file),
-      equipment: inferEquipment(file),
+      page_intent: dishwasher.pageIntent || inferPageIntent(file),
+      equipment: dishwasher.equipment || inferEquipment(file),
       brand: inferBrand(file),
-      service: 'repair',
-      commercial_segment: inferSegment(file),
+      service: dishwasher.service || 'repair',
+      commercial_segment: dishwasher.commercialSegment || inferSegment(file),
       branch: pageMetadata.branch || 'neutral',
       page_version: canonicalPageVersion(html),
-      source: 'run4_archive_only_inferred'
+      source: dishwasherMetrics.has(file) ? 'dishwasher_manifest' : 'run4_archive_only_inferred'
     };
   }
   return {

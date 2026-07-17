@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "ne-podaetsya-moyushchee-sredstvo.html",
+  "slug": "ne-podaetsya-moyushchee-sredstvo",
+  "route": "/ne-podaetsya-moyushchee-sredstvo.html",
+  "branch": "restaurant",
+  "role": "branch",
+  "title": "Не подаётся моющее средство — диагностика и ремонт | MosPochin",
+  "h1": "Не подаётся моющее средство",
+  "source": {
+    "extractedFrom": "ne-podaetsya-moyushchee-sredstvo.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "dbb552a31606e6ee605aa20d0e06c31d48532c700a4cfaec464e8e97004cc1ac",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "file": "sections/001-contact-cta-kontaktnyy-cta.html",
+      "bytes": 47,
+      "hash": "848c21ac460f3aba"
+    },
+    {
+      "id": "002-breadcrumb-ne-podaetsya-moyuschee-sredstvo",
+      "component": "breadcrumb",
+      "label": "Не подаётся моющее средство",
+      "file": "sections/002-breadcrumb-ne-podaetsya-moyuschee-sredstvo.html",
+      "bytes": 37506,
+      "hash": "9bc4a3a50994dc2c"
+    },
+    {
+      "id": "003-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/003-faq-chastye-voprosy.html",
+      "bytes": 1798,
+      "hash": "668a4683810e2362"
+    },
+    {
+      "id": "004-footer-anchor-footer-mount-point",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 33,
+      "hash": "e290e2b6541c5f25",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html",
+      "props": {},
+      "sourceFile": "sections/004-footer-anchor-footer-mount-point.html"
+    },
+    {
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 40,
+      "hash": "5984ebe80b6e73f2",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "8e4830584f7baecb",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html",
+      "props": {},
+      "sourceFile": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "007-runtime-partials-podklyuchenie-partials-injector",
+      "component": "runtime-partials",
+      "label": "Подключение partials-injector",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script-defer-empty",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html",
+      "props": {},
+      "sourceFile": "sections/007-runtime-partials-podklyuchenie-partials-injector.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:page -- --page ne-podaetsya-moyushchee-sredstvo.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page ne-podaetsya-moyushchee-sredstvo.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

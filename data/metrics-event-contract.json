@@ -1,8 +1,21 @@
 {
-  "version": "2026-07-12-conversion-p0-v1",
-  "purpose": "MosPochin archive-only metrics contract. This file is the local source of truth for required website events, backend log fields, and clean LLM aggregates.",
+  "version": "2026-07-15-paid-tracking-v3",
+  "purpose": "MosPochin paid tracking v3 contract: strict frontend event allowlist, attribution v3, cross-tab identity and backward-compatible backend ingestion.",
   "events": [
-    "page_view"
+    "page_view",
+    "cta_view",
+    "cta_click",
+    "phone_click",
+    "whatsapp_click",
+    "telegram_click",
+    "email_click",
+    "form_open",
+    "form_start",
+    "form_submit_attempt",
+    "form_submit_success",
+    "form_submit_error",
+    "form_validation_error",
+    "form_submit_blocked"
   ],
   "backend_events": [
     "qualified_lead",
@@ -11,7 +24,11 @@
     "service_contract_created"
   ],
   "bot_policy": {
-    "frontend_hints": ["navigator.webdriver", "bot_user_agent", "headlesschrome"],
+    "frontend_hints": [
+      "navigator.webdriver",
+      "bot_user_agent",
+      "headlesschrome"
+    ],
     "backend_action": "reject_before_accepted_log",
     "rejected_reason": "bot_user_agent"
   },
@@ -22,34 +39,28 @@
     "goals": [
       "phone_click",
       "whatsapp_click",
-      "telegram_click",
-      "email_click",
       "form_open",
-      "form_start",
       "form_submit_attempt",
-      "form_submit_success",
-      "form_submit_error",
-      "form_validation_error",
-      "form_submit_blocked",
-      "cta_view",
-      "cta_click"
+      "form_submit_success"
     ]
   },
   "frontend": {
-    "attribution_storage_key": "mospochin_attribution_v1",
-    "session_storage_key": "mospochin_session_v1",
+    "attribution_storage_key": "mospochin_attribution_v3",
+    "session_storage_key": "mospochin_session_v3",
     "required_runtime_exports": [
       "window.mospochinGetAttribution",
-      "window.mospochinGetSession",
-      "window.mospochinTrackGoal",
-      "window.MospochinAnalytics"
+      "window.mospochinGetIdentity",
+      "window.mospochinGetLeadContext",
+      "window.mospochinTrackSiteEvent",
+      "window.mospochinTrackGoal"
     ],
     "required_guards": [
-      "production_only_host_guard",
-      "blocked_localhost_guard",
       "automation_hint_guard",
       "event_isTrusted_guard",
-      "client_rate_limit"
+      "reserved_event_fields",
+      "unknown_event_skip",
+      "client_rate_limit",
+      "storage_error_guard"
     ],
     "event_transport": [
       "navigator.sendBeacon",
@@ -58,11 +69,14 @@
     "cta_view_rule": {
       "api": "IntersectionObserver",
       "minimum_visible_ratio": 0.5,
-      "minimum_visible_ms": 900,
+      "minimum_visible_ms": 500,
       "dedupe": "once per CTA per page session"
     },
     "event_semantics": {
-      "visibility": ["page_view", "cta_view"],
+      "visibility": [
+        "page_view",
+        "cta_view"
+      ],
       "decision": [
         "cta_click",
         "phone_click",
@@ -74,9 +88,7 @@
         "form_submit_attempt",
         "form_submit_success"
       ],
-      "form_outcome": [
-        "form_submit_attempt",
-        "form_submit_success",
+      "error": [
         "form_submit_error",
         "form_validation_error",
         "form_submit_blocked"
@@ -91,7 +103,9 @@
     "required_markup_scripts": [
       "tools/apply-metrics-page-markup.mjs",
       "tools/check-metrics-markup.mjs"
-    ]
+    ],
+    "visitor_storage_key": "mospochin_visitor_v1",
+    "tab_storage_key": "mospochin_tab_v1"
   },
   "backend": {
     "endpoint": "/api/track-event",
@@ -122,7 +136,17 @@
       "referrer_host",
       "session_id_hash",
       "event_id",
-      "client_event_ts"
+      "client_event_ts",
+      "symptom_id",
+      "equipment_family",
+      "probable_node",
+      "error_code",
+      "cta_position",
+      "vital_name",
+      "vital_value",
+      "vital_rating",
+      "navigation_type",
+      "effective_connection_type"
     ],
     "required_quality_values": [
       "human_candidate",
@@ -132,8 +156,9 @@
       "test"
     ],
     "must_hash_fields": [
-      "session_id",
-      "yclid",
+      "session_id when nonempty",
+      "yclid when nonempty",
+      "gclid when nonempty",
       "ip",
       "phone",
       "name"
@@ -151,7 +176,8 @@
       "whatsapp_phone",
       "telegram_id"
     ],
-    "contact_target_policy": "Do not write raw tel:, mailto:, WhatsApp phone numbers, Telegram IDs, full IP or full user-agent to analytics logs. Store redacted target hints and hashes only."
+    "contact_target_policy": "Do not write raw tel:, mailto:, WhatsApp phone numbers, Telegram IDs, full IP or full user-agent to analytics logs. Store redacted target hints and hashes only.",
+    "empty_identifier_policy": "null or omitted; never hash an empty string"
   },
   "llm_outputs": [
     "llm_event_funnel_YYYY-MM-DD.csv",
@@ -213,5 +239,37 @@
       "data-block"
     ],
     "purpose": "Make page intent, equipment, brand and CTA identity explicit in event payloads instead of relying only on URL inference."
-  }
+  },
+  "web_vitals": {
+    "event": "web_vital",
+    "metrics": [
+      "LCP",
+      "INP",
+      "CLS"
+    ],
+    "percentile": "p75",
+    "segments": [
+      "page_slug",
+      "device",
+      "navigation_type"
+    ],
+    "good_thresholds": {
+      "LCP_ms": 2500,
+      "INP_ms": 200,
+      "CLS": 0.1
+    }
+  },
+  "backend_legacy_events": [
+    "symptom_selfcheck_started",
+    "symptom_selfcheck_completed",
+    "symptom_decision_branch_selected",
+    "symptom_cause_matrix_viewed",
+    "error_code_entered",
+    "equipment_model_entered",
+    "diagnostic_media_added",
+    "cta_after_selfcheck",
+    "cta_after_cause_matrix",
+    "symptom_service_lead",
+    "web_vital"
+  ]
 }

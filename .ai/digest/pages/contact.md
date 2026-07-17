@@ -2,30 +2,28 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: Контакты MosPochin — телефон, WhatsApp, Telegram, адрес в Москве
-- Description: Телефон, WhatsApp, Telegram и адрес MosPochin в Москве. Принимаем заявки на ремонт ресторанного оборудования по согласованному графику.
-- H1: Связаться с MosPochin и быстро решить вопрос с ремонтом
+- Title: Контакты MosPochin — телефон, WhatsApp и заявка на ремонт
+- Description: Контакты MosPochin по ремонту ресторанного оборудования: телефон 8 (999) 005-71-72, WhatsApp, email, Москва и Московская область.
+- H1: Связаться по ремонту ресторанного оборудования
 - Canonical: https://mospochin.ru/contact.html
 - Builder model: src/pages/contact/page.json
-- Sections: 41 (26 local, 0 shared refs, 10 raw)
-- Text words inside referenced sections: 786
+- Sections: 17 (14 local, 0 shared refs, 3 raw)
+- Text words inside referenced sections: 471
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| layout-fragment | 10 |
-| raw | 10 |
-| contact-cta | 5 |
-| mobile-contact | 4 |
-| breadcrumb | 2 |
-| faq | 2 |
-| proof | 2 |
-| footer-anchor | 1 |
+| mobile-contact | 5 |
+| raw | 3 |
+| contact-cta | 1 |
+| faq | 1 |
 | hero | 1 |
+| layout-fragment | 1 |
 | lead-form | 1 |
+| navigation | 1 |
 | noscript | 1 |
-| runtime-partials | 1 |
+| pricing | 1 |
 | section | 1 |
 
 
@@ -33,14 +31,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Все способы связи | mobile-contact | 7.4 KB | 73 | no | src/pages/contact/sections/010-mobile-contact-vse-sposoby-svyazi.html |
-| Зона обслуживания | section | 7.1 KB | 96 | no | src/pages/contact/sections/016-section-zona-obsluzhivaniya.html |
-| Связаться с MosPochin и быстро решить вопрос с ремонтом | hero | 6.4 KB | 77 | no | src/pages/contact/sections/006-hero-svyazat-sya-s-mospochin-i-bystro-reshit-vopros-.html |
-| Новое направление: вентиляция ресторанов | contact-cta | 4.1 KB | 72 | no | src/pages/contact/sections/028-contact-cta-novoe-napravlenie-ventilyaciya-restorano.html |
-| Кто приедет к вам | proof | 3.9 KB | 52 | no | src/pages/contact/sections/014-proof-kto-priedet-k-vam.html |
-| Схема работы | contact-cta | 3.8 KB | 90 | no | src/pages/contact/sections/020-contact-cta-shema-raboty.html |
-| Частые вопросы | faq | 3.8 KB | 101 | no | src/pages/contact/sections/022-faq-chastye-voprosy.html |
-| Оставьте заявку, и мы свяжемся по ремонту | lead-form | 3.7 KB | 42 | no | src/pages/contact/sections/026-lead-form-ostav-te-zayavku-i-my-svyazhemsya-po-remon.html |
+| Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/contact/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/contact/sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Оставить контакт для ответа | lead-form | 2.7 KB | 33 | no | src/pages/contact/sections/008-lead-form-ostavit-kontakt-dlya-otveta.html |
+| Частые вопросы | faq | 2.6 KB | 80 | no | src/pages/contact/sections/009-faq-chastye-voprosy.html |
+| Данные для первого ответа | pricing | 2.5 KB | 78 | no | src/pages/contact/sections/006-pricing-dannye-dlya-pervogo-otveta.html |
+| Телефон | mobile-contact | 2.1 KB | 19 | no | src/pages/contact/sections/005-mobile-contact-telefon.html |
+| Связаться по ремонту ресторанного оборудования | hero | 1.8 KB | 34 | no | src/pages/contact/sections/004-hero-svyazat-sya-po-remontu-restorannogo-oborudovani.html |
+| Сведения рекламодателя | section | 1.7 KB | 22 | no | src/pages/contact/sections/007-section-svedeniya-reklamodatelya.html |
 
 
 ## Editable source files

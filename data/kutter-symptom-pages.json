@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "cluster": "kutter",
+  "pages": [
+    {
+      "page": "kutter-ne-vklyuchaetsya.html",
+      "symptomId": "cutter.no_power",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "page": "kutter-ne-zapuskaetsya-s-kryshkoy.html",
+      "symptomId": "cutter.lid_interlock",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety",
+        "sammic.k41.safety"
+      ]
+    },
+    {
+      "page": "kutter-ne-vidit-chashu.html",
+      "symptomId": "cutter.bowl_detection",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "sammic.k41.safety",
+        "sammic.ck241.safety",
+        "hallde.vcm.parts"
+      ]
+    },
+    {
+      "page": "motor-kuttera-gudit-no-nozhi-ne-krutatsya.html",
+      "symptomId": "cutter.motor_hums_blade_still",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r4.drive"
+      ]
+    },
+    {
+      "page": "kutter-ostanavlivaetsya-pod-nagruzkoy.html",
+      "symptomId": "cutter.stops_under_load",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "page": "kutter-shumit-i-vibriruet.html",
+      "symptomId": "cutter.noise_vibration",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r4.drive"
+      ]
+    },
+    {
+      "page": "kutter-ploho-izmelchaet.html",
+      "symptomId": "cutter.poor_cut",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "robot-coupe.r10.spec",
+        "sammic.k41.safety"
+      ]
+    },
+    {
+      "page": "kutter-techet.html",
+      "symptomId": "cutter.leak",
+      "wave": "P0",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "sirman.ctronic.safety",
+        "hallde.vcm.parts",
+        "robot-coupe.blixer.scraper"
+      ]
+    },
+    {
+      "page": "kutter-vybivaet-avtomat.html",
+      "symptomId": "cutter.trips_breaker",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "page": "kutter-peregrevaetsya.html",
+      "symptomId": "cutter.overheats",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "sirman.ctronic.process"
+      ]
+    },
+    {
+      "page": "kutter-teryaet-oboroty.html",
+      "symptomId": "cutter.loses_speed",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "sirman.ctronic.process",
+        "sammic.ke5v.variable"
+      ]
+    },
+    {
+      "page": "nozh-kuttera-zaklinilo.html",
+      "symptomId": "cutter.blade_jam",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r10.spec"
+      ]
+    },
+    {
+      "page": "ne-rabotaet-vtoraya-skorost-kuttera.html",
+      "symptomId": "cutter.second_speed_failure",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "robot-coupe.r10.spec",
+        "sammic.k82.performance",
+        "hallde.vcm.parts"
+      ]
+    },
+    {
+      "page": "ne-reguliruetsya-skorost-kuttera.html",
+      "symptomId": "cutter.variable_speed_failure",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "sirman.ctronic.process",
+        "sammic.ke5v.variable"
+      ]
+    },
+    {
+      "page": "ne-rabotaet-impulsnyy-rezhim-kuttera.html",
+      "symptomId": "cutter.pulse_failure",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "robot-coupe.r10.spec",
+        "sirman.ctronic.process",
+        "hallde.vcm.parts"
+      ]
+    },
+    {
+      "page": "ne-rabotaet-taymer-kuttera.html",
+      "symptomId": "cutter.timer_failure",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r10.spec"
+      ]
+    },
+    {
+      "page": "skreber-kuttera-ne-rabotaet.html",
+      "symptomId": "cutter.scraper_failure",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "robot-coupe.blixer.scraper",
+        "sammic.k82.performance",
+        "hallde.vcm.parts"
+      ]
+    },
+    {
+      "page": "nozh-kuttera-ne-ostanavlivaetsya.html",
+      "symptomId": "cutter.brake_failure",
+      "wave": "P1",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "robot-coupe.r10.spec",
+        "hallde.vcm.manual",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "page": "kutter-ne-emulgiruet.html",
+      "symptomId": "cutter.no_emulsification",
+      "wave": "P2",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "sammic.ke5v.variable",
+        "robot-coupe.blixer.scraper"
+      ]
+    },
+    {
+      "page": "kutter-mazhet-produkt-vmesto-izmelcheniya.html",
+      "symptomId": "cutter.smears_product",
+      "wave": "P2",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "robot-coupe.r4.drive",
+        "sammic.k41.safety"
+      ]
+    },
+    {
+      "page": "produkt-nagrevaetsya-v-kuttere.html",
+      "symptomId": "cutter.product_heating",
+      "wave": "P2",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "sirman.ctronic.process",
+        "sammic.k41.safety"
+      ]
+    },
+    {
+      "page": "tupye-ili-povrezhdennye-nozhi-kuttera.html",
+      "symptomId": "cutter.damaged_blades",
+      "wave": "P2",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.parts",
+        "robot-coupe.r10.spec"
+      ]
+    },
+    {
+      "page": "posle-moyki-kutter-ne-vklyuchaetsya.html",
+      "symptomId": "cutter.no_start_after_wash",
+      "wave": "P2",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "sirman.ctronic.process"
+      ]
+    },
+    {
+      "page": "voda-popala-v-motornyy-blok-kuttera.html",
+      "symptomId": "cutter.water_in_motor",
+      "wave": "P2",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "sirman.ctronic.safety",
+        "hallde.vcm.manual"
+      ]
+    },
+    {
+      "page": "zapah-gari-ili-dym-iz-kuttera.html",
+      "symptomId": "cutter.smoke_burning",
+      "wave": "P2",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.parts",
+        "sirman.ctronic.safety"
+      ]
+    },
+    {
+      "page": "kryshka-kuttera-ne-zakryvaetsya.html",
+      "symptomId": "cutter.lid_not_closing",
+      "wave": "P2",
+      "status": "published",
+      "indexable": true,
+      "evidenceIds": [
+        "hallde.vcm.manual",
+        "robot-coupe.blixer.scraper",
+        "sirman.ctronic.safety"
+      ]
+    }
+  ]
+}

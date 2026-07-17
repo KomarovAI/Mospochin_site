@@ -1,169 +1,56 @@
-# Mospochin_site Rules
+<!-- ai-instruction-file: true -->
+# Repository Instructions
 
-## AI operating entrypoint
+## Start
 
-For any non-trivial AI edit, use this route:
-
-1. Read `docs/AI_START_HERE.md`.
-2. Read `docs/DOC_INDEX.md` only if you need more documentation.
-3. Inspect `data/project-map.generated.json` for page/source/check mapping.
-4. Inspect `data/file-ownership.json` before editing unclear files.
-5. Open only the relevant `.ai/digest/pages/*.md`, component digest or cluster digest.
-
-Use the task router before choosing files or commands:
-
-```bash
-npm run ai:route -- --task content --page parokonvektomat-rational.html
-```
-
-For deeper architecture context, read `docs/AI_PROJECT_OPERATING_GUIDE.md`. `AI-CONTEXT.md` is now only a short compatibility stub, not the main guide.
-
-If the task touches parokonvektomat pages, also read:
-
-1. `docs/PAROKONVEKTOMAT_CLUSTER_AI_GUIDE.md`
-2. `data/parokonvektomat-conversion-pages.json`
-3. `.ai/digest/clusters/parokonvektomaty.md`
-
-Если задача касается вентиляции, дополнительно открыть:
-
-1. `docs/VENTILATION_CLUSTER_AI_GUIDE.md`
-2. `data/ventilation-cluster-pages.json`
-3. `data/ventilation-photo-map.json`
-4. `.ai/digest/clusters/ventilyatsiya.md`
-
-After small AI edits, run `npm run check:core`. If generated artifacts may be stale, run `npm run sync:generated`. Before handoff/ZIP, run `npm run check:handoff` or `npm run handoff:pack` (alias for check only: `npm run predeploy:check`). Use `npm run check:full` only before production or after visual/image/layout changes. For forms, CTA, WhatsApp, phone links, sitemap/index logic or parokonvektomat cluster links, `npm run check:conversion-ui` is mandatory.
+- Run `npm run ai:brief -- --task <task> --page <file.html>` before a non-trivial edit.
+- Read `.ai/CURRENT.md` for current project state.
+- Open only the files listed by the brief; do not read generated project maps in full.
+- Use `docs/AI_CONTROL_LITE.md` only when the brief is insufficient.
 
 ## Source of truth
 
-Prefer the builder/data layer over root production HTML:
+- Page structure: `src/site-builder.json` and `src/pages/<slug>/page.json`.
+- Page-local markup: `src/pages/<slug>/sections/*`.
+- Shared markup: `src/components/shared/*`.
+- Parametric markup and props: `src/components/parametric/*` and `content/components/*`.
+- Metadata, contacts, cluster contracts and policies: `data/*`.
+- Runtime code: `main.js`, `analytics.js`, `telegram-form.js`, `styles-combined.css`.
+- Backend: `server/*`.
+- Root HTML, sitemap, digests, reports and deploy manifests are generated outputs.
 
-- `src/site-builder.json` and `src/pages/<slug>/page.json` — page structure for indexed HTML pages.
-- `src/pages/<slug>/sections/*` — page-local HTML sections.
-- `src/components/shared/*` — declarative shared HTML sections reused by pages.
-- `src/components/parametric/*/*.template.html` — parameterized component markup.
-- `content/components/*/*.json` — page/variant props for parameterized components.
-- `content/faq/page-faq-registry.json` and `content/faq/schema/*.json` — generated FAQ registry/schema, update with scripts.
-- `data/*.json` — contacts, metadata, service registries, slots, AI indexes.
-- `data/cluster-registry.json` — machine-readable page clusters, roles, guides, visual manifests and guard commands.
-- `data/visual-runtime.json` — primary local-native screenshot runtime and manual GitHub fallback policy.
-- `styles-combined.css`, `main.js`, `telegram-form.js`, `analytics.js` — production runtime/style sources.
-- `tools/*.mjs` — generators, validators, AI workflow tools.
+## Editing rules
 
-Root `*.html` files are production output and must match the Static Component Builder. Do not edit them directly unless you also sync the builder source or intentionally bootstrap from root HTML.
+- Edit the smallest relevant source file.
+- Do not manually edit root HTML when a builder source exists.
+- Do not reformat unrelated files.
+- Do not create reports, notes, backups, screenshots or temporary files in authoring directories.
+- Put temporary output in `.artifacts/`; put durable release evidence in `reports/handoff/`.
+- Do not add new instruction files. Approved instruction files are listed in `data/ai-instruction-policy.json`.
+- Instruction files contain stable rules only; never append task results, metrics, dates, logs or release notes.
 
-## Preferred AI workflow
+## Verification
 
-1. Run `npm run ai:route -- --task <type> --page <file.html>` or read `docs/AI_START_HERE.md` for the route.
-2. Open `data/project-map.generated.json`, `data/file-ownership.json` and the relevant digest/source files.
-3. Edit the smallest source of truth: data, props, page section, shared component or parametric template.
-4. Rebuild generated artifacts with the relevant script, or run `npm run sync:generated` when several generated maps may be stale.
-5. Run `npm run check:core` after small edits and `npm run check:handoff` before final handoff.
+- After an iteration: `npm run ai:verify -- --changed`.
+- For an explicit file list: `npm run ai:verify -- --files path/a,path/b`.
+- After a no-delete source overlay: `npm run apply:ai-control-lite-r5`.
+- Before a release or ZIP: `npm run ai:release`.
+- If a command fails, fix the source or policy; do not disable the guard.
 
-## Generated / do not edit manually
+## Instruction hygiene
 
-- Root `*.html` production pages, unless intentionally syncing builder state.
-- `sitemap.xml` — use `npm run generate:sitemap` when needed.
-- `.deploy/include-files.txt` — use `npm run generate:deploy-manifest`.
-- `data/ai-project-index.json` — use `npm run generate:ai-index`.
-- `data/ai-component-map.json` — use `npm run generate:ai-component-map`.
-- `data/project-map.generated.json` — use `npm run generate:project-map`.
-- `data/cluster-registry.json` — edit only when adding/changing a cluster contract; project-map and digests consume it.
-- `.ai/digest/*` — use `npm run ai:digest`.
-- `reports/source-complexity.*` — use `npm run analyze:source-complexity`.
-- `content/faq/page-faq-registry.json` and `content/faq/schema/*.json` — use `npm run generate:faq-registry`.
-- responsive/WebP/AVIF derivatives — use image generator scripts.
-- `reports/handoff/*` — generated by `npm run handoff:pack`.
-- `reports/handoff/ai-change-manifest.json` — generated by `npm run ai:change-manifest`; in ZIP/no-Git mode it is the source/generated state snapshot for the next AI handoff.
+- `npm run check:instruction-hygiene` protects instruction files from unrelated content.
+- `npm run check:repo-hygiene` blocks new root notes, backup copies, logs, ZIP files and stray instruction files.
+- Current status belongs only in `.ai/CURRENT.md` and `data/ai-current-state.json`.
+- Long plans belong only in `docs/exec-plans/active/` and are moved to `completed/` when done.
 
 ## Risky zones
 
-- `.github/workflows/*`
-- `deploy/*` and `.deploy/*`
-- `server/telegram-api.mjs`
-- `tools/*.mjs`
-- `main.js`, `telegram-form.js`, `analytics.js`
-- `styles-combined.css`
-- SEO metadata, canonicals, sitemap, FAQ schema, forms and contact flow
+- `.github/workflows/*`, `deploy/*`, `.deploy/*`.
+- `server/*`, `tools/*`, package scripts and lock files.
+- Forms, analytics, contacts, canonicals, sitemap, structured data and indexability.
+- Shared components and runtime files that affect many pages.
 
-Keep changes small and do not reformat unrelated HTML, CSS, JS or JSON.
+## Handoff
 
-## Scale policy
-
-Проект зафиксирован в режиме `controlled-growth-to-150-pages`.
-
-- До 100–150 страниц можно расти по текущей builder/source модели.
-- Нельзя добавлять страницы копипастой root HTML или ухудшать source-layer.
-- После 100 страниц нужно активно сжимать повторяемые блоки через shared/parametric.
-- После 125 страниц нужны blueprints для повторяемых семейств.
-- После 150 страниц рост заблокирован до отдельного source-compression/blueprint этапа.
-
-Machine-readable contract: `data/ai-scale-policy.json`.
-Human-readable contract: `docs/SCALE_POLICY.md`.
-Gate command: `npm run guard:scale`.
-
-Если `npm run guard:scale` падает, не отключай проверку: сначала выноси повторяемые секции в shared/parametric или blueprint.
-
-## Validation
-
-Use profile checks instead of long manual chains:
-
-```bash
-npm run check:core      # after small edits
-npm run check:ai        # after AI docs/index/digest changes
-npm run check:handoff   # before ZIP/handoff
-npm run check:full      # before production or after visual/image/layout changes
-npm run check:visual-contract # manifest/registry/local-runtime contract; browser is not launched
-```
-
-Visual changes use the local-native Chromium path first:
-
-```bash
-npm run setup:visual          # real system-Chromium probe, no browser download
-npm run audit:visual-smoke    # first-view desktop/mobile PNG
-npm run check:visual-workflows # GitHub visual workflows must be manual-only
-```
-
-GitHub Actions is a fallback only and may be started manually through `workflow_dispatch`. Do not add visual jobs to push/PR/schedule workflows. Full visual architecture: `docs/VISUAL_CHECKS.md`.
-
-Common focused checks:
-
-```bash
-npm run validate:data
-npm run validate:site
-npm run check:site-builder
-npm run check:shared-components
-npm run check:parameterized-components
-npm run check:faq-registry
-npm run check:conversion-ui
-```
-
-## Static Component Builder rules
-
-- Edit page-local sections in `src/pages/<slug>/sections/*`.
-- Edit reused sections in `src/components/shared/*`.
-- Edit parameterized component structure in `src/components/parametric/*/*.template.html`.
-- Edit parameterized per-page text/props in `content/components/*/*.json`.
-- Rebuild root HTML with `npm run build:site -- --page <file.html> --write` or all pages with `npm run build:site -- --write`.
-- Check root/build parity with `npm run check:site-builder`.
-
-## Restaurant branch guardrails
-
-- Keep restaurant branch behavior in `main.js` and data registries, not in page-specific JS snippets.
-- Keep shared restaurant UI in `data/restaurant-branch.json`, `data/restaurant-page-slots.json`, `data/restaurant-services.json`, shared components, or parametric props.
-- `index.html` and `uslugi.html` are routers; preserve page-specific copy on vertical restaurant pages.
-
-## Final handoff
-
-In the final summary, state:
-
-1. What changed.
-2. Which files were touched.
-3. Which checks passed.
-4. What still needs visual/manual review, if anything.
-
-## Sous-vide pilot — 2026-07-14
-
-- Blueprint: `data/sous-vide-cluster-pages.json`.
-- AI guide: `docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md`.
-- Visual manifest: `data/sous-vide-screenshot-audit.json`.
-- Four-page pilot targets 125 total production pages.
+Report only what changed, files touched, checks passed and remaining manual review. Do not paste terminal logs or generated reports into instruction files.

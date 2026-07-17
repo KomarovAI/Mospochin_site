@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://mospochin.ru/kody-oshibok-holodilnogo-oborudovaniya.html#faq",
+  "url": "https://mospochin.ru/kody-oshibok-holodilnogo-oborudovaniya.html",
+  "name": "Коды ошибок холодильного оборудования | MosPochin",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Код E29 всегда означает датчик камеры?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Только для Danfoss ERC 21X он относится к Sair. На другом контроллере значение может быть иным."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли сбросить A80 выключением питания?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Руководство описывает ручной reset, но сначала нужно устранить перегрев конденсатора; простой сброс не является ремонтом."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Почему общий Err не приведён как отдельная ошибка?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Он показывает, что температура не может быть отображена из-за ошибки датчика, но без конкретного E-кода не определяет вход."
+      }
+    }
+  ]
+}

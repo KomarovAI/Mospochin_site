@@ -7,34 +7,31 @@
 - H1: Как подготовиться к выезду мастера по вентиляции
 - Canonical: https://mospochin.ru/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
 - Builder model: src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/page.json
-- Sections: 10 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1472
+- Sections: 9 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1256
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| mobile-contact | 4 |
 | layout-fragment | 3 |
-| mobile-contact | 2 |
-| body-preamble | 1 |
 | breadcrumb | 1 |
-| footer-anchor | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Как подготовиться к выезду мастера по вентиляции | breadcrumb | 60.4 KB | 1472 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/002-breadcrumb-kak-podgotovit-sya-k-vyezdu-mastera-po-ve.html |
-| Подключение partials-injector | runtime-partials | 54 B | 0 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/008-runtime-partials-podklyuchenie-partials-injector.html |
+| Как подготовиться к выезду мастера по вентиляции | breadcrumb | 40.9 KB | 1069 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/002-breadcrumb-kak-podgotovit-sya-k-vyezdu-mastera-po-ve.html |
+| Мобильные контактные элементы | mobile-contact | 9.3 KB | 110 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/007-lead-form-forma-zayavki.html |
-| Секция 1 | body-preamble | 48 B | 0 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/001-body-preamble-sekciya-1.html |
 | HTML-фрагмент | layout-fragment | 46 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-52c8755076d4.template.html |
 | Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| HTML-фрагмент | layout-fragment | 42 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html |
 | Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
-| HTML-фрагмент | layout-fragment | 41 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-5b57bace79b1.template.html |
 
 
 ## Editable source files

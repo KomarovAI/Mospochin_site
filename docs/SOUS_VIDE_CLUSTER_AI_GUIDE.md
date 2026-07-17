@@ -1,6 +1,6 @@
 # Sous-vide — AI cluster guide
 
-Кластер содержит 15 страниц: hub, 6 сервисных страниц, 5 информационных материалов и 3 noindex Direct landing. Контракт страниц — `data/sous-vide-cluster-pages.json`, визуальный manifest — `data/sous-vide-screenshot-audit.json`.
+Кластер содержит 37 страниц: hub, 6 сервисных страниц, 5 информационных материалов, 22 symptom-service страницы и 3 noindex Direct landing. Контракт страниц — `data/sous-vide-cluster-pages.json`, визуальный manifest — `data/sous-vide-screenshot-audit.json`.
 
 ## Состав MVP
 
@@ -19,7 +19,8 @@
 6. Каждая страница должна иметь минимум три ссылки на другие страницы кластера. Все такие ссылки обязаны иметь `data-cta-id`, `data-cta-group="internal_link"` и `data-block="related_cluster"`.
 7. Индексируемые страницы не ссылаются на noindex Direct landing; рекламный контур получает трафик из кампаний и сам возвращает пользователя на SEO/service-страницы.
 8. FAQ хранится отдельной builder-секцией с `component: "faq"`. JSON-LD `FAQPage` не редактируется вручную: его генерирует FAQ Registry.
-9. Hub должен оставаться основной навигационной точкой; новые симптомные или брендовые страницы добавляются только после отдельного blueprint.
+9. Hub должен оставаться основной навигационной точкой. Семантические связи symptom-service страниц задаются в `data/sous-vide-fault-taxonomy.json` и `data/sous-vide-link-graph.json`; случайные перекрёстные ссылки между термостатами и вакууматорами запрещены.
+10. SEO/content contract описан в `docs/SOUS_VIDE_SEO_LINKING_GUIDE.md`.
 
 ## Проверки
 
@@ -29,6 +30,7 @@ npm run generate:sitemap
 npm run sync:generated
 npm run check:conversion-ui
 npm run check:sous-vide-run5
+npm run audit:sous-vide-seo
 npm run check:visual-contract
 npm run check:visual-workflows
 npm run audit:sous-vide-screenshots
@@ -60,3 +62,15 @@ GitHub Actions — только ручной резерв через `workflow_d
 - существование и analytics-разметку каждого кластерного перехода;
 - входящие ссылки на каждую indexable дочернюю страницу;
 - совпадение metrics context, body data-атрибутов и cluster manifest.
+## Symptom-service architecture (2026-07-14)
+
+The cluster now includes evidence-backed `symptom_service` pages. Start with `data/sous-vide-fault-taxonomy.json`; publish only `status=ready`. Official claims live in `data/sous-vide-fault-evidence.json`, model-scoped codes in `data/sous-vide-error-codes.json`, and required page blocks in `src/components/parametric/symptom-service/blueprint.json`. Run `npm run check:symptom-service-pages` and `npm run check:symptom-cannibalization`.
+
+## Отчёт аудита
+
+```bash
+npm run report:sous-vide-seo
+npm run check:sous-vide-seo-report
+```
+
+Generated-отчёты: `reports/sous-vide-seo-cluster-audit.json` и `reports/sous-vide-seo-cluster-audit.md`.

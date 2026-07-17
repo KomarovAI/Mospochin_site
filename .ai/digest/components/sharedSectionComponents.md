@@ -1,7 +1,7 @@
 # Component Digest — sharedSectionComponents
 
 - Name: Shared section components / общие HTML-секции
-- Appears in: 44 pages
+- Appears in: 51 pages
 - Keywords: shared, компонент, общие секции, дубли, src/components/shared
 
 ## Related files
@@ -18,16 +18,15 @@
 
 ## Safe editing notes
 
-- Сейчас shared refs: 269, shared files: 40.
+- Сейчас shared refs: 297, shared files: 52.
 - После правки src/components/shared/* запускай check:shared-components и check:site-builder.
 
 ## Representative pages
 
 - grili-mangaly.html
 - holodilniki.html
-- holodilnoe-oborudovanie.html
-- ice-machines.html
 - kompyutery.html
+- nasos-vakuumatora-shumit-peregrevaetsya.html
 - parokonvektomat-abat.html
 - parokonvektomat-convotherm.html
 - parokonvektomat-e02-e07-e10.html
@@ -43,4 +42,5 @@
 - parokonvektomaty-promo.html
 - parokonvektomaty.html
 - pishevarochnye-kotly.html
-- … ещё 24
+- pishevarochnyj-kotel-abat-kpem.html
+- … ещё 31

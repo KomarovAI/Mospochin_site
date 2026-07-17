@@ -2,18 +2,9 @@
   "schemaVersion": 1,
   "purpose": "Machine-readable map for AI-assisted editing of MosPochin site.",
   "startHere": [
-    "docs/AI_START_HERE.md",
-    "docs/DOC_INDEX.md",
     "AGENTS.md",
-    "data/project-map.generated.json",
-    "data/file-ownership.json",
-    "data/cluster-registry.json",
-    "data/ventilation-cluster-pages.json",
-    "data/ventilation-photo-map.json",
-    "docs/AI_PROJECT_OPERATING_GUIDE.md",
-    "AI-CONTEXT.md",
-    "data/sous-vide-cluster-pages.json",
-    "data/sous-vide-screenshot-audit.json"
+    ".ai/CURRENT.md",
+    "docs/AI_CONTROL_LITE.md"
   ],
   "sourceOfTruth": {
     "pageBuilder": "src/site-builder.json",
@@ -42,7 +33,7 @@
   ],
   "criticalCommands": {
     "afterAnyEdit": [
-      "npm run verify:fast"
+      "npm run ai:verify -- --changed"
     ],
     "afterLinksFormsOrCTA": [
       "npm run check:conversion-ui"
@@ -57,16 +48,15 @@
       "npm run validate:site"
     ],
     "afterAiDocsOrIndexEdit": [
-      "npm run generate:ai-index",
-      "npm run ai:digest",
-      "npm run ai:doctor"
+      "npm run check:instruction-hygiene",
+      "npm run check:repo-hygiene",
+      "npm run check:ai"
     ],
     "beforeHandoff": [
-      "npm run sync:generated",
-      "npm run check:handoff"
+      "npm run ai:release"
     ],
     "routeTask": [
-      "npm run ai:route -- --task <type> --page <file.html>"
+      "npm run ai:brief -- --task <type> --page <file.html>"
     ],
     "afterNavigationLayerEdit": [
       "npm run sync:generated",
@@ -225,53 +215,11 @@
       "conversionManifest": "data/sous-vide-cluster-pages.json",
       "screenshotManifest": "data/sous-vide-screenshot-audit.json",
       "digest": ".ai/digest/clusters/sous-vide.md",
-      "guardCommand": "npm run check:conversion-ui",
+      "guardCommand": "npm run audit:sous-vide-seo",
       "pages": [
         {
-          "page": "sous-vide-restoranov.html",
-          "intent": "hub",
-          "indexable": true,
-          "branch": "restaurant",
-          "minClusterLinks": 3
-        },
-        {
-          "page": "remont-sous-vide.html",
-          "intent": "service",
-          "indexable": true,
-          "branch": "restaurant",
-          "minClusterLinks": 3
-        },
-        {
-          "page": "sous-vide-termostaty.html",
-          "intent": "service",
-          "indexable": true,
-          "branch": "restaurant",
-          "minClusterLinks": 3
-        },
-        {
-          "page": "vakuumnye-upakovshiki-dlya-restorana.html",
-          "intent": "service",
-          "indexable": true,
-          "branch": "restaurant",
-          "minClusterLinks": 3
-        },
-        {
-          "page": "remont-termostata-sous-vide.html",
-          "intent": "service",
-          "indexable": true,
-          "branch": "restaurant",
-          "minClusterLinks": 3
-        },
-        {
-          "page": "remont-vakuumnogo-upakovshika.html",
-          "intent": "service",
-          "indexable": true,
-          "branch": "restaurant",
-          "minClusterLinks": 3
-        },
-        {
-          "page": "obsluzhivanie-sous-vide.html",
-          "intent": "service",
+          "page": "bezopasnost-sous-vide.html",
+          "intent": "guide",
           "indexable": true,
           "branch": "restaurant",
           "minClusterLinks": 3
@@ -291,30 +239,69 @@
           "minClusterLinks": 3
         },
         {
-          "page": "sous-vide-i-vakuumnaya-upakovka.html",
-          "intent": "guide",
+          "page": "kody-oshibok-sous-vide.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.error_codes",
+          "evidenceIds": [
+            "anova.nano.alerts",
+            "anova.pro.alerts",
+            "henkelman.manuals.series"
+          ]
+        },
+        {
+          "page": "mutnoe-maslo-vakuumatora.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.cloudy_oil",
+          "evidenceIds": [
+            "henkelman.pump.moisture",
+            "sammic.oil.service",
+            "sammic.vacuum.safety",
+            "henkelman.liquid.control"
+          ]
+        },
+        {
+          "page": "nasos-vakuumatora-shumit-peregrevaetsya.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.pump_noise_overheat",
+          "evidenceIds": [
+            "henkelman.maintenance.core",
+            "henkelman.pump.moisture"
+          ]
+        },
+        {
+          "page": "obsluzhivanie-sous-vide.html",
+          "intent": "service",
           "indexable": true,
           "branch": "restaurant",
           "minClusterLinks": 3
         },
         {
-          "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
-          "intent": "guide",
+          "page": "paket-nabiraet-vozduh-posle-vakuumirovaniya.html",
+          "intent": "symptom_service",
           "indexable": true,
           "branch": "restaurant",
-          "minClusterLinks": 3
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.package_reinflates",
+          "evidenceIds": [
+            "henkelman.vacuum.process",
+            "henkelman.softair",
+            "henkelman.sealbar.parts",
+            "sammic.maintenance.kit"
+          ]
         },
         {
-          "page": "bezopasnost-sous-vide.html",
-          "intent": "guide",
+          "page": "remont-sous-vide.html",
+          "intent": "service",
           "indexable": true,
-          "branch": "restaurant",
-          "minClusterLinks": 3
-        },
-        {
-          "page": "sous-vide-remont-moskva.html",
-          "intent": "promo",
-          "indexable": false,
           "branch": "restaurant",
           "minClusterLinks": 3
         },
@@ -326,23 +313,310 @@
           "minClusterLinks": 3
         },
         {
+          "page": "remont-termostata-sous-vide.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
           "page": "remont-vakuumnogo-upakovshika-reklama.html",
           "intent": "promo",
           "indexable": false,
           "branch": "restaurant",
           "minClusterLinks": 3
+        },
+        {
+          "page": "remont-vakuumnogo-upakovshika.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "slabyy-ili-nerovnyy-shov-vakuumatora.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.weak_uneven_seal",
+          "evidenceIds": [
+            "henkelman.sealbar.parts",
+            "henkelman.maintenance.core",
+            "sammic.maintenance.kit"
+          ]
+        },
+        {
+          "page": "sous-vide-i-shokovoe-okhlazhdenie.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-i-vakuumnaya-upakovka.html",
+          "intent": "guide",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-medlenno-nagrevaet-vodu.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.slow_heat",
+          "evidenceIds": [
+            "anova.temperature.stuck",
+            "anova.cleaning.internal",
+            "anova.temperature.mismatch"
+          ]
+        },
+        {
+          "page": "sous-vide-ne-cirkuliruet-voda.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.no_flow",
+          "evidenceIds": [
+            "anova.nano.alerts",
+            "anova.noise.gurgling",
+            "anova.cleaning.internal"
+          ]
+        },
+        {
+          "page": "sous-vide-ne-derzhit-temperaturu.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.unstable_temperature",
+          "evidenceIds": [
+            "anova.temperature.mismatch",
+            "anova.temperature.stuck",
+            "anova.cleaning.internal"
+          ]
+        },
+        {
+          "page": "sous-vide-ne-greet-vodu.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.no_heat",
+          "evidenceIds": [
+            "anova.power.troubleshooting",
+            "anova.cleaning.internal"
+          ]
+        },
+        {
+          "page": "sous-vide-ne-vklyuchaetsya.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.no_power",
+          "evidenceIds": [
+            "anova.power.troubleshooting",
+            "anova.nano.alerts",
+            "anova.pro.alerts"
+          ]
+        },
+        {
+          "page": "sous-vide-oshibka-urovnya-vody.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.low_water_alarm",
+          "evidenceIds": [
+            "anova.nano.alerts",
+            "anova.pro.alerts"
+          ]
+        },
+        {
+          "page": "sous-vide-peregrevaet-vodu.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.overheat",
+          "evidenceIds": [
+            "anova.temperature.mismatch",
+            "anova.nano.alerts",
+            "anova.safety.electrical"
+          ]
+        },
+        {
+          "page": "sous-vide-remont-moskva.html",
+          "intent": "promo",
+          "indexable": false,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-restoranov.html",
+          "intent": "hub",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-shumit-bulkaet-vibriruet.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.noise_gurgle_vibration",
+          "evidenceIds": [
+            "anova.noise.details",
+            "anova.cleaning.internal",
+            "anova.nano.alerts"
+          ]
+        },
+        {
+          "page": "sous-vide-termostaty.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "sous-vide-vybivaet-avtomat.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.trips_breaker",
+          "evidenceIds": [
+            "anova.safety.electrical",
+            "anova.nano.alerts",
+            "anova.power.troubleshooting"
+          ]
+        },
+        {
+          "page": "sous-vide-vyklyuchaetsya-vo-vremya-raboty.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "circulator.stops_during_work",
+          "evidenceIds": [
+            "anova.random.reboot",
+            "anova.safety.electrical",
+            "anova.nano.alerts"
+          ]
+        },
+        {
+          "page": "vakuumator-medlenno-nabiraet-vakuum.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.slow_vacuum",
+          "evidenceIds": [
+            "henkelman.maintenance.core",
+            "sammic.oil.service",
+            "henkelman.pump.moisture",
+            "henkelman.manuals.series"
+          ]
+        },
+        {
+          "page": "vakuumator-ne-dostigaet-zadannogo-vakuuma.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.target_not_reached",
+          "evidenceIds": [
+            "henkelman.sensor.control",
+            "sammic.vacuum.safety",
+            "henkelman.maintenance.core"
+          ]
+        },
+        {
+          "page": "vakuumator-ne-otkachivaet-vozduh.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.no_vacuum",
+          "evidenceIds": [
+            "henkelman.maintenance.core",
+            "henkelman.pump.moisture"
+          ]
+        },
+        {
+          "page": "vakuumator-ne-zapaivaet-paket.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.no_seal",
+          "evidenceIds": [
+            "henkelman.maintenance.core",
+            "henkelman.sealbar.parts"
+          ]
+        },
+        {
+          "page": "vakuumator-ne-zapuskaet-cikl.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.cycle_no_start",
+          "evidenceIds": [
+            "henkelman.manuals.series",
+            "sammic.vacuum.safety",
+            "henkelman.vacuum.process"
+          ]
+        },
+        {
+          "page": "vakuumator-prozhigaet-paket.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.burns_bag",
+          "evidenceIds": [
+            "henkelman.sealbar.parts",
+            "henkelman.maintenance.core",
+            "sammic.maintenance.kit"
+          ]
+        },
+        {
+          "page": "vakuumnye-upakovshiki-dlya-restorana.html",
+          "intent": "service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 3
+        },
+        {
+          "page": "zhidkost-popala-v-vakuumator.html",
+          "intent": "symptom_service",
+          "indexable": true,
+          "branch": "restaurant",
+          "minClusterLinks": 5,
+          "symptomId": "vacuum.liquid_ingress",
+          "evidenceIds": [
+            "henkelman.liquid.control",
+            "henkelman.pump.moisture",
+            "henkelman.maintenance.core"
+          ]
         }
-      ]
+      ],
+      "seoGuide": "docs/SOUS_VIDE_SEO_LINKING_GUIDE.md",
+      "linkGraph": "data/sous-vide-link-graph.json"
     }
   },
   "handoffChecklist": "docs/AI_CHANGE_CHECKLIST.md",
   "changelog": "CHANGELOG_AI.md",
   "navigationLayer": {
-    "entrypoint": "docs/AI_START_HERE.md",
-    "docIndex": "docs/DOC_INDEX.md",
-    "projectMap": "data/project-map.generated.json",
-    "ownership": "data/file-ownership.json",
-    "taskRouter": "npm run ai:route -- --task <type> --page <file.html>",
-    "handoffPacker": "npm run handoff:pack"
+    "taskBrief": "npm run ai:brief",
+    "currentState": ".ai/CURRENT.md",
+    "instructionPolicy": "data/ai-instruction-policy.json",
+    "repoHygienePolicy": "data/repo-hygiene-policy.json"
   }
 }

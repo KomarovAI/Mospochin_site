@@ -1,17 +1,14 @@
 {
   "summary": {
-    "generatedAt": "2026-07-14T03:53:42.736Z",
-    "totalDocs": 44,
-    "totalBytes": 203254,
+    "generatedAt": "2026-07-17T06:46:10.400Z",
+    "totalDocs": 81,
+    "totalBytes": 331237,
     "byCategory": {
       "active": 13,
-      "reference": 23,
-      "orphanCandidate": 7,
-      "legacyCandidate": 1
+      "reference": 68
     },
     "byAction": {
-      "keep": 36,
-      "reviewForPrune": 8
+      "keep": 81
     }
   },
   "docs": [
@@ -20,8 +17,12 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 7631,
+      "sizeBytes": 2671,
       "references": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "count": 2
+        },
         {
           "file": "AI-CONTEXT.md",
           "count": 2
@@ -31,20 +32,40 @@
           "count": 6
         },
         {
+          "file": "data/ai-current-state.json",
+          "count": 2
+        },
+        {
           "file": "data/ai-editing-manifest.json",
           "count": 2
         },
         {
+          "file": "data/ai-instruction-policy.json",
+          "count": 12
+        },
+        {
           "file": "data/file-ownership.json",
-          "count": 2
+          "count": 24
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 32
         },
         {
           "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
           "count": 4
         },
         {
-          "file": "docs/DOC_INDEX.md",
+          "file": "docs/AI_START_HERE.md",
           "count": 4
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-brief.mjs",
+          "count": 10
         },
         {
           "file": "tools/ai-task-router.mjs",
@@ -57,30 +78,18 @@
         {
           "file": "tools/audit-docs.mjs",
           "count": 4
-        },
-        {
-          "file": "tools/generate-deploy-manifest.mjs",
-          "count": 4
-        },
-        {
-          "file": "tools/generate-public-file-list.mjs",
-          "count": 2
-        },
-        {
-          "file": "tools/report-size.mjs",
-          "count": 2
         }
       ],
-      "referenceCount": 38,
+      "referenceCount": 132,
       "headings": [
-        "Mospochin_site Rules",
-        "AI operating entrypoint",
+        "Repository Instructions",
+        "Start",
         "Source of truth",
-        "Preferred AI workflow",
-        "Generated / do not edit manually",
+        "Editing rules",
+        "Verification",
+        "Instruction hygiene",
         "Risky zones",
-        "Scale policy",
-        "Validation"
+        "Handoff"
       ]
     },
     {
@@ -88,14 +97,10 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 1621,
+      "sizeBytes": 285,
       "references": [
         {
           "file": ".ai/digest/content-map.json",
-          "count": 2
-        },
-        {
-          "file": "AGENTS.md",
           "count": 2
         },
         {
@@ -103,19 +108,15 @@
           "count": 2
         },
         {
-          "file": "data/ai-editing-manifest.json",
+          "file": "data/file-ownership.json",
           "count": 2
         },
         {
-          "file": "data/file-ownership.json",
+          "file": "data/repo-hygiene-policy.json",
           "count": 4
         },
         {
           "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
-          "count": 2
-        },
-        {
-          "file": "docs/DOC_INDEX.md",
           "count": 2
         },
         {
@@ -135,13 +136,9 @@
           "count": 2
         }
       ],
-      "referenceCount": 26,
+      "referenceCount": 22,
       "headings": [
-        "AI-CONTEXT — compatibility stub",
-        "Актуальный маршрут",
-        "Быстрый workflow",
-        "Source of truth",
-        "Почему файл короткий"
+        "AI Context Compatibility Stub"
       ]
     },
     {
@@ -149,12 +146,8 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 8752,
+      "sizeBytes": 16117,
       "references": [
-        {
-          "file": "README_CONVERSION_P0_PATCH.md",
-          "count": 2
-        },
         {
           "file": "data/ai-editing-manifest.json",
           "count": 2
@@ -162,6 +155,10 @@
         {
           "file": "data/file-ownership.json",
           "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 4
         },
         {
           "file": "docs/AI_CHANGE_CHECKLIST.md",
@@ -172,7 +169,7 @@
           "count": 2
         },
         {
-          "file": "docs/AI_START_HERE.md",
+          "file": "docs/archive/root-history/README_CONVERSION_P0_PATCH.md",
           "count": 2
         },
         {
@@ -184,16 +181,16 @@
           "count": 6
         }
       ],
-      "referenceCount": 22,
+      "referenceCount": 24,
       "headings": [
         "AI Change Log — MosPochin",
+        "2026-07-14 — kutter cluster K3 pilot",
+        "2026-07-14 — sous-vide native visual audit and header correction",
+        "2026-07-14 — ventilation cluster and AI-maintenance hardening",
         "2026-07-13 — workspace and AI-context cleanup",
         "2026-07-13 — AI architecture and visual runner hardening",
         "2026-06-03 — Parokonvektomat AI operating layer",
-        "2026-06-06 — low-resource/high-impact patch",
-        "2026-06-06 — low-resource check hierarchy",
-        "2026-06-06 — AI navigation pack",
-        "2026-06-06 — AI/docs prune pack"
+        "2026-06-06 — low-resource/high-impact patch"
       ]
     },
     {
@@ -201,8 +198,12 @@
       "category": "reference",
       "action": "keep",
       "reason": "Referenced or useful reference documentation.",
-      "sizeBytes": 694,
+      "sizeBytes": 692,
       "references": [
+        {
+          "file": ".github/copilot-instructions.md",
+          "count": 1
+        },
         {
           "file": "AI-CONTEXT.md",
           "count": 1
@@ -212,20 +213,40 @@
           "count": 3
         },
         {
+          "file": "data/ai-current-state.json",
+          "count": 1
+        },
+        {
           "file": "data/ai-editing-manifest.json",
           "count": 1
         },
         {
+          "file": "data/ai-instruction-policy.json",
+          "count": 7
+        },
+        {
           "file": "data/file-ownership.json",
-          "count": 1
+          "count": 14
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 18
         },
         {
           "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
           "count": 2
         },
         {
-          "file": "docs/DOC_INDEX.md",
+          "file": "docs/AI_START_HERE.md",
           "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 1
+        },
+        {
+          "file": "tools/ai-brief.mjs",
+          "count": 6
         },
         {
           "file": "tools/ai-task-router.mjs",
@@ -238,23 +259,15 @@
         {
           "file": "tools/audit-docs.mjs",
           "count": 2
-        },
-        {
-          "file": "tools/generate-deploy-manifest.mjs",
-          "count": 2
-        },
-        {
-          "file": "tools/generate-public-file-list.mjs",
-          "count": 1
-        },
-        {
-          "file": "tools/report-size.mjs",
-          "count": 1
         }
       ],
-      "referenceCount": 19,
+      "referenceCount": 73,
       "headings": [
-        "Docs Rules"
+        "Documentation Instructions",
+        "Scope",
+        "Edit",
+        "Verify",
+        "Do not add"
       ]
     },
     {
@@ -277,11 +290,11 @@
           "count": 1
         },
         {
-          "file": "docs/AI_TASK_RECIPES.md",
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
         },
         {
-          "file": "docs/DOC_INDEX.md",
+          "file": "docs/AI_TASK_RECIPES.md",
           "count": 2
         },
         {
@@ -306,6 +319,66 @@
       ]
     },
     {
+      "file": "docs/AI_CONTROL_LITE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 2333,
+      "references": [
+        {
+          "file": "AGENTS.md",
+          "count": 2
+        },
+        {
+          "file": "AI-CONTEXT.md",
+          "count": 2
+        },
+        {
+          "file": "data/ai-current-state.json",
+          "count": 2
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/file-ownership.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_START_HERE.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-brief.mjs",
+          "count": 6
+        },
+        {
+          "file": "tools/generate-ai-current-state.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 24,
+      "headings": [
+        "AI Control Lite",
+        "Workflow",
+        "Public commands",
+        "Context budget",
+        "Instruction files",
+        "File hygiene",
+        "Browser evidence",
+        "Verification levels"
+      ]
+    },
+    {
       "file": "docs/AI_FLEXIBLE_EDITING.md",
       "category": "reference",
       "action": "keep",
@@ -321,6 +394,10 @@
           "count": 2
         },
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
           "file": "tools/ai-check.mjs",
           "count": 2
         },
@@ -329,7 +406,7 @@
           "count": 4
         }
       ],
-      "referenceCount": 10,
+      "referenceCount": 12,
       "headings": [
         "Flexible AI Editing",
         "Принцип",
@@ -357,15 +434,7 @@
           "count": 2
         },
         {
-          "file": "AGENTS.md",
-          "count": 2
-        },
-        {
           "file": "CHANGELOG_AI.md",
-          "count": 2
-        },
-        {
-          "file": "data/ai-editing-manifest.json",
           "count": 2
         },
         {
@@ -373,8 +442,8 @@
           "count": 1
         },
         {
-          "file": "docs/DOC_INDEX.md",
-          "count": 3
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
         },
         {
           "file": "tools/ai-task-router.mjs",
@@ -389,7 +458,7 @@
           "count": 4
         }
       ],
-      "referenceCount": 24,
+      "referenceCount": 19,
       "headings": [
         "AI Project Operating Guide — MosPochin",
         "1. Быстрый старт для новой нейронки",
@@ -406,7 +475,7 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 5954,
+      "sizeBytes": 466,
       "references": [
         {
           "file": ".ai/digest/content-map.json",
@@ -417,19 +486,7 @@
           "count": 2
         },
         {
-          "file": "AGENTS.md",
-          "count": 4
-        },
-        {
-          "file": "AI-CONTEXT.md",
-          "count": 2
-        },
-        {
           "file": "CHANGELOG_AI.md",
-          "count": 4
-        },
-        {
-          "file": "data/ai-editing-manifest.json",
           "count": 4
         },
         {
@@ -441,12 +498,8 @@
           "count": 1
         },
         {
-          "file": "data/file-ownership.json",
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
-        },
-        {
-          "file": "docs/AGENTS.md",
-          "count": 4
         },
         {
           "file": "docs/AI_CHANGE_CHECKLIST.md",
@@ -457,28 +510,37 @@
           "count": 4
         },
         {
-          "file": "docs/DOC_INDEX.md",
-          "count": 6
-        },
-        {
           "file": "docs/PROJECT_DECISIONS.md",
           "count": 4
         },
         {
           "file": "tools/ai-check.mjs",
           "count": 2
+        },
+        {
+          "file": "tools/ai-context.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-maintenance-lib.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-task-router.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/ai-workspace.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-ai-overlap.mjs",
+          "count": 4
         }
       ],
-      "referenceCount": 63,
+      "referenceCount": 43,
       "headings": [
-        "AI_START_HERE — быстрый вход в MosPochin",
-        "1. Сначала определить тип задачи",
-        "2. Source of truth",
-        "3. Карта проекта",
-        "4. Минимальные проверки",
-        "5. Пароконвектоматы",
-        "6. Handoff",
-        "7. Что делать, если сомневаешься"
+        "AI Start Here"
       ]
     },
     {
@@ -497,7 +559,7 @@
           "count": 2
         },
         {
-          "file": "docs/DOC_INDEX.md",
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
         },
         {
@@ -531,36 +593,51 @@
     },
     {
       "file": "docs/AI_VISUAL_REVIEW_WORKFLOW.md",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No references found in project text graph.",
-      "sizeBytes": 4790,
-      "references": [],
-      "referenceCount": 0,
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3939,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "MosPochin — AI visual review workflow",
-        "Главный принцип",
-        "нейронка индексирует доступные PNG через Work Mode",
-        "если есть issues — правки, build/sync/check, снова audit:visual-smoke",
-        "затем AI review + повторный screenshot pass после исправлений",
-        "Что именно смотрит нейронка на скриншотах",
-        "Что именно проверяет автоматический контракт",
-        "Если среда не умеет запускать браузер"
+        "Основной цикл",
+        "открыть PNG, зафиксировать подтверждённые issues, внести правки",
+        "Что смотрит AI/ревьюер",
+        "First-view и full-page проверяются отдельно",
+        "Возобновляемый прогон",
+        "GitHub fallback",
+        "Финальный отчёт"
       ]
     },
     {
-      "file": "docs/ARCHIVE_HYGIENE.md",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No references found in project text graph.",
-      "sizeBytes": 1860,
-      "references": [],
-      "referenceCount": 0,
+      "file": "docs/ARCHIVE_HYGIENE_R4.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 7913,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "tools/check-archive-hygiene-r4.mjs",
+          "count": 2
+        }
+      ],
+      "referenceCount": 4,
       "headings": [
-        "Archive hygiene for MosPochin",
-        "Правило",
-        "Что исключается из полного project ZIP",
-        "Проверка размера"
+        "Archive Hygiene R4 — MosPochin",
+        "Статус",
+        "Удалённые historical/orphan файлы",
+        "Active backlog",
+        "Guard"
       ]
     },
     {
@@ -575,6 +652,10 @@
           "count": 1
         },
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
           "file": "docs/README.md",
           "count": 2
         },
@@ -583,7 +664,7 @@
           "count": 2
         }
       ],
-      "referenceCount": 5,
+      "referenceCount": 7,
       "headings": [
         "🍽️ ПОПУЛЯРНЫЕ БРЕНДЫ РЕСТОРАННОЙ ТЕХНИКИ",
         "📊 ТАБЛИЦА БРЕНДОВ ПО КАТЕГОРИЯМ",
@@ -607,11 +688,19 @@
           "count": 1
         },
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
           "file": "tools/audit-docs.mjs",
           "count": 2
         }
       ],
-      "referenceCount": 3,
+      "referenceCount": 7,
       "headings": [
         "Cleanup Policy",
         "Что считается live source",
@@ -631,6 +720,10 @@
           "count": 1
         },
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
           "file": "docs/DOC_INDEX.md",
           "count": 2
         },
@@ -643,7 +736,7 @@
           "count": 2
         }
       ],
-      "referenceCount": 7,
+      "referenceCount": 9,
       "headings": [
         "Data Contracts — MosPochin",
         "Главная команда",
@@ -667,6 +760,14 @@
           "count": 2
         },
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
           "file": "docs/STATIC_COMPONENT_BUILDER.md",
           "count": 2
         },
@@ -683,7 +784,7 @@
           "count": 2
         }
       ],
-      "referenceCount": 10,
+      "referenceCount": 14,
       "headings": [
         "Declarative Components",
         "Что это даёт",
@@ -696,11 +797,80 @@
       ]
     },
     {
+      "file": "docs/DISHWASHER_CLUSTER_AI_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 4021,
+      "references": [
+        {
+          "file": ".ai/digest/clusters/dishwasher.md",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/project-map.generated.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 10,
+      "headings": [
+        "Dishwasher Cluster AI Guide",
+        "Status",
+        "Source of truth",
+        "Published architecture",
+        "Mandatory rules",
+        "Direct pages",
+        "Machine-readable contracts",
+        "Commands"
+      ]
+    },
+    {
+      "file": "docs/DISHWASHER_IMAGE_INTEGRATION.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1492,
+      "references": [
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/archive/root-history/MOSPOCHIN_DISHWASHER_IMAGE_INTEGRATION_20260715.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "Dishwasher image integration",
+        "Source of truth",
+        "Rendering contract",
+        "Content contract",
+        "Adding a photograph"
+      ]
+    },
+    {
       "file": "docs/DOC_INDEX.md",
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 7217,
+      "sizeBytes": 739,
       "references": [
         {
           "file": ".ai/digest/content-map.json",
@@ -711,36 +881,20 @@
           "count": 2
         },
         {
-          "file": "AGENTS.md",
-          "count": 2
-        },
-        {
-          "file": "AI-CONTEXT.md",
-          "count": 2
-        },
-        {
           "file": "CHANGELOG_AI.md",
           "count": 8
-        },
-        {
-          "file": "data/ai-editing-manifest.json",
-          "count": 4
         },
         {
           "file": "data/docs-contracts.json",
           "count": 7
         },
         {
-          "file": "docs/AGENTS.md",
-          "count": 4
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
         },
         {
           "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
           "count": 4
-        },
-        {
-          "file": "docs/AI_START_HERE.md",
-          "count": 2
         },
         {
           "file": "docs/PROJECT_DECISIONS.md",
@@ -755,23 +909,38 @@
           "count": 2
         },
         {
+          "file": "tools/ai-brief.mjs",
+          "count": 2
+        },
+        {
           "file": "tools/ai-check.mjs",
           "count": 2
         },
         {
           "file": "tools/ai-task-router.mjs",
           "count": 4
+        },
+        {
+          "file": "tools/audit-ai-overlap.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-docs.mjs",
+          "count": 4
+        },
+        {
+          "file": "tools/generate-ai-digest.mjs",
+          "count": 4
         }
       ],
-      "referenceCount": 62,
+      "referenceCount": 52,
       "headings": [
-        "DOC_INDEX — статусы документации MosPochin",
-        "Активные входы",
-        "Специальные reference-документы",
-        "Удалённые/схлопнутые документы",
-        "Правило чтения",
-        "Что может устаревать",
-        "Maintenance audit reports"
+        "Documentation Index",
+        "Start",
+        "Architecture and contracts",
+        "Domain guides",
+        "Operations",
+        "Archive"
       ]
     },
     {
@@ -779,8 +948,12 @@
       "category": "reference",
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
-      "sizeBytes": 2186,
+      "sizeBytes": 2189,
       "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
         {
           "file": "docs/PARAMETERIZED_COMPONENTS.md",
           "count": 2
@@ -794,7 +967,7 @@
           "count": 2
         }
       ],
-      "referenceCount": 6,
+      "referenceCount": 8,
       "headings": [
         "FAQ Registry + FAQPage Schema Sync",
         "Источник правды",
@@ -810,8 +983,13 @@
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 2164,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Household Authoring Helpers",
         "Supported Commands",
@@ -825,8 +1003,13 @@
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 4250,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Household Editing Checklist",
         "Change Symptoms, Brands, or Related Pages",
@@ -844,8 +1027,13 @@
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 3851,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Household Factory Model",
         "Goal",
@@ -861,8 +1049,13 @@
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 3380,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Household Service Page Contract",
         "Source of Truth",
@@ -879,8 +1072,13 @@
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 4059,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Household Slot Model",
         "Purpose",
@@ -891,43 +1089,99 @@
       ]
     },
     {
-      "file": "docs/LIVE_VISUAL_PACK_MVP.md",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No references found in project text graph.",
-      "sizeBytes": 823,
-      "references": [],
-      "referenceCount": 0,
-      "headings": [
-        "MosPochin Live Visual Pack MVP"
-      ]
-    },
-    {
-      "file": "docs/LOCAL_VISUAL_SCREENSHOT_PACK.md",
-      "category": "legacyCandidate",
-      "action": "reviewForPrune",
-      "reason": "Contains legacy/deprecated markers.",
-      "sizeBytes": 5426,
+      "file": "docs/KUTTER_CLUSTER_AI_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 4735,
       "references": [
         {
-          "file": "mospochin_prog13_local_python_visual_pack_changed_files.txt",
+          "file": ".ai/digest/clusters/kutter.md",
           "count": 2
         },
         {
-          "file": "mospochin_stage6_prog13_local_python_visual_pack_report_20260609.md",
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 2
+        },
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/project-map.generated.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 12,
+      "headings": [
+        "KUTTER_CLUSTER_AI_GUIDE",
+        "Status",
+        "Read first",
+        "Boundaries",
+        "Safety rules",
+        "Publication workflow",
+        "Published K3 pilot",
+        "Mandatory checks"
+      ]
+    },
+    {
+      "file": "docs/KUTTER_IMAGE_INTEGRATION.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1391,
+      "references": [
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/archive/root-history/MOSPOCHIN_KUTTER_IMAGE_INTEGRATION_20260714.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "Kutter image integration",
+        "Scope",
+        "Content contract",
+        "Commands"
+      ]
+    },
+    {
+      "file": "docs/KUTTER_SEO_LINKING_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1195,
+      "references": [
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
         }
       ],
       "referenceCount": 4,
       "headings": [
-        "MosPochin — локальный screenshot ZIP для проверки нейронкой",
-        "Быстрый запуск",
-        "Где будет ZIP",
-        "Режимы",
-        "Ключевой smoke: главная, услуги, контакты, hub, Rational/Unox, error/symptom",
-        "Весь пароконвектоматный кластер",
-        "Все root HTML-страницы",
-        "Одна/несколько страниц"
+        "KUTTER SEO AND INTERNAL LINKING GUIDE",
+        "Source of truth",
+        "Rules",
+        "Commands"
       ]
     },
     {
@@ -942,6 +1196,10 @@
           "count": 5
         },
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
           "file": "docs/README.md",
           "count": 5
         },
@@ -950,7 +1208,7 @@
           "count": 5
         }
       ],
-      "referenceCount": 15,
+      "referenceCount": 17,
       "headings": [
         "Operator Routing",
         "Default Routes",
@@ -963,22 +1221,6 @@
       ]
     },
     {
-      "file": "docs/PAGE_IMPROVEMENT_METRICS.md",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No references found in project text graph.",
-      "sizeBytes": 4028,
-      "references": [],
-      "referenceCount": 0,
-      "headings": [
-        "Page Improvement Metrics",
-        "Поток данных",
-        "Как читать scorecard",
-        "Где искать решение",
-        "Регламент изменения страницы"
-      ]
-    },
-    {
       "file": "docs/PARAMETERIZED_COMPONENTS.md",
       "category": "reference",
       "action": "keep",
@@ -986,11 +1228,19 @@
       "sizeBytes": 4213,
       "references": [
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        },
+        {
           "file": "tools/ai-check.mjs",
           "count": 2
         }
       ],
-      "referenceCount": 2,
+      "referenceCount": 6,
       "headings": [
         "Parameterized Components",
         "Что уже параметризовано",
@@ -1007,7 +1257,7 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 7711,
+      "sizeBytes": 7833,
       "references": [
         {
           "file": ".ai/digest/clusters/parokonvektomaty.md",
@@ -1019,10 +1269,6 @@
         },
         {
           "file": ".ai/digest/project.md",
-          "count": 2
-        },
-        {
-          "file": "AGENTS.md",
           "count": 2
         },
         {
@@ -1046,20 +1292,16 @@
           "count": 2
         },
         {
-          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
         },
         {
-          "file": "docs/AI_START_HERE.md",
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
           "count": 2
         },
         {
           "file": "docs/AI_TASK_RECIPES.md",
           "count": 2
-        },
-        {
-          "file": "docs/DOC_INDEX.md",
-          "count": 4
         },
         {
           "file": "tools/audit-docs.mjs",
@@ -1070,7 +1312,7 @@
           "count": 6
         }
       ],
-      "referenceCount": 37,
+      "referenceCount": 31,
       "headings": [
         "Parokonvektomat Cluster AI Guide",
         "1. Роль кластера",
@@ -1087,7 +1329,7 @@
       "category": "reference",
       "action": "keep",
       "reason": "Referenced or useful reference documentation.",
-      "sizeBytes": 1961,
+      "sizeBytes": 2050,
       "references": [
         {
           "file": ".ai/digest/clusters/pishevarochnye-kotly.md",
@@ -1110,11 +1352,7 @@
           "count": 2
         },
         {
-          "file": "docs/AI_START_HERE.md",
-          "count": 2
-        },
-        {
-          "file": "docs/DOC_INDEX.md",
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
         },
         {
@@ -1122,7 +1360,7 @@
           "count": 2
         }
       ],
-      "referenceCount": 16,
+      "referenceCount": 14,
       "headings": [
         "Пищеварочные котлы — AI cluster guide",
         "Source of truth",
@@ -1131,11 +1369,36 @@
       ]
     },
     {
+      "file": "docs/PLANS.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 442,
+      "references": [
+        {
+          "file": "data/file-ownership.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "Execution Plans"
+      ]
+    },
+    {
       "file": "docs/PROJECT_DECISIONS.md",
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 6101,
+      "sizeBytes": 9424,
       "references": [
         {
           "file": ".ai/digest/project.md",
@@ -1150,12 +1413,12 @@
           "count": 1
         },
         {
-          "file": "docs/AI_START_HERE.md",
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
         },
         {
           "file": "docs/DOC_INDEX.md",
-          "count": 5
+          "count": 2
         },
         {
           "file": "tools/ai-check.mjs",
@@ -1174,7 +1437,7 @@
           "count": 2
         }
       ],
-      "referenceCount": 22,
+      "referenceCount": 19,
       "headings": [
         "Project Decisions — MosPochin",
         "2026-06 — Safe optimization over destructive compression",
@@ -1191,22 +1454,34 @@
       "category": "reference",
       "action": "keep",
       "reason": "Referenced or useful reference documentation.",
-      "sizeBytes": 6906,
+      "sizeBytes": 6967,
       "references": [
         {
           "file": "data/docs-contracts.json",
           "count": 3
         },
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 5
+        },
+        {
           "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 2
+        },
+        {
+          "file": "tools/apply-ai-control-lite-r5.mjs",
           "count": 2
         },
         {
           "file": "tools/audit-assets.mjs",
           "count": 1
+        },
+        {
+          "file": "tools/test-ai-control-lite-r5.mjs",
+          "count": 1
         }
       ],
-      "referenceCount": 6,
+      "referenceCount": 14,
       "headings": [
         "Mospochin_site",
         "Canonical docs",
@@ -1219,13 +1494,163 @@
       ]
     },
     {
+      "file": "docs/REFRIGERATION_CLUSTER_AI_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1241,
+      "references": [
+        {
+          "file": ".ai/digest/clusters/refrigeration.md",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/project-map.generated.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF01_20260715.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 12,
+      "headings": [
+        "Refrigeration cluster AI guide",
+        "Scope",
+        "Publication rule",
+        "Subclusters",
+        "Forbidden shortcuts"
+      ]
+    },
+    {
+      "file": "docs/REFRIGERATION_EVIDENCE_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 610,
+      "references": [
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF01_20260715.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "Refrigeration evidence guide"
+      ]
+    },
+    {
+      "file": "docs/REFRIGERATION_IMAGE_INTEGRATION.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1435,
+      "references": [
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_IMAGE_R1_20260716.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "Refrigeration image integration",
+        "Scope",
+        "Commands",
+        "Contracts",
+        "Source archive disclosure"
+      ]
+    },
+    {
+      "file": "docs/REFRIGERATION_SEO_LINKING_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 632,
+      "references": [
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF01_20260715.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "Refrigeration SEO and linking guide"
+      ]
+    },
+    {
+      "file": "docs/REFRIGERATION_VISUAL_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 417,
+      "references": [
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF01_20260715.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 6,
+      "headings": [
+        "Refrigeration visual guide"
+      ]
+    },
+    {
       "file": "docs/RESTAURANT_AUTHORING_HELPERS.md",
       "category": "reference",
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 2257,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Restaurant Authoring Helpers",
         "Supported Commands",
@@ -1239,8 +1664,13 @@
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 917,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Restaurant Branch Contract",
         "Source of Truth",
@@ -1254,8 +1684,13 @@
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 2912,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Restaurant Factory Model",
         "Goal",
@@ -1270,8 +1705,13 @@
       "action": "keep",
       "reason": "Domain/branch/component reference documentation.",
       "sizeBytes": 2234,
-      "references": [],
-      "referenceCount": 0,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 2,
       "headings": [
         "Restaurant Slot Model",
         "Source Of Truth",
@@ -1293,6 +1733,10 @@
           "count": 9
         },
         {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
           "file": "docs/OPERATOR_ROUTING.md",
           "count": 4
         },
@@ -1305,7 +1749,7 @@
           "count": 4
         }
       ],
-      "referenceCount": 22,
+      "referenceCount": 24,
       "headings": [
         "Restaurant Visual Audit Checklist",
         "Start",
@@ -1322,19 +1766,15 @@
       "category": "active",
       "action": "keep",
       "reason": "Current AI/project operating path or active contract.",
-      "sizeBytes": 4603,
+      "sizeBytes": 384,
       "references": [
-        {
-          "file": "AGENTS.md",
-          "count": 2
-        },
         {
           "file": "data/docs-contracts.json",
           "count": 1
         },
         {
-          "file": "docs/DOC_INDEX.md",
-          "count": 3
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
         },
         {
           "file": "docs/README.md",
@@ -1345,16 +1785,9 @@
           "count": 2
         }
       ],
-      "referenceCount": 11,
+      "referenceCount": 8,
       "headings": [
-        "Scale Policy: controlled growth to 150 pages",
-        "Решение",
-        "Жёсткий контракт",
-        "Текущий режим",
-        "Что нельзя делать",
-        "Что можно делать",
-        "Контрольные точки",
-        "До 75 страниц"
+        "Scale policy"
       ]
     },
     {
@@ -1369,7 +1802,11 @@
           "count": 7
         },
         {
-          "file": "docs/AGENTS.md",
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
           "count": 2
         },
         {
@@ -1381,7 +1818,7 @@
           "count": 3
         }
       ],
-      "referenceCount": 15,
+      "referenceCount": 17,
       "headings": [
         "Site Maintenance Model",
         "Source Of Truth",
@@ -1394,6 +1831,119 @@
       ]
     },
     {
+      "file": "docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 5427,
+      "references": [
+        {
+          "file": ".ai/digest/clusters/sous-vide.md",
+          "count": 2
+        },
+        {
+          "file": ".ai/digest/content-map.json",
+          "count": 2
+        },
+        {
+          "file": "CHANGELOG_AI.md",
+          "count": 2
+        },
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "data/project-map.generated.json",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 15,
+      "headings": [
+        "Sous-vide — AI cluster guide",
+        "Состав MVP",
+        "Маршрут правки",
+        "Проверки",
+        "Run 5 contract",
+        "Symptom-service architecture (2026-07-14)",
+        "Отчёт аудита"
+      ]
+    },
+    {
+      "file": "docs/SOUS_VIDE_SEO_LINKING_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3362,
+      "references": [
+        {
+          "file": "data/ai-editing-manifest.json",
+          "count": 2
+        },
+        {
+          "file": "data/cluster-registry.json",
+          "count": 2
+        },
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/SOUS_VIDE_CLUSTER_AI_GUIDE.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 9,
+      "headings": [
+        "Sous-vide SEO content and internal-linking guide",
+        "Purpose",
+        "Google-aligned principles",
+        "Symptom-page link contract",
+        "Content contract",
+        "Hub contract",
+        "Checks",
+        "Отчёт аудита"
+      ]
+    },
+    {
+      "file": "docs/SOUS_VIDE_SYMPTOM_SERVICE_GUIDE.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1028,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 1
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "Sous-vide symptom-service pages",
+        "SEO and linking"
+      ]
+    },
+    {
       "file": "docs/STATIC_COMPONENT_BUILDER.md",
       "category": "reference",
       "action": "keep",
@@ -1402,6 +1952,10 @@
       "references": [
         {
           "file": ".ai/digest/project.md",
+          "count": 2
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
         },
         {
@@ -1421,7 +1975,7 @@
           "count": 2
         }
       ],
-      "referenceCount": 10,
+      "referenceCount": 12,
       "headings": [
         "Static Component Builder",
         "Что уже подключено",
@@ -1438,7 +1992,7 @@
       "category": "reference",
       "action": "keep",
       "reason": "Referenced or useful reference documentation.",
-      "sizeBytes": 3095,
+      "sizeBytes": 3150,
       "references": [
         {
           "file": ".ai/digest/clusters/ventilyatsiya.md",
@@ -1449,7 +2003,7 @@
           "count": 2
         },
         {
-          "file": "AGENTS.md",
+          "file": "CHANGELOG_AI.md",
           "count": 2
         },
         {
@@ -1465,15 +2019,15 @@
           "count": 2
         },
         {
-          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "file": "data/repo-hygiene-policy.json",
           "count": 2
         },
         {
-          "file": "docs/DOC_INDEX.md",
-          "count": 4
+          "file": "docs/AI_PROJECT_OPERATING_GUIDE.md",
+          "count": 2
         }
       ],
-      "referenceCount": 18,
+      "referenceCount": 16,
       "headings": [
         "Вентиляция — AI cluster guide",
         "Маршрут AI-правки",
@@ -1483,40 +2037,808 @@
     },
     {
       "file": "docs/VISUAL_CHECKS.md",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No references found in project text graph.",
-      "sizeBytes": 5344,
-      "references": [],
-      "referenceCount": 0,
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 7371,
+      "references": [
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "data/visual-runtime.json",
+          "count": 2
+        },
+        {
+          "file": "docs/AI_VISUAL_REVIEW_WORKFLOW.md",
+          "count": 2
+        },
+        {
+          "file": "docs/DOC_INDEX.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 8,
       "headings": [
-        "Visual checks / screenshot audit",
-        "Быстрый маршрут",
-        "Что реально можно сделать в текущей среде",
-        "Полный visual по пароконвектоматному кластеру",
-        "или явно:",
-        "Что добавлено специально для AI/CI",
-        "Важные ограничения",
-        "Финальное правило для отчёта"
+        "Visual checks — локальный нативный screenshot-контур",
+        "Архитектурное правило",
+        "Быстрый запуск",
+        "Главные команды",
+        "Быстрый first-view smoke",
+        "Длинные full-page кадры smoke-набора",
+        "Универсальный запуск любого manifest",
+        "Надёжность и восстановление"
       ]
     },
     {
-      "file": "docs/cooking-kettles-run4-handoff-20260618.md",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No references found in project text graph.",
-      "sizeBytes": 3060,
-      "references": [],
-      "referenceCount": 0,
+      "file": "docs/archive/README.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 157,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 3
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 4
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 1
+        },
+        {
+          "file": "tools/apply-ai-control-lite-r5.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-assets.mjs",
+          "count": 1
+        },
+        {
+          "file": "tools/test-ai-control-lite-r5.mjs",
+          "count": 1
+        }
+      ],
+      "referenceCount": 12,
       "headings": [
-        "MosPochin — Cooking Kettles Cluster Run 4 Handoff",
-        "Область",
-        "Страницы кластера",
-        "Хаб и симптомы",
-        "Узлы ремонта",
-        "Abat / КПЭМ коды",
-        "Бренды",
-        "Перед деплоем"
+        "Documentation archive"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/BACKEND_DEPLOY_README_20260716.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 958,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin backend patch — paid tracking v3",
+        "Изменения",
+        "Deployment"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/FINAL_TZ_COMPLIANCE_AUDIT_20260620.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 5413,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin metrics archive — final TZ compliance audit",
+        "Verdict",
+        "TZ compliance matrix",
+        "Checks executed",
+        "Important cleanup performed during final TZ audit",
+        "Known non-blocking notes"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_DISHWASHER_DW7_20260715.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3664,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Dishwasher DW7 Completion Report",
+        "Summary",
+        "Direct contract",
+        "Technical baseline",
+        "Validation",
+        "Canonical visual evidence",
+        "Architecture changes",
+        "Image integrity"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_DISHWASHER_IMAGE_INTEGRATION_20260715.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 8051,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — интеграция фотографий в кластер профессиональных посудомоечных машин",
+        "1. Результат",
+        "2. Состав фотоархива",
+        "3. Логика распределения",
+        "4. HTML и SEO-контракт",
+        "5. Новые source-файлы",
+        "6. Проверки",
+        "7. Визуальный QA"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_KUTTER_IMAGE_INTEGRATION_20260714.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 5305,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — интеграция изображений куттеров",
+        "Результат",
+        "Реализованный HTML-контракт",
+        "Распределение изображений",
+        "Архитектура",
+        "SEO и Open Graph",
+        "Проверки",
+        "Ограничение исходных изображений"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_IMAGE_R1_20260716.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 4714,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Refrigeration Image Integration IMG-R1",
+        "1. Результат",
+        "2. Страницы IMG-R1",
+        "3. Брендовая безопасность",
+        "4. HTML и performance-контракт",
+        "5. Новые source-файлы",
+        "6. Проверки",
+        "7. Визуальный QA"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF01_20260715.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 7521,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — холодильное оборудование, RF0–RF1 foundation",
+        "1. Результат",
+        "2. Целевой manifest",
+        "3. Data contracts",
+        "4. Evidence и коды",
+        "5. Брендовый registry",
+        "6. Автоматические проверки",
+        "7. Итоговые проверки"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF4_20260715.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 5410,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Refrigeration RF4",
+        "Опубликованные страницы",
+        "Evidence",
+        "Текущее состояние",
+        "Архитектурное улучшение",
+        "Проверки",
+        "Visual QA",
+        "Изображения"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF5_20260715.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3917,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Refrigeration RF5",
+        "Опубликованные страницы",
+        "Evidence",
+        "Текущее состояние",
+        "Проверки",
+        "Visual QA",
+        "Изображения",
+        "Следующий этап"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF6_20260715.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 6118,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — RF6: symptom-service слой шокеров",
+        "1. Результат",
+        "2. Техническая модель",
+        "3. Official evidence",
+        "4. HTML, builder и SEO",
+        "5. Итоговые метрики",
+        "6. Проверки",
+        "7. Visual QA"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/MOSPOCHIN_REFRIGERATION_RF7_20260715.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3391,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — RF7: symptom-service слой льдогенераторов",
+        "Опубликованные страницы",
+        "Технические принципы",
+        "Итоговые показатели",
+        "Проверки",
+        "Visual QA",
+        "Изображения",
+        "Official evidence added in RF7"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/README.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 2776,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 3
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 4
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 1
+        },
+        {
+          "file": "tools/apply-ai-control-lite-r5.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-assets.mjs",
+          "count": 1
+        },
+        {
+          "file": "tools/test-ai-control-lite-r5.mjs",
+          "count": 1
+        }
+      ],
+      "referenceCount": 12,
+      "headings": [
+        "Archived root handoffs"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/README_CONVERSION_P0_PATCH.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1236,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "Как применить патч",
+        "Вариант 1: распаковать поверх проекта",
+        "Вариант 2: скопировать файлы вручную",
+        "После деплоя"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/README_CONVERSION_RUNTIME_STAGE2.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 2714,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Stage 2 Conversion Runtime Pack",
+        "Что сделано",
+        "Как проверить debug-режим",
+        "Прогоны",
+        "Важный нюанс"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/README_FLOATING_CTA_FIX.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 1288,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — floating CTA overlap visual fix",
+        "Problem",
+        "Change",
+        "Expected visual result",
+        "Suggested checks"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/README_VISUAL_FIX.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 4777,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — visual fix patch handoff",
+        "Что исправлено",
+        "1. Header overlap на light/direct kettle pages",
+        "2. Контраст stat cards на `/contact.html`",
+        "3. Mobile `/about.html`: устранён видимый `0+` / `0%`",
+        "4. Mobile brand/header polish",
+        "5. Tap target safety",
+        "Изменённые файлы"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/README_VISUAL_FOLLOWUP_FIX.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3194,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin visual follow-up fix — 2026-06-20",
+        "Зачем этот patch",
+        "Что изменено",
+        "Почему так",
+        "Как применить",
+        "После деплоя проверить картинками"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/mospochin_prog18_visual_mobile_polish_report_20260609.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 3499,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Prog18 visual mobile polish",
+        "Что сделано",
+        "Проверки",
+        "Важное ограничение проверки",
+        "Что осталось на следующий визуальный прогон"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/mospochin_prog19_mobile_safe_space_report_20260609.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 4917,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Prog19 mobile safe-space final pass",
+        "Цель",
+        "Изменённые файлы",
+        "Что сделано",
+        "1. Mobile sticky footer",
+        "2. `contact.html` mobile",
+        "3. `parokonvektomaty.html` и весь parokonvektomat cluster",
+        "4. `index.html` и `uslugi.html` mobile"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/mospochin_stage6_prog13_local_python_visual_pack_report_20260609.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 5611,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Prog13 local Python visual screenshot pack",
+        "Что добавлено",
+        "Какой цикл теперь поддерживается",
+        "Режимы генератора",
+        "smoke: главные страницы + ключевой пароконвектоматный кластер",
+        "весь пароконвектоматный кластер",
+        "все root HTML страницы",
+        "dry-run без браузера, только проверка manifest/структуры ZIP"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/mospochin_stage6_prog2_parokonvektomaty_hub_report_20260608.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 10551,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin Stage6 — Прогон 2: дожим hub `parokonvektomaty.html`",
+        "1. Цель прогона",
+        "2. Что изменено по смыслу",
+        "2.1. Первый экран стал короче и понятнее",
+        "2.2. Hub стал маршрутизатором, а не справочником",
+        "2.3. Блок “что прислать мастеру” поднят выше",
+        "2.4. Lead form уточнён под hub-интент",
+        "2.5. SEO description обновлён точечно"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/mospochin_stage6_prog3_rational_unox_brand_report_20260608.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 12065,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin Stage6 — Прогон 3: брендовые страницы Rational + Unox",
+        "1. Цель прогона",
+        "2. Что было сделано по Rational",
+        "2.1. Hero",
+        "2.2. Stage4 visual rail",
+        "2.3. Stage3 SEO/CRO блок",
+        "2.4. Диагностический блок Rational",
+        "3. Что было сделано по Unox"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/mospochin_stage6_prog5_old_brand_to_report_20260608.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 8478,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Прогон 5: old brand / neutral pages + ТО",
+        "1. Цель прогона",
+        "2. Что сделано",
+        "2.1. Abat",
+        "2.2. Convotherm",
+        "2.3. Electrolux Professional",
+        "2.4. Lainox",
+        "2.5. Техническое обслуживание"
+      ]
+    },
+    {
+      "file": "docs/archive/root-history/mospochin_stage6_prog9_cleanup_visible_service_copy_report_20260608.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 6074,
+      "references": [
+        {
+          "file": "data/ai-control-lite-r5-cleanup.json",
+          "count": 1
+        },
+        {
+          "file": "docs/archive/root-history/README.md",
+          "count": 2
+        }
+      ],
+      "referenceCount": 3,
+      "headings": [
+        "MosPochin — Prog9 cleanup: удаление видимых служебных SEO/AI-формулировок",
+        "Что было найдено",
+        "Что исправлено",
+        "Затронутые зоны",
+        "Пользовательский visible-text audit",
+        "Дополнительные контрольные проверки",
+        "Команды, которые прошли",
+        "Что осталось как внешний долг"
+      ]
+    },
+    {
+      "file": "docs/exec-plans/active/README.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 69,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 3
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 4
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 1
+        },
+        {
+          "file": "tools/apply-ai-control-lite-r5.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-assets.mjs",
+          "count": 1
+        },
+        {
+          "file": "tools/test-ai-control-lite-r5.mjs",
+          "count": 1
+        }
+      ],
+      "referenceCount": 12,
+      "headings": [
+        "Active execution plans"
+      ]
+    },
+    {
+      "file": "docs/exec-plans/completed/README.md",
+      "category": "reference",
+      "action": "keep",
+      "reason": "Referenced or useful reference documentation.",
+      "sizeBytes": 80,
+      "references": [
+        {
+          "file": "data/docs-contracts.json",
+          "count": 3
+        },
+        {
+          "file": "data/repo-hygiene-policy.json",
+          "count": 4
+        },
+        {
+          "file": "docs/SITE_MAINTENANCE_MODEL.md",
+          "count": 1
+        },
+        {
+          "file": "tools/apply-ai-control-lite-r5.mjs",
+          "count": 2
+        },
+        {
+          "file": "tools/audit-assets.mjs",
+          "count": 1
+        },
+        {
+          "file": "tools/test-ai-control-lite-r5.mjs",
+          "count": 1
+        }
+      ],
+      "referenceCount": 12,
+      "headings": [
+        "Completed execution plans"
       ]
     },
     {
@@ -1527,11 +2849,15 @@
       "sizeBytes": 4440,
       "references": [
         {
-          "file": "METRICS_RUN5_CHANGED_FILES_20260620.txt",
+          "file": "data/repo-hygiene-policy.json",
+          "count": 2
+        },
+        {
+          "file": "docs/archive/root-history/METRICS_RUN5_CHANGED_FILES_20260620.txt",
           "count": 2
         }
       ],
-      "referenceCount": 2,
+      "referenceCount": 4,
       "headings": [
         "MosPochin metrics Run5 — technical audit and cleanup",
         "Что проверено",
@@ -1539,25 +2865,6 @@
         "Что намеренно не удалялось",
         "Политика логов после cleanup",
         "Новая проверка"
-      ]
-    },
-    {
-      "file": "docs/mospochin-deploy-handoff-run8-20260621.md",
-      "category": "orphanCandidate",
-      "action": "reviewForPrune",
-      "reason": "No references found in project text graph.",
-      "sizeBytes": 6153,
-      "references": [],
-      "referenceCount": 0,
-      "headings": [
-        "MosPochin — P8 Final Deploy Handoff",
-        "0. Что это за пакет",
-        "1. Inventory",
-        "2. Главный guardrail",
-        "3. Pre-deploy порядок",
-        "4. Deploy порядок",
-        "5. Ключевые страницы smoke-test",
-        "6. Ожидаемые события"
       ]
     }
   ]

@@ -377,6 +377,12 @@ try {
   const manifestPath = String(args.manifest || 'data/visual-smoke-audit.json');
   const { manifest, errors } = getAuditContractSummary(manifestPath);
   if (errors.length) throw new Error(`Screenshot audit contract failed:\n- ${errors.join('\n- ')}`);
+  if (manifest.status === 'planned' && manifest.pages.length === 0) {
+    const summary = { schemaVersion: 1, manifest: manifestPath, status: 'planned', screenshots: [], message: 'No published pages yet; activate in K3.' };
+    if (args.json) console.log(JSON.stringify(summary, null, 2));
+    else console.log('✅ local native visual capture skipped: planned manifest has no published pages (activate in K3)');
+    process.exit(0);
+  }
 
   const systemChromium = resolveSystemChromium();
   if (!systemChromium) throw new Error('System Chromium is unavailable; run npm run check:visual-env for diagnostics.');

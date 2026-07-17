@@ -240,8 +240,18 @@ for (const entry of manifest.pages || []) {
 
   const seenCtaIds = new Set();
   let clusterLinkCount = 0;
+  // Global header/footer links are validated by static-shell and crawl guards.
+  // Some legacy-generated pages keep an empty <main></main> mount before the
+  // editorial sections, so scope by the shell boundaries instead of scanning
+  // the complete document.
+  const emptyMain = html.match(/<main\b[^>]*>\s*<\/main>/i);
+  const footerIndex = html.indexOf('<div id=\"footer-container\"');
+  const normalMain = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '';
+  const editorialHtml = emptyMain && footerIndex > (emptyMain.index ?? -1)
+    ? html.slice((emptyMain.index ?? 0) + emptyMain[0].length, footerIndex)
+    : (normalMain || html);
   const anchorPattern = /<a\b([^>]*)>([\s\S]*?)<\/a>/gi;
-  for (const anchor of html.matchAll(anchorPattern)) {
+  for (const anchor of editorialHtml.matchAll(anchorPattern)) {
     const tag = `<a${anchor[1]}>`;
     const href = attr(tag, 'href');
     const target = normalizeHref(href);

@@ -355,13 +355,31 @@ function renderCompactServicePage(page) {
                 <h3 class="font-display text-lg font-extrabold text-brand-blue">${escapeHtml(card.title)}</h3>
                 <p class="mt-2 text-sm leading-relaxed text-slate-600">${escapeHtml(card.text)}</p>
               </article>`).join('');
-  const links = (Array.isArray(page.relatedLinks) ? page.relatedLinks : []).map((link) => `
-              <a class="block rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-brand-orange hover:bg-white" href="${escapeAttr(link.href)}">
+  const links = (Array.isArray(page.relatedLinks) ? page.relatedLinks : []).map((link, index) => `
+              <a class="block rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-brand-orange hover:bg-white" href="${escapeAttr(link.href)}" data-cta-id="${slug}_related_${String(index + 1).padStart(2, '0')}" data-cta-group="internal_link" data-block="related_cluster">
                 <span class="font-display text-lg font-extrabold text-brand-blue">${escapeHtml(link.label)}</span>
                 <span class="mt-2 block text-sm leading-relaxed text-slate-600">${escapeHtml(link.description)}</span>
               </a>`).join('');
   const whatsappHref = `https://wa.me/${phone}?text=${encodeURIComponent(page.whatsappText)}`;
-  const faqItems = [
+  const formFields = Array.isArray(page.formFields) && page.formFields.length
+    ? page.formFields
+    : [
+        { name: 'type', placeholder: page.typePlaceholder, type: 'text' },
+        { name: 'details', placeholder: page.problemPlaceholder, type: 'text' },
+      ];
+  const formFieldsMarkup = formFields.map((field) => {
+    const attrs = [
+      `class="w-full rounded-xl border-2 border-slate-200 px-4 py-3"`,
+      `type="${escapeAttr(field.type ?? 'text')}"`,
+      `name="${escapeAttr(field.name)}"`,
+      `placeholder="${escapeAttr(field.placeholder ?? '')}"`,
+    ];
+    if (field.required) attrs.push('required');
+    if (field.autocomplete) attrs.push(`autocomplete="${escapeAttr(field.autocomplete)}"`);
+    if (field.inputmode) attrs.push(`inputmode="${escapeAttr(field.inputmode)}"`);
+    return `<input ${attrs.join(' ')}>`;
+  }).join('');
+  const faqItems = Array.isArray(page.faqs) && page.faqs.length ? page.faqs : [
     ['Что прислать инженеру?', 'Фото шильдика, панели управления, описание симптома и адрес объекта.'],
     ['Можно ли назвать точную цену заранее?', 'Точная стоимость определяется после диагностики и согласуется до начала ремонта.'],
     ['Работаете с ресторанами и юридическими лицами?', 'Да. Формат документов и порядок работ согласуются перед выездом.'],
@@ -420,17 +438,17 @@ function renderCompactServicePage(page) {
   <link rel="canonical" href="${escapeAttr(canonical)}">
   <meta name="robots" content="${escapeAttr(page.robots ?? 'noindex,follow')}">
   <script type="application/ld+json">${serviceSchema}</script>
-  <script type="application/ld+json">${faqSchema}</script>
+  <script type="application/ld+json" data-generated="faq-registry">${faqSchema}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
 </head>
-<body class="font-sans text-slate-800 antialiased bg-white branch-restaurant page-sous-vide page-direct-landing page-${slug}" data-page-slug="${slug}" data-page-intent="promo" data-equipment="sous_vide" data-service="repair" data-commercial-segment="b2b_kitchen" data-page-version="2026-07-14-sous-vide-pilot-v1">
+<body class="font-sans text-slate-800 antialiased bg-white branch-${escapeAttr(page.branch ?? 'restaurant')} ${escapeAttr(page.bodyClass ?? 'page-direct')} page-direct-landing page-${slug}" data-page-slug="${slug}" data-page-intent="promo" data-equipment="${escapeAttr(page.equipment ?? 'site')}" data-brand="${escapeAttr(page.brand ?? '')}" data-service="repair" data-commercial-segment="b2b_kitchen" data-page-version="${escapeAttr(page.pageVersion ?? '2026-07-14-direct-v1')}" data-direct-ad-ids="${escapeAttr((page.directAdIds ?? []).join(','))}">
   <div id="header-container" class="mt-12"></div>
   <main>
     <section class="bg-gradient-to-br from-brand-blue via-slate-900 to-slate-800 pb-16 pt-32 text-white lg:pb-20 lg:pt-44">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div><p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-orange">Заявка из рекламы</p><h1 class="mt-4 text-3xl font-display font-extrabold leading-tight sm:text-5xl">${page.h1Html}</h1><p class="mt-5 text-lg leading-relaxed text-white/80">${escapeHtml(page.lead)} <strong class="text-white">${escapeHtml(page.leadStrong)}</strong></p><div class="mt-8 flex flex-wrap gap-3"><a class="rounded-xl bg-brand-orange px-6 py-4 font-extrabold text-white" href="#request" data-cta-id="${slug}_hero_form" data-cta-group="primary" data-block="hero">${escapeHtml(page.heroSubmitLabel)}</a><a class="rounded-xl border border-white/30 px-6 py-4 font-extrabold text-white" href="tel:+79990057172" data-contact-link="phone" data-cta-id="${slug}_hero_phone" data-cta-group="contact" data-block="hero">${escapeHtml(page.mobilePhoneLabel)}</a><a class="rounded-xl border border-green-400/40 bg-green-500/10 px-6 py-4 font-extrabold text-green-100" href="${escapeAttr(whatsappHref)}" data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" data-cta-id="${slug}_hero_whatsapp" data-cta-group="contact" data-block="hero">${escapeHtml(page.mobileWhatsappLabel)}</a></div></div>
-          <form id="request" class="telegram-form rounded-3xl border border-white/15 bg-white p-6 text-slate-800 shadow-2xl" data-contact-form="true" data-cta-id="${slug}_form_01" data-cta-group="lead_form" data-block="hero_form"><input type="hidden" name="problem" value="${escapeAttr(page.hiddenProblem)}"><h2 class="text-xl font-display font-extrabold text-brand-blue">${escapeHtml(page.quickFormTitle)}</h2><div class="mt-5 space-y-4"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="text" name="name" autocomplete="name" placeholder="Ваше имя"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="text" name="type" placeholder="${escapeAttr(page.typePlaceholder)}"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="text" name="details" placeholder="${escapeAttr(page.problemPlaceholder)}"></div><button class="mt-5 w-full rounded-xl bg-green-600 px-6 py-4 font-extrabold text-white" type="submit"><i class="ri-send-plane-line mr-2"></i>${escapeHtml(page.mainSubmitLabel)}</button></form>
+        <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div><p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-orange">${escapeHtml(page.eyebrow ?? 'Заявка из рекламы')}</p><h1 class="mt-4 text-3xl font-display font-extrabold leading-tight sm:text-5xl">${page.h1Html}</h1><p class="mt-5 text-lg leading-relaxed text-white/80">${escapeHtml(page.lead)} <strong class="text-white">${escapeHtml(page.leadStrong)}</strong></p><div class="mt-8 flex flex-wrap gap-3"><a class="rounded-xl bg-brand-orange px-6 py-4 font-extrabold text-white" href="#request" data-cta-id="${slug}_hero_form" data-cta-group="primary" data-block="hero">${escapeHtml(page.heroSubmitLabel)}</a><a class="rounded-xl border border-white/30 px-6 py-4 font-extrabold text-white" href="tel:+79990057172" data-contact-link="phone" data-cta-id="${slug}_hero_phone" data-cta-group="contact" data-block="hero">${escapeHtml(page.mobilePhoneLabel)}</a><a class="rounded-xl border border-green-400/40 bg-green-500/10 px-6 py-4 font-extrabold text-green-100" href="${escapeAttr(whatsappHref)}" data-contact-link="whatsapp" rel="noopener noreferrer" target="_blank" data-cta-id="${slug}_hero_whatsapp" data-cta-group="contact" data-block="hero">${escapeHtml(page.mobileWhatsappLabel)}</a></div></div>
+          <form id="request" class="telegram-form rounded-3xl border border-white/15 bg-white p-6 text-slate-800 shadow-2xl" data-contact-form="true" data-cta-id="${slug}_form_01" data-cta-group="lead_form" data-block="hero_form"><input type="hidden" name="problem" value="${escapeAttr(page.hiddenProblem)}"><input type="hidden" name="campaign_id" value="${escapeAttr(page.campaignId ?? '')}"><input type="hidden" name="ad_group_id" value="${escapeAttr(page.adGroupId ?? '')}"><input type="hidden" name="direct_ad_ids" value="${escapeAttr((page.directAdIds ?? []).join(','))}"><h2 class="text-xl font-display font-extrabold text-brand-blue">${escapeHtml(page.quickFormTitle)}</h2><div class="mt-5 space-y-4"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="text" name="name" autocomplete="name" placeholder="Ваше имя"><input class="w-full rounded-xl border-2 border-slate-200 px-4 py-3" type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__">${formFieldsMarkup}</div><button class="mt-5 w-full rounded-xl bg-green-600 px-6 py-4 font-extrabold text-white" type="submit"><i class="ri-send-plane-line mr-2"></i>${escapeHtml(page.mainSubmitLabel)}</button></form>
         </div>
       </div>
     </section>
@@ -438,7 +456,7 @@ function renderCompactServicePage(page) {
     <section class="bg-slate-50 py-14 lg:py-20"><div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><h2 class="text-3xl font-display font-extrabold text-brand-blue">По теме</h2><div class="mt-8 grid gap-4 md:grid-cols-3">${links}</div></div></section>
     <section class="bg-white py-14"><div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"><h2 class="text-center text-3xl font-display font-extrabold text-brand-blue">Частые вопросы</h2><div class="mt-8 grid gap-4">${faqMarkup}</div></div></section>
   </main>
-  <div id="footer-container"></div><div id="mobile-footer-container"></div><div id="whatsapp-float-container"></div><script src="partials-injector.js" defer></script>
+  <div id="footer-container"></div><div id="mobile-footer-container"></div><div id="whatsapp-float-container"></div>
 </body>
 </html>`;
 }

@@ -1,10 +1,22 @@
-# Docs Rules
+<!-- ai-instruction-file: true -->
+# Documentation Instructions
 
-For AI navigation, keep `docs/AI_START_HERE.md` and `docs/DOC_INDEX.md` as the concise entry layer. Do not duplicate their routing tables across random docs; link to them instead.
+## Scope
 
+Documentation records durable architecture, contracts and decisions.
 
-- Keep docs concise, durable, and decision-oriented.
-- Prefer updating the canonical doc over creating overlapping notes.
-- Do not turn docs into raw terminal dumps, chat transcripts, or speculative summaries.
-- Keep `docs/AI_START_HERE.md`, `docs/DOC_INDEX.md`, `data/project-map.generated.json`, and `docs/SITE_MAINTENANCE_MODEL.md` aligned with the real repo structure and commands.
-- When finishing docs work, state which doc is canonical and what may go stale after future structural changes.
+## Edit
+
+- Update a canonical document instead of creating an overlapping note.
+- Put active execution plans in `docs/exec-plans/active/`.
+- Move completed plans to `docs/exec-plans/completed/`.
+- Put historical material in `docs/archive/`.
+- Keep current metrics and release state out of durable documents.
+
+## Verify
+
+Run `npm run check:instruction-hygiene` and `npm run check:repo-hygiene`.
+
+## Do not add
+
+Do not store chat transcripts, raw terminal output, temporary reports, duplicate instructions or unverified status summaries in `docs/`.

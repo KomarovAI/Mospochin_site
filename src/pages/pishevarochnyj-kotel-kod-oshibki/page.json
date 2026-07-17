@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "pishevarochnyj-kotel-kod-oshibki.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "83ce3f41a19a6beee0b3d9833c71eb40dfc8d6040ef1d1e3835aa58d564a77a9",
+    "hash": "c0bc1f5dfd6db63393661f750c49800145663ca6910c873cd56bf6fb6d57bb9d",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -32,8 +32,8 @@
       "id": "002-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "bytes": 38,
-      "hash": "2d69700825ff4140",
+      "bytes": 35,
+      "hash": "e8cee9634454ca04",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
       "variant": "technical-fragment-2d69700825ff",
@@ -129,11 +129,11 @@
       "id": "011-pricing-chto-fiksiruem-do-nachala-rabot",
       "component": "pricing",
       "label": "Что фиксируем до начала работ",
-      "bytes": 2880,
-      "hash": "8c35885ce8c1edec",
-      "componentRef": "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot--8c35885ce8c1edec.html",
+      "bytes": 2509,
+      "hash": "16d41223b799cf7c",
+      "componentRef": "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot--16d41223b799cf7c.html",
       "componentScope": "shared",
-      "componentSignature": "8c35885ce8c1edec",
+      "componentSignature": "16d41223b799cf7c",
       "sourceFile": "sections/011-pricing-chto-fiksiruem-do-nachala-rabot.html"
     },
     {
@@ -167,8 +167,8 @@
       "component": "pricing",
       "label": "Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma",
       "file": "sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html",
-      "bytes": 6235,
-      "hash": "2119c18a140b641a"
+      "bytes": 6346,
+      "hash": "e7f0ab7e9a553e4f"
     },
     {
       "id": "015-raw-html-fragment",
@@ -201,8 +201,8 @@
       "component": "pricing",
       "label": "Развели ошибки КПЭМ по отдельным сценариям",
       "file": "sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html",
-      "bytes": 5427,
-      "hash": "0b15b83fc52669a7"
+      "bytes": 5486,
+      "hash": "3ac40a396990fbe4"
     },
     {
       "id": "018-raw-html-fragment",
@@ -235,8 +235,8 @@
       "component": "pricing",
       "label": "Развели заявки по симптомам и узлам",
       "file": "sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-      "bytes": 10511,
-      "hash": "7c10cfe6ac48090c"
+      "bytes": 10501,
+      "hash": "2dc04effad1f8f97"
     },
     {
       "id": "021-raw-html-fragment",
@@ -322,8 +322,8 @@
       "id": "030-footer-anchor-footer-mount-point",
       "component": "footer-anchor",
       "label": "Footer mount point",
-      "bytes": 38,
-      "hash": "d4bb19e48569789e",
+      "bytes": 35,
+      "hash": "97f3485506f6a966",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
       "variant": "footer-container-mount",
@@ -335,8 +335,8 @@
       "id": "031-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
-      "bytes": 55,
-      "hash": "a0c0c2f23990c35a",
+      "bytes": 2,
+      "hash": "6c179f21e6f62b62",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
       "variant": "partials-injector-script",
@@ -348,17 +348,27 @@
       "id": "032-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/032-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 45,
-      "hash": "b0eb9b3368bc8f56"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/032-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "033-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/033-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 46,
-      "hash": "a95192064ee78a08"
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/033-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "034-raw-html-fragment",

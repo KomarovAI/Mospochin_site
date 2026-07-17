@@ -7,40 +7,37 @@
 - H1: Техническое обслуживание пароконвектоматов
 - Canonical: https://mospochin.ru/parokonvektomat-obschuzhivanie.html
 - Builder model: src/pages/parokonvektomat-obschuzhivanie/page.json
-- Sections: 33 (26 local, 0 shared refs, 10 raw)
-- Text words inside referenced sections: 1610
+- Sections: 32 (29 local, 0 shared refs, 11 raw)
+- Text words inside referenced sections: 1802
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 10 |
+| raw | 11 |
+| mobile-contact | 5 |
 | section | 5 |
-| mobile-contact | 3 |
 | pricing | 3 |
 | breadcrumb | 2 |
 | faq | 2 |
-| layout-fragment | 2 |
 | body-preamble | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
 | related-links | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Полный комплекс профилактики | section | 11.4 KB | 135 | no | src/pages/parokonvektomat-obschuzhivanie/sections/010-section-polnyy-kompleks-profilaktiki.html |
-| Связанные страницы по пароконвектоматам | related-links | 11.3 KB | 187 | no | src/pages/parokonvektomat-obschuzhivanie/sections/024-related-links-svyazannye-stranicy-po-parokonvektomat.html |
-| Техническое обслуживание пароконвектоматов | hero | 11.3 KB | 101 | no | src/pages/parokonvektomat-obschuzhivanie/sections/006-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html |
-| Особенности ТО для каждого бренда | section | 11.0 KB | 146 | no | src/pages/parokonvektomat-obschuzhivanie/sections/016-section-osobennosti-to-dlya-kazhdogo-brenda.html |
-| Частые вопросы о ТО пароконвектоматов | faq | 8.5 KB | 325 | no | src/pages/parokonvektomat-obschuzhivanie/sections/023-faq-chastye-voprosy-o-to-parokonvektomatov.html |
-| Почему ТО выгоднее аварийного ремонта | pricing | 5.9 KB | 92 | no | src/pages/parokonvektomat-obschuzhivanie/sections/014-pricing-pochemu-to-vygodnee-avariynogo-remonta.html |
-| Что говорят клиенты с договором на ТО | section | 5.9 KB | 157 | no | src/pages/parokonvektomat-obschuzhivanie/sections/020-section-chto-govoryat-klienty-s-dogovorom-na-to.html |
-| Заключите договор на техническое обслуживание | lead-form | 5.7 KB | 46 | no | src/pages/parokonvektomat-obschuzhivanie/sections/028-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html |
+| Связанные страницы по пароконвектоматам | related-links | 10.2 KB | 186 | no | src/pages/parokonvektomat-obschuzhivanie/sections/024-related-links-svyazannye-stranicy-po-parokonvektomat.html |
+| Полный комплекс профилактики | section | 9.1 KB | 135 | no | src/pages/parokonvektomat-obschuzhivanie/sections/010-section-polnyy-kompleks-profilaktiki.html |
+| Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/parokonvektomat-obschuzhivanie/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Техническое обслуживание пароконвектоматов | hero | 9.0 KB | 101 | no | src/pages/parokonvektomat-obschuzhivanie/sections/006-hero-tehnicheskoe-obsluzhivanie-parokonvektomatov.html |
+| Особенности ТО для каждого бренда | section | 8.7 KB | 146 | no | src/pages/parokonvektomat-obschuzhivanie/sections/016-section-osobennosti-to-dlya-kazhdogo-brenda.html |
+| Частые вопросы о ТО пароконвектоматов | faq | 7.4 KB | 327 | no | src/pages/parokonvektomat-obschuzhivanie/sections/023-faq-chastye-voprosy-o-to-parokonvektomatov.html |
+| Что говорят клиенты с договором на ТО | section | 5.0 KB | 157 | no | src/pages/parokonvektomat-obschuzhivanie/sections/020-section-chto-govoryat-klienty-s-dogovorom-na-to.html |
+| Заключите договор на техническое обслуживание | lead-form | 4.9 KB | 46 | no | src/pages/parokonvektomat-obschuzhivanie/sections/028-lead-form-zaklyuchite-dogovor-na-tehnicheskoe-obsluz.html |
 
 
 ## Editable source files

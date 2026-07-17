@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "cluster": "kutter",
+  "checkedAt": "2026-07-14",
+  "records": [
+    {
+      "id": "robot-coupe.r10.spec",
+      "sourceType": "official_specification",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "R 10"
+      ],
+      "title": "R 10 table-top cutter mixer specification",
+      "url": "https://www.robot-coupe.com/rbc/asset/get?asset=28892&download=1&lang=sv&market=43373&product=18245",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Модель использует прямой индукционный привод без ремня.",
+        "Конструкция содержит магнитную защиту и моторный тормоз.",
+        "Доступны две скорости и импульсный режим.",
+        "Чаша фиксируется центральным замком, ножевой блок содержит три ножа."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить число скоростей, мощность и устройство блокировки на все куттеры Robot Coupe."
+      ]
+    },
+    {
+      "id": "robot-coupe.r4.drive",
+      "sourceType": "official_product_page",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "R 4 family"
+      ],
+      "title": "Robot Coupe R 4 cutter",
+      "url": "https://www.robot-coupe.com/export/en/p/cutters-r-4/18238",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "В семействе R 4 применяется промышленный индукционный мотор на подшипниках и прямой привод без ремня.",
+        "Для разных продуктов предусмотрены гладкие и зубчатые ножи."
+      ],
+      "prohibitedGeneralizations": [
+        "Не диагностировать ремень на моделях с официально подтверждённым прямым приводом."
+      ]
+    },
+    {
+      "id": "robot-coupe.blixer.scraper",
+      "sourceType": "official_product_page",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "Blixer 8",
+        "Blixer 10"
+      ],
+      "title": "Robot Coupe Blixer scraper and blade systems",
+      "url": "https://www.robot-coupe.com/uk/en_GB/p/blixer-blixer-10/18380",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Blixer использует скребок крышки и чаши для однородного результата.",
+        "Ножевой блок предназначен для получения гладкой однородной текстуры.",
+        "Скребок и рабочие элементы снимаются для очистки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не называть любой вертикальный куттер Blixer и не обещать одинаковую текстуру без учёта модели и рецептуры."
+      ]
+    },
+    {
+      "id": "robot-coupe.r402.combination",
+      "sourceType": "official_product_page",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "R 402"
+      ],
+      "title": "Robot Coupe R 402 combination processor",
+      "url": "https://www.robot-coupe.com/uk/en_GB/p/food-processors-r-402/18334",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "R 402 объединяет функцию куттера и овощерезки.",
+        "Куттерная часть использует чашу и отдельный ножевой блок, овощерезка — диски и загрузочные отверстия."
+      ],
+      "prohibitedGeneralizations": [
+        "Не смешивать диагностику куттерной чаши с неисправностями дисковой овощерезки."
+      ]
+    },
+    {
+      "id": "sammic.k41.safety",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sammic",
+      "modelScope": [
+        "K-41"
+      ],
+      "title": "Sammic K-41 cutter-mixer and emulsifier",
+      "url": "https://sammic.com/en/product/food-processor-k-41",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Положение чаши и крышки контролируется защитными микровыключателями.",
+        "Модель имеет систему предупреждений об ошибках.",
+        "Боковые мешалки и зубчатые ножи влияют на однородность и нагрев продукта."
+      ],
+      "prohibitedGeneralizations": [
+        "Не публиковать значения кодов ошибок без отдельного руководства конкретной модели."
+      ]
+    },
+    {
+      "id": "sammic.k82.performance",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sammic",
+      "modelScope": [
+        "K-82"
+      ],
+      "title": "Sammic K-82 cutter-mixer and emulsifier",
+      "url": "https://sammic.com/en/product/k-82",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "K-82 имеет две скорости и восьмилитровую чашу.",
+        "Опциональный Cut&mix-скребок и отверстие крышки участвуют в технологическом процессе."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить объём, скорости и ножи K-82 на другие серии Sammic."
+      ]
+    },
+    {
+      "id": "sammic.ke5v.variable",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sammic",
+      "modelScope": [
+        "KE-5V",
+        "KE-8V"
+      ],
+      "title": "Sammic variable-speed emulsifier/texturizer",
+      "url": "https://sammic.com/en/product/ke-5v",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Серия KE использует регулируемую скорость, brushless-привод, зубчатые ножи и Cut&mix-скребок.",
+        "Оборудование предназначено в том числе для эмульсий и текстурирования."
+      ],
+      "prohibitedGeneralizations": [
+        "Не сводить плохую эмульсию только к неисправности двигателя: результат зависит от скорости, ножей, скребка, загрузки и продукта."
+      ]
+    },
+    {
+      "id": "sammic.ck35v.combi",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sammic",
+      "modelScope": [
+        "CK-35V",
+        "CK-38V",
+        "CK-45V",
+        "CK-48V"
+      ],
+      "title": "Sammic combi cutter and vegetable preparation machines",
+      "url": "https://sammic.com/en/product/ck-35v",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Комбинированные модели объединяют овощерезку и куттерную чашу на одном моторном блоке.",
+        "В зависимости от модели используется регулируемая скорость и микрозубчатый ножевой ротор."
+      ],
+      "prohibitedGeneralizations": [
+        "Не объединять в одной symptom-странице неисправности дискового рабочего органа и куттерного ножевого блока."
+      ]
+    },
+    {
+      "id": "sammic.ck241.safety",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sammic",
+      "modelScope": [
+        "CK-241"
+      ],
+      "title": "Sammic CK-241 safety and hygiene",
+      "url": "https://sammic.com/en/product/combi-ck-241",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Комбинированная машина использует несколько систем безопасности для головки, крышки, чаши и выключателя.",
+        "Съёмные элементы предназначены для очистки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не предлагать обход любой из защитных систем."
+      ]
+    },
+    {
+      "id": "hallde.vcm.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "HALLDE",
+      "modelScope": [
+        "VCM-41",
+        "VCM-42"
+      ],
+      "title": "HALLDE VCM-41/VCM-42 user instructions",
+      "url": "https://www.hallde.com/app/uploads/2023/04/hallde-userinstructions-vcm-41-42-13001b.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Конструкция использует три независимых защитных выключателя и механический моторный тормоз.",
+        "Применяются прямой привод и термозащита двигателя.",
+        "При невозможности запуска руководство требует проверить сборку чаши, крышки и скребка, питание и предохранители.",
+        "При плохом результате руководство рекомендует проверить ножи, загрузку, размер продукта, время и скребок."
+      ],
+      "prohibitedGeneralizations": [
+        "Не советовать продолжительную непрерывную работу: руководство указывает охлаждение между партиями для соответствующей модели."
+      ]
+    },
+    {
+      "id": "hallde.vcm.parts",
+      "sourceType": "official_parts_list",
+      "manufacturer": "HALLDE",
+      "modelScope": [
+        "VCM-41",
+        "VCM-42",
+        "VCB-31S",
+        "VCB-61",
+        "VCB-62"
+      ],
+      "title": "HALLDE vertical cutter spare parts list 2025",
+      "url": "https://www.hallde.com/app/uploads/2020/06/hallde-spare-parts-list.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Перечни содержат safety arm, magnetic switch, safety microswitch, brake device, contactor и fuse.",
+        "В моторном контуре перечислены stator, rotor, bearings, starting relay и capacitors.",
+        "Рабочий узел включает knife head/unit, upper/lower knives, spacers, bowl, lid, scraper и seals."
+      ],
+      "prohibitedGeneralizations": [
+        "Не утверждать наличие конденсатора или пускового реле у каждой трёхфазной и brushless-модели."
+      ]
+    },
+    {
+      "id": "sirman.ctronic.safety",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sirman",
+      "modelScope": [
+        "C-TRONIC 4 VT",
+        "C-TRONIC 6 VT",
+        "C-TRONIC 9 PLUS"
+      ],
+      "title": "Sirman C-TRONIC safety systems",
+      "url": "https://www.sirman.com/en-US/food-preparing/bowl-cutters/c-tronic-4-vt/40780428S",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Один interlock отключает аппарат при перемещении фиксирующего крышку рычага.",
+        "Второй interlock предотвращает запуск без установленной крышки.",
+        "Указаны защита от перегрузки и no-voltage release.",
+        "Валы двигателя и ножа герметизированы для предотвращения протечек к мотору."
+      ],
+      "prohibitedGeneralizations": [
+        "Не описывать обход interlock и не обещать одинаковое устройство датчиков во всех моделях Sirman."
+      ]
+    },
+    {
+      "id": "sirman.ctronic.process",
+      "sourceType": "official_specification",
+      "manufacturer": "Sirman",
+      "modelScope": [
+        "C-TRONIC 4 VT",
+        "C-TRONIC 6 VT",
+        "C-TRONIC 9 PLUS"
+      ],
+      "title": "Sirman C-TRONIC cutters/mixers specification",
+      "url": "https://media.sirman.com/immagini_prodotti/pdf_catalogo/usa_c-tronic.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "VARIOTRONIC регулирует и стабилизирует мощность в зависимости от продукта.",
+        "Скребок встроен в чашу.",
+        "Размещение мотора рядом с чашей снижает передачу тепла продукту.",
+        "Предусмотрены импульсный режим и регулируемые скорости в соответствующих моделях."
+      ],
+      "prohibitedGeneralizations": [
+        "Не объяснять любой нагрев продукта только расположением мотора: важны ножи, время, скорость, загрузка и рецептура."
+      ]
+    },
+    {
+      "id": "robot-coupe.blixer.spec",
+      "sourceType": "official_product_page",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "Blixer 3",
+        "Blixer 20"
+      ],
+      "title": "Robot Coupe Blixer bowl, scraper and lid specifications",
+      "url": "https://www.robot-coupe.com/usa/en_US/p/blixer-blixer-3/18341",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Blixer использует мелкозубчатый нож и съёмный скребковый узел для равномерной консистенции.",
+        "Прозрачная крышка имеет уплотнение, снимается для очистки и позволяет добавлять ингредиенты."
+      ],
+      "prohibitedGeneralizations": [
+        "Не использовать Blixer как универсальное название любого куттера или эмульгатора."
+      ]
+    },
+    {
+      "id": "robot-coupe.blixer7.spec",
+      "sourceType": "official_product_page",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "Blixer 7"
+      ],
+      "title": "Robot Coupe Blixer 7 specification",
+      "url": "https://www.robot-coupe.com/usa/en_US/p/blixer-7/18346",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Blixer 7 использует две скорости 1500 и 3000 об/мин.",
+        "Модель имеет таймер и съёмный скребковый узел."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить две скорости и таймер на все модели Blixer."
+      ]
+    },
+    {
+      "id": "robot-coupe.catalogue",
+      "sourceType": "official_catalogue",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "Cutter Mixers",
+        "Blixer",
+        "Combination Processors"
+      ],
+      "title": "Robot Coupe 2026 export catalogue",
+      "url": "https://www.robot-coupe.com/robot-coupe-global/Page%20Documentation/Catalogues/Export/Robot-Coupe_2026_Catalogue_Export_Interactive.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Robot Coupe разделяет Cutter Mixers, Blixer и Combination Processors как самостоятельные семейства.",
+        "Категории имеют разные рабочие модули и назначение."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать все семейства взаимозаменяемыми только из-за общей моторной базы."
+      ]
+    },
+    {
+      "id": "robot-coupe.r402.combi",
+      "sourceType": "official_product_page",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "R 402"
+      ],
+      "title": "Robot Coupe R 402 combination processor specification",
+      "url": "https://www.robot-coupe.com/usa/en_US/p/combination-processors-r-402/18334",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "R 402 объединяет cutter bowl и vegetable preparation attachment на одной моторной базе.",
+        "Куттерная чаша и овощерезательный модуль выполняют разные операции."
+      ],
+      "prohibitedGeneralizations": [
+        "Не утверждать, что два модуля работают одновременно."
+      ]
+    },
+    {
+      "id": "sammic.ck.combi",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sammic",
+      "modelScope": [
+        "CK-35V",
+        "CK-241"
+      ],
+      "title": "Sammic combination cutter and vegetable preparation machines",
+      "url": "https://sammic.com/en/product/ck-35v",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Серия CK сочетает функции cutter/emulsifier и vegetable preparation machine.",
+        "Конкретная комплектация и скорости зависят от модели."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить комплектацию CK-35V на все комбинированные машины Sammic."
+      ]
+    },
+    {
+      "id": "hallde.cc.combi",
+      "sourceType": "official_product_range",
+      "manufacturer": "HALLDE",
+      "modelScope": [
+        "CC-32S",
+        "CC-34"
+      ],
+      "title": "HALLDE Combi Cutter range",
+      "url": "https://www.hallde.com/other-languages/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "HALLDE выделяет CC-32S и CC-34 как Combi Cutters.",
+        "Комбинированная категория включает cutter и vegetable preparation функции."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить объём, производительность и оснастку одной модели CC на другую."
+      ]
+    },
+    {
+      "id": "hallde.range.selection",
+      "sourceType": "official_selection_guide",
+      "manufacturer": "HALLDE",
+      "modelScope": [
+        "VCB",
+        "VCM",
+        "CC product families"
+      ],
+      "title": "HALLDE professional food preparation selection guide",
+      "url": "https://www.hallde.com/food-preparation-machines-from-hallde-built-for-professional-kitchens/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Выбор машины связывается с меню, требуемой текстурой, размером партии и производительностью.",
+        "HALLDE разделяет vegetable preparation machines, Combi cutters и Vertical cutter mixers."
+      ],
+      "prohibitedGeneralizations": [
+        "Не выбирать объём и мощность без проверки фактической партии и технологической задачи."
+      ]
+    },
+    {
+      "id": "hallde.vcm.cleaning",
+      "sourceType": "official_product_page",
+      "manufacturer": "HALLDE",
+      "modelScope": [
+        "VCM-41",
+        "VCM-42",
+        "VCB-32",
+        "VCB-61",
+        "VCB-62"
+      ],
+      "title": "HALLDE VCM/VCB cleaning and removable parts",
+      "url": "https://www.hallde.com/products/vcm-41/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Для указанных VCM/VCB заявлена быстрая очистка и машинная мойка съёмных частей.",
+        "Скребок и ножевой блок являются отдельными рабочими элементами."
+      ],
+      "prohibitedGeneralizations": [
+        "Не разрешать машинную мойку моторного блока и деталей, не указанных как machine washable."
+      ]
+    },
+    {
+      "id": "sammic.range.speed",
+      "sourceType": "official_product_range",
+      "manufacturer": "Sammic",
+      "modelScope": [
+        "K-41",
+        "K-82",
+        "KE-5V",
+        "CK-35V",
+        "CK-241"
+      ],
+      "title": "Sammic cutter and emulsifier range",
+      "url": "https://sammic.com/en/products/cutters-emulsifiers",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "В линейке представлены односкоростные, двухскоростные и регулируемые модели.",
+        "Куттеры-эмульгаторы и комбинированные машины разделяются по задачам и конструкции."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить диапазон скорости и оснастку одной модели на всю линейку."
+      ]
+    },
+    {
+      "id": "sirman.katana.cleaning",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sirman",
+      "modelScope": [
+        "KATANA 6",
+        "KATANA 12",
+        "KATANA 20"
+      ],
+      "title": "Sirman KATANA cleaning and safety specification",
+      "url": "https://www.sirman.com/en-US/food-preparing/bowl-cutters/katana-6/40793058",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Крышка чаши, трёхножевой блок и чаша снимаются без инструмента для санитарной обработки.",
+        "Конструкция предусматривает защиту вала от проникновения жидкости и блокировку крышки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не разрешать струйную мойку моторного блока без прямого указания руководства конкретной модели."
+      ]
+    },
+    {
+      "id": "hallde.vcm.cleaning.water",
+      "sourceType": "official_user_manual",
+      "manufacturer": "HALLDE",
+      "modelScope": [
+        "VCM-41",
+        "VCM-42"
+      ],
+      "title": "HALLDE VCM-41/VCM-42 cleaning and troubleshooting instructions",
+      "url": "https://www.hallde.com/app/uploads/2023/04/hallde-userinstructions-vcm-41-42-13001b.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Перед очисткой аппарат необходимо отключить от сети.",
+        "Съёмные части допускают мойку в пределах руководства, а корпус машины протирают влажной тканью и сразу вытирают насухо.",
+        "На машину запрещено лить или распылять воду.",
+        "При плохом результате руководство предлагает проверить ножи, загрузку, размер продукта, время и скребок."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать весь аппарат моющимся струёй воды и не переносить правила съёмных частей на моторный блок."
+      ]
+    },
+    {
+      "id": "sirman.katana.liquid.protection",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sirman",
+      "modelScope": [
+        "KATANA 6"
+      ],
+      "title": "Sirman KATANA 6 liquid protection and safety specification",
+      "url": "https://www.sirman.com/en-US/food-preparing/bowl-cutters/katana-6/40793058",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Модель имеет защиту от проникновения жидкости в зоне вала.",
+        "Предусмотрены блокировка крышки, термозащита двигателя и защита от повторного запуска после пропадания напряжения.",
+        "Крышка, чаша и трёхножевой узел снимаются без инструмента для очистки."
+      ],
+      "prohibitedGeneralizations": [
+        "Защита вала не разрешает заливать моторный блок водой и не означает полной водонепроницаемости аппарата."
+      ]
+    },
+    {
+      "id": "robot-coupe.r502.blade.quality",
+      "sourceType": "official_brochure",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "R 502 V.V.",
+        "R 752"
+      ],
+      "title": "Robot Coupe cutter and vegetable processor blade performance",
+      "url": "https://www.robot-coupe.com/rbc/asset/get?asset=28387&download=1&lang=en_AU&market=28851&product=18403",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Куттерный узел предназначен для измельчения, эмульгирования, замеса, размола и приготовления соусов.",
+        "Производитель подчёркивает точность заточки режущих элементов и отдельные рабочие функции.",
+        "Состояние режущей кромки и конфигурация ножей влияют на качество результата."
+      ],
+      "prohibitedGeneralizations": [
+        "Не обещать одинаковое качество результата без учёта продукта, загрузки, скорости и модели ножевого блока."
+      ]
+    },
+    {
+      "id": "sirman.ctronic.food.heat",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sirman",
+      "modelScope": [
+        "C-TRONIC 6 VT"
+      ],
+      "title": "Sirman C-TRONIC 6 VT product heat and sealed shafts",
+      "url": "https://www.sirman.com/en-US/food-preparing/bowl-cutters/c-tronic-6-vt/40780628S",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Двигатель размещён рядом с чашей для снижения передачи тепла продукту.",
+        "Скорость регулируется в диапазоне модели, а двигатель имеет вентиляцию.",
+        "Валы двигателя и ножа герметизированы для снижения риска протечек.",
+        "Две независимые защитные блокировки контролируют крышку и фиксирующий рычаг."
+      ],
+      "prohibitedGeneralizations": [
+        "Не объяснять любой нагрев продукта только расположением двигателя и не считать герметизацию разрешением для мойки моторного блока водой."
+      ]
+    },
+    {
+      "id": "robot-coupe.r401.official",
+      "sourceType": "official_product_page",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "R 401 B",
+        "R 4 family"
+      ],
+      "title": "Robot Coupe R 401 B cutter mixer",
+      "url": "https://www.robot-coupe.com/usa/en_US/p/cutters-r-401-b/18237",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "R 401 B использует промышленный индукционный двигатель на подшипниках и прямой привод без ремня.",
+        "Модель имеет фиксированную скорость и импульсный режим.",
+        "Чаша, крышка и ножевой блок снимаются для обслуживания в пределах руководства."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить фиксированную скорость R 401 B на регулируемые R 5/R 7 и другие серии."
+      ]
+    },
+    {
+      "id": "robot-coupe.blixer4.official",
+      "sourceType": "official_product_page",
+      "manufacturer": "Robot Coupe",
+      "modelScope": [
+        "Blixer 4"
+      ],
+      "title": "Robot Coupe Blixer 4",
+      "url": "https://www.robot-coupe.com/usa/en_US/p/blixer-blixer-4/18384",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Blixer 4 предназначен для модификации текстуры продуктов.",
+        "Модель использует мелкозубчатый нож и съёмный Blixer-рычаг для однородности."
+      ],
+      "prohibitedGeneralizations": [
+        "Не называть любой куттер Blixer и не обещать одинаковый результат без учёта рецептуры и модели."
+      ]
+    },
+    {
+      "id": "sammic.ke4v.official",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sammic",
+      "modelScope": [
+        "KE-4V"
+      ],
+      "title": "Sammic KE-4V cutter-emulsifier-texturizer",
+      "url": "https://sammic.com/en/product/food-processor-emulsifier-ke-4v",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "KE-4V использует регулируемый brushless-привод, программирование времени и импульс.",
+        "Положение чаши и крышки контролируется защитными микровыключателями.",
+        "Боковые мешалки и ножи участвуют в однородности и ограничении перегрева продукта."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить диапазон скорости и управление KE-4V на серии K с фиксированной скоростью."
+      ]
+    },
+    {
+      "id": "hallde.vcm41.product",
+      "sourceType": "official_product_page",
+      "manufacturer": "HALLDE",
+      "modelScope": [
+        "VCM-41"
+      ],
+      "title": "HALLDE VCM-41 vertical cutter mixer",
+      "url": "https://www.hallde.com/products/vcm-41/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "VCM-41 относится к вертикальным cutter mixer и рассчитан на профессиональные кухни.",
+        "Для модели доступны официальные инструкции, parts list, wiring diagram и сертификация."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить электрическую схему VCM-41 на VCB и Combi Cutter без проверки документации."
+      ]
+    },
+    {
+      "id": "sirman.ctronic9.official",
+      "sourceType": "official_product_page",
+      "manufacturer": "Sirman",
+      "modelScope": [
+        "C-TRONIC 9 PLUS"
+      ],
+      "title": "Sirman C-TRONIC 9 PLUS",
+      "url": "https://www.sirman.com/en-US/food-preparing/bowl-cutters/c-tronic-9-plus/40780958S",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "C-TRONIC 9 PLUS использует регулируемую систему VARIOTRONIC, импульсный режим и встроенный скребок.",
+        "Модель имеет две защитные блокировки, защиту от перегрузки и повторного запуска.",
+        "Валы двигателя и ножа герметизированы для снижения риска протечек."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить диапазон скорости, мощность и устройство привода C-TRONIC 9 PLUS на KATANA и другие модели."
+      ]
+    }
+  ]
+}

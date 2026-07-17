@@ -7,34 +7,31 @@
 - H1: Жарко на кухне ресторана
 - Canonical: https://mospochin.ru/peregrev-kuhni-restorana.html
 - Builder model: src/pages/peregrev-kuhni-restorana/page.json
-- Sections: 10 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1413
+- Sections: 9 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1204
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| mobile-contact | 4 |
 | layout-fragment | 3 |
-| mobile-contact | 2 |
-| body-preamble | 1 |
 | breadcrumb | 1 |
-| footer-anchor | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Жарко на кухне ресторана | breadcrumb | 56.1 KB | 1413 | no | src/pages/peregrev-kuhni-restorana/sections/002-breadcrumb-zharko-na-kuhne-restorana.html |
-| Подключение partials-injector | runtime-partials | 54 B | 0 | no | src/pages/peregrev-kuhni-restorana/sections/008-runtime-partials-podklyuchenie-partials-injector.html |
+| Жарко на кухне ресторана | breadcrumb | 37.1 KB | 1017 | no | src/pages/peregrev-kuhni-restorana/sections/002-breadcrumb-zharko-na-kuhne-restorana.html |
+| Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/peregrev-kuhni-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/peregrev-kuhni-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/peregrev-kuhni-restorana/sections/007-lead-form-forma-zayavki.html |
-| Секция 1 | body-preamble | 48 B | 0 | no | src/pages/peregrev-kuhni-restorana/sections/001-body-preamble-sekciya-1.html |
 | HTML-фрагмент | layout-fragment | 46 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-52c8755076d4.template.html |
 | Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| HTML-фрагмент | layout-fragment | 42 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html |
 | Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
-| HTML-фрагмент | layout-fragment | 41 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-5b57bace79b1.template.html |
 
 
 ## Editable source files

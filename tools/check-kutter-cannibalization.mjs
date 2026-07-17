@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+import fs from 'node:fs'; import {load,failIf} from './kutter-fault-lib.mjs';
+const pages=load('kutter-cluster-pages.json').pages||[], errors=[], intents=new Map(), titles=new Map(), h1s=new Map();
+for(const p of pages){if(!p.intent)errors.push(`${p.page}: intent missing`);if(intents.has(p.intent))errors.push(`duplicate intent ${p.intent}: ${intents.get(p.intent)} / ${p.page}`);intents.set(p.intent,p.page);if(p.status==='published'){const html=fs.readFileSync(p.page,'utf8');const title=html.match(/<title>([\s\S]*?)<\/title>/i)?.[1].trim().toLowerCase();const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1].replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().toLowerCase();if(!title||!h1)errors.push(`${p.page}: title/H1 missing`);if(title&&titles.has(title))errors.push(`duplicate title: ${p.page} / ${titles.get(title)}`);if(h1&&h1s.has(h1))errors.push(`duplicate H1: ${p.page} / ${h1s.get(h1)}`);titles.set(title,p.page);h1s.set(h1,p.page)}}
+failIf(errors,`Kutter cannibalization passed: ${pages.length} unique intents, ${titles.size} published titles/H1s`)

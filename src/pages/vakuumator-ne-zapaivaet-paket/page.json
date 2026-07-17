@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "vakuumator-ne-zapaivaet-paket.html",
+  "slug": "vakuumator-ne-zapaivaet-paket",
+  "route": "/vakuumator-ne-zapaivaet-paket.html",
+  "branch": "restaurant",
+  "role": "symptom-service",
+  "title": "Вакууматор не запаивает пакет — проверка и ремонт | MosPochin",
+  "h1": "Вакууматор не запаивает пакет",
+  "source": {
+    "extractedFrom": "vakuumator-ne-zapaivaet-paket.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "1c35adfab71b1cbd32b1d8636c2bf9aa8680045f50462fc872022b1f8d677618",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble",
+      "component": "body-preamble",
+      "label": "Преамбула",
+      "file": "sections/001-body-preamble.html",
+      "bytes": 60,
+      "hash": "3b5244e9cdb0a353"
+    },
+    {
+      "id": "010-hero",
+      "component": "hero",
+      "label": "Первый экран",
+      "file": "sections/010-hero.html",
+      "bytes": 1702,
+      "hash": "668021065133ba64"
+    },
+    {
+      "id": "020-stop-use",
+      "component": "stop-use",
+      "label": "Условия остановки",
+      "file": "sections/020-stop-use.html",
+      "bytes": 1093,
+      "hash": "873dfe61825fc553"
+    },
+    {
+      "id": "030-safe-self-check",
+      "component": "safe-self-check",
+      "label": "Безопасная проверка",
+      "file": "sections/030-safe-self-check.html",
+      "bytes": 1828,
+      "hash": "8c4e2ada9d2f2a51"
+    },
+    {
+      "id": "040-decision-tree",
+      "component": "decision-tree",
+      "label": "Дерево решений",
+      "file": "sections/040-decision-tree.html",
+      "bytes": 1519,
+      "hash": "1d199bb31605a620"
+    },
+    {
+      "id": "050-cause-matrix",
+      "component": "cause-matrix",
+      "label": "Матрица причин",
+      "file": "sections/050-cause-matrix.html",
+      "bytes": 2785,
+      "hash": "d16387edbf0bcf18"
+    },
+    {
+      "id": "060-service-diagnostics",
+      "component": "service-diagnostics",
+      "label": "Сервисная диагностика",
+      "bytes": 1773,
+      "hash": "eae9d6f0e3273b80",
+      "componentRef": "src/components/shared/service-diagnostics/service-diagnostics-servisnaya-diagnostika--eae9d6f0e3273b80.html",
+      "componentScope": "shared",
+      "componentSignature": "eae9d6f0e3273b80",
+      "sourceFile": "sections/060-service-diagnostics.html"
+    },
+    {
+      "id": "070-repair-scope",
+      "component": "repair-scope",
+      "label": "Ремонтируемые узлы",
+      "file": "sections/070-repair-scope.html",
+      "bytes": 2592,
+      "hash": "7efc8e030d418822"
+    },
+    {
+      "id": "080-lead-form",
+      "component": "lead-form",
+      "label": "Форма заявки",
+      "file": "sections/080-lead-form.html",
+      "bytes": 3447,
+      "hash": "fc3ab55e4e67b5cd"
+    },
+    {
+      "id": "090-faq",
+      "component": "faq",
+      "label": "FAQ — частые вопросы",
+      "file": "sections/090-faq.html",
+      "bytes": 2050,
+      "hash": "beb308f0f0738f1f"
+    },
+    {
+      "id": "100-related-symptoms",
+      "component": "related-symptoms",
+      "label": "Связанные симптомы",
+      "file": "sections/100-related-symptoms.html",
+      "bytes": 4955,
+      "hash": "362793f3922c0757"
+    },
+    {
+      "id": "110-sources-note",
+      "component": "sources-note",
+      "label": "Источники",
+      "file": "sections/110-sources-note.html",
+      "bytes": 1223,
+      "hash": "160641965f62aa22"
+    },
+    {
+      "id": "120-footer-anchor",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 33,
+      "hash": "e290e2b6541c5f25",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html",
+      "props": {},
+      "sourceFile": "sections/120-footer-anchor.html"
+    },
+    {
+      "id": "130-mobile-contact",
+      "component": "mobile-contact",
+      "label": "Мобильные контакты",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/130-mobile-contact.html"
+    },
+    {
+      "id": "131-mobile-contact",
+      "component": "mobile-contact",
+      "label": "Мобильная навигация",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/131-mobile-contact.html"
+    },
+    {
+      "id": "140-runtime-partials",
+      "component": "runtime-partials",
+      "label": "Partials injector",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html",
+      "props": {},
+      "sourceFile": "sections/140-runtime-partials.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run check:symptom-service-pages",
+    "npm run page:check -- --page vakuumator-ne-zapaivaet-paket.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Edit taxonomy/evidence before technical claims.",
+    "Root HTML is generated from this model."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

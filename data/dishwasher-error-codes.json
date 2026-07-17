@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "cluster": "dishwasher",
+  "checkedAt": "2026-07-14",
+  "policy": {
+    "universalCodesForbidden": true,
+    "modelScopeRequired": true,
+    "ambiguousRowsExcluded": true
+  },
+  "codes": [
+    {
+      "manufacturer": "Electrolux Professional",
+      "modelScope": "PM00483 V5 undercounter dishwasher document scope",
+      "code": "Er-001",
+      "officialMeaning": "Faulty rinsing temperature sensor 1 (R1)",
+      "safeChecks": [
+        "Зафиксировать код и модель по шильдику",
+        "Отключить машину при нестабильном нагреве"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить сопротивление датчика R1",
+        "Проверить соединение датчика R1"
+      ],
+      "sourceEvidenceId": "electrolux.pm00483.manual"
+    },
+    {
+      "manufacturer": "Electrolux Professional",
+      "modelScope": "PM00483 V5 undercounter dishwasher document scope",
+      "code": "Er-011",
+      "officialMeaning": "Faulty heating of rinsing",
+      "safeChecks": [
+        "Зафиксировать код и текущую температуру",
+        "Не повторять циклы при отсутствии нагрева"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить цепь нагрева ополаскивания",
+        "Проверить силовые элементы и датчики"
+      ],
+      "sourceEvidenceId": "electrolux.pm00483.manual"
+    },
+    {
+      "manufacturer": "Electrolux Professional",
+      "modelScope": "PM00483 V5 undercounter dishwasher document scope",
+      "code": "Er-040",
+      "officialMeaning": "Faulty initialized communication",
+      "safeChecks": [
+        "Зафиксировать код после включения",
+        "Выполнить только штатное выключение и повторный запуск один раз"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить соединения модулей управления",
+        "Проверить питание и обмен между платами"
+      ],
+      "sourceEvidenceId": "electrolux.pm00483.manual"
+    },
+    {
+      "manufacturer": "Electrolux Professional",
+      "modelScope": "PM00483 V5 undercounter dishwasher document scope",
+      "code": "Er-041",
+      "officialMeaning": "Faulty ON-state communication",
+      "safeChecks": [
+        "Зафиксировать этап появления кода",
+        "Остановить эксплуатацию при повторении"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить линию связи во включённом состоянии",
+        "Проверить платы и разъёмы"
+      ],
+      "sourceEvidenceId": "electrolux.pm00483.manual"
+    },
+    {
+      "manufacturer": "MEIKO",
+      "modelScope": "DV 80.2",
+      "code": "Info 120",
+      "officialMeaning": "Tank is not heating OR fresh water is not entering unit",
+      "safeChecks": [
+        "Проверить, открыт ли внешний кран и не пережат ли доступный подводящий шланг",
+        "Зафиксировать, нагревается ли бак"
+      ],
+      "serviceOnlyChecks": [
+        "Разделить контур подачи воды и нагрева измерениями",
+        "Проверить клапан, уровень, ТЭН и силовую цепь"
+      ],
+      "sourceEvidenceId": "meiko.dv802.manual"
+    },
+    {
+      "manufacturer": "MEIKO",
+      "modelScope": "DV 80.2",
+      "code": "Info 121",
+      "officialMeaning": "Door is not closed OR door switch is defective",
+      "safeChecks": [
+        "Проверить штатное закрытие двери без приложения дополнительного усилия",
+        "Зафиксировать положение двери"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить дверной выключатель и его проводку",
+        "Проверить механику и регулировку двери"
+      ],
+      "sourceEvidenceId": "meiko.dv802.manual"
+    },
+    {
+      "manufacturer": "MEIKO",
+      "modelScope": "DV 80.2",
+      "code": "Err 111",
+      "officialMeaning": "Water leakage onto floor pan",
+      "safeChecks": [
+        "Остановить эксплуатацию и отключить питание",
+        "Закрыть внешний кран при продолжающейся утечке"
+      ],
+      "serviceOnlyChecks": [
+        "Найти источник утечки и проверить датчик поддона",
+        "Проверить впускной и сливной тракт"
+      ],
+      "sourceEvidenceId": "meiko.dv802.manual"
+    },
+    {
+      "manufacturer": "MEIKO",
+      "modelScope": "DV 80.2",
+      "code": "Err 201",
+      "officialMeaning": "Correct water level was not reached during initial filling",
+      "safeChecks": [
+        "Проверить внешний кран и отсутствие перегиба доступного шланга",
+        "Зафиксировать фактический уровень"
+      ],
+      "serviceOnlyChecks": [
+        "Проверить давление, клапан и контроль уровня",
+        "Проверить гидравлические ограничения"
+      ],
+      "sourceEvidenceId": "meiko.dv802.manual"
+    },
+    {
+      "manufacturer": "MEIKO",
+      "modelScope": "DV 80.2",
+      "code": "Err 202",
+      "officialMeaning": "Filling process takes too long",
+      "safeChecks": [
+        "Проверить внешний кран и подводящий шланг",
+        "Зафиксировать длительность наполнения"
+      ],
+      "serviceOnlyChecks": [
+        "Измерить давление и производительность впуска",
+        "Проверить фильтр, клапан и датчик уровня"
+      ],
+      "sourceEvidenceId": "meiko.dv802.manual"
+    }
+  ],
+  "excludedAmbiguities": [
+    {
+      "manufacturer": "Electrolux Professional",
+      "modelScope": "PM00483 V5 undercounter dishwasher document scope",
+      "code": "Er-002",
+      "reason": "Официальная таблица одной редакции дважды использует Er-002 для разных датчиков R2 и R3; строка не публикуется до получения уточнённого документа производителя.",
+      "sourceEvidenceId": "electrolux.pm00483.manual"
+    }
+  ]
+}

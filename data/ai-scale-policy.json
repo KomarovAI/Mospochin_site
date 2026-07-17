@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 1,
-  "mode": "controlled-growth-to-150-pages",
-  "intent": "До 100–150 страниц проект можно расширять без большого blueprint-рефактора, но нельзя ухудшать source-layer и AI-сопровождаемость.",
+  "schemaVersion": 2,
+  "mode": "quality-gated-growth",
+  "intent": "Размер сайта не ограничивается искусственным числом страниц. Рост блокируется только при нарушении builder parity, source quality, shared coverage или других измеримых контрактов.",
   "sourceOfTruth": [
     "src/site-builder.json",
     "src/pages/*/page.json",
@@ -22,10 +22,9 @@
     "reports/source-complexity.*"
   ],
   "pageBudget": {
-    "currentTargetPages": 150,
-    "softReviewAtPages": 125,
-    "hardStopAtPages": 150,
-    "afterHardStop": "Новые страницы после 150 допускаются только после отдельного blueprint/source-compression этапа или осознанного изменения этого policy файла."
+    "hardStopAtPages": null,
+    "reviewEveryAddedPages": 20,
+    "policy": "No numeric page cap. Review quality metrics after material growth batches."
   },
   "hardGates": {
     "builderParityRequired": true,
@@ -40,26 +39,21 @@
       "minimumSharedCoverageRatio": 0.28,
       "maxAverageSectionsPerPage": 55,
       "maxAverageSourceFilesPerPage": 58,
-      "message": "На 75+ страницах нужно начинать выносить повторяемые hero/FAQ/proof/pricing блоки."
+      "message": "На 75+ страницах выносить повторяемые hero/FAQ/proof/pricing блоки."
     },
     {
       "minPages": 100,
       "minimumSharedCoverageRatio": 0.35,
       "maxAverageSectionsPerPage": 50,
       "maxAverageSourceFilesPerPage": 52,
-      "message": "На 100+ страницах новые страницы не должны быть длинной копией локальных секций; нужен активный parametric/blueprint слой."
+      "message": "На 100+ страницах применять parametric/blueprint слой."
     },
     {
       "minPages": 125,
       "minimumSharedCoverageRatio": 0.42,
       "maxAverageSectionsPerPage": 47,
       "maxAverageSourceFilesPerPage": 48,
-      "message": "На 125+ страницах обязательны blueprints для повторяемых семейств страниц."
-    },
-    {
-      "minPages": 151,
-      "block": true,
-      "message": "Стоп: лимит controlled-growth исчерпан. Сначала делать blueprint/source-compression pack, потом расширять дальше."
+      "message": "На 125+ страницах повторяемые семейства должны иметь blueprints."
     }
   ],
   "warningThresholds": {
@@ -70,8 +64,8 @@
   },
   "allowedGrowthWorkflow": [
     "Добавлять страницы через source/builder/data, не через ручной root HTML.",
-    "После каждых +20–30 страниц запускать analyze:source-complexity и guard:scale.",
-    "Если guard:scale падает — не добавлять новые страницы, а делать compression pack.",
+    "После каждых +20 страниц запускать analyze:source-complexity и guard:scale.",
+    "Если guard:scale падает — исправлять измеримую причину, а не снижать качество или вводить числовой потолок.",
     "Не снижать shared/parametric coverage ниже текущего базового пола."
   ]
 }

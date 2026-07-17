@@ -7,36 +7,34 @@
 - H1: Пароконвектомат не набирает воду? Найдём узел
 - Canonical: https://mospochin.ru/parokonvektomat-ne-nabiraet-vodu.html
 - Builder model: src/pages/parokonvektomat-ne-nabiraet-vodu/page.json
-- Sections: 16 (11 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 879
+- Sections: 15 (12 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1066
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| mobile-contact | 5 |
 | proof | 4 |
-| mobile-contact | 3 |
-| layout-fragment | 2 |
 | related-links | 2 |
 | body-preamble | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
+| layout-fragment | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Оставьте заявку на ремонт | lead-form | 8.3 KB | 151 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/004-lead-form-ostav-te-zayavku-na-remont.html |
-| Пароконвектомат не набирает воду? Найдём узел | mobile-contact | 8.3 KB | 251 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/003-mobile-contact-parokonvektomat-ne-nabiraet-vodu-nayd.html |
-| Если вместе с водой есть другие симптомы | related-links | 7.1 KB | 146 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/009-related-links-esli-vmeste-s-vodoy-est-drugie-simptom.html |
-| Вопросы о подаче воды в пароконвектомат | faq | 4.9 KB | 205 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/011-faq-voprosy-o-podache-vody-v-parokonvektomat.html |
-| Не меняем детали вслепую | proof | 4.8 KB | 126 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/006-proof-ne-menyaem-detali-vslepuyu.html |
+| Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Пароконвектомат не набирает воду? Найдём узел | mobile-contact | 7.6 KB | 251 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/003-mobile-contact-parokonvektomat-ne-nabiraet-vodu-nayd.html |
+| Оставьте заявку на ремонт | lead-form | 7.6 KB | 151 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/004-lead-form-ostav-te-zayavku-na-remont.html |
+| Если вместе с водой есть другие симптомы | related-links | 7.0 KB | 146 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/009-related-links-esli-vmeste-s-vodoy-est-drugie-simptom.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/012-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Вопросы о подаче воды в пароконвектомат | faq | 4.8 KB | 205 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/011-faq-voprosy-o-podache-vody-v-parokonvektomat.html |
+| Не меняем детали вслепую | proof | 4.3 KB | 126 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/006-proof-ne-menyaem-detali-vslepuyu.html |
 | Доказательства/гарантии | proof | 183 B | 0 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/005-proof-dokazatel-stva-garantii.html |
-| Доказательства/гарантии | proof | 182 B | 0 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/008-proof-dokazatel-stva-garantii.html |
-| Секция 1 | body-preamble | 77 B | 0 | no | src/pages/parokonvektomat-ne-nabiraet-vodu/sections/001-body-preamble-sekciya-1.html |
 
 
 ## Editable source files

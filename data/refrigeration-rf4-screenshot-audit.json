@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "status": "rf4-new-pages",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/refrigeration/rf4",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 2200
+  },
+  "pages": [
+    {
+      "page": "kompressor-holodilnogo-oborudovaniya-ne-zapuskaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "vysokaya-temperatura-v-holodilnoy-kamere.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "isparitel-holodilnogo-oborudovaniya-pokryvaetsya-ldom.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ne-rabotaet-ottaika-holodilnogo-oborudovaniya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "ventilyator-holodilnogo-oborudovaniya-ne-rabotaet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "holodilnoe-oborudovanie-vybivaet-avtomat.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "techet-voda-iz-holodilnogo-oborudovaniya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kody-oshibok-holodilnogo-oborudovaniya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    }
+  ],
+  "checkedAt": "2026-07-15",
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "browser": "chromium"
+}

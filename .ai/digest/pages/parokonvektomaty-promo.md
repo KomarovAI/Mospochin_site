@@ -7,42 +7,40 @@
 - H1: Ошибка Rational / Unox / Abat
 - Canonical: https://mospochin.ru/parokonvektomaty-promo.html
 - Builder model: src/pages/parokonvektomaty-promo/page.json
-- Sections: 68 (23 local, 14 shared refs, 3 raw)
-- Text words inside referenced sections: 2528
+- Sections: 67 (24 local, 15 shared refs, 2 raw)
+- Text words inside referenced sections: 2562
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
 | layout-fragment | 27 |
-| pricing | 11 |
-| proof | 8 |
+| pricing | 10 |
+| proof | 7 |
+| mobile-contact | 5 |
 | related-links | 4 |
-| mobile-contact | 3 |
-| raw | 3 |
+| section | 3 |
 | breadcrumb | 2 |
 | contact-cta | 2 |
 | faq | 2 |
+| raw | 2 |
 | body-preamble | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
-| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Что важно по ошибке пароконвектомата | related-links | 14.8 KB | 414 | no | src/pages/parokonvektomaty-promo/sections/009-related-links-chto-vazhno-po-oshibke-parokonvektomat.html |
-| Ошибка Rational / Unox / Abat | hero | 9.2 KB | 93 | no | src/pages/parokonvektomaty-promo/sections/006-hero-oshibka-rational-unox-abat.html |
-| Частые поломки пароконвектоматов | pricing | 8.1 KB | 197 | yes | src/components/shared/pricing/pricing-chastye-polomki-parokonvektomatov--e1e987fb23638159.html |
+| Что важно по ошибке пароконвектомата | related-links | 14.8 KB | 412 | no | src/pages/parokonvektomaty-promo/sections/009-related-links-chto-vazhno-po-oshibke-parokonvektomat.html |
+| Ошибка Rational / Unox / Abat | hero | 9.2 KB | 95 | no | src/pages/parokonvektomaty-promo/sections/006-hero-oshibka-rational-unox-abat.html |
+| Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/parokonvektomaty-promo/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Частые поломки пароконвектоматов | section | 8.5 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--16d8721c09cebb16.html |
 | Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.5 KB | 102 | no | src/pages/parokonvektomaty-promo/sections/051-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
-| Частые вопросы о ремонте пароконвектоматов | faq | 6.5 KB | 240 | no | src/pages/parokonvektomaty-promo/sections/046-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
-| Последние ремонты пароконвектоматов | pricing | 6.2 KB | 124 | yes | src/components/shared/pricing/pricing-poslednie-remonty-parokonvektomatov--7f0901fe41d1f650.html |
+| Частые вопросы о ремонте пароконвектоматов | faq | 6.4 KB | 233 | no | src/pages/parokonvektomaty-promo/sections/046-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.0 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--179e76b534feb278.html |
-| Ремонтируем все типы пароконвектоматов | pricing | 5.8 KB | 134 | yes | src/components/shared/pricing/pricing-remontiruem-vse-tipy-parokonvektomatov--08947d2913b4455f.html |
+| Ремонтируем все типы пароконвектоматов | section | 5.9 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--5ce5c0ec71cc04c7.html |
 
 
 ## Editable source files

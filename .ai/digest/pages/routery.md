@@ -7,41 +7,39 @@
 - H1: Ремонт и настройка роутеров в Москве
 - Canonical: https://mospochin.ru/routery.html
 - Builder model: src/pages/routery/page.json
-- Sections: 51 (43 local, 2 shared refs, 9 raw)
-- Text words inside referenced sections: 2417
+- Sections: 50 (44 local, 5 shared refs, 9 raw)
+- Text words inside referenced sections: 2555
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| pricing | 10 |
+| section | 10 |
+| pricing | 9 |
 | raw | 9 |
-| section | 7 |
-| mobile-contact | 5 |
-| proof | 5 |
-| contact-cta | 4 |
+| mobile-contact | 7 |
+| proof | 4 |
+| contact-cta | 3 |
 | faq | 3 |
-| layout-fragment | 2 |
 | body-preamble | 1 |
 | breadcrumb | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
+| layout-fragment | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем все марки роутеров | pricing | 16.9 KB | 104 | no | src/pages/routery/sections/036-pricing-remontiruem-vse-marki-routerov.html |
-| Настраиваем и чиним всё сетевое | pricing | 13.5 KB | 228 | no | src/pages/routery/sections/009-pricing-nastraivaem-i-chinim-vse-setevoe.html |
-| Реальные вызовы на этой неделе | contact-cta | 8.3 KB | 108 | no | src/pages/routery/sections/018-contact-cta-real-nye-vyzovy-na-etoy-nedele.html |
-| Частые вопросы про роутеры | faq | 8.0 KB | 216 | no | src/pages/routery/sections/029-faq-chastye-voprosy-pro-routery.html |
-| Настройка и ремонт роутеров | faq | 7.3 KB | 175 | no | src/pages/routery/sections/041-faq-nastroyka-i-remont-routerov.html |
-| Ремонт и настройка роутеров в Москве | hero | 6.4 KB | 85 | no | src/pages/routery/sections/004-hero-remont-i-nastroyka-routerov-v-moskve.html |
-| Частые поломки роутеров | pricing | 6.3 KB | 121 | no | src/pages/routery/sections/030-pricing-chastye-polomki-routerov.html |
-| 2.4ГГц vs 5ГГц vs 6ГГц — что выбрать | section | 5.9 KB | 93 | no | src/pages/routery/sections/022-section-2-4ggc-vs-5ggc-vs-6ggc-chto-vybrat.html |
+| Работаем с распространёнными марками роутеров | pricing | 16.5 KB | 109 | no | src/pages/routery/sections/036-pricing-rabotaem-s-rasprostranennymi-markami-routero.html |
+| Настраиваем и чиним всё сетевое | section | 10.9 KB | 230 | no | src/pages/routery/sections/009-section-nastraivaem-i-chinim-vse-setevoe.html |
+| Мобильные контактные элементы | mobile-contact | 7.1 KB | 78 | no | src/pages/routery/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Настройка и ремонт роутеров | faq | 6.3 KB | 178 | no | src/pages/routery/sections/041-faq-nastroyka-i-remont-routerov.html |
+| Частые вопросы про роутеры | faq | 6.2 KB | 216 | no | src/pages/routery/sections/029-faq-chastye-voprosy-pro-routery.html |
+| Частые поломки роутеров | section | 6.2 KB | 121 | no | src/pages/routery/sections/030-section-chastye-polomki-routerov.html |
+| Ремонт и настройка роутеров в Москве | hero | 5.7 KB | 89 | no | src/pages/routery/sections/004-hero-remont-i-nastroyka-routerov-v-moskve.html |
+| Что случилось с роутером? | pricing | 4.9 KB | 41 | no | src/pages/routery/sections/016-pricing-chto-sluchilos-s-routerom.html |
 
 
 ## Editable source files

@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "cluster": "dishwasher",
+  "checkedAt": "2026-07-14",
+  "policy": {
+    "allowedSourceTypes": [
+      "official_product_page",
+      "official_download_centre",
+      "official_user_manual",
+      "official_catalogue",
+      "official_technical_documentation"
+    ],
+    "requireModelScopeForErrorCodes": true,
+    "thirdPartyErrorTablesForbidden": true
+  },
+  "records": [
+    {
+      "id": "winterhalter.download.centre",
+      "sourceType": "official_download_centre",
+      "manufacturer": "Winterhalter",
+      "modelScope": [
+        "UC series",
+        "PT series",
+        "CTR",
+        "C50",
+        "water treatment and dosing systems"
+      ],
+      "title": "Winterhalter Download Centre",
+      "url": "https://www.winterhalter.com/download-centre/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "У производителя доступны отдельные руководства, схемы подключения, технические листы и документы по водоподготовке.",
+        "Технические утверждения и коды должны привязываться к конкретному документу и серии."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить параметры, сервисные процедуры и коды между сериями без отдельного документа."
+      ]
+    },
+    {
+      "id": "winterhalter.undercounter.range",
+      "sourceType": "official_product_page",
+      "manufacturer": "Winterhalter",
+      "modelScope": [
+        "UC series",
+        "U50"
+      ],
+      "title": "Winterhalter undercounter commercial warewashers",
+      "url": "https://www.winterhalter.com/uk-en/products/dishwashers/commercial-undercounter-dishwashers/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Подстольные машины и стаканомоечные машины образуют отдельное семейство профессионального оборудования.",
+        "В рабочем цикле контролируются программа, температура бака и температура бойлера."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать любую фронтальную машину моделью UC или U50."
+      ]
+    },
+    {
+      "id": "winterhalter.passthrough.pt",
+      "sourceType": "official_product_page",
+      "manufacturer": "Winterhalter",
+      "modelScope": [
+        "PT series"
+      ],
+      "title": "Winterhalter PT passthrough dishwasher",
+      "url": "https://www.winterhalter.com/products/passthrough-dishwasher/pt-series/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Купольная PT имеет отдельный этап самоочистки и штатный слив остаточной воды.",
+        "Подъём купола, запуск цикла и слив относятся к разным функциональным узлам."
+      ],
+      "prohibitedGeneralizations": [
+        "Не применять устройство PT ко всем купольным машинам других серий."
+      ]
+    },
+    {
+      "id": "winterhalter.rack.ctr",
+      "sourceType": "official_product_page",
+      "manufacturer": "Winterhalter",
+      "modelScope": [
+        "CTR"
+      ],
+      "title": "Winterhalter CTR compact rack conveyor dishwasher",
+      "url": "https://www.winterhalter.com/au-en/products/ctr-compact-rack-conveyor-dishwasher/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Кассетная конвейерная машина имеет отдельную систему перемещения кассет.",
+        "Ошибки отображаются на дисплее кодами и текстовыми сообщениями в рамках конкретной серии."
+      ],
+      "prohibitedGeneralizations": [
+        "Не публиковать значения кодов CTR без руководства конкретной версии."
+      ]
+    },
+    {
+      "id": "winterhalter.rack.c50",
+      "sourceType": "official_product_page",
+      "manufacturer": "Winterhalter",
+      "modelScope": [
+        "C50"
+      ],
+      "title": "Winterhalter C50 rack conveyor dishwasher",
+      "url": "https://www.winterhalter.com/in-en/products/rack-conveyor-dishwashers-c50/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Кассетная конвейерная машина рассчитана на непрерывный поток кассет и имеет модульную компоновку.",
+        "Неисправность движения конвейера является отдельным диагностическим сценарием от неисправностей мойки и нагрева."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить производительность и модульный состав C50 на другие линии."
+      ]
+    },
+    {
+      "id": "hobart.undercounter.fx",
+      "sourceType": "official_product_page",
+      "manufacturer": "HOBART",
+      "modelScope": [
+        "PROFI FX",
+        "PROFI FXL"
+      ],
+      "title": "HOBART PROFI FX front-loading dishwasher",
+      "url": "https://www.hobart-export.com/products/warewashing/dishwashers/front-loading-dishwasher/product/fx",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Фронтальная машина имеет отдельные бак, бойлер и моечный насос.",
+        "Время цикла, расход воды и электрическая нагрузка зависят от конкретной модели."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить параметры FX на серии AMX, CP, CN или машины других брендов."
+      ]
+    },
+    {
+      "id": "hobart.rack.cp_cn",
+      "sourceType": "official_catalogue",
+      "manufacturer": "HOBART",
+      "modelScope": [
+        "PREMAX CP",
+        "PROFI CN"
+      ],
+      "title": "HOBART CP/CN rack-type dishwasher brochure",
+      "url": "https://www.hobart-export.com/assets/Documents/EN/Product%20documents/Brochures%20%28Inhaltsseiten%29/PR-1017-0822-814-K-en_CP-CN_final.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Кассетные машины CP/CN используют отдельную систему движения и контроля потока кассет.",
+        "Конвейерный тракт, зоны мойки и ополаскивания диагностируются раздельно."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать устройство CP/CN универсальным для пальчиковых линий."
+      ]
+    },
+    {
+      "id": "hobart.flow.dosing",
+      "sourceType": "official_product_page",
+      "manufacturer": "HOBART",
+      "modelScope": [
+        "FLOW Line"
+      ],
+      "title": "HOBART FLOW Line",
+      "url": "https://www.hobart-export.com/products/warewashing/conveyor-dishwashers/flow-line",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "В конвейерной линии химия дозируется отдельной системой.",
+        "Уровень химии и гидравлический контур дозирования влияют на результат мойки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не сводить плохой результат мойки только к дозатору без проверки воды, температуры и циркуляции."
+      ]
+    },
+    {
+      "id": "hobart.water.hydroline",
+      "sourceType": "official_catalogue",
+      "manufacturer": "HOBART",
+      "modelScope": [
+        "HYDROLINE",
+        "PROFI FX/FXL",
+        "PROFI AMX family",
+        "PREMAX CP",
+        "PROFI CN",
+        "FLOW Line"
+      ],
+      "title": "HOBART HYDROLINE water treatment",
+      "url": "https://www.hobart-export.com/assets/Documents/EN/Product%20documents/Brochures%20%28Inhaltsseiten%29/H_ww_product-brochure_Hydroline_en_UK_1116.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Жёсткая вода вызывает накипь и снижает эффективность моющих и ополаскивающих средств.",
+        "Умягчение, частичная деминерализация и обратный осмос решают разные задачи водоподготовки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не рекомендовать конкретную систему водоподготовки без анализа жёсткости и электропроводности воды."
+      ]
+    },
+    {
+      "id": "meiko.undercounter.range",
+      "sourceType": "official_product_page",
+      "manufacturer": "MEIKO",
+      "modelScope": [
+        "M-iClean U",
+        "UPster U"
+      ],
+      "title": "MEIKO undercounter dishwashers and glasswashers",
+      "url": "https://www.meiko.com/en-gb/products/commercial-dishwashing/under-counter-dishwashers-and-glasswashers",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Подстольные посудомоечные и стаканомоечные машины составляют отдельное семейство.",
+        "Конкретные программы, расход воды и комплектация зависят от модели."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить параметры M-iClean U на UPster U без проверки модели."
+      ]
+    },
+    {
+      "id": "meiko.hood.range",
+      "sourceType": "official_product_page",
+      "manufacturer": "MEIKO",
+      "modelScope": [
+        "M-iClean H",
+        "UPster H"
+      ],
+      "title": "MEIKO hood-type dishwashing machines",
+      "url": "https://www.meiko.com/en-gb/products/commercial-dishwashing/pass-through-dishwashers",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Купольные машины MEIKO являются отдельным типом оборудования для проходной компоновки.",
+        "У отдельных серий применяются автоматический купол и автоматическое определение кассеты."
+      ],
+      "prohibitedGeneralizations": [
+        "Не утверждать наличие автоматического купола у любой купольной машины MEIKO."
+      ]
+    },
+    {
+      "id": "meiko.cleaning.maintenance",
+      "sourceType": "official_product_page",
+      "manufacturer": "MEIKO",
+      "modelScope": [
+        "commercial dishwasher range"
+      ],
+      "title": "MEIKO commercial dishwasher maintenance tips",
+      "url": "https://www.meiko.com/en-gb/simple-dishwasher-maintenance-tips-owners-forget",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Загрязнение фильтров и форсунок ухудшает циркуляцию и результат мойки.",
+        "Ежедневная очистка доступных фильтров и удаление остатков пищи относятся к пользовательскому обслуживанию."
+      ],
+      "prohibitedGeneralizations": [
+        "Не предлагать пользователю разбирать насос, бойлер или электрическую часть."
+      ]
+    },
+    {
+      "id": "meiko.limescale",
+      "sourceType": "official_product_page",
+      "manufacturer": "MEIKO",
+      "modelScope": [
+        "commercial dishwasher range"
+      ],
+      "title": "MEIKO limescale in dishwashing machines",
+      "url": "https://www.meiko.com/en-it/meiko-experience/blog/the-problem-of-limescale-in-the-dishwashing-machine",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Минеральные отложения связаны с качеством воды и нагревом.",
+        "Накипь может ухудшать нагрев и состояние гидравлических элементов."
+      ],
+      "prohibitedGeneralizations": [
+        "Не диагностировать неисправность нагрева только по видимому налёту."
+      ]
+    },
+    {
+      "id": "electrolux.pm00483.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "Electrolux Professional",
+      "modelScope": [
+        "PM00483 V5 undercounter dishwasher document scope"
+      ],
+      "title": "Electrolux Professional undercounter dishwasher instruction manual PM00483",
+      "url": "https://tools.electroluxprofessional.com/Mirror/Doc/HB/HB_PM00483_1_1_PM00483.V5.UD-1_USER_MANUAL.EN.pdf?version=1760819414",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Руководство разделяет ошибки датчиков температуры ополаскивания, нагрева ополаскивания и связи.",
+        "Результат мойки зависит от фильтров, рукавов, загрузки, химии и состояния воды."
+      ],
+      "prohibitedGeneralizations": [
+        "Коды из PM00483 нельзя применять ко всем машинам Electrolux Professional.",
+        "Не публиковать неоднозначную строку Er-002 без дополнительной редакции документа."
+      ]
+    },
+    {
+      "id": "electrolux.euca060.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "Electrolux Professional",
+      "modelScope": [
+        "EUCA060",
+        "ZUCA060"
+      ],
+      "title": "Electrolux Professional EUCA060/ZUCA060 manual",
+      "url": "https://tools.electroluxprofessional.com/Mirror/Doc/HB/HB_59566V500_1_3_59566V500_en.pdf?version=1728322548",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Руководство содержит отдельные процедуры установки, эксплуатации и обслуживания конкретных подстольных моделей.",
+        "Безопасные пользовательские проверки должны отделяться от сервисного доступа к электрическим и гидравлическим узлам."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить сервисные процедуры EUCA060/ZUCA060 на другие серии."
+      ]
+    },
+    {
+      "id": "dihr.range",
+      "sourceType": "official_product_page",
+      "manufacturer": "DIHR",
+      "modelScope": [
+        "CS",
+        "GS",
+        "DS",
+        "ELECTRON",
+        "OPTIMA",
+        "HT",
+        "RX",
+        "QX",
+        "LP",
+        "HYDROPOWER"
+      ],
+      "title": "DIHR commercial warewashing range",
+      "url": "https://www.dihr.com/en/products/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "DIHR выпускает подстольные, купольные, кассетные, пальчиковые и котломоечные машины.",
+        "Тип машины определяет набор применимых неисправностей и структуру перелинковки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не смешивать диагностику конвейерного тракта с фронтальной машиной."
+      ]
+    },
+    {
+      "id": "dihr.ht10.spec",
+      "sourceType": "official_catalogue",
+      "manufacturer": "DIHR",
+      "modelScope": [
+        "HT 10",
+        "HT 10 L"
+      ],
+      "title": "DIHR HT 10 hood-type dishwasher specification",
+      "url": "https://www.dihr.com/sync/pdf/HT%2010_ES.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "HT 10 и HT 10 L относятся к купольным машинам; у электронной версии предусмотрены программы и самоочистка.",
+        "При жёсткости воды выше указанного диапазона производитель требует внешнее умягчение."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить предел жёсткости HT 10 на все модели DIHR."
+      ]
+    },
+    {
+      "id": "dihr.gs.spec",
+      "sourceType": "official_catalogue",
+      "manufacturer": "DIHR",
+      "modelScope": [
+        "GS series"
+      ],
+      "title": "DIHR GS glass and dishwashers specification",
+      "url": "https://www.dihr.com/sync/pdf/GS_EN.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Серия GS объединяет подстольные стаканомоечные и посудомоечные исполнения.",
+        "В зависимости от версии доступны Thermostop, встроенный умягчитель и самоочистка."
+      ],
+      "prohibitedGeneralizations": [
+        "Не утверждать наличие опции у конкретной GS без проверки модификации."
+      ]
+    },
+    {
+      "id": "abat.technical.docs",
+      "sourceType": "official_technical_documentation",
+      "manufacturer": "Abat",
+      "modelScope": [
+        "МПК product family"
+      ],
+      "title": "Abat technical documentation",
+      "url": "https://abat.ru/servis-i-podderzhka/tekhnicheskaya-dokumentatsiya/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Производитель публикует отдельную техническую документацию для посудомоечных машин.",
+        "Сервисные данные и коды должны проверяться по руководству конкретной модели."
+      ],
+      "prohibitedGeneralizations": [
+        "Не использовать коды и электрические схемы без привязки к модели МПК."
+      ]
+    },
+    {
+      "id": "abat.mpk500f.product",
+      "sourceType": "official_product_page",
+      "manufacturer": "Abat",
+      "modelScope": [
+        "МПК-500Ф"
+      ],
+      "title": "Abat МПК-500Ф front-loading dishwasher",
+      "url": "https://abat.ru/catalog/posudomoechnye-mashiny/frontalnaya-posudomoechnaya-mashina-mpk-500f/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "МПК-500Ф относится к фронтальным профессиональным машинам.",
+        "Температура мойки и ополаскивания являются отдельными контролируемыми параметрами."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить электрическую мощность и параметры МПК-500Ф на другие МПК."
+      ]
+    },
+    {
+      "id": "abat.mpk700k01.product",
+      "sourceType": "official_product_page",
+      "manufacturer": "Abat",
+      "modelScope": [
+        "МПК-700К-01"
+      ],
+      "title": "Abat МПК-700К-01 hood-type dishwasher",
+      "url": "https://abat.ru/catalog/posudomoechnye-mashiny/kupolnaya-posudomoechnaya-mashina-mpk-700k-01/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "МПК-700К-01 относится к купольным профессиональным машинам.",
+        "Купольная механика и запуск цикла требуют отдельного диагностического сценария."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать все модификации МПК-700К идентичными по электрической и гидравлической комплектации."
+      ]
+    },
+    {
+      "id": "fagor.dishwashing.catalogue",
+      "sourceType": "official_catalogue",
+      "manufacturer": "Fagor Professional",
+      "modelScope": [
+        "E-VO glasswashers",
+        "E-VO front-loading",
+        "E-VO hood-type",
+        "rack-type and flight-type ranges"
+      ],
+      "title": "Fagor Professional dishwashing catalogue",
+      "url": "https://www.fagorprofessional.com/documents/20127/229127/03_DISHWASHING.pdf/87694ba1-c849-730a-451e-f9598ff3eafb?t=1712587213187",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Каталог разделяет стаканомоечные, фронтальные, купольные, кассетные и пальчиковые машины.",
+        "Для ряда моделей отдельно указаны Thermostop, сливной насос, дозатор моющего средства, умягчение и осмос."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить комплектацию и температуры конкретной модели на весь каталог."
+      ]
+    },
+    {
+      "id": "fagor.potwashers",
+      "sourceType": "official_product_page",
+      "manufacturer": "Fagor Professional",
+      "modelScope": [
+        "iNOVA utensil washer range"
+      ],
+      "title": "Fagor Professional utensil washers",
+      "url": "https://www.fagorprofessional.com/en/kitchen-appliances/dishwashing/potwashers",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Котломоечные машины являются отдельным типом оборудования для крупного инвентаря.",
+        "Их загрузка, гидравлика и диагностические сценарии отличаются от стандартных фронтальных машин."
+      ],
+      "prohibitedGeneralizations": [
+        "Не объединять котломоечные машины с бытовыми посудомойками или стандартными стаканомоечными машинами."
+      ]
+    },
+    {
+      "id": "winterhalter.water.treatment",
+      "sourceType": "official_product_page",
+      "manufacturer": "Winterhalter",
+      "modelScope": [
+        "commercial warewasher range",
+        "MonoMatik 3",
+        "DuoMatik 3",
+        "TE 15",
+        "TE 20",
+        "VE 15",
+        "VE 20",
+        "AT Excellence",
+        "RoMatik"
+      ],
+      "title": "Winterhalter commercial water treatment devices",
+      "url": "https://www.winterhalter.com/in-en/products/water-treatment/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Умягчение, частичная и полная деминерализация и обратный осмос решают разные задачи водоподготовки.",
+        "Снижение минеральной нагрузки уменьшает отложения и помогает моющему средству и ополаскивателю работать стабильнее."
+      ],
+      "prohibitedGeneralizations": [
+        "Не назначать конкретный тип водоподготовки без анализа исходной воды и требований к результату мойки."
+      ]
+    },
+    {
+      "id": "winterhalter.dosing.technology",
+      "sourceType": "official_product_page",
+      "manufacturer": "Winterhalter",
+      "modelScope": [
+        "commercial warewasher dosing systems",
+        "detergent suction systems",
+        "rinse aid suction systems"
+      ],
+      "title": "Winterhalter dosing technology for detergent and rinse aid",
+      "url": "https://www.winterhalter.com/products/chemicals/dosing-technology/",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Моющее средство и ополаскиватель подаются отдельными дозирующими контурами.",
+        "Пустая канистра, подсос воздуха, состояние всасывающей трубки и настройка дозы влияют на стабильность результата мойки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать дозатор единственной причиной пены, разводов или слабой мойки без проверки воды, температуры и циркуляции."
+      ]
+    },
+    {
+      "id": "meiko.dv802.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "MEIKO",
+      "modelScope": [
+        "DV 80.2"
+      ],
+      "title": "MEIKO DV 80.2 operating manual — troubleshooting",
+      "url": "https://www.meiko.com/fileadmin/editor_upload/meiko.us/Downloads/Door_types/DV_80.2/Manual_DV_80-2.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Руководство различает информационные и аварийные коды для модели DV 80.2.",
+        "В таблице модели отдельно указаны отсутствие нагрева или подачи воды, незакрытая дверь, вода в поддоне и проблемы первоначального наполнения."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить значения Info 120, Info 121, Err 111, Err 201 и Err 202 на другие модели MEIKO без отдельного руководства."
+      ]
+    },
+    {
+      "id": "meiko.miclean.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "MEIKO",
+      "modelScope": [
+        "M-iClean undercounter family covered by Manual_M-iClean.pdf"
+      ],
+      "title": "MEIKO M-iClean operating manual — troubleshooting",
+      "url": "https://www.meiko.com/fileadmin/editor_upload/meiko.us/Downloads/Undercounters/M-iClean/Manual_M-iClean.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Руководство отдельно описывает заблокированные или неправильно установленные моечные и ополаскивающие рукава, низкий уровень ополаскивателя и сбой внешнего дозирования.",
+        "В разделе эксплуатационных проблем различаются разводы, значительное пенообразование и недостаточное качество мойки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить номера сообщений и процедуры M-iClean на другие серии MEIKO без отдельного руководства."
+      ]
+    },
+    {
+      "id": "meiko.fv1302.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "MEIKO",
+      "modelScope": [
+        "FV 130.2"
+      ],
+      "title": "MEIKO FV 130.2 operating manual — chemical concentration",
+      "url": "https://www.meiko.com/fileadmin/editor_upload/meiko.us/Downloads/Pot_and_Pan_washers/FV_130.2/Manual_FV_130-2.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Руководство связывает недостаточную дозу моющего средства с плохим качеством мойки.",
+        "Недостаточная подача ополаскивателя может вызывать пятна и разводы; изменения заводского дозирования выполняются сервисным специалистом."
+      ],
+      "prohibitedGeneralizations": [
+        "Не использовать числовые заводские дозы FV 130.2 как универсальные для других моделей и химических продуктов."
+      ]
+    },
+    {
+      "id": "winterhalter.glasswashing.whitepaper",
+      "sourceType": "official_technical_documentation",
+      "manufacturer": "Winterhalter",
+      "modelScope": [
+        "commercial glasswasher workflow"
+      ],
+      "title": "Winterhalter glasswashing guide",
+      "url": "https://www.winterhalter.com/fileadmin/user_upload/Website/United_Kingdom/advice/glasswashing-whitepaper_brochure_UK_en_ePaper_lowresPdf_download__1_.pdf",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Корректная дозировка моющего средства и ополаскивателя важна для результата мойки стекла.",
+        "Остатки средства для ручной мойки вызывают пенообразование и мешают нормальной мойке; выгрузка и вентиляция влияют на высыхание."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить рекомендации для стекла на все материалы без учёта руководства машины и химии."
+      ]
+    },
+    {
+      "id": "electrolux.rack.59566qm02.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "Electrolux Professional",
+      "modelScope": [
+        "rack-type dishwasher covered by OM_59566QM02"
+      ],
+      "title": "Electrolux Professional rack-type dishwasher user manual",
+      "url": "https://tools.electroluxprofessional.com/Mirror/Doc/OM/OM_59566QM02_1_2_59566QM02_en.pdf?version=1682638158",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "Руководство разделяет причины плохой сушки, пятен, пены и низкого давления финального ополаскивания.",
+        "Для транспортного тракта и защитных условий предусмотрены отдельные неисправности, требующие проверки сервисом."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить температуры, предупреждения и неисправности данного документа на другие rack-type серии без проверки PNC и серийного номера."
+      ]
+    },
+    {
+      "id": "hobart.performance.troubleshooting",
+      "sourceType": "official_technical_documentation",
+      "manufacturer": "HOBART",
+      "modelScope": [
+        "commercial warewasher troubleshooting overview"
+      ],
+      "title": "HOBART troubleshooting common kitchen equipment issues",
+      "url": "https://blog.hobartcorp.com/blog/troubleshooting-common-kitchen-equipment-issues",
+      "checkedAt": "2026-07-14",
+      "supportedClaims": [
+        "HOBART перечисляет недостаточный уровень воды, препятствие насосу, неверную температуру, дозирование, минеральные отложения и состояние рукавов как разные причины плохой мойки.",
+        "Проверка свободного вращения моечных и ополаскивающих рукавов является отдельным операторским шагом."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать обзорную статью заменой руководства конкретной модели или источником model-scoped кодов."
+      ]
+    }
+  ]
+}

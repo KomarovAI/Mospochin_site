@@ -2,46 +2,40 @@
 
 - Branch: restaurant
 - Role: branch
-- Title: Услуги по ремонту ресторанного оборудования — MosPochin | Цены
-- Description: Ремонт пароконвектоматов, плит, холодильного оборудования, посудомоек, грилей, фритюров и льдогенераторов. Диагностика и смета до работ.
-- H1: Услуги и цены на ремонт ресторанного оборудования
+- Title: Ремонт оборудования ресторанов — каталог услуг MosPochin
+- Description: Каталог ремонта профессионального оборудования ресторанов: пароконвектоматы, плиты, котлы, холодильная и моечная техника, куттеры, sous-vide и вентиляция.
+- H1: Ремонт профессионального оборудования ресторанов
 - Canonical: https://mospochin.ru/uslugi.html
 - Builder model: src/pages/uslugi/page.json
-- Sections: 26 (21 local, 0 shared refs, 1 raw)
-- Text words inside referenced sections: 969
+- Sections: 18 (15 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 504
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
 | mobile-contact | 6 |
-| pricing | 4 |
-| section | 3 |
-| layout-fragment | 2 |
-| proof | 2 |
+| section | 6 |
 | body-preamble | 1 |
-| breadcrumb | 1 |
-| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
+| layout-fragment | 1 |
 | lead-form | 1 |
-| raw | 1 |
-| runtime-partials | 1 |
+| navigation | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ключевые направления по типу техники | pricing | 13.9 KB | 156 | no | src/pages/uslugi/sections/008-pricing-klyuchevye-napravleniya-po-tipu-tehniki.html |
-| Услуги и цены на ремонт ресторанного оборудования | hero | 7.3 KB | 96 | no | src/pages/uslugi/sections/004-hero-uslugi-i-ceny-na-remont-restorannogo-oborudovan.html |
-| Все виды услуг для ресторанов | pricing | 6.9 KB | 109 | no | src/pages/uslugi/sections/013-pricing-vse-vidy-uslug-dlya-restoranov.html |
-| Почему Быстрый выезд, договор и понятная ответственность | proof | 5.5 KB | 106 | no | src/pages/uslugi/sections/010-proof-pochemu-bystryy-vyezd-dogovor-i-ponyatnaya-otv.html |
-| Работаем со всеми форматами | section | 3.7 KB | 36 | no | src/pages/uslugi/sections/009-section-rabotaem-so-vsemi-formatami.html |
-| Не знаете, какую услугу выбрать? | section | 3.7 KB | 82 | no | src/pages/uslugi/sections/014-section-ne-znaete-kakuyu-uslugu-vybrat.html |
-| Каждая минута простоя = потеря денег | pricing | 3.4 KB | 67 | no | src/pages/uslugi/sections/007-pricing-kazhdaya-minuta-prostoya-poterya-deneg.html |
-| Начните с симптома, если техника уже встала | section | 3.3 KB | 64 | no | src/pages/uslugi/sections/006-section-nachnite-s-simptoma-esli-tehnika-uzhe-vstala.html |
+| Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/uslugi/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/uslugi/sections/014-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Тепловое оборудование | section | 4.6 KB | 60 | no | src/pages/uslugi/sections/006-section-teplovoe-oborudovanie.html |
+| Оставить заявку по оборудованию | lead-form | 2.7 KB | 34 | no | src/pages/uslugi/sections/012-lead-form-ostavit-zayavku-po-oborudovaniyu.html |
+| Частые вопросы | faq | 2.1 KB | 67 | no | src/pages/uslugi/sections/013-faq-chastye-voprosy.html |
+| Холодильное оборудование | section | 2.0 KB | 27 | no | src/pages/uslugi/sections/007-section-holodil-noe-oborudovanie.html |
+| Ремонт профессионального оборудования ресторанов | hero | 1.7 KB | 27 | no | src/pages/uslugi/sections/004-hero-remont-professional-nogo-oborudovaniya-restoran.html |
+| Пришлите общий вид и шильдик | mobile-contact | 1.7 KB | 34 | no | src/pages/uslugi/sections/011-mobile-contact-prishlite-obschiy-vid-i-shil-dik.html |
 
 
 ## Editable source files

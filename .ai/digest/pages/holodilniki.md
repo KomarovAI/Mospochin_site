@@ -7,41 +7,39 @@
 - H1: Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене
 - Canonical: https://mospochin.ru/holodilniki.html
 - Builder model: src/pages/holodilniki/page.json
-- Sections: 50 (36 local, 1 shared refs, 0 raw)
-- Text words inside referenced sections: 3015
+- Sections: 49 (36 local, 5 shared refs, 0 raw)
+- Text words inside referenced sections: 3053
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| pricing | 10 |
-| layout-fragment | 9 |
+| pricing | 11 |
 | proof | 9 |
-| mobile-contact | 5 |
+| layout-fragment | 8 |
+| mobile-contact | 7 |
 | section | 4 |
 | faq | 3 |
-| contact-cta | 2 |
 | related-links | 2 |
 | body-preamble | 1 |
 | breadcrumb | 1 |
-| footer-anchor | 1 |
+| contact-cta | 1 |
 | hero | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Какие бренды и модели берём в работу | pricing | 18.9 KB | 110 | no | src/pages/holodilniki/sections/027-pricing-kakie-brendy-i-modeli-berem-v-rabotu.html |
-| Что клиент понимает ещё до начала работ | pricing | 13.1 KB | 426 | no | src/pages/holodilniki/sections/037-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
-| Оставьте заявку на звонок по холодильнику | lead-form | 8.5 KB | 143 | no | src/pages/holodilniki/sections/035-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html |
-| Свежие кейсы по ремонту холодильников | contact-cta | 8.4 KB | 105 | no | src/pages/holodilniki/sections/017-contact-cta-svezhie-keysy-po-remontu-holodil-nikov.html |
-| Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене | hero | 6.5 KB | 87 | no | src/pages/holodilniki/sections/004-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html |
-| Какие поломки мы чаще всего чиним на дому | pricing | 6.0 KB | 107 | no | src/pages/holodilniki/sections/018-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom.html |
-| Какие симптомы чаще всего описывают по телефону | pricing | 5.9 KB | 56 | no | src/pages/holodilniki/sections/015-pricing-kakie-simptomy-chasche-vsego-opisyvayut-po-t.html |
-| Сколько обычно стоит ремонт холодильника | pricing | 5.6 KB | 114 | no | src/pages/holodilniki/sections/019-pricing-skol-ko-obychno-stoit-remont-holodil-nika.html |
+| Какие бренды и модели берём в работу | pricing | 18.4 KB | 110 | no | src/pages/holodilniki/sections/027-pricing-kakie-brendy-i-modeli-berem-v-rabotu.html |
+| Что клиент понимает ещё до начала работ | pricing | 11.6 KB | 429 | no | src/pages/holodilniki/sections/037-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
+| Оставьте заявку на звонок по холодильнику | lead-form | 7.7 KB | 143 | no | src/pages/holodilniki/sections/035-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html |
+| Мобильные контактные элементы | mobile-contact | 7.2 KB | 78 | no | src/pages/holodilniki/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Какие поломки мы чаще всего чиним на дому | pricing | 5.9 KB | 107 | no | src/pages/holodilniki/sections/018-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom.html |
+| Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене | hero | 5.2 KB | 87 | no | src/pages/holodilniki/sections/004-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html |
+| Какие симптомы чаще всего описывают по телефону | pricing | 5.1 KB | 56 | no | src/pages/holodilniki/sections/015-pricing-kakie-simptomy-chasche-vsego-opisyvayut-po-t.html |
+| Что обычно происходит с поломкой холодильника, если тянуть | faq | 4.6 KB | 237 | no | src/pages/holodilniki/sections/021-faq-chto-obychno-proishodit-s-polomkoy-holodil-nika-.html |
 
 
 ## Editable source files

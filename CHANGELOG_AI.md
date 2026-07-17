@@ -2,6 +2,15 @@
 
 Краткая история AI-правок. Новые агенты должны добавлять запись при каждом handoff.
 
+## 2026-07-14 — kutter cluster K3 pilot
+
+- Published eight source-managed professional-cutter pages: hub, repair, maintenance, how-it-works and four symptom-service pages.
+- Activated kutter metadata, sitemap, FAQ/schema, conversion, metrics, link-graph and visual contracts while keeping 37 future pages planned.
+- Added safe diagnostic paths for power, lid interlocks, motor hum/blade stall and poor cutting; no protection-bypass instructions are published.
+- Captured 32 local-native Chromium PNG files (desktop/mobile, first-view/full-page); GitHub remains manual fallback only.
+- Visual QA removed leaked internal English protection terms from visible Russian content.
+- Checks: builder 166/166, core, visual, AI and handoff passed.
+
 ## 2026-07-14 — sous-vide native visual audit and header correction
 
 - Added a policy-safe native visual path for the four-page sous-vide pilot: system Chromium + Playwright local-content routing, without localhost navigation or browser downloads.
@@ -157,3 +166,38 @@ Checks to run:
 - Removed indexable SEO links to noindex Direct landing pages.
 - Enriched Article, Service, CollectionPage and BreadcrumbList schema with canonical identity, language and hierarchy.
 - Corrected metrics semantics for informational, equipment-service, repair and maintenance intents.
+## 2026-07-14 — symptom-service architecture
+- Removed false 150-page hard stop.
+- Added scale fixtures for 150/151/250/500 pages.
+- Added sous-vide fault taxonomy, official evidence, model-scoped error codes, symptom-service blueprint and validators.
+
+
+## Kutter cluster K1–K2 (2026-07-14)
+
+- Guide: `docs/KUTTER_CLUSTER_AI_GUIDE.md`.
+- Machine contracts: `data/kutter-*.json`.
+- No root kutter HTML is published before K3 source-builder rollout.
+
+
+## 2026-07-14 — Kutter K6 full-cluster SEO and linking audit
+
+- Reconciled 38 published pages with the machine-readable link graph.
+- Replaced 30 stale planned node statuses and generated published edges from actual crawlable links.
+- Increased minimum incoming-link coverage from two to three; seven weak pages were reinforced contextually.
+- Enriched thin repair, maintenance, diagnostic, equipment-family and guide pages with unique model-scoped content.
+- Removed a duplicate FAQ, shortened two titles and eliminated the visible `safety chain` internal term.
+- Added generated Kutter SEO reports and permanent core/handoff checks.
+
+
+## K8 Direct/noindex — 2026-07-14
+
+Опубликованы три рекламные посадочные страницы: общий ремонт куттеров, симптом «не включается» и Robot Coupe. Они имеют `noindex,follow`, исключены из sitemap, не получают органических входящих ссылок и сохраняют campaign/ad-group/direct-ad attribution в форме. Основной визуальный прогон выполняется локальным Chromium; GitHub остаётся ручным резервом.
+## 2026-07-14 — K9 pre-deploy gate
+
+- Added deterministic full-site crawler and reports.
+- Removed duplicate canonical tags and organic links to noindex promo pages.
+- Added Kutter lead E2E smoke with UTM/Direct attribution, rate limiting, accessibility errors and network fallback.
+- Form error handling now sets `aria-invalid`, links the status text and moves focus to the invalid control.
+- Injected consent checkbox is guaranteed to be at least 24×24 CSS px.
+- K9 checks are part of core and handoff.
+

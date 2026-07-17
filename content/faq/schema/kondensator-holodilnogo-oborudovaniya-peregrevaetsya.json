@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://mospochin.ru/kondensator-holodilnogo-oborudovaniya-peregrevaetsya.html#faq",
+  "url": "https://mospochin.ru/kondensator-holodilnogo-oborudovaniya-peregrevaetsya.html",
+  "name": "Конденсатор холодильного оборудования перегревается | MosPochin",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Можно ли промыть конденсатор водой?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Способ зависит от конструкции и расположения электрических частей. Оборудование обесточивают и используют метод, разрешённый производителем."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Перегрев всегда связан с грязью?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Проверяют также вентилятор, рециркуляцию воздуха, температуру помещения и холодильный контур."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что означает A80?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "В Danfoss ERC 21X это тревога высокой температуры конденсатора при настроенном соответствующем датчике. Для других контроллеров значение может быть иным."
+      }
+    }
+  ]
+}

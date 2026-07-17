@@ -79,6 +79,9 @@ for (const key of ['manual', 'generated', 'dangerZones']) {
     fail(`file-ownership: ${key} должен быть непустым массивом`);
   }
 }
+if (manifest.optionalDangerZones !== undefined && !Array.isArray(manifest.optionalDangerZones)) {
+  fail('file-ownership: optionalDangerZones должен быть массивом');
+}
 
 const allFiles = walk(ROOT_DIR);
 for (const [key, patterns] of Object.entries({ manual: manifest.manual, generated: manifest.generated, dangerZones: manifest.dangerZones })) {

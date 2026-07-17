@@ -7,7 +7,7 @@
 - H1: Ремонт оборудования sous-vide
 - Canonical: https://mospochin.ru/remont-sous-vide.html
 - Builder model: src/pages/remont-sous-vide/page.json
-- Sections: 8 (5 local, 0 shared refs, 0 raw)
+- Sections: 8 (3 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 286
 
 ## Component mix
@@ -29,12 +29,12 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонт оборудования sous-vide | lead-form | 11.5 KB | 213 | no | src/pages/remont-sous-vide/sections/002-lead-form-remont-oborudovaniya-sous-vide.html |
 | Частые вопросы | faq | 1.9 KB | 73 | no | src/pages/remont-sous-vide/sections/002b-faq-chastye-voprosy.html |
-| Секция 1 | body-preamble | 50 B | 0 | no | src/pages/remont-sous-vide/sections/001-body-preamble-sekciya-1.html |
-| Подключение partials-injector | runtime-partials | 50 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/pages/remont-sous-vide/sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/pages/remont-sous-vide/sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Секция 1 | body-preamble | 48 B | 0 | no | src/pages/remont-sous-vide/sections/001-body-preamble-sekciya-1.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
 | Footer mount point | footer-anchor | 36 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-7e779f23d41c.template.html |
 | HTML-фрагмент | layout-fragment | 1 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html |
+| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html |
 
 
 ## Editable source files

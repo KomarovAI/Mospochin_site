@@ -1,0 +1,891 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "checkedAt": "2026-07-15",
+  "policy": {
+    "allowedSourceTypes": [
+      "official_manufacturer",
+      "official_product_page",
+      "official_user_manual",
+      "official_service_manual",
+      "official_download_centre",
+      "official_controller_manual",
+      "official_technical_guide",
+      "official_catalogue"
+    ],
+    "requireModelScopeForErrorCodes": true,
+    "universalPressureTablesForbidden": true,
+    "thirdPartyErrorTablesForbidden": true
+  },
+  "records": [
+    {
+      "id": "polair.catalog.2024",
+      "sourceType": "official_catalogue",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Холодильные шкафы",
+        "Холодильные столы",
+        "Холодильные камеры",
+        "Моноблоки и сплит-системы",
+        "Шоковая заморозка"
+      ],
+      "title": "Каталог профессионального холодильного оборудования Polair",
+      "url": "https://www.polair.com/upload/iblock/444/1t410zv2rduzvp7uywgzqy564i72dk7q/Polair-2024-web.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Polair выпускает отдельные семейства шкафов, столов, камер, холодильных машин и оборудования шоковой заморозки.",
+        "Тип оборудования должен фиксироваться отдельно при диагностике и подборе технического содержания."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить характеристики между шкафами, столами, камерами и холодильными машинами.",
+        "Не считать каталог руководством по ремонту конкретной модели."
+      ]
+    },
+    {
+      "id": "polair.products.range",
+      "sourceType": "official_manufacturer",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Шкафы",
+        "Столы",
+        "Камеры",
+        "Моноблоки",
+        "Сплит-системы",
+        "Шокеры"
+      ],
+      "title": "Продукция Polair",
+      "url": "https://www.polair.com/products/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "В официальной классификации отдельно представлены холодильные шкафы, столы, камеры и машины.",
+        "Шоковые шкафы и камеры выделены в самостоятельное направление."
+      ],
+      "prohibitedGeneralizations": [
+        "Не объединять шоковое охлаждение с обычным хранением.",
+        "Не указывать модель без шильдика."
+      ]
+    },
+    {
+      "id": "polair.refrigeration.machines",
+      "sourceType": "official_product_page",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Среднетемпературные и низкотемпературные моноблоки",
+        "Сплит-системы"
+      ],
+      "title": "Холодильные машины Polair",
+      "url": "https://www.polair.com/products/mashiny-kholodilnye/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Холодильные машины применяются для охлаждения, замораживания и поддержания температуры камер.",
+        "Сплит-система разделяет испарительный и конденсаторный блоки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать моноблок и сплит-систему одинаковыми по монтажу.",
+        "Не публиковать универсальные рабочие давления."
+      ]
+    },
+    {
+      "id": "polair.coldroom.kkhn",
+      "sourceType": "official_product_page",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "КХН 80 Р",
+        "Сборные холодильные камеры"
+      ],
+      "title": "Камера холодильная Polair КХН 80 Р",
+      "url": "https://www.polair.com/products/kamery-kholodilnye/kkhn-8-81/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Сборная холодильная камера является отдельным изделием с требованиями к монтажу панелей и двери.",
+        "Холодильная машина для камеры подбирается отдельно."
+      ],
+      "prohibitedGeneralizations": [
+        "Не приписывать камере конкретную холодильную машину без комплектации.",
+        "Не переносить размеры и толщину панелей на другие камеры."
+      ]
+    },
+    {
+      "id": "polair.downloads.docs",
+      "sourceType": "official_download_centre",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Шкафы",
+        "Столы",
+        "Камеры",
+        "Машины",
+        "Шокеры"
+      ],
+      "title": "Документация и сертификаты Polair",
+      "url": "https://www.polair.com/downloads/sertifikaty/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Производитель публикует отдельные руководства для столов, камер, машин и шокеров.",
+        "Технические параметры следует брать из документа конкретной группы оборудования."
+      ],
+      "prohibitedGeneralizations": [
+        "Не заменять руководство рекламным буклетом.",
+        "Не переносить хладагент и электрические параметры между сериями."
+      ]
+    },
+    {
+      "id": "polair.shock.range",
+      "sourceType": "official_manufacturer",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Grande",
+        "Light",
+        "Шкафы под тележку",
+        "Камеры шоковой заморозки"
+      ],
+      "title": "Оборудование шоковой заморозки Polair",
+      "url": "https://www.polair.com/products/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Polair выпускает шкафы и камеры шоковой заморозки разных форматов.",
+        "Шкафы и камеры под тележку относятся к разным производственным масштабам."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать один цикл универсальным для всех моделей.",
+        "Не смешивать шоковую заморозку и хранение."
+      ]
+    },
+    {
+      "id": "abat.shock.cabinets",
+      "sourceType": "official_product_page",
+      "manufacturer": "Abat",
+      "modelScope": [
+        "ШОК-6-1/1 LIGHT",
+        "ШОК-40-01",
+        "Шкафы шоковой заморозки"
+      ],
+      "title": "Шкафы шоковой заморозки Abat",
+      "url": "https://abat.ru/catalog/shkafy-shokovoy-zamorozki/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Abat выпускает отдельную линейку шкафов шоковой заморозки.",
+        "Оборудование предназначено для быстрого охлаждения, замораживания и последующего хранения в рамках заданных циклов."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить производительность между моделями.",
+        "Не считать материал продуктовой страницы сервисной инструкцией."
+      ]
+    },
+    {
+      "id": "abat.shock.chambers",
+      "sourceType": "official_product_page",
+      "manufacturer": "Abat",
+      "modelScope": [
+        "Камеры шоковой заморозки"
+      ],
+      "title": "Камеры шоковой заморозки Abat",
+      "url": "https://abat.ru/catalog/kamery-shokovoy-zamorozki/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Камеры шоковой заморозки являются отдельным классом оборудования большой производительности.",
+        "Диагностика камеры должна учитывать удалённые агрегаты, вентиляторы и цикл продукта."
+      ],
+      "prohibitedGeneralizations": [
+        "Не смешивать камеры с компактными шкафами.",
+        "Не указывать цикл без модели и загрузки."
+      ]
+    },
+    {
+      "id": "abat.refrigerated.tables",
+      "sourceType": "official_product_page",
+      "manufacturer": "Abat",
+      "modelScope": [
+        "СХС-60",
+        "СХС-70",
+        "Холодильные столы"
+      ],
+      "title": "Холодильные столы Abat",
+      "url": "https://abat.ru/catalog/kholodilnye-stoly/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Abat выпускает отдельные серии холодильных столов для предприятий питания.",
+        "На страницах отдельных моделей доступны руководства по эксплуатации."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать все столы одинаковыми по расположению агрегата.",
+        "Не переносить температурный диапазон без модели."
+      ]
+    },
+    {
+      "id": "abat.refrigerated.cabinets",
+      "sourceType": "official_product_page",
+      "manufacturer": "Abat",
+      "modelScope": [
+        "Холодильные шкафы серии Т",
+        "Профессиональные холодильные шкафы"
+      ],
+      "title": "Холодильные шкафы Abat",
+      "url": "https://abat.ru/catalog/kholodilnye-shkafy/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Холодильные шкафы Abat выделены в отдельную продуктовую категорию.",
+        "Технические характеристики зависят от конкретного исполнения и температурного класса."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить параметры между средне- и низкотемпературными моделями.",
+        "Не использовать новостную публикацию вместо руководства."
+      ]
+    },
+    {
+      "id": "hicold.tables.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "HICOLD",
+      "modelScope": [
+        "BN/SN/GN столы",
+        "HT/TN/BT температурные исполнения"
+      ],
+      "title": "Руководство по эксплуатации охлаждаемых столов HICOLD",
+      "url": "https://hicold.ru/assets/passports/stol_ohl_bok_agr_BR.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "В столах используются компрессор, воздухоохладитель, вентиляторы, контроллер и автоматическая оттайка.",
+        "Талая вода отводится в ванночку агрегатного отсека."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить диапазон температуры между HT, TN и BT.",
+        "Не считать любой перегрев недостатком хладагента."
+      ]
+    },
+    {
+      "id": "hicold.controllers",
+      "sourceType": "official_download_centre",
+      "manufacturer": "HICOLD",
+      "modelScope": [
+        "CAREL EASY",
+        "EVCO",
+        "CAREL MPX ZERO"
+      ],
+      "title": "Инструкции контроллеров HICOLD",
+      "url": "https://hicold.ru/manuals/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "HICOLD применяет разные семейства контроллеров.",
+        "Коды и параметры должны привязываться к фактически установленному контроллеру."
+      ],
+      "prohibitedGeneralizations": [
+        "Не публиковать универсальную таблицу кодов HICOLD.",
+        "Не угадывать контроллер по внешнему виду оборудования."
+      ]
+    },
+    {
+      "id": "liebherr.gastronomy.refrigerators",
+      "sourceType": "official_product_page",
+      "manufacturer": "Liebherr",
+      "modelScope": [
+        "Gastronomy refrigerators",
+        "Professional foodservice refrigerators"
+      ],
+      "title": "Профессиональные холодильники Liebherr для гастрономии",
+      "url": "https://www.liebherr.com/en-nz/fridges-freezers/gastro-refrigerators-3928172",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Liebherr выделяет профессиональные холодильники для гастрономии.",
+        "Для них важны стабильность температуры, циркуляция воздуха и работа при высокой окружающей температуре."
+      ],
+      "prohibitedGeneralizations": [
+        "Не смешивать бытовые и профессиональные модели.",
+        "Не переносить функции между сериями."
+      ]
+    },
+    {
+      "id": "liebherr.gastronomy.freezers",
+      "sourceType": "official_product_page",
+      "manufacturer": "Liebherr",
+      "modelScope": [
+        "Commercial freezers",
+        "Professional gastronomy freezers"
+      ],
+      "title": "Профессиональные морозильники Liebherr",
+      "url": "https://www.liebherr.com/en-za/fridges-freezers/commercial-freezers-6634253",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Профессиональные морозильники являются отдельной группой оборудования.",
+        "Холодильные компоненты могут быть расположены сверху для сервисного доступа."
+      ],
+      "prohibitedGeneralizations": [
+        "Не применять бытовые инструкции к профессиональной серии.",
+        "Не указывать климатический класс без модели."
+      ]
+    },
+    {
+      "id": "liebherr.foodservice.brochure",
+      "sourceType": "official_catalogue",
+      "manufacturer": "Liebherr",
+      "modelScope": [
+        "ProfiLine",
+        "Professional food service"
+      ],
+      "title": "Commercial Food Service Refrigerators and Freezers",
+      "url": "https://home.liebherr.com/media/hau/brochures/ncsa/commercial-appliances-usa/pdf/liebherr-download-us-en-commercial-food-service.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Профессиональные шкафы используют принудительную циркуляцию воздуха и электронные аварийные сигналы.",
+        "В документации отдельно описаны температурные отклонения, дверь и оттайка."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить региональные электрические параметры.",
+        "Не публиковать коды без руководства конкретной модели."
+      ]
+    },
+    {
+      "id": "irinox.easyfresh.next",
+      "sourceType": "official_product_page",
+      "manufacturer": "IRINOX",
+      "modelScope": [
+        "EasyFresh Next"
+      ],
+      "title": "EasyFresh Next blast chiller / shock freezer",
+      "url": "https://www.irinoxprofessional.com/en_us/products/blast-chillers-shock-freezers/easyfresh-next",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "EasyFresh Next поддерживает отдельные функции быстрого охлаждения и замораживания.",
+        "Циклы выбираются по назначению и конфигурации оборудования."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить число функций на другие серии.",
+        "Не считать удержание температуры основным режимом хранения."
+      ]
+    },
+    {
+      "id": "irinox.multifresh.next",
+      "sourceType": "official_product_page",
+      "manufacturer": "IRINOX",
+      "modelScope": [
+        "MultiFresh Next",
+        "MultiFresh MyA"
+      ],
+      "title": "MultiFresh Next blast chiller",
+      "url": "https://www.irinoxprofessional.com/en_ww/products/blast-chillers/multifresh-next",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "MultiFresh Next использует программируемые циклы охлаждения и заморозки.",
+        "Производитель предлагает отдельные roll-in исполнения для больших объёмов."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить диапазоны между конфигурациями.",
+        "Не указывать хладагент без модели."
+      ]
+    },
+    {
+      "id": "coldline.modi",
+      "sourceType": "official_product_page",
+      "manufacturer": "Coldline",
+      "modelScope": [
+        "MODI UP",
+        "MODI ACTIVE"
+      ],
+      "title": "MODI multifunction blast chiller",
+      "url": "https://coldline.it/en/prodotti/multifunction-blast-chiller/blast-chiller-MODI",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "MODI поддерживает blast chilling, blast freezing, holding и ручной цикл.",
+        "В циклах используются регулировка вентиляции и термощуп."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить функции ACTIVE на UP без проверки.",
+        "Не считать термощуп единственной причиной остановки цикла."
+      ]
+    },
+    {
+      "id": "coldline.vision",
+      "sourceType": "official_product_page",
+      "manufacturer": "Coldline",
+      "modelScope": [
+        "VISION F",
+        "VISION INDUSTRY"
+      ],
+      "title": "VISION blast chillers",
+      "url": "https://coldline.it/en/products/vision-f-blast-chiller-14",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "VISION использует отдельные циклы быстрого охлаждения и заморозки.",
+        "Оборудование оснащается игольчатым термощупом и управлением вентиляцией."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить ёмкость и производительность между моделями.",
+        "Не считать все модели моноблочными."
+      ]
+    },
+    {
+      "id": "hoshizaki.documentation",
+      "sourceType": "official_download_centre",
+      "manufacturer": "Hoshizaki",
+      "modelScope": [
+        "KM crescent",
+        "IM cube",
+        "FM flake/nugget",
+        "DCM dispensers"
+      ],
+      "title": "Hoshizaki documentation centre",
+      "url": "https://hoshizaki-europe.com/documentation/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Hoshizaki публикует отдельные руководства для KM, IM и FM семейств.",
+        "Кубиковые, crescent и шнековые машины имеют разные рабочие циклы."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить сервисные процедуры между KM, IM и FM.",
+        "Не применять шнековую диагностику к кубиковым машинам."
+      ]
+    },
+    {
+      "id": "hoshizaki.im.product",
+      "sourceType": "official_product_page",
+      "manufacturer": "Hoshizaki",
+      "modelScope": [
+        "IM Series cube ice makers"
+      ],
+      "title": "Hoshizaki IM cube ice maker",
+      "url": "https://hoshizaki-europe.com/middleeast/product/im-65ne-hc-lm-big-cube-ice-maker-self-contained/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "IM относится к кубиковым льдогенераторам.",
+        "Фактическая производительность и размер льда зависят от модели и условий установки."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить производительность на другие IM-модели.",
+        "Не считать размер кубика диагностикой без условий воды и температуры."
+      ]
+    },
+    {
+      "id": "scotsman.products",
+      "sourceType": "official_manufacturer",
+      "manufacturer": "Scotsman",
+      "modelScope": [
+        "Cube",
+        "Nugget",
+        "Flake",
+        "Dispensers"
+      ],
+      "title": "Scotsman commercial ice machines",
+      "url": "https://www.scotsman-ice.com/products",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Scotsman разделяет кубиковые, гранулированные и чешуйчатые машины.",
+        "Фильтрация и санитарное обслуживание рассматриваются как отдельные части системы."
+      ],
+      "prohibitedGeneralizations": [
+        "Не объединять cube, nugget и flake в одну механику.",
+        "Не переносить шнековые узлы на кубиковую машину."
+      ]
+    },
+    {
+      "id": "scotsman.service.manuals",
+      "sourceType": "official_download_centre",
+      "manufacturer": "Scotsman",
+      "modelScope": [
+        "Commercial ice machine service manuals"
+      ],
+      "title": "Scotsman Service Manuals",
+      "url": "https://www.scotsman-ice.com/service/Service_Manuals.htm",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Производитель публикует сервисные руководства по конкретным моделям и сериям.",
+        "Диагностические процедуры должны ссылаться на конкретное руководство."
+      ],
+      "prohibitedGeneralizations": [
+        "Не использовать старый handbook как универсальный источник.",
+        "Не переносить коды и тайминги между моделями."
+      ]
+    },
+    {
+      "id": "scotsman.flake.nugget.manual",
+      "sourceType": "official_service_manual",
+      "manufacturer": "Scotsman",
+      "modelScope": [
+        "N0922L",
+        "N1322L",
+        "F1222L",
+        "F1522L"
+      ],
+      "title": "Service Manual for flaked and nugget ice machines",
+      "url": "https://www.scotsman-ice.com/service/Service%20Manuals/PF_rl_Service_Manual.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Во flake/nugget машинах лёд перемещается вращающимся шнеком через испаритель.",
+        "Регламент включает удаление накипи, санитарную обработку, очистку датчиков и проверку подшипника."
+      ],
+      "prohibitedGeneralizations": [
+        "Не применять эту схему к кубиковым машинам.",
+        "Не переносить интервалы обслуживания без качества воды и модели."
+      ]
+    },
+    {
+      "id": "danfoss.erc21x",
+      "sourceType": "official_controller_manual",
+      "manufacturer": "Danfoss",
+      "modelScope": [
+        "ERC 211",
+        "ERC 213",
+        "ERC 214"
+      ],
+      "title": "Electronic refrigeration control ERC 21X",
+      "url": "https://assets.danfoss.com/documents/latest/526526/BC194286421698en-001101.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "ERC 21X управляет компрессором, оттайкой, вентиляторами и аварийными сигналами в зависимости от исполнения.",
+        "Руководство содержит controller-scoped alarm codes для датчиков, температуры, напряжения, конденсатора и двери."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать коды ERC 21X кодами производителя холодильного шкафа.",
+        "Не переносить параметры на другой контроллер."
+      ]
+    },
+    {
+      "id": "danfoss.akcc210b",
+      "sourceType": "official_controller_manual",
+      "manufacturer": "Danfoss",
+      "modelScope": [
+        "AK-CC 210B"
+      ],
+      "title": "Controller for cold rooms and freezer rooms AK-CC 210B",
+      "url": "https://assets.danfoss.com/documents/latest/151097/BC337220653630en-000201.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Контроллер камеры может управлять охлаждением, оттайкой, вентиляторами и дверной сигнализацией.",
+        "Открытие двери может изменять работу света, вентилятора и охлаждения в зависимости от конфигурации."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить схему входов на другой контроллер.",
+        "Не считать открытие двери единственной причиной высокой температуры."
+      ]
+    },
+    {
+      "id": "copeland.troubleshooting",
+      "sourceType": "official_technical_guide",
+      "manufacturer": "Copeland",
+      "modelScope": [
+        "Commercial refrigeration compressors and systems"
+      ],
+      "title": "Refrigeration Basics: Troubleshooting Fundamentals",
+      "url": "https://e360blog.copeland.com/refrigeration-basics-troubleshooting-fundamentals/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Диагностика холодильного контура должна учитывать компрессор, конденсатор, испаритель, перегрев и переохлаждение.",
+        "Замена компонента без поиска системной причины не является полной диагностикой."
+      ],
+      "prohibitedGeneralizations": [
+        "Не сводить отсутствие холода к дозаправке хладагента.",
+        "Не публиковать рабочие давления без модели, хладагента и условий."
+      ]
+    },
+    {
+      "id": "copeland.coresense",
+      "sourceType": "official_product_page",
+      "manufacturer": "Copeland",
+      "modelScope": [
+        "CoreSense Diagnostics for refrigeration compressors"
+      ],
+      "title": "CoreSense Technology for Refrigeration",
+      "url": "https://www.copeland.com/en-us/products/refrigeration/commercial-refrigeration/electronics/coresense-technology",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "CoreSense использует данные компрессора для диагностики и защиты системы.",
+        "Диагностические данные зависят от конкретного компрессора и электронного модуля."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать коды CoreSense универсальными кодами холодильного оборудования.",
+        "Не обходить защиту компрессора."
+      ]
+    },
+    {
+      "id": "copeland.safety.terminal",
+      "sourceType": "official_technical_guide",
+      "manufacturer": "Copeland",
+      "modelScope": [
+        "Refrigeration compressors with electrical faults"
+      ],
+      "title": "Terminal Venting safety guidance",
+      "url": "https://www.copeland.com/en-us/training-support/safety-resource-center/terminal-venting",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Повторное срабатывание автомата или предохранителя может указывать на электрическую неисправность.",
+        "Перед повторной подачей питания необходимо исключить электрический дефект."
+      ],
+      "prohibitedGeneralizations": [
+        "Не рекомендовать многократный перезапуск после срабатывания защиты.",
+        "Не обходить защитные устройства."
+      ]
+    },
+    {
+      "id": "hicold.catalog.range",
+      "sourceType": "official_manufacturer",
+      "manufacturer": "HICOLD",
+      "modelScope": [
+        "Холодильные и морозильные столы",
+        "Холодильные шкафы",
+        "Холодильные горки",
+        "Витрины для ингредиентов"
+      ],
+      "title": "Каталог холодильного оборудования HICOLD",
+      "url": "https://hicold.ru/katalog/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "HICOLD выделяет холодильные столы, шкафы, горки и витрины в разные продуктовые категории.",
+        "Холодильные столы выпускаются в разных компоновках и температурных исполнениях."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить температурный диапазон между сериями.",
+        "Не считать горку, витрину и закрытый шкаф одинаковыми по воздушному тракту."
+      ]
+    },
+    {
+      "id": "polair.machine.selection",
+      "sourceType": "official_product_page",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Среднетемпературные моноблоки и сплит-системы",
+        "Низкотемпературные моноблоки и сплит-системы",
+        "Камеры 2–60 м³ в пределах официального подбора"
+      ],
+      "title": "Подбор холодильной машины Polair",
+      "url": "https://www.polair.com/podbor/",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Выбор моноблока или сплит-системы зависит от объёма камеры и температурного режима.",
+        "Среднетемпературные и низкотемпературные машины подбираются раздельно."
+      ],
+      "prohibitedGeneralizations": [
+        "Не подбирать агрегат только по площади помещения.",
+        "Не переносить допустимый объём между температурными режимами и климатическими условиями."
+      ]
+    },
+    {
+      "id": "irinox.rollin.range",
+      "sourceType": "official_product_page",
+      "manufacturer": "IRINOX",
+      "modelScope": [
+        "MultiFresh MyA roll-in blast chillers and shock freezers"
+      ],
+      "title": "IRINOX roll-in blast chillers and shock freezers",
+      "url": "https://www.irinoxprofessional.com/en_us/products/roll-in-blast-chillers-shock-freezers/multifresh-mya/multifresh-mya-1302",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Roll-in шокеры предназначены для больших производственных объёмов и загрузки тележек.",
+        "Управляемые циклы быстрого охлаждения и замораживания являются отдельной технологической функцией."
+      ],
+      "prohibitedGeneralizations": [
+        "Не смешивать roll-in камеру с компактным шкафом по производительности и загрузке.",
+        "Не указывать время цикла без модели, массы и начальной температуры продукта."
+      ]
+    },
+    {
+      "id": "coldline.rollin.range",
+      "sourceType": "official_product_page",
+      "manufacturer": "Coldline",
+      "modelScope": [
+        "Modi Up roll-in blast chiller"
+      ],
+      "title": "Coldline Modi Up roll-in blast chiller",
+      "url": "https://coldline.it/en/products/modi-up-roll-in-blast-chiller-1",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Roll-in камера поддерживает отдельные циклы blast chilling, shock freezing и continuous cycle.",
+        "В конструкции используются электронное управление, термощуп, теплоизоляция и отдельная холодильная система."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать все камеры одинаковыми по контроллеру и датчикам.",
+        "Не переносить хладагент, заряд и производительность между моделями."
+      ]
+    },
+    {
+      "id": "polair.monoblock.troubleshooting",
+      "sourceType": "official_user_manual",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Моноблочные холодильные машины Polair серии 2023 из указанного руководства"
+      ],
+      "title": "Руководство по эксплуатации моноблочной холодильной машины Polair",
+      "url": "https://www.polair.com/upload/iblock/49b/1f6arcyl50rd6oqxa94s2h1uelbqob05.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Длительная работа и высокая температура могут быть связаны с тёплой загрузкой, частым открыванием двери, обмерзанием испарителя и нарушением герметичности камеры.",
+        "Короткие циклы могут возникать при нарушении воздушного потока и высокой температуре окружающей среды."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить таблицу неисправностей на все серии и типы холодильных машин.",
+        "Не считать указанный в таблице фактор подтверждённой причиной без диагностики."
+      ]
+    },
+    {
+      "id": "polair.cabinet.troubleshooting",
+      "sourceType": "official_user_manual",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Холодильные шкафы Polair из указанного руководства"
+      ],
+      "title": "Руководство по эксплуатации холодильного шкафа Polair",
+      "url": "https://www.polair.com/upload/iblock/408/p87s5uccmfr5bi4g8ne08tbhbaj5ffar.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Свободная циркуляция воздуха, температура окружающей среды, частота открывания двери и состояние испарителя влияют на поддержание температуры.",
+        "Толстый слой льда на испарителе требует проверки оттайки и причин повторного обмерзания."
+      ],
+      "prohibitedGeneralizations": [
+        "Не применять рекомендации шкафа к камере или шокеру без проверки конструкции.",
+        "Не рекомендовать механическое удаление льда острым инструментом."
+      ]
+    },
+    {
+      "id": "polair.ceiling.monoblock.components",
+      "sourceType": "official_user_manual",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "Потолочные моноблочные холодильные машины Polair из указанного руководства"
+      ],
+      "title": "Руководство потолочной моноблочной холодильной машины Polair",
+      "url": "https://www.polair.com/upload/iblock/90b/n12temuo8zzi3r7fmg3m78yl6r7kvov6.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Схема оборудования выделяет вентиляторы конденсатора и испарителя, датчики температуры, ТЭН оттайки и обогрев сливной трубки как отдельные узлы.",
+        "Протечка и обмерзание требуют раздельной проверки дренажа, оттайки и воздушного тракта."
+      ],
+      "prohibitedGeneralizations": [
+        "Не считать обозначения компонентов универсальными для других производителей.",
+        "Не подавать питание на нагреватель или двигатель в обход штатной схемы и защит."
+      ]
+    },
+    {
+      "id": "copeland.short.cycling",
+      "sourceType": "official_technical_guide",
+      "manufacturer": "Copeland",
+      "modelScope": [
+        "Холодильные системы с компрессорами Copeland в пределах бюллетеня AE17-1262 R2"
+      ],
+      "title": "Short Cycling — причины и риски для компрессора",
+      "url": "https://webapps.copeland.com/online-product-information/Publication/LaunchPDF?Index=aeb&PDF=AE17-1262_R2.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Короткие циклы могут нарушать возврат масла и создавать риск повреждения подшипников компрессора.",
+        "Частые пуски увеличивают механическую нагрузку на обмотки и требуют поиска причины в системе управления и холодильном контуре."
+      ],
+      "prohibitedGeneralizations": [
+        "Не устанавливать универсальное допустимое число пусков для всех компрессоров и систем.",
+        "Не менять задержки и реле давления без документации конкретной установки."
+      ]
+    },
+    {
+      "id": "liebherr.frfcvg4001.door",
+      "sourceType": "official_product_page",
+      "manufacturer": "Liebherr",
+      "modelScope": [
+        "Профессиональный холодильный шкаф Liebherr FRFCvg 4001 и указанные на странице функции"
+      ],
+      "title": "FRFCvg 4001 — сменное уплотнение и сигнализация двери",
+      "url": "https://www.liebherr.com/en-gb/p/frfcvg-4001-3011780",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "У модели применяется сменное дверное уплотнение, которое можно заменить без инструмента.",
+        "Световая сигнализация предупреждает о неконтролируемом росте температуры и оставленной открытой двери."
+      ],
+      "prohibitedGeneralizations": [
+        "Не утверждать, что все шкафы Liebherr имеют одинаковое крепление уплотнения.",
+        "Не переносить конструкцию двери и сигнализации на другие бренды или серии."
+      ]
+    },
+    {
+      "id": "polair.crt20.manual",
+      "sourceType": "official_user_manual",
+      "manufacturer": "Polair",
+      "modelScope": [
+        "CRt20-G",
+        "CRt20T-G"
+      ],
+      "title": "Руководство по эксплуатации аппаратов шоковой заморозки CRt20",
+      "url": "https://www.polair.com/upload/iblock/09e/f5ke01bsdhw4tth12mlwqxy656kuk1dv/RE-apparaty-shokovoy-zamorozki-20-urovney-Polair-GRANDE-ot-07.09.2023.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Для CRt20 указаны отдельные циклы охлаждения продукта от +90 до +3 °C и замораживания от +90 до −18 °C в заданных изготовителем условиях.",
+        "В конструкции указаны контроллер, испаритель и вентиляторы; параметры относятся только к моделям из руководства."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить время цикла, хладагент, заряд и электрические параметры на другие серии.",
+        "Не считать указанную производительность гарантированной при иной массе, упаковке или начальной температуре продукта."
+      ]
+    },
+    {
+      "id": "coldline.modi.active.spec",
+      "sourceType": "official_product_page",
+      "manufacturer": "Coldline",
+      "modelScope": [
+        "MODI Active W6AES-R452 в пределах официальной спецификации"
+      ],
+      "title": "MODI Active blast chiller specification",
+      "url": "https://coldline.it/coldline/product/print/4344?language=en",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "В конкретной комплектации доступны blast chilling, blast freezing, ручной цикл и работа с термощупом.",
+        "Вентиляция регулируется в пределах, указанных для модели, а термощуп является отдельным сменным компонентом."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить диапазон вентиляции, хладагент и производительность на другие модели Coldline.",
+        "Не считать термощуп или вентилятор единственной причиной любого сбоя цикла."
+      ]
+    },
+    {
+      "id": "hoshizaki.kml.service.manual",
+      "sourceType": "official_service_manual",
+      "manufacturer": "Hoshizaki",
+      "modelScope": [
+        "KML-325M J series",
+        "KML-500M J series",
+        "KML-700M J series covered by the manual"
+      ],
+      "title": "KML-325/500/700M J Series Service Manual",
+      "url": "https://www.hoshizaki.com/docs/manuals/KML_325_500_700M_J_serv.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "В руководстве отдельно описаны fill, freeze, harvest и pump-out циклы, работа float switch и диагностические причины низкой производительности.",
+        "Среди проверяемых причин указаны вода, фильтры, впускной клапан, датчик уровня, испаритель, конденсатор, клапан горячего газа, компрессор и плата."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить алгоритм платы, таймеры и причины кодов на другие серии Hoshizaki.",
+        "Не использовать длительность цикла и рабочие параметры без проверки точной модели и условий установки."
+      ]
+    },
+    {
+      "id": "hoshizaki.im500.service.manual",
+      "sourceType": "official_service_manual",
+      "manufacturer": "Hoshizaki",
+      "modelScope": [
+        "IM-500SAA within the official service manual"
+      ],
+      "title": "IM-500SAA Service Manual",
+      "url": "https://secure.hoshizakiamerica.com/docs/manuals/IM-500SAA_serv_LTR.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Руководство раздельно рассматривает low ice production, imperfect ice production, large-hole cubes, cloudy cubes и утечки водяной системы.",
+        "Форма и качество льда могут зависеть от давления и фильтрации воды, форсунок, насоса, конденсатора, температуры помещения и состояния холодильного контура."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить причины и регулировки IM-500SAA на все кубиковые машины.",
+        "Не считать мутность, пустотелость или низкую выработку доказательством одной конкретной неисправности без проверки."
+      ]
+    },
+    {
+      "id": "scotsman.scc30.service.manual",
+      "sourceType": "official_service_manual",
+      "manufacturer": "Scotsman",
+      "modelScope": [
+        "SCCG30",
+        "SCCP30"
+      ],
+      "title": "SCCG30 & SCCP30 Service Manual",
+      "url": "https://www.scotsman-ice.com/service/Service%20Manuals/SCC30%20Manual.pdf",
+      "checkedAt": "2026-07-15",
+      "supportedClaims": [
+        "Для указанных моделей размер кубика связан с freeze cycle и cube-size thermostat, а сброс регулируется отдельным harvest time.",
+        "В документации отдельно указаны впускной клапан, spray pump, drain pump, overflow standpipe и последовательность freeze/harvest."
+      ],
+      "prohibitedGeneralizations": [
+        "Не переносить регулировки термостата, время harvest и наличие сливного насоса на другие модели Scotsman.",
+        "Не использовать эти параметры как универсальный норматив для профессиональных льдогенераторов."
+      ]
+    }
+  ]
+}

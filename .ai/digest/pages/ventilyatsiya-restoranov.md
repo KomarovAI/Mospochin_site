@@ -7,35 +7,31 @@
 - H1: Ремонт и обслуживание вентиляции ресторанов, кафе и пищеблоков
 - Canonical: https://mospochin.ru/ventilyatsiya-restoranov.html
 - Builder model: src/pages/ventilyatsiya-restoranov/page.json
-- Sections: 10 (6 local, 0 shared refs, 2 raw)
-- Text words inside referenced sections: 1566
+- Sections: 9 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1356
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| mobile-contact | 2 |
-| raw | 2 |
-| body-preamble | 1 |
+| mobile-contact | 4 |
+| layout-fragment | 3 |
 | breadcrumb | 1 |
-| footer-anchor | 1 |
-| layout-fragment | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонт и обслуживание вентиляции ресторанов, кафе и пищеблоков | breadcrumb | 64.1 KB | 1566 | no | src/pages/ventilyatsiya-restoranov/sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html |
-| Подключение partials-injector | runtime-partials | 54 B | 0 | no | src/pages/ventilyatsiya-restoranov/sections/008-runtime-partials-podklyuchenie-partials-injector.html |
+| Ремонт и обслуживание вентиляции ресторанов, кафе и пищеблоков | breadcrumb | 45.1 KB | 1169 | no | src/pages/ventilyatsiya-restoranov/sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html |
+| Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyatsiya-restoranov/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/ventilyatsiya-restoranov/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-restoranov/sections/007-lead-form-forma-zayavki.html |
-| Секция 1 | body-preamble | 48 B | 0 | no | src/pages/ventilyatsiya-restoranov/sections/001-body-preamble-sekciya-1.html |
-| HTML-фрагмент | raw | 46 B | 0 | no | src/pages/ventilyatsiya-restoranov/sections/006-raw-html-fragment.html |
+| HTML-фрагмент | layout-fragment | 46 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-52c8755076d4.template.html |
 | Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| HTML-фрагмент | layout-fragment | 42 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html |
 | Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
-| HTML-фрагмент | raw | 41 B | 0 | no | src/pages/ventilyatsiya-restoranov/sections/009-raw-html-fragment.html |
 
 
 ## Editable source files

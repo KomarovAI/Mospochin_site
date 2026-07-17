@@ -7,41 +7,39 @@
 - H1: Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен
 - Canonical: https://mospochin.ru/kompyutery.html
 - Builder model: src/pages/kompyutery/page.json
-- Sections: 54 (43 local, 3 shared refs, 14 raw)
-- Text words inside referenced sections: 2282
+- Sections: 53 (43 local, 6 shared refs, 13 raw)
+- Text words inside referenced sections: 2306
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| raw | 14 |
-| pricing | 11 |
-| proof | 7 |
-| mobile-contact | 5 |
+| raw | 13 |
+| pricing | 12 |
+| mobile-contact | 7 |
+| proof | 6 |
 | layout-fragment | 4 |
-| contact-cta | 3 |
 | faq | 3 |
+| contact-cta | 2 |
+| section | 2 |
 | body-preamble | 1 |
 | breadcrumb | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
-| section | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем все марки компьютеров и ноутбуков | pricing | 17.9 KB | 108 | no | src/pages/kompyutery/sections/031-pricing-remontiruem-vse-marki-komp-yuterov-i-noutbuk.html |
-| Ремонтируем ноутбуки и стационарные ПК | pricing | 9.9 KB | 216 | no | src/pages/kompyutery/sections/007-pricing-remontiruem-noutbuki-i-stacionarnye-pk.html |
-| Реальные ремонты на этой неделе | contact-cta | 7.9 KB | 133 | no | src/pages/kompyutery/sections/016-contact-cta-real-nye-remonty-na-etoy-nedele.html |
-| Частые вопросы | faq | 7.2 KB | 239 | no | src/pages/kompyutery/sections/040-faq-chastye-voprosy.html |
-| Частые поломки компьютеров и ноутбуков | pricing | 6.2 KB | 124 | no | src/pages/kompyutery/sections/018-pricing-chastye-polomki-komp-yuterov-i-noutbukov.html |
-| Цены на ремонт компьютеров и ноутбуков | pricing | 6.0 KB | 124 | no | src/pages/kompyutery/sections/020-pricing-ceny-na-remont-komp-yuterov-i-noutbukov.html |
-| Что случилось с компьютером? | pricing | 5.8 KB | 45 | no | src/pages/kompyutery/sections/014-pricing-chto-sluchilos-s-komp-yuterom.html |
-| Что говорят наши клиенты | pricing | 5.1 KB | 142 | no | src/pages/kompyutery/sections/024-pricing-chto-govoryat-nashi-klienty.html |
+| Работаем с распространёнными марками компьютеров и ноутбуков | pricing | 17.4 KB | 113 | no | src/pages/kompyutery/sections/031-pricing-rabotaem-s-rasprostranennymi-markami-komp-yu.html |
+| Ремонтируем ноутбуки и стационарные ПК | pricing | 8.1 KB | 216 | no | src/pages/kompyutery/sections/007-pricing-remontiruem-noutbuki-i-stacionarnye-pk.html |
+| Мобильные контактные элементы | mobile-contact | 7.1 KB | 78 | no | src/pages/kompyutery/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Частые вопросы | faq | 6.7 KB | 248 | no | src/pages/kompyutery/sections/040-faq-chastye-voprosy.html |
+| Частые поломки компьютеров и ноутбуков | section | 6.1 KB | 124 | no | src/pages/kompyutery/sections/018-section-chastye-polomki-komp-yuterov-i-noutbukov.html |
+| Что случилось с компьютером? | pricing | 5.0 KB | 45 | no | src/pages/kompyutery/sections/014-pricing-chto-sluchilos-s-komp-yuterom.html |
+| Мобильные контактные элементы | mobile-contact | 4.2 KB | 61 | no | src/pages/kompyutery/sections/050-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Типовые сценарии по компьютерам и ноутбукам | faq | 4.2 KB | 197 | no | src/pages/kompyutery/sections/025-faq-tipovye-scenarii-po-komp-yuteram-i-noutbukam.html |
 
 
 ## Editable source files

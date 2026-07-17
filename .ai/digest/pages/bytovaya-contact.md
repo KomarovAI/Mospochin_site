@@ -7,37 +7,35 @@
 - H1: Связаться по ремонту бытовой техники
 - Canonical: https://mospochin.ru/bytovaya-contact.html
 - Builder model: src/pages/bytovaya-contact/page.json
-- Sections: 17 (11 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1489
+- Sections: 16 (15 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1628
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| mobile-contact | 5 |
+| mobile-contact | 7 |
 | contact-cta | 3 |
-| layout-fragment | 2 |
 | breadcrumb | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
 | hero | 1 |
+| layout-fragment | 1 |
 | pricing | 1 |
 | proof | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Сервисные точки и карта | contact-cta | 18.5 KB | 312 | no | src/pages/bytovaya-contact/sections/006-contact-cta-servisnye-tochki-i-karta.html |
-| Когда лучше звонить, а когда писать | mobile-contact | 13.1 KB | 263 | no | src/pages/bytovaya-contact/sections/008-mobile-contact-kogda-luchshe-zvonit-a-kogda-pisat.html |
-| Связаться по ремонту бытовой техники | hero | 12.6 KB | 138 | no | src/pages/bytovaya-contact/sections/004-hero-svyazat-sya-po-remontu-bytovoy-tehniki.html |
-| Куда писать и звонить по бытовой технике | mobile-contact | 9.9 KB | 146 | no | src/pages/bytovaya-contact/sections/005-mobile-contact-kuda-pisat-i-zvonit-po-bytovoy-tehnik.html |
-| Что лучше отправить сразу | contact-cta | 7.4 KB | 172 | no | src/pages/bytovaya-contact/sections/010-contact-cta-chto-luchshe-otpravit-srazu.html |
-| Что клиент понимает ещё до приезда мастера | proof | 4.7 KB | 154 | no | src/pages/bytovaya-contact/sections/007-proof-chto-klient-ponimaet-esche-do-priezda-mastera.html |
-| Частые вопросы | faq | 4.7 KB | 152 | no | src/pages/bytovaya-contact/sections/011-faq-chastye-voprosy.html |
-| Возражения, которые лучше снять ещё на странице контактов | pricing | 3.8 KB | 125 | no | src/pages/bytovaya-contact/sections/009-pricing-vozrazheniya-kotorye-luchshe-snyat-esche-na-.html |
+| Сервисные точки и карта | contact-cta | 15.2 KB | 312 | no | src/pages/bytovaya-contact/sections/006-contact-cta-servisnye-tochki-i-karta.html |
+| Когда лучше звонить, а когда писать | mobile-contact | 11.2 KB | 263 | no | src/pages/bytovaya-contact/sections/008-mobile-contact-kogda-luchshe-zvonit-a-kogda-pisat.html |
+| Связаться по ремонту бытовой техники | hero | 10.2 KB | 138 | no | src/pages/bytovaya-contact/sections/004-hero-svyazat-sya-po-remontu-bytovoy-tehniki.html |
+| Куда писать и звонить по бытовой технике | mobile-contact | 8.9 KB | 146 | no | src/pages/bytovaya-contact/sections/005-mobile-contact-kuda-pisat-i-zvonit-po-bytovoy-tehnik.html |
+| Мобильные контактные элементы | mobile-contact | 7.2 KB | 78 | no | src/pages/bytovaya-contact/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Что лучше отправить сразу | contact-cta | 6.1 KB | 172 | no | src/pages/bytovaya-contact/sections/010-contact-cta-chto-luchshe-otpravit-srazu.html |
+| Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/pages/bytovaya-contact/sections/013-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Что клиент понимает ещё до приезда мастера | proof | 4.0 KB | 154 | no | src/pages/bytovaya-contact/sections/007-proof-chto-klient-ponimaet-esche-do-priezda-mastera.html |
 
 
 ## Editable source files

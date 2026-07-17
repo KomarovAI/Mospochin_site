@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "checkedAt": "2026-07-17",
+  "status": "published",
+  "canonicalBase": "https://mospochin.ru/",
+  "pages": [
+    {
+      "page": "remont-holodilnogo-oborudovaniya-moskva.html",
+      "status": "published",
+      "indexable": false,
+      "renderMode": "compact-service-v1",
+      "intent": "direct-general-refrigeration",
+      "branch": "restaurant",
+      "minForms": 1,
+      "minClusterLinks": 0
+    },
+    {
+      "page": "holodilnaya-kamera-ne-holodit-remont-moskva.html",
+      "status": "published",
+      "indexable": false,
+      "renderMode": "compact-service-v1",
+      "intent": "direct-cold-room-no-cooling",
+      "branch": "restaurant",
+      "minForms": 1,
+      "minClusterLinks": 0
+    },
+    {
+      "page": "remont-shokera-moskva.html",
+      "status": "published",
+      "indexable": false,
+      "renderMode": "compact-service-v1",
+      "intent": "direct-blast-chiller",
+      "branch": "restaurant",
+      "minForms": 1,
+      "minClusterLinks": 0
+    },
+    {
+      "page": "remont-ldogeneratora-moskva.html",
+      "status": "published",
+      "indexable": false,
+      "renderMode": "compact-service-v1",
+      "intent": "direct-ice-machine",
+      "branch": "restaurant",
+      "minForms": 1,
+      "minClusterLinks": 0
+    }
+  ],
+  "defaults": {
+    "branch": "restaurant",
+    "minForms": 1,
+    "minClusterLinks": 0,
+    "requirePhoneLink": true,
+    "requireWhatsappLink": true,
+    "requireAnalytics": true,
+    "requireTelegramFormScript": true,
+    "requireMobileContactContainers": true,
+    "requireFaqSchema": true,
+    "requireSingleH1": true,
+    "requireHiddenProblem": true
+  }
+}

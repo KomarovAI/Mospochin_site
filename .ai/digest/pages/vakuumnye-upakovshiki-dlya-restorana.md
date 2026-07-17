@@ -7,8 +7,8 @@
 - H1: Вакуумные упаковщики для ресторана
 - Canonical: https://mospochin.ru/vakuumnye-upakovshiki-dlya-restorana.html
 - Builder model: src/pages/vakuumnye-upakovshiki-dlya-restorana/page.json
-- Sections: 7 (5 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 286
+- Sections: 7 (3 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 317
 
 ## Component mix
 
@@ -26,13 +26,13 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вакуумные упаковщики для ресторана | lead-form | 12.4 KB | 232 | no | src/pages/vakuumnye-upakovshiki-dlya-restorana/sections/002-lead-form-vakuumnye-upakovschiki-dlya-restorana.html |
+| Вакуумные упаковщики для ресторана | lead-form | 13.8 KB | 263 | no | src/pages/vakuumnye-upakovshiki-dlya-restorana/sections/002-lead-form-vakuumnye-upakovschiki-dlya-restorana.html |
 | Частые вопросы | faq | 1.6 KB | 54 | no | src/pages/vakuumnye-upakovshiki-dlya-restorana/sections/002b-faq-chastye-voprosy.html |
-| Подключение partials-injector | runtime-partials | 50 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html |
 | Секция 1 | body-preamble | 47 B | 0 | no | src/pages/vakuumnye-upakovshiki-dlya-restorana/sections/001-body-preamble-sekciya-1.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/pages/vakuumnye-upakovshiki-dlya-restorana/sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/pages/vakuumnye-upakovshiki-dlya-restorana/sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
 | Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
+| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html |
 
 
 ## Editable source files

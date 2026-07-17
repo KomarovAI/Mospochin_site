@@ -201,33 +201,6 @@ function buildReport() {
     missingReferences: missingList,
   };
 }
-// MOSPOCHIN_UNUSED_ASSETS_DETERMINISTIC_REPORT_V1
-function stabilizeGeneratedAt(report) {
-  if (!fs.existsSync(REPORT_JSON)) return;
-
-  try {
-    const previous = JSON.parse(
-      fs.readFileSync(REPORT_JSON, 'utf8')
-    );
-
-    const previousComparable = { ...previous };
-    const currentComparable = { ...report };
-
-    delete previousComparable.generatedAt;
-    delete currentComparable.generatedAt;
-
-    if (
-      JSON.stringify(previousComparable) ===
-        JSON.stringify(currentComparable) &&
-      typeof previous.generatedAt === 'string'
-    ) {
-      report.generatedAt = previous.generatedAt;
-    }
-  } catch {
-    // Invalid or missing previous report must not block regeneration.
-  }
-}
-
 function writeReport(report) {
   fs.mkdirSync(REPORT_DIR, { recursive: true });
   fs.writeFileSync(REPORT_JSON, `${JSON.stringify(report, null, 2)}\n`);
@@ -277,7 +250,6 @@ function main() {
     const removedBytes = removed.reduce((sum, item) => sum + item.bytes, 0);
     report.prune = { removedCount: removed.length, removedBytes, removedMb: Number((removedBytes / (1024 * 1024)).toFixed(3)), removedFiles: removed.map((item) => item.path) };
   }
-  stabilizeGeneratedAt(report);
   writeReport(report);
   if (!args.jsonOnly) {
     console.log('Unused assets audit written: reports/unused-assets.json and reports/unused-assets.md');

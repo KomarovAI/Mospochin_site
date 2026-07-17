@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "ventilyatsiya-restoranov.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "5f76f59e0a6675d9aa7989beef245e0c20c77e1f276f2598c3df7ed4b1ca2d4d",
+    "hash": "6c272e650454e17a26dda67d5af1973d82c0408c45f56658c057d3a8d64bd3a5",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,33 +21,28 @@
   },
   "sections": [
     {
-      "id": "001-body-preamble-sekciya-1",
-      "component": "body-preamble",
-      "label": "Секция 1",
-      "file": "sections/001-body-preamble-sekciya-1.html",
-      "bytes": 48,
-      "hash": "6c45e024a4e3965e"
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9428,
+      "hash": "52ebf9b4f0e6b142"
     },
     {
       "id": "002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor",
       "component": "breadcrumb",
       "label": "Ремонт и обслуживание вентиляции ресторанов, кафе и пищеблоков",
       "file": "sections/002-breadcrumb-remont-i-obsluzhivanie-ventilyacii-restor.html",
-      "bytes": 61594,
-      "hash": "6ef71324692b2059"
+      "bytes": 46225,
+      "hash": "bc0a7cc07b226a7c"
     },
     {
-      "id": "003-footer-anchor-footer-mount-point",
-      "component": "footer-anchor",
-      "label": "Footer mount point",
-      "bytes": 35,
-      "hash": "64173ac09ccc2ab2",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "footer-container-mount",
-      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-64173ac09ccc.template.html",
-      "props": {},
-      "sourceFile": "sections/003-footer-anchor-footer-mount-point.html"
+      "id": "003-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4992,
+      "hash": "aaf16e5cd550144f"
     },
     {
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -77,11 +72,16 @@
     },
     {
       "id": "006-raw-html-fragment",
-      "component": "raw",
+      "component": "layout-fragment",
       "label": "HTML-фрагмент",
-      "file": "sections/006-raw-html-fragment.html",
       "bytes": 46,
-      "hash": "52c8755076d4256e"
+      "hash": "52c8755076d4256e",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-52c8755076d4",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-52c8755076d4.template.html",
+      "props": {},
+      "sourceFile": "sections/006-raw-html-fragment.html"
     },
     {
       "id": "007-lead-form-forma-zayavki",
@@ -92,23 +92,20 @@
       "hash": "f771578a5d50836c"
     },
     {
-      "id": "008-runtime-partials-podklyuchenie-partials-injector",
-      "component": "runtime-partials",
-      "label": "Подключение partials-injector",
-      "file": "sections/008-runtime-partials-podklyuchenie-partials-injector.html",
-      "bytes": 54,
-      "hash": "1714ff6d614671d3"
+      "id": "008-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 42,
+      "hash": "47228a35947e03f3",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-47228a35947e",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html",
+      "props": {},
+      "sourceFile": "sections/008-raw-html-fragment.html"
     },
     {
       "id": "009-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/009-raw-html-fragment.html",
-      "bytes": 41,
-      "hash": "5b57bace79b19443"
-    },
-    {
-      "id": "010-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -118,15 +115,15 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/010-raw-html-fragment.html"
+      "sourceFile": "sections/009-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
     "npm run doctor:restaurant-page -- --page ventilyatsiya-restoranov.html",
     "npm run doctor:page -- --page ventilyatsiya-restoranov.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page ventilyatsiya-restoranov.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page ventilyatsiya-restoranov.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

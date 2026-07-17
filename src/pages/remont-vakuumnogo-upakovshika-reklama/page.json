@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "remont-vakuumnogo-upakovshika-reklama.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "8f93130d7faba532b7b56c8df0af255192850b45286bc09298d5050d87f3f2ab",
+    "hash": "bca124307bf6c232cb9db902befe098850db05f6884bd5587c5a08885f45eeba",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -25,8 +25,8 @@
       "component": "body-preamble",
       "label": "Секция 1",
       "file": "sections/001-body-preamble-sekciya-1.html",
-      "bytes": 50,
-      "hash": "fcebee1ed90c68b8"
+      "bytes": 48,
+      "hash": "6c45e024a4e3965e"
     },
     {
       "id": "002-lead-form-remont-vakuumnogo-upakovschika",
@@ -41,8 +41,8 @@
       "component": "faq",
       "label": "Частые вопросы",
       "file": "sections/002b-faq-chastye-voprosy.html",
-      "bytes": 1752,
-      "hash": "dabdc083bdaa975f"
+      "bytes": 1850,
+      "hash": "fa7b6dac643789e8"
     },
     {
       "id": "003-footer-anchor-footer-mount-point",
@@ -61,24 +61,34 @@
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 40,
-      "hash": "5984ebe80b6e73f2"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 41,
-      "hash": "8e4830584f7baecb"
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "006-runtime-partials-podklyuchenie-partials-injector",
       "component": "runtime-partials",
       "label": "Подключение partials-injector",
-      "bytes": 50,
-      "hash": "55fc50b4acf9af97",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
       "componentMode": "parametric",
       "componentScope": "parametric-static",
       "variant": "partials-injector-script",

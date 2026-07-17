@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "release": "site-paid-tracking-v3-20260716",
+  "blockingIncreaseBudgetGzipBytes": 20480,
+  "scripts": {
+    "analytics.js": {
+      "baseline_raw_bytes": 23271,
+      "baseline_gzip_bytes": 5943,
+      "current_raw_bytes_at_baseline_creation": 26721,
+      "current_gzip_bytes_at_baseline_creation": 6531
+    },
+    "telegram-form.js": {
+      "baseline_raw_bytes": 22521,
+      "baseline_gzip_bytes": 5742,
+      "current_raw_bytes_at_baseline_creation": 23618,
+      "current_gzip_bytes_at_baseline_creation": 6551
+    }
+  },
+  "notes": [
+    "Both scripts must remain defer-loaded on all paid landing pages.",
+    "Production Core Web Vitals require post-deploy RUM; this guard covers release JS weight and blocking patterns."
+  ]
+}

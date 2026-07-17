@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "blixery-dlya-restoranov.html",
+  "slug": "blixery-dlya-restoranov",
+  "route": "/blixery-dlya-restoranov.html",
+  "branch": "restaurant",
+  "role": "branch",
+  "title": "Blixer для ресторанов и текстурированного питания | MosPochin",
+  "h1": "Blixer для ресторанов и текстурированного питания",
+  "source": {
+    "extractedFrom": "blixery-dlya-restoranov.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "fd422d07b28a16f28b3c62e72d85f398eed34740678aca8631ef8c412c2a2ce1",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 47,
+      "hash": "848c21ac460f3aba"
+    },
+    {
+      "id": "002-breadcrumb-blixer-dlya-restoranov-i-teksturirovannog",
+      "component": "breadcrumb",
+      "label": "Blixer для ресторанов и текстурированного питания",
+      "file": "sections/002-breadcrumb-blixer-dlya-restoranov-i-teksturirovannog.html",
+      "bytes": 18046,
+      "hash": "e7e93832932da325"
+    },
+    {
+      "id": "003-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/003-faq-chastye-voprosy.html",
+      "bytes": 1650,
+      "hash": "2a6839c7e1957f2a"
+    },
+    {
+      "id": "004-footer-anchor-footer-mount-point",
+      "component": "footer-anchor",
+      "label": "Footer mount point",
+      "bytes": 33,
+      "hash": "e290e2b6541c5f25",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "footer-container-mount",
+      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html",
+      "props": {},
+      "sourceFile": "sections/004-footer-anchor-footer-mount-point.html"
+    },
+    {
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "007-runtime-partials-podklyuchenie-partials-injector",
+      "component": "runtime-partials",
+      "label": "Подключение partials-injector",
+      "bytes": 0,
+      "hash": "e3b0c44298fc1c14",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "partials-injector-script",
+      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-30d5aa9353a9.template.html",
+      "props": {},
+      "sourceFile": "sections/007-runtime-partials-podklyuchenie-partials-injector.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:page -- --page blixery-dlya-restoranov.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page blixery-dlya-restoranov.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

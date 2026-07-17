@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "status": "rf5-new-pages",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/refrigeration/rf5",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9999
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 2200
+  },
+  "pages": [
+    {
+      "page": "holodilnoe-oborudovanie-medlenno-nabiraet-temperaturu.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "holodilnoe-oborudovanie-peremorazhivaet-produkty.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kompressor-holodilnogo-oborudovaniya-rabotaet-bez-ostanovki.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "holodilnoe-oborudovanie-chasto-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "kondensator-holodilnogo-oborudovaniya-peregrevaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "holodilnoe-oborudovanie-shumit-i-vibriruet.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    },
+    {
+      "page": "dver-holodilnogo-shkafa-ne-zakryvaetsya.html",
+      "branch": "restaurant",
+      "pageType": "service",
+      "fullPage": true
+    }
+  ],
+  "checkedAt": "2026-07-15",
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "browser": "chromium"
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-07-14",
+  "restaurant": {
+    "page": "posudomoechnye-mashiny.html",
+    "requiredTerms": [
+      "промышленн",
+      "купольн",
+      "конвейерн",
+      "фронтальн"
+    ],
+    "forbiddenPrimaryTerms": [
+      "на дому",
+      "встраиваемая",
+      "отдельностоящая бытовая"
+    ]
+  },
+  "household": {
+    "page": "posudomoyki.html",
+    "requiredTerms": [
+      "на дому",
+      "посудомойка"
+    ],
+    "forbiddenPrimaryTerms": [
+      "купольная",
+      "конвейерная",
+      "кассетная линия"
+    ]
+  },
+  "crossLinkPolicy": {
+    "allowedOnlyWithExplicitLabels": true,
+    "restaurantLabel": "Промышленные посудомоечные машины",
+    "householdLabel": "Бытовые посудомоечные машины"
+  },
+  "ventilationAdjacency": {
+    "page": "ventilyatsiya-i-posudomoechnaya-zona.html",
+    "role": "external_adjacent_not_cluster_member"
+  }
+}

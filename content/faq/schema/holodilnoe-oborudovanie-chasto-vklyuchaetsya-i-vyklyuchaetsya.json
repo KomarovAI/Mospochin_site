@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://mospochin.ru/holodilnoe-oborudovanie-chasto-vklyuchaetsya-i-vyklyuchaetsya.html#faq",
+  "url": "https://mospochin.ru/holodilnoe-oborudovanie-chasto-vklyuchaetsya-i-vyklyuchaetsya.html",
+  "name": "Холодильное оборудование часто включается и выключается | MosPochin",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько пусков компрессора допустимо в час?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Универсального числа нет: оно зависит от компрессора и системы. Критично исключить слишком короткое время работы и повторные защитные отключения."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно увеличить задержку пуска самостоятельно?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Параметры меняют по документации конкретного контроллера и оборудования. Сначала устанавливают причину коротких циклов."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Частые пуски вредят компрессору?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, длительный short cycling повышает электрическую и механическую нагрузку и может нарушать возврат масла."
+      }
+    }
+  ]
+}

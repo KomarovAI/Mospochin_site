@@ -7,36 +7,34 @@
 - H1: Пароконвектомат не включается? Найдём причину
 - Canonical: https://mospochin.ru/parokonvektomat-ne-vklyuchaetsya.html
 - Builder model: src/pages/parokonvektomat-ne-vklyuchaetsya/page.json
-- Sections: 16 (12 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 723
+- Sections: 15 (12 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 910
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| mobile-contact | 5 |
 | proof | 4 |
-| mobile-contact | 3 |
-| layout-fragment | 2 |
 | related-links | 2 |
 | body-preamble | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
+| layout-fragment | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Пароконвектомат не включается? Найдём причину | mobile-contact | 8.6 KB | 225 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/003-mobile-contact-parokonvektomat-ne-vklyuchaetsya-nayd.html |
-| Оставьте заявку на ремонт | lead-form | 8.3 KB | 148 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/004-lead-form-ostav-te-zayavku-na-remont.html |
-| Если проблема оказалась в другом узле | related-links | 6.3 KB | 104 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/009-related-links-esli-problema-okazalas-v-drugom-uzle.html |
+| Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Пароконвектомат не включается? Найдём причину | mobile-contact | 8.4 KB | 225 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/003-mobile-contact-parokonvektomat-ne-vklyuchaetsya-nayd.html |
+| Оставьте заявку на ремонт | lead-form | 7.6 KB | 148 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/004-lead-form-ostav-te-zayavku-na-remont.html |
+| Если проблема оказалась в другом узле | related-links | 6.2 KB | 104 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/009-related-links-esli-problema-okazalas-v-drugom-uzle.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/012-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Вопросы о запуске пароконвектомата | faq | 4.3 KB | 154 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/011-faq-voprosy-o-zapuske-parokonvektomata.html |
 | Что проверим до решения о ремонте | proof | 3.2 KB | 92 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/006-proof-chto-proverim-do-resheniya-o-remonte.html |
 | Доказательства/гарантии | proof | 183 B | 0 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/005-proof-dokazatel-stva-garantii.html |
-| Доказательства/гарантии | proof | 182 B | 0 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/008-proof-dokazatel-stva-garantii.html |
-| Секция 1 | body-preamble | 76 B | 0 | no | src/pages/parokonvektomat-ne-vklyuchaetsya/sections/001-body-preamble-sekciya-1.html |
 
 
 ## Editable source files

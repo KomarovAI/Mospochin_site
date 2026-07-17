@@ -7,34 +7,31 @@
 - H1: Как понять, что нужна чистка вентиляции
 - Canonical: https://mospochin.ru/kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html
 - Builder model: src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/page.json
-- Sections: 10 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1487
+- Sections: 9 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1270
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| mobile-contact | 4 |
 | layout-fragment | 3 |
-| mobile-contact | 2 |
-| body-preamble | 1 |
 | breadcrumb | 1 |
-| footer-anchor | 1 |
 | lead-form | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Как понять, что нужна чистка вентиляции | breadcrumb | 59.9 KB | 1487 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/002-breadcrumb-kak-ponyat-chto-nuzhna-chistka-ventilyaci.html |
-| Подключение partials-injector | runtime-partials | 54 B | 0 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/008-runtime-partials-podklyuchenie-partials-injector.html |
+| Как понять, что нужна чистка вентиляции | breadcrumb | 40.7 KB | 1083 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/002-breadcrumb-kak-ponyat-chto-nuzhna-chistka-ventilyaci.html |
+| Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/007-lead-form-forma-zayavki.html |
-| Секция 1 | body-preamble | 48 B | 0 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/001-body-preamble-sekciya-1.html |
 | HTML-фрагмент | layout-fragment | 46 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-52c8755076d4.template.html |
 | Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| HTML-фрагмент | layout-fragment | 42 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-47228a35947e.template.html |
 | Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
-| HTML-фрагмент | layout-fragment | 41 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-5b57bace79b1.template.html |
 
 
 ## Editable source files

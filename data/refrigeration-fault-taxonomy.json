@@ -1,0 +1,1690 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "checkedAt": "2026-07-15",
+  "symptoms": [
+    {
+      "symptomId": "refrigeration.no_cooling",
+      "slug": "holodilnoe-oborudovanie-ne-holodit.html",
+      "title": "Холодильное оборудование не холодит",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Холодильное оборудование не холодит",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "controller",
+        "compressor",
+        "condenser",
+        "refrigerant_circuit"
+      ],
+      "probableNodeLabels": [
+        "Контроллер",
+        "Компрессор",
+        "Конденсатор",
+        "Холодильный контур"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.door_not_closing",
+        "refrigeration.slow_pull_down"
+      ],
+      "sourceEvidenceIds": [
+        "danfoss.erc21x",
+        "copeland.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.slow_pull_down",
+      "slug": "holodilnoe-oborudovanie-medlenno-nabiraet-temperaturu.html",
+      "title": "Холодильное оборудование медленно набирает температуру",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Холодильное оборудование медленно набирает температуру",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "condenser",
+        "evaporator_fan",
+        "door_gasket",
+        "refrigerant_circuit"
+      ],
+      "probableNodeLabels": [
+        "Конденсатор",
+        "Вентилятор испарителя",
+        "Уплотнение двери",
+        "Холодильный контур"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.no_cooling",
+        "refrigeration.overcooling"
+      ],
+      "sourceEvidenceIds": [
+        "polair.monoblock.troubleshooting",
+        "polair.cabinet.troubleshooting",
+        "danfoss.erc21x"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.overcooling",
+      "slug": "holodilnoe-oborudovanie-peremorazhivaet-produkty.html",
+      "title": "Холодильное оборудование перемораживает продукты",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "userSymptoms": [
+        "Холодильное оборудование перемораживает продукты",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "controller",
+        "temperature_probe",
+        "compressor_relay"
+      ],
+      "probableNodeLabels": [
+        "Контроллер",
+        "Датчик температуры",
+        "Реле компрессора"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.slow_pull_down",
+        "refrigeration.compressor_no_start"
+      ],
+      "sourceEvidenceIds": [
+        "danfoss.erc21x",
+        "polair.cabinet.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.compressor_no_start",
+      "slug": "kompressor-holodilnogo-oborudovaniya-ne-zapuskaetsya.html",
+      "title": "Компрессор холодильного оборудования не запускается",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Компрессор холодильного оборудования не запускается",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "power_supply",
+        "contactor",
+        "compressor_protection",
+        "compressor"
+      ],
+      "probableNodeLabels": [
+        "Питание",
+        "Контактор",
+        "Защита компрессора",
+        "Компрессор"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.overcooling",
+        "refrigeration.compressor_continuous"
+      ],
+      "sourceEvidenceIds": [
+        "copeland.safety.terminal",
+        "copeland.troubleshooting",
+        "danfoss.erc21x"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.compressor_continuous",
+      "slug": "kompressor-holodilnogo-oborudovaniya-rabotaet-bez-ostanovki.html",
+      "title": "Компрессор холодильного оборудования работает без остановки",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Компрессор холодильного оборудования работает без остановки",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "temperature_probe",
+        "door_gasket",
+        "condenser",
+        "refrigerant_circuit"
+      ],
+      "probableNodeLabels": [
+        "Датчик температуры",
+        "Уплотнение двери",
+        "Конденсатор",
+        "Холодильный контур"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.compressor_no_start",
+        "refrigeration.short_cycle"
+      ],
+      "sourceEvidenceIds": [
+        "polair.monoblock.troubleshooting",
+        "polair.cabinet.troubleshooting",
+        "copeland.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.short_cycle",
+      "slug": "holodilnoe-oborudovanie-chasto-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "title": "Холодильное оборудование часто включается и выключается",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Холодильное оборудование часто включается и выключается",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "controller",
+        "voltage_supply",
+        "compressor_protection",
+        "condenser"
+      ],
+      "probableNodeLabels": [
+        "Контроллер",
+        "Напряжение питания",
+        "Защита компрессора",
+        "Конденсатор"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.compressor_continuous",
+        "refrigeration.high_temp_cold_room"
+      ],
+      "sourceEvidenceIds": [
+        "copeland.short.cycling",
+        "danfoss.erc21x",
+        "polair.monoblock.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.high_temp_cold_room",
+      "slug": "vysokaya-temperatura-v-holodilnoy-kamere.html",
+      "title": "Высокая температура в холодильной камере",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Высокая температура в холодильной камере",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "door_switch",
+        "evaporator_fan",
+        "defrost_system",
+        "refrigerant_circuit"
+      ],
+      "probableNodeLabels": [
+        "Дверной выключатель",
+        "Вентилятор испарителя",
+        "Система оттайки",
+        "Холодильный контур"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.short_cycle",
+        "refrigeration.error_codes"
+      ],
+      "sourceEvidenceIds": [
+        "danfoss.erc21x",
+        "polair.monoblock.troubleshooting",
+        "polair.cabinet.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.error_codes",
+      "slug": "kody-oshibok-holodilnogo-oborudovaniya.html",
+      "title": "Коды ошибок холодильного оборудования",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Коды ошибок холодильного оборудования",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "controller",
+        "temperature_probe",
+        "condenser_probe"
+      ],
+      "probableNodeLabels": [
+        "Контроллер",
+        "Датчик температуры",
+        "Датчик конденсатора"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.high_temp_cold_room",
+        "refrigeration.evaporator_iced"
+      ],
+      "sourceEvidenceIds": [
+        "danfoss.erc21x",
+        "copeland.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.evaporator_iced",
+      "slug": "isparitel-holodilnogo-oborudovaniya-pokryvaetsya-ldom.html",
+      "title": "Испаритель холодильного оборудования покрывается льдом",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Испаритель холодильного оборудования покрывается льдом",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "defrost_system",
+        "evaporator_fan",
+        "door_gasket",
+        "drainage"
+      ],
+      "probableNodeLabels": [
+        "Система оттайки",
+        "Вентилятор испарителя",
+        "Уплотнение двери",
+        "Дренаж"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.error_codes",
+        "refrigeration.defrost_failure"
+      ],
+      "sourceEvidenceIds": [
+        "danfoss.erc21x",
+        "polair.cabinet.troubleshooting",
+        "polair.ceiling.monoblock.components"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.defrost_failure",
+      "slug": "ne-rabotaet-ottaika-holodilnogo-oborudovaniya.html",
+      "title": "Не работает оттайка холодильного оборудования",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Не работает оттайка холодильного оборудования",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "defrost_heater",
+        "defrost_probe",
+        "controller",
+        "drainage"
+      ],
+      "probableNodeLabels": [
+        "Нагреватель оттайки",
+        "Датчик оттайки",
+        "Контроллер",
+        "Дренаж"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.evaporator_iced",
+        "refrigeration.condenser_overheat"
+      ],
+      "sourceEvidenceIds": [
+        "danfoss.erc21x",
+        "polair.ceiling.monoblock.components",
+        "polair.cabinet.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.condenser_overheat",
+      "slug": "kondensator-holodilnogo-oborudovaniya-peregrevaetsya.html",
+      "title": "Конденсатор холодильного оборудования перегревается",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Конденсатор холодильного оборудования перегревается",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "condenser",
+        "condenser_fan",
+        "airflow",
+        "controller"
+      ],
+      "probableNodeLabels": [
+        "Конденсатор",
+        "Вентилятор конденсатора",
+        "Воздушный поток",
+        "Контроллер"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.defrost_failure",
+        "refrigeration.fan_failure"
+      ],
+      "sourceEvidenceIds": [
+        "danfoss.erc21x",
+        "polair.monoblock.troubleshooting",
+        "polair.ceiling.monoblock.components"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.fan_failure",
+      "slug": "ventilyator-holodilnogo-oborudovaniya-ne-rabotaet.html",
+      "title": "Вентилятор холодильного оборудования не работает",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Вентилятор холодильного оборудования не работает",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "evaporator_fan",
+        "fan_relay",
+        "door_switch",
+        "controller"
+      ],
+      "probableNodeLabels": [
+        "Вентилятор испарителя",
+        "Реле вентилятора",
+        "Дверной выключатель",
+        "Контроллер"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.condenser_overheat",
+        "refrigeration.noise_vibration"
+      ],
+      "sourceEvidenceIds": [
+        "danfoss.erc21x",
+        "polair.ceiling.monoblock.components",
+        "polair.cabinet.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.noise_vibration",
+      "slug": "holodilnoe-oborudovanie-shumit-i-vibriruet.html",
+      "title": "Холодильное оборудование шумит и вибрирует",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Холодильное оборудование шумит и вибрирует",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "fan",
+        "compressor_mount",
+        "pipe_contact"
+      ],
+      "probableNodeLabels": [
+        "Вентилятор",
+        "Опоры компрессора",
+        "Контакт трубопроводов"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.fan_failure",
+        "refrigeration.water_leak"
+      ],
+      "sourceEvidenceIds": [
+        "copeland.troubleshooting",
+        "polair.ceiling.monoblock.components",
+        "polair.cabinet.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.water_leak",
+      "slug": "techet-voda-iz-holodilnogo-oborudovaniya.html",
+      "title": "Течёт вода из холодильного оборудования",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Течёт вода из холодильного оборудования",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "drainage",
+        "defrost_system",
+        "door_gasket"
+      ],
+      "probableNodeLabels": [
+        "Дренаж",
+        "Система оттайки",
+        "Уплотнение двери"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.noise_vibration",
+        "refrigeration.breaker_trip"
+      ],
+      "sourceEvidenceIds": [
+        "polair.ceiling.monoblock.components",
+        "polair.cabinet.troubleshooting",
+        "danfoss.erc21x"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.breaker_trip",
+      "slug": "holodilnoe-oborudovanie-vybivaet-avtomat.html",
+      "title": "Холодильное оборудование выбивает автомат",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "userSymptoms": [
+        "Холодильное оборудование выбивает автомат",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "power_supply",
+        "compressor",
+        "defrost_heater",
+        "wiring"
+      ],
+      "probableNodeLabels": [
+        "Питание",
+        "Компрессор",
+        "Нагреватель оттайки",
+        "Проводка"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.water_leak",
+        "refrigeration.door_not_closing"
+      ],
+      "sourceEvidenceIds": [
+        "copeland.safety.terminal",
+        "copeland.troubleshooting",
+        "polair.ceiling.monoblock.components"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "refrigeration.door_not_closing",
+      "slug": "dver-holodilnogo-shkafa-ne-zakryvaetsya.html",
+      "title": "Дверь холодильного шкафа не закрывается",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "general",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "userSymptoms": [
+        "Дверь холодильного шкафа не закрывается",
+        "Сбой повторяется в группе: general"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "door_hinge",
+        "door_gasket",
+        "door_closer",
+        "cabinet_alignment"
+      ],
+      "probableNodeLabels": [
+        "Петля двери",
+        "Уплотнение двери",
+        "Доводчик",
+        "Геометрия корпуса"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "refrigeration.breaker_trip",
+        "refrigeration.no_cooling"
+      ],
+      "sourceEvidenceIds": [
+        "liebherr.frfcvg4001.door",
+        "danfoss.akcc210b",
+        "polair.cabinet.troubleshooting"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "blast.slow_chilling",
+      "slug": "shoker-medlenno-okhlazhdaet.html",
+      "title": "Шокер медленно охлаждает",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "userSymptoms": [
+        "Шокер медленно охлаждает",
+        "Сбой повторяется в группе: blast_chiller"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "product_probe",
+        "evaporator_fan",
+        "condenser",
+        "refrigerant_circuit"
+      ],
+      "probableNodeLabels": [
+        "Термощуп продукта",
+        "Вентилятор испарителя",
+        "Конденсатор",
+        "Холодильный контур"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "blast.probe_air_mismatch",
+        "blast.no_minus18"
+      ],
+      "sourceEvidenceIds": [
+        "polair.crt20.manual",
+        "irinox.easyfresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "blast.no_minus18",
+      "slug": "shoker-ne-zamorazhivaet-do-minus-18.html",
+      "title": "Шокер не замораживает продукт до −18 °C",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "userSymptoms": [
+        "Шокер не замораживает продукт до −18 °C",
+        "Сбой повторяется в группе: blast_chiller"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "product_probe",
+        "compressor",
+        "evaporator",
+        "refrigerant_circuit"
+      ],
+      "probableNodeLabels": [
+        "Термощуп продукта",
+        "Компрессор",
+        "Испаритель",
+        "Холодильный контур"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "blast.slow_chilling",
+        "blast.probe_not_detected"
+      ],
+      "sourceEvidenceIds": [
+        "polair.crt20.manual",
+        "irinox.multifresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "blast.probe_not_detected",
+      "slug": "shoker-ne-vidit-termoshchup.html",
+      "title": "Шокер не видит термощуп",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "userSymptoms": [
+        "Шокер не видит термощуп",
+        "Сбой повторяется в группе: blast_chiller"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "product_probe",
+        "probe_connector",
+        "controller"
+      ],
+      "probableNodeLabels": [
+        "Термощуп продукта",
+        "Разъём термощупа",
+        "Контроллер"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "blast.no_minus18",
+        "blast.fan_failure"
+      ],
+      "sourceEvidenceIds": [
+        "irinox.easyfresh.next",
+        "coldline.modi.active.spec",
+        "polair.crt20.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "blast.fan_failure",
+      "slug": "ventilyator-shokera-ne-rabotaet.html",
+      "title": "Вентилятор шокера не работает",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "userSymptoms": [
+        "Вентилятор шокера не работает",
+        "Сбой повторяется в группе: blast_chiller"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "evaporator_fan",
+        "fan_relay",
+        "controller"
+      ],
+      "probableNodeLabels": [
+        "Вентилятор испарителя",
+        "Реле вентилятора",
+        "Контроллер"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "blast.probe_not_detected",
+        "blast.cycle_no_start"
+      ],
+      "sourceEvidenceIds": [
+        "polair.crt20.manual",
+        "irinox.multifresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "blast.cycle_no_start",
+      "slug": "shoker-ne-zapuskaet-cikl.html",
+      "title": "Шокер не запускает цикл",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "userSymptoms": [
+        "Шокер не запускает цикл",
+        "Сбой повторяется в группе: blast_chiller"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "door_switch",
+        "controller",
+        "product_probe",
+        "power_supply"
+      ],
+      "probableNodeLabels": [
+        "Дверной выключатель",
+        "Контроллер",
+        "Термощуп продукта",
+        "Питание"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "blast.fan_failure",
+        "blast.cycle_error_stop"
+      ],
+      "sourceEvidenceIds": [
+        "polair.crt20.manual",
+        "irinox.easyfresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "blast.cycle_error_stop",
+      "slug": "shoker-ostanavlivaetsya-s-oshibkoy.html",
+      "title": "Шокер останавливается с ошибкой",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "userSymptoms": [
+        "Шокер останавливается с ошибкой",
+        "Сбой повторяется в группе: blast_chiller"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "controller",
+        "temperature_probe",
+        "compressor_protection"
+      ],
+      "probableNodeLabels": [
+        "Контроллер",
+        "Датчик температуры",
+        "Защита компрессора"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "blast.cycle_no_start",
+        "blast.probe_air_mismatch"
+      ],
+      "sourceEvidenceIds": [
+        "polair.crt20.manual",
+        "irinox.multifresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "blast.probe_air_mismatch",
+      "slug": "temperatura-termoshchupa-ne-sovpadaet-s-kameroy.html",
+      "title": "Температура термощупа не совпадает с температурой камеры",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "blast_chiller",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "userSymptoms": [
+        "Температура термощупа не совпадает с температурой камеры",
+        "Сбой повторяется в группе: blast_chiller"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "product_probe",
+        "air_probe",
+        "probe_calibration"
+      ],
+      "probableNodeLabels": [
+        "Термощуп продукта",
+        "Датчик воздуха",
+        "Калибровка датчиков"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "blast.cycle_error_stop",
+        "blast.slow_chilling"
+      ],
+      "sourceEvidenceIds": [
+        "irinox.easyfresh.next",
+        "coldline.modi.active.spec",
+        "polair.crt20.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.no_production",
+      "slug": "ldogenerator-ne-proizvodit-led.html",
+      "title": "Льдогенератор не производит лёд",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "userSymptoms": [
+        "Льдогенератор не производит лёд",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "water_inlet",
+        "controller",
+        "refrigeration_system",
+        "bin_sensor"
+      ],
+      "probableNodeLabels": [
+        "Подача воды",
+        "Контроллер",
+        "Холодильная система",
+        "Датчик бункера"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.auger_noise",
+        "ice.slow_production"
+      ],
+      "sourceEvidenceIds": [
+        "hoshizaki.documentation",
+        "scotsman.service.manuals"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.slow_production",
+      "slug": "ldogenerator-medlenno-delaet-led.html",
+      "title": "Льдогенератор медленно делает лёд",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "userSymptoms": [
+        "Льдогенератор медленно делает лёд",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "condenser",
+        "water_system",
+        "evaporator",
+        "refrigeration_system"
+      ],
+      "probableNodeLabels": [
+        "Конденсатор",
+        "Водяная система",
+        "Испаритель",
+        "Холодильная система"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.no_production",
+        "ice.no_water"
+      ],
+      "sourceEvidenceIds": [
+        "hoshizaki.kml.service.manual",
+        "hoshizaki.im500.service.manual",
+        "scotsman.service.manuals"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.no_water",
+      "slug": "ldogenerator-ne-nabiraet-vodu.html",
+      "title": "Льдогенератор не набирает воду",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "userSymptoms": [
+        "Льдогенератор не набирает воду",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "water_valve",
+        "water_filter",
+        "reservoir_sensor"
+      ],
+      "probableNodeLabels": [
+        "Впускной клапан",
+        "Фильтр воды",
+        "Датчик резервуара"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.slow_production",
+        "ice.no_harvest"
+      ],
+      "sourceEvidenceIds": [
+        "hoshizaki.kml.service.manual",
+        "hoshizaki.documentation",
+        "scotsman.service.manuals"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.no_harvest",
+      "slug": "ldogenerator-ne-sbrasyvaet-led.html",
+      "title": "Льдогенератор не сбрасывает лёд",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "userSymptoms": [
+        "Льдогенератор не сбрасывает лёд",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "harvest_system",
+        "hot_gas_valve",
+        "evaporator_sensor"
+      ],
+      "probableNodeLabels": [
+        "Система сброса",
+        "Клапан горячего газа",
+        "Датчик испарителя"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.no_water",
+        "ice.no_drain"
+      ],
+      "sourceEvidenceIds": [
+        "hoshizaki.kml.service.manual",
+        "hoshizaki.im500.service.manual",
+        "scotsman.scc30.service.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.no_drain",
+      "slug": "ldogenerator-ne-slivaet-vodu.html",
+      "title": "Льдогенератор не сливает воду",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "userSymptoms": [
+        "Льдогенератор не сливает воду",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "drainage",
+        "drain_pump",
+        "reservoir"
+      ],
+      "probableNodeLabels": [
+        "Дренаж",
+        "Сливной насос",
+        "Резервуар"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.no_harvest",
+        "ice.bad_shape"
+      ],
+      "sourceEvidenceIds": [
+        "scotsman.scc30.service.manual",
+        "hoshizaki.kml.service.manual",
+        "scotsman.service.manuals"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.bad_shape",
+      "slug": "ldogenerator-delaet-melkiy-ili-pustotelyy-led.html",
+      "title": "Льдогенератор делает мелкий или пустотелый лёд",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "userSymptoms": [
+        "Льдогенератор делает мелкий или пустотелый лёд",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "water_flow",
+        "freeze_cycle",
+        "evaporator",
+        "refrigeration_system"
+      ],
+      "probableNodeLabels": [
+        "Поток воды",
+        "Цикл заморозки",
+        "Испаритель",
+        "Холодильная система"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.no_drain",
+        "ice.dirty_ice"
+      ],
+      "sourceEvidenceIds": [
+        "hoshizaki.im500.service.manual",
+        "scotsman.scc30.service.manual",
+        "hoshizaki.kml.service.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.dirty_ice",
+      "slug": "gryaznyy-mutnyy-ili-s-zapahom-led.html",
+      "title": "Льдогенератор делает мутный лёд или лёд с запахом",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "userSymptoms": [
+        "Льдогенератор делает мутный лёд или лёд с запахом",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "water_filter",
+        "water_system",
+        "sanitation",
+        "reservoir"
+      ],
+      "probableNodeLabels": [
+        "Фильтр воды",
+        "Водяная система",
+        "Санитарное состояние",
+        "Резервуар"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.bad_shape",
+        "ice.water_leak"
+      ],
+      "sourceEvidenceIds": [
+        "hoshizaki.im500.service.manual",
+        "scotsman.products",
+        "scotsman.service.manuals"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.water_leak",
+      "slug": "ldogenerator-techet.html",
+      "title": "Льдогенератор течёт",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "userSymptoms": [
+        "Льдогенератор течёт",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "water_inlet",
+        "reservoir",
+        "drainage",
+        "hoses"
+      ],
+      "probableNodeLabels": [
+        "Подача воды",
+        "Резервуар",
+        "Дренаж",
+        "Шланги"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.dirty_ice",
+        "ice.auger_noise"
+      ],
+      "sourceEvidenceIds": [
+        "hoshizaki.im500.service.manual",
+        "hoshizaki.kml.service.manual",
+        "scotsman.scc30.service.manual"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    },
+    {
+      "symptomId": "ice.auger_noise",
+      "slug": "shnek-ldogeneratora-shumit-ili-zaklinil.html",
+      "title": "Шнек льдогенератора шумит или заклинил",
+      "status": "published",
+      "publicationState": "published",
+      "symptomGroup": "ice_machine",
+      "equipmentFamilies": [
+        "ice_machine_auger"
+      ],
+      "userSymptoms": [
+        "Шнек льдогенератора шумит или заклинил",
+        "Сбой повторяется в группе: ice_machine"
+      ],
+      "safeChecks": [
+        "Зафиксировать модель, серийный номер и контроллер по шильдику",
+        "Записать фактическую и заданную температуру либо этап цикла",
+        "Проверить доступные внешние условия без вскрытия холодильного контура"
+      ],
+      "stopUseConditions": [
+        "Есть запах гари, дым, вода рядом с электрическими узлами или повторно срабатывает автомат",
+        "Температура продукта вышла из допустимого режима либо оборудование не останавливается штатно"
+      ],
+      "probableNodes": [
+        "auger",
+        "gearbox",
+        "top_bearing",
+        "evaporator_scale"
+      ],
+      "probableNodeLabels": [
+        "Шнек",
+        "Редуктор",
+        "Верхний подшипник",
+        "Накипь испарителя"
+      ],
+      "technicianChecks": [
+        "Проверить питание, сигналы контроллера и исполнительные выходы по схеме конкретной модели",
+        "Измерить параметры холодильного контура и воздушного тракта с учётом хладагента и условий работы"
+      ],
+      "relatedSymptoms": [
+        "ice.water_leak",
+        "ice.no_production"
+      ],
+      "sourceEvidenceIds": [
+        "scotsman.flake.nugget.manual",
+        "hoshizaki.documentation",
+        "scotsman.service.manuals"
+      ],
+      "prohibitedClaims": [
+        "Не называть один узел гарантированной причиной без измерений",
+        "Не публиковать универсальные давления, дозу хладагента или коды без модели и контроллера"
+      ]
+    }
+  ]
+}

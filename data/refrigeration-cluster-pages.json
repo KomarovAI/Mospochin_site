@@ -1,0 +1,1432 @@
+{
+  "schemaVersion": 1,
+  "cluster": "refrigeration",
+  "checkedAt": "2026-07-15",
+  "hub": "holodilnoe-oborudovanie.html",
+  "subHubs": [
+    "ice-machines.html",
+    "shokery-shkafy-shokovogo-okhlazhdeniya-i-zamorozki.html"
+  ],
+  "householdPageExcluded": "holodilniki.html",
+  "adjacentPagesExcluded": [
+    "sous-vide-i-shokovoe-okhlazhdenie.html",
+    "ventilyatsiya-i-holodilnoe-oborudovanie.html"
+  ],
+  "publicationPolicy": "quality-gated-growth",
+  "targetPages": 56,
+  "pages": [
+    {
+      "page": "holodilnoe-oborudovanie.html",
+      "intent": "commercial-repair-hub",
+      "pageType": "hub",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF2",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room",
+        "blast_chiller",
+        "ice_machine"
+      ],
+      "title": "Ремонт профессионального холодильного оборудования в Москве | MosPochin",
+      "h1": "Ремонт профессионального холодильного оборудования",
+      "evidenceIds": [
+        "polair.catalog.2024",
+        "copeland.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "commercial-repair-hub",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ice-machines.html",
+      "intent": "ice-machine-repair-hub",
+      "pageType": "subhub",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF2",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Ремонт профессиональных льдогенераторов в Москве | MosPochin",
+      "h1": "Ремонт профессиональных льдогенераторов",
+      "evidenceIds": [
+        "hoshizaki.documentation",
+        "scotsman.products"
+      ],
+      "metrics": {
+        "pageIntent": "ice-machine-repair-hub",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "obsluzhivanie-holodilnogo-oborudovaniya.html",
+      "intent": "maintenance",
+      "pageType": "foundation",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF2",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Обслуживание профессионального холодильного оборудования | MosPochin",
+      "h1": "Обслуживание профессионального холодильного оборудования",
+      "evidenceIds": [
+        "polair.downloads.docs",
+        "hicold.tables.manual"
+      ],
+      "metrics": {
+        "pageIntent": "maintenance",
+        "equipment": "commercial_refrigeration",
+        "service": "maintenance",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "diagnostika-holodilnogo-oborudovaniya.html",
+      "intent": "diagnostics",
+      "pageType": "foundation",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF2",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room",
+        "blast_chiller",
+        "ice_machine"
+      ],
+      "title": "Диагностика профессионального холодильного оборудования | MosPochin",
+      "h1": "Диагностика профессионального холодильного оборудования",
+      "evidenceIds": [
+        "copeland.troubleshooting",
+        "danfoss.erc21x"
+      ],
+      "metrics": {
+        "pageIntent": "diagnostics",
+        "equipment": "blast_chiller",
+        "service": "diagnostics",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kak-rabotaet-promyshlennoe-holodilnoe-oborudovanie.html",
+      "intent": "refrigeration-system-guide",
+      "pageType": "informational_article",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF3",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Как работает профессиональное холодильное оборудование | MosPochin",
+      "h1": "Как работает профессиональное холодильное оборудование",
+      "evidenceIds": [
+        "copeland.troubleshooting",
+        "hicold.tables.manual"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration-system-guide",
+        "equipment": "commercial_refrigeration",
+        "service": "information",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnye-shkafy-dlya-restoranov.html",
+      "intent": "refrigerated-cabinets",
+      "pageType": "equipment_family",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF3",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Ремонт профессиональных холодильных шкафов | MosPochin",
+      "h1": "Холодильные шкафы для ресторанов и кафе",
+      "evidenceIds": [
+        "polair.products.range",
+        "liebherr.gastronomy.refrigerators"
+      ],
+      "metrics": {
+        "pageIntent": "refrigerated-cabinets",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnye-stoly.html",
+      "intent": "refrigerated-tables",
+      "pageType": "equipment_family",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF3",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Ремонт профессиональных холодильных столов | MosPochin",
+      "h1": "Профессиональные холодильные столы",
+      "evidenceIds": [
+        "hicold.tables.manual",
+        "abat.refrigerated.tables",
+        "hicold.catalog.range"
+      ],
+      "metrics": {
+        "pageIntent": "refrigerated-tables",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnye-vitriny-i-gorki.html",
+      "intent": "refrigerated-displays",
+      "pageType": "equipment_family",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF3",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Ремонт холодильных витрин и горок | MosPochin",
+      "h1": "Холодильные витрины и горки",
+      "evidenceIds": [
+        "polair.products.range",
+        "danfoss.erc21x",
+        "hicold.catalog.range"
+      ],
+      "metrics": {
+        "pageIntent": "refrigerated-displays",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnye-kamery-dlya-restoranov.html",
+      "intent": "cold-rooms",
+      "pageType": "equipment_family",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF2",
+      "equipmentFamilies": [
+        "cold_room"
+      ],
+      "title": "Ремонт холодильных камер для ресторанов | MosPochin",
+      "h1": "Холодильные камеры для ресторанов и пищеблоков",
+      "evidenceIds": [
+        "polair.coldroom.kkhn",
+        "danfoss.akcc210b"
+      ],
+      "metrics": {
+        "pageIntent": "cold-rooms",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "monobloki-i-split-sistemy-holodilnyh-kamer.html",
+      "intent": "cold-room-units",
+      "pageType": "equipment_family",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF3",
+      "equipmentFamilies": [
+        "cold_room"
+      ],
+      "title": "Ремонт моноблоков и сплит-систем холодильных камер | MosPochin",
+      "h1": "Моноблоки и сплит-системы холодильных камер",
+      "evidenceIds": [
+        "polair.refrigeration.machines",
+        "copeland.troubleshooting",
+        "polair.machine.selection"
+      ],
+      "metrics": {
+        "pageIntent": "cold-room-units",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "shokery-shkafy-shokovogo-okhlazhdeniya-i-zamorozki.html",
+      "intent": "blast-chillers",
+      "pageType": "subhub",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF2",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Ремонт шкафов шокового охлаждения и заморозки | MosPochin",
+      "h1": "Шкафы шокового охлаждения и заморозки",
+      "evidenceIds": [
+        "irinox.easyfresh.next",
+        "polair.shock.range"
+      ],
+      "metrics": {
+        "pageIntent": "blast-chillers",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kamery-shokovoy-zamorozki.html",
+      "intent": "blast-freezing-rooms",
+      "pageType": "equipment_family",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF3",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Ремонт камер шоковой заморозки | MosPochin",
+      "h1": "Камеры шоковой заморозки",
+      "evidenceIds": [
+        "abat.shock.chambers",
+        "polair.shock.range",
+        "irinox.rollin.range",
+        "coldline.rollin.range"
+      ],
+      "metrics": {
+        "pageIntent": "blast-freezing-rooms",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnoe-oborudovanie-ne-holodit.html",
+      "intent": "refrigeration.no_cooling",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF2",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Холодильное оборудование не холодит — диагностика | MosPochin",
+      "h1": "Холодильное оборудование не холодит",
+      "evidenceIds": [
+        "danfoss.erc21x",
+        "copeland.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.no_cooling",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnoe-oborudovanie-medlenno-nabiraet-temperaturu.html",
+      "intent": "refrigeration.slow_pull_down",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF5",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Холодильное оборудование медленно набирает температуру | MosPochin",
+      "h1": "Холодильное оборудование медленно набирает температуру",
+      "evidenceIds": [
+        "polair.monoblock.troubleshooting",
+        "polair.cabinet.troubleshooting",
+        "danfoss.erc21x"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.slow_pull_down",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnoe-oborudovanie-peremorazhivaet-produkty.html",
+      "intent": "refrigeration.overcooling",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF5",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Холодильное оборудование перемораживает продукты | MosPochin",
+      "h1": "Холодильное оборудование перемораживает продукты",
+      "evidenceIds": [
+        "danfoss.erc21x",
+        "polair.cabinet.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.overcooling",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kompressor-holodilnogo-oborudovaniya-ne-zapuskaetsya.html",
+      "intent": "refrigeration.compressor_no_start",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF4",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Компрессор холодильного оборудования не запускается | MosPochin",
+      "h1": "Компрессор холодильного оборудования не запускается",
+      "evidenceIds": [
+        "copeland.safety.terminal",
+        "copeland.troubleshooting",
+        "danfoss.erc21x"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.compressor_no_start",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kompressor-holodilnogo-oborudovaniya-rabotaet-bez-ostanovki.html",
+      "intent": "refrigeration.compressor_continuous",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF5",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Компрессор холодильного оборудования работает без остановки | MosPochin",
+      "h1": "Компрессор холодильного оборудования работает без остановки",
+      "evidenceIds": [
+        "polair.monoblock.troubleshooting",
+        "polair.cabinet.troubleshooting",
+        "copeland.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.compressor_continuous",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnoe-oborudovanie-chasto-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "intent": "refrigeration.short_cycle",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF5",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Холодильное оборудование часто включается и выключается | MosPochin",
+      "h1": "Холодильное оборудование часто включается и выключается",
+      "evidenceIds": [
+        "copeland.short.cycling",
+        "danfoss.erc21x",
+        "polair.monoblock.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.short_cycle",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "vysokaya-temperatura-v-holodilnoy-kamere.html",
+      "intent": "refrigeration.high_temp_cold_room",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF4",
+      "equipmentFamilies": [
+        "cold_room"
+      ],
+      "title": "Высокая температура в холодильной камере | MosPochin",
+      "h1": "Высокая температура в холодильной камере",
+      "evidenceIds": [
+        "danfoss.erc21x",
+        "polair.monoblock.troubleshooting",
+        "polair.cabinet.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.high_temp_cold_room",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kody-oshibok-holodilnogo-oborudovaniya.html",
+      "intent": "refrigeration.error_codes",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF4",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Коды ошибок холодильного оборудования | MosPochin",
+      "h1": "Коды ошибок холодильного оборудования",
+      "evidenceIds": [
+        "danfoss.erc21x",
+        "copeland.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.error_codes",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "isparitel-holodilnogo-oborudovaniya-pokryvaetsya-ldom.html",
+      "intent": "refrigeration.evaporator_iced",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF4",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Испаритель холодильного оборудования покрывается льдом | MosPochin",
+      "h1": "Испаритель холодильного оборудования покрывается льдом",
+      "evidenceIds": [
+        "danfoss.erc21x",
+        "polair.cabinet.troubleshooting",
+        "polair.ceiling.monoblock.components"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.evaporator_iced",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ne-rabotaet-ottaika-holodilnogo-oborudovaniya.html",
+      "intent": "refrigeration.defrost_failure",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF4",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Не работает оттайка холодильного оборудования | MosPochin",
+      "h1": "Не работает оттайка холодильного оборудования",
+      "evidenceIds": [
+        "danfoss.erc21x",
+        "polair.ceiling.monoblock.components",
+        "polair.cabinet.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.defrost_failure",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "kondensator-holodilnogo-oborudovaniya-peregrevaetsya.html",
+      "intent": "refrigeration.condenser_overheat",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF5",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Конденсатор холодильного оборудования перегревается | MosPochin",
+      "h1": "Конденсатор холодильного оборудования перегревается",
+      "evidenceIds": [
+        "danfoss.erc21x",
+        "polair.monoblock.troubleshooting",
+        "polair.ceiling.monoblock.components"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.condenser_overheat",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ventilyator-holodilnogo-oborudovaniya-ne-rabotaet.html",
+      "intent": "refrigeration.fan_failure",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF4",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Вентилятор холодильного оборудования не работает | MosPochin",
+      "h1": "Вентилятор холодильного оборудования не работает",
+      "evidenceIds": [
+        "danfoss.erc21x",
+        "polair.ceiling.monoblock.components",
+        "polair.cabinet.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.fan_failure",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnoe-oborudovanie-shumit-i-vibriruet.html",
+      "intent": "refrigeration.noise_vibration",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF5",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Холодильное оборудование шумит и вибрирует | MosPochin",
+      "h1": "Холодильное оборудование шумит и вибрирует",
+      "evidenceIds": [
+        "copeland.troubleshooting",
+        "polair.ceiling.monoblock.components",
+        "polair.cabinet.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.noise_vibration",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "techet-voda-iz-holodilnogo-oborudovaniya.html",
+      "intent": "refrigeration.water_leak",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF4",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Течёт вода из холодильного оборудования | MosPochin",
+      "h1": "Течёт вода из холодильного оборудования",
+      "evidenceIds": [
+        "polair.ceiling.monoblock.components",
+        "polair.cabinet.troubleshooting",
+        "danfoss.erc21x"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.water_leak",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnoe-oborudovanie-vybivaet-avtomat.html",
+      "intent": "refrigeration.breaker_trip",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF4",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Холодильное оборудование выбивает автомат | MosPochin",
+      "h1": "Холодильное оборудование выбивает автомат",
+      "evidenceIds": [
+        "copeland.safety.terminal",
+        "copeland.troubleshooting",
+        "polair.ceiling.monoblock.components"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.breaker_trip",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "dver-holodilnogo-shkafa-ne-zakryvaetsya.html",
+      "intent": "refrigeration.door_not_closing",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF5",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Дверь холодильного шкафа не закрывается | MosPochin",
+      "h1": "Дверь холодильного шкафа не закрывается",
+      "evidenceIds": [
+        "liebherr.frfcvg4001.door",
+        "danfoss.akcc210b",
+        "polair.cabinet.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "refrigeration.door_not_closing",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "shoker-medlenno-okhlazhdaet.html",
+      "intent": "blast.slow_chilling",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF6",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Шокер медленно охлаждает — диагностика и ремонт | MosPochin",
+      "h1": "Шокер медленно охлаждает",
+      "evidenceIds": [
+        "polair.crt20.manual",
+        "irinox.easyfresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "metrics": {
+        "pageIntent": "blast.slow_chilling",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "shoker-ne-zamorazhivaet-do-minus-18.html",
+      "intent": "blast.no_minus18",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF6",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Шокер не замораживает продукт до −18 °C — диагностика | MosPochin",
+      "h1": "Шокер не замораживает продукт до −18 °C",
+      "evidenceIds": [
+        "polair.crt20.manual",
+        "irinox.multifresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "metrics": {
+        "pageIntent": "blast.no_minus18",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "shoker-ne-vidit-termoshchup.html",
+      "intent": "blast.probe_not_detected",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF6",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Шокер не видит термощуп — диагностика и ремонт | MosPochin",
+      "h1": "Шокер не видит термощуп",
+      "evidenceIds": [
+        "irinox.easyfresh.next",
+        "coldline.modi.active.spec",
+        "polair.crt20.manual"
+      ],
+      "metrics": {
+        "pageIntent": "blast.probe_not_detected",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ventilyator-shokera-ne-rabotaet.html",
+      "intent": "blast.fan_failure",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF6",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Вентилятор шокера не работает — диагностика и ремонт | MosPochin",
+      "h1": "Вентилятор шокера не работает",
+      "evidenceIds": [
+        "polair.crt20.manual",
+        "irinox.multifresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "metrics": {
+        "pageIntent": "blast.fan_failure",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "shoker-ne-zapuskaet-cikl.html",
+      "intent": "blast.cycle_no_start",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF6",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Шокер не запускает цикл — диагностика и ремонт | MosPochin",
+      "h1": "Шокер не запускает цикл",
+      "evidenceIds": [
+        "polair.crt20.manual",
+        "irinox.easyfresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "metrics": {
+        "pageIntent": "blast.cycle_no_start",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "shoker-ostanavlivaetsya-s-oshibkoy.html",
+      "intent": "blast.cycle_error_stop",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF6",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Шокер останавливается с ошибкой — диагностика | MosPochin",
+      "h1": "Шокер останавливается с ошибкой",
+      "evidenceIds": [
+        "polair.crt20.manual",
+        "irinox.multifresh.next",
+        "coldline.modi.active.spec"
+      ],
+      "metrics": {
+        "pageIntent": "blast.cycle_error_stop",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "temperatura-termoshchupa-ne-sovpadaet-s-kameroy.html",
+      "intent": "blast.probe_air_mismatch",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF6",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Температура термощупа не совпадает с камерой шокера | MosPochin",
+      "h1": "Температура термощупа не совпадает с температурой камеры",
+      "evidenceIds": [
+        "irinox.easyfresh.next",
+        "coldline.modi.active.spec",
+        "polair.crt20.manual"
+      ],
+      "metrics": {
+        "pageIntent": "blast.probe_air_mismatch",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ldogenerator-ne-proizvodit-led.html",
+      "intent": "ice.no_production",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF2",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Льдогенератор не производит лёд — диагностика | MosPochin",
+      "h1": "Льдогенератор не производит лёд",
+      "evidenceIds": [
+        "hoshizaki.documentation",
+        "scotsman.service.manuals"
+      ],
+      "metrics": {
+        "pageIntent": "ice.no_production",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ldogenerator-medlenno-delaet-led.html",
+      "intent": "ice.slow_production",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF7",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Льдогенератор медленно делает лёд — диагностика и ремонт | MosPochin",
+      "h1": "Льдогенератор медленно делает лёд",
+      "evidenceIds": [
+        "hoshizaki.kml.service.manual",
+        "hoshizaki.im500.service.manual",
+        "scotsman.service.manuals"
+      ],
+      "metrics": {
+        "pageIntent": "ice.slow_production",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ldogenerator-ne-nabiraet-vodu.html",
+      "intent": "ice.no_water",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF7",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Льдогенератор не набирает воду — диагностика и ремонт | MosPochin",
+      "h1": "Льдогенератор не набирает воду",
+      "evidenceIds": [
+        "hoshizaki.kml.service.manual",
+        "hoshizaki.documentation",
+        "scotsman.service.manuals"
+      ],
+      "metrics": {
+        "pageIntent": "ice.no_water",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ldogenerator-ne-sbrasyvaet-led.html",
+      "intent": "ice.no_harvest",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF7",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Льдогенератор не сбрасывает лёд — диагностика harvest cycle | MosPochin",
+      "h1": "Льдогенератор не сбрасывает лёд",
+      "evidenceIds": [
+        "hoshizaki.kml.service.manual",
+        "hoshizaki.im500.service.manual",
+        "scotsman.scc30.service.manual"
+      ],
+      "metrics": {
+        "pageIntent": "ice.no_harvest",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ldogenerator-ne-slivaet-vodu.html",
+      "intent": "ice.no_drain",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF7",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Льдогенератор не сливает воду — диагностика дренажа | MosPochin",
+      "h1": "Льдогенератор не сливает воду",
+      "evidenceIds": [
+        "scotsman.scc30.service.manual",
+        "hoshizaki.kml.service.manual",
+        "scotsman.service.manuals"
+      ],
+      "metrics": {
+        "pageIntent": "ice.no_drain",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ldogenerator-delaet-melkiy-ili-pustotelyy-led.html",
+      "intent": "ice.bad_shape",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF7",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Льдогенератор делает мелкий или пустотелый лёд — диагностика | MosPochin",
+      "h1": "Льдогенератор делает мелкий или пустотелый лёд",
+      "evidenceIds": [
+        "hoshizaki.im500.service.manual",
+        "scotsman.scc30.service.manual",
+        "hoshizaki.kml.service.manual"
+      ],
+      "metrics": {
+        "pageIntent": "ice.bad_shape",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "gryaznyy-mutnyy-ili-s-zapahom-led.html",
+      "intent": "ice.dirty_ice",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF7",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Мутный лёд или лёд с запахом — диагностика льдогенератора | MosPochin",
+      "h1": "Льдогенератор делает мутный лёд или лёд с запахом",
+      "evidenceIds": [
+        "hoshizaki.im500.service.manual",
+        "scotsman.products",
+        "scotsman.service.manuals"
+      ],
+      "metrics": {
+        "pageIntent": "ice.dirty_ice",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "ldogenerator-techet.html",
+      "intent": "ice.water_leak",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF7",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Льдогенератор течёт — диагностика утечки воды | MosPochin",
+      "h1": "Льдогенератор течёт",
+      "evidenceIds": [
+        "hoshizaki.im500.service.manual",
+        "hoshizaki.kml.service.manual",
+        "scotsman.scc30.service.manual"
+      ],
+      "metrics": {
+        "pageIntent": "ice.water_leak",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "shnek-ldogeneratora-shumit-ili-zaklinil.html",
+      "intent": "ice.auger_noise",
+      "pageType": "symptom_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF7",
+      "equipmentFamilies": [
+        "ice_machine_auger"
+      ],
+      "title": "Шнек льдогенератора шумит или заклинил — диагностика | MosPochin",
+      "h1": "Шнек льдогенератора шумит или заклинил",
+      "evidenceIds": [
+        "scotsman.flake.nugget.manual",
+        "hoshizaki.documentation",
+        "scotsman.service.manuals"
+      ],
+      "metrics": {
+        "pageIntent": "ice.auger_noise",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-holodilnogo-oborudovaniya-polair.html",
+      "intent": "brand-repair-polair",
+      "pageType": "brand_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF8",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Ремонт холодильного оборудования Polair в Москве | MosPochin",
+      "h1": "Ремонт холодильного оборудования Polair",
+      "evidenceIds": [
+        "polair.catalog.2024",
+        "polair.products.range",
+        "polair.downloads.docs",
+        "polair.monoblock.troubleshooting",
+        "polair.cabinet.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "brand-repair-polair",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-holodilnogo-oborudovaniya-abat.html",
+      "intent": "brand-repair-abat",
+      "pageType": "brand_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF8",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Ремонт холодильного оборудования Abat в Москве | MosPochin",
+      "h1": "Ремонт холодильного оборудования Abat",
+      "evidenceIds": [
+        "abat.refrigerated.tables",
+        "abat.refrigerated.cabinets",
+        "abat.shock.cabinets",
+        "abat.shock.chambers"
+      ],
+      "metrics": {
+        "pageIntent": "brand-repair-abat",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-holodilnogo-oborudovaniya-hicold.html",
+      "intent": "brand-repair-hicold",
+      "pageType": "brand_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF8",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Ремонт холодильного оборудования HICOLD в Москве | MosPochin",
+      "h1": "Ремонт холодильного оборудования HICOLD",
+      "evidenceIds": [
+        "hicold.tables.manual",
+        "hicold.controllers"
+      ],
+      "metrics": {
+        "pageIntent": "brand-repair-hicold",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-holodilnogo-oborudovaniya-liebherr.html",
+      "intent": "brand-repair-liebherr",
+      "pageType": "brand_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF8",
+      "equipmentFamilies": [
+        "storage_refrigeration"
+      ],
+      "title": "Ремонт профессионального оборудования Liebherr в Москве | MosPochin",
+      "h1": "Ремонт холодильного оборудования Liebherr",
+      "evidenceIds": [
+        "liebherr.gastronomy.refrigerators",
+        "liebherr.gastronomy.freezers",
+        "liebherr.foodservice.brochure",
+        "liebherr.frfcvg4001.door"
+      ],
+      "metrics": {
+        "pageIntent": "brand-repair-liebherr",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-shokerov-irinox.html",
+      "intent": "brand-repair-irinox",
+      "pageType": "brand_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF8",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Ремонт шокеров IRINOX в Москве | MosPochin",
+      "h1": "Ремонт шокеров IRINOX",
+      "evidenceIds": [
+        "irinox.easyfresh.next",
+        "irinox.multifresh.next",
+        "irinox.rollin.range"
+      ],
+      "metrics": {
+        "pageIntent": "brand-repair-irinox",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-shokerov-coldline.html",
+      "intent": "brand-repair-coldline",
+      "pageType": "brand_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF8",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Ремонт шокеров Coldline в Москве | MosPochin",
+      "h1": "Ремонт шокеров Coldline",
+      "evidenceIds": [
+        "coldline.modi",
+        "coldline.vision",
+        "coldline.rollin.range",
+        "coldline.modi.active.spec"
+      ],
+      "metrics": {
+        "pageIntent": "brand-repair-coldline",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-ldogeneratorov-hoshizaki.html",
+      "intent": "brand-repair-hoshizaki",
+      "pageType": "brand_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF8",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Ремонт льдогенераторов Hoshizaki в Москве | MosPochin",
+      "h1": "Ремонт льдогенераторов Hoshizaki",
+      "evidenceIds": [
+        "hoshizaki.documentation",
+        "hoshizaki.im.product",
+        "hoshizaki.kml.service.manual",
+        "hoshizaki.im500.service.manual"
+      ],
+      "metrics": {
+        "pageIntent": "brand-repair-hoshizaki",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-ldogeneratorov-scotsman.html",
+      "intent": "brand-repair-scotsman",
+      "pageType": "brand_service",
+      "status": "published",
+      "indexable": true,
+      "branch": "restaurant",
+      "publicationWave": "RF8",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Ремонт льдогенераторов Scotsman в Москве | MosPochin",
+      "h1": "Ремонт льдогенераторов Scotsman",
+      "evidenceIds": [
+        "scotsman.products",
+        "scotsman.service.manuals",
+        "scotsman.flake.nugget.manual",
+        "scotsman.scc30.service.manual"
+      ],
+      "metrics": {
+        "pageIntent": "brand-repair-scotsman",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-holodilnogo-oborudovaniya-moskva.html",
+      "intent": "direct-general-refrigeration",
+      "pageType": "direct",
+      "status": "published",
+      "indexable": false,
+      "branch": "restaurant",
+      "publicationWave": "RF9",
+      "equipmentFamilies": [
+        "storage_refrigeration",
+        "cold_room"
+      ],
+      "title": "Ремонт холодильного оборудования в Москве | MosPochin",
+      "h1": "Ремонт холодильного оборудования в Москве",
+      "evidenceIds": [
+        "polair.catalog.2024",
+        "copeland.troubleshooting"
+      ],
+      "metrics": {
+        "pageIntent": "direct-general-refrigeration",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "holodilnaya-kamera-ne-holodit-remont-moskva.html",
+      "intent": "direct-cold-room-no-cooling",
+      "pageType": "direct",
+      "status": "published",
+      "indexable": false,
+      "branch": "restaurant",
+      "publicationWave": "RF9",
+      "equipmentFamilies": [
+        "cold_room"
+      ],
+      "title": "Холодильная камера не холодит — ремонт в Москве | MosPochin",
+      "h1": "Холодильная камера не холодит",
+      "evidenceIds": [
+        "polair.refrigeration.machines",
+        "danfoss.akcc210b"
+      ],
+      "metrics": {
+        "pageIntent": "direct-cold-room-no-cooling",
+        "equipment": "commercial_refrigeration",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-shokera-moskva.html",
+      "intent": "direct-blast-chiller",
+      "pageType": "direct",
+      "status": "published",
+      "indexable": false,
+      "branch": "restaurant",
+      "publicationWave": "RF9",
+      "equipmentFamilies": [
+        "blast_chiller"
+      ],
+      "title": "Ремонт шокера в Москве — заявка инженеру | MosPochin",
+      "h1": "Ремонт шкафа шокового охлаждения и заморозки",
+      "evidenceIds": [
+        "irinox.easyfresh.next",
+        "coldline.modi"
+      ],
+      "metrics": {
+        "pageIntent": "direct-blast-chiller",
+        "equipment": "blast_chiller",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    },
+    {
+      "page": "remont-ldogeneratora-moskva.html",
+      "intent": "direct-ice-machine",
+      "pageType": "direct",
+      "status": "published",
+      "indexable": false,
+      "branch": "restaurant",
+      "publicationWave": "RF9",
+      "equipmentFamilies": [
+        "ice_machine"
+      ],
+      "title": "Ремонт льдогенератора в Москве — выезд | MosPochin",
+      "h1": "Ремонт льдогенератора в Москве",
+      "evidenceIds": [
+        "hoshizaki.documentation",
+        "scotsman.service.manuals"
+      ],
+      "metrics": {
+        "pageIntent": "direct-ice-machine",
+        "equipment": "ice_machine",
+        "service": "repair",
+        "commercialSegment": "b2b_kitchen"
+      }
+    }
+  ]
+}

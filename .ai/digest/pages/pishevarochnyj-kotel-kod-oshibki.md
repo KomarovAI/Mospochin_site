@@ -7,8 +7,8 @@
 - H1: Код ошибки пищеварочного котла — диагностика и ремонт
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-kod-oshibki.html
 - Builder model: src/pages/pishevarochnyj-kotel-kod-oshibki/page.json
-- Sections: 34 (17 local, 2 shared refs, 0 raw)
-- Text words inside referenced sections: 1250
+- Sections: 34 (15 local, 2 shared refs, 0 raw)
+- Text words inside referenced sections: 1243
 
 ## Component mix
 
@@ -30,12 +30,12 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 10.3 KB | 156 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
+| Развели заявки по симптомам и узлам | pricing | 10.3 KB | 146 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Оставьте заявку на ремонт | lead-form | 6.4 KB | 88 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/022-lead-form-ostav-te-zayavku-na-remont.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.1 KB | 199 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
+| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.2 KB | 207 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
 | Разводим трафик по реальному симптому | pricing | 5.8 KB | 120 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.3 KB | 129 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.4 KB | 124 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Код ошибки — не сбрасываем вслепую, связываем код с моделью | mobile-contact | 4.9 KB | 114 | no | src/pages/pishevarochnyj-kotel-kod-oshibki/sections/005-mobile-contact-kod-oshibki-ne-sbrasyvaem-vslepuyu-sv.html |
 | Частые вопросы по ремонту | faq | 3.5 KB | 98 | yes | src/components/shared/faq/faq-chastye-voprosy-po-remontu--f74d3505aafe0fc9.html |
 

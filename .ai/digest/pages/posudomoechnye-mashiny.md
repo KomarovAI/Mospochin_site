@@ -2,32 +2,23 @@
 
 - Branch: restaurant
 - Role: service
-- Title: Ремонт промышленных посудомоечных машин — MosPochin
-- Description: Ремонт купольных, конвейерных и фронтальных посудомоечных машин Winterhalter, Hobart и Meiko. Диагностика, смета до работ и документы по ремонту.
-- H1: Ремонт промышленных посудомоечных машин с понятной сметой до работ
+- Title: Ремонт промышленных посудомоечных машин — MosPochin | MosPochin
+- Description: Ремонт промышленных посудомоечных машин в Москве: диагностика фронтальных, купольных и конвейерных машин, восстановление нагрева, набора и слива воды.
+- H1: Ремонт промышленных посудомоечных машин
 - Canonical: https://mospochin.ru/posudomoechnye-mashiny.html
 - Builder model: src/pages/posudomoechnye-mashiny/page.json
-- Sections: 66 (43 local, 3 shared refs, 12 raw)
-- Text words inside referenced sections: 2354
+- Sections: 7 (3 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 838
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| layout-fragment | 15 |
-| raw | 12 |
-| pricing | 11 |
-| proof | 9 |
-| section | 4 |
-| mobile-contact | 3 |
-| breadcrumb | 2 |
-| faq | 2 |
-| related-links | 2 |
-| body-preamble | 1 |
+| mobile-contact | 2 |
+| breadcrumb | 1 |
 | contact-cta | 1 |
+| faq | 1 |
 | footer-anchor | 1 |
-| hero | 1 |
-| lead-form | 1 |
 | runtime-partials | 1 |
 
 
@@ -35,14 +26,13 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем все типы промышленных посудомоек | pricing | 14.9 KB | 315 | no | src/pages/posudomoechnye-mashiny/sections/012-pricing-remontiruem-vse-tipy-promyshlennyh-posudomoe.html |
-| Ремонтируем все марки промышленных посудомоек | section | 12.2 KB | 70 | no | src/pages/posudomoechnye-mashiny/sections/026-section-remontiruem-vse-marki-promyshlennyh-posudomo.html |
-| Ремонт промышленных посудомоечных машин с понятной сметой до работ | hero | 7.9 KB | 87 | no | src/pages/posudomoechnye-mashiny/sections/006-hero-remont-promyshlennyh-posudomoechnyh-mashin-s-po.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 179 | no | src/pages/posudomoechnye-mashiny/sections/048-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
-| Частые вопросы о ремонте промышленных посудомоек | faq | 6.7 KB | 234 | no | src/pages/posudomoechnye-mashiny/sections/042-faq-chastye-voprosy-o-remonte-promyshlennyh-posudomo.html |
-| Получите понятный сценарий ремонта мойки | lead-form | 6.0 KB | 107 | no | src/pages/posudomoechnye-mashiny/sections/046-lead-form-poluchite-ponyatnyy-scenariy-remonta-moyki.html |
-| Примеры ремонта посудомоечных машин | pricing | 5.4 KB | 139 | no | src/pages/posudomoechnye-mashiny/sections/024-pricing-primery-remonta-posudomoechnyh-mashin.html |
-| Цены на ремонт промышленных посудомоек | pricing | 5.1 KB | 133 | no | src/pages/posudomoechnye-mashiny/sections/020-pricing-ceny-na-remont-promyshlennyh-posudomoek.html |
+| Ремонт промышленных посудомоечных машин | breadcrumb | 39.1 KB | 766 | no | src/pages/posudomoechnye-mashiny/sections/002-breadcrumb-remont-promyshlennyh-posudomoechnyh-mashi.html |
+| Частые вопросы | faq | 1.9 KB | 72 | no | src/pages/posudomoechnye-mashiny/sections/003-faq-chastye-voprosy.html |
+| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/posudomoechnye-mashiny/sections/001-contact-cta-kontaktnyy-cta.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html |
+| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html |
+| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
+| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html |
 
 
 ## Editable source files

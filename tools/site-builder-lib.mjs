@@ -2,6 +2,7 @@ import { createHash } from 'crypto';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
 import { dirname, join, relative } from 'path';
 import { ROOT_DIR as PROJECT_ROOT_DIR } from './ai-maintenance-lib.mjs';
+import { injectStaticShell } from './static-shell-lib.mjs';
 export const ROOT_DIR = PROJECT_ROOT_DIR;
 
 export const SITE_BUILDER_MANIFEST = 'src/site-builder.json';
@@ -394,7 +395,7 @@ export function renderPageFromModel(modelPath) {
   const bodyOpen = readProjectFile(toPosix(join(base, model.files.bodyOpen)));
   const sections = (model.sections || []).map((section) => readSectionContent(modelPath, section));
   const afterBody = readProjectFile(toPosix(join(base, model.files.afterBody)));
-  return { model, html: `${head}${bodyOpen}${sections.join('')}${afterBody}` };
+  return { model, html: injectStaticShell(`${head}${bodyOpen}${sections.join('')}${afterBody}`, model.page) };
 }
 
 export function ensureWithinProject(path) {
