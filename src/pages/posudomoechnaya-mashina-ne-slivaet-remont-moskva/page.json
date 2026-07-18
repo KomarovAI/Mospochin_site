@@ -4,14 +4,14 @@
   "page": "posudomoechnaya-mashina-ne-slivaet-remont-moskva.html",
   "slug": "posudomoechnaya-mashina-ne-slivaet-remont-moskva",
   "route": "/posudomoechnaya-mashina-ne-slivaet-remont-moskva.html",
-  "branch": "unknown",
-  "role": "unknown",
-  "title": null,
-  "h1": null,
+  "branch": "restaurant",
+  "role": "branch",
+  "title": "Промышленная посудомоечная машина не сливает — ремонт в Москве | MosPochin",
+  "h1": "Посудомоечная машина не сливает — диагностика в Москве",
   "source": {
     "extractedFrom": "posudomoechnaya-mashina-ne-slivaet-remont-moskva.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "8d1e562febdab32150f316ea5603a071f191ad37b51c5c1ac0fa7aba69642b3a",
+    "hash": "3e9b3e496f77a5dbee64ac56d8ccbba288cbb40adda21731bc78e12a3e52458b",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,33 +21,28 @@
   },
   "sections": [
     {
-      "id": "001-body-preamble-sekciya-1",
-      "component": "body-preamble",
-      "label": "Секция 1",
-      "file": "sections/001-body-preamble-sekciya-1.html",
-      "bytes": 48,
-      "hash": "6c45e024a4e3965e"
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9464,
+      "hash": "0776c4718162a8fe"
     },
     {
       "id": "002-lead-form-posudomoechnaya-mashina-ne-slivaet-diagnos",
       "component": "lead-form",
       "label": "Посудомоечная машина не сливает — диагностика в Москве",
       "file": "sections/002-lead-form-posudomoechnaya-mashina-ne-slivaet-diagnos.html",
-      "bytes": 15826,
-      "hash": "824695aa64b14f66"
+      "bytes": 15841,
+      "hash": "6a696c473d3193d5"
     },
     {
-      "id": "003-footer-anchor-footer-mount-point",
-      "component": "footer-anchor",
-      "label": "Footer mount point",
-      "bytes": 36,
-      "hash": "7e779f23d41c388a",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "footer-container-mount",
-      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-7e779f23d41c.template.html",
-      "props": {},
-      "sourceFile": "sections/003-footer-anchor-footer-mount-point.html"
+      "id": "003-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 5020,
+      "hash": "c7edce54ba5bfd98"
     },
     {
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -76,20 +71,7 @@
       "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "006-runtime-partials-podklyuchenie-partials-injector",
-      "component": "runtime-partials",
-      "label": "Подключение partials-injector",
-      "bytes": 0,
-      "hash": "e3b0c44298fc1c14",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "partials-injector-script",
-      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html",
-      "props": {},
-      "sourceFile": "sections/006-runtime-partials-podklyuchenie-partials-injector.html"
-    },
-    {
-      "id": "007-raw-html-fragment",
+      "id": "006-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -99,13 +81,14 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/007-raw-html-fragment.html"
+      "sourceFile": "sections/006-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
+    "npm run doctor:page -- --page posudomoechnaya-mashina-ne-slivaet-remont-moskva.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page posudomoechnaya-mashina-ne-slivaet-remont-moskva.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page posudomoechnaya-mashina-ne-slivaet-remont-moskva.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

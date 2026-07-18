@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "zamena-tena-duhovki.html",
+  "slug": "zamena-tena-duhovki",
+  "route": "/zamena-tena-duhovki.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Замена ТЭНа духового шкафа в Москве | MosPochin",
+  "h1": "Замена ТЭНа духового шкафа в Москве",
+  "source": {
+    "extractedFrom": "zamena-tena-duhovki.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "5d6a37a5db154d86dec7578559070fe6f14be47cba41b2fecc0d1504976867fe",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9440,
+      "hash": "dc1b18ed92aaa970",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/zamena-tena-duhovki/props/cook2-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1023,
+      "hash": "87a6b0c96581bc32",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "zamena_tena_duhovki_breadcrumb_1"
+          },
+          {
+            "href": "plity.html",
+            "label": "Плиты и варочные панели",
+            "ctaId": "zamena_tena_duhovki_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Замена ТЭНа духового шкафа в Москве"
+      }
+    },
+    {
+      "id": "002-contact-cta-zamena-tena-duhovogo-shkafa-v-moskve",
+      "component": "contact-cta",
+      "label": "Замена ТЭНа духового шкафа в Москве",
+      "file": "sections/002-contact-cta-zamena-tena-duhovogo-shkafa-v-moskve.html",
+      "bytes": 2131,
+      "hash": "b076563039561b7f"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1156,
+      "hash": "ce7ed2fea992369e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/zamena-tena-duhovki/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 2028,
+      "hash": "a607cdcea7f44430",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/zamena-tena-duhovki/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 486,
+      "hash": "41b545d13f66622b"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1368,
+      "hash": "b1d64602e1169457"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1820,
+      "hash": "a6c2eee8554b9f6b"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4060,
+      "hash": "449f2970d319eb00"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2206,
+      "hash": "e8e3c6f0ee0b493d"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5011,
+      "hash": "69c3875714620d2e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/zamena-tena-duhovki/props/cook2-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 539,
+      "hash": "329ba1d49bd3e65e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/zamena-tena-duhovki/props/cook2-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page zamena-tena-duhovki.html",
+    "npm run doctor:page -- --page zamena-tena-duhovki.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page zamena-tena-duhovki.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

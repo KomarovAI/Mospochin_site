@@ -1,42 +1,32 @@
-# Manual fallback only. Primary screenshots run locally through system Chromium.
-name: Visual Targeted Mobile (manual fallback)
-run-name: Manual targeted mobile fallback
+name: Manual targeted mobile visual audit
 
 on:
   workflow_dispatch:
     inputs:
-      pages:
-        description: 'Comma-separated page paths'
-        type: string
-        default: '/water-heaters.html,/contact.html,/about.html,/pishevarochnyj-kotel-abat-e01.html,/pishevarochnye-kotly.html'
+      manifest:
+        description: Screenshot manifest path
+        required: true
+        default: data/household-dishwasher-screenshot-audit.json
 
 permissions:
   contents: read
-  actions: read
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-  VISUAL_BASE_URL: https://mospochin.ru
-  VISUAL_EXECUTION_MODE: github-manual-fallback
 
 jobs:
   targeted-mobile:
-    name: Targeted mobile deep screenshots
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
-      - run: npm ci
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
       - run: npm run setup:visual:github
-      - env:
-          VISUAL_TARGET_PAGES: ${{ inputs.pages }}
-        timeout-minutes: 10
-        run: node tools/visual-runner.mjs tools/visual-targeted-mobile-deep.mjs
+      - run: node tools/visual-local-capture.mjs --manifest "${{ inputs.manifest }}" --mode first-view --output .artifacts/screenshots/manual-targeted-mobile
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: mospochin-targeted-mobile-deep-${{ github.sha }}-${{ github.run_id }}
-          path: reports/visual-targeted-mobile
-          retention-days: 5
+          name: targeted-mobile-visual-audit
+          path: .artifacts/screenshots/manual-targeted-mobile/
+          if-no-files-found: warn

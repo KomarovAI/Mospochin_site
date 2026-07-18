@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
+import { chromium } from 'playwright';
 
 const DEFAULT_CANDIDATES = [
   '/usr/bin/chromium',
@@ -8,18 +9,28 @@ const DEFAULT_CANDIDATES = [
   '/usr/bin/google-chrome-stable',
 ];
 
-export function resolveSystemChromium() {
+function resolvePlaywrightChromium() {
+  try {
+    const executable = chromium.executablePath();
+    return executable && fs.existsSync(executable) ? executable : null;
+  } catch {
+    return null;
+  }
+}
+
+export function resolveChromiumExecutable() {
   const explicit = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || process.env.CHROMIUM_PATH;
-  const candidates = [explicit, ...DEFAULT_CANDIDATES].filter(Boolean);
+  const candidates = [explicit, ...DEFAULT_CANDIDATES, resolvePlaywrightChromium()].filter(Boolean);
   return candidates.find((candidate) => fs.existsSync(candidate)) || null;
 }
 
-export function getSystemChromiumLaunchOptions() {
-  const executablePath = resolveSystemChromium();
+export function getChromiumLaunchOptions() {
+  const executablePath = resolveChromiumExecutable();
   if (!executablePath) {
     throw new Error(
-      'System Chromium was not found. Set PLAYWRIGHT_CHROMIUM_EXECUTABLE or CHROMIUM_PATH. ' +
-      `Checked: ${DEFAULT_CANDIDATES.join(', ')}`
+      'Chromium was not found. Set PLAYWRIGHT_CHROMIUM_EXECUTABLE or CHROMIUM_PATH, ' +
+      'install a system Chromium, or run npm run setup:visual:github for the manual Playwright fallback. ' +
+      `System paths checked: ${DEFAULT_CANDIDATES.join(', ')}`
     );
   }
 
@@ -42,6 +53,16 @@ export function getSystemChromiumLaunchOptions() {
   };
 }
 
+export function getChromiumRuntimeSource(executablePath = resolveChromiumExecutable()) {
+  if (!executablePath) return 'unavailable';
+  return DEFAULT_CANDIDATES.includes(executablePath) ? 'system' : 'explicit-or-playwright';
+}
+
+// Compatibility exports for older cluster helpers. New code should use the
+// generic Chromium names because the manual CI fallback is Playwright-managed.
+export const resolveSystemChromium = resolveChromiumExecutable;
+export const getSystemChromiumLaunchOptions = getChromiumLaunchOptions;
+
 export const LOCAL_VISUAL_ORIGIN = 'http://mospochin.local';
 export function probePillowStitcher() {
   const result = spawnSync('python3', ['-c', 'from PIL import Image; print(Image.__version__)'], {
@@ -53,4 +74,3 @@ export function probePillowStitcher() {
     error: result.status === 0 ? null : String(result.stderr || result.stdout || '').trim(),
   };
 }
-

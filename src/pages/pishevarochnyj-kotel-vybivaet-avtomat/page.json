@@ -99,10 +99,10 @@
     {
       "id": "008-pricing-razvodim-trafik-po-real-nomu-simptomu",
       "component": "pricing",
-      "label": "Разводим трафик по реальному симптому",
+      "label": "Выберите ближайший симптом пищеварочного котла",
       "file": "sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html",
-      "bytes": 5959,
-      "hash": "08c7b6df97c192b2"
+      "bytes": 6036,
+      "hash": "259dd95ee30ae09b"
     },
     {
       "id": "009-raw-html-fragment",
@@ -124,17 +124,6 @@
       "file": "sections/010-proof-dokazatel-stva-garantii.html",
       "bytes": 180,
       "hash": "7f924712bc288e3e"
-    },
-    {
-      "id": "011-pricing-chto-fiksiruem-do-nachala-rabot",
-      "component": "pricing",
-      "label": "Что фиксируем до начала работ",
-      "bytes": 2509,
-      "hash": "16d41223b799cf7c",
-      "componentRef": "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot--16d41223b799cf7c.html",
-      "componentScope": "shared",
-      "componentSignature": "16d41223b799cf7c",
-      "sourceFile": "sections/011-pricing-chto-fiksiruem-do-nachala-rabot.html"
     },
     {
       "id": "012-raw-html-fragment",
@@ -163,14 +152,6 @@
       "sourceFile": "sections/013-raw-html-fragment.html"
     },
     {
-      "id": "014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at",
-      "component": "pricing",
-      "label": "Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma",
-      "file": "sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html",
-      "bytes": 6371,
-      "hash": "7002ec2b8e9540fb"
-    },
-    {
       "id": "015-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
@@ -197,14 +178,6 @@
       "sourceFile": "sections/016-raw-html-fragment.html"
     },
     {
-      "id": "017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam",
-      "component": "pricing",
-      "label": "Развели ошибки КПЭМ по отдельным сценариям",
-      "file": "sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html",
-      "bytes": 5511,
-      "hash": "e95c59d3829bd7a6"
-    },
-    {
       "id": "018-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
@@ -229,14 +202,6 @@
       "templateRef": "src/components/parametric/static/layout-fragment-cooking-kettle-run1-expanded-cluster-start-422298255a40.template.html",
       "props": {},
       "sourceFile": "sections/019-raw-html-fragment.html"
-    },
-    {
-      "id": "020-pricing-razveli-zayavki-po-simptomam-i-uzlam",
-      "component": "pricing",
-      "label": "Развели заявки по симптомам и узлам",
-      "file": "sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html",
-      "bytes": 10526,
-      "hash": "581c1f15c67b9be3"
     },
     {
       "id": "021-raw-html-fragment",
@@ -268,14 +233,6 @@
       "hash": "7aa05ccc83a83b5d"
     },
     {
-      "id": "024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte",
-      "component": "pricing",
-      "label": "Что фиксируем до начала работ на объекте",
-      "file": "sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html",
-      "bytes": 6910,
-      "hash": "26bc50eda60d2613"
-    },
-    {
       "id": "025-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
@@ -290,14 +247,6 @@
       "file": "sections/026-proof-dokazatel-stva-garantii.html",
       "bytes": 182,
       "hash": "d0c02b385f4baba2"
-    },
-    {
-      "id": "027-related-links-esli-problema-v-drugom-restorannom-obo",
-      "component": "related-links",
-      "label": "Если проблема в другом ресторанном оборудовании",
-      "file": "sections/027-related-links-esli-problema-v-drugom-restorannom-obo.html",
-      "bytes": 3610,
-      "hash": "26f205b753e68fbc"
     },
     {
       "id": "028-related-links-svyazannye-stranicy",
@@ -397,7 +346,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 2,
+    "sharedSectionRefs": 1,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

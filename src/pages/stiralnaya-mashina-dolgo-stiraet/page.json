@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "stiralnaya-mashina-dolgo-stiraet.html",
+  "slug": "stiralnaya-mashina-dolgo-stiraet",
+  "route": "/stiralnaya-mashina-dolgo-stiraet.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Стиральная машина долго стирает — диагностика в Москве | MosPochin",
+  "h1": "Стиральная машина долго стирает",
+  "source": {
+    "extractedFrom": "stiralnaya-mashina-dolgo-stiraet.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "85f702b7b513600367b0e01a9bd6f2b1bf0a178b16bc2432fbf268c50aaa04c9",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9492,
+      "hash": "2e5fd51bf936c712",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-dolgo-stiraet/props/wm2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-stiral-naya-mashina-dolgo-stiraet",
+      "component": "mobile-contact",
+      "label": "Стиральная машина долго стирает",
+      "file": "sections/002-mobile-contact-stiral-naya-mashina-dolgo-stiraet.html",
+      "bytes": 1916,
+      "hash": "2b424ef435312ea7"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1045,
+      "hash": "6f9186ab61a2055c",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "stiralnaya_mashina_dolgo_stiraet_breadcrumb_1"
+          },
+          {
+            "href": "stiralnye-mashiny.html",
+            "label": "Стиральные машины",
+            "ctaId": "stiralnaya_mashina_dolgo_stiraet_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Стиральная машина долго стирает"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 1028,
+      "hash": "35aadbcacf487154",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/observations.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-dolgo-stiraet/props/wm2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1944,
+      "hash": "f910dd2747442759",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-dolgo-stiraet/props/wm2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 528,
+      "hash": "750361583571c2ca"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1215,
+      "hash": "478e1a38393754a0"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1644,
+      "hash": "5bdaac6911556f0f"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1670,
+      "hash": "41bf9737b60d9ad6"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1440,
+      "hash": "ddfc15d21cf4bab0"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5050,
+      "hash": "e9562204e971d0da",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-dolgo-stiraet/props/wm2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page stiralnaya-mashina-dolgo-stiraet.html",
+    "npm run doctor:page -- --page stiralnaya-mashina-dolgo-stiraet.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page stiralnaya-mashina-dolgo-stiraet.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

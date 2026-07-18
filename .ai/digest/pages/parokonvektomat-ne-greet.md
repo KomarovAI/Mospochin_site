@@ -7,19 +7,18 @@
 - H1: Пароконвектомат не греет
 - Canonical: https://mospochin.ru/parokonvektomat-ne-greet.html
 - Builder model: src/pages/parokonvektomat-ne-greet/page.json
-- Sections: 65 (22 local, 15 shared refs, 1 raw)
-- Text words inside referenced sections: 2564
+- Sections: 54 (17 local, 5 shared refs, 1 raw)
+- Text words inside referenced sections: 1439
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
 | layout-fragment | 27 |
-| pricing | 10 |
-| proof | 7 |
+| proof | 6 |
 | mobile-contact | 5 |
-| related-links | 4 |
-| section | 3 |
+| pricing | 3 |
+| related-links | 3 |
 | breadcrumb | 2 |
 | faq | 2 |
 | body-preamble | 1 |
@@ -27,6 +26,7 @@
 | hero | 1 |
 | lead-form | 1 |
 | raw | 1 |
+| section | 1 |
 
 
 ## Largest sections to inspect first
@@ -36,11 +36,11 @@
 | Почему пароконвектомат не греет | related-links | 14.0 KB | 421 | no | src/pages/parokonvektomat-ne-greet/sections/009-related-links-pochemu-parokonvektomat-ne-greet.html |
 | Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/parokonvektomat-ne-greet/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Пароконвектомат не греет | hero | 8.9 KB | 117 | no | src/pages/parokonvektomat-ne-greet/sections/006-hero-parokonvektomat-ne-greet.html |
-| Частые поломки пароконвектоматов | section | 8.5 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--16d8721c09cebb16.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.8 KB | 108 | no | src/pages/parokonvektomat-ne-greet/sections/050-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.8 KB | 108 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-647ff67890ef.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 240 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--d15f88b47a30bdfb.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.0 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--179e76b534feb278.html |
-| Ремонтируем все типы пароконвектоматов | section | 5.9 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--5ce5c0ec71cc04c7.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/parokonvektomat-ne-greet/sections/060-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Выберите проблему — уточним сценарий | pricing | 4.7 KB | 43 | no | src/pages/parokonvektomat-ne-greet/sections/024-pricing-vyberite-problemu-utochnim-scenariy.html |
+| Пароконвектомат встал? | contact-cta | 2.6 KB | 43 | no | src/pages/parokonvektomat-ne-greet/sections/049-contact-cta-parokonvektomat-vstal.html |
 
 
 ## Editable source files

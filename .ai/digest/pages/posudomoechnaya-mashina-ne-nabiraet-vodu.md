@@ -1,38 +1,41 @@
 # Page Digest — posudomoechnaya-mashina-ne-nabiraet-vodu.html
 
-- Branch: restaurant
-- Role: branch
-- Title: Посудомоечная машина не набирает воду — диагностика и ремонт | MosPochin
-- Description: Что проверить, если промышленная посудомоечная машина не набирает воду: кран, давление, фильтр, клапан, уровень и безопасная диагностика.
-- H1: Посудомоечная машина не набирает воду
+- Branch: household
+- Role: service
+- Title: Посудомоечная машина не набирает воду — ремонт | MosPochin
+- Description: Посудомойка не набирает воду: проверяем кран, давление, шланг, входной фильтр, AquaStop, клапан, дверь и датчики.
+- H1: Бытовая посудомоечная машина не набирает воду
 - Canonical: https://mospochin.ru/posudomoechnaya-mashina-ne-nabiraet-vodu.html
 - Builder model: src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/page.json
-- Sections: 7 (3 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 819
+- Sections: 13 (12 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 556
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| section | 3 |
+| contact-cta | 2 |
 | mobile-contact | 2 |
+| proof | 2 |
 | breadcrumb | 1 |
-| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
-| runtime-partials | 1 |
+| lead-form | 1 |
+| pricing | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Посудомоечная машина не набирает воду | breadcrumb | 37.2 KB | 750 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/002-breadcrumb-posudomoechnaya-mashina-ne-nabiraet-vodu.html |
-| Частые вопросы | faq | 1.8 KB | 69 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/003-faq-chastye-voprosy.html |
-| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/001-contact-cta-kontaktnyy-cta.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html |
-| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
-| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html |
+| Мобильные контактные элементы | mobile-contact | 9.3 KB | 110 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 5.0 KB | 77 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/011-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Что отправить до выезда | lead-form | 4.1 KB | 58 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/009-lead-form-chto-otpravit-do-vyezda.html |
+| Частые вопросы | faq | 2.1 KB | 86 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/010-faq-chastye-voprosy.html |
+| Посудомоечная машина не набирает воду | contact-cta | 2.0 KB | 34 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/002-contact-cta-posudomoechnaya-mashina-ne-nabiraet-vodu.html |
+| Что проверить безопасно | proof | 1.9 KB | 44 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/004-proof-chto-proverit-bezopasno.html |
+| Узлы набора и контроля уровня | section | 1.9 KB | 32 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/008-section-uzly-nabora-i-kontrolya-urovnya.html |
+| Связанные страницы бытового кластера | section | 1.5 KB | 25 | no | src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/sections/007-section-svyazannye-stranicy-bytovogo-klastera.html |
 
 
 ## Editable source files
@@ -40,8 +43,12 @@
 - data/page-metadata.json
 - data/contact-config.json
 - data/runtime-config.json
-- data/restaurant-branch.json
-- data/restaurant-page-policy.json
+- data/household-branch.json
+- data/household-page-policy.json
+- data/household-services.json
+- data/household-taxonomy.json
+- data/household-proof-layer.json
+- data/household-page-slots.json
 - posudomoechnaya-mashina-ne-nabiraet-vodu.html
 - src/site-builder.json
 - src/pages/posudomoechnaya-mashina-ne-nabiraet-vodu/page.json
@@ -49,6 +56,7 @@
 
 ## Checks
 
+- npm run doctor:household-page -- --page posudomoechnaya-mashina-ne-nabiraet-vodu.html
 - npm run doctor:page -- --page posudomoechnaya-mashina-ne-nabiraet-vodu.html
 - npm run validate:site
 - npm run check:site-builder

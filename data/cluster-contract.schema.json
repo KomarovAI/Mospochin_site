@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mospochin.ru/schemas/cluster-contract.schema.json",
+  "title": "MosPochin normalized cluster contract",
+  "type": "object",
+  "required": [
+    "id",
+    "pages",
+    "ownerData",
+    "guardCommands",
+    "visualManifest",
+    "claimsScope",
+    "releaseTier"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "pages": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ownerData": {
+      "type": "string",
+      "minLength": 1
+    },
+    "guardCommands": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^npm run [a-zA-Z0-9:_-]+$"
+      }
+    },
+    "visualManifest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claimsScope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "releaseTier": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visualCommand": {
+      "type": "string",
+      "pattern": "^npm run [a-zA-Z0-9:_-]+$"
+    }
+  },
+  "additionalProperties": true
+}

@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/peregrev-kuhni-restorana.html
 - Builder model: src/pages/peregrev-kuhni-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1204
+- Text words inside referenced sections: 885
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Жарко на кухне ресторана | breadcrumb | 37.1 KB | 1017 | no | src/pages/peregrev-kuhni-restorana/sections/002-breadcrumb-zharko-na-kuhne-restorana.html |
+| Жарко на кухне ресторана | breadcrumb | 27.9 KB | 698 | no | src/pages/peregrev-kuhni-restorana/sections/002-breadcrumb-zharko-na-kuhne-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/peregrev-kuhni-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/peregrev-kuhni-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/peregrev-kuhni-restorana/sections/007-lead-form-forma-zayavki.html |

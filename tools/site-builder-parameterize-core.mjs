@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { hashContent, readSectionContent, renderParametricTemplate, ROOT_DIR } from './site-builder-lib.mjs';
 import { parseArgs } from './ai-maintenance-lib.mjs';
@@ -40,12 +40,18 @@ function inputAttribute(html, field, attribute, fallback = '') {
   const match = tag.match(new RegExp(`\\b${attribute}=["']([^"']*)["']`, 'i'));
   return match?.[1] || fallback;
 }
+function tagAttribute(tag, attribute, fallback = '') {
+  return tag.match(new RegExp(`\\b${attribute}=["']([^"']*)["']`, 'i'))?.[1] || fallback;
+}
 function extractB2bProps(page, slug, html) {
   if (!html.includes('data-slot="request-form"', 'data-form-id', 'data-cta-group="form_submit"')) return null;
   if (!html.includes('Модель пароконвектомата')) return null;
   if (!html.includes('name="address"') || !html.includes('name="business_type"')) return null;
   if (html.includes('name="quantity"')) return null;
   if (!html.includes('name="problem"')) return null;
+  const formTag = html.match(/<form\b[^>]*>/i)?.[0] || '';
+  const hiddenProblemTag = (html.match(/<input\b[^>]*>/gi) || [])
+    .find((candidate) => /\bname=["']problem["']/i.test(candidate) && /\btype=["']hidden["']/i.test(candidate)) || '';
   const props = {
     schemaVersion: 1,
     component: 'lead-form',
@@ -56,6 +62,14 @@ function extractB2bProps(page, slug, html) {
     subtitle: matchOne(html, /<p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">([\s\S]*?)<\/p>/, 'subtitle').trim(),
     formContext: matchOne(html, /data-form-context="([^"]+)"/, 'form context'),
     formId: matchOne(html, /<form[\s\S]*?data-form-id="([^"]+)"/, 'form id'),
+    formPageSlug: tagAttribute(formTag, 'data-form-page-slug', slug),
+    formCtaId: tagAttribute(formTag, 'data-cta-id', `${slug}_form_02`),
+    formVariant: tagAttribute(formTag, 'data-form-variant', 'restaurant-parokonvektomat-b2b'),
+    formBlock: tagAttribute(formTag, 'data-block', 'lead_form'),
+    hiddenProblem: hiddenProblemTag ? {
+      value: tagAttribute(hiddenProblemTag, 'value', slug),
+      dataProblem: tagAttribute(hiddenProblemTag, 'data-problem', slug),
+    } : null,
     submitCtaId: matchOptional(html, /<button\b[^>]*data-cta-id="([^"]+)"[^>]*>/i, `${slug}-submit`),
     ids: {
       name: inputAttribute(html, 'name', 'id', `${slug}-name`),
@@ -79,6 +93,28 @@ function extractB2bProps(page, slug, html) {
   return props;
 }
 function makeLeadTemplateFromHtml(html, props) {
+  let template = html;
+  const formTag = html.match(/<form\b[^>]*>/i)?.[0] || '';
+  if (formTag) {
+    let parameterizedFormTag = formTag;
+    for (const [attribute, value, placeholder] of [
+      ['data-form-page-slug', props.formPageSlug, '{{formPageSlug}}'],
+      ['data-cta-id', props.formCtaId, '{{formCtaId}}'],
+      ['data-form-variant', props.formVariant, '{{formVariant}}'],
+      ['data-block', props.formBlock, '{{formBlock}}'],
+    ]) {
+      if (value) parameterizedFormTag = parameterizedFormTag.replace(`${attribute}="${value}"`, `${attribute}="${placeholder}"`);
+    }
+    template = template.replace(formTag, parameterizedFormTag);
+  }
+  const hiddenProblemTag = (html.match(/<input\b[^>]*>/gi) || [])
+    .find((candidate) => /\bname=["']problem["']/i.test(candidate) && /\btype=["']hidden["']/i.test(candidate));
+  if (hiddenProblemTag && props.hiddenProblem) {
+    const parameterizedHidden = hiddenProblemTag
+      .replace(`value="${props.hiddenProblem.value}"`, 'value="{{hiddenProblem.value}}"')
+      .replace(`data-problem="${props.hiddenProblem.dataProblem}"`, 'data-problem="{{hiddenProblem.dataProblem}}"');
+    template = template.replace(hiddenProblemTag, parameterizedHidden);
+  }
   const replacements = [
     [props.title, '{{title}}'],
     [props.subtitle, '{{subtitle}}'],
@@ -96,13 +132,15 @@ function makeLeadTemplateFromHtml(html, props) {
     [props.placeholders.address, '{{placeholders.address}}'],
     [props.placeholders.businessType, '{{placeholders.businessType}}'],
     [props.submitText, '{{submitText}}'],
-  ].sort((a, b) => b[0].length - a[0].length);
-  let template = html;
+  ].filter(([from]) => String(from).length > 0).sort((a, b) => b[0].length - a[0].length);
   for (const [from, to] of replacements) template = template.split(from).join(to);
   return template;
 }
 function templatePathForHash(component, variant, html) {
   return `src/components/parametric/static/${component}-${variant}-${hashContent(html).slice(0, 12)}.template.html`;
+}
+function leadTemplatePathForHtml(html) {
+  return `src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-${hashContent(html).slice(0, 12)}.template.html`;
 }
 function classifyStaticCoreSection(component, html) {
   if (component === 'noscript' && /^\s*<noscript><div><img src="https:\/\/mc\.yandex\.ru\/watch\/[0-9]+"[\s\S]*?<\/noscript>\s*$/.test(html)) {
@@ -166,6 +204,7 @@ function ensureComponentFiles(templateSource = null, firstProps = null) {
     component: 'lead-form',
     variant: 'restaurant-parokonvektomat-b2b',
     intent: 'B2B форма заявки для страниц ремонта пароконвектоматов',
+    minimumCoverage: 15,
     requiredFields: ['name', 'phone', 'type', 'problem', 'address', 'business_type'],
     requiredAttributes: ['action="/api/send-telegram"', 'method="post"', 'autocomplete="name"', 'autocomplete="tel"', 'inputmode="tel"', 'data-slot="request-form"', 'data-form-id', 'data-cta-group="form_submit"'],
     aiNotes: [
@@ -246,8 +285,10 @@ function checkParameterizedComponents() {
       }
     }
   }
-  // Lead forms intentionally stay page-local: their copy and fields differ by
-  // intent, while the shared runtime contract lives in telegram-form.js.
+  if (lead < 15) {
+    console.error(`❌ Parametric lead-form coverage ниже pilot contract: ${lead} < 15`);
+    errors += 1;
+  }
   if (mobile < 70) {
     console.warn(`⚠️ Parametric mobile-contact coverage ниже целевого порога: ${mobile}`);
   }
@@ -289,23 +330,29 @@ function applyParameterization() {
   for (const { model, path } of models) {
     let changed = false;
     for (const section of model.sections || []) {
-      if (section.componentMode === 'parametric') continue;
+      const existingB2bLead = section.component === 'lead-form'
+        && section.componentMode === 'parametric'
+        && section.variant === 'restaurant-parokonvektomat-b2b';
+      if (section.componentMode === 'parametric' && !existingB2bLead) continue;
       const originalPath = relSectionPath(model, section);
       const html = readSectionContent(path, section);
       if (section.component === 'lead-form') {
         const props = extractB2bProps(model.page, model.slug, html);
         if (props) {
           const propsPath = `${PROPS_DIR}/${model.slug}.json`;
-          const rendered = renderParametricTemplate(read(LEAD_TEMPLATE), props);
+          const template = makeLeadTemplateFromHtml(html, props);
+          const templateRef = leadTemplatePathForHtml(template);
+          const rendered = renderParametricTemplate(template, props);
           if (rendered !== html) {
             console.warn(`⚠️  ${model.page} / ${section.id}: lead-form не совпал с template, оставлен локальным`);
             continue;
           }
+          write(templateRef, template);
           writeJson(propsPath, props);
           section.componentMode = 'parametric';
           section.componentScope = 'parametric';
           section.variant = 'restaurant-parokonvektomat-b2b';
-          section.templateRef = LEAD_TEMPLATE;
+          section.templateRef = templateRef;
           section.propsRef = propsPath;
           section.sourceFile = section.sourceFile || section.file;
           section.bytes = Buffer.byteLength(rendered, 'utf8');
@@ -381,6 +428,15 @@ function applyParameterization() {
       }
     }
     if (changed) writeJson(path, model);
+  }
+  const referencedLeadTemplates = new Set(loadModels().flatMap(({ model }) => (model.sections || [])
+    .filter((section) => section.component === 'lead-form' && section.componentMode === 'parametric')
+    .map((section) => section.templateRef)));
+  const leadDir = abs('src/components/parametric/lead-form');
+  for (const file of readdirSync(leadDir)) {
+    if (!/^restaurant-parokonvektomat-b2b-[a-f0-9]{12}\.template\.html$/.test(file)) continue;
+    const relativePath = `src/components/parametric/lead-form/${file}`;
+    if (!referencedLeadTemplates.has(relativePath)) removeProjectFile(relativePath);
   }
   const staticSummary = [...staticCounts.entries()].sort().map(([key, value]) => `${key}=${value}`).join(', ');
   console.log(`✅ Parametric migration complete: lead-form=${migratedLead}, mobile-contact=${migratedMobile}, static=${migratedStatic}${staticSummary ? ` (${staticSummary})` : ''}`);

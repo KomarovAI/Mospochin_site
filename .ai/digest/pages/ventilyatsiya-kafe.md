@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyatsiya-kafe.html
 - Builder model: src/pages/ventilyatsiya-kafe/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1204
+- Text words inside referenced sections: 885
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция кафе | breadcrumb | 37.5 KB | 1017 | no | src/pages/ventilyatsiya-kafe/sections/002-breadcrumb-ventilyaciya-kafe.html |
+| Вентиляция кафе | breadcrumb | 28.2 KB | 698 | no | src/pages/ventilyatsiya-kafe/sections/002-breadcrumb-ventilyaciya-kafe.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/ventilyatsiya-kafe/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/ventilyatsiya-kafe/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-kafe/sections/007-lead-form-forma-zayavki.html |

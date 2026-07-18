@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "ne-rabotaet-podsvetka-kuhonnoy-vytyazhki.html",
+  "slug": "ne-rabotaet-podsvetka-kuhonnoy-vytyazhki",
+  "route": "/ne-rabotaet-podsvetka-kuhonnoy-vytyazhki.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Не работает подсветка кухонной вытяжки | MosPochin",
+  "h1": "Не работает подсветка кухонной вытяжки",
+  "source": {
+    "extractedFrom": "ne-rabotaet-podsvetka-kuhonnoy-vytyazhki.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "a11d0af1028073f88737a1474623b9862df2be3563920ecde3992a572acfc195",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9417,
+      "hash": "2c46d2c3de6a5467",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/header-9bbd5dfdb994.template.html",
+      "propsRef": "src/pages/ne-rabotaet-podsvetka-kuhonnoy-vytyazhki/props/hood1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1073,
+      "hash": "11a86bf60bf4fb1a",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "ne_rabotaet_podsvetka_kuhonnoy_vytyazhki_breadcrumb_1"
+          },
+          {
+            "href": "kuhonnye-vytyazhki.html",
+            "label": "Кухонные вытяжки",
+            "ctaId": "ne_rabotaet_podsvetka_kuhonnoy_vytyazhki_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Не работает подсветка кухонной вытяжки"
+      }
+    },
+    {
+      "id": "002-contact-cta-ne-rabotaet-podsvetka-kuhonnoy-vytyazhki",
+      "component": "contact-cta",
+      "label": "Не работает подсветка кухонной вытяжки",
+      "file": "sections/002-contact-cta-ne-rabotaet-podsvetka-kuhonnoy-vytyazhki.html",
+      "bytes": 2055,
+      "hash": "5fcf03406968ccda"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1075,
+      "hash": "61a766f936bd78f5",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/symptom-observations.template.html",
+      "propsRef": "src/pages/ne-rabotaet-podsvetka-kuhonnoy-vytyazhki/props/hood1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1981,
+      "hash": "f17a45a03a3b240b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/ne-rabotaet-podsvetka-kuhonnoy-vytyazhki/props/hood1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 511,
+      "hash": "c851a9dfe2f38893"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1318,
+      "hash": "67870c8bfccb6bfe"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1851,
+      "hash": "5bf6df9de9994495"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4128,
+      "hash": "cb0deafb58d1a32b"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2361,
+      "hash": "db73d69f5f9b0202"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4993,
+      "hash": "a98549cb29a7e25b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/footer-71b3c4a81b57.template.html",
+      "propsRef": "src/pages/ne-rabotaet-podsvetka-kuhonnoy-vytyazhki/props/hood1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 560,
+      "hash": "7b59b9e543a1ab02",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/ne-rabotaet-podsvetka-kuhonnoy-vytyazhki/props/hood1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page ne-rabotaet-podsvetka-kuhonnoy-vytyazhki.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

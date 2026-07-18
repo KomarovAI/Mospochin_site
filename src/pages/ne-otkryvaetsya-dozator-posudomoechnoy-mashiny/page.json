@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+  "slug": "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny",
+  "route": "/ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Не открывается дозатор посудомоечной машины — ремонт | MosPochin",
+  "h1": "Не открывается дозатор посудомоечной машины",
+  "source": {
+    "extractedFrom": "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "356424409640e0a377c7d3cbf0875a3934eb4f8ad2712b466699bb050e645d09",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9548,
+      "hash": "05083bbbcac5fa98",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/ne-otkryvaetsya-dozator-posudomoechnoy-mashiny/props/dw2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-ne-otkryvaetsya-dozator-posudomoechno",
+      "component": "mobile-contact",
+      "label": "Не открывается дозатор посудомоечной машины",
+      "file": "sections/002-mobile-contact-ne-otkryvaetsya-dozator-posudomoechno.html",
+      "bytes": 1846,
+      "hash": "6e029b81847f2b26"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1096,
+      "hash": "469e2c52c31222d6",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "ne_otkryvaetsya_dozator_posudomoechnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "posudomoyki.html",
+            "label": "Посудомоечные машины",
+            "ctaId": "ne_otkryvaetsya_dozator_posudomoechnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Не открывается дозатор посудомоечной машины"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 980,
+      "hash": "d5e2a954fd0ca212",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/observations.template.html",
+      "propsRef": "src/pages/ne-otkryvaetsya-dozator-posudomoechnoy-mashiny/props/dw2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1831,
+      "hash": "18c0fc320d6714dc",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/ne-otkryvaetsya-dozator-posudomoechnoy-mashiny/props/dw2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 443,
+      "hash": "7202ece602a59976"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1166,
+      "hash": "d2ad56d94311b397"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1575,
+      "hash": "1e9c3620c175838f"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1719,
+      "hash": "e282048d57d26d5a"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1816,
+      "hash": "483242ec53bf4488"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5092,
+      "hash": "09ce5d5f367887f8",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/ne-otkryvaetsya-dozator-posudomoechnoy-mashiny/props/dw2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+    "npm run doctor:page -- --page ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

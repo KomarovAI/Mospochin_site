@@ -29,6 +29,27 @@
       "hash": "0e0e234fc4751400"
     },
     {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 639,
+      "hash": "aee1d95b14798864",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-one-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/one-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "/",
+            "label": "Главная",
+            "ctaId": "bytovaya_index_breadcrumb_1"
+          }
+        ],
+        "currentLabel": "Бытовая техника"
+      }
+    },
+    {
       "id": "002-raw-html-fragment",
       "component": "raw",
       "label": "HTML-фрагмент",
@@ -65,8 +86,8 @@
       "component": "section",
       "label": "Сначала выберите, что сломалось",
       "file": "sections/006-section-snachala-vyberite-chto-slomalos.html",
-      "bytes": 4424,
-      "hash": "995e1937ba00cc6e"
+      "bytes": 5469,
+      "hash": "92de0a793e4ca9aa"
     },
     {
       "id": "007-proof-dokazatel-stva-garantii",
@@ -272,17 +293,27 @@
       "id": "032-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/032-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "2b586b01fca76adb"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/032-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "033-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/033-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/033-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "034-raw-html-fragment",

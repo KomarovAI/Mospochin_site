@@ -21,12 +21,13 @@ contains(analytics,[
  'mospochin_metrika_client_v1','/api/track-event','IntersectionObserver','sendBeacon','keepalive',
  'navigator.webdriver','isTrusted','reachGoal','RESERVED_EVENT_FIELDS','EVENT_DEFINITIONS',
  'mospochin.web.v3','2026-07-15','page_view','page_version','event_id','client_event_ts','is_decision_event','form_variant',
+ 'PerformanceObserver','largest-contentful-paint','layout-shift','interactionId','web_vital','vital_name','vital_value','vital_rating',
  "getStorage('localStorage')","getStorage('sessionStorage')"
 ],'analytics.js');
 for(const event of contract.events||[]) check(analytics.includes(event),`analytics frontend allowlist contains ${event}`);
 for(const event of contract.backend_legacy_events||[]) check(!analytics.includes(`'${event}'`) && !analytics.includes(`\"${event}\"`),`analytics does not emit legacy-only event ${event}`);
 contains(form,['mospochin.lead.v3','form_submit_attempt','form_submit_success','form_submit_error','form_validation_error','form_submit_blocked','data-telegram-enhanced','15000','idempotency_key','result.ok !== true'],'telegram-form.js');
-contains(server,['/api/track-event','site_events.jsonl','site_event_rejects.jsonl','direct_leads.jsonl','ALLOWED_EVENTS','unknown_event','bad_origin','rate_limited','bot_user_agent','event_id','client_event_ts','is_decision_event','idempotency_conflict','payloadFingerprintHash','optionalHash','trace_id'],'server/telegram-api.mjs');
+contains(server,['/api/track-event','site_events.jsonl','site_event_rejects.jsonl','direct_leads.jsonl','ALLOWED_EVENTS','unknown_event','bad_origin','rate_limited','bot_user_agent','event_id','client_event_ts','is_decision_event','idempotency_conflict','payloadFingerprintHash','optionalHash','trace_id','vital_name','vital_value','vital_rating','navigation_type','effective_connection_type'],'server/telegram-api.mjs');
 for(const event of [...(contract.events||[]),...(contract.backend_legacy_events||[]),...(contract.backend_events||[])]) check(server.includes(event),`backend accepts ${event}`);
 check(!/shortHash\(value\s*\|\|\s*['"]{2}\)/.test(server),'backend does not hash empty identifiers');
 check(!/directRow\s*=\s*\{[\s\S]*?phone\s*:/.test(server),'lead log does not expose raw phone');

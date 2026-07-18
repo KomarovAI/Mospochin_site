@@ -7,32 +7,28 @@
 - H1: Не подаётся ополаскиватель
 - Canonical: https://mospochin.ru/ne-podaetsya-opolaskivatel.html
 - Builder model: src/pages/ne-podaetsya-opolaskivatel/page.json
-- Sections: 7 (3 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 825
+- Sections: 6 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1012
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| mobile-contact | 2 |
+| mobile-contact | 4 |
 | breadcrumb | 1 |
-| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Не подаётся ополаскиватель | breadcrumb | 36.3 KB | 762 | no | src/pages/ne-podaetsya-opolaskivatel/sections/002-breadcrumb-ne-podaetsya-opolaskivatel.html |
+| Не подаётся ополаскиватель | breadcrumb | 36.4 KB | 762 | no | src/pages/ne-podaetsya-opolaskivatel/sections/002-breadcrumb-ne-podaetsya-opolaskivatel.html |
+| Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ne-podaetsya-opolaskivatel/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/ne-podaetsya-opolaskivatel/sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Частые вопросы | faq | 1.7 KB | 63 | no | src/pages/ne-podaetsya-opolaskivatel/sections/003-faq-chastye-voprosy.html |
-| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/ne-podaetsya-opolaskivatel/sections/001-contact-cta-kontaktnyy-cta.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html |
-| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
-| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
 
 
 ## Editable source files

@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "ne-rabotayut-knopki-mikrovolnovki.html",
+  "slug": "ne-rabotayut-knopki-mikrovolnovki",
+  "route": "/ne-rabotayut-knopki-mikrovolnovki.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Не работают кнопки микроволновки — ремонт в Москве | MosPochin",
+  "h1": "Не работают кнопки микроволновки",
+  "source": {
+    "extractedFrom": "ne-rabotayut-knopki-mikrovolnovki.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "7c2070c6fb30ebf0ade54a0b320b66ac2af27d3d01c7eed348d18bd6586156db",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 7607,
+      "hash": "39c1f4301b841404"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1044,
+      "hash": "a6d8be69725df09d",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "ne_rabotayut_knopki_mikrovolnovki_breadcrumb_1"
+          },
+          {
+            "href": "microwaves.html",
+            "label": "Микроволновые печи",
+            "ctaId": "ne_rabotayut_knopki_mikrovolnovki_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Не работают кнопки микроволновки"
+      }
+    },
+    {
+      "id": "002-navigation-navigaciya",
+      "component": "navigation",
+      "label": "Навигация",
+      "file": "sections/002-navigation-navigaciya.html",
+      "bytes": 440,
+      "hash": "55584cbc72781158"
+    },
+    {
+      "id": "003-hero-ne-rabotayut-knopki-mikrovolnovki",
+      "component": "hero",
+      "label": "Не работают кнопки микроволновки",
+      "file": "sections/003-hero-ne-rabotayut-knopki-mikrovolnovki.html",
+      "bytes": 2563,
+      "hash": "d346f47389e899a0"
+    },
+    {
+      "id": "004-section-pochemu-proverki-pol-zovatelya-ogranicheny-v",
+      "component": "section",
+      "label": "Почему проверки пользователя ограничены внешним осмотром",
+      "bytes": 1197,
+      "hash": "d52a5af6fcd9f74e",
+      "componentRef": "src/components/shared/section/section-pochemu-proverki-polzovatelya-ogranicheny-vneshnim--d52a5af6fcd9f74e.html",
+      "componentScope": "shared",
+      "componentSignature": "d52a5af6fcd9f74e",
+      "sourceFile": "sections/004-section-pochemu-proverki-pol-zovatelya-ogranicheny-v.html"
+    },
+    {
+      "id": "005-section-chto-vazhno-opisat-do-vyezda",
+      "component": "section",
+      "label": "Что важно описать до выезда",
+      "file": "sections/005-section-chto-vazhno-opisat-do-vyezda.html",
+      "bytes": 1904,
+      "hash": "572d6387fe6be2ad"
+    },
+    {
+      "id": "006-proof-chto-mozhno-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что можно проверить безопасно",
+      "file": "sections/006-proof-chto-mozhno-proverit-bezopasno.html",
+      "bytes": 2774,
+      "hash": "030a4b5a08573240"
+    },
+    {
+      "id": "007-section-kogda-ekspluataciyu-prekraschayut",
+      "component": "section",
+      "label": "Когда эксплуатацию прекращают",
+      "file": "sections/007-section-kogda-ekspluataciyu-prekraschayut.html",
+      "bytes": 947,
+      "hash": "36bc5588f5881b1e"
+    },
+    {
+      "id": "008-section-kakim-mozhet-byt-rezul-tat-diagnostiki",
+      "component": "section",
+      "label": "Каким может быть результат диагностики",
+      "file": "sections/008-section-kakim-mozhet-byt-rezul-tat-diagnostiki.html",
+      "bytes": 1700,
+      "hash": "5a85ba8032447b5f"
+    },
+    {
+      "id": "009-pricing-stoimost-posle-opredeleniya-prichiny",
+      "component": "pricing",
+      "label": "Стоимость — после определения причины",
+      "bytes": 881,
+      "hash": "a90ef99bf8a48f52",
+      "componentRef": "src/components/shared/pricing/pricing-stoimost-posle-opredeleniya-prichiny--a90ef99bf8a48f52.html",
+      "componentScope": "shared",
+      "componentSignature": "a90ef99bf8a48f52",
+      "sourceFile": "sections/009-pricing-stoimost-posle-opredeleniya-prichiny.html"
+    },
+    {
+      "id": "010-related-links-svyazannye-scenarii",
+      "component": "related-links",
+      "label": "Связанные сценарии",
+      "file": "sections/010-related-links-svyazannye-scenarii.html",
+      "bytes": 2068,
+      "hash": "7d891d1edd0851f2"
+    },
+    {
+      "id": "011-lead-form-chto-otpravit-dlya-predvaritel-noy-kvalifi",
+      "component": "lead-form",
+      "label": "Что отправить для предварительной квалификации",
+      "file": "sections/011-lead-form-chto-otpravit-dlya-predvaritel-noy-kvalifi.html",
+      "bytes": 3546,
+      "hash": "dcdc55416e786d8e"
+    },
+    {
+      "id": "012-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/012-faq-chastye-voprosy.html",
+      "bytes": 1984,
+      "hash": "afb1279a0daf7c1f"
+    },
+    {
+      "id": "013-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/013-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4503,
+      "hash": "31502d97c6543260"
+    },
+    {
+      "id": "014-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "file": "sections/014-contact-cta-kontaktnyy-cta.html",
+      "bytes": 554,
+      "hash": "b215184f8070b0d8"
+    },
+    {
+      "id": "015-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 1,
+      "hash": "01ba4719c80b6fe9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-01ba4719c80b",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
+      "props": {},
+      "sourceFile": "sections/015-raw-html-fragment.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page ne-rabotayut-knopki-mikrovolnovki.html",
+    "npm run doctor:page -- --page ne-rabotayut-knopki-mikrovolnovki.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page ne-rabotayut-knopki-mikrovolnovki.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 2,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

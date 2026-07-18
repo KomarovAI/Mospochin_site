@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+  "slug": "posudomoechnaya-mashina-ne-vklyuchaetsya",
+  "route": "/posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Посудомоечная машина не включается — ремонт в Москве | MosPochin",
+  "h1": "Посудомоечная машина не включается",
+  "source": {
+    "extractedFrom": "posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "1c56e1e73f943d08db875dec892127c793470c2df559562bb2b361bc7a13d8ef",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9524,
+      "hash": "86b0aea41e917026"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1067,
+      "hash": "75616af478e0c268",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "posudomoechnaya_mashina_ne_vklyuchaetsya_breadcrumb_1"
+          },
+          {
+            "href": "posudomoyki.html",
+            "label": "Посудомоечные машины",
+            "ctaId": "posudomoechnaya_mashina_ne_vklyuchaetsya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Посудомоечная машина не включается"
+      }
+    },
+    {
+      "id": "002-contact-cta-posudomoechnaya-mashina-ne-vklyuchaetsya",
+      "component": "contact-cta",
+      "label": "Посудомоечная машина не включается",
+      "file": "sections/002-contact-cta-posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+      "bytes": 2085,
+      "hash": "77d974013bba5580"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "file": "sections/003-proof-chto-vazhno-soobschit-masteru.html",
+      "bytes": 1138,
+      "hash": "51d06547404b5dfd"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "file": "sections/004-proof-chto-proverit-bezopasno.html",
+      "bytes": 2023,
+      "hash": "59be3cfdfb53627b"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 503,
+      "hash": "88d79e12b0b06c19"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1430,
+      "hash": "3e08998c3db6fee8"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-bytovogo-klastera",
+      "component": "section",
+      "label": "Связанные страницы бытового кластера",
+      "file": "sections/007-section-svyazannye-stranicy-bytovogo-klastera.html",
+      "bytes": 1556,
+      "hash": "2d479db972a4da58"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4161,
+      "hash": "0b26056c2d580c21"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2166,
+      "hash": "b355da16b8e0194b"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 5074,
+      "hash": "ecb69a154e869b8d"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "file": "sections/011-contact-cta-kontaktnyy-cta.html",
+      "bytes": 560,
+      "hash": "84287a87d739dd6f"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

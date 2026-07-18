@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "promyshlennaya-posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+  "slug": "promyshlennaya-posudomoechnaya-mashina-ne-nabiraet-vodu",
+  "route": "/promyshlennaya-posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+  "branch": "unknown",
+  "role": "unknown",
+  "title": "Промышленная посудомойка не набирает воду — ремонт | MosPochin",
+  "h1": "Промышленная посудомоечная машина не набирает воду",
+  "source": {
+    "extractedFrom": "promyshlennaya-posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "f15370161296418f7883b97351e2b50147a689488d9156b7a39d30e4efb70150",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9431,
+      "hash": "a49b8fcecb234e38"
+    },
+    {
+      "id": "002-breadcrumb-posudomoechnaya-mashina-ne-nabiraet-vodu",
+      "component": "breadcrumb",
+      "label": "Посудомоечная машина не набирает воду",
+      "file": "sections/002-breadcrumb-posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+      "bytes": 38239,
+      "hash": "77c0598499b27651"
+    },
+    {
+      "id": "003-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/003-faq-chastye-voprosy.html",
+      "bytes": 1883,
+      "hash": "1e7838b3916df7a8"
+    },
+    {
+      "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4993,
+      "hash": "89cf809ba5382e66"
+    },
+    {
+      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page promyshlennaya-posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

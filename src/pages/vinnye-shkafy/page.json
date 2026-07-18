@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "vinnye-shkafy.html",
+  "slug": "vinnye-shkafy",
+  "route": "/vinnye-shkafy.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Ремонт винных шкафов в Москве — диагностика и сервис | MosPochin",
+  "h1": "Ремонт винных шкафов в Москве",
+  "source": {
+    "extractedFrom": "vinnye-shkafy.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "7a53ada79af9ea574f040d1425cc9f4151120cb8b15b6e2010d3b0824bc8c0a6",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9309,
+      "hash": "6a74deab6e6492b6",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/header-9bbd5dfdb994.template.html",
+      "propsRef": "src/pages/vinnye-shkafy/props/wine-rf1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 696,
+      "hash": "d7fbf183eefc8410",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-one-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/one-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "vinnye_shkafy_breadcrumb_1"
+          }
+        ],
+        "currentLabel": "Ремонт винных шкафов в Москве"
+      }
+    },
+    {
+      "id": "002-contact-cta-remont-vinnyh-shkafov-v-moskve",
+      "component": "contact-cta",
+      "label": "Ремонт винных шкафов в Москве",
+      "file": "sections/002-contact-cta-remont-vinnyh-shkafov-v-moskve.html",
+      "bytes": 2031,
+      "hash": "e85764cf275d7052"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1215,
+      "hash": "55a38ffe3f807c21",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/symptom-observations.template.html",
+      "propsRef": "src/pages/vinnye-shkafy/props/wine-rf1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 2277,
+      "hash": "15a452b35e43471d",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/vinnye-shkafy/props/wine-rf1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "bytes": 700,
+      "hash": "a6129b50923708b1",
+      "componentRef": "src/components/shared/section/section-sekciya-stranicy--a6129b50923708b1.html",
+      "componentScope": "shared",
+      "componentSignature": "a6129b50923708b1",
+      "sourceFile": "sections/005-section-sekciya-stranicy.html"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1429,
+      "hash": "27cf2950ac3a8403"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1853,
+      "hash": "b5f87e4787277402"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4132,
+      "hash": "f3a2c62c5b6b34c1"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "bytes": 2890,
+      "hash": "c0f69a2e3f0bf0e2",
+      "componentRef": "src/components/shared/faq/faq-chastye-voprosy--705cfb95b145e46b.html",
+      "componentScope": "shared",
+      "componentSignature": "705cfb95b145e46b",
+      "sourceFile": "sections/009-faq-chastye-voprosy.html"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4912,
+      "hash": "ef0d29e0c04c6f5d",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/footer-71b3c4a81b57.template.html",
+      "propsRef": "src/pages/vinnye-shkafy/props/wine-rf1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 533,
+      "hash": "85241c38624a7a58",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/vinnye-shkafy/props/wine-rf1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page vinnye-shkafy.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 2,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

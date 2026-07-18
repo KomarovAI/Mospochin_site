@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 1,
+  "cluster": "washing-machines",
+  "hub": "stiralnye-mashiny.html",
+  "edges": [
+    {
+      "from": "stiralnye-mashiny.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnye-mashiny.html",
+      "to": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnye-mashiny.html",
+      "to": "stiralnaya-mashina-ne-otzhimaet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnye-mashiny.html",
+      "to": "stiralnaya-mashina-techet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnye-mashiny.html",
+      "to": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnye-mashiny.html",
+      "to": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-otzhimaet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-techet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-stiralnoy-mashiny.html",
+      "to": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "to": "stiralnaya-mashina-ne-otzhimaet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "to": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-otzhimaet.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-otzhimaet.html",
+      "to": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-otzhimaet.html",
+      "to": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-otzhimaet.html",
+      "to": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-techet.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-techet.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-techet.html",
+      "to": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-techet.html",
+      "to": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "to": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "to": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "to": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "to": "stiralnaya-mashina-ne-otzhimaet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "to": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "to": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "to": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "to": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "to": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "to": "stiralnaya-mashina-techet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-greet-vodu.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-greet-vodu.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-greet-vodu.html",
+      "to": "zamena-tena-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-greet-vodu.html",
+      "to": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-otzhimaet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "to": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-otzhimaet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-tena-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-tena-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-greet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-tena-stiralnoy-mashiny.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-tena-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-techet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "to": "voda-ostaetsya-v-barabane-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "to": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+      "to": "stiralnaya-mashina-dolgo-stiraet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+      "to": "stiralnaya-mashina-vybivaet-avtomat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-dolgo-stiraet.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-dolgo-stiraet.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-dolgo-stiraet.html",
+      "to": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-dolgo-stiraet.html",
+      "to": "stiralnaya-mashina-ne-greet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-nabiraet-i-srazu-slivaet-vodu.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-nabiraet-i-srazu-slivaet-vodu.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-nabiraet-i-srazu-slivaet-vodu.html",
+      "to": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-nabiraet-i-srazu-slivaet-vodu.html",
+      "to": "zamena-zalivnogo-klapana-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "voda-ostaetsya-v-barabane-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "voda-ostaetsya-v-barabane-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "voda-ostaetsya-v-barabane-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "voda-ostaetsya-v-barabane-stiralnoy-mashiny.html",
+      "to": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-vybivaet-avtomat.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-vybivaet-avtomat.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-vybivaet-avtomat.html",
+      "to": "stiralnaya-mashina-ne-greet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "stiralnaya-mashina-vybivaet-avtomat.html",
+      "to": "remont-platy-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-manzhety-lyuka-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-manzhety-lyuka-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-techet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-manzhety-lyuka-stiralnoy-mashiny.html",
+      "to": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-manzhety-lyuka-stiralnoy-mashiny.html",
+      "to": "izvlechenie-postoronnego-predmeta-iz-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+      "to": "zamena-manzhety-lyuka-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-amortizatorov-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-amortizatorov-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-amortizatorov-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-amortizatorov-stiralnoy-mashiny.html",
+      "to": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-remnya-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-remnya-stiralnoy-mashiny.html",
+      "to": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-remnya-stiralnoy-mashiny.html",
+      "to": "remont-dvigatelya-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-remnya-stiralnoy-mashiny.html",
+      "to": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-zalivnogo-klapana-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-zalivnogo-klapana-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-zalivnogo-klapana-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-nabiraet-i-srazu-slivaet-vodu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-zalivnogo-klapana-stiralnoy-mashiny.html",
+      "to": "remont-platy-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-dvigatelya-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-dvigatelya-stiralnoy-mashiny.html",
+      "to": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-dvigatelya-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ne-otzhimaet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-dvigatelya-stiralnoy-mashiny.html",
+      "to": "zamena-remnya-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-platy-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-platy-stiralnoy-mashiny.html",
+      "to": "diagnostika-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-platy-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-platy-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-vybivaet-avtomat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "izvlechenie-postoronnego-predmeta-iz-stiralnoy-mashiny.html",
+      "to": "stiralnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "izvlechenie-postoronnego-predmeta-iz-stiralnoy-mashiny.html",
+      "to": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "type": "contextual"
+    },
+    {
+      "from": "izvlechenie-postoronnego-predmeta-iz-stiralnoy-mashiny.html",
+      "to": "zamena-manzhety-lyuka-stiralnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "izvlechenie-postoronnego-predmeta-iz-stiralnoy-mashiny.html",
+      "to": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "type": "contextual"
+    }
+  ]
+}

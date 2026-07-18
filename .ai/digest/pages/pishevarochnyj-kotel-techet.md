@@ -7,22 +7,22 @@
 - H1: Ремонт пищеварочного котла при течи
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-techet.html
 - Builder model: src/pages/pishevarochnyj-kotel-techet/page.json
-- Sections: 34 (15 local, 2 shared refs, 0 raw)
-- Text words inside referenced sections: 1254
+- Sections: 28 (10 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 470
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
 | layout-fragment | 13 |
-| pricing | 6 |
 | mobile-contact | 4 |
 | proof | 4 |
-| related-links | 2 |
 | body-preamble | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
 | lead-form | 1 |
+| pricing | 1 |
+| related-links | 1 |
 | runtime-partials | 1 |
 
 
@@ -30,14 +30,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 10.2 KB | 149 | no | src/pages/pishevarochnyj-kotel-techet/sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 180 | no | src/pages/pishevarochnyj-kotel-techet/sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Оставьте заявку на ремонт | lead-form | 6.5 KB | 94 | no | src/pages/pishevarochnyj-kotel-techet/sections/022-lead-form-ostav-te-zayavku-na-remont.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.2 KB | 207 | no | src/pages/pishevarochnyj-kotel-techet/sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
-| Разводим трафик по реальному симптому | pricing | 5.8 KB | 124 | no | src/pages/pishevarochnyj-kotel-techet/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.3 KB | 124 | no | src/pages/pishevarochnyj-kotel-techet/sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Выберите ближайший симптом пищеварочного котла | pricing | 5.9 KB | 124 | no | src/pages/pishevarochnyj-kotel-techet/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
 | Котел течет — сначала определяем, откуда вода или продукт | mobile-contact | 4.9 KB | 115 | no | src/pages/pishevarochnyj-kotel-techet/sections/005-mobile-contact-kotel-techet-snachala-opredelyaem-otk.html |
-| Если проблема в другом ресторанном оборудовании | related-links | 3.5 KB | 65 | no | src/pages/pishevarochnyj-kotel-techet/sections/027-related-links-esli-problema-v-drugom-restorannom-obo.html |
+| Частые вопросы по ремонту | faq | 3.5 KB | 98 | yes | src/components/shared/faq/faq-chastye-voprosy-po-remontu--f74d3505aafe0fc9.html |
+| Ремонт пищеварочного котла при течи | mobile-contact | 3.1 KB | 39 | no | src/pages/pishevarochnyj-kotel-techet/sections/003-mobile-contact-remont-pischevarochnogo-kotla-pri-tec.html |
+| Доказательства/гарантии | proof | 182 B | 0 | no | src/pages/pishevarochnyj-kotel-techet/sections/023-proof-dokazatel-stva-garantii.html |
+| Доказательства/гарантии | proof | 182 B | 0 | no | src/pages/pishevarochnyj-kotel-techet/sections/026-proof-dokazatel-stva-garantii.html |
+| Доказательства/гарантии | proof | 180 B | 0 | no | src/pages/pishevarochnyj-kotel-techet/sections/010-proof-dokazatel-stva-garantii.html |
 
 
 ## Editable source files

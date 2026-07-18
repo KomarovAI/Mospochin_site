@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "stiralnaya-mashina-vybivaet-avtomat.html",
+  "slug": "stiralnaya-mashina-vybivaet-avtomat",
+  "route": "/stiralnaya-mashina-vybivaet-avtomat.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Стиральная машина выбивает автомат — диагностика в Москве | MosPochin",
+  "h1": "Стиральная машина выбивает автомат или УЗО",
+  "source": {
+    "extractedFrom": "stiralnaya-mashina-vybivaet-avtomat.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "b6a46d580d4f2bb9d57a95d894b7be01a7bc6522759b7a87b5dd2fdeb8fe60a4",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9504,
+      "hash": "d6af35c8a8b50f80",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-vybivaet-avtomat/props/wm2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-stiral-naya-mashina-vybivaet-avtomat-",
+      "component": "mobile-contact",
+      "label": "Стиральная машина выбивает автомат или УЗО",
+      "file": "sections/002-mobile-contact-stiral-naya-mashina-vybivaet-avtomat-.html",
+      "bytes": 1904,
+      "hash": "999cf7257a5907ca"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1071,
+      "hash": "25dee16a143f3fe5",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "stiralnaya_mashina_vybivaet_avtomat_breadcrumb_1"
+          },
+          {
+            "href": "stiralnye-mashiny.html",
+            "label": "Стиральные машины",
+            "ctaId": "stiralnaya_mashina_vybivaet_avtomat_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Стиральная машина выбивает автомат или УЗО"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 1002,
+      "hash": "c04ed1ebd6b7a08c",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/observations.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-vybivaet-avtomat/props/wm2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1884,
+      "hash": "a5bc6f1122502735",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-vybivaet-avtomat/props/wm2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 602,
+      "hash": "db4547779b706ec6"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1186,
+      "hash": "13db2fca50624523"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1607,
+      "hash": "2d7676b180c34365"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1673,
+      "hash": "1635d49cb86f4956"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1599,
+      "hash": "a817abc9a85e48c5"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5059,
+      "hash": "e1489d7463a2432e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-vybivaet-avtomat/props/wm2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page stiralnaya-mashina-vybivaet-avtomat.html",
+    "npm run doctor:page -- --page stiralnaya-mashina-vybivaet-avtomat.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page stiralnaya-mashina-vybivaet-avtomat.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

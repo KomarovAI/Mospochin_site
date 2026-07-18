@@ -7,7 +7,7 @@
 - H1: Су-вид выключается во время работы
 - Canonical: https://mospochin.ru/sous-vide-vyklyuchaetsya-vo-vremya-raboty.html
 - Builder model: src/pages/sous-vide-vyklyuchaetsya-vo-vremya-raboty/page.json
-- Sections: 16 (12 local, 0 shared refs, 0 raw)
+- Sections: 16 (11 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 704
 
 ## Component mix
@@ -40,7 +40,7 @@
 | Матрица причин | cause-matrix | 3.4 KB | 124 | no | src/pages/sous-vide-vyklyuchaetsya-vo-vremya-raboty/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.8 KB | 106 | no | src/pages/sous-vide-vyklyuchaetsya-vo-vremya-raboty/sections/070-repair-scope.html |
 | FAQ — частые вопросы | faq | 2.0 KB | 75 | no | src/pages/sous-vide-vyklyuchaetsya-vo-vremya-raboty/sections/090-faq.html |
-| Безопасная проверка | safe-self-check | 2.0 KB | 54 | no | src/pages/sous-vide-vyklyuchaetsya-vo-vremya-raboty/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 2.0 KB | 54 | no | src/components/parametric/safe-self-check/default.template.html |
 | Сервисная диагностика | service-diagnostics | 1.9 KB | 48 | no | src/pages/sous-vide-vyklyuchaetsya-vo-vremya-raboty/sections/060-service-diagnostics.html |
 | Первый экран | hero | 1.8 KB | 45 | no | src/pages/sous-vide-vyklyuchaetsya-vo-vremya-raboty/sections/010-hero.html |
 

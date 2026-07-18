@@ -1,7 +1,7 @@
 # Component Digest — hero
 
 - Name: Hero / первый экран
-- Appears in: 31 pages
+- Appears in: 82 pages
 - Keywords: hero, первый экран, обложка, главный блок, заголовок, h1
 - CSS selectors: .hero-animate, .hero-animate-delay-*, header .glass-card
 
@@ -13,7 +13,7 @@
 
 | Total sections | Local | Shared refs | Shared % |
 | --- | --- | --- | --- |
-| 56 | 56 | 0 | 0% |
+| 90 | 90 | 0 | 0% |
 
 
 ## Risks
@@ -32,19 +32,19 @@
 - bytovaya-contact.html
 - bytovaya-index.html
 - bytovaya-uslugi.html
+- case-chistka-boylera-s-silnoy-nakipyu.html
+- case-remont-boylera-v-tesnoy-nishe.html
+- case-remont-dvuhbakovogo-vodonagrevatelya.html
+- case-trehfaznaya-sistema-gvs-chastnogo-doma.html
+- chistka-vodonagrevatelya-ot-nakipi.html
+- diagnostika-mikrovolnovoy-pechi.html
+- diagnostika-stiralnoy-mashiny.html
+- diagnostika-vodonagrevatelya.html
+- dvertsa-mikrovolnovki-ne-zakryvaetsya.html
+- fotografii-remonta-vodonagrevateley.html
 - grili-mangaly.html
-- holodilniki.html
 - index.html
 - kompyutery.html
-- parokonvektomat-abat.html
-- parokonvektomat-convotherm.html
-- parokonvektomat-e02-e07-e10.html
-- parokonvektomat-electrolux.html
-- parokonvektomat-kod-oshibki.html
-- parokonvektomat-lainox.html
-- parokonvektomat-ne-greet.html
-- parokonvektomat-net-para.html
-- parokonvektomat-obschuzhivanie.html
-- parokonvektomat-rational-e9.html
-- parokonvektomat-rational.html
-- … ещё 11
+- korroziya-baka-vodonagrevatelya.html
+- microwaves.html
+- … ещё 62

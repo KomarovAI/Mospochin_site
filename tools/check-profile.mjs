@@ -20,13 +20,35 @@ function cmd(command, args = []) {
   return { command, args };
 }
 
+const architectureCommands = [
+  cmd(NODE, ['tools/check-architecture.mjs']),
+  cmd(NODE, ['tools/check-cluster-registry.mjs']),
+  cmd(NODE, ['tools/parameterize-cluster-breadcrumbs.mjs', '--check']),
+  cmd(NODE, ['tools/site-builder-parameterize-core.mjs', '--check']),
+  cmd(NODE, ['--test', 'tests/cluster-contract.spec.mjs', 'tests/architecture-budget.spec.mjs']),
+  cmd(NODE, ['tools/check-architecture-budget.mjs']),
+];
+
 const commandSets = {
   core: [
     cmd(NODE, ['tools/check-instruction-hygiene.mjs']),
     cmd(NODE, ['tools/check-repo-hygiene.mjs']),
     cmd(NODE, ['tools/validate-data.mjs']),
+    cmd(NODE, ['tools/repair-jsonld.mjs']),
     cmd(NODE, ['tools/check-html-head.mjs']),
+    cmd(NODE, ['tools/check-seo-content-quality.mjs']),
+    cmd(NODE, ['tools/sync-ventilation-content-prune-p2.mjs']),
+    cmd(NODE, ['tools/sync-restaurant-content-prune-p2.mjs']),
     cmd(NODE, ['tools/check-static-shell.mjs']),
+    cmd(NODE, ['tools/sync-household-source-metadata.mjs', '--check']),
+    cmd(NODE, ['tools/sync-household-navigation.mjs', '--check']),
+    cmd(NODE, ['tools/check-household-integrity.mjs']),
+    cmd(NODE, ['tools/check-household-refrigerator-cluster.mjs']),
+    cmd(NODE, ['tools/check-washing-machine-cluster.mjs']),
+    cmd(NODE, ['tools/check-dryer-cluster.mjs']),
+    cmd(NODE, ['tools/check-household-dishwasher-cluster.mjs']),
+    cmd(NODE, ['tools/check-microwave-cluster.mjs']),
+    cmd(NODE, ['tools/check-water-heater-cluster.mjs']),
     cmd(NODE, ['tools/check-public-copy.mjs']),
     cmd(NODE, ['tools/test-scale-policy-fixtures.mjs']),
     cmd(NODE, ['tools/check-sous-vide-evidence.mjs']),
@@ -75,7 +97,7 @@ const commandSets = {
     cmd(NODE, ['tools/check-sous-vide-link-graph.mjs']),
     cmd(NODE, ['tools/generate-sous-vide-seo-report.mjs', '--check']),
     cmd(NODE, ['tools/sync-site-builder-manifest.mjs', '--check']),
-    cmd(NODE, ['tools/check-architecture.mjs']),
+    ...architectureCommands,
     cmd(NODE, ['tools/check-generated-diff.mjs']),
     cmd(NODE, ['tools/validate-site.mjs']),
     cmd(NODE, ['tools/check-conversion-ui.mjs']),
@@ -130,9 +152,11 @@ const commandSets = {
   npmAudit: [
     cmd(NODE, ['tools/check-npm-audit.mjs']),
   ],
+  architecture: architectureCommands,
 };
 
 const profiles = {
+  architecture: [...commandSets.architecture],
   core: [...commandSets.core],
   ai: [...commandSets.ai],
   assets: [...commandSets.assets],

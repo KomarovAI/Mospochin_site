@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "elektricheskaya-panel-vybivaet-avtomat.html",
+  "slug": "elektricheskaya-panel-vybivaet-avtomat",
+  "route": "/elektricheskaya-panel-vybivaet-avtomat.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Электрическая панель выбивает автомат или УЗО | MosPochin",
+  "h1": "Электрическая панель выбивает автомат или УЗО",
+  "source": {
+    "extractedFrom": "elektricheskaya-panel-vybivaet-avtomat.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "ab26aa3117104c8166e8398a9681c69a8eea7f7ccb4b8ba809c6731dc5578221",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9516,
+      "hash": "3e4765c7c5f0aba7",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/elektricheskaya-panel-vybivaet-avtomat/props/cook2-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1081,
+      "hash": "b9528913cb9c1c74",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "elektricheskaya_panel_vybivaet_avtomat_breadcrumb_1"
+          },
+          {
+            "href": "plity.html",
+            "label": "Плиты и варочные панели",
+            "ctaId": "elektricheskaya_panel_vybivaet_avtomat_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Электрическая панель выбивает автомат или УЗО"
+      }
+    },
+    {
+      "id": "002-contact-cta-elektricheskaya-panel-vybivaet-avtomat-i",
+      "component": "contact-cta",
+      "label": "Электрическая панель выбивает автомат или УЗО",
+      "file": "sections/002-contact-cta-elektricheskaya-panel-vybivaet-avtomat-i.html",
+      "bytes": 2226,
+      "hash": "ee0962eff59dc496"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1136,
+      "hash": "06acbe04f64cdeaa",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/elektricheskaya-panel-vybivaet-avtomat/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1957,
+      "hash": "13105cb9cb76e1ed",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/elektricheskaya-panel-vybivaet-avtomat/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 439,
+      "hash": "b016b4d531f8f8a7"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1307,
+      "hash": "6fa72b75581da04c"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1964,
+      "hash": "a56e6fcb6d9eae20"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4079,
+      "hash": "e3b3a56b41b4c8d6"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2136,
+      "hash": "409747735af3280a"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5068,
+      "hash": "2b3a06efc0854830",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/elektricheskaya-panel-vybivaet-avtomat/props/cook2-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 558,
+      "hash": "81d6fa925e30ef45",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/elektricheskaya-panel-vybivaet-avtomat/props/cook2-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page elektricheskaya-panel-vybivaet-avtomat.html",
+    "npm run doctor:page -- --page elektricheskaya-panel-vybivaet-avtomat.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page elektricheskaya-panel-vybivaet-avtomat.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

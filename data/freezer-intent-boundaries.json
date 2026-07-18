@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-freezers",
+  "primaryScope": [
+    "domestic upright freezers",
+    "domestic chest freezers",
+    "domestic frost-free freezers"
+  ],
+  "boundaries": [
+    {
+      "intent": "commercial restaurant freezer",
+      "status": "excluded",
+      "reason": "professional refrigeration branch"
+    },
+    {
+      "intent": "retail display chest",
+      "status": "excluded",
+      "reason": "commercial refrigeration branch"
+    },
+    {
+      "intent": "recharge without leak search",
+      "status": "prohibited",
+      "reason": "refrigerant is not a consumable"
+    },
+    {
+      "intent": "unsafe ice removal",
+      "status": "prohibited",
+      "reason": "risk of evaporator damage"
+    }
+  ],
+  "prohibitedClaims": [
+    "не морозит — всегда заправка",
+    "шумит — всегда компрессор",
+    "иней — всегда нагреватель оттайки",
+    "вода — всегда дренаж"
+  ]
+}

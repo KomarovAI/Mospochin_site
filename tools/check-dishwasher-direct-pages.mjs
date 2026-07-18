@@ -33,7 +33,9 @@ for (const row of directRows) {
   if (!/href=["']tel:\+79990057172["']/i.test(html)) errors.push(`${page}: phone CTA missing`);
   if (!/href=["']https:\/\/wa\.me\/79990057172/i.test(html)) errors.push(`${page}: WhatsApp CTA missing`);
   if (!/<form\b[^>]*telegram-form/i.test(html)) errors.push(`${page}: lead form missing`);
-  for (const type of ['Service', 'FAQPage', 'BreadcrumbList']) if (!html.includes(`"@type": "${type}"`)) errors.push(`${page}: ${type} schema missing`);
+  for (const type of ['Service', 'BreadcrumbList']) if (!html.includes(`"@type": "${type}"`)) errors.push(`${page}: ${type} schema missing`);
+  if (/"@type"\s*:\s*"FAQPage"/.test(html)) errors.push(`${page}: retired FAQPage schema must be absent`);
+  if ((html.match(/<details\b/gi) || []).length < 2) errors.push(`${page}: at least two visible FAQ items required`);
   const title = (html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1]?.trim();
   const h1 = (html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [])[1]?.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
   if (!title || titles.has(title)) errors.push(`${page}: title missing/duplicate`); else titles.add(title);

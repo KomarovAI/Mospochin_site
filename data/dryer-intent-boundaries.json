@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-dryers",
+  "primaryScope": [
+    "domestic condenser dryers",
+    "domestic heater dryers",
+    "domestic heat pump dryers"
+  ],
+  "boundaries": [
+    {
+      "intent": "washer-dryer combination",
+      "status": "excluded",
+      "reason": "separate combined-appliance diagnostic contract"
+    },
+    {
+      "intent": "commercial laundry dryer",
+      "status": "excluded",
+      "reason": "professional laundry branch"
+    },
+    {
+      "intent": "user refrigerant circuit repair",
+      "status": "prohibited",
+      "reason": "sealed-system and electrical hazard"
+    },
+    {
+      "intent": "burning smell continued use",
+      "status": "prohibited",
+      "reason": "fire and electrical risk"
+    }
+  ],
+  "prohibitedClaims": [
+    "не сушит — всегда ТЭН",
+    "долго сушит — всегда компрессор",
+    "шумит — всегда подшипник",
+    "пустой бак — всегда насос"
+  ]
+}

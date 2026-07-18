@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-refrigerators",
+  "checkedAt": "2026-07-17",
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "holodilniki.html",
+      "label": "hub",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "holodilnik-ne-morozit.html",
+      "label": "no-cooling",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "ne-rabotaet-no-frost.html",
+      "label": "no-frost",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "techet-voda-iz-holodilnika.html",
+      "label": "leak",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "poisk-utechki-i-zapravka-holodilnika.html",
+      "label": "leak-search-refill",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ],
+  "status": "rf-home1-household-cluster",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/household-refrigerators/rf-home1",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9995
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1800
+  }
+}

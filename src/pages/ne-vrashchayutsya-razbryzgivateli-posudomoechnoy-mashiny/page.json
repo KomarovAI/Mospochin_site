@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+  "slug": "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny",
+  "route": "/ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Не вращаются разбрызгиватели посудомоечной машины | MosPochin",
+  "h1": "Не вращаются разбрызгиватели посудомоечной машины",
+  "source": {
+    "extractedFrom": "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "c56a38b447d41d5ee8a5d158d4fadcf69a6703f046674ab97142b307bedcbb78",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9588,
+      "hash": "95493a8e3edeeaf4",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny/props/dw2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-ne-vraschayutsya-razbryzgivateli-posu",
+      "component": "mobile-contact",
+      "label": "Не вращаются разбрызгиватели посудомоечной машины",
+      "file": "sections/002-mobile-contact-ne-vraschayutsya-razbryzgivateli-posu.html",
+      "bytes": 1875,
+      "hash": "b945feb12f95a42f"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1128,
+      "hash": "a75be5809c217783",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "ne_vrashchayutsya_razbryzgivateli_posudomoechnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "posudomoyki.html",
+            "label": "Посудомоечные машины",
+            "ctaId": "ne_vrashchayutsya_razbryzgivateli_posudomoechnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Не вращаются разбрызгиватели посудомоечной машины"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 961,
+      "hash": "0a833475583f0f88",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/observations.template.html",
+      "propsRef": "src/pages/ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny/props/dw2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1917,
+      "hash": "58b146c7637c088c",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny/props/dw2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 409,
+      "hash": "e0426e16f225573a"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1214,
+      "hash": "48d92d7dc9900ba7"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1567,
+      "hash": "ecebdebae3b2ce6b"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1729,
+      "hash": "9d8a95a966f2b4f8"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1906,
+      "hash": "ea86d75887e5e732"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5122,
+      "hash": "39d3b1bfcf7b4222",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny/props/dw2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+    "npm run doctor:page -- --page ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

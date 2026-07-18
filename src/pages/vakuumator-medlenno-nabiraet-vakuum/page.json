@@ -48,9 +48,14 @@
       "id": "030-safe-self-check",
       "component": "safe-self-check",
       "label": "Безопасная проверка",
-      "file": "sections/030-safe-self-check.html",
       "bytes": 2044,
-      "hash": "fce6036c54c67415"
+      "hash": "fce6036c54c67415",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "three-step-external-check",
+      "templateRef": "src/components/parametric/safe-self-check/default.template.html",
+      "propsRef": "src/components/parametric/safe-self-check/props/vakuumator-medlenno-nabiraet-vakuum.json",
+      "sourceFile": "sections/030-safe-self-check.html"
     },
     {
       "id": "040-decision-tree",

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "cluster": "water-heaters",
+  "release": "WH2-PIPING",
+  "serviceBoundary": "local_appliance_piping",
+  "hub": "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+  "pages": [
+    {
+      "page": "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+      "slug": "podklyuchenie-i-obvyazka-vodonagrevatelya",
+      "intent": "adjacent_service",
+      "label": "Подключение и обвязка",
+      "relatedPages": [
+        "water-heaters.html",
+        "remont-nakopitelnyh-vodonagrevateley.html",
+        "diagnostika-vodonagrevatelya.html",
+        "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
+        "ustanovka-slivnogo-krana-vodonagrevatelya.html",
+        "podklyuchenie-vodonagrevatelya-polipropilenom.html"
+      ],
+      "evidenceIds": [
+        "thermex_kit_safety_valve_manual",
+        "thermex_storage_installation_manual",
+        "wavin_ppr_installation_manual"
+      ]
+    },
+    {
+      "page": "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
+      "slug": "zamena-predohranitelnogo-klapana-vodonagrevatelya",
+      "intent": "service",
+      "label": "Предохранительный клапан",
+      "relatedPages": [
+        "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+        "vodonagrevatel-techet.html",
+        "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya.html",
+        "ustanovka-slivnogo-krana-vodonagrevatelya.html"
+      ],
+      "evidenceIds": [
+        "thermex_kit_safety_valve_manual",
+        "thermex_storage_installation_manual"
+      ]
+    },
+    {
+      "page": "ustanovka-slivnogo-krana-vodonagrevatelya.html",
+      "slug": "ustanovka-slivnogo-krana-vodonagrevatelya",
+      "intent": "service",
+      "label": "Сливной кран",
+      "relatedPages": [
+        "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+        "chistka-vodonagrevatelya-ot-nakipi.html",
+        "zamena-tena-vodonagrevatelya.html",
+        "zamena-predohranitelnogo-klapana-vodonagrevatelya.html"
+      ],
+      "evidenceIds": [
+        "thermex_storage_installation_manual",
+        "thermex_kit_safety_valve_manual"
+      ]
+    },
+    {
+      "page": "zamena-zapornogo-krana-vodonagrevatelya.html",
+      "slug": "zamena-zapornogo-krana-vodonagrevatelya",
+      "intent": "service",
+      "label": "Запорный кран",
+      "relatedPages": [
+        "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+        "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
+        "vodonagrevatel-techet.html",
+        "podklyuchenie-vodonagrevatelya-polipropilenom.html"
+      ],
+      "evidenceIds": [
+        "thermex_kit_safety_valve_manual",
+        "thermex_storage_installation_manual"
+      ]
+    },
+    {
+      "page": "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya.html",
+      "slug": "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya",
+      "intent": "service",
+      "label": "Редуктор давления",
+      "relatedPages": [
+        "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+        "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
+        "vodonagrevatel-techet.html",
+        "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem.html"
+      ],
+      "evidenceIds": [
+        "thermex_storage_installation_manual",
+        "itap_pressure_reducer_manual"
+      ]
+    },
+    {
+      "page": "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem.html",
+      "slug": "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem",
+      "intent": "service",
+      "label": "Механический фильтр",
+      "relatedPages": [
+        "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+        "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya.html",
+        "umyagchenie-vody-dlya-vodonagrevatelya.html",
+        "remont-protochnyh-vodonagrevateley.html"
+      ],
+      "evidenceIds": [
+        "aquaphor_mechanical_prefilter",
+        "itap_pressure_reducer_manual"
+      ]
+    },
+    {
+      "page": "umyagchenie-vody-dlya-vodonagrevatelya.html",
+      "slug": "umyagchenie-vody-dlya-vodonagrevatelya",
+      "intent": "advisory_service",
+      "label": "Умягчение воды",
+      "relatedPages": [
+        "chistka-vodonagrevatelya-ot-nakipi.html",
+        "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem.html",
+        "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+        "zamena-tena-vodonagrevatelya.html"
+      ],
+      "evidenceIds": [
+        "aquaphor_mechanical_prefilter",
+        "aquaphor_hardness_guidance_2026"
+      ]
+    },
+    {
+      "page": "podklyuchenie-vodonagrevatelya-polipropilenom.html",
+      "slug": "podklyuchenie-vodonagrevatelya-polipropilenom",
+      "intent": "service",
+      "label": "Подключение PP-R",
+      "relatedPages": [
+        "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+        "zamena-zapornogo-krana-vodonagrevatelya.html",
+        "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya.html",
+        "vodonagrevatel-techet.html"
+      ],
+      "evidenceIds": [
+        "wavin_ppr_installation_manual",
+        "wavin_pprct_technical_manual",
+        "thermex_storage_installation_manual"
+      ]
+    }
+  ]
+}

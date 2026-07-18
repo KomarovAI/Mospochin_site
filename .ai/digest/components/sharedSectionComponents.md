@@ -1,7 +1,7 @@
 # Component Digest — sharedSectionComponents
 
 - Name: Shared section components / общие HTML-секции
-- Appears in: 51 pages
+- Appears in: 140 pages
 - Keywords: shared, компонент, общие секции, дубли, src/components/shared
 
 ## Related files
@@ -18,29 +18,29 @@
 
 ## Safe editing notes
 
-- Сейчас shared refs: 297, shared files: 52.
+- Сейчас shared refs: 349, shared files: 74.
 - После правки src/components/shared/* запускай check:shared-components и check:site-builder.
 
 ## Representative pages
 
+- case-chistka-boylera-s-silnoy-nakipyu.html
+- case-remont-boylera-v-tesnoy-nishe.html
+- case-remont-dvuhbakovogo-vodonagrevatelya.html
+- case-trehfaznaya-sistema-gvs-chastnogo-doma.html
+- chistka-vodonagrevatelya-ot-nakipi.html
+- diagnostika-holodilnika.html
+- diagnostika-mikrovolnovoy-pechi.html
+- diagnostika-stiralnoy-mashiny.html
+- diagnostika-vinnogo-shkafa.html
+- diagnostika-vodonagrevatelya.html
+- duhovka-ne-vklyuchaetsya.html
+- dver-holodilnika-ne-zakryvaetsya.html
+- dvertsa-mikrovolnovki-ne-zakryvaetsya.html
+- elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html
 - grili-mangaly.html
-- holodilniki.html
-- kompyutery.html
-- nasos-vakuumatora-shumit-peregrevaetsya.html
-- parokonvektomat-abat.html
-- parokonvektomat-convotherm.html
-- parokonvektomat-e02-e07-e10.html
-- parokonvektomat-electrolux.html
-- parokonvektomat-kod-oshibki.html
-- parokonvektomat-lainox.html
-- parokonvektomat-ne-greet.html
-- parokonvektomat-net-para.html
-- parokonvektomat-rational-e9.html
-- parokonvektomat-rational.html
-- parokonvektomat-unox-af02-af08.html
-- parokonvektomat-unox.html
-- parokonvektomaty-promo.html
-- parokonvektomaty.html
-- pishevarochnye-kotly.html
-- pishevarochnyj-kotel-abat-kpem.html
-- … ещё 31
+- holodilnaya-kamera-ne-holodit.html
+- holodilnik-namerzaet-led.html
+- holodilnik-ne-morozit.html
+- holodilnik-ne-vklyuchaetsya.html
+- holodilnik-peremorazhivaet-produkty.html
+- … ещё 120

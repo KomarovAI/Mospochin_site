@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+  "slug": "podklyuchenie-i-obvyazka-vodonagrevatelya",
+  "route": "/podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Подключение и обвязка водонагревателя в Москве — MosPochin",
+  "h1": "Подключение и обвязка водонагревателя",
+  "source": {
+    "extractedFrom": "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "c46168a741169d97077d33e3f3119b70915be1571b4bb63b877f24f491bd0499",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9528,
+      "hash": "8c010f8bd433b4e3"
+    },
+    {
+      "id": "002-mobile-contact-podklyuchenie-i-obvyazka-vodonagrevat",
+      "component": "mobile-contact",
+      "label": "Подключение и обвязка водонагревателя",
+      "file": "sections/002-mobile-contact-podklyuchenie-i-obvyazka-vodonagrevat.html",
+      "bytes": 1881,
+      "hash": "1cc37c393b582c6a"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1068,
+      "hash": "7a73d02ea7aca97f",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "podklyuchenie_i_obvyazka_vodonagrevatelya_breadcrumb_1"
+          },
+          {
+            "href": "water-heaters.html",
+            "label": "Водонагреватели",
+            "ctaId": "podklyuchenie_i_obvyazka_vodonagrevatelya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Подключение и обвязка водонагревателя"
+      }
+    },
+    {
+      "id": "003-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 32,
+      "hash": "e3ed39fc5e5639ac",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/podklyuchenie-i-obvyazka-vodonagrevatelya-003-raw-html-fragment.json"
+    },
+    {
+      "id": "004-section-chto-vidno-na-servisnom-foto",
+      "component": "section",
+      "label": "Что видно на сервисном фото",
+      "bytes": 2319,
+      "hash": "fa573176a74d9ec8",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/podklyuchenie-i-obvyazka-vodonagrevatelya-004-section-chto-vidno-na-servisnom-foto.json"
+    },
+    {
+      "id": "005-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 30,
+      "hash": "3d832b62376e754b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/podklyuchenie-i-obvyazka-vodonagrevatelya-005-raw-html-fragment.json"
+    },
+    {
+      "id": "006-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/006-section-sekciya-stranicy.html",
+      "bytes": 494,
+      "hash": "969a3264b9ce4dba"
+    },
+    {
+      "id": "007-section-kogda-nuzhen-etot-scenariy",
+      "component": "section",
+      "label": "Когда нужен этот сценарий",
+      "file": "sections/007-section-kogda-nuzhen-etot-scenariy.html",
+      "bytes": 1083,
+      "hash": "2d9571b4711489af"
+    },
+    {
+      "id": "008-pricing-chto-proverit-bezopasno",
+      "component": "pricing",
+      "label": "Что проверить безопасно",
+      "file": "sections/008-pricing-chto-proverit-bezopasno.html",
+      "bytes": 2391,
+      "hash": "de4b0cd6fe23ac25"
+    },
+    {
+      "id": "009-pricing-ceny-stoimost",
+      "component": "pricing",
+      "label": "Цены/стоимость",
+      "file": "sections/009-pricing-ceny-stoimost.html",
+      "bytes": 570,
+      "hash": "cac2550488b2f298"
+    },
+    {
+      "id": "010-section-kakie-raboty-mogut-potrebovat-sya",
+      "component": "section",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/010-section-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1542,
+      "hash": "0adc9c201b9a9699"
+    },
+    {
+      "id": "011-section-svyazannye-stranicy-vodonagrevateley",
+      "component": "section",
+      "label": "Связанные страницы водонагревателей",
+      "file": "sections/011-section-svyazannye-stranicy-vodonagrevateley.html",
+      "bytes": 2521,
+      "hash": "11657ac7ee9ad480"
+    },
+    {
+      "id": "012-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "file": "sections/012-raw-html-fragment.html",
+      "bytes": 30,
+      "hash": "55ac44e874afd7a7"
+    },
+    {
+      "id": "013-section-trehfaznye-sistemy-gvs-dlya-chastnyh-domov",
+      "component": "section",
+      "label": "Трёхфазные системы ГВС для частных домов",
+      "bytes": 950,
+      "hash": "4297f3f9be6e0552",
+      "componentRef": "src/components/shared/section/section-trehfaznye-sistemy-gvs-dlya-chastnyh-domov--4297f3f9be6e0552.html",
+      "componentScope": "shared",
+      "componentSignature": "4297f3f9be6e0552",
+      "sourceFile": "sections/013-section-trehfaznye-sistemy-gvs-dlya-chastnyh-domov.html"
+    },
+    {
+      "id": "014-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 28,
+      "hash": "c8ea3eefa93abd31",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "wh3-three-phase-end-c8ea3eefa93a",
+      "templateRef": "src/components/parametric/static/layout-fragment-wh3-three-phase-end-c8ea3eefa93a.template.html",
+      "props": {},
+      "sourceFile": "sections/014-raw-html-fragment.html"
+    },
+    {
+      "id": "015-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 34,
+      "hash": "7df8935a609d1748",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/podklyuchenie-i-obvyazka-vodonagrevatelya-015-raw-html-fragment.json"
+    },
+    {
+      "id": "016-section-dopolnitel-nye-fotografii-uzla",
+      "component": "section",
+      "label": "Дополнительные фотографии узла",
+      "bytes": 3610,
+      "hash": "99830e2c34a9b09d",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/podklyuchenie-i-obvyazka-vodonagrevatelya-016-section-dopolnitel-nye-fotografii-uzla.json"
+    },
+    {
+      "id": "017-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 31,
+      "hash": "b85b8d634f088161",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/podklyuchenie-i-obvyazka-vodonagrevatelya-017-raw-html-fragment.json"
+    },
+    {
+      "id": "018-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/018-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1972,
+      "hash": "ff5f187281889221"
+    },
+    {
+      "id": "019-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/019-faq-chastye-voprosy.html",
+      "bytes": 1744,
+      "hash": "86f9b4fbe3d2ed2b"
+    },
+    {
+      "id": "020-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/020-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 5077,
+      "hash": "fbca6792dacfb109"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+    "npm run doctor:page -- --page podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page podklyuchenie-i-obvyazka-vodonagrevatelya.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

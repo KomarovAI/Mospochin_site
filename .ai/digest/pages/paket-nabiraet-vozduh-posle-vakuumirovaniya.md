@@ -7,7 +7,7 @@
 - H1: Пакет набирает воздух после вакуумирования
 - Canonical: https://mospochin.ru/paket-nabiraet-vozduh-posle-vakuumirovaniya.html
 - Builder model: src/pages/paket-nabiraet-vozduh-posle-vakuumirovaniya/page.json
-- Sections: 16 (12 local, 0 shared refs, 0 raw)
+- Sections: 16 (11 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 738
 
 ## Component mix
@@ -39,7 +39,7 @@
 | Форма заявки | lead-form | 3.5 KB | 33 | no | src/pages/paket-nabiraet-vozduh-posle-vakuumirovaniya/sections/080-lead-form.html |
 | Матрица причин | cause-matrix | 3.4 KB | 135 | no | src/pages/paket-nabiraet-vozduh-posle-vakuumirovaniya/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.8 KB | 106 | no | src/pages/paket-nabiraet-vozduh-posle-vakuumirovaniya/sections/070-repair-scope.html |
-| Безопасная проверка | safe-self-check | 1.9 KB | 56 | no | src/pages/paket-nabiraet-vozduh-posle-vakuumirovaniya/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 1.9 KB | 56 | no | src/components/parametric/safe-self-check/default.template.html |
 | FAQ — частые вопросы | faq | 1.9 KB | 78 | no | src/pages/paket-nabiraet-vozduh-posle-vakuumirovaniya/sections/090-faq.html |
 | Источники | sources-note | 1.9 KB | 63 | no | src/pages/paket-nabiraet-vozduh-posle-vakuumirovaniya/sections/110-sources-note.html |
 | Первый экран | hero | 1.9 KB | 49 | no | src/pages/paket-nabiraet-vozduh-posle-vakuumirovaniya/sections/010-hero.html |

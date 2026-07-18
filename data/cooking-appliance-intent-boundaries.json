@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 2,
+  "cluster": "cooking-appliance-hubs",
+  "primaryScope": [
+    "domestic electric ovens",
+    "resistive electric hobs",
+    "induction hobs"
+  ],
+  "boundaries": [
+    {
+      "intent": "gas cooktop or gas oven",
+      "status": "excluded",
+      "reason": "separate regulated gas-work scope"
+    },
+    {
+      "intent": "commercial restaurant cooking equipment",
+      "status": "excluded",
+      "reason": "restaurant equipment branch"
+    },
+    {
+      "intent": "user mains wiring or module repair instructions",
+      "status": "prohibited",
+      "reason": "high-power electrical hazard"
+    },
+    {
+      "intent": "cracked glass continued use",
+      "status": "prohibited",
+      "reason": "electrical shock hazard"
+    }
+  ],
+  "cannibalizationRules": [
+    {
+      "page": "plity.html",
+      "owns": "cooking_hub"
+    },
+    {
+      "page": "remont-duhovyh-shkafov.html",
+      "owns": "electric_oven"
+    },
+    {
+      "page": "remont-elektricheskih-varochnyh-paneley.html",
+      "owns": "electric_hob"
+    },
+    {
+      "page": "remont-indukcionnyh-varochnyh-paneley.html",
+      "owns": "induction_hob"
+    }
+  ],
+  "prohibitedClaims": [
+    "не греет — всегда ТЭН",
+    "не видит посуду — всегда плата",
+    "не работает зона — менять всю панель",
+    "можно пользоваться с треснувшим стеклом"
+  ]
+}

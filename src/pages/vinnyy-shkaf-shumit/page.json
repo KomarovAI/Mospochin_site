@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "vinnyy-shkaf-shumit.html",
+  "slug": "vinnyy-shkaf-shumit",
+  "route": "/vinnyy-shkaf-shumit.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Винный шкаф шумит — диагностика звука и вибрации | MosPochin",
+  "h1": "Винный шкаф шумит или вибрирует",
+  "source": {
+    "extractedFrom": "vinnyy-shkaf-shumit.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "77b3a18ed70f3944e2379fc161ad17560719f8a85d9aa92d1de0cc022e9c455d",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9333,
+      "hash": "8ac96f1bd27f10f3",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/header-9bbd5dfdb994.template.html",
+      "propsRef": "src/pages/vinnyy-shkaf-shumit/props/wine-rf1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1004,
+      "hash": "4cc3f55f184973b6",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "vinnyy_shkaf_shumit_breadcrumb_1"
+          },
+          {
+            "href": "vinnye-shkafy.html",
+            "label": "Винные шкафы",
+            "ctaId": "vinnyy_shkaf_shumit_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Винный шкаф шумит или вибрирует"
+      }
+    },
+    {
+      "id": "002-contact-cta-vinnyy-shkaf-shumit-ili-vibriruet",
+      "component": "contact-cta",
+      "label": "Винный шкаф шумит или вибрирует",
+      "file": "sections/002-contact-cta-vinnyy-shkaf-shumit-ili-vibriruet.html",
+      "bytes": 2012,
+      "hash": "d462cf96813747d5"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1193,
+      "hash": "80be1b132c756f5d",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/symptom-observations.template.html",
+      "propsRef": "src/pages/vinnyy-shkaf-shumit/props/wine-rf1-observations.json"
+    },
+    {
+      "id": "004-pricing-chto-proverit-bezopasno",
+      "component": "pricing",
+      "label": "Что проверить безопасно",
+      "bytes": 2100,
+      "hash": "1da995fc73aa74f1",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/vinnyy-shkaf-shumit/props/wine-rf1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "bytes": 680,
+      "hash": "01b78cbc5c0af887",
+      "componentRef": "src/components/shared/section/section-sekciya-stranicy--01b78cbc5c0af887.html",
+      "componentScope": "shared",
+      "componentSignature": "01b78cbc5c0af887",
+      "sourceFile": "sections/005-section-sekciya-stranicy.html"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1376,
+      "hash": "9e01d5d4322e887c"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1823,
+      "hash": "e8080688ade48c8b"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4138,
+      "hash": "ffd8d2b2df86d465"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "bytes": 2769,
+      "hash": "391bbdd1f13042d2",
+      "componentRef": "src/components/shared/faq/faq-chastye-voprosy--3c9b5b2e5932a8e7.html",
+      "componentScope": "shared",
+      "componentSignature": "3c9b5b2e5932a8e7",
+      "sourceFile": "sections/009-faq-chastye-voprosy.html"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4930,
+      "hash": "37c5f14d72895a18",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/footer-71b3c4a81b57.template.html",
+      "propsRef": "src/pages/vinnyy-shkaf-shumit/props/wine-rf1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 539,
+      "hash": "55d24f8409c4ed29",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/vinnyy-shkaf-shumit/props/wine-rf1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page vinnyy-shkaf-shumit.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 2,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

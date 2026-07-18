@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyator-vytyazhki-vybivaet-avtomat.html
 - Builder model: src/pages/ventilyator-vytyazhki-vybivaet-avtomat/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1232
+- Text words inside referenced sections: 915
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентилятор вытяжки выбивает автомат | breadcrumb | 38.9 KB | 1045 | no | src/pages/ventilyator-vytyazhki-vybivaet-avtomat/sections/002-breadcrumb-ventilyator-vytyazhki-vybivaet-avtomat.html |
+| Вентилятор вытяжки выбивает автомат | breadcrumb | 29.6 KB | 728 | no | src/pages/ventilyator-vytyazhki-vybivaet-avtomat/sections/002-breadcrumb-ventilyator-vytyazhki-vybivaet-avtomat.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyator-vytyazhki-vybivaet-avtomat/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/ventilyator-vytyazhki-vybivaet-avtomat/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyator-vytyazhki-vybivaet-avtomat/sections/007-lead-form-forma-zayavki.html |

@@ -1,23 +1,34 @@
 {
   "schemaVersion": 1,
   "project": "mospochin-site",
-  "artifactType": "source-handoff",
+  "artifactType": "source-handoff-lite",
   "deployable": false,
-  "createdAt": "2026-07-17T10:14:16.634Z",
+  "createdAt": "2026-07-18T16:44:51.514Z",
   "packageVersion": "1.0.0",
   "source": {
     "githubSha": "",
     "githubRef": "",
-    "node": "v22.16.0"
+    "node": "v24.14.0"
   },
   "contents": {
-    "description": "Full MosPochin source handoff including media masters."
+    "filesBeforeContract": 10064,
+    "bytesBeforeContract": 186575088,
+    "sourceTreeSha256": "67e3a3dde9d0edbf894b10e55e1512c431a5deb6d800bd8686f13fcd48254177",
+    "excluded": [
+      "src/media-source",
+      "build",
+      ".deploy/dist",
+      ".artifacts",
+      "visual evidence",
+      "nested archives"
+    ]
   },
   "requirements": {
     "requiredWorkflow": "Deploy to VPS",
-    "minimumNodeMajor": 20
+    "minimumNodeMajor": 22
   },
   "notes": [
-    "Do not deploy this source archive directly. Build a public-deploy artifact first."
+    "Compact AI/developer handoff. Media masters are shipped separately.",
+    "Do not deploy this ZIP. Run release:prepare to create a public-deploy artifact."
   ]
 }

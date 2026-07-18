@@ -196,7 +196,7 @@ writeJson('data/dishwasher-conversion-pages.json', {
     requireAnalytics: true,
     requireTelegramFormScript: true,
     requireMobileContactContainers: true,
-    requireFaqSchema: true,
+    requireVisibleFaq: true,
     requireSingleH1: true,
     requireHiddenProblem: true,
   },

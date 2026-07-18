@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyatsiya-moechnoj-zony.html
 - Builder model: src/pages/ventilyatsiya-moechnoj-zony/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1202
+- Text words inside referenced sections: 883
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция моечной зоны | breadcrumb | 37.8 KB | 1015 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/002-breadcrumb-ventilyaciya-moechnoy-zony.html |
+| Вентиляция моечной зоны | breadcrumb | 28.6 KB | 696 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/002-breadcrumb-ventilyaciya-moechnoy-zony.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-moechnoj-zony/sections/007-lead-form-forma-zayavki.html |

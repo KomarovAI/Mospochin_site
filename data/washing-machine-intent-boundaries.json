@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "cluster": "washing-machines",
+  "primaryScope": [
+    "domestic automatic washing machine repair",
+    "front load",
+    "top load",
+    "built in"
+  ],
+  "boundaries": [
+    {
+      "intent": "washer dryer drying circuit",
+      "status": "deferred",
+      "reason": "separate drying subsystem and diagnostics"
+    },
+    {
+      "intent": "commercial laundry equipment",
+      "status": "excluded",
+      "reason": "belongs to restaurant or professional equipment branch"
+    },
+    {
+      "intent": "installation and plumbing modification",
+      "status": "adjacent",
+      "reason": "publish only after service capability is confirmed"
+    }
+  ],
+  "cannibalizationRules": [
+    {
+      "page": "stiralnye-mashiny.html",
+      "owns": "generic household washing machine repair hub"
+    },
+    {
+      "page": "diagnostika-stiralnoy-mashiny.html",
+      "owns": "diagnostic intent"
+    },
+    {
+      "pattern": "stiralnaya-mashina-*.html",
+      "owns": "single observable symptom"
+    },
+    {
+      "pattern": "zamena-*-stiralnoy-mashiny.html",
+      "owns": "confirmed service operation"
+    }
+  ],
+  "prohibitedClaims": [
+    "не открывается — всегда замок",
+    "долго стирает — всегда плата",
+    "набрал и слил — всегда насос",
+    "прыгает — всегда амортизаторы",
+    "не крутится — всегда ремень",
+    "не набирает — всегда клапан"
+  ]
+}

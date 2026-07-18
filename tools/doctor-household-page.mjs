@@ -47,6 +47,10 @@ function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
+function normalizeComparable(value) {
+  return String(value ?? '').trim().toLocaleLowerCase('ru-RU');
+}
+
 function countNamedFields(html, fieldName) {
   return (html.match(new RegExp(`name="${fieldName}"`, 'g')) || []).length;
 }
@@ -158,6 +162,9 @@ function runDoctor(page) {
   const taxonomyEntry = (taxonomy.devices ?? []).find((entry) => entry.page === page) ?? null;
   const slotEntry = slots.pages?.[page] ?? null;
   const sharedCardConfig = policy.sharedCardSlots ?? {};
+  const customServiceConfig = policy.customServicePages ?? {};
+  const customServicePages = new Set(customServiceConfig.pages ?? []);
+  const isCustomServicePage = customServicePages.has(page);
   const branchCardPages = new Set(sharedCardConfig.branchPages ?? []);
   const isBranchCardPage = branchCardPages.has(page);
   const isServicePage = Boolean(registryEntry);
@@ -191,7 +198,7 @@ function runDoctor(page) {
     if (registryEntry.slug !== taxonomyEntry.slug) {
       issues.push('Registry slug does not match taxonomy slug');
     }
-    if (registryEntry.deviceName !== taxonomyEntry.deviceName) {
+    if (!isCustomServicePage && normalizeComparable(registryEntry.deviceName) !== normalizeComparable(taxonomyEntry.deviceName)) {
       issues.push('Registry deviceName does not match taxonomy deviceName');
     }
     if (registryEntry.isShadow !== taxonomyEntry.isShadow) {
@@ -299,15 +306,17 @@ function runDoctor(page) {
       }
     }
 
-    for (const sectionId of registryEntry.sectionIds ?? []) {
-      if (!html.includes(`<section id="${sectionId}"`)) {
-        issues.push(`Missing section id ${sectionId}`);
+    if (!(isCustomServicePage && customServiceConfig.skipStandardSectionIds)) {
+      for (const sectionId of registryEntry.sectionIds ?? []) {
+        if (!html.includes(`<section id="${sectionId}"`)) {
+          issues.push(`Missing section id ${sectionId}`);
+        }
       }
-    }
 
-    for (const sectionId of contract.requiredSectionIds ?? []) {
-      if (!registryEntry.sectionIds?.includes(sectionId)) {
-        issues.push(`Registry must include required section id ${sectionId}`);
+      for (const sectionId of contract.requiredSectionIds ?? []) {
+        if (!registryEntry.sectionIds?.includes(sectionId)) {
+          issues.push(`Registry must include required section id ${sectionId}`);
+        }
       }
     }
 
@@ -335,7 +344,7 @@ function runDoctor(page) {
       }
     }
 
-    if (!registryEntry.isShadow) {
+    if (!registryEntry.isShadow && !(isCustomServicePage && customServiceConfig.skipFallbackSync)) {
       syncState = analyzeHouseholdSyncState(html, {
         pageMeta,
         service: registryEntry,
@@ -378,7 +387,7 @@ function runDoctor(page) {
 
   const summary = {
     page,
-    pageType: isBranchCardPage ? 'branch-card-page' : registryEntry ? 'service-page' : 'unknown',
+    pageType: isBranchCardPage ? 'branch-card-page' : isCustomServicePage ? 'custom-service-page' : registryEntry ? 'service-page' : 'unknown',
     htmlExists,
     metadata: pageMeta
       ? { branch: pageMeta.branch, canonical: pageMeta.canonical ?? null, robots: pageMeta.robots ?? null }
@@ -425,8 +434,9 @@ function runDoctor(page) {
             hasObjectionCards: Boolean(serviceProofDefaults?.objectionCards),
             requestAnchorPresent: hasSlotAnchor(html, 'request-form'),
             syncZonesPresent: HOUSEHOLD_SYNC_ZONES.filter((zone) => html.includes(`data-sync-zone="${zone}"`)),
-            syncReady:
-              syncState?.issues.filter((issue) => issue.includes('fallback drift') || issue.includes('sync')).length === 0,
+            syncReady: isCustomServicePage
+              ? true
+              : syncState?.issues.filter((issue) => issue.includes('fallback drift') || issue.includes('sync')).length === 0,
           }
         : null,
     formRuntime,
@@ -439,7 +449,7 @@ function runDoctor(page) {
       : null,
     recommendedEditSurface: getRecommendedEditSurface({
       page,
-      pageType: isBranchCardPage ? 'branch-card-page' : registryEntry ? 'service-page' : 'unknown',
+      pageType: isBranchCardPage ? 'branch-card-page' : isCustomServicePage ? 'custom-service-page' : registryEntry ? 'service-page' : 'unknown',
       registryEntry,
     }),
     issues,

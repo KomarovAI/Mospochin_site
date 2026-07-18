@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+  "slug": "remont-blokirovki-lyuka-stiralnoy-mashiny",
+  "route": "/remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Ремонт блокировки люка стиральной машины в Москве | MosPochin",
+  "h1": "Ремонт блокировки люка стиральной машины",
+  "source": {
+    "extractedFrom": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "3407d830b0aab666031da908833377dc538cbb2b195e7ea8f14f83987fe4c6f0",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9528,
+      "hash": "2c1304a3c1148030",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/remont-blokirovki-lyuka-stiralnoy-mashiny/props/wm2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-remont-blokirovki-lyuka-stiral-noy-ma",
+      "component": "mobile-contact",
+      "label": "Ремонт блокировки люка стиральной машины",
+      "file": "sections/002-mobile-contact-remont-blokirovki-lyuka-stiral-noy-ma.html",
+      "bytes": 1906,
+      "hash": "79c9c173c57887ac"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1080,
+      "hash": "005eca15e84ec85f",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "remont_blokirovki_lyuka_stiralnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "stiralnye-mashiny.html",
+            "label": "Стиральные машины",
+            "ctaId": "remont_blokirovki_lyuka_stiralnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Ремонт блокировки люка стиральной машины"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 985,
+      "hash": "1b94d107b413a713",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/observations.template.html",
+      "propsRef": "src/pages/remont-blokirovki-lyuka-stiralnoy-mashiny/props/wm2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1834,
+      "hash": "9e97387a08aa3691",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/remont-blokirovki-lyuka-stiralnoy-mashiny/props/wm2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 511,
+      "hash": "500ffd8483ae22bf"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1170,
+      "hash": "4318a217d6517646"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1581,
+      "hash": "bc728bbdad4a2ce9"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1679,
+      "hash": "afb61cd58abfb14c"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1571,
+      "hash": "b7d2bb026c1dde7c"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5077,
+      "hash": "cf120dc3eec03a4e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/remont-blokirovki-lyuka-stiralnoy-mashiny/props/wm2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+    "npm run doctor:page -- --page remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page remont-blokirovki-lyuka-stiralnoy-mashiny.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

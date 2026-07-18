@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "vodonagrevatel-techet.html",
+  "slug": "vodonagrevatel-techet",
+  "route": "/vodonagrevatel-techet.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Водонагреватель течёт — диагностика и ремонт в Москве",
+  "h1": "Водонагреватель течёт или капает",
+  "source": {
+    "extractedFrom": "vodonagrevatel-techet.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "a24c7eba3934c080fa016c5901341c9127be4f1198e5cdd607024c07e2154588",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 61,
+      "hash": "ae18760a8b904fc2"
+    },
+    {
+      "id": "002-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 7508,
+      "hash": "6de886a3c7c073ac"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1018,
+      "hash": "da4f73174f91b03b",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "vodonagrevatel_techet_breadcrumb_1"
+          },
+          {
+            "href": "water-heaters.html",
+            "label": "Водонагреватели",
+            "ctaId": "vodonagrevatel_techet_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Водонагреватель течёт или капает"
+      }
+    },
+    {
+      "id": "004-hero-vodonagrevatel-techet-ili-kapaet",
+      "component": "hero",
+      "label": "Водонагреватель течёт или капает",
+      "file": "sections/004-hero-vodonagrevatel-techet-ili-kapaet.html",
+      "bytes": 3728,
+      "hash": "8b4cb8ae9de8ea1c"
+    },
+    {
+      "id": "005-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/005-proof-dokazatel-stva-garantii.html",
+      "bytes": 186,
+      "hash": "410196d1d7a5efd2"
+    },
+    {
+      "id": "006-section-chto-utochnyaem-do-vyezda",
+      "component": "section",
+      "label": "Что уточняем до выезда",
+      "bytes": 2838,
+      "hash": "da4d06759e5b2ca7",
+      "componentRef": "src/components/shared/section/section-chto-utochnyaem-do-vyezda--da4d06759e5b2ca7.html",
+      "componentScope": "shared",
+      "componentSignature": "da4d06759e5b2ca7",
+      "sourceFile": "sections/006-section-chto-utochnyaem-do-vyezda.html"
+    },
+    {
+      "id": "007-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 32,
+      "hash": "e3ed39fc5e5639ac",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/vodonagrevatel-techet-007-raw-html-fragment.json"
+    },
+    {
+      "id": "008-pricing-chto-vidno-na-servisnom-foto",
+      "component": "pricing",
+      "label": "Что видно на сервисном фото",
+      "bytes": 2153,
+      "hash": "6d55c315bfcf827a",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/pricing.template.html",
+      "propsRef": "content/components/water-heater-wh4/vodonagrevatel-techet-008-pricing-chto-vidno-na-servisnom-foto.json"
+    },
+    {
+      "id": "009-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 30,
+      "hash": "3d832b62376e754b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/vodonagrevatel-techet-009-raw-html-fragment.json"
+    },
+    {
+      "id": "010-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 41,
+      "hash": "137889f34839845d",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "household-sync-service-kpi-end-137889f34839",
+      "templateRef": "src/components/parametric/static/layout-fragment-household-sync-service-kpi-end-137889f34839.template.html",
+      "props": {},
+      "sourceFile": "sections/010-raw-html-fragment.html"
+    },
+    {
+      "id": "011-pricing-kapaet-iz-drenazhnoy-trubki",
+      "component": "pricing",
+      "label": "Капает из дренажной трубки",
+      "file": "sections/011-pricing-kapaet-iz-drenazhnoy-trubki.html",
+      "bytes": 4391,
+      "hash": "ff4f1a2017ea65c4"
+    },
+    {
+      "id": "012-pricing-kak-lokalizuetsya-tech",
+      "component": "pricing",
+      "label": "Как локализуется течь",
+      "file": "sections/012-pricing-kak-lokalizuetsya-tech.html",
+      "bytes": 3520,
+      "hash": "52fd21ddee2b0e1e"
+    },
+    {
+      "id": "013-pricing-kakie-techi-obychno-remontiruyutsya",
+      "component": "pricing",
+      "label": "Какие течи обычно ремонтируются",
+      "file": "sections/013-pricing-kakie-techi-obychno-remontiruyutsya.html",
+      "bytes": 4140,
+      "hash": "2fc62237a4fe9d5a"
+    },
+    {
+      "id": "014-pricing-ot-chego-zavisit-smeta",
+      "component": "pricing",
+      "label": "От чего зависит смета",
+      "file": "sections/014-pricing-ot-chego-zavisit-smeta.html",
+      "bytes": 2368,
+      "hash": "9e0b8fcbfb055539"
+    },
+    {
+      "id": "015-section-bezopasnye-deystviya-do-vyezda",
+      "component": "section",
+      "label": "Безопасные действия до выезда",
+      "file": "sections/015-section-bezopasnye-deystviya-do-vyezda.html",
+      "bytes": 2380,
+      "hash": "e1dfd20115c4318d"
+    },
+    {
+      "id": "016-section-svyazannye-scenarii",
+      "component": "section",
+      "label": "Связанные сценарии",
+      "file": "sections/016-section-svyazannye-scenarii.html",
+      "bytes": 1670,
+      "hash": "8c3658b8e3171d13"
+    },
+    {
+      "id": "017-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 26,
+      "hash": "6f588031b3d8587f",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "wh2-piping-start-6f588031b3d8",
+      "templateRef": "src/components/parametric/static/layout-fragment-wh2-piping-start-6f588031b3d8.template.html",
+      "props": {},
+      "sourceFile": "sections/017-raw-html-fragment.html"
+    },
+    {
+      "id": "018-pricing-podklyuchenie-i-lokal-naya-obvyazka",
+      "component": "pricing",
+      "label": "Подключение и локальная обвязка",
+      "file": "sections/018-pricing-podklyuchenie-i-lokal-naya-obvyazka.html",
+      "bytes": 1832,
+      "hash": "ef27ed7a2a3bdf06"
+    },
+    {
+      "id": "019-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 23,
+      "hash": "8939b02e33828378",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "wh2-piping-end-8939b02e3382",
+      "templateRef": "src/components/parametric/static/layout-fragment-wh2-piping-end-8939b02e3382.template.html",
+      "props": {},
+      "sourceFile": "sections/019-raw-html-fragment.html"
+    },
+    {
+      "id": "020-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 34,
+      "hash": "7df8935a609d1748",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/vodonagrevatel-techet-020-raw-html-fragment.json"
+    },
+    {
+      "id": "021-pricing-dopolnitel-nye-fotografii-uzla",
+      "component": "pricing",
+      "label": "Дополнительные фотографии узла",
+      "bytes": 3332,
+      "hash": "66272c48b4b26a33",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/pricing.template.html",
+      "propsRef": "content/components/water-heater-wh4/vodonagrevatel-techet-021-pricing-dopolnitel-nye-fotografii-uzla.json"
+    },
+    {
+      "id": "022-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 31,
+      "hash": "b85b8d634f088161",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/vodonagrevatel-techet-022-raw-html-fragment.json"
+    },
+    {
+      "id": "023-lead-form-opishite-model-i-tochnyy-simptom",
+      "component": "lead-form",
+      "label": "Опишите модель и точный симптом",
+      "file": "sections/023-lead-form-opishite-model-i-tochnyy-simptom.html",
+      "bytes": 6083,
+      "hash": "2ae7bbb58838ab39"
+    },
+    {
+      "id": "024-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/024-proof-dokazatel-stva-garantii.html",
+      "bytes": 188,
+      "hash": "202e3627e69644bb"
+    },
+    {
+      "id": "025-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
+      "component": "pricing",
+      "label": "Что клиент понимает ещё до начала работ",
+      "file": "sections/025-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+      "bytes": 13456,
+      "hash": "3ddc32d0c41966ba"
+    },
+    {
+      "id": "026-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/026-proof-dokazatel-stva-garantii.html",
+      "bytes": 42,
+      "hash": "c9cde558065e3f95"
+    },
+    {
+      "id": "027-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/027-proof-dokazatel-stva-garantii.html",
+      "bytes": 188,
+      "hash": "fcaa2344d15a11e9"
+    },
+    {
+      "id": "028-related-links-prodolzhit-diagnostiku-po-sosednemu-sc",
+      "component": "related-links",
+      "label": "Продолжить диагностику по соседнему сценарию",
+      "bytes": 3266,
+      "hash": "0ba81df63d99ccf4",
+      "componentRef": "src/components/shared/related-links/related-links-prodolzhit-diagnostiku-po-sosednemu-scenariy--0ba81df63d99ccf4.html",
+      "componentScope": "shared",
+      "componentSignature": "0ba81df63d99ccf4",
+      "sourceFile": "sections/028-related-links-prodolzhit-diagnostiku-po-sosednemu-sc.html"
+    },
+    {
+      "id": "029-related-links-svyazannye-stranicy",
+      "component": "related-links",
+      "label": "Связанные страницы",
+      "file": "sections/029-related-links-svyazannye-stranicy.html",
+      "bytes": 42,
+      "hash": "50ecf96d2596ed9c"
+    },
+    {
+      "id": "030-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/030-faq-chastye-voprosy.html",
+      "bytes": 4502,
+      "hash": "892b006d8d058eb6"
+    },
+    {
+      "id": "031-mobile-contact-nuzhna-diagnostika-vodonagrevatelya",
+      "component": "mobile-contact",
+      "label": "Нужна диагностика водонагревателя?",
+      "file": "sections/031-mobile-contact-nuzhna-diagnostika-vodonagrevatelya.html",
+      "bytes": 1060,
+      "hash": "5fedd0c27aede444"
+    },
+    {
+      "id": "032-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/032-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 504,
+      "hash": "c97e9444d6ae892a"
+    },
+    {
+      "id": "033-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/033-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 1014,
+      "hash": "b0f9a837def23511"
+    },
+    {
+      "id": "034-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/034-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4479,
+      "hash": "a284cc8b3fc268b3"
+    },
+    {
+      "id": "035-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/035-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "036-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/036-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "037-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 1,
+      "hash": "01ba4719c80b6fe9",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "technical-fragment-01ba4719c80b",
+      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
+      "props": {},
+      "sourceFile": "sections/037-raw-html-fragment.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page vodonagrevatel-techet.html",
+    "npm run doctor:page -- --page vodonagrevatel-techet.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page vodonagrevatel-techet.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 2,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

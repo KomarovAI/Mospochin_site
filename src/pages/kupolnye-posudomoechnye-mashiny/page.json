@@ -11,7 +11,7 @@
   "source": {
     "extractedFrom": "kupolnye-posudomoechnye-mashiny.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "b3fdafc2fd5d6b7379b17082d07fa9b65b29e6ea9478dd1ce14e95a06694a550",
+    "hash": "40294c730abb5173a2c1e98dbc42899a449c19ea09b5e36fb4519d32ae338085",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,20 +21,20 @@
   },
   "sections": [
     {
-      "id": "001-contact-cta-kontaktnyy-cta",
-      "component": "contact-cta",
-      "label": "Контактный CTA",
-      "file": "sections/001-contact-cta-kontaktnyy-cta.html",
-      "bytes": 47,
-      "hash": "848c21ac460f3aba"
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9395,
+      "hash": "c233966d93d476db"
     },
     {
       "id": "002-breadcrumb-kupol-nye-promyshlennye-posudomoechnye-ma",
       "component": "breadcrumb",
       "label": "Купольные промышленные посудомоечные машины",
       "file": "sections/002-breadcrumb-kupol-nye-promyshlennye-posudomoechnye-ma.html",
-      "bytes": 37153,
-      "hash": "24be5ef9b823c6b5"
+      "bytes": 37258,
+      "hash": "1d77604f15b70995"
     },
     {
       "id": "003-faq-chastye-voprosy",
@@ -45,28 +45,23 @@
       "hash": "83815be2ea5c4ca7"
     },
     {
-      "id": "004-footer-anchor-footer-mount-point",
-      "component": "footer-anchor",
-      "label": "Footer mount point",
-      "bytes": 33,
-      "hash": "e290e2b6541c5f25",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "footer-container-mount",
-      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html",
-      "props": {},
-      "sourceFile": "sections/004-footer-anchor-footer-mount-point.html"
+      "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4966,
+      "hash": "8e15cf4f382b52df"
     },
     {
       "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "bytes": 40,
-      "hash": "5984ebe80b6e73f2",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
       "componentMode": "parametric",
       "componentScope": "parametric",
       "variant": "mobile-footer-container",
-      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
       "props": {},
       "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
@@ -74,27 +69,14 @@
       "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "bytes": 41,
-      "hash": "8e4830584f7baecb",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
       "componentMode": "parametric",
       "componentScope": "parametric",
       "variant": "whatsapp-float-container",
-      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
       "props": {},
       "sourceFile": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html"
-    },
-    {
-      "id": "007-runtime-partials-podklyuchenie-partials-injector",
-      "component": "runtime-partials",
-      "label": "Подключение partials-injector",
-      "bytes": 0,
-      "hash": "e3b0c44298fc1c14",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "partials-injector-script-defer-empty",
-      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html",
-      "props": {},
-      "sourceFile": "sections/007-runtime-partials-podklyuchenie-partials-injector.html"
     }
   ],
   "recommendedChecks": [

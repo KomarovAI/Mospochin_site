@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Manual GitHub fallback runner for Firefox-based visual workflows.
+ * Manual GitHub fallback runner for Chromium-based visual workflows.
  *
  * The primary project screenshot runtime is tools/visual-local-capture.mjs with
  * preinstalled system Chromium. This file exists only for explicit browser
@@ -36,8 +36,8 @@ let command;
 let commandArgs;
 if (args[0] === '--install') {
   command = NPM;
-  commandArgs = ['exec', '--', 'playwright', 'install', 'firefox'];
-  console.log(`Installing Firefox into ${browserPath}`);
+  commandArgs = ['exec', '--', 'playwright', 'install', 'chromium'];
+  console.log(`Installing Chromium into ${browserPath}`);
 } else {
   const target = args.shift();
   const playwrightPackage = path.join(ROOT_DIR, 'node_modules', 'playwright', 'package.json');

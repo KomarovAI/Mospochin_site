@@ -1,38 +1,41 @@
 # Page Digest — posudomoechnaya-mashina-vybivaet-avtomat.html
 
-- Branch: restaurant
-- Role: branch
-- Title: Посудомоечная машина выбивает автомат — диагностика и ремонт | MosPochin
-- Description: Посудомоечная машина выбивает автомат: безопасная диагностика изоляции ТЭНов, двигателей насосов, проводки, контакторов и попадания воды.
-- H1: Посудомоечная машина выбивает автомат
+- Branch: household
+- Role: service
+- Title: Посудомоечная машина выбивает автомат — диагностика | MosPochin
+- Description: Посудомойка отключает автомат или УЗО: проверяем кабель, утечку воды, нагрев, насосы, проводку и силовую электронику.
+- H1: Посудомоечная машина выбивает автомат или УЗО
 - Canonical: https://mospochin.ru/posudomoechnaya-mashina-vybivaet-avtomat.html
 - Builder model: src/pages/posudomoechnaya-mashina-vybivaet-avtomat/page.json
-- Sections: 7 (3 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 775
+- Sections: 12 (11 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 523
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| contact-cta | 2 |
 | mobile-contact | 2 |
+| proof | 2 |
+| section | 2 |
 | breadcrumb | 1 |
-| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
-| runtime-partials | 1 |
+| lead-form | 1 |
+| pricing | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Посудомоечная машина выбивает автомат | breadcrumb | 36.8 KB | 713 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/002-breadcrumb-posudomoechnaya-mashina-vybivaet-avtomat.html |
-| Частые вопросы | faq | 1.7 KB | 62 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/003-faq-chastye-voprosy.html |
-| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/001-contact-cta-kontaktnyy-cta.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html |
-| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
-| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html |
+| Мобильные контактные элементы | mobile-contact | 9.3 KB | 110 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 5.0 KB | 77 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Что отправить до выезда | lead-form | 4.1 KB | 58 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/008-lead-form-chto-otpravit-do-vyezda.html |
+| Частые вопросы | faq | 2.1 KB | 83 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/009-faq-chastye-voprosy.html |
+| Посудомоечная машина выбивает автомат или УЗО | contact-cta | 2.0 KB | 38 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/002-contact-cta-posudomoechnaya-mashina-vybivaet-avtomat.html |
+| Что проверить безопасно | proof | 2.0 KB | 46 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/004-proof-chto-proverit-bezopasno.html |
+| Связанные страницы бытового кластера | section | 1.5 KB | 24 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/007-section-svyazannye-stranicy-bytovogo-klastera.html |
+| Какие работы могут потребоваться | pricing | 1.4 KB | 39 | no | src/pages/posudomoechnaya-mashina-vybivaet-avtomat/sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html |
 
 
 ## Editable source files
@@ -40,8 +43,12 @@
 - data/page-metadata.json
 - data/contact-config.json
 - data/runtime-config.json
-- data/restaurant-branch.json
-- data/restaurant-page-policy.json
+- data/household-branch.json
+- data/household-page-policy.json
+- data/household-services.json
+- data/household-taxonomy.json
+- data/household-proof-layer.json
+- data/household-page-slots.json
 - posudomoechnaya-mashina-vybivaet-avtomat.html
 - src/site-builder.json
 - src/pages/posudomoechnaya-mashina-vybivaet-avtomat/page.json
@@ -49,6 +56,7 @@
 
 ## Checks
 
+- npm run doctor:household-page -- --page posudomoechnaya-mashina-vybivaet-avtomat.html
 - npm run doctor:page -- --page posudomoechnaya-mashina-vybivaet-avtomat.html
 - npm run validate:site
 - npm run check:site-builder

@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "diagnostika-duhovogo-shkafa.html",
+  "slug": "diagnostika-duhovogo-shkafa",
+  "route": "/diagnostika-duhovogo-shkafa.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Диагностика духового шкафа в Москве | MosPochin",
+  "h1": "Диагностика духового шкафа в Москве",
+  "source": {
+    "extractedFrom": "diagnostika-duhovogo-shkafa.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "b15c93afe961cac81d9421f364c7e14191549dbfb8a608773323816751c7efa7",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9472,
+      "hash": "4601e09eeaf42b33",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/diagnostika-duhovogo-shkafa/props/cook2-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1040,
+      "hash": "1ce9259f8dbd8147",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "diagnostika_duhovogo_shkafa_breadcrumb_1"
+          },
+          {
+            "href": "plity.html",
+            "label": "Плиты и варочные панели",
+            "ctaId": "diagnostika_duhovogo_shkafa_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Диагностика духового шкафа в Москве"
+      }
+    },
+    {
+      "id": "002-contact-cta-diagnostika-duhovogo-shkafa-v-moskve",
+      "component": "contact-cta",
+      "label": "Диагностика духового шкафа в Москве",
+      "file": "sections/002-contact-cta-diagnostika-duhovogo-shkafa-v-moskve.html",
+      "bytes": 2173,
+      "hash": "ec987ee90690dc75"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1157,
+      "hash": "07a82dd50a3030e2",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/diagnostika-duhovogo-shkafa/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 2030,
+      "hash": "039e8278a71603e3",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/diagnostika-duhovogo-shkafa/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 562,
+      "hash": "fc14582c35a625d7"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1386,
+      "hash": "f16ebcb765869a46"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1805,
+      "hash": "51a2e0644334d7d5"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4068,
+      "hash": "db53907a28fea2dc"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2301,
+      "hash": "042255b96e5a0bbb"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5035,
+      "hash": "d1105e9dbaeb387a",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/diagnostika-duhovogo-shkafa/props/cook2-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 547,
+      "hash": "c95aebcfd64fe807",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/diagnostika-duhovogo-shkafa/props/cook2-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page diagnostika-duhovogo-shkafa.html",
+    "npm run doctor:page -- --page diagnostika-duhovogo-shkafa.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page diagnostika-duhovogo-shkafa.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/vytyazhnaya-ventilyatsiya-restorana.html
 - Builder model: src/pages/vytyazhnaya-ventilyatsiya-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1212
+- Text words inside referenced sections: 893
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вытяжная вентиляция ресторана | breadcrumb | 38.5 KB | 1025 | no | src/pages/vytyazhnaya-ventilyatsiya-restorana/sections/002-breadcrumb-vytyazhnaya-ventilyaciya-restorana.html |
+| Вытяжная вентиляция ресторана | breadcrumb | 29.2 KB | 706 | no | src/pages/vytyazhnaya-ventilyatsiya-restorana/sections/002-breadcrumb-vytyazhnaya-ventilyaciya-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/vytyazhnaya-ventilyatsiya-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/vytyazhnaya-ventilyatsiya-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/vytyazhnaya-ventilyatsiya-restorana/sections/007-lead-form-forma-zayavki.html |

@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "cluster": "water-heaters",
+  "equipmentFamilies": [
+    "storage_electric",
+    "instant_electric"
+  ],
+  "symptoms": [
+    {
+      "symptomId": "water_heater.no_heat",
+      "page": "vodonagrevatel-ne-greet-vodu.html",
+      "userSymptoms": [
+        "индикатор не горит",
+        "индикатор горит, но вода холодная",
+        "вода едва тёплая",
+        "нагрев прекращается рано"
+      ],
+      "safeChecks": [
+        "зафиксировать индикацию",
+        "проверить, не отключена ли штатная защита без вскрытия",
+        "отправить фото шильдика"
+      ],
+      "stopUseConditions": [
+        "запах гари",
+        "течь под электрической крышкой",
+        "выбивает автомат или УЗО"
+      ],
+      "probableNodes": [
+        "power_supply",
+        "thermal_cutout",
+        "thermostat",
+        "heating_element",
+        "relay",
+        "temperature_sensor",
+        "control_board",
+        "flow_sensor"
+      ],
+      "technicianChecks": [
+        "supply_voltage",
+        "terminal_condition",
+        "thermal_protection",
+        "element_resistance",
+        "insulation_resistance",
+        "control_output",
+        "flow_activation"
+      ],
+      "prohibitedClaims": [
+        "не греет — всегда ТЭН"
+      ]
+    },
+    {
+      "symptomId": "water_heater.leak",
+      "page": "vodonagrevatel-techet.html",
+      "userSymptoms": [
+        "капает из клапана",
+        "течёт из-под фланца",
+        "мокрое соединение",
+        "вода из корпуса"
+      ],
+      "safeChecks": [
+        "определить видимое место воды без снятия крышки",
+        "зафиксировать, происходит ли сброс только при нагреве"
+      ],
+      "stopUseConditions": [
+        "вода возле электрической части",
+        "сильная неконтролируемая течь",
+        "вода из корпуса или шва"
+      ],
+      "probableNodes": [
+        "safety_valve",
+        "threaded_connection",
+        "gasket",
+        "flange",
+        "pipe_stub",
+        "inner_tank"
+      ],
+      "technicianChecks": [
+        "dry_and_trace_source",
+        "pressure_related_discharge",
+        "valve_condition",
+        "connection_inspection",
+        "flange_gasket",
+        "tank_leak_boundary"
+      ],
+      "prohibitedClaims": [
+        "любые капли из клапана означают поломку",
+        "течь бака всегда ремонтируется"
+      ]
+    },
+    {
+      "symptomId": "water_heater.trips_protection",
+      "page": "vodonagrevatel-vybivaet-avtomat.html",
+      "userSymptoms": [
+        "отключает сразу",
+        "отключает при нагреве",
+        "отключает через время",
+        "отключает на максимальной мощности"
+      ],
+      "safeChecks": [
+        "уточнить какое устройство срабатывает",
+        "не включать повторно"
+      ],
+      "stopUseConditions": [
+        "повторное отключение защиты",
+        "запах гари",
+        "влага внутри корпуса"
+      ],
+      "probableNodes": [
+        "heating_element_insulation",
+        "power_cable",
+        "terminals",
+        "relay",
+        "internal_wiring",
+        "water_ingress",
+        "circuit_overload"
+      ],
+      "technicianChecks": [
+        "protection_type",
+        "load_and_rating",
+        "terminal_heat_damage",
+        "insulation_resistance",
+        "moisture_source",
+        "stage_by_stage_test"
+      ],
+      "prohibitedClaims": [
+        "поставить автомат большего номинала",
+        "обойти УЗО"
+      ]
+    },
+    {
+      "symptomId": "water_heater.no_power",
+      "page": "vodonagrevatel-ne-vklyuchaetsya.html",
+      "userSymptoms": [
+        "нет индикации",
+        "дисплей есть, нагрев не запускается",
+        "не включился после защиты",
+        "отказ после течи"
+      ],
+      "safeChecks": [
+        "зафиксировать состояние панели",
+        "не вскрывать прибор"
+      ],
+      "stopUseConditions": [
+        "оплавленная вилка",
+        "запах гари",
+        "вода внутри корпуса"
+      ],
+      "probableNodes": [
+        "supply",
+        "cable",
+        "switch",
+        "thermal_cutout",
+        "control_power",
+        "button",
+        "display",
+        "board"
+      ],
+      "technicianChecks": [
+        "incoming_power",
+        "cable_and_terminal",
+        "protection_chain",
+        "control_supply",
+        "panel_and_harness",
+        "sensor_interlocks"
+      ],
+      "prohibitedClaims": [
+        "замкнуть термозащиту для проверки"
+      ]
+    },
+    {
+      "symptomId": "water_heater.slow_heat",
+      "page": "vodonagrevatel-medlenno-greet-vodu.html",
+      "userSymptoms": [
+        "долго набирает температуру",
+        "вода только тёплая",
+        "нагрев хуже на большом расходе",
+        "раньше грел быстрее"
+      ],
+      "safeChecks": [
+        "зафиксировать режим и время нагрева",
+        "сравнить при одинаковом расходе"
+      ],
+      "stopUseConditions": [
+        "шум с запахом гари",
+        "перегрев контактов",
+        "отключение защиты"
+      ],
+      "probableNodes": [
+        "reduced_power_mode",
+        "partial_heater_failure",
+        "voltage_drop",
+        "scale",
+        "thermostat_sensor",
+        "excess_flow"
+      ],
+      "technicianChecks": [
+        "rated_vs_actual_power",
+        "voltage",
+        "heater_stages",
+        "temperature_control",
+        "scale_condition",
+        "flow_and_pressure"
+      ],
+      "prohibitedClaims": [
+        "накипь — единственная причина"
+      ]
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyatsiya-dark-kitchen.html
 - Builder model: src/pages/ventilyatsiya-dark-kitchen/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1205
+- Text words inside referenced sections: 886
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция дарк-кухня | breadcrumb | 37.9 KB | 1018 | no | src/pages/ventilyatsiya-dark-kitchen/sections/002-breadcrumb-ventilyaciya-dark-kuhnya.html |
+| Вентиляция дарк-кухня | breadcrumb | 28.7 KB | 699 | no | src/pages/ventilyatsiya-dark-kitchen/sections/002-breadcrumb-ventilyaciya-dark-kuhnya.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyatsiya-dark-kitchen/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/ventilyatsiya-dark-kitchen/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-dark-kitchen/sections/007-lead-form-forma-zayavki.html |

@@ -19,8 +19,8 @@ function resolveFirefoxExecutable() {
 }
 
 /**
- * One launch contract for every visual path in the project.
- * Firefox remains the source of truth; Chromium is not a silent fallback.
+ * Launch contract for the explicit Firefox-only legacy/fallback tools.
+ * The primary project visual runtime is Chromium; see visual-local-runtime.mjs.
  */
 export function getFirefoxLaunchOptions({ headless = true } = {}) {
   const executablePath = resolveFirefoxExecutable();

@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "posudomoechnaya-mashina-shumit.html",
+  "slug": "posudomoechnaya-mashina-shumit",
+  "route": "/posudomoechnaya-mashina-shumit.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Посудомоечная машина шумит — диагностика звука | MosPochin",
+  "h1": "Посудомоечная машина шумит и гудит",
+  "source": {
+    "extractedFrom": "posudomoechnaya-mashina-shumit.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "4159af537faf183903d48ffe5f60af6957ee626e211603db23717372d3cdaaa7",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9484,
+      "hash": "1046de20cfd64ad5",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/posudomoechnaya-mashina-shumit/props/dw2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-posudomoechnaya-mashina-shumit-i-gudi",
+      "component": "mobile-contact",
+      "label": "Посудомоечная машина шумит и гудит",
+      "file": "sections/002-mobile-contact-posudomoechnaya-mashina-shumit-i-gudi.html",
+      "bytes": 1728,
+      "hash": "82acb82e07250066"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1046,
+      "hash": "db6b9e2d7cffc60c",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "posudomoechnaya_mashina_shumit_breadcrumb_1"
+          },
+          {
+            "href": "posudomoyki.html",
+            "label": "Посудомоечные машины",
+            "ctaId": "posudomoechnaya_mashina_shumit_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Посудомоечная машина шумит и гудит"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 945,
+      "hash": "c4ca5ae625d13863",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/observations.template.html",
+      "propsRef": "src/pages/posudomoechnaya-mashina-shumit/props/dw2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1869,
+      "hash": "a442b84307451507",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/posudomoechnaya-mashina-shumit/props/dw2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 454,
+      "hash": "f79a395de7c0c67d"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1243,
+      "hash": "6dba334e65c84b54"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1584,
+      "hash": "bfcc5b4a4ec36ead"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1703,
+      "hash": "5168156c6d8feb60"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1729,
+      "hash": "387cb43a4a943faa"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5044,
+      "hash": "64494e7930216a72",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/posudomoechnaya-mashina-shumit/props/dw2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page posudomoechnaya-mashina-shumit.html",
+    "npm run doctor:page -- --page posudomoechnaya-mashina-shumit.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page posudomoechnaya-mashina-shumit.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

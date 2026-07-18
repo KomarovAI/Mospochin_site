@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "cluster": "cooking-appliance-cook2",
+  "release": "COOK2",
+  "checkedAt": "2026-07-17",
+  "status": "cook2-household-cluster",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/cooking-appliances/cook2",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9995
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1800
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "plity.html",
+      "label": "Духовки и панели",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "duhovka-ne-greet.html",
+      "label": "Не греет",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "label": "Не работает конфорка",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "label": "Не видит посуду",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "tresnula-steklokeramika-varochnoy-paneli.html",
+      "label": "Треснула стеклокерамика",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ]
+}

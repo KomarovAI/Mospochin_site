@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyatsiya-i-holodilnoe-oborudovanie.html
 - Builder model: src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1224
+- Text words inside referenced sections: 905
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция и холодильное оборудование | breadcrumb | 39.3 KB | 1037 | no | src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/sections/002-breadcrumb-ventilyaciya-i-holodil-noe-oborudovanie.html |
+| Вентиляция и холодильное оборудование | breadcrumb | 30.0 KB | 718 | no | src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/sections/002-breadcrumb-ventilyaciya-i-holodil-noe-oborudovanie.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-i-holodilnoe-oborudovanie/sections/007-lead-form-forma-zayavki.html |

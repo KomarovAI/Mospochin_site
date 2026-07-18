@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "umyagchenie-vody-dlya-vodonagrevatelya.html",
+  "slug": "umyagchenie-vody-dlya-vodonagrevatelya",
+  "route": "/umyagchenie-vody-dlya-vodonagrevatelya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Умягчение воды для водонагревателя — подбор и подключение",
+  "h1": "Умягчение воды для водонагревателя",
+  "source": {
+    "extractedFrom": "umyagchenie-vody-dlya-vodonagrevatelya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "0c6ba1d241e6ac4cc781585c337ece2766c44bf0cee601ff5d6ec59d6850789a",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9409,
+      "hash": "6f8ef72ef999a9cd"
+    },
+    {
+      "id": "002-mobile-contact-umyagchenie-vody-dlya-vodonagrevately",
+      "component": "mobile-contact",
+      "label": "Умягчение воды для водонагревателя",
+      "file": "sections/002-mobile-contact-umyagchenie-vody-dlya-vodonagrevately.html",
+      "bytes": 1761,
+      "hash": "8df7917ebf41a5a6"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1056,
+      "hash": "09fbd0db77587565",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "umyagchenie_vody_dlya_vodonagrevatelya_breadcrumb_1"
+          },
+          {
+            "href": "water-heaters.html",
+            "label": "Водонагреватели",
+            "ctaId": "umyagchenie_vody_dlya_vodonagrevatelya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Умягчение воды для водонагревателя"
+      }
+    },
+    {
+      "id": "003-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/003-section-sekciya-stranicy.html",
+      "bytes": 440,
+      "hash": "ab2825c5e4ba1f69"
+    },
+    {
+      "id": "004-section-kogda-nuzhen-etot-scenariy",
+      "component": "section",
+      "label": "Когда нужен этот сценарий",
+      "file": "sections/004-section-kogda-nuzhen-etot-scenariy.html",
+      "bytes": 1091,
+      "hash": "7f6a2d368725ca0d"
+    },
+    {
+      "id": "005-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "file": "sections/005-proof-chto-proverit-bezopasno.html",
+      "bytes": 2176,
+      "hash": "6067f1bbe7701b0d"
+    },
+    {
+      "id": "006-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/006-section-sekciya-stranicy.html",
+      "bytes": 492,
+      "hash": "16a78921940e6730"
+    },
+    {
+      "id": "007-section-kakie-raboty-mogut-potrebovat-sya",
+      "component": "section",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/007-section-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1496,
+      "hash": "9875c340d21a023f"
+    },
+    {
+      "id": "008-section-svyazannye-stranicy-vodonagrevateley",
+      "component": "section",
+      "label": "Связанные страницы водонагревателей",
+      "file": "sections/008-section-svyazannye-stranicy-vodonagrevateley.html",
+      "bytes": 1757,
+      "hash": "a02594c683f16e84"
+    },
+    {
+      "id": "009-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "bytes": 1857,
+      "hash": "fda738717a7b479e",
+      "componentRef": "src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--fda738717a7b479e.html",
+      "componentScope": "shared",
+      "componentSignature": "fda738717a7b479e",
+      "sourceFile": "sections/009-lead-form-chto-otpravit-do-vyezda.html"
+    },
+    {
+      "id": "010-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/010-faq-chastye-voprosy.html",
+      "bytes": 1723,
+      "hash": "5872827052758df3"
+    },
+    {
+      "id": "011-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/011-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4987,
+      "hash": "90a4b41a361fe948"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page umyagchenie-vody-dlya-vodonagrevatelya.html",
+    "npm run doctor:page -- --page umyagchenie-vody-dlya-vodonagrevatelya.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page umyagchenie-vody-dlya-vodonagrevatelya.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

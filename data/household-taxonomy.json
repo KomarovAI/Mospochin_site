@@ -2,102 +2,199 @@
   "families": [
     {
       "slug": "cold-storage",
-      "allowedSymptoms": ["не морозит", "намерзает", "течет", "шумит"],
-      "brandPool": ["Bosch", "Samsung", "LG", "Indesit", "Beko"],
-      "relatedFamilies": ["laundry", "dishwashing", "water-heating"]
+      "allowedSymptoms": [
+        "не морозит",
+        "намерзает",
+        "течет",
+        "шумит"
+      ],
+      "brandPool": [
+        "Bosch",
+        "Samsung",
+        "LG",
+        "Indesit",
+        "Beko"
+      ],
+      "relatedFamilies": [
+        "laundry",
+        "dishwashing",
+        "water-heating"
+      ]
     },
     {
       "slug": "laundry",
-      "allowedSymptoms": ["не сливает", "течет", "шумит", "не включается"],
-      "brandPool": ["Samsung", "LG", "Bosch", "Indesit", "Electrolux"],
-      "relatedFamilies": ["cold-storage", "dishwashing", "cooking"]
+      "allowedSymptoms": [
+        "не сливает",
+        "течет",
+        "шумит",
+        "не включается"
+      ],
+      "brandPool": [
+        "Samsung",
+        "LG",
+        "Bosch",
+        "Indesit",
+        "Electrolux"
+      ],
+      "relatedFamilies": [
+        "cold-storage",
+        "dishwashing",
+        "cooking"
+      ]
     },
     {
       "slug": "dishwashing",
-      "allowedSymptoms": ["течет", "не моет", "не сливает", "не греет воду"],
-      "brandPool": ["Bosch", "Electrolux", "Beko", "Hotpoint", "Hansa"],
-      "relatedFamilies": ["laundry", "cold-storage", "water-heating"]
+      "allowedSymptoms": [
+        "течет",
+        "не моет",
+        "не сливает",
+        "не греет воду"
+      ],
+      "brandPool": [
+        "Bosch",
+        "Electrolux",
+        "Beko",
+        "Hotpoint",
+        "Hansa"
+      ],
+      "relatedFamilies": [
+        "laundry",
+        "cold-storage",
+        "water-heating"
+      ]
     },
     {
       "slug": "cooking",
-      "allowedSymptoms": ["не греет", "искрит", "пахнет газом", "не включается"],
-      "brandPool": ["Gorenje", "Bosch", "Electrolux", "Gefest", "Hansa"],
-      "relatedFamilies": ["microwave", "water-heating", "cold-storage"]
+      "allowedSymptoms": [
+        "не нагревает",
+        "греет неравномерно",
+        "не работает зона",
+        "не видит посуду",
+        "не включается",
+        "выбивает автомат",
+        "показывает ошибку"
+      ],
+      "brandPool": [
+        "Bosch",
+        "Electrolux",
+        "Gorenje",
+        "Hansa",
+        "Samsung",
+        "Siemens",
+        "Neff",
+        "AEG"
+      ],
+      "relatedFamilies": [
+        "microwave",
+        "water-heating",
+        "cold-storage"
+      ]
     },
     {
       "slug": "microwave",
-      "allowedSymptoms": ["не греет", "искрит", "ошибка", "не включается"],
-      "brandPool": ["Neff", "Miele", "Bosch", "Siemens", "Smeg"],
-      "relatedFamilies": ["cooking", "water-heating", "cold-storage"]
+      "allowedSymptoms": [
+        "не греет",
+        "искрит",
+        "не включается",
+        "не запускается",
+        "не вращается поддон",
+        "шумит",
+        "не работает панель",
+        "не закрывается дверца",
+        "выбивает автомат"
+      ],
+      "brandPool": [
+        "Samsung",
+        "LG",
+        "Bosch",
+        "Siemens",
+        "Neff",
+        "Miele",
+        "Panasonic",
+        "Midea",
+        "Gorenje",
+        "Electrolux"
+      ],
+      "relatedFamilies": [
+        "cooking",
+        "water-heating",
+        "cold-storage"
+      ]
     },
     {
       "slug": "water-heating",
-      "allowedSymptoms": ["не греет", "течет", "выбивает автомат", "не включается"],
-      "brandPool": ["Ariston", "Thermex", "Electrolux", "Bosch", "Atlantic"],
-      "relatedFamilies": ["cooking", "microwave", "cold-storage"]
+      "allowedSymptoms": [
+        "не греет",
+        "течет",
+        "выбивает автомат",
+        "не включается"
+      ],
+      "brandPool": [
+        "Ariston",
+        "Thermex",
+        "Electrolux",
+        "Bosch",
+        "Atlantic"
+      ],
+      "relatedFamilies": [
+        "cooking",
+        "microwave",
+        "cold-storage"
+      ]
     },
     {
       "slug": "home-computing",
-      "allowedSymptoms": ["не включается", "тормозит", "шумит", "перегревается"],
-      "brandPool": ["ASUS", "Acer", "Lenovo", "HP", "Dell"],
-      "relatedFamilies": ["home-networking", "cold-storage", "laundry"]
+      "allowedSymptoms": [
+        "не включается",
+        "тормозит",
+        "шумит",
+        "перегревается"
+      ],
+      "brandPool": [
+        "ASUS",
+        "Acer",
+        "Lenovo",
+        "HP",
+        "Dell"
+      ],
+      "relatedFamilies": [
+        "home-networking",
+        "cold-storage",
+        "laundry"
+      ]
     },
     {
       "slug": "home-networking",
-      "allowedSymptoms": ["не раздает Wi-Fi", "сбрасывает сеть", "не включается", "слабый сигнал"],
-      "brandPool": ["TP-Link", "Keenetic", "ASUS", "D-Link", "Xiaomi"],
-      "relatedFamilies": ["home-computing", "cold-storage", "water-heating"]
+      "allowedSymptoms": [
+        "не раздает Wi-Fi",
+        "сбрасывает сеть",
+        "не включается",
+        "слабый сигнал"
+      ],
+      "brandPool": [
+        "TP-Link",
+        "Keenetic",
+        "ASUS",
+        "D-Link",
+        "Xiaomi"
+      ],
+      "relatedFamilies": [
+        "home-computing",
+        "cold-storage",
+        "water-heating"
+      ]
+    },
+    {
+      "slug": "refrigeration-home",
+      "name": "Бытовые холодильники",
+      "relatedFamilies": [
+        "laundry",
+        "dishwashing",
+        "cooking"
+      ]
     }
   ],
   "devices": [
-    {
-      "page": "holodilniki.html",
-      "slug": "holodilniki",
-      "family": "cold-storage",
-      "deviceName": "Холодильники",
-      "uiLabel": "Холодильники",
-      "isShadow": false
-    },
-    {
-      "page": "stiralnye-mashiny.html",
-      "slug": "stiralnye-mashiny",
-      "family": "laundry",
-      "deviceName": "Стиральные машины",
-      "uiLabel": "Стиральные машины",
-      "isShadow": false
-    },
-    {
-      "page": "posudomoyki.html",
-      "slug": "posudomoyki",
-      "family": "dishwashing",
-      "deviceName": "Посудомоечные машины",
-      "uiLabel": "Посудомойки",
-      "isShadow": false
-    },
-    {
-      "page": "plity.html",
-      "slug": "plity",
-      "family": "cooking",
-      "deviceName": "Плиты и духовки",
-      "uiLabel": "Плиты и духовки",
-      "isShadow": false
-    },
-    {
-      "page": "microwaves.html",
-      "slug": "microwaves",
-      "family": "microwave",
-      "deviceName": "Встроенные микроволновки",
-      "uiLabel": "Встроенные СВЧ",
-      "isShadow": false
-    },
-    {
-      "page": "water-heaters.html",
-      "slug": "water-heaters",
-      "family": "water-heating",
-      "deviceName": "Водонагреватели",
-      "uiLabel": "Водонагреватели",
-      "isShadow": false
-    },
     {
       "page": "kompyutery.html",
       "slug": "kompyutery",
@@ -113,15 +210,1673 @@
       "deviceName": "Роутеры",
       "uiLabel": "Роутеры",
       "isShadow": true
+    },
+    {
+      "page": "water-heaters.html",
+      "slug": "water-heaters",
+      "family": "water-heating",
+      "deviceName": "Водонагреватели",
+      "uiLabel": "Водонагреватели",
+      "isShadow": false
+    },
+    {
+      "page": "remont-nakopitelnyh-vodonagrevateley.html",
+      "slug": "remont-nakopitelnyh-vodonagrevateley",
+      "family": "water-heating",
+      "deviceName": "Накопительные бойлеры",
+      "uiLabel": "Накопительные бойлеры",
+      "isShadow": false
+    },
+    {
+      "page": "remont-protochnyh-vodonagrevateley.html",
+      "slug": "remont-protochnyh-vodonagrevateley",
+      "family": "water-heating",
+      "deviceName": "Проточные водонагреватели",
+      "uiLabel": "Проточные водонагреватели",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-vodonagrevatelya.html",
+      "slug": "diagnostika-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Диагностика водонагревателя",
+      "uiLabel": "Диагностика водонагревателя",
+      "isShadow": false
+    },
+    {
+      "page": "vodonagrevatel-ne-greet-vodu.html",
+      "slug": "vodonagrevatel-ne-greet-vodu",
+      "family": "water-heating",
+      "deviceName": "Не греет воду",
+      "uiLabel": "Не греет воду",
+      "isShadow": false
+    },
+    {
+      "page": "vodonagrevatel-techet.html",
+      "slug": "vodonagrevatel-techet",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель течёт",
+      "uiLabel": "Водонагреватель течёт",
+      "isShadow": false
+    },
+    {
+      "page": "vodonagrevatel-vybivaet-avtomat.html",
+      "slug": "vodonagrevatel-vybivaet-avtomat",
+      "family": "water-heating",
+      "deviceName": "Выбивает автомат или УЗО",
+      "uiLabel": "Выбивает автомат или УЗО",
+      "isShadow": false
+    },
+    {
+      "page": "vodonagrevatel-ne-vklyuchaetsya.html",
+      "slug": "vodonagrevatel-ne-vklyuchaetsya",
+      "family": "water-heating",
+      "deviceName": "Не включается",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "vodonagrevatel-medlenno-greet-vodu.html",
+      "slug": "vodonagrevatel-medlenno-greet-vodu",
+      "family": "water-heating",
+      "deviceName": "Медленно греет воду",
+      "uiLabel": "Медленно греет воду",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-tena-vodonagrevatelya.html",
+      "slug": "zamena-tena-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Замена ТЭНа",
+      "uiLabel": "Замена ТЭНа",
+      "isShadow": false
+    },
+    {
+      "page": "chistka-vodonagrevatelya-ot-nakipi.html",
+      "slug": "chistka-vodonagrevatelya-ot-nakipi",
+      "family": "water-heating",
+      "deviceName": "Чистка от накипи",
+      "uiLabel": "Чистка от накипи",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnye-mashiny.html",
+      "slug": "stiralnye-mashiny",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Стиральные машины",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-stiralnoy-mashiny.html",
+      "slug": "diagnostika-stiralnoy-mashiny",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Диагностика стиральной машины",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-ne-slivaet-vodu.html",
+      "slug": "stiralnaya-mashina-ne-slivaet-vodu",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Не сливает воду",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-ne-otzhimaet.html",
+      "slug": "stiralnaya-mashina-ne-otzhimaet",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Не отжимает",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-techet.html",
+      "slug": "stiralnaya-mashina-techet",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Течёт",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-shumit-pri-otzhime.html",
+      "slug": "stiralnaya-mashina-shumit-pri-otzhime",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Шумит при отжиме",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-prygaet-i-vibriruet.html",
+      "slug": "stiralnaya-mashina-prygaet-i-vibriruet",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Прыгает и вибрирует",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-ne-vklyuchaetsya.html",
+      "slug": "stiralnaya-mashina-ne-vklyuchaetsya",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-ne-nabiraet-vodu.html",
+      "slug": "stiralnaya-mashina-ne-nabiraet-vodu",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Не набирает воду",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-ne-greet-vodu.html",
+      "slug": "stiralnaya-mashina-ne-greet-vodu",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Не греет воду",
+      "isShadow": false
+    },
+    {
+      "page": "ne-krutitsya-baraban-stiralnoy-mashiny.html",
+      "slug": "ne-krutitsya-baraban-stiralnoy-mashiny",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Не крутится барабан",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-slivnogo-nasosa-stiralnoy-mashiny.html",
+      "slug": "zamena-slivnogo-nasosa-stiralnoy-mashiny",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Замена сливного насоса",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-tena-stiralnoy-mashiny.html",
+      "slug": "zamena-tena-stiralnoy-mashiny",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Замена ТЭНа",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-podshipnikov-stiralnoy-mashiny.html",
+      "slug": "zamena-podshipnikov-stiralnoy-mashiny",
+      "family": "laundry",
+      "deviceName": "Стиральная машина",
+      "uiLabel": "Замена подшипников",
+      "isShadow": false
+    },
+    {
+      "page": "microwaves.html",
+      "slug": "microwaves",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Микроволновые печи",
+      "isShadow": false
+    },
+    {
+      "page": "remont-vstroennyh-mikrovolnovok.html",
+      "slug": "remont-vstroennyh-mikrovolnovok",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Встроенные СВЧ",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-mikrovolnovoy-pechi.html",
+      "slug": "diagnostika-mikrovolnovoy-pechi",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Диагностика СВЧ",
+      "isShadow": false
+    },
+    {
+      "page": "mikrovolnovka-ne-greet.html",
+      "slug": "mikrovolnovka-ne-greet",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "СВЧ не греет",
+      "isShadow": false
+    },
+    {
+      "page": "mikrovolnovka-iskrit-i-treshchit.html",
+      "slug": "mikrovolnovka-iskrit-i-treshchit",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "СВЧ искрит",
+      "isShadow": false
+    },
+    {
+      "page": "mikrovolnovka-ne-vklyuchaetsya.html",
+      "slug": "mikrovolnovka-ne-vklyuchaetsya",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "СВЧ не включается",
+      "isShadow": false
+    },
+    {
+      "page": "mikrovolnovka-ne-zapuskaetsya.html",
+      "slug": "mikrovolnovka-ne-zapuskaetsya",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "СВЧ не запускается",
+      "isShadow": false
+    },
+    {
+      "page": "ne-krutitsya-tarelka-v-mikrovolnovke.html",
+      "slug": "ne-krutitsya-tarelka-v-mikrovolnovke",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Не крутится тарелка",
+      "isShadow": false
+    },
+    {
+      "page": "mikrovolnovka-shumit-i-gudit.html",
+      "slug": "mikrovolnovka-shumit-i-gudit",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "СВЧ шумит",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotayut-knopki-mikrovolnovki.html",
+      "slug": "ne-rabotayut-knopki-mikrovolnovki",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Не работают кнопки СВЧ",
+      "isShadow": false
+    },
+    {
+      "page": "dvertsa-mikrovolnovki-ne-zakryvaetsya.html",
+      "slug": "dvertsa-mikrovolnovki-ne-zakryvaetsya",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Не закрывается дверца СВЧ",
+      "isShadow": false
+    },
+    {
+      "page": "mikrovolnovka-vybivaet-avtomat.html",
+      "slug": "mikrovolnovka-vybivaet-avtomat",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "СВЧ выбивает автомат",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-slyudy-v-mikrovolnovke.html",
+      "slug": "zamena-slyudy-v-mikrovolnovke",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Замена слюды СВЧ",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-magnetrona-mikrovolnovki.html",
+      "slug": "zamena-magnetrona-mikrovolnovki",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Замена магнетрона СВЧ",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-dvigatelya-poddona-mikrovolnovki.html",
+      "slug": "zamena-dvigatelya-poddona-mikrovolnovki",
+      "family": "microwave",
+      "deviceName": "Бытовые микроволновые печи",
+      "uiLabel": "Двигатель поддона СВЧ",
+      "isShadow": false
+    },
+    {
+      "page": "holodilniki.html",
+      "slug": "holodilniki",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Бытовые холодильники",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-holodilnika.html",
+      "slug": "diagnostika-holodilnika",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Диагностика",
+      "isShadow": false
+    },
+    {
+      "page": "holodilnik-ne-morozit.html",
+      "slug": "holodilnik-ne-morozit",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Нет холода",
+      "isShadow": false
+    },
+    {
+      "page": "holodilnaya-kamera-ne-holodit.html",
+      "slug": "holodilnaya-kamera-ne-holodit",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Тёплая камера",
+      "isShadow": false
+    },
+    {
+      "page": "holodilnik-rabotaet-bez-ostanovki.html",
+      "slug": "holodilnik-rabotaet-bez-ostanovki",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Не отключается",
+      "isShadow": false
+    },
+    {
+      "page": "holodilnik-namerzaet-led.html",
+      "slug": "holodilnik-namerzaet-led",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Лёд и иней",
+      "isShadow": false
+    },
+    {
+      "page": "techet-voda-iz-holodilnika.html",
+      "slug": "techet-voda-iz-holodilnika",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Протечка",
+      "isShadow": false
+    },
+    {
+      "page": "holodilnik-shumit-i-gudit.html",
+      "slug": "holodilnik-shumit-i-gudit",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Необычный звук",
+      "isShadow": false
+    },
+    {
+      "page": "holodilnik-ne-vklyuchaetsya.html",
+      "slug": "holodilnik-ne-vklyuchaetsya",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Нет запуска",
+      "isShadow": false
+    },
+    {
+      "page": "holodilnik-peremorazhivaet-produkty.html",
+      "slug": "holodilnik-peremorazhivaet-produkty",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Слишком холодно",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-no-frost.html",
+      "slug": "ne-rabotaet-no-frost",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "No Frost",
+      "isShadow": false
+    },
+    {
+      "page": "dver-holodilnika-ne-zakryvaetsya.html",
+      "slug": "dver-holodilnika-ne-zakryvaetsya",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Дверь и уплотнитель",
+      "isShadow": false
+    },
+    {
+      "page": "remont-sistemy-ottaiki-holodilnika.html",
+      "slug": "remont-sistemy-ottaiki-holodilnika",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Система оттайки",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-ventilyatora-holodilnika.html",
+      "slug": "zamena-ventilyatora-holodilnika",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Вентилятор",
+      "isShadow": false
+    },
+    {
+      "page": "remont-platy-holodilnika.html",
+      "slug": "remont-platy-holodilnika",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Электронное управление",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-kompressora-holodilnika.html",
+      "slug": "zamena-kompressora-holodilnika",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Компрессор",
+      "isShadow": false
+    },
+    {
+      "page": "poisk-utechki-i-zapravka-holodilnika.html",
+      "slug": "poisk-utechki-i-zapravka-holodilnika",
+      "family": "refrigeration-home",
+      "deviceName": "Бытовой холодильник",
+      "uiLabel": "Холодильный контур",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoyki.html",
+      "slug": "posudomoyki",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Бытовые посудомойки",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-posudomoechnoy-mashiny.html",
+      "slug": "diagnostika-posudomoechnoy-mashiny",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Диагностика",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-slivaet-vodu.html",
+      "slug": "posudomoechnaya-mashina-ne-slivaet-vodu",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не сливает воду",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ploho-moet-posudu.html",
+      "slug": "posudomoechnaya-mashina-ploho-moet-posudu",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Плохо моет",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-techet.html",
+      "slug": "posudomoechnaya-mashina-techet",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Течёт",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+      "slug": "posudomoechnaya-mashina-ne-nabiraet-vodu",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не набирает воду",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-greet-vodu.html",
+      "slug": "posudomoechnaya-mashina-ne-greet-vodu",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не греет воду",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-sushit-posudu.html",
+      "slug": "posudomoechnaya-mashina-ne-sushit-posudu",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не сушит",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+      "slug": "posudomoechnaya-mashina-ne-vklyuchaetsya",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-zapuskaet-cikl.html",
+      "slug": "posudomoechnaya-mashina-ne-zapuskaet-cikl",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не запускает цикл",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "slug": "posudomoechnaya-mashina-ostanavlivaetsya-v-cikle",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Останавливается",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-vybivaet-avtomat.html",
+      "slug": "posudomoechnaya-mashina-vybivaet-avtomat",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Выбивает автомат",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-slivnogo-nasosa-posudomoechnoy-mashiny.html",
+      "slug": "zamena-slivnogo-nasosa-posudomoechnoy-mashiny",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Сливной насос",
+      "isShadow": false
+    },
+    {
+      "page": "remont-cirkulyacionnogo-nasosa-posudomoechnoy-mashiny.html",
+      "slug": "remont-cirkulyacionnogo-nasosa-posudomoechnoy-mashiny",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Циркуляционный насос",
+      "isShadow": false
+    },
+    {
+      "page": "remont-nagreva-posudomoechnoy-mashiny.html",
+      "slug": "remont-nagreva-posudomoechnoy-mashiny",
+      "family": "dishwashing",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Система нагрева",
+      "isShadow": false
+    },
+    {
+      "page": "plity.html",
+      "slug": "plity",
+      "family": "cooking_hub",
+      "deviceName": "Духовки и варочные панели",
+      "uiLabel": "Духовки и панели",
+      "isShadow": false
+    },
+    {
+      "page": "remont-duhovyh-shkafov.html",
+      "slug": "remont-duhovyh-shkafov",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Духовые шкафы",
+      "isShadow": false
+    },
+    {
+      "page": "remont-elektricheskih-varochnyh-paneley.html",
+      "slug": "remont-elektricheskih-varochnyh-paneley",
+      "family": "electric_hob",
+      "deviceName": "Электрические варочные панели",
+      "uiLabel": "Электрические панели",
+      "isShadow": false
+    },
+    {
+      "page": "remont-indukcionnyh-varochnyh-paneley.html",
+      "slug": "remont-indukcionnyh-varochnyh-paneley",
+      "family": "induction_hob",
+      "deviceName": "Индукционные варочные панели",
+      "uiLabel": "Индукционные панели",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-duhovogo-shkafa.html",
+      "slug": "diagnostika-duhovogo-shkafa",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Диагностика духовки",
+      "isShadow": false
+    },
+    {
+      "page": "duhovka-ne-greet.html",
+      "slug": "duhovka-ne-greet",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Не греет",
+      "isShadow": false
+    },
+    {
+      "page": "duhovka-neravnomerno-pechet.html",
+      "slug": "duhovka-neravnomerno-pechet",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Неравномерно печёт",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-konvekciya-duhovki.html",
+      "slug": "ne-rabotaet-konvekciya-duhovki",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Не работает конвекция",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-gril-duhovki.html",
+      "slug": "ne-rabotaet-gril-duhovki",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Не работает гриль",
+      "isShadow": false
+    },
+    {
+      "page": "duhovka-ne-vklyuchaetsya.html",
+      "slug": "duhovka-ne-vklyuchaetsya",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "duhovka-vybivaet-avtomat.html",
+      "slug": "duhovka-vybivaet-avtomat",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Выбивает автомат",
+      "isShadow": false
+    },
+    {
+      "page": "duhovka-peregrevaetsya.html",
+      "slug": "duhovka-peregrevaetsya",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Перегревается",
+      "isShadow": false
+    },
+    {
+      "page": "dver-duhovki-ne-zakryvaetsya.html",
+      "slug": "dver-duhovki-ne-zakryvaetsya",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Не закрывается дверца",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-tena-duhovki.html",
+      "slug": "zamena-tena-duhovki",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Замена ТЭНа",
+      "isShadow": false
+    },
+    {
+      "page": "remont-ventilyatora-duhovki.html",
+      "slug": "remont-ventilyatora-duhovki",
+      "family": "electric_oven",
+      "deviceName": "Электрические духовые шкафы",
+      "uiLabel": "Ремонт вентилятора",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "slug": "diagnostika-elektricheskoy-varochnoy-paneli",
+      "family": "electric_hob",
+      "deviceName": "Электрические варочные панели",
+      "uiLabel": "Диагностика электрической панели",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "slug": "ne-rabotaet-konforka-elektricheskoy-paneli",
+      "family": "electric_hob",
+      "deviceName": "Электрические варочные панели",
+      "uiLabel": "Не работает конфорка",
+      "isShadow": false
+    },
+    {
+      "page": "konforka-postoyanno-greet.html",
+      "slug": "konforka-postoyanno-greet",
+      "family": "electric_hob",
+      "deviceName": "Электрические варочные панели",
+      "uiLabel": "Постоянно греет",
+      "isShadow": false
+    },
+    {
+      "page": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+      "slug": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya",
+      "family": "electric_hob",
+      "deviceName": "Электрические варочные панели",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-sensor-elektricheskoy-paneli.html",
+      "slug": "ne-rabotaet-sensor-elektricheskoy-paneli",
+      "family": "electric_hob",
+      "deviceName": "Электрические варочные панели",
+      "uiLabel": "Не работает сенсор",
+      "isShadow": false
+    },
+    {
+      "page": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "slug": "elektricheskaya-panel-vybivaet-avtomat",
+      "family": "electric_hob",
+      "deviceName": "Электрические варочные панели",
+      "uiLabel": "Выбивает автомат",
+      "isShadow": false
+    },
+    {
+      "page": "tresnula-steklokeramika-varochnoy-paneli.html",
+      "slug": "tresnula-steklokeramika-varochnoy-paneli",
+      "family": "electric_hob",
+      "deviceName": "Электрические варочные панели",
+      "uiLabel": "Треснула стеклокерамика",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "slug": "diagnostika-indukcionnoy-varochnoy-paneli",
+      "family": "induction_hob",
+      "deviceName": "Индукционные варочные панели",
+      "uiLabel": "Диагностика индукции",
+      "isShadow": false
+    },
+    {
+      "page": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "slug": "indukcionnaya-panel-ne-vidit-posudu",
+      "family": "induction_hob",
+      "deviceName": "Индукционные варочные панели",
+      "uiLabel": "Не видит посуду",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "slug": "ne-rabotaet-odna-zona-indukcionnoy-paneli",
+      "family": "induction_hob",
+      "deviceName": "Индукционные варочные панели",
+      "uiLabel": "Не работает одна зона",
+      "isShadow": false
+    },
+    {
+      "page": "indukcionnaya-panel-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "slug": "indukcionnaya-panel-vklyuchaetsya-i-vyklyuchaetsya",
+      "family": "induction_hob",
+      "deviceName": "Индукционные варочные панели",
+      "uiLabel": "Включается и отключается",
+      "isShadow": false
+    },
+    {
+      "page": "oshibka-na-indukcionnoy-paneli.html",
+      "slug": "oshibka-na-indukcionnoy-paneli",
+      "family": "induction_hob",
+      "deviceName": "Индукционные варочные панели",
+      "uiLabel": "Ошибка на дисплее",
+      "isShadow": false
+    },
+    {
+      "page": "remont-silovogo-modulya-indukcionnoy-paneli.html",
+      "slug": "remont-silovogo-modulya-indukcionnoy-paneli",
+      "family": "induction_hob",
+      "deviceName": "Индукционные варочные панели",
+      "uiLabel": "Силовой модуль",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnye-mashiny.html",
+      "slug": "sushilnye-mashiny",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Сушильные машины",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-sushilnoy-mashiny.html",
+      "slug": "diagnostika-sushilnoy-mashiny",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Диагностика",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnaya-mashina-ne-sushit.html",
+      "slug": "sushilnaya-mashina-ne-sushit",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Не сушит бельё",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnaya-mashina-dolgo-sushit.html",
+      "slug": "sushilnaya-mashina-dolgo-sushit",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Долго сушит",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnaya-mashina-ne-greet.html",
+      "slug": "sushilnaya-mashina-ne-greet",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Не нагревает",
+      "isShadow": false
+    },
+    {
+      "page": "ne-krutitsya-baraban-sushilnoy-mashiny.html",
+      "slug": "ne-krutitsya-baraban-sushilnoy-mashiny",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Не вращается барабан",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnaya-mashina-ne-vklyuchaetsya.html",
+      "slug": "sushilnaya-mashina-ne-vklyuchaetsya",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnaya-mashina-ne-zapuskaetsya.html",
+      "slug": "sushilnaya-mashina-ne-zapuskaetsya",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Не запускается",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "slug": "sushilnaya-mashina-ostanavlivaetsya-v-cikle",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Останавливается в цикле",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnaya-mashina-shumit-i-skripit.html",
+      "slug": "sushilnaya-mashina-shumit-i-skripit",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Шумит и скрипит",
+      "isShadow": false
+    },
+    {
+      "page": "techet-sushilnaya-mashina.html",
+      "slug": "techet-sushilnaya-mashina",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Течёт вода",
+      "isShadow": false
+    },
+    {
+      "page": "sushilnaya-mashina-ne-sobiraet-kondensat.html",
+      "slug": "sushilnaya-mashina-ne-sobiraet-kondensat",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Не собирает конденсат",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "slug": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Тепловой насос",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-remnya-sushilnoy-mashiny.html",
+      "slug": "zamena-remnya-sushilnoy-mashiny",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Замена ремня",
+      "isShadow": false
+    },
+    {
+      "page": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "slug": "remont-ventilyatora-sushilnoy-mashiny",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Ремонт вентилятора",
+      "isShadow": false
+    },
+    {
+      "page": "remont-nagreva-sushilnoy-mashiny.html",
+      "slug": "remont-nagreva-sushilnoy-mashiny",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Ремонт нагрева",
+      "isShadow": false
+    },
+    {
+      "page": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "slug": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny",
+      "family": "drying",
+      "deviceName": "Бытовая сушильная машина",
+      "uiLabel": "Чистка воздушного тракта",
+      "isShadow": false
+    },
+    {
+      "page": "morozilniki.html",
+      "slug": "morozilniki",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Морозильники",
+      "isShadow": false
+    },
+    {
+      "page": "remont-morozilnyh-larey.html",
+      "slug": "remont-morozilnyh-larey",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Морозильные лари",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-morozilnika.html",
+      "slug": "diagnostika-morozilnika",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Диагностика",
+      "isShadow": false
+    },
+    {
+      "page": "morozilka-ne-morozit.html",
+      "slug": "morozilka-ne-morozit",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Не морозит",
+      "isShadow": false
+    },
+    {
+      "page": "morozilnik-slabo-morozit.html",
+      "slug": "morozilnik-slabo-morozit",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Слабо морозит",
+      "isShadow": false
+    },
+    {
+      "page": "morozilnik-rabotaet-bez-ostanovki.html",
+      "slug": "morozilnik-rabotaet-bez-ostanovki",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Работает без остановки",
+      "isShadow": false
+    },
+    {
+      "page": "morozilnik-namerzaet-led.html",
+      "slug": "morozilnik-namerzaet-led",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Намерзает лёд",
+      "isShadow": false
+    },
+    {
+      "page": "techet-voda-iz-morozilnika.html",
+      "slug": "techet-voda-iz-morozilnika",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Течёт вода",
+      "isShadow": false
+    },
+    {
+      "page": "morozilnik-shumit-i-gudit.html",
+      "slug": "morozilnik-shumit-i-gudit",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Шумит и гудит",
+      "isShadow": false
+    },
+    {
+      "page": "morozilnik-ne-vklyuchaetsya.html",
+      "slug": "morozilnik-ne-vklyuchaetsya",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "morozilnik-peremorazhivaet.html",
+      "slug": "morozilnik-peremorazhivaet",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Перемораживает",
+      "isShadow": false
+    },
+    {
+      "page": "dver-morozilnika-ne-zakryvaetsya.html",
+      "slug": "dver-morozilnika-ne-zakryvaetsya",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Не закрывается дверь",
+      "isShadow": false
+    },
+    {
+      "page": "remont-sistemy-ottaiki-morozilnika.html",
+      "slug": "remont-sistemy-ottaiki-morozilnika",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Система оттайки",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-kompressora-morozilnika.html",
+      "slug": "zamena-kompressora-morozilnika",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Компрессор",
+      "isShadow": false
+    },
+    {
+      "page": "poisk-utechki-i-zapravka-morozilnika.html",
+      "slug": "poisk-utechki-i-zapravka-morozilnika",
+      "family": "freezing",
+      "deviceName": "Бытовой морозильник",
+      "uiLabel": "Утечка и заправка",
+      "isShadow": false
+    },
+    {
+      "page": "kuhonnye-vytyazhki.html",
+      "slug": "kuhonnye-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Кухонные вытяжки",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-kuhonnoy-vytyazhki.html",
+      "slug": "diagnostika-kuhonnoy-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Диагностика",
+      "isShadow": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-ne-vklyuchaetsya.html",
+      "slug": "kuhonnaya-vytyazhka-ne-vklyuchaetsya",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-ploho-tyanet.html",
+      "slug": "kuhonnaya-vytyazhka-ploho-tyanet",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Плохо тянет",
+      "isShadow": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-shumit.html",
+      "slug": "kuhonnaya-vytyazhka-shumit",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Шумит",
+      "isShadow": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-vibriruet.html",
+      "slug": "kuhonnaya-vytyazhka-vibriruet",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Вибрирует",
+      "isShadow": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-ne-pereklyuchaet-skorosti.html",
+      "slug": "kuhonnaya-vytyazhka-ne-pereklyuchaet-skorosti",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Не переключает скорости",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-sensor-kuhonnoy-vytyazhki.html",
+      "slug": "ne-rabotaet-sensor-kuhonnoy-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Не работает сенсор",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-podsvetka-kuhonnoy-vytyazhki.html",
+      "slug": "ne-rabotaet-podsvetka-kuhonnoy-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Не работает подсветка",
+      "isShadow": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-vybivaet-avtomat.html",
+      "slug": "kuhonnaya-vytyazhka-vybivaet-avtomat",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Выбивает автомат",
+      "isShadow": false
+    },
+    {
+      "page": "remont-dvigatelya-kuhonnoy-vytyazhki.html",
+      "slug": "remont-dvigatelya-kuhonnoy-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Ремонт двигателя",
+      "isShadow": false
+    },
+    {
+      "page": "remont-platy-kuhonnoy-vytyazhki.html",
+      "slug": "remont-platy-kuhonnoy-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Ремонт платы",
+      "isShadow": false
+    },
+    {
+      "page": "remont-knopochnogo-bloka-kuhonnoy-vytyazhki.html",
+      "slug": "remont-knopochnogo-bloka-kuhonnoy-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Кнопочный блок",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-krylchatki-kuhonnoy-vytyazhki.html",
+      "slug": "zamena-krylchatki-kuhonnoy-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Крыльчатка",
+      "isShadow": false
+    },
+    {
+      "page": "obsluzhivanie-filtrov-kuhonnoy-vytyazhki.html",
+      "slug": "obsluzhivanie-filtrov-kuhonnoy-vytyazhki",
+      "family": "cooking_ventilation",
+      "deviceName": "Бытовая кухонная вытяжка",
+      "uiLabel": "Фильтры",
+      "isShadow": false
+    },
+    {
+      "page": "vinnye-shkafy.html",
+      "slug": "vinnye-shkafy",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Винные шкафы",
+      "isShadow": false
+    },
+    {
+      "page": "diagnostika-vinnogo-shkafa.html",
+      "slug": "diagnostika-vinnogo-shkafa",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Диагностика",
+      "isShadow": false
+    },
+    {
+      "page": "remont-vstroennyh-vinnyh-shkafov.html",
+      "slug": "remont-vstroennyh-vinnyh-shkafov",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Встроенные модели",
+      "isShadow": false
+    },
+    {
+      "page": "vinnyy-shkaf-ne-ohlazhdaet.html",
+      "slug": "vinnyy-shkaf-ne-ohlazhdaet",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Не охлаждает",
+      "isShadow": false
+    },
+    {
+      "page": "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+      "slug": "vinnyy-shkaf-ne-derzhit-temperaturu",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Не держит температуру",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+      "slug": "ne-rabotaet-odna-zona-vinnogo-shkafa",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Не работает одна зона",
+      "isShadow": false
+    },
+    {
+      "page": "vinnyy-shkaf-peremorazhivaet.html",
+      "slug": "vinnyy-shkaf-peremorazhivaet",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Перемораживает",
+      "isShadow": false
+    },
+    {
+      "page": "kondensat-v-vinnom-shkafu.html",
+      "slug": "kondensat-v-vinnom-shkafu",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Конденсат",
+      "isShadow": false
+    },
+    {
+      "page": "vinnyy-shkaf-shumit.html",
+      "slug": "vinnyy-shkaf-shumit",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Шумит",
+      "isShadow": false
+    },
+    {
+      "page": "vinnyy-shkaf-ne-vklyuchaetsya.html",
+      "slug": "vinnyy-shkaf-ne-vklyuchaetsya",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Не включается",
+      "isShadow": false
+    },
+    {
+      "page": "vinnyy-shkaf-rabotaet-bez-ostanovki.html",
+      "slug": "vinnyy-shkaf-rabotaet-bez-ostanovki",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Работает без остановки",
+      "isShadow": false
+    },
+    {
+      "page": "ne-rabotaet-ventilyator-vinnogo-shkafa.html",
+      "slug": "ne-rabotaet-ventilyator-vinnogo-shkafa",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Вентилятор",
+      "isShadow": false
+    },
+    {
+      "page": "remont-datchika-temperatury-vinnogo-shkafa.html",
+      "slug": "remont-datchika-temperatury-vinnogo-shkafa",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Датчик температуры",
+      "isShadow": false
+    },
+    {
+      "page": "remont-platy-vinnogo-shkafa.html",
+      "slug": "remont-platy-vinnogo-shkafa",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Плата управления",
+      "isShadow": false
+    },
+    {
+      "page": "poisk-utechki-i-zapravka-vinnogo-shkafa.html",
+      "slug": "poisk-utechki-i-zapravka-vinnogo-shkafa",
+      "family": "wine_cooling",
+      "deviceName": "Бытовой винный шкаф",
+      "uiLabel": "Холодильный контур",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "slug": "stiralnaya-mashina-ne-otkryvaetsya",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Не открывается люк",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+      "slug": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Останавливается во время стирки",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-dolgo-stiraet.html",
+      "slug": "stiralnaya-mashina-dolgo-stiraet",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Долго стирает",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-nabiraet-i-srazu-slivaet-vodu.html",
+      "slug": "stiralnaya-mashina-nabiraet-i-srazu-slivaet-vodu",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Набирает и сразу сливает",
+      "isShadow": false
+    },
+    {
+      "page": "voda-ostaetsya-v-barabane-stiralnoy-mashiny.html",
+      "slug": "voda-ostaetsya-v-barabane-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Вода остаётся в барабане",
+      "isShadow": false
+    },
+    {
+      "page": "stiralnaya-mashina-vybivaet-avtomat.html",
+      "slug": "stiralnaya-mashina-vybivaet-avtomat",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Выбивает автомат или УЗО",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-manzhety-lyuka-stiralnoy-mashiny.html",
+      "slug": "zamena-manzhety-lyuka-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Замена манжеты люка",
+      "isShadow": false
+    },
+    {
+      "page": "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+      "slug": "remont-blokirovki-lyuka-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Ремонт блокировки люка",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-amortizatorov-stiralnoy-mashiny.html",
+      "slug": "zamena-amortizatorov-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Замена амортизаторов",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-remnya-stiralnoy-mashiny.html",
+      "slug": "zamena-remnya-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Замена ремня",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-zalivnogo-klapana-stiralnoy-mashiny.html",
+      "slug": "zamena-zalivnogo-klapana-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Замена заливного клапана",
+      "isShadow": false
+    },
+    {
+      "page": "remont-dvigatelya-stiralnoy-mashiny.html",
+      "slug": "remont-dvigatelya-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Ремонт двигателя",
+      "isShadow": false
+    },
+    {
+      "page": "remont-platy-stiralnoy-mashiny.html",
+      "slug": "remont-platy-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Ремонт платы управления",
+      "isShadow": false
+    },
+    {
+      "page": "izvlechenie-postoronnego-predmeta-iz-stiralnoy-mashiny.html",
+      "slug": "izvlechenie-postoronnego-predmeta-iz-stiralnoy-mashiny",
+      "family": "washing",
+      "deviceName": "Бытовая стиральная машина",
+      "uiLabel": "Извлечение постороннего предмета",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-postoyanno-slivaet-vodu.html",
+      "slug": "posudomoechnaya-mashina-postoyanno-slivaet-vodu",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Постоянно сливает воду",
+      "isShadow": false
+    },
+    {
+      "page": "srabotal-aquastop-posudomoechnoy-mashiny.html",
+      "slug": "srabotal-aquastop-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Сработал AquaStop",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-rastvoryaet-tabletku.html",
+      "slug": "posudomoechnaya-mashina-ne-rastvoryaet-tabletku",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не растворяет таблетку",
+      "isShadow": false
+    },
+    {
+      "page": "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+      "slug": "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не открывается дозатор",
+      "isShadow": false
+    },
+    {
+      "page": "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+      "slug": "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не вращаются разбрызгиватели",
+      "isShadow": false
+    },
+    {
+      "page": "belyy-nalet-posle-posudomoechnoy-mashiny.html",
+      "slug": "belyy-nalet-posle-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Белый налёт на посуде",
+      "isShadow": false
+    },
+    {
+      "page": "pena-v-posudomoechnoy-mashine.html",
+      "slug": "pena-v-posudomoechnoy-mashine",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Пена в посудомоечной машине",
+      "isShadow": false
+    },
+    {
+      "page": "posudomoechnaya-mashina-shumit.html",
+      "slug": "posudomoechnaya-mashina-shumit",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Шумит и гудит",
+      "isShadow": false
+    },
+    {
+      "page": "dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+      "slug": "dver-posudomoechnoy-mashiny-ne-zakryvaetsya",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Не закрывается дверь",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-zalivnogo-klapana-posudomoechnoy-mashiny.html",
+      "slug": "zamena-zalivnogo-klapana-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Замена заливного клапана",
+      "isShadow": false
+    },
+    {
+      "page": "remont-zamka-posudomoechnoy-mashiny.html",
+      "slug": "remont-zamka-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Ремонт замка двери",
+      "isShadow": false
+    },
+    {
+      "page": "remont-dozatora-posudomoechnoy-mashiny.html",
+      "slug": "remont-dozatora-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Ремонт дозатора",
+      "isShadow": false
+    },
+    {
+      "page": "remont-datchika-urovnya-posudomoechnoy-mashiny.html",
+      "slug": "remont-datchika-urovnya-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Ремонт датчика уровня",
+      "isShadow": false
+    },
+    {
+      "page": "remont-platy-posudomoechnoy-mashiny.html",
+      "slug": "remont-platy-posudomoechnoy-mashiny",
+      "family": "dishwasher",
+      "deviceName": "Бытовая посудомоечная машина",
+      "uiLabel": "Ремонт платы управления",
+      "isShadow": false
+    },
+    {
+      "page": "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+      "slug": "podklyuchenie-i-obvyazka-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель и локальная обвязка",
+      "uiLabel": "Подключение и обвязка",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
+      "slug": "zamena-predohranitelnogo-klapana-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель и локальная обвязка",
+      "uiLabel": "Предохранительный клапан",
+      "isShadow": false
+    },
+    {
+      "page": "ustanovka-slivnogo-krana-vodonagrevatelya.html",
+      "slug": "ustanovka-slivnogo-krana-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель и локальная обвязка",
+      "uiLabel": "Сливной кран",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-zapornogo-krana-vodonagrevatelya.html",
+      "slug": "zamena-zapornogo-krana-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель и локальная обвязка",
+      "uiLabel": "Запорный кран",
+      "isShadow": false
+    },
+    {
+      "page": "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya.html",
+      "slug": "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель и локальная обвязка",
+      "uiLabel": "Редуктор давления",
+      "isShadow": false
+    },
+    {
+      "page": "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem.html",
+      "slug": "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель и локальная обвязка",
+      "uiLabel": "Механический фильтр",
+      "isShadow": false
+    },
+    {
+      "page": "umyagchenie-vody-dlya-vodonagrevatelya.html",
+      "slug": "umyagchenie-vody-dlya-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель и локальная обвязка",
+      "uiLabel": "Умягчение воды",
+      "isShadow": false
+    },
+    {
+      "page": "podklyuchenie-vodonagrevatelya-polipropilenom.html",
+      "slug": "podklyuchenie-vodonagrevatelya-polipropilenom",
+      "family": "water-heating",
+      "deviceName": "Водонагреватель и локальная обвязка",
+      "uiLabel": "Подключение PP-R",
+      "isShadow": false
+    },
+    {
+      "page": "remont-trehfaznyh-vodonagrevateley-380-400v.html",
+      "slug": "remont-trehfaznyh-vodonagrevateley-380-400v",
+      "family": "water-heating",
+      "deviceName": "Трёхфазный электрический водонагреватель",
+      "uiLabel": "Трёхфазные 380/400 В",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-flantsa-i-prokladki-vodonagrevatelya.html",
+      "slug": "zamena-flantsa-i-prokladki-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Замена фланца и прокладки водонагревателя",
+      "uiLabel": "Замена фланца и прокладки водонагревателя",
+      "isShadow": false
+    },
+    {
+      "page": "remont-platy-i-elektroniki-vodonagrevatelya.html",
+      "slug": "remont-platy-i-elektroniki-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Ремонт платы и электроники водонагревателя",
+      "uiLabel": "Ремонт платы и электроники водонагревателя",
+      "isShadow": false
+    },
+    {
+      "page": "zamena-termostata-i-datchika-temperatury-vodonagrevatelya.html",
+      "slug": "zamena-termostata-i-datchika-temperatury-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Замена термостата и датчика температуры водонагревателя",
+      "uiLabel": "Замена термостата и датчика температуры водонагревателя",
+      "isShadow": false
+    },
+    {
+      "page": "ustanovka-rasshiritelnogo-baka-dlya-vodonagrevatelya.html",
+      "slug": "ustanovka-rasshiritelnogo-baka-dlya-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Установка расширительного бака для водонагревателя",
+      "uiLabel": "Установка расширительного бака для водонагревателя",
+      "isShadow": false
+    },
+    {
+      "page": "remont-ploskih-dvuhbakovyh-vodonagrevateley.html",
+      "slug": "remont-ploskih-dvuhbakovyh-vodonagrevateley",
+      "family": "water-heating",
+      "deviceName": "Ремонт плоских двухбаковых водонагревателей",
+      "uiLabel": "Ремонт плоских двухбаковых водонагревателей",
+      "isShadow": false
+    },
+    {
+      "page": "korroziya-baka-vodonagrevatelya.html",
+      "slug": "korroziya-baka-vodonagrevatelya",
+      "family": "water-heating",
+      "deviceName": "Коррозия бака водонагревателя: ремонт или замена",
+      "uiLabel": "Коррозия бака водонагревателя: ремонт или замена",
+      "isShadow": false
     }
   ],
   "symptomAliases": {
-    "не морозит": ["не холодит", "плохо морозит"],
-    "течет": ["подтекает", "капает вода"],
-    "не сливает": ["не уходит вода", "стоит вода"],
-    "не греет": ["не нагревает", "нет нагрева"],
-    "не включается": ["не запускается", "не подает признаков жизни"],
-    "шумит": ["гудит", "сильно вибрирует"]
+    "не морозит": [
+      "не холодит",
+      "плохо морозит"
+    ],
+    "течет": [
+      "подтекает",
+      "капает вода"
+    ],
+    "не сливает": [
+      "не уходит вода",
+      "стоит вода"
+    ],
+    "не греет": [
+      "не нагревает",
+      "нет нагрева"
+    ],
+    "не включается": [
+      "не запускается",
+      "не подает признаков жизни"
+    ],
+    "шумит": [
+      "гудит",
+      "сильно вибрирует"
+    ]
   },
   "relatedRules": {
     "maxLinks": 3,

@@ -4,14 +4,14 @@
   "page": "remont-posudomoechnoy-mashiny-winterhalter-moskva.html",
   "slug": "remont-posudomoechnoy-mashiny-winterhalter-moskva",
   "route": "/remont-posudomoechnoy-mashiny-winterhalter-moskva.html",
-  "branch": "unknown",
-  "role": "unknown",
-  "title": null,
-  "h1": null,
+  "branch": "restaurant",
+  "role": "branch",
+  "title": "Ремонт посудомоечных машин Winterhalter в Москве — заявка | MosPochin",
+  "h1": "Ремонт посудомоечной машины Winterhalter",
   "source": {
     "extractedFrom": "remont-posudomoechnoy-mashiny-winterhalter-moskva.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "dc1975d3550e0f56fc5943ec6f72689f9b620b997303314bff19cfc4dcfe9091",
+    "hash": "7c7910878cf326917ac60dfb468efd6ec08510b0dcfcbb9ac388294b2395722e",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,33 +21,28 @@
   },
   "sections": [
     {
-      "id": "001-body-preamble-sekciya-1",
-      "component": "body-preamble",
-      "label": "Секция 1",
-      "file": "sections/001-body-preamble-sekciya-1.html",
-      "bytes": 48,
-      "hash": "6c45e024a4e3965e"
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9468,
+      "hash": "8a22085ce2c1625a"
     },
     {
       "id": "002-lead-form-remont-posudomoechnoy-mashiny-winterhalter",
       "component": "lead-form",
       "label": "Ремонт посудомоечной машины Winterhalter",
       "file": "sections/002-lead-form-remont-posudomoechnoy-mashiny-winterhalter.html",
-      "bytes": 13200,
-      "hash": "8e80cb555754e7ae"
+      "bytes": 13245,
+      "hash": "9b6d06816e8f8ae3"
     },
     {
-      "id": "003-footer-anchor-footer-mount-point",
-      "component": "footer-anchor",
-      "label": "Footer mount point",
-      "bytes": 36,
-      "hash": "7e779f23d41c388a",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "footer-container-mount",
-      "templateRef": "src/components/parametric/static/footer-anchor-footer-container-mount-7e779f23d41c.template.html",
-      "props": {},
-      "sourceFile": "sections/003-footer-anchor-footer-mount-point.html"
+      "id": "003-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 5023,
+      "hash": "700ecf0198aee254"
     },
     {
       "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -76,20 +71,7 @@
       "sourceFile": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
-      "id": "006-runtime-partials-podklyuchenie-partials-injector",
-      "component": "runtime-partials",
-      "label": "Подключение partials-injector",
-      "bytes": 0,
-      "hash": "e3b0c44298fc1c14",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "partials-injector-script",
-      "templateRef": "src/components/parametric/static/runtime-partials-partials-injector-script-55fc50b4acf9.template.html",
-      "props": {},
-      "sourceFile": "sections/006-runtime-partials-podklyuchenie-partials-injector.html"
-    },
-    {
-      "id": "007-raw-html-fragment",
+      "id": "006-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -99,13 +81,14 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/007-raw-html-fragment.html"
+      "sourceFile": "sections/006-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
+    "npm run doctor:page -- --page remont-posudomoechnoy-mashiny-winterhalter-moskva.html",
     "npm run validate:site",
-    "npm run ai:semantic-diff -- --page remont-posudomoechnoy-mashiny-winterhalter-moskva.html",
-    "npm run check:site-builder"
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page remont-posudomoechnoy-mashiny-winterhalter-moskva.html"
   ],
   "aiNotes": [
     "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",

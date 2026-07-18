@@ -2,44 +2,40 @@
 
 - Branch: household
 - Role: service
-- Title: Ремонт холодильников на дому в Москве — MosPochin
-- Description: Ремонт холодильников Bosch, Samsung, LG, Indesit на дому в Москве и МО. Диагностика причины, согласование работ и гарантия после ремонта.
-- H1: Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене
+- Title: Ремонт холодильников в Москве на дому — MosPochin
+- Description: Диагностика и ремонт бытовых холодильников: не морозит, течёт, шумит, намерзает лёд, не работает No Frost. Выезд по Москве.
+- H1: Ремонт бытовых холодильников в Москве
 - Canonical: https://mospochin.ru/holodilniki.html
 - Builder model: src/pages/holodilniki/page.json
-- Sections: 49 (36 local, 5 shared refs, 0 raw)
-- Text words inside referenced sections: 3053
+- Sections: 12 (10 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 597
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| pricing | 11 |
-| proof | 9 |
-| layout-fragment | 8 |
-| mobile-contact | 7 |
-| section | 4 |
-| faq | 3 |
-| related-links | 2 |
-| body-preamble | 1 |
+| section | 3 |
+| contact-cta | 2 |
+| mobile-contact | 2 |
 | breadcrumb | 1 |
-| contact-cta | 1 |
-| hero | 1 |
+| faq | 1 |
 | lead-form | 1 |
+| pricing | 1 |
+| proof | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Какие бренды и модели берём в работу | pricing | 18.4 KB | 110 | no | src/pages/holodilniki/sections/027-pricing-kakie-brendy-i-modeli-berem-v-rabotu.html |
-| Что клиент понимает ещё до начала работ | pricing | 11.6 KB | 429 | no | src/pages/holodilniki/sections/037-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
-| Оставьте заявку на звонок по холодильнику | lead-form | 7.7 KB | 143 | no | src/pages/holodilniki/sections/035-lead-form-ostav-te-zayavku-na-zvonok-po-holodil-niku.html |
-| Мобильные контактные элементы | mobile-contact | 7.2 KB | 78 | no | src/pages/holodilniki/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| Какие поломки мы чаще всего чиним на дому | pricing | 5.9 KB | 107 | no | src/pages/holodilniki/sections/018-pricing-kakie-polomki-my-chasche-vsego-chinim-na-dom.html |
-| Холодильник не морозит? Вернём холод сегодня, без сюрпризов по цене | hero | 5.2 KB | 87 | no | src/pages/holodilniki/sections/004-hero-holodil-nik-ne-morozit-vernem-holod-segodnya-be.html |
-| Какие симптомы чаще всего описывают по телефону | pricing | 5.1 KB | 56 | no | src/pages/holodilniki/sections/015-pricing-kakie-simptomy-chasche-vsego-opisyvayut-po-t.html |
-| Что обычно происходит с поломкой холодильника, если тянуть | faq | 4.6 KB | 237 | no | src/pages/holodilniki/sections/021-faq-chto-obychno-proishodit-s-polomkoy-holodil-nika-.html |
+| Мобильные контактные элементы | mobile-contact | 7.2 KB | 78 | no | src/pages/holodilniki/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/pages/holodilniki/sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Что отправить до выезда | lead-form | 4.1 KB | 60 | no | src/pages/holodilniki/sections/008-lead-form-chto-otpravit-do-vyezda.html |
+| Связанные страницы кластера | section | 3.3 KB | 67 | no | src/pages/holodilniki/sections/007-section-svyazannye-stranicy-klastera.html |
+| Что проверяет мастер | proof | 2.4 KB | 56 | no | src/pages/holodilniki/sections/005-proof-chto-proveryaet-master.html |
+| Ремонт бытовых холодильников в Москве | contact-cta | 2.3 KB | 52 | no | src/pages/holodilniki/sections/002-contact-cta-remont-bytovyh-holodil-nikov-v-moskve.html |
+| Частые вопросы | faq | 2.1 KB | 85 | no | src/pages/holodilniki/sections/009-faq-chastye-voprosy.html |
+| Что можно проверить безопасно | pricing | 2.1 KB | 62 | no | src/pages/holodilniki/sections/004-pricing-chto-mozhno-proverit-bezopasno.html |
 
 
 ## Editable source files

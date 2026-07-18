@@ -158,6 +158,138 @@
       "visualGuide": "docs/REFRIGERATION_VISUAL_GUIDE.md",
       "imageLibrary": "data/refrigeration-image-library.json",
       "imageGuide": "docs/REFRIGERATION_IMAGE_INTEGRATION.md"
+    },
+    "microwaves": {
+      "manifest": "data/microwave-cluster-pages.json",
+      "guide": "docs/archive/MICROWAVE_CLUSTER_AI_GUIDE.md",
+      "digest": ".ai/digest/clusters/microwaves.md",
+      "screenshotManifest": "data/microwave-screenshot-audit.json",
+      "status": "mw1",
+      "guardCommands": [
+        "npm run check:microwave-cluster"
+      ],
+      "visualCommand": "npm run audit:microwave-mw1-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/microwave-fault-taxonomy.json",
+        "evidence": "data/microwave-fault-evidence.json"
+      },
+      "linkGraph": "data/microwave-link-graph.json"
+    },
+    "household-dishwasher": {
+      "manifest": "data/household-dishwasher-cluster-pages.json",
+      "status": "dw2",
+      "screenshotManifest": "data/household-dishwasher-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:household-dishwasher-cluster"
+      ],
+      "visualCommand": "npm run audit:household-dishwasher-dw2-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/household-dishwasher-fault-taxonomy.json",
+        "evidence": "data/household-dishwasher-fault-evidence.json"
+      },
+      "linkGraph": "data/household-dishwasher-link-graph.json"
+    },
+    "cooking-appliance": {
+      "manifest": "data/cooking-appliance-hub-pages.json",
+      "status": "cook2",
+      "screenshotManifest": "data/cooking-appliance-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:cooking-appliance-hub"
+      ],
+      "visualCommand": "npm run audit:cooking-appliance-cook2-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/cooking-appliance-fault-taxonomy.json",
+        "evidence": "data/cooking-appliance-fault-evidence.json"
+      },
+      "linkGraph": "data/cooking-appliance-link-graph.json"
+    },
+    "household-dryers": {
+      "manifest": "data/dryer-cluster-pages.json",
+      "status": "dr1",
+      "screenshotManifest": "data/dryer-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:dryer-cluster"
+      ],
+      "visualCommand": "npm run audit:dryer-dr1-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/dryer-fault-taxonomy.json",
+        "evidence": "data/dryer-fault-evidence.json"
+      },
+      "linkGraph": "data/dryer-link-graph.json"
+    },
+    "household-freezers": {
+      "manifest": "data/freezer-cluster-pages.json",
+      "status": "rf-freezer1",
+      "screenshotManifest": "data/freezer-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:freezer-cluster"
+      ],
+      "visualCommand": "npm run audit:freezer-rf1-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/freezer-fault-taxonomy.json",
+        "evidence": "data/freezer-fault-evidence.json"
+      },
+      "linkGraph": "data/freezer-link-graph.json"
+    },
+    "household-kitchen-hoods": {
+      "manifest": "data/hood-cluster-pages.json",
+      "status": "hood1",
+      "screenshotManifest": "data/hood-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:hood-cluster"
+      ],
+      "visualCommand": "npm run audit:hood1-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/hood-fault-taxonomy.json",
+        "evidence": "data/hood-fault-evidence.json"
+      },
+      "linkGraph": "data/hood-link-graph.json"
+    },
+    "household-wine-cabinets": {
+      "manifest": "data/wine-cabinet-cluster-pages.json",
+      "status": "rf-wine1",
+      "screenshotManifest": "data/wine-cabinet-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:wine-cabinet-cluster"
+      ],
+      "visualCommand": "npm run audit:wine-cabinet-rf1-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/wine-cabinet-fault-taxonomy.json",
+        "evidence": "data/wine-cabinet-fault-evidence.json"
+      },
+      "linkGraph": "data/wine-cabinet-link-graph.json"
+    },
+    "washing-machines": {
+      "manifest": "data/washing-machine-cluster-pages.json",
+      "status": "wm2",
+      "screenshotManifest": "data/washing-machine-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:washing-machine-cluster"
+      ],
+      "visualCommand": "npm run audit:washing-wm2-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/washing-machine-fault-taxonomy.json",
+        "evidence": "data/washing-machine-fault-evidence.json"
+      },
+      "linkGraph": "data/washing-machine-link-graph.json"
+    },
+    "water-heaters": {
+      "manifest": "data/water-heater-cluster-pages.json",
+      "status": "wh4-visual-full",
+      "screenshotManifest": "data/water-heater-screenshot-audit.json",
+      "guardCommands": [
+        "npm run check:water-heater-cluster"
+      ],
+      "visualCommand": "npm run audit:water-heater-screenshots",
+      "symptomArchitecture": {
+        "taxonomy": "data/water-heater-fault-taxonomy.json",
+        "pipingTaxonomy": "data/water-heater-piping-taxonomy.json",
+        "evidence": "data/water-heater-fault-evidence.json"
+      },
+      "linkGraph": "data/water-heater-link-graph.json",
+      "threePhaseSpec": "data/water-heater-three-phase-page.json",
+      "photoLibrary": "data/water-heater-photo-library.json",
+      "visualPages": "data/water-heater-visual-pages.json"
     }
   },
   "visualRuntime": "data/visual-runtime.json"

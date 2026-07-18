@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "case-trehfaznaya-sistema-gvs-chastnogo-doma.html",
+  "slug": "case-trehfaznaya-sistema-gvs-chastnogo-doma",
+  "route": "/case-trehfaznaya-sistema-gvs-chastnogo-doma.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Фотокейс: сложная трёхфазная система ГВС частного дома",
+  "h1": "Сложная трёхфазная система ГВС частного дома — фотокейс",
+  "source": {
+    "extractedFrom": "case-trehfaznaya-sistema-gvs-chastnogo-doma.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "53b1aae2e2e224494717b638d39a0d477a1b0dd5d627057af3a0bef018d7f5bf",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 8580,
+      "hash": "42fae6f777239edd",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/mobile-contact.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-trehfaznaya-sistema-gvs-chastnogo-doma-001-mobile-contact-mobil-nye-kontaktnye-elementy.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1105,
+      "hash": "978850e1f6622e86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "case_trehfaznaya_sistema_gvs_chastnogo_doma_breadcrumb_1"
+          },
+          {
+            "href": "water-heaters.html",
+            "label": "Водонагреватели",
+            "ctaId": "case_trehfaznaya_sistema_gvs_chastnogo_doma_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Сложная трёхфазная система ГВС частного дома — фотокейс"
+      }
+    },
+    {
+      "id": "002-pricing-slozhnaya-trehfaznaya-sistema-gvs-chastnogo-",
+      "component": "pricing",
+      "label": "Сложная трёхфазная система ГВС частного дома — фотокейс",
+      "bytes": 2574,
+      "hash": "439801c99cb999b9",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/pricing.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-trehfaznaya-sistema-gvs-chastnogo-doma-002-pricing-slozhnaya-trehfaznaya-sistema-gvs-chastnogo-.json"
+    },
+    {
+      "id": "003-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "bytes": 539,
+      "hash": "b90339e39ec4d6de",
+      "componentRef": "src/components/shared/section/section-sekciya-stranicy--b90339e39ec4d6de.html",
+      "componentScope": "shared",
+      "componentSignature": "b90339e39ec4d6de",
+      "sourceFile": "sections/003-section-sekciya-stranicy.html"
+    },
+    {
+      "id": "004-section-chto-vidno-v-etoy-serii",
+      "component": "section",
+      "label": "Что видно в этой серии",
+      "bytes": 971,
+      "hash": "1a0d6448173cc3df",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-trehfaznaya-sistema-gvs-chastnogo-doma-004-section-chto-vidno-v-etoy-serii.json"
+    },
+    {
+      "id": "005-pricing-posledovatel-nost-i-detali",
+      "component": "pricing",
+      "label": "Последовательность и детали",
+      "bytes": 22644,
+      "hash": "cae235353c663814",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/pricing.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-trehfaznaya-sistema-gvs-chastnogo-doma-005-pricing-posledovatel-nost-i-detali.json"
+    },
+    {
+      "id": "006-section-svyazannye-uslugi",
+      "component": "section",
+      "label": "Связанные услуги",
+      "bytes": 1572,
+      "hash": "655b8ab27e1fcc1e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-trehfaznaya-sistema-gvs-chastnogo-doma-006-section-svyazannye-uslugi.json"
+    },
+    {
+      "id": "007-lead-form-pokazhite-svoy-uzel",
+      "component": "lead-form",
+      "label": "Покажите свой узел",
+      "bytes": 1166,
+      "hash": "026fa95bea2e36cd",
+      "componentRef": "src/components/shared/lead-form/lead-form-pokazhite-svoy-uzel--026fa95bea2e36cd.html",
+      "componentScope": "shared",
+      "componentSignature": "026fa95bea2e36cd",
+      "sourceFile": "sections/007-lead-form-pokazhite-svoy-uzel.html"
+    },
+    {
+      "id": "008-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "bytes": 1654,
+      "hash": "a7084e5e5cf57dc1",
+      "componentRef": "src/components/shared/faq/faq-chastye-voprosy--a7084e5e5cf57dc1.html",
+      "componentScope": "shared",
+      "componentSignature": "a7084e5e5cf57dc1",
+      "sourceFile": "sections/008-faq-chastye-voprosy.html"
+    },
+    {
+      "id": "009-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4453,
+      "hash": "e590e40e134d7b9f",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/mobile-contact.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-trehfaznaya-sistema-gvs-chastnogo-doma-009-mobile-contact-mobil-nye-kontaktnye-elementy.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page case-trehfaznaya-sistema-gvs-chastnogo-doma.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 3,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

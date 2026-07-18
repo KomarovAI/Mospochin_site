@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "zamena-zapornogo-krana-vodonagrevatelya.html",
+  "slug": "zamena-zapornogo-krana-vodonagrevatelya",
+  "route": "/zamena-zapornogo-krana-vodonagrevatelya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Замена запорного крана водонагревателя в Москве",
+  "h1": "Замена запорного крана водонагревателя",
+  "source": {
+    "extractedFrom": "zamena-zapornogo-krana-vodonagrevatelya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "23b592b304196a49b564e316f4b1dd0ab68fd73a8bf23143e3737c776aac44e9",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 9413,
+      "hash": "3ecf9ad96e316ea5"
+    },
+    {
+      "id": "002-mobile-contact-zamena-zapornogo-krana-vodonagrevatel",
+      "component": "mobile-contact",
+      "label": "Замена запорного крана водонагревателя",
+      "file": "sections/002-mobile-contact-zamena-zapornogo-krana-vodonagrevatel.html",
+      "bytes": 1788,
+      "hash": "030b3f7dcec57f1f"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1066,
+      "hash": "80f9f463a70220a4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "zamena_zapornogo_krana_vodonagrevatelya_breadcrumb_1"
+          },
+          {
+            "href": "water-heaters.html",
+            "label": "Водонагреватели",
+            "ctaId": "zamena_zapornogo_krana_vodonagrevatelya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Замена запорного крана водонагревателя"
+      }
+    },
+    {
+      "id": "003-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 32,
+      "hash": "e3ed39fc5e5639ac",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-zapornogo-krana-vodonagrevatelya-003-raw-html-fragment.json"
+    },
+    {
+      "id": "004-section-chto-vidno-na-servisnom-foto",
+      "component": "section",
+      "label": "Что видно на сервисном фото",
+      "bytes": 2256,
+      "hash": "79f26f657bb36154",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-zapornogo-krana-vodonagrevatelya-004-section-chto-vidno-na-servisnom-foto.json"
+    },
+    {
+      "id": "005-raw-html-fragment",
+      "component": "raw",
+      "label": "HTML-фрагмент",
+      "bytes": 30,
+      "hash": "3d832b62376e754b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/raw.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-zapornogo-krana-vodonagrevatelya-005-raw-html-fragment.json"
+    },
+    {
+      "id": "006-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/006-section-sekciya-stranicy.html",
+      "bytes": 431,
+      "hash": "b2bdee71d59af9fc"
+    },
+    {
+      "id": "007-section-kogda-nuzhen-etot-scenariy",
+      "component": "section",
+      "label": "Когда нужен этот сценарий",
+      "file": "sections/007-section-kogda-nuzhen-etot-scenariy.html",
+      "bytes": 1015,
+      "hash": "56e30e13890000b1"
+    },
+    {
+      "id": "008-pricing-chto-proverit-bezopasno",
+      "component": "pricing",
+      "label": "Что проверить безопасно",
+      "file": "sections/008-pricing-chto-proverit-bezopasno.html",
+      "bytes": 2155,
+      "hash": "e9d4dc0c4bd84b11"
+    },
+    {
+      "id": "009-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/009-section-sekciya-stranicy.html",
+      "bytes": 545,
+      "hash": "71747a011990f43d"
+    },
+    {
+      "id": "010-section-kakie-raboty-mogut-potrebovat-sya",
+      "component": "section",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/010-section-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1414,
+      "hash": "55f191f430935f97"
+    },
+    {
+      "id": "011-section-svyazannye-stranicy-vodonagrevateley",
+      "component": "section",
+      "label": "Связанные страницы водонагревателей",
+      "file": "sections/011-section-svyazannye-stranicy-vodonagrevateley.html",
+      "bytes": 1741,
+      "hash": "61969755a5c87487"
+    },
+    {
+      "id": "012-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "bytes": 1857,
+      "hash": "fda738717a7b479e",
+      "componentRef": "src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--fda738717a7b479e.html",
+      "componentScope": "shared",
+      "componentSignature": "fda738717a7b479e",
+      "sourceFile": "sections/012-lead-form-chto-otpravit-do-vyezda.html"
+    },
+    {
+      "id": "013-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/013-faq-chastye-voprosy.html",
+      "bytes": 1507,
+      "hash": "f75a2a23f04faa43"
+    },
+    {
+      "id": "014-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/014-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4990,
+      "hash": "d8870e3c27426dd6"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page zamena-zapornogo-krana-vodonagrevatelya.html",
+    "npm run doctor:page -- --page zamena-zapornogo-krana-vodonagrevatelya.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page zamena-zapornogo-krana-vodonagrevatelya.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

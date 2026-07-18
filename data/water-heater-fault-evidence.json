@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "cluster": "water-heaters",
+  "sources": [
+    {
+      "id": "thermex_storage_manual_2025",
+      "type": "manufacturer_manual",
+      "publisher": "Thermex",
+      "url": "https://thermex.ru/upload/iblock/24b/zc62s29j98mu3u0ejeh5yc9kwze0x05t.pdf",
+      "supports": [
+        "storage flange contains heater and thermostat sensors",
+        "thermal cutout protects from overheating",
+        "safety valve relieves excess pressure",
+        "water from discharge pipe can occur during heating"
+      ]
+    },
+    {
+      "id": "thermex_storage_manual_general",
+      "type": "manufacturer_manual",
+      "publisher": "Thermex",
+      "url": "https://shop.thermex.ru/upload/iblock/03e/oyk9ohl8kyf9bwxuha1iazqpvda8bxb3.pdf",
+      "supports": [
+        "heater thermostat and magnesium anode may be mounted on removable flange",
+        "safety valve has check and pressure relief functions"
+      ]
+    },
+    {
+      "id": "mosoblgaz_2026_rules",
+      "type": "official_operator",
+      "publisher": "АО Мособлгаз",
+      "url": "https://mosoblgaz.ru/abonents/services/tekhnicheskoe-obsluzhivanie/",
+      "supports": [
+        "from 1 March 2026 gas equipment maintenance in Moscow region is restricted to qualifying gas distribution organizations",
+        "gas equipment is outside ordinary electric appliance service scope"
+      ]
+    },
+    {
+      "id": "thermex_kit_safety_valve_manual",
+      "type": "manufacturer_manual",
+      "publisher": "Thermex",
+      "url": "https://thermex.ru/upload/iblock/24b/zc62s29j98mu3u0ejeh5yc9kwze0x05t.pdf",
+      "supports": [
+        "safety valve combines check and pressure relief functions",
+        "discharge may occur during heating",
+        "discharge outlet must remain open and point downward",
+        "no shutoff valve between safety valve and heater inlet",
+        "plumbing and shutoff fittings must suit network parameters"
+      ]
+    },
+    {
+      "id": "thermex_storage_installation_manual",
+      "type": "manufacturer_manual",
+      "publisher": "Thermex",
+      "url": "https://thermex.ru/upload/iblock/1fe/bxu28s3g12nq0q8n91kpxkly6dy1area.pdf",
+      "supports": [
+        "pressure reducer must not be installed between heater and safety valve",
+        "draining while power is on is prohibited",
+        "service drain valve may be used for maintenance",
+        "heater must be filled before energizing"
+      ]
+    },
+    {
+      "id": "itap_pressure_reducer_manual",
+      "type": "manufacturer_manual",
+      "publisher": "ITAP",
+      "url": "https://www.itap.it/cat_files/pdf/360_2927_IST_ru.pdf",
+      "supports": [
+        "pressure reducer lowers and stabilizes downstream pressure",
+        "upstream fluctuations should not change set downstream pressure"
+      ]
+    },
+    {
+      "id": "aquaphor_mechanical_prefilter",
+      "type": "manufacturer_guidance",
+      "publisher": "Aquaphor",
+      "url": "https://www.aquaphor.ru/house/wells_for_water",
+      "supports": [
+        "mechanical prefilters remove insoluble particles such as rust sand and silt",
+        "mechanical filtration is a separate task from hardness reduction"
+      ]
+    },
+    {
+      "id": "aquaphor_hardness_guidance_2026",
+      "type": "manufacturer_guidance",
+      "publisher": "Aquaphor",
+      "url": "https://www.aquaphor.ru/blog/snizit-zhestkost-vody",
+      "supports": [
+        "softening media resource depends on hardness and throughput",
+        "small cartridges are not universal for very hard water",
+        "water analysis and performance requirements matter for system selection"
+      ]
+    },
+    {
+      "id": "wavin_ppr_installation_manual",
+      "type": "manufacturer_manual",
+      "publisher": "Wavin",
+      "url": "https://mediahub.wavin.com/asset/c990440e-d5b9-4b1f-805a-1e06f1fa9706/PP-RC-PP-RCT-Pipe-Systems-Installation-Manual.pdf",
+      "supports": [
+        "PP-R and PP-RCT systems are used for hot and cold water",
+        "sanitary threaded transitions should use plastic metal couplings rather than all plastic threaded couplings",
+        "hot water piping requires allowance for temperature effects and correct installation"
+      ]
+    },
+    {
+      "id": "wavin_pprct_technical_manual",
+      "type": "manufacturer_manual",
+      "publisher": "Wavin",
+      "url": "https://blog.wavin.com/hubfs/Technical%20Manual%20PP-RCT%20USA_16082023%20%28002%29.pdf",
+      "supports": [
+        "pipe class must be selected for operating pressure and temperature",
+        "multilayer reinforced pipe has lower thermal expansion",
+        "combined fittings with metal thread are available for appliance connections"
+      ]
+    },
+    {
+      "id": "stiebel_dhe_18_21_24_400v",
+      "type": "manufacturer_product_data",
+      "publisher": "STIEBEL ELTRON",
+      "url": "https://www.stiebel-eltron.com/en/home/products-solutions/dhw/instantaneous_waterheater/convenience_instantaneouswaterheater/dhe/dhe-18-21-24.html",
+      "supports": [
+        "DHE models use 380/400/415 V",
+        "rated outputs include 18 21 and 24 kW",
+        "rated current varies with selected output"
+      ]
+    },
+    {
+      "id": "stiebel_three_phase_3pe_manual",
+      "type": "manufacturer_manual",
+      "publisher": "STIEBEL ELTRON",
+      "url": "https://www.stiebel-eltron.com/content/dam/ste/cdbassets/current/bedienungs-_u_installationsanleitungen/instructionandinstallationmanual_doc-00060507.pdf",
+      "supports": [
+        "some instantaneous water heaters use 3/PE 380-400 V wiring",
+        "internal wiring and safety cutout follow model diagram"
+      ]
+    },
+    {
+      "id": "clage_cexu_400v",
+      "type": "manufacturer_product_data",
+      "publisher": "CLAGE",
+      "url": "https://www.clage.com/en/products/instantaneous-water-heaters/e-compact-instant-water-heaters/cex-u",
+      "supports": [
+        "CEX-U uses 11 or 13.5 kW at 400 V",
+        "power setting is selected during installation",
+        "fixed electrical connection is required"
+      ]
+    },
+    {
+      "id": "thermex_topflow_15000_official",
+      "type": "manufacturer_product_data",
+      "publisher": "Thermex",
+      "url": "https://thermex.ru/catalog/seriya-topflow/thermex-topflow-15000/",
+      "supports": [
+        "Topflow 15000 is a high-power instantaneous water heater",
+        "it can serve multiple draw-off points",
+        "electronic regulation maintains selected temperature"
+      ]
+    },
+    {
+      "id": "thermex_service_maintenance_official",
+      "type": "manufacturer_service",
+      "publisher": "Thermex",
+      "url": "https://thermex.ru/support/guarantee.php",
+      "supports": [
+        "service includes replacement of magnesium anodes and removal of sediment or scale",
+        "manufacturer service performs installation maintenance and repair"
+      ]
+    },
+    {
+      "id": "watts_dhw_expansion_tanks",
+      "type": "manufacturer_product_guidance",
+      "publisher": "Watts",
+      "url": "https://www.watts.com/products/plumbing-flow-control-solutions/water-heater-accessories/expansion-tanks",
+      "supports": [
+        "heated water expands",
+        "potable water expansion tanks absorb excess volume and help prevent relief valve activation"
+      ]
+    },
+    {
+      "id": "thermex_if_pro_flat_two_tank",
+      "type": "manufacturer_product_data",
+      "publisher": "Thermex",
+      "url": "https://thermex.ru/catalog/seriya-if-pro/thermex-if-50-v-pro/",
+      "supports": [
+        "Thermex IF Pro is a flat storage water-heater product family",
+        "flat models use a compact internal construction and electronic control"
+      ]
+    }
+  ],
+  "claimPolicy": {
+    "requiredFor": [
+      "safety",
+      "maintenance",
+      "gas_scope",
+      "component_function"
+    ],
+    "prefer": [
+      "manufacturer_manual",
+      "official_operator",
+      "regulation"
+    ],
+    "forbid": [
+      "invented repair statistics",
+      "universal service interval",
+      "diagnosis from one symptom"
+    ]
+  }
+}

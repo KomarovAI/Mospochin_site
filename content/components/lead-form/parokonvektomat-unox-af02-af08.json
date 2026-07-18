@@ -7,21 +7,29 @@
   "title": "Получите понятный сценарий ремонта пароконвектомата",
   "subtitle": "Оставьте телефон, модель и код ошибки. Перезвоним, уточним адрес и скажем, нужен ли срочный выезд инженера.",
   "formContext": "parokonvektomat_b2b_ad_landing",
-  "formId": "parokonvektomat-unox-af02-af08_telegram_form_2",
-  "submitCtaId": "parokonvektomat-unox-af02-af08_form_submit_2",
+  "formId": "parokonvektomat_unox_af02_af08_form_2",
+  "formPageSlug": "parokonvektomat-unox-af02-af08",
+  "formCtaId": "parokonvektomat-unox-af02-af08_form_02",
+  "formVariant": "restaurant-parokonvektomat-b2b",
+  "formBlock": "error_form",
+  "hiddenProblem": {
+    "value": "parokonvektomat-unox-af02-af08",
+    "dataProblem": "parokonvektomat-unox-af02-af08"
+  },
+  "submitCtaId": "parokonvektomat-unox-af02-af08_form_submit_button_2",
   "ids": {
     "name": "parokonvektomaty-promo-name",
     "phone": "parokonvektomaty-promo-phone-2",
     "type": "parokonvektomaty-promo-type-2",
-    "problem": "parokonvektomaty-promo-problem",
+    "problem": "parokonvektomat-unox-af02-af08-problem",
     "address": "parokonvektomaty-promo-address",
     "businessType": "parokonvektomaty-promo-business_type"
   },
   "placeholders": {
     "type": "Unox AF02 или Unox AF08...",
-    "problem": "Как ведет себя Unox: пар, нагрев, запуск, сбой цикла...",
+    "problem": "",
     "address": "Павелецкая, Даниловский, ЗИЛ...",
-    "businessType": "Ресторан, кафе, пекарня, dark kitchen"
+    "businessType": "Ресторан, кафе, пекарня, дарк-кухня"
   },
   "submitText": "Вызвать инженера Unox"
 }

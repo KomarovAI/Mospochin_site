@@ -7,21 +7,29 @@
   "title": "Получите понятный сценарий ремонта пароконвектомата",
   "subtitle": "Оставьте телефон, модель и код ошибки. Перезвоним, уточним адрес и скажем, нужен ли срочный выезд инженера.",
   "formContext": "parokonvektomat_b2b_ad_landing",
-  "formId": "parokonvektomat-e02-e07-e10_telegram_form_2",
-  "submitCtaId": "parokonvektomat-e02-e07-e10_form_submit_2",
+  "formId": "parokonvektomat_e02_e07_e10_form_2",
+  "formPageSlug": "parokonvektomat-e02-e07-e10",
+  "formCtaId": "parokonvektomat-e02-e07-e10_form_02",
+  "formVariant": "restaurant-parokonvektomat-b2b",
+  "formBlock": "error_form",
+  "hiddenProblem": {
+    "value": "parokonvektomat-e02-e07-e10",
+    "dataProblem": "parokonvektomat-e02-e07-e10"
+  },
+  "submitCtaId": "parokonvektomat-e02-e07-e10_form_submit_button_2",
   "ids": {
     "name": "parokonvektomaty-promo-name",
     "phone": "parokonvektomaty-promo-phone-2",
     "type": "parokonvektomaty-promo-type-2",
-    "problem": "parokonvektomaty-promo-problem",
+    "problem": "parokonvektomat-e02-e07-e10-problem",
     "address": "parokonvektomaty-promo-address",
     "businessType": "parokonvektomaty-promo-business_type"
   },
   "placeholders": {
     "type": "Abat E02, Abat E07 или Fagor E10...",
-    "problem": "Что происходит: не греет, нет пара, стопорится цикл...",
+    "problem": "",
     "address": "Павелецкая, Даниловский, ЗИЛ...",
-    "businessType": "Ресторан, кафе, пекарня, dark kitchen"
+    "businessType": "Ресторан, кафе, пекарня, дарк-кухня"
   },
   "submitText": "Согласовать выезд по коду"
 }

@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 2,
+  "cluster": "cooking-appliance-hubs",
+  "hub": "plity.html",
+  "edges": [
+    {
+      "from": "plity.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "plity.html",
+      "to": "remont-elektricheskih-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "plity.html",
+      "to": "remont-indukcionnyh-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "plity.html",
+      "to": "duhovka-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-duhovyh-shkafov.html",
+      "to": "diagnostika-duhovogo-shkafa.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-duhovyh-shkafov.html",
+      "to": "duhovka-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-duhovyh-shkafov.html",
+      "to": "duhovka-neravnomerno-pechet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-duhovyh-shkafov.html",
+      "to": "ne-rabotaet-konvekciya-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-elektricheskih-varochnyh-paneley.html",
+      "to": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-elektricheskih-varochnyh-paneley.html",
+      "to": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-elektricheskih-varochnyh-paneley.html",
+      "to": "konforka-postoyanno-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-elektricheskih-varochnyh-paneley.html",
+      "to": "tresnula-steklokeramika-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-indukcionnyh-varochnyh-paneley.html",
+      "to": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-indukcionnyh-varochnyh-paneley.html",
+      "to": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-indukcionnyh-varochnyh-paneley.html",
+      "to": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-indukcionnyh-varochnyh-paneley.html",
+      "to": "oshibka-na-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-duhovogo-shkafa.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-duhovogo-shkafa.html",
+      "to": "duhovka-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-duhovogo-shkafa.html",
+      "to": "duhovka-neravnomerno-pechet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-duhovogo-shkafa.html",
+      "to": "duhovka-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-ne-greet.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-ne-greet.html",
+      "to": "zamena-tena-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-ne-greet.html",
+      "to": "diagnostika-duhovogo-shkafa.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-ne-greet.html",
+      "to": "duhovka-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-neravnomerno-pechet.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-neravnomerno-pechet.html",
+      "to": "ne-rabotaet-konvekciya-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-neravnomerno-pechet.html",
+      "to": "duhovka-peregrevaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-neravnomerno-pechet.html",
+      "to": "dver-duhovki-ne-zakryvaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-konvekciya-duhovki.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-konvekciya-duhovki.html",
+      "to": "remont-ventilyatora-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-konvekciya-duhovki.html",
+      "to": "duhovka-neravnomerno-pechet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-konvekciya-duhovki.html",
+      "to": "duhovka-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-gril-duhovki.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-gril-duhovki.html",
+      "to": "duhovka-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-gril-duhovki.html",
+      "to": "zamena-tena-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-gril-duhovki.html",
+      "to": "diagnostika-duhovogo-shkafa.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-ne-vklyuchaetsya.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-ne-vklyuchaetsya.html",
+      "to": "diagnostika-duhovogo-shkafa.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-ne-vklyuchaetsya.html",
+      "to": "duhovka-vybivaet-avtomat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-ne-vklyuchaetsya.html",
+      "to": "duhovka-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-vybivaet-avtomat.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-vybivaet-avtomat.html",
+      "to": "duhovka-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-vybivaet-avtomat.html",
+      "to": "zamena-tena-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-vybivaet-avtomat.html",
+      "to": "diagnostika-duhovogo-shkafa.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-peregrevaetsya.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-peregrevaetsya.html",
+      "to": "duhovka-neravnomerno-pechet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-peregrevaetsya.html",
+      "to": "diagnostika-duhovogo-shkafa.html",
+      "type": "contextual"
+    },
+    {
+      "from": "duhovka-peregrevaetsya.html",
+      "to": "duhovka-vybivaet-avtomat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "dver-duhovki-ne-zakryvaetsya.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "dver-duhovki-ne-zakryvaetsya.html",
+      "to": "duhovka-neravnomerno-pechet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "dver-duhovki-ne-zakryvaetsya.html",
+      "to": "diagnostika-duhovogo-shkafa.html",
+      "type": "contextual"
+    },
+    {
+      "from": "dver-duhovki-ne-zakryvaetsya.html",
+      "to": "duhovka-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-tena-duhovki.html",
+      "to": "duhovka-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-tena-duhovki.html",
+      "to": "ne-rabotaet-gril-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-tena-duhovki.html",
+      "to": "ne-rabotaet-konvekciya-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-tena-duhovki.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-ventilyatora-duhovki.html",
+      "to": "ne-rabotaet-konvekciya-duhovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-ventilyatora-duhovki.html",
+      "to": "duhovka-peregrevaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-ventilyatora-duhovki.html",
+      "to": "remont-duhovyh-shkafov.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-ventilyatora-duhovki.html",
+      "to": "diagnostika-duhovogo-shkafa.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "to": "remont-elektricheskih-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "to": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "to": "konforka-postoyanno-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "to": "ne-rabotaet-sensor-elektricheskoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "to": "remont-elektricheskih-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "to": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "to": "konforka-postoyanno-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "to": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "konforka-postoyanno-greet.html",
+      "to": "remont-elektricheskih-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "konforka-postoyanno-greet.html",
+      "to": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "konforka-postoyanno-greet.html",
+      "to": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "konforka-postoyanno-greet.html",
+      "to": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+      "to": "remont-elektricheskih-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+      "to": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+      "to": "ne-rabotaet-sensor-elektricheskoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+      "to": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-sensor-elektricheskoy-paneli.html",
+      "to": "remont-elektricheskih-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-sensor-elektricheskoy-paneli.html",
+      "to": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-sensor-elektricheskoy-paneli.html",
+      "to": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-sensor-elektricheskoy-paneli.html",
+      "to": "konforka-postoyanno-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "to": "remont-elektricheskih-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "to": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "to": "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "to": "tresnula-steklokeramika-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "tresnula-steklokeramika-varochnoy-paneli.html",
+      "to": "remont-elektricheskih-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "tresnula-steklokeramika-varochnoy-paneli.html",
+      "to": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "tresnula-steklokeramika-varochnoy-paneli.html",
+      "to": "elektricheskaya-panel-vybivaet-avtomat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "tresnula-steklokeramika-varochnoy-paneli.html",
+      "to": "plity.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "to": "remont-indukcionnyh-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "to": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "to": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "to": "oshibka-na-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "to": "remont-indukcionnyh-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "to": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "to": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "to": "oshibka-na-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "to": "remont-indukcionnyh-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "to": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "to": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "to": "remont-silovogo-modulya-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "indukcionnaya-panel-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "to": "remont-indukcionnyh-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "indukcionnaya-panel-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "to": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "indukcionnaya-panel-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "to": "oshibka-na-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "indukcionnaya-panel-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "to": "remont-silovogo-modulya-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "oshibka-na-indukcionnoy-paneli.html",
+      "to": "remont-indukcionnyh-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "oshibka-na-indukcionnoy-paneli.html",
+      "to": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "oshibka-na-indukcionnoy-paneli.html",
+      "to": "indukcionnaya-panel-ne-vidit-posudu.html",
+      "type": "contextual"
+    },
+    {
+      "from": "oshibka-na-indukcionnoy-paneli.html",
+      "to": "indukcionnaya-panel-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-silovogo-modulya-indukcionnoy-paneli.html",
+      "to": "remont-indukcionnyh-varochnyh-paneley.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-silovogo-modulya-indukcionnoy-paneli.html",
+      "to": "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-silovogo-modulya-indukcionnoy-paneli.html",
+      "to": "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-silovogo-modulya-indukcionnoy-paneli.html",
+      "to": "oshibka-na-indukcionnoy-paneli.html",
+      "type": "contextual"
+    }
+  ]
+}

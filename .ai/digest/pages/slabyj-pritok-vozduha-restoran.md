@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/slabyj-pritok-vozduha-restoran.html
 - Builder model: src/pages/slabyj-pritok-vozduha-restoran/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1221
+- Text words inside referenced sections: 902
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Слабый приток воздуха в ресторане | breadcrumb | 38.3 KB | 1034 | no | src/pages/slabyj-pritok-vozduha-restoran/sections/002-breadcrumb-slabyy-pritok-vozduha-v-restorane.html |
+| Слабый приток воздуха в ресторане | breadcrumb | 29.1 KB | 715 | no | src/pages/slabyj-pritok-vozduha-restoran/sections/002-breadcrumb-slabyy-pritok-vozduha-v-restorane.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/slabyj-pritok-vozduha-restoran/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/slabyj-pritok-vozduha-restoran/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/slabyj-pritok-vozduha-restoran/sections/007-lead-form-forma-zayavki.html |

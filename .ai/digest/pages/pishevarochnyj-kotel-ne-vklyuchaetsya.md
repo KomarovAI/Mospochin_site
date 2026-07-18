@@ -7,8 +7,8 @@
 - H1: Пищеварочный котел не включается
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-ne-vklyuchaetsya.html
 - Builder model: src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/page.json
-- Sections: 23 (9 local, 1 shared refs, 0 raw)
-- Text words inside referenced sections: 861
+- Sections: 24 (9 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 1012
 
 ## Component mix
 
@@ -20,6 +20,7 @@
 | body-preamble | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
+| intent-diagnostic | 1 |
 | lead-form | 1 |
 | proof | 1 |
 | runtime-partials | 1 |
@@ -34,9 +35,9 @@
 | Оставьте заявку на диагностику | lead-form | 5.7 KB | 71 | no | src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
 | Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.4 KB | 124 | no | src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Симптом → узел → риск простоя → диагностика | mobile-contact | 5.3 KB | 110 | no | src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html |
+| Диагностическая граница интента | intent-diagnostic | 3.4 KB | 151 | no | src/components/parametric/kettle-intent-diagnostic/default.template.html |
 | Пищеварочный котел не включается | mobile-contact | 3.0 KB | 44 | no | src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/003-mobile-contact-pischevarochnyy-kotel-ne-vklyuchaetsy.html |
 | Частые вопросы по этой неисправности | faq | 2.9 KB | 85 | no | src/pages/pishevarochnyj-kotel-ne-vklyuchaetsya/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html |
-| Не просто статья, а страница под заявку | proof | 2.1 KB | 69 | yes | src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html |
 
 
 ## Editable source files

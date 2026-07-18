@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "remont-zamka-posudomoechnoy-mashiny.html",
+  "slug": "remont-zamka-posudomoechnoy-mashiny",
+  "route": "/remont-zamka-posudomoechnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Ремонт замка посудомоечной машины в Москве | MosPochin",
+  "h1": "Ремонт замка двери посудомоечной машины",
+  "source": {
+    "extractedFrom": "remont-zamka-posudomoechnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "463d205431f4fd21a98b5ee07e2f9229813c14ed5e18a95ce6493a682bcc685b",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9504,
+      "hash": "6ed92d7b00a1b958",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/remont-zamka-posudomoechnoy-mashiny/props/dw2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-remont-zamka-dveri-posudomoechnoy-mas",
+      "component": "mobile-contact",
+      "label": "Ремонт замка двери посудомоечной машины",
+      "file": "sections/002-mobile-contact-remont-zamka-dveri-posudomoechnoy-mas.html",
+      "bytes": 1788,
+      "hash": "2dd766adb456e723"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1066,
+      "hash": "2689edfc7221d3da",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "remont_zamka_posudomoechnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "posudomoyki.html",
+            "label": "Посудомоечные машины",
+            "ctaId": "remont_zamka_posudomoechnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Ремонт замка двери посудомоечной машины"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 1008,
+      "hash": "456e46a3aac5b70a",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/observations.template.html",
+      "propsRef": "src/pages/remont-zamka-posudomoechnoy-mashiny/props/dw2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1847,
+      "hash": "044f31f097402744",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/remont-zamka-posudomoechnoy-mashiny/props/dw2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 439,
+      "hash": "cda075148a6f0e54"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1171,
+      "hash": "4ba75f5dffb6169c"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1527,
+      "hash": "06ff24dafdf35973"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1708,
+      "hash": "4b1ca06e4b490413"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1710,
+      "hash": "ba37b15dfec4b5f8"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5059,
+      "hash": "fa0bd40cf6561c1e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/remont-zamka-posudomoechnoy-mashiny/props/dw2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page remont-zamka-posudomoechnoy-mashiny.html",
+    "npm run doctor:page -- --page remont-zamka-posudomoechnoy-mashiny.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page remont-zamka-posudomoechnoy-mashiny.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

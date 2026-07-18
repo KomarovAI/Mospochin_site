@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-freezers",
+  "release": "RF-FREEZER1",
+  "branch": "household",
+  "scope": "domestic-freezers",
+  "hub": "morozilniki.html",
+  "pageCount": 15,
+  "pages": [
+    {
+      "page": "morozilniki.html",
+      "slug": "morozilniki",
+      "family": "freezer_hub",
+      "intent": "hub",
+      "title": "Ремонт морозильников и морозильных камер в Москве — MosPochin",
+      "h1": "Ремонт бытовых морозильников в Москве",
+      "indexable": true,
+      "clusterLinks": [
+        "diagnostika-morozilnika.html",
+        "morozilka-ne-morozit.html",
+        "morozilnik-namerzaet-led.html",
+        "poisk-utechki-i-zapravka-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E01",
+        "FRZ-E02",
+        "FRZ-E08"
+      ]
+    },
+    {
+      "page": "remont-morozilnyh-larey.html",
+      "slug": "remont-morozilnyh-larey",
+      "family": "chest_freezer",
+      "intent": "service",
+      "title": "Ремонт бытовых морозильных ларей в Москве | MosPochin",
+      "h1": "Ремонт бытовых морозильных ларей в Москве",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "morozilnik-slabo-morozit.html",
+        "morozilnik-rabotaet-bez-ostanovki.html",
+        "zamena-kompressora-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E02",
+        "FRZ-E06",
+        "FRZ-E10"
+      ]
+    },
+    {
+      "page": "diagnostika-morozilnika.html",
+      "slug": "diagnostika-morozilnika",
+      "family": "freezer",
+      "intent": "service",
+      "title": "Диагностика морозильника в Москве | MosPochin",
+      "h1": "Диагностика морозильника в Москве",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "morozilka-ne-morozit.html",
+        "morozilnik-shumit-i-gudit.html",
+        "poisk-utechki-i-zapravka-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E01",
+        "FRZ-E02",
+        "FRZ-E08"
+      ]
+    },
+    {
+      "page": "morozilka-ne-morozit.html",
+      "slug": "morozilka-ne-morozit",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "Морозилка не морозит — диагностика и ремонт | MosPochin",
+      "h1": "Морозилка не морозит",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "morozilnik-slabo-morozit.html",
+        "remont-sistemy-ottaiki-morozilnika.html",
+        "poisk-utechki-i-zapravka-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E01",
+        "FRZ-E02",
+        "FRZ-E07"
+      ]
+    },
+    {
+      "page": "morozilnik-slabo-morozit.html",
+      "slug": "morozilnik-slabo-morozit",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "Морозильник слабо морозит | MosPochin",
+      "h1": "Морозильник слабо морозит",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilka-ne-morozit.html",
+        "morozilnik-namerzaet-led.html",
+        "dver-morozilnika-ne-zakryvaetsya.html",
+        "poisk-utechki-i-zapravka-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E02",
+        "FRZ-E01",
+        "FRZ-E03"
+      ]
+    },
+    {
+      "page": "morozilnik-rabotaet-bez-ostanovki.html",
+      "slug": "morozilnik-rabotaet-bez-ostanovki",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "Морозильник работает без остановки | MosPochin",
+      "h1": "Морозильник работает без остановки",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "dver-morozilnika-ne-zakryvaetsya.html",
+        "morozilnik-namerzaet-led.html",
+        "zamena-kompressora-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E07",
+        "FRZ-E10",
+        "FRZ-E02"
+      ]
+    },
+    {
+      "page": "morozilnik-namerzaet-led.html",
+      "slug": "morozilnik-namerzaet-led",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "В морозильнике намерзает лёд | MosPochin",
+      "h1": "В морозильнике намерзает лёд",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "dver-morozilnika-ne-zakryvaetsya.html",
+        "techet-voda-iz-morozilnika.html",
+        "remont-sistemy-ottaiki-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E03",
+        "FRZ-E04",
+        "FRZ-E05",
+        "FRZ-E11"
+      ]
+    },
+    {
+      "page": "techet-voda-iz-morozilnika.html",
+      "slug": "techet-voda-iz-morozilnika",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "Из морозильника течёт вода | MosPochin",
+      "h1": "Из морозильника течёт вода",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilnik-namerzaet-led.html",
+        "dver-morozilnika-ne-zakryvaetsya.html",
+        "remont-sistemy-ottaiki-morozilnika.html",
+        "diagnostika-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E05",
+        "FRZ-E10",
+        "FRZ-E11"
+      ]
+    },
+    {
+      "page": "morozilnik-shumit-i-gudit.html",
+      "slug": "morozilnik-shumit-i-gudit",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "Морозильник шумит и гудит | MosPochin",
+      "h1": "Морозильник шумит или гудит",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "morozilnik-namerzaet-led.html",
+        "zamena-kompressora-morozilnika.html",
+        "diagnostika-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E08",
+        "FRZ-E09",
+        "FRZ-E03"
+      ]
+    },
+    {
+      "page": "morozilnik-ne-vklyuchaetsya.html",
+      "slug": "morozilnik-ne-vklyuchaetsya",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "Морозильник не включается | MosPochin",
+      "h1": "Морозильник не включается",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "diagnostika-morozilnika.html",
+        "zamena-kompressora-morozilnika.html",
+        "morozilnik-shumit-i-gudit.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E06",
+        "FRZ-E08",
+        "FRZ-E09"
+      ]
+    },
+    {
+      "page": "morozilnik-peremorazhivaet.html",
+      "slug": "morozilnik-peremorazhivaet",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "Морозильник перемораживает продукты | MosPochin",
+      "h1": "Морозильник перемораживает продукты",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "morozilnik-rabotaet-bez-ostanovki.html",
+        "diagnostika-morozilnika.html",
+        "remont-sistemy-ottaiki-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E01",
+        "FRZ-E07",
+        "FRZ-E08"
+      ]
+    },
+    {
+      "page": "dver-morozilnika-ne-zakryvaetsya.html",
+      "slug": "dver-morozilnika-ne-zakryvaetsya",
+      "family": "freezer",
+      "intent": "symptom",
+      "title": "Дверь морозильника не закрывается | MosPochin",
+      "h1": "Дверь морозильника не закрывается",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilniki.html",
+        "morozilnik-namerzaet-led.html",
+        "morozilnik-rabotaet-bez-ostanovki.html",
+        "techet-voda-iz-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E03",
+        "FRZ-E10",
+        "FRZ-E11"
+      ]
+    },
+    {
+      "page": "remont-sistemy-ottaiki-morozilnika.html",
+      "slug": "remont-sistemy-ottaiki-morozilnika",
+      "family": "freezer",
+      "intent": "service",
+      "title": "Ремонт системы оттайки морозильника | MosPochin",
+      "h1": "Ремонт системы оттайки морозильника",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilnik-namerzaet-led.html",
+        "techet-voda-iz-morozilnika.html",
+        "morozilka-ne-morozit.html",
+        "dver-morozilnika-ne-zakryvaetsya.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E03",
+        "FRZ-E04",
+        "FRZ-E05"
+      ]
+    },
+    {
+      "page": "zamena-kompressora-morozilnika.html",
+      "slug": "zamena-kompressora-morozilnika",
+      "family": "freezer",
+      "intent": "service",
+      "title": "Замена компрессора морозильника | MosPochin",
+      "h1": "Замена компрессора морозильника",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilnik-ne-vklyuchaetsya.html",
+        "morozilnik-shumit-i-gudit.html",
+        "morozilnik-rabotaet-bez-ostanovki.html",
+        "poisk-utechki-i-zapravka-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E06",
+        "FRZ-E08",
+        "FRZ-E09"
+      ]
+    },
+    {
+      "page": "poisk-utechki-i-zapravka-morozilnika.html",
+      "slug": "poisk-utechki-i-zapravka-morozilnika",
+      "family": "freezer",
+      "intent": "service",
+      "title": "Поиск утечки и заправка морозильника | MosPochin",
+      "h1": "Поиск утечки и заправка морозильника",
+      "indexable": true,
+      "clusterLinks": [
+        "morozilka-ne-morozit.html",
+        "morozilnik-slabo-morozit.html",
+        "zamena-kompressora-morozilnika.html",
+        "diagnostika-morozilnika.html"
+      ],
+      "evidenceIds": [
+        "FRZ-E01",
+        "FRZ-E02",
+        "FRZ-E08"
+      ]
+    }
+  ]
+}

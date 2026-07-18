@@ -7,7 +7,7 @@
 - H1: Ремонт пароконвектоматов Abat
 - Canonical: https://mospochin.ru/parokonvektomat-abat.html
 - Builder model: src/pages/parokonvektomat-abat/page.json
-- Sections: 75 (27 local, 15 shared refs, 2 raw)
+- Sections: 75 (23 local, 15 shared refs, 2 raw)
 - Text words inside referenced sections: 2699
 
 ## Component mix
@@ -37,7 +37,7 @@
 | Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/parokonvektomat-abat/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Ремонт пароконвектоматов Abat | hero | 8.6 KB | 98 | no | src/pages/parokonvektomat-abat/sections/006-hero-remont-parokonvektomatov-abat.html |
 | Частые поломки пароконвектоматов | section | 8.6 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--92107a1adc63b709.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.7 KB | 103 | no | src/pages/parokonvektomat-abat/sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.7 KB | 103 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-3fc70c71db1d.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 240 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--2419627029e3672a.html |
 | Что фиксируем до начала работ на объекте | proof | 6.3 KB | 197 | no | src/pages/parokonvektomat-abat/sections/058-proof-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Ремонтируем все типы пароконвектоматов | section | 6.0 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--66391bf17107a40d.html |

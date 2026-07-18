@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/chek-list-ventilyatsii-restorana.html
 - Builder model: src/pages/chek-list-ventilyatsii-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1246
+- Text words inside referenced sections: 927
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Чек-лист вентиляции ресторана | breadcrumb | 40.2 KB | 1059 | no | src/pages/chek-list-ventilyatsii-restorana/sections/002-breadcrumb-chek-list-ventilyacii-restorana.html |
+| Чек-лист вентиляции ресторана | breadcrumb | 30.9 KB | 740 | no | src/pages/chek-list-ventilyatsii-restorana/sections/002-breadcrumb-chek-list-ventilyacii-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/chek-list-ventilyatsii-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/chek-list-ventilyatsii-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/chek-list-ventilyatsii-restorana/sections/007-lead-form-forma-zayavki.html |

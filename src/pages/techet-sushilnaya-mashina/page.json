@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "techet-sushilnaya-mashina.html",
+  "slug": "techet-sushilnaya-mashina",
+  "route": "/techet-sushilnaya-mashina.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Из сушильной машины течёт вода | MosPochin",
+  "h1": "Из сушильной машины течёт вода",
+  "source": {
+    "extractedFrom": "techet-sushilnaya-mashina.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "b7006e0c132d180f1d565998fff25949f7d1360316998660e3c97e09f2dcc955",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9464,
+      "hash": "fba2a90316118215",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/techet-sushilnaya-mashina/props/dr1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1026,
+      "hash": "500f3e58e741b184",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "techet_sushilnaya_mashina_breadcrumb_1"
+          },
+          {
+            "href": "sushilnye-mashiny.html",
+            "label": "Сушильные машины",
+            "ctaId": "techet_sushilnaya_mashina_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Из сушильной машины течёт вода"
+      }
+    },
+    {
+      "id": "002-contact-cta-iz-sushil-noy-mashiny-techet-voda",
+      "component": "contact-cta",
+      "label": "Из сушильной машины течёт вода",
+      "file": "sections/002-contact-cta-iz-sushil-noy-mashiny-techet-voda.html",
+      "bytes": 1963,
+      "hash": "b3082d034d7a5984"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1127,
+      "hash": "a007d257ed459299",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/symptom-observations.template.html",
+      "propsRef": "src/pages/techet-sushilnaya-mashina/props/dr1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1967,
+      "hash": "43799111bd2096d2",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/techet-sushilnaya-mashina/props/dr1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 565,
+      "hash": "293e9420d0b2ca5c"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1339,
+      "hash": "6ea437672a62bb11"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1902,
+      "hash": "aab6db92fbe095d7"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4110,
+      "hash": "4ed71e74af1a1c0e"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2404,
+      "hash": "8e644ff7f90de182"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5029,
+      "hash": "ad5e0a2b6b276182",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/techet-sushilnaya-mashina/props/dr1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 545,
+      "hash": "d92117ebc1695fd0",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/techet-sushilnaya-mashina/props/dr1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page techet-sushilnaya-mashina.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

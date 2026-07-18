@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "duhovka-neravnomerno-pechet.html",
+  "slug": "duhovka-neravnomerno-pechet",
+  "route": "/duhovka-neravnomerno-pechet.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Духовка неравномерно печёт — диагностика и ремонт | MosPochin",
+  "h1": "Духовка неравномерно печёт — диагностика и ремонт",
+  "source": {
+    "extractedFrom": "duhovka-neravnomerno-pechet.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "3c95e310e76be05bcef62545b09500bbb7468164be4504d3b9d85702d7b21baa",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9472,
+      "hash": "c0d145243eda782e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/duhovka-neravnomerno-pechet/props/cook2-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1067,
+      "hash": "9f62d5a563d2d4b9",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "duhovka_neravnomerno_pechet_breadcrumb_1"
+          },
+          {
+            "href": "plity.html",
+            "label": "Плиты и варочные панели",
+            "ctaId": "duhovka_neravnomerno_pechet_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Духовка неравномерно печёт — диагностика и ремонт"
+      }
+    },
+    {
+      "id": "002-contact-cta-duhovka-neravnomerno-pechet-diagnostika-",
+      "component": "contact-cta",
+      "label": "Духовка неравномерно печёт — диагностика и ремонт",
+      "file": "sections/002-contact-cta-duhovka-neravnomerno-pechet-diagnostika-.html",
+      "bytes": 2256,
+      "hash": "4ddd422218f1c1af"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1146,
+      "hash": "7a30dc33ee25c37f",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/duhovka-neravnomerno-pechet/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 2080,
+      "hash": "54d54583f6a206b9",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/duhovka-neravnomerno-pechet/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 534,
+      "hash": "dcafd8523f178f32"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1397,
+      "hash": "dd1d66b4af62d098"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1849,
+      "hash": "6a2be12c7b07d8a9"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4068,
+      "hash": "cfb9c6918e3ff97d"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2291,
+      "hash": "7e29415cdb07a96d"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5035,
+      "hash": "d774dbf79cb32098",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/duhovka-neravnomerno-pechet/props/cook2-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 547,
+      "hash": "08dd6804b38974e8",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/duhovka-neravnomerno-pechet/props/cook2-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page duhovka-neravnomerno-pechet.html",
+    "npm run doctor:page -- --page duhovka-neravnomerno-pechet.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page duhovka-neravnomerno-pechet.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

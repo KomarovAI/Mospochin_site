@@ -7,26 +7,26 @@
 - H1: Ошибка Rational E9
 - Canonical: https://mospochin.ru/parokonvektomat-rational-e9.html
 - Builder model: src/pages/parokonvektomat-rational-e9/page.json
-- Sections: 67 (23 local, 16 shared refs, 2 raw)
-- Text words inside referenced sections: 2560
+- Sections: 55 (17 local, 6 shared refs, 2 raw)
+- Text words inside referenced sections: 1393
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
 | layout-fragment | 27 |
-| pricing | 10 |
-| proof | 7 |
+| proof | 6 |
 | mobile-contact | 5 |
-| related-links | 4 |
-| section | 3 |
+| pricing | 3 |
+| related-links | 3 |
 | breadcrumb | 2 |
-| contact-cta | 2 |
 | faq | 2 |
 | raw | 2 |
 | body-preamble | 1 |
+| contact-cta | 1 |
 | hero | 1 |
 | lead-form | 1 |
+| section | 1 |
 
 
 ## Largest sections to inspect first
@@ -36,11 +36,11 @@
 | Что уточняем по Rational E9 | related-links | 13.2 KB | 397 | no | src/pages/parokonvektomat-rational-e9/sections/009-related-links-chto-utochnyaem-po-rational-e9.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/parokonvektomat-rational-e9/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Ошибка Rational E9 | hero | 9.0 KB | 101 | no | src/pages/parokonvektomat-rational-e9/sections/006-hero-oshibka-rational-e9.html |
-| Частые поломки пароконвектоматов | section | 8.5 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--16d8721c09cebb16.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.6 KB | 240 | yes | src/components/shared/faq/faq-chastye-voprosy-o-remonte-parokonvektomatov--9302e2410efc79af.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.5 KB | 102 | no | src/pages/parokonvektomat-rational-e9/sections/051-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.0 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--179e76b534feb278.html |
-| Ремонтируем все типы пароконвектоматов | section | 5.9 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--5ce5c0ec71cc04c7.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.5 KB | 102 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-e67caef46e64.template.html |
+| Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/parokonvektomat-rational-e9/sections/061-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Выберите проблему — уточним сценарий | pricing | 4.7 KB | 43 | no | src/pages/parokonvektomat-rational-e9/sections/025-pricing-vyberite-problemu-utochnim-scenariy.html |
+| Пароконвектомат встал? | contact-cta | 2.6 KB | 43 | no | src/pages/parokonvektomat-rational-e9/sections/050-contact-cta-parokonvektomat-vstal.html |
 
 
 ## Editable source files

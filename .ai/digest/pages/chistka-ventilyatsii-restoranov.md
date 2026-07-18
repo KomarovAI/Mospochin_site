@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/chistka-ventilyatsii-restoranov.html
 - Builder model: src/pages/chistka-ventilyatsii-restoranov/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1357
+- Text words inside referenced sections: 1039
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Чистка вентиляции ресторанов и кафе | breadcrumb | 43.7 KB | 1170 | no | src/pages/chistka-ventilyatsii-restoranov/sections/002-breadcrumb-chistka-ventilyacii-restoranov-i-kafe.html |
+| Чистка вентиляции ресторанов и кафе | breadcrumb | 34.5 KB | 852 | no | src/pages/chistka-ventilyatsii-restoranov/sections/002-breadcrumb-chistka-ventilyacii-restoranov-i-kafe.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/chistka-ventilyatsii-restoranov/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/chistka-ventilyatsii-restoranov/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/chistka-ventilyatsii-restoranov/sections/007-lead-form-forma-zayavki.html |

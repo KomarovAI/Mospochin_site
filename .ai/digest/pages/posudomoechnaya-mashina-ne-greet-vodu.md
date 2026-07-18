@@ -1,38 +1,41 @@
 # Page Digest — posudomoechnaya-mashina-ne-greet-vodu.html
 
-- Branch: restaurant
-- Role: branch
-- Title: Посудомоечная машина не греет воду — диагностика и ремонт | MosPochin
-- Description: Посудомоечная машина не греет воду: диагностика ТЭНа бака и бойлера, датчиков температуры, контакторов, термостатов и условий разрешения нагрева.
-- H1: Посудомоечная машина не греет воду
+- Branch: household
+- Role: service
+- Title: Посудомоечная машина не греет воду — ремонт нагрева | MosPochin
+- Description: Посудомойка моет холодной водой: проверяем нагреватель или тепловой насос, датчик температуры, циркуляцию, реле и плату.
+- H1: Бытовая посудомоечная машина не греет воду
 - Canonical: https://mospochin.ru/posudomoechnaya-mashina-ne-greet-vodu.html
 - Builder model: src/pages/posudomoechnaya-mashina-ne-greet-vodu/page.json
-- Sections: 7 (3 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 796
+- Sections: 12 (11 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 516
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| contact-cta | 2 |
 | mobile-contact | 2 |
+| proof | 2 |
+| section | 2 |
 | breadcrumb | 1 |
-| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
-| runtime-partials | 1 |
+| lead-form | 1 |
+| pricing | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Посудомоечная машина не греет воду | breadcrumb | 37.4 KB | 731 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/002-breadcrumb-posudomoechnaya-mashina-ne-greet-vodu.html |
-| Частые вопросы | faq | 1.8 KB | 65 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/003-faq-chastye-voprosy.html |
-| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/001-contact-cta-kontaktnyy-cta.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html |
-| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
-| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html |
+| Мобильные контактные элементы | mobile-contact | 9.3 KB | 110 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Что отправить до выезда | lead-form | 4.1 KB | 58 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/008-lead-form-chto-otpravit-do-vyezda.html |
+| Частые вопросы | faq | 2.1 KB | 84 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/009-faq-chastye-voprosy.html |
+| Посудомоечная машина не греет воду | contact-cta | 2.0 KB | 36 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/002-contact-cta-posudomoechnaya-mashina-ne-greet-vodu.html |
+| Что проверить безопасно | proof | 2.0 KB | 43 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/004-proof-chto-proverit-bezopasno.html |
+| Связанные страницы бытового кластера | section | 1.5 KB | 25 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/007-section-svyazannye-stranicy-bytovogo-klastera.html |
+| Какие работы могут потребоваться | pricing | 1.4 KB | 36 | no | src/pages/posudomoechnaya-mashina-ne-greet-vodu/sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html |
 
 
 ## Editable source files
@@ -40,8 +43,12 @@
 - data/page-metadata.json
 - data/contact-config.json
 - data/runtime-config.json
-- data/restaurant-branch.json
-- data/restaurant-page-policy.json
+- data/household-branch.json
+- data/household-page-policy.json
+- data/household-services.json
+- data/household-taxonomy.json
+- data/household-proof-layer.json
+- data/household-page-slots.json
 - posudomoechnaya-mashina-ne-greet-vodu.html
 - src/site-builder.json
 - src/pages/posudomoechnaya-mashina-ne-greet-vodu/page.json
@@ -49,6 +56,7 @@
 
 ## Checks
 
+- npm run doctor:household-page -- --page posudomoechnaya-mashina-ne-greet-vodu.html
 - npm run doctor:page -- --page posudomoechnaya-mashina-ne-greet-vodu.html
 - npm run validate:site
 - npm run check:site-builder

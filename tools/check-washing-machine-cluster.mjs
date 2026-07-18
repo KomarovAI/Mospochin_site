@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+import fs from 'node:fs'; import path from 'node:path';
+const ROOT=process.cwd(), read=f=>JSON.parse(fs.readFileSync(path.join(ROOT,f),'utf8'));
+const pages=read('data/washing-machine-cluster-pages.json'), graph=read('data/washing-machine-link-graph.json'), evidence=read('data/washing-machine-fault-evidence.json');
+const failures=[], fail=x=>failures.push(x);
+if(pages.cluster!=='washing-machines'||pages.scope!=='domestic-automatic') fail('invalid cluster scope');
+if(pages.release!=='WM2'||pages.pages.length!==28) fail(`expected WM2 / 28 pages, got ${pages.release} / ${pages.pages.length}`);
+const set=new Set(pages.pages.map(x=>x.page));
+for(const item of pages.pages){const file=path.join(ROOT,item.page); if(!fs.existsSync(file)){fail(`${item.page}: missing root HTML`);continue} const html=fs.readFileSync(file,'utf8'); const model=path.join(ROOT,'src/pages',item.slug,'page.json'); if(!fs.existsSync(model)) fail(`${item.page}: missing builder model`); for(const n of ['<h1','telegram-form','name="phone"','name="problem"','telegram-form.js','analytics.js','tel:+79990057172','wa.me/79990057172','data-sync-zone="faq-items"']) if(!html.includes(n)) fail(`${item.page}: missing ${n}`); if(!html.includes(`<link rel="canonical" href="https://mospochin.ru/${item.page}">`)) fail(`${item.page}: canonical mismatch`); for(const t of item.clusterLinks||[]) if(!html.includes(`href="${t}"`)) fail(`${item.page}: missing cluster link ${t}`); const banned=[/не сливает[^<]{0,40}(?:—|-)\s*(?:это\s+)?(?:всегда|точно)\s+(?:помпа|насос)[.!<]/i,/шумит[^<]{0,40}(?:—|-)\s*(?:это\s+)?(?:всегда|точно)\s+подшип[^?<]*[.!<]/i,/не открывается[^<]{0,40}(?:—|-)\s*(?:это\s+)?(?:всегда|точно)\s+замок[^?<]*[.!<]/i,/долго стирает[^<]{0,40}(?:—|-)\s*(?:это\s+)?(?:всегда|точно)\s+плат[^?<]*[.!<]/i,/набирает[^<]{0,50}сливает[^<]{0,40}(?:—|-)\s*(?:это\s+)?(?:всегда|точно)\s+насос[^?<]*[.!<]/i,/прыгает[^<]{0,40}(?:—|-)\s*(?:это\s+)?(?:всегда|точно)\s+амортиз[^?<]*[.!<]/i,/не крутится[^<]{0,40}(?:—|-)\s*(?:это\s+)?(?:всегда|точно)\s+ремень[^?<]*[.!<]/i]; for(const r of banned) if(r.test(html)) fail(`${item.page}: prohibited certainty ${r}`);}
+for(const e of graph.edges) if(!set.has(e.from)||!set.has(e.to)) fail(`bad graph edge ${e.from}->${e.to}`);
+for(const s of evidence.sources||[]) if(!/^https:\/\//.test(s.url||'')) fail(`evidence ${s.id}: invalid url`);
+if(failures.length){console.error(failures.map(x=>`❌ ${x}`).join('\n'));process.exit(1)}
+console.log(`Washing-machine WM2 OK: ${pages.pages.length} pages, ${graph.edges.length} contextual links, ${evidence.sources.length} evidence sources`);

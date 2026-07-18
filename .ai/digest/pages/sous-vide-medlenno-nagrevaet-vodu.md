@@ -7,7 +7,7 @@
 - H1: Су-вид медленно нагревает воду
 - Canonical: https://mospochin.ru/sous-vide-medlenno-nagrevaet-vodu.html
 - Builder model: src/pages/sous-vide-medlenno-nagrevaet-vodu/page.json
-- Sections: 16 (12 local, 0 shared refs, 0 raw)
+- Sections: 16 (11 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 713
 
 ## Component mix
@@ -40,7 +40,7 @@
 | Форма заявки | lead-form | 3.4 KB | 33 | no | src/pages/sous-vide-medlenno-nagrevaet-vodu/sections/080-lead-form.html |
 | Ремонтируемые узлы | repair-scope | 2.8 KB | 103 | no | src/pages/sous-vide-medlenno-nagrevaet-vodu/sections/070-repair-scope.html |
 | FAQ — частые вопросы | faq | 2.0 KB | 83 | no | src/pages/sous-vide-medlenno-nagrevaet-vodu/sections/090-faq.html |
-| Безопасная проверка | safe-self-check | 2.0 KB | 57 | no | src/pages/sous-vide-medlenno-nagrevaet-vodu/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 2.0 KB | 57 | no | src/components/parametric/safe-self-check/default.template.html |
 | Сервисная диагностика | service-diagnostics | 1.9 KB | 49 | no | src/pages/sous-vide-medlenno-nagrevaet-vodu/sections/060-service-diagnostics.html |
 | Первый экран | hero | 1.8 KB | 47 | no | src/pages/sous-vide-medlenno-nagrevaet-vodu/sections/010-hero.html |
 

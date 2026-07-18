@@ -37,12 +37,25 @@
       "hash": "70207657494d8f52"
     },
     {
-      "id": "003-breadcrumb-hlebnye-kroshki",
+      "id": "p1-household-breadcrumb",
       "component": "breadcrumb",
-      "label": "Хлебные крошки",
-      "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 486,
-      "hash": "35fa99315475f662"
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 656,
+      "hash": "a4027e55684eebb6",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-one-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/one-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "bytovaya_uslugi_breadcrumb_1"
+          }
+        ],
+        "currentLabel": "Услуги"
+      }
     },
     {
       "id": "004-hero-remont-bytovoy-tehniki-na-domu",
@@ -65,8 +78,8 @@
       "component": "faq",
       "label": "Сначала выберите тип техники",
       "file": "sections/006-faq-snachala-vyberite-tip-tehniki.html",
-      "bytes": 11636,
-      "hash": "c7bb4610607e2c5d"
+      "bytes": 15252,
+      "hash": "5f02026c35da50d5"
     },
     {
       "id": "007-pricing-chto-progovarivaem-do-nachala-remonta",
@@ -105,8 +118,8 @@
       "component": "lead-form",
       "label": "Оставьте заявку на ремонт",
       "file": "sections/011-lead-form-ostav-te-zayavku-na-remont.html",
-      "bytes": 4011,
-      "hash": "b36b31ba41db37a9"
+      "bytes": 4101,
+      "hash": "3f26d519975e9c75"
     },
     {
       "id": "012-mobile-contact-mobil-nye-kontaktnye-elementy",
@@ -128,17 +141,27 @@
       "id": "014-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/014-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "2b586b01fca76adb"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/014-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "015-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/015-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/015-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "016-raw-html-fragment",

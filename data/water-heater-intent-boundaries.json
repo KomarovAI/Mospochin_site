@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "cluster": "water-heaters",
+  "primaryScope": [
+    "electric storage water heaters",
+    "electric instantaneous water heaters",
+    "local water-heater piping and protective fittings",
+    "three-phase electric DHW equipment for private homes",
+    "photo-supported water-heater service pages and private-house DHW cases"
+  ],
+  "boundaries": [
+    {
+      "intent": "gas water heater repair",
+      "status": "excluded",
+      "reason": "regulated gas equipment scope; refer to gas distribution organization"
+    },
+    {
+      "intent": "indirect water heater and heating boiler",
+      "status": "deferred",
+      "reason": "belongs to heating/hydronics cluster"
+    },
+    {
+      "intent": "installation and electrical line upgrade",
+      "status": "adjacent",
+      "reason": "publish only after service capability is confirmed"
+    },
+    {
+      "intent": "local water-heater piping",
+      "status": "included",
+      "reason": "adjacent service limited to appliance connection zone"
+    },
+    {
+      "intent": "general plumbing",
+      "status": "excluded",
+      "reason": "no toilets, sewer, risers, full apartment piping or unrelated fixtures"
+    },
+    {
+      "intent": "three-phase water heater repair",
+      "status": "included",
+      "reason": "high-power electric DHW equipment only; exact wiring follows manufacturer diagram"
+    },
+    {
+      "intent": "electric heating boiler and house heating system",
+      "status": "excluded",
+      "reason": "heating circuits and electric boilers are outside the water-heater cluster"
+    },
+    {
+      "intent": "utility power increase and full switchboard reconstruction",
+      "status": "adjacent",
+      "reason": "requires separate electrical assessment and is not included automatically"
+    },
+    {
+      "intent": "full boiler-room construction",
+      "status": "excluded",
+      "reason": "advanced images are visual context only; the service remains limited to DHW equipment"
+    },
+    {
+      "intent": "water-heater photo cases",
+      "status": "included",
+      "reason": "technical visual evidence linked to a water-heater service scenario"
+    },
+    {
+      "intent": "potable DHW expansion tank",
+      "status": "included",
+      "reason": "local accessory of a closed water-heater system"
+    },
+    {
+      "intent": "full boiler-room construction",
+      "status": "excluded",
+      "reason": "advanced images are visual context only; the service remains limited to DHW equipment"
+    }
+  ],
+  "cannibalizationRules": [
+    {
+      "page": "water-heaters.html",
+      "owns": "generic electric water-heater repair hub"
+    },
+    {
+      "page": "remont-nakopitelnyh-vodonagrevateley.html",
+      "owns": "storage type repair"
+    },
+    {
+      "page": "remont-protochnyh-vodonagrevateley.html",
+      "owns": "instant electric type repair"
+    },
+    {
+      "page": "diagnostika-vodonagrevatelya.html",
+      "owns": "diagnostic intent"
+    },
+    {
+      "pattern": "vodonagrevatel-*.html",
+      "owns": "single observable symptom"
+    }
+  ],
+  "prohibitedClaims": [
+    "предохранительный сброс можно заглушить",
+    "кран можно поставить между клапаном и баком",
+    "механический фильтр полностью убирает накипь",
+    "одно давление подходит всем моделям",
+    "можно включить пустой бойлер",
+    "полная сантехническая разводка входит в услугу",
+    "всем трёхфазным водонагревателям нужен ноль",
+    "один автомат подходит всем моделям 380 В",
+    "сечение кабеля определяется только мощностью",
+    "можно переставлять перемычки без заводской схемы"
+  ]
+}

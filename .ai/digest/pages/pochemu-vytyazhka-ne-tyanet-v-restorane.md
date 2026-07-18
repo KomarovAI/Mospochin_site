@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/pochemu-vytyazhka-ne-tyanet-v-restorane.html
 - Builder model: src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1271
+- Text words inside referenced sections: 946
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Почему вытяжка не тянет в ресторане | breadcrumb | 40.7 KB | 1084 | no | src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/sections/002-breadcrumb-pochemu-vytyazhka-ne-tyanet-v-restorane.html |
+| Почему вытяжка не тянет в ресторане | breadcrumb | 31.4 KB | 759 | no | src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/sections/002-breadcrumb-pochemu-vytyazhka-ne-tyanet-v-restorane.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/pochemu-vytyazhka-ne-tyanet-v-restorane/sections/007-lead-form-forma-zayavki.html |

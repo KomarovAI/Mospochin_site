@@ -7,7 +7,7 @@
 - H1: Пароконвектомат встал? Пришлите фото ошибки
 - Canonical: https://mospochin.ru/parokonvektomaty.html
 - Builder model: src/pages/parokonvektomaty/page.json
-- Sections: 77 (49 local, 10 shared refs, 12 raw)
+- Sections: 77 (45 local, 10 shared refs, 12 raw)
 - Text words inside referenced sections: 3364
 
 ## Component mix
@@ -39,7 +39,7 @@
 | Частые поломки пароконвектоматов | section | 9.1 KB | 210 | no | src/pages/parokonvektomaty/sections/029-section-chastye-polomki-parokonvektomatov.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/parokonvektomaty/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Ошибка на дисплее — повод не читать справочник, а быстро вернуть кухню в работу | lead-form | 8.8 KB | 171 | no | src/pages/parokonvektomaty/sections/010-lead-form-oshibka-na-displee-povod-ne-chitat-spravoc.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.6 KB | 115 | no | src/pages/parokonvektomaty/sections/056-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 7.6 KB | 115 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-f0a8d078b92e.template.html |
 | Разобрать проблему пароконвектомата точнее | section | 7.1 KB | 156 | no | src/pages/parokonvektomaty/sections/031-section-razobrat-problemu-parokonvektomata-tochnee.html |
 
 

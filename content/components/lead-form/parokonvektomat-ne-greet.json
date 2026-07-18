@@ -7,21 +7,29 @@
   "title": "Получите понятный сценарий ремонта пароконвектомата",
   "subtitle": "Оставьте телефон, модель и код ошибки. Перезвоним, уточним адрес и скажем, нужен ли срочный выезд инженера.",
   "formContext": "parokonvektomat_b2b_ad_landing",
-  "formId": "parokonvektomat-ne-greet_telegram_form_2",
-  "submitCtaId": "parokonvektomat-ne-greet_form_submit_2",
+  "formId": "parokonvektomat_ne_greet_form_2",
+  "formPageSlug": "parokonvektomat-ne-greet",
+  "formCtaId": "parokonvektomat-ne-greet_form_02",
+  "formVariant": "parokonvektomat_no_heat_details_v1",
+  "formBlock": "lead_form",
+  "hiddenProblem": {
+    "value": "parokonvektomat-ne-greet",
+    "dataProblem": "parokonvektomat-ne-greet"
+  },
+  "submitCtaId": "parokonvektomat-ne-greet_form_submit_button_2",
   "ids": {
     "name": "parokonvektomaty-promo-name",
     "phone": "parokonvektomaty-promo-phone-2",
     "type": "parokonvektomaty-promo-type-2",
-    "problem": "parokonvektomaty-promo-problem",
+    "problem": "parokonvektomat-ne-greet-problem",
     "address": "parokonvektomaty-promo-address",
     "businessType": "parokonvektomaty-promo-business_type"
   },
   "placeholders": {
     "type": "Rational, Unox, Abat, Convotherm...",
-    "problem": "Не греет, температура не растет, ошибка нагрева...",
+    "problem": "",
     "address": "Павелецкая, Даниловский, ЗИЛ...",
-    "businessType": "Ресторан, кафе, пекарня, dark kitchen"
+    "businessType": "Ресторан, кафе, пекарня, дарк-кухня"
   },
   "submitText": "Вызвать инженера по нагреву"
 }

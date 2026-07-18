@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "zamena-krylchatki-kuhonnoy-vytyazhki.html",
+  "slug": "zamena-krylchatki-kuhonnoy-vytyazhki",
+  "route": "/zamena-krylchatki-kuhonnoy-vytyazhki.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Замена крыльчатки кухонной вытяжки | MosPochin",
+  "h1": "Замена крыльчатки кухонной вытяжки",
+  "source": {
+    "extractedFrom": "zamena-krylchatki-kuhonnoy-vytyazhki.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "52b4002ba975d05697a3a4c50600bd17ec0df9c574fd4725f44f00934c1e5caa",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9401,
+      "hash": "228740a5059a026f",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/header-9bbd5dfdb994.template.html",
+      "propsRef": "src/pages/zamena-krylchatki-kuhonnoy-vytyazhki/props/hood1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1058,
+      "hash": "5929b23afe7146d8",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "zamena_krylchatki_kuhonnoy_vytyazhki_breadcrumb_1"
+          },
+          {
+            "href": "kuhonnye-vytyazhki.html",
+            "label": "Кухонные вытяжки",
+            "ctaId": "zamena_krylchatki_kuhonnoy_vytyazhki_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Замена крыльчатки кухонной вытяжки"
+      }
+    },
+    {
+      "id": "002-contact-cta-zamena-kryl-chatki-kuhonnoy-vytyazhki",
+      "component": "contact-cta",
+      "label": "Замена крыльчатки кухонной вытяжки",
+      "file": "sections/002-contact-cta-zamena-kryl-chatki-kuhonnoy-vytyazhki.html",
+      "bytes": 2055,
+      "hash": "d48899413d83d99f"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1120,
+      "hash": "2f6db4e111892dae",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/symptom-observations.template.html",
+      "propsRef": "src/pages/zamena-krylchatki-kuhonnoy-vytyazhki/props/hood1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1968,
+      "hash": "eabc7a88a7adc7cc",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/zamena-krylchatki-kuhonnoy-vytyazhki/props/hood1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 549,
+      "hash": "ec0cc26fb288ec25"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1387,
+      "hash": "9b225496dd37545e"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1819,
+      "hash": "4b59f3358f014c22"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4124,
+      "hash": "54e6111ffe838694"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2459,
+      "hash": "0845528063d6c8c8"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4981,
+      "hash": "c3856645a5f6902d",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/footer-71b3c4a81b57.template.html",
+      "propsRef": "src/pages/zamena-krylchatki-kuhonnoy-vytyazhki/props/hood1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 556,
+      "hash": "aad37ddc5213ea5c",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/hood1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/zamena-krylchatki-kuhonnoy-vytyazhki/props/hood1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page zamena-krylchatki-kuhonnoy-vytyazhki.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

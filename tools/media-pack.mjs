@@ -56,7 +56,7 @@ fs.writeFileSync(path.join(stage, 'artifact.json'), stableJson(contract));
 
 fs.mkdirSync(OUT, { recursive: true });
 fs.rmSync(zipPath, { force: true });
-const result = spawnSync('zip', ['-qr', zipPath, '.'], { cwd: stage, stdio: 'inherit' });
+const result = spawnSync('zip', ['-9qr', zipPath, '.'], { cwd: stage, stdio: 'inherit' });
 if (result.status !== 0) throw new Error('zip command failed');
 const sha = sha256File(zipPath);
 fs.writeFileSync(shaPath, `${sha}  ${path.basename(zipPath)}\n`);

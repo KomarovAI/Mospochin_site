@@ -7,7 +7,7 @@
 - H1: Су-вид не включается
 - Canonical: https://mospochin.ru/sous-vide-ne-vklyuchaetsya.html
 - Builder model: src/pages/sous-vide-ne-vklyuchaetsya/page.json
-- Sections: 16 (11 local, 1 shared refs, 0 raw)
+- Sections: 16 (10 local, 1 shared refs, 0 raw)
 - Text words inside referenced sections: 584
 
 ## Component mix
@@ -40,7 +40,7 @@
 | Матрица причин | cause-matrix | 2.7 KB | 83 | no | src/pages/sous-vide-ne-vklyuchaetsya/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.3 KB | 65 | no | src/pages/sous-vide-ne-vklyuchaetsya/sections/070-repair-scope.html |
 | FAQ — частые вопросы | faq | 1.9 KB | 69 | no | src/pages/sous-vide-ne-vklyuchaetsya/sections/090-faq.html |
-| Безопасная проверка | safe-self-check | 1.8 KB | 48 | no | src/pages/sous-vide-ne-vklyuchaetsya/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 1.8 KB | 48 | no | src/components/parametric/safe-self-check/default.template.html |
 | Сервисная диагностика | service-diagnostics | 1.7 KB | 37 | yes | src/components/shared/service-diagnostics/service-diagnostics-servisnaya-diagnostika--eae9d6f0e3273b80.html |
 | Первый экран | hero | 1.7 KB | 39 | no | src/pages/sous-vide-ne-vklyuchaetsya/sections/010-hero.html |
 

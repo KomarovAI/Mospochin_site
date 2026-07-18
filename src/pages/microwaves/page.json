@@ -6,12 +6,12 @@
   "route": "/microwaves.html",
   "branch": "household",
   "role": "service",
-  "title": "Ремонт встроенных микроволновок — MosPochin",
-  "h1": "Ремонт встроенных СВЧ Neff, Miele и Bosch",
+  "title": "Ремонт микроволновых печей в Москве — MosPochin",
+  "h1": "Ремонт микроволновых печей в Москве",
   "source": {
     "extractedFrom": "microwaves.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "cb2db863f9d99ea12552691943a2f451d1cc5a70d62366f8660952348f55cd2d",
+    "hash": "dfdfa0969ae4f53936e92b8cbaac7702e51fdff96b821945b657a818a45b210d",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -25,59 +25,142 @@
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
       "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 7357,
-      "hash": "36fe31c67b68b3c7"
+      "bytes": 7575,
+      "hash": "ad431b362b2e237e"
     },
     {
-      "id": "002-raw-html-fragment",
-      "component": "raw",
-      "label": "HTML-фрагмент",
-      "file": "sections/002-raw-html-fragment.html",
-      "bytes": 51,
-      "hash": "7a8c9e8360dca53c"
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 705,
+      "hash": "ff52ffba21797012",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-one-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/one-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "microwaves_breadcrumb_1"
+          }
+        ],
+        "currentLabel": "Ремонт микроволновых печей в Москве"
+      }
     },
     {
-      "id": "003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch",
+      "id": "002-navigation-navigaciya",
+      "component": "navigation",
+      "label": "Навигация",
+      "file": "sections/002-navigation-navigaciya.html",
+      "bytes": 434,
+      "hash": "0f9776f930032022"
+    },
+    {
+      "id": "003-hero-remont-mikrovolnovyh-pechey-v-moskve",
+      "component": "hero",
+      "label": "Ремонт микроволновых печей в Москве",
+      "file": "sections/003-hero-remont-mikrovolnovyh-pechey-v-moskve.html",
+      "bytes": 2593,
+      "hash": "e4df96a4fdd21420"
+    },
+    {
+      "id": "004-section-pochemu-proverki-pol-zovatelya-ogranicheny-v",
+      "component": "section",
+      "label": "Почему проверки пользователя ограничены внешним осмотром",
+      "bytes": 1197,
+      "hash": "d52a5af6fcd9f74e",
+      "componentRef": "src/components/shared/section/section-pochemu-proverki-polzovatelya-ogranicheny-vneshnim--d52a5af6fcd9f74e.html",
+      "componentScope": "shared",
+      "componentSignature": "d52a5af6fcd9f74e",
+      "sourceFile": "sections/004-section-pochemu-proverki-pol-zovatelya-ogranicheny-v.html"
+    },
+    {
+      "id": "005-section-chto-vazhno-opisat-do-vyezda",
+      "component": "section",
+      "label": "Что важно описать до выезда",
+      "file": "sections/005-section-chto-vazhno-opisat-do-vyezda.html",
+      "bytes": 1897,
+      "hash": "a4c278ab7f05f8a9"
+    },
+    {
+      "id": "006-proof-chto-mozhno-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что можно проверить безопасно",
+      "file": "sections/006-proof-chto-mozhno-proverit-bezopasno.html",
+      "bytes": 2762,
+      "hash": "59f1e70bdc2629f4"
+    },
+    {
+      "id": "007-section-kogda-ekspluataciyu-prekraschayut",
+      "component": "section",
+      "label": "Когда эксплуатацию прекращают",
+      "file": "sections/007-section-kogda-ekspluataciyu-prekraschayut.html",
+      "bytes": 1040,
+      "hash": "f011da0e947ce65e"
+    },
+    {
+      "id": "008-section-kakim-mozhet-byt-rezul-tat-diagnostiki",
+      "component": "section",
+      "label": "Каким может быть результат диагностики",
+      "file": "sections/008-section-kakim-mozhet-byt-rezul-tat-diagnostiki.html",
+      "bytes": 1774,
+      "hash": "630db1d81ce78889"
+    },
+    {
+      "id": "009-pricing-stoimost-posle-opredeleniya-prichiny",
+      "component": "pricing",
+      "label": "Стоимость — после определения причины",
+      "bytes": 881,
+      "hash": "a90ef99bf8a48f52",
+      "componentRef": "src/components/shared/pricing/pricing-stoimost-posle-opredeleniya-prichiny--a90ef99bf8a48f52.html",
+      "componentScope": "shared",
+      "componentSignature": "a90ef99bf8a48f52",
+      "sourceFile": "sections/009-pricing-stoimost-posle-opredeleniya-prichiny.html"
+    },
+    {
+      "id": "010-related-links-svyazannye-scenarii",
+      "component": "related-links",
+      "label": "Связанные сценарии",
+      "file": "sections/010-related-links-svyazannye-scenarii.html",
+      "bytes": 2908,
+      "hash": "1d4c9268584cf62d"
+    },
+    {
+      "id": "011-lead-form-chto-otpravit-dlya-predvaritel-noy-kvalifi",
       "component": "lead-form",
-      "label": "Ремонт встроенных СВЧ Neff, Miele и Bosch",
-      "file": "sections/003-lead-form-remont-vstroennyh-svch-neff-miele-i-bosch.html",
-      "bytes": 46531,
-      "hash": "dd4e4eb71d34d917"
+      "label": "Что отправить для предварительной квалификации",
+      "file": "sections/011-lead-form-chto-otpravit-dlya-predvaritel-noy-kvalifi.html",
+      "bytes": 3523,
+      "hash": "df1a2521744e1f27"
     },
     {
-      "id": "004-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "012-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/012-faq-chastye-voprosy.html",
+      "bytes": 2170,
+      "hash": "cd5a8d193e6f3fe2"
+    },
+    {
+      "id": "013-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 4277,
-      "hash": "127d1d397f74c005"
+      "file": "sections/013-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4478,
+      "hash": "5d26c00cfd0144ea"
     },
     {
-      "id": "005-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 599,
-      "hash": "392ad31371e7cc52"
+      "id": "014-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "file": "sections/014-contact-cta-kontaktnyy-cta.html",
+      "bytes": 531,
+      "hash": "d8b825af218e8686"
     },
     {
-      "id": "006-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/006-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "2b586b01fca76adb"
-    },
-    {
-      "id": "007-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/007-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
-    },
-    {
-      "id": "008-raw-html-fragment",
+      "id": "015-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
       "bytes": 1,
@@ -87,7 +170,7 @@
       "variant": "technical-fragment-01ba4719c80b",
       "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
       "props": {},
-      "sourceFile": "sections/008-raw-html-fragment.html"
+      "sourceFile": "sections/015-raw-html-fragment.html"
     }
   ],
   "recommendedChecks": [
@@ -103,7 +186,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 0,
+    "sharedSectionRefs": 2,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

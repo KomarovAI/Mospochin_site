@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-wine-cabinets",
+  "release": "RF-WINE1",
+  "branch": "household",
+  "scope": "domestic-wine-cabinets",
+  "hub": "vinnye-shkafy.html",
+  "pageCount": 15,
+  "pages": [
+    {
+      "page": "vinnye-shkafy.html",
+      "slug": "vinnye-shkafy",
+      "family": "wine_hub",
+      "intent": "hub",
+      "title": "Ремонт винных шкафов в Москве — диагностика и сервис | MosPochin",
+      "h1": "Ремонт винных шкафов в Москве",
+      "indexable": true,
+      "clusterLinks": [
+        "diagnostika-vinnogo-shkafa.html",
+        "vinnyy-shkaf-ne-ohlazhdaet.html",
+        "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+        "remont-vstroennyh-vinnyh-shkafov.html"
+      ],
+      "evidenceIds": [
+        "WINE-E02",
+        "WINE-E07",
+        "WINE-E10"
+      ]
+    },
+    {
+      "page": "diagnostika-vinnogo-shkafa.html",
+      "slug": "diagnostika-vinnogo-shkafa",
+      "family": "wine",
+      "intent": "service",
+      "title": "Диагностика винного шкафа в Москве | MosPochin",
+      "h1": "Диагностика винного шкафа в Москве",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnye-shkafy.html",
+        "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+        "remont-datchika-temperatury-vinnogo-shkafa.html",
+        "poisk-utechki-i-zapravka-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E01",
+        "WINE-E02",
+        "WINE-E09"
+      ]
+    },
+    {
+      "page": "remont-vstroennyh-vinnyh-shkafov.html",
+      "slug": "remont-vstroennyh-vinnyh-shkafov",
+      "family": "built_in_wine",
+      "intent": "service",
+      "title": "Ремонт встроенных винных шкафов в Москве | MosPochin",
+      "h1": "Ремонт встроенных винных шкафов в Москве",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnye-shkafy.html",
+        "vinnyy-shkaf-ne-ohlazhdaet.html",
+        "vinnyy-shkaf-rabotaet-bez-ostanovki.html",
+        "diagnostika-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E01",
+        "WINE-E09",
+        "WINE-E12"
+      ]
+    },
+    {
+      "page": "vinnyy-shkaf-ne-ohlazhdaet.html",
+      "slug": "vinnyy-shkaf-ne-ohlazhdaet",
+      "family": "wine",
+      "intent": "symptom",
+      "title": "Винный шкаф не охлаждает — диагностика и ремонт | MosPochin",
+      "h1": "Винный шкаф не охлаждает",
+      "indexable": true,
+      "clusterLinks": [
+        "diagnostika-vinnogo-shkafa.html",
+        "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+        "remont-vstroennyh-vinnyh-shkafov.html",
+        "poisk-utechki-i-zapravka-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E01",
+        "WINE-E03",
+        "WINE-E09"
+      ]
+    },
+    {
+      "page": "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+      "slug": "vinnyy-shkaf-ne-derzhit-temperaturu",
+      "family": "wine",
+      "intent": "symptom",
+      "title": "Винный шкаф не держит температуру | MosPochin",
+      "h1": "Винный шкаф не держит температуру",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnye-shkafy.html",
+        "remont-datchika-temperatury-vinnogo-shkafa.html",
+        "vinnyy-shkaf-rabotaet-bez-ostanovki.html",
+        "ne-rabotaet-odna-zona-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E02",
+        "WINE-E07",
+        "WINE-E08"
+      ]
+    },
+    {
+      "page": "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+      "slug": "ne-rabotaet-odna-zona-vinnogo-shkafa",
+      "family": "multi_zone",
+      "intent": "symptom",
+      "title": "Не работает одна зона винного шкафа | MosPochin",
+      "h1": "Не работает одна зона винного шкафа",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnye-shkafy.html",
+        "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+        "ne-rabotaet-ventilyator-vinnogo-shkafa.html",
+        "remont-platy-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E10",
+        "WINE-E11",
+        "WINE-E12"
+      ]
+    },
+    {
+      "page": "vinnyy-shkaf-peremorazhivaet.html",
+      "slug": "vinnyy-shkaf-peremorazhivaet",
+      "family": "wine",
+      "intent": "symptom",
+      "title": "Винный шкаф перемораживает или охлаждает ниже настройки | MosPochin",
+      "h1": "Винный шкаф слишком сильно охлаждает",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+        "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+        "remont-datchika-temperatury-vinnogo-shkafa.html",
+        "remont-platy-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E07",
+        "WINE-E08",
+        "WINE-E10"
+      ]
+    },
+    {
+      "page": "kondensat-v-vinnom-shkafu.html",
+      "slug": "kondensat-v-vinnom-shkafu",
+      "family": "wine",
+      "intent": "symptom",
+      "title": "Конденсат в винном шкафу — причины и диагностика | MosPochin",
+      "h1": "В винном шкафу появляется конденсат",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnye-shkafy.html",
+        "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+        "remont-vstroennyh-vinnyh-shkafov.html",
+        "ne-rabotaet-ventilyator-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E02",
+        "WINE-E07",
+        "WINE-E09"
+      ]
+    },
+    {
+      "page": "vinnyy-shkaf-shumit.html",
+      "slug": "vinnyy-shkaf-shumit",
+      "family": "wine",
+      "intent": "symptom",
+      "title": "Винный шкаф шумит — диагностика звука и вибрации | MosPochin",
+      "h1": "Винный шкаф шумит или вибрирует",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnye-shkafy.html",
+        "ne-rabotaet-ventilyator-vinnogo-shkafa.html",
+        "remont-vstroennyh-vinnyh-shkafov.html",
+        "diagnostika-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E05",
+        "WINE-E06",
+        "WINE-E13"
+      ]
+    },
+    {
+      "page": "vinnyy-shkaf-ne-vklyuchaetsya.html",
+      "slug": "vinnyy-shkaf-ne-vklyuchaetsya",
+      "family": "wine",
+      "intent": "symptom",
+      "title": "Винный шкаф не включается — диагностика питания | MosPochin",
+      "h1": "Винный шкаф не включается",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnye-shkafy.html",
+        "remont-platy-vinnogo-shkafa.html",
+        "vinnyy-shkaf-ne-ohlazhdaet.html",
+        "diagnostika-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E03",
+        "WINE-E02",
+        "WINE-E09"
+      ]
+    },
+    {
+      "page": "vinnyy-shkaf-rabotaet-bez-ostanovki.html",
+      "slug": "vinnyy-shkaf-rabotaet-bez-ostanovki",
+      "family": "wine",
+      "intent": "symptom",
+      "title": "Винный шкаф работает без остановки | MosPochin",
+      "h1": "Винный шкаф работает без остановки",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnyy-shkaf-ne-ohlazhdaet.html",
+        "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+        "remont-vstroennyh-vinnyh-shkafov.html",
+        "poisk-utechki-i-zapravka-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E04",
+        "WINE-E06",
+        "WINE-E09"
+      ]
+    },
+    {
+      "page": "ne-rabotaet-ventilyator-vinnogo-shkafa.html",
+      "slug": "ne-rabotaet-ventilyator-vinnogo-shkafa",
+      "family": "wine",
+      "intent": "service",
+      "title": "Ремонт вентилятора винного шкафа | MosPochin",
+      "h1": "Не работает вентилятор винного шкафа",
+      "indexable": true,
+      "clusterLinks": [
+        "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+        "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+        "vinnyy-shkaf-shumit.html",
+        "remont-platy-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E05",
+        "WINE-E12",
+        "WINE-E13"
+      ]
+    },
+    {
+      "page": "remont-datchika-temperatury-vinnogo-shkafa.html",
+      "slug": "remont-datchika-temperatury-vinnogo-shkafa",
+      "family": "wine",
+      "intent": "service",
+      "title": "Замена датчика температуры винного шкафа | MosPochin",
+      "h1": "Ремонт датчика температуры винного шкафа",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+        "vinnyy-shkaf-peremorazhivaet.html",
+        "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+        "remont-platy-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E02",
+        "WINE-E07",
+        "WINE-E10"
+      ]
+    },
+    {
+      "page": "remont-platy-vinnogo-shkafa.html",
+      "slug": "remont-platy-vinnogo-shkafa",
+      "family": "wine",
+      "intent": "service",
+      "title": "Ремонт платы управления винного шкафа | MosPochin",
+      "h1": "Ремонт платы винного шкафа",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnyy-shkaf-ne-vklyuchaetsya.html",
+        "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+        "remont-datchika-temperatury-vinnogo-shkafa.html",
+        "diagnostika-vinnogo-shkafa.html"
+      ],
+      "evidenceIds": [
+        "WINE-E02",
+        "WINE-E03",
+        "WINE-E12"
+      ]
+    },
+    {
+      "page": "poisk-utechki-i-zapravka-vinnogo-shkafa.html",
+      "slug": "poisk-utechki-i-zapravka-vinnogo-shkafa",
+      "family": "wine",
+      "intent": "service",
+      "title": "Поиск утечки и заправка винного шкафа | MosPochin",
+      "h1": "Поиск утечки и заправка винного шкафа",
+      "indexable": true,
+      "clusterLinks": [
+        "vinnyy-shkaf-ne-ohlazhdaet.html",
+        "vinnyy-shkaf-rabotaet-bez-ostanovki.html",
+        "diagnostika-vinnogo-shkafa.html",
+        "remont-vstroennyh-vinnyh-shkafov.html"
+      ],
+      "evidenceIds": [
+        "WINE-E04",
+        "WINE-E09",
+        "WINE-E10"
+      ]
+    }
+  ]
+}

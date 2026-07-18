@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-wine-cabinets",
+  "primaryScope": [
+    "domestic wine cabinets",
+    "built-in wine cabinets",
+    "single and multi-zone wine coolers"
+  ],
+  "boundaries": [
+    {
+      "intent": "commercial wine cellar refrigeration",
+      "status": "excluded",
+      "reason": "professional refrigeration branch"
+    },
+    {
+      "intent": "restaurant wine display equipment",
+      "status": "excluded",
+      "reason": "commercial equipment branch"
+    },
+    {
+      "intent": "recharge without leak search",
+      "status": "prohibited",
+      "reason": "refrigerant is not a consumable"
+    },
+    {
+      "intent": "one zone fault equals compressor",
+      "status": "prohibited",
+      "reason": "zones may have separate sensors fans and dampers"
+    }
+  ],
+  "prohibitedClaims": [
+    "не охлаждает — всегда заправка",
+    "шумит — всегда компрессор",
+    "одна зона не работает — всегда компрессор",
+    "конденсат — всегда утечка"
+  ]
+}

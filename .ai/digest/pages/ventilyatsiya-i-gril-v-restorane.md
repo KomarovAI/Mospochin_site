@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyatsiya-i-gril-v-restorane.html
 - Builder model: src/pages/ventilyatsiya-i-gril-v-restorane/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1240
+- Text words inside referenced sections: 921
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция и гриль в ресторане | breadcrumb | 38.8 KB | 1053 | no | src/pages/ventilyatsiya-i-gril-v-restorane/sections/002-breadcrumb-ventilyaciya-i-gril-v-restorane.html |
+| Вентиляция и гриль в ресторане | breadcrumb | 29.6 KB | 734 | no | src/pages/ventilyatsiya-i-gril-v-restorane/sections/002-breadcrumb-ventilyaciya-i-gril-v-restorane.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyatsiya-i-gril-v-restorane/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/ventilyatsiya-i-gril-v-restorane/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-i-gril-v-restorane/sections/007-lead-form-forma-zayavki.html |

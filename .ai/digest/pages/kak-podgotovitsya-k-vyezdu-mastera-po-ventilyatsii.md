@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html
 - Builder model: src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1256
+- Text words inside referenced sections: 937
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Как подготовиться к выезду мастера по вентиляции | breadcrumb | 40.9 KB | 1069 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/002-breadcrumb-kak-podgotovit-sya-k-vyezdu-mastera-po-ve.html |
+| Как подготовиться к выезду мастера по вентиляции | breadcrumb | 31.7 KB | 750 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/002-breadcrumb-kak-podgotovit-sya-k-vyezdu-mastera-po-ve.html |
 | Мобильные контактные элементы | mobile-contact | 9.3 KB | 110 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii/sections/007-lead-form-forma-zayavki.html |

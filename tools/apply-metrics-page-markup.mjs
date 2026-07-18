@@ -5,14 +5,97 @@ import crypto from 'node:crypto';
 
 const root = process.cwd();
 const contextPath = path.join(root, 'data', 'metrics-page-context.json');
+const pageArgIndex = process.argv.indexOf('--pages');
+const selectedPages = pageArgIndex >= 0 && process.argv[pageArgIndex + 1]
+  ? new Set(process.argv[pageArgIndex + 1].split(',').map((value) => value.trim()).filter(Boolean))
+  : null;
 const htmlFiles = fs.readdirSync(root)
   .filter((name) => name.endsWith('.html'))
   .filter((name) => name !== '404.html')
+  .filter((name) => !selectedPages || selectedPages.has(name))
   .sort();
 
 const dishwasherManifestPath = path.join(root, 'data', 'dishwasher-cluster-pages.json');
 const dishwasherMetrics = fs.existsSync(dishwasherManifestPath)
   ? new Map((JSON.parse(fs.readFileSync(dishwasherManifestPath, 'utf8')).pages || []).map((page) => [page.page, page.metrics || {}]))
+  : new Map();
+
+const waterHeaterManifestPath = path.join(root, 'data', 'water-heater-cluster-pages.json');
+const waterHeaterMetrics = fs.existsSync(waterHeaterManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(waterHeaterManifestPath, 'utf8')).pages || []).map((page) => [page.page, {
+      pageIntent: page.intent === 'symptom' ? 'symptom' : 'service',
+      equipment: 'vodonagrevatel',
+      service: page.intent === 'diagnostic' ? 'diagnostic' : page.intent === 'service' && /chistka/.test(page.page) ? 'maintenance' : 'repair',
+      commercialSegment: 'b2c_home'
+    }]))
+  : new Map();
+
+const washingMachineManifestPath = path.join(root, 'data', 'washing-machine-cluster-pages.json');
+const washingMachineMetrics = fs.existsSync(washingMachineManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(washingMachineManifestPath, 'utf8')).pages || []).map((page) => [page.page, {
+      pageIntent: page.intent === 'symptom' ? 'symptom' : page.intent === 'diagnostic' ? 'diagnostic' : page.intent === 'hub' ? 'service' : 'service',
+      equipment: 'stiralnaya_mashina',
+      service: page.intent === 'diagnostic' ? 'diagnostic' : 'repair',
+      commercialSegment: 'b2c_home'
+    }]))
+  : new Map();
+
+const cookingManifestPath = path.join(root, 'data', 'cooking-appliance-hub-pages.json');
+const cookingMetrics = fs.existsSync(cookingManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(cookingManifestPath, 'utf8')).pages || []).map((page) => {
+      const equipmentByFamily = {
+        cooking_hub: 'duhovki_i_paneli',
+        electric_oven: 'duhovoy_shkaf',
+        electric_hob: 'elektricheskaya_varochnaya_panel',
+        induction_hob: 'indukcionnaya_panel'
+      };
+      return [page.page, {
+        pageIntent: page.intent === 'symptom' ? 'symptom' : page.intent === 'diagnostic' ? 'diagnostic' : 'service',
+        equipment: equipmentByFamily[page.family] || 'duhovki_i_paneli',
+        service: page.intent === 'diagnostic' ? 'diagnostic' : 'repair',
+        commercialSegment: 'b2c_home'
+      }];
+    }))
+  : new Map();
+
+const microwaveManifestPath = path.join(root, 'data', 'microwave-cluster-pages.json');
+const microwaveMetrics = fs.existsSync(microwaveManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(microwaveManifestPath, 'utf8')).pages || []).map((page) => [page.page, {
+      pageIntent: page.intent === 'symptom' ? 'symptom' : page.intent === 'diagnostic' ? 'diagnostic' : 'service',
+      equipment: 'svch',
+      service: page.intent === 'diagnostic' ? 'diagnostic' : 'repair',
+      commercialSegment: 'b2c_home'
+    }]))
+  : new Map();
+
+const householdDishwasherManifestPath = path.join(root, 'data', 'household-dishwasher-cluster-pages.json');
+const householdDishwasherMetrics = fs.existsSync(householdDishwasherManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(householdDishwasherManifestPath, 'utf8')).pages || []).map((page) => [page.page, {
+      pageIntent: page.role === 'symptom' ? 'symptom' : page.role === 'diagnostic' ? 'diagnostic' : 'service',
+      equipment: 'posudomoechnaya_mashina',
+      service: page.role === 'diagnostic' ? 'diagnostic' : 'repair',
+      commercialSegment: 'b2c_home'
+    }]))
+  : new Map();
+
+const dryerManifestPath = path.join(root, 'data', 'dryer-cluster-pages.json');
+const dryerMetrics = fs.existsSync(dryerManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(dryerManifestPath, 'utf8')).pages || []).map((page) => [page.page, {
+      pageIntent: page.intent === 'symptom' ? 'symptom' : page.intent === 'diagnostic' ? 'diagnostic' : 'service',
+      equipment: page.family === 'heat_pump_dryer' ? 'sushilnaya_mashina_teplovoy_nasos' : 'sushilnaya_mashina',
+      service: page.intent === 'diagnostic' ? 'diagnostic' : page.page.includes('chistka-') ? 'maintenance' : 'repair',
+      commercialSegment: 'b2c_home'
+    }]))
+  : new Map();
+
+const householdRefrigeratorManifestPath = path.join(root, 'data', 'household-refrigerator-cluster-pages.json');
+const householdRefrigeratorMetrics = fs.existsSync(householdRefrigeratorManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(householdRefrigeratorManifestPath, 'utf8')).pages || []).map((page) => [page.page, {
+      pageIntent: page.intent === 'symptom' ? 'symptom' : page.intent === 'diagnostic' ? 'diagnostic' : 'service',
+      equipment: 'holodilnik',
+      service: page.intent === 'diagnostic' ? 'diagnostic' : 'repair',
+      commercialSegment: 'b2c_home'
+    }]))
   : new Map();
 
 const BRAND_PATTERNS = [
@@ -33,14 +116,16 @@ function canonicalPageVersion(html) {
 
 function inferEquipment(file) {
   const lower = file.toLowerCase();
+  if (/mikrovolnov|microwaves|svch/.test(lower)) return 'svch';
   if (/pishevarochnyj|pishevarochnye|kotl/.test(lower)) return 'pishevarochnyj_kotel';
   if (/parokonvektomat/.test(lower)) return 'parokonvektomat';
   if (/microwaves|svch/.test(lower)) return 'svch';
   if (/holodil|ice-machines/.test(lower)) return 'holodilnoe_oborudovanie';
   if (/posudom/.test(lower)) return 'posudomoechnaya_mashina';
-  if (/plity|pechi|grili/.test(lower)) return 'plity_pechi';
+  if (/plity|pechi|grili|duhov|varochn|induk/.test(lower)) return 'plity_pechi';
   if (/water-heaters/.test(lower)) return 'vodonagrevatel';
   if (/stiralnye/.test(lower)) return 'stiralnaya_mashina';
+  if (/sushiln/.test(lower)) return 'sushilnaya_mashina';
   if (/kompyutery|routery/.test(lower)) return 'electronics';
   return 'site';
 }
@@ -66,7 +151,7 @@ function inferPageIntent(file) {
 
 function inferSegment(file) {
   const lower = file.toLowerCase();
-  if (/bytovaya|holodilniki|stiralnye|posudomoyki|plity|microwaves|water-heaters|kompyutery|routery/.test(lower)) {
+  if (/bytovaya|holodilniki|stiralnye|sushiln|posudomoyki|plity|duhov|varochn|induk|microwaves|water-heaters|kompyutery|routery/.test(lower)) {
     return 'b2c_home';
   }
   return 'b2b_kitchen';
@@ -80,16 +165,39 @@ function buildContext() {
       ? JSON.parse(fs.readFileSync(path.join(root, 'data', 'page-metadata.json'), 'utf8')).pages?.[file] || {}
       : {};
     const dishwasher = dishwasherMetrics.get(file) || {};
+    const waterHeater = waterHeaterMetrics.get(file) || {};
+    const washingMachine = washingMachineMetrics.get(file) || {};
+    const microwave = microwaveMetrics.get(file) || {};
+    const householdDishwasher = householdDishwasherMetrics.get(file) || {};
+    const householdRefrigerator = householdRefrigeratorMetrics.get(file) || {};
+    const cooking = cookingMetrics.get(file) || {};
+    const dryer = dryerMetrics.get(file) || {};
     pages[file] = {
       page_slug: slugFromFile(file),
-      page_intent: dishwasher.pageIntent || inferPageIntent(file),
-      equipment: dishwasher.equipment || inferEquipment(file),
+      page_intent: dryer.pageIntent || dishwasher.pageIntent || waterHeater.pageIntent || washingMachine.pageIntent || microwave.pageIntent || householdRefrigerator.pageIntent || cooking.pageIntent || inferPageIntent(file),
+      equipment: dryer.equipment || householdDishwasher.equipment || dishwasher.equipment || waterHeater.equipment || washingMachine.equipment || microwave.equipment || householdRefrigerator.equipment || cooking.equipment || inferEquipment(file),
       brand: inferBrand(file),
-      service: dishwasher.service || 'repair',
-      commercial_segment: dishwasher.commercialSegment || inferSegment(file),
+      service: dryer.service || householdDishwasher.service || dishwasher.service || waterHeater.service || washingMachine.service || microwave.service || householdRefrigerator.service || cooking.service || 'repair',
+      commercial_segment: dryer.commercialSegment || householdDishwasher.commercialSegment || dishwasher.commercialSegment || waterHeater.commercialSegment || washingMachine.commercialSegment || microwave.commercialSegment || householdRefrigerator.commercialSegment || cooking.commercialSegment || inferSegment(file),
       branch: pageMetadata.branch || 'neutral',
       page_version: canonicalPageVersion(html),
-      source: dishwasherMetrics.has(file) ? 'dishwasher_manifest' : 'run4_archive_only_inferred'
+      source: dryerMetrics.has(file)
+        ? 'dryer_manifest'
+        : householdDishwasherMetrics.has(file)
+        ? 'household_dishwasher_manifest'
+        : dishwasherMetrics.has(file)
+        ? 'dishwasher_manifest'
+        : waterHeaterMetrics.has(file)
+          ? 'water_heater_manifest'
+          : washingMachineMetrics.has(file)
+            ? 'washing_machine_manifest'
+            : microwaveMetrics.has(file)
+              ? 'microwave_manifest'
+              : householdRefrigeratorMetrics.has(file)
+                ? 'household_refrigerator_manifest'
+                : cookingMetrics.has(file)
+                ? 'cooking_appliance_manifest'
+                : 'run4_archive_only_inferred'
     };
   }
   return {

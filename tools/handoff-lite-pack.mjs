@@ -9,7 +9,7 @@ import { createArtifactContract, stableJson, sha256File, toPosix } from './artif
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const PROJECT_NAME = path.basename(ROOT);
+const PROJECT_NAME = 'mospochin-site';
 const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
 const ARCHIVES = path.join(ROOT, '.archives');
 
@@ -65,7 +65,7 @@ function treeDigest(root) {
 
 function zip(stageParent, projectDir, zipPath) {
   fs.rmSync(zipPath, { force: true });
-  const result = spawnSync('zip', ['-qr', zipPath, path.basename(projectDir)], { cwd: stageParent, stdio: 'inherit' });
+  const result = spawnSync('zip', ['-9qr', zipPath, path.basename(projectDir)], { cwd: stageParent, stdio: 'inherit' });
   if (result.status !== 0) throw new Error('zip command failed');
 }
 

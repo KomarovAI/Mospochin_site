@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyator-vytyazhki-ne-vklyuchaetsya.html
 - Builder model: src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1240
+- Text words inside referenced sections: 923
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Не включается вентилятор вытяжки ресторана | breadcrumb | 38.9 KB | 1053 | no | src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/sections/002-breadcrumb-ne-vklyuchaetsya-ventilyator-vytyazhki-re.html |
+| Не включается вентилятор вытяжки ресторана | breadcrumb | 29.7 KB | 736 | no | src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/sections/002-breadcrumb-ne-vklyuchaetsya-ventilyator-vytyazhki-re.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyator-vytyazhki-ne-vklyuchaetsya/sections/007-lead-form-forma-zayavki.html |

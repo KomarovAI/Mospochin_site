@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-refrigerators",
+  "boundaries": [
+    {
+      "intent": "domestic-refrigerators",
+      "status": "included"
+    },
+    {
+      "intent": "commercial-restaurant-refrigeration",
+      "status": "excluded"
+    },
+    {
+      "intent": "refrigerant-top-up-without-leak-repair",
+      "status": "prohibited"
+    },
+    {
+      "intent": "compressor-replacement-without-diagnostics",
+      "status": "prohibited"
+    },
+    {
+      "intent": "sharp-tool-defrosting",
+      "status": "prohibited"
+    }
+  ]
+}

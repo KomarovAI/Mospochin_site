@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "cluster": "water-heaters",
+  "release": "WH4-VISUAL-FULL",
+  "status": "all-water-heater-photos-deployed",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/water-heaters/wh4-visual",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9995
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1800
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "water-heaters.html",
+      "label": "Ремонт электрических водонагревателей в Москве",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+      "label": "Подключение и обвязка",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
+      "label": "Предохранительный клапан",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya.html",
+      "label": "Редуктор давления",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "podklyuchenie-vodonagrevatelya-polipropilenom.html",
+      "label": "Подключение PP-R",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-trehfaznyh-vodonagrevateley-380-400v.html",
+      "label": "Ремонт трёхфазных водонагревателей 380/400 В",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "fotografii-remonta-vodonagrevateley.html",
+      "label": "Фотографии ремонта водонагревателей",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "zamena-flantsa-i-prokladki-vodonagrevatelya.html",
+      "label": "Замена фланца и прокладки водонагревателя",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-platy-i-elektroniki-vodonagrevatelya.html",
+      "label": "Ремонт платы и электроники водонагревателя",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "zamena-termostata-i-datchika-temperatury-vodonagrevatelya.html",
+      "label": "Замена термостата и датчика температуры водонагревателя",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "ustanovka-rasshiritelnogo-baka-dlya-vodonagrevatelya.html",
+      "label": "Установка расширительного бака для водонагревателя",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "case-chistka-boylera-s-silnoy-nakipyu.html",
+      "label": "Очистка бойлера с сильной накипью — фотокейс",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "case-remont-dvuhbakovogo-vodonagrevatelya.html",
+      "label": "Разборка двухбакового водонагревателя — фотокейс",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "case-remont-boylera-v-tesnoy-nishe.html",
+      "label": "Ремонт бойлера в тесной нише — фотокейс",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "case-trehfaznaya-sistema-gvs-chastnogo-doma.html",
+      "label": "Сложная трёхфазная система ГВС частного дома — фотокейс",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ]
+}

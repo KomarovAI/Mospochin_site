@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+  "slug": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya",
+  "route": "/elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Электрическая варочная панель не включается | MosPochin",
+  "h1": "Электрическая варочная панель не включается",
+  "source": {
+    "extractedFrom": "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "5723a0febafbf65f2013a7346023141ae9abe8422fbd4492e3944ed3c96c7c98",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9560,
+      "hash": "c0f6386dd75594b2",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/elektricheskaya-varochnaya-panel-ne-vklyuchaetsya/props/cook2-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1100,
+      "hash": "b8e90be9231dfa56",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "elektricheskaya_varochnaya_panel_ne_vklyuchaetsya_breadcrumb_1"
+          },
+          {
+            "href": "plity.html",
+            "label": "Плиты и варочные панели",
+            "ctaId": "elektricheskaya_varochnaya_panel_ne_vklyuchaetsya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Электрическая варочная панель не включается"
+      }
+    },
+    {
+      "id": "002-contact-cta-elektricheskaya-varochnaya-panel-ne-vkly",
+      "component": "contact-cta",
+      "label": "Электрическая варочная панель не включается",
+      "file": "sections/002-contact-cta-elektricheskaya-varochnaya-panel-ne-vkly.html",
+      "bytes": 2248,
+      "hash": "8bbbe87ef7bbcb73"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1131,
+      "hash": "42102c026c80fd0f",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/elektricheskaya-varochnaya-panel-ne-vklyuchaetsya/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1912,
+      "hash": "4a4c792c923cf79f",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/elektricheskaya-varochnaya-panel-ne-vklyuchaetsya/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 508,
+      "hash": "caa47d3e14214b82"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1330,
+      "hash": "9761acb78953c736"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1942,
+      "hash": "ec757c63d99690c8"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4090,
+      "hash": "8bee03089fbddacd"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "bytes": 2181,
+      "hash": "7682c030ed3a615e",
+      "componentRef": "src/components/shared/faq/faq-chastye-voprosy--2e07bfeccbcc5ed4.html",
+      "componentScope": "shared",
+      "componentSignature": "2e07bfeccbcc5ed4",
+      "sourceFile": "sections/009-faq-chastye-voprosy.html"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5101,
+      "hash": "f76331407b98cc48",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/elektricheskaya-varochnaya-panel-ne-vklyuchaetsya/props/cook2-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 569,
+      "hash": "dc3e8fdb44587655",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/elektricheskaya-varochnaya-panel-ne-vklyuchaetsya/props/cook2-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+    "npm run doctor:page -- --page elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

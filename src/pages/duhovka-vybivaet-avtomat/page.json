@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "duhovka-vybivaet-avtomat.html",
+  "slug": "duhovka-vybivaet-avtomat",
+  "route": "/duhovka-vybivaet-avtomat.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Духовка выбивает автомат — безопасная диагностика | MosPochin",
+  "h1": "Духовка выбивает автомат — безопасная диагностика",
+  "source": {
+    "extractedFrom": "duhovka-vybivaet-avtomat.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "6c1d9a008ebebd8373ccc26f94416f056292eb409677bbc3be4fca8fd8eb9c5b",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9460,
+      "hash": "a0db9e357442f1b3",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/duhovka-vybivaet-avtomat/props/cook2-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1062,
+      "hash": "edec9c2b798fdb7c",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "duhovka_vybivaet_avtomat_breadcrumb_1"
+          },
+          {
+            "href": "plity.html",
+            "label": "Плиты и варочные панели",
+            "ctaId": "duhovka_vybivaet_avtomat_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Духовка выбивает автомат — безопасная диагностика"
+      }
+    },
+    {
+      "id": "002-contact-cta-duhovka-vybivaet-avtomat-bezopasnaya-dia",
+      "component": "contact-cta",
+      "label": "Духовка выбивает автомат — безопасная диагностика",
+      "file": "sections/002-contact-cta-duhovka-vybivaet-avtomat-bezopasnaya-dia.html",
+      "bytes": 2158,
+      "hash": "e784bac28aaf2fb7"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1154,
+      "hash": "e953ca650f3de0ba",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/duhovka-vybivaet-avtomat/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 2015,
+      "hash": "cd55d814604859de",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/duhovka-vybivaet-avtomat/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 543,
+      "hash": "1728fd9275d58e7b"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1352,
+      "hash": "28dda104c9ba5b45"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1816,
+      "hash": "39e23c4ecee704d1"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4065,
+      "hash": "f3a5201e9ea2f077"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2281,
+      "hash": "f6e26a9f41c1e0cf"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5026,
+      "hash": "c04431382038cd19",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/duhovka-vybivaet-avtomat/props/cook2-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 544,
+      "hash": "e342474abc08d78e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/duhovka-vybivaet-avtomat/props/cook2-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page duhovka-vybivaet-avtomat.html",
+    "npm run doctor:page -- --page duhovka-vybivaet-avtomat.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page duhovka-vybivaet-avtomat.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

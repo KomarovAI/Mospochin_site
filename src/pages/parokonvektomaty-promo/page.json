@@ -53,9 +53,14 @@
       "id": "004-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
       "bytes": 904,
-      "hash": "a37386b1db8fba16"
+      "hash": "a37386b1db8fba16",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "cluster-parokonvektomaty-ac4fcdb92c94",
+      "templateRef": "src/components/parametric/breadcrumb/cluster-parokonvektomaty-ac4fcdb92c94.template.html",
+      "propsRef": "content/components/breadcrumb/parokonvektomaty-promo.json",
+      "sourceFile": "sections/004-breadcrumb-hlebnye-kroshki.html"
     },
     {
       "id": "005-raw-html-fragment",
@@ -573,9 +578,14 @@
       "id": "051-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "file": "sections/051-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
       "bytes": 6677,
-      "hash": "4f2b494e7c2c4a8f"
+      "hash": "4f2b494e7c2c4a8f",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "restaurant-parokonvektomat-b2b",
+      "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-14c3fd8c1b20.template.html",
+      "propsRef": "content/components/lead-form/parokonvektomaty-promo.json",
+      "sourceFile": "sections/051-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
     },
     {
       "id": "052-proof-dokazatel-stva-garantii",
@@ -716,17 +726,27 @@
       "id": "065-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/065-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "2b586b01fca76adb"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/065-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "066-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/066-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/066-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "067-raw-html-fragment",
@@ -754,7 +774,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 15,
+    "sharedSectionRefs": 10,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

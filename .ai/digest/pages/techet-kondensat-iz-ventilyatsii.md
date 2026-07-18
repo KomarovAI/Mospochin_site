@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/techet-kondensat-iz-ventilyatsii.html
 - Builder model: src/pages/techet-kondensat-iz-ventilyatsii/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1226
+- Text words inside referenced sections: 907
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Конденсат из вентиляции на кухне ресторана | breadcrumb | 38.5 KB | 1039 | no | src/pages/techet-kondensat-iz-ventilyatsii/sections/002-breadcrumb-kondensat-iz-ventilyacii-na-kuhne-restora.html |
+| Конденсат из вентиляции на кухне ресторана | breadcrumb | 29.3 KB | 720 | no | src/pages/techet-kondensat-iz-ventilyatsii/sections/002-breadcrumb-kondensat-iz-ventilyacii-na-kuhne-restora.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/techet-kondensat-iz-ventilyatsii/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/techet-kondensat-iz-ventilyatsii/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/techet-kondensat-iz-ventilyatsii/sections/007-lead-form-forma-zayavki.html |

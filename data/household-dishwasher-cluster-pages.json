@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "clusterId": "household-dishwasher",
+  "release": "DW2",
+  "hub": "posudomoyki.html",
+  "pageCount": 29,
+  "pages": [
+    {
+      "page": "posudomoyki.html",
+      "role": "hub",
+      "label": "Бытовые посудомойки",
+      "evidenceIds": [
+        "HDW-E01",
+        "HDW-E03",
+        "HDW-E05",
+        "HDW-E06",
+        "HDW-E07"
+      ],
+      "clusterLinks": [
+        "diagnostika-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-ne-slivaet-vodu.html",
+        "posudomoechnaya-mashina-ploho-moet-posudu.html",
+        "posudomoechnaya-mashina-techet.html",
+        "posudomoechnaya-mashina-postoyanno-slivaet-vodu.html",
+        "posudomoechnaya-mashina-ne-rastvoryaet-tabletku.html",
+        "pena-v-posudomoechnoy-mashine.html",
+        "posudomoechnaya-mashina-shumit.html",
+        "dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+        "srabotal-aquastop-posudomoechnoy-mashiny.html",
+        "belyy-nalet-posle-posudomoechnoy-mashiny.html",
+        "remont-platy-posudomoechnoy-mashiny.html"
+      ]
+    },
+    {
+      "page": "diagnostika-posudomoechnoy-mashiny.html",
+      "role": "diagnostic",
+      "label": "Диагностика",
+      "evidenceIds": [
+        "HDW-E01",
+        "HDW-E05",
+        "HDW-E09"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-ne-slivaet-vodu.html",
+        "posudomoechnaya-mashina-ne-zapuskaet-cikl.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-slivaet-vodu.html",
+      "role": "symptom",
+      "label": "Не сливает воду",
+      "evidenceIds": [
+        "HDW-E01",
+        "HDW-E02"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "zamena-slivnogo-nasosa-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-ostanavlivaetsya-v-cikle.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ploho-moet-posudu.html",
+      "role": "symptom",
+      "label": "Плохо моет",
+      "evidenceIds": [
+        "HDW-E03",
+        "HDW-E04"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "remont-cirkulyacionnogo-nasosa-posudomoechnoy-mashiny.html",
+        "remont-nagreva-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-ne-rastvoryaet-tabletku.html",
+        "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+        "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+        "belyy-nalet-posle-posudomoechnoy-mashiny.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-techet.html",
+      "role": "symptom",
+      "label": "Течёт",
+      "evidenceIds": [
+        "HDW-E07",
+        "HDW-E08"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "diagnostika-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-vybivaet-avtomat.html",
+        "srabotal-aquastop-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-postoyanno-slivaet-vodu.html",
+        "pena-v-posudomoechnoy-mashine.html",
+        "dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+      "role": "symptom",
+      "label": "Не набирает воду",
+      "evidenceIds": [
+        "HDW-E05"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-ne-zapuskaet-cikl.html",
+        "diagnostika-posudomoechnoy-mashiny.html",
+        "zamena-zalivnogo-klapana-posudomoechnoy-mashiny.html",
+        "srabotal-aquastop-posudomoechnoy-mashiny.html",
+        "remont-datchika-urovnya-posudomoechnoy-mashiny.html",
+        "remont-platy-posudomoechnoy-mashiny.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-greet-vodu.html",
+      "role": "symptom",
+      "label": "Не греет воду",
+      "evidenceIds": [
+        "HDW-E03",
+        "HDW-E10"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "remont-nagreva-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-ne-sushit-posudu.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-sushit-posudu.html",
+      "role": "symptom",
+      "label": "Не сушит",
+      "evidenceIds": [
+        "HDW-E06"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-ne-greet-vodu.html",
+        "remont-nagreva-posudomoechnoy-mashiny.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+      "role": "symptom",
+      "label": "Не включается",
+      "evidenceIds": [
+        "HDW-E09"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-ne-zapuskaet-cikl.html",
+        "posudomoechnaya-mashina-vybivaet-avtomat.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-zapuskaet-cikl.html",
+      "role": "symptom",
+      "label": "Не запускает цикл",
+      "evidenceIds": [
+        "HDW-E09"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+        "posudomoechnaya-mashina-ne-vklyuchaetsya.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "role": "symptom",
+      "label": "Останавливается",
+      "evidenceIds": [
+        "HDW-E01",
+        "HDW-E09",
+        "HDW-E10"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-ne-slivaet-vodu.html",
+        "posudomoechnaya-mashina-ne-greet-vodu.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-vybivaet-avtomat.html",
+      "role": "symptom",
+      "label": "Выбивает автомат",
+      "evidenceIds": [
+        "HDW-E07",
+        "HDW-E10"
+      ],
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-techet.html",
+        "remont-nagreva-posudomoechnoy-mashiny.html"
+      ]
+    },
+    {
+      "page": "zamena-slivnogo-nasosa-posudomoechnoy-mashiny.html",
+      "role": "service",
+      "label": "Сливной насос",
+      "evidenceIds": [
+        "HDW-E01",
+        "HDW-E02"
+      ],
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ne-slivaet-vodu.html",
+        "posudomoyki.html",
+        "diagnostika-posudomoechnoy-mashiny.html"
+      ]
+    },
+    {
+      "page": "remont-cirkulyacionnogo-nasosa-posudomoechnoy-mashiny.html",
+      "role": "service",
+      "label": "Циркуляционный насос",
+      "evidenceIds": [
+        "HDW-E03",
+        "HDW-E04"
+      ],
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ploho-moet-posudu.html",
+        "remont-nagreva-posudomoechnoy-mashiny.html",
+        "posudomoyki.html"
+      ]
+    },
+    {
+      "page": "remont-nagreva-posudomoechnoy-mashiny.html",
+      "role": "service",
+      "label": "Система нагрева",
+      "evidenceIds": [
+        "HDW-E03",
+        "HDW-E10"
+      ],
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ne-greet-vodu.html",
+        "posudomoechnaya-mashina-ne-sushit-posudu.html",
+        "remont-cirkulyacionnogo-nasosa-posudomoechnoy-mashiny.html"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-postoyanno-slivaet-vodu.html",
+      "slug": "posudomoechnaya-mashina-postoyanno-slivaet-vodu",
+      "intent": "symptom",
+      "title": "Посудомоечная машина постоянно сливает воду — ремонт | MosPochin",
+      "h1": "Посудомоечная машина постоянно сливает воду",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoyki.html",
+        "srabotal-aquastop-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-techet.html",
+        "remont-datchika-urovnya-posudomoechnoy-mashiny.html"
+      ],
+      "evidenceIds": [
+        "HDW-E17",
+        "HDW-E20"
+      ]
+    },
+    {
+      "page": "srabotal-aquastop-posudomoechnoy-mashiny.html",
+      "slug": "srabotal-aquastop-posudomoechnoy-mashiny",
+      "intent": "symptom",
+      "title": "Сработал AquaStop посудомоечной машины — диагностика | MosPochin",
+      "h1": "Сработал AquaStop посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-postoyanno-slivaet-vodu.html",
+        "posudomoechnaya-mashina-techet.html",
+        "zamena-zalivnogo-klapana-posudomoechnoy-mashiny.html"
+      ],
+      "evidenceIds": [
+        "HDW-E17",
+        "HDW-E20"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-ne-rastvoryaet-tabletku.html",
+      "slug": "posudomoechnaya-mashina-ne-rastvoryaet-tabletku",
+      "intent": "symptom",
+      "title": "Посудомоечная машина не растворяет таблетку — диагностика | MosPochin",
+      "h1": "Посудомоечная машина не растворяет таблетку",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ploho-moet-posudu.html",
+        "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+        "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+        "remont-dozatora-posudomoechnoy-mashiny.html"
+      ],
+      "evidenceIds": [
+        "HDW-E11",
+        "HDW-E12",
+        "HDW-E19"
+      ]
+    },
+    {
+      "page": "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+      "slug": "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny",
+      "intent": "symptom",
+      "title": "Не открывается дозатор посудомоечной машины — ремонт | MosPochin",
+      "h1": "Не открывается дозатор посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ne-rastvoryaet-tabletku.html",
+        "remont-dozatora-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-ploho-moet-posudu.html",
+        "remont-platy-posudomoechnoy-mashiny.html"
+      ],
+      "evidenceIds": [
+        "HDW-E11",
+        "HDW-E19"
+      ]
+    },
+    {
+      "page": "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+      "slug": "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny",
+      "intent": "symptom",
+      "title": "Не вращаются разбрызгиватели посудомоечной машины | MosPochin",
+      "h1": "Не вращаются разбрызгиватели посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ploho-moet-posudu.html",
+        "posudomoechnaya-mashina-ne-rastvoryaet-tabletku.html",
+        "remont-cirkulyacionnogo-nasosa-posudomoechnoy-mashiny.html",
+        "posudomoyki.html"
+      ],
+      "evidenceIds": [
+        "HDW-E13",
+        "HDW-E14"
+      ]
+    },
+    {
+      "page": "belyy-nalet-posle-posudomoechnoy-mashiny.html",
+      "slug": "belyy-nalet-posle-posudomoechnoy-mashiny",
+      "intent": "symptom",
+      "title": "Белый налёт после посудомоечной машины — причины и диагностика | MosPochin",
+      "h1": "Белый налёт после посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ploho-moet-posudu.html",
+        "remont-dozatora-posudomoechnoy-mashiny.html",
+        "remont-nagreva-posudomoechnoy-mashiny.html",
+        "posudomoyki.html"
+      ],
+      "evidenceIds": [
+        "HDW-E15"
+      ]
+    },
+    {
+      "page": "pena-v-posudomoechnoy-mashine.html",
+      "slug": "pena-v-posudomoechnoy-mashine",
+      "intent": "symptom",
+      "title": "Пена в посудомоечной машине — что делать и когда нужен ремонт | MosPochin",
+      "h1": "Пена в посудомоечной машине",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-techet.html",
+        "remont-dozatora-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-postoyanno-slivaet-vodu.html",
+        "posudomoyki.html"
+      ],
+      "evidenceIds": [
+        "HDW-E16",
+        "HDW-E22"
+      ]
+    },
+    {
+      "page": "posudomoechnaya-mashina-shumit.html",
+      "slug": "posudomoechnaya-mashina-shumit",
+      "intent": "symptom",
+      "title": "Посудомоечная машина шумит — диагностика звука | MosPochin",
+      "h1": "Посудомоечная машина шумит и гудит",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoyki.html",
+        "posudomoechnaya-mashina-ne-slivaet-vodu.html",
+        "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+        "remont-cirkulyacionnogo-nasosa-posudomoechnoy-mashiny.html"
+      ],
+      "evidenceIds": [
+        "HDW-E18",
+        "HDW-E21"
+      ]
+    },
+    {
+      "page": "dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+      "slug": "dver-posudomoechnoy-mashiny-ne-zakryvaetsya",
+      "intent": "symptom",
+      "title": "Дверь посудомоечной машины не закрывается — ремонт | MosPochin",
+      "h1": "Дверь посудомоечной машины не закрывается",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ne-zapuskaet-cikl.html",
+        "remont-zamka-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-techet.html",
+        "posudomoyki.html"
+      ],
+      "evidenceIds": [
+        "HDW-E22",
+        "HDW-E23"
+      ]
+    },
+    {
+      "page": "zamena-zalivnogo-klapana-posudomoechnoy-mashiny.html",
+      "slug": "zamena-zalivnogo-klapana-posudomoechnoy-mashiny",
+      "intent": "service",
+      "title": "Замена заливного клапана посудомоечной машины | MosPochin",
+      "h1": "Замена заливного клапана посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+        "srabotal-aquastop-posudomoechnoy-mashiny.html",
+        "remont-datchika-urovnya-posudomoechnoy-mashiny.html",
+        "posudomoyki.html"
+      ],
+      "evidenceIds": [
+        "HDW-E17",
+        "HDW-E24"
+      ]
+    },
+    {
+      "page": "remont-zamka-posudomoechnoy-mashiny.html",
+      "slug": "remont-zamka-posudomoechnoy-mashiny",
+      "intent": "service",
+      "title": "Ремонт замка посудомоечной машины в Москве | MosPochin",
+      "h1": "Ремонт замка двери посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+        "posudomoechnaya-mashina-ne-zapuskaet-cikl.html",
+        "remont-platy-posudomoechnoy-mashiny.html",
+        "posudomoyki.html"
+      ],
+      "evidenceIds": [
+        "HDW-E23"
+      ]
+    },
+    {
+      "page": "remont-dozatora-posudomoechnoy-mashiny.html",
+      "slug": "remont-dozatora-posudomoechnoy-mashiny",
+      "intent": "service",
+      "title": "Ремонт дозатора посудомоечной машины | MosPochin",
+      "h1": "Ремонт дозатора посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-ne-rastvoryaet-tabletku.html",
+        "belyy-nalet-posle-posudomoechnoy-mashiny.html",
+        "remont-platy-posudomoechnoy-mashiny.html"
+      ],
+      "evidenceIds": [
+        "HDW-E11",
+        "HDW-E19"
+      ]
+    },
+    {
+      "page": "remont-datchika-urovnya-posudomoechnoy-mashiny.html",
+      "slug": "remont-datchika-urovnya-posudomoechnoy-mashiny",
+      "intent": "service",
+      "title": "Ремонт датчика уровня посудомоечной машины | MosPochin",
+      "h1": "Ремонт датчика уровня посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-postoyanno-slivaet-vodu.html",
+        "zamena-zalivnogo-klapana-posudomoechnoy-mashiny.html",
+        "posudomoechnaya-mashina-ne-nabiraet-vodu.html",
+        "remont-platy-posudomoechnoy-mashiny.html"
+      ],
+      "evidenceIds": [
+        "HDW-E24",
+        "HDW-E25"
+      ]
+    },
+    {
+      "page": "remont-platy-posudomoechnoy-mashiny.html",
+      "slug": "remont-platy-posudomoechnoy-mashiny",
+      "intent": "service",
+      "title": "Ремонт платы посудомоечной машины в Москве | MosPochin",
+      "h1": "Ремонт платы управления посудомоечной машины",
+      "indexable": true,
+      "clusterLinks": [
+        "posudomoechnaya-mashina-ne-vklyuchaetsya.html",
+        "posudomoechnaya-mashina-ostanavlivaetsya-v-cikle.html",
+        "remont-zamka-posudomoechnoy-mashiny.html",
+        "remont-datchika-urovnya-posudomoechnoy-mashiny.html"
+      ],
+      "evidenceIds": [
+        "HDW-E25",
+        "HDW-E26"
+      ]
+    }
+  ],
+  "contentRules": [
+    "AquaStop must not be bypassed",
+    "tablet residue is not automatically a dispenser fault",
+    "white residue is not automatically a pump fault",
+    "noise must be classified before pump replacement",
+    "board repair requires connected-load diagnosis"
+  ]
+}

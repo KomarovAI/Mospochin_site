@@ -94,12 +94,14 @@ function buildVersionJson(files, copiedFiles) {
   return {
     project: 'mospochin-site',
     artifact: 'public-runtime',
+    releaseId: runtimeHash.slice(0, 16),
     packageVersion: PACKAGE_JSON.version || '0.0.0',
     generatedAt: new Date().toISOString(),
     source: {
       githubSha: process.env.GITHUB_SHA || '',
       githubRef: process.env.GITHUB_REF || '',
       node: process.version,
+      runtimePayloadSha256: runtimeHash,
     },
     manifest: {
       path: '.deploy/include-files.txt',
@@ -115,7 +117,7 @@ function buildVersionJson(files, copiedFiles) {
 
 function runZip(zipPath) {
   fs.rmSync(zipPath, { force: true });
-  const result = spawnSync('zip', ['-qr', zipPath, '.'], {
+  const result = spawnSync('zip', ['-9qr', zipPath, '.'], {
     cwd: STAGE_DIR,
     stdio: 'inherit',
   });
@@ -222,11 +224,15 @@ function main() {
     deployable: true,
     packageVersion: PACKAGE_JSON.version || '0.0.0',
     contents: {
+      releaseId: version.releaseId,
       manifestPath: version.manifest.path,
       manifestFiles: version.manifest.files,
       manifestSha256: version.manifest.sha256,
       runtimeFiles: version.runtime.files,
       runtimePayloadSha256: version.runtime.sha256,
+    },
+    requirements: {
+      minimumNodeMajor: 22,
     },
     notes: [
       'Production runtime artifact. Verify artifact.json and the external SHA256 before activation.',

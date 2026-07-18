@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "cluster": "cooking-appliance-hubs",
+  "sources": [
+    {
+      "id": "COOK-E01",
+      "publisher": "Bosch",
+      "topic": "oven-heat",
+      "url": "https://www.bosch-home.com/us/owner-support/get-support/support-selfhelp-ovens-does-not-work-convection-oven-no-longer-heats-up",
+      "claim": "При отсутствии нагрева сначала проверяются питание и выбранная температура; неравномерный нагрев требует сервисной диагностики."
+    },
+    {
+      "id": "COOK-E02",
+      "publisher": "Bosch",
+      "topic": "oven-power",
+      "url": "https://www.bosch-home.com/mt/service/get-support/oven-not-functioning",
+      "claim": "Полностью неработающая духовка требует первичной проверки питания и предохранителя."
+    },
+    {
+      "id": "COOK-E03",
+      "publisher": "Bosch",
+      "topic": "oven-door",
+      "url": "https://www.bosch-home.com/us/owner-support/get-support/support-selfhelp-ovens-does-not-work-oven-door-not-closing-properly",
+      "claim": "До ремонта дверцы проверяются уплотнение, петли, загрязнение и посторонние предметы."
+    },
+    {
+      "id": "COOK-E04",
+      "publisher": "Bosch",
+      "topic": "oven-general",
+      "url": "https://www.bosch-home.com/us/owner-support/get-support/support-selfhelp-ovens-does-not-work-oven-not-working",
+      "claim": "Нагреватель, конвекция и дверца являются отдельными диагностическими сценариями."
+    },
+    {
+      "id": "COOK-E05",
+      "publisher": "Bosch",
+      "topic": "cracked-glass",
+      "url": "https://media3.bosch-home.com/Documents/9001608823_E.pdf",
+      "claim": "При треснувшей поверхности варочную панель необходимо отключить для предотвращения поражения током."
+    },
+    {
+      "id": "COOK-E06",
+      "publisher": "Samsung",
+      "topic": "touch-controls",
+      "url": "https://www.samsung.com/us/support/troubleshooting/TSG01204615/",
+      "claim": "Сенсор может не реагировать из-за блокировки, влаги, загрязнения или сухости контакта."
+    },
+    {
+      "id": "COOK-E07",
+      "publisher": "Samsung",
+      "topic": "induction-codes",
+      "url": "https://www.samsung.com/us/support/troubleshooting/TSG01001785/",
+      "claim": "Ошибка распознавания посуды связана с размером или магнитными свойствами; остальные коды требуют модельной диагностики."
+    },
+    {
+      "id": "COOK-E08",
+      "publisher": "Samsung",
+      "topic": "one-zone",
+      "url": "https://www.samsung.com/us/support/troubleshoot/TSG10007170/",
+      "claim": "Перед сервисом одной зоны индукции исключается несовместимая посуда."
+    },
+    {
+      "id": "COOK-E09",
+      "publisher": "Samsung",
+      "topic": "temperature-control",
+      "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002324/",
+      "claim": "Остаточное тепло и штатная цикличность нужно отделять от невозможности регулировать мощность."
+    },
+    {
+      "id": "COOK-E10",
+      "publisher": "Bosch",
+      "topic": "electrical-safety",
+      "url": "https://www.bosch-home.com/kw/en/customer-service/get-support/ceramic-hob-not-working",
+      "claim": "Ремонт высокомощной варочной панели должен выполнять специалист."
+    },
+    {
+      "id": "COOK-E11",
+      "publisher": "Bosch",
+      "topic": "convection",
+      "url": "https://media3.bosch-home.com/Documents/9001682752_F.pdf",
+      "claim": "В режиме горячего воздуха вентилятор распределяет тепло кольцевого нагревателя по камере."
+    },
+    {
+      "id": "COOK-E12",
+      "publisher": "Samsung",
+      "topic": "error-codes",
+      "url": "https://www.samsung.com/us/support/troubleshoot/TSG10003529/",
+      "claim": "Коды духовых шкафов и плит зависят от модели; часть уведомлений очищается перезапуском, повторяющиеся требуют сервиса."
+    }
+  ]
+}

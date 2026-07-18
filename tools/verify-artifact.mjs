@@ -81,6 +81,21 @@ if (contract.artifactType === 'public-deploy') {
   for (const prefix of forbidden) {
     if (relativeEntries.some((entry) => entry.startsWith(prefix))) errors.push(`public-deploy contains forbidden path ${prefix}`);
   }
+  try {
+    const versionEntry = `${rootPrefix}version.json`;
+    const versionText = fs.statSync(target).isDirectory()
+      ? fs.readFileSync(path.join(target, 'version.json'), 'utf8')
+      : readZipEntry(target, versionEntry);
+    const version = JSON.parse(versionText);
+    if (version.releaseId !== contract.contents?.releaseId) {
+      errors.push('version.json releaseId does not match artifact.json');
+    }
+    if (version.runtime?.sha256 !== contract.contents?.runtimePayloadSha256) {
+      errors.push('version.json runtime.sha256 does not match artifact.json');
+    }
+  } catch (error) {
+    errors.push(`cannot validate version.json identity: ${error.message}`);
+  }
 }
 
 if (errors.length) fail(errors);

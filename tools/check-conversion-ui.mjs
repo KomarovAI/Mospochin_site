@@ -144,7 +144,8 @@ function validatePage(entry, manifest, metadata, sitemap, clusterPages) {
     if (!/id=["']whatsapp-float-container["']/i.test(html)) errors.push(`${entry.page}: missing #whatsapp-float-container`);
     if (/src=["']partials-injector\.js["']/i.test(html)) errors.push(`${entry.page}: retired partials-injector.js must not be loaded`);
   }
-  if (defaults.requireFaqSchema && !/"@type"\s*:\s*"FAQPage"/i.test(html)) errors.push(`${entry.page}: missing FAQPage schema`);
+  if (defaults.requireVisibleFaq && (html.match(/<details\b/gi) ?? []).length < 2) errors.push(`${entry.page}: expected at least two visible FAQ items`);
+  if (/"@type"\s*:\s*"FAQPage"/i.test(html)) errors.push(`${entry.page}: retired FAQPage schema must be absent`);
   const localAnchors = extractAnchors(html)
     .map((anchor) => ({ ...anchor, normalizedHref: normalizeLocalHtmlHref(anchor.href) }))
     .filter((anchor) => Boolean(anchor.normalizedHref));

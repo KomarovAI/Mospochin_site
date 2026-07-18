@@ -7,32 +7,28 @@
 - H1: Ремонт промышленных посудомоечных машин
 - Canonical: https://mospochin.ru/posudomoechnye-mashiny.html
 - Builder model: src/pages/posudomoechnye-mashiny/page.json
-- Sections: 7 (3 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 838
+- Sections: 6 (4 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 1025
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| mobile-contact | 2 |
+| mobile-contact | 4 |
 | breadcrumb | 1 |
-| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
-| runtime-partials | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонт промышленных посудомоечных машин | breadcrumb | 39.1 KB | 766 | no | src/pages/posudomoechnye-mashiny/sections/002-breadcrumb-remont-promyshlennyh-posudomoechnyh-mashi.html |
+| Ремонт промышленных посудомоечных машин | breadcrumb | 39.2 KB | 766 | no | src/pages/posudomoechnye-mashiny/sections/002-breadcrumb-remont-promyshlennyh-posudomoechnyh-mashi.html |
+| Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/posudomoechnye-mashiny/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/posudomoechnye-mashiny/sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Частые вопросы | faq | 1.9 KB | 72 | no | src/pages/posudomoechnye-mashiny/sections/003-faq-chastye-voprosy.html |
-| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/posudomoechnye-mashiny/sections/001-contact-cta-kontaktnyy-cta.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html |
-| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
-| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
 
 
 ## Editable source files

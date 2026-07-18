@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-kitchen-hoods",
+  "release": "HOOD1",
+  "checkedAt": "2026-07-17",
+  "status": "hood1-household-cluster",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/hoods/hood1",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9992
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1800
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "kuhonnye-vytyazhki.html",
+      "label": "Кухонные вытяжки",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-ploho-tyanet.html",
+      "label": "Плохо тянет",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-ne-vklyuchaetsya.html",
+      "label": "Не включается",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-shumit.html",
+      "label": "Шумит",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "kuhonnaya-vytyazhka-vybivaet-avtomat.html",
+      "label": "Выбивает автомат",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ]
+}

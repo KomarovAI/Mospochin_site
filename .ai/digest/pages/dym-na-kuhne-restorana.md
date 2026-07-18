@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/dym-na-kuhne-restorana.html
 - Builder model: src/pages/dym-na-kuhne-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1290
+- Text words inside referenced sections: 969
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Дым и гарь на кухне ресторана | breadcrumb | 39.3 KB | 1103 | no | src/pages/dym-na-kuhne-restorana/sections/002-breadcrumb-dym-i-gar-na-kuhne-restorana.html |
+| Дым и гарь на кухне ресторана | breadcrumb | 30.0 KB | 782 | no | src/pages/dym-na-kuhne-restorana/sections/002-breadcrumb-dym-i-gar-na-kuhne-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/dym-na-kuhne-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/dym-na-kuhne-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/dym-na-kuhne-restorana/sections/007-lead-form-forma-zayavki.html |

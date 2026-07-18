@@ -2,45 +2,44 @@
 
 - Branch: household
 - Role: service
-- Title: Ремонт водонагревателей в Москве на дому — MosPochin
-- Description: Ремонт накопительных, проточных и газовых водонагревателей на дому в Москве. Диагностика, согласование работ и аккуратное восстановление техники с гарантией.
-- H1: Ремонт водонагревателей на дому в Москве
+- Title: Ремонт электрических водонагревателей в Москве — MosPochin
+- Description: Ремонт накопительных бойлеров и электрических проточных водонагревателей в Москве и МО. Диагностика причины, безопасные действия и согласование работ до ремонта.
+- H1: Ремонт электрических водонагревателей в Москве
 - Canonical: https://mospochin.ru/water-heaters.html
 - Builder model: src/pages/water-heaters/page.json
-- Sections: 47 (35 local, 5 shared refs, 1 raw)
-- Text words inside referenced sections: 2548
+- Sections: 44 (24 local, 3 shared refs, 6 raw)
+- Text words inside referenced sections: 1807
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
-| pricing | 11 |
-| proof | 10 |
-| layout-fragment | 7 |
+| section | 8 |
 | mobile-contact | 7 |
-| hero | 2 |
+| layout-fragment | 6 |
+| raw | 6 |
+| pricing | 5 |
+| proof | 5 |
 | related-links | 2 |
-| section | 2 |
 | body-preamble | 1 |
 | breadcrumb | 1 |
-| contact-cta | 1 |
 | faq | 1 |
+| hero | 1 |
 | lead-form | 1 |
-| raw | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонтируем водонагреватели известных марок | hero | 16.7 KB | 130 | no | src/pages/water-heaters/sections/023-hero-remontiruem-vodonagrevateli-izvestnyh-marok.html |
-| Что клиент понимает ещё до начала работ | pricing | 11.6 KB | 430 | no | src/pages/water-heaters/sections/035-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
-| Ремонтируем все типы водонагревателей | pricing | 8.1 KB | 205 | no | src/pages/water-heaters/sections/008-pricing-remontiruem-vse-tipy-vodonagrevateley.html |
-| Мобильные контактные элементы | mobile-contact | 7.2 KB | 78 | no | src/pages/water-heaters/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| Частые поломки водонагревателей | pricing | 6.3 KB | 134 | no | src/pages/water-heaters/sections/016-pricing-chastye-polomki-vodonagrevateley.html |
-| Оставьте заявку на ремонт | lead-form | 6.1 KB | 80 | no | src/pages/water-heaters/sections/033-lead-form-ostav-te-zayavku-na-remont.html |
-| Ремонт водонагревателей на дому в Москве | hero | 5.6 KB | 72 | no | src/pages/water-heaters/sections/004-hero-remont-vodonagrevateley-na-domu-v-moskve.html |
-| Что случилось с водонагревателем? | pricing | 5.0 KB | 46 | no | src/pages/water-heaters/sections/013-pricing-chto-sluchilos-s-vodonagrevatelem.html |
+| Что клиент понимает ещё до начала работ | pricing | 13.1 KB | 427 | no | src/pages/water-heaters/sections/032-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
+| Выберите тип прибора или то, что произошло | section | 9.9 KB | 155 | no | src/pages/water-heaters/sections/011-section-vyberite-tip-pribora-ili-to-chto-proizoshlo.html |
+| Мобильные контактные элементы | mobile-contact | 7.3 KB | 78 | no | src/pages/water-heaters/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Опишите модель и точный симптом | lead-form | 5.9 KB | 104 | no | src/pages/water-heaters/sections/030-lead-form-opishite-model-i-tochnyy-simptom.html |
+| Расширенный кластер водонагревателей | section | 4.9 KB | 115 | no | src/pages/water-heaters/sections/028-section-rasshirennyy-klaster-vodonagrevateley.html |
+| Частые вопросы | faq | 4.7 KB | 131 | no | src/pages/water-heaters/sections/037-faq-chastye-voprosy.html |
+| Мобильные контактные элементы | mobile-contact | 4.4 KB | 61 | no | src/pages/water-heaters/sections/041-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Ремонтировать или менять прибор | pricing | 4.3 KB | 87 | no | src/pages/water-heaters/sections/013-pricing-remontirovat-ili-menyat-pribor.html |
 
 
 ## Editable source files

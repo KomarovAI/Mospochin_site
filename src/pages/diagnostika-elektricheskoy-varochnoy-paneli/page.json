@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+  "slug": "diagnostika-elektricheskoy-varochnoy-paneli",
+  "route": "/diagnostika-elektricheskoy-varochnoy-paneli.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Диагностика электрической варочной панели | MosPochin",
+  "h1": "Диагностика электрической варочной панели",
+  "source": {
+    "extractedFrom": "diagnostika-elektricheskoy-varochnoy-paneli.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "6b5c8cddd80275d8541e03da0ac631953395f78a09ec22a73406a51e9a3eec8c",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9536,
+      "hash": "5d0de934306d8f87",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/diagnostika-elektricheskoy-varochnoy-paneli/props/cook2-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1085,
+      "hash": "3d5bca68594942af",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "diagnostika_elektricheskoy_varochnoy_paneli_breadcrumb_1"
+          },
+          {
+            "href": "plity.html",
+            "label": "Плиты и варочные панели",
+            "ctaId": "diagnostika_elektricheskoy_varochnoy_paneli_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Диагностика электрической варочной панели"
+      }
+    },
+    {
+      "id": "002-contact-cta-diagnostika-elektricheskoy-varochnoy-pan",
+      "component": "contact-cta",
+      "label": "Диагностика электрической варочной панели",
+      "file": "sections/002-contact-cta-diagnostika-elektricheskoy-varochnoy-pan.html",
+      "bytes": 2250,
+      "hash": "4b8f8fe812612f1b"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1132,
+      "hash": "11022f3e0b3a48c9",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/diagnostika-elektricheskoy-varochnoy-paneli/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1961,
+      "hash": "d25b1152ad7081cb",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/diagnostika-elektricheskoy-varochnoy-paneli/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 515,
+      "hash": "82e5c83e67756c9c"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1347,
+      "hash": "8ef14bcf213ace2c"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1902,
+      "hash": "1454f93d126ee5e7"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4084,
+      "hash": "4d4f2a4ef4060cf1"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2221,
+      "hash": "b78de8dd48e9dd38"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5083,
+      "hash": "e8c27f9f42ba4567",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/diagnostika-elektricheskoy-varochnoy-paneli/props/cook2-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 563,
+      "hash": "371d9ecd08ead800",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/diagnostika-elektricheskoy-varochnoy-paneli/props/cook2-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page diagnostika-elektricheskoy-varochnoy-paneli.html",
+    "npm run doctor:page -- --page diagnostika-elektricheskoy-varochnoy-paneli.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page diagnostika-elektricheskoy-varochnoy-paneli.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

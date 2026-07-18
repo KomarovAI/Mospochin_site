@@ -192,4 +192,4 @@ npm run ai:digest
 
 ## FAQ Registry note
 
-FAQ теперь индексируется в `content/faq/page-faq-registry.json`, а generated FAQPage JSON-LD лежит в `content/faq/schema/*.json` и вставляется в head через `data-generated="faq-registry"`. После правок FAQ запускать `npm run generate:faq-registry`, затем `npm run build:site -- --write` и `npm run check:faq-registry`.
+FAQ индексируется в `content/faq/page-faq-registry.json`. FAQPage JSON-LD отключена после прекращения FAQ rich results в Google; видимые ответы сохраняются. После правок FAQ запускать `npm run generate:faq-registry`, затем `npm run build:site -- --write` и `npm run check:faq-registry`.

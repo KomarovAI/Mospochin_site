@@ -7,8 +7,8 @@
 - H1: Замена ТЭНа пищеварочного котла
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-zamena-tena.html
 - Builder model: src/pages/pishevarochnyj-kotel-zamena-tena/page.json
-- Sections: 23 (9 local, 1 shared refs, 0 raw)
-- Text words inside referenced sections: 855
+- Sections: 24 (9 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 993
 
 ## Component mix
 
@@ -20,6 +20,7 @@
 | body-preamble | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
+| intent-diagnostic | 1 |
 | lead-form | 1 |
 | proof | 1 |
 | runtime-partials | 1 |
@@ -34,9 +35,9 @@
 | Оставьте заявку на диагностику | lead-form | 5.7 KB | 69 | no | src/pages/pishevarochnyj-kotel-zamena-tena/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
 | Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.4 KB | 124 | no | src/pages/pishevarochnyj-kotel-zamena-tena/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
 | Симптом → узел → риск простоя → диагностика | mobile-contact | 5.3 KB | 116 | no | src/pages/pishevarochnyj-kotel-zamena-tena/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html |
+| Диагностическая граница интента | intent-diagnostic | 3.3 KB | 138 | no | src/components/parametric/kettle-intent-diagnostic/default.template.html |
 | Замена ТЭНа пищеварочного котла | mobile-contact | 3.0 KB | 42 | no | src/pages/pishevarochnyj-kotel-zamena-tena/sections/003-mobile-contact-zamena-tena-pischevarochnogo-kotla.html |
 | Частые вопросы по этой неисправности | faq | 2.8 KB | 77 | no | src/pages/pishevarochnyj-kotel-zamena-tena/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html |
-| Не просто статья, а страница под заявку | proof | 2.1 KB | 69 | yes | src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html |
 
 
 ## Editable source files

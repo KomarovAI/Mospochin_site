@@ -7,7 +7,7 @@
 - H1: Ошибка Rational / Unox / Abat
 - Canonical: https://mospochin.ru/parokonvektomaty-promo.html
 - Builder model: src/pages/parokonvektomaty-promo/page.json
-- Sections: 67 (24 local, 15 shared refs, 2 raw)
+- Sections: 67 (20 local, 15 shared refs, 2 raw)
 - Text words inside referenced sections: 2562
 
 ## Component mix
@@ -37,7 +37,7 @@
 | Ошибка Rational / Unox / Abat | hero | 9.2 KB | 95 | no | src/pages/parokonvektomaty-promo/sections/006-hero-oshibka-rational-unox-abat.html |
 | Мобильные контактные элементы | mobile-contact | 9.0 KB | 110 | no | src/pages/parokonvektomaty-promo/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Частые поломки пароконвектоматов | section | 8.5 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--16d8721c09cebb16.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.5 KB | 102 | no | src/pages/parokonvektomaty-promo/sections/051-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.5 KB | 102 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-14c3fd8c1b20.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.4 KB | 233 | no | src/pages/parokonvektomaty-promo/sections/046-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.0 KB | 179 | yes | src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--179e76b534feb278.html |
 | Ремонтируем все типы пароконвектоматов | section | 5.9 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--5ce5c0ec71cc04c7.html |

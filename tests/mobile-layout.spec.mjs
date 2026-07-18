@@ -3,10 +3,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { chromium } from 'playwright';
 import { installLocalSiteRoutes, analyticsInitScript } from './helpers/site-route.mjs';
+import { getChromiumLaunchOptions } from '../tools/visual-local-runtime.mjs';
 const manifest=JSON.parse(fs.readFileSync('data/paid-landings.json','utf8'));
 
 test('five paid landings expose quick contact on mobile first screen', {timeout:120000}, async () => {
- const browser=await chromium.launch({headless:true, executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium', args:['--no-sandbox']});
+ const browser=await chromium.launch(getChromiumLaunchOptions());
  try {
   const context=await browser.newContext({viewport:{width:360,height:800}});
   await context.addInitScript(analyticsInitScript); await installLocalSiteRoutes(context);

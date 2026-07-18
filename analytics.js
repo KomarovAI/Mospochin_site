@@ -2,7 +2,7 @@
   'use strict';
 
   var SITE_RELEASE = 'site-paid-tracking-v3-20260716';
-  var ANALYTICS_RELEASE = 'analytics-v3-20260716';
+  var ANALYTICS_RELEASE = 'analytics-v3-20260718';
   var SCHEMA_VERSION = 'mospochin.web.v3';
   var TRACKING_VERSION = '2026-07-15';
   var METRIKA_ID = String(window.MOSPOCHIN_METRICA_COUNTER_ID || '109138661');
@@ -41,7 +41,8 @@
     form_submit_success: Object.freeze({ event_class: 'conversion', is_decision_event: true }),
     form_submit_error: Object.freeze({ event_class: 'error', is_decision_event: false }),
     form_validation_error: Object.freeze({ event_class: 'error', is_decision_event: false }),
-    form_submit_blocked: Object.freeze({ event_class: 'error', is_decision_event: false })
+    form_submit_blocked: Object.freeze({ event_class: 'error', is_decision_event: false }),
+    web_vital: Object.freeze({ event_class: 'performance', is_decision_event: false })
   });
 
   var RESERVED_EVENT_FIELDS = new Set([
@@ -515,6 +516,85 @@
     return payload;
   }
 
+  function navigationType() {
+    try {
+      var navigation = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      return cleanString(navigation && navigation.type, 32) || 'navigate';
+    } catch (error) {
+      return 'navigate';
+    }
+  }
+
+  function vitalRating(name, value) {
+    var thresholds = {
+      LCP: [2500, 4000],
+      INP: [200, 500],
+      CLS: [0.1, 0.25]
+    };
+    var limits = thresholds[name];
+    if (!limits) return 'unknown';
+    if (value <= limits[0]) return 'good';
+    if (value <= limits[1]) return 'needs-improvement';
+    return 'poor';
+  }
+
+  function observeWebVitals() {
+    if (!('PerformanceObserver' in window)) return;
+    var values = { LCP: null, INP: null, CLS: 0 };
+    var sent = new Set();
+    var observers = [];
+
+    function report(name) {
+      if (sent.has(name) || values[name] === null) return;
+      var value = name === 'CLS'
+        ? Math.round(values[name] * 10000) / 10000
+        : Math.round(values[name]);
+      sent.add(name);
+      trackEvent('web_vital', {
+        vital_name: name,
+        vital_value: value,
+        vital_rating: vitalRating(name, value),
+        navigation_type: navigationType(),
+        device: window.matchMedia && window.matchMedia('(max-width: 767px)').matches ? 'mobile' : 'desktop',
+        effective_connection_type: cleanString(navigator.connection && navigator.connection.effectiveType, 32)
+      });
+    }
+
+    function observe(type, handler, options) {
+      try {
+        var observer = new PerformanceObserver(function (list) { handler(list.getEntries()); });
+        observer.observe(Object.assign({ type: type, buffered: true }, options || {}));
+        observers.push(observer);
+      } catch (error) {}
+    }
+
+    observe('largest-contentful-paint', function (entries) {
+      var entry = entries[entries.length - 1];
+      if (entry) values.LCP = entry.startTime;
+    });
+    observe('layout-shift', function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.hadRecentInput) values.CLS += entry.value;
+      });
+    });
+    observe('event', function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.interactionId && (values.INP === null || entry.duration > values.INP)) values.INP = entry.duration;
+      });
+    }, { durationThreshold: 40 });
+
+    function flush() {
+      report('LCP');
+      report('CLS');
+      report('INP');
+      observers.forEach(function (observer) { observer.disconnect(); });
+    }
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') flush();
+    }, { once: true });
+    window.addEventListener('pagehide', flush, { once: true });
+  }
+
   function redactContactText(value) {
     return (cleanString(value, 256) || '')
       .replace(/(?:\+?\d[\d\s().-]{7,}\d)/g, '[phone:redacted]')
@@ -657,6 +737,7 @@
       trackEvent('page_view', { page_title: cleanString(document.title, 240) });
     }
     observeCtaViews();
+    observeWebVitals();
   }
 
   if (document.readyState === 'loading') {

@@ -2,12 +2,12 @@
 
 ## Summary
 
-- Root HTML: **296**
-- Indexable HTML: **278**
+- Root HTML: **500**
+- Indexable HTML: **482**
 - Noindex HTML: **18**
-- Sitemap URLs: **278**
-- Internal page edges: **20374**
-- Unique checked resources: **383**
+- Sitemap URLs: **482**
+- Internal page edges: **30794**
+- Unique checked resources: **1086**
 - Broken links/resources: **0**
 - Indexable orphans: **0**
 - Issues: **0**

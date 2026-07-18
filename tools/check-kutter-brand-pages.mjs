@@ -38,7 +38,7 @@ for (const brand of brands) {
   if (!/независимый сервис/i.test(text) || !/не является официальным сервисным центром/i.test(text)) errors.push(`${exp.page}: independent-service disclaimer missing`);
   if (!/"@type"\s*:\s*"Service"/.test(html)) errors.push(`${exp.page}: Service schema missing`);
   if (!/"@type"\s*:\s*"BreadcrumbList"/.test(html)) errors.push(`${exp.page}: BreadcrumbList missing`);
-  if (!/data-generated=["']faq-registry["']/.test(html)) errors.push(`${exp.page}: generated FAQ schema missing`);
+  if (/"@type"\s*:\s*"FAQPage"/.test(html)) errors.push(`${exp.page}: retired FAQPage schema must be absent`);
   if ((html.match(/data-brand-series=/g) || []).length < 2) errors.push(`${exp.page}: at least two visible series blocks required`);
   const evidenceIds = [...html.matchAll(/data-evidence-id=["']([^"']+)["']/g)].map((m) => m[1]);
   if (new Set(evidenceIds).size < 2) errors.push(`${exp.page}: at least two visible evidence records required`);

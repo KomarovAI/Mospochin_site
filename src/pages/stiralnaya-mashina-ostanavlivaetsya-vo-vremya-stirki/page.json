@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+  "slug": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki",
+  "route": "/stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Стиральная машина останавливается в цикле — ремонт | MosPochin",
+  "h1": "Стиральная машина останавливается во время стирки",
+  "source": {
+    "extractedFrom": "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "d6a7eb28720a10ead559ea7942b0dd3e59c7dcb7f5983432d9bc9f867baaeb98",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9572,
+      "hash": "47a41defe3fa08a6",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki/props/wm2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-stiral-naya-mashina-ostanavlivaetsya-",
+      "component": "mobile-contact",
+      "label": "Стиральная машина останавливается во время стирки",
+      "file": "sections/002-mobile-contact-stiral-naya-mashina-ostanavlivaetsya-.html",
+      "bytes": 1999,
+      "hash": "82b33f6021df8a2d"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1119,
+      "hash": "cfdfd8cec7b0ca41",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "stiralnaya_mashina_ostanavlivaetsya_vo_vremya_stirki_breadcrumb_1"
+          },
+          {
+            "href": "stiralnye-mashiny.html",
+            "label": "Стиральные машины",
+            "ctaId": "stiralnaya_mashina_ostanavlivaetsya_vo_vremya_stirki_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Стиральная машина останавливается во время стирки"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 1002,
+      "hash": "52e9d6558a1ff261",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/observations.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki/props/wm2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1856,
+      "hash": "5d78345db096e0f3",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki/props/wm2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 555,
+      "hash": "716d39a7224a95f4"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1194,
+      "hash": "4eb5fe58aa0a973c"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1580,
+      "hash": "4411fb6249ea75e2"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1690,
+      "hash": "4c95a7213ee23f1d"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1540,
+      "hash": "66f60870ee137dc6"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5110,
+      "hash": "367530eea8afeeb9",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki/props/wm2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+    "npm run doctor:page -- --page stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

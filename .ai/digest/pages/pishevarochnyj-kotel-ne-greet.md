@@ -7,21 +7,21 @@
 - H1: Ремонт пищеварочного котла, который не греет
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-ne-greet.html
 - Builder model: src/pages/pishevarochnyj-kotel-ne-greet/page.json
-- Sections: 34 (15 local, 2 shared refs, 0 raw)
-- Text words inside referenced sections: 1247
+- Sections: 28 (10 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 461
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
 | layout-fragment | 13 |
-| pricing | 7 |
 | mobile-contact | 4 |
 | proof | 4 |
 | body-preamble | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
 | lead-form | 1 |
+| pricing | 1 |
 | related-links | 1 |
 | runtime-partials | 1 |
 
@@ -30,14 +30,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Развели заявки по симптомам и узлам | pricing | 10.2 KB | 148 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/020-pricing-razveli-zayavki-po-simptomam-i-uzlam.html |
-| Что фиксируем до начала работ на объекте | pricing | 6.7 KB | 182 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/024-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Оставьте заявку на ремонт | lead-form | 6.5 KB | 92 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/022-lead-form-ostav-te-zayavku-na-remont.html |
-| Отдельные посадочные под Abat, КПЭМ, Apach, Atesy и Iterma | pricing | 6.2 KB | 207 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/014-pricing-otdel-nye-posadochnye-pod-abat-kpem-apach-at.html |
-| Разводим трафик по реальному симптому | pricing | 5.8 KB | 123 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
-| Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.3 KB | 124 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/017-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Выберите ближайший симптом пищеварочного котла | pricing | 5.9 KB | 123 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/008-pricing-razvodim-trafik-po-real-nomu-simptomu.html |
 | Котел не греет — проверяем не только ТЭН | mobile-contact | 4.9 KB | 106 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/005-mobile-contact-kotel-ne-greet-proveryaem-ne-tol-ko-t.html |
 | Частые вопросы по ремонту | faq | 3.5 KB | 98 | yes | src/components/shared/faq/faq-chastye-voprosy-po-remontu--f74d3505aafe0fc9.html |
+| Ремонт пищеварочного котла, который не греет | mobile-contact | 3.1 KB | 42 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/003-mobile-contact-remont-pischevarochnogo-kotla-kotoryy.html |
+| Доказательства/гарантии | proof | 182 B | 0 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/023-proof-dokazatel-stva-garantii.html |
+| Доказательства/гарантии | proof | 182 B | 0 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/026-proof-dokazatel-stva-garantii.html |
+| Доказательства/гарантии | proof | 180 B | 0 | no | src/pages/pishevarochnyj-kotel-ne-greet/sections/010-proof-dokazatel-stva-garantii.html |
 
 
 ## Editable source files

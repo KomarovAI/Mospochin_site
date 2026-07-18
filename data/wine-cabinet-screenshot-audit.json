@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-wine-cabinets",
+  "release": "RF-WINE1",
+  "checkedAt": "2026-07-17",
+  "status": "rf-wine1-household-cluster",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/wine-cabinets/rf-wine1",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9995
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1800
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "vinnye-shkafy.html",
+      "label": "Винные шкафы",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "vinnyy-shkaf-ne-ohlazhdaet.html",
+      "label": "Не охлаждает",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+      "label": "Не работает одна зона",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "kondensat-v-vinnom-shkafu.html",
+      "label": "Конденсат",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "poisk-utechki-i-zapravka-vinnogo-shkafa.html",
+      "label": "Холодильный контур",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ]
+}

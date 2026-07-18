@@ -48,9 +48,14 @@
       "id": "030-safe-self-check",
       "component": "safe-self-check",
       "label": "Безопасная проверка",
-      "file": "sections/030-safe-self-check.html",
       "bytes": 2005,
-      "hash": "34b5e940c153d8f0"
+      "hash": "34b5e940c153d8f0",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "three-step-external-check",
+      "templateRef": "src/components/parametric/safe-self-check/default.template.html",
+      "propsRef": "src/components/parametric/safe-self-check/props/sous-vide-peregrevaet-vodu.json",
+      "sourceFile": "sections/030-safe-self-check.html"
     },
     {
       "id": "040-decision-tree",

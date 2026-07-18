@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-freezers",
+  "release": "RF-FREEZER1",
+  "checkedAt": "2026-07-17",
+  "status": "rf-freezer1-household-cluster",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/freezers/rf-freezer1",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9993
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1800
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "morozilniki.html",
+      "label": "Морозильники",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "morozilka-ne-morozit.html",
+      "label": "Не морозит",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "morozilnik-namerzaet-led.html",
+      "label": "Намерзает лёд",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "poisk-utechki-i-zapravka-morozilnika.html",
+      "label": "Утечка и заправка",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-morozilnyh-larey.html",
+      "label": "Морозильные лари",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ]
+}

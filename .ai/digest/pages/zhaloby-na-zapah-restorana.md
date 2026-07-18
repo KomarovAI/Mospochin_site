@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/zhaloby-na-zapah-restorana.html
 - Builder model: src/pages/zhaloby-na-zapah-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1243
+- Text words inside referenced sections: 920
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Жалобы на запах из ресторана | breadcrumb | 38.3 KB | 1056 | no | src/pages/zhaloby-na-zapah-restorana/sections/002-breadcrumb-zhaloby-na-zapah-iz-restorana.html |
+| Жалобы на запах из ресторана | breadcrumb | 29.1 KB | 733 | no | src/pages/zhaloby-na-zapah-restorana/sections/002-breadcrumb-zhaloby-na-zapah-iz-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/zhaloby-na-zapah-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/zhaloby-na-zapah-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/zhaloby-na-zapah-restorana/sections/007-lead-form-forma-zayavki.html |

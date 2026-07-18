@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "cluster": "water-heaters",
+  "release": "WH3-THREE-PHASE",
+  "page": "remont-trehfaznyh-vodonagrevateley-380-400v.html",
+  "scope": "three_phase_dhw_only",
+  "equipmentTypes": [
+    "high_power_instantaneous",
+    "large_storage_multistage"
+  ],
+  "images": [
+    {
+      "sourceId": "PHOTO_061",
+      "role": "hero",
+      "asset": "water-heater-three-phase-private-house-system"
+    },
+    {
+      "sourceId": "PHOTO_031",
+      "role": "three_phase_terminal",
+      "asset": "water-heater-three-phase-l1-l2-l3-terminal"
+    },
+    {
+      "sourceId": "PHOTO_058",
+      "role": "piping_controls",
+      "asset": "water-heater-three-phase-piping-controls"
+    },
+    {
+      "sourceId": "PHOTO_062",
+      "role": "service_area",
+      "asset": "water-heater-three-phase-service-area"
+    }
+  ],
+  "evidenceIds": [
+    "stiebel_dhe_18_21_24_400v",
+    "stiebel_three_phase_3pe_manual",
+    "clage_cexu_400v",
+    "thermex_topflow_15000_official"
+  ],
+  "prohibitedClaims": [
+    "всем нужен нулевой провод",
+    "для любой модели подходит один автомат",
+    "сечение кабеля определяется только мощностью",
+    "можно переставить перемычки без схемы",
+    "электрокотлы отопления входят в эту услугу"
+  ]
+}

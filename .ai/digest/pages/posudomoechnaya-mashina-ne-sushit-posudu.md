@@ -1,38 +1,41 @@
 # Page Digest — posudomoechnaya-mashina-ne-sushit-posudu.html
 
-- Branch: restaurant
-- Role: branch
-- Title: Посудомоечная машина не сушит посуду — диагностика и ремонт | MosPochin
-- Description: Промышленная посудомоечная машина не сушит посуду: диагностика температуры ополаскивания, подачи ополаскивателя, качества воды, загрузки и модуля сушки.
-- H1: Посудомоечная машина не сушит посуду
+- Branch: household
+- Role: service
+- Title: Посудомоечная машина не сушит посуду — диагностика | MosPochin
+- Description: Посудомойка оставляет мокрую посуду: учитываем тип сушки, программу, загрузку, ополаскиватель, нагрев и вентилятор.
+- H1: Бытовая посудомоечная машина не сушит посуду
 - Canonical: https://mospochin.ru/posudomoechnaya-mashina-ne-sushit-posudu.html
 - Builder model: src/pages/posudomoechnaya-mashina-ne-sushit-posudu/page.json
-- Sections: 7 (3 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 850
+- Sections: 12 (11 local, 0 shared refs, 0 raw)
+- Text words inside referenced sections: 513
 
 ## Component mix
 
 | Component | Count |
 | --- | --- |
+| contact-cta | 2 |
 | mobile-contact | 2 |
+| proof | 2 |
+| section | 2 |
 | breadcrumb | 1 |
-| contact-cta | 1 |
 | faq | 1 |
-| footer-anchor | 1 |
-| runtime-partials | 1 |
+| lead-form | 1 |
+| pricing | 1 |
 
 
 ## Largest sections to inspect first
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Посудомоечная машина не сушит посуду | breadcrumb | 38.5 KB | 781 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/002-breadcrumb-posudomoechnaya-mashina-ne-sushit-posudu.html |
-| Частые вопросы | faq | 1.9 KB | 69 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/003-faq-chastye-voprosy.html |
-| Контактный CTA | contact-cta | 47 B | 0 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/001-contact-cta-kontaktnyy-cta.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container-inline.template.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container-inline.template.html |
-| Footer mount point | footer-anchor | 33 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-e290e2b6541c.template.html |
-| Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/components/parametric/static/runtime-partials-partials-injector-script-defer-empty.template.html |
+| Мобильные контактные элементы | mobile-contact | 9.3 KB | 110 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 5.0 KB | 77 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Что отправить до выезда | lead-form | 4.1 KB | 58 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/008-lead-form-chto-otpravit-do-vyezda.html |
+| Частые вопросы | faq | 2.1 KB | 85 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/009-faq-chastye-voprosy.html |
+| Посудомоечная машина не сушит посуду | contact-cta | 2.0 KB | 37 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/002-contact-cta-posudomoechnaya-mashina-ne-sushit-posudu.html |
+| Что проверить безопасно | proof | 2.0 KB | 35 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/004-proof-chto-proverit-bezopasno.html |
+| Связанные страницы бытового кластера | section | 1.5 KB | 26 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/007-section-svyazannye-stranicy-bytovogo-klastera.html |
+| Какие работы могут потребоваться | pricing | 1.4 KB | 35 | no | src/pages/posudomoechnaya-mashina-ne-sushit-posudu/sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html |
 
 
 ## Editable source files
@@ -40,8 +43,12 @@
 - data/page-metadata.json
 - data/contact-config.json
 - data/runtime-config.json
-- data/restaurant-branch.json
-- data/restaurant-page-policy.json
+- data/household-branch.json
+- data/household-page-policy.json
+- data/household-services.json
+- data/household-taxonomy.json
+- data/household-proof-layer.json
+- data/household-page-slots.json
 - posudomoechnaya-mashina-ne-sushit-posudu.html
 - src/site-builder.json
 - src/pages/posudomoechnaya-mashina-ne-sushit-posudu/page.json
@@ -49,6 +56,7 @@
 
 ## Checks
 
+- npm run doctor:household-page -- --page posudomoechnaya-mashina-ne-sushit-posudu.html
 - npm run doctor:page -- --page posudomoechnaya-mashina-ne-sushit-posudu.html
 - npm run validate:site
 - npm run check:site-builder

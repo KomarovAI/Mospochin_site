@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyatsiya-stolovoj.html
 - Builder model: src/pages/ventilyatsiya-stolovoj/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1202
+- Text words inside referenced sections: 883
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция столовой | breadcrumb | 37.7 KB | 1015 | no | src/pages/ventilyatsiya-stolovoj/sections/002-breadcrumb-ventilyaciya-stolovoy.html |
+| Вентиляция столовой | breadcrumb | 28.5 KB | 696 | no | src/pages/ventilyatsiya-stolovoj/sections/002-breadcrumb-ventilyaciya-stolovoy.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/ventilyatsiya-stolovoj/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/ventilyatsiya-stolovoj/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-stolovoj/sections/007-lead-form-forma-zayavki.html |

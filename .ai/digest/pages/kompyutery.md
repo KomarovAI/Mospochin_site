@@ -7,8 +7,8 @@
 - H1: Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен
 - Canonical: https://mospochin.ru/kompyutery.html
 - Builder model: src/pages/kompyutery/page.json
-- Sections: 53 (43 local, 6 shared refs, 13 raw)
-- Text words inside referenced sections: 2306
+- Sections: 53 (40 local, 6 shared refs, 13 raw)
+- Text words inside referenced sections: 2318
 
 ## Component mix
 

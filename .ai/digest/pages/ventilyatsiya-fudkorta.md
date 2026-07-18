@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyatsiya-fudkorta.html
 - Builder model: src/pages/ventilyatsiya-fudkorta/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1211
+- Text words inside referenced sections: 892
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция фудкорта | breadcrumb | 37.8 KB | 1024 | no | src/pages/ventilyatsiya-fudkorta/sections/002-breadcrumb-ventilyaciya-fudkorta.html |
+| Вентиляция фудкорта | breadcrumb | 28.5 KB | 705 | no | src/pages/ventilyatsiya-fudkorta/sections/002-breadcrumb-ventilyaciya-fudkorta.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/ventilyatsiya-fudkorta/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/ventilyatsiya-fudkorta/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-fudkorta/sections/007-lead-form-forma-zayavki.html |

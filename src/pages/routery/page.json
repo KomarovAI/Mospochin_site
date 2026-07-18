@@ -37,12 +37,30 @@
       "hash": "a90e544cc715aad4"
     },
     {
-      "id": "003-breadcrumb-hlebnye-kroshki",
+      "id": "p1-household-breadcrumb",
       "component": "breadcrumb",
-      "label": "Хлебные крошки",
-      "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 857,
-      "hash": "2b302aa39fa906f4"
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 993,
+      "hash": "63ec82523da8d66c",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "routery_breadcrumb_1"
+          },
+          {
+            "href": "bytovaya-uslugi.html",
+            "label": "Другие услуги",
+            "ctaId": "routery_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Ремонт и настройка роутеров в Москве"
+      }
     },
     {
       "id": "004-hero-remont-i-nastroyka-routerov-v-moskve",
@@ -415,17 +433,27 @@
       "id": "048-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/048-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "2b586b01fca76adb"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/048-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "049-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/049-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/049-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "050-raw-html-fragment",

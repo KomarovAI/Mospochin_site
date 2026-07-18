@@ -4,7 +4,7 @@
   "primary": {
     "mode": "local-native",
     "runner": "tools/visual-local-capture.mjs",
-    "browser": "system-chromium",
+    "browser": "chromium",
     "browserExecutableEnv": [
       "PLAYWRIGHT_CHROMIUM_EXECUTABLE",
       "CHROMIUM_PATH"
@@ -65,7 +65,7 @@
       "schedule",
       "workflow_call"
     ],
-    "browser": "playwright-firefox",
+    "browser": "playwright-chromium",
     "browserSetup": "npm run setup:visual:github",
     "policyCheck": "npm run check:visual-workflows"
   },

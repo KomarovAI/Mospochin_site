@@ -209,3 +209,17 @@ Checks to run:
 - fixed broken hero rendering on `index.html`, `uslugi.html`, `about.html`, `contact.html`;
 - added core CSS selector guard and desktop/mobile visual-smoke manifests;
 - verified builder parity, control pages and zero npm audit vulnerabilities.
+## 2026-07-17 — Water heaters WH1
+
+- Rebuilt `water-heaters.html` as an electric-only household cluster hub.
+- Added 10 indexable type, diagnostic, symptom and service pages.
+- Added water-heater taxonomy, evidence, intent-boundary, link-graph and screenshot-audit contracts.
+- Added `check:water-heater-cluster` and page-specific related-link headings.
+- Removed gas water-heater repair from the cluster scope and replaced unsupported one-symptom diagnoses with diagnostic boundaries.
+## 2026-07-17 — Washing machines WM1
+
+- Rebuilt `stiralnye-mashiny.html` as the household washing-machine hub.
+- Added 13 diagnostic, symptom and service pages for drain, spin, leak, noise, vibration, power, fill, heat, drum drive, pump, heater and bearings.
+- Added washing-machine taxonomy, evidence, intent-boundary, link-graph and screenshot contracts.
+- Added `check:washing-machine-cluster` and diagnostic content boundaries that prevent one-symptom part replacement claims.
+

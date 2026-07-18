@@ -8,10 +8,11 @@
 
 ### `lead-form / restaurant-parokonvektomat-b2b`
 
-- Template: `src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html`
+- Canonical template: `src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html`
+- Byte-preserving render variants: `src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-*.template.html`
 - Contract: `src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.contract.json`
 - Props: `content/components/lead-form/*.json`
-- Coverage: 12 B2B-форм страниц пароконвектоматов
+- Minimum pilot coverage: 15 B2B-форм страниц пароконвектоматов
 
 Пример section в `src/pages/<slug>/page.json`:
 
@@ -21,7 +22,7 @@
   "componentMode": "parametric",
   "componentScope": "parametric",
   "variant": "restaurant-parokonvektomat-b2b",
-  "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b.template.html",
+  "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-<render-hash>.template.html",
   "propsRef": "content/components/lead-form/parokonvektomat-abat.json"
 }
 ```
@@ -31,7 +32,7 @@
 - `src/components/parametric/mobile-contact/mobile-footer-container.template.html`
 - `src/components/parametric/mobile-contact/whatsapp-float-container.template.html`
 - Contract: `src/components/parametric/mobile-contact/mobile-contact-containers.contract.json`
-- Coverage: 72 mount-секции
+- Minimum coverage contract: 70 mount-секций
 
 ## Как это читать нейронке
 
@@ -63,14 +64,24 @@ npm run ai:check
 
 ## Почему это импактно
 
-Раньше 12 B2B-форм и 72 мобильных mount-секции лежали как локальные HTML-файлы. Теперь разметка формы одна, а различия вынесены в компактные props. Это уменьшает AI-контекст, снижает риск расхождения форм и готовит проект к полноценному `Content Registry`.
+Формы одной B2B-семьи используют общий contract и компактные props. Ограниченное число render-вариантов сохраняет legacy HTML byte-for-byte там, где различаются форматирование или набор технических атрибутов. Это уменьшает AI-контекст, снижает риск расхождения форм и не требует массового визуального изменения.
 
-## FAQ Registry + FAQPage Schema Sync
+## Breadcrumb pilot
+
+- Cluster: `parokonvektomaty`
+- Templates: `src/components/parametric/breadcrumb/cluster-parokonvektomaty-*.template.html`
+- Props: `content/components/breadcrumb/*.json`
+- Contract: `src/components/parametric/breadcrumb/cluster-parokonvektomaty.contract.json`
+- Apply/check: `node tools/parameterize-cluster-breadcrumbs.mjs [--check]`
+
+Breadcrumb pilot параметризует только те visible navigation blocks, для которых template + props воспроизводят исходную секцию byte-for-byte. Breadcrumb structured data в head остаётся отдельным SEO-контрактом.
+
+## FAQ Registry
 
 FAQ пока не полностью переведён в props-driven template, но уже вынесен в машинно-читаемый registry:
 
 - `content/faq/page-faq-registry.json` — индекс видимых FAQ-блоков и extracted question/answer.
-- `content/faq/schema/*.json` — generated FAQPage JSON-LD.
+- `content/faq/schema/*.json` — пустой generated-каталог после retirement FAQ rich results.
 - `docs/FAQ_REGISTRY.md` — правила работы.
 - `tools/generate-faq-registry.mjs` — генератор и check-mode.
 
@@ -84,4 +95,4 @@ npm run ai:semantic-diff -- --page <file.html>
 npm run ai:check
 ```
 
-Generated scripts `data-generated="faq-registry"` в `src/pages/<slug>/head.html` не редактируются вручную.
+FAQPage JSON-LD не генерируется: Google перестал показывать FAQ rich results 7 мая 2026 года. Полезные ответы остаются видимыми, а registry используется как индекс контента.

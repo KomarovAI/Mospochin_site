@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-refrigerators",
+  "edges": [
+    {
+      "from": "holodilniki.html",
+      "to": "diagnostika-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilniki.html",
+      "to": "holodilnik-ne-morozit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilniki.html",
+      "to": "holodilnaya-kamera-ne-holodit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilniki.html",
+      "to": "ne-rabotaet-no-frost.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilniki.html",
+      "to": "techet-voda-iz-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-holodilnika.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-holodilnika.html",
+      "to": "holodilnik-ne-morozit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-holodilnika.html",
+      "to": "ne-rabotaet-no-frost.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-holodilnika.html",
+      "to": "poisk-utechki-i-zapravka-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-ne-morozit.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-ne-morozit.html",
+      "to": "diagnostika-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-ne-morozit.html",
+      "to": "holodilnaya-kamera-ne-holodit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-ne-morozit.html",
+      "to": "poisk-utechki-i-zapravka-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnaya-kamera-ne-holodit.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnaya-kamera-ne-holodit.html",
+      "to": "holodilnik-ne-morozit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnaya-kamera-ne-holodit.html",
+      "to": "ne-rabotaet-no-frost.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnaya-kamera-ne-holodit.html",
+      "to": "zamena-ventilyatora-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-rabotaet-bez-ostanovki.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-rabotaet-bez-ostanovki.html",
+      "to": "holodilnik-ne-morozit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-rabotaet-bez-ostanovki.html",
+      "to": "dver-holodilnika-ne-zakryvaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-rabotaet-bez-ostanovki.html",
+      "to": "poisk-utechki-i-zapravka-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-namerzaet-led.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-namerzaet-led.html",
+      "to": "ne-rabotaet-no-frost.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-namerzaet-led.html",
+      "to": "remont-sistemy-ottaiki-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-namerzaet-led.html",
+      "to": "techet-voda-iz-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "techet-voda-iz-holodilnika.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "techet-voda-iz-holodilnika.html",
+      "to": "holodilnik-namerzaet-led.html",
+      "type": "contextual"
+    },
+    {
+      "from": "techet-voda-iz-holodilnika.html",
+      "to": "remont-sistemy-ottaiki-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "techet-voda-iz-holodilnika.html",
+      "to": "dver-holodilnika-ne-zakryvaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-shumit-i-gudit.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-shumit-i-gudit.html",
+      "to": "zamena-ventilyatora-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-shumit-i-gudit.html",
+      "to": "zamena-kompressora-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-shumit-i-gudit.html",
+      "to": "holodilnik-namerzaet-led.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-ne-vklyuchaetsya.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-ne-vklyuchaetsya.html",
+      "to": "diagnostika-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-ne-vklyuchaetsya.html",
+      "to": "remont-platy-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-ne-vklyuchaetsya.html",
+      "to": "zamena-kompressora-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-peremorazhivaet-produkty.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-peremorazhivaet-produkty.html",
+      "to": "holodilnik-rabotaet-bez-ostanovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-peremorazhivaet-produkty.html",
+      "to": "remont-platy-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "holodilnik-peremorazhivaet-produkty.html",
+      "to": "diagnostika-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-no-frost.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-no-frost.html",
+      "to": "holodilnik-namerzaet-led.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-no-frost.html",
+      "to": "remont-sistemy-ottaiki-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-no-frost.html",
+      "to": "zamena-ventilyatora-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "dver-holodilnika-ne-zakryvaetsya.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "dver-holodilnika-ne-zakryvaetsya.html",
+      "to": "holodilnik-rabotaet-bez-ostanovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "dver-holodilnika-ne-zakryvaetsya.html",
+      "to": "holodilnik-namerzaet-led.html",
+      "type": "contextual"
+    },
+    {
+      "from": "dver-holodilnika-ne-zakryvaetsya.html",
+      "to": "techet-voda-iz-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-sistemy-ottaiki-holodilnika.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-sistemy-ottaiki-holodilnika.html",
+      "to": "ne-rabotaet-no-frost.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-sistemy-ottaiki-holodilnika.html",
+      "to": "holodilnik-namerzaet-led.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-sistemy-ottaiki-holodilnika.html",
+      "to": "zamena-ventilyatora-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-ventilyatora-holodilnika.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-ventilyatora-holodilnika.html",
+      "to": "holodilnik-shumit-i-gudit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-ventilyatora-holodilnika.html",
+      "to": "ne-rabotaet-no-frost.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-ventilyatora-holodilnika.html",
+      "to": "remont-sistemy-ottaiki-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-platy-holodilnika.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-platy-holodilnika.html",
+      "to": "holodilnik-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-platy-holodilnika.html",
+      "to": "ne-rabotaet-no-frost.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-platy-holodilnika.html",
+      "to": "diagnostika-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-kompressora-holodilnika.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-kompressora-holodilnika.html",
+      "to": "holodilnik-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-kompressora-holodilnika.html",
+      "to": "holodilnik-rabotaet-bez-ostanovki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-kompressora-holodilnika.html",
+      "to": "poisk-utechki-i-zapravka-holodilnika.html",
+      "type": "contextual"
+    },
+    {
+      "from": "poisk-utechki-i-zapravka-holodilnika.html",
+      "to": "holodilniki.html",
+      "type": "contextual"
+    },
+    {
+      "from": "poisk-utechki-i-zapravka-holodilnika.html",
+      "to": "holodilnik-ne-morozit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "poisk-utechki-i-zapravka-holodilnika.html",
+      "to": "zamena-kompressora-holodilnika.html",
+      "type": "contextual"
+    }
+  ]
+}

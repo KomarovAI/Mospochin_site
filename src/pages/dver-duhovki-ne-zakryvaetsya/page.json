@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "dver-duhovki-ne-zakryvaetsya.html",
+  "slug": "dver-duhovki-ne-zakryvaetsya",
+  "route": "/dver-duhovki-ne-zakryvaetsya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Дверца духовки не закрывается — ремонт | MosPochin",
+  "h1": "Дверца духовки не закрывается — ремонт",
+  "source": {
+    "extractedFrom": "dver-duhovki-ne-zakryvaetsya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "a00e59915fbdbda5a935c90de2d2b047e222ff01ea02e09a3327466ba2d29888",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9476,
+      "hash": "be4f60a4219508f7",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/dver-duhovki-ne-zakryvaetsya/props/cook2-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1048,
+      "hash": "658f61f707697b3e",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "dver_duhovki_ne_zakryvaetsya_breadcrumb_1"
+          },
+          {
+            "href": "plity.html",
+            "label": "Плиты и варочные панели",
+            "ctaId": "dver_duhovki_ne_zakryvaetsya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Дверца духовки не закрывается — ремонт"
+      }
+    },
+    {
+      "id": "002-contact-cta-dverca-duhovki-ne-zakryvaetsya-remont",
+      "component": "contact-cta",
+      "label": "Дверца духовки не закрывается — ремонт",
+      "file": "sections/002-contact-cta-dverca-duhovki-ne-zakryvaetsya-remont.html",
+      "bytes": 2182,
+      "hash": "b65a51380f20a5c1"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1119,
+      "hash": "ab420afd7ee5912e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/dver-duhovki-ne-zakryvaetsya/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1987,
+      "hash": "4f4595604119b5ae",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/dver-duhovki-ne-zakryvaetsya/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 562,
+      "hash": "eb111f1b33323d96"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1326,
+      "hash": "95dc269d15033ef2"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1820,
+      "hash": "ea2a7df1dba8ea45"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4069,
+      "hash": "e4fe3c455640c1f2"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2222,
+      "hash": "6da6c9855da8e790"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5038,
+      "hash": "9ebba73b31e2466a",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/dver-duhovki-ne-zakryvaetsya/props/cook2-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 548,
+      "hash": "8ca419ed1e2c569a",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/dver-duhovki-ne-zakryvaetsya/props/cook2-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page dver-duhovki-ne-zakryvaetsya.html",
+    "npm run doctor:page -- --page dver-duhovki-ne-zakryvaetsya.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page dver-duhovki-ne-zakryvaetsya.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

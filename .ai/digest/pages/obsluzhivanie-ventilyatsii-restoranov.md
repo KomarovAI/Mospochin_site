@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/obsluzhivanie-ventilyatsii-restoranov.html
 - Builder model: src/pages/obsluzhivanie-ventilyatsii-restoranov/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1322
+- Text words inside referenced sections: 1003
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Обслуживание вентиляции ресторанов | breadcrumb | 42.9 KB | 1135 | no | src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/002-breadcrumb-obsluzhivanie-ventilyacii-restoranov.html |
+| Обслуживание вентиляции ресторанов | breadcrumb | 33.7 KB | 816 | no | src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/002-breadcrumb-obsluzhivanie-ventilyacii-restoranov.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/obsluzhivanie-ventilyatsii-restoranov/sections/007-lead-form-forma-zayavki.html |

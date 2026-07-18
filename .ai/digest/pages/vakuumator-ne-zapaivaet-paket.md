@@ -7,7 +7,7 @@
 - H1: Вакууматор не запаивает пакет
 - Canonical: https://mospochin.ru/vakuumator-ne-zapaivaet-paket.html
 - Builder model: src/pages/vakuumator-ne-zapaivaet-paket/page.json
-- Sections: 16 (11 local, 1 shared refs, 0 raw)
+- Sections: 16 (10 local, 1 shared refs, 0 raw)
 - Text words inside referenced sections: 602
 
 ## Component mix
@@ -40,7 +40,7 @@
 | Матрица причин | cause-matrix | 2.7 KB | 91 | no | src/pages/vakuumator-ne-zapaivaet-paket/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.5 KB | 78 | no | src/pages/vakuumator-ne-zapaivaet-paket/sections/070-repair-scope.html |
 | FAQ — частые вопросы | faq | 2.0 KB | 79 | no | src/pages/vakuumator-ne-zapaivaet-paket/sections/090-faq.html |
-| Безопасная проверка | safe-self-check | 1.8 KB | 46 | no | src/pages/vakuumator-ne-zapaivaet-paket/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 1.8 KB | 46 | no | src/components/parametric/safe-self-check/default.template.html |
 | Сервисная диагностика | service-diagnostics | 1.7 KB | 37 | yes | src/components/shared/service-diagnostics/service-diagnostics-servisnaya-diagnostika--eae9d6f0e3273b80.html |
 | Первый экран | hero | 1.7 KB | 37 | no | src/pages/vakuumator-ne-zapaivaet-paket/sections/010-hero.html |
 

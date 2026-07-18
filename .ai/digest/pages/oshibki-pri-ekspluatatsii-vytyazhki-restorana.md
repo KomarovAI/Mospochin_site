@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/oshibki-pri-ekspluatatsii-vytyazhki-restorana.html
 - Builder model: src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1241
+- Text words inside referenced sections: 922
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ошибки при эксплуатации вытяжки ресторана | breadcrumb | 41.9 KB | 1054 | no | src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/sections/002-breadcrumb-oshibki-pri-ekspluatacii-vytyazhki-restor.html |
+| Ошибки при эксплуатации вытяжки ресторана | breadcrumb | 32.7 KB | 735 | no | src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/sections/002-breadcrumb-oshibki-pri-ekspluatacii-vytyazhki-restor.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/oshibki-pri-ekspluatatsii-vytyazhki-restorana/sections/007-lead-form-forma-zayavki.html |

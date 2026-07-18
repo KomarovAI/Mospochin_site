@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/zasorilas-vytyazhka-restorana.html
 - Builder model: src/pages/zasorilas-vytyazhka-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1227
+- Text words inside referenced sections: 909
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Засорилась вытяжка ресторана | breadcrumb | 38.2 KB | 1040 | no | src/pages/zasorilas-vytyazhka-restorana/sections/002-breadcrumb-zasorilas-vytyazhka-restorana.html |
+| Засорилась вытяжка ресторана | breadcrumb | 29.1 KB | 722 | no | src/pages/zasorilas-vytyazhka-restorana/sections/002-breadcrumb-zasorilas-vytyazhka-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/zasorilas-vytyazhka-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/zasorilas-vytyazhka-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/zasorilas-vytyazhka-restorana/sections/007-lead-form-forma-zayavki.html |

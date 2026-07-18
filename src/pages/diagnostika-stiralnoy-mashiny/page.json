@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "diagnostika-stiralnoy-mashiny.html",
+  "slug": "diagnostika-stiralnoy-mashiny",
+  "route": "/diagnostika-stiralnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Диагностика стиральной машины в Москве — MosPochin",
+  "h1": "Диагностика стиральной машины на дому",
+  "source": {
+    "extractedFrom": "diagnostika-stiralnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "8de8a94c4aed898ac9bde6f37a84821ee5a59f4da2c329c2590bfecc54938348",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-body-preamble-sekciya-1",
+      "component": "body-preamble",
+      "label": "Секция 1",
+      "file": "sections/001-body-preamble-sekciya-1.html",
+      "bytes": 68,
+      "hash": "1816829dfd8cb458"
+    },
+    {
+      "id": "002-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 7539,
+      "hash": "4f1720bc2bfb71d9"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1050,
+      "hash": "a408dd3f92fc58ee",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "diagnostika_stiralnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "stiralnye-mashiny.html",
+            "label": "Стиральные машины",
+            "ctaId": "diagnostika_stiralnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Диагностика стиральной машины на дому"
+      }
+    },
+    {
+      "id": "004-hero-diagnostika-stiral-noy-mashiny-na-domu",
+      "component": "hero",
+      "label": "Диагностика стиральной машины на дому",
+      "file": "sections/004-hero-diagnostika-stiral-noy-mashiny-na-domu.html",
+      "bytes": 3733,
+      "hash": "6ff4a2133dce6183"
+    },
+    {
+      "id": "005-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/005-proof-dokazatel-stva-garantii.html",
+      "bytes": 186,
+      "hash": "410196d1d7a5efd2"
+    },
+    {
+      "id": "006-section-chto-utochnyaem-do-vyezda",
+      "component": "section",
+      "label": "Что уточняем до выезда",
+      "bytes": 2799,
+      "hash": "b160a4351b7919db",
+      "componentRef": "src/components/shared/section/section-chto-utochnyaem-do-vyezda--b160a4351b7919db.html",
+      "componentScope": "shared",
+      "componentSignature": "b160a4351b7919db",
+      "sourceFile": "sections/006-section-chto-utochnyaem-do-vyezda.html"
+    },
+    {
+      "id": "007-raw-html-fragment",
+      "component": "layout-fragment",
+      "label": "HTML-фрагмент",
+      "bytes": 40,
+      "hash": "6ea051972d91dd2c",
+      "componentMode": "parametric",
+      "componentScope": "parametric-static",
+      "variant": "household-sync-service-kpi-end-6ea051972d91",
+      "templateRef": "src/components/parametric/static/layout-fragment-household-sync-service-kpi-end-6ea051972d91.template.html",
+      "props": {},
+      "sourceFile": "sections/007-raw-html-fragment.html"
+    },
+    {
+      "id": "008-section-ostanavlivaetsya-na-etape",
+      "component": "section",
+      "label": "Останавливается на этапе",
+      "file": "sections/008-section-ostanavlivaetsya-na-etape.html",
+      "bytes": 4415,
+      "hash": "518e9e76d74a593f"
+    },
+    {
+      "id": "009-section-posledovatel-nost-proverki",
+      "component": "section",
+      "label": "Последовательность проверки",
+      "file": "sections/009-section-posledovatel-nost-proverki.html",
+      "bytes": 3344,
+      "hash": "e27a946d4fe6db6d"
+    },
+    {
+      "id": "010-pricing-chto-poluchaetsya-posle-diagnostiki",
+      "component": "pricing",
+      "label": "Что получается после диагностики",
+      "file": "sections/010-pricing-chto-poluchaetsya-posle-diagnostiki.html",
+      "bytes": 4332,
+      "hash": "b28232b55d9057cb"
+    },
+    {
+      "id": "011-pricing-ot-chego-zavisit-smeta",
+      "component": "pricing",
+      "label": "От чего зависит смета",
+      "bytes": 2666,
+      "hash": "dcac3d7a31de3b66",
+      "componentRef": "src/components/shared/pricing/pricing-ot-chego-zavisit-smeta--dcac3d7a31de3b66.html",
+      "componentScope": "shared",
+      "componentSignature": "dcac3d7a31de3b66",
+      "sourceFile": "sections/011-pricing-ot-chego-zavisit-smeta.html"
+    },
+    {
+      "id": "012-section-bezopasnye-deystviya-do-vyezda",
+      "component": "section",
+      "label": "Безопасные действия до выезда",
+      "bytes": 2800,
+      "hash": "0f25f0b2a5c741ae",
+      "componentRef": "src/components/shared/section/section-bezopasnye-deystviya-do-vyezda--0f25f0b2a5c741ae.html",
+      "componentScope": "shared",
+      "componentSignature": "0f25f0b2a5c741ae",
+      "sourceFile": "sections/012-section-bezopasnye-deystviya-do-vyezda.html"
+    },
+    {
+      "id": "013-section-svyazannye-scenarii",
+      "component": "section",
+      "label": "Связанные сценарии",
+      "file": "sections/013-section-svyazannye-scenarii.html",
+      "bytes": 2310,
+      "hash": "64009d70204e8a5c"
+    },
+    {
+      "id": "014-lead-form-opishite-model-etap-cikla-i-simptom",
+      "component": "lead-form",
+      "label": "Опишите модель, этап цикла и симптом",
+      "file": "sections/014-lead-form-opishite-model-etap-cikla-i-simptom.html",
+      "bytes": 6000,
+      "hash": "e299fa0929592326"
+    },
+    {
+      "id": "015-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/015-proof-dokazatel-stva-garantii.html",
+      "bytes": 188,
+      "hash": "202e3627e69644bb"
+    },
+    {
+      "id": "016-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
+      "component": "pricing",
+      "label": "Что клиент понимает ещё до начала работ",
+      "file": "sections/016-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+      "bytes": 13464,
+      "hash": "d2a21271ea26ffa7"
+    },
+    {
+      "id": "017-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/017-proof-dokazatel-stva-garantii.html",
+      "bytes": 42,
+      "hash": "c9cde558065e3f95"
+    },
+    {
+      "id": "018-proof-dokazatel-stva-garantii",
+      "component": "proof",
+      "label": "Доказательства/гарантии",
+      "file": "sections/018-proof-dokazatel-stva-garantii.html",
+      "bytes": 187,
+      "hash": "1cb92549db0fa9a7"
+    },
+    {
+      "id": "019-related-links-prodolzhit-diagnostiku-po-sosednemu-sc",
+      "component": "related-links",
+      "label": "Продолжить диагностику по соседнему сценарию",
+      "bytes": 3269,
+      "hash": "f2c7ccf9788a9b3e",
+      "componentRef": "src/components/shared/related-links/related-links-prodolzhit-diagnostiku-po-sosednemu-scenariy--f2c7ccf9788a9b3e.html",
+      "componentScope": "shared",
+      "componentSignature": "f2c7ccf9788a9b3e",
+      "sourceFile": "sections/019-related-links-prodolzhit-diagnostiku-po-sosednemu-sc.html"
+    },
+    {
+      "id": "020-related-links-svyazannye-stranicy",
+      "component": "related-links",
+      "label": "Связанные страницы",
+      "file": "sections/020-related-links-svyazannye-stranicy.html",
+      "bytes": 42,
+      "hash": "50ecf96d2596ed9c"
+    },
+    {
+      "id": "021-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/021-faq-chastye-voprosy.html",
+      "bytes": 3632,
+      "hash": "f25f83a44c4dae65"
+    },
+    {
+      "id": "022-mobile-contact-nuzhna-diagnostika-stiral-noy-mashiny",
+      "component": "mobile-contact",
+      "label": "Нужна диагностика стиральной машины?",
+      "file": "sections/022-mobile-contact-nuzhna-diagnostika-stiral-noy-mashiny.html",
+      "bytes": 1100,
+      "hash": "a12c2b47d2d67c0e"
+    },
+    {
+      "id": "023-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/023-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 511,
+      "hash": "a9c63eaddcdf7dec"
+    },
+    {
+      "id": "024-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/024-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 1029,
+      "hash": "43440556918ebedd"
+    },
+    {
+      "id": "025-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/025-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4502,
+      "hash": "afee0bdf6b1cba95"
+    },
+    {
+      "id": "026-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/026-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    },
+    {
+      "id": "027-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 42,
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/027-mobile-contact-mobil-nye-kontaktnye-elementy.html"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page diagnostika-stiralnoy-mashiny.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 4,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

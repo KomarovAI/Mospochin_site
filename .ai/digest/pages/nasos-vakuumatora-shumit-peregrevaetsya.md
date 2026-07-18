@@ -7,7 +7,7 @@
 - H1: Насос вакууматора шумит или перегревается
 - Canonical: https://mospochin.ru/nasos-vakuumatora-shumit-peregrevaetsya.html
 - Builder model: src/pages/nasos-vakuumatora-shumit-peregrevaetsya/page.json
-- Sections: 16 (10 local, 2 shared refs, 0 raw)
+- Sections: 16 (9 local, 2 shared refs, 0 raw)
 - Text words inside referenced sections: 577
 
 ## Component mix
@@ -39,7 +39,7 @@
 | Форма заявки | lead-form | 3.4 KB | 33 | no | src/pages/nasos-vakuumatora-shumit-peregrevaetsya/sections/080-lead-form.html |
 | Матрица причин | cause-matrix | 2.8 KB | 93 | no | src/pages/nasos-vakuumatora-shumit-peregrevaetsya/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.6 KB | 85 | no | src/pages/nasos-vakuumatora-shumit-peregrevaetsya/sections/070-repair-scope.html |
-| Безопасная проверка | safe-self-check | 1.9 KB | 48 | no | src/pages/nasos-vakuumatora-shumit-peregrevaetsya/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 1.9 KB | 48 | no | src/components/parametric/safe-self-check/default.template.html |
 | FAQ — частые вопросы | faq | 1.8 KB | 62 | no | src/pages/nasos-vakuumatora-shumit-peregrevaetsya/sections/090-faq.html |
 | Первый экран | hero | 1.7 KB | 40 | no | src/pages/nasos-vakuumatora-shumit-peregrevaetsya/sections/010-hero.html |
 | Сервисная диагностика | service-diagnostics | 1.7 KB | 37 | yes | src/components/shared/service-diagnostics/service-diagnostics-servisnaya-diagnostika--eae9d6f0e3273b80.html |

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "case-remont-dvuhbakovogo-vodonagrevatelya.html",
+  "slug": "case-remont-dvuhbakovogo-vodonagrevatelya",
+  "route": "/case-remont-dvuhbakovogo-vodonagrevatelya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Фотокейс: разборка двухбакового водонагревателя",
+  "h1": "Разборка двухбакового водонагревателя — фотокейс",
+  "source": {
+    "extractedFrom": "case-remont-dvuhbakovogo-vodonagrevatelya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "3d6cb2fe68aa295f856e400dee82e2953672dcdc6e2b94fcc70dbcf3a0766074",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 8572,
+      "hash": "e7ccb639ab424f36",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/mobile-contact.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-remont-dvuhbakovogo-vodonagrevatelya-001-mobile-contact-mobil-nye-kontaktnye-elementy.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1090,
+      "hash": "50b9bbd66863e416",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "case_remont_dvuhbakovogo_vodonagrevatelya_breadcrumb_1"
+          },
+          {
+            "href": "water-heaters.html",
+            "label": "Водонагреватели",
+            "ctaId": "case_remont_dvuhbakovogo_vodonagrevatelya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Разборка двухбакового водонагревателя — фотокейс"
+      }
+    },
+    {
+      "id": "002-section-razborka-dvuhbakovogo-vodonagrevatelya-fotok",
+      "component": "section",
+      "label": "Разборка двухбакового водонагревателя — фотокейс",
+      "bytes": 2392,
+      "hash": "e266747d6c2f0121",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-remont-dvuhbakovogo-vodonagrevatelya-002-section-razborka-dvuhbakovogo-vodonagrevatelya-fotok.json"
+    },
+    {
+      "id": "003-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "bytes": 539,
+      "hash": "b90339e39ec4d6de",
+      "componentRef": "src/components/shared/section/section-sekciya-stranicy--b90339e39ec4d6de.html",
+      "componentScope": "shared",
+      "componentSignature": "b90339e39ec4d6de",
+      "sourceFile": "sections/003-section-sekciya-stranicy.html"
+    },
+    {
+      "id": "004-section-chto-vidno-v-etoy-serii",
+      "component": "section",
+      "label": "Что видно в этой серии",
+      "bytes": 951,
+      "hash": "5abce666a52eca1b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-remont-dvuhbakovogo-vodonagrevatelya-004-section-chto-vidno-v-etoy-serii.json"
+    },
+    {
+      "id": "005-section-posledovatel-nost-i-detali",
+      "component": "section",
+      "label": "Последовательность и детали",
+      "bytes": 6432,
+      "hash": "b73db3f5dd68bc54",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-remont-dvuhbakovogo-vodonagrevatelya-005-section-posledovatel-nost-i-detali.json"
+    },
+    {
+      "id": "006-section-svyazannye-uslugi",
+      "component": "section",
+      "label": "Связанные услуги",
+      "bytes": 1609,
+      "hash": "5b8afca336bc59e5",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-remont-dvuhbakovogo-vodonagrevatelya-006-section-svyazannye-uslugi.json"
+    },
+    {
+      "id": "007-lead-form-pokazhite-svoy-uzel",
+      "component": "lead-form",
+      "label": "Покажите свой узел",
+      "bytes": 1166,
+      "hash": "026fa95bea2e36cd",
+      "componentRef": "src/components/shared/lead-form/lead-form-pokazhite-svoy-uzel--026fa95bea2e36cd.html",
+      "componentScope": "shared",
+      "componentSignature": "026fa95bea2e36cd",
+      "sourceFile": "sections/007-lead-form-pokazhite-svoy-uzel.html"
+    },
+    {
+      "id": "008-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "bytes": 1654,
+      "hash": "a7084e5e5cf57dc1",
+      "componentRef": "src/components/shared/faq/faq-chastye-voprosy--a7084e5e5cf57dc1.html",
+      "componentScope": "shared",
+      "componentSignature": "a7084e5e5cf57dc1",
+      "sourceFile": "sections/008-faq-chastye-voprosy.html"
+    },
+    {
+      "id": "009-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4447,
+      "hash": "240b9576f3b0ebc1",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/mobile-contact.template.html",
+      "propsRef": "content/components/water-heater-wh4/case-remont-dvuhbakovogo-vodonagrevatelya-009-mobile-contact-mobil-nye-kontaktnye-elementy.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page case-remont-dvuhbakovogo-vodonagrevatelya.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 3,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

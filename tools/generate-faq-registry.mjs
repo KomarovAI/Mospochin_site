@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * FAQ Registry + FAQPage Schema Sync
+ * FAQ Registry
  *
  * Extracts visible FAQ/details content from Static Component Builder sections,
- * writes a compact content registry, generates per-page FAQPage JSON-LD, and
- * injects a deterministic generated JSON-LD block into page head snapshots.
+ * writes a compact content registry and removes retired FAQPage JSON-LD.
+ * Google stopped showing FAQ rich results on 2026-05-07.
  */
 
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
@@ -25,7 +25,10 @@ const REGISTRY_PATH = 'content/faq/page-faq-registry.json';
 const SCHEMA_DIR = 'content/faq/schema';
 const DOC_PATH = 'docs/FAQ_REGISTRY.md';
 const GENERATED_MARKER = 'data-generated="faq-registry"';
-const GENERATED_BLOCK_RE = /\n?\s*<script\s+type=["']application\/ld\+json["']\s+data-generated=["']faq-registry["']>[\s\S]*?<\/script>\s*/gi;
+const GENERATED_BLOCK_RE = /\n?\s*<script\b(?=[^>]*\btype=["']application\/ld\+json["'])(?=[^>]*\bdata-generated=["']faq-registry["'])[^>]*>[\s\S]*?<\/script>\s*/gi;
+const JSON_LD_BLOCK_RE = /\n?\s*<script\b(?=[^>]*\btype=["']application\/ld\+json["'])[^>]*>([\s\S]*?)<\/script>\s*/gi;
+const FAQPAGE_SCHEMA_ENABLED = false;
+const FAQPAGE_RETIREMENT_SOURCE = 'https://developers.google.com/search/updates#removing-faq-rich-result';
 
 const args = parseArgs();
 const checkMode = Boolean(args.check);
@@ -34,7 +37,7 @@ const selectedPages = args.page
   : null;
 
 function usage() {
-  console.log(`\n# FAQ Registry + FAQPage Schema Sync\n\nИспользование:\n  npm run generate:faq-registry\n  npm run check:faq-registry\n  npm run generate:faq-registry -- --page holodilniki.html\n\nЧто делает:\n  1. Извлекает visible FAQ/details из src/pages/* через site-builder model.\n  2. Пишет content/faq/page-faq-registry.json.\n  3. Генерирует content/faq/schema/<slug>.json для FAQPage.\n  4. Вставляет generated JSON-LD script в src/pages/<slug>/head.html.\n`);
+  console.log(`\n# FAQ Registry\n\nИспользование:\n  npm run generate:faq-registry\n  npm run check:faq-registry\n  npm run generate:faq-registry -- --page holodilniki.html\n\nЧто делает:\n  1. Извлекает visible FAQ/details из src/pages/* через site-builder model.\n  2. Пишет content/faq/page-faq-registry.json.\n  3. Удаляет устаревшую FAQPage JSON-LD, сохраняя видимый FAQ.\n`);
 }
 
 if (args.help) {
@@ -132,11 +135,42 @@ function extractDetailsItems(html) {
   return items;
 }
 
+function extractAccordionItems(html) {
+  const items = [];
+  const pattern = /<button\b[^>]*class=["'][^"']*\bfaq-question\b[^"']*["'][^>]*>([\s\S]*?)<\/button>\s*<div\b[^>]*class=["'][^"']*\bfaq-answer\b[^"']*["'][^>]*>([\s\S]*?)<\/div>/gi;
+  for (const match of String(html).matchAll(pattern)) {
+    const question = compactText(match[1]);
+    const answerHtml = String(match[2] || '').trim();
+    const answerText = compactText(answerHtml);
+    if (!question || !answerText) continue;
+    items.push({
+      position: items.length + 1,
+      question,
+      answerText,
+      answerHtml: htmlToSingleLine(answerHtml),
+      sourceHash: hashContent(`${question}\n${answerText}`).slice(0, 16),
+    });
+  }
+  return items;
+}
+
+function extractFaqItems(html) {
+  const items = [...extractDetailsItems(html), ...extractAccordionItems(html)];
+  const seen = new Set();
+  return items.filter((item) => {
+    const key = item.question.toLowerCase().replace(/\s+/g, ' ').trim();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    item.position = seen.size;
+    return true;
+  });
+}
+
 function isSchemaEligibleBlock({ label, items, html }) {
   if (!items.length) return false;
   const labelText = String(label || '').toLowerCase();
   const htmlText = String(html || '').toLowerCase();
-  const hasFaqSignal = /faq|частые вопросы|что обычно спрашивают|вопросы/.test(labelText) || /<span[^>]*>\s*❓\s*faq|>\s*faq\s*</i.test(htmlText);
+  const hasFaqSignal = /faq|частые вопросы|что обычно спрашивают|вопросы/.test(labelText) || />\s*(?:❓\s*)?(?:faq|частые вопросы|что обычно спрашивают)\s*</i.test(htmlText);
   const questionLikeCount = items.filter((item) => /\?\s*$/.test(item.question)).length;
   // Mini cases and scenario accordions are useful visible content but not always FAQPage-worthy.
   const looksLikeCases = /мини-кейс|сценарий|разобраться подробнее/.test(labelText) || items.some((item) => /^сценарий\s*\d+/i.test(item.question));
@@ -173,8 +207,21 @@ function removeGeneratedFaqSchema(head) {
   }).replace(/\n{3,}/g, '\n\n');
 }
 
+function removeStandaloneFaqSchemas(head) {
+  return String(head).replace(JSON_LD_BLOCK_RE, (match, body) => {
+    try {
+      const schema = JSON.parse(body);
+      const types = [].concat(schema?.['@type'] || []);
+      return types.includes('FAQPage') ? (match.startsWith('\n') ? '\n' : '') : match;
+    } catch {
+      return match;
+    }
+  }).replace(/\n{3,}/g, '\n\n');
+}
+
 function injectGeneratedFaqSchema(head, schema) {
-  const clean = removeGeneratedFaqSchema(head);
+  const withoutGenerated = removeGeneratedFaqSchema(head);
+  const clean = removeStandaloneFaqSchemas(withoutGenerated);
   if (!schema) return clean;
   const script = generatedSchemaScript(schema);
   if (!/<\/head>/i.test(clean)) throw new Error('head.html не содержит </head>');
@@ -202,12 +249,13 @@ function buildRegistry() {
   for (const entry of manifest.pages || []) {
     if (selectedPages && !selectedPages.has(entry.page)) continue;
     const model = readJsonFile(entry.model);
+    const headPath = toPosix(join(dirname(entry.model), model.files.head));
+    const currentHead = readProject(headPath);
     const blocks = [];
     const schemaCandidates = [];
     for (const section of model.sections || []) {
-      if (section.component !== 'faq') continue;
       const html = readSectionContent(entry.model, section);
-      const items = extractDetailsItems(html);
+      const items = extractFaqItems(html);
       if (!items.length) continue;
       const source = sourcePathForSection(entry.model, section);
       const schemaEligible = isSchemaEligibleBlock({ label: section.label, items, html });
@@ -227,7 +275,10 @@ function buildRegistry() {
       if (schemaEligible) schemaCandidates.push(...items.map((item) => ({ ...item, blockId: section.id })));
     }
 
-    if (!blocks.length) continue;
+    if (!blocks.length) {
+      headUpdates.set(headPath, injectGeneratedFaqSchema(currentHead, null));
+      continue;
+    }
 
     const dedupedSchemaItems = [];
     const seenQuestions = new Set();
@@ -238,7 +289,7 @@ function buildRegistry() {
       dedupedSchemaItems.push(item);
     }
 
-    const schemaEnabled = dedupedSchemaItems.length >= 2;
+    const schemaEnabled = FAQPAGE_SCHEMA_ENABLED && dedupedSchemaItems.length >= 2;
     const schema = schemaEnabled ? buildFaqPageSchema({ page: entry.page, pageTitle: model.title || model.h1, items: dedupedSchemaItems }) : null;
     if (schema) {
       schemaPages += 1;
@@ -257,16 +308,16 @@ function buildRegistry() {
       itemCount: blocks.reduce((sum, block) => sum + block.itemCount, 0),
       schema: {
         enabled: schemaEnabled,
-        itemCount: dedupedSchemaItems.length,
+        retired: !FAQPAGE_SCHEMA_ENABLED,
+        retirementSource: FAQPAGE_RETIREMENT_SOURCE,
+        itemCount: schemaEnabled ? dedupedSchemaItems.length : 0,
         output: schema ? `${SCHEMA_DIR}/${slugFromPage(entry.page)}.json` : null,
         generatedHead: schema ? `src/pages/${model.slug}/head.html` : null,
-        sourceBlocks: [...new Set(dedupedSchemaItems.map((item) => item.blockId))],
+        sourceBlocks: schemaEnabled ? [...new Set(dedupedSchemaItems.map((item) => item.blockId))] : [],
       },
       blocks,
     };
 
-    const headPath = toPosix(join(dirname(entry.model), model.files.head));
-    const currentHead = readProject(headPath);
     headUpdates.set(headPath, injectGeneratedFaqSchema(currentHead, schema));
   }
 
@@ -276,9 +327,10 @@ function buildRegistry() {
     source: 'src/pages/* FAQ sections via Static Component Builder',
     policy: {
       visibleFaqSource: 'src/pages/<slug>/sections/* or shared/parametric components',
-      registryRole: 'machine-readable content index and source for generated FAQPage JSON-LD',
-      schemaSync: 'FAQPage JSON-LD is generated from schemaEligible visible FAQ blocks and injected into src/pages/<slug>/head.html',
-      noManualSchemaEdits: 'Do not edit data-generated="faq-registry" scripts manually; rerun npm run generate:faq-registry.',
+      registryRole: 'machine-readable content index for visible FAQ blocks',
+      schemaSync: 'FAQPage JSON-LD retired after Google stopped showing FAQ rich results on 2026-05-07',
+      retirementSource: FAQPAGE_RETIREMENT_SOURCE,
+      noManualSchemaEdits: 'Do not add FAQPage JSON-LD; keep useful answers visible and rerun npm run generate:faq-registry.',
     },
     summary: {
       pagesWithFaq: Object.keys(pages).length,
@@ -304,7 +356,7 @@ function currentSchemaFiles() {
 }
 
 function buildDocs(registry) {
-  return `# FAQ Registry + FAQPage Schema Sync\n\nЭтот слой делает FAQ машинно-читаемым и синхронизирует видимые FAQ-блоки с JSON-LD \`FAQPage\`.\n\n## Источник правды\n\n- Видимый FAQ пока остаётся в Static Component Builder source: \`src/pages/<slug>/sections/*\`, \`src/components/shared/*\` или \`src/components/parametric/*\`.\n- \`content/faq/page-faq-registry.json\` — машинный индекс видимых FAQ-блоков.\n- \`content/faq/schema/*.json\` — generated FAQPage schema по страницам.\n- Generated scripts в \`src/pages/<slug>/head.html\` помечены \`data-generated="faq-registry"\` и не редактируются вручную.\n\n## Команды\n\n\`\`\`bash\nnpm run generate:faq-registry\nnpm run check:faq-registry\nnpm run build:site -- --write\nnpm run ai:semantic-diff -- --page holodilniki.html\nnpm run ai:check\n\`\`\`\n\n## Метрики текущего registry\n\n- Страниц с FAQ: ${registry.summary.pagesWithFaq}\n- FAQ-блоков: ${registry.summary.blocks}\n- Вопросов/ответов: ${registry.summary.items}\n- Страниц с generated FAQPage schema: ${registry.summary.pagesWithFaqPageSchema}\n- Вопросов в schema: ${registry.summary.schemaItems}\n\n## Workflow для AI\n\n1. Для понимания FAQ страницы сначала читать \`content/faq/page-faq-registry.json\`, а не весь HTML.\n2. Если меняется видимый FAQ — менять соответствующий section/component source.\n3. После правки запускать \`npm run generate:faq-registry\`, затем \`npm run build:site -- --write\`.\n4. Проверять \`npm run check:faq-registry && npm run check:site-builder && npm run ai:semantic-diff -- --page <page.html>\`.\n\n## Что считается schemaEligible\n\nВ schema попадают только блоки, которые похожи на реальный FAQ: имеют сигнал \`FAQ / Частые вопросы / Что обычно спрашивают\` и вопросы с вопросительным знаком. Сценарии, мини-кейсы и обучающие accordion-блоки индексируются в registry, но не всегда попадают в \`FAQPage\`.\n`;
+  return `# FAQ Registry\n\nЭтот слой индексирует видимые FAQ-блоки. Генерация \`FAQPage\` JSON-LD отключена: Google перестал показывать FAQ rich results 7 мая 2026 года и удалил документацию функции.\n\nИсточник: ${FAQPAGE_RETIREMENT_SOURCE}\n\n## Источник правды\n\n- Видимый FAQ остаётся в Static Component Builder source: \`src/pages/<slug>/sections/*\`, \`src/components/shared/*\` или \`src/components/parametric/*\`.\n- \`content/faq/page-faq-registry.json\` — машинный индекс видимых FAQ-блоков.\n- \`content/faq/schema/*.json\` должен оставаться пустым.\n- В \`src/pages/<slug>/head.html\` не должно быть \`FAQPage\` JSON-LD.\n\n## Команды\n\n\`\`\`bash\nnpm run generate:faq-registry\nnpm run check:faq-registry\nnpm run build:site -- --write\nnpm run ai:semantic-diff -- --page holodilniki.html\nnpm run ai:check\n\`\`\`\n\n## Метрики текущего registry\n\n- Страниц с FAQ: ${registry.summary.pagesWithFaq}\n- FAQ-блоков: ${registry.summary.blocks}\n- Вопросов/ответов: ${registry.summary.items}\n- Страниц с FAQPage schema: ${registry.summary.pagesWithFaqPageSchema}\n- Вопросов в schema: ${registry.summary.schemaItems}\n\n## Workflow для AI\n\n1. Для понимания FAQ страницы сначала читать \`content/faq/page-faq-registry.json\`, а не весь HTML.\n2. Менять только полезный видимый FAQ в соответствующем section/component source.\n3. После правки запускать \`npm run generate:faq-registry\`, затем \`npm run build:site -- --write\`.\n4. Проверять \`npm run check:faq-registry && npm run check:site-builder && npm run ai:semantic-diff -- --page <page.html>\`.\n\nFAQPage-разметку не возвращать без нового подтверждённого изменения в документации Google.\n`;
 }
 
 let errors = [];
@@ -364,7 +416,7 @@ for (const [file, content] of headUpdates) {
   if (writeIfChanged(file, content)) writes += 1;
 }
 
-console.log('✅ FAQ Registry + FAQPage Schema Sync обновлён');
+console.log('✅ FAQ Registry обновлён; FAQPage schema retired');
 console.log(`   pages=${registry.summary.pagesWithFaq}, blocks=${registry.summary.blocks}, items=${registry.summary.items}`);
 console.log(`   schemaPages=${registry.summary.pagesWithFaqPageSchema}, schemaItems=${registry.summary.schemaItems}`);
 console.log(`   changedFiles=${writes}`);

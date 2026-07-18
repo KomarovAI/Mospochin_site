@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "poisk-utechki-i-zapravka-holodilnika.html",
+  "slug": "poisk-utechki-i-zapravka-holodilnika",
+  "route": "/poisk-utechki-i-zapravka-holodilnika.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Поиск утечки и заправка холодильника в Москве | MosPochin",
+  "h1": "Поиск утечки и заправка холодильника",
+  "source": {
+    "extractedFrom": "poisk-utechki-i-zapravka-holodilnika.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "c318826fbd08ec80ac9830b3df2932d71a43d14f243fac61990881623fbf17ed",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 7466,
+      "hash": "1b7f547c40c95d85"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1047,
+      "hash": "937dcbb6b55af81b",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "poisk_utechki_i_zapravka_holodilnika_breadcrumb_1"
+          },
+          {
+            "href": "holodilniki.html",
+            "label": "Холодильники",
+            "ctaId": "poisk_utechki_i_zapravka_holodilnika_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Поиск утечки и заправка холодильника"
+      }
+    },
+    {
+      "id": "002-contact-cta-poisk-utechki-i-zapravka-holodil-nika",
+      "component": "contact-cta",
+      "label": "Поиск утечки и заправка холодильника",
+      "file": "sections/002-contact-cta-poisk-utechki-i-zapravka-holodil-nika.html",
+      "bytes": 2360,
+      "hash": "b6c0b57c70dcb3e5"
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "file": "sections/003-section-kak-proyavlyaetsya-problema.html",
+      "bytes": 1578,
+      "hash": "b31233f593f2a26a"
+    },
+    {
+      "id": "004-pricing-chto-mozhno-proverit-bezopasno",
+      "component": "pricing",
+      "label": "Что можно проверить безопасно",
+      "file": "sections/004-pricing-chto-mozhno-proverit-bezopasno.html",
+      "bytes": 1904,
+      "hash": "7513804ff221f6d5"
+    },
+    {
+      "id": "005-pricing-chto-proveryaet-master",
+      "component": "pricing",
+      "label": "Что проверяет мастер",
+      "file": "sections/005-pricing-chto-proveryaet-master.html",
+      "bytes": 2089,
+      "hash": "8aec35d9f98057d3"
+    },
+    {
+      "id": "006-section-zapravka-i-zamena-kompressora-tol-ko-posle-p",
+      "component": "section",
+      "label": "Заправка и замена компрессора — только после подтверждения",
+      "bytes": 748,
+      "hash": "12955e05424f351d",
+      "componentRef": "src/components/shared/section/section-zapravka-i-zamena-kompressora-tolko-posle-podtverz--12955e05424f351d.html",
+      "componentScope": "shared",
+      "componentSignature": "12955e05424f351d",
+      "sourceFile": "sections/006-section-zapravka-i-zamena-kompressora-tol-ko-posle-p.html"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 2113,
+      "hash": "2af3904415a19ddc"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4184,
+      "hash": "c0e6a9bdf4c74069"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1932,
+      "hash": "10121b543a3d898d"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4466,
+      "hash": "4d68d4aac4e54d78"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "file": "sections/011-contact-cta-kontaktnyy-cta.html",
+      "bytes": 556,
+      "hash": "27f8db3b9d5edc04"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page poisk-utechki-i-zapravka-holodilnika.html",
+    "npm run doctor:page -- --page poisk-utechki-i-zapravka-holodilnika.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page poisk-utechki-i-zapravka-holodilnika.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

@@ -612,6 +612,16 @@ function buildMetricRow(body, req) {
     contact_target: sanitizeContactHref(body.href || body.contact_target),
     field_name: sanitizeString(body.field_name, 80),
     reason: redactSensitiveText(body.reason || body.validation_message || body.error_code || body.block_reason),
+    vital_name: ['LCP', 'INP', 'CLS'].includes(String(body.vital_name || '').toUpperCase())
+      ? String(body.vital_name).toUpperCase()
+      : null,
+    vital_value: Number.isFinite(Number(body.vital_value)) ? Number(body.vital_value) : null,
+    vital_rating: ['good', 'needs-improvement', 'poor'].includes(String(body.vital_rating || ''))
+      ? String(body.vital_rating)
+      : null,
+    navigation_type: sanitizeString(body.navigation_type, 32),
+    device: ['mobile', 'desktop'].includes(String(body.device || '')) ? String(body.device) : null,
+    effective_connection_type: sanitizeString(body.effective_connection_type, 32),
     referrer_host: cleanReferrerHost(body.referrer || body.referrer_host),
     utm_source: sanitizeString(body.utm_source || lastTouch.utm_source || firstTouch.utm_source, 160),
     utm_medium: sanitizeString(body.utm_medium || lastTouch.utm_medium || firstTouch.utm_medium, 160),

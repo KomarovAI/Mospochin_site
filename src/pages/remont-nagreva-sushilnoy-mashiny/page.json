@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "remont-nagreva-sushilnoy-mashiny.html",
+  "slug": "remont-nagreva-sushilnoy-mashiny",
+  "route": "/remont-nagreva-sushilnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Ремонт системы нагрева сушильной машины | MosPochin",
+  "h1": "Ремонт системы нагрева сушильной машины",
+  "source": {
+    "extractedFrom": "remont-nagreva-sushilnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "2b122d23e597c8b6133be4307e5bf3b8c0a9348e207b20a6f4d428164fbe3998",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9492,
+      "hash": "1061f81153a4d90a",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/remont-nagreva-sushilnoy-mashiny/props/dr1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1058,
+      "hash": "5c0f6c5830440262",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "remont_nagreva_sushilnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "sushilnye-mashiny.html",
+            "label": "Сушильные машины",
+            "ctaId": "remont_nagreva_sushilnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Ремонт системы нагрева сушильной машины"
+      }
+    },
+    {
+      "id": "002-contact-cta-remont-sistemy-nagreva-sushil-noy-mashin",
+      "component": "contact-cta",
+      "label": "Ремонт системы нагрева сушильной машины",
+      "file": "sections/002-contact-cta-remont-sistemy-nagreva-sushil-noy-mashin.html",
+      "bytes": 2034,
+      "hash": "a33cb6c639825d3d"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1114,
+      "hash": "6e57cc1ed8895cba",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/symptom-observations.template.html",
+      "propsRef": "src/pages/remont-nagreva-sushilnoy-mashiny/props/dr1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1921,
+      "hash": "a75255d3153d5b34",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/remont-nagreva-sushilnoy-mashiny/props/dr1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 530,
+      "hash": "f92ae8bc2a46d0b3"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1310,
+      "hash": "56a1c68b78348ef4"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1842,
+      "hash": "5f5cbf4054583af5"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4117,
+      "hash": "7168feb13d377c43"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2374,
+      "hash": "70a1d986f4177659"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5050,
+      "hash": "f168b9c5fc002724",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/remont-nagreva-sushilnoy-mashiny/props/dr1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 552,
+      "hash": "fb62d968f21a3f14",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/remont-nagreva-sushilnoy-mashiny/props/dr1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page remont-nagreva-sushilnoy-mashiny.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

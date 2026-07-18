@@ -7,7 +7,7 @@
 - H1: Вакууматор не запускает цикл
 - Canonical: https://mospochin.ru/vakuumator-ne-zapuskaet-cikl.html
 - Builder model: src/pages/vakuumator-ne-zapuskaet-cikl/page.json
-- Sections: 16 (12 local, 0 shared refs, 0 raw)
+- Sections: 16 (11 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 712
 
 ## Component mix
@@ -39,7 +39,7 @@
 | Форма заявки | lead-form | 3.4 KB | 33 | no | src/pages/vakuumator-ne-zapuskaet-cikl/sections/080-lead-form.html |
 | Матрица причин | cause-matrix | 3.3 KB | 125 | no | src/pages/vakuumator-ne-zapuskaet-cikl/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.8 KB | 103 | no | src/pages/vakuumator-ne-zapuskaet-cikl/sections/070-repair-scope.html |
-| Безопасная проверка | safe-self-check | 2.0 KB | 57 | no | src/pages/vakuumator-ne-zapuskaet-cikl/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 2.0 KB | 57 | no | src/components/parametric/safe-self-check/default.template.html |
 | FAQ — частые вопросы | faq | 2.0 KB | 80 | no | src/pages/vakuumator-ne-zapuskaet-cikl/sections/090-faq.html |
 | Сервисная диагностика | service-diagnostics | 1.9 KB | 48 | no | src/pages/vakuumator-ne-zapuskaet-cikl/sections/060-service-diagnostics.html |
 | Первый экран | hero | 1.7 KB | 44 | no | src/pages/vakuumator-ne-zapuskaet-cikl/sections/010-hero.html |

@@ -15,7 +15,8 @@
     "form_submit_success",
     "form_submit_error",
     "form_validation_error",
-    "form_submit_blocked"
+    "form_submit_blocked",
+    "web_vital"
   ],
   "backend_events": [
     "qualified_lead",
@@ -92,6 +93,9 @@
         "form_submit_error",
         "form_validation_error",
         "form_submit_blocked"
+      ],
+      "performance": [
+        "web_vital"
       ],
       "business_outcome": [
         "qualified_lead",
@@ -269,7 +273,6 @@
     "diagnostic_media_added",
     "cta_after_selfcheck",
     "cta_after_cause_matrix",
-    "symptom_service_lead",
-    "web_vital"
+    "symptom_service_lead"
   ]
 }

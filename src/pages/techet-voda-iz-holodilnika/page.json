@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "techet-voda-iz-holodilnika.html",
+  "slug": "techet-voda-iz-holodilnika",
+  "route": "/techet-voda-iz-holodilnika.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Из холодильника течёт вода — ремонт в Москве | MosPochin",
+  "h1": "Из холодильника течёт вода",
+  "source": {
+    "extractedFrom": "techet-voda-iz-holodilnika.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "b3b65576b79d80f64b8ad839fc59f2c376d82c04abfaf399ea9606b1aa9f7eb4",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 7426,
+      "hash": "23009a5b380ea37b"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1008,
+      "hash": "c1111f0cbf735fcb",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "techet_voda_iz_holodilnika_breadcrumb_1"
+          },
+          {
+            "href": "holodilniki.html",
+            "label": "Холодильники",
+            "ctaId": "techet_voda_iz_holodilnika_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Из холодильника течёт вода"
+      }
+    },
+    {
+      "id": "002-contact-cta-iz-holodil-nika-techet-voda",
+      "component": "contact-cta",
+      "label": "Из холодильника течёт вода",
+      "file": "sections/002-contact-cta-iz-holodil-nika-techet-voda.html",
+      "bytes": 2314,
+      "hash": "f715c50036c65a7d"
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "file": "sections/003-section-kak-proyavlyaetsya-problema.html",
+      "bytes": 1458,
+      "hash": "897bead28953f522"
+    },
+    {
+      "id": "004-section-chto-mozhno-proverit-bezopasno",
+      "component": "section",
+      "label": "Что можно проверить безопасно",
+      "file": "sections/004-section-chto-mozhno-proverit-bezopasno.html",
+      "bytes": 1975,
+      "hash": "590a6ade912ad169"
+    },
+    {
+      "id": "005-pricing-chto-proveryaet-master",
+      "component": "pricing",
+      "label": "Что проверяет мастер",
+      "file": "sections/005-pricing-chto-proveryaet-master.html",
+      "bytes": 2038,
+      "hash": "a46896da1e9b761e"
+    },
+    {
+      "id": "006-section-zapravka-i-zamena-kompressora-tol-ko-posle-p",
+      "component": "section",
+      "label": "Заправка и замена компрессора — только после подтверждения",
+      "bytes": 748,
+      "hash": "12955e05424f351d",
+      "componentRef": "src/components/shared/section/section-zapravka-i-zamena-kompressora-tolko-posle-podtverz--12955e05424f351d.html",
+      "componentScope": "shared",
+      "componentSignature": "12955e05424f351d",
+      "sourceFile": "sections/006-section-zapravka-i-zamena-kompressora-tol-ko-posle-p.html"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 2158,
+      "hash": "633cd2421dc84acc"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4174,
+      "hash": "cdaa0873ddcef5e0"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2110,
+      "hash": "6f3fc07ee43451c8"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4436,
+      "hash": "874f5d617fda3eaa"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "file": "sections/011-contact-cta-kontaktnyy-cta.html",
+      "bytes": 546,
+      "hash": "cfaef8a78ede09ea"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page techet-voda-iz-holodilnika.html",
+    "npm run doctor:page -- --page techet-voda-iz-holodilnika.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page techet-voda-iz-holodilnika.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

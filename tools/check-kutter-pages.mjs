@@ -65,7 +65,8 @@ for (const p of published) {
   if (!/name=["']problem["']/.test(html) || !/name=["']phone["']/.test(html)) errors.push(`${p.page}: required form fields missing`);
   if (!/href=["']tel:/.test(html) || !/wa\.me\//.test(html)) errors.push(`${p.page}: contact CTAs missing`);
   if (!/id=["']mobile-footer-container["']/.test(html) || !/id=["']whatsapp-float-container["']/.test(html)) errors.push(`${p.page}: mobile contact mounts missing`);
-  if (!/data-generated=["']faq-registry["']/.test(html)) errors.push(`${p.page}: generated FAQ schema missing`);
+  if (/"@type"\s*:\s*"FAQPage"/.test(html)) errors.push(`${p.page}: retired FAQPage schema must be absent`);
+  if ((html.match(/<details\b/gi) || []).length < 2) errors.push(`${p.page}: at least two visible FAQ items required`);
   if (!/"@type"\s*:\s*"BreadcrumbList"/.test(html)) errors.push(`${p.page}: BreadcrumbList missing`);
   if (p.pageType === 'cluster_hub' && !/CollectionPage/.test(html)) errors.push(`${p.page}: CollectionPage missing`);
   if (p.pageType === 'informational_article' && !/"@type"\s*:\s*"Article"/.test(html)) errors.push(`${p.page}: Article missing`);

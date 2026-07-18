@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "cluster": "microwaves",
+  "sources": [
+    {
+      "id": "samsung.no_heat",
+      "publisher": "Samsung",
+      "type": "official-support",
+      "url": "https://www.samsung.com/ru/support/home-appliances/what-to-do-if-the-samsung-microwave-does-not-heat/",
+      "supports": [
+        "settings",
+        "power",
+        "cookware",
+        "installation"
+      ]
+    },
+    {
+      "id": "samsung.no_power",
+      "publisher": "Samsung",
+      "type": "official-support",
+      "url": "https://www.samsung.com/ru/support/home-appliances/what-to-do-if-the-samsung-microwave-does-not-turn-on/",
+      "supports": [
+        "outlet",
+        "cable",
+        "no-extension"
+      ]
+    },
+    {
+      "id": "samsung.turntable",
+      "publisher": "Samsung",
+      "type": "official-support",
+      "url": "https://www.samsung.com/ru/support/home-appliances/the-turntable-in-the-samsung-microwave-oven-does-not-rotate/",
+      "supports": [
+        "settings",
+        "roller-ring",
+        "turntable",
+        "no-empty-run"
+      ]
+    },
+    {
+      "id": "samsung.buttons",
+      "publisher": "Samsung",
+      "type": "official-support",
+      "url": "https://www.samsung.com/ru/support/home-appliances/the-control-buttons-on-the-samsung-microwave-oven-do-not-work/",
+      "supports": [
+        "cleaning",
+        "child-lock",
+        "door-closure"
+      ]
+    },
+    {
+      "id": "bosch.safety",
+      "publisher": "Bosch",
+      "type": "official-manual",
+      "url": "https://media3.bosch-home.com/Documents/9001682571_A.pdf",
+      "supports": [
+        "damaged-door-stop-use",
+        "do-not-remove-casing",
+        "service-only"
+      ]
+    },
+    {
+      "id": "lg.spark",
+      "publisher": "LG",
+      "type": "official-support",
+      "url": "https://www.lg.com/ru/lg-magazine/what-is/iskrit-mikrovolnovaya-pech-prichiny-i-sposoby-ustraneniya",
+      "supports": [
+        "metal-cookware",
+        "mica",
+        "contamination",
+        "enamel",
+        "coupler"
+      ]
+    }
+  ]
+}

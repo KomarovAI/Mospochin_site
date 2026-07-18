@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/posle-remonta-kuhni-ventilyatsiya-huzhe.html
 - Builder model: src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1222
+- Text words inside referenced sections: 903
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| После ремонта кухни вентиляция стала хуже | breadcrumb | 38.7 KB | 1035 | no | src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/sections/002-breadcrumb-posle-remonta-kuhni-ventilyaciya-stala-hu.html |
+| После ремонта кухни вентиляция стала хуже | breadcrumb | 29.4 KB | 716 | no | src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/sections/002-breadcrumb-posle-remonta-kuhni-ventilyaciya-stala-hu.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/posle-remonta-kuhni-ventilyatsiya-huzhe/sections/007-lead-form-forma-zayavki.html |

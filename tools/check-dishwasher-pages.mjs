@@ -38,7 +38,7 @@ for(const p of rows){
    if(!/"@type"\s*:\s*"BreadcrumbList"/.test(html))errors.push(`${p.page}: BreadcrumbList schema missing`);
    const expectedSchema=p.pageType==='informational_article'?'Article':'Service';
    if(!new RegExp(`"@type"\\s*:\\s*"${expectedSchema}"`).test(html))errors.push(`${p.page}: ${expectedSchema} schema missing`);
-   if(!/"@type"\s*:\s*"FAQPage"/.test(html))errors.push(`${p.page}: FAQPage schema missing`);
+   if(/"@type"\s*:\s*"FAQPage"/.test(html))errors.push(`${p.page}: retired FAQPage schema must be absent`);
    if((html.match(/<details\b/gi)||[]).length<3)errors.push(`${p.page}: at least 3 visible FAQ items required`);
    if(!/<form\b[^>]*telegram-form/.test(html))errors.push(`${p.page}: telegram lead form missing`);
    if(p.pageType==='brand_service'&&!/name=["']manufacturer["']/.test(html))errors.push(`${p.page}: brand manufacturer field missing`);

@@ -26,16 +26,16 @@
 
 | Метрика | Значение |
 | --- | --- |
-| Pages | 296 |
-| Builder pages | 296 |
-| Total sections | 4333 |
-| src/pages files | 3436 |
-| src/pages HTML section files | 3139 |
-| Shared component files | 182 |
-| Shared refs | 297 |
-| Shared coverage | 48.0% |
-| Average sections/page | 14.6 |
-| Average source files/page | 18.5 |
+| Pages | 500 |
+| Builder pages | 500 |
+| Total sections | 6933 |
+| src/pages files | 6341 |
+| src/pages HTML section files | 5278 |
+| Shared component files | 215 |
+| Shared refs | 349 |
+| Shared coverage | 45.9% |
+| Average sections/page | 13.9 |
+| Average source files/page | 19.2 |
 | AI component map entries | 12 |
 
 
@@ -51,32 +51,32 @@
 
 | Page | Sections | Local | Shared |
 | --- | --- | --- | --- |
-| parokonvektomaty.html | 77 | 49 | 10 |
-| parokonvektomat-abat.html | 75 | 27 | 15 |
-| parokonvektomat-convotherm.html | 75 | 26 | 16 |
-| parokonvektomat-electrolux.html | 75 | 28 | 14 |
-| parokonvektomat-lainox.html | 75 | 26 | 16 |
-| remont-oborudovaniya-restorana-parokonvektomat.html | 73 | 25 | 14 |
-| parokonvektomat-e02-e07-e10.html | 67 | 23 | 16 |
-| parokonvektomat-rational-e9.html | 67 | 23 | 16 |
-| parokonvektomat-rational.html | 67 | 23 | 16 |
-| parokonvektomat-unox-af02-af08.html | 67 | 23 | 16 |
+| parokonvektomaty.html | 77 | 45 | 10 |
+| parokonvektomat-abat.html | 75 | 23 | 15 |
+| remont-oborudovaniya-restorana-parokonvektomat.html | 73 | 21 | 14 |
+| parokonvektomaty-promo.html | 67 | 20 | 15 |
+| parokonvektomat-convotherm.html | 64 | 20 | 7 |
+| parokonvektomat-electrolux.html | 64 | 22 | 5 |
+| parokonvektomat-lainox.html | 64 | 20 | 7 |
+| grili-mangaly.html | 63 | 43 | 2 |
+| parokonvektomat-e02-e07-e10.html | 55 | 17 | 6 |
+| parokonvektomat-rational-e9.html | 55 | 17 | 6 |
 
 
 ## Крупнейшие кандидаты на сжатие смысла
 
-- **high**: faq: 247 локальных секций, shared ratio 7% — кандидат на параметризованный компонент + props.
-- **high**: proof: 209 локальных секций, shared ratio 13% — кандидат на параметризованный компонент + props.
-- **high**: breadcrumb: 211 локальных секций, shared ratio 8% — кандидат на параметризованный компонент + props.
-- **high**: lead-form: 167 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: body-preamble: 152 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: contact-cta: 143 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: raw: 103 локальных секций, shared ratio 20% — кандидат на параметризованный компонент + props.
-- **medium**: section: 78 локальных секций, shared ratio 34% — кандидат на параметризованный компонент + props.
-- **high**: related-links: 86 локальных секций, shared ratio 15% — кандидат на параметризованный компонент + props.
-- **medium**: hero: 56 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: section: 526 локальных секций, shared ratio 29% — кандидат на параметризованный компонент + props.
+- **high**: pricing: 374 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props.
+- **high**: faq: 418 локальных секций, shared ratio 10% — кандидат на параметризованный компонент + props.
+- **high**: lead-form: 337 локальных секций, shared ratio 9% — кандидат на параметризованный компонент + props.
+- **high**: contact-cta: 258 локальных секций, shared ratio 27% — кандидат на параметризованный компонент + props.
+- **high**: body-preamble: 169 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: related-links: 108 локальных секций, shared ratio 25% — кандидат на параметризованный компонент + props.
+- **high**: hero: 90 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 - **medium**: cause-matrix: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 - **medium**: decision-tree: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **medium**: related-symptoms: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **medium**: repair-scope: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 
 ## Команды digest/source compression
 

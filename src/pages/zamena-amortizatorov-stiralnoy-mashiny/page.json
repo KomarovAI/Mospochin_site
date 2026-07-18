@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "zamena-amortizatorov-stiralnoy-mashiny.html",
+  "slug": "zamena-amortizatorov-stiralnoy-mashiny",
+  "route": "/zamena-amortizatorov-stiralnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Замена амортизаторов стиральной машины в Москве | MosPochin",
+  "h1": "Замена амортизаторов стиральной машины",
+  "source": {
+    "extractedFrom": "zamena-amortizatorov-stiralnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "4aed86d9422b1c075d47a6b4e7bdb5447b941cd8a2301ed84b63eb16b2349c1d",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9516,
+      "hash": "d00120af5dc7cab1",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/zamena-amortizatorov-stiralnoy-mashiny/props/wm2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-zamena-amortizatorov-stiral-noy-mashi",
+      "component": "mobile-contact",
+      "label": "Замена амортизаторов стиральной машины",
+      "file": "sections/002-mobile-contact-zamena-amortizatorov-stiral-noy-mashi.html",
+      "bytes": 1875,
+      "hash": "d11dba56f1b552b4"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1071,
+      "hash": "cac95b9666d3d7a7",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "zamena_amortizatorov_stiralnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "stiralnye-mashiny.html",
+            "label": "Стиральные машины",
+            "ctaId": "zamena_amortizatorov_stiralnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Замена амортизаторов стиральной машины"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 974,
+      "hash": "4f8176df3154c708",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/observations.template.html",
+      "propsRef": "src/pages/zamena-amortizatorov-stiralnoy-mashiny/props/wm2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1812,
+      "hash": "9413a56228cad69d",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/zamena-amortizatorov-stiralnoy-mashiny/props/wm2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 536,
+      "hash": "7c2cf2e8f9c627c1"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1191,
+      "hash": "0822bb51a65b6704"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1659,
+      "hash": "4c22380b0e8c130b"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1676,
+      "hash": "683619093dde3f5c"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1535,
+      "hash": "9c3dbb6a7471d4a0"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5068,
+      "hash": "012cb78c61314ff1",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/zamena-amortizatorov-stiralnoy-mashiny/props/wm2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page zamena-amortizatorov-stiralnoy-mashiny.html",
+    "npm run doctor:page -- --page zamena-amortizatorov-stiralnoy-mashiny.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page zamena-amortizatorov-stiralnoy-mashiny.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

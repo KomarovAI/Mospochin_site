@@ -7,7 +7,7 @@
 - H1: Вакууматор не откачивает воздух
 - Canonical: https://mospochin.ru/vakuumator-ne-otkachivaet-vozduh.html
 - Builder model: src/pages/vakuumator-ne-otkachivaet-vozduh/page.json
-- Sections: 16 (10 local, 2 shared refs, 0 raw)
+- Sections: 16 (9 local, 2 shared refs, 0 raw)
 - Text words inside referenced sections: 605
 
 ## Component mix
@@ -40,7 +40,7 @@
 | Матрица причин | cause-matrix | 2.9 KB | 92 | no | src/pages/vakuumator-ne-otkachivaet-vozduh/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.5 KB | 78 | no | src/pages/vakuumator-ne-otkachivaet-vozduh/sections/070-repair-scope.html |
 | FAQ — частые вопросы | faq | 2.0 KB | 83 | no | src/pages/vakuumator-ne-otkachivaet-vozduh/sections/090-faq.html |
-| Безопасная проверка | safe-self-check | 1.9 KB | 47 | no | src/pages/vakuumator-ne-otkachivaet-vozduh/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 1.9 KB | 47 | no | src/components/parametric/safe-self-check/default.template.html |
 | Сервисная диагностика | service-diagnostics | 1.7 KB | 37 | yes | src/components/shared/service-diagnostics/service-diagnostics-servisnaya-diagnostika--eae9d6f0e3273b80.html |
 | Первый экран | hero | 1.7 KB | 38 | no | src/pages/vakuumator-ne-otkachivaet-vozduh/sections/010-hero.html |
 

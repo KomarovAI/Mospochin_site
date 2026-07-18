@@ -7,8 +7,8 @@
 - H1: Ремонт бытовой техники на дому в Москве
 - Canonical: https://mospochin.ru/bytovaya-index.html
 - Builder model: src/pages/bytovaya-index/page.json
-- Sections: 34 (33 local, 0 shared refs, 9 raw)
-- Text words inside referenced sections: 1191
+- Sections: 35 (31 local, 0 shared refs, 9 raw)
+- Text words inside referenced sections: 1219
 
 ## Component mix
 
@@ -22,6 +22,7 @@
 | lead-form | 2 |
 | related-links | 2 |
 | body-preamble | 1 |
+| breadcrumb | 1 |
 | hero | 1 |
 | layout-fragment | 1 |
 | noscript | 1 |
@@ -37,8 +38,8 @@
 | Популярные категории и типовые поломки | related-links | 7.1 KB | 136 | no | src/pages/bytovaya-index/sections/010-related-links-populyarnye-kategorii-i-tipovye-polomk.html |
 | Ремонт бытовой техники на дому в Москве | hero | 6.7 KB | 108 | no | src/pages/bytovaya-index/sections/005-hero-remont-bytovoy-tehniki-na-domu-v-moskve.html |
 | Прозрачные цены без сюрпризов | pricing | 5.9 KB | 73 | no | src/pages/bytovaya-index/sections/017-pricing-prozrachnye-ceny-bez-syurprizov.html |
+| Сначала выберите, что сломалось | section | 5.3 KB | 98 | no | src/pages/bytovaya-index/sections/006-section-snachala-vyberite-chto-slomalos.html |
 | Почему бытовую технику чаще чинят дома, а не везут в мастерскую | proof | 4.9 KB | 109 | no | src/pages/bytovaya-index/sections/012-proof-pochemu-bytovuyu-tehniku-chasche-chinyat-doma-.html |
-| Сначала выберите, что сломалось | section | 4.3 KB | 73 | no | src/pages/bytovaya-index/sections/006-section-snachala-vyberite-chto-slomalos.html |
 | Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/pages/bytovaya-index/sections/028-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 
 

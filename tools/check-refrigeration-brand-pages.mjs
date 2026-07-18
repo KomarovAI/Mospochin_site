@@ -23,7 +23,9 @@ for(const brand of brands){
  if(h1!==entry.h1)errors.push(`${brand.page}: H1 mismatch`);
  if(!html.includes(`<link rel="canonical" href="https://mospochin.ru/${brand.page}">`))errors.push(`${brand.page}: self canonical missing`);
  if(/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html))errors.push(`${brand.page}: unexpected noindex`);
- for(const token of ['branch-restaurant','page-refrigeration-brand','data-brand-disclaimer="independent-service"','name="equipment_model"','name="serial_number"','name="controller_model"','name="error_code"','name="manufacturer"','data-contact-form="primary"','telegram-form.js','analytics.js','"@type": "Service"','"@type": "BreadcrumbList"','"@type": "FAQPage"'])if(!html.includes(token))errors.push(`${brand.page}: missing ${token}`);
+ for(const token of ['branch-restaurant','page-refrigeration-brand','data-brand-disclaimer="independent-service"','name="equipment_model"','name="serial_number"','name="controller_model"','name="error_code"','name="manufacturer"','data-contact-form="primary"','telegram-form.js','analytics.js','"@type": "Service"','"@type": "BreadcrumbList"'])if(!html.includes(token))errors.push(`${brand.page}: missing ${token}`);
+ if(/"@type"\s*:\s*"FAQPage"/.test(html))errors.push(`${brand.page}: retired FAQPage schema must be absent`);
+ if((html.match(/<details\b/gi)||[]).length<2)errors.push(`${brand.page}: at least two visible FAQ items required`);
  if(!html.includes(`не является авторизованным сервисным центром ${brand.brand}`))errors.push(`${brand.page}: independent-service disclaimer missing`);
  const spec=specs[brand.page];if(!spec)errors.push(`${brand.page}: RF8 spec missing`);for(const series of spec?.series||[]){const label=series[0];if(!html.toLowerCase().includes(label.toLowerCase()))errors.push(`${brand.page}: rendered series missing: ${label}`);}
  for(const id of entry.evidenceIds||[]){if(!evidence.has(id))errors.push(`${brand.page}: unknown evidence ${id}`);if(!html.includes(`data-evidence-id="${id}"`))errors.push(`${brand.page}: evidence not rendered ${id}`)}

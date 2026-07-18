@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html
 - Builder model: src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1270
+- Text words inside referenced sections: 952
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Как понять, что нужна чистка вентиляции | breadcrumb | 40.7 KB | 1083 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/002-breadcrumb-kak-ponyat-chto-nuzhna-chistka-ventilyaci.html |
+| Как понять, что нужна чистка вентиляции | breadcrumb | 31.5 KB | 765 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/002-breadcrumb-kak-ponyat-chto-nuzhna-chistka-ventilyaci.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/kak-ponyat-chto-nuzhna-chistka-ventilyatsii/sections/007-lead-form-forma-zayavki.html |

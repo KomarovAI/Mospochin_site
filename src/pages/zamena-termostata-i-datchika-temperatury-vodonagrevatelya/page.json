@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "zamena-termostata-i-datchika-temperatury-vodonagrevatelya.html",
+  "slug": "zamena-termostata-i-datchika-temperatury-vodonagrevatelya",
+  "route": "/zamena-termostata-i-datchika-temperatury-vodonagrevatelya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Замена термостата и датчика температуры водонагревателя",
+  "h1": "Замена термостата и датчика температуры водонагревателя",
+  "source": {
+    "extractedFrom": "zamena-termostata-i-datchika-temperatury-vodonagrevatelya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "fec743822491c424c201aa05946923656e18baef34f41e4deaddfdb658544eef",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 8636,
+      "hash": "75f13b7c9a6fe213",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/mobile-contact.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-001-mobile-contact-mobil-nye-kontaktnye-elementy.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1134,
+      "hash": "3c8acd8ded3aef4f",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "zamena_termostata_i_datchika_temperatury_vodonagrevatelya_breadcrumb_1"
+          },
+          {
+            "href": "water-heaters.html",
+            "label": "Водонагреватели",
+            "ctaId": "zamena_termostata_i_datchika_temperatury_vodonagrevatelya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Замена термостата и датчика температуры водонагревателя"
+      }
+    },
+    {
+      "id": "002-contact-cta-zamena-termostata-i-datchika-temperatury",
+      "component": "contact-cta",
+      "label": "Замена термостата и датчика температуры водонагревателя",
+      "bytes": 3273,
+      "hash": "0d75ab39113f52dd",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/contact-cta.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-002-contact-cta-zamena-termostata-i-datchika-temperatury.json"
+    },
+    {
+      "id": "003-section-kogda-nuzhen-etot-scenariy",
+      "component": "section",
+      "label": "Когда нужен этот сценарий",
+      "bytes": 1027,
+      "hash": "3f50fce2ee912015",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-003-section-kogda-nuzhen-etot-scenariy.json"
+    },
+    {
+      "id": "004-proof-chto-sdelat-bezopasno",
+      "component": "proof",
+      "label": "Что сделать безопасно",
+      "bytes": 1751,
+      "hash": "506d24eff0800423",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/proof.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-004-proof-chto-sdelat-bezopasno.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "bytes": 439,
+      "hash": "201d6c32a7e39d46",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-005-section-sekciya-stranicy.json"
+    },
+    {
+      "id": "006-section-kakie-raboty-mogut-potrebovat-sya",
+      "component": "section",
+      "label": "Какие работы могут потребоваться",
+      "bytes": 1116,
+      "hash": "af9cdb8548fba00b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-006-section-kakie-raboty-mogut-potrebovat-sya.json"
+    },
+    {
+      "id": "007-section-foto-uzla-i-etapov-raboty",
+      "component": "section",
+      "label": "Фото узла и этапов работы",
+      "bytes": 3766,
+      "hash": "589ce33faa102684",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/section.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-007-section-foto-uzla-i-etapov-raboty.json"
+    },
+    {
+      "id": "008-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "bytes": 1836,
+      "hash": "7a83390e067c8796",
+      "componentRef": "src/components/shared/section/section-svyazannye-stranicy--7a83390e067c8796.html",
+      "componentScope": "shared",
+      "componentSignature": "7a83390e067c8796",
+      "sourceFile": "sections/008-section-svyazannye-stranicy.html"
+    },
+    {
+      "id": "009-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "bytes": 1612,
+      "hash": "f5a4f439e3ae8667",
+      "componentRef": "src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--f5a4f439e3ae8667.html",
+      "componentScope": "shared",
+      "componentSignature": "f5a4f439e3ae8667",
+      "sourceFile": "sections/009-lead-form-chto-otpravit-do-vyezda.html"
+    },
+    {
+      "id": "010-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "bytes": 1488,
+      "hash": "aab4d840675ad165",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/faq.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-010-faq-chastye-voprosy.json"
+    },
+    {
+      "id": "011-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4495,
+      "hash": "ae0f870cb739c6dc",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/water-heater-wh4/mobile-contact.template.html",
+      "propsRef": "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-011-mobile-contact-mobil-nye-kontaktnye-elementy.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page zamena-termostata-i-datchika-temperatury-vodonagrevatelya.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 2,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

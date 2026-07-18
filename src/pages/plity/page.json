@@ -6,12 +6,12 @@
   "route": "/plity.html",
   "branch": "household",
   "role": "service",
-  "title": "Ремонт плит и духовок в Москве на дому — MosPochin",
-  "h1": "Плита не греет, искрит или пахнет газом? Починим дома без навязанных замен",
+  "title": "Ремонт духовых шкафов и варочных панелей в Москве — MosPochin",
+  "h1": "Ремонт духовых шкафов и варочных панелей в Москве",
   "source": {
     "extractedFrom": "plity.html",
     "extractedAt": "1970-01-01T00:00:00.000Z",
-    "hash": "fe4177ef267628a4a52ef6af59bf9d79e5afb0c9f2d3f3d6e022c7f78825708c",
+    "hash": "1ebb9c9755b315034b06c7142f2022244727fc4f302e8aec83e443865f8e89b7",
     "mode": "lossless-section-snapshot"
   },
   "files": {
@@ -21,420 +21,123 @@
   },
   "sections": [
     {
-      "id": "001-body-preamble-sekciya-1",
-      "component": "body-preamble",
-      "label": "Секция 1",
-      "file": "sections/001-body-preamble-sekciya-1.html",
-      "bytes": 45,
-      "hash": "65bfb63c445b9cf0"
-    },
-    {
-      "id": "002-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 7337,
-      "hash": "aea2f232024ee0c0"
-    },
-    {
-      "id": "003-breadcrumb-hlebnye-kroshki",
-      "component": "breadcrumb",
-      "label": "Хлебные крошки",
-      "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 867,
-      "hash": "f4db85799a0d6ef3"
-    },
-    {
-      "id": "004-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim",
-      "component": "hero",
-      "label": "Плита не греет, искрит или пахнет газом? Починим дома без навязанных замен",
-      "file": "sections/004-hero-plita-ne-greet-iskrit-ili-pahnet-gazom-pochinim.html",
-      "bytes": 3877,
-      "hash": "5a9c47bc0f5e1842"
-    },
-    {
-      "id": "005-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/005-proof-dokazatel-stva-garantii.html",
-      "bytes": 187,
-      "hash": "4b26841ecc5d9f10"
-    },
-    {
-      "id": "006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda",
-      "component": "proof",
-      "label": "Что получаете по заявке до и после выезда",
-      "bytes": 2619,
-      "hash": "fe5022e30cc0dcfb",
-      "componentRef": "src/components/shared/proof/proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda--fe5022e30cc0dcfb.html",
-      "componentScope": "shared",
-      "componentSignature": "fe5022e30cc0dcfb",
-      "sourceFile": "sections/006-proof-chto-poluchaete-po-zayavke-do-i-posle-vyezda.html"
-    },
-    {
-      "id": "007-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 40,
-      "hash": "6ea051972d91dd2c",
+      "bytes": 7558,
+      "hash": "38354dcb9094fd8c",
       "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "household-sync-service-kpi-end-6ea051972d91",
-      "templateRef": "src/components/parametric/static/layout-fragment-household-sync-service-kpi-end-6ea051972d91.template.html",
-      "props": {},
-      "sourceFile": "sections/007-raw-html-fragment.html"
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/header-76780d2f5125.template.html",
+      "propsRef": "src/pages/plity/props/cook2-header.json"
     },
     {
-      "id": "008-pricing-chto-vy-poluchaete-krome-samogo-remonta",
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 725,
+      "hash": "029c4366f822f3e0",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-one-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/one-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "plity_breadcrumb_1"
+          }
+        ],
+        "currentLabel": "Ремонт духовых шкафов и варочных панелей в Москве"
+      }
+    },
+    {
+      "id": "002-contact-cta-remont-duhovyh-shkafov-i-varochnyh-panel",
+      "component": "contact-cta",
+      "label": "Ремонт духовых шкафов и варочных панелей в Москве",
+      "file": "sections/002-contact-cta-remont-duhovyh-shkafov-i-varochnyh-panel.html",
+      "bytes": 1962,
+      "hash": "3de3a0624be7302d"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1153,
+      "hash": "c669db97e3f7d457",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/symptom-observations.template.html",
+      "propsRef": "src/pages/plity/props/cook2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 2059,
+      "hash": "5379b5109c142fd2",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/plity/props/cook2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 575,
+      "hash": "47bcd43a9294d385"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
       "component": "pricing",
-      "label": "Что вы получаете, кроме самого ремонта",
-      "file": "sections/008-pricing-chto-vy-poluchaete-krome-samogo-remonta.html",
-      "bytes": 3387,
-      "hash": "2e93d53df744b1a6"
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1365,
+      "hash": "3402edce5be61457"
     },
     {
-      "id": "009-pricing-remontiruem-vse-tipy-plit-i-duhovok",
-      "component": "pricing",
-      "label": "Ремонтируем все типы плит и духовок",
-      "file": "sections/009-pricing-remontiruem-vse-tipy-plit-i-duhovok.html",
-      "bytes": 8159,
-      "hash": "13e2697e4c47ef1c"
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 2226,
+      "hash": "1ad999858c9567e4"
     },
     {
-      "id": "010-pricing-ceny-stoimost",
-      "component": "pricing",
-      "label": "Цены/стоимость",
-      "file": "sections/010-pricing-ceny-stoimost.html",
-      "bytes": 616,
-      "hash": "d9112092d3441065"
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4046,
+      "hash": "2fc6e526045f99f5"
     },
     {
-      "id": "011-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-",
+      "id": "009-faq-chastye-voprosy",
       "component": "faq",
-      "label": "Если хочется, можно быстро посмотреть похожие истории",
-      "file": "sections/011-faq-esli-hochetsya-mozhno-bystro-posmotret-pohozhie-.html",
-      "bytes": 2717,
-      "hash": "aa8ce3d938f2b452"
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2293,
+      "hash": "4267bc3cdc159f43"
     },
     {
-      "id": "012-faq-chto-obychno-proishodit-do-bolee-dorogogo-remont",
-      "component": "faq",
-      "label": "Что обычно происходит до более дорогого ремонта плиты",
-      "file": "sections/012-faq-chto-obychno-proishodit-do-bolee-dorogogo-remont.html",
-      "bytes": 3093,
-      "hash": "9ebd7c2685754b7e"
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4464,
+      "hash": "ecedf5d830e89a26",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/footer-e7dcf49c74e0.template.html",
+      "propsRef": "src/pages/plity/props/cook2-footer.json"
     },
     {
-      "id": "013-contact-cta-kontaktnyy-cta",
+      "id": "011-contact-cta-kontaktnyy-cta",
       "component": "contact-cta",
       "label": "Контактный CTA",
-      "file": "sections/013-contact-cta-kontaktnyy-cta.html",
-      "bytes": 2412,
-      "hash": "6bf9c2754d8f90fe"
-    },
-    {
-      "id": "014-pricing-chto-vliyaet-na-stoimost-remonta",
-      "component": "pricing",
-      "label": "Что влияет на стоимость ремонта",
-      "file": "sections/014-pricing-chto-vliyaet-na-stoimost-remonta.html",
-      "bytes": 4146,
-      "hash": "e5dadfe3ebd2129d"
-    },
-    {
-      "id": "015-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 97,
-      "hash": "0648703daf054cfc",
+      "bytes": 525,
+      "hash": "1923e92e3bddacb3",
       "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "блок-что-сломалось-кликабельные-иконки-0648703daf05",
-      "templateRef": "src/components/parametric/static/layout-fragment-блок-что-сломалось-кликабельные-иконки-0648703daf05.template.html",
-      "props": {},
-      "sourceFile": "sections/015-raw-html-fragment.html"
-    },
-    {
-      "id": "016-pricing-chto-sluchilos-s-plitoy-ili-duhovkoy",
-      "component": "pricing",
-      "label": "Что случилось с плитой или духовкой?",
-      "file": "sections/016-pricing-chto-sluchilos-s-plitoy-ili-duhovkoy.html",
-      "bytes": 5079,
-      "hash": "e23a7d4dfb084f63"
-    },
-    {
-      "id": "017-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 93,
-      "hash": "e192ec34a9cc0f49",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "блок-реальные-истории-кейсы-из-москвы-e192ec34a9cc",
-      "templateRef": "src/components/parametric/static/layout-fragment-блок-реальные-истории-кейсы-из-москвы-e192ec34a9cc.template.html",
-      "props": {},
-      "sourceFile": "sections/017-raw-html-fragment.html"
-    },
-    {
-      "id": "018-pricing-tipovye-obrascheniya-po-remontu-oborudovaniy",
-      "component": "pricing",
-      "label": "Типовые обращения по ремонту оборудования",
-      "bytes": 2665,
-      "hash": "bb0b0ecac53fdb7f",
-      "componentRef": "src/components/shared/pricing/pricing-tipovye-obrascheniya-po-remontu-oborudovaniya--bb0b0ecac53fdb7f.html",
-      "componentScope": "shared",
-      "componentSignature": "bb0b0ecac53fdb7f",
-      "sourceFile": "sections/018-pricing-tipovye-obrascheniya-po-remontu-oborudovaniy.html"
-    },
-    {
-      "id": "019-section-chastye-polomki-plit-i-duhovok",
-      "component": "section",
-      "label": "Частые поломки плит и духовок",
-      "file": "sections/019-section-chastye-polomki-plit-i-duhovok.html",
-      "bytes": 6324,
-      "hash": "3c9ea7458a143740"
-    },
-    {
-      "id": "020-pricing-kak-formiruyutsya-stoimost-i-srok-remonta",
-      "component": "pricing",
-      "label": "Как формируются стоимость и срок ремонта",
-      "bytes": 1954,
-      "hash": "a0ff67c4509ce8ec",
-      "componentRef": "src/components/shared/pricing/pricing-kak-formiruyutsya-stoimost-i-srok-remonta--a0ff67c4509ce8ec.html",
-      "componentScope": "shared",
-      "componentSignature": "a0ff67c4509ce8ec",
-      "sourceFile": "sections/020-pricing-kak-formiruyutsya-stoimost-i-srok-remonta.html"
-    },
-    {
-      "id": "021-pricing-pochemu-vybirayut-remont-plit-i-pechey",
-      "component": "pricing",
-      "label": "Почему выбирают ремонт плит и печей",
-      "file": "sections/021-pricing-pochemu-vybirayut-remont-plit-i-pechey.html",
-      "bytes": 4228,
-      "hash": "92e23b1bc9c065fc"
-    },
-    {
-      "id": "022-pricing-tipovye-obrascheniya-po-remontu-oborudovaniy",
-      "component": "pricing",
-      "label": "Типовые обращения по ремонту оборудования",
-      "bytes": 2665,
-      "hash": "bb0b0ecac53fdb7f",
-      "componentRef": "src/components/shared/pricing/pricing-tipovye-obrascheniya-po-remontu-oborudovaniya--bb0b0ecac53fdb7f.html",
-      "componentScope": "shared",
-      "componentSignature": "bb0b0ecac53fdb7f",
-      "sourceFile": "sections/022-pricing-tipovye-obrascheniya-po-remontu-oborudovaniy.html"
-    },
-    {
-      "id": "023-proof-5-shagov-do-rabotayuschey-kuhni",
-      "component": "proof",
-      "label": "5 шагов до работающей кухни",
-      "file": "sections/023-proof-5-shagov-do-rabotayuschey-kuhni.html",
-      "bytes": 3361,
-      "hash": "d554a7557364ee9a"
-    },
-    {
-      "id": "024-proof-my-otvechaem-za-kachestvo",
-      "component": "proof",
-      "label": "Мы отвечаем за качество",
-      "bytes": 2559,
-      "hash": "4307d0113ef22f09",
-      "componentRef": "src/components/shared/proof/proof-my-otvechaem-za-kachestvo--4307d0113ef22f09.html",
-      "componentScope": "shared",
-      "componentSignature": "4307d0113ef22f09",
-      "sourceFile": "sections/024-proof-my-otvechaem-za-kachestvo.html"
-    },
-    {
-      "id": "025-pricing-rabotaem-s-rasprostranennymi-markami-plit-i-",
-      "component": "pricing",
-      "label": "Работаем с распространёнными марками плит и духовок",
-      "file": "sections/025-pricing-rabotaem-s-rasprostranennymi-markami-plit-i-.html",
-      "bytes": 18598,
-      "hash": "079ac90e0b2abf99"
-    },
-    {
-      "id": "026-pricing-kak-soglasovyvaem-remont",
-      "component": "pricing",
-      "label": "Как согласовываем ремонт",
-      "bytes": 1874,
-      "hash": "1d83e191003594ce",
-      "componentRef": "src/components/shared/pricing/pricing-kak-soglasovyvaem-remont--1d83e191003594ce.html",
-      "componentScope": "shared",
-      "componentSignature": "1d83e191003594ce",
-      "sourceFile": "sections/026-pricing-kak-soglasovyvaem-remont.html"
-    },
-    {
-      "id": "027-section-rabotaem-po-vsey-moskve-i-mo",
-      "component": "section",
-      "label": "Работаем по всей Москве и МО",
-      "file": "sections/027-section-rabotaem-po-vsey-moskve-i-mo.html",
-      "bytes": 2903,
-      "hash": "ea700bd1415bf3e5"
-    },
-    {
-      "id": "028-pricing-sdelayte-eto-do-priezda-mastera",
-      "component": "pricing",
-      "label": "Сделайте это до приезда мастера",
-      "file": "sections/028-pricing-sdelayte-eto-do-priezda-mastera.html",
-      "bytes": 3003,
-      "hash": "84e9c79bd34032ee"
-    },
-    {
-      "id": "029-proof-kak-obychno-prohodit-remont-plity-na-domu",
-      "component": "proof",
-      "label": "Как обычно проходит ремонт плиты на дому",
-      "file": "sections/029-proof-kak-obychno-prohodit-remont-plity-na-domu.html",
-      "bytes": 3537,
-      "hash": "897838272a2cfa8b"
-    },
-    {
-      "id": "030-faq-chto-obychno-sprashivayut-pered-remontom-plity",
-      "component": "faq",
-      "label": "Что обычно спрашивают перед ремонтом плиты",
-      "file": "sections/030-faq-chto-obychno-sprashivayut-pered-remontom-plity.html",
-      "bytes": 3982,
-      "hash": "4f7790e81a5f3351"
-    },
-    {
-      "id": "031-contact-cta-ostav-te-zayavku-chtoby-spokoyno-razobra",
-      "component": "contact-cta",
-      "label": "Оставьте заявку, чтобы спокойно разобраться с поломкой",
-      "file": "sections/031-contact-cta-ostav-te-zayavku-chtoby-spokoyno-razobra.html",
-      "bytes": 1726,
-      "hash": "eef6821f117b1408"
-    },
-    {
-      "id": "032-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 34,
-      "hash": "320bf445eaddebfe",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "форма-заявки-320bf445eadd",
-      "templateRef": "src/components/parametric/static/layout-fragment-форма-заявки-320bf445eadd.template.html",
-      "props": {},
-      "sourceFile": "sections/032-raw-html-fragment.html"
-    },
-    {
-      "id": "033-contact-cta-opishite-problemu-s-plitoy-ili-duhovkoy",
-      "component": "contact-cta",
-      "label": "Опишите проблему с плитой или духовкой",
-      "file": "sections/033-contact-cta-opishite-problemu-s-plitoy-ili-duhovkoy.html",
-      "bytes": 2051,
-      "hash": "4d8aa9b6c075ff78"
-    },
-    {
-      "id": "034-lead-form-poluchite-ponyatnyy-scenariy-remonta-plity",
-      "component": "lead-form",
-      "label": "Получите понятный сценарий ремонта плиты",
-      "file": "sections/034-lead-form-poluchite-ponyatnyy-scenariy-remonta-plity.html",
-      "bytes": 6273,
-      "hash": "9136a534ad940619"
-    },
-    {
-      "id": "035-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 55,
-      "hash": "ae7664dc3522f963",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "мобильная-нижняя-панель-ae7664dc3522",
-      "templateRef": "src/components/parametric/static/layout-fragment-мобильная-нижняя-панель-ae7664dc3522.template.html",
-      "props": {},
-      "sourceFile": "sections/035-raw-html-fragment.html"
-    },
-    {
-      "id": "036-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/036-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 971,
-      "hash": "f74b57b8b1c280e9"
-    },
-    {
-      "id": "037-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/037-proof-dokazatel-stva-garantii.html",
-      "bytes": 189,
-      "hash": "d3f5537264a267de"
-    },
-    {
-      "id": "038-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
-      "component": "pricing",
-      "label": "Что клиент понимает ещё до начала работ",
-      "file": "sections/038-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
-      "bytes": 11841,
-      "hash": "0e6b2dbcdbe78a80"
-    },
-    {
-      "id": "039-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/039-proof-dokazatel-stva-garantii.html",
-      "bytes": 42,
-      "hash": "c9cde558065e3f95"
-    },
-    {
-      "id": "040-proof-dokazatel-stva-garantii",
-      "component": "proof",
-      "label": "Доказательства/гарантии",
-      "file": "sections/040-proof-dokazatel-stva-garantii.html",
-      "bytes": 189,
-      "hash": "07f68605479a5cc5"
-    },
-    {
-      "id": "041-related-links-esli-problema-v-drugoy-tehnike",
-      "component": "related-links",
-      "label": "Если проблема в другой технике",
-      "file": "sections/041-related-links-esli-problema-v-drugoy-tehnike.html",
-      "bytes": 2801,
-      "hash": "46d1f3ae2c4c1c5e"
-    },
-    {
-      "id": "042-related-links-svyazannye-stranicy",
-      "component": "related-links",
-      "label": "Связанные страницы",
-      "file": "sections/042-related-links-svyazannye-stranicy.html",
-      "bytes": 42,
-      "hash": "50ecf96d2596ed9c"
-    },
-    {
-      "id": "043-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/043-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 4267,
-      "hash": "2e31530fd627f562"
-    },
-    {
-      "id": "044-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/044-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "c1651e02864eed09"
-    },
-    {
-      "id": "045-mobile-contact-mobil-nye-kontaktnye-elementy",
-      "component": "mobile-contact",
-      "label": "Мобильные контактные элементы",
-      "file": "sections/045-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
-    },
-    {
-      "id": "046-raw-html-fragment",
-      "component": "layout-fragment",
-      "label": "HTML-фрагмент",
-      "bytes": 1,
-      "hash": "01ba4719c80b6fe9",
-      "componentMode": "parametric",
-      "componentScope": "parametric-static",
-      "variant": "technical-fragment-01ba4719c80b",
-      "templateRef": "src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html",
-      "props": {},
-      "sourceFile": "sections/046-raw-html-fragment.html"
+      "templateRef": "src/components/parametric/cooking-appliance-cook2/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/plity/props/cook2-mobile_cta.json"
     }
   ],
   "recommendedChecks": [
@@ -450,7 +153,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 6,
+    "sharedSectionRefs": 0,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

@@ -193,17 +193,14 @@ for (const entry of manifest.pages || []) {
   const faq = schemaByType(schemas, 'FAQPage');
   const visibleFaq = detailsItems(html);
   assert(visibleFaq.length >= 2, `${page}: visible FAQ has at least two entries`);
-  assert(Boolean(faq), `${page}: FAQPage schema exists`);
-  if (faq) {
-    const schemaFaq = faqSchemaItems(faq);
-    assert(JSON.stringify(schemaFaq) === JSON.stringify(visibleFaq), `${page}: FAQPage matches visible FAQ`);
-    remember(faqOwners, signature(visibleFaq), page);
-  }
+  assert(!faq, `${page}: retired FAQPage schema is absent`);
+  remember(faqOwners, signature(visibleFaq), page);
   const registry = faqRegistry[page];
   assert(Boolean(registry), `${page}: FAQ is registered in machine-readable registry`);
-  assert(Boolean(registry?.schema?.enabled), `${page}: FAQ registry schema is enabled`);
-  assert((registry?.schema?.itemCount || 0) === visibleFaq.length, `${page}: FAQ registry item count matches visible FAQ`);
-  assert((html.match(/data-generated=["']faq-registry["']/g) || []).length === 1, `${page}: exactly one generated FAQ schema block`);
+  assert(Boolean(registry?.schema?.retired), `${page}: FAQ registry records schema retirement`);
+  assert(!registry?.schema?.enabled, `${page}: FAQ registry schema is disabled`);
+  assert((registry?.itemCount || 0) === visibleFaq.length, `${page}: FAQ registry item count matches visible FAQ`);
+  assert((html.match(/data-generated=["']faq-registry["']/g) || []).length === 0, `${page}: generated FAQ schema block is absent`);
 
   const breadcrumb = schemaByType(schemas, 'BreadcrumbList');
   assert(Boolean(breadcrumb), `${page}: BreadcrumbList exists`);

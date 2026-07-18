@@ -7,7 +7,7 @@
 - H1: Мутное масло вакууматора
 - Canonical: https://mospochin.ru/mutnoe-maslo-vakuumatora.html
 - Builder model: src/pages/mutnoe-maslo-vakuumatora/page.json
-- Sections: 16 (12 local, 0 shared refs, 0 raw)
+- Sections: 16 (11 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 735
 
 ## Component mix
@@ -39,7 +39,7 @@
 | Матрица причин | cause-matrix | 3.4 KB | 133 | no | src/pages/mutnoe-maslo-vakuumatora/sections/050-cause-matrix.html |
 | Форма заявки | lead-form | 3.3 KB | 33 | no | src/pages/mutnoe-maslo-vakuumatora/sections/080-lead-form.html |
 | Ремонтируемые узлы | repair-scope | 2.9 KB | 111 | no | src/pages/mutnoe-maslo-vakuumatora/sections/070-repair-scope.html |
-| Безопасная проверка | safe-self-check | 2.0 KB | 65 | no | src/pages/mutnoe-maslo-vakuumatora/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 2.0 KB | 65 | no | src/components/parametric/safe-self-check/default.template.html |
 | Источники | sources-note | 1.9 KB | 63 | no | src/pages/mutnoe-maslo-vakuumatora/sections/110-sources-note.html |
 | Сервисная диагностика | service-diagnostics | 1.9 KB | 47 | no | src/pages/mutnoe-maslo-vakuumatora/sections/060-service-diagnostics.html |
 | FAQ — частые вопросы | faq | 1.8 KB | 78 | no | src/pages/mutnoe-maslo-vakuumatora/sections/090-faq.html |

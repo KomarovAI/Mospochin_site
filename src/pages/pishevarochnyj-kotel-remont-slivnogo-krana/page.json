@@ -84,6 +84,16 @@
       "sourceFile": "sections/006-raw-html-fragment.html"
     },
     {
+      "id": "006a-intent-diagnostic",
+      "component": "intent-diagnostic",
+      "label": "Диагностическая граница интента",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "kettle-intent-v1",
+      "templateRef": "src/components/parametric/kettle-intent-diagnostic/default.template.html",
+      "propsRef": "src/components/parametric/kettle-intent-diagnostic/props/pishevarochnyj-kotel-remont-slivnogo-krana.json"
+    },
+    {
       "id": "007-proof-ne-prosto-stat-ya-a-stranica-pod-zayavku",
       "component": "proof",
       "label": "Не просто статья, а страница под заявку",

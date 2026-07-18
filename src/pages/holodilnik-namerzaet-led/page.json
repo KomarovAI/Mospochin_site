@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "holodilnik-namerzaet-led.html",
+  "slug": "holodilnik-namerzaet-led",
+  "route": "/holodilnik-namerzaet-led.html",
+  "branch": "household",
+  "role": "service",
+  "title": "В холодильнике намерзает лёд — диагностика в Москве | MosPochin",
+  "h1": "В холодильнике намерзает лёд",
+  "source": {
+    "extractedFrom": "holodilnik-namerzaet-led.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "62de81c7a2fbbb41e59178be61b8d988460ea4a6c6d46df4d645a09691291936",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 7418,
+      "hash": "990ce057826ac5ca"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1008,
+      "hash": "ad3fb34e5b278c5e",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "holodilnik_namerzaet_led_breadcrumb_1"
+          },
+          {
+            "href": "holodilniki.html",
+            "label": "Холодильники",
+            "ctaId": "holodilnik_namerzaet_led_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "В холодильнике намерзает лёд"
+      }
+    },
+    {
+      "id": "002-contact-cta-v-holodil-nike-namerzaet-led",
+      "component": "contact-cta",
+      "label": "В холодильнике намерзает лёд",
+      "file": "sections/002-contact-cta-v-holodil-nike-namerzaet-led.html",
+      "bytes": 2307,
+      "hash": "fd45f9b26761fae4"
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "file": "sections/003-section-kak-proyavlyaetsya-problema.html",
+      "bytes": 1521,
+      "hash": "82ab6092edbbd703"
+    },
+    {
+      "id": "004-pricing-chto-mozhno-proverit-bezopasno",
+      "component": "pricing",
+      "label": "Что можно проверить безопасно",
+      "file": "sections/004-pricing-chto-mozhno-proverit-bezopasno.html",
+      "bytes": 1956,
+      "hash": "8389ae41f2ad9491"
+    },
+    {
+      "id": "005-proof-chto-proveryaet-master",
+      "component": "proof",
+      "label": "Что проверяет мастер",
+      "file": "sections/005-proof-chto-proveryaet-master.html",
+      "bytes": 1962,
+      "hash": "bd0e022290b46778"
+    },
+    {
+      "id": "006-section-zapravka-i-zamena-kompressora-tol-ko-posle-p",
+      "component": "section",
+      "label": "Заправка и замена компрессора — только после подтверждения",
+      "bytes": 748,
+      "hash": "12955e05424f351d",
+      "componentRef": "src/components/shared/section/section-zapravka-i-zamena-kompressora-tolko-posle-podtverz--12955e05424f351d.html",
+      "componentScope": "shared",
+      "componentSignature": "12955e05424f351d",
+      "sourceFile": "sections/006-section-zapravka-i-zamena-kompressora-tol-ko-posle-p.html"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 2126,
+      "hash": "f946b91d66a065bc"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4172,
+      "hash": "9fdfa048dfbf90a6"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2035,
+      "hash": "7562f4d3ac352093"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "file": "sections/010-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+      "bytes": 4430,
+      "hash": "d9af78f077311652"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "file": "sections/011-contact-cta-kontaktnyy-cta.html",
+      "bytes": 544,
+      "hash": "75b8d81e5afca1c5"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page holodilnik-namerzaet-led.html",
+    "npm run doctor:page -- --page holodilnik-namerzaet-led.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page holodilnik-namerzaet-led.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 1,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

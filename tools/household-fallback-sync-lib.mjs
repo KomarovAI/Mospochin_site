@@ -375,20 +375,25 @@ export function renderHouseholdServiceProof(service, proofLayer) {
     </section>`;
 }
 
-export function renderHouseholdRelatedLinks(service, registry, cardPresets) {
+export function renderHouseholdRelatedLinks(service, registry, cardPresets, slotEntry = null) {
   const serviceMap = new Map((registry?.services || []).map((entry) => [entry.page, entry]));
   const pages = (service.relatedPages || [])
     .map((page) => serviceMap.get(page))
     .filter((entry) => entry && !entry.isShadow)
     .map((entry) => entry.page);
 
+  const relatedConfig = slotEntry?.relatedLinks || {};
+  const relatedBadge = relatedConfig.badge || 'ДРУГИЕ БЫТОВЫЕ КАТЕГОРИИ';
+  const relatedTitle = relatedConfig.title || 'Если проблема в другой технике';
+  const relatedDescription = relatedConfig.description || 'Ниже ближайшие бытовые категории, которые чаще всего смотрят рядом с этой страницей.';
+
   return `<section data-sync-zone="related-links" data-household-slot-generated="related-links" class="py-16 lg:py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <div class="text-center mb-8">
-            <span class="inline-block rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-semibold text-brand-blue">ДРУГИЕ БЫТОВЫЕ КАТЕГОРИИ</span>
-            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">Если проблема в другой технике</h2>
-            <p class="mt-3 text-slate-600">Ниже ближайшие бытовые категории, которые чаще всего смотрят рядом с этой страницей.</p>
+            <span class="inline-block rounded-full bg-brand-blue/10 px-4 py-2 text-sm font-semibold text-brand-blue">${escapeHtml(relatedBadge)}</span>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-display font-extrabold text-brand-blue">${escapeHtml(relatedTitle)}</h2>
+            <p class="mt-3 text-slate-600">${escapeHtml(relatedDescription)}</p>
           </div>
           <div class="household-card-grid household-card-grid--related">
             ${renderHouseholdServiceCards(pages, serviceMap, cardPresets, 'compact')}
@@ -711,7 +716,7 @@ function buildSyncPayload({ pageMeta, service, slotEntry, slotsRoot, registry, c
     'request-overview': renderHouseholdRequestOverview(service, slotEntry),
     'faq-items': renderHouseholdFaqItems(slotEntry),
     'service-proof': renderHouseholdServiceProof(service, proofLayer),
-    'related-links': renderHouseholdRelatedLinks(service, registry, cardPresets),
+    'related-links': renderHouseholdRelatedLinks(service, registry, cardPresets, slotEntry),
   };
   const brandGroupsSection = renderHouseholdBrandGroups(slotEntry);
   if (brandGroupsSection) {

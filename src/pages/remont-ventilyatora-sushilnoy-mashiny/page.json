@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "remont-ventilyatora-sushilnoy-mashiny.html",
+  "slug": "remont-ventilyatora-sushilnoy-mashiny",
+  "route": "/remont-ventilyatora-sushilnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Ремонт вентилятора сушильной машины | MosPochin",
+  "h1": "Ремонт вентилятора сушильной машины",
+  "source": {
+    "extractedFrom": "remont-ventilyatora-sushilnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "9d02f1eac17e17570445f5cc716b40af4fc97231cf503c08179f979bf1d85844",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9512,
+      "hash": "2f4d3cc9904011e5",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/remont-ventilyatora-sushilnoy-mashiny/props/dr1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1061,
+      "hash": "511c66debdefd835",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "remont_ventilyatora_sushilnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "sushilnye-mashiny.html",
+            "label": "Сушильные машины",
+            "ctaId": "remont_ventilyatora_sushilnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Ремонт вентилятора сушильной машины"
+      }
+    },
+    {
+      "id": "002-contact-cta-remont-ventilyatora-sushil-noy-mashiny",
+      "component": "contact-cta",
+      "label": "Ремонт вентилятора сушильной машины",
+      "file": "sections/002-contact-cta-remont-ventilyatora-sushil-noy-mashiny.html",
+      "bytes": 2006,
+      "hash": "5f797a4cbb72582e"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1108,
+      "hash": "c36c8533dea97c89",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/symptom-observations.template.html",
+      "propsRef": "src/pages/remont-ventilyatora-sushilnoy-mashiny/props/dr1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1961,
+      "hash": "0b628100b12e17d0",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/remont-ventilyatora-sushilnoy-mashiny/props/dr1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 487,
+      "hash": "dc5332cca50d282a"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1310,
+      "hash": "5d4ed5b78597010e"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1925,
+      "hash": "4a1a83a723503d2a"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4122,
+      "hash": "16cb920ccf4044a4"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2334,
+      "hash": "bc7d6bbf0d75d4db"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5065,
+      "hash": "eb31a261b59d43fa",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/remont-ventilyatora-sushilnoy-mashiny/props/dr1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 557,
+      "hash": "91e6c0dd690bc446",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/remont-ventilyatora-sushilnoy-mashiny/props/dr1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page remont-ventilyatora-sushilnoy-mashiny.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

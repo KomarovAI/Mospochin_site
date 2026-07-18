@@ -7,8 +7,8 @@
 - H1: Пищеварочный котел долго греет
 - Canonical: https://mospochin.ru/pishevarochnyj-kotel-dolgo-greet.html
 - Builder model: src/pages/pishevarochnyj-kotel-dolgo-greet/page.json
-- Sections: 23 (9 local, 1 shared refs, 0 raw)
-- Text words inside referenced sections: 858
+- Sections: 24 (9 local, 1 shared refs, 0 raw)
+- Text words inside referenced sections: 1010
 
 ## Component mix
 
@@ -20,6 +20,7 @@
 | body-preamble | 1 |
 | faq | 1 |
 | footer-anchor | 1 |
+| intent-diagnostic | 1 |
 | lead-form | 1 |
 | proof | 1 |
 | runtime-partials | 1 |
@@ -34,9 +35,9 @@
 | Оставьте заявку на диагностику | lead-form | 5.7 KB | 69 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/017-lead-form-ostav-te-zayavku-na-diagnostiku.html |
 | Симптом → узел → риск простоя → диагностика | mobile-contact | 5.5 KB | 112 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/005-mobile-contact-simptom-uzel-risk-prostoya-diagnostik.html |
 | Развели ошибки КПЭМ по отдельным сценариям | pricing | 5.4 KB | 124 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/012-pricing-razveli-oshibki-kpem-po-otdel-nym-scenariyam.html |
+| Диагностическая граница интента | intent-diagnostic | 3.4 KB | 152 | no | src/components/parametric/kettle-intent-diagnostic/default.template.html |
 | Пищеварочный котел долго греет | mobile-contact | 3.0 KB | 39 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/003-mobile-contact-pischevarochnyy-kotel-dolgo-greet.html |
 | Частые вопросы по этой неисправности | faq | 2.9 KB | 87 | no | src/pages/pishevarochnyj-kotel-dolgo-greet/sections/018-faq-chastye-voprosy-po-etoy-neispravnosti.html |
-| Не просто статья, а страница под заявку | proof | 2.1 KB | 69 | yes | src/components/shared/proof/proof-ne-prosto-statya-a-stranica-pod-zayavku--ce9c82e757dac360.html |
 
 
 ## Editable source files

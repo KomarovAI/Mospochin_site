@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+  "slug": "dver-posudomoechnoy-mashiny-ne-zakryvaetsya",
+  "route": "/dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Дверь посудомоечной машины не закрывается — ремонт | MosPochin",
+  "h1": "Дверь посудомоечной машины не закрывается",
+  "source": {
+    "extractedFrom": "dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "3bacc17e6dfe829ae75c5a80049d048d237b81baa6c880284ca80a843e9d1af1",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9536,
+      "hash": "baa52e9f5128fbaa",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/dver-posudomoechnoy-mashiny-ne-zakryvaetsya/props/dw2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-dver-posudomoechnoy-mashiny-ne-zakryv",
+      "component": "mobile-contact",
+      "label": "Дверь посудомоечной машины не закрывается",
+      "file": "sections/002-mobile-contact-dver-posudomoechnoy-mashiny-ne-zakryv.html",
+      "bytes": 1810,
+      "hash": "e04c4e1ee3babbf3"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1086,
+      "hash": "6996d8be94f32ad4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "dver_posudomoechnoy_mashiny_ne_zakryvaetsya_breadcrumb_1"
+          },
+          {
+            "href": "posudomoyki.html",
+            "label": "Посудомоечные машины",
+            "ctaId": "dver_posudomoechnoy_mashiny_ne_zakryvaetsya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Дверь посудомоечной машины не закрывается"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 969,
+      "hash": "94380fd47a35d9e1",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/observations.template.html",
+      "propsRef": "src/pages/dver-posudomoechnoy-mashiny-ne-zakryvaetsya/props/dw2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1906,
+      "hash": "a15a99059b4bee7b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/dver-posudomoechnoy-mashiny-ne-zakryvaetsya/props/dw2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 438,
+      "hash": "ad3ae9f063dc8728"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1172,
+      "hash": "7f0f6152f8175696"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1501,
+      "hash": "79540e476c27399e"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1716,
+      "hash": "778c6f0c66909e0a"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1766,
+      "hash": "402165c0b63fa707"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5083,
+      "hash": "1d133971abf61d5e",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/household-dishwasher-dw2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/dver-posudomoechnoy-mashiny-ne-zakryvaetsya/props/dw2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+    "npm run doctor:page -- --page dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

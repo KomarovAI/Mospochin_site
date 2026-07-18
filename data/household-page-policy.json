@@ -14,15 +14,45 @@
       "formExample",
       "sectionIds"
     ],
-    "defaultSectionIds": ["problems", "prices", "brands", "request"],
-    "requiredSectionIds": ["prices", "request"],
-    "requiredSlotAnchors": ["service-schema", "request-form"],
-    "optionalSlotAnchors": ["service-advisory"],
-    "requiredSyncZones": ["service-schema", "service-kpi", "request-overview", "faq-items", "service-proof", "related-links"],
-    "requiredSlotFields": ["faq", "formHints"],
-    "requiredBodyClasses": ["page-household-service"],
+    "defaultSectionIds": [
+      "problems",
+      "prices",
+      "brands",
+      "request"
+    ],
+    "requiredSectionIds": [
+      "prices",
+      "request"
+    ],
+    "requiredSlotAnchors": [
+      "service-schema",
+      "request-form"
+    ],
+    "optionalSlotAnchors": [
+      "service-advisory"
+    ],
+    "requiredSyncZones": [
+      "service-schema",
+      "service-kpi",
+      "request-overview",
+      "faq-items",
+      "service-proof",
+      "related-links"
+    ],
+    "requiredSlotFields": [
+      "faq",
+      "formHints"
+    ],
+    "requiredBodyClasses": [
+      "page-household-service"
+    ],
     "requirePageSlugClass": true,
-    "requiredFormFields": ["name", "phone", "type", "problem"],
+    "requiredFormFields": [
+      "name",
+      "phone",
+      "type",
+      "problem"
+    ],
     "requiredHtmlMarkers": {
       "formClass": "telegram-form",
       "faqClass": "faq-item",
@@ -44,11 +74,25 @@
       "formExample",
       "sectionIds"
     ],
-    "defaultSectionIds": ["problems", "prices", "brands", "request"],
-    "requiredSectionIds": ["prices"],
-    "requiredBodyClasses": ["page-household-service"],
+    "defaultSectionIds": [
+      "problems",
+      "prices",
+      "brands",
+      "request"
+    ],
+    "requiredSectionIds": [
+      "prices"
+    ],
+    "requiredBodyClasses": [
+      "page-household-service"
+    ],
     "requirePageSlugClass": true,
-    "requiredFormFields": ["name", "phone", "type", "problem"],
+    "requiredFormFields": [
+      "name",
+      "phone",
+      "type",
+      "problem"
+    ],
     "requiredHtmlMarkers": {
       "formClass": "telegram-form",
       "faqClass": "faq-item",
@@ -62,25 +106,57 @@
       "bytovaya-about.html",
       "bytovaya-contact.html"
     ],
-    "requiredBodyClasses": ["page-household-branch"],
+    "requiredBodyClasses": [
+      "page-household-branch"
+    ],
     "requirePageSlugClass": true,
-    "allowedSections": ["categoryCards", "trustCards", "contactChannels", "proofCards", "reviewCards", "caseCards", "objectionCards"],
+    "allowedSections": [
+      "categoryCards",
+      "trustCards",
+      "contactChannels",
+      "proofCards",
+      "reviewCards",
+      "caseCards",
+      "objectionCards"
+    ],
     "pageContracts": {
       "bytovaya-index.html": {
-        "requiredCardSections": ["categoryCards", "trustCards"],
-        "requiredProofSections": ["reviewCards", "caseCards"]
+        "requiredCardSections": [
+          "categoryCards",
+          "trustCards"
+        ],
+        "requiredProofSections": [
+          "reviewCards",
+          "caseCards"
+        ]
       },
       "bytovaya-uslugi.html": {
-        "requiredCardSections": ["categoryCards", "trustCards"],
-        "requiredProofSections": ["proofCards", "caseCards"]
+        "requiredCardSections": [
+          "categoryCards",
+          "trustCards"
+        ],
+        "requiredProofSections": [
+          "proofCards",
+          "caseCards"
+        ]
       },
       "bytovaya-about.html": {
-        "requiredCardSections": ["categoryCards", "trustCards"],
-        "requiredProofSections": ["proofCards"]
+        "requiredCardSections": [
+          "categoryCards",
+          "trustCards"
+        ],
+        "requiredProofSections": [
+          "proofCards"
+        ]
       },
       "bytovaya-contact.html": {
-        "requiredCardSections": ["contactChannels"],
-        "requiredProofSections": ["proofCards", "objectionCards"]
+        "requiredCardSections": [
+          "contactChannels"
+        ],
+        "requiredProofSections": [
+          "proofCards",
+          "objectionCards"
+        ]
       }
     },
     "anchorMap": {
@@ -93,8 +169,156 @@
       "objectionCards": "objection-cards"
     },
     "routingHint": {
-      "pages": ["bytovaya-index.html", "bytovaya-uslugi.html"],
+      "pages": [
+        "bytovaya-index.html",
+        "bytovaya-uslugi.html"
+      ],
       "anchor": "routing-hint"
     }
+  },
+  "customServicePages": {
+    "pages": [
+      "belyy-nalet-posle-posudomoechnoy-mashiny.html",
+      "case-chistka-boylera-s-silnoy-nakipyu.html",
+      "case-remont-boylera-v-tesnoy-nishe.html",
+      "case-remont-dvuhbakovogo-vodonagrevatelya.html",
+      "case-trehfaznaya-sistema-gvs-chastnogo-doma.html",
+      "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "diagnostika-duhovogo-shkafa.html",
+      "diagnostika-elektricheskoy-varochnoy-paneli.html",
+      "diagnostika-indukcionnoy-varochnoy-paneli.html",
+      "diagnostika-kuhonnoy-vytyazhki.html",
+      "diagnostika-morozilnika.html",
+      "diagnostika-sushilnoy-mashiny.html",
+      "diagnostika-vinnogo-shkafa.html",
+      "duhovka-ne-greet.html",
+      "duhovka-ne-vklyuchaetsya.html",
+      "duhovka-neravnomerno-pechet.html",
+      "duhovka-peregrevaetsya.html",
+      "duhovka-vybivaet-avtomat.html",
+      "dver-duhovki-ne-zakryvaetsya.html",
+      "dver-morozilnika-ne-zakryvaetsya.html",
+      "dver-posudomoechnoy-mashiny-ne-zakryvaetsya.html",
+      "elektricheskaya-panel-vybivaet-avtomat.html",
+      "elektricheskaya-varochnaya-panel-ne-vklyuchaetsya.html",
+      "fotografii-remonta-vodonagrevateley.html",
+      "indukcionnaya-panel-ne-vidit-posudu.html",
+      "indukcionnaya-panel-vklyuchaetsya-i-vyklyuchaetsya.html",
+      "izvlechenie-postoronnego-predmeta-iz-stiralnoy-mashiny.html",
+      "kondensat-v-vinnom-shkafu.html",
+      "konforka-postoyanno-greet.html",
+      "korroziya-baka-vodonagrevatelya.html",
+      "kuhonnaya-vytyazhka-ne-pereklyuchaet-skorosti.html",
+      "kuhonnaya-vytyazhka-ne-vklyuchaetsya.html",
+      "kuhonnaya-vytyazhka-ploho-tyanet.html",
+      "kuhonnaya-vytyazhka-shumit.html",
+      "kuhonnaya-vytyazhka-vibriruet.html",
+      "kuhonnaya-vytyazhka-vybivaet-avtomat.html",
+      "kuhonnye-vytyazhki.html",
+      "morozilka-ne-morozit.html",
+      "morozilnik-namerzaet-led.html",
+      "morozilnik-ne-vklyuchaetsya.html",
+      "morozilnik-peremorazhivaet.html",
+      "morozilnik-rabotaet-bez-ostanovki.html",
+      "morozilnik-shumit-i-gudit.html",
+      "morozilnik-slabo-morozit.html",
+      "morozilniki.html",
+      "ne-krutitsya-baraban-sushilnoy-mashiny.html",
+      "ne-otkryvaetsya-dozator-posudomoechnoy-mashiny.html",
+      "ne-rabotaet-gril-duhovki.html",
+      "ne-rabotaet-konforka-elektricheskoy-paneli.html",
+      "ne-rabotaet-konvekciya-duhovki.html",
+      "ne-rabotaet-odna-zona-indukcionnoy-paneli.html",
+      "ne-rabotaet-odna-zona-vinnogo-shkafa.html",
+      "ne-rabotaet-podsvetka-kuhonnoy-vytyazhki.html",
+      "ne-rabotaet-sensor-elektricheskoy-paneli.html",
+      "ne-rabotaet-sensor-kuhonnoy-vytyazhki.html",
+      "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "ne-rabotaet-ventilyator-vinnogo-shkafa.html",
+      "ne-vrashchayutsya-razbryzgivateli-posudomoechnoy-mashiny.html",
+      "obsluzhivanie-filtrov-kuhonnoy-vytyazhki.html",
+      "oshibka-na-indukcionnoy-paneli.html",
+      "pena-v-posudomoechnoy-mashine.html",
+      "plity.html",
+      "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+      "podklyuchenie-vodonagrevatelya-polipropilenom.html",
+      "poisk-utechki-i-zapravka-morozilnika.html",
+      "poisk-utechki-i-zapravka-vinnogo-shkafa.html",
+      "posudomoechnaya-mashina-ne-rastvoryaet-tabletku.html",
+      "posudomoechnaya-mashina-postoyanno-slivaet-vodu.html",
+      "posudomoechnaya-mashina-shumit.html",
+      "remont-blokirovki-lyuka-stiralnoy-mashiny.html",
+      "remont-datchika-temperatury-vinnogo-shkafa.html",
+      "remont-datchika-urovnya-posudomoechnoy-mashiny.html",
+      "remont-dozatora-posudomoechnoy-mashiny.html",
+      "remont-duhovyh-shkafov.html",
+      "remont-dvigatelya-kuhonnoy-vytyazhki.html",
+      "remont-dvigatelya-stiralnoy-mashiny.html",
+      "remont-elektricheskih-varochnyh-paneley.html",
+      "remont-indukcionnyh-varochnyh-paneley.html",
+      "remont-knopochnogo-bloka-kuhonnoy-vytyazhki.html",
+      "remont-morozilnyh-larey.html",
+      "remont-nagreva-sushilnoy-mashiny.html",
+      "remont-platy-i-elektroniki-vodonagrevatelya.html",
+      "remont-platy-kuhonnoy-vytyazhki.html",
+      "remont-platy-posudomoechnoy-mashiny.html",
+      "remont-platy-stiralnoy-mashiny.html",
+      "remont-platy-vinnogo-shkafa.html",
+      "remont-ploskih-dvuhbakovyh-vodonagrevateley.html",
+      "remont-silovogo-modulya-indukcionnoy-paneli.html",
+      "remont-sistemy-ottaiki-morozilnika.html",
+      "remont-trehfaznyh-vodonagrevateley-380-400v.html",
+      "remont-ventilyatora-duhovki.html",
+      "remont-ventilyatora-sushilnoy-mashiny.html",
+      "remont-vstroennyh-vinnyh-shkafov.html",
+      "remont-zamka-posudomoechnoy-mashiny.html",
+      "srabotal-aquastop-posudomoechnoy-mashiny.html",
+      "stiralnaya-mashina-dolgo-stiraet.html",
+      "stiralnaya-mashina-nabiraet-i-srazu-slivaet-vodu.html",
+      "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "stiralnaya-mashina-ostanavlivaetsya-vo-vremya-stirki.html",
+      "stiralnaya-mashina-vybivaet-avtomat.html",
+      "sushilnaya-mashina-dolgo-sushit.html",
+      "sushilnaya-mashina-ne-greet.html",
+      "sushilnaya-mashina-ne-sobiraet-kondensat.html",
+      "sushilnaya-mashina-ne-sushit.html",
+      "sushilnaya-mashina-ne-vklyuchaetsya.html",
+      "sushilnaya-mashina-ne-zapuskaetsya.html",
+      "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "sushilnaya-mashina-shumit-i-skripit.html",
+      "sushilnye-mashiny.html",
+      "techet-sushilnaya-mashina.html",
+      "techet-voda-iz-morozilnika.html",
+      "tresnula-steklokeramika-varochnoy-paneli.html",
+      "umyagchenie-vody-dlya-vodonagrevatelya.html",
+      "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem.html",
+      "ustanovka-rasshiritelnogo-baka-dlya-vodonagrevatelya.html",
+      "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya.html",
+      "ustanovka-slivnogo-krana-vodonagrevatelya.html",
+      "vinnye-shkafy.html",
+      "vinnyy-shkaf-ne-derzhit-temperaturu.html",
+      "vinnyy-shkaf-ne-ohlazhdaet.html",
+      "vinnyy-shkaf-ne-vklyuchaetsya.html",
+      "vinnyy-shkaf-peremorazhivaet.html",
+      "vinnyy-shkaf-rabotaet-bez-ostanovki.html",
+      "vinnyy-shkaf-shumit.html",
+      "voda-ostaetsya-v-barabane-stiralnoy-mashiny.html",
+      "zamena-amortizatorov-stiralnoy-mashiny.html",
+      "zamena-flantsa-i-prokladki-vodonagrevatelya.html",
+      "zamena-kompressora-morozilnika.html",
+      "zamena-krylchatki-kuhonnoy-vytyazhki.html",
+      "zamena-manzhety-lyuka-stiralnoy-mashiny.html",
+      "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
+      "zamena-remnya-stiralnoy-mashiny.html",
+      "zamena-remnya-sushilnoy-mashiny.html",
+      "zamena-tena-duhovki.html",
+      "zamena-termostata-i-datchika-temperatury-vodonagrevatelya.html",
+      "zamena-zalivnogo-klapana-posudomoechnoy-mashiny.html",
+      "zamena-zalivnogo-klapana-stiralnoy-mashiny.html",
+      "zamena-zapornogo-krana-vodonagrevatelya.html"
+    ],
+    "skipStandardSectionIds": true,
+    "skipFallbackSync": true,
+    "guardScript": "npm run check:wine-cabinet-cluster"
   }
 }

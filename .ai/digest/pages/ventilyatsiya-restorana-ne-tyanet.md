@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/ventilyatsiya-restorana-ne-tyanet.html
 - Builder model: src/pages/ventilyatsiya-restorana-ne-tyanet/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1289
+- Text words inside referenced sections: 964
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вентиляция ресторана не тянет | breadcrumb | 40.2 KB | 1102 | no | src/pages/ventilyatsiya-restorana-ne-tyanet/sections/002-breadcrumb-ventilyaciya-restorana-ne-tyanet.html |
+| Вентиляция ресторана не тянет | breadcrumb | 30.9 KB | 777 | no | src/pages/ventilyatsiya-restorana-ne-tyanet/sections/002-breadcrumb-ventilyaciya-restorana-ne-tyanet.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/ventilyatsiya-restorana-ne-tyanet/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/ventilyatsiya-restorana-ne-tyanet/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/ventilyatsiya-restorana-ne-tyanet/sections/007-lead-form-forma-zayavki.html |

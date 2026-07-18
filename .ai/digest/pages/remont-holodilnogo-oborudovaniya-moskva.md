@@ -7,7 +7,7 @@
 - H1: Ремонт холодильного оборудования в Москве
 - Canonical: https://mospochin.ru/remont-holodilnogo-oborudovaniya-moskva.html
 - Builder model: src/pages/remont-holodilnogo-oborudovaniya-moskva/page.json
-- Sections: 7 (5 local, 0 shared refs, 0 raw)
+- Sections: 7 (3 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 233
 
 ## Component mix
@@ -28,8 +28,8 @@
 | --- | --- | --- | --- | --- | --- |
 | Ремонт холодильного оборудования в Москве | lead-form | 13.8 KB | 233 | no | src/pages/remont-holodilnogo-oborudovaniya-moskva/sections/002-lead-form-remont-holodil-nogo-oborudovaniya-v-moskve.html |
 | Секция 1 | body-preamble | 48 B | 0 | no | src/pages/remont-holodilnogo-oborudovaniya-moskva/sections/001-body-preamble-sekciya-1.html |
-| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/pages/remont-holodilnogo-oborudovaniya-moskva/sections/005-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| Мобильные контактные элементы | mobile-contact | 40 B | 0 | no | src/pages/remont-holodilnogo-oborudovaniya-moskva/sections/004-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Мобильные контактные элементы | mobile-contact | 42 B | 0 | no | src/components/parametric/mobile-contact/whatsapp-float-container.template.html |
+| Мобильные контактные элементы | mobile-contact | 41 B | 0 | no | src/components/parametric/mobile-contact/mobile-footer-container.template.html |
 | Footer mount point | footer-anchor | 34 B | 0 | no | src/components/parametric/static/footer-anchor-footer-container-mount-06f3fb249f34.template.html |
 | HTML-фрагмент | layout-fragment | 1 B | 0 | no | src/components/parametric/static/layout-fragment-technical-fragment-01ba4719c80b.template.html |
 | Подключение partials-injector | runtime-partials | 0 B | 0 | no | src/pages/remont-holodilnogo-oborudovaniya-moskva/sections/006-runtime-partials-podklyuchenie-partials-injector.html |

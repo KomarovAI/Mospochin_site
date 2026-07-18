@@ -3,7 +3,13 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { chromium } from 'playwright';
-import { getSystemChromiumLaunchOptions, LOCAL_VISUAL_ORIGIN, probePillowStitcher, resolveSystemChromium } from './visual-local-runtime.mjs';
+import {
+  getChromiumLaunchOptions,
+  getChromiumRuntimeSource,
+  LOCAL_VISUAL_ORIGIN,
+  probePillowStitcher,
+  resolveChromiumExecutable,
+} from './visual-local-runtime.mjs';
 
 const ROOT = process.cwd();
 const PAGE_NAME = process.env.VISUAL_ENV_PAGE || 'index.html';
@@ -43,8 +49,8 @@ let context;
 let page;
 let tempDir;
 try {
-  const executable = resolveSystemChromium();
-  if (!executable) throw new Error('System Chromium not found. Set PLAYWRIGHT_CHROMIUM_EXECUTABLE or CHROMIUM_PATH.');
+  const executable = resolveChromiumExecutable();
+  if (!executable) throw new Error('Chromium not found. Set a browser path or run npm run setup:visual:github.');
   const pillow = probePillowStitcher();
   if (!pillow.available) throw new Error(`Python Pillow full-page stitcher is unavailable: ${pillow.error || 'unknown error'}`);
   const htmlPath = path.join(ROOT, PAGE_NAME);
@@ -53,11 +59,12 @@ try {
   console.log('# visual-env: local-native');
   console.log(`node: ${process.version}`);
   console.log(`chromiumExecutable: ${executable}`);
+  console.log(`chromiumSource: ${getChromiumRuntimeSource(executable)}`);
   console.log('transport: Playwright page.setContent + route.fulfill');
   console.log('network navigation: not required');
   console.log(`fullPageStitcher: Python Pillow ${pillow.version}`);
 
-  browser = await chromium.launch(getSystemChromiumLaunchOptions());
+  browser = await chromium.launch(getChromiumLaunchOptions());
   context = await browser.newContext({ viewport: { width: 393, height: 852 }, deviceScaleFactor: 2 });
   page = await context.newPage();
   await page.route('**/*', async (route) => {
@@ -95,8 +102,8 @@ try {
 } catch (error) {
   console.error('❌ visual-env failed');
   console.error(String(error?.stack || error));
-  console.error('Primary visual path requires the preinstalled system Chromium and local-content routing.');
-  console.error('GitHub Actions is a manual fallback only; run the Visual Audit workflow with workflow_dispatch when local Chromium is genuinely unavailable.');
+  console.error('Primary visual path requires Chromium and local-content routing.');
+  console.error('Use a system/explicit browser locally, or the manually dispatched GitHub visual workflow with its Playwright-managed Chromium.');
   process.exitCode = 1;
 } finally {
   if (page) await page.close().catch(() => {});

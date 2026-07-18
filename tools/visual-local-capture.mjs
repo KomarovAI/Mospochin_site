@@ -6,7 +6,7 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { getAuditContractSummary, getDefaultArtifactDir, getSiteRoot } from './screenshot-audit-lib.mjs';
-import { probePillowStitcher, resolveSystemChromium } from './visual-local-runtime.mjs';
+import { getChromiumRuntimeSource, probePillowStitcher, resolveChromiumExecutable } from './visual-local-runtime.mjs';
 
 const ROOT = getSiteRoot();
 const NODE = process.execPath;
@@ -46,8 +46,9 @@ Options:
   --json                                      Print machine-readable summary
 
 Default behavior is resumable. A page is skipped only when its PNG files and visual fingerprint
-match the current HTML, manifest and local visual assets. The command uses preinstalled system
-Chromium plus Playwright local-content routing; it never downloads a browser or navigates localhost.`);
+match the current HTML, manifest and local visual assets. The command uses an explicit, system,
+or already-installed Playwright Chromium with local-content routing; it never downloads a browser
+or navigates localhost.`);
 }
 
 function sha256Buffer(buffer) {
@@ -343,8 +344,9 @@ async function captureMode({
     startedAt,
     completedAt: new Date().toISOString(),
     runtime: {
-      browser: 'system-chromium',
-      executable: resolveSystemChromium(),
+      browser: 'chromium',
+      executable: resolveChromiumExecutable(),
+      source: getChromiumRuntimeSource(),
       transport: 'playwright-local-content',
       navigation: 'page.setContent + route.fulfill',
       platform: `${os.platform()} ${os.release()} ${os.arch()}`,
@@ -384,8 +386,8 @@ try {
     process.exit(0);
   }
 
-  const systemChromium = resolveSystemChromium();
-  if (!systemChromium) throw new Error('System Chromium is unavailable; run npm run check:visual-env for diagnostics.');
+  const chromiumExecutable = resolveChromiumExecutable();
+  if (!chromiumExecutable) throw new Error('Chromium is unavailable; run npm run check:visual-env for diagnostics.');
 
   const requestedPages = args.page
     ? String(args.page).split(',').map((value) => value.trim()).filter(Boolean)

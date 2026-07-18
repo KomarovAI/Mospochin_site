@@ -2,9 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 import { installLocalSiteRoutes, analyticsInitScript } from './helpers/site-route.mjs';
+import { getChromiumLaunchOptions } from '../tools/visual-local-runtime.mjs';
 
 test('attribution v3 and cross-tab identity', {timeout:60000}, async () => {
-  const browser=await chromium.launch({headless:true, executablePath:process.env.CHROMIUM_PATH || '/usr/bin/chromium', args:['--no-sandbox']});
+  const browser=await chromium.launch(getChromiumLaunchOptions());
   try {
     const context=await browser.newContext();
     await context.addInitScript(analyticsInitScript);

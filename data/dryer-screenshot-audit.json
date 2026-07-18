@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-dryers",
+  "release": "DR1",
+  "checkedAt": "2026-07-17",
+  "status": "dr1-household-cluster",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/dryers/dr1",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9994
+  },
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1800
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "Desktop",
+      "width": 1440,
+      "height": 1080,
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    }
+  ],
+  "pages": [
+    {
+      "page": "sushilnye-mashiny.html",
+      "label": "Сушильные машины",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "sushilnaya-mashina-ne-sushit.html",
+      "label": "Не сушит бельё",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "sushilnaya-mashina-ne-greet.html",
+      "label": "Не нагревает",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "label": "Тепловой насос",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "techet-sushilnaya-mashina.html",
+      "label": "Течёт вода",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ]
+}

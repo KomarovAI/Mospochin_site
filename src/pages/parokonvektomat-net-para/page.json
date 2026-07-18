@@ -53,9 +53,14 @@
       "id": "004-breadcrumb-hlebnye-kroshki",
       "component": "breadcrumb",
       "label": "Хлебные крошки",
-      "file": "sections/004-breadcrumb-hlebnye-kroshki.html",
       "bytes": 908,
-      "hash": "ab3797c4c0e0f3c1"
+      "hash": "ab3797c4c0e0f3c1",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "cluster-parokonvektomaty-ac4fcdb92c94",
+      "templateRef": "src/components/parametric/breadcrumb/cluster-parokonvektomaty-ac4fcdb92c94.template.html",
+      "propsRef": "content/components/breadcrumb/parokonvektomat-net-para.json",
+      "sourceFile": "sections/004-breadcrumb-hlebnye-kroshki.html"
     },
     {
       "id": "005-raw-html-fragment",
@@ -158,17 +163,6 @@
       "hash": "7f924712bc288e3e"
     },
     {
-      "id": "014-proof-kakie-metriki-derzhim-po-zayavke-restorana",
-      "component": "proof",
-      "label": "Какие метрики держим по заявке ресторана",
-      "bytes": 2584,
-      "hash": "876442cdfe5982bc",
-      "componentRef": "src/components/shared/proof/proof-kakie-metriki-derzhim-po-zayavke-restorana--876442cdfe5982bc.html",
-      "componentScope": "shared",
-      "componentSignature": "876442cdfe5982bc",
-      "sourceFile": "sections/014-proof-kakie-metriki-derzhim-po-zayavke-restorana.html"
-    },
-    {
       "id": "015-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
@@ -193,17 +187,6 @@
       "templateRef": "src/components/parametric/static/layout-fragment-section-5-типы-пароконвектоматов-57b8fd0acc0a.template.html",
       "props": {},
       "sourceFile": "sections/016-raw-html-fragment.html"
-    },
-    {
-      "id": "017-section-remontiruem-vse-tipy-parokonvektomatov",
-      "component": "section",
-      "label": "Ремонтируем все типы пароконвектоматов",
-      "bytes": 6071,
-      "hash": "5ce5c0ec71cc04c7",
-      "componentRef": "src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--5ce5c0ec71cc04c7.html",
-      "componentScope": "shared",
-      "componentSignature": "5ce5c0ec71cc04c7",
-      "sourceFile": "sections/017-section-remontiruem-vse-tipy-parokonvektomatov.html"
     },
     {
       "id": "018-raw-html-fragment",
@@ -251,17 +234,6 @@
       "hash": "c5fd9ded353f8c13"
     },
     {
-      "id": "022-pricing-faktory-stoimosti-remonta",
-      "component": "pricing",
-      "label": "Факторы стоимости ремонта",
-      "bytes": 4610,
-      "hash": "f45dcc8d39e28fb1",
-      "componentRef": "src/components/shared/pricing/pricing-faktory-stoimosti-remonta--f45dcc8d39e28fb1.html",
-      "componentScope": "shared",
-      "componentSignature": "f45dcc8d39e28fb1",
-      "sourceFile": "sections/022-pricing-faktory-stoimosti-remonta.html"
-    },
-    {
       "id": "023-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
@@ -273,6 +245,17 @@
       "templateRef": "src/components/parametric/static/layout-fragment-section-7-что-сломалось-кликабельные-иконки-e44ac21a57bd.template.html",
       "props": {},
       "sourceFile": "sections/023-raw-html-fragment.html"
+    },
+    {
+      "id": "p2-pricing-kak-formiruyutsya-stoimost-i-srok-remonta",
+      "component": "pricing",
+      "label": "Как формируются стоимость и срок ремонта",
+      "bytes": 1953,
+      "hash": "10b13373c68636ab",
+      "componentRef": "src/components/shared/pricing/pricing-kak-formiruyutsya-stoimost-i-srok-remonta--10b13373c68636ab.html",
+      "componentScope": "shared",
+      "componentSignature": "10b13373c68636ab",
+      "sourceFile": null
     },
     {
       "id": "024-pricing-vyberite-problemu-utochnim-scenariy",
@@ -296,17 +279,6 @@
       "sourceFile": "sections/025-raw-html-fragment.html"
     },
     {
-      "id": "026-pricing-tipovye-obrascheniya-po-parokonvektomatam",
-      "component": "pricing",
-      "label": "Типовые обращения по пароконвектоматам",
-      "bytes": 2771,
-      "hash": "2ec348ad8aa1fabf",
-      "componentRef": "src/components/shared/pricing/pricing-tipovye-obrascheniya-po-parokonvektomatam--2ec348ad8aa1fabf.html",
-      "componentScope": "shared",
-      "componentSignature": "2ec348ad8aa1fabf",
-      "sourceFile": "sections/026-pricing-tipovye-obrascheniya-po-parokonvektomatam.html"
-    },
-    {
       "id": "027-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
@@ -318,17 +290,6 @@
       "templateRef": "src/components/parametric/static/layout-fragment-section-9-частые-поломки-детальные-карточки-2caf64f5f11f.template.html",
       "props": {},
       "sourceFile": "sections/027-raw-html-fragment.html"
-    },
-    {
-      "id": "028-section-chastye-polomki-parokonvektomatov",
-      "component": "section",
-      "label": "Частые поломки пароконвектоматов",
-      "bytes": 8681,
-      "hash": "16d8721c09cebb16",
-      "componentRef": "src/components/shared/section/section-chastye-polomki-parokonvektomatov--16d8721c09cebb16.html",
-      "componentScope": "shared",
-      "componentSignature": "16d8721c09cebb16",
-      "sourceFile": "sections/028-section-chastye-polomki-parokonvektomatov.html"
     },
     {
       "id": "029-raw-html-fragment",
@@ -344,34 +305,12 @@
       "sourceFile": "sections/029-raw-html-fragment.html"
     },
     {
-      "id": "030-pricing-kak-formiruyutsya-stoimost-i-srok-remonta",
-      "component": "pricing",
-      "label": "Как формируются стоимость и срок ремонта",
-      "bytes": 1953,
-      "hash": "10b13373c68636ab",
-      "componentRef": "src/components/shared/pricing/pricing-kak-formiruyutsya-stoimost-i-srok-remonta--10b13373c68636ab.html",
-      "componentScope": "shared",
-      "componentSignature": "10b13373c68636ab",
-      "sourceFile": "sections/030-pricing-kak-formiruyutsya-stoimost-i-srok-remonta.html"
-    },
-    {
       "id": "031-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
       "file": "sections/031-proof-dokazatel-stva-garantii.html",
       "bytes": 192,
       "hash": "9565a863065a52c5"
-    },
-    {
-      "id": "032-pricing-pochemu-restorany-obraschayutsya-v-servis",
-      "component": "pricing",
-      "label": "Почему рестораны обращаются в сервис",
-      "bytes": 4271,
-      "hash": "c90310c18594b2fe",
-      "componentRef": "src/components/shared/pricing/pricing-pochemu-restorany-obraschayutsya-v-servis--c90310c18594b2fe.html",
-      "componentScope": "shared",
-      "componentSignature": "c90310c18594b2fe",
-      "sourceFile": "sections/032-pricing-pochemu-restorany-obraschayutsya-v-servis.html"
     },
     {
       "id": "033-raw-html-fragment",
@@ -387,17 +326,6 @@
       "sourceFile": "sections/033-raw-html-fragment.html"
     },
     {
-      "id": "034-pricing-chto-fiksiruem-posle-diagnostiki",
-      "component": "pricing",
-      "label": "Что фиксируем после диагностики",
-      "bytes": 2463,
-      "hash": "83d87cfffd63e29b",
-      "componentRef": "src/components/shared/pricing/pricing-chto-fiksiruem-posle-diagnostiki--83d87cfffd63e29b.html",
-      "componentScope": "shared",
-      "componentSignature": "83d87cfffd63e29b",
-      "sourceFile": "sections/034-pricing-chto-fiksiruem-posle-diagnostiki.html"
-    },
-    {
       "id": "035-raw-html-fragment",
       "component": "layout-fragment",
       "label": "HTML-фрагмент",
@@ -411,34 +339,12 @@
       "sourceFile": "sections/035-raw-html-fragment.html"
     },
     {
-      "id": "036-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-",
-      "component": "pricing",
-      "label": "Как проходит ремонт без лишнего хаоса для кухни",
-      "bytes": 3199,
-      "hash": "dde82b4dee62b635",
-      "componentRef": "src/components/shared/pricing/pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-kuhni--dde82b4dee62b635.html",
-      "componentScope": "shared",
-      "componentSignature": "dde82b4dee62b635",
-      "sourceFile": "sections/036-pricing-kak-prohodit-remont-bez-lishnego-haosa-dlya-.html"
-    },
-    {
       "id": "037-proof-dokazatel-stva-garantii",
       "component": "proof",
       "label": "Доказательства/гарантии",
       "file": "sections/037-proof-dokazatel-stva-garantii.html",
       "bytes": 162,
       "hash": "0aa9f34b523e1f6a"
-    },
-    {
-      "id": "038-pricing-chto-poluchaet-kuhnya-posle-remonta",
-      "component": "pricing",
-      "label": "Что получает кухня после ремонта",
-      "bytes": 3244,
-      "hash": "87cd09941090b1d8",
-      "componentRef": "src/components/shared/pricing/pricing-chto-poluchaet-kuhnya-posle-remonta--87cd09941090b1d8.html",
-      "componentScope": "shared",
-      "componentSignature": "87cd09941090b1d8",
-      "sourceFile": "sections/038-pricing-chto-poluchaet-kuhnya-posle-remonta.html"
     },
     {
       "id": "039-raw-html-fragment",
@@ -568,9 +474,14 @@
       "id": "050-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok",
       "component": "lead-form",
       "label": "Получите понятный сценарий ремонта пароконвектомата",
-      "file": "sections/050-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html",
       "bytes": 7015,
-      "hash": "b15f20363fbdf257"
+      "hash": "b15f20363fbdf257",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "restaurant-parokonvektomat-b2b",
+      "templateRef": "src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-647ff67890ef.template.html",
+      "propsRef": "content/components/lead-form/parokonvektomat-net-para.json",
+      "sourceFile": "sections/050-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html"
     },
     {
       "id": "051-proof-dokazatel-stva-garantii",
@@ -579,17 +490,6 @@
       "file": "sections/051-proof-dokazatel-stva-garantii.html",
       "bytes": 182,
       "hash": "7aa05ccc83a83b5d"
-    },
-    {
-      "id": "052-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte",
-      "component": "pricing",
-      "label": "Что фиксируем до начала работ на объекте",
-      "bytes": 6194,
-      "hash": "179e76b534feb278",
-      "componentRef": "src/components/shared/pricing/pricing-chto-fiksiruem-do-nachala-rabot-na-obekte--179e76b534feb278.html",
-      "componentScope": "shared",
-      "componentSignature": "179e76b534feb278",
-      "sourceFile": "sections/052-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html"
     },
     {
       "id": "053-proof-dokazatel-stva-garantii",
@@ -606,14 +506,6 @@
       "file": "sections/054-proof-dokazatel-stva-garantii.html",
       "bytes": 182,
       "hash": "d0c02b385f4baba2"
-    },
-    {
-      "id": "055-related-links-esli-problema-v-drugom-restorannom-obo",
-      "component": "related-links",
-      "label": "Если проблема в другом ресторанном оборудовании",
-      "file": "sections/055-related-links-esli-problema-v-drugom-restorannom-obo.html",
-      "bytes": 2966,
-      "hash": "6ec637f12f2abfcf"
     },
     {
       "id": "056-related-links-svyazannye-stranicy",
@@ -700,17 +592,27 @@
       "id": "063-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/063-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "2b586b01fca76adb"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/063-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "064-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/064-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/064-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "065-raw-html-fragment",
@@ -738,7 +640,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 15,
+    "sharedSectionRefs": 5,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

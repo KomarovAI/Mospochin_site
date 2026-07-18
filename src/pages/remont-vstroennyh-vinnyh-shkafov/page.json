@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "remont-vstroennyh-vinnyh-shkafov.html",
+  "slug": "remont-vstroennyh-vinnyh-shkafov",
+  "route": "/remont-vstroennyh-vinnyh-shkafov.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Ремонт встроенных винных шкафов в Москве | MosPochin",
+  "h1": "Ремонт встроенных винных шкафов в Москве",
+  "source": {
+    "extractedFrom": "remont-vstroennyh-vinnyh-shkafov.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "faa622c6fafc7b4e0164dff71d62fbacdebb9733e29154eedfa1b7f6f88b7239",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9385,
+      "hash": "aa3a68e6de6e34a6",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/header-9bbd5dfdb994.template.html",
+      "propsRef": "src/pages/remont-vstroennyh-vinnyh-shkafov/props/wine-rf1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1047,
+      "hash": "af54cbef2ee981ac",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "remont_vstroennyh_vinnyh_shkafov_breadcrumb_1"
+          },
+          {
+            "href": "vinnye-shkafy.html",
+            "label": "Винные шкафы",
+            "ctaId": "remont_vstroennyh_vinnyh_shkafov_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Ремонт встроенных винных шкафов в Москве"
+      }
+    },
+    {
+      "id": "002-contact-cta-remont-vstroennyh-vinnyh-shkafov-v-moskv",
+      "component": "contact-cta",
+      "label": "Ремонт встроенных винных шкафов в Москве",
+      "file": "sections/002-contact-cta-remont-vstroennyh-vinnyh-shkafov-v-moskv.html",
+      "bytes": 2088,
+      "hash": "c74fd5d03c04375f"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1226,
+      "hash": "ee768001b02e1967",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/symptom-observations.template.html",
+      "propsRef": "src/pages/remont-vstroennyh-vinnyh-shkafov/props/wine-rf1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 2271,
+      "hash": "f7f61fd2b3a8fd96",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/remont-vstroennyh-vinnyh-shkafov/props/wine-rf1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "bytes": 680,
+      "hash": "01b78cbc5c0af887",
+      "componentRef": "src/components/shared/section/section-sekciya-stranicy--01b78cbc5c0af887.html",
+      "componentScope": "shared",
+      "componentSignature": "01b78cbc5c0af887",
+      "sourceFile": "sections/005-section-sekciya-stranicy.html"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1448,
+      "hash": "0c86b78636160ca4"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1826,
+      "hash": "28f3f19a3864f1d6"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4151,
+      "hash": "29c3b7993775d108"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "bytes": 2873,
+      "hash": "fbd7d9eb67a27743",
+      "componentRef": "src/components/shared/faq/faq-chastye-voprosy--3c9b5b2e5932a8e7.html",
+      "componentScope": "shared",
+      "componentSignature": "3c9b5b2e5932a8e7",
+      "sourceFile": "sections/009-faq-chastye-voprosy.html"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 4969,
+      "hash": "9636d976715d7e5b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/footer-71b3c4a81b57.template.html",
+      "propsRef": "src/pages/remont-vstroennyh-vinnyh-shkafov/props/wine-rf1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 552,
+      "hash": "95ff934c241e82e9",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/wine-rf1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/remont-vstroennyh-vinnyh-shkafov/props/wine-rf1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page remont-vstroennyh-vinnyh-shkafov.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 2,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

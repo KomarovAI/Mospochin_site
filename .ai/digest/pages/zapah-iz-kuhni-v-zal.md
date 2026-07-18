@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/zapah-iz-kuhni-v-zal.html
 - Builder model: src/pages/zapah-iz-kuhni-v-zal/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1284
+- Text words inside referenced sections: 961
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Запах из кухни попадает в зал | breadcrumb | 39.0 KB | 1097 | no | src/pages/zapah-iz-kuhni-v-zal/sections/002-breadcrumb-zapah-iz-kuhni-popadaet-v-zal.html |
+| Запах из кухни попадает в зал | breadcrumb | 29.7 KB | 774 | no | src/pages/zapah-iz-kuhni-v-zal/sections/002-breadcrumb-zapah-iz-kuhni-popadaet-v-zal.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/zapah-iz-kuhni-v-zal/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/zapah-iz-kuhni-v-zal/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/zapah-iz-kuhni-v-zal/sections/007-lead-form-forma-zayavki.html |

@@ -20,7 +20,7 @@ if (registry.visualRuntime !== 'data/visual-runtime.json') {
 }
 if (visualRuntime.primary?.mode !== 'local-native') errors.push('visual runtime: primary.mode must be local-native');
 if (visualRuntime.primary?.runner !== 'tools/visual-local-capture.mjs') errors.push('visual runtime: primary.runner must be tools/visual-local-capture.mjs');
-if (visualRuntime.primary?.browser !== 'system-chromium') errors.push('visual runtime: primary.browser must be system-chromium');
+if (visualRuntime.primary?.browser !== 'chromium') errors.push('visual runtime: primary.browser must be chromium');
 if (visualRuntime.primary?.transport !== 'playwright-local-content') errors.push('visual runtime: primary.transport must be playwright-local-content');
 if (visualRuntime.primary?.requiresLocalhost !== false) errors.push('visual runtime: requiresLocalhost must be false');
 if (visualRuntime.primary?.requiresBrowserDownload !== false) errors.push('visual runtime: requiresBrowserDownload must be false');

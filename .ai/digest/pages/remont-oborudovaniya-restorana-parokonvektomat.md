@@ -7,7 +7,7 @@
 - H1: Ремонт кухни ресторана: пароконвектоматы
 - Canonical: https://mospochin.ru/remont-oborudovaniya-restorana-parokonvektomat.html
 - Builder model: src/pages/remont-oborudovaniya-restorana-parokonvektomat/page.json
-- Sections: 73 (25 local, 14 shared refs, 2 raw)
+- Sections: 73 (21 local, 14 shared refs, 2 raw)
 - Text words inside referenced sections: 2488
 
 ## Component mix
@@ -37,7 +37,7 @@
 | Ремонт кухни ресторана: пароконвектоматы | hero | 9.5 KB | 99 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/006-hero-remont-kuhni-restorana-parokonvektomaty.html |
 | Мобильные контактные элементы | mobile-contact | 9.1 KB | 110 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Частые поломки пароконвектоматов | section | 8.6 KB | 202 | yes | src/components/shared/section/section-chastye-polomki-parokonvektomatov--92107a1adc63b709.html |
-| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.8 KB | 104 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/057-lead-form-poluchite-ponyatnyy-scenariy-remonta-parok.html |
+| Получите понятный сценарий ремонта пароконвектомата | lead-form | 6.8 KB | 104 | no | src/components/parametric/lead-form/restaurant-parokonvektomat-b2b-fc5ab080a2f1.template.html |
 | Частые вопросы о ремонте пароконвектоматов | faq | 6.4 KB | 233 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/052-faq-chastye-voprosy-o-remonte-parokonvektomatov.html |
 | Что фиксируем до начала работ на объекте | pricing | 6.1 KB | 179 | no | src/pages/remont-oborudovaniya-restorana-parokonvektomat/sections/059-pricing-chto-fiksiruem-do-nachala-rabot-na-ob-ekte.html |
 | Ремонтируем все типы пароконвектоматов | section | 6.0 KB | 125 | yes | src/components/shared/section/section-remontiruem-vse-tipy-parokonvektomatov--66391bf17107a40d.html |

@@ -7,7 +7,7 @@
 - H1: Коды ошибок sous-vide
 - Canonical: https://mospochin.ru/kody-oshibok-sous-vide.html
 - Builder model: src/pages/kody-oshibok-sous-vide/page.json
-- Sections: 16 (12 local, 0 shared refs, 0 raw)
+- Sections: 16 (11 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 688
 
 ## Component mix
@@ -40,7 +40,7 @@
 | Матрица причин | cause-matrix | 3.2 KB | 115 | no | src/pages/kody-oshibok-sous-vide/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.8 KB | 103 | no | src/pages/kody-oshibok-sous-vide/sections/070-repair-scope.html |
 | FAQ — частые вопросы | faq | 2.0 KB | 85 | no | src/pages/kody-oshibok-sous-vide/sections/090-faq.html |
-| Безопасная проверка | safe-self-check | 1.9 KB | 50 | no | src/pages/kody-oshibok-sous-vide/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 1.9 KB | 50 | no | src/components/parametric/safe-self-check/default.template.html |
 | Сервисная диагностика | service-diagnostics | 1.9 KB | 48 | no | src/pages/kody-oshibok-sous-vide/sections/060-service-diagnostics.html |
 | Первый экран | hero | 1.7 KB | 42 | no | src/pages/kody-oshibok-sous-vide/sections/010-hero.html |
 

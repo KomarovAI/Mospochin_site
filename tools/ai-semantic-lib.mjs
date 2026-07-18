@@ -308,8 +308,8 @@ export function classifyFile(file, index = null) {
     checks.add('npm run check:site-builder');
     checks.add('npm run validate:site');
     notes.push(normalized.includes('/schema/')
-      ? 'Generated FAQPage JSON-LD: не редактировать вручную, пересоздавать через generate:faq-registry.'
-      : 'FAQ registry синхронизирует видимые FAQ-блоки и generated FAQPage schema.');
+      ? 'Retired FAQPage JSON-LD: файл не должен существовать; запусти generate:faq-registry.'
+      : 'FAQ registry индексирует видимые FAQ-блоки; FAQPage schema отключена.');
     try {
       const registry = JSON.parse(readProjectFile('content/faq/page-faq-registry.json') || '{}');
       if (normalized === 'content/faq/page-faq-registry.json') {

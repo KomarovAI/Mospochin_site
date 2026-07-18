@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/remont-vytyazhki-restorana.html
 - Builder model: src/pages/remont-vytyazhki-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1263
+- Text words inside referenced sections: 944
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Ремонт вытяжки на кухне ресторана | breadcrumb | 39.6 KB | 1076 | no | src/pages/remont-vytyazhki-restorana/sections/002-breadcrumb-remont-vytyazhki-na-kuhne-restorana.html |
+| Ремонт вытяжки на кухне ресторана | breadcrumb | 30.4 KB | 757 | no | src/pages/remont-vytyazhki-restorana/sections/002-breadcrumb-remont-vytyazhki-na-kuhne-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/remont-vytyazhki-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/remont-vytyazhki-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/remont-vytyazhki-restorana/sections/007-lead-form-forma-zayavki.html |

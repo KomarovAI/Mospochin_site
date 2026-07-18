@@ -1,5 +1,10 @@
 {
-  "allowedTones": ["slate", "orange", "blue", "green"],
+  "allowedTones": [
+    "slate",
+    "orange",
+    "blue",
+    "green"
+  ],
   "ctaVocabulary": [
     "Открыть страницу",
     "Открыть полный каталог",
@@ -11,47 +16,128 @@
   "variants": {
     "categoryCards": {
       "cardType": "service-card",
-      "allowedTones": ["slate", "orange", "blue", "green"]
+      "allowedTones": [
+        "slate",
+        "orange",
+        "blue",
+        "green"
+      ]
     },
     "trustCards": {
       "cardType": "trust-card",
-      "allowedTones": ["slate", "orange", "blue", "green"]
+      "allowedTones": [
+        "slate",
+        "orange",
+        "blue",
+        "green"
+      ]
     },
     "proofCards": {
       "cardType": "proof-card",
-      "allowedTones": ["slate", "orange", "blue", "green"]
+      "allowedTones": [
+        "slate",
+        "orange",
+        "blue",
+        "green"
+      ]
     },
     "objectionCards": {
       "cardType": "objection-card",
-      "allowedTones": ["slate", "orange", "blue", "green"]
+      "allowedTones": [
+        "slate",
+        "orange",
+        "blue",
+        "green"
+      ]
     },
     "reviewCards": {
       "cardType": "review-card",
-      "allowedTones": ["slate", "orange", "blue", "green"]
+      "allowedTones": [
+        "slate",
+        "orange",
+        "blue",
+        "green"
+      ]
     },
     "caseCards": {
       "cardType": "case-card",
-      "allowedTones": ["slate", "orange", "blue", "green"]
+      "allowedTones": [
+        "slate",
+        "orange",
+        "blue",
+        "green"
+      ]
     },
     "contactChannels": {
       "cardType": "contact-card",
-      "allowedTones": ["slate", "orange", "blue", "green"]
+      "allowedTones": [
+        "slate",
+        "orange",
+        "blue",
+        "green"
+      ]
     }
   },
   "pageIcons": {
     "holodilniki.html": "ri-snowy-line",
-    "stiralnye-mashiny.html": "ri-loader-4-line",
+    "stiralnye-mashiny.html": "ri-shirt-line",
     "posudomoyki.html": "ri-drop-line",
     "plity.html": "ri-fire-line",
     "microwaves.html": "ri-cpu-line",
-    "water-heaters.html": "ri-temp-hot-line"
+    "water-heaters.html": "ri-water-flash-line",
+    "remont-nakopitelnyh-vodonagrevateley.html": "ri-water-flash-line",
+    "remont-protochnyh-vodonagrevateley.html": "ri-flashlight-line",
+    "diagnostika-vodonagrevatelya.html": "ri-search-eye-line",
+    "vodonagrevatel-ne-greet-vodu.html": "ri-temp-cold-line",
+    "vodonagrevatel-techet.html": "ri-drop-line",
+    "vodonagrevatel-vybivaet-avtomat.html": "ri-shut-down-line",
+    "vodonagrevatel-ne-vklyuchaetsya.html": "ri-power-line",
+    "vodonagrevatel-medlenno-greet-vodu.html": "ri-timer-line",
+    "zamena-tena-vodonagrevatelya.html": "ri-tools-line",
+    "chistka-vodonagrevatelya-ot-nakipi.html": "ri-bubble-chart-line",
+    "diagnostika-stiralnoy-mashiny.html": "ri-search-eye-line",
+    "stiralnaya-mashina-ne-slivaet-vodu.html": "ri-water-flash-line",
+    "stiralnaya-mashina-ne-otzhimaet.html": "ri-refresh-line",
+    "stiralnaya-mashina-techet.html": "ri-drop-line",
+    "stiralnaya-mashina-shumit-pri-otzhime.html": "ri-volume-up-line",
+    "stiralnaya-mashina-prygaet-i-vibriruet.html": "ri-rhythm-line",
+    "stiralnaya-mashina-ne-vklyuchaetsya.html": "ri-power-line",
+    "stiralnaya-mashina-ne-nabiraet-vodu.html": "ri-water-percent-line",
+    "stiralnaya-mashina-ne-greet-vodu.html": "ri-temp-hot-line",
+    "ne-krutitsya-baraban-stiralnoy-mashiny.html": "ri-disc-line",
+    "zamena-slivnogo-nasosa-stiralnoy-mashiny.html": "ri-settings-3-line",
+    "zamena-tena-stiralnoy-mashiny.html": "ri-flashlight-line",
+    "zamena-podshipnikov-stiralnoy-mashiny.html": "ri-settings-5-line"
   },
   "pageTones": {
     "holodilniki.html": "blue",
-    "stiralnye-mashiny.html": "green",
+    "stiralnye-mashiny.html": "blue",
     "posudomoyki.html": "slate",
     "plity.html": "orange",
     "microwaves.html": "slate",
-    "water-heaters.html": "blue"
+    "water-heaters.html": "blue",
+    "remont-nakopitelnyh-vodonagrevateley.html": "orange",
+    "remont-protochnyh-vodonagrevateley.html": "slate",
+    "diagnostika-vodonagrevatelya.html": "green",
+    "vodonagrevatel-ne-greet-vodu.html": "blue",
+    "vodonagrevatel-techet.html": "orange",
+    "vodonagrevatel-vybivaet-avtomat.html": "slate",
+    "vodonagrevatel-ne-vklyuchaetsya.html": "green",
+    "vodonagrevatel-medlenno-greet-vodu.html": "blue",
+    "zamena-tena-vodonagrevatelya.html": "orange",
+    "chistka-vodonagrevatelya-ot-nakipi.html": "slate",
+    "diagnostika-stiralnoy-mashiny.html": "orange",
+    "stiralnaya-mashina-ne-slivaet-vodu.html": "slate",
+    "stiralnaya-mashina-ne-otzhimaet.html": "green",
+    "stiralnaya-mashina-techet.html": "blue",
+    "stiralnaya-mashina-shumit-pri-otzhime.html": "orange",
+    "stiralnaya-mashina-prygaet-i-vibriruet.html": "slate",
+    "stiralnaya-mashina-ne-vklyuchaetsya.html": "green",
+    "stiralnaya-mashina-ne-nabiraet-vodu.html": "blue",
+    "stiralnaya-mashina-ne-greet-vodu.html": "orange",
+    "ne-krutitsya-baraban-stiralnoy-mashiny.html": "slate",
+    "zamena-slivnogo-nasosa-stiralnoy-mashiny.html": "green",
+    "zamena-tena-stiralnoy-mashiny.html": "blue",
+    "zamena-podshipnikov-stiralnoy-mashiny.html": "orange"
   }
 }

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "cluster": "microwaves",
+  "primaryScope": [
+    "domestic microwave ovens",
+    "freestanding",
+    "built-in",
+    "solo",
+    "grill",
+    "convection",
+    "inverter"
+  ],
+  "boundaries": [
+    {
+      "intent": "commercial high-power microwave",
+      "status": "excluded",
+      "reason": "professional equipment branch"
+    },
+    {
+      "intent": "combined full-size oven with microwave",
+      "status": "adjacent",
+      "reason": "separate cooking appliance diagnostics"
+    },
+    {
+      "intent": "user high-voltage repair instructions",
+      "status": "prohibited",
+      "reason": "dangerous stored energy and microwave shielding"
+    }
+  ],
+  "cannibalizationRules": [
+    {
+      "page": "microwaves.html",
+      "owns": "generic domestic microwave repair hub"
+    },
+    {
+      "page": "remont-vstroennyh-mikrovolnovok.html",
+      "owns": "built-in microwave repair"
+    },
+    {
+      "pattern": "mikrovolnovka-*.html",
+      "owns": "single observable symptom"
+    },
+    {
+      "pattern": "zamena-*-mikrovolnovke.html",
+      "owns": "confirmed service operation"
+    }
+  ]
+}

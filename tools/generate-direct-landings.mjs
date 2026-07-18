@@ -101,16 +101,8 @@ function setRobots(html, robots) {
 
 
 function updateFaqRegistrySchema(html, page) {
-  const canonical = canonicalFor(page.file);
   const pattern = /(<script type="application\/ld\+json" data-generated="faq-registry">)([\s\S]*?)(<\/script>)/;
-  const match = html.match(pattern);
-  if (!match) return html;
-
-  let schema = match[2];
-  schema = schema.replace(/("@id":\s*")[^"]*("\s*,)/, `$1${escapeAttr(`${canonical}#faq`)}$2`);
-  schema = schema.replace(/("url":\s*")[^"]*("\s*,)/, `$1${escapeAttr(canonical)}$2`);
-  schema = schema.replace(/("name":\s*")[^"]*("\s*,)/, `$1${escapeAttr(page.title)}$2`);
-  return html.replace(pattern, `${match[1]}${schema}${match[3]}`);
+  return html.replace(pattern, '');
 }
 
 function updateJsonLdDescription(html, description) {
@@ -389,15 +381,6 @@ function renderCompactServicePage(page) {
               <summary class="cursor-pointer font-bold text-brand-blue">${escapeHtml(question)}</summary>
               <p class="mt-3 leading-relaxed text-slate-600">${escapeHtml(answer)}</p>
             </details>`).join('');
-  const faqSchema = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map(([question, answer]) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: { '@type': 'Answer', text: answer },
-    })),
-  }, null, 2);
   const serviceSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -438,7 +421,6 @@ function renderCompactServicePage(page) {
   <link rel="canonical" href="${escapeAttr(canonical)}">
   <meta name="robots" content="${escapeAttr(page.robots ?? 'noindex,follow')}">
   <script type="application/ld+json">${serviceSchema}</script>
-  <script type="application/ld+json" data-generated="faq-registry">${faqSchema}</script>
   <script type="application/ld+json">${breadcrumbSchema}</script>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white branch-${escapeAttr(page.branch ?? 'restaurant')} ${escapeAttr(page.bodyClass ?? 'page-direct')} page-direct-landing page-${slug}" data-page-slug="${slug}" data-page-intent="promo" data-equipment="${escapeAttr(page.equipment ?? 'site')}" data-brand="${escapeAttr(page.brand ?? '')}" data-service="repair" data-commercial-segment="b2b_kitchen" data-page-version="${escapeAttr(page.pageVersion ?? '2026-07-14-direct-v1')}" data-direct-ad-ids="${escapeAttr((page.directAdIds ?? []).join(','))}">

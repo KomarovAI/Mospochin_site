@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "cluster": "microwaves",
+  "equipmentFamilies": [
+    "freestanding",
+    "built_in",
+    "solo",
+    "grill",
+    "convection",
+    "inverter"
+  ],
+  "symptoms": [
+    {
+      "symptomId": "microwave.no_heat",
+      "page": "mikrovolnovka-ne-greet.html",
+      "probableNodes": [
+        "settings",
+        "door_interlocks",
+        "power",
+        "thermal_protection",
+        "magnetron",
+        "inverter_or_transformer",
+        "control_board"
+      ],
+      "prohibitedClaims": [
+        "не греет — всегда магнетрон"
+      ]
+    },
+    {
+      "symptomId": "microwave.sparking",
+      "page": "mikrovolnovka-iskrit-i-treshchit.html",
+      "probableNodes": [
+        "cookware",
+        "contamination",
+        "mica",
+        "waveguide",
+        "enamel",
+        "coupler",
+        "high_voltage"
+      ],
+      "prohibitedClaims": [
+        "искрит — всегда слюда"
+      ]
+    },
+    {
+      "symptomId": "microwave.no_power",
+      "page": "mikrovolnovka-ne-vklyuchaetsya.html",
+      "probableNodes": [
+        "outlet",
+        "cable",
+        "line_filter",
+        "fuse",
+        "thermal_cutout",
+        "power_board"
+      ],
+      "prohibitedClaims": [
+        "не включается — всегда предохранитель"
+      ]
+    },
+    {
+      "symptomId": "microwave.no_start",
+      "page": "mikrovolnovka-ne-zapuskaetsya.html",
+      "probableNodes": [
+        "child_lock",
+        "door_latches",
+        "interlocks",
+        "start_button",
+        "control_board"
+      ],
+      "prohibitedClaims": [
+        "можно прижать дверцу рукой"
+      ]
+    },
+    {
+      "symptomId": "microwave.no_turntable",
+      "page": "ne-krutitsya-tarelka-v-mikrovolnovke.html",
+      "probableNodes": [
+        "turntable_setting",
+        "roller_ring",
+        "coupler",
+        "motor",
+        "wiring",
+        "control_board"
+      ],
+      "prohibitedClaims": [
+        "не крутится — всегда двигатель"
+      ]
+    },
+    {
+      "symptomId": "microwave.noise",
+      "page": "mikrovolnovka-shumit-i-gudit.html",
+      "probableNodes": [
+        "installation",
+        "turntable",
+        "fan",
+        "transformer_or_inverter",
+        "magnetron",
+        "relay"
+      ],
+      "prohibitedClaims": [
+        "гудит — всегда магнетрон"
+      ]
+    },
+    {
+      "symptomId": "microwave.controls",
+      "page": "ne-rabotayut-knopki-mikrovolnovki.html",
+      "probableNodes": [
+        "child_lock",
+        "contamination",
+        "moisture",
+        "membrane_keyboard",
+        "ribbon",
+        "encoder",
+        "control_board"
+      ],
+      "prohibitedClaims": [
+        "не работают кнопки — всегда плата"
+      ]
+    },
+    {
+      "symptomId": "microwave.door",
+      "page": "dvertsa-mikrovolnovki-ne-zakryvaetsya.html",
+      "probableNodes": [
+        "debris",
+        "latches",
+        "springs",
+        "hinges",
+        "interlocks",
+        "door_geometry"
+      ],
+      "prohibitedClaims": [
+        "можно обойти блокировку"
+      ]
+    },
+    {
+      "symptomId": "microwave.breaker",
+      "page": "mikrovolnovka-vybivaet-avtomat.html",
+      "probableNodes": [
+        "outlet",
+        "cable",
+        "line_filter",
+        "door_switch_sequence",
+        "high_voltage",
+        "insulation"
+      ],
+      "prohibitedClaims": [
+        "можно включать повторно"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "baselineDate": "2026-07-18",
+  "purpose": "Fail closed when the static architecture regresses in scale, compression, runtime payload or operator surface.",
+  "runtimeFiles": [
+    "main.js",
+    "analytics.js",
+    "telegram-form.js",
+    "styles-combined.css"
+  ],
+  "checks": [
+    {
+      "metric": "source.rootHtmlPages",
+      "operator": "exact",
+      "value": 500
+    },
+    {
+      "metric": "source.builderPages",
+      "operator": "exact",
+      "value": 500
+    },
+    {
+      "metric": "source.srcPageFiles",
+      "operator": "max",
+      "value": 6404
+    },
+    {
+      "metric": "source.srcPageHtmlFiles",
+      "operator": "max",
+      "value": 5341
+    },
+    {
+      "metric": "source.localSections",
+      "operator": "max",
+      "value": 3841
+    },
+    {
+      "metric": "source.compressedSectionRefs",
+      "operator": "min",
+      "value": 3069
+    },
+    {
+      "metric": "source.sharedCoverageRatio",
+      "operator": "min",
+      "value": 0.444
+    },
+    {
+      "metric": "source.averageLocalSectionsPerPage",
+      "operator": "max",
+      "value": 7.682
+    },
+    {
+      "metric": "runtime.payloadBytes",
+      "operator": "max",
+      "value": 298869,
+      "baseline": 295910,
+      "allowedGrowthPercent": 1
+    },
+    {
+      "metric": "tooling.packageScripts",
+      "operator": "max",
+      "value": 337
+    },
+    {
+      "metric": "tooling.publicCliRoutes",
+      "operator": "max",
+      "value": 12
+    },
+    {
+      "metric": "clusters.contracts",
+      "operator": "exact",
+      "value": 16
+    }
+  ]
+}

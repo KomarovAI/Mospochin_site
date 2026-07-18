@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-dryers",
+  "hub": "sushilnye-mashiny.html",
+  "edges": [
+    {
+      "from": "sushilnye-mashiny.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnye-mashiny.html",
+      "to": "sushilnaya-mashina-ne-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnye-mashiny.html",
+      "to": "sushilnaya-mashina-dolgo-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnye-mashiny.html",
+      "to": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-sushilnoy-mashiny.html",
+      "to": "sushilnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ne-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "diagnostika-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-sushit.html",
+      "to": "sushilnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-sushit.html",
+      "to": "sushilnaya-mashina-dolgo-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-sushit.html",
+      "to": "sushilnaya-mashina-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-sushit.html",
+      "to": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-dolgo-sushit.html",
+      "to": "sushilnaya-mashina-ne-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-dolgo-sushit.html",
+      "to": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-dolgo-sushit.html",
+      "to": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-dolgo-sushit.html",
+      "to": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-greet.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-greet.html",
+      "to": "remont-nagreva-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-greet.html",
+      "to": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-greet.html",
+      "to": "sushilnaya-mashina-ne-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-krutitsya-baraban-sushilnoy-mashiny.html",
+      "to": "sushilnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-krutitsya-baraban-sushilnoy-mashiny.html",
+      "to": "zamena-remnya-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-krutitsya-baraban-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-shumit-i-skripit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-krutitsya-baraban-sushilnoy-mashiny.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-vklyuchaetsya.html",
+      "to": "sushilnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-vklyuchaetsya.html",
+      "to": "sushilnaya-mashina-ne-zapuskaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-vklyuchaetsya.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-vklyuchaetsya.html",
+      "to": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-zapuskaetsya.html",
+      "to": "sushilnaya-mashina-ne-vklyuchaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-zapuskaetsya.html",
+      "to": "sushilnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-zapuskaetsya.html",
+      "to": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-zapuskaetsya.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "to": "sushilnaya-mashina-ne-zapuskaetsya.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "to": "sushilnaya-mashina-dolgo-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "to": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-shumit-i-skripit.html",
+      "to": "ne-krutitsya-baraban-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-shumit-i-skripit.html",
+      "to": "zamena-remnya-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-shumit-i-skripit.html",
+      "to": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-shumit-i-skripit.html",
+      "to": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "techet-sushilnaya-mashina.html",
+      "to": "sushilnaya-mashina-ne-sobiraet-kondensat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "techet-sushilnaya-mashina.html",
+      "to": "sushilnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "techet-sushilnaya-mashina.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "techet-sushilnaya-mashina.html",
+      "to": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-sobiraet-kondensat.html",
+      "to": "techet-sushilnaya-mashina.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-sobiraet-kondensat.html",
+      "to": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-sobiraet-kondensat.html",
+      "to": "sushilnaya-mashina-ne-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "sushilnaya-mashina-ne-sobiraet-kondensat.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ne-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-dolgo-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ne-sobiraet-kondensat.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-remnya-sushilnoy-mashiny.html",
+      "to": "ne-krutitsya-baraban-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-remnya-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-shumit-i-skripit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-remnya-sushilnoy-mashiny.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "zamena-remnya-sushilnoy-mashiny.html",
+      "to": "sushilnye-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-dolgo-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-shumit-i-skripit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "to": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-nagreva-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ne-greet.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-nagreva-sushilnoy-mashiny.html",
+      "to": "ne-rabotaet-teplovoy-nasos-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-nagreva-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ne-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "remont-nagreva-sushilnoy-mashiny.html",
+      "to": "diagnostika-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-dolgo-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ne-sushit.html",
+      "type": "contextual"
+    },
+    {
+      "from": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "to": "remont-ventilyatora-sushilnoy-mashiny.html",
+      "type": "contextual"
+    },
+    {
+      "from": "chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html",
+      "to": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+      "type": "contextual"
+    }
+  ]
+}

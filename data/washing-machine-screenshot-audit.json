@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "cluster": "washing-machines",
+  "release": "WM2",
+  "checkedAt": "2026-07-17",
+  "status": "wm2-expanded",
+  "runtime": "local-native",
+  "artifactRoot": ".artifacts/screenshots/washing/wm2",
+  "browser": "chromium",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9992
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "width": 1440,
+      "height": 1080,
+      "label": "Desktop",
+      "deviceScaleFactor": 1
+    },
+    {
+      "id": "mobile",
+      "width": 393,
+      "height": 852,
+      "isMobile": true,
+      "hasTouch": true,
+      "label": "Mobile",
+      "deviceScaleFactor": 2
+    }
+  ],
+  "pages": [
+    {
+      "page": "stiralnye-mashiny.html",
+      "label": "Ремонт стиральных машин в Москве на дому",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "stiralnaya-mashina-ne-otkryvaetsya.html",
+      "label": "Не открывается люк",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "stiralnaya-mashina-vybivaet-avtomat.html",
+      "label": "Выбивает автомат или УЗО",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "zamena-amortizatorov-stiralnoy-mashiny.html",
+      "label": "Замена амортизаторов",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "remont-platy-stiralnoy-mashiny.html",
+      "label": "Ремонт платы управления",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    }
+  ],
+  "waitStrategy": {
+    "networkIdleTimeoutMs": 1500,
+    "postLoadDelayMs": 1800
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "stiralnaya-mashina-ne-otkryvaetsya.html",
+  "slug": "stiralnaya-mashina-ne-otkryvaetsya",
+  "route": "/stiralnaya-mashina-ne-otkryvaetsya.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Стиральная машина не открывается — диагностика в Москве | MosPochin",
+  "h1": "Стиральная машина не открывается после стирки",
+  "source": {
+    "extractedFrom": "stiralnaya-mashina-ne-otkryvaetsya.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "0c540df55afe0282e734912457ad1fdfad7b4751728b6b3c1a22d10f3a2257fb",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9500,
+      "hash": "20911a8984bf26f6",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-ne-otkryvaetsya/props/wm2-header.json"
+    },
+    {
+      "id": "002-mobile-contact-stiral-naya-mashina-ne-otkryvaetsya-p",
+      "component": "mobile-contact",
+      "label": "Стиральная машина не открывается после стирки",
+      "file": "sections/002-mobile-contact-stiral-naya-mashina-ne-otkryvaetsya-p.html",
+      "bytes": 1967,
+      "hash": "56262aed63fffaa6"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1075,
+      "hash": "ea42ae5cc0fb7259",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "stiralnaya_mashina_ne_otkryvaetsya_breadcrumb_1"
+          },
+          {
+            "href": "stiralnye-mashiny.html",
+            "label": "Стиральные машины",
+            "ctaId": "stiralnaya_mashina_ne_otkryvaetsya_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Стиральная машина не открывается после стирки"
+      }
+    },
+    {
+      "id": "003-section-kak-proyavlyaetsya-problema",
+      "component": "section",
+      "label": "Как проявляется проблема",
+      "bytes": 1012,
+      "hash": "1f3efe65068589b9",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/observations.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-ne-otkryvaetsya/props/wm2-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1960,
+      "hash": "a06b70ecb1e874b5",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/safe-diagnostics.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-ne-otkryvaetsya/props/wm2-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 573,
+      "hash": "5781c00069e35661"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1190,
+      "hash": "e1b319f614d5bdc7"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy",
+      "component": "section",
+      "label": "Связанные страницы",
+      "file": "sections/007-section-svyazannye-stranicy.html",
+      "bytes": 1614,
+      "hash": "ade53aa3742f3cf7"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 1672,
+      "hash": "71b1388e691d016b"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 1652,
+      "hash": "f35b1ef56373c6e9"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5056,
+      "hash": "29f353d05c28ad47",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/washing-wm2/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/stiralnaya-mashina-ne-otkryvaetsya/props/wm2-footer.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run doctor:household-page -- --page stiralnaya-mashina-ne-otkryvaetsya.html",
+    "npm run doctor:page -- --page stiralnaya-mashina-ne-otkryvaetsya.html",
+    "npm run validate:site",
+    "npm run check:site-builder",
+    "npm run ai:semantic-diff -- --page stiralnaya-mashina-ne-otkryvaetsya.html"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

@@ -37,12 +37,30 @@
       "hash": "6774a5726308cb19"
     },
     {
-      "id": "003-breadcrumb-hlebnye-kroshki",
+      "id": "p1-household-breadcrumb",
       "component": "breadcrumb",
-      "label": "Хлебные крошки",
-      "file": "sections/003-breadcrumb-hlebnye-kroshki.html",
-      "bytes": 889,
-      "hash": "d9e0683eb1138e81"
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1095,
+      "hash": "f32b112d3a698df2",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "kompyutery_breadcrumb_1"
+          },
+          {
+            "href": "bytovaya-uslugi.html",
+            "label": "Другие услуги",
+            "ctaId": "kompyutery_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Компьютер или ноутбук тормозит, шумит или не включается? Вернём в работу без лишних замен"
+      }
     },
     {
       "id": "004-hero-komp-yuter-ili-noutbuk-tormozit-shumit-ili-ne-v",
@@ -457,17 +475,27 @@
       "id": "051-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/051-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-      "bytes": 42,
-      "hash": "c1651e02864eed09"
+      "bytes": 41,
+      "hash": "b173d293386c47b4",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "mobile-footer-container",
+      "templateRef": "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
+      "props": {},
+      "sourceFile": "sections/051-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "052-mobile-contact-mobil-nye-kontaktnye-elementy",
       "component": "mobile-contact",
       "label": "Мобильные контактные элементы",
-      "file": "sections/052-mobile-contact-mobil-nye-kontaktnye-elementy.html",
       "bytes": 42,
-      "hash": "e7df22d1cd35cc86"
+      "hash": "e7df22d1cd35cc86",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "whatsapp-float-container",
+      "templateRef": "src/components/parametric/mobile-contact/whatsapp-float-container.template.html",
+      "props": {},
+      "sourceFile": "sections/052-mobile-contact-mobil-nye-kontaktnye-elementy.html"
     },
     {
       "id": "053-raw-html-fragment",
@@ -496,7 +524,7 @@
     "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
   ],
   "componentStats": {
-    "sharedSectionRefs": 6,
+    "sharedSectionRefs": 5,
     "sharedSectionMinBytes": 512,
     "sharedSectionMinRefs": 2
   }

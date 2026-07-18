@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/zhir-v-vozduhovodah-restorana.html
 - Builder model: src/pages/zhir-v-vozduhovodah-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1222
+- Text words inside referenced sections: 904
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Жир в воздуховодах ресторана | breadcrumb | 38.2 KB | 1035 | no | src/pages/zhir-v-vozduhovodah-restorana/sections/002-breadcrumb-zhir-v-vozduhovodah-restorana.html |
+| Жир в воздуховодах ресторана | breadcrumb | 29.1 KB | 717 | no | src/pages/zhir-v-vozduhovodah-restorana/sections/002-breadcrumb-zhir-v-vozduhovodah-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/zhir-v-vozduhovodah-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.8 KB | 77 | no | src/pages/zhir-v-vozduhovodah-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/zhir-v-vozduhovodah-restorana/sections/007-lead-form-forma-zayavki.html |

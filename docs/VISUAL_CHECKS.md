@@ -5,7 +5,7 @@
 Основной способ снимать скриншоты в рабочей среде проекта:
 
 ```text
-system Chromium
+Chromium (explicit, system or already installed by Playwright)
 → Playwright
 → page.setContent(root HTML)
 → route.fulfill(local CSS/JS/images)
@@ -41,10 +41,8 @@ npm run audit:visual-smoke
 
 1. `PLAYWRIGHT_CHROMIUM_EXECUTABLE`;
 2. `CHROMIUM_PATH`;
-3. `/usr/bin/chromium`;
-4. `/usr/bin/chromium-browser`;
-5. `/usr/bin/google-chrome`;
-6. `/usr/bin/google-chrome-stable`.
+3. системный Chromium/Chrome;
+4. уже установленный Playwright Chromium из ручного fallback-контура.
 
 ## Главные команды
 
@@ -155,7 +153,7 @@ npm run check:visual
 Их запускают вручную через **Actions → Run workflow**. Они не должны запускаться от commit, PR,
 расписания или другого workflow.
 
-Firefox для резервного GitHub runner ставится только явной командой:
+Chromium для резервного GitHub runner ставится только явной командой:
 
 ```bash
 npm run setup:visual:github
@@ -191,7 +189,7 @@ PNG-пак можно передавать отдельно как evidence ко
 Успешный локальный прогон:
 
 ```text
-local-native visual passed — system Chromium, Playwright local-content,
+local-native visual passed — Chromium, Playwright local-content,
 artifacts: .artifacts/screenshots/<scope>/<run>
 ```
 

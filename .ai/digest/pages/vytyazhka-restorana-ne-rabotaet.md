@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/vytyazhka-restorana-ne-rabotaet.html
 - Builder model: src/pages/vytyazhka-restorana-ne-rabotaet/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1257
+- Text words inside referenced sections: 938
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Вытяжка ресторана не работает | breadcrumb | 39.6 KB | 1070 | no | src/pages/vytyazhka-restorana-ne-rabotaet/sections/002-breadcrumb-vytyazhka-restorana-ne-rabotaet.html |
+| Вытяжка ресторана не работает | breadcrumb | 30.3 KB | 751 | no | src/pages/vytyazhka-restorana-ne-rabotaet/sections/002-breadcrumb-vytyazhka-restorana-ne-rabotaet.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/vytyazhka-restorana-ne-rabotaet/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/vytyazhka-restorana-ne-rabotaet/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/vytyazhka-restorana-ne-rabotaet/sections/007-lead-form-forma-zayavki.html |

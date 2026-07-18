@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { renderParametricTemplate } from './site-builder-lib.mjs';
 
 const root = process.cwd();
 const cluster = JSON.parse(fs.readFileSync(path.join(root, 'data/sous-vide-cluster-pages.json'), 'utf8'));
@@ -8,8 +9,9 @@ const registry = JSON.parse(fs.readFileSync(path.join(root, 'data/sous-vide-symp
 const published = registry.pages.filter((item) => item.status === 'published');
 let errors = 0;
 let checks = 0;
+const verbose = process.argv.includes('--verbose');
 
-function pass(message) { checks += 1; console.log(`PASS: ${message}`); }
+function pass(message) { checks += 1; if (verbose) console.log(`PASS: ${message}`); }
 function fail(message) { checks += 1; errors += 1; console.error(`FAIL: ${message}`); }
 function assert(condition, message) { condition ? pass(message) : fail(message); }
 function text(html) { return String(html).replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/\s+/g, ' ').trim(); }
@@ -20,8 +22,14 @@ function componentHtml(page, component) {
   const model = JSON.parse(fs.readFileSync(path.join(root, 'src/pages', slug, 'page.json'), 'utf8'));
   const section = model.sections.find((item) => item.component === component);
   if (!section) return '';
+  if (section.componentMode === 'parametric' && section.templateRef && section.propsRef) {
+    const template = fs.readFileSync(path.join(root, section.templateRef), 'utf8');
+    const props = JSON.parse(fs.readFileSync(path.join(root, section.propsRef), 'utf8'));
+    return renderParametricTemplate(template, props);
+  }
   const file = section.file || section.sourceFile;
-  return file ? fs.readFileSync(path.join(root, 'src/pages', slug, file), 'utf8') : '';
+  const candidate = file ? path.join(root, 'src/pages', slug, file) : '';
+  return candidate && fs.existsSync(candidate) ? fs.readFileSync(candidate, 'utf8') : '';
 }
 
 const titles = new Map();

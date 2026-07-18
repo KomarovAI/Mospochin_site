@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "cluster": "microwaves",
+  "checkedAt": "2026-07-17",
+  "viewports": [
+    {"id":"desktop","label":"Desktop","width":1440,"height":1080,"deviceScaleFactor":1},
+    {"id":"mobile","label":"Mobile","width":393,"height":852,"deviceScaleFactor":2,"isMobile":true,"hasTouch":true}
+  ],
+  "pages": [
+    {"page":"microwaves.html","label":"hub","branch":"household","pageType":"service","fullPage":false},
+    {"page":"mikrovolnovka-ne-greet.html","label":"no-heat","branch":"household","pageType":"service","fullPage":false},
+    {"page":"mikrovolnovka-iskrit-i-treshchit.html","label":"sparking","branch":"household","pageType":"service","fullPage":false},
+    {"page":"remont-vstroennyh-mikrovolnovok.html","label":"built-in","branch":"household","pageType":"service","fullPage":false},
+    {"page":"zamena-magnetrona-mikrovolnovki.html","label":"magnetron","branch":"household","pageType":"service","fullPage":false}
+  ],
+  "status":"mw1-household-cluster",
+  "runtime":"local-native",
+  "artifactRoot":".artifacts/screenshots/microwave/mw1",
+  "browser":"chromium",
+  "server":{"host":"127.0.0.1","port":9996},
+  "waitStrategy":{"networkIdleTimeoutMs":1500,"postLoadDelayMs":1800}
+}

@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "diagnostika-sushilnoy-mashiny.html",
+  "slug": "diagnostika-sushilnoy-mashiny",
+  "route": "/diagnostika-sushilnoy-mashiny.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Диагностика сушильной машины в Москве | MosPochin",
+  "h1": "Диагностика сушильной машины в Москве",
+  "source": {
+    "extractedFrom": "diagnostika-sushilnoy-mashiny.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "142853cac6efcba317980d3a844ef2ff1f5053f82e7d15e99a0a0054bd0c177e",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9480,
+      "hash": "f60aaa864e0d650d",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/diagnostika-sushilnoy-mashiny/props/dr1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1048,
+      "hash": "eac9cc7d2e2deeb6",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "diagnostika_sushilnoy_mashiny_breadcrumb_1"
+          },
+          {
+            "href": "sushilnye-mashiny.html",
+            "label": "Сушильные машины",
+            "ctaId": "diagnostika_sushilnoy_mashiny_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Диагностика сушильной машины в Москве"
+      }
+    },
+    {
+      "id": "002-contact-cta-diagnostika-sushil-noy-mashiny-v-moskve",
+      "component": "contact-cta",
+      "label": "Диагностика сушильной машины в Москве",
+      "file": "sections/002-contact-cta-diagnostika-sushil-noy-mashiny-v-moskve.html",
+      "bytes": 2033,
+      "hash": "44d4796265105f9c"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1095,
+      "hash": "1855769cd74a2978",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/symptom-observations.template.html",
+      "propsRef": "src/pages/diagnostika-sushilnoy-mashiny/props/dr1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 2032,
+      "hash": "857b5667e8ef1d9b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/diagnostika-sushilnoy-mashiny/props/dr1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 580,
+      "hash": "a02ddea2e89886b6"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1379,
+      "hash": "b63ab1ecafaa6734"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1855,
+      "hash": "6f71f4f8c669a91f"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4114,
+      "hash": "d37e9cfcf8539aed"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2490,
+      "hash": "d52ab56b5827c71e"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5041,
+      "hash": "aff874f136d5d101",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/diagnostika-sushilnoy-mashiny/props/dr1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 549,
+      "hash": "35af1c43ee5cd45b",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/diagnostika-sushilnoy-mashiny/props/dr1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page diagnostika-sushilnoy-mashiny.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

@@ -7,7 +7,7 @@
 - H1: Вакууматор медленно набирает вакуум
 - Canonical: https://mospochin.ru/vakuumator-medlenno-nabiraet-vakuum.html
 - Builder model: src/pages/vakuumator-medlenno-nabiraet-vakuum/page.json
-- Sections: 16 (12 local, 0 shared refs, 0 raw)
+- Sections: 16 (11 local, 0 shared refs, 0 raw)
 - Text words inside referenced sections: 740
 
 ## Component mix
@@ -39,7 +39,7 @@
 | Матрица причин | cause-matrix | 3.5 KB | 140 | no | src/pages/vakuumator-medlenno-nabiraet-vakuum/sections/050-cause-matrix.html |
 | Форма заявки | lead-form | 3.4 KB | 33 | no | src/pages/vakuumator-medlenno-nabiraet-vakuum/sections/080-lead-form.html |
 | Ремонтируемые узлы | repair-scope | 2.9 KB | 106 | no | src/pages/vakuumator-medlenno-nabiraet-vakuum/sections/070-repair-scope.html |
-| Безопасная проверка | safe-self-check | 2.0 KB | 59 | no | src/pages/vakuumator-medlenno-nabiraet-vakuum/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 2.0 KB | 59 | no | src/components/parametric/safe-self-check/default.template.html |
 | FAQ — частые вопросы | faq | 2.0 KB | 77 | no | src/pages/vakuumator-medlenno-nabiraet-vakuum/sections/090-faq.html |
 | Источники | sources-note | 1.9 KB | 70 | no | src/pages/vakuumator-medlenno-nabiraet-vakuum/sections/110-sources-note.html |
 | Сервисная диагностика | service-diagnostics | 1.9 KB | 47 | no | src/pages/vakuumator-medlenno-nabiraet-vakuum/sections/060-service-diagnostics.html |

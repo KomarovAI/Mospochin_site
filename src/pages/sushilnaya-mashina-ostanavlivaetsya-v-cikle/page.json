@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "template": "sectioned-html-v1",
+  "page": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+  "slug": "sushilnaya-mashina-ostanavlivaetsya-v-cikle",
+  "route": "/sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+  "branch": "household",
+  "role": "service",
+  "title": "Сушильная машина останавливается во время цикла | MosPochin",
+  "h1": "Сушильная машина останавливается во время цикла",
+  "source": {
+    "extractedFrom": "sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+    "extractedAt": "1970-01-01T00:00:00.000Z",
+    "hash": "7bf276d54c81977a936fb959a6227bb6e219debebce97fea96397c323425de59",
+    "mode": "lossless-section-snapshot"
+  },
+  "files": {
+    "head": "head.html",
+    "bodyOpen": "body-open.html",
+    "afterBody": "after-body.html"
+  },
+  "sections": [
+    {
+      "id": "001-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 9536,
+      "hash": "b4480bc2eb4e5028",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/header-ff5231eb4124.template.html",
+      "propsRef": "src/pages/sushilnaya-mashina-ostanavlivaetsya-v-cikle/props/dr1-header.json"
+    },
+    {
+      "id": "p1-household-breadcrumb",
+      "component": "breadcrumb",
+      "label": "Хлебные крошки бытовой ветки",
+      "bytes": 1095,
+      "hash": "d66e6632c3884267",
+      "componentMode": "parametric",
+      "componentScope": "parametric",
+      "variant": "household-two-parent",
+      "templateRef": "src/components/parametric/household-breadcrumb/two-parent.template.html",
+      "props": {
+        "links": [
+          {
+            "href": "bytovaya-index.html",
+            "label": "Бытовая техника",
+            "ctaId": "sushilnaya_mashina_ostanavlivaetsya_v_cikle_breadcrumb_1"
+          },
+          {
+            "href": "sushilnye-mashiny.html",
+            "label": "Сушильные машины",
+            "ctaId": "sushilnaya_mashina_ostanavlivaetsya_v_cikle_breadcrumb_2"
+          }
+        ],
+        "currentLabel": "Сушильная машина останавливается во время цикла"
+      }
+    },
+    {
+      "id": "002-contact-cta-sushil-naya-mashina-ostanavlivaetsya-vo-",
+      "component": "contact-cta",
+      "label": "Сушильная машина останавливается во время цикла",
+      "file": "sections/002-contact-cta-sushil-naya-mashina-ostanavlivaetsya-vo-.html",
+      "bytes": 2072,
+      "hash": "321b6ea13478e045"
+    },
+    {
+      "id": "003-proof-chto-vazhno-soobschit-masteru",
+      "component": "proof",
+      "label": "Что важно сообщить мастеру",
+      "bytes": 1198,
+      "hash": "5fbe00ffa58f4d8f",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/symptom-observations.template.html",
+      "propsRef": "src/pages/sushilnaya-mashina-ostanavlivaetsya-v-cikle/props/dr1-observations.json"
+    },
+    {
+      "id": "004-proof-chto-proverit-bezopasno",
+      "component": "proof",
+      "label": "Что проверить безопасно",
+      "bytes": 1898,
+      "hash": "b9ff70e4b600c474",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/safe-diagnostics.template.html",
+      "propsRef": "src/pages/sushilnaya-mashina-ostanavlivaetsya-v-cikle/props/dr1-safe.json"
+    },
+    {
+      "id": "005-section-sekciya-stranicy",
+      "component": "section",
+      "label": "Секция страницы",
+      "file": "sections/005-section-sekciya-stranicy.html",
+      "bytes": 560,
+      "hash": "b0a16758cfe0f306"
+    },
+    {
+      "id": "006-pricing-kakie-raboty-mogut-potrebovat-sya",
+      "component": "pricing",
+      "label": "Какие работы могут потребоваться",
+      "file": "sections/006-pricing-kakie-raboty-mogut-potrebovat-sya.html",
+      "bytes": 1330,
+      "hash": "f44300d25b03c813"
+    },
+    {
+      "id": "007-section-svyazannye-stranicy-klastera",
+      "component": "section",
+      "label": "Связанные страницы кластера",
+      "file": "sections/007-section-svyazannye-stranicy-klastera.html",
+      "bytes": 1852,
+      "hash": "e9b83a9cd20462f2"
+    },
+    {
+      "id": "008-lead-form-chto-otpravit-do-vyezda",
+      "component": "lead-form",
+      "label": "Что отправить до выезда",
+      "file": "sections/008-lead-form-chto-otpravit-do-vyezda.html",
+      "bytes": 4128,
+      "hash": "0b1f523f591040ce"
+    },
+    {
+      "id": "009-faq-chastye-voprosy",
+      "component": "faq",
+      "label": "Частые вопросы",
+      "file": "sections/009-faq-chastye-voprosy.html",
+      "bytes": 2392,
+      "hash": "cb9f4f277149177b"
+    },
+    {
+      "id": "010-mobile-contact-mobil-nye-kontaktnye-elementy",
+      "component": "mobile-contact",
+      "label": "Мобильные контактные элементы",
+      "bytes": 5083,
+      "hash": "a7bb7f49e58e9a4f",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/footer-3aff2ca0a962.template.html",
+      "propsRef": "src/pages/sushilnaya-mashina-ostanavlivaetsya-v-cikle/props/dr1-footer.json"
+    },
+    {
+      "id": "011-contact-cta-kontaktnyy-cta",
+      "component": "contact-cta",
+      "label": "Контактный CTA",
+      "bytes": 563,
+      "hash": "ca62ead43ccb6124",
+      "componentMode": "parametric",
+      "templateRef": "src/components/parametric/dryer-dr1/mobile_cta-8d342004164f.template.html",
+      "propsRef": "src/pages/sushilnaya-mashina-ostanavlivaetsya-v-cikle/props/dr1-mobile_cta.json"
+    }
+  ],
+  "recommendedChecks": [
+    "npm run validate:site",
+    "npm run ai:semantic-diff -- --page sushilnaya-mashina-ostanavlivaetsya-v-cikle.html",
+    "npm run check:site-builder"
+  ],
+  "aiNotes": [
+    "Эта страница подключена к Static Component Builder: редактируй секции в src/pages/<slug>/sections/*, затем запускай npm run build:site -- --page <file> --write.",
+    "Root HTML остаётся production-артефактом и должен совпадать с builder output.",
+    "Если правишь root HTML вручную, синхронизируй src через npm run site-builder:bootstrap -- --pages <file>."
+  ],
+  "componentStats": {
+    "sharedSectionRefs": 0,
+    "sharedSectionMinBytes": 512,
+    "sharedSectionMinRefs": 2
+  }
+}

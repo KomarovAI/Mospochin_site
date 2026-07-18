@@ -7,7 +7,7 @@
 - H1: Ошибка уровня воды sous-vide
 - Canonical: https://mospochin.ru/sous-vide-oshibka-urovnya-vody.html
 - Builder model: src/pages/sous-vide-oshibka-urovnya-vody/page.json
-- Sections: 16 (11 local, 1 shared refs, 0 raw)
+- Sections: 16 (10 local, 1 shared refs, 0 raw)
 - Text words inside referenced sections: 575
 
 ## Component mix
@@ -39,7 +39,7 @@
 | Форма заявки | lead-form | 3.3 KB | 33 | no | src/pages/sous-vide-oshibka-urovnya-vody/sections/080-lead-form.html |
 | Матрица причин | cause-matrix | 2.8 KB | 89 | no | src/pages/sous-vide-oshibka-urovnya-vody/sections/050-cause-matrix.html |
 | Ремонтируемые узлы | repair-scope | 2.4 KB | 75 | no | src/pages/sous-vide-oshibka-urovnya-vody/sections/070-repair-scope.html |
-| Безопасная проверка | safe-self-check | 1.8 KB | 45 | no | src/pages/sous-vide-oshibka-urovnya-vody/sections/030-safe-self-check.html |
+| Безопасная проверка | safe-self-check | 1.8 KB | 45 | no | src/components/parametric/safe-self-check/default.template.html |
 | FAQ — частые вопросы | faq | 1.8 KB | 71 | no | src/pages/sous-vide-oshibka-urovnya-vody/sections/090-faq.html |
 | Сервисная диагностика | service-diagnostics | 1.7 KB | 37 | yes | src/components/shared/service-diagnostics/service-diagnostics-servisnaya-diagnostika--eae9d6f0e3273b80.html |
 | Первый экран | hero | 1.7 KB | 39 | no | src/pages/sous-vide-oshibka-urovnya-vody/sections/010-hero.html |

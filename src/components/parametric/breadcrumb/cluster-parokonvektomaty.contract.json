@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "component": "breadcrumb",
+  "cluster": "parokonvektomaty",
+  "intent": "Lossless visible breadcrumb navigation for the parokonvektomat pilot cluster.",
+  "requiredAttributes": [
+    "aria-label=\"Breadcrumb\"",
+    "data-cta-group=\"internal_link\""
+  ],
+  "sourceManifest": "data/parokonvektomat-conversion-pages.json",
+  "minimumCoverage": 16,
+  "references": [
+    "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb"
+  ]
+}

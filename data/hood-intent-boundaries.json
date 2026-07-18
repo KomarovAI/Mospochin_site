@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "cluster": "household-kitchen-hoods",
+  "primaryScope": [
+    "domestic ducted cooker hoods",
+    "domestic recirculating cooker hoods",
+    "integrated domestic hoods"
+  ],
+  "boundaries": [
+    {
+      "intent": "restaurant ventilation",
+      "status": "excluded",
+      "reason": "professional ventilation branch"
+    },
+    {
+      "intent": "commercial extraction canopy",
+      "status": "excluded",
+      "reason": "restaurant equipment branch"
+    },
+    {
+      "intent": "user motor or mains repair",
+      "status": "prohibited",
+      "reason": "electrical and rotating-part hazard"
+    },
+    {
+      "intent": "operation without grease filter",
+      "status": "prohibited",
+      "reason": "fire and contamination risk"
+    }
+  ],
+  "prohibitedClaims": [
+    "плохо тянет — всегда двигатель",
+    "шумит — всегда подшипник",
+    "не включается — всегда плата",
+    "не меняет скорость — всегда кнопочный блок"
+  ]
+}

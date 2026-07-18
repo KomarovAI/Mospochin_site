@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/kryshnye-ventilyatory-restorana.html
 - Builder model: src/pages/kryshnye-ventilyatory-restorana/page.json
 - Sections: 9 (4 local, 0 shared refs, 0 raw)
-- Text words inside referenced sections: 1211
+- Text words inside referenced sections: 894
 
 ## Component mix
 
@@ -24,7 +24,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Крышные вентиляторы ресторана | breadcrumb | 38.4 KB | 1024 | no | src/pages/kryshnye-ventilyatory-restorana/sections/002-breadcrumb-kryshnye-ventilyatory-restorana.html |
+| Крышные вентиляторы ресторана | breadcrumb | 29.2 KB | 707 | no | src/pages/kryshnye-ventilyatory-restorana/sections/002-breadcrumb-kryshnye-ventilyatory-restorana.html |
 | Мобильные контактные элементы | mobile-contact | 9.2 KB | 110 | no | src/pages/kryshnye-ventilyatory-restorana/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 4.9 KB | 77 | no | src/pages/kryshnye-ventilyatory-restorana/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Форма заявки | lead-form | 50 B | 0 | no | src/pages/kryshnye-ventilyatory-restorana/sections/007-lead-form-forma-zayavki.html |
