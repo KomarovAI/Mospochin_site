@@ -3,12 +3,12 @@
 - Branch: household
 - Role: branch
 - Title: Ремонт бытовой техники на дому в Москве — MosPochin
-- Description: Ремонт бытовой техники на дому в Москве: холодильники, стиральные машины, посудомойки, плиты, микроволновки и водонагреватели.
+- Description: Ремонт бытовой техники на дому в Москве: холодильная техника, стиральные и сушильные машины, посудомойки, кухонная техника и водонагреватели.
 - H1: Ремонт бытовой техники на дому в Москве
 - Canonical: https://mospochin.ru/bytovaya-index.html
 - Builder model: src/pages/bytovaya-index/page.json
 - Sections: 35 (31 local, 0 shared refs, 9 raw)
-- Text words inside referenced sections: 1219
+- Text words inside referenced sections: 1058
 
 ## Component mix
 
@@ -33,14 +33,14 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Работаем с распространёнными марками | pricing | 21.3 KB | 90 | no | src/pages/bytovaya-index/sections/019-pricing-rabotaem-s-rasprostranennymi-markami.html |
 | Мобильные контактные элементы | mobile-contact | 7.2 KB | 78 | no | src/pages/bytovaya-index/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| Популярные категории и типовые поломки | related-links | 7.1 KB | 136 | no | src/pages/bytovaya-index/sections/010-related-links-populyarnye-kategorii-i-tipovye-polomk.html |
 | Ремонт бытовой техники на дому в Москве | hero | 6.7 KB | 108 | no | src/pages/bytovaya-index/sections/005-hero-remont-bytovoy-tehniki-na-domu-v-moskve.html |
-| Прозрачные цены без сюрпризов | pricing | 5.9 KB | 73 | no | src/pages/bytovaya-index/sections/017-pricing-prozrachnye-ceny-bez-syurprizov.html |
-| Сначала выберите, что сломалось | section | 5.3 KB | 98 | no | src/pages/bytovaya-index/sections/006-section-snachala-vyberite-chto-slomalos.html |
-| Почему бытовую технику чаще чинят дома, а не везут в мастерскую | proof | 4.9 KB | 109 | no | src/pages/bytovaya-index/sections/012-proof-pochemu-bytovuyu-tehniku-chasche-chinyat-doma-.html |
+| Сначала выберите, что сломалось | section | 6.2 KB | 111 | no | src/pages/bytovaya-index/sections/006-section-snachala-vyberite-chto-slomalos.html |
 | Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/pages/bytovaya-index/sections/028-mobile-contact-mobil-nye-kontaktnye-elementy.html |
+| Спокойный сценарий ремонта без лишних шагов | pricing | 4.1 KB | 96 | no | src/pages/bytovaya-index/sections/008-pricing-spokoynyy-scenariy-remonta-bez-lishnih-shago.html |
+| Истории наших клиентов | proof | 3.9 KB | 95 | no | src/pages/bytovaya-index/sections/014-proof-istorii-nashih-klientov.html |
+| Оставьте заявку на ремонт | lead-form | 3.7 KB | 61 | no | src/pages/bytovaya-index/sections/024-lead-form-ostav-te-zayavku-na-remont.html |
+| Что обычно происходит на бытовом выезде | pricing | 3.7 KB | 153 | no | src/pages/bytovaya-index/sections/015-pricing-chto-obychno-proishodit-na-bytovom-vyezde.html |
 
 
 ## Editable source files

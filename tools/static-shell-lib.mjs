@@ -74,7 +74,7 @@ function allNavigationItems(config) {
 
 function desktopServiceMenu(config, page, isHousehold) {
   const groups = navigationGroups(config);
-  if (isHousehold || groups.length === 1) {
+  if (groups.length === 1) {
     return (groups[0]?.items || []).map((service) => (
       `<a href="${escapeHtml(service.href)}" class="dropdown-item ${activeClass(page, service.href)}"${currentAttrs(page, service.href)}><span class="icon">${escapeHtml(service.icon || '🔧')}</span>${escapeHtml(service.name)}</a>`
     )).join('');
@@ -86,7 +86,9 @@ function desktopServiceMenu(config, page, isHousehold) {
     )).join('')}</div>`
   )).join('');
 
-  return `<div class="restaurant-mega-menu"><a href="uslugi.html" class="restaurant-menu-catalog ${activeClass(page, 'uslugi.html')}"${currentAttrs(page, 'uslugi.html')}><span>Каталог ремонта ресторанного оборудования</span><i class="ri-arrow-right-line"></i></a><div class="restaurant-menu-grid">${groupHtml}</div></div>`;
+  const catalogHref = isHousehold ? 'bytovaya-uslugi.html' : 'uslugi.html';
+  const catalogLabel = isHousehold ? 'Все услуги по ремонту бытовой техники' : 'Каталог ремонта ресторанного оборудования';
+  return `<div class="restaurant-mega-menu"><a href="${catalogHref}" class="restaurant-menu-catalog ${activeClass(page, catalogHref)}"${currentAttrs(page, catalogHref)}><span>${catalogLabel}</span><i class="ri-arrow-right-line"></i></a><div class="restaurant-menu-grid">${groupHtml}</div></div>`;
 }
 
 function mobileServiceGroups(page, meta) {
@@ -122,6 +124,7 @@ export function renderStaticHeader(page) {
   const top = meta.config.topBarText || {};
   const servicePages = new Set([meta.servicesLink, ...allNavigationItems(meta.config).map((item) => item.href)]);
   const serviceActive = servicePages.has(page) ? 'active' : '';
+  const groupedMenuClass = navigationGroups(meta.config).length > 1 ? 'restaurant-dropdown-menu' : '';
   return `<!-- build-time static shell -->
 <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg">
   <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
@@ -142,7 +145,7 @@ export function renderStaticHeader(page) {
       </a>
       <div class="hidden lg:flex items-center gap-5">
         <a href="${meta.homeLink}" class="nav-link ${activeClass(page, meta.homeLink)}"${currentAttrs(page, meta.homeLink)}>Главная</a>
-        <div class="dropdown"><a href="${meta.servicesLink}" class="nav-link dropdown-toggle ${serviceActive}" aria-haspopup="true">${meta.isHousehold ? 'Услуги' : 'Ремонт техники'} <i class="ri-arrow-down-s-line text-xs ml-1"></i></a><div class="dropdown-menu ${meta.isHousehold ? '' : 'restaurant-dropdown-menu'}" aria-label="${meta.isHousehold ? 'Услуги бытовой техники' : 'Категории ресторанного оборудования'}">${desktopServiceMenu(meta.config, page, meta.isHousehold)}</div></div>
+        <div class="dropdown"><a href="${meta.servicesLink}" class="nav-link dropdown-toggle ${serviceActive}" aria-haspopup="true">${meta.isHousehold ? 'Услуги' : 'Ремонт техники'} <i class="ri-arrow-down-s-line text-xs ml-1"></i></a><div class="dropdown-menu ${groupedMenuClass}" aria-label="${meta.isHousehold ? 'Услуги бытовой техники' : 'Категории ресторанного оборудования'}">${desktopServiceMenu(meta.config, page, meta.isHousehold)}</div></div>
         <a href="${meta.aboutLink}" class="nav-link ${activeClass(page, meta.aboutLink)}"${currentAttrs(page, meta.aboutLink)}>О нас</a>
         <a href="${meta.contactLink}" class="nav-link ${activeClass(page, meta.contactLink)}"${currentAttrs(page, meta.contactLink)}>Контакты</a>
       </div>
@@ -171,28 +174,49 @@ export function renderStaticFooter(page) {
   if (!meta.isHousehold && Array.isArray(restaurant.footerGroups)) {
     middleColumns = restaurant.footerGroups.map((group, index) => footerGroup(page, group, index === 0 ? 'Основные направления ремонта ресторанного оборудования' : 'Дополнительные направления и информация')).join('');
   } else {
-    const householdGroups = [
-      { title: 'Бытовая техника', items: (household.footerLinks || []).slice(0, 8) },
-      { title: 'Информация', items: [
-        { href: 'bytovaya-about.html', label: 'О компании' },
-        { href: 'bytovaya-contact.html', label: 'Контакты' },
-        { href: 'index.html', label: 'Ресторанное оборудование' },
-      ] },
-    ];
-    middleColumns = householdGroups.map((group, index) => footerGroup(page, group, index === 0 ? 'Категории бытовой техники' : 'Информация и другие направления')).join('');
+    middleColumns = navigationGroups(household).map((group) => footerGroup(page, {
+      title: group.label,
+      items: (group.items || []).map((item) => ({ href: item.href, label: item.name })),
+    }, `Бытовая техника: ${group.label}`)).join('');
   }
+
+  const householdInfo = meta.isHousehold ? `<nav class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm" aria-label="Информация"><a href="bytovaya-uslugi.html" class="font-semibold text-slate-300 hover:text-white transition">Все услуги</a><a href="bytovaya-about.html" class="font-semibold text-slate-300 hover:text-white transition">О компании</a><a href="bytovaya-contact.html" class="font-semibold text-slate-300 hover:text-white transition">Контакты</a></nav>` : '';
+  const footerGrid = meta.isHousehold ? 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5' : 'sm:grid-cols-2 lg:grid-cols-4';
 
   return `<!-- build-time static shell -->
 <footer class="bg-brand-blue text-slate-400 py-12 border-t border-slate-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-      <div><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 bg-gradient-to-br from-brand-orange to-orange-600 rounded-lg flex items-center justify-center text-white shadow-lg"><i class="ri-tools-line"></i></div><span class="font-extrabold text-xl text-white">MosPochin</span></div><p class="text-sm max-w-sm">${meta.isHousehold ? 'Ремонт бытовой техники в Москве и Московской области.' : 'Ремонт профессионального ресторанного оборудования в Москве и Московской области.'}</p><a href="${meta.branchSwitchLink}" class="inline-flex mt-4 text-sm font-semibold text-slate-300 hover:text-white transition">${meta.isHousehold ? 'Перейти к ресторанному оборудованию' : 'Перейти к бытовой технике'} <i class="ri-arrow-right-line ml-1"></i></a></div>
+    <div class="grid ${footerGrid} gap-8 mb-8">
+      <div><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 bg-gradient-to-br from-brand-orange to-orange-600 rounded-lg flex items-center justify-center text-white shadow-lg"><i class="ri-tools-line"></i></div><span class="font-extrabold text-xl text-white">MosPochin</span></div><p class="text-sm max-w-sm">${meta.isHousehold ? 'Ремонт бытовой техники в Москве и Московской области.' : 'Ремонт профессионального ресторанного оборудования в Москве и Московской области.'}</p>${householdInfo}<a href="${meta.branchSwitchLink}" class="inline-flex mt-4 text-sm font-semibold text-slate-300 hover:text-white transition">${meta.isHousehold ? 'Перейти к ресторанному оборудованию' : 'Перейти к бытовой технике'} <i class="ri-arrow-right-line ml-1"></i></a></div>
       ${middleColumns}
       <div><h5 class="text-white font-bold mb-4">Связаться</h5><ul class="space-y-3 text-sm"><li class="flex items-center gap-2"><i class="ri-phone-line text-brand-orange"></i><a href="tel:${escapeHtml(contacts.phoneE164)}" ${shellCtaAttrs(page, 'footer_phone', 'footer')} class="hover:text-white transition font-bold">${escapeHtml(contacts.phoneDisplay)}</a></li><li class="flex items-center gap-2"><i class="ri-whatsapp-line text-brand-orange"></i><a href="${whatsappHref}" ${shellCtaAttrs(page, 'footer_whatsapp', 'footer', 'whatsapp')} target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Написать в WhatsApp</a></li><li class="flex items-center gap-2"><i class="ri-mail-line text-brand-orange"></i><a href="mailto:${escapeHtml(contacts.email)}" ${shellCtaAttrs(page, 'footer_email', 'footer', 'email')} class="hover:text-white transition">${escapeHtml(contacts.email)}</a></li><li class="flex items-center gap-2"><i class="ri-time-line text-brand-orange"></i><span>График — по согласованию</span></li><li class="flex items-center gap-2"><i class="ri-map-pin-line text-brand-orange"></i><span>Москва и МО</span></li></ul></div>
     </div>
     <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-4"><p class="text-xs">&copy; ${new Date().getFullYear()} MosPochin. Все права защищены.</p>${legalBlock}</div>
   </div>
 </footer>`;
+}
+
+function replaceContainerById(html, id, content) {
+  const source = String(html);
+  const openPattern = new RegExp(`<div\\b[^>]*\\bid=["']${id}["'][^>]*>`, 'i');
+  const openMatch = openPattern.exec(source);
+  if (!openMatch || openMatch.index == null) return source;
+
+  const tagPattern = /<\/?div\b[^>]*>/gi;
+  tagPattern.lastIndex = openMatch.index + openMatch[0].length;
+  let depth = 1;
+  let match;
+  while ((match = tagPattern.exec(source))) {
+    if (/^<\/div\b/i.test(match[0])) depth -= 1;
+    else if (!/\/\s*>$/.test(match[0])) depth += 1;
+    if (depth !== 0) continue;
+
+    const openTag = /\bdata-static-shell\s*=/i.test(openMatch[0])
+      ? openMatch[0]
+      : openMatch[0].replace(/>$/, ' data-static-shell="true">');
+    return `${source.slice(0, openMatch.index)}${openTag}${content}</div>${source.slice(tagPattern.lastIndex)}`;
+  }
+  return source;
 }
 
 export function optimizeStaticHead(html) {
@@ -217,7 +241,7 @@ export function injectStaticShell(html, page) {
   let result = optimizeStaticHead(html);
   const header = renderStaticHeader(page);
   const footer = renderStaticFooter(page);
-  result = result.replace(/<div([^>]*\bid=["']header-container["'][^>]*)>\s*<\/div>/i, `<div$1 data-static-shell="true">${header}</div>`);
-  result = result.replace(/<div([^>]*\bid=["']footer-container["'][^>]*)>\s*<\/div>/i, `<div$1 data-static-shell="true">${footer}</div>`);
+  result = replaceContainerById(result, 'header-container', header);
+  result = replaceContainerById(result, 'footer-container', footer);
   return result;
 }

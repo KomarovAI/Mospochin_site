@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/chistka-vodonagrevatelya-ot-nakipi.html
 - Builder model: src/pages/chistka-vodonagrevatelya-ot-nakipi/page.json
 - Sections: 37 (22 local, 2 shared refs, 4 raw)
-- Text words inside referenced sections: 1483
+- Text words inside referenced sections: 1487
 
 ## Component mix
 

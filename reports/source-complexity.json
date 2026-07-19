@@ -2,24 +2,24 @@
   "schemaVersion": 1,
   "generatedAt": "1970-01-01T00:00:00.000Z",
   "summary": {
-    "rootHtmlPages": 500,
-    "builderPages": 500,
-    "srcPageFiles": 6341,
-    "srcPageHtmlFiles": 5278,
+    "rootHtmlPages": 503,
+    "builderPages": 503,
+    "srcPageFiles": 6401,
+    "srcPageHtmlFiles": 5335,
     "sharedComponentFiles": 215,
     "parametricTemplateFiles": 255,
     "parametricPropsFiles": 189,
-    "totalSections": 6933,
-    "localSections": 3748,
+    "totalSections": 6984,
+    "localSections": 3796,
     "sharedSectionRefs": 349,
-    "parametricSectionRefs": 2836,
-    "compressedSectionRefs": 3185,
-    "sharedCoverageRatio": 0.45939708639838456,
-    "rootHtmlBytes": 24211688,
-    "srcPageHtmlBytes": 18049379,
+    "parametricSectionRefs": 2839,
+    "compressedSectionRefs": 3188,
+    "sharedCoverageRatio": 0.45647193585337914,
+    "rootHtmlBytes": 24549258,
+    "srcPageHtmlBytes": 18115594,
     "sharedHtmlBytes": 780844,
-    "averageSectionsPerPage": 13.866,
-    "averageSourceFilesPerPage": 19.204,
+    "averageSectionsPerPage": 13.884691848906561,
+    "averageSourceFilesPerPage": 19.214711729622266,
     "estimatedSharedSavedBytes": 573536,
     "componentMapComponents": 12
   },
@@ -1047,10 +1047,10 @@
       "sharedRefs": 0,
       "parametricRefs": 4,
       "rawSections": 9,
-      "localBytes": 89067,
+      "localBytes": 58018,
       "sharedBytesReferenced": 723,
-      "totalReferencedBytes": 89790,
-      "textWords": 1219,
+      "totalReferencedBytes": 58741,
+      "textWords": 1058,
       "sourceFiles": [
         "src/components/parametric/household-breadcrumb/one-parent.template.html",
         "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
@@ -1110,32 +1110,12 @@
       },
       "largestSections": [
         {
-          "id": "019-pricing-rabotaem-s-rasprostranennymi-markami",
-          "component": "pricing",
-          "label": "Работаем с распространёнными марками",
-          "bytes": 21797,
-          "words": 90,
-          "source": "src/pages/bytovaya-index/sections/019-pricing-rabotaem-s-rasprostranennymi-markami.html",
-          "shared": false,
-          "parametric": false
-        },
-        {
           "id": "003-mobile-contact-mobil-nye-kontaktnye-elementy",
           "component": "mobile-contact",
           "label": "Мобильные контактные элементы",
           "bytes": 7388,
           "words": 78,
           "source": "src/pages/bytovaya-index/sections/003-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-          "shared": false,
-          "parametric": false
-        },
-        {
-          "id": "010-related-links-populyarnye-kategorii-i-tipovye-polomk",
-          "component": "related-links",
-          "label": "Популярные категории и типовые поломки",
-          "bytes": 7222,
-          "words": 136,
-          "source": "src/pages/bytovaya-index/sections/010-related-links-populyarnye-kategorii-i-tipovye-polomk.html",
           "shared": false,
           "parametric": false
         },
@@ -1150,32 +1130,12 @@
           "parametric": false
         },
         {
-          "id": "017-pricing-prozrachnye-ceny-bez-syurprizov",
-          "component": "pricing",
-          "label": "Прозрачные цены без сюрпризов",
-          "bytes": 6071,
-          "words": 73,
-          "source": "src/pages/bytovaya-index/sections/017-pricing-prozrachnye-ceny-bez-syurprizov.html",
-          "shared": false,
-          "parametric": false
-        },
-        {
           "id": "006-section-snachala-vyberite-chto-slomalos",
           "component": "section",
           "label": "Сначала выберите, что сломалось",
-          "bytes": 5469,
-          "words": 98,
+          "bytes": 6372,
+          "words": 111,
           "source": "src/pages/bytovaya-index/sections/006-section-snachala-vyberite-chto-slomalos.html",
-          "shared": false,
-          "parametric": false
-        },
-        {
-          "id": "012-proof-pochemu-bytovuyu-tehniku-chasche-chinyat-doma-",
-          "component": "proof",
-          "label": "Почему бытовую технику чаще чинят дома, а не везут в мастерскую",
-          "bytes": 4984,
-          "words": 109,
-          "source": "src/pages/bytovaya-index/sections/012-proof-pochemu-bytovuyu-tehniku-chasche-chinyat-doma-.html",
           "shared": false,
           "parametric": false
         },
@@ -1186,6 +1146,46 @@
           "bytes": 4376,
           "words": 61,
           "source": "src/pages/bytovaya-index/sections/028-mobile-contact-mobil-nye-kontaktnye-elementy.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "008-pricing-spokoynyy-scenariy-remonta-bez-lishnih-shago",
+          "component": "pricing",
+          "label": "Спокойный сценарий ремонта без лишних шагов",
+          "bytes": 4220,
+          "words": 96,
+          "source": "src/pages/bytovaya-index/sections/008-pricing-spokoynyy-scenariy-remonta-bez-lishnih-shago.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "014-proof-istorii-nashih-klientov",
+          "component": "proof",
+          "label": "Истории наших клиентов",
+          "bytes": 4032,
+          "words": 95,
+          "source": "src/pages/bytovaya-index/sections/014-proof-istorii-nashih-klientov.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "024-lead-form-ostav-te-zayavku-na-remont",
+          "component": "lead-form",
+          "label": "Оставьте заявку на ремонт",
+          "bytes": 3834,
+          "words": 61,
+          "source": "src/pages/bytovaya-index/sections/024-lead-form-ostav-te-zayavku-na-remont.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "015-pricing-chto-obychno-proishodit-na-bytovom-vyezde",
+          "component": "pricing",
+          "label": "Что обычно происходит на бытовом выезде",
+          "bytes": 3763,
+          "words": 153,
+          "source": "src/pages/bytovaya-index/sections/015-pricing-chto-obychno-proishodit-na-bytovom-vyezde.html",
           "shared": false,
           "parametric": false
         }
@@ -1204,10 +1204,10 @@
       "sharedRefs": 0,
       "parametricRefs": 4,
       "rawSections": 0,
-      "localBytes": 52984,
+      "localBytes": 46106,
       "sharedBytesReferenced": 740,
-      "totalReferencedBytes": 53724,
-      "textWords": 895,
+      "totalReferencedBytes": 46846,
+      "textWords": 905,
       "sourceFiles": [
         "src/components/parametric/household-breadcrumb/one-parent.template.html",
         "src/components/parametric/mobile-contact/mobile-footer-container.template.html",
@@ -1247,8 +1247,8 @@
           "id": "006-faq-snachala-vyberite-tip-tehniki",
           "component": "faq",
           "label": "Сначала выберите тип техники",
-          "bytes": 15252,
-          "words": 151,
+          "bytes": 9032,
+          "words": 159,
           "source": "src/pages/bytovaya-uslugi/sections/006-faq-snachala-vyberite-tip-tehniki.html",
           "shared": false,
           "parametric": false
@@ -1284,22 +1284,22 @@
           "parametric": false
         },
         {
-          "id": "011-lead-form-ostav-te-zayavku-na-remont",
-          "component": "lead-form",
-          "label": "Оставьте заявку на ремонт",
-          "bytes": 4101,
-          "words": 59,
-          "source": "src/pages/bytovaya-uslugi/sections/011-lead-form-ostav-te-zayavku-na-remont.html",
-          "shared": false,
-          "parametric": false
-        },
-        {
           "id": "008-pricing-kak-vyglyadit-put-ot-simptoma-do-rezul-tata",
           "component": "pricing",
           "label": "Как выглядит путь от симптома до результата",
           "bytes": 3584,
           "words": 131,
           "source": "src/pages/bytovaya-uslugi/sections/008-pricing-kak-vyglyadit-put-ot-simptoma-do-rezul-tata.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "011-lead-form-ostav-te-zayavku-na-remont",
+          "component": "lead-form",
+          "label": "Оставьте заявку на ремонт",
+          "bytes": 3443,
+          "words": 61,
+          "source": "src/pages/bytovaya-uslugi/sections/011-lead-form-ostav-te-zayavku-na-remont.html",
           "shared": false,
           "parametric": false
         },
@@ -1339,9 +1339,9 @@
       "parametricRefs": 7,
       "rawSections": 0,
       "localBytes": 0,
-      "sharedBytesReferenced": 32783,
-      "totalReferencedBytes": 32783,
-      "textWords": 475,
+      "sharedBytesReferenced": 33342,
+      "totalReferencedBytes": 33342,
+      "textWords": 503,
       "sourceFiles": [
         "content/components/water-heater-wh4/case-chistka-boylera-s-silnoy-nakipyu-001-mobile-contact-mobil-nye-kontaktnye-elementy.json",
         "content/components/water-heater-wh4/case-chistka-boylera-s-silnoy-nakipyu-002-section-ochistka-boylera-s-sil-noy-nakip-yu-fotokeys.json",
@@ -1373,8 +1373,8 @@
           "id": "005-section-posledovatel-nost-i-detali",
           "component": "section",
           "label": "Последовательность и детали",
-          "bytes": 9163,
-          "words": 53,
+          "bytes": 9722,
+          "words": 81,
           "source": "src/components/parametric/water-heater-wh4/section.template.html",
           "shared": false,
           "parametric": true
@@ -1465,9 +1465,9 @@
       "parametricRefs": 7,
       "rawSections": 0,
       "localBytes": 0,
-      "sharedBytesReferenced": 35890,
-      "totalReferencedBytes": 35890,
-      "textWords": 439,
+      "sharedBytesReferenced": 36435,
+      "totalReferencedBytes": 36435,
+      "textWords": 469,
       "sourceFiles": [
         "content/components/water-heater-wh4/case-remont-boylera-v-tesnoy-nishe-001-mobile-contact-mobil-nye-kontaktnye-elementy.json",
         "content/components/water-heater-wh4/case-remont-boylera-v-tesnoy-nishe-002-section-remont-boylera-v-tesnoy-nishe-fotokeys.json",
@@ -1499,8 +1499,8 @@
           "id": "005-section-posledovatel-nost-i-detali",
           "component": "section",
           "label": "Последовательность и детали",
-          "bytes": 13623,
-          "words": 89,
+          "bytes": 14168,
+          "words": 119,
           "source": "src/components/parametric/water-heater-wh4/section.template.html",
           "shared": false,
           "parametric": true
@@ -1591,9 +1591,9 @@
       "parametricRefs": 7,
       "rawSections": 0,
       "localBytes": 0,
-      "sharedBytesReferenced": 28852,
-      "totalReferencedBytes": 28852,
-      "textWords": 379,
+      "sharedBytesReferenced": 29436,
+      "totalReferencedBytes": 29436,
+      "textWords": 407,
       "sourceFiles": [
         "content/components/water-heater-wh4/case-remont-dvuhbakovogo-vodonagrevatelya-001-mobile-contact-mobil-nye-kontaktnye-elementy.json",
         "content/components/water-heater-wh4/case-remont-dvuhbakovogo-vodonagrevatelya-002-section-razborka-dvuhbakovogo-vodonagrevatelya-fotok.json",
@@ -1635,8 +1635,8 @@
           "id": "005-section-posledovatel-nost-i-detali",
           "component": "section",
           "label": "Последовательность и детали",
-          "bytes": 6432,
-          "words": 42,
+          "bytes": 7016,
+          "words": 70,
           "source": "src/components/parametric/water-heater-wh4/section.template.html",
           "shared": false,
           "parametric": true
@@ -1717,9 +1717,9 @@
       "parametricRefs": 7,
       "rawSections": 0,
       "localBytes": 0,
-      "sharedBytesReferenced": 45258,
-      "totalReferencedBytes": 45258,
-      "textWords": 523,
+      "sharedBytesReferenced": 45887,
+      "totalReferencedBytes": 45887,
+      "textWords": 555,
       "sourceFiles": [
         "content/components/water-heater-wh4/case-trehfaznaya-sistema-gvs-chastnogo-doma-001-mobile-contact-mobil-nye-kontaktnye-elementy.json",
         "content/components/water-heater-wh4/case-trehfaznaya-sistema-gvs-chastnogo-doma-002-pricing-slozhnaya-trehfaznaya-sistema-gvs-chastnogo-.json",
@@ -1753,8 +1753,8 @@
           "id": "005-pricing-posledovatel-nost-i-detali",
           "component": "pricing",
           "label": "Последовательность и детали",
-          "bytes": 22644,
-          "words": 166,
+          "bytes": 23273,
+          "words": 198,
           "source": "src/components/parametric/water-heater-wh4/pricing.template.html",
           "shared": false,
           "parametric": true
@@ -2456,10 +2456,10 @@
       "sharedRefs": 2,
       "parametricRefs": 13,
       "rawSections": 4,
-      "localBytes": 64658,
+      "localBytes": 65040,
       "sharedBytesReferenced": 17640,
-      "totalReferencedBytes": 82298,
-      "textWords": 1483,
+      "totalReferencedBytes": 82680,
+      "textWords": 1487,
       "sourceFiles": [
         "content/components/water-heater-wh4/chistka-vodonagrevatelya-ot-nakipi-007-raw-html-fragment.json",
         "content/components/water-heater-wh4/chistka-vodonagrevatelya-ot-nakipi-008-section-chto-vidno-na-servisnom-foto.json",
@@ -2595,7 +2595,7 @@
           "id": "011-related-links-shumit-pri-nagreve",
           "component": "related-links",
           "label": "Шумит при нагреве",
-          "bytes": 4314,
+          "bytes": 4325,
           "words": 63,
           "source": "src/pages/chistka-vodonagrevatelya-ot-nakipi/sections/011-related-links-shumit-pri-nagreve.html",
           "shared": false,
@@ -4799,10 +4799,10 @@
       "sharedRefs": 2,
       "parametricRefs": 15,
       "rawSections": 4,
-      "localBytes": 68387,
+      "localBytes": 68739,
       "sharedBytesReferenced": 10873,
-      "totalReferencedBytes": 79260,
-      "textWords": 1499,
+      "totalReferencedBytes": 79612,
+      "textWords": 1503,
       "sourceFiles": [
         "content/components/water-heater-wh4/diagnostika-vodonagrevatelya-007-raw-html-fragment.json",
         "content/components/water-heater-wh4/diagnostika-vodonagrevatelya-008-section-chto-vidno-na-servisnom-foto.json",
@@ -13351,9 +13351,9 @@
       "parametricRefs": 10,
       "rawSections": 0,
       "localBytes": 0,
-      "sharedBytesReferenced": 32179,
-      "totalReferencedBytes": 32179,
-      "textWords": 457,
+      "sharedBytesReferenced": 35111,
+      "totalReferencedBytes": 35111,
+      "textWords": 615,
       "sourceFiles": [
         "content/components/water-heater-wh4/korroziya-baka-vodonagrevatelya-001-mobile-contact-mobil-nye-kontaktnye-elementy.json",
         "content/components/water-heater-wh4/korroziya-baka-vodonagrevatelya-002-contact-cta-korroziya-baka-vodonagrevatelya-remont-i.json",
@@ -13429,6 +13429,26 @@
           "parametric": true
         },
         {
+          "id": "003-section-kogda-nuzhen-etot-scenariy",
+          "component": "section",
+          "label": "Когда нужен этот сценарий",
+          "bytes": 1964,
+          "words": 82,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
+          "shared": false,
+          "parametric": true
+        },
+        {
+          "id": "005-section-sekciya-stranicy",
+          "component": "section",
+          "label": "Секция страницы",
+          "bytes": 1909,
+          "words": 78,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
+          "shared": false,
+          "parametric": true
+        },
+        {
           "id": "004-proof-chto-sdelat-bezopasno",
           "component": "proof",
           "label": "Что сделать безопасно",
@@ -13439,34 +13459,14 @@
           "parametric": true
         },
         {
-          "id": "009-lead-form-chto-otpravit-do-vyezda",
-          "component": "lead-form",
-          "label": "Что отправить до выезда",
-          "bytes": 1612,
-          "words": 23,
-          "source": "src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--f5a4f439e3ae8667.html",
-          "shared": true,
-          "parametric": false
-        },
-        {
-          "id": "010-faq-chastye-voprosy",
-          "component": "faq",
-          "label": "Частые вопросы",
-          "bytes": 1573,
-          "words": 58,
-          "source": "src/components/parametric/water-heater-wh4/faq.template.html",
+          "id": "006-section-kakie-raboty-mogut-potrebovat-sya",
+          "component": "section",
+          "label": "Какие работы могут потребоваться",
+          "bytes": 1654,
+          "words": 56,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
           "shared": false,
           "parametric": true
-        },
-        {
-          "id": "008-section-svyazannye-stranicy",
-          "component": "section",
-          "label": "Связанные страницы",
-          "bytes": 1205,
-          "words": 15,
-          "source": "src/components/shared/section/section-svyazannye-stranicy--e7f315bdd817bc14.html",
-          "shared": true,
-          "parametric": false
         }
       ],
       "missing": []
@@ -32021,10 +32021,10 @@
       "sharedRefs": 1,
       "parametricRefs": 8,
       "rawSections": 5,
-      "localBytes": 28833,
+      "localBytes": 29228,
       "sharedBytesReferenced": 8102,
-      "totalReferencedBytes": 36935,
-      "textWords": 652,
+      "totalReferencedBytes": 37330,
+      "textWords": 660,
       "sourceFiles": [
         "content/components/water-heater-wh4/podklyuchenie-i-obvyazka-vodonagrevatelya-003-raw-html-fragment.json",
         "content/components/water-heater-wh4/podklyuchenie-i-obvyazka-vodonagrevatelya-004-section-chto-vidno-na-servisnom-foto.json",
@@ -32100,8 +32100,8 @@
           "id": "011-section-svyazannye-stranicy-vodonagrevateley",
           "component": "section",
           "label": "Связанные страницы водонагревателей",
-          "bytes": 2521,
-          "words": 38,
+          "bytes": 2916,
+          "words": 46,
           "source": "src/pages/podklyuchenie-i-obvyazka-vodonagrevatelya/sections/011-section-svyazannye-stranicy-vodonagrevateley.html",
           "shared": false,
           "parametric": false
@@ -41037,9 +41037,9 @@
       "parametricRefs": 10,
       "rawSections": 0,
       "localBytes": 0,
-      "sharedBytesReferenced": 36214,
-      "totalReferencedBytes": 36214,
-      "textWords": 467,
+      "sharedBytesReferenced": 39172,
+      "totalReferencedBytes": 39172,
+      "textWords": 625,
       "sourceFiles": [
         "content/components/water-heater-wh4/remont-platy-i-elektroniki-vodonagrevatelya-001-mobile-contact-mobil-nye-kontaktnye-elementy.json",
         "content/components/water-heater-wh4/remont-platy-i-elektroniki-vodonagrevatelya-002-contact-cta-remont-platy-i-elektroniki-vodonagrevate.json",
@@ -41115,6 +41115,16 @@
           "parametric": true
         },
         {
+          "id": "003-section-kogda-nuzhen-etot-scenariy",
+          "component": "section",
+          "label": "Когда нужен этот сценарий",
+          "bytes": 2045,
+          "words": 79,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
+          "shared": false,
+          "parametric": true
+        },
+        {
           "id": "008-section-svyazannye-stranicy",
           "component": "section",
           "label": "Связанные страницы",
@@ -41125,32 +41135,22 @@
           "parametric": false
         },
         {
-          "id": "004-proof-chto-sdelat-bezopasno",
-          "component": "proof",
-          "label": "Что сделать безопасно",
-          "bytes": 1708,
-          "words": 35,
-          "source": "src/components/parametric/water-heater-wh4/proof.template.html",
+          "id": "005-section-sekciya-stranicy",
+          "component": "section",
+          "label": "Секция страницы",
+          "bytes": 1814,
+          "words": 65,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
           "shared": false,
           "parametric": true
         },
         {
-          "id": "009-lead-form-chto-otpravit-do-vyezda",
-          "component": "lead-form",
-          "label": "Что отправить до выезда",
-          "bytes": 1612,
-          "words": 23,
-          "source": "src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--f5a4f439e3ae8667.html",
-          "shared": true,
-          "parametric": false
-        },
-        {
-          "id": "010-faq-chastye-voprosy",
-          "component": "faq",
-          "label": "Частые вопросы",
-          "bytes": 1488,
-          "words": 50,
-          "source": "src/components/parametric/water-heater-wh4/faq.template.html",
+          "id": "006-section-kakie-raboty-mogut-potrebovat-sya",
+          "component": "section",
+          "label": "Какие работы могут потребоваться",
+          "bytes": 1727,
+          "words": 70,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
           "shared": false,
           "parametric": true
         }
@@ -41700,9 +41700,9 @@
       "parametricRefs": 10,
       "rawSections": 0,
       "localBytes": 0,
-      "sharedBytesReferenced": 29475,
-      "totalReferencedBytes": 29475,
-      "textWords": 425,
+      "sharedBytesReferenced": 32101,
+      "totalReferencedBytes": 32101,
+      "textWords": 562,
       "sourceFiles": [
         "content/components/water-heater-wh4/remont-ploskih-dvuhbakovyh-vodonagrevateley-001-mobile-contact-mobil-nye-kontaktnye-elementy.json",
         "content/components/water-heater-wh4/remont-ploskih-dvuhbakovyh-vodonagrevateley-002-contact-cta-remont-ploskih-dvuhbakovyh-vodonagrevate.json",
@@ -41778,6 +41778,16 @@
           "parametric": true
         },
         {
+          "id": "003-section-kogda-nuzhen-etot-scenariy",
+          "component": "section",
+          "label": "Когда нужен этот сценарий",
+          "bytes": 2022,
+          "words": 76,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
+          "shared": false,
+          "parametric": true
+        },
+        {
           "id": "004-proof-chto-sdelat-bezopasno",
           "component": "proof",
           "label": "Что сделать безопасно",
@@ -41788,32 +41798,22 @@
           "parametric": true
         },
         {
+          "id": "005-section-sekciya-stranicy",
+          "component": "section",
+          "label": "Секция страницы",
+          "bytes": 1629,
+          "words": 68,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
+          "shared": false,
+          "parametric": true
+        },
+        {
           "id": "009-lead-form-chto-otpravit-do-vyezda",
           "component": "lead-form",
           "label": "Что отправить до выезда",
           "bytes": 1612,
           "words": 23,
           "source": "src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--f5a4f439e3ae8667.html",
-          "shared": true,
-          "parametric": false
-        },
-        {
-          "id": "010-faq-chastye-voprosy",
-          "component": "faq",
-          "label": "Частые вопросы",
-          "bytes": 1435,
-          "words": 52,
-          "source": "src/components/parametric/water-heater-wh4/faq.template.html",
-          "shared": false,
-          "parametric": true
-        },
-        {
-          "id": "008-section-svyazannye-stranicy",
-          "component": "section",
-          "label": "Связанные страницы",
-          "bytes": 1205,
-          "words": 15,
-          "source": "src/components/shared/section/section-svyazannye-stranicy--e7f315bdd817bc14.html",
           "shared": true,
           "parametric": false
         }
@@ -53728,6 +53728,143 @@
       "missing": []
     },
     {
+      "page": "ustanovka-elektricheskogo-vodonagrevatelya.html",
+      "slug": "ustanovka-elektricheskogo-vodonagrevatelya",
+      "branch": "household",
+      "role": "service",
+      "title": "Установка электрического водонагревателя в Москве",
+      "h1": "Установка электрического водонагревателя",
+      "sectionCount": 17,
+      "localSections": 16,
+      "sharedRefs": 0,
+      "parametricRefs": 1,
+      "rawSections": 2,
+      "localBytes": 31696,
+      "sharedBytesReferenced": 1077,
+      "totalReferencedBytes": 32773,
+      "textWords": 792,
+      "sourceFiles": [
+        "src/components/parametric/household-breadcrumb/two-parent.template.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/after-body.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/body-open.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/head.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/page.json",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/001-body-preamble-sekciya-1.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/002-raw-html-fragment.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/003-hero-ustanovka-elektricheskogo-vodonagrevatelya-na-d.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/005-pricing-kak-prohodit-zayavka.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/006-section-s-kakimi-bytovymi-modelyami-rabotaem.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/007-lead-form-chto-luchshe-otpravit-srazu.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/008-proof-dokazatel-stva-garantii.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/010-proof-dokazatel-stva-garantii.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/011-proof-dokazatel-stva-garantii.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/012-related-links-esli-problema-v-drugoy-tehnike.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/013-related-links-svyazannye-stranicy.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/014-faq-chastye-voprosy-po-stranice-ustanovka-vodonagrev.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/015-footer-anchor-footer-mount-point.html",
+        "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/016-raw-html-fragment.html"
+      ],
+      "sourceFileCount": 21,
+      "byComponent": {
+        "proof": 3,
+        "pricing": 2,
+        "raw": 2,
+        "related-links": 2,
+        "section": 2,
+        "body-preamble": 1,
+        "breadcrumb": 1,
+        "faq": 1,
+        "footer-anchor": 1,
+        "hero": 1,
+        "lead-form": 1
+      },
+      "largestSections": [
+        {
+          "id": "007-lead-form-chto-luchshe-otpravit-srazu",
+          "component": "lead-form",
+          "label": "Что лучше отправить сразу",
+          "bytes": 10675,
+          "words": 159,
+          "source": "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/007-lead-form-chto-luchshe-otpravit-srazu.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "012-related-links-esli-problema-v-drugoy-tehnike",
+          "component": "related-links",
+          "label": "Если проблема в другой технике",
+          "bytes": 3859,
+          "words": 100,
+          "source": "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/012-related-links-esli-problema-v-drugoy-tehnike.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "014-faq-chastye-voprosy-po-stranice-ustanovka-vodonagrev",
+          "component": "faq",
+          "label": "Частые вопросы по странице Установка водонагревателя",
+          "bytes": 3604,
+          "words": 137,
+          "source": "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/014-faq-chastye-voprosy-po-stranice-ustanovka-vodonagrev.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "005-pricing-kak-prohodit-zayavka",
+          "component": "pricing",
+          "label": "Как проходит заявка",
+          "bytes": 3409,
+          "words": 106,
+          "source": "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/005-pricing-kak-prohodit-zayavka.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt",
+          "component": "section",
+          "label": "С чем чаще всего обращаются по электрический водонагреватель",
+          "bytes": 2768,
+          "words": 87,
+          "source": "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "006-section-s-kakimi-bytovymi-modelyami-rabotaem",
+          "component": "section",
+          "label": "С какими бытовыми моделями работаем",
+          "bytes": 2476,
+          "words": 81,
+          "source": "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/006-section-s-kakimi-bytovymi-modelyami-rabotaem.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
+          "component": "pricing",
+          "label": "Что клиент понимает ещё до начала работ",
+          "bytes": 2274,
+          "words": 79,
+          "source": "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "003-hero-ustanovka-elektricheskogo-vodonagrevatelya-na-d",
+          "component": "hero",
+          "label": "Установка электрического водонагревателя на дому",
+          "bytes": 1997,
+          "words": 37,
+          "source": "src/pages/ustanovka-elektricheskogo-vodonagrevatelya/sections/003-hero-ustanovka-elektricheskogo-vodonagrevatelya-na-d.html",
+          "shared": false,
+          "parametric": false
+        }
+      ],
+      "missing": []
+    },
+    {
       "page": "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem.html",
       "slug": "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem",
       "branch": "household",
@@ -58688,10 +58825,10 @@
       "sharedRefs": 1,
       "parametricRefs": 8,
       "rawSections": 2,
-      "localBytes": 65912,
+      "localBytes": 66264,
       "sharedBytesReferenced": 6307,
-      "totalReferencedBytes": 72219,
-      "textWords": 1388,
+      "totalReferencedBytes": 72571,
+      "textWords": 1392,
       "sourceFiles": [
         "content/components/water-heater-wh4/vodonagrevatel-medlenno-greet-vodu-007-raw-html-fragment.json",
         "content/components/water-heater-wh4/vodonagrevatel-medlenno-greet-vodu-008-section-chto-vidno-na-servisnom-foto.json",
@@ -59133,6 +59270,143 @@
       "missing": []
     },
     {
+      "page": "vodonagrevatel-shumit-pri-nagreve.html",
+      "slug": "vodonagrevatel-shumit-pri-nagreve",
+      "branch": "household",
+      "role": "service",
+      "title": "Водонагреватель шумит при нагреве — диагностика в Москве",
+      "h1": "Водонагреватель шумит при нагреве",
+      "sectionCount": 17,
+      "localSections": 16,
+      "sharedRefs": 0,
+      "parametricRefs": 1,
+      "rawSections": 2,
+      "localBytes": 30716,
+      "sharedBytesReferenced": 1044,
+      "totalReferencedBytes": 31760,
+      "textWords": 781,
+      "sourceFiles": [
+        "src/components/parametric/household-breadcrumb/two-parent.template.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/after-body.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/body-open.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/head.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/page.json",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/001-body-preamble-sekciya-1.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/002-raw-html-fragment.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/003-hero-diagnostika-shuma-vodonagrevatelya-pri-nagreve-.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/005-pricing-kak-prohodit-zayavka.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/006-section-s-kakimi-bytovymi-modelyami-rabotaem.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/007-lead-form-chto-luchshe-otpravit-srazu.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/008-proof-dokazatel-stva-garantii.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/010-proof-dokazatel-stva-garantii.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/011-proof-dokazatel-stva-garantii.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/012-related-links-esli-problema-v-drugoy-tehnike.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/013-related-links-svyazannye-stranicy.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/014-faq-chastye-voprosy-po-stranice-vodonagrevatel-shumi.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/015-footer-anchor-footer-mount-point.html",
+        "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/016-raw-html-fragment.html"
+      ],
+      "sourceFileCount": 21,
+      "byComponent": {
+        "proof": 3,
+        "pricing": 2,
+        "raw": 2,
+        "related-links": 2,
+        "section": 2,
+        "body-preamble": 1,
+        "breadcrumb": 1,
+        "faq": 1,
+        "footer-anchor": 1,
+        "hero": 1,
+        "lead-form": 1
+      },
+      "largestSections": [
+        {
+          "id": "007-lead-form-chto-luchshe-otpravit-srazu",
+          "component": "lead-form",
+          "label": "Что лучше отправить сразу",
+          "bytes": 10501,
+          "words": 155,
+          "source": "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/007-lead-form-chto-luchshe-otpravit-srazu.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "014-faq-chastye-voprosy-po-stranice-vodonagrevatel-shumi",
+          "component": "faq",
+          "label": "Частые вопросы по странице Водонагреватель шумит при нагреве",
+          "bytes": 3599,
+          "words": 152,
+          "source": "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/014-faq-chastye-voprosy-po-stranice-vodonagrevatel-shumi.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "012-related-links-esli-problema-v-drugoy-tehnike",
+          "component": "related-links",
+          "label": "Если проблема в другой технике",
+          "bytes": 3489,
+          "words": 74,
+          "source": "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/012-related-links-esli-problema-v-drugoy-tehnike.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "005-pricing-kak-prohodit-zayavka",
+          "component": "pricing",
+          "label": "Как проходит заявка",
+          "bytes": 3211,
+          "words": 98,
+          "source": "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/005-pricing-kak-prohodit-zayavka.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt",
+          "component": "section",
+          "label": "С чем чаще всего обращаются по электрический водонагреватель",
+          "bytes": 2808,
+          "words": 91,
+          "source": "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "006-section-s-kakimi-bytovymi-modelyami-rabotaem",
+          "component": "section",
+          "label": "С какими бытовыми моделями работаем",
+          "bytes": 2403,
+          "words": 88,
+          "source": "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/006-section-s-kakimi-bytovymi-modelyami-rabotaem.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
+          "component": "pricing",
+          "label": "Что клиент понимает ещё до начала работ",
+          "bytes": 2099,
+          "words": 73,
+          "source": "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "003-hero-diagnostika-shuma-vodonagrevatelya-pri-nagreve-",
+          "component": "hero",
+          "label": "Диагностика шума водонагревателя при нагреве на дому",
+          "bytes": 1981,
+          "words": 43,
+          "source": "src/pages/vodonagrevatel-shumit-pri-nagreve/sections/003-hero-diagnostika-shuma-vodonagrevatelya-pri-nagreve-.html",
+          "shared": false,
+          "parametric": false
+        }
+      ],
+      "missing": []
+    },
+    {
       "page": "vodonagrevatel-techet.html",
       "slug": "vodonagrevatel-techet",
       "branch": "household",
@@ -59144,10 +59418,10 @@
       "sharedRefs": 2,
       "parametricRefs": 13,
       "rawSections": 4,
-      "localBytes": 63342,
+      "localBytes": 63983,
       "sharedBytesReferenced": 12908,
-      "totalReferencedBytes": 76250,
-      "textWords": 1438,
+      "totalReferencedBytes": 76891,
+      "textWords": 1481,
       "sourceFiles": [
         "content/components/water-heater-wh4/vodonagrevatel-techet-007-raw-html-fragment.json",
         "content/components/water-heater-wh4/vodonagrevatel-techet-008-pricing-chto-vidno-na-servisnom-foto.json",
@@ -59240,6 +59514,16 @@
           "parametric": false
         },
         {
+          "id": "011-pricing-kapaet-iz-drenazhnoy-trubki",
+          "component": "pricing",
+          "label": "Капает из дренажной трубки",
+          "bytes": 5032,
+          "words": 115,
+          "source": "src/pages/vodonagrevatel-techet/sections/011-pricing-kapaet-iz-drenazhnoy-trubki.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
           "id": "030-faq-chastye-voprosy",
           "component": "faq",
           "label": "Частые вопросы",
@@ -59256,16 +59540,6 @@
           "bytes": 4479,
           "words": 61,
           "source": "src/pages/vodonagrevatel-techet/sections/034-mobile-contact-mobil-nye-kontaktnye-elementy.html",
-          "shared": false,
-          "parametric": false
-        },
-        {
-          "id": "011-pricing-kapaet-iz-drenazhnoy-trubki",
-          "component": "pricing",
-          "label": "Капает из дренажной трубки",
-          "bytes": 4391,
-          "words": 72,
-          "source": "src/pages/vodonagrevatel-techet/sections/011-pricing-kapaet-iz-drenazhnoy-trubki.html",
           "shared": false,
           "parametric": false
         },
@@ -59918,10 +60192,10 @@
       "sharedRefs": 3,
       "parametricRefs": 17,
       "rawSections": 6,
-      "localBytes": 80059,
+      "localBytes": 80137,
       "sharedBytesReferenced": 9881,
-      "totalReferencedBytes": 89940,
-      "textWords": 1807,
+      "totalReferencedBytes": 90018,
+      "textWords": 1837,
       "sourceFiles": [
         "content/components/water-heater-wh4/water-heaters-007-raw-html-fragment.json",
         "content/components/water-heater-wh4/water-heaters-008-proof-chto-vidno-na-servisnom-foto.json",
@@ -61003,6 +61277,143 @@
           "bytes": 1924,
           "words": 35,
           "source": "src/pages/zamena-magnetrona-mikrovolnovki/sections/005-section-chto-vazhno-opisat-do-vyezda.html",
+          "shared": false,
+          "parametric": false
+        }
+      ],
+      "missing": []
+    },
+    {
+      "page": "zamena-magnievogo-anoda-vodonagrevatelya.html",
+      "slug": "zamena-magnievogo-anoda-vodonagrevatelya",
+      "branch": "household",
+      "role": "service",
+      "title": "Замена магниевого анода водонагревателя в Москве",
+      "h1": "Замена магниевого анода водонагревателя",
+      "sectionCount": 17,
+      "localSections": 16,
+      "sharedRefs": 0,
+      "parametricRefs": 1,
+      "rawSections": 2,
+      "localBytes": 31564,
+      "sharedBytesReferenced": 1070,
+      "totalReferencedBytes": 32634,
+      "textWords": 829,
+      "sourceFiles": [
+        "src/components/parametric/household-breadcrumb/two-parent.template.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/after-body.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/body-open.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/head.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/page.json",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/001-body-preamble-sekciya-1.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/002-raw-html-fragment.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/003-hero-zamena-magnievogo-anoda-vodonagrevatelya-na-dom.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/005-pricing-kak-prohodit-zayavka.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/006-section-s-kakimi-bytovymi-modelyami-rabotaem.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/007-lead-form-chto-luchshe-otpravit-srazu.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/008-proof-dokazatel-stva-garantii.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/010-proof-dokazatel-stva-garantii.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/011-proof-dokazatel-stva-garantii.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/012-related-links-esli-problema-v-drugoy-tehnike.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/013-related-links-svyazannye-stranicy.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/014-faq-chastye-voprosy-po-stranice-zamena-magnievogo-an.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/015-footer-anchor-footer-mount-point.html",
+        "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/016-raw-html-fragment.html"
+      ],
+      "sourceFileCount": 21,
+      "byComponent": {
+        "proof": 3,
+        "pricing": 2,
+        "raw": 2,
+        "related-links": 2,
+        "section": 2,
+        "body-preamble": 1,
+        "breadcrumb": 1,
+        "faq": 1,
+        "footer-anchor": 1,
+        "hero": 1,
+        "lead-form": 1
+      },
+      "largestSections": [
+        {
+          "id": "007-lead-form-chto-luchshe-otpravit-srazu",
+          "component": "lead-form",
+          "label": "Что лучше отправить сразу",
+          "bytes": 10550,
+          "words": 154,
+          "source": "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/007-lead-form-chto-luchshe-otpravit-srazu.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "014-faq-chastye-voprosy-po-stranice-zamena-magnievogo-an",
+          "component": "faq",
+          "label": "Частые вопросы по странице Замена магниевого анода",
+          "bytes": 3660,
+          "words": 150,
+          "source": "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/014-faq-chastye-voprosy-po-stranice-zamena-magnievogo-an.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "012-related-links-esli-problema-v-drugoy-tehnike",
+          "component": "related-links",
+          "label": "Если проблема в другой технике",
+          "bytes": 3569,
+          "words": 79,
+          "source": "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/012-related-links-esli-problema-v-drugoy-tehnike.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "005-pricing-kak-prohodit-zayavka",
+          "component": "pricing",
+          "label": "Как проходит заявка",
+          "bytes": 3381,
+          "words": 115,
+          "source": "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/005-pricing-kak-prohodit-zayavka.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt",
+          "component": "section",
+          "label": "С чем чаще всего обращаются по электрический накопительный водонагреватель",
+          "bytes": 2907,
+          "words": 97,
+          "source": "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/004-section-s-chem-chasche-vsego-obraschayutsya-po-elekt.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "006-section-s-kakimi-bytovymi-modelyami-rabotaem",
+          "component": "section",
+          "label": "С какими бытовыми моделями работаем",
+          "bytes": 2651,
+          "words": 103,
+          "source": "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/006-section-s-kakimi-bytovymi-modelyami-rabotaem.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot",
+          "component": "pricing",
+          "label": "Что клиент понимает ещё до начала работ",
+          "bytes": 2275,
+          "words": 86,
+          "source": "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/009-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html",
+          "shared": false,
+          "parametric": false
+        },
+        {
+          "id": "003-hero-zamena-magnievogo-anoda-vodonagrevatelya-na-dom",
+          "component": "hero",
+          "label": "Замена магниевого анода водонагревателя на дому",
+          "bytes": 1939,
+          "words": 38,
+          "source": "src/pages/zamena-magnievogo-anoda-vodonagrevatelya/sections/003-hero-zamena-magnievogo-anoda-vodonagrevatelya-na-dom.html",
           "shared": false,
           "parametric": false
         }
@@ -62395,10 +62806,10 @@
       "sharedRefs": 1,
       "parametricRefs": 11,
       "rawSections": 4,
-      "localBytes": 65933,
+      "localBytes": 66304,
       "sharedBytesReferenced": 16986,
-      "totalReferencedBytes": 82919,
-      "textWords": 1437,
+      "totalReferencedBytes": 83290,
+      "textWords": 1441,
       "sourceFiles": [
         "content/components/water-heater-wh4/zamena-tena-vodonagrevatelya-007-raw-html-fragment.json",
         "content/components/water-heater-wh4/zamena-tena-vodonagrevatelya-008-proof-chto-vidno-na-servisnom-foto.json",
@@ -62554,9 +62965,9 @@
       "parametricRefs": 10,
       "rawSections": 0,
       "localBytes": 0,
-      "sharedBytesReferenced": 30573,
-      "totalReferencedBytes": 30573,
-      "textWords": 433,
+      "sharedBytesReferenced": 33244,
+      "totalReferencedBytes": 33244,
+      "textWords": 566,
       "sourceFiles": [
         "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-001-mobile-contact-mobil-nye-kontaktnye-elementy.json",
         "content/components/water-heater-wh4/zamena-termostata-i-datchika-temperatury-vodonagrevatelya-002-contact-cta-zamena-termostata-i-datchika-temperatury.json",
@@ -62632,6 +63043,16 @@
           "parametric": true
         },
         {
+          "id": "003-section-kogda-nuzhen-etot-scenariy",
+          "component": "section",
+          "label": "Когда нужен этот сценарий",
+          "bytes": 2016,
+          "words": 73,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
+          "shared": false,
+          "parametric": true
+        },
+        {
           "id": "008-section-svyazannye-stranicy",
           "component": "section",
           "label": "Связанные страницы",
@@ -62652,22 +63073,12 @@
           "parametric": true
         },
         {
-          "id": "009-lead-form-chto-otpravit-do-vyezda",
-          "component": "lead-form",
-          "label": "Что отправить до выезда",
-          "bytes": 1612,
-          "words": 23,
-          "source": "src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--f5a4f439e3ae8667.html",
-          "shared": true,
-          "parametric": false
-        },
-        {
-          "id": "010-faq-chastye-voprosy",
-          "component": "faq",
-          "label": "Частые вопросы",
-          "bytes": 1488,
-          "words": 55,
-          "source": "src/components/parametric/water-heater-wh4/faq.template.html",
+          "id": "005-section-sekciya-stranicy",
+          "component": "section",
+          "label": "Секция страницы",
+          "bytes": 1663,
+          "words": 62,
+          "source": "src/components/parametric/water-heater-wh4/section.template.html",
           "shared": false,
           "parametric": true
         }
@@ -63959,57 +64370,57 @@
     },
     {
       "component": "section",
-      "total": 736,
-      "local": 526,
+      "total": 742,
+      "local": 532,
       "sharedRefs": 123,
       "parametricRefs": 87,
       "compressedRefs": 210,
-      "sharedRatio": 0.28532608695652173
+      "sharedRatio": 0.2830188679245283
     },
     {
       "component": "proof",
-      "total": 553,
-      "local": 336,
+      "total": 562,
+      "local": 345,
       "sharedRefs": 14,
       "parametricRefs": 203,
       "compressedRefs": 217,
-      "sharedRatio": 0.3924050632911392
+      "sharedRatio": 0.3861209964412811
     },
     {
       "component": "pricing",
-      "total": 477,
-      "local": 374,
+      "total": 483,
+      "local": 380,
       "sharedRefs": 84,
       "parametricRefs": 19,
       "compressedRefs": 103,
-      "sharedRatio": 0.21593291404612158
+      "sharedRatio": 0.21325051759834368
     },
     {
       "component": "faq",
-      "total": 463,
-      "local": 418,
+      "total": 466,
+      "local": 421,
       "sharedRefs": 38,
       "parametricRefs": 7,
       "compressedRefs": 45,
-      "sharedRatio": 0.09719222462203024
+      "sharedRatio": 0.09656652360515021
     },
     {
       "component": "breadcrumb",
-      "total": 434,
+      "total": 437,
       "local": 185,
       "sharedRefs": 0,
-      "parametricRefs": 249,
-      "compressedRefs": 249,
-      "sharedRatio": 0.5737327188940092
+      "parametricRefs": 252,
+      "compressedRefs": 252,
+      "sharedRatio": 0.5766590389016019
     },
     {
       "component": "lead-form",
-      "total": 370,
-      "local": 337,
+      "total": 373,
+      "local": 340,
       "sharedRefs": 17,
       "parametricRefs": 16,
       "compressedRefs": 33,
-      "sharedRatio": 0.0891891891891892
+      "sharedRatio": 0.08847184986595175
     },
     {
       "component": "contact-cta",
@@ -64022,17 +64433,17 @@
     },
     {
       "component": "raw",
-      "total": 175,
-      "local": 101,
+      "total": 181,
+      "local": 107,
       "sharedRefs": 26,
       "parametricRefs": 48,
       "compressedRefs": 74,
-      "sharedRatio": 0.4228571428571429
+      "sharedRatio": 0.4088397790055249
     },
     {
       "component": "body-preamble",
-      "total": 169,
-      "local": 169,
+      "total": 172,
+      "local": 172,
       "sharedRefs": 0,
       "parametricRefs": 0,
       "compressedRefs": 0,
@@ -64040,12 +64451,12 @@
     },
     {
       "component": "footer-anchor",
-      "total": 168,
-      "local": 0,
+      "total": 171,
+      "local": 3,
       "sharedRefs": 0,
       "parametricRefs": 168,
       "compressedRefs": 168,
-      "sharedRatio": 1
+      "sharedRatio": 0.9824561403508771
     },
     {
       "component": "runtime-partials",
@@ -64058,17 +64469,17 @@
     },
     {
       "component": "related-links",
-      "total": 144,
-      "local": 108,
+      "total": 150,
+      "local": 114,
       "sharedRefs": 35,
       "parametricRefs": 1,
       "compressedRefs": 36,
-      "sharedRatio": 0.25
+      "sharedRatio": 0.24
     },
     {
       "component": "hero",
-      "total": 90,
-      "local": 90,
+      "total": 93,
+      "local": 93,
       "sharedRefs": 0,
       "parametricRefs": 0,
       "compressedRefs": 0,
@@ -65296,18 +65707,13 @@
         "sections": 32
       },
       {
-        "page": "bytovaya-index.html",
-        "localBytes": 89067,
-        "sections": 35
-      },
-      {
         "page": "pishevarochnye-kotly.html",
         "localBytes": 84649,
         "sections": 45
       },
       {
         "page": "water-heaters.html",
-        "localBytes": 80059,
+        "localBytes": 80137,
         "sections": 44
       },
       {
@@ -65324,6 +65730,11 @@
         "page": "stiralnye-mashiny.html",
         "localBytes": 71031,
         "sections": 28
+      },
+      {
+        "page": "diagnostika-vodonagrevatelya.html",
+        "localBytes": 68739,
+        "sections": 40
       }
     ],
     "byRawSections": [
@@ -65456,25 +65867,25 @@
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "section",
-      "message": "section: 526 локальных секций, shared ratio 29% — кандидат на параметризованный компонент + props."
+      "message": "section: 532 локальных секций, shared ratio 28% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "pricing",
-      "message": "pricing: 374 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props."
+      "message": "pricing: 380 локальных секций, shared ratio 21% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "faq",
-      "message": "faq: 418 локальных секций, shared ratio 10% — кандидат на параметризованный компонент + props."
+      "message": "faq: 421 локальных секций, shared ratio 10% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "lead-form",
-      "message": "lead-form: 337 локальных секций, shared ratio 9% — кандидат на параметризованный компонент + props."
+      "message": "lead-form: 340 локальных секций, shared ratio 9% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
@@ -65486,19 +65897,19 @@
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "body-preamble",
-      "message": "body-preamble: 169 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props."
+      "message": "body-preamble: 172 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "related-links",
-      "message": "related-links: 108 локальных секций, shared ratio 25% — кандидат на параметризованный компонент + props."
+      "message": "related-links: 114 локальных секций, shared ratio 24% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",
       "priority": "high",
       "component": "hero",
-      "message": "hero: 90 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props."
+      "message": "hero: 93 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props."
     },
     {
       "type": "componentize-local-sections",

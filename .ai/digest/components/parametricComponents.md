@@ -1,7 +1,7 @@
 # Component Digest — parametricComponents
 
 - Name: Parameterized components / template + props
-- Appears in: 500 pages
+- Appears in: 503 pages
 - Keywords: parametric, parameterized, templateRef, propsRef, content/components, параметризованные компоненты
 
 ## Related files
@@ -18,7 +18,7 @@
 
 ## Safe editing notes
 
-- Parametric refs: 2836, templates: 170, props files: 781.
+- Parametric refs: 2839, templates: 170, props files: 781.
 - Для текста конкретной страницы меняй content/components/*/*.json; для разметки меняй template.html.
 - После правки запускай check:parameterized-components и check:site-builder.
 
@@ -44,4 +44,4 @@
 - chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html
 - chistka-ventilyatsii-restoranov.html
 - chistka-vodonagrevatelya-ot-nakipi.html
-- … ещё 480
+- … ещё 483

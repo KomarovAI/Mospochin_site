@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "cluster": "water-heaters",
-  "release": "WH4-VISUAL-FULL",
+  "release": "WH5-CONTENT-P4",
   "status": "all-water-heater-photos-deployed",
   "runtime": "local-native",
   "artifactRoot": ".artifacts/screenshots/water-heaters/wh4-visual",
@@ -136,6 +136,27 @@
       "label": "Сложная трёхфазная система ГВС частного дома — фотокейс",
       "branch": "household",
       "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "zamena-magnievogo-anoda-vodonagrevatelya.html",
+      "label": "Замена магниевого анода водонагревателя",
+      "branch": "household",
+      "pageType": "service",
+      "fullPage": false
+    },
+    {
+      "page": "vodonagrevatel-shumit-pri-nagreve.html",
+      "label": "Водонагреватель шумит при нагреве",
+      "branch": "household",
+      "pageType": "symptom",
+      "fullPage": false
+    },
+    {
+      "page": "ustanovka-elektricheskogo-vodonagrevatelya.html",
+      "label": "Установка электрического водонагревателя",
+      "branch": "household",
+      "pageType": "installation",
       "fullPage": false
     }
   ]

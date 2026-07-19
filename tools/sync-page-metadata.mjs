@@ -38,12 +38,18 @@ function removeTag(html, regex) {
 }
 
 for (const [fileName, page] of Object.entries(metadata.pages)) {
-  const filePath = path.join(SITE_ROOT, fileName);
-  if (!fs.existsSync(filePath)) {
+  const rootPagePath = path.join(SITE_ROOT, fileName);
+  if (!fs.existsSync(rootPagePath)) {
     throw new Error(`Missing page file: ${fileName}`);
   }
 
-  let html = fs.readFileSync(filePath, 'utf8').replace(/\r\n/g, '\n');
+  const slug = fileName.replace(/\.html$/i, '');
+  const sourceHeadPath = path.join(SITE_ROOT, 'src', 'pages', slug, 'head.html');
+  const targetPaths = [rootPagePath];
+  if (fs.existsSync(sourceHeadPath)) targetPaths.push(sourceHeadPath);
+
+  for (const filePath of targetPaths) {
+    let html = fs.readFileSync(filePath, 'utf8').replace(/\r\n/g, '\n');
 
   html = replaceOrInsert(
     html,
@@ -52,45 +58,35 @@ for (const [fileName, page] of Object.entries(metadata.pages)) {
     '<meta name="description"'
   );
 
-  html = replaceOrInsert(
-    html,
-    /<meta[^>]+name="description"[^>]+content="[^"]*"[^>]*>/i,
-    `<meta name="description" content="${page.description}">`,
-    '</title>'
-  );
+  const descriptionTag = `<meta name="description" content="${page.description}">`;
+  const descriptionMatcher = /<meta\b(?=[^>]*\bname=["']description["'])(?=[^>]*\bcontent=["'][^"']*["'])[^>]*>/i;
+  if (descriptionMatcher.test(html)) {
+    html = html.replace(descriptionMatcher, descriptionTag);
+  } else {
+    html = html.replace(/<\/title>/i, `</title>\n${descriptionTag}`);
+  }
 
   if (page.canonical) {
-    html = replaceOrInsert(
-      html,
-      /<link[^>]+rel="canonical"[^>]+href="[^"]*"[^>]*>/i,
-      `<link rel="canonical" href="${page.canonical}">`,
-      '</head>'
-    );
+    html = html.replace(/\s*<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>\s*/gi, '\n');
+    html = html.replace('</head>', `<link rel="canonical" href="${page.canonical}">\n</head>`);
   } else {
-    html = removeTag(html, /\n?\s*<link[^>]+rel="canonical"[^>]*>\s*/i);
+    html = removeTag(html, /\s*<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>\s*/gi);
   }
 
   if (page.ogUrl) {
-    html = replaceOrInsert(
-      html,
-      /<meta[^>]+property="og:url"[^>]+content="[^"]*"[^>]*>/i,
-      `<meta property="og:url" content="${page.ogUrl}">`,
-      '</head>'
-    );
+    html = html.replace(/\s*<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>\s*/gi, '\n');
+    html = html.replace('</head>', `<meta property="og:url" content="${page.ogUrl}">\n</head>`);
   } else {
     html = removeTag(html, /\n?\s*<meta[^>]+property="og:url"[^>]*>\s*/i);
   }
 
   if (page.robots) {
-    html = replaceOrInsert(
-      html,
-      /<meta[^>]+name="robots"[^>]+content="[^"]*"[^>]*>/i,
-      `<meta name="robots" content="${page.robots}">`,
-      '</head>'
-    );
+    html = html.replace(/\s*<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>\s*/gi, '\n');
+    html = html.replace('</head>', `<meta name="robots" content="${page.robots}">\n</head>`);
   }
 
-  fs.writeFileSync(filePath, `${html.replace(/\n{3,}/g, '\n\n').trim()}\n`);
+    fs.writeFileSync(filePath, `${html.replace(/\n{3,}/g, '\n\n').trim()}\n`);
+  }
 }
 
 console.log(`Synced metadata for ${Object.keys(metadata.pages).length} pages.`);

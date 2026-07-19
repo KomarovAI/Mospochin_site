@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/diagnostika-vodonagrevatelya.html
 - Builder model: src/pages/diagnostika-vodonagrevatelya/page.json
 - Sections: 40 (23 local, 2 shared refs, 4 raw)
-- Text words inside referenced sections: 1499
+- Text words inside referenced sections: 1503
 
 ## Component mix
 

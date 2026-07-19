@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/zamena-tena-vodonagrevatelya.html
 - Builder model: src/pages/zamena-tena-vodonagrevatelya/page.json
 - Sections: 34 (22 local, 1 shared refs, 4 raw)
-- Text words inside referenced sections: 1437
+- Text words inside referenced sections: 1441
 
 ## Component mix
 

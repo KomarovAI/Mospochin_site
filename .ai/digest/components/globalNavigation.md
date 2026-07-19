@@ -1,7 +1,7 @@
 # Component Digest — globalNavigation
 
 - Name: Глобальная навигация / header
-- Appears in: 500 pages
+- Appears in: 503 pages
 - Keywords: меню, навигац, header, шапка, nav
 - CSS selectors: nav, .mobile-menu, [data-mobile-menu], .btn-click
 - JS hooks: mobile-menu, DOMContentLoaded
@@ -42,4 +42,4 @@
 - chistka-teploobmennika-i-vozdushnogo-trakta-sushilnoy-mashiny.html
 - chistka-ventilyatsii-restoranov.html
 - chistka-vodonagrevatelya-ot-nakipi.html
-- … ещё 480
+- … ещё 483

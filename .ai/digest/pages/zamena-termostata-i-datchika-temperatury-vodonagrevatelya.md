@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/zamena-termostata-i-datchika-temperatury-vodonagrevatelya.html
 - Builder model: src/pages/zamena-termostata-i-datchika-temperatury-vodonagrevatelya/page.json
 - Sections: 12 (0 local, 2 shared refs, 0 raw)
-- Text words inside referenced sections: 433
+- Text words inside referenced sections: 566
 
 ## Component mix
 
@@ -31,10 +31,10 @@
 | Мобильные контактные элементы | mobile-contact | 4.4 KB | 61 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Фото узла и этапов работы | section | 3.7 KB | 31 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Замена термостата и датчика температуры водонагревателя | contact-cta | 3.2 KB | 50 | no | src/components/parametric/water-heater-wh4/contact-cta.template.html |
+| Когда нужен этот сценарий | section | 2.0 KB | 73 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Связанные страницы | section | 1.8 KB | 25 | yes | src/components/shared/section/section-svyazannye-stranicy--7a83390e067c8796.html |
 | Что сделать безопасно | proof | 1.7 KB | 34 | no | src/components/parametric/water-heater-wh4/proof.template.html |
-| Что отправить до выезда | lead-form | 1.6 KB | 23 | yes | src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--f5a4f439e3ae8667.html |
-| Частые вопросы | faq | 1.5 KB | 55 | no | src/components/parametric/water-heater-wh4/faq.template.html |
+| Секция страницы | section | 1.6 KB | 62 | no | src/components/parametric/water-heater-wh4/section.template.html |
 
 
 ## Editable source files

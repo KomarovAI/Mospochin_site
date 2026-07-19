@@ -68,6 +68,21 @@
       "intent": "full boiler-room construction",
       "status": "excluded",
       "reason": "advanced images are visual context only; the service remains limited to DHW equipment"
+    },
+    {
+      "intent": "magnesium anode maintenance",
+      "status": "included",
+      "reason": "model-scoped maintenance of an electric storage water heater"
+    },
+    {
+      "intent": "noise during electric water-heater operation",
+      "status": "included",
+      "reason": "symptom-led diagnostics without assuming scale"
+    },
+    {
+      "intent": "electric water-heater installation",
+      "status": "included",
+      "reason": "appliance mounting, local piping and model-scoped connection checks"
     }
   ],
   "cannibalizationRules": [

@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/podklyuchenie-i-obvyazka-vodonagrevatelya.html
 - Builder model: src/pages/podklyuchenie-i-obvyazka-vodonagrevatelya/page.json
 - Sections: 21 (12 local, 1 shared refs, 5 raw)
-- Text words inside referenced sections: 652
+- Text words inside referenced sections: 660
 
 ## Component mix
 
@@ -31,7 +31,7 @@
 | Мобильные контактные элементы | mobile-contact | 9.3 KB | 110 | no | src/pages/podklyuchenie-i-obvyazka-vodonagrevatelya/sections/001-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Мобильные контактные элементы | mobile-contact | 5.0 KB | 77 | no | src/pages/podklyuchenie-i-obvyazka-vodonagrevatelya/sections/020-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Дополнительные фотографии узла | section | 3.5 KB | 29 | no | src/components/parametric/water-heater-wh4/section.template.html |
-| Связанные страницы водонагревателей | section | 2.5 KB | 38 | no | src/pages/podklyuchenie-i-obvyazka-vodonagrevatelya/sections/011-section-svyazannye-stranicy-vodonagrevateley.html |
+| Связанные страницы водонагревателей | section | 2.8 KB | 46 | no | src/pages/podklyuchenie-i-obvyazka-vodonagrevatelya/sections/011-section-svyazannye-stranicy-vodonagrevateley.html |
 | Что проверить безопасно | pricing | 2.3 KB | 71 | no | src/pages/podklyuchenie-i-obvyazka-vodonagrevatelya/sections/008-pricing-chto-proverit-bezopasno.html |
 | Что видно на сервисном фото | section | 2.3 KB | 35 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Что отправить до выезда | lead-form | 1.9 KB | 31 | no | src/pages/podklyuchenie-i-obvyazka-vodonagrevatelya/sections/018-lead-form-chto-otpravit-do-vyezda.html |

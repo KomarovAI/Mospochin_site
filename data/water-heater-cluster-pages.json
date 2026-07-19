@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "cluster": "water-heaters",
   "branch": "household",
-  "release": "WH4-VISUAL-FULL",
+  "release": "WH5-CONTENT-P4",
   "scope": "electric-only-plus-local-piping-three-phase-and-visual-cases",
   "hub": "water-heaters.html",
-  "pageCount": 31,
+  "pageCount": 34,
   "pages": [
     {
       "page": "water-heaters.html",
@@ -36,7 +36,10 @@
         "case-chistka-boylera-s-silnoy-nakipyu.html",
         "case-remont-dvuhbakovogo-vodonagrevatelya.html",
         "case-remont-boylera-v-tesnoy-nishe.html",
-        "case-trehfaznaya-sistema-gvs-chastnogo-doma.html"
+        "case-trehfaznaya-sistema-gvs-chastnogo-doma.html",
+        "zamena-magnievogo-anoda-vodonagrevatelya.html",
+        "vodonagrevatel-shumit-pri-nagreve.html",
+        "ustanovka-elektricheskogo-vodonagrevatelya.html"
       ]
     },
     {
@@ -89,7 +92,8 @@
         "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
         "ustanovka-reduktora-davleniya-dlya-vodonagrevatelya.html",
         "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem.html",
-        "remont-trehfaznyh-vodonagrevateley-380-400v.html"
+        "remont-trehfaznyh-vodonagrevateley-380-400v.html",
+        "vodonagrevatel-shumit-pri-nagreve.html"
       ]
     },
     {
@@ -162,7 +166,8 @@
         "water-heaters.html",
         "diagnostika-vodonagrevatelya.html",
         "zamena-tena-vodonagrevatelya.html",
-        "chistka-vodonagrevatelya-ot-nakipi.html"
+        "chistka-vodonagrevatelya-ot-nakipi.html",
+        "vodonagrevatel-shumit-pri-nagreve.html"
       ]
     },
     {
@@ -176,7 +181,8 @@
         "water-heaters.html",
         "vodonagrevatel-ne-greet-vodu.html",
         "vodonagrevatel-vybivaet-avtomat.html",
-        "chistka-vodonagrevatelya-ot-nakipi.html"
+        "chistka-vodonagrevatelya-ot-nakipi.html",
+        "zamena-magnievogo-anoda-vodonagrevatelya.html"
       ]
     },
     {
@@ -193,7 +199,9 @@
         "zamena-tena-vodonagrevatelya.html",
         "umyagchenie-vody-dlya-vodonagrevatelya.html",
         "ustanovka-mehanicheskogo-filtra-pered-vodonagrevatelem.html",
-        "ustanovka-slivnogo-krana-vodonagrevatelya.html"
+        "ustanovka-slivnogo-krana-vodonagrevatelya.html",
+        "vodonagrevatel-shumit-pri-nagreve.html",
+        "zamena-magnievogo-anoda-vodonagrevatelya.html"
       ]
     },
     {
@@ -210,7 +218,8 @@
         "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
         "ustanovka-slivnogo-krana-vodonagrevatelya.html",
         "podklyuchenie-vodonagrevatelya-polipropilenom.html",
-        "remont-trehfaznyh-vodonagrevateley-380-400v.html"
+        "remont-trehfaznyh-vodonagrevateley-380-400v.html",
+        "ustanovka-elektricheskogo-vodonagrevatelya.html"
       ],
       "evidenceIds": [
         "thermex_kit_safety_valve_manual",
@@ -483,7 +492,8 @@
       "clusterLinks": [
         "water-heaters.html",
         "diagnostika-vodonagrevatelya.html",
-        "fotografii-remonta-vodonagrevateley.html"
+        "fotografii-remonta-vodonagrevateley.html",
+        "zamena-magnievogo-anoda-vodonagrevatelya.html"
       ],
       "evidenceIds": [
         "thermex_storage_manual_2025",
@@ -576,6 +586,61 @@
         "case-trehfaznaya-sistema-gvs-chastnogo-doma.html"
       ],
       "serviceBoundary": "visual_evidence_only"
+    },
+    {
+      "page": "zamena-magnievogo-anoda-vodonagrevatelya.html",
+      "slug": "zamena-magnievogo-anoda-vodonagrevatelya",
+      "intent": "service",
+      "title": "Замена магниевого анода водонагревателя в Москве",
+      "h1": "Замена магниевого анода водонагревателя",
+      "indexable": true,
+      "clusterLinks": [
+        "water-heaters.html",
+        "chistka-vodonagrevatelya-ot-nakipi.html",
+        "zamena-tena-vodonagrevatelya.html",
+        "korroziya-baka-vodonagrevatelya.html"
+      ],
+      "evidenceIds": [
+        "thermex_kit_maintenance_2026"
+      ],
+      "serviceBoundary": "electric_water_heater_maintenance"
+    },
+    {
+      "page": "vodonagrevatel-shumit-pri-nagreve.html",
+      "slug": "vodonagrevatel-shumit-pri-nagreve",
+      "intent": "symptom",
+      "title": "Водонагреватель шумит при нагреве — диагностика в Москве",
+      "h1": "Водонагреватель шумит при нагреве",
+      "indexable": true,
+      "clusterLinks": [
+        "water-heaters.html",
+        "diagnostika-vodonagrevatelya.html",
+        "chistka-vodonagrevatelya-ot-nakipi.html",
+        "vodonagrevatel-medlenno-greet-vodu.html"
+      ],
+      "evidenceIds": [
+        "thermex_kit_maintenance_2026"
+      ],
+      "serviceBoundary": "electric_water_heater_diagnostics"
+    },
+    {
+      "page": "ustanovka-elektricheskogo-vodonagrevatelya.html",
+      "slug": "ustanovka-elektricheskogo-vodonagrevatelya",
+      "intent": "installation",
+      "title": "Установка электрического водонагревателя в Москве",
+      "h1": "Установка электрического водонагревателя",
+      "indexable": true,
+      "clusterLinks": [
+        "water-heaters.html",
+        "podklyuchenie-i-obvyazka-vodonagrevatelya.html",
+        "zamena-predohranitelnogo-klapana-vodonagrevatelya.html",
+        "ustanovka-slivnogo-krana-vodonagrevatelya.html"
+      ],
+      "evidenceIds": [
+        "thermex_kit_maintenance_2026",
+        "thermex_storage_installation_manual"
+      ],
+      "serviceBoundary": "electric_water_heater_installation"
     }
   ],
   "excludedIntents": [
@@ -600,7 +665,9 @@
     "DHW equipment is separated from electric heating boilers",
     "every source photo has one primary owner page",
     "captions remain neutral until provenance is confirmed",
-    "photos do not prove a correct installation scheme"
+    "photos do not prove a correct installation scheme",
+    "new intent pages require unique diagnostic logic",
+    "manufacturer guidance is scoped to the cited model family"
   ],
   "photoLibrary": "data/water-heater-photo-library.json"
 }

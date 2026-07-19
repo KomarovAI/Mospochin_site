@@ -5,7 +5,7 @@ const pages=read('data/water-heater-cluster-pages.json'); const graph=read('data
 const plumbing=read('data/water-heater-plumbing-pages.json'); const piping=read('data/water-heater-piping-taxonomy.json'); const install=read('data/water-heater-installation-specs.json'); const bounds=read('data/water-heater-intent-boundaries.json'); const photoLibrary=read('data/water-heater-photo-library.json'); const visual=read('data/water-heater-visual-pages.json');
 const failures=[]; const fail=m=>failures.push(m);
 if(pages.cluster!=='water-heaters'||pages.scope!=='electric-only-plus-local-piping-three-phase-and-visual-cases') fail('invalid WH4 visual cluster scope');
-if(pages.pages.length!==31||pages.pageCount!==31) fail(`expected 31 pages, got ${pages.pages.length}/${pages.pageCount}`);
+if(pages.pages.length!==34||pages.pageCount!==34) fail(`expected 34 pages, got ${pages.pages.length}/${pages.pageCount}`);
 if(plumbing.pages.length!==8||plumbing.serviceBoundary!=='local_appliance_piping') fail('invalid local piping subcluster');
 const pageSet=new Set(pages.pages.map(x=>x.page)); const plumbingSet=new Set(plumbing.pages.map(x=>x.page));
 for(const item of pages.pages){const file=path.join(ROOT,item.page); if(!fs.existsSync(file)){fail(`${item.page}: missing root HTML`);continue} const html=fs.readFileSync(file,'utf8'); const model=path.join(ROOT,'src/pages',item.slug,'page.json'); if(!fs.existsSync(model)) fail(`${item.page}: missing builder model`); for(const needle of ['<h1','telegram-form','name="phone"','name="problem"','telegram-form.js','analytics.js','tel:+79990057172','wa.me/79990057172','data-sync-zone="faq-items"']) if(!html.includes(needle)) fail(`${item.page}: missing ${needle}`); if(!html.includes(`<link rel="canonical" href="https://mospochin.ru/${item.page}">`)) fail(`${item.page}: canonical mismatch`); if(/по согласованию после диагностикиут/i.test(html)) fail(`${item.page}: corrupted legacy phrase`); if(/ремонт(?:ируем)?\s+газов(?:ых|ой)\s+(?:водонагревател|колон)/i.test(html)) fail(`${item.page}: prohibited gas repair claim`); if(/установк[аи]\s+унитаз|ремонт\s+канализац|замен[аи]\s+стояк/i.test(html)) fail(`${item.page}: general plumbing leakage`); for(const target of item.clusterLinks||[]) if(!html.includes(`href="${target}"`)) fail(`${item.page}: missing cluster link ${target}`);}
@@ -30,4 +30,6 @@ for(const photo of photoLibrary.photos){
 }
 if(visual.photoCount!==117||visual.photoHub!=='fotografii-remonta-vodonagrevateley.html') fail('invalid WH4 visual manifest');
 const three=read('data/water-heater-three-phase-page.json'); if(three.scope!=='three_phase_dhw_only') fail('invalid three-phase page scope');
-console.log(`Water-heater WH4 OK: ${pages.pages.length} pages, ${photoLibrary.photos.length} photos, ${plumbing.pages.length} piping pages, ${graph.edges.length} contextual links, ${evidence.sources.length} evidence sources`);
+if(pages.release!=='WH5-CONTENT-P4') fail(`unexpected release: ${pages.release}`);
+if(failures.length){console.error(failures.map(x=>`❌ ${x}`).join('\n'));process.exit(1)}
+console.log(`Water-heater WH5/P4 OK: ${pages.pages.length} pages, ${photoLibrary.photos.length} photos, ${plumbing.pages.length} piping pages, ${graph.edges.length} contextual links, ${evidence.sources.length} evidence sources`);

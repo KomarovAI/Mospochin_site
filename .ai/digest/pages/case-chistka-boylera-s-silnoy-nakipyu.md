@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/case-chistka-boylera-s-silnoy-nakipyu.html
 - Builder model: src/pages/case-chistka-boylera-s-silnoy-nakipyu/page.json
 - Sections: 10 (0 local, 3 shared refs, 0 raw)
-- Text words inside referenced sections: 475
+- Text words inside referenced sections: 503
 
 ## Component mix
 
@@ -25,7 +25,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Последовательность и детали | section | 8.9 KB | 53 | no | src/components/parametric/water-heater-wh4/section.template.html |
+| Последовательность и детали | section | 9.5 KB | 81 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Мобильные контактные элементы | mobile-contact | 8.4 KB | 96 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Очистка бойлера с сильной накипью — фотокейс | section | 2.4 KB | 38 | no | src/components/parametric/water-heater-wh4/section.template.html |

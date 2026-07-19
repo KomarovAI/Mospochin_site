@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/case-remont-dvuhbakovogo-vodonagrevatelya.html
 - Builder model: src/pages/case-remont-dvuhbakovogo-vodonagrevatelya/page.json
 - Sections: 10 (0 local, 3 shared refs, 0 raw)
-- Text words inside referenced sections: 379
+- Text words inside referenced sections: 407
 
 ## Component mix
 
@@ -26,7 +26,7 @@
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
 | Мобильные контактные элементы | mobile-contact | 8.4 KB | 96 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
-| Последовательность и детали | section | 6.3 KB | 42 | no | src/components/parametric/water-heater-wh4/section.template.html |
+| Последовательность и детали | section | 6.9 KB | 70 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Разборка двухбакового водонагревателя — фотокейс | section | 2.3 KB | 29 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Частые вопросы | faq | 1.6 KB | 61 | yes | src/components/shared/faq/faq-chastye-voprosy--a7084e5e5cf57dc1.html |

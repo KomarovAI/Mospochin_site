@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/vodonagrevatel-techet.html
 - Builder model: src/pages/vodonagrevatel-techet/page.json
 - Sections: 37 (22 local, 2 shared refs, 4 raw)
-- Text words inside referenced sections: 1438
+- Text words inside referenced sections: 1481
 
 ## Component mix
 
@@ -35,9 +35,9 @@
 | Что клиент понимает ещё до начала работ | pricing | 13.1 KB | 432 | no | src/pages/vodonagrevatel-techet/sections/025-pricing-chto-klient-ponimaet-esche-do-nachala-rabot.html |
 | Мобильные контактные элементы | mobile-contact | 7.3 KB | 78 | no | src/pages/vodonagrevatel-techet/sections/002-mobile-contact-mobil-nye-kontaktnye-elementy.html |
 | Опишите модель и точный симптом | lead-form | 5.9 KB | 112 | no | src/pages/vodonagrevatel-techet/sections/023-lead-form-opishite-model-i-tochnyy-simptom.html |
+| Капает из дренажной трубки | pricing | 4.9 KB | 115 | no | src/pages/vodonagrevatel-techet/sections/011-pricing-kapaet-iz-drenazhnoy-trubki.html |
 | Частые вопросы | faq | 4.4 KB | 110 | no | src/pages/vodonagrevatel-techet/sections/030-faq-chastye-voprosy.html |
 | Мобильные контактные элементы | mobile-contact | 4.4 KB | 61 | no | src/pages/vodonagrevatel-techet/sections/034-mobile-contact-mobil-nye-kontaktnye-elementy.html |
-| Капает из дренажной трубки | pricing | 4.3 KB | 72 | no | src/pages/vodonagrevatel-techet/sections/011-pricing-kapaet-iz-drenazhnoy-trubki.html |
 | Какие течи обычно ремонтируются | pricing | 4.0 KB | 62 | no | src/pages/vodonagrevatel-techet/sections/013-pricing-kakie-techi-obychno-remontiruyutsya.html |
 | Водонагреватель течёт или капает | hero | 3.6 KB | 80 | no | src/pages/vodonagrevatel-techet/sections/004-hero-vodonagrevatel-techet-ili-kapaet.html |
 

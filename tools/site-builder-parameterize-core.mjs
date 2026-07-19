@@ -236,7 +236,16 @@ function ensureComponentFiles(templateSource = null, firstProps = null) {
 }
 function loadModels() {
   const manifest = readJson('src/site-builder.json');
-  return manifest.pages.map((entry) => ({ entry, path: entry.model, model: readJson(entry.model) }));
+  const entries = checkMode && manifest.migration?.mode === 'staged-source-parity'
+    ? readdirSync(abs('src/pages'), { withFileTypes: true })
+      .filter((entry) => entry.isDirectory() && existsSync(abs(`src/pages/${entry.name}/page.json`)))
+      .map((entry) => ({
+        page: `${entry.name}.html`,
+        slug: entry.name,
+        model: `src/pages/${entry.name}/page.json`,
+      }))
+    : manifest.pages;
+  return entries.map((entry) => ({ entry, path: entry.model, model: readJson(entry.model) }));
 }
 function renderSectionFromParam(section) {
   const template = read(section.templateRef);

@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/remont-platy-i-elektroniki-vodonagrevatelya.html
 - Builder model: src/pages/remont-platy-i-elektroniki-vodonagrevatelya/page.json
 - Sections: 12 (0 local, 2 shared refs, 0 raw)
-- Text words inside referenced sections: 467
+- Text words inside referenced sections: 625
 
 ## Component mix
 
@@ -31,10 +31,10 @@
 | Мобильные контактные элементы | mobile-contact | 8.4 KB | 96 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Ремонт платы и электроники водонагревателя | contact-cta | 3.1 KB | 50 | no | src/components/parametric/water-heater-wh4/contact-cta.template.html |
+| Когда нужен этот сценарий | section | 2.0 KB | 79 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Связанные страницы | section | 1.8 KB | 25 | yes | src/components/shared/section/section-svyazannye-stranicy--7a83390e067c8796.html |
-| Что сделать безопасно | proof | 1.7 KB | 35 | no | src/components/parametric/water-heater-wh4/proof.template.html |
-| Что отправить до выезда | lead-form | 1.6 KB | 23 | yes | src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--f5a4f439e3ae8667.html |
-| Частые вопросы | faq | 1.5 KB | 50 | no | src/components/parametric/water-heater-wh4/faq.template.html |
+| Секция страницы | section | 1.8 KB | 65 | no | src/components/parametric/water-heater-wh4/section.template.html |
+| Какие работы могут потребоваться | section | 1.7 KB | 70 | no | src/components/parametric/water-heater-wh4/section.template.html |
 
 
 ## Editable source files

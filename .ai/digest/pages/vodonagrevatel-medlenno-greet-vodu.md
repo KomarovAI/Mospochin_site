@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/vodonagrevatel-medlenno-greet-vodu.html
 - Builder model: src/pages/vodonagrevatel-medlenno-greet-vodu/page.json
 - Sections: 31 (22 local, 1 shared refs, 2 raw)
-- Text words inside referenced sections: 1388
+- Text words inside referenced sections: 1392
 
 ## Component mix
 

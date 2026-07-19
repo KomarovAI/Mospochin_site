@@ -231,7 +231,15 @@ function top(items, n, pick) {
 
 export function analyzeSourceComplexity() {
   const { aiIndex, siteBuilder, componentMap } = loadProjectMaps();
-  const pageEntries = (siteBuilder.pages || []).slice().sort((a, b) => a.page.localeCompare(b.page));
+  const pageEntries = siteBuilder.migration?.mode === 'staged-source-parity'
+    ? readdirSync(join(ROOT_DIR, 'src/pages'), { withFileTypes: true })
+      .filter((entry) => entry.isDirectory() && fileExists(`src/pages/${entry.name}/page.json`))
+      .map((entry) => {
+        const model = readJson(`src/pages/${entry.name}/page.json`);
+        return { page: model.page, slug: model.slug, model: `src/pages/${entry.name}/page.json` };
+      })
+      .sort((a, b) => a.page.localeCompare(b.page))
+    : (siteBuilder.pages || []).slice().sort((a, b) => a.page.localeCompare(b.page));
   const pages = pageEntries.map(collectPageSectionMetrics).filter(Boolean);
 
   const srcPageFiles = walkFiles('src/pages');

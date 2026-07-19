@@ -204,6 +204,46 @@
       "prohibitedClaims": [
         "накипь — единственная причина"
       ]
+    },
+    {
+      "symptomId": "water_heater.noise_during_heating",
+      "page": "vodonagrevatel-shumit-pri-nagreve.html",
+      "userSymptoms": [
+        "гудит при нагреве",
+        "шипит или потрескивает",
+        "свистит у клапана",
+        "звук стал громче"
+      ],
+      "safeChecks": [
+        "записать звук без снятия крышки",
+        "уточнить момент появления",
+        "зафиксировать режим и индикацию"
+      ],
+      "stopUseConditions": [
+        "запах гари",
+        "течь возле электрической части",
+        "срабатывание автомата или УЗО"
+      ],
+      "probableNodes": [
+        "scale",
+        "heating_element",
+        "safety_valve",
+        "pressure",
+        "mounting",
+        "terminals",
+        "relay"
+      ],
+      "technicianChecks": [
+        "sound_timing",
+        "heating_rate",
+        "valve_discharge",
+        "pressure",
+        "mounting_transfer",
+        "electrical_connections"
+      ],
+      "prohibitedClaims": [
+        "шум всегда означает накипь"
+      ]
     }
   ]
 }

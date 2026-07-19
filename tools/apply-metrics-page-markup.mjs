@@ -98,6 +98,23 @@ const householdRefrigeratorMetrics = fs.existsSync(householdRefrigeratorManifest
     }]))
   : new Map();
 
+const kutterManifestPath = path.join(root, 'data', 'kutter-cluster-pages.json');
+const kutterMetrics = fs.existsSync(kutterManifestPath)
+  ? new Map((JSON.parse(fs.readFileSync(kutterManifestPath, 'utf8')).pages || []).map((page) => {
+      const brandSlug = page.pageType === 'brand_service'
+        ? page.page.replace(/^remont-kutterov-/, '').replace(/\.html$/, '')
+        : '';
+      const brand = brandSlug === 'robot-coupe' ? 'robot_coupe' : brandSlug;
+      return [page.page, {
+        pageIntent: page.metrics?.pageIntent || page.pageType || 'service',
+        equipment: page.metrics?.equipment || 'professional_cutter',
+        brand,
+        service: page.metrics?.service || (page.pageType === 'cluster_hub' ? 'information' : 'repair'),
+        commercialSegment: page.metrics?.commercialSegment || 'b2b_kitchen'
+      }];
+    }))
+  : new Map();
+
 const BRAND_PATTERNS = [
   'rational', 'unox', 'abat', 'kpem', 'apach', 'atesy', 'iterma',
   'mkn', 'alphatech', 'convotherm', 'electrolux', 'lainox'
@@ -172,16 +189,19 @@ function buildContext() {
     const householdRefrigerator = householdRefrigeratorMetrics.get(file) || {};
     const cooking = cookingMetrics.get(file) || {};
     const dryer = dryerMetrics.get(file) || {};
+    const kutter = kutterMetrics.get(file) || {};
     pages[file] = {
       page_slug: slugFromFile(file),
-      page_intent: dryer.pageIntent || dishwasher.pageIntent || waterHeater.pageIntent || washingMachine.pageIntent || microwave.pageIntent || householdRefrigerator.pageIntent || cooking.pageIntent || inferPageIntent(file),
-      equipment: dryer.equipment || householdDishwasher.equipment || dishwasher.equipment || waterHeater.equipment || washingMachine.equipment || microwave.equipment || householdRefrigerator.equipment || cooking.equipment || inferEquipment(file),
-      brand: inferBrand(file),
-      service: dryer.service || householdDishwasher.service || dishwasher.service || waterHeater.service || washingMachine.service || microwave.service || householdRefrigerator.service || cooking.service || 'repair',
-      commercial_segment: dryer.commercialSegment || householdDishwasher.commercialSegment || dishwasher.commercialSegment || waterHeater.commercialSegment || washingMachine.commercialSegment || microwave.commercialSegment || householdRefrigerator.commercialSegment || cooking.commercialSegment || inferSegment(file),
+      page_intent: kutter.pageIntent || dryer.pageIntent || dishwasher.pageIntent || waterHeater.pageIntent || washingMachine.pageIntent || microwave.pageIntent || householdRefrigerator.pageIntent || cooking.pageIntent || inferPageIntent(file),
+      equipment: kutter.equipment || dryer.equipment || householdDishwasher.equipment || dishwasher.equipment || waterHeater.equipment || washingMachine.equipment || microwave.equipment || householdRefrigerator.equipment || cooking.equipment || inferEquipment(file),
+      brand: kutter.brand || inferBrand(file),
+      service: kutter.service || dryer.service || householdDishwasher.service || dishwasher.service || waterHeater.service || washingMachine.service || microwave.service || householdRefrigerator.service || cooking.service || 'repair',
+      commercial_segment: kutter.commercialSegment || dryer.commercialSegment || householdDishwasher.commercialSegment || dishwasher.commercialSegment || waterHeater.commercialSegment || washingMachine.commercialSegment || microwave.commercialSegment || householdRefrigerator.commercialSegment || cooking.commercialSegment || inferSegment(file),
       branch: pageMetadata.branch || 'neutral',
       page_version: canonicalPageVersion(html),
-      source: dryerMetrics.has(file)
+      source: kutterMetrics.has(file)
+        ? 'kutter_manifest'
+        : dryerMetrics.has(file)
         ? 'dryer_manifest'
         : householdDishwasherMetrics.has(file)
         ? 'household_dishwasher_manifest'

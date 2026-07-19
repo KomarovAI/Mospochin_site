@@ -6,23 +6,23 @@
 
 | Метрика | Значение |
 | --- | --- |
-| Root HTML pages | 500 |
-| Builder pages | 500 |
-| src/pages files | 6341 |
-| src/pages HTML section files | 5278 |
+| Root HTML pages | 503 |
+| Builder pages | 503 |
+| src/pages files | 6401 |
+| src/pages HTML section files | 5335 |
 | Shared component files | 215 |
 | Parametric template files | 255 |
 | Parametric props files | 189 |
-| Total declared sections | 6933 |
-| Local sections | 3748 |
+| Total declared sections | 6984 |
+| Local sections | 3796 |
 | Shared section refs | 349 |
-| Parametric section refs | 2836 |
-| Compressed refs | 3185 |
-| Shared/parametric coverage | 45.9% |
+| Parametric section refs | 2839 |
+| Compressed refs | 3188 |
+| Shared/parametric coverage | 45.6% |
 | Average sections/page | 13.9 |
 | Average source files/page | 19.2 |
-| Root HTML bytes | 23.09 MB |
-| src/pages HTML bytes | 17.21 MB |
+| Root HTML bytes | 23.41 MB |
+| src/pages HTML bytes | 17.28 MB |
 | Shared HTML bytes | 762.5 KB |
 | Estimated duplicate bytes removed by shared components | 560.1 KB |
 
@@ -55,12 +55,12 @@
 | grili-mangaly.html | 104.0 KB | 63 |
 | kompyutery.html | 100.0 KB | 53 |
 | parokonvektomat-obschuzhivanie.html | 87.7 KB | 32 |
-| bytovaya-index.html | 87.0 KB | 35 |
 | pishevarochnye-kotly.html | 82.7 KB | 45 |
-| water-heaters.html | 78.2 KB | 44 |
+| water-heaters.html | 78.3 KB | 44 |
 | bytovaya-contact.html | 75.8 KB | 16 |
 | bytovaya-about.html | 69.5 KB | 46 |
 | stiralnye-mashiny.html | 69.4 KB | 28 |
+| diagnostika-vodonagrevatelya.html | 67.1 KB | 40 |
 
 
 ## Компоненты по количеству секций
@@ -69,19 +69,19 @@
 | --- | --- | --- | --- | --- | --- |
 | mobile-contact | 1490 | 608 | 0 | 882 | 59% |
 | layout-fragment | 938 | 0 | 0 | 938 | 100% |
-| section | 736 | 526 | 123 | 87 | 29% |
-| proof | 553 | 336 | 14 | 203 | 39% |
-| pricing | 477 | 374 | 84 | 19 | 22% |
-| faq | 463 | 418 | 38 | 7 | 10% |
-| breadcrumb | 434 | 185 | 0 | 249 | 57% |
-| lead-form | 370 | 337 | 17 | 16 | 9% |
+| section | 742 | 532 | 123 | 87 | 28% |
+| proof | 562 | 345 | 14 | 203 | 39% |
+| pricing | 483 | 380 | 84 | 19 | 21% |
+| faq | 466 | 421 | 38 | 7 | 10% |
+| breadcrumb | 437 | 185 | 0 | 252 | 58% |
+| lead-form | 373 | 340 | 17 | 16 | 9% |
 | contact-cta | 354 | 258 | 0 | 96 | 27% |
-| raw | 175 | 101 | 26 | 48 | 42% |
-| body-preamble | 169 | 169 | 0 | 0 | 0% |
-| footer-anchor | 168 | 0 | 0 | 168 | 100% |
+| raw | 181 | 107 | 26 | 48 | 41% |
+| body-preamble | 172 | 172 | 0 | 0 | 0% |
+| footer-anchor | 171 | 3 | 0 | 168 | 98% |
 | runtime-partials | 166 | 74 | 0 | 92 | 55% |
-| related-links | 144 | 108 | 35 | 1 | 25% |
-| hero | 90 | 90 | 0 | 0 | 0% |
+| related-links | 150 | 114 | 35 | 1 | 24% |
+| hero | 93 | 93 | 0 | 0 | 0% |
 | cause-matrix | 22 | 22 | 0 | 0 | 0% |
 | decision-tree | 22 | 22 | 0 | 0 | 0% |
 | related-symptoms | 22 | 22 | 0 | 0 | 0% |
@@ -109,14 +109,14 @@
 
 ## Возможности для следующего сжатия смысла
 
-- **high** / componentize-local-sections: section: 526 локальных секций, shared ratio 29% — кандидат на параметризованный компонент + props.
-- **high** / componentize-local-sections: pricing: 374 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props.
-- **high** / componentize-local-sections: faq: 418 локальных секций, shared ratio 10% — кандидат на параметризованный компонент + props.
-- **high** / componentize-local-sections: lead-form: 337 локальных секций, shared ratio 9% — кандидат на параметризованный компонент + props.
+- **high** / componentize-local-sections: section: 532 локальных секций, shared ratio 28% — кандидат на параметризованный компонент + props.
+- **high** / componentize-local-sections: pricing: 380 локальных секций, shared ratio 21% — кандидат на параметризованный компонент + props.
+- **high** / componentize-local-sections: faq: 421 локальных секций, shared ratio 10% — кандидат на параметризованный компонент + props.
+- **high** / componentize-local-sections: lead-form: 340 локальных секций, shared ratio 9% — кандидат на параметризованный компонент + props.
 - **high** / componentize-local-sections: contact-cta: 258 локальных секций, shared ratio 27% — кандидат на параметризованный компонент + props.
-- **high** / componentize-local-sections: body-preamble: 169 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high** / componentize-local-sections: related-links: 108 локальных секций, shared ratio 25% — кандидат на параметризованный компонент + props.
-- **high** / componentize-local-sections: hero: 90 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high** / componentize-local-sections: body-preamble: 172 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high** / componentize-local-sections: related-links: 114 локальных секций, shared ratio 24% — кандидат на параметризованный компонент + props.
+- **high** / componentize-local-sections: hero: 93 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 - **medium** / componentize-local-sections: cause-matrix: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 - **medium** / componentize-local-sections: decision-tree: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 - **medium** / componentize-local-sections: related-symptoms: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.

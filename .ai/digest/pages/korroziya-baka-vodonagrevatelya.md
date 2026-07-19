@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/korroziya-baka-vodonagrevatelya.html
 - Builder model: src/pages/korroziya-baka-vodonagrevatelya/page.json
 - Sections: 12 (0 local, 2 shared refs, 0 raw)
-- Text words inside referenced sections: 457
+- Text words inside referenced sections: 615
 
 ## Component mix
 
@@ -31,10 +31,10 @@
 | Фото узла и этапов работы | section | 6.2 KB | 50 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Коррозия бака водонагревателя: ремонт или замена | contact-cta | 3.0 KB | 54 | no | src/components/parametric/water-heater-wh4/contact-cta.template.html |
+| Когда нужен этот сценарий | section | 1.9 KB | 82 | no | src/components/parametric/water-heater-wh4/section.template.html |
+| Секция страницы | section | 1.9 KB | 78 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Что сделать безопасно | proof | 1.7 KB | 33 | no | src/components/parametric/water-heater-wh4/proof.template.html |
-| Что отправить до выезда | lead-form | 1.6 KB | 23 | yes | src/components/shared/lead-form/lead-form-chto-otpravit-do-vyezda--f5a4f439e3ae8667.html |
-| Частые вопросы | faq | 1.5 KB | 58 | no | src/components/parametric/water-heater-wh4/faq.template.html |
-| Связанные страницы | section | 1.2 KB | 15 | yes | src/components/shared/section/section-svyazannye-stranicy--e7f315bdd817bc14.html |
+| Какие работы могут потребоваться | section | 1.6 KB | 56 | no | src/components/parametric/water-heater-wh4/section.template.html |
 
 
 ## Editable source files

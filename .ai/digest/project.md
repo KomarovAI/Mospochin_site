@@ -26,14 +26,14 @@
 
 | Метрика | Значение |
 | --- | --- |
-| Pages | 500 |
-| Builder pages | 500 |
-| Total sections | 6933 |
-| src/pages files | 6341 |
-| src/pages HTML section files | 5278 |
+| Pages | 503 |
+| Builder pages | 503 |
+| Total sections | 6984 |
+| src/pages files | 6401 |
+| src/pages HTML section files | 5335 |
 | Shared component files | 215 |
 | Shared refs | 349 |
-| Shared coverage | 45.9% |
+| Shared coverage | 45.6% |
 | Average sections/page | 13.9 |
 | Average source files/page | 19.2 |
 | AI component map entries | 12 |
@@ -65,14 +65,14 @@
 
 ## Крупнейшие кандидаты на сжатие смысла
 
-- **high**: section: 526 локальных секций, shared ratio 29% — кандидат на параметризованный компонент + props.
-- **high**: pricing: 374 локальных секций, shared ratio 22% — кандидат на параметризованный компонент + props.
-- **high**: faq: 418 локальных секций, shared ratio 10% — кандидат на параметризованный компонент + props.
-- **high**: lead-form: 337 локальных секций, shared ratio 9% — кандидат на параметризованный компонент + props.
+- **high**: section: 532 локальных секций, shared ratio 28% — кандидат на параметризованный компонент + props.
+- **high**: pricing: 380 локальных секций, shared ratio 21% — кандидат на параметризованный компонент + props.
+- **high**: faq: 421 локальных секций, shared ratio 10% — кандидат на параметризованный компонент + props.
+- **high**: lead-form: 340 локальных секций, shared ratio 9% — кандидат на параметризованный компонент + props.
 - **high**: contact-cta: 258 локальных секций, shared ratio 27% — кандидат на параметризованный компонент + props.
-- **high**: body-preamble: 169 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
-- **high**: related-links: 108 локальных секций, shared ratio 25% — кандидат на параметризованный компонент + props.
-- **high**: hero: 90 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: body-preamble: 172 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
+- **high**: related-links: 114 локальных секций, shared ratio 24% — кандидат на параметризованный компонент + props.
+- **high**: hero: 93 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 - **medium**: cause-matrix: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 - **medium**: decision-tree: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.
 - **medium**: related-symptoms: 22 локальных секций, shared ratio 0% — кандидат на параметризованный компонент + props.

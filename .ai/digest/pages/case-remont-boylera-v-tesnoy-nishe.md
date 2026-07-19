@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/case-remont-boylera-v-tesnoy-nishe.html
 - Builder model: src/pages/case-remont-boylera-v-tesnoy-nishe/page.json
 - Sections: 10 (0 local, 3 shared refs, 0 raw)
-- Text words inside referenced sections: 439
+- Text words inside referenced sections: 469
 
 ## Component mix
 
@@ -25,7 +25,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Последовательность и детали | section | 13.3 KB | 89 | no | src/components/parametric/water-heater-wh4/section.template.html |
+| Последовательность и детали | section | 13.8 KB | 119 | no | src/components/parametric/water-heater-wh4/section.template.html |
 | Мобильные контактные элементы | mobile-contact | 8.3 KB | 96 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Ремонт бойлера в тесной нише — фотокейс | section | 2.3 KB | 36 | no | src/components/parametric/water-heater-wh4/section.template.html |

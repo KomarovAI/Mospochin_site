@@ -8,7 +8,7 @@
 - Canonical: https://mospochin.ru/case-trehfaznaya-sistema-gvs-chastnogo-doma.html
 - Builder model: src/pages/case-trehfaznaya-sistema-gvs-chastnogo-doma/page.json
 - Sections: 10 (0 local, 3 shared refs, 0 raw)
-- Text words inside referenced sections: 523
+- Text words inside referenced sections: 555
 
 ## Component mix
 
@@ -26,7 +26,7 @@
 
 | Section | Component | Bytes | Words | Shared | Source |
 | --- | --- | --- | --- | --- | --- |
-| Последовательность и детали | pricing | 22.1 KB | 166 | no | src/components/parametric/water-heater-wh4/pricing.template.html |
+| Последовательность и детали | pricing | 22.7 KB | 198 | no | src/components/parametric/water-heater-wh4/pricing.template.html |
 | Мобильные контактные элементы | mobile-contact | 8.4 KB | 96 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Мобильные контактные элементы | mobile-contact | 4.3 KB | 61 | no | src/components/parametric/water-heater-wh4/mobile-contact.template.html |
 | Сложная трёхфазная система ГВС частного дома — фотокейс | pricing | 2.5 KB | 45 | no | src/components/parametric/water-heater-wh4/pricing.template.html |

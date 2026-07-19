@@ -7,7 +7,7 @@
 | Metric | Value |
 | --- | --- |
 | Cluster | water-heaters |
-| Pages | 31 |
+| Pages | 34 |
 | Guide | — |
 | Screenshot manifest | data/water-heater-screenshot-audit.json |
 | Guard commands | npm run check:water-heater-cluster |
@@ -48,6 +48,9 @@
 | case-remont-boylera-v-tesnoy-nishe.html | case_study | — | .ai/digest/pages/case-remont-boylera-v-tesnoy-nishe.md |
 | case-trehfaznaya-sistema-gvs-chastnogo-doma.html | case_study | — | .ai/digest/pages/case-trehfaznaya-sistema-gvs-chastnogo-doma.md |
 | fotografii-remonta-vodonagrevateley.html | visual_hub | — | .ai/digest/pages/fotografii-remonta-vodonagrevateley.md |
+| zamena-magnievogo-anoda-vodonagrevatelya.html | service | — | .ai/digest/pages/zamena-magnievogo-anoda-vodonagrevatelya.md |
+| vodonagrevatel-shumit-pri-nagreve.html | symptom | — | .ai/digest/pages/vodonagrevatel-shumit-pri-nagreve.md |
+| ustanovka-elektricheskogo-vodonagrevatelya.html | installation | — | .ai/digest/pages/ustanovka-elektricheskogo-vodonagrevatelya.md |
 
 
 ## AI editing rules
