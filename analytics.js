@@ -1,8 +1,8 @@
 (function () {
   'use strict';
 
-  var SITE_RELEASE = 'site-paid-tracking-v3-20260716';
-  var ANALYTICS_RELEASE = 'analytics-v3-20260718';
+  var SITE_RELEASE = 'site-error-conversion-v1-20260720';
+  var ANALYTICS_RELEASE = 'analytics-error-conversion-v1-20260720';
   var SCHEMA_VERSION = 'mospochin.web.v3';
   var TRACKING_VERSION = '2026-07-15';
   var METRIKA_ID = String(window.MOSPOCHIN_METRICA_COUNTER_ID || '109138661');
@@ -42,7 +42,36 @@
     form_submit_error: Object.freeze({ event_class: 'error', is_decision_event: false }),
     form_validation_error: Object.freeze({ event_class: 'error', is_decision_event: false }),
     form_submit_blocked: Object.freeze({ event_class: 'error', is_decision_event: false }),
-    web_vital: Object.freeze({ event_class: 'performance', is_decision_event: false })
+    web_vital: Object.freeze({ event_class: 'performance', is_decision_event: false }),
+    gas_oven_page_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    gas_symptom_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    gas_nameplate_upload: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    gas_safety_warning_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    gas_lead_submit: Object.freeze({ event_class: 'conversion', is_decision_event: true }),
+    gas_whatsapp_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    gas_call_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    board_repair_hub_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    board_workshop_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    board_service_format_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    board_full_cycle_select: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    board_workshop_only_select: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    board_nameplate_upload: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    board_part_number_submit: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    board_case_view: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    board_lead_submit: Object.freeze({ event_class: 'conversion_step', is_decision_event: true }),
+    board_whatsapp_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    board_call_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    board_damage_cause_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    board_test_level_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    board_equipment_type_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    board_equipment_page_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    error_conversion_page_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    error_conversion_block_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    error_mobile_bar_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    error_call_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    error_photo_whatsapp_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    error_callback_submit: Object.freeze({ event_class: 'conversion_step', is_decision_event: true }),
+    error_photo_submit: Object.freeze({ event_class: 'conversion_step', is_decision_event: true })
   });
 
   var RESERVED_EVENT_FIELDS = new Set([
@@ -51,7 +80,8 @@
   ]);
 
   var METRICA_GOALS = new Set([
-    'phone_click', 'whatsapp_click', 'form_open', 'form_submit_attempt', 'form_submit_success'
+    'phone_click', 'whatsapp_click', 'form_open', 'form_submit_attempt', 'form_submit_success',
+    'error_call_click', 'error_photo_whatsapp_click', 'error_callback_submit', 'error_photo_submit'
   ]);
 
   var startedForms = new WeakSet();
@@ -735,6 +765,12 @@
     if (!window.__MOSPOCHIN_PAGE_VIEW_SENT__) {
       window.__MOSPOCHIN_PAGE_VIEW_SENT__ = true;
       trackEvent('page_view', { page_title: cleanString(document.title, 240) });
+      if (document.body && document.body.dataset.gasPage === 'true') {
+        trackEvent('gas_oven_page_view', { page_title: cleanString(document.title, 240) });
+      }
+      if (document.body && document.body.dataset.boardPage === 'true') {
+        trackEvent(document.body.dataset.boardVariant === 'workshop' ? 'board_workshop_view' : (document.body.dataset.equipment && document.body.dataset.equipment !== 'restaurant_electronics' ? 'board_equipment_page_view' : 'board_repair_hub_view'), { page_title: cleanString(document.title, 240), equipment: cleanString(document.body.dataset.equipment || '', 80) });
+      }
     }
     observeCtaViews();
     observeWebVitals();
@@ -744,5 +780,19 @@
     document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
     init();
+  }
+})();
+
+/* MOSPOCHIN_ERROR_ENGINEERING_V1 */
+(function(){
+  function push(name, data) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({event:name, engineering_cluster:'parokonvektomat_errors'}, data || {}));
+  }
+  document.addEventListener('submit', function(e) {
+    if (e.target && e.target.matches('.eng-form')) push('error_lead_submit',{page:location.pathname});
+  }, true);
+  if (document.body && document.body.classList.contains('page-error-engineering')) {
+    push('error_engineering_page_view',{page:location.pathname,brand:document.body.dataset.brand || ''});
   }
 })();

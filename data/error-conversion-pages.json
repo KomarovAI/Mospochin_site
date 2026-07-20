@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-07-20",
+  "cluster": "parokonvektomat_errors_engineering",
+  "counts": {
+    "call": 16,
+    "photo": 15,
+    "reference": 28
+  },
+  "pages": [
+    {
+      "path": "electrolux-skyline-acu-communication.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Electrolux SkyLine: CPUA, CPUt, ACUP",
+      "reason": "основные контроллеры не подтверждают штатную связь"
+    },
+    {
+      "path": "electrolux-skyline-acum-fu13.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Electrolux SkyLine: ACUM и FU13/MCtM",
+      "reason": "для предварительной оценки нужны версия, модель, код и условия появления"
+    },
+    {
+      "path": "electrolux-skyline-boiler-hd01.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Electrolux SkyLine: ошибка Hd01",
+      "reason": "важны уровень воды, состояние бойлера и момент появления сообщения"
+    },
+    {
+      "path": "electrolux-skyline-cleaning-pump.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Electrolux SkyLine: Hd08 и HdPP",
+      "reason": "до выезда полезны фото сообщения, химии, канистр и этапа остановки мойки"
+    },
+    {
+      "path": "electrolux-skyline-cleaning-table.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Electrolux SkyLine: ошибка ECLt",
+      "reason": "нужно зафиксировать таблицу мойки, версию ПО и этап цикла"
+    },
+    {
+      "path": "electrolux-skyline-drain-quenching.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Electrolux SkyLine: EStd и Hd02",
+      "reason": "нужно различить слив, охлаждение стока, датчики и внешнюю канализацию"
+    },
+    {
+      "path": "electrolux-skyline-ega0-egat-egad.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Electrolux SkyLine: EGA0, EGAt и EGAd",
+      "reason": ""
+    },
+    {
+      "path": "electrolux-skyline-esch-asch.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Electrolux SkyLine: ESCH и ASCH",
+      "reason": "электронный отсек перегрет или получен аварийный температурный сигнал"
+    },
+    {
+      "path": "electrolux-skyline-etc-safety.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Electrolux SkyLine: ошибка EtC",
+      "reason": "сработала температурная защитная цепь камеры"
+    },
+    {
+      "path": "electrolux-skyline-flash-fram.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Electrolux SkyLine: FLA1, FLA2, FrA1, FrA2, FrMC",
+      "reason": "ошибка затрагивает память, данные конфигурации или запуск контроллера"
+    },
+    {
+      "path": "electrolux-skyline-gbcu-gbcd-gbbu.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Electrolux SkyLine: GbCU, GbCd и GbbU",
+      "reason": "зафиксирована блокировка одной из газовых горелок"
+    },
+    {
+      "path": "electrolux-skyline-hfni.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Electrolux SkyLine HFnI",
+      "reason": "нужно определить, на каком этапе пропало увлажнение и какие функции остаются доступными"
+    },
+    {
+      "path": "electrolux-skyline-kody-oshibok.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Electrolux Professional: SkyLine Ovens",
+      "reason": ""
+    },
+    {
+      "path": "electrolux-skyline-memory-io.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Electrolux SkyLine: операции FLASH и FRAM",
+      "reason": ""
+    },
+    {
+      "path": "electrolux-skyline-ntc-ssr.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Electrolux SkyLine: EntC, CntC, CSOt",
+      "reason": ""
+    },
+    {
+      "path": "electrolux-skyline-parameters-configuration.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Electrolux SkyLine: PFAC, PUOr, PFOr, PCE1",
+      "reason": ""
+    },
+    {
+      "path": "electrolux-skyline-software-version.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Electrolux SkyLine: ACUS, ACSS, tCMS, InuS",
+      "reason": ""
+    },
+    {
+      "path": "electrolux-skyline-vent-cleaning.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Electrolux SkyLine: BEto и Y8",
+      "reason": "нужно увидеть состояние клапана, мойки и полный текст сообщения"
+    },
+    {
+      "path": "lainox-a00.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Lainox Sapiens: ошибка A00",
+      "reason": "нет подтверждённой связи между дисплеем и I/O-модулем"
+    },
+    {
+      "path": "lainox-a01.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Lainox Sapiens: ошибка A01",
+      "reason": ""
+    },
+    {
+      "path": "lainox-a02-a03.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Lainox Sapiens: A02 и A03",
+      "reason": "сработала защитная температура вентилятора или камеры"
+    },
+    {
+      "path": "lainox-a04-a05.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Lainox Sapiens: A04 и A05",
+      "reason": "нужно различить внешний ресурс воды и внутренний контроль уровня"
+    },
+    {
+      "path": "lainox-a06.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Lainox Sapiens: ошибка A06",
+      "reason": "не подтверждён газовый ресурс или работа газового контура"
+    },
+    {
+      "path": "lainox-a07.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Lainox Sapiens: A07",
+      "reason": ""
+    },
+    {
+      "path": "lainox-a08-a09.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Lainox Sapiens: A08 и A09",
+      "reason": "нужны фото сообщения и данные температурного контура"
+    },
+    {
+      "path": "lainox-a10.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Lainox Sapiens: A10",
+      "reason": ""
+    },
+    {
+      "path": "lainox-a11-a13.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Lainox Sapiens: A11, A12, A13",
+      "reason": "нужно понять, какой датчик или режим связан с сообщением"
+    },
+    {
+      "path": "lainox-a20-a21.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Lainox Sapiens: A20 и A21",
+      "reason": "нарушена работа вентилятора горелки или розжига"
+    },
+    {
+      "path": "lainox-a22-a27.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Lainox Sapiens: A22–A27",
+      "reason": "ошибка относится к горелке камеры или парогенератора"
+    },
+    {
+      "path": "lainox-a30-a32.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Lainox Sapiens: A30 и A32",
+      "reason": "инвертор или привод не подтверждает штатный режим"
+    },
+    {
+      "path": "lainox-a31-a37.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Lainox Sapiens: A31–A37",
+      "reason": ""
+    },
+    {
+      "path": "lainox-a45-a62.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Lainox Sapiens: A45 и A62",
+      "reason": "нужны точная серия, версия и условия появления сообщения"
+    },
+    {
+      "path": "lainox-a60-a61-a64.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Lainox Sapiens: A60, A61 и A64",
+      "reason": ""
+    },
+    {
+      "path": "lainox-sapiens-kody-oshibok.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Lainox: Sapiens",
+      "reason": ""
+    },
+    {
+      "path": "oshibki-parokonvektomatov-electrolux.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Коды ошибок Electrolux Professional",
+      "reason": ""
+    },
+    {
+      "path": "oshibki-parokonvektomatov-lainox.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Коды ошибок Lainox",
+      "reason": ""
+    },
+    {
+      "path": "oshibki-parokonvektomatov-rational.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Коды ошибок RATIONAL",
+      "reason": ""
+    },
+    {
+      "path": "oshibki-parokonvektomatov-retigo.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Коды ошибок Retigo",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-kody-oshibok-istochniki.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Источники инженерного справочника",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-kody-oshibok-metodika.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Как читать код ошибки пароконвектомата",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Газ, розжиг и контроль пламени",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-oshibki-konfiguraciya-po.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Конфигурация, прошивка и совместимость",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-oshibki-moyka-sliv.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Мойка, насосы, клапаны и слив",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Платы, память, питание и связь",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Температурные датчики и защитные цепи",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-oshibki-ventilyator-invertor.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Вентилятор, двигатель и инвертор",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Вода, пар, бойлер и уровень",
+      "reason": ""
+    },
+    {
+      "path": "parokonvektomaty-kody-oshibok.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Коды ошибок пароконвектоматов",
+      "reason": ""
+    },
+    {
+      "path": "rational-icombi-kody-oshibok.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "RATIONAL: iCombi Pro / iCombi Classic",
+      "reason": ""
+    },
+    {
+      "path": "rational-service-140-4.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "RATIONAL Service 140.4",
+      "reason": "это предупреждение о накопленных событиях; сначала нужна история первичных кодов"
+    },
+    {
+      "path": "rational-service-140-8.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "RATIONAL Service 140.8",
+      "reason": "приготовление заблокировано после повторяющихся событий системы сгорания"
+    },
+    {
+      "path": "rational-service-s32-s33.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Ошибки RATIONAL S_32_x и S_33_x",
+      "reason": "ошибка относится к розжигу, контролю пламени или управлению системой сгорания"
+    },
+    {
+      "path": "rational-service-s70-s73.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Ошибки RATIONAL S_70–S_73",
+      "reason": "затронуты питание, охлаждение электроники или защитные цепи"
+    },
+    {
+      "path": "retigo-error-18.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Retigo Orange Vision Plus: Err 18",
+      "reason": "нужно подтвердить поколение аппарата, уровень и слив бойлера"
+    },
+    {
+      "path": "retigo-error-27.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Retigo Orange Vision: Err 27",
+      "reason": "важны положение заслонки, режим и повторяемость сообщения"
+    },
+    {
+      "path": "retigo-error-32.html",
+      "mode": "photo",
+      "priority": "medium",
+      "title": "Retigo Orange Vision: Err 32",
+      "reason": "нужны серия, температура бойлера и фото полного сообщения"
+    },
+    {
+      "path": "retigo-error-60-79.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Retigo Blue Vision: Err 60–79",
+      "reason": "нарушена связь между электронными модулями"
+    },
+    {
+      "path": "retigo-error-97-2.html",
+      "mode": "call",
+      "priority": "high",
+      "title": "Retigo Err 97.2 — Wrong stack",
+      "reason": "газовый нагрев остановлен защитой дымоудаления"
+    },
+    {
+      "path": "retigo-vision-kody-oshibok.html",
+      "mode": "reference",
+      "priority": "reference",
+      "title": "Retigo: Vision generations",
+      "reason": ""
+    }
+  ]
+}

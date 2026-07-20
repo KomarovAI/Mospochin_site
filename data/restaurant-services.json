@@ -10,23 +10,56 @@
       "isShadow": false,
       "primarySymptoms": [
         "не нагревает",
+        "нет пара",
+        "выбивает автомат",
+        "не работает вентилятор",
+        "не сливает воду",
         "ошибка",
-        "не подает пар",
-        "не запускается"
+        "не запускается",
+        "ошибка розжига",
+        "пламя гаснет",
+        "газовая модель не греет"
       ],
       "brandCluster": [
         "Rational",
         "Unox",
+        "Abat",
         "Convotherm",
         "Lainox",
-        "Electrolux Professional"
+        "Electrolux Professional",
+        "Fagor Professional",
+        "Tecnoeka",
+        "Retigo",
+        "MKN"
       ],
       "relatedPages": [
         "plity-pechi.html",
         "grili-mangaly.html",
         "posudomoechnye-mashiny.html",
         "holodilnoe-oborudovanie.html",
-        "ice-machines.html"
+        "ice-machines.html",
+        "parokonvektomat-vybivaet-avtomat.html",
+        "parokonvektomat-ne-rabotaet-ventilyator.html",
+        "parokonvektomat-ne-slivaet-vodu.html",
+        "parokonvektomat-ne-zakryvaetsya-dver.html",
+        "uplotnitel-dveri-parokonvektomata.html",
+        "parokonvektomat-peregrevaetsya.html",
+        "parokonvektomat-ne-rabotaet-displey.html",
+        "dekalcinaciya-parokonvektomata.html",
+        "zamena-tena-parokonvektomata.html",
+        "remont-platy-parokonvektomata.html",
+        "montazh-parokonvektomata.html",
+        "gazovyy-parokonvektomat-remont.html",
+        "parokonvektomat-fagor.html",
+        "parokonvektomat-tecnoeka.html",
+        "parokonvektomat-retigo.html",
+        "parokonvektomat-mkn.html",
+        "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+        "gazovyy-parokonvektomat-gasnet-plamya.html",
+        "oshibka-rozzhiga-parokonvektomata.html",
+        "gazovyy-parokonvektomat-ne-greet.html",
+        "ventilyatsiya-gazovogo-parokonvektomata.html",
+        "trebovaniya-k-ustanovke-gazovogo-parokonvektomata.html"
       ],
       "formExample": "пароконвектомат 6 уровней, ошибка E05, ресторан на Павелецкой, нужен срочный выезд и документы на юрлицо",
       "mobileHiddenSectionIds": [
@@ -37,7 +70,19 @@
       ],
       "sectionIds": [
         "request"
-      ]
+      ],
+      "gasSubcluster": {
+        "hub": "gazovyy-parokonvektomat-remont.html",
+        "pages": [
+          "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "oshibka-rozzhiga-parokonvektomata.html",
+          "gazovyy-parokonvektomat-ne-greet.html",
+          "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "trebovaniya-k-ustanovke-gazovogo-parokonvektomata.html"
+        ],
+        "safetyBoundary": "equipment-diagnostics-separated-from-site-gas-network-work"
+      }
     },
     {
       "page": "plity-pechi.html",
@@ -3431,7 +3476,7 @@
         "parokonvektomat-kod-oshibki.html",
         "parokonvektomat-rational.html",
         "parokonvektomat-unox.html",
-        "parokonvektomat-obschuzhivanie.html"
+        "parokonvektomat-obsluzhivanie.html"
       ],
       "formExample": "Пароконвектомат не включается, ресторан в Москве, нужен выезд инженера",
       "sectionIds": [
@@ -3545,6 +3590,93 @@
       "sectionIds": [
         "request"
       ]
+    },
+    {
+      "page": "remont-elektronnyh-plat-restorannogo-oborudovaniya.html",
+      "slug": "remont-elektronnyh-plat-restorannogo-oborudovaniya",
+      "uiLabel": "Ремонт электронных плат",
+      "deviceName": "Электронные платы ресторанного оборудования",
+      "serviceName": "Ремонт плат ресторанного оборудования",
+      "schemaName": "Ремонт электронных плат ресторанного оборудования",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не включается",
+        "ошибка платы",
+        "сгорел силовой выход",
+        "попала вода",
+        "не работает дисплей",
+        "повреждён разъём"
+      ],
+      "brandCluster": [
+        "RATIONAL",
+        "UNOX",
+        "Convotherm",
+        "Electrolux Professional",
+        "MKN",
+        "Retigo",
+        "Winterhalter",
+        "Hobart",
+        "Meiko",
+        "Polair"
+      ],
+      "relatedPages": [
+        "remont-elektronnyh-plat-restorannogo-oborudovaniya.html",
+        "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+        "komponentnyy-remont-elektronnyh-plat.html",
+        "remont-ili-zamena-elektronnoy-platy.html",
+        "remont-platy-parokonvektomata.html"
+      ],
+      "formExample": "плата пароконвектомата, фото маркировки и шильдика, аппарат не включается после скачка питания",
+      "sectionIds": [
+        "request"
+      ],
+      "boardRepairCluster": {
+        "hub": "remont-elektronnyh-plat-restorannogo-oborudovaniya.html",
+        "workshop": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+        "pages": [
+          "remont-elektronnyh-plat-restorannogo-oborudovaniya.html",
+          "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "komponentnyy-remont-elektronnyh-plat.html",
+          "remont-ili-zamena-elektronnoy-platy.html",
+          "remont-platy-parokonvektomata.html"
+        ]
+      }
+    },
+    {
+      "page": "remont-elektronnyh-plat-restorannogo-oborudovaniya.html",
+      "slug": "board-repair",
+      "uiLabel": "Ремонт электронных плат",
+      "deviceName": "Платы ресторанного оборудования",
+      "serviceName": "Ремонт электронных плат ресторанного оборудования",
+      "schemaName": "Ремонт электронных плат ресторанного оборудования",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не включается",
+        "перезапускается",
+        "не работает выход",
+        "сгорело реле",
+        "выбивает автомат",
+        "после воды",
+        "ошибка связи"
+      ],
+      "brandCluster": [],
+      "relatedPages": [
+        "remont-elektronnyh-plat-restorannogo-oborudovaniya.html",
+        "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+        "komponentnyy-remont-elektronnyh-plat.html",
+        "remont-ili-zamena-elektronnoy-platy.html",
+        "remont-platy-parokonvektomata.html",
+        "remont-bloka-pitaniya-elektronnoy-platy.html",
+        "remont-silovoy-chasti-platy-upravleniya.html",
+        "remont-platy-posle-popadaniya-vody.html",
+        "vosstanovlenie-dorozhek-i-razemov-platy.html",
+        "remont-platy-promyshlennoy-posudomoechnoy-mashiny.html",
+        "remont-platy-holodilnogo-oborudovaniya.html",
+        "remont-platy-ledogeneratora.html",
+        "remont-platy-professionalnoy-indukcionnoy-plity.html"
+      ],
+      "formExample": "пароконвектомат, плата управления, после скачка не включается, пришлю шильдик и маркировку",
+      "mobileHiddenSectionIds": []
     }
   ],
   "brandCluster": [

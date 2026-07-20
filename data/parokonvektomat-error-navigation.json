@@ -1,0 +1,4024 @@
+{
+  "schema_version": "1.1-hotfix",
+  "updated": "2026-07-20",
+  "cluster": "parokonvektomat_errors_engineering",
+  "root_page": "parokonvektomaty-kody-oshibok.html",
+  "counts": {
+    "pages": 59,
+    "central": 1,
+    "brand_hubs": 4,
+    "family_hubs": 4,
+    "system_hubs": 7,
+    "error_pages": 41,
+    "support_pages": 2
+  },
+  "brands": [
+    {
+      "slug": "rational",
+      "hub": "oshibki-parokonvektomatov-rational.html",
+      "label": "RATIONAL",
+      "family_hub": "rational-icombi-kody-oshibok.html",
+      "family_label": "iCombi Pro / iCombi Classic",
+      "name": "RATIONAL"
+    },
+    {
+      "slug": "electrolux",
+      "hub": "oshibki-parokonvektomatov-electrolux.html",
+      "label": "Electrolux Professional",
+      "family_hub": "electrolux-skyline-kody-oshibok.html",
+      "family_label": "SkyLine Ovens",
+      "name": "Electrolux Professional"
+    },
+    {
+      "slug": "retigo",
+      "hub": "oshibki-parokonvektomatov-retigo.html",
+      "label": "Retigo",
+      "family_hub": "retigo-vision-kody-oshibok.html",
+      "family_label": "Vision generations",
+      "name": "Retigo"
+    },
+    {
+      "slug": "lainox",
+      "hub": "oshibki-parokonvektomatov-lainox.html",
+      "label": "Lainox",
+      "family_hub": "lainox-sapiens-kody-oshibok.html",
+      "family_label": "Sapiens",
+      "name": "Lainox"
+    }
+  ],
+  "systems": [
+    {
+      "label": "Газ, розжиг и контроль пламени",
+      "short": "Газ / розжиг",
+      "hub": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "key": "gas_combustion"
+    },
+    {
+      "label": "Вода, пар, бойлер и уровень",
+      "short": "Вода / бойлер",
+      "hub": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "key": "water_steam"
+    },
+    {
+      "label": "Платы, память, питание и связь",
+      "short": "Плата / связь",
+      "hub": "parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+      "key": "electronics_memory"
+    },
+    {
+      "label": "Вентилятор, двигатель и инвертор",
+      "short": "Вентилятор / привод",
+      "hub": "parokonvektomat-oshibki-ventilyator-invertor.html",
+      "key": "motor_inverter"
+    },
+    {
+      "label": "Температурные датчики и защитные цепи",
+      "short": "Температура / защита",
+      "hub": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "key": "temperature_safety"
+    },
+    {
+      "label": "Мойка, насосы, клапаны и слив",
+      "short": "Мойка / слив",
+      "hub": "parokonvektomat-oshibki-moyka-sliv.html",
+      "key": "cleaning_drain"
+    },
+    {
+      "label": "Конфигурация, прошивка и совместимость",
+      "short": "ПО / конфигурация",
+      "hub": "parokonvektomat-oshibki-konfiguraciya-po.html",
+      "key": "configuration_software"
+    }
+  ],
+  "pages": [
+    {
+      "path": "electrolux-skyline-acu-communication.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: CPUA, CPUt, ACUP",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "electronics_memory",
+      "systems": [
+        "electronics_memory"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "ACUP",
+        "CPUA",
+        "CPUt"
+      ],
+      "previous": "electrolux-skyline-memory-io.html",
+      "next": "electrolux-skyline-acum-fu13.html",
+      "related_errors": [
+        "electrolux-skyline-flash-fram.html",
+        "electrolux-skyline-memory-io.html",
+        "lainox-a00.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Пароконвектомат не включается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Не работает дисплей"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы пароконвектомата"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская плат"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-acu-communication.html",
+          "label": "Electrolux SkyLine: CPUA, CPUt, ACUP"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-acum-fu13.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: ACUM и FU13/MCtM",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "motor_inverter",
+      "systems": [
+        "motor_inverter"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "photo",
+      "codes": [
+        "ACUM",
+        "FU13 / MCtM",
+        "MCbM / Fd13"
+      ],
+      "previous": "electrolux-skyline-acu-communication.html",
+      "next": "electrolux-skyline-ntc-ssr.html",
+      "related_errors": [
+        "lainox-a01.html",
+        "lainox-a30-a32.html",
+        "lainox-a31-a37.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-ventilyator-invertor.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-rabotaet-ventilyator.html",
+          "title": "Не работает вентилятор"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не набирает температуру"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы и привода"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Ремонт пароконвектоматов"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-acum-fu13.html",
+          "label": "Electrolux SkyLine: ACUM и FU13/MCtM"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-boiler-hd01.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: ошибка Hd01",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "water_steam",
+      "systems": [
+        "water_steam"
+      ],
+      "impact": "limited",
+      "conversion_mode": "photo",
+      "codes": [
+        "Hd01"
+      ],
+      "previous": "electrolux-skyline-hfni.html",
+      "next": "electrolux-skyline-drain-quenching.html",
+      "related_errors": [
+        "electrolux-skyline-hfni.html",
+        "lainox-a04-a05.html",
+        "lainox-a45-a62.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-nabiraet-vodu.html",
+          "title": "Пароконвектомат не набирает воду"
+        },
+        {
+          "path": "parokonvektomat-net-para.html",
+          "title": "Нет пара"
+        },
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Декальцинация и очистка"
+        },
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Техническое обслуживание"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-boiler-hd01.html",
+          "label": "Electrolux SkyLine: ошибка Hd01"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-cleaning-pump.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: Hd08 и HdPP",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "cleaning_drain",
+      "systems": [
+        "cleaning_drain"
+      ],
+      "impact": "limited",
+      "conversion_mode": "photo",
+      "codes": [
+        "Hd08",
+        "HdPP"
+      ],
+      "previous": "electrolux-skyline-cleaning-table.html",
+      "next": "electrolux-skyline-gbcu-gbcd-gbbu.html",
+      "related_errors": [
+        "electrolux-skyline-drain-quenching.html",
+        "electrolux-skyline-vent-cleaning.html",
+        "lainox-a08-a09.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-moyka-sliv.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        },
+        {
+          "path": "parokonvektomat-techet-voda.html",
+          "title": "Течёт вода"
+        },
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Накипь и загрязнение бойлера"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Обслуживание системы мойки"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Ремонт пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-cleaning-pump.html",
+          "label": "Electrolux SkyLine: Hd08 и HdPP"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-cleaning-table.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: ошибка ECLt",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "configuration_software",
+      "systems": [
+        "configuration_software"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "photo",
+      "codes": [
+        "ECLt"
+      ],
+      "previous": "electrolux-skyline-vent-cleaning.html",
+      "next": "electrolux-skyline-cleaning-pump.html",
+      "related_errors": [
+        "electrolux-skyline-ega0-egat-egad.html",
+        "electrolux-skyline-parameters-configuration.html",
+        "electrolux-skyline-software-version.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-konfiguraciya-po.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Аппарат не загружается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Ошибка дисплея или интерфейса"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Диагностика платы и конфигурации"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-cleaning-table.html",
+          "label": "Electrolux SkyLine: ошибка ECLt"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-drain-quenching.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: EStd и Hd02",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "cleaning_drain",
+      "systems": [
+        "cleaning_drain"
+      ],
+      "impact": "limited",
+      "conversion_mode": "photo",
+      "codes": [
+        "EStd",
+        "Hd02"
+      ],
+      "previous": "electrolux-skyline-boiler-hd01.html",
+      "next": "electrolux-skyline-vent-cleaning.html",
+      "related_errors": [
+        "electrolux-skyline-vent-cleaning.html",
+        "electrolux-skyline-cleaning-pump.html",
+        "lainox-a08-a09.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-moyka-sliv.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        },
+        {
+          "path": "parokonvektomat-techet-voda.html",
+          "title": "Течёт вода"
+        },
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Накипь и загрязнение бойлера"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Обслуживание системы мойки"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Ремонт пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-drain-quenching.html",
+          "label": "Electrolux SkyLine: EStd и Hd02"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-ega0-egat-egad.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: EGA0, EGAt и EGAd",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "configuration_software",
+      "systems": [
+        "configuration_software"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "EGA0",
+        "EGAd",
+        "EGAt"
+      ],
+      "previous": null,
+      "next": "electrolux-skyline-parameters-configuration.html",
+      "related_errors": [
+        "electrolux-skyline-parameters-configuration.html",
+        "electrolux-skyline-software-version.html",
+        "electrolux-skyline-cleaning-table.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-konfiguraciya-po.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Аппарат не загружается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Ошибка дисплея или интерфейса"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Диагностика платы и конфигурации"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-ega0-egat-egad.html",
+          "label": "Electrolux SkyLine: EGA0, EGAt и EGAd"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-esch-asch.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: ESCH и ASCH",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "ASCH",
+        "ESCH"
+      ],
+      "previous": "electrolux-skyline-etc-safety.html",
+      "next": "electrolux-skyline-hfni.html",
+      "related_errors": [
+        "electrolux-skyline-ntc-ssr.html",
+        "electrolux-skyline-etc-safety.html",
+        "lainox-a02-a03.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-esch-asch.html",
+          "label": "Electrolux SkyLine: ESCH и ASCH"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-etc-safety.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: ошибка EtC",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "EtC"
+      ],
+      "previous": "electrolux-skyline-ntc-ssr.html",
+      "next": "electrolux-skyline-esch-asch.html",
+      "related_errors": [
+        "electrolux-skyline-ntc-ssr.html",
+        "electrolux-skyline-esch-asch.html",
+        "lainox-a02-a03.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-etc-safety.html",
+          "label": "Electrolux SkyLine: ошибка EtC"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-flash-fram.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: FLA1, FLA2, FrA1, FrA2, FrMC",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "electronics_memory",
+      "systems": [
+        "electronics_memory"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "FLA1",
+        "FLA2",
+        "FrA1",
+        "FrA2",
+        "FrMC"
+      ],
+      "previous": "electrolux-skyline-software-version.html",
+      "next": "electrolux-skyline-memory-io.html",
+      "related_errors": [
+        "electrolux-skyline-memory-io.html",
+        "electrolux-skyline-acu-communication.html",
+        "lainox-a00.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Пароконвектомат не включается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Не работает дисплей"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы пароконвектомата"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская плат"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-flash-fram.html",
+          "label": "Electrolux SkyLine: FLA1, FLA2, FrA1, FrA2, FrMC"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-gbcu-gbcd-gbbu.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: GbCU, GbCd и GbbU",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "GbCU",
+        "GbCd",
+        "GbbU"
+      ],
+      "previous": "electrolux-skyline-cleaning-pump.html",
+      "next": null,
+      "related_errors": [
+        "lainox-a06.html",
+        "lainox-a20-a21.html",
+        "lainox-a22-a27.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "related_symptoms": [
+        {
+          "path": "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "title": "Газовый пароконвектомат не зажигается"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "title": "Пламя появляется и гаснет"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-ne-greet.html",
+          "title": "Газовый аппарат не набирает температуру"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "gazovyy-parokonvektomat-remont.html",
+          "title": "Диагностика газового пароконвектомата"
+        },
+        {
+          "path": "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "title": "Вентиляция и дымоудаление"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-gbcu-gbcd-gbbu.html",
+          "label": "Electrolux SkyLine: GbCU, GbCd и GbbU"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-hfni.html",
+      "type": "error",
+      "title": "Electrolux SkyLine HFnI",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "water_steam",
+      "systems": [
+        "water_steam"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "photo",
+      "codes": [
+        "HFnI"
+      ],
+      "previous": "electrolux-skyline-esch-asch.html",
+      "next": "electrolux-skyline-boiler-hd01.html",
+      "related_errors": [
+        "electrolux-skyline-boiler-hd01.html",
+        "lainox-a04-a05.html",
+        "lainox-a45-a62.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-nabiraet-vodu.html",
+          "title": "Пароконвектомат не набирает воду"
+        },
+        {
+          "path": "parokonvektomat-net-para.html",
+          "title": "Нет пара"
+        },
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Декальцинация и очистка"
+        },
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Техническое обслуживание"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-hfni.html",
+          "label": "Electrolux SkyLine HFnI"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-kody-oshibok.html",
+      "type": "family",
+      "title": "Electrolux Professional: SkyLine Ovens",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        }
+      ],
+      "additional_navigation": [
+        "electrolux-skyline-etc-safety.html"
+      ]
+    },
+    {
+      "path": "electrolux-skyline-memory-io.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: операции FLASH и FRAM",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "electronics_memory",
+      "systems": [
+        "electronics_memory"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "FLEE",
+        "FLUE",
+        "FLrE",
+        "FrUE",
+        "FrrE"
+      ],
+      "previous": "electrolux-skyline-flash-fram.html",
+      "next": "electrolux-skyline-acu-communication.html",
+      "related_errors": [
+        "electrolux-skyline-flash-fram.html",
+        "electrolux-skyline-acu-communication.html",
+        "lainox-a00.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Пароконвектомат не включается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Не работает дисплей"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы пароконвектомата"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская плат"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-memory-io.html",
+          "label": "Electrolux SkyLine: операции FLASH и FRAM"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-ntc-ssr.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: EntC, CntC, CSOt",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "CSOt",
+        "CntC",
+        "EntC"
+      ],
+      "previous": "electrolux-skyline-acum-fu13.html",
+      "next": "electrolux-skyline-etc-safety.html",
+      "related_errors": [
+        "electrolux-skyline-etc-safety.html",
+        "electrolux-skyline-esch-asch.html",
+        "lainox-a02-a03.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-ntc-ssr.html",
+          "label": "Electrolux SkyLine: EntC, CntC, CSOt"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-parameters-configuration.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: PFAC, PUOr, PFOr, PCE1",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "configuration_software",
+      "systems": [
+        "configuration_software"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "PCE1",
+        "PFAC",
+        "PFOr",
+        "PUOr"
+      ],
+      "previous": "electrolux-skyline-ega0-egat-egad.html",
+      "next": "electrolux-skyline-software-version.html",
+      "related_errors": [
+        "electrolux-skyline-ega0-egat-egad.html",
+        "electrolux-skyline-software-version.html",
+        "electrolux-skyline-cleaning-table.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-konfiguraciya-po.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Аппарат не загружается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Ошибка дисплея или интерфейса"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Диагностика платы и конфигурации"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-parameters-configuration.html",
+          "label": "Electrolux SkyLine: PFAC, PUOr, PFOr, PCE1"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-software-version.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: ACUS, ACSS, tCMS, InuS",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "configuration_software",
+      "systems": [
+        "configuration_software"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "ACSS",
+        "ACUS",
+        "InuS",
+        "tCMS"
+      ],
+      "previous": "electrolux-skyline-parameters-configuration.html",
+      "next": "electrolux-skyline-flash-fram.html",
+      "related_errors": [
+        "electrolux-skyline-ega0-egat-egad.html",
+        "electrolux-skyline-parameters-configuration.html",
+        "electrolux-skyline-cleaning-table.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-konfiguraciya-po.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Аппарат не загружается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Ошибка дисплея или интерфейса"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Диагностика платы и конфигурации"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-software-version.html",
+          "label": "Electrolux SkyLine: ACUS, ACSS, tCMS, InuS"
+        }
+      ]
+    },
+    {
+      "path": "electrolux-skyline-vent-cleaning.html",
+      "type": "error",
+      "title": "Electrolux SkyLine: BEto и Y8",
+      "brand": "Electrolux Professional",
+      "family": "SkyLine Ovens",
+      "system": "cleaning_drain",
+      "systems": [
+        "cleaning_drain"
+      ],
+      "impact": "limited",
+      "conversion_mode": "photo",
+      "codes": [
+        "BEto",
+        "Y8"
+      ],
+      "previous": "electrolux-skyline-drain-quenching.html",
+      "next": "electrolux-skyline-cleaning-table.html",
+      "related_errors": [
+        "electrolux-skyline-drain-quenching.html",
+        "electrolux-skyline-cleaning-pump.html",
+        "lainox-a08-a09.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-electrolux.html",
+      "parent_family": "electrolux-skyline-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-moyka-sliv.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        },
+        {
+          "path": "parokonvektomat-techet-voda.html",
+          "title": "Течёт вода"
+        },
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Накипь и загрязнение бойлера"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Обслуживание системы мойки"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Ремонт пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        },
+        {
+          "url": "/electrolux-skyline-kody-oshibok.html",
+          "label": "SkyLine Ovens"
+        },
+        {
+          "url": "/electrolux-skyline-vent-cleaning.html",
+          "label": "Electrolux SkyLine: BEto и Y8"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a00.html",
+      "type": "error",
+      "title": "Lainox Sapiens: ошибка A00",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "electronics_memory",
+      "systems": [
+        "electronics_memory"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "A00"
+      ],
+      "previous": null,
+      "next": "lainox-a01.html",
+      "related_errors": [
+        "electrolux-skyline-acu-communication.html",
+        "electrolux-skyline-flash-fram.html",
+        "electrolux-skyline-memory-io.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Пароконвектомат не включается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Не работает дисплей"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы пароконвектомата"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская плат"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a00.html",
+          "label": "Lainox Sapiens: ошибка A00"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a01.html",
+      "type": "error",
+      "title": "Lainox Sapiens: ошибка A01",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "motor_inverter",
+      "systems": [
+        "motor_inverter"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "A01"
+      ],
+      "previous": "lainox-a00.html",
+      "next": "lainox-a02-a03.html",
+      "related_errors": [
+        "lainox-a30-a32.html",
+        "lainox-a31-a37.html",
+        "electrolux-skyline-acum-fu13.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-ventilyator-invertor.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-rabotaet-ventilyator.html",
+          "title": "Не работает вентилятор"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не набирает температуру"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы и привода"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Ремонт пароконвектоматов"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a01.html",
+          "label": "Lainox Sapiens: ошибка A01"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a02-a03.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A02 и A03",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "A02",
+        "A03"
+      ],
+      "previous": "lainox-a01.html",
+      "next": "lainox-a04-a05.html",
+      "related_errors": [
+        "lainox-a07.html",
+        "lainox-a08-a09.html",
+        "lainox-a10.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a02-a03.html",
+          "label": "Lainox Sapiens: A02 и A03"
+        }
+      ],
+      "additional_navigation": [
+        "lainox-a11-a13.html"
+      ]
+    },
+    {
+      "path": "lainox-a04-a05.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A04 и A05",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "water_steam",
+      "systems": [
+        "water_steam"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "photo",
+      "codes": [
+        "A04",
+        "A05"
+      ],
+      "previous": "lainox-a02-a03.html",
+      "next": "lainox-a06.html",
+      "related_errors": [
+        "lainox-a45-a62.html",
+        "lainox-a60-a61-a64.html",
+        "electrolux-skyline-boiler-hd01.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-nabiraet-vodu.html",
+          "title": "Пароконвектомат не набирает воду"
+        },
+        {
+          "path": "parokonvektomat-net-para.html",
+          "title": "Нет пара"
+        },
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Декальцинация и очистка"
+        },
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Техническое обслуживание"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a04-a05.html",
+          "label": "Lainox Sapiens: A04 и A05"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a06.html",
+      "type": "error",
+      "title": "Lainox Sapiens: ошибка A06",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "A06"
+      ],
+      "previous": "lainox-a04-a05.html",
+      "next": "lainox-a07.html",
+      "related_errors": [
+        "lainox-a20-a21.html",
+        "lainox-a22-a27.html",
+        "electrolux-skyline-gbcu-gbcd-gbbu.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "related_symptoms": [
+        {
+          "path": "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "title": "Газовый пароконвектомат не зажигается"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "title": "Пламя появляется и гаснет"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-ne-greet.html",
+          "title": "Газовый аппарат не набирает температуру"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "gazovyy-parokonvektomat-remont.html",
+          "title": "Диагностика газового пароконвектомата"
+        },
+        {
+          "path": "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "title": "Вентиляция и дымоудаление"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a06.html",
+          "label": "Lainox Sapiens: ошибка A06"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a07.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A07",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "A07"
+      ],
+      "previous": "lainox-a06.html",
+      "next": "lainox-a08-a09.html",
+      "related_errors": [
+        "lainox-a02-a03.html",
+        "lainox-a08-a09.html",
+        "lainox-a10.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a07.html",
+          "label": "Lainox Sapiens: A07"
+        }
+      ],
+      "additional_navigation": [
+        "lainox-a11-a13.html"
+      ]
+    },
+    {
+      "path": "lainox-a08-a09.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A08 и A09",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety",
+        "cleaning_drain"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "photo",
+      "codes": [
+        "A08",
+        "A09"
+      ],
+      "previous": "lainox-a07.html",
+      "next": "lainox-a10.html",
+      "related_errors": [
+        "lainox-a02-a03.html",
+        "lainox-a07.html",
+        "lainox-a10.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a08-a09.html",
+          "label": "Lainox Sapiens: A08 и A09"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a10.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A10",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "A10"
+      ],
+      "previous": "lainox-a08-a09.html",
+      "next": "lainox-a11-a13.html",
+      "related_errors": [
+        "lainox-a02-a03.html",
+        "lainox-a07.html",
+        "lainox-a08-a09.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a10.html",
+          "label": "Lainox Sapiens: A10"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a11-a13.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A11, A12, A13",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "limited",
+      "conversion_mode": "photo",
+      "codes": [
+        "A11",
+        "A12",
+        "A13"
+      ],
+      "previous": "lainox-a10.html",
+      "next": "lainox-a20-a21.html",
+      "related_errors": [
+        "lainox-a02-a03.html",
+        "lainox-a07.html",
+        "lainox-a08-a09.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a11-a13.html",
+          "label": "Lainox Sapiens: A11, A12, A13"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a20-a21.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A20 и A21",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "A20",
+        "A21"
+      ],
+      "previous": "lainox-a11-a13.html",
+      "next": "lainox-a22-a27.html",
+      "related_errors": [
+        "lainox-a06.html",
+        "lainox-a22-a27.html",
+        "electrolux-skyline-gbcu-gbcd-gbbu.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "related_symptoms": [
+        {
+          "path": "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "title": "Газовый пароконвектомат не зажигается"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "title": "Пламя появляется и гаснет"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-ne-greet.html",
+          "title": "Газовый аппарат не набирает температуру"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "gazovyy-parokonvektomat-remont.html",
+          "title": "Диагностика газового пароконвектомата"
+        },
+        {
+          "path": "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "title": "Вентиляция и дымоудаление"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a20-a21.html",
+          "label": "Lainox Sapiens: A20 и A21"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a22-a27.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A22–A27",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "A22",
+        "A23",
+        "A24",
+        "A25",
+        "A26",
+        "A27"
+      ],
+      "previous": "lainox-a20-a21.html",
+      "next": "lainox-a30-a32.html",
+      "related_errors": [
+        "lainox-a06.html",
+        "lainox-a20-a21.html",
+        "electrolux-skyline-gbcu-gbcd-gbbu.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "related_symptoms": [
+        {
+          "path": "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "title": "Газовый пароконвектомат не зажигается"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "title": "Пламя появляется и гаснет"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-ne-greet.html",
+          "title": "Газовый аппарат не набирает температуру"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "gazovyy-parokonvektomat-remont.html",
+          "title": "Диагностика газового пароконвектомата"
+        },
+        {
+          "path": "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "title": "Вентиляция и дымоудаление"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a22-a27.html",
+          "label": "Lainox Sapiens: A22–A27"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a30-a32.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A30 и A32",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "motor_inverter",
+      "systems": [
+        "motor_inverter"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "A30",
+        "A32"
+      ],
+      "previous": "lainox-a22-a27.html",
+      "next": "lainox-a31-a37.html",
+      "related_errors": [
+        "lainox-a01.html",
+        "lainox-a31-a37.html",
+        "electrolux-skyline-acum-fu13.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-ventilyator-invertor.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-rabotaet-ventilyator.html",
+          "title": "Не работает вентилятор"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не набирает температуру"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы и привода"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Ремонт пароконвектоматов"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a30-a32.html",
+          "label": "Lainox Sapiens: A30 и A32"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a31-a37.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A31–A37",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "motor_inverter",
+      "systems": [
+        "motor_inverter"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "A31",
+        "A33",
+        "A34",
+        "A35",
+        "A36",
+        "A37"
+      ],
+      "previous": "lainox-a30-a32.html",
+      "next": "lainox-a45-a62.html",
+      "related_errors": [
+        "lainox-a01.html",
+        "lainox-a30-a32.html",
+        "electrolux-skyline-acum-fu13.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-ventilyator-invertor.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-rabotaet-ventilyator.html",
+          "title": "Не работает вентилятор"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не набирает температуру"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы и привода"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Ремонт пароконвектоматов"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a31-a37.html",
+          "label": "Lainox Sapiens: A31–A37"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a45-a62.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A45 и A62",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "water_steam",
+      "systems": [
+        "water_steam"
+      ],
+      "impact": "limited",
+      "conversion_mode": "photo",
+      "codes": [
+        "A45",
+        "A62"
+      ],
+      "previous": "lainox-a31-a37.html",
+      "next": "lainox-a60-a61-a64.html",
+      "related_errors": [
+        "lainox-a04-a05.html",
+        "lainox-a60-a61-a64.html",
+        "electrolux-skyline-boiler-hd01.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-nabiraet-vodu.html",
+          "title": "Пароконвектомат не набирает воду"
+        },
+        {
+          "path": "parokonvektomat-net-para.html",
+          "title": "Нет пара"
+        },
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Декальцинация и очистка"
+        },
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Техническое обслуживание"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a45-a62.html",
+          "label": "Lainox Sapiens: A45 и A62"
+        }
+      ]
+    },
+    {
+      "path": "lainox-a60-a61-a64.html",
+      "type": "error",
+      "title": "Lainox Sapiens: A60, A61 и A64",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": "water_steam",
+      "systems": [
+        "water_steam"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "reference",
+      "codes": [
+        "A60",
+        "A61",
+        "A64"
+      ],
+      "previous": "lainox-a45-a62.html",
+      "next": null,
+      "related_errors": [
+        "lainox-a04-a05.html",
+        "lainox-a45-a62.html",
+        "electrolux-skyline-boiler-hd01.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-lainox.html",
+      "parent_family": "lainox-sapiens-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-nabiraet-vodu.html",
+          "title": "Пароконвектомат не набирает воду"
+        },
+        {
+          "path": "parokonvektomat-net-para.html",
+          "title": "Нет пара"
+        },
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Декальцинация и очистка"
+        },
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Техническое обслуживание"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        },
+        {
+          "url": "/lainox-a60-a61-a64.html",
+          "label": "Lainox Sapiens: A60, A61 и A64"
+        }
+      ]
+    },
+    {
+      "path": "lainox-sapiens-kody-oshibok.html",
+      "type": "family",
+      "title": "Lainox: Sapiens",
+      "brand": "Lainox",
+      "family": "Sapiens",
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        },
+        {
+          "url": "/lainox-sapiens-kody-oshibok.html",
+          "label": "Sapiens"
+        }
+      ]
+    },
+    {
+      "path": "oshibki-parokonvektomatov-electrolux.html",
+      "type": "brand",
+      "title": "Коды ошибок Electrolux Professional",
+      "brand": "Electrolux Professional",
+      "family": null,
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-electrolux.html",
+          "label": "Electrolux Professional"
+        }
+      ]
+    },
+    {
+      "path": "oshibki-parokonvektomatov-lainox.html",
+      "type": "brand",
+      "title": "Коды ошибок Lainox",
+      "brand": "Lainox",
+      "family": null,
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-lainox.html",
+          "label": "Lainox"
+        }
+      ]
+    },
+    {
+      "path": "oshibki-parokonvektomatov-rational.html",
+      "type": "brand",
+      "title": "Коды ошибок RATIONAL",
+      "brand": "RATIONAL",
+      "family": null,
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-rational.html",
+          "label": "RATIONAL"
+        }
+      ]
+    },
+    {
+      "path": "oshibki-parokonvektomatov-retigo.html",
+      "type": "brand",
+      "title": "Коды ошибок Retigo",
+      "brand": "Retigo",
+      "family": null,
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-retigo.html",
+          "label": "Retigo"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-kody-oshibok-istochniki.html",
+      "type": "support",
+      "title": "Источники инженерного справочника",
+      "brand": null,
+      "family": null,
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-kody-oshibok-istochniki.html",
+          "label": "Источники и редакции"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-kody-oshibok-metodika.html",
+      "type": "support",
+      "title": "Как читать код ошибки пароконвектомата",
+      "brand": null,
+      "family": null,
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-kody-oshibok-metodika.html",
+          "label": "Методика диагностики"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "type": "system",
+      "title": "Газ, розжиг и контроль пламени",
+      "brand": null,
+      "family": null,
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+          "label": "Газ, розжиг и контроль пламени"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-oshibki-konfiguraciya-po.html",
+      "type": "system",
+      "title": "Конфигурация, прошивка и совместимость",
+      "brand": null,
+      "family": null,
+      "system": "configuration_software",
+      "systems": [
+        "configuration_software"
+      ],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-oshibki-konfiguraciya-po.html",
+          "label": "Конфигурация, прошивка и совместимость"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-oshibki-moyka-sliv.html",
+      "type": "system",
+      "title": "Мойка, насосы, клапаны и слив",
+      "brand": null,
+      "family": null,
+      "system": "cleaning_drain",
+      "systems": [
+        "cleaning_drain"
+      ],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-oshibki-moyka-sliv.html",
+          "label": "Мойка, насосы, клапаны и слив"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+      "type": "system",
+      "title": "Платы, память, питание и связь",
+      "brand": null,
+      "family": null,
+      "system": "electronics_memory",
+      "systems": [
+        "electronics_memory"
+      ],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+          "label": "Платы, память, питание и связь"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "type": "system",
+      "title": "Температурные датчики и защитные цепи",
+      "brand": null,
+      "family": null,
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-oshibki-temperatura-zashchita.html",
+          "label": "Температурные датчики и защитные цепи"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-oshibki-ventilyator-invertor.html",
+      "type": "system",
+      "title": "Вентилятор, двигатель и инвертор",
+      "brand": null,
+      "family": null,
+      "system": "motor_inverter",
+      "systems": [
+        "motor_inverter"
+      ],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-oshibki-ventilyator-invertor.html",
+          "label": "Вентилятор, двигатель и инвертор"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "type": "system",
+      "title": "Вода, пар, бойлер и уровень",
+      "brand": null,
+      "family": null,
+      "system": "water_steam",
+      "systems": [
+        "water_steam"
+      ],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/parokonvektomat-oshibki-voda-par-boiler.html",
+          "label": "Вода, пар, бойлер и уровень"
+        }
+      ]
+    },
+    {
+      "path": "parokonvektomaty-kody-oshibok.html",
+      "type": "central",
+      "title": "Коды ошибок пароконвектоматов",
+      "brand": null,
+      "family": null,
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        }
+      ],
+      "additional_navigation": [
+        "rational-icombi-kody-oshibok.html"
+      ]
+    },
+    {
+      "path": "rational-icombi-kody-oshibok.html",
+      "type": "family",
+      "title": "RATIONAL: iCombi Pro / iCombi Classic",
+      "brand": "RATIONAL",
+      "family": "iCombi Pro / iCombi Classic",
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-rational.html",
+          "label": "RATIONAL"
+        },
+        {
+          "url": "/rational-icombi-kody-oshibok.html",
+          "label": "iCombi Pro / iCombi Classic"
+        }
+      ]
+    },
+    {
+      "path": "rational-service-140-4.html",
+      "type": "error",
+      "title": "RATIONAL Service 140.4",
+      "brand": "RATIONAL",
+      "family": "iCombi Pro / iCombi Classic",
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "limited",
+      "conversion_mode": "photo",
+      "codes": [
+        "Service 140.4"
+      ],
+      "previous": "rational-service-s32-s33.html",
+      "next": "rational-service-140-8.html",
+      "related_errors": [
+        "rational-service-s32-s33.html",
+        "rational-service-140-8.html",
+        "electrolux-skyline-gbcu-gbcd-gbbu.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-rational.html",
+      "parent_family": "rational-icombi-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "related_symptoms": [
+        {
+          "path": "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "title": "Газовый пароконвектомат не зажигается"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "title": "Пламя появляется и гаснет"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-ne-greet.html",
+          "title": "Газовый аппарат не набирает температуру"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "gazovyy-parokonvektomat-remont.html",
+          "title": "Диагностика газового пароконвектомата"
+        },
+        {
+          "path": "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "title": "Вентиляция и дымоудаление"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-rational.html",
+          "label": "RATIONAL"
+        },
+        {
+          "url": "/rational-icombi-kody-oshibok.html",
+          "label": "iCombi Pro / iCombi Classic"
+        },
+        {
+          "url": "/rational-service-140-4.html",
+          "label": "RATIONAL Service 140.4"
+        }
+      ],
+      "additional_navigation": [
+        "rational-service-s70-s73.html"
+      ]
+    },
+    {
+      "path": "rational-service-140-8.html",
+      "type": "error",
+      "title": "RATIONAL Service 140.8",
+      "brand": "RATIONAL",
+      "family": "iCombi Pro / iCombi Classic",
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "Service 140.8"
+      ],
+      "previous": "rational-service-140-4.html",
+      "next": "rational-service-s70-s73.html",
+      "related_errors": [
+        "rational-service-s32-s33.html",
+        "rational-service-140-4.html",
+        "electrolux-skyline-gbcu-gbcd-gbbu.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-rational.html",
+      "parent_family": "rational-icombi-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "related_symptoms": [
+        {
+          "path": "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "title": "Газовый пароконвектомат не зажигается"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "title": "Пламя появляется и гаснет"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-ne-greet.html",
+          "title": "Газовый аппарат не набирает температуру"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "gazovyy-parokonvektomat-remont.html",
+          "title": "Диагностика газового пароконвектомата"
+        },
+        {
+          "path": "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "title": "Вентиляция и дымоудаление"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-rational.html",
+          "label": "RATIONAL"
+        },
+        {
+          "url": "/rational-icombi-kody-oshibok.html",
+          "label": "iCombi Pro / iCombi Classic"
+        },
+        {
+          "url": "/rational-service-140-8.html",
+          "label": "RATIONAL Service 140.8"
+        }
+      ]
+    },
+    {
+      "path": "rational-service-s32-s33.html",
+      "type": "error",
+      "title": "Ошибки RATIONAL S_32_x и S_33_x",
+      "brand": "RATIONAL",
+      "family": "iCombi Pro / iCombi Classic",
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "S_32_1.y",
+        "S_32_2.y",
+        "S_32_3.y",
+        "S_32_4.y",
+        "S_33_1",
+        "S_33_2",
+        "S_33_3",
+        "S_33_4",
+        "S_33_5"
+      ],
+      "previous": null,
+      "next": "rational-service-140-4.html",
+      "related_errors": [
+        "rational-service-140-4.html",
+        "rational-service-140-8.html",
+        "electrolux-skyline-gbcu-gbcd-gbbu.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-rational.html",
+      "parent_family": "rational-icombi-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "related_symptoms": [
+        {
+          "path": "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "title": "Газовый пароконвектомат не зажигается"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "title": "Пламя появляется и гаснет"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-ne-greet.html",
+          "title": "Газовый аппарат не набирает температуру"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "gazovyy-parokonvektomat-remont.html",
+          "title": "Диагностика газового пароконвектомата"
+        },
+        {
+          "path": "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "title": "Вентиляция и дымоудаление"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-rational.html",
+          "label": "RATIONAL"
+        },
+        {
+          "url": "/rational-icombi-kody-oshibok.html",
+          "label": "iCombi Pro / iCombi Classic"
+        },
+        {
+          "url": "/rational-service-s32-s33.html",
+          "label": "Ошибки RATIONAL S_32_x и S_33_x"
+        }
+      ]
+    },
+    {
+      "path": "rational-service-s70-s73.html",
+      "type": "error",
+      "title": "Ошибки RATIONAL S_70–S_73",
+      "brand": "RATIONAL",
+      "family": "iCombi Pro / iCombi Classic",
+      "system": "temperature_safety",
+      "systems": [
+        "temperature_safety"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "S_70_1",
+        "S_70_5",
+        "S_71_1",
+        "S_71_2",
+        "S_72",
+        "S_73_x"
+      ],
+      "previous": "rational-service-140-8.html",
+      "next": null,
+      "related_errors": [
+        "electrolux-skyline-esch-asch.html",
+        "electrolux-skyline-etc-safety.html",
+        "electrolux-skyline-ntc-ssr.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-rational.html",
+      "parent_family": "rational-icombi-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-temperatura-zashchita.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-peregrevaetsya.html",
+          "title": "Пароконвектомат перегревается"
+        },
+        {
+          "path": "parokonvektomat-ne-greet.html",
+          "title": "Не греет"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Отключается или выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Профилактическое обслуживание"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Диагностика пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-rational.html",
+          "label": "RATIONAL"
+        },
+        {
+          "url": "/rational-icombi-kody-oshibok.html",
+          "label": "iCombi Pro / iCombi Classic"
+        },
+        {
+          "url": "/rational-service-s70-s73.html",
+          "label": "Ошибки RATIONAL S_70–S_73"
+        }
+      ]
+    },
+    {
+      "path": "retigo-error-18.html",
+      "type": "error",
+      "title": "Retigo Orange Vision Plus: Err 18",
+      "brand": "Retigo",
+      "family": "Orange Vision Plus",
+      "system": "water_steam",
+      "systems": [
+        "water_steam"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "photo",
+      "codes": [
+        "Err 18"
+      ],
+      "previous": null,
+      "next": "retigo-error-27.html",
+      "related_errors": [
+        "retigo-error-32.html",
+        "electrolux-skyline-boiler-hd01.html",
+        "electrolux-skyline-hfni.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-retigo.html",
+      "parent_family": "retigo-vision-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-nabiraet-vodu.html",
+          "title": "Пароконвектомат не набирает воду"
+        },
+        {
+          "path": "parokonvektomat-net-para.html",
+          "title": "Нет пара"
+        },
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Декальцинация и очистка"
+        },
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Техническое обслуживание"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-retigo.html",
+          "label": "Retigo"
+        },
+        {
+          "url": "/retigo-vision-kody-oshibok.html",
+          "label": "Vision generations"
+        },
+        {
+          "url": "/retigo-error-18.html",
+          "label": "Retigo Orange Vision Plus: Err 18"
+        }
+      ],
+      "additional_navigation": [
+        "retigo-error-97-2.html"
+      ]
+    },
+    {
+      "path": "retigo-error-27.html",
+      "type": "error",
+      "title": "Retigo Orange Vision: Err 27",
+      "brand": "Retigo",
+      "family": "Orange Vision (earlier generation)",
+      "system": "cleaning_drain",
+      "systems": [
+        "cleaning_drain"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "photo",
+      "codes": [
+        "Err 27"
+      ],
+      "previous": "retigo-error-18.html",
+      "next": "retigo-error-32.html",
+      "related_errors": [
+        "electrolux-skyline-cleaning-pump.html",
+        "electrolux-skyline-drain-quenching.html",
+        "electrolux-skyline-vent-cleaning.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-retigo.html",
+      "parent_family": "retigo-vision-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-moyka-sliv.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        },
+        {
+          "path": "parokonvektomat-techet-voda.html",
+          "title": "Течёт вода"
+        },
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Накипь и загрязнение бойлера"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Обслуживание системы мойки"
+        },
+        {
+          "path": "parokonvektomaty.html",
+          "title": "Ремонт пароконвектомата"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-retigo.html",
+          "label": "Retigo"
+        },
+        {
+          "url": "/retigo-vision-kody-oshibok.html",
+          "label": "Vision generations"
+        },
+        {
+          "url": "/retigo-error-27.html",
+          "label": "Retigo Orange Vision: Err 27"
+        }
+      ]
+    },
+    {
+      "path": "retigo-error-32.html",
+      "type": "error",
+      "title": "Retigo Orange Vision: Err 32",
+      "brand": "Retigo",
+      "family": "Orange Vision",
+      "system": "water_steam",
+      "systems": [
+        "water_steam"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "photo",
+      "codes": [
+        "Err 32"
+      ],
+      "previous": "retigo-error-27.html",
+      "next": "retigo-error-60-79.html",
+      "related_errors": [
+        "retigo-error-18.html",
+        "electrolux-skyline-boiler-hd01.html",
+        "electrolux-skyline-hfni.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-retigo.html",
+      "parent_family": "retigo-vision-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-voda-par-boiler.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-nabiraet-vodu.html",
+          "title": "Пароконвектомат не набирает воду"
+        },
+        {
+          "path": "parokonvektomat-net-para.html",
+          "title": "Нет пара"
+        },
+        {
+          "path": "parokonvektomat-ne-slivaet-vodu.html",
+          "title": "Не сливает воду"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "dekalcinaciya-parokonvektomata.html",
+          "title": "Декальцинация и очистка"
+        },
+        {
+          "path": "parokonvektomat-obsluzhivanie.html",
+          "title": "Техническое обслуживание"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-retigo.html",
+          "label": "Retigo"
+        },
+        {
+          "url": "/retigo-vision-kody-oshibok.html",
+          "label": "Vision generations"
+        },
+        {
+          "url": "/retigo-error-32.html",
+          "label": "Retigo Orange Vision: Err 32"
+        }
+      ]
+    },
+    {
+      "path": "retigo-error-60-79.html",
+      "type": "error",
+      "title": "Retigo Blue Vision: Err 60–79",
+      "brand": "Retigo",
+      "family": "Blue Vision",
+      "system": "electronics_memory",
+      "systems": [
+        "electronics_memory"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "Err 60–79"
+      ],
+      "previous": "retigo-error-32.html",
+      "next": "retigo-error-97-2.html",
+      "related_errors": [
+        "electrolux-skyline-acu-communication.html",
+        "electrolux-skyline-flash-fram.html",
+        "electrolux-skyline-memory-io.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-retigo.html",
+      "parent_family": "retigo-vision-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-plata-pamyat-svyaz.html",
+      "related_symptoms": [
+        {
+          "path": "parokonvektomat-ne-vklyuchaetsya.html",
+          "title": "Пароконвектомат не включается"
+        },
+        {
+          "path": "parokonvektomat-ne-rabotaet-displey.html",
+          "title": "Не работает дисплей"
+        },
+        {
+          "path": "parokonvektomat-vybivaet-avtomat.html",
+          "title": "Выбивает автомат"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "remont-platy-parokonvektomata.html",
+          "title": "Ремонт платы пароконвектомата"
+        },
+        {
+          "path": "masterskaya-remonta-plat-restorannogo-oborudovaniya.html",
+          "title": "Стационарная мастерская плат"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-retigo.html",
+          "label": "Retigo"
+        },
+        {
+          "url": "/retigo-vision-kody-oshibok.html",
+          "label": "Vision generations"
+        },
+        {
+          "url": "/retigo-error-60-79.html",
+          "label": "Retigo Blue Vision: Err 60–79"
+        }
+      ]
+    },
+    {
+      "path": "retigo-error-97-2.html",
+      "type": "error",
+      "title": "Retigo Err 97.2 — Wrong stack",
+      "brand": "Retigo",
+      "family": "Gas B13",
+      "system": "gas_combustion",
+      "systems": [
+        "gas_combustion"
+      ],
+      "impact": "stopped",
+      "conversion_mode": "call",
+      "codes": [
+        "Err 97.2"
+      ],
+      "previous": "retigo-error-60-79.html",
+      "next": null,
+      "related_errors": [
+        "electrolux-skyline-gbcu-gbcd-gbbu.html",
+        "lainox-a06.html",
+        "lainox-a20-a21.html"
+      ],
+      "parent_brand": "oshibki-parokonvektomatov-retigo.html",
+      "parent_family": "retigo-vision-kody-oshibok.html",
+      "parent_system": "parokonvektomat-oshibki-gaz-rozzhig-plamya.html",
+      "related_symptoms": [
+        {
+          "path": "gazovyy-parokonvektomat-ne-zazhigaetsya.html",
+          "title": "Газовый пароконвектомат не зажигается"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-gasnet-plamya.html",
+          "title": "Пламя появляется и гаснет"
+        },
+        {
+          "path": "gazovyy-parokonvektomat-ne-greet.html",
+          "title": "Газовый аппарат не набирает температуру"
+        }
+      ],
+      "related_services": [
+        {
+          "path": "gazovyy-parokonvektomat-remont.html",
+          "title": "Диагностика газового пароконвектомата"
+        },
+        {
+          "path": "ventilyatsiya-gazovogo-parokonvektomata.html",
+          "title": "Вентиляция и дымоудаление"
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-retigo.html",
+          "label": "Retigo"
+        },
+        {
+          "url": "/retigo-vision-kody-oshibok.html",
+          "label": "Vision generations"
+        },
+        {
+          "url": "/retigo-error-97-2.html",
+          "label": "Retigo Err 97.2 — Wrong stack"
+        }
+      ]
+    },
+    {
+      "path": "retigo-vision-kody-oshibok.html",
+      "type": "family",
+      "title": "Retigo: Vision generations",
+      "brand": "Retigo",
+      "family": "Vision generations",
+      "system": null,
+      "systems": [],
+      "impact": "reference",
+      "conversion_mode": "reference",
+      "codes": [],
+      "previous": null,
+      "next": null,
+      "related_errors": [],
+      "parent_brand": null,
+      "parent_family": null,
+      "parent_system": null,
+      "related_symptoms": [],
+      "related_services": [],
+      "breadcrumbs": [
+        {
+          "url": "/",
+          "label": "Главная"
+        },
+        {
+          "url": "/parokonvektomaty.html",
+          "label": "Пароконвектоматы"
+        },
+        {
+          "url": "/parokonvektomaty-kody-oshibok.html",
+          "label": "Коды ошибок"
+        },
+        {
+          "url": "/oshibki-parokonvektomatov-retigo.html",
+          "label": "Retigo"
+        },
+        {
+          "url": "/retigo-vision-kody-oshibok.html",
+          "label": "Vision generations"
+        }
+      ]
+    }
+  ],
+  "independent_audit_hotfix": {
+    "reserved_fixed_header_space": true,
+    "doctype_normalized": true,
+    "scroll_affordance": true,
+    "keyboard_focusable_rows": true,
+    "additional_links": [
+      {
+        "donor": "lainox-a02-a03.html",
+        "target": "lainox-a11-a13.html",
+        "heading": "По этой же системе"
+      },
+      {
+        "donor": "lainox-a07.html",
+        "target": "lainox-a11-a13.html",
+        "heading": "По этой же системе"
+      },
+      {
+        "donor": "electrolux-skyline-kody-oshibok.html",
+        "target": "electrolux-skyline-etc-safety.html",
+        "heading": "Карточки серии"
+      },
+      {
+        "donor": "parokonvektomaty-kody-oshibok.html",
+        "target": "rational-icombi-kody-oshibok.html",
+        "heading": "По производителю"
+      },
+      {
+        "donor": "rational-service-140-4.html",
+        "target": "rational-service-s70-s73.html",
+        "heading": "По оборудованию"
+      },
+      {
+        "donor": "retigo-error-18.html",
+        "target": "retigo-error-97-2.html",
+        "heading": "По оборудованию"
+      }
+    ],
+    "target_min_unique_inbound_donors": 6
+  }
+}

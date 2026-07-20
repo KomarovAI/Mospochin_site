@@ -1,0 +1,48 @@
+/* Parokonvektomat engineering cluster navigation — 2026-07-20 */
+.error-breadcrumb{overflow:hidden}.error-breadcrumb-list{display:flex;align-items:center;gap:0;list-style:none;margin:0;padding:0;white-space:nowrap;overflow-x:auto;scrollbar-width:thin}.error-breadcrumb-item{display:flex;align-items:center;flex:0 0 auto}.error-breadcrumb-item:not(:last-child)::after{content:"›";color:#94a3b8;padding:0 8px}.error-breadcrumb-item a{font-weight:750}.error-breadcrumb-item [aria-current="page"]{color:#64748b;max-width:420px;overflow:hidden;text-overflow:ellipsis}
+.error-cluster-nav{background:#fff;border-bottom:1px solid #dbe4ee;box-shadow:0 7px 22px rgba(15,23,42,.055);position:relative;z-index:4}.error-cluster-nav-inner{padding-top:12px;padding-bottom:12px}.error-cluster-nav-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.error-nav-search{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#0f172a;color:#fff;text-decoration:none;font-weight:900}.error-nav-search:hover{background:#1e293b}.error-nav-context{font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#64748b}.error-nav-row{display:flex;gap:8px;overflow-x:auto;padding:10px 1px 2px;scrollbar-width:thin}.error-nav-chip{display:inline-flex;align-items:center;min-height:38px;padding:8px 11px;border:1px solid #dbe4ee;border-radius:999px;background:#f8fafc;color:#334155;text-decoration:none;font-size:13px;font-weight:850;white-space:nowrap}.error-nav-chip:hover{border-color:#94a3b8;background:#fff}.error-nav-chip.is-active{background:#dbeafe;border-color:#60a5fa;color:#1d4ed8}.error-nav-chip-system.is-active{background:#cffafe;border-color:#22d3ee;color:#155e75}.error-nav-chip-impact{background:#fff7ed}.error-nav-systems{margin-top:6px}.error-nav-systems summary{cursor:pointer;font-size:13px;font-weight:850;color:#475569;list-style:none;padding:6px 0}.error-nav-systems summary::-webkit-details-marker{display:none}.error-nav-systems summary::after{content:" +";color:#2563eb}.error-nav-systems[open] summary::after{content:" −"}.error-nav-system-body{border-top:1px solid #e2e8f0;margin-top:4px}.error-nav-impact{padding-top:6px}
+.error-page-route{background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:20px 0}.error-route-hierarchy{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.error-route-item{padding:12px 14px;border:1px solid #dbe4ee;border-radius:14px;background:#fff;min-width:0}.error-route-label{display:block;color:#64748b;font-size:11px;font-weight:900;letter-spacing:.075em;text-transform:uppercase;margin-bottom:5px}.error-route-value{display:block;color:#0f172a;text-decoration:none;font-weight:900;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.error-route-value:hover{color:#2563eb}.error-page-pager{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.error-pager-link,.error-pager-empty{display:flex;align-items:center;min-height:52px;padding:10px 14px;border-radius:13px;border:1px solid #dbe4ee;background:#fff;color:#334155;text-decoration:none;font-weight:850}.error-pager-next{justify-content:flex-end;text-align:right}.error-pager-link:hover{border-color:#60a5fa;color:#1d4ed8}.error-pager-empty{color:#94a3b8;background:transparent}
+.error-page-toc{width:min(100% - 32px,1180px);margin:18px auto 0;border:1px solid #dbe4ee;border-radius:14px;background:#fff;padding:0 16px}.error-page-toc summary{cursor:pointer;padding:13px 0;font-weight:900;color:#334155}.error-page-toc ol{columns:2;column-gap:36px;margin:0 0 16px;padding-left:20px}.error-page-toc li{break-inside:avoid;margin:6px 0}.error-page-toc a{color:#1d4ed8;text-decoration:none;font-weight:750}
+.error-navigation-onward{border-top:1px solid #dbe4ee}.error-onward-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}.error-onward-group{background:#fff;border:1px solid #dbe4ee;border-radius:18px;padding:20px}.error-onward-group h3{margin:0 0 12px;color:#0f172a}.error-onward-links{display:flex;flex-direction:column;gap:8px}.error-onward-link{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:11px;background:#f8fafc;color:#334155;text-decoration:none;font-weight:800}.error-onward-link::after{content:"→";color:#64748b}.error-onward-link:hover{background:#e2e8f0;color:#0f172a}.error-onward-link.service{background:#eff6ff;color:#1d4ed8}.error-onward-link.symptom{background:#f0fdfa;color:#115e59}
+.error-symptom-entry{margin:48px auto;width:min(100% - 32px,1180px);border:1px solid #bae6fd;border-radius:20px;background:linear-gradient(135deg,#f0f9ff,#ecfeff);box-shadow:0 16px 38px rgba(14,116,144,.09)}.error-symptom-entry-inner{padding:25px}.error-symptom-kicker{display:block;color:#0369a1;font-size:12px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}.error-symptom-entry h2{margin:7px 0 8px;color:#0f172a;font-size:clamp(24px,3vw,34px);line-height:1.12}.error-symptom-entry p{color:#475569;max-width:850px}.error-symptom-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.error-symptom-link{display:inline-flex;padding:9px 12px;border-radius:999px;border:1px solid #7dd3fc;background:#fff;color:#0c4a6e;text-decoration:none;font-size:13px;font-weight:850}.error-symptom-code{border-color:#cbd5e1;color:#334155}.error-symptom-search{background:#0f172a;border-color:#0f172a;color:#fff}
+[data-error-nav-link]:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+@media(min-width:900px){.error-nav-systems>summary{display:none}.error-nav-systems{margin-top:2px}.error-nav-system-body{border-top:0;margin-top:0}.error-nav-impact{padding-top:3px}}
+@media(max-width:760px){.error-breadcrumb-item [aria-current="page"]{max-width:240px}.error-nav-context{display:none}.error-route-hierarchy{grid-template-columns:1fr 1fr}.error-page-pager{grid-template-columns:1fr}.error-pager-next{justify-content:flex-start;text-align:left}.error-page-toc ol{columns:1}.error-onward-grid{grid-template-columns:1fr}.error-symptom-entry{margin-top:34px;margin-bottom:34px}.error-symptom-entry-inner{padding:20px}.error-nav-systems:not([open]) .error-nav-system-body{display:none}}
+@media(max-width:430px){.error-route-hierarchy{grid-template-columns:1fr}.error-route-value{white-space:normal}.error-nav-search{width:100%;justify-content:center}.error-cluster-nav-head{display:block}.error-page-toc{width:calc(100% - 24px)}}
+
+.error-compact-brands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}.error-compact-brand{background:#fff;border:1px solid #dbe4ee;border-radius:17px;overflow:hidden}.error-compact-brand summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;cursor:pointer;font-weight:950;color:#0f172a}.error-compact-brand summary strong{font-size:12px;color:#64748b}.error-compact-brand-body{border-top:1px solid #e2e8f0;padding:6px 20px 18px}.error-compact-system{padding-top:14px}.error-compact-system h3{font-size:15px;margin:0 0 8px}.error-compact-system h3 a{color:#0f172a;text-decoration:none}.error-compact-links{display:flex;flex-direction:column;gap:5px}.error-compact-links a{padding:7px 9px;border-radius:9px;background:#f8fafc;color:#334155;text-decoration:none;font-size:13px;font-weight:750}.error-compact-links a:hover{background:#e2e8f0;color:#1d4ed8}@media(max-width:760px){.error-compact-brands{grid-template-columns:1fr}.error-compact-brand summary{padding:15px 16px}.error-compact-brand-body{padding-left:16px;padding-right:16px}}
+
+
+/* Navigation independent-audit hotfix — 2026-07-20 */
+/* The fixed red bar occupies 3rem. The header shell now reserves the navbar's
+   real flow height (4rem mobile, 5rem desktop), so the breadcrumb starts below it. */
+.page-error-engineering #header-container{height:4rem}
+.page-error-engineering .error-breadcrumb{position:relative;z-index:6;background:#fff}
+.page-error-engineering [id]{scroll-margin-top:8.75rem}
+.error-nav-row{overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.error-nav-chip{scroll-snap-align:start}
+.error-nav-row:focus-visible{outline:3px solid #f59e0b;outline-offset:3px;border-radius:12px}
+@media(min-width:1024px){
+  .page-error-engineering #header-container{height:5.0625rem}
+  .page-error-engineering [id]{scroll-margin-top:9.75rem}
+}
+@media(max-width:760px){
+  .error-breadcrumb-list,
+  .error-nav-row{
+    background:
+      linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)) left center,
+      linear-gradient(270deg,#fff 30%,rgba(255,255,255,0)) right center,
+      linear-gradient(90deg,rgba(15,23,42,.14),rgba(15,23,42,0)) left center,
+      linear-gradient(270deg,rgba(15,23,42,.14),rgba(15,23,42,0)) right center;
+    background-repeat:no-repeat;
+    background-size:42px 100%,42px 100%,12px 100%,12px 100%;
+    background-attachment:local,local,scroll,scroll;
+  }
+  .error-nav-row{padding-right:4px}
+  .error-nav-row::after{
+    content:"↔";position:sticky;right:2px;display:grid;place-items:center;
+    flex:0 0 30px;height:34px;align-self:center;border:1px solid #dbe4ee;
+    border-radius:999px;background:rgba(255,255,255,.96);color:#64748b;
+    box-shadow:0 2px 8px rgba(15,23,42,.10);font-size:14px;font-weight:900;
+  }
+}

@@ -509,6 +509,12 @@
         submit_attempt_event_id: payload.submit_attempt_event_id,
         deduplicated: result.deduplicated === true
       });
+      if (document.body && document.body.dataset.gasPage === 'true') {
+        track('gas_lead_submit', form, {
+          lead_id: cleanString(result.lead_id, 256),
+          request_id: cleanString(result.request_id, 256)
+        });
+      }
       safeStorageSet(rateLimitKey(form), Date.now());
       form.reset();
       clearFieldErrors(form);

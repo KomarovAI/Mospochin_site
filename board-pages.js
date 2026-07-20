@@ -1,0 +1,1 @@
+(function(){"use strict";document.addEventListener("change",function(e){var n=e.target&&e.target.closest&&e.target.closest("[data-board-event]");if(!n||typeof window.mospochinTrackSiteEvent!=="function")return;window.mospochinTrackSiteEvent(n.getAttribute("data-board-event"),{field_name:n.name||n.id||null,field_value:String(n.value||"").slice(0,120)});},true);})();

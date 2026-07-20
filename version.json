@@ -1,0 +1,38 @@
+{
+  "project": "mospochin-site",
+  "artifact": "public-runtime",
+  "releaseId": "57c9ee601a48bd0d",
+  "packageVersion": "1.9.1-parokonvektomat-errors-navigation-hotfix-v2",
+  "generatedAt": "2026-07-20T13:00:00+03:00",
+  "source": {
+    "githubSha": "",
+    "githubRef": "",
+    "node": "",
+    "runtimePayloadSha256": "57c9ee601a48bd0d04ddcfa933844594e3037e13ad8c7c1725eec62107a6ca64"
+  },
+  "manifest": {
+    "path": ".deploy/include-files.txt",
+    "files": 1924,
+    "sha256": "db52fbe31abe4692b9524ace56841113c57828276224ea0cf084409f19cdc75f"
+  },
+  "runtime": {
+    "files": 1927,
+    "sha256": "57c9ee601a48bd0d04ddcfa933844594e3037e13ad8c7c1725eec62107a6ca64"
+  },
+  "changes": {
+    "cluster": "parokonvektomat-error-navigation-hotfix-v2",
+    "engineeringPages": 59,
+    "errorPages": 41,
+    "minimumOutgoingClusterLinks": 12,
+    "minimumUniqueInboundDonors": 6,
+    "layoutChecks": 118,
+    "layoutFailures": 0,
+    "representativePages": 6,
+    "screenshots": 18,
+    "navigationMap": "data/parokonvektomat-error-navigation.json",
+    "baseArchive": "mospochin-site-parokonvektomat-error-navigation-v1-20260720.zip"
+  },
+  "updated": "2026-07-20",
+  "version": "2026.07.20-parokonvektomat-errors-navigation-hotfix-v2",
+  "description": "Исправление навигации после независимого аудита: видимые breadcrumbs, корректный flow-offset шапки, единый DOCTYPE, усиленная перелинковка и доступная горизонтальная навигация."
+}
