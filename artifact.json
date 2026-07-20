@@ -3,43 +3,15 @@
   "project": "mospochin-site",
   "artifactType": "source-handoff-lite",
   "deployable": false,
-  "createdAt": "2026-07-20T15:30:00+03:00",
-  "packageVersion": "1.9.1-parokonvektomat-errors-navigation-hotfix-v2-source-handoff",
-  "source": {
-    "githubSha": "",
-    "githubRef": "",
-    "node": ""
-  },
-  "contents": {
-    "releaseId": "57c9ee601a48bd0d",
-    "manifestPath": ".deploy/include-files.txt",
-    "manifestFiles": 1924,
-    "manifestSha256": "db52fbe31abe4692b9524ace56841113c57828276224ea0cf084409f19cdc75f",
-    "runtimeFiles": 1927,
-    "runtimePayloadSha256": "57c9ee601a48bd0d04ddcfa933844594e3037e13ad8c7c1725eec62107a6ca64",
-    "payloadHashMethod": "sha256(sorted sha256(path-content) excluding version.json and artifact.json)"
-  },
-  "requirements": {
-    "minimumNodeMajor": 22
-  },
-  "notes": [
-    "Fixed header now reserves flow space on all 59 engineering pages.",
-    "Breadcrumb HTML and BreadcrumbList remain synchronized.",
-    "Minimum unique inbound donor pages is 6.",
-    "Desktop system filters auto-open; mobile filters remain collapsible.",
-    "118 desktop/mobile layout checks passed.",
-    "This archive is a source-handoff overlay and is not a directly deployable server bundle.",
-    "Deploy only through canonical mosrollout flow; do not rsync --delete.",
-    "Canonical .github/workflows/deploy.yml must be preserved by the rollout kit."
-  ],
+  "createdAt": "2026-07-20T09:30:00+03:00",
+  "packageVersion": "public-json-hotfix-v1-20260720",
   "updated": "2026-07-20",
-  "version": "2026.07.20-parokonvektomat-errors-navigation-hotfix-v2",
-  "description": "Исправление навигации после независимого аудита: видимые breadcrumbs, корректный flow-offset шапки, единый DOCTYPE, усиленная перелинковка и доступная горизонтальная навигация.",
-  "sourceHandoff": {
-    "basePublicArchive": "mospochin-site-parokonvektomat-error-navigation-hotfix-v2-20260720.zip",
-    "rolloutTarget": "KomarovAI/Mospochin_site:main",
-    "overlayMode": "rsync-without-delete",
-    "preserveCanonicalWorkflow": true,
-    "helperCompatibility": "mospochin-rollout-helper-for-ai-v3.1 / rollout-kit-v3.0.2"
-  }
+  "version": "2026.07.20-public-json-hotfix-v1",
+  "description": "Добавляет три JSON-файла инженерного кластера пароконвектоматов в публичный deploy allowlist.",
+  "requirements": {"minimumNodeMajor": 22},
+  "notes": [
+    "Fixes production 404 for parokonvektomat-error-codes.json, parokonvektomat-error-navigation.json and error-conversion-pages.json.",
+    "Overlay only; canonical deploy workflow must be preserved.",
+    "Deploy through mosrollout; do not rsync --delete."
+  ]
 }
