@@ -1,19 +1,47 @@
 {
   "schemaVersion": 1,
   "project": "mospochin-site",
-  "artifactType": "source-handoff-lite",
+  "artifactType": "source-handoff",
   "deployable": false,
-  "createdAt": "2026-07-20T10:05:00+03:00",
-  "packageVersion": "parokonvektomat-search-asset-hotfix-v2-20260720",
-  "updated": "2026-07-20",
-  "version": "2026.07.20-parokonvektomat-search-asset-hotfix-v2",
-  "description": "Перевод runtime-базы поиска кодов ошибок с нестабильного /data JSON на гарантированно публичный корневой JS asset.",
+  "createdAt": "2026-07-21T00:08:28+03:00",
+  "packageVersion": "2.0.0-cooking-kettles-full-site-source-handoff",
+  "source": {
+    "githubSha": "",
+    "githubRef": "main",
+    "node": ""
+  },
+  "contents": {
+    "releaseId": "aa861c4b49e4dc43",
+    "manifestPath": ".deploy/include-files.txt",
+    "manifestFiles": 1960,
+    "manifestSha256": "f067c121e4192ca1ca211722106022c6b03c3f4733162095a4f102c96c0179da",
+    "handoffFiles": 1954,
+    "runtimePayloadSha256": "aa861c4b49e4dc43e05799d6718970cce8e0d731b675af9be5a092ec0252f6c4",
+    "payloadHashMethod": "sha256(sorted path\\0sha256(content)\\n excluding version.json and artifact.json)"
+  },
   "requirements": {
     "minimumNodeMajor": 22
   },
   "notes": [
-    "Overlay only; canonical deploy workflow must be preserved.",
-    "Root JS asset is the primary runtime source; /data JSON is legacy fallback only.",
-    "Deploy through updated mosrollout kit; do not rsync --delete."
-  ]
+    "Full cumulative source-handoff overlay for the cooking-kettles cluster and all prior site content.",
+    "Contains 39 indexable cooking-kettle pages, unified navigation, forms, analytics, search and media.",
+    "Preserves the final root runtime-data contract for the parokonvektomat error search.",
+    "Unchanged binary font files are intentionally not repackaged; canonical Git checkout retains them because overlay is without --delete.",
+    "Deploy only through canonical mosrollout flow; do not rsync --delete.",
+    "Canonical .github/workflows/deploy.yml must be preserved by rollout kit."
+  ],
+  "updated": "2026-07-21",
+  "version": "2026.07.21-cooking-kettles-full-site",
+  "description": "Полный cumulative source-handoff сайта MosPochin с инженерным кластером пищеварочных котлов, поиском кодов, навигацией, конверсией, аналитикой и медиасистемой.",
+  "sourceHandoff": {
+    "basePublicArchive": "mospochin-source-parokonvektomat-error-navigation-hotfix-v2-20260720.zip",
+    "rolloutTarget": "KomarovAI/Mospochin_site:main",
+    "overlayMode": "rsync-without-delete",
+    "preserveCanonicalWorkflow": true,
+    "helperCompatibility": "mospochin-rollout-helper-for-ai-v3.2 / rollout-kit-v3.0.3",
+    "omittedUnchangedAssets": [
+      "assets/fonts/*.woff2",
+      "assets/fonts/*.ttf"
+    ]
+  }
 }

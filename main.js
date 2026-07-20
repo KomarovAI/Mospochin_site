@@ -775,7 +775,7 @@ const Components = {
 
     return `
 <!-- Top bar -->
-<div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg">
+<div class="kettle-top-bar bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center fixed top-0 w-full z-[60] shadow-lg">
   <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4">
     <i class="${branch.topBarText.icon} text-yellow-300"></i>
     <span class="font-bold">${branch.topBarText.text}</span>

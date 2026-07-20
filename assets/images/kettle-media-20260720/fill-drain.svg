@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Залив и слив</title><desc id="desc">Вода в рабочую ёмкость, заполнение рубашки и продуктовый слив — разные гидравлические контуры.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#eef2f7"/></linearGradient>
+  <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#cbd5e1"/><stop offset=".45" stop-color="#f8fafc"/><stop offset="1" stop-color="#94a3b8"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity=".15"/></filter>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#0284c7"/></marker>
+</defs>
+<rect width="1200" height="760" rx="36" fill="url(#bg)"/>
+<rect x="40" y="38" width="1120" height="684" rx="28" fill="#fff" stroke="#dbe3ec"/>
+<text x="80" y="100" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Залив и слив</text>
+<text x="80" y="137" font-family="Arial, sans-serif" font-size="18" fill="#475569">Вода в рабочую ёмкость, заполнение рубашки и продуктовый слив — разные гидравлические контуры.</text>
+<g filter="url(#shadow)">
+<path d="M470,260 Q630.0,202 790,260 L764,532 Q630.0,595 496,532 Z" fill="url(#steel)" stroke="#64748b" stroke-width="4"/>
+<path d="M498,282 Q630.0,240 762,282 L738,496 Q630.0,538 522,496 Z" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="3"/>
+<ellipse cx="630.0" cy="260" rx="160.0" ry="48" fill="#f8fafc" stroke="#64748b" stroke-width="4"/>
+<ellipse cx="630.0" cy="268" rx="126.0" ry="32" fill="#c7d2fe" opacity=".75"/>
+<rect x="506" y="542" width="34" height="86" rx="10" fill="#64748b"/><rect x="720" y="542" width="34" height="86" rx="10" fill="#64748b"/>
+</g>
+<path d="M280 260 H470" stroke="#0ea5e9" stroke-width="16"/><rect x="330" y="225" width="72" height="70" rx="12" fill="#0284c7"/><circle cx="366" cy="260" r="15" fill="#e0f2fe"/><path d="M630 560 V630 H880" stroke="#0f766e" stroke-width="18"/><rect x="760" y="590" width="78" height="78" rx="18" fill="#0f766e"/><path d="M799 575 V645 M765 610 H833" stroke="#ccfbf1" stroke-width="9"/>
+<g><rect x="80" y="230" width="210" height="38" rx="12" fill="#fff" stroke="#cbd5e1"/><circle cx="98" cy="249" r="6" fill="#ea580c"/><text x="114" y="255" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">Вход воды</text></g><g><rect x="80" y="320" width="210" height="38" rx="12" fill="#fff" stroke="#cbd5e1"/><circle cx="98" cy="339" r="6" fill="#ea580c"/><text x="114" y="345" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">Фильтр и клапан</text></g><g><rect x="850" y="530" width="240" height="38" rx="12" fill="#fff" stroke="#cbd5e1"/><circle cx="868" cy="549" r="6" fill="#ea580c"/><text x="884" y="555" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">Продуктовый слив</text></g><g><rect x="850" y="615" width="220" height="38" rx="12" fill="#fff" stroke="#cbd5e1"/><circle cx="868" cy="634" r="6" fill="#ea580c"/><text x="884" y="640" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">Сервисный контур</text></g>
+
+<g transform="translate(80 684)"><rect width="340" height="26" rx="13" fill="#0284c7" opacity=".12"/><text x="16" y="19" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0284c7">УСЛОВНАЯ ИНЖЕНЕРНАЯ СХЕМА • НЕ МОНТАЖНЫЙ ЧЕРТЁЖ</text></g>
+</svg>

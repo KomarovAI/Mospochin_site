@@ -1,38 +1,37 @@
 {
   "project": "mospochin-site",
   "artifact": "public-runtime",
-  "releaseId": "57c9ee601a48bd0d",
-  "packageVersion": "1.9.1-parokonvektomat-errors-navigation-hotfix-v2",
-  "generatedAt": "2026-07-20T13:00:00+03:00",
+  "releaseId": "aa861c4b49e4dc43",
+  "packageVersion": "2.0.0-cooking-kettles-full-site",
+  "generatedAt": "2026-07-21T00:08:28+03:00",
   "source": {
     "githubSha": "",
-    "githubRef": "",
+    "githubRef": "main",
     "node": "",
-    "runtimePayloadSha256": "57c9ee601a48bd0d04ddcfa933844594e3037e13ad8c7c1725eec62107a6ca64"
+    "runtimePayloadSha256": "aa861c4b49e4dc43e05799d6718970cce8e0d731b675af9be5a092ec0252f6c4"
   },
   "manifest": {
     "path": ".deploy/include-files.txt",
-    "files": 1924,
-    "sha256": "db52fbe31abe4692b9524ace56841113c57828276224ea0cf084409f19cdc75f"
+    "files": 1960,
+    "sha256": "f067c121e4192ca1ca211722106022c6b03c3f4733162095a4f102c96c0179da"
   },
   "runtime": {
-    "files": 1927,
-    "sha256": "57c9ee601a48bd0d04ddcfa933844594e3037e13ad8c7c1725eec62107a6ca64"
+    "handoffFiles": 1954,
+    "sha256": "aa861c4b49e4dc43e05799d6718970cce8e0d731b675af9be5a092ec0252f6c4"
   },
   "changes": {
-    "cluster": "parokonvektomat-error-navigation-hotfix-v2",
-    "engineeringPages": 59,
-    "errorPages": 41,
-    "minimumOutgoingClusterLinks": 12,
-    "minimumUniqueInboundDonors": 6,
-    "layoutChecks": 118,
-    "layoutFailures": 0,
-    "representativePages": 6,
-    "screenshots": 18,
-    "navigationMap": "data/parokonvektomat-error-navigation.json",
-    "baseArchive": "mospochin-site-parokonvektomat-error-navigation-v1-20260720.zip"
+    "cluster": "cooking-kettles-engineering-p2",
+    "indexablePages": 39,
+    "errorRecords": 5,
+    "navigationEdges": 618,
+    "forms": 37,
+    "mobileBars": 37,
+    "mediaPages": 39,
+    "searchRuntimeAsset": "kettle-error-search-data.js",
+    "parokonvektomatSearchRuntimeAsset": "error-search-data.js",
+    "regression": "RUN_15 PASS"
   },
-  "updated": "2026-07-20",
-  "version": "2026.07.20-parokonvektomat-errors-navigation-hotfix-v2",
-  "description": "Исправление навигации после независимого аудита: видимые breadcrumbs, корректный flow-offset шапки, единый DOCTYPE, усиленная перелинковка и доступная горизонтальная навигация."
+  "updated": "2026-07-21",
+  "version": "2026.07.21-cooking-kettles-full-site",
+  "description": "Инженерный кластер пищеварочных котлов и сохранённый runtime-контракт всех ранее опубликованных кластеров."
 }

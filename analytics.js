@@ -2,9 +2,9 @@
   'use strict';
 
   var SITE_RELEASE = 'site-error-conversion-v1-20260720';
-  var ANALYTICS_RELEASE = 'analytics-error-conversion-v1-20260720';
+  var ANALYTICS_RELEASE = 'analytics-kettle-conversion-v1-20260720';
   var SCHEMA_VERSION = 'mospochin.web.v3';
-  var TRACKING_VERSION = '2026-07-15';
+  var TRACKING_VERSION = '2026-07-20';
   var METRIKA_ID = String(window.MOSPOCHIN_METRICA_COUNTER_ID || '109138661');
   var PRODUCTION_HOSTS = ['mospochin.ru', 'www.mospochin.ru'];
   var BOT_USER_AGENT_RE = /bot\b|crawler|spider|slurp|bingpreview|phantomjs|prerender|lighthouse/i;
@@ -71,7 +71,24 @@
     error_call_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
     error_photo_whatsapp_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
     error_callback_submit: Object.freeze({ event_class: 'conversion_step', is_decision_event: true }),
-    error_photo_submit: Object.freeze({ event_class: 'conversion_step', is_decision_event: true })
+    error_photo_submit: Object.freeze({ event_class: 'conversion_step', is_decision_event: true }),
+    kettle_page_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    kettle_conversion_block_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    kettle_mobile_bar_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    kettle_call_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    kettle_photo_whatsapp_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    kettle_reference_click: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    kettle_lead_submit: Object.freeze({ event_class: 'conversion', is_decision_event: true }),
+    kettle_symptom_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    kettle_type_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    kettle_brand_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    kettle_system_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    kettle_code_open: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    kettle_error_search_open: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    kettle_error_search_use: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    kettle_error_search_result_open: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    kettle_nav_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    kettle_nav_click: Object.freeze({ event_class: 'engagement', is_decision_event: true })
   });
 
   var RESERVED_EVENT_FIELDS = new Set([
@@ -81,7 +98,8 @@
 
   var METRICA_GOALS = new Set([
     'phone_click', 'whatsapp_click', 'form_open', 'form_submit_attempt', 'form_submit_success',
-    'error_call_click', 'error_photo_whatsapp_click', 'error_callback_submit', 'error_photo_submit'
+    'error_call_click', 'error_photo_whatsapp_click', 'error_callback_submit', 'error_photo_submit',
+    'kettle_call_click', 'kettle_photo_whatsapp_click', 'kettle_lead_submit'
   ]);
 
   var startedForms = new WeakSet();
@@ -540,7 +558,12 @@
         page_slug: payload.page_slug || null,
         form_id: payload.form_id || null,
         cta_id: payload.cta_id || null,
-        commercial_segment: payload.commercial_segment || null
+        commercial_segment: payload.commercial_segment || null,
+        conversion_mode: payload.conversion_mode || null,
+        page_role: payload.page_role || null,
+        functional_system: payload.functional_system || null,
+        error_code: payload.error_code || null,
+        brand: payload.brand || null
       });
     }
     return payload;

@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  var FORM_RELEASE = 'telegram-form-v3-20260716';
+  var FORM_RELEASE = 'telegram-form-v3.1-kettle-20260720';
   var LEAD_SCHEMA_VERSION = 'mospochin.lead.v3';
-  var TRACKING_VERSION = '2026-07-15';
+  var TRACKING_VERSION = '2026-07-20';
   var LEAD_TIMEOUT_MS = 15000;
   var FORM_MIN_FILL_MS = 1500;
   var FORM_RATE_LIMIT_MS = 60000;
@@ -509,6 +509,15 @@
         submit_attempt_event_id: payload.submit_attempt_event_id,
         deduplicated: result.deduplicated === true
       });
+      try {
+        document.dispatchEvent(new CustomEvent('mospochin:form-success', { detail: {
+          form: form,
+          leadId: cleanString(result.lead_id, 256),
+          requestId: cleanString(result.request_id, 256),
+          traceId: payload.trace_id,
+          deduplicated: result.deduplicated === true
+        }}));
+      } catch (eventError) {}
       if (document.body && document.body.dataset.gasPage === 'true') {
         track('gas_lead_submit', form, {
           lead_id: cleanString(result.lead_id, 256),

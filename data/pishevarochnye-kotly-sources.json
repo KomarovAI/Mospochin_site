@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "dataset": "mospochin_cooking_kettle_sources",
+  "updated_at": "2026-07-20",
+  "publication_policy": {
+    "official_host": "предпочтительный первичный источник",
+    "manufacturer_manual_mirror_verified": "документ производителя на техническом зеркале; статус зеркала показывается пользователю",
+    "secondary_pending_official": "не используется как единственное основание для подтверждённой расшифровки"
+  },
+  "sources": [
+    {
+      "id": "abat_catalog_kpem",
+      "title": "Каталог пищеварочных котлов Abat КПЭМ",
+      "publisher": "Abat / Чувашторгтехника",
+      "document_type": "официальный каталог производителя",
+      "access_url": "https://abat.ru/catalog/pishchevarochnye-kotly/",
+      "host_status": "official_manufacturer_host",
+      "models": [
+        "КПЭМ — стационарные, опрокидываемые и модели с мешалкой"
+      ],
+      "supports": [
+        "model_family",
+        "construction_scope"
+      ],
+      "checked_at": "2026-07-20",
+      "notes": "Используется для подтверждения существования семейств и конструктивных исполнений, но не для универсальной расшифровки кодов.",
+      "evidence_strength": "primary"
+    },
+    {
+      "id": "abat_kpem_omr_v_2018",
+      "title": "Руководство по эксплуатации КПЭМ-60/100/160-ОМР-В и ОМР-ВК, редакция 09.2018",
+      "publisher": "Abat / Чувашторгтехника",
+      "document_type": "руководство производителя, доступное через техническое зеркало",
+      "access_url": "https://pttperm.ru/image/catalog/products_images/ABAT/kpem-60-omr-v/KPEM_hhh_OMR_V_400V_09.2018_2.pdf",
+      "host_status": "manufacturer_manual_mirror_verified",
+      "models": [
+        "КПЭМ-60-ОМР-В",
+        "КПЭМ-100-ОМР-В",
+        "КПЭМ-160-ОМР-В",
+        "КПЭМ-60-ОМР-ВК",
+        "КПЭМ-100-ОМР-ВК",
+        "КПЭМ-160-ОМР-ВК"
+      ],
+      "supports": [
+        "E01",
+        "E02",
+        "E04",
+        "H20",
+        "H2O",
+        "E17"
+      ],
+      "checked_at": "2026-07-20",
+      "notes": "Основной источник для пяти текущих карточек. Статус зеркала указывается явно: документ производителя найден не на домене производителя.",
+      "evidence_strength": "manufacturer_document_mirror"
+    },
+    {
+      "id": "abat_kpem_om2_2018",
+      "title": "Руководство КПЭМ-ОМ2, редакция контроллера с Err Ch1 / Err Ch2",
+      "publisher": "Abat / Чувашторгтехника",
+      "document_type": "руководство производителя, доступное через техническое зеркало",
+      "access_url": "https://www.whitegoods.ru/upload/iblock/e1c/999e533ca8a31e6dc7f7028fa6bdc1a8.pdf",
+      "host_status": "manufacturer_manual_mirror_verified",
+      "models": [
+        "КПЭМ-(60…350)-ОМ2"
+      ],
+      "supports": [
+        "Err Ch1",
+        "Err Ch2",
+        "E04",
+        "H2O"
+      ],
+      "checked_at": "2026-07-20",
+      "notes": "Подтверждает, что обозначения каналов и состав причин E04 зависят от поколения контроллера.",
+      "evidence_strength": "manufacturer_document_mirror"
+    },
+    {
+      "id": "abat_kpem_om2_later",
+      "title": "Руководство КПЭМ-ОМ2 — более поздняя редакция защитной цепи",
+      "publisher": "Abat / Чувашторгтехника",
+      "document_type": "руководство производителя, доступное через техническое зеркало",
+      "access_url": "https://frostweld.ru/upload/iblock/ae6/k69321v5ci9z61vr5ikpk4ymhllt5rrd.pdf",
+      "host_status": "manufacturer_manual_mirror_verified",
+      "models": [
+        "КПЭМ-ОМ2"
+      ],
+      "supports": [
+        "Err Ch1",
+        "Err Ch2",
+        "E04 expanded protective circuit",
+        "H2O"
+      ],
+      "checked_at": "2026-07-20",
+      "notes": "Используется только для различий редакций; не объединяется с ОМР-В/ВК в универсальную трактовку.",
+      "evidence_strength": "manufacturer_document_mirror"
+    }
+  ]
+}

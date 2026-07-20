@@ -23,9 +23,6 @@ const PUBLIC_DATA_FILES = new Set([
   'data/household-page-slots.json',
   'data/household-card-presets.json',
   'data/household-proof-layer.json',
-  'data/parokonvektomat-error-codes.json',
-  'data/parokonvektomat-error-navigation.json',
-  'data/error-conversion-pages.json',
 ]);
 
 function exists(file) {

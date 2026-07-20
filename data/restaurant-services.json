@@ -282,7 +282,20 @@
         "течет",
         "ошибка",
         "не включается",
-        "выбивает автомат"
+        "выбивает автомат",
+        "не работает мешалка",
+        "не опрокидывается",
+        "неисправность ТЭНа",
+        "утечка или давление рубашки",
+        "ошибка датчика температуры",
+        "неисправность манометра",
+        "срабатывает предохранительный клапан",
+        "неисправность платы управления",
+        "течёт сливной кран",
+        "ошибка уровня воды",
+        "не работает клапан залива",
+        "неисправность блокировки крышки",
+        "неисправность привода мешалки"
       ],
       "brandCluster": [
         "Abat",
@@ -297,7 +310,25 @@
         "parokonvektomaty.html",
         "grili-mangaly.html",
         "holodilnoe-oborudovanie.html",
-        "posudomoechnye-mashiny.html"
+        "posudomoechnye-mashiny.html",
+        "remont-pishevarochnyh-kotlov-s-meshalkoy.html",
+        "pishevarochnyj-kotel-ne-rabotaet-meshalka.html",
+        "remont-oprokidyvaemyh-pishevarochnyh-kotlov.html",
+        "pishevarochnyj-kotel-ne-oprokidyvaetsya.html",
+        "pishevarochnyj-kotel-zamena-tena.html",
+        "pishevarochnyj-kotel-parovodyanaya-rubashka.html",
+        "pishevarochnyj-kotel-datchik-temperatury.html",
+        "pishevarochnyj-kotel-manometr.html",
+        "pishevarochnyj-kotel-predohranitelnyj-klapan.html",
+        "pishevarochnyj-kotel-plata-upravleniya.html",
+        "pishevarochnyj-kotel-remont-slivnogo-krana.html",
+        "pishevarochnyj-kotel-elektrod-urovnya-vody.html",
+        "pishevarochnyj-kotel-klapan-zaliva-vody.html",
+        "pishevarochnyj-kotel-kryshka-i-blokirovka.html",
+        "remont-privoda-meshalki-pishevarochnogo-kotla.html",
+        "remont-pishevarochnyh-kotlov-abat.html",
+        "remont-pishevarochnyh-kotlov-kpem.html",
+        "pishevarochnyj-kotel-ne-rabotaet-ohlazhdenie.html"
       ],
       "formExample": "Пищеварочный котел Abat КПЭМ не набирает температуру, столовая на Павелецкой, нужен выезд инженера и закрывающие документы",
       "mobileHiddenSectionIds": [
@@ -333,7 +364,7 @@
       "relatedPages": [
         "pishevarochnye-kotly.html",
         "pishevarochnyj-kotel-suhoy-hod.html",
-        "pishevarochnyj-kotel-abat-kpem.html"
+        "remont-pishevarochnyh-kotlov-kpem.html"
       ],
       "formExample": "Пищеварочный котел не греет, столовая или ресторан в Москве, нужен выезд инженера",
       "sectionIds": [
@@ -364,7 +395,7 @@
       ],
       "relatedPages": [
         "pishevarochnye-kotly.html",
-        "pishevarochnyj-kotel-abat-kpem.html",
+        "remont-pishevarochnyh-kotlov-kpem.html",
         "pishevarochnyj-kotel-ne-greet.html"
       ],
       "formExample": "Пищеварочный котел течет, столовая или ресторан в Москве, нужен выезд инженера",
@@ -405,40 +436,6 @@
       ]
     },
     {
-      "page": "pishevarochnyj-kotel-kod-oshibki.html",
-      "slug": "pishevarochnyj-kotel-kod-oshibki",
-      "uiLabel": "Код ошибки котла",
-      "deviceName": "Пищеварочный котел",
-      "serviceName": "Код ошибки пищеварочного котла — диагностика и ремонт",
-      "schemaName": "Диагностика кода ошибки пищеварочного котла",
-      "isShadow": false,
-      "primarySymptoms": [
-        "код ошибки",
-        "E01",
-        "E02",
-        "E04",
-        "H2O",
-        "E17"
-      ],
-      "brandCluster": [
-        "Abat",
-        "Iterma",
-        "Kogast",
-        "Apach",
-        "Fagor",
-        "Kocateq"
-      ],
-      "relatedPages": [
-        "pishevarochnye-kotly.html",
-        "pishevarochnyj-kotel-abat-kpem.html",
-        "pishevarochnyj-kotel-suhoy-hod.html"
-      ],
-      "formExample": "Пищеварочный котел код ошибки, столовая или ресторан в Москве, нужен выезд инженера",
-      "sectionIds": [
-        "request"
-      ]
-    },
-    {
       "page": "pishevarochnyj-kotel-suhoy-hod.html",
       "slug": "pishevarochnyj-kotel-suhoy-hod",
       "uiLabel": "Сухой ход / H2O",
@@ -471,7 +468,7 @@
       ]
     },
     {
-      "page": "pishevarochnyj-kotel-abat-kpem.html",
+      "page": "remont-pishevarochnyh-kotlov-kpem.html",
       "slug": "pishevarochnyj-kotel-abat-kpem",
       "uiLabel": "Abat КПЭМ",
       "deviceName": "Пищеварочный котел Abat КПЭМ",
@@ -3548,7 +3545,7 @@
         "pishevarochnyj-kotel-kod-oshibki.html",
         "pishevarochnyj-kotel-ne-nabiraet-vodu.html",
         "pishevarochnyj-kotel-ne-slivaet-vodu.html",
-        "pishevarochnyj-kotel-abat-kpem.html"
+        "remont-pishevarochnyh-kotlov-kpem.html"
       ],
       "formExample": "Пищеварочный котел не держит давление, ресторан в Москве, нужен выезд инженера",
       "sectionIds": [
@@ -3677,6 +3674,113 @@
       ],
       "formExample": "пароконвектомат, плата управления, после скачка не включается, пришлю шильдик и маркировку",
       "mobileHiddenSectionIds": []
+    },
+    {
+      "page": "pishevarochnyj-kotel-kod-oshibki.html",
+      "slug": "pishevarochnyj-kotel-kod-oshibki",
+      "uiLabel": "Коды ошибок котлов",
+      "deviceName": "Пищеварочный котёл",
+      "serviceName": "Инженерный справочник кодов Abat КПЭМ",
+      "schemaName": "Коды ошибок пищеварочных котлов Abat КПЭМ",
+      "isShadow": false,
+      "primarySymptoms": [
+        "E01",
+        "E02",
+        "E04",
+        "H20",
+        "H2O",
+        "E17",
+        "Err Ch1",
+        "Err Ch2"
+      ],
+      "brandCluster": [
+        "Abat",
+        "КПЭМ"
+      ],
+      "relatedPages": [
+        "pishevarochnye-kotly.html",
+        "remont-pishevarochnyh-kotlov-kpem.html",
+        "pishevarochnye-kotly-kody-oshibok-metodika.html",
+        "pishevarochnye-kotly-kody-oshibok-istochniki.html"
+      ],
+      "formExample": "Abat КПЭМ-100-ОМР-ВК, код E04, фото дисплея и шильдика",
+      "sectionIds": [
+        "search",
+        "request"
+      ]
+    },
+    {
+      "page": "pishevarochnye-kotly-kody-oshibok-metodika.html",
+      "slug": "pishevarochnye-kotly-kody-oshibok-metodika",
+      "uiLabel": "Методика кодов котлов",
+      "deviceName": "Пищеварочный котёл",
+      "serviceName": "Методика диагностики кодов пищеварочных котлов",
+      "schemaName": "Методика кодов пищеварочных котлов",
+      "isShadow": false,
+      "primarySymptoms": [
+        "методика кодов",
+        "как читать код",
+        "модель контроллера"
+      ],
+      "brandCluster": [
+        "Abat",
+        "КПЭМ"
+      ],
+      "relatedPages": [
+        "pishevarochnyj-kotel-kod-oshibki.html",
+        "pishevarochnye-kotly-kody-oshibok-istochniki.html"
+      ],
+      "formExample": "",
+      "sectionIds": []
+    },
+    {
+      "page": "pishevarochnye-kotly-kody-oshibok-istochniki.html",
+      "slug": "pishevarochnye-kotly-kody-oshibok-istochniki",
+      "uiLabel": "Источники кодов котлов",
+      "deviceName": "Пищеварочный котёл",
+      "serviceName": "Источники кодов ошибок пищеварочных котлов",
+      "schemaName": "Источники кодов пищеварочных котлов",
+      "isShadow": false,
+      "primarySymptoms": [
+        "источник кода",
+        "руководство КПЭМ",
+        "редакция контроллера"
+      ],
+      "brandCluster": [
+        "Abat",
+        "КПЭМ"
+      ],
+      "relatedPages": [
+        "pishevarochnyj-kotel-kod-oshibki.html",
+        "pishevarochnye-kotly-kody-oshibok-metodika.html"
+      ],
+      "formExample": "",
+      "sectionIds": []
+    },
+    {
+      "page": "pishevarochnyj-kotel-ne-rabotaet-ohlazhdenie.html",
+      "slug": "pishevarochnyj-kotel-ne-rabotaet-ohlazhdenie",
+      "uiLabel": "Не работает охлаждение котла",
+      "deviceName": "Пищеварочный котёл",
+      "serviceName": "Диагностика системы охлаждения пищеварочного котла",
+      "schemaName": "Ремонт системы охлаждения пищеварочного котла",
+      "isShadow": false,
+      "primarySymptoms": [
+        "не охлаждает продукт",
+        "нет подачи воды в рубашку",
+        "охлаждение не отключается"
+      ],
+      "brandCluster": [],
+      "relatedPages": [
+        "pishevarochnyj-kotel-klapan-zaliva-vody.html",
+        "pishevarochnyj-kotel-parovodyanaya-rubashka.html",
+        "pishevarochnyj-kotel-datchik-temperatury.html"
+      ],
+      "formExample": "Пищеварочный котёл с заводской системой охлаждения не снижает температуру продукта; приложу шильдик и видео",
+      "mobileHiddenSectionIds": [],
+      "sectionIds": [
+        "request"
+      ]
     }
   ],
   "brandCluster": [
