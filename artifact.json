@@ -3,15 +3,17 @@
   "project": "mospochin-site",
   "artifactType": "source-handoff-lite",
   "deployable": false,
-  "createdAt": "2026-07-20T09:30:00+03:00",
-  "packageVersion": "public-json-hotfix-v1-20260720",
+  "createdAt": "2026-07-20T10:05:00+03:00",
+  "packageVersion": "parokonvektomat-search-asset-hotfix-v2-20260720",
   "updated": "2026-07-20",
-  "version": "2026.07.20-public-json-hotfix-v1",
-  "description": "Добавляет три JSON-файла инженерного кластера пароконвектоматов в публичный deploy allowlist.",
-  "requirements": {"minimumNodeMajor": 22},
+  "version": "2026.07.20-parokonvektomat-search-asset-hotfix-v2",
+  "description": "Перевод runtime-базы поиска кодов ошибок с нестабильного /data JSON на гарантированно публичный корневой JS asset.",
+  "requirements": {
+    "minimumNodeMajor": 22
+  },
   "notes": [
-    "Fixes production 404 for parokonvektomat-error-codes.json, parokonvektomat-error-navigation.json and error-conversion-pages.json.",
     "Overlay only; canonical deploy workflow must be preserved.",
-    "Deploy through mosrollout; do not rsync --delete."
+    "Root JS asset is the primary runtime source; /data JSON is legacy fallback only.",
+    "Deploy through updated mosrollout kit; do not rsync --delete."
   ]
 }
