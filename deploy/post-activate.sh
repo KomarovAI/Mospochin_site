@@ -127,53 +127,48 @@ NGINX_SECURITY_HEADERS
   systemctl reload nginx
 }
 
+# MOSPOCHIN_RUNTIME_INCLUDE_REPAIR_V4
+repair_nginx_runtime_hardening_include() {
+  if ! command -v nginx >/dev/null 2>&1; then
+    echo "Skipping runtime-hardening include repair: nginx is not available."
+    return
+  fi
+
+  [[ -f "${NGINX_SITE_AVAILABLE}" ]] || {
+    echo "Missing nginx site config: ${NGINX_SITE_AVAILABLE}" >&2
+    exit 1
+  }
+
+  python3 \
+    "${RELEASE_ROOT}/deploy/nginx/repair-managed-includes.py" \
+    "${NGINX_SITE_AVAILABLE}" \
+    "${NGINX_RUNTIME_HARDENING_CONF}"
+
+  nginx -t
+}
+
 install_nginx_runtime_hardening_config() {
   if ! command -v nginx >/dev/null 2>&1; then
     echo "Skipping nginx runtime-hardening config: nginx is not available."
     return
   fi
+
   [[ -f "${NGINX_RUNTIME_HARDENING_SOURCE}" ]] || {
     echo "Missing nginx runtime-hardening source: ${NGINX_RUNTIME_HARDENING_SOURCE}" >&2
     exit 1
   }
+
   [[ -f "${NGINX_SITE_AVAILABLE}" ]] || {
     echo "Missing nginx site config: ${NGINX_SITE_AVAILABLE}" >&2
     exit 1
   }
 
   install -d -m 0755 "$(dirname "${NGINX_RUNTIME_HARDENING_CONF}")"
-  install -m 0644 "${NGINX_RUNTIME_HARDENING_SOURCE}" "${NGINX_RUNTIME_HARDENING_CONF}"
+  install -m 0644 \
+    "${NGINX_RUNTIME_HARDENING_SOURCE}" \
+    "${NGINX_RUNTIME_HARDENING_CONF}"
 
-  python3 - "${NGINX_SITE_AVAILABLE}" <<'PY_NGINX_INCLUDE'
-from pathlib import Path
-import sys
-conf = Path(sys.argv[1])
-text = conf.read_text(encoding="utf-8")
-needle = "include snippets/mospochin-runtime-hardening.conf;"
-if needle not in text:
-    lines = text.splitlines()
-    out = []
-    inserted = False
-    for line in lines:
-        out.append(line)
-        if not inserted and "add_header Strict-Transport-Security" in line and "always" in line:
-            indent = line[:len(line) - len(line.lstrip())]
-            out.append(indent + needle)
-            inserted = True
-    if not inserted:
-        for index, line in enumerate(lines):
-            if line.strip().startswith("server") and "{" in line:
-                indent = line[:len(line) - len(line.lstrip())] + "    "
-                lines.insert(index + 1, indent + needle)
-                out = lines
-                inserted = True
-                break
-    if not inserted:
-        raise SystemExit("Could not insert runtime-hardening include into nginx site config")
-    conf.write_text("\n".join(out) + "\n", encoding="utf-8")
-PY_NGINX_INCLUDE
-
-  nginx -t
+  repair_nginx_runtime_hardening_include
   systemctl reload nginx
 }
 
@@ -203,6 +198,8 @@ else
   echo "Skipping Telegram tunnel unit install: ${TUNNEL_UNIT_SOURCE} is missing."
 fi
 
+# MOSPOCHIN_RUNTIME_INCLUDE_PRECHECK_V4
+repair_nginx_runtime_hardening_include
 build_public_webroot
 install_nginx_static_compression_config
 install_nginx_security_headers_config
