@@ -1,37 +1,37 @@
 {
   "project": "mospochin-site",
   "artifact": "public-runtime",
-  "releaseId": "aa861c4b49e4dc43",
-  "packageVersion": "2.0.0-cooking-kettles-full-site",
-  "generatedAt": "2026-07-21T00:08:28+03:00",
+  "releaseId": "5c67e39614befeea",
+  "packageVersion": "2.1.0-ventilation-final",
+  "generatedAt": "2026-07-22T21:15:00Z",
   "source": {
     "githubSha": "",
     "githubRef": "main",
     "node": "",
-    "runtimePayloadSha256": "aa861c4b49e4dc43e05799d6718970cce8e0d731b675af9be5a092ec0252f6c4"
+    "runtimePayloadSha256": "5c67e39614befeeaee364be754bedffaa6cb65723d8f4617dc7cd40d352c9861"
   },
   "manifest": {
     "path": ".deploy/include-files.txt",
-    "files": 1960,
-    "sha256": "f067c121e4192ca1ca211722106022c6b03c3f4733162095a4f102c96c0179da"
+    "files": 2093,
+    "sha256": "5ad5aa3f661243d9cd394e22a2a971f019ad4ca17d8c15d54784bc8e9f22549c"
   },
   "runtime": {
-    "handoffFiles": 1954,
-    "sha256": "aa861c4b49e4dc43e05799d6718970cce8e0d731b675af9be5a092ec0252f6c4"
+    "handoffFiles": 2086,
+    "sha256": "5c67e39614befeeaee364be754bedffaa6cb65723d8f4617dc7cd40d352c9861"
   },
   "changes": {
-    "cluster": "cooking-kettles-engineering-p2",
-    "indexablePages": 39,
-    "errorRecords": 5,
-    "navigationEdges": 618,
-    "forms": 37,
-    "mobileBars": 37,
-    "mediaPages": 39,
-    "searchRuntimeAsset": "kettle-error-search-data.js",
-    "parokonvektomatSearchRuntimeAsset": "error-search-data.js",
-    "regression": "RUN_15 PASS"
+    "scope": "restaurant-ventilation-final",
+    "canonicalPages": 44,
+    "redirects": 8,
+    "internalEdges": 642,
+    "mediaFiles": 115,
+    "analyticsEvents": 14,
+    "conversionModes": 3,
+    "nginxRuntimeHardeningInstalledByPostActivate": true,
+    "redirectVerificationAfterDeploy": true,
+    "regression": "RUN 15 PASS"
   },
-  "updated": "2026-07-21",
-  "version": "2026.07.21-cooking-kettles-full-site",
-  "description": "Инженерный кластер пищеварочных котлов и сохранённый runtime-контракт всех ранее опубликованных кластеров."
+  "updated": "2026-07-22",
+  "version": "2026.07.22-ventilation-final",
+  "description": "Финальный cumulative runtime ресторанной вентиляции MosPochin."
 }

@@ -23,6 +23,10 @@ const PUBLIC_DATA_FILES = new Set([
   'data/household-page-slots.json',
   'data/household-card-presets.json',
   'data/household-proof-layer.json',
+  'data/ventilation-navigation.json',
+  'data/ventilation-conversion-pages.json',
+  'data/ventilation-media-map.json',
+  'data/ventilation-redirects.json',
 ]);
 
 function exists(file) {

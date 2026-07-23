@@ -3,45 +3,56 @@
   "project": "mospochin-site",
   "artifactType": "source-handoff",
   "deployable": false,
-  "createdAt": "2026-07-21T00:08:28+03:00",
-  "packageVersion": "2.0.0-cooking-kettles-full-site-source-handoff",
+  "createdAt": "2026-07-22T21:15:00Z",
+  "packageVersion": "2.1.0-full-site-ventilation-final",
   "source": {
     "githubSha": "",
     "githubRef": "main",
     "node": ""
   },
   "contents": {
-    "releaseId": "aa861c4b49e4dc43",
+    "releaseId": "5c67e39614befeea",
     "manifestPath": ".deploy/include-files.txt",
-    "manifestFiles": 1960,
-    "manifestSha256": "f067c121e4192ca1ca211722106022c6b03c3f4733162095a4f102c96c0179da",
-    "handoffFiles": 1954,
-    "runtimePayloadSha256": "aa861c4b49e4dc43e05799d6718970cce8e0d731b675af9be5a092ec0252f6c4",
+    "manifestFiles": 2093,
+    "manifestSha256": "5ad5aa3f661243d9cd394e22a2a971f019ad4ca17d8c15d54784bc8e9f22549c",
+    "handoffFiles": 2086,
+    "runtimePayloadSha256": "5c67e39614befeeaee364be754bedffaa6cb65723d8f4617dc7cd40d352c9861",
     "payloadHashMethod": "sha256(sorted path\\0sha256(content)\\n excluding version.json and artifact.json)"
   },
   "requirements": {
     "minimumNodeMajor": 22
   },
   "notes": [
-    "Full cumulative source-handoff overlay for the cooking-kettles cluster and all prior site content.",
-    "Contains 39 indexable cooking-kettle pages, unified navigation, forms, analytics, search and media.",
-    "Preserves the final root runtime-data contract for the parokonvektomat error search.",
-    "Unchanged binary font files are intentionally not repackaged; canonical Git checkout retains them because overlay is without --delete.",
+    "Full cumulative source-handoff based on the verified cooking-kettles and mobile-navigation releases.",
+    "Completes the restaurant ventilation cluster: 44 canonical pages, 8 direct redirects, media, navigation, forms and analytics.",
+    "Post-activate installs nginx runtime-hardening and validates nginx before reload.",
+    "Internal links, canonical annotations and sitemap point directly to final ventilation URLs.",
     "Deploy only through canonical mosrollout flow; do not rsync --delete.",
     "Canonical .github/workflows/deploy.yml must be preserved by rollout kit."
   ],
-  "updated": "2026-07-21",
-  "version": "2026.07.21-cooking-kettles-full-site",
-  "description": "Полный cumulative source-handoff сайта MosPochin с инженерным кластером пищеварочных котлов, поиском кодов, навигацией, конверсией, аналитикой и медиасистемой.",
+  "updated": "2026-07-22",
+  "version": "2026.07.22-ventilation-final",
+  "description": "Полный cumulative source-handoff MosPochin с финальной переработкой ресторанной вентиляции, медиасистемой, перелинковкой, формами, аналитикой и восемью прямыми Nginx 301.",
   "sourceHandoff": {
-    "basePublicArchive": "mospochin-source-parokonvektomat-error-navigation-hotfix-v2-20260720.zip",
+    "basePublicArchive": "mospochin-source-full-site-mobile-navigation-hotfix-20260721.zip",
     "rolloutTarget": "KomarovAI/Mospochin_site:main",
     "overlayMode": "rsync-without-delete",
     "preserveCanonicalWorkflow": true,
-    "helperCompatibility": "mospochin-rollout-helper-for-ai-v3.2 / rollout-kit-v3.0.3",
+    "helperCompatibility": "mospochin-rollout-helper-for-ai-v3.2 / rollout-kit-v3.0.4",
     "omittedUnchangedAssets": [
       "assets/fonts/*.woff2",
       "assets/fonts/*.ttf"
     ]
+  },
+  "ventilation": {
+    "canonicalPages": 44,
+    "redirects": 8,
+    "internalEdges": 642,
+    "indexableOrphans": 0,
+    "minimumUniqueDonors": 4,
+    "productionMediaFiles": 115,
+    "analyticsEvents": 14,
+    "conversionModes": 3,
+    "finalRegression": "PASS"
   }
 }

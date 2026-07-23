@@ -1,0 +1,21 @@
+(function(){
+'use strict';
+var RELEASE='ventilation-conversion-v1-20260722';
+if(window.__MOSPOCHIN_VENTILATION_CONVERSION__===RELEASE)return;
+window.__MOSPOCHIN_VENTILATION_CONVERSION__=RELEASE;
+function clean(v,n){return typeof v==='string'?v.trim().replace(/\s+/g,' ').slice(0,n||256):null;}
+function ctx(el){var b=document.body||{};var d=(el&&el.dataset)||{};return{page_role:clean(d.pageRole||b.dataset.ventilationRole,96),functional_system:clean(d.functionalSystem||b.dataset.ventilationSystem,96),conversion_mode:clean(d.conversionMode||b.dataset.ventilationMode,64),page_slug:clean(b.dataset.pageSlug,160),commercial_segment:'restaurant_ventilation'};}
+function track(name,extra,el){if(typeof window.mospochinTrackSiteEvent!=='function')return null;return window.mospochinTrackSiteEvent(name,Object.assign({},ctx(el),extra||{}));}
+function actionPayload(el){return{cta_id:clean(el&&el.dataset.ctaId,160),cta_group:clean(el&&el.dataset.ctaGroup,80),block:el&&el.closest('[data-vent-mobile-bar]')?'mobile_conversion_bar':'conversion_block'};}
+function init(){var body=document.body;if(!body||body.dataset.ventilationPage!=='true')return;
+track('ventilation_page_view',{page_title:clean(document.title,240)},body);
+var block=document.querySelector('[data-vent-conversion-block]');var bar=document.querySelector('[data-vent-mobile-bar]');
+function observe(node,eventName){if(!node)return;if(!('IntersectionObserver'in window)){track(eventName,{},node);return;}var sent=false;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!sent&&e.isIntersecting&&e.intersectionRatio>=.45){sent=true;track(eventName,{},node);io.disconnect();}});},{threshold:[.45]});io.observe(node);}
+observe(block,'ventilation_conversion_block_view');observe(bar,'ventilation_mobile_bar_view');
+var started=new WeakSet();document.querySelectorAll('form[data-ventilation-form]').forEach(function(form){form.addEventListener('input',function(){if(started.has(form))return;started.add(form);track('ventilation_form_start',{form_id:clean(form.dataset.formId,160)},form);},{once:true});form.addEventListener('invalid',function(e){track('ventilation_form_validation_error',{form_id:clean(form.dataset.formId,160),field_name:clean(e.target&&e.target.name,80)},form);},true);});
+document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('[data-vent-action],.vent-nav a');if(!el)return;var a=el.dataset.ventAction;if(a==='call')track('ventilation_call_click',actionPayload(el),el);else if(a==='photo')track('ventilation_photo_whatsapp_click',actionPayload(el),el);else if(a==='form'&&ctx(el).conversion_mode==='maintenance_request')track('ventilation_maintenance_request',actionPayload(el),el);
+if(el.matches('.vent-nav a')){var group=el.closest('.vent-nav-group');var title=clean(group&&group.querySelector('h3')&&group.querySelector('h3').textContent,100)||'';var p={target_path:clean(el.getAttribute('href'),240),navigation_group:title};track('ventilation_nav_click',p,el);if(/Срочные|Симптом/i.test(title))track('ventilation_symptom_select',p,el);if(/Систем/i.test(title))track('ventilation_system_select',p,el);}},true);
+document.addEventListener('mospochin:form-success',function(e){var form=e.detail&&e.detail.form;if(!form||!form.matches('[data-ventilation-form]'))return;var payload={form_id:clean(form.dataset.formId,160),lead_id:clean(e.detail.leadId,200),request_id:clean(e.detail.requestId,200)};track('ventilation_lead_submit',payload,form);var system=ctx(form).functional_system||'';if(/clean|grease|filter/i.test(system))track('ventilation_cleaning_request',payload,form);if(/fan|motor|drive/i.test(system))track('ventilation_motor_replacement_request',payload,form);if(ctx(form).conversion_mode==='maintenance_request')track('ventilation_maintenance_request',payload,form);});
+function syncMenu(){var open=body.classList.contains('mobile-menu-open')||!!document.querySelector('#mobile-menu:not(.hidden)');if(bar)bar.classList.toggle('is-menu-open',open);}syncMenu();new MutationObserver(syncMenu).observe(body,{attributes:true,attributeFilter:['class']});var menu=document.getElementById('mobile-menu');if(menu)new MutationObserver(syncMenu).observe(menu,{attributes:true,attributeFilter:['class']});}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();

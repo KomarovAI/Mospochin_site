@@ -1,0 +1,10 @@
+/* MosPochin ventilation media system — RUN 12 */
+.vent-media-block{padding:72px 20px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
+.vent-media-shell{width:min(1160px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:42px;align-items:center}
+.vent-media-copy{min-width:0}.vent-media-eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;padding:7px 12px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.vent-media-copy h2{margin:0 0 16px;color:#0f172a;font-size:clamp(28px,3.2vw,44px);line-height:1.08;letter-spacing:-.025em}.vent-media-copy p{margin:0;color:#475569;font-size:18px;line-height:1.65}
+.vent-media-points{display:grid;gap:10px;margin:22px 0 0;padding:0;list-style:none}.vent-media-points li{display:flex;gap:10px;align-items:flex-start;color:#334155;font-size:15px;line-height:1.45}.vent-media-points i{color:#0284c7;font-size:19px;line-height:1.2}
+.vent-media-figure{margin:0;overflow:hidden;border:1px solid #dbe5ef;border-radius:26px;background:#fff;box-shadow:0 18px 46px rgba(15,23,42,.12)}.vent-media-figure picture{display:block}.vent-media-figure img{display:block;width:100%;height:auto;max-width:100%;object-fit:cover;background:#e2e8f0}.vent-media-figure.is-diagram img{aspect-ratio:1200/760;object-fit:contain;background:#f8fafc}.vent-media-figure figcaption{display:flex;gap:10px;align-items:flex-start;padding:15px 18px;color:#475569;font-size:14px;line-height:1.45;background:#fff}.vent-media-figure figcaption i{flex:0 0 auto;color:#0284c7;font-size:18px}
+@media(max-width:860px){.vent-media-block{padding:54px 16px}.vent-media-shell{grid-template-columns:1fr;gap:26px}.vent-media-copy h2{font-size:32px}.vent-media-copy p{font-size:16px}.vent-media-figure{border-radius:20px}}
+@media(max-width:360px){.vent-media-block{padding-left:12px;padding-right:12px}.vent-media-copy h2{font-size:28px}.vent-media-figure figcaption{padding:13px 14px}}
+@media(prefers-reduced-motion:reduce){.vent-media-figure{scroll-behavior:auto}}

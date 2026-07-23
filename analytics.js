@@ -2,9 +2,9 @@
   'use strict';
 
   var SITE_RELEASE = 'site-error-conversion-v1-20260720';
-  var ANALYTICS_RELEASE = 'analytics-kettle-conversion-v1-20260720';
+  var ANALYTICS_RELEASE = 'analytics-ventilation-conversion-v1-20260722';
   var SCHEMA_VERSION = 'mospochin.web.v3';
-  var TRACKING_VERSION = '2026-07-20';
+  var TRACKING_VERSION = '2026-07-22';
   var METRIKA_ID = String(window.MOSPOCHIN_METRICA_COUNTER_ID || '109138661');
   var PRODUCTION_HOSTS = ['mospochin.ru', 'www.mospochin.ru'];
   var BOT_USER_AGENT_RE = /bot\b|crawler|spider|slurp|bingpreview|phantomjs|prerender|lighthouse/i;
@@ -88,7 +88,21 @@
     kettle_error_search_use: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
     kettle_error_search_result_open: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
     kettle_nav_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
-    kettle_nav_click: Object.freeze({ event_class: 'engagement', is_decision_event: true })
+    kettle_nav_click: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    ventilation_page_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    ventilation_conversion_block_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    ventilation_mobile_bar_view: Object.freeze({ event_class: 'visibility', is_decision_event: false }),
+    ventilation_call_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    ventilation_photo_whatsapp_click: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    ventilation_form_start: Object.freeze({ event_class: 'micro_conversion', is_decision_event: true }),
+    ventilation_form_validation_error: Object.freeze({ event_class: 'error', is_decision_event: false }),
+    ventilation_lead_submit: Object.freeze({ event_class: 'conversion', is_decision_event: true }),
+    ventilation_symptom_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    ventilation_system_select: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    ventilation_nav_click: Object.freeze({ event_class: 'engagement', is_decision_event: true }),
+    ventilation_cleaning_request: Object.freeze({ event_class: 'conversion_step', is_decision_event: true }),
+    ventilation_motor_replacement_request: Object.freeze({ event_class: 'conversion_step', is_decision_event: true }),
+    ventilation_maintenance_request: Object.freeze({ event_class: 'conversion_step', is_decision_event: true })
   });
 
   var RESERVED_EVENT_FIELDS = new Set([
@@ -99,7 +113,8 @@
   var METRICA_GOALS = new Set([
     'phone_click', 'whatsapp_click', 'form_open', 'form_submit_attempt', 'form_submit_success',
     'error_call_click', 'error_photo_whatsapp_click', 'error_callback_submit', 'error_photo_submit',
-    'kettle_call_click', 'kettle_photo_whatsapp_click', 'kettle_lead_submit'
+    'kettle_call_click', 'kettle_photo_whatsapp_click', 'kettle_lead_submit',
+    'ventilation_call_click', 'ventilation_photo_whatsapp_click', 'ventilation_lead_submit'
   ]);
 
   var startedForms = new WeakSet();
@@ -677,11 +692,20 @@
 
   function formPayload(form) {
     var data = (form && form.dataset) || {};
+    function field(name) {
+      var node = form && form.querySelector ? form.querySelector('[name="' + name + '"]') : null;
+      return cleanString(node && node.value, 256);
+    }
     return {
       form_id: cleanString(data.formId || data.formContext, 256),
       form_context: cleanString(data.formContext, 256),
       form_variant: cleanString(data.formVariant || data.formContext, 256),
-      block: cleanString(data.block, 128)
+      block: cleanString(data.block, 128),
+      equipment: field('equipment'),
+      page_role: field('page_role') || cleanString(data.pageRole, 128),
+      functional_system: field('functional_system') || cleanString(data.functionalSystem, 128),
+      conversion_mode: field('conversion_mode') || cleanString(data.conversionMode, 128),
+      paid_cluster: field('paid_cluster')
     };
   }
 
