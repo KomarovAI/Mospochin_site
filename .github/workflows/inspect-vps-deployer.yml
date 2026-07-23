@@ -1,0 +1,113 @@
+name: Inspect VPS deployer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: inspect-vps-deployer
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Setup SSH
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" \
+            > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          ssh-keyscan \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            "${{ secrets.DEPLOY_HOST }}" \
+            >> ~/.ssh/known_hosts
+
+      - name: Collect read-only deployer source
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p artifact
+
+          SSH_ARGS=(
+            -i ~/.ssh/deploy_key
+            -p "${{ secrets.DEPLOY_PORT }}"
+            -o IdentitiesOnly=yes
+            -o BatchMode=yes
+            -o StrictHostKeyChecking=yes
+            -o ConnectTimeout=15
+          )
+
+          REMOTE="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
+
+          ssh "${SSH_ARGS[@]}" "$REMOTE" '
+            set -eu
+
+            echo "COLLECTED_AT=$(date -Is)"
+            echo "HOSTNAME=$(hostname)"
+            echo "USER=$(id -un)"
+            id
+
+            echo
+            echo "===== DEPLOYER STAT ====="
+            stat /usr/local/sbin/mospochin-deploy-git
+            sha256sum /usr/local/sbin/mospochin-deploy-git
+            file /usr/local/sbin/mospochin-deploy-git
+            readlink -f /usr/local/sbin/mospochin-deploy-git
+
+            echo
+            echo "===== SUDO CONTRACT ====="
+            sudo -n -l 2>&1 || true
+
+            echo
+            echo "===== RELATED FILES ====="
+            find /usr/local/sbin /usr/local/lib /opt \
+              -maxdepth 4 \
+              -type f \
+              \( \
+                -iname "*mospochin*deploy*" -o \
+                -iname "*post-activate*" -o \
+                -iname "*pre-activate*" \
+              \) \
+              -printf "%m %u:%g %s %p\n" 2>/dev/null \
+              | sort \
+              | head -n 500
+          ' > artifact/metadata.txt
+
+          ssh "${SSH_ARGS[@]}" "$REMOTE" \
+            'cat /usr/local/sbin/mospochin-deploy-git' \
+            > artifact/mospochin-deploy-git
+
+          chmod 600 artifact/mospochin-deploy-git
+          sha256sum artifact/mospochin-deploy-git \
+            > artifact/SHA256SUMS.txt
+
+          file artifact/mospochin-deploy-git \
+            > artifact/file-type.txt
+
+          {
+            echo "READ_ONLY=YES"
+            echo "DIRECT_LOCAL_VPS_ACCESS=NO"
+            echo "ARBITRARY_SUDO_EXECUTED=NO"
+            echo "PRODUCTION_CHANGED=NO"
+            echo "SOURCE=/usr/local/sbin/mospochin-deploy-git"
+          } > artifact/README.txt
+
+      - name: Upload deployer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-vps-deployer-source
+          path: artifact/
+          if-no-files-found: error
+          retention-days: 7
