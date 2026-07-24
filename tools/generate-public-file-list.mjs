@@ -1,13 +1,10 @@
 import fs from 'fs';
-import { recoverStaleNginxRuntimeInclude } from './recover-stale-nginx-runtime-include.mjs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SITE_ROOT = path.resolve(__dirname, '..');
-// MOSPOCHIN_EARLY_NGINX_BOOTSTRAP_V5
-recoverStaleNginxRuntimeInclude();
 const MANIFEST_PATH = path.join(SITE_ROOT, '.deploy', 'include-files.txt');
 const outArgIndex = process.argv.indexOf('--out');
 const OUT_PATH = outArgIndex >= 0 ? path.resolve(process.argv[outArgIndex + 1] ?? '') : null;

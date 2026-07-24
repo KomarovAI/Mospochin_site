@@ -1463,7 +1463,6 @@ deploy/env/telegram.env.example
 deploy/nginx/apply-nginx.sh
 deploy/nginx/mospochin-csp.conf
 deploy/nginx/mospochin-runtime-hardening.conf
-deploy/nginx/repair-managed-includes.py
 deploy/post-activate.sh
 deploy/systemd/mospochin-telegram-api.service
 deploy/systemd/mospochin-telegram-tunnel.service
@@ -1989,7 +1988,6 @@ techet-voda-iz-morozilnika.html
 telegram-form.js
 temperatura-termoshchupa-ne-sovpadaet-s-kameroy.html
 tools/generate-public-file-list.mjs
-tools/recover-stale-nginx-runtime-include.mjs
 trebovaniya-k-ustanovke-gazovogo-parokonvektomata.html
 tresnula-steklokeramika-varochnoy-paneli.html
 tupye-ili-povrezhdennye-nozhi-kuttera.html

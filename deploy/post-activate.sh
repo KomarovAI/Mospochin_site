@@ -127,7 +127,7 @@ NGINX_SECURITY_HEADERS
   systemctl reload nginx
 }
 
-# MOSPOCHIN_RUNTIME_INCLUDE_REPAIR_V4
+# MOSPOCHIN_RUNTIME_INCLUDE_REPAIR_V6_SELF_CONTAINED
 repair_nginx_runtime_hardening_include() {
   if ! command -v nginx >/dev/null 2>&1; then
     echo "Skipping runtime-hardening include repair: nginx is not available."
@@ -139,12 +139,166 @@ repair_nginx_runtime_hardening_include() {
     exit 1
   }
 
-  python3 \
-    "${RELEASE_ROOT}/deploy/nginx/repair-managed-includes.py" \
-    "${NGINX_SITE_AVAILABLE}" \
-    "${NGINX_RUNTIME_HARDENING_CONF}"
+  command -v python3 >/dev/null 2>&1 || {
+    echo "python3 is required for managed Nginx include repair." >&2
+    exit 1
+  }
 
-  nginx -t
+  local backup
+  backup="${NGINX_SITE_AVAILABLE}.runtime-include-repair.$(date +%Y%m%d-%H%M%S).bak"
+  cp -a "${NGINX_SITE_AVAILABLE}" "${backup}"
+
+  python3 - \
+    "${NGINX_SITE_AVAILABLE}" \
+    "${NGINX_RUNTIME_HARDENING_CONF}" <<'PY_NGINX_INCLUDE_REPAIR'
+from __future__ import annotations
+
+import os
+import re
+import tempfile
+from pathlib import Path
+import sys
+
+site_path = Path(sys.argv[1])
+snippet_path = Path(sys.argv[2])
+
+original = site_path.read_text(encoding="utf-8")
+include_pattern = re.compile(
+    r"(?m)^[ \t]*include[ \t]+"
+    r"(?:/etc/nginx/)?snippets/"
+    r"mospochin-runtime-hardening\.conf;"
+    r"[ \t]*(?:\n|$)"
+)
+
+without_managed, removed = include_pattern.subn("", original)
+lines = without_managed.splitlines(keepends=True)
+
+
+def structural_text(line: str) -> str:
+    result: list[str] = []
+    quote: str | None = None
+    escaped = False
+
+    for char in line:
+        if escaped:
+            escaped = False
+            result.append(" ")
+            continue
+
+        if char == "\\":
+            escaped = True
+            result.append(" ")
+            continue
+
+        if quote is not None:
+            if char == quote:
+                quote = None
+            result.append(" ")
+            continue
+
+        if char in {"'", '"'}:
+            quote = char
+            result.append(" ")
+            continue
+
+        if char == "#":
+            break
+
+        result.append(char)
+
+    return "".join(result)
+
+
+depth = 0
+server_start: int | None = None
+blocks: list[tuple[int, int, str]] = []
+
+for index, line in enumerate(lines):
+    clean = structural_text(line)
+
+    if depth == 0 and re.search(r"\bserver\s*\{", clean):
+        server_start = index
+
+    depth += clean.count("{")
+    depth -= clean.count("}")
+
+    if depth < 0:
+        raise SystemExit("Nginx site config has unbalanced closing braces")
+
+    if server_start is not None and depth == 0:
+        block_text = "".join(lines[server_start : index + 1])
+        blocks.append((server_start, index, block_text))
+        server_start = None
+
+if depth != 0:
+    raise SystemExit("Nginx site config has unbalanced braces")
+
+candidates = [
+    block
+    for block in blocks
+    if re.search(
+        r"(?m)^[ \t]*server_name[ \t]+[^;]*\bmospochin\.ru\b",
+        block[2],
+    )
+]
+
+if not candidates:
+    raise SystemExit("MosPochin server block was not found")
+
+ssl_candidates = [
+    block
+    for block in candidates
+    if re.search(r"(?m)^[ \t]*listen[ \t]+(?:[^;]*:)?443\b", block[2])
+]
+
+selected = ssl_candidates[0] if ssl_candidates else candidates[0]
+insert_after = selected[0]
+
+opening_indent = re.match(r"^[ \t]*", lines[insert_after]).group(0)
+include_line = (
+    f"{opening_indent}    "
+    "include snippets/mospochin-runtime-hardening.conf;\n"
+)
+
+lines.insert(insert_after + 1, include_line)
+repaired = "".join(lines)
+
+if repaired == original:
+    print("MANAGED_INCLUDE_REPAIR=ALREADY_CORRECT")
+    raise SystemExit(0)
+
+stat = site_path.stat()
+fd, temporary_name = tempfile.mkstemp(
+    prefix=f".{site_path.name}.",
+    suffix=".tmp",
+    dir=str(site_path.parent),
+)
+
+try:
+    with os.fdopen(fd, "w", encoding="utf-8") as handle:
+        handle.write(repaired)
+        handle.flush()
+        os.fsync(handle.fileno())
+
+    os.chmod(temporary_name, stat.st_mode)
+    os.chown(temporary_name, stat.st_uid, stat.st_gid)
+    os.replace(temporary_name, site_path)
+finally:
+    if os.path.exists(temporary_name):
+        os.unlink(temporary_name)
+
+print(f"MANAGED_INCLUDE_LINES_REMOVED={removed}")
+print("MANAGED_INCLUDE_INSERTED_AT=SERVER_SCOPE")
+PY_NGINX_INCLUDE_REPAIR
+
+  if ! nginx -t; then
+    echo "Managed include repair produced invalid Nginx config; restoring backup." >&2
+    cp -a "${backup}" "${NGINX_SITE_AVAILABLE}"
+    nginx -t 2>&1 || true
+    exit 1
+  fi
+
+  rm -f "${backup}"
 }
 
 install_nginx_runtime_hardening_config() {
