@@ -1,0 +1,500 @@
+name: Recover Nginx with approved rollback and deploy
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: vps-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  KNOWN_GOOD_SHA: c620e2e8203d4f685c46479b3994ef885b23ce22
+  KNOWN_GOOD_RUN_ID: "29779205934"
+  FAILED_VENTILATION_SHA: 6ce559ce6d617b9ebb559b2c615a902d7684a08b
+  FAILED_V4_SHA: e70a316d31e7147aaa044f908b60b3855349c994
+  FAILED_V5_SHA: 1163804cb637b76b9ea292f9d106944f860404a9
+
+jobs:
+  rollback-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Calculate deploy content hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/hash-deploy-content.mjs
+
+      - name: Setup SSH
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" \
+            > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          ssh-keyscan \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            "${{ secrets.DEPLOY_HOST }}" \
+            >> ~/.ssh/known_hosts
+
+      - name: Collect rollback contract and select known-good release
+        id: contract
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p rollback-artifact
+
+          SSH_ARGS=(
+            -i ~/.ssh/deploy_key
+            -p "${{ secrets.DEPLOY_PORT }}"
+            -o IdentitiesOnly=yes
+            -o BatchMode=yes
+            -o StrictHostKeyChecking=yes
+            -o ConnectTimeout=15
+            -o ServerAliveInterval=15
+            -o ServerAliveCountMax=3
+          )
+
+          REMOTE="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
+
+          ssh "${SSH_ARGS[@]}" "$REMOTE" \
+            'cat /usr/local/sbin/mospochin-rollback' \
+            > rollback-artifact/mospochin-rollback
+
+          chmod 600 rollback-artifact/mospochin-rollback
+          bash -n rollback-artifact/mospochin-rollback
+
+          sha256sum rollback-artifact/mospochin-rollback \
+            > rollback-artifact/SHA256SUMS.txt
+
+          ssh "${SSH_ARGS[@]}" "$REMOTE" '
+            set +e
+
+            echo "COLLECTED_AT=$(date -Is 2>/dev/null || date)"
+            echo "HOSTNAME=$(hostname)"
+            echo "USER=$(id -un)"
+            id
+
+            echo
+            echo "===== CURRENT RELEASE ====="
+            readlink -f /var/www/mospochin-current || true
+
+            echo
+            echo "===== KNOWN-GOOD CANDIDATES ====="
+            find /var/www/mospochin-releases \
+              -mindepth 1 \
+              -maxdepth 1 \
+              -type d \
+              -name "c620e2e8203d4f685c46479b3994ef885b23ce22-*" \
+              -printf "%T@|%p\n" 2>/dev/null \
+              | sort -t"|" -k1,1nr
+
+            echo
+            echo "===== RECENT RELEASES ====="
+            find /var/www/mospochin-releases \
+              -mindepth 1 \
+              -maxdepth 1 \
+              -type d \
+              -printf "%TY-%Tm-%TdT%TH:%TM:%TS|%p\n" 2>/dev/null \
+              | sort -r \
+              | head -n 40
+
+            echo
+            echo "===== SUDO CONTRACT ====="
+            sudo -n -l 2>&1 || true
+          ' > rollback-artifact/remote-state.txt
+
+          CONTRACT="$(
+            python3 tools/detect-mospochin-rollback-contract.py \
+              rollback-artifact/mospochin-rollback
+          )"
+
+          printf '%s\n' "$CONTRACT" \
+            | tee rollback-artifact/contract.json \
+            | jq .
+
+          MODE="$(printf '%s' "$CONTRACT" | jq -r '.mode')"
+          REASON="$(printf '%s' "$CONTRACT" | jq -r '.reason')"
+
+          CURRENT_RELEASE="$(
+            ssh "${SSH_ARGS[@]}" "$REMOTE" \
+              'readlink -f /var/www/mospochin-current 2>/dev/null || true'
+          )"
+
+          KNOWN_GOOD_RELEASE="$(
+            ssh "${SSH_ARGS[@]}" "$REMOTE" \
+              "find /var/www/mospochin-releases \
+                -mindepth 1 \
+                -maxdepth 1 \
+                -type d \
+                -name '${KNOWN_GOOD_SHA}-*' \
+                -printf '%T@|%p\n' 2>/dev/null \
+               | sort -t'|' -k1,1nr \
+               | head -n 1 \
+               | cut -d'|' -f2-"
+          )"
+
+          if [[ "$CURRENT_RELEASE" == /var/www/mospochin-releases/${KNOWN_GOOD_SHA}-* ]]; then
+            TARGET_RELEASE="$CURRENT_RELEASE"
+          else
+            TARGET_RELEASE="$KNOWN_GOOD_RELEASE"
+          fi
+
+          case "$MODE" in
+            no_args)
+              ;;
+            positional_release|flag_release|flag_target)
+              [[ "$TARGET_RELEASE" == /var/www/mospochin-releases/${KNOWN_GOOD_SHA}-* ]] || {
+                echo "ERROR: known-good release was not found for rollback mode $MODE" >&2
+                exit 81
+              }
+              ;;
+            commit|run_id|commit_run)
+              ;;
+            *)
+              echo "ERROR: rollback contract is unknown" >&2
+              cat rollback-artifact/contract.json >&2
+              exit 82
+              ;;
+          esac
+
+          {
+            echo "ROLLBACK_MODE=$MODE"
+            echo "ROLLBACK_REASON=$REASON"
+            echo "CURRENT_RELEASE=$CURRENT_RELEASE"
+            echo "TARGET_RELEASE=$TARGET_RELEASE"
+          } | tee rollback-artifact/selection.txt
+
+          printf 'mode=%s\n' "$MODE" >> "$GITHUB_OUTPUT"
+          printf 'target_release=%s\n' "$TARGET_RELEASE" >> "$GITHUB_OUTPUT"
+
+      - name: Run approved rollback
+        shell: bash
+        timeout-minutes: 8
+        run: |
+          set -euo pipefail
+
+          MODE="${{ steps.contract.outputs.mode }}"
+          TARGET_RELEASE="${{ steps.contract.outputs.target_release }}"
+
+          SSH_ARGS=(
+            -i ~/.ssh/deploy_key
+            -p "${{ secrets.DEPLOY_PORT }}"
+            -o IdentitiesOnly=yes
+            -o BatchMode=yes
+            -o StrictHostKeyChecking=yes
+            -o ConnectTimeout=15
+            -o ServerAliveInterval=15
+            -o ServerAliveCountMax=3
+          )
+
+          REMOTE="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
+
+          echo "ROLLBACK_MODE=$MODE"
+          echo "ROLLBACK_TARGET=${TARGET_RELEASE:-none}"
+
+          case "$MODE" in
+            no_args)
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                "sudo -n /usr/local/sbin/mospochin-rollback"
+              ;;
+
+            positional_release)
+              case "$TARGET_RELEASE" in
+                /var/www/mospochin-releases/${KNOWN_GOOD_SHA}-*) ;;
+                *)
+                  echo "ERROR: unsafe positional rollback target" >&2
+                  exit 83
+                  ;;
+              esac
+
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                "sudo -n /usr/local/sbin/mospochin-rollback '$TARGET_RELEASE'"
+              ;;
+
+            flag_release)
+              case "$TARGET_RELEASE" in
+                /var/www/mospochin-releases/${KNOWN_GOOD_SHA}-*) ;;
+                *)
+                  echo "ERROR: unsafe --release rollback target" >&2
+                  exit 84
+                  ;;
+              esac
+
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                "sudo -n /usr/local/sbin/mospochin-rollback --release '$TARGET_RELEASE'"
+              ;;
+
+            flag_target)
+              case "$TARGET_RELEASE" in
+                /var/www/mospochin-releases/${KNOWN_GOOD_SHA}-*) ;;
+                *)
+                  echo "ERROR: unsafe --target rollback target" >&2
+                  exit 85
+                  ;;
+              esac
+
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                "sudo -n /usr/local/sbin/mospochin-rollback --target '$TARGET_RELEASE'"
+              ;;
+
+            commit)
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                "sudo -n /usr/local/sbin/mospochin-rollback '${KNOWN_GOOD_SHA}'"
+              ;;
+
+            run_id)
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                "sudo -n /usr/local/sbin/mospochin-rollback '${KNOWN_GOOD_RUN_ID}'"
+              ;;
+
+            commit_run)
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                "sudo -n /usr/local/sbin/mospochin-rollback \
+                  '${KNOWN_GOOD_SHA}' \
+                  '${KNOWN_GOOD_RUN_ID}'"
+              ;;
+
+            *)
+              echo "ERROR: unsupported rollback mode: $MODE" >&2
+              exit 86
+              ;;
+          esac
+
+          echo "APPROVED_ROLLBACK=COMPLETED"
+
+      - name: Approved healthcheck after rollback
+        shell: bash
+        timeout-minutes: 5
+        run: |
+          set -euo pipefail
+
+          ssh \
+            -i ~/.ssh/deploy_key \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "sudo -n /usr/local/sbin/mospochin-healthcheck"
+
+      - name: Deploy current exact SHA
+        shell: bash
+        timeout-minutes: 12
+        run: |
+          set -euo pipefail
+
+          CONTENT_HASH="$(cat .deploy/content.sha256)"
+
+          echo "Commit: ${GITHUB_SHA}"
+          echo "Run: ${GITHUB_RUN_ID}"
+          echo "Content hash: ${CONTENT_HASH}"
+
+          ssh \
+            -i ~/.ssh/deploy_key \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=15 \
+            -o ServerAliveInterval=15 \
+            -o ServerAliveCountMax=3 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "sudo -n /usr/local/sbin/mospochin-deploy-git \
+              '${GITHUB_SHA}' \
+              '${GITHUB_RUN_ID}' \
+              '${GITHUB_RUN_NUMBER}' \
+              '${CONTENT_HASH}'"
+
+      - name: Verify production exact SHA
+        shell: bash
+        timeout-minutes: 6
+        run: |
+          set -euo pipefail
+
+          VERSION=""
+
+          for attempt in $(seq 1 60); do
+            VERSION="$(
+              curl \
+                -fsS \
+                --retry 5 \
+                --retry-delay 3 \
+                --retry-all-errors \
+                --connect-timeout 8 \
+                --max-time 25 \
+                -H 'Cache-Control: no-cache' \
+                "https://mospochin.ru/version.json?run=${GITHUB_RUN_ID}&attempt=${attempt}" \
+              || true
+            )"
+
+            COMMIT="$(
+              printf '%s' "$VERSION" \
+                | jq -r '.commit // empty' 2>/dev/null \
+                || true
+            )"
+
+            RUN_ID="$(
+              printf '%s' "$VERSION" \
+                | jq -r '.run_id // empty' 2>/dev/null \
+                || true
+            )"
+
+            echo "VERSION_ATTEMPT=$attempt COMMIT=$COMMIT RUN_ID=$RUN_ID"
+
+            if [[ "$COMMIT" == "$GITHUB_SHA" &&
+                  "$RUN_ID" == "$GITHUB_RUN_ID" ]]; then
+              printf '%s\n' "$VERSION" | jq .
+              exit 0
+            fi
+
+            sleep 5
+          done
+
+          echo "ERROR: production did not confirm exact SHA/run" >&2
+          printf '%s\n' "$VERSION" >&2
+          exit 1
+
+      - name: Verify ventilation redirects
+        shell: bash
+        timeout-minutes: 5
+        run: |
+          set -euo pipefail
+
+          BASE_URL="https://mospochin.ru"
+          PASS=0
+
+          while IFS='|' read -r SOURCE TARGET; do
+            HEADERS="$(
+              curl \
+                -sS \
+                --retry 8 \
+                --retry-delay 3 \
+                --retry-all-errors \
+                --connect-timeout 8 \
+                --max-time 25 \
+                -D - \
+                -o /dev/null \
+                "${BASE_URL}${SOURCE}?run=${GITHUB_RUN_ID}"
+            )"
+
+            CODE="$(
+              printf '%s\n' "$HEADERS" \
+                | awk '/^HTTP\// {value=$2} END {print value}'
+            )"
+
+            LOCATION="$(
+              printf '%s\n' "$HEADERS" \
+                | awk '
+                    BEGIN {IGNORECASE=1}
+                    /^location:/ {
+                      sub(/\r$/, "")
+                      sub(/^[^:]+:[[:space:]]*/, "")
+                      print
+                      exit
+                    }
+                  '
+            )"
+
+            LOCATION_PATH="$LOCATION"
+            LOCATION_PATH="${LOCATION_PATH#${BASE_URL}}"
+            LOCATION_PATH="${LOCATION_PATH%%\?*}"
+
+            echo "HTTP=$CODE SOURCE=$SOURCE LOCATION=${LOCATION:-none} EXPECTED=$TARGET"
+
+            [[ "$CODE" == "301" ]]
+            [[ "$LOCATION_PATH" == "$TARGET" ]]
+
+            PASS=$((PASS + 1))
+          done < data/ventilation-redirects.tsv
+
+          echo "REDIRECTS=$PASS/8"
+          [[ "$PASS" == "8" ]]
+
+      - name: Verify ventilation assets
+        shell: bash
+        timeout-minutes: 5
+        run: |
+          set -euo pipefail
+
+          for PATHNAME in \
+            /ventilyatsiya-restoranov.html \
+            /remont-ventilyatsii-restoranov.html \
+            /ventilation-navigation.css \
+            /ventilation-conversion.css \
+            /ventilation-conversion.js \
+            /ventilation-media.css \
+            /data/ventilation-navigation.json \
+            /data/ventilation-conversion-pages.json \
+            /data/ventilation-media-map.json \
+            /data/ventilation-redirects.json
+          do
+            META="$(
+              curl \
+                -sS \
+                --retry 8 \
+                --retry-delay 3 \
+                --retry-all-errors \
+                --connect-timeout 8 \
+                --max-time 25 \
+                -o /dev/null \
+                -w '%{http_code}\t%{size_download}' \
+                "https://mospochin.ru${PATHNAME}?run=${GITHUB_RUN_ID}"
+            )"
+
+            CODE="${META%%$'\t'*}"
+            SIZE="${META#*$'\t'}"
+
+            echo "HTTP=$CODE SIZE=$SIZE PATH=$PATHNAME"
+
+            [[ "$CODE" == "200" ]]
+            [[ "${SIZE%%.*}" -gt 0 ]]
+          done
+
+          echo "ASSETS=10/10"
+
+      - name: Upload rollback diagnostic artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mospochin-approved-rollback-contract
+          path: rollback-artifact/
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Write summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## MosPochin approved rollback recovery"
+            echo
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Run: \`${GITHUB_RUN_ID}\`"
+            echo "- Recovery: approved \`mospochin-rollback\`"
+            echo "- Healthcheck: approved \`mospochin-healthcheck\`"
+            echo "- Deployment: approved \`mospochin-deploy-git\`"
+            echo "- Direct Nginx edit: **no**"
+            echo "- Arbitrary sudo shell: **no**"
+            echo "- Local direct VPS access: **no**"
+          } >> "$GITHUB_STEP_SUMMARY"
