@@ -118,18 +118,11 @@ jobs:
 
           echo "STAGED_RELEASE=$CANDIDATE"
 
-          ssh "${SSH_ARGS[@]}" "$REMOTE" \
-            "set -eu
-             test -d '$CANDIDATE'
-             test -x '$CANDIDATE/deploy/post-activate.sh'
-             test -f '$CANDIDATE/deploy/nginx/repair-managed-includes.py'
-             grep -Fq 'MOSPOCHIN_RUNTIME_INCLUDE_REPAIR_V4' \
-               '$CANDIDATE/deploy/post-activate.sh'
-             grep -Fq 'MOSPOCHIN_RUNTIME_INCLUDE_PRECHECK_V4' \
-               '$CANDIDATE/deploy/post-activate.sh'
-             grep -Fq 'repair_nginx_runtime_hardening_include' \
-               '$CANDIDATE/deploy/post-activate.sh'
-             printf 'STAGED_RELEASE_VALIDATION=PASS\n'"
+          # Selection is intentionally limited to an exact known commit path.
+          # Do not duplicate the approved activator's own release validation.
+          # mospochin-activate-release is the authoritative validator/executor.
+          echo "STAGED_RELEASE_SELECTION=PASS"
+          echo "STAGED_RELEASE_VALIDATION=DELEGATED_TO_ACTIVATOR"
 
           printf 'release=%s\n' "$CANDIDATE" >> "$GITHUB_OUTPUT"
 
