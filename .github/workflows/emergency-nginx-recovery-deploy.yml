@@ -1,0 +1,435 @@
+name: Emergency Nginx recovery and deploy
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: vps-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  recover-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Calculate deploy content hash
+        run: node tools/hash-deploy-content.mjs
+
+      - name: Setup SSH
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" \
+            > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          ssh-keyscan \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            "${{ secrets.DEPLOY_HOST }}" \
+            >> ~/.ssh/known_hosts
+
+      - name: Build exact recovery payload
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          cat > /tmp/mospochin-emergency-nginx-recovery.sh <<'REMOTE_RECOVERY'
+          #!/usr/bin/env bash
+          set -Eeuo pipefail
+
+          SITE="/etc/nginx/sites-available/mospochin.conf"
+          ENABLED="/etc/nginx/sites-enabled/mospochin.conf"
+          SNIPPET="/etc/nginx/snippets/mospochin-runtime-hardening.conf"
+          STAMP="$(date +%Y%m%d-%H%M%S)"
+          BACKUP="${SITE}.github-recovery-${STAMP}.bak"
+
+          echo "RECOVERY_CHANNEL=GITHUB_ACTIONS"
+          echo "RECOVERY_HOST=$(hostname)"
+          echo "RECOVERY_USER=$(id -un)"
+          echo "SITE=$SITE"
+          echo "SNIPPET=$SNIPPET"
+
+          [[ -f "$SITE" ]] || {
+            echo "ERROR: site config not found: $SITE" >&2
+            exit 61
+          }
+
+          set +e
+          BEFORE="$(nginx -t 2>&1)"
+          BEFORE_RC=$?
+          set -e
+
+          echo "$BEFORE"
+
+          if (( BEFORE_RC == 0 )); then
+            echo "NGINX_PRECHECK=ALREADY_VALID"
+            exit 0
+          fi
+
+          if ! printf '%s' "$BEFORE" |
+               grep -Fq 'location "/package.json" is outside location'; then
+            echo "ERROR: refusing repair for unknown nginx failure" >&2
+            exit 62
+          fi
+
+          if ! printf '%s' "$BEFORE" |
+               grep -Fq 'mospochin-runtime-hardening.conf'; then
+            echo "ERROR: known package.json error does not reference runtime-hardening" >&2
+            exit 63
+          fi
+
+          cp -a "$SITE" "$BACKUP"
+          echo "BACKUP=$BACKUP"
+
+          python3 - "$SITE" <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          path = Path(sys.argv[1])
+          original = path.read_text(encoding="utf-8")
+
+          pattern = re.compile(
+              r"(?m)^[ \t]*include[ \t]+"
+              r"(?:/etc/nginx/)?snippets/"
+              r"mospochin-runtime-hardening\.conf;"
+              r"[ \t]*(?:\n|$)"
+          )
+
+          repaired, count = pattern.subn("", original)
+
+          if count < 1:
+              raise SystemExit(
+                  "known stale include error detected, but no managed include line was found"
+              )
+
+          tmp = path.with_name(path.name + ".github-recovery.tmp")
+          tmp.write_text(repaired.rstrip() + "\n", encoding="utf-8")
+          tmp.chmod(path.stat().st_mode)
+          tmp.replace(path)
+
+          print(f"REMOVED_RUNTIME_HARDENING_INCLUDES={count}")
+          PY
+
+          # Handle a non-symlink enabled copy only when it is a distinct regular file.
+          if [[ -f "$ENABLED" && ! -L "$ENABLED" ]]; then
+            SITE_REAL="$(readlink -f "$SITE")"
+            ENABLED_REAL="$(readlink -f "$ENABLED")"
+
+            if [[ "$SITE_REAL" != "$ENABLED_REAL" ]]; then
+              cp -a "$ENABLED" "${ENABLED}.github-recovery-${STAMP}.bak"
+
+              python3 - "$ENABLED" <<'PY'
+              from pathlib import Path
+              import re
+              import sys
+
+              path = Path(sys.argv[1])
+              original = path.read_text(encoding="utf-8")
+              pattern = re.compile(
+                  r"(?m)^[ \t]*include[ \t]+"
+                  r"(?:/etc/nginx/)?snippets/"
+                  r"mospochin-runtime-hardening\.conf;"
+                  r"[ \t]*(?:\n|$)"
+              )
+              repaired, count = pattern.subn("", original)
+              if count:
+                  tmp = path.with_name(path.name + ".github-recovery.tmp")
+                  tmp.write_text(repaired.rstrip() + "\n", encoding="utf-8")
+                  tmp.chmod(path.stat().st_mode)
+                  tmp.replace(path)
+              print(f"REMOVED_ENABLED_COPY_INCLUDES={count}")
+              PY
+            fi
+          fi
+
+          if ! nginx -t; then
+            echo "ERROR: nginx remained invalid; restoring site config backup" >&2
+            cp -a "$BACKUP" "$SITE"
+            nginx -t 2>&1 || true
+            exit 64
+          fi
+
+          systemctl reload nginx
+          echo "NGINX_RECOVERY=VERIFIED_AND_RELOADED"
+          REMOTE_RECOVERY
+
+          chmod 700 /tmp/mospochin-emergency-nginx-recovery.sh
+          bash -n /tmp/mospochin-emergency-nginx-recovery.sh
+
+      - name: Repair stale Nginx include through GitHub
+        shell: bash
+        timeout-minutes: 3
+        run: |
+          set -euo pipefail
+
+          SSH_ARGS=(
+            -i ~/.ssh/deploy_key
+            -p "${{ secrets.DEPLOY_PORT }}"
+            -o IdentitiesOnly=yes
+            -o BatchMode=yes
+            -o StrictHostKeyChecking=yes
+            -o ConnectTimeout=15
+            -o ServerAliveInterval=15
+            -o ServerAliveCountMax=3
+          )
+
+          REMOTE="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
+
+          REMOTE_MODE="$(
+            ssh "${SSH_ARGS[@]}" "$REMOTE" '
+              if [ "$(id -u)" = "0" ]; then
+                echo ROOT
+              elif sudo -n bash -c true >/dev/null 2>&1; then
+                echo SUDO_BASH
+              elif [ -w /etc/nginx/sites-available/mospochin.conf ]; then
+                echo DIRECT_WRITE
+              else
+                echo BLOCKED
+              fi
+            '
+          )"
+
+          echo "REMOTE_RECOVERY_MODE=$REMOTE_MODE"
+
+          case "$REMOTE_MODE" in
+            ROOT)
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                'bash -s' \
+                < /tmp/mospochin-emergency-nginx-recovery.sh
+              ;;
+            SUDO_BASH)
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                'sudo -n bash -s' \
+                < /tmp/mospochin-emergency-nginx-recovery.sh
+              ;;
+            DIRECT_WRITE)
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                'bash -s' \
+                < /tmp/mospochin-emergency-nginx-recovery.sh
+              ;;
+            *)
+              echo "ERROR: GitHub deploy identity cannot perform controlled recovery." >&2
+              echo "Sudo contract:" >&2
+              ssh "${SSH_ARGS[@]}" "$REMOTE" \
+                'id; sudo -n -l 2>&1 || true; ls -l /etc/nginx/sites-available/mospochin.conf' \
+                >&2 || true
+              exit 77
+              ;;
+          esac
+
+      - name: Deploy on VPS
+        shell: bash
+        timeout-minutes: 8
+        run: |
+          set -euo pipefail
+
+          CONTENT_HASH="$(cat .deploy/content.sha256)"
+
+          echo "Commit: ${GITHUB_SHA}"
+          echo "Run: ${GITHUB_RUN_ID}"
+          echo "Content hash: ${CONTENT_HASH}"
+
+          ssh \
+            -i ~/.ssh/deploy_key \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "sudo -n /usr/local/sbin/mospochin-deploy-git \
+              '${GITHUB_SHA}' \
+              '${GITHUB_RUN_ID}' \
+              '${GITHUB_RUN_NUMBER}' \
+              '${CONTENT_HASH}'"
+
+      - name: Verify production commit
+        shell: bash
+        timeout-minutes: 5
+        run: |
+          set -euo pipefail
+
+          VERSION=""
+
+          for attempt in $(seq 1 45); do
+            VERSION="$(
+              curl \
+                -fsS \
+                --retry 5 \
+                --retry-delay 3 \
+                --retry-all-errors \
+                --connect-timeout 8 \
+                --max-time 25 \
+                -H 'Cache-Control: no-cache' \
+                "https://mospochin.ru/version.json?run=${GITHUB_RUN_ID}&attempt=${attempt}" \
+              || true
+            )"
+
+            COMMIT="$(
+              printf '%s' "$VERSION" |
+                jq -r '.commit // empty' 2>/dev/null ||
+                true
+            )"
+
+            RUN_ID="$(
+              printf '%s' "$VERSION" |
+                jq -r '.run_id // empty' 2>/dev/null ||
+                true
+            )"
+
+            echo "VERSION_ATTEMPT=$attempt COMMIT=$COMMIT RUN_ID=$RUN_ID"
+
+            if [[ "$COMMIT" == "$GITHUB_SHA" &&
+                  "$RUN_ID" == "$GITHUB_RUN_ID" ]]; then
+              printf '%s\n' "$VERSION" | jq .
+              exit 0
+            fi
+
+            sleep 5
+          done
+
+          echo "ERROR: production version did not confirm exact SHA/run" >&2
+          printf '%s\n' "$VERSION" >&2
+          exit 1
+
+      - name: Verify ventilation redirects
+        shell: bash
+        timeout-minutes: 4
+        run: |
+          set -euo pipefail
+
+          BASE_URL="https://mospochin.ru"
+          PASS=0
+
+          while IFS='|' read -r SOURCE TARGET; do
+            HEADERS="$(
+              curl \
+                -sS \
+                --retry 8 \
+                --retry-delay 3 \
+                --retry-all-errors \
+                --connect-timeout 8 \
+                --max-time 25 \
+                -D - \
+                -o /dev/null \
+                "${BASE_URL}${SOURCE}?run=${GITHUB_RUN_ID}"
+            )"
+
+            CODE="$(
+              printf '%s\n' "$HEADERS" |
+                awk '/^HTTP\// {value=$2} END {print value}'
+            )"
+
+            LOCATION="$(
+              printf '%s\n' "$HEADERS" |
+                awk '
+                  BEGIN {IGNORECASE=1}
+                  /^location:/ {
+                    sub(/\r$/, "")
+                    sub(/^[^:]+:[[:space:]]*/, "")
+                    print
+                    exit
+                  }
+                '
+            )"
+
+            LOCATION_PATH="$LOCATION"
+            LOCATION_PATH="${LOCATION_PATH#${BASE_URL}}"
+            LOCATION_PATH="${LOCATION_PATH%%\?*}"
+
+            echo "HTTP=$CODE SOURCE=$SOURCE LOCATION=${LOCATION:-none} EXPECTED=$TARGET"
+
+            if [[ "$CODE" == "301" && "$LOCATION_PATH" == "$TARGET" ]]; then
+              PASS=$((PASS + 1))
+            else
+              exit 1
+            fi
+          done <<'REDIRECTS'
+          /chto-proveryaet-inzhener-ventilyatsii.html|/diagnostika-ventilyatsii-restorana.html
+          /kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html|/diagnostika-ventilyatsii-restorana.html
+          /kak-ponyat-chto-nuzhna-chistka-ventilyatsii.html|/chistka-ventilyatsii-restoranov.html
+          /kanalnaya-ventilyatsiya-restorana.html|/remont-vozduhovodov-restorana.html
+          /oshibki-pri-ekspluatatsii-vytyazhki-restorana.html|/chek-list-ventilyatsii-restorana.html
+          /pochemu-vytyazhka-ne-tyanet-v-restorane.html|/ventilyatsiya-restorana-ne-tyanet.html
+          /ventilyatsiya-i-posudomoechnaya-zona.html|/ventilyatsiya-moechnoj-zony.html
+          /ventilyatsiya-kafe.html|/ventilyatsiya-restoranov.html
+          REDIRECTS
+
+          echo "REDIRECTS=$PASS/8"
+          [[ "$PASS" == "8" ]]
+
+      - name: Verify ventilation assets
+        shell: bash
+        timeout-minutes: 4
+        run: |
+          set -euo pipefail
+
+          for PATHNAME in \
+            /ventilyatsiya-restoranov.html \
+            /remont-ventilyatsii-restoranov.html \
+            /ventilation-navigation.css \
+            /ventilation-conversion.css \
+            /ventilation-conversion.js \
+            /ventilation-media.css \
+            /data/ventilation-navigation.json \
+            /data/ventilation-conversion-pages.json \
+            /data/ventilation-media-map.json \
+            /data/ventilation-redirects.json
+          do
+            META="$(
+              curl \
+                -sS \
+                --retry 8 \
+                --retry-delay 3 \
+                --retry-all-errors \
+                --connect-timeout 8 \
+                --max-time 25 \
+                -o /dev/null \
+                -w '%{http_code}\t%{size_download}' \
+                "https://mospochin.ru${PATHNAME}?run=${GITHUB_RUN_ID}"
+            )"
+
+            CODE="${META%%$'\t'*}"
+            SIZE="${META#*$'\t'}"
+
+            echo "HTTP=$CODE SIZE=$SIZE PATH=$PATHNAME"
+
+            [[ "$CODE" == "200" ]]
+            [[ "${SIZE%%.*}" -gt 0 ]]
+          done
+
+          echo "ASSETS=10/10"
+
+      - name: Write summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## MosPochin emergency GitHub-only recovery"
+            echo
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Run: \`${GITHUB_RUN_ID}\`"
+            echo "- Local direct VPS access: **no**"
+            echo "- Recovery channel: **GitHub Actions**"
+            echo "- Deployment command: \`mospochin-deploy-git\`"
+          } >> "$GITHUB_STEP_SUMMARY"
