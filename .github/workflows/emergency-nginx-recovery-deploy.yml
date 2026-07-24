@@ -130,7 +130,7 @@ jobs:
           print(f"REMOVED_RUNTIME_HARDENING_INCLUDES={count}")
           PY
 
-          # Handle a non-symlink enabled copy only when it is a distinct regular file.
+          # Handle a non-symlink enabled copy without a nested heredoc.
           if [[ -f "$ENABLED" && ! -L "$ENABLED" ]]; then
             SITE_REAL="$(readlink -f "$SITE")"
             ENABLED_REAL="$(readlink -f "$ENABLED")"
@@ -138,27 +138,33 @@ jobs:
             if [[ "$SITE_REAL" != "$ENABLED_REAL" ]]; then
               cp -a "$ENABLED" "${ENABLED}.github-recovery-${STAMP}.bak"
 
-              python3 - "$ENABLED" <<'PY'
-              from pathlib import Path
-              import re
-              import sys
+              ENABLED_COUNT="$(
+                python3 -c '
+          from pathlib import Path
+          import re
+          import sys
 
-              path = Path(sys.argv[1])
-              original = path.read_text(encoding="utf-8")
-              pattern = re.compile(
-                  r"(?m)^[ \t]*include[ \t]+"
-                  r"(?:/etc/nginx/)?snippets/"
-                  r"mospochin-runtime-hardening\.conf;"
-                  r"[ \t]*(?:\n|$)"
-              )
-              repaired, count = pattern.subn("", original)
-              if count:
-                  tmp = path.with_name(path.name + ".github-recovery.tmp")
-                  tmp.write_text(repaired.rstrip() + "\n", encoding="utf-8")
-                  tmp.chmod(path.stat().st_mode)
-                  tmp.replace(path)
-              print(f"REMOVED_ENABLED_COPY_INCLUDES={count}")
-              PY
+          path = Path(sys.argv[1])
+          original = path.read_text(encoding="utf-8")
+          pattern = re.compile(
+              r"(?m)^[ \\t]*include[ \\t]+"
+              r"(?:/etc/nginx/)?snippets/"
+              r"mospochin-runtime-hardening\\.conf;"
+              r"[ \\t]*(?:\\n|$)"
+          )
+          repaired, count = pattern.subn("", original)
+
+          if count:
+              tmp = path.with_name(path.name + ".github-recovery.tmp")
+              tmp.write_text(repaired.rstrip() + "\\n", encoding="utf-8")
+              tmp.chmod(path.stat().st_mode)
+              tmp.replace(path)
+
+          print(count)
+          ' "$ENABLED"
+              )"
+
+              echo "REMOVED_ENABLED_COPY_INCLUDES=$ENABLED_COUNT"
             fi
           fi
 
