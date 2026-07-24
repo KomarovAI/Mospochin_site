@@ -1,0 +1,1659 @@
+{
+  "version": "run-12-2026-07-22",
+  "pages": [
+    {
+      "page": "avtomatika-ventilyatsii-restorana.html",
+      "label": "Автоматика вентиляции ресторана",
+      "role": "system",
+      "primary_system": "automation_electrics",
+      "media_type": "diagram",
+      "media_id": "automation-chain",
+      "title": "Цепь запуска вентиляционной установки",
+      "asset_url": "/assets/images/ventilation-media-20260722/automation-chain.svg"
+    },
+    {
+      "page": "chek-list-ventilyatsii-restorana.html",
+      "label": "Чек-лист вентиляции ресторана",
+      "role": "reference",
+      "primary_system": "operations_safety",
+      "media_type": "diagram",
+      "media_id": "operations-checklist",
+      "title": "Что может безопасно проверить персонал",
+      "asset_url": "/assets/images/ventilation-media-20260722/operations-checklist.svg"
+    },
+    {
+      "page": "chem-otlichaetsya-pritok-ot-vytyazhki.html",
+      "label": "Чем приток отличается от вытяжки",
+      "role": "reference",
+      "primary_system": "air_balance",
+      "media_type": "photo",
+      "media_id": "clean-duct-damper",
+      "title": "Доступный участок канала и заслонка",
+      "asset_url": "/assets/images/ventilation-media-20260722/clean-duct-damper-1200w.jpg"
+    },
+    {
+      "page": "chistka-ventilyatsii-restoranov.html",
+      "label": "Чистка вентиляции ресторанов и кафе",
+      "role": "service",
+      "primary_system": "cleaning_hygiene",
+      "media_type": "diagram",
+      "media_id": "cleaning-zones",
+      "title": "Зоны очистки вентиляции",
+      "asset_url": "/assets/images/ventilation-media-20260722/cleaning-zones.svg"
+    },
+    {
+      "page": "diagnostika-ventilyatsii-restorana.html",
+      "label": "Диагностика вентиляции ресторана перед ремонтом",
+      "role": "service",
+      "primary_system": "diagnostics",
+      "media_type": "diagram",
+      "media_id": "diagnostics-route",
+      "title": "Диагностика до назначения ремонта",
+      "asset_url": "/assets/images/ventilation-media-20260722/diagnostics-route.svg"
+    },
+    {
+      "page": "dym-na-kuhne-restorana.html",
+      "label": "Дым и гарь на кухне ресторана",
+      "role": "symptom_emergency",
+      "primary_system": "air_capture",
+      "media_type": "diagram",
+      "media_id": "cleaning-zones",
+      "title": "Зоны очистки вентиляции",
+      "asset_url": "/assets/images/ventilation-media-20260722/cleaning-zones.svg"
+    },
+    {
+      "page": "kak-rabotaet-ventilyatsiya-restorana.html",
+      "label": "Как работает вентиляция ресторана",
+      "role": "reference",
+      "primary_system": "air_balance",
+      "media_type": "photo",
+      "media_id": "attic-duct",
+      "title": "Магистраль в технической зоне",
+      "asset_url": "/assets/images/ventilation-media-20260722/attic-duct-768w.jpg"
+    },
+    {
+      "page": "kryshnye-ventilyatory-restorana.html",
+      "label": "Крышные вентиляторы ресторана",
+      "role": "system",
+      "primary_system": "fan_drive",
+      "media_type": "photo",
+      "media_id": "exterior-route",
+      "title": "Наружная трасса и точка выброса",
+      "asset_url": "/assets/images/ventilation-media-20260722/exterior-route-768w.jpg"
+    },
+    {
+      "page": "mestnaya-vytyazhka-nad-oborudovaniem.html",
+      "label": "Местная вытяжка над оборудованием кухни",
+      "role": "system",
+      "primary_system": "hood_capture",
+      "media_type": "diagram",
+      "media_id": "hood-capture",
+      "title": "Зона захвата вытяжного зонта",
+      "asset_url": "/assets/images/ventilation-media-20260722/hood-capture.svg"
+    },
+    {
+      "page": "obratnaya-tyaga-v-restorane.html",
+      "label": "Обратная тяга в ресторане",
+      "role": "symptom",
+      "primary_system": "air_balance",
+      "media_type": "diagram",
+      "media_id": "reverse-draft",
+      "title": "Как возникает обратная тяга",
+      "asset_url": "/assets/images/ventilation-media-20260722/reverse-draft.svg"
+    },
+    {
+      "page": "obsluzhivanie-ventilyatsii-restoranov.html",
+      "label": "Обслуживание вентиляции ресторанов",
+      "role": "service",
+      "primary_system": "maintenance",
+      "media_type": "diagram",
+      "media_id": "maintenance-route",
+      "title": "Контроль состояния между отказами",
+      "asset_url": "/assets/images/ventilation-media-20260722/maintenance-route.svg"
+    },
+    {
+      "page": "peregrev-kuhni-restorana.html",
+      "label": "Жарко на кухне ресторана",
+      "role": "symptom",
+      "primary_system": "air_balance",
+      "media_type": "photo",
+      "media_id": "hood-underside",
+      "title": "Зонт и зона захвата над оборудованием",
+      "asset_url": "/assets/images/ventilation-media-20260722/hood-underside-1200w.jpg"
+    },
+    {
+      "page": "posle-remonta-kuhni-ventilyatsiya-huzhe.html",
+      "label": "После ремонта кухни вентиляция стала хуже",
+      "role": "scenario",
+      "primary_system": "air_balance",
+      "media_type": "diagram",
+      "media_id": "layout-change",
+      "title": "Почему после перестановки кухни стало хуже",
+      "asset_url": "/assets/images/ventilation-media-20260722/layout-change.svg"
+    },
+    {
+      "page": "pritochnaya-ventilyatsiya-restorana.html",
+      "label": "Приточная вентиляция ресторана",
+      "role": "system_hub",
+      "primary_system": "supply_air",
+      "media_type": "diagram",
+      "media_id": "supply-air",
+      "title": "Путь приточного воздуха",
+      "asset_url": "/assets/images/ventilation-media-20260722/supply-air.svg"
+    },
+    {
+      "page": "pritochno-vytyazhnaya-ventilyatsiya-restorana.html",
+      "label": "Приточно-вытяжная вентиляция ресторана",
+      "role": "system_hub",
+      "primary_system": "air_balance",
+      "media_type": "diagram",
+      "media_id": "supply-exhaust-balance",
+      "title": "Баланс притока и вытяжки",
+      "asset_url": "/assets/images/ventilation-media-20260722/supply-exhaust-balance.svg"
+    },
+    {
+      "page": "remont-pritochnoj-ventilyatsii-restorana.html",
+      "label": "Ремонт приточной вентиляции ресторана",
+      "role": "service",
+      "primary_system": "supply_air",
+      "media_type": "diagram",
+      "media_id": "fan-drive",
+      "title": "Привод вентилятора",
+      "asset_url": "/assets/images/ventilation-media-20260722/fan-drive.svg"
+    },
+    {
+      "page": "remont-ventilyatora-vytyazhki-restorana.html",
+      "label": "Ремонт вентилятора вытяжки ресторана",
+      "role": "service",
+      "primary_system": "fan_drive",
+      "media_type": "diagram",
+      "media_id": "fan-drive",
+      "title": "Привод вентилятора",
+      "asset_url": "/assets/images/ventilation-media-20260722/fan-drive.svg"
+    },
+    {
+      "page": "remont-ventilyatsii-restoranov.html",
+      "label": "Ремонт вентиляции ресторанов и кафе",
+      "role": "service_hub",
+      "primary_system": "repair",
+      "media_type": "diagram",
+      "media_id": "diagnostics-route",
+      "title": "Диагностика до назначения ремонта",
+      "asset_url": "/assets/images/ventilation-media-20260722/diagnostics-route.svg"
+    },
+    {
+      "page": "remont-vozduhovodov-restorana.html",
+      "label": "Ремонт воздуховодов ресторана",
+      "role": "service",
+      "primary_system": "ductwork",
+      "media_type": "diagram",
+      "media_id": "exhaust-system",
+      "title": "Путь вытяжного воздуха",
+      "asset_url": "/assets/images/ventilation-media-20260722/exhaust-system.svg"
+    },
+    {
+      "page": "remont-vytyazhki-restorana.html",
+      "label": "Ремонт вытяжки на кухне ресторана",
+      "role": "service",
+      "primary_system": "exhaust_air",
+      "media_type": "diagram",
+      "media_id": "exhaust-system",
+      "title": "Путь вытяжного воздуха",
+      "asset_url": "/assets/images/ventilation-media-20260722/exhaust-system.svg"
+    },
+    {
+      "page": "remont-zhirovyh-filtrov-vytyazhki.html",
+      "label": "Ремонт и обслуживание жировых фильтров вытяжки",
+      "role": "service",
+      "primary_system": "filters_grease",
+      "media_type": "diagram",
+      "media_id": "filter-cassette",
+      "title": "Жировой фильтр как рабочий узел",
+      "asset_url": "/assets/images/ventilation-media-20260722/filter-cassette.svg"
+    },
+    {
+      "page": "shumit-vytyazhka-restorana.html",
+      "label": "Шумит вытяжка ресторана",
+      "role": "symptom",
+      "primary_system": "noise_vibration",
+      "media_type": "photo",
+      "media_id": "motor-shaft",
+      "title": "Вал и механическая часть привода",
+      "asset_url": "/assets/images/ventilation-media-20260722/motor-shaft-1080w.jpg"
+    },
+    {
+      "page": "slabyj-pritok-vozduha-restoran.html",
+      "label": "Слабый приток воздуха в ресторане",
+      "role": "symptom",
+      "primary_system": "supply_air",
+      "media_type": "diagram",
+      "media_id": "supply-air",
+      "title": "Путь приточного воздуха",
+      "asset_url": "/assets/images/ventilation-media-20260722/supply-air.svg"
+    },
+    {
+      "page": "techet-kondensat-iz-ventilyatsii.html",
+      "label": "Конденсат из вентиляции на кухне ресторана",
+      "role": "symptom",
+      "primary_system": "ductwork_condensate",
+      "media_type": "diagram",
+      "media_id": "condensation",
+      "title": "Как появляется конденсат",
+      "asset_url": "/assets/images/ventilation-media-20260722/condensation.svg"
+    },
+    {
+      "page": "ventilyator-vytyazhki-ne-vklyuchaetsya.html",
+      "label": "Не включается вентилятор вытяжки ресторана",
+      "role": "symptom",
+      "primary_system": "fan_drive",
+      "media_type": "diagram",
+      "media_id": "fan-drive",
+      "title": "Привод вентилятора",
+      "asset_url": "/assets/images/ventilation-media-20260722/fan-drive.svg"
+    },
+    {
+      "page": "ventilyator-vytyazhki-vybivaet-avtomat.html",
+      "label": "Вентилятор вытяжки выбивает автомат",
+      "role": "symptom_emergency",
+      "primary_system": "electrical_fault",
+      "media_type": "diagram",
+      "media_id": "electrical-fault",
+      "title": "Почему срабатывает электрическая защита",
+      "asset_url": "/assets/images/ventilation-media-20260722/electrical-fault.svg"
+    },
+    {
+      "page": "ventilyatsionnye-zonty-restorana.html",
+      "label": "Вентиляционные зонты ресторана",
+      "role": "system",
+      "primary_system": "hood_capture",
+      "media_type": "diagram",
+      "media_id": "hood-capture",
+      "title": "Зона захвата вытяжного зонта",
+      "asset_url": "/assets/images/ventilation-media-20260722/hood-capture.svg"
+    },
+    {
+      "page": "ventilyatsiya-dark-kitchen.html",
+      "label": "Вентиляция дарк-кухня",
+      "role": "object",
+      "primary_system": "object_dark_kitchen",
+      "media_type": "photo",
+      "media_id": "restaurant-overview",
+      "title": "Осмотр вытяжной системы на работающей кухне",
+      "asset_url": "/assets/images/ventilation-media-20260722/restaurant-overview-1200w.jpg"
+    },
+    {
+      "page": "ventilyatsiya-fudkorta.html",
+      "label": "Вентиляция фудкорта",
+      "role": "object",
+      "primary_system": "object_food_court",
+      "media_type": "photo",
+      "media_id": "exterior-route",
+      "title": "Наружная трасса и точка выброса",
+      "asset_url": "/assets/images/ventilation-media-20260722/exterior-route-768w.jpg"
+    },
+    {
+      "page": "ventilyatsiya-i-gril-v-restorane.html",
+      "label": "Вентиляция и гриль в ресторане",
+      "role": "equipment_context",
+      "primary_system": "hood_capture",
+      "media_type": "photo",
+      "media_id": "hood-underside",
+      "title": "Зонт и зона захвата над оборудованием",
+      "asset_url": "/assets/images/ventilation-media-20260722/hood-underside-1200w.jpg"
+    },
+    {
+      "page": "ventilyatsiya-i-holodilnoe-oborudovanie.html",
+      "label": "Вентиляция и холодильное оборудование",
+      "role": "equipment_context",
+      "primary_system": "heat_balance",
+      "media_type": "diagram",
+      "media_id": "heat-balance",
+      "title": "Тепловая нагрузка кухни",
+      "asset_url": "/assets/images/ventilation-media-20260722/heat-balance.svg"
+    },
+    {
+      "page": "ventilyatsiya-i-parokonvektomat.html",
+      "label": "Вентиляция и пароконвектомат",
+      "role": "equipment_context",
+      "primary_system": "steam_heat",
+      "media_type": "diagram",
+      "media_id": "steam-heat",
+      "title": "Пар и тепло от пароконвектомата",
+      "asset_url": "/assets/images/ventilation-media-20260722/steam-heat.svg"
+    },
+    {
+      "page": "ventilyatsiya-moechnoj-zony.html",
+      "label": "Вентиляция моечной зоны",
+      "role": "object",
+      "primary_system": "wash_zone",
+      "media_type": "diagram",
+      "media_id": "wash-zone",
+      "title": "Влага в моечной зоне",
+      "asset_url": "/assets/images/ventilation-media-20260722/wash-zone.svg"
+    },
+    {
+      "page": "ventilyatsiya-pekarni.html",
+      "label": "Вентиляция пекарни",
+      "role": "object",
+      "primary_system": "object_bakery",
+      "media_type": "diagram",
+      "media_id": "object-bakery",
+      "title": "Воздухообмен пекарни",
+      "asset_url": "/assets/images/ventilation-media-20260722/object-bakery.svg"
+    },
+    {
+      "page": "ventilyatsiya-restorana-ne-tyanet.html",
+      "label": "Вентиляция ресторана не тянет",
+      "role": "symptom",
+      "primary_system": "airflow_fault",
+      "media_type": "diagram",
+      "media_id": "airflow-fault",
+      "title": "Почему система работает, но не тянет",
+      "asset_url": "/assets/images/ventilation-media-20260722/airflow-fault.svg"
+    },
+    {
+      "page": "ventilyatsiya-restoranov.html",
+      "label": "Вентиляция ресторанов",
+      "role": "cluster_hub",
+      "primary_system": "cluster",
+      "media_type": "diagram",
+      "media_id": "system-overview",
+      "title": "Как связаны элементы ресторанной вентиляции",
+      "asset_url": "/assets/images/ventilation-media-20260722/system-overview.svg"
+    },
+    {
+      "page": "ventilyatsiya-stolovoj.html",
+      "label": "Вентиляция столовой",
+      "role": "object",
+      "primary_system": "object_canteen",
+      "media_type": "diagram",
+      "media_id": "object-canteen",
+      "title": "Вентиляция столовой",
+      "asset_url": "/assets/images/ventilation-media-20260722/object-canteen.svg"
+    },
+    {
+      "page": "vibriruet-ventilyator-vytyazhki.html",
+      "label": "Вибрирует вентилятор вытяжки ресторана",
+      "role": "symptom_emergency",
+      "primary_system": "noise_vibration",
+      "media_type": "diagram",
+      "media_id": "vibration",
+      "title": "Передача вибрации по вентиляционной системе",
+      "asset_url": "/assets/images/ventilation-media-20260722/vibration.svg"
+    },
+    {
+      "page": "vytyazhka-restorana-ne-rabotaet.html",
+      "label": "Вытяжка ресторана не работает",
+      "role": "symptom",
+      "primary_system": "exhaust_air",
+      "media_type": "diagram",
+      "media_id": "exhaust-system",
+      "title": "Путь вытяжного воздуха",
+      "asset_url": "/assets/images/ventilation-media-20260722/exhaust-system.svg"
+    },
+    {
+      "page": "vytyazhnaya-ventilyatsiya-restorana.html",
+      "label": "Вытяжная вентиляция ресторана",
+      "role": "system_hub",
+      "primary_system": "exhaust_air",
+      "media_type": "photo",
+      "media_id": "attic-duct",
+      "title": "Магистраль в технической зоне",
+      "asset_url": "/assets/images/ventilation-media-20260722/attic-duct-768w.jpg"
+    },
+    {
+      "page": "zapah-iz-kuhni-v-zal.html",
+      "label": "Запах из кухни попадает в зал",
+      "role": "symptom",
+      "primary_system": "odor_migration",
+      "media_type": "diagram",
+      "media_id": "odor-migration",
+      "title": "Как запах попадает из кухни в зал",
+      "asset_url": "/assets/images/ventilation-media-20260722/odor-migration.svg"
+    },
+    {
+      "page": "zasorilas-vytyazhka-restorana.html",
+      "label": "Засорилась вытяжка ресторана",
+      "role": "symptom",
+      "primary_system": "filters_grease",
+      "media_type": "photo",
+      "media_id": "greasy-damper",
+      "title": "Жировые отложения в зоне заслонки",
+      "asset_url": "/assets/images/ventilation-media-20260722/greasy-damper-1200w.jpg"
+    },
+    {
+      "page": "zhaloby-na-zapah-restorana.html",
+      "label": "Жалобы на запах из ресторана",
+      "role": "scenario",
+      "primary_system": "odor_external",
+      "media_type": "diagram",
+      "media_id": "odor-external",
+      "title": "Как запах выходит за пределы ресторана",
+      "asset_url": "/assets/images/ventilation-media-20260722/odor-external.svg"
+    },
+    {
+      "page": "zhir-v-vozduhovodah-restorana.html",
+      "label": "Жир в воздуховодах ресторана",
+      "role": "symptom",
+      "primary_system": "filters_grease",
+      "media_type": "photo",
+      "media_id": "greasy-depth",
+      "title": "Загрязнение глубины воздуховода",
+      "asset_url": "/assets/images/ventilation-media-20260722/greasy-depth-768w.jpg"
+    }
+  ],
+  "photos": {
+    "restaurant-overview": {
+      "type": "photo",
+      "source": "assets/images/responsive/restaurant-ventilation-hero-1200w.jpg",
+      "title": "Осмотр вытяжной системы на работающей кухне",
+      "alt": "Осмотр фильтра и нижней части вытяжного зонта на ресторанной кухне",
+      "caption": "Реальный объект: состояние зонта, фильтров и доступных элементов оценивается вместе с работой кухни.",
+      "source_original": "/assets/images/responsive/restaurant-ventilation-hero-1200w.jpg",
+      "original_width": 1200,
+      "original_height": 750,
+      "variants": [
+        {
+          "width": 480,
+          "height": 300,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/restaurant-overview-480w.jpg",
+          "bytes": 26190,
+          "sha256": "88be9068129730663104cd566992e329f3053d3780e0ac9b2741a62b2ace1120"
+        },
+        {
+          "width": 480,
+          "height": 300,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/restaurant-overview-480w.webp",
+          "bytes": 16176,
+          "sha256": "aeb4831954af048d72afdbdd17f15169b4f2efac6ef28284ef9f7bdf0441b4d2"
+        },
+        {
+          "width": 768,
+          "height": 480,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/restaurant-overview-768w.jpg",
+          "bytes": 55511,
+          "sha256": "9996971f1b2a06ec16effd0e983955ce50e6868ddcee903321219be5a2eb08e7"
+        },
+        {
+          "width": 768,
+          "height": 480,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/restaurant-overview-768w.webp",
+          "bytes": 31802,
+          "sha256": "937cf62512e54cad3cb0119f01315b56c1b82907303aeee74276e4122893c1e8"
+        },
+        {
+          "width": 1080,
+          "height": 675,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/restaurant-overview-1080w.jpg",
+          "bytes": 94885,
+          "sha256": "59cec160323ef292d61b5d89647d439b9c053b9cb0e7ee01c30ca510dd7bcef9"
+        },
+        {
+          "width": 1080,
+          "height": 675,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/restaurant-overview-1080w.webp",
+          "bytes": 51078,
+          "sha256": "fdb28655739dcec5e1f7252a2ed0ac24d69ab42ee9eada2884a0ad8be1f920e2"
+        },
+        {
+          "width": 1200,
+          "height": 750,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/restaurant-overview-1200w.jpg",
+          "bytes": 104652,
+          "sha256": "8962e0a01aa940ef5648919bce9f733e73559607632f7ed827eae3f6640da765"
+        },
+        {
+          "width": 1200,
+          "height": 750,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/restaurant-overview-1200w.webp",
+          "bytes": 59438,
+          "sha256": "7e5bdebad61c73532c155e16017fa1c8d173832d4db7fdfcedeff7d677c7c822"
+        }
+      ]
+    },
+    "hood-underside": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-restaurant-hood-underside-1200w.jpg",
+      "title": "Зонт и зона захвата над оборудованием",
+      "alt": "Нижняя часть вытяжного зонта над ресторанным тепловым оборудованием",
+      "caption": "Положение оборудования, вылет зонта и состояние фильтров напрямую влияют на локальный захват.",
+      "source_original": "/assets/images/responsive/ventilation-restaurant-hood-underside-1200w.jpg",
+      "original_width": 1200,
+      "original_height": 900,
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/hood-underside-480w.jpg",
+          "bytes": 34601,
+          "sha256": "133814416c39b1453b49d1f8aee1c437629cce46c1f2785e714903197edbd997"
+        },
+        {
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/hood-underside-480w.webp",
+          "bytes": 20540,
+          "sha256": "a6b1eb0a8cbef9e600edbdbb4f0a1b41cf3848272f5aa3e8afe04167670844cd"
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/hood-underside-768w.jpg",
+          "bytes": 76304,
+          "sha256": "d3af48b9837f34bf07278e22ab5123dd027dade2ed63c859618e66b89f0c70ce"
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/hood-underside-768w.webp",
+          "bytes": 43702,
+          "sha256": "d3e3c5b9746a79e6467d73e5033ef8aa5a95c4184064cbeaaa00fa0e90d43544"
+        },
+        {
+          "width": 1080,
+          "height": 810,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/hood-underside-1080w.jpg",
+          "bytes": 133783,
+          "sha256": "1807fb2fa0f5ca5c2fed5afb0be18003f0421ec16c0068e6e49480bbf73d59e8"
+        },
+        {
+          "width": 1080,
+          "height": 810,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/hood-underside-1080w.webp",
+          "bytes": 72614,
+          "sha256": "fdbc2ae06cf562d1a904105062ca3ab45999faecdb0e787d6550fe6b802195cd"
+        },
+        {
+          "width": 1200,
+          "height": 900,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/hood-underside-1200w.jpg",
+          "bytes": 148469,
+          "sha256": "69e9b299736af5be0f9172e4e6202d4d1fdbd2d3de2853c50ccca3b3cf8ba9c7"
+        },
+        {
+          "width": 1200,
+          "height": 900,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/hood-underside-1200w.webp",
+          "bytes": 86194,
+          "sha256": "aa64b4a9585300fd6fbccf410a08502fb8ccd25cc6600af93cd75150ec14e28e"
+        }
+      ]
+    },
+    "clean-filters": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-clean-baffle-filters-1200w.jpg",
+      "title": "Жироулавливающие фильтры после очистки",
+      "alt": "Чистые лабиринтные жировые фильтры ресторанного вытяжного зонта",
+      "caption": "Фильтры должны быть исправны, правильно установлены и не оставлять обходных зазоров.",
+      "source_original": "/assets/images/responsive/ventilation-clean-baffle-filters-1200w.jpg",
+      "original_width": 1200,
+      "original_height": 902,
+      "variants": [
+        {
+          "width": 480,
+          "height": 361,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/clean-filters-480w.jpg",
+          "bytes": 41283,
+          "sha256": "5e2a069e1af6a9e478f88cf3a9dd7b46d2deb592c4b99551c52f7639c000c2ee"
+        },
+        {
+          "width": 480,
+          "height": 361,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/clean-filters-480w.webp",
+          "bytes": 27016,
+          "sha256": "a7b4487b889aa430311d9a54b642ccb9d1cefdf59577bf6319c9c44cbf03b91b"
+        },
+        {
+          "width": 768,
+          "height": 577,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/clean-filters-768w.jpg",
+          "bytes": 90991,
+          "sha256": "1f7a5f5510427192d284e4b89e7fa233590bd6c87f9984369b02373e01f9f58c"
+        },
+        {
+          "width": 768,
+          "height": 577,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/clean-filters-768w.webp",
+          "bytes": 56386,
+          "sha256": "4e3b967f10b4466cff7b71c4e4f7751be4d6fc2ea5572bdada9672bf0f6668ad"
+        },
+        {
+          "width": 1080,
+          "height": 812,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/clean-filters-1080w.jpg",
+          "bytes": 157307,
+          "sha256": "19b37ddd8c09916095ee6620e152a8ce36c3bef7fdc4c60e791d951cc43d9608"
+        },
+        {
+          "width": 1080,
+          "height": 812,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/clean-filters-1080w.webp",
+          "bytes": 92146,
+          "sha256": "29307880fe5b8f04378f7ea0746532cb30ba75b4c053bf9c5da86a3bb273f8eb"
+        },
+        {
+          "width": 1200,
+          "height": 902,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/clean-filters-1200w.jpg",
+          "bytes": 175481,
+          "sha256": "92ecdecb9f0f5f275a3b44807aac770c36109ba9d4c7a931c3a5e866f60b9700"
+        },
+        {
+          "width": 1200,
+          "height": 902,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/clean-filters-1200w.webp",
+          "bytes": 107940,
+          "sha256": "d2bb802120b21a78173d0a4c81cc1e349baf7a696821c6fe58aa548898cd2bf8"
+        }
+      ]
+    },
+    "clean-duct-damper": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-clean-duct-interior-with-damper-1200w.jpg",
+      "title": "Доступный участок канала и заслонка",
+      "alt": "Очищенный участок вентиляционного воздуховода с регулирующей заслонкой",
+      "caption": "Даже при чистом канале положение заслонки и состояние привода проверяются отдельно.",
+      "source_original": "/assets/images/responsive/ventilation-clean-duct-interior-with-damper-1200w.jpg",
+      "original_width": 1200,
+      "original_height": 900,
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/clean-duct-damper-480w.jpg",
+          "bytes": 41548,
+          "sha256": "6245ea696fc578900ec7ad5e451b96c510e7f6eca98f1f8699224552b116dec6"
+        },
+        {
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/clean-duct-damper-480w.webp",
+          "bytes": 28420,
+          "sha256": "a21ec0b28cb0feae1f2f6e63ea1f38ba1497ebfd5ded7c69ffc356e1331863cf"
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/clean-duct-damper-768w.jpg",
+          "bytes": 98802,
+          "sha256": "6eb54ccc11d741ea9a7af577000fbcc11d5f4cd31b699b3a6cbe279a697bad0c"
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/clean-duct-damper-768w.webp",
+          "bytes": 68948,
+          "sha256": "0df94e79fef7501115d929fabfeb6bf3db6c1bbf1938fc08d8111ab1efbaa3bd"
+        },
+        {
+          "width": 1080,
+          "height": 810,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/clean-duct-damper-1080w.jpg",
+          "bytes": 178175,
+          "sha256": "dd99262ea2602c975fcc388b72adf75eccb91a371f0b6e0b600989fc0a2151c4"
+        },
+        {
+          "width": 1080,
+          "height": 810,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/clean-duct-damper-1080w.webp",
+          "bytes": 116546,
+          "sha256": "20df8dfa6c1bcac7928e15004344f7d0976affafefe9c51dc2c750098aae35cc"
+        },
+        {
+          "width": 1200,
+          "height": 900,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/clean-duct-damper-1200w.jpg",
+          "bytes": 208173,
+          "sha256": "8cf3980acd3e5b46ccffff4386dd268206490a2304f93f33768153a145134cd2"
+        },
+        {
+          "width": 1200,
+          "height": 900,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/clean-duct-damper-1200w.webp",
+          "bytes": 136976,
+          "sha256": "a4aa0ce275ad29971d0af3f36b21ab7578f20241f42f0029519d0aae809ab77f"
+        }
+      ]
+    },
+    "greasy-damper": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-greasy-duct-damper-1200w.jpg",
+      "title": "Жировые отложения в зоне заслонки",
+      "alt": "Жировые загрязнения внутри воздуховода возле вентиляционной заслонки",
+      "caption": "Отложения сужают проход, мешают работе заслонки и повышают пожарную нагрузку.",
+      "source_original": "/assets/images/responsive/ventilation-greasy-duct-damper-1200w.jpg",
+      "original_width": 1200,
+      "original_height": 900,
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/greasy-damper-480w.jpg",
+          "bytes": 41742,
+          "sha256": "580582e85d7bfa24d1a5955da813bbf64d6c9996da607a528a727903702dc003"
+        },
+        {
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/greasy-damper-480w.webp",
+          "bytes": 30218,
+          "sha256": "8b65a4dcff2ce4194e3813a3f60126b25895de2ef25bebf850a25e004d5994e2"
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/greasy-damper-768w.jpg",
+          "bytes": 104094,
+          "sha256": "1ccf5560456782e22986b44b91e338e5f586e0c1815134d0553045fe82909c9e"
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/greasy-damper-768w.webp",
+          "bytes": 76674,
+          "sha256": "d9062e6d2123663c6e1e2eeeb4183c546d5c9c3518819f56e95c4c52bf8dd2b5"
+        },
+        {
+          "width": 1080,
+          "height": 810,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/greasy-damper-1080w.jpg",
+          "bytes": 196428,
+          "sha256": "43c8d7657a099a65529b2355d50bf2c804f3787e199d86248cd237425b2b1719"
+        },
+        {
+          "width": 1080,
+          "height": 810,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/greasy-damper-1080w.webp",
+          "bytes": 139382,
+          "sha256": "9bfa50be1753004da77d86c37e204a492385356b2016fffac8d8029631bc0bad"
+        },
+        {
+          "width": 1200,
+          "height": 900,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/greasy-damper-1200w.jpg",
+          "bytes": 237140,
+          "sha256": "6407bc064ec76e6504de94c7ae6df9999dbb8a81561de532e6473e5c88769036"
+        },
+        {
+          "width": 1200,
+          "height": 900,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/greasy-damper-1200w.webp",
+          "bytes": 168578,
+          "sha256": "b5dcd42d2b719c8bb39bc53bdf21093828deee714022669c9e3848d2312d5422"
+        }
+      ]
+    },
+    "greasy-depth": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-greasy-duct-interior-depth-768w.jpg",
+      "title": "Загрязнение глубины воздуховода",
+      "alt": "Жировые отложения на внутренних стенках ресторанного воздуховода",
+      "caption": "Граница доступной очистки определяется трассой, люками и безопасным доступом к каналу.",
+      "source_original": "/assets/images/responsive/ventilation-greasy-duct-interior-depth-768w.jpg",
+      "original_width": 768,
+      "original_height": 1026,
+      "variants": [
+        {
+          "width": 480,
+          "height": 641,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/greasy-depth-480w.jpg",
+          "bytes": 92916,
+          "sha256": "700c4b142493e0046789321fa47d08040ffa1af94f475fc5c7d333d046f8c167"
+        },
+        {
+          "width": 480,
+          "height": 641,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/greasy-depth-480w.webp",
+          "bytes": 84360,
+          "sha256": "812ad83f54d1470ed46fa01e0721d4dae888348c643db13b3a226f5f9c55813a"
+        },
+        {
+          "width": 768,
+          "height": 1026,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/greasy-depth-768w.jpg",
+          "bytes": 224228,
+          "sha256": "55fbd4eaf5ab4795146585c8f32c83fe6d5c3608b38160639099b131a9bb160b"
+        },
+        {
+          "width": 768,
+          "height": 1026,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/greasy-depth-768w.webp",
+          "bytes": 194620,
+          "sha256": "faccb274695f7960a876ec0fa2a0fa69e97f2764c46ca57a737666ce4103df0c"
+        }
+      ]
+    },
+    "joint-gap": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-open-duct-joint-gap-1200w.jpg",
+      "title": "Разошедшийся стык воздуховода",
+      "alt": "Открытый зазор в соединении металлического вентиляционного воздуховода",
+      "caption": "Утечка воздуха в стыке снижает фактический расход и может переносить запахи в технические зоны.",
+      "source_original": "/assets/images/responsive/ventilation-open-duct-joint-gap-1200w.jpg",
+      "original_width": 1200,
+      "original_height": 900,
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/joint-gap-480w.jpg",
+          "bytes": 32911,
+          "sha256": "673f2c2ee7631d82f315d6b05e1605c5f9d30debde563b04eadb1c960b616762"
+        },
+        {
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/joint-gap-480w.webp",
+          "bytes": 21374,
+          "sha256": "8af47e51024c0a84f831626209ec9e70627fa3b2f33e2404a40ebd2fe2ba55e3"
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/joint-gap-768w.jpg",
+          "bytes": 78815,
+          "sha256": "393a6074da4be6863328affd44a6038344a029f30be96d6eb2d4e2380effa778"
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/joint-gap-768w.webp",
+          "bytes": 51328,
+          "sha256": "79580f3aab7b1e58d80c999ec3672f5e6e6f0a987baff428432cb63944f2c17b"
+        },
+        {
+          "width": 1080,
+          "height": 810,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/joint-gap-1080w.jpg",
+          "bytes": 144090,
+          "sha256": "3e5f1ab305c14e5a3ce9ec36110479a4692abc72f0893f18f821d271e367d019"
+        },
+        {
+          "width": 1080,
+          "height": 810,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/joint-gap-1080w.webp",
+          "bytes": 90686,
+          "sha256": "1c78957570246ab23bbd82517d86545f634237016a0403ba1a5021ea7c9fd30c"
+        },
+        {
+          "width": 1200,
+          "height": 900,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/joint-gap-1200w.jpg",
+          "bytes": 167460,
+          "sha256": "a5ce216e06073d7f76fd9fdd2de346fa667d507898bc162c69416b1ea5fe467e"
+        },
+        {
+          "width": 1200,
+          "height": 900,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/joint-gap-1200w.webp",
+          "bytes": 107656,
+          "sha256": "6a2375d30f81e3d446a1575c33a4d69d39a283cd853d9455c1a0ac414601067e"
+        }
+      ]
+    },
+    "damaged-insulation": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-damaged-duct-insulation-768w.jpg",
+      "title": "Повреждение теплоизоляции канала",
+      "alt": "Повреждённая теплоизоляция вентиляционного воздуховода",
+      "caption": "Намокшая или разорванная изоляция создаёт мостики холода и повышает риск конденсата.",
+      "source_original": "/assets/images/responsive/ventilation-damaged-duct-insulation-768w.jpg",
+      "original_width": 768,
+      "original_height": 1024,
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/damaged-insulation-480w.jpg",
+          "bytes": 86899,
+          "sha256": "84a13167bae22cf2397a53833935357dd4aceddbc40c92f0405159211e5a3511"
+        },
+        {
+          "width": 480,
+          "height": 640,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/damaged-insulation-480w.webp",
+          "bytes": 70114,
+          "sha256": "c1dbb7246290bbce8c0c277acba01c035140039d22b0b514cc48963fb5361f19"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/damaged-insulation-768w.jpg",
+          "bytes": 201216,
+          "sha256": "dfa7cf4a116f11aefaa7e9c69fa3066d8d97093df9dcddc6558aeda5dc8cffad"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/damaged-insulation-768w.webp",
+          "bytes": 164672,
+          "sha256": "e4caf7e80da8586375ea2aa81fc657a858ad8e18029198de1af9179c7b0c4449"
+        }
+      ]
+    },
+    "exterior-route": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-exterior-ventilation-duct-route-768w.jpg",
+      "title": "Наружная трасса и точка выброса",
+      "alt": "Наружный вентиляционный воздуховод ресторана на фасаде здания",
+      "caption": "При внешних жалобах оцениваются трасса, крепления, направление выброса и соседние воздухозаборы.",
+      "source_original": "/assets/images/responsive/ventilation-exterior-ventilation-duct-route-768w.jpg",
+      "original_width": 768,
+      "original_height": 1024,
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/exterior-route-480w.jpg",
+          "bytes": 59908,
+          "sha256": "35e0827620c9a2ad76101f94f4ca3a28ee52b349898118b798c15db84a3548a5"
+        },
+        {
+          "width": 480,
+          "height": 640,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/exterior-route-480w.webp",
+          "bytes": 39458,
+          "sha256": "595751876d12827be6d598e702d381619642ea2a95636c957a061102a022af8c"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/exterior-route-768w.jpg",
+          "bytes": 136254,
+          "sha256": "8e22186c4a1bcb0f4e67413cb92b9764b7c14498cb74787beff2d47dd0f61c9e"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/exterior-route-768w.webp",
+          "bytes": 91274,
+          "sha256": "161faddd5016ef7cd66c1099f015f8b7a21a4806acd8490c6143bb69e9eacfe4"
+        }
+      ]
+    },
+    "attic-duct": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-attic-spiral-duct-run-768w.jpg",
+      "title": "Магистраль в технической зоне",
+      "alt": "Спиральный вентиляционный воздуховод в техническом помещении",
+      "caption": "Подвесы, стыки, заслонки и доступность обслуживания проверяются по всей доступной трассе.",
+      "source_original": "/assets/images/responsive/ventilation-attic-spiral-duct-run-768w.jpg",
+      "original_width": 768,
+      "original_height": 1024,
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/attic-duct-480w.jpg",
+          "bytes": 63270,
+          "sha256": "fe2d793d2015e540a8242e56cf6ee14cfd3c16a77610b9fe471d6d77c4cf20b1"
+        },
+        {
+          "width": 480,
+          "height": 640,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/attic-duct-480w.webp",
+          "bytes": 43244,
+          "sha256": "d9807ad9630748f5086a79440a569141f73173b048e7b1f7bbffce5dc51e1f31"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/attic-duct-768w.jpg",
+          "bytes": 162928,
+          "sha256": "f0953f9395786e8b0f1bf034ea6fe25bf8f17ae8ced8626097454e1aac2dfe1f"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/attic-duct-768w.webp",
+          "bytes": 114500,
+          "sha256": "6244e50ad6876b3161dc9ddf393c92a1f94ff84969b03626568ca75ff13b6c71"
+        }
+      ]
+    },
+    "motor-control": {
+      "type": "photo",
+      "source": "assets/images/service-equipment-20260719/service-motor-control-overview-1080w.jpg",
+      "title": "Электродвигатель и цепь управления",
+      "alt": "Элементы управления и диагностики электродвигателя вентиляционной установки",
+      "caption": "Пусковая цепь проверяется вместе с фактической нагрузкой двигателя и механической частью вентилятора.",
+      "source_original": "/assets/images/service-equipment-20260719/service-motor-control-overview-1080w.jpg",
+      "original_width": 1080,
+      "original_height": 1440,
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-control-480w.jpg",
+          "bytes": 111392,
+          "sha256": "71544ce64355674bbcb01a122f028fbfd5d834ae7174f945435bef4e02e4af60"
+        },
+        {
+          "width": 480,
+          "height": 640,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-control-480w.webp",
+          "bytes": 95244,
+          "sha256": "e527814fbcfd0035b94fc698423dcb6d5ddd2e991791fe0d4d9536b9600b7952"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-control-768w.jpg",
+          "bytes": 267702,
+          "sha256": "9dd796f75ed2e65e68e23902730f3ed4c86c0fa3a5a5c2ec61d05a851828c6dd"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-control-768w.webp",
+          "bytes": 221728,
+          "sha256": "86f2dd4f776983c15604ae5add724be1b9f814ad1b46850ecddcc2baa3c8342e"
+        },
+        {
+          "width": 1080,
+          "height": 1440,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-control-1080w.jpg",
+          "bytes": 498597,
+          "sha256": "6c7f0f2c812497c57b1704b71ebfa66e6f4c1cd5ea8056c9797962c5e78091ca"
+        },
+        {
+          "width": 1080,
+          "height": 1440,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-control-1080w.webp",
+          "bytes": 382662,
+          "sha256": "14ef9dbbaf50dc0c1d5b26ee4a938811316de3928f5c40a24647cc6b331945f1"
+        }
+      ]
+    },
+    "motor-installed": {
+      "type": "photo",
+      "source": "assets/images/service-equipment-20260719/service-drive-motor-installed-1080w.jpg",
+      "title": "Привод вентилятора под нагрузкой",
+      "alt": "Установленный электродвигатель привода промышленного оборудования",
+      "caption": "До замены двигателя проверяются питание, ток, подшипники, крыльчатка, ремень и сопротивление воздушного тракта.",
+      "source_original": "/assets/images/service-equipment-20260719/service-drive-motor-installed-1080w.jpg",
+      "original_width": 1080,
+      "original_height": 1440,
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-installed-480w.jpg",
+          "bytes": 93733,
+          "sha256": "0066594ac3727f417707f57ce6748569cf455d6ae220853be0331426ed851210"
+        },
+        {
+          "width": 480,
+          "height": 640,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-installed-480w.webp",
+          "bytes": 78690,
+          "sha256": "0807a61057904893420e09864ab56bbd4ab73539dadac7c787c2223f713be710"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-installed-768w.jpg",
+          "bytes": 230587,
+          "sha256": "867e631413a3725c9503440fff13ea8a7f67fd392b73f2c2ed251d68165b8e89"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-installed-768w.webp",
+          "bytes": 189410,
+          "sha256": "12c6bcd3fc21f6d89f3ded975a9042f6bfaef3787f47ea462d127e11c04fc4fa"
+        },
+        {
+          "width": 1080,
+          "height": 1440,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-installed-1080w.jpg",
+          "bytes": 432480,
+          "sha256": "1009396862fc83f4d06e5450e91c31a1adebae57f83a9d537414bfe47fae451c"
+        },
+        {
+          "width": 1080,
+          "height": 1440,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-installed-1080w.webp",
+          "bytes": 315856,
+          "sha256": "55f18f0611ab15341c4c376b94c3bd014743c975bab5e1cbf0f0ef08cba95cfd"
+        }
+      ]
+    },
+    "motor-shaft": {
+      "type": "photo",
+      "source": "assets/images/service-equipment-20260719/service-drive-motor-shaft-1080w.jpg",
+      "title": "Вал и механическая часть привода",
+      "alt": "Вал электродвигателя и механические элементы привода вентилятора",
+      "caption": "Шум, вибрация и нестабильный запуск могут быть связаны с валом, подшипниками, муфтой или крыльчаткой.",
+      "source_original": "/assets/images/service-equipment-20260719/service-drive-motor-shaft-1080w.jpg",
+      "original_width": 1080,
+      "original_height": 1440,
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-shaft-480w.jpg",
+          "bytes": 97016,
+          "sha256": "eca3cca81a7f717d7f65d1e54b06fab2e4b65cc61e6b45188cc00d6dae105389"
+        },
+        {
+          "width": 480,
+          "height": 640,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-shaft-480w.webp",
+          "bytes": 81828,
+          "sha256": "6ec445f83188ba02d68673f6dc837d7de16bc39ce1ad8e20469a79850d7e7974"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-shaft-768w.jpg",
+          "bytes": 229033,
+          "sha256": "bc23a32d5123dad49540a14f45f5c8b918ab4068f08a5e576c925cb74ad6bb1e"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-shaft-768w.webp",
+          "bytes": 187076,
+          "sha256": "84e5f35c33b86e2fb42f4576131bafbed2b531b53966bfe4243acc282c548ad0"
+        },
+        {
+          "width": 1080,
+          "height": 1440,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/motor-shaft-1080w.jpg",
+          "bytes": 422048,
+          "sha256": "59a12fcd65e774c914dd0787b367956b62beba61300f0d2ca61a777d3c41ca89"
+        },
+        {
+          "width": 1080,
+          "height": 1440,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/motor-shaft-1080w.webp",
+          "bytes": 314556,
+          "sha256": "f8da4c199ef9c8e99f4f6b56970bdb27b7ed5a412aef20dd179499d53d6898ce"
+        }
+      ]
+    },
+    "insulated-joint": {
+      "type": "photo",
+      "source": "assets/images/responsive/ventilation-insulated-duct-connection-768w.jpg",
+      "title": "Изолированное соединение воздуховода",
+      "alt": "Соединение изолированных вентиляционных воздуховодов",
+      "caption": "Состояние оболочки, герметичность и отсутствие мостиков холода важны для стабильной работы трассы.",
+      "source_original": "/assets/images/responsive/ventilation-insulated-duct-connection-768w.jpg",
+      "original_width": 768,
+      "original_height": 1024,
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/insulated-joint-480w.jpg",
+          "bytes": 68396,
+          "sha256": "7b1697b5de3df60752ee43a7d9c361123a47b8fce1139153c54ed29eefb24ef7"
+        },
+        {
+          "width": 480,
+          "height": 640,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/insulated-joint-480w.webp",
+          "bytes": 53298,
+          "sha256": "0bc6ea92b8dbe6ccec781aaf4f10f5d578a8177ea49d4dea136595b5783b9e69"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "jpg",
+          "url": "/assets/images/ventilation-media-20260722/insulated-joint-768w.jpg",
+          "bytes": 162148,
+          "sha256": "b5afb31cf5a160056363cf9c2402e0d4dfed54b394ac3764eae79d9f257d86aa"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "format": "webp",
+          "url": "/assets/images/ventilation-media-20260722/insulated-joint-768w.webp",
+          "bytes": 125242,
+          "sha256": "f779e8cec0061f5423f293fb58d01ec4f79b7fc69c5bce163d2eca71dfeb5631"
+        }
+      ]
+    }
+  },
+  "diagrams": {
+    "system-overview": {
+      "type": "diagram",
+      "title": "Как связаны элементы ресторанной вентиляции",
+      "subtitle": "Путь воздуха от рабочей зоны до выброса и обратно через организованный приток",
+      "alt": "Как связаны элементы ресторанной вентиляции",
+      "caption": "Слабое звено в любой части цепочки меняет работу всей системы.",
+      "url": "/assets/images/ventilation-media-20260722/system-overview.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 5102,
+      "sha256": "d529243113b236368758f8d1f7f21d0dd1e8275195d872b8d28f7b1d8c258405"
+    },
+    "automation-chain": {
+      "type": "diagram",
+      "title": "Цепь запуска вентиляционной установки",
+      "subtitle": "От команды оператора до фактического вращения вентилятора",
+      "alt": "Цепь запуска вентиляционной установки",
+      "caption": "Защиты не обходят: сначала подтверждают, на каком этапе пропадает штатный сигнал.",
+      "url": "/assets/images/ventilation-media-20260722/automation-chain.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4938,
+      "sha256": "36fae3e67141a8081c736aa659f93e394ef3a83a2a0c2d89d5ed7f3a55ee0c17"
+    },
+    "supply-exhaust-balance": {
+      "type": "diagram",
+      "title": "Баланс притока и вытяжки",
+      "subtitle": "Две части системы должны работать согласованно",
+      "alt": "Баланс притока и вытяжки",
+      "caption": "Избыток или недостаток одной стороны меняет давление, запахи и захват дыма.",
+      "url": "/assets/images/ventilation-media-20260722/supply-exhaust-balance.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4835,
+      "sha256": "7c1a0e8dbb1c9e357f80bcd828281895b657a34e2011f10fc039d7d4cf34addf"
+    },
+    "diagnostics-route": {
+      "type": "diagram",
+      "title": "Диагностика до назначения ремонта",
+      "subtitle": "Последовательность отделяет загрязнение, механику, электрику и аэродинамику",
+      "alt": "Диагностика до назначения ремонта",
+      "caption": "Запчасть назначается после подтверждения причины, а не только по внешнему проявлению.",
+      "url": "/assets/images/ventilation-media-20260722/diagnostics-route.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4998,
+      "sha256": "5dd93d3148d74393777a1d70f35ab76ee05b847b34f92d24315aef7fe028f138"
+    },
+    "roof-fan": {
+      "type": "diagram",
+      "title": "Крышный вентилятор и наружная часть",
+      "subtitle": "Узел проверяется вместе с трассой и условиями на кровле",
+      "alt": "Крышный вентилятор и наружная часть",
+      "caption": "Работы на высоте требуют организованного доступа и безопасного отключения.",
+      "url": "/assets/images/ventilation-media-20260722/roof-fan.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4872,
+      "sha256": "a0651066577f78bdf77cc4d0af47486013f222d1373dc8691a807ac87d3fecdc"
+    },
+    "hood-capture": {
+      "type": "diagram",
+      "title": "Зона захвата вытяжного зонта",
+      "subtitle": "Дым должен попадать под зонт до рассеивания по кухне",
+      "alt": "Зона захвата вытяжного зонта",
+      "caption": "Положение оборудования и приточные струи могут ухудшать захват даже при работающем вентиляторе.",
+      "url": "/assets/images/ventilation-media-20260722/hood-capture.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4940,
+      "sha256": "caa85b40b1decd5cd2042631de0c110d7f45a0aa1459c3415047d48821edf865"
+    },
+    "reverse-draft": {
+      "type": "diagram",
+      "title": "Как возникает обратная тяга",
+      "subtitle": "Поток может развернуться из-за дисбаланса или внешнего подпора",
+      "alt": "Как возникает обратная тяга",
+      "caption": "Проверяют взаимодействие систем, а не только один вентилятор.",
+      "url": "/assets/images/ventilation-media-20260722/reverse-draft.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4869,
+      "sha256": "46aac42f6c9d78482f579c4180bc75bc8827d649e7581cd292774ac56ac679ba"
+    },
+    "heat-balance": {
+      "type": "diagram",
+      "title": "Тепловая нагрузка кухни",
+      "subtitle": "Комфорт зависит от захвата тепла и организованного притока",
+      "alt": "Тепловая нагрузка кухни",
+      "caption": "Увеличение скорости вентилятора не заменяет проверку захвата, притока и фактической нагрузки.",
+      "url": "/assets/images/ventilation-media-20260722/heat-balance.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4935,
+      "sha256": "676d389c874f089f626c083d67df3d91c14ea12a45bcb891fa74a181cba6b2d3"
+    },
+    "layout-change": {
+      "type": "diagram",
+      "title": "Почему после перестановки кухни стало хуже",
+      "subtitle": "Изменение геометрии меняет локальный захват и воздушные потоки",
+      "alt": "Почему после перестановки кухни стало хуже",
+      "caption": "Сначала фиксируют, что изменилось, затем проверяют систему в новом рабочем режиме.",
+      "url": "/assets/images/ventilation-media-20260722/layout-change.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 5021,
+      "sha256": "20e2f3326f8e5c9189910bf5d763936799c40b11ebd1211dbba1943d2b0aa30a"
+    },
+    "supply-air": {
+      "type": "diagram",
+      "title": "Путь приточного воздуха",
+      "subtitle": "От наружного воздухозабора до рабочей зоны",
+      "alt": "Путь приточного воздуха",
+      "caption": "Слабый поток может возникнуть в любом участке цепочки, а не только из-за двигателя.",
+      "url": "/assets/images/ventilation-media-20260722/supply-air.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4792,
+      "sha256": "f9cfb4ff7da4c49586431373d0e59048b6d2328eba970219ae9668602b80261a"
+    },
+    "exhaust-system": {
+      "type": "diagram",
+      "title": "Путь вытяжного воздуха",
+      "subtitle": "От локального захвата до безопасного выброса",
+      "alt": "Путь вытяжного воздуха",
+      "caption": "Пуск двигателя не подтверждает достаточный расход через всю систему.",
+      "url": "/assets/images/ventilation-media-20260722/exhaust-system.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4734,
+      "sha256": "0f20715e7ecadcf189da3456b22fb3ff2ebc8597928c71947503caf30d02bbd0"
+    },
+    "vibration": {
+      "type": "diagram",
+      "title": "Передача вибрации по вентиляционной системе",
+      "subtitle": "Источник и место проявления могут не совпадать",
+      "alt": "Передача вибрации по вентиляционной системе",
+      "caption": "Сильную вибрацию не маскируют подтяжкой случайных креплений без поиска причины.",
+      "url": "/assets/images/ventilation-media-20260722/vibration.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4981,
+      "sha256": "57d87b6581e3d005868c0438aec87b93997fc615978b34f3d3cfe4b528d5a71a"
+    },
+    "fan-drive": {
+      "type": "diagram",
+      "title": "Привод вентилятора",
+      "subtitle": "Электрическая и механическая части проверяются вместе",
+      "alt": "Привод вентилятора",
+      "caption": "Гул без вращения, перегрев и нестабильный запуск требуют разных проверок.",
+      "url": "/assets/images/ventilation-media-20260722/fan-drive.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4815,
+      "sha256": "e483b4b480314f5767cb3f7bab880c5ad6103ba0d46d70bb12bc419018360a9c"
+    },
+    "electrical-fault": {
+      "type": "diagram",
+      "title": "Почему срабатывает электрическая защита",
+      "subtitle": "Повторный запуск не заменяет поиск повреждения",
+      "alt": "Почему срабатывает электрическая защита",
+      "caption": "Номинал защиты не увеличивают: измеряют ток, изоляцию и состояние нагрузки.",
+      "url": "/assets/images/ventilation-media-20260722/electrical-fault.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4863,
+      "sha256": "07e4c137919a255b7a2b9581a3c71da1213bbd290960d70dd27d05045f617fbf"
+    },
+    "filter-cassette": {
+      "type": "diagram",
+      "title": "Жировой фильтр как рабочий узел",
+      "subtitle": "Важны не только чистота, но и геометрия установки",
+      "alt": "Жировой фильтр как рабочий узел",
+      "caption": "Деформированный или неподходящий фильтр создаёт обходной путь для жира.",
+      "url": "/assets/images/ventilation-media-20260722/filter-cassette.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4820,
+      "sha256": "2bc6f2fccbeb204840a23f0de8010746465972b43c4767bba60aa1c2e54de66f"
+    },
+    "cleaning-zones": {
+      "type": "diagram",
+      "title": "Зоны очистки вентиляции",
+      "subtitle": "Объём работ определяется доступом и фактическим загрязнением",
+      "alt": "Зоны очистки вентиляции",
+      "caption": "Очистка не подменяет ремонт привода, автоматики или повреждённых элементов.",
+      "url": "/assets/images/ventilation-media-20260722/cleaning-zones.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4858,
+      "sha256": "1107df50ccf8ba2126b894b39f1310e5f9e4ba93569c9ee0b1465adb20b3c1be"
+    },
+    "condensation": {
+      "type": "diagram",
+      "title": "Как появляется конденсат",
+      "subtitle": "Влага возникает при сочетании холодной поверхности и влажного воздуха",
+      "alt": "Как появляется конденсат",
+      "caption": "Нужно отделить конденсат от воды после мойки, осадков и негерметичных стыков.",
+      "url": "/assets/images/ventilation-media-20260722/condensation.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4923,
+      "sha256": "69549a1186e2e941e07d659262b743e1d47740d529aeec198e081cb7e6f9b2bd"
+    },
+    "airflow-fault": {
+      "type": "diagram",
+      "title": "Почему система работает, но не тянет",
+      "subtitle": "Фактический расход зависит от всей аэродинамической цепочки",
+      "alt": "Почему система работает, но не тянет",
+      "caption": "Шум двигателя и вращение крыльчатки не гарантируют нужный расход воздуха.",
+      "url": "/assets/images/ventilation-media-20260722/airflow-fault.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4923,
+      "sha256": "0331552919e78bfc9acd5fc61339bad630da41c67d86363d059e46174d003f13"
+    },
+    "odor-migration": {
+      "type": "diagram",
+      "title": "Как запах попадает из кухни в зал",
+      "subtitle": "Запах переносится туда, куда направлен общий воздушный баланс",
+      "alt": "Как запах попадает из кухни в зал",
+      "caption": "Проверяют локальную вытяжку, приток и маршруты перетока между помещениями.",
+      "url": "/assets/images/ventilation-media-20260722/odor-migration.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4940,
+      "sha256": "2f02a6e209773e679048d73bee00c10a62ebff37378f163420d0c0d851320056"
+    },
+    "odor-external": {
+      "type": "diagram",
+      "title": "Как запах выходит за пределы ресторана",
+      "subtitle": "Внешние жалобы требуют проверки точки выброса и соседних потоков",
+      "alt": "Как запах выходит за пределы ресторана",
+      "caption": "Внешний запах нельзя диагностировать только по состоянию фильтров внутри кухни.",
+      "url": "/assets/images/ventilation-media-20260722/odor-external.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4990,
+      "sha256": "018c8146a5961853d27c4e124a348f038f5955240ab4998e0cb9be28992f2554"
+    },
+    "steam-heat": {
+      "type": "diagram",
+      "title": "Пар и тепло от пароконвектомата",
+      "subtitle": "Нагрузка меняется по режимам приготовления и открытию камеры",
+      "alt": "Пар и тепло от пароконвектомата",
+      "caption": "Проверку проводят в реальном цикле, а не только при пустой и холодной камере.",
+      "url": "/assets/images/ventilation-media-20260722/steam-heat.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4893,
+      "sha256": "f88a3e7d6f7be8893129cea23a2b46bd00a5c9dee8eb861ca5f8e8c362351ce7"
+    },
+    "wash-zone": {
+      "type": "diagram",
+      "title": "Влага в моечной зоне",
+      "subtitle": "Пар и аэрозоль требуют отдельного захвата и устойчивого воздухообмена",
+      "alt": "Влага в моечной зоне",
+      "caption": "Следы воды возле электрики требуют остановки и безопасной диагностики.",
+      "url": "/assets/images/ventilation-media-20260722/wash-zone.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4876,
+      "sha256": "792d3db2b31f00c256624a2eac5d3eeeb9c50a3e18819e7999bc3d36d199b8d6"
+    },
+    "object-bakery": {
+      "type": "diagram",
+      "title": "Воздухообмен пекарни",
+      "subtitle": "Одновременно учитываются тепло, мука, пар и разные циклы оборудования",
+      "alt": "Воздухообмен пекарни",
+      "caption": "Режимы выпечки и открытие дверей оборудования проверяются отдельно.",
+      "url": "/assets/images/ventilation-media-20260722/object-bakery.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4837,
+      "sha256": "b5c71438b704cdacf249c0993182871382434f741f7eea4fa45d64ac9d5513ac"
+    },
+    "object-dark-kitchen": {
+      "type": "diagram",
+      "title": "Вентиляция dark kitchen",
+      "subtitle": "Несколько тепловых линий работают в ограниченном помещении",
+      "alt": "Вентиляция dark kitchen",
+      "caption": "Изменение загрузки одной линии влияет на весь общий воздушный баланс.",
+      "url": "/assets/images/ventilation-media-20260722/object-dark-kitchen.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4792,
+      "sha256": "8c4f63b2cfa250619394b91fce488e35be6209bf9b6f08458092991323a48802"
+    },
+    "object-foodcourt": {
+      "type": "diagram",
+      "title": "Вентиляция точки на фудкорте",
+      "subtitle": "Собственная вытяжка взаимодействует с общей вентиляцией здания",
+      "alt": "Вентиляция точки на фудкорте",
+      "caption": "Диагностика учитывает границу ответственности и режим общей системы здания.",
+      "url": "/assets/images/ventilation-media-20260722/object-foodcourt.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4926,
+      "sha256": "72c19156a071c04203461db41cdead6baa58b20878eab3446da4c7babac415d3"
+    },
+    "object-grill": {
+      "type": "diagram",
+      "title": "Захват дыма над грилем",
+      "subtitle": "Высокая тепловая нагрузка усиливает подъём и рассеивание дыма",
+      "alt": "Захват дыма над грилем",
+      "caption": "Оценка проводится на рабочей мощности и с фактической загрузкой гриля.",
+      "url": "/assets/images/ventilation-media-20260722/object-grill.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4823,
+      "sha256": "ff358929734aee90c5edd06c4dcb5f71c889c4dec7521201d7cd62fe42ed014e"
+    },
+    "object-canteen": {
+      "type": "diagram",
+      "title": "Вентиляция столовой",
+      "subtitle": "Разные зоны работают по общему графику и меняющейся нагрузке",
+      "alt": "Вентиляция столовой",
+      "caption": "Проверяется работа по сменам, а не только единичный запуск оборудования.",
+      "url": "/assets/images/ventilation-media-20260722/object-canteen.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4813,
+      "sha256": "1e391ef4abcc8033fa20905257e5fd97907b40ac5910afb9ed8b5a382d39656a"
+    },
+    "maintenance-route": {
+      "type": "diagram",
+      "title": "Контроль состояния между отказами",
+      "subtitle": "Обслуживание фиксирует тенденции до аварийной остановки",
+      "alt": "Контроль состояния между отказами",
+      "caption": "Выявленный дефект переводится в ремонт с отдельным объёмом работ.",
+      "url": "/assets/images/ventilation-media-20260722/maintenance-route.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4860,
+      "sha256": "64379896cd22543884e738f22ba0651312b4b696d28f1bb08046878177e9b267"
+    },
+    "operations-checklist": {
+      "type": "diagram",
+      "title": "Что может безопасно проверить персонал",
+      "subtitle": "Наблюдения помогают инженеру, но не заменяют вскрытие и измерения",
+      "alt": "Что может безопасно проверить персонал",
+      "caption": "Щиты, ограждения и горячие загрязнённые каналы ради фото не открывают.",
+      "url": "/assets/images/ventilation-media-20260722/operations-checklist.svg",
+      "width": 1200,
+      "height": 760,
+      "bytes": 4936,
+      "sha256": "25bf26c0927595077fd8e65eb9ff3771acf0c2ab203eceb8ad20541318b604f3"
+    }
+  },
+  "rules": {
+    "responsive_photos": "JPG and WebP variants; srcset and sizes on every new photographic placement",
+    "diagrams": "SVG with title/description and explicit width/height",
+    "loading": "All below-fold media uses loading=lazy and decoding=async",
+    "safety": "Images do not instruct users to open energized panels, guards, roofs or contaminated ducts."
+  }
+}
