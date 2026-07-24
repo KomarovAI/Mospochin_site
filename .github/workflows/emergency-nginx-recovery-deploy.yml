@@ -1,4 +1,4 @@
-name: Emergency Nginx recovery and deploy
+name: Recover via staged release and deploy
 
 on:
   workflow_dispatch:
@@ -12,11 +12,13 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  RECOVERY_RELEASE_SHA_PRIMARY: 1163804cb637b76b9ea292f9d106944f860404a9
+  RECOVERY_RELEASE_SHA_FALLBACK: e70a316d31e7147aaa044f908b60b3855349c994
 
 jobs:
   recover-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
 
     steps:
       - name: Checkout
@@ -28,7 +30,10 @@ jobs:
           node-version: 24
 
       - name: Calculate deploy content hash
-        run: node tools/hash-deploy-content.mjs
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/hash-deploy-content.mjs
 
       - name: Setup SSH
         shell: bash
@@ -47,144 +52,9 @@ jobs:
             "${{ secrets.DEPLOY_HOST }}" \
             >> ~/.ssh/known_hosts
 
-      - name: Build exact recovery payload
+      - name: Select staged repaired release
+        id: staged
         shell: bash
-        run: |
-          set -euo pipefail
-
-          cat > /tmp/mospochin-emergency-nginx-recovery.sh <<'REMOTE_RECOVERY'
-          #!/usr/bin/env bash
-          set -Eeuo pipefail
-
-          SITE="/etc/nginx/sites-available/mospochin.conf"
-          ENABLED="/etc/nginx/sites-enabled/mospochin.conf"
-          SNIPPET="/etc/nginx/snippets/mospochin-runtime-hardening.conf"
-          STAMP="$(date +%Y%m%d-%H%M%S)"
-          BACKUP="${SITE}.github-recovery-${STAMP}.bak"
-
-          echo "RECOVERY_CHANNEL=GITHUB_ACTIONS"
-          echo "RECOVERY_HOST=$(hostname)"
-          echo "RECOVERY_USER=$(id -un)"
-          echo "SITE=$SITE"
-          echo "SNIPPET=$SNIPPET"
-
-          [[ -f "$SITE" ]] || {
-            echo "ERROR: site config not found: $SITE" >&2
-            exit 61
-          }
-
-          set +e
-          BEFORE="$(nginx -t 2>&1)"
-          BEFORE_RC=$?
-          set -e
-
-          echo "$BEFORE"
-
-          if (( BEFORE_RC == 0 )); then
-            echo "NGINX_PRECHECK=ALREADY_VALID"
-            exit 0
-          fi
-
-          if ! printf '%s' "$BEFORE" |
-               grep -Fq 'location "/package.json" is outside location'; then
-            echo "ERROR: refusing repair for unknown nginx failure" >&2
-            exit 62
-          fi
-
-          if ! printf '%s' "$BEFORE" |
-               grep -Fq 'mospochin-runtime-hardening.conf'; then
-            echo "ERROR: known package.json error does not reference runtime-hardening" >&2
-            exit 63
-          fi
-
-          cp -a "$SITE" "$BACKUP"
-          echo "BACKUP=$BACKUP"
-
-          python3 - "$SITE" <<'PY'
-          from pathlib import Path
-          import re
-          import sys
-
-          path = Path(sys.argv[1])
-          original = path.read_text(encoding="utf-8")
-
-          pattern = re.compile(
-              r"(?m)^[ \t]*include[ \t]+"
-              r"(?:/etc/nginx/)?snippets/"
-              r"mospochin-runtime-hardening\.conf;"
-              r"[ \t]*(?:\n|$)"
-          )
-
-          repaired, count = pattern.subn("", original)
-
-          if count < 1:
-              raise SystemExit(
-                  "known stale include error detected, but no managed include line was found"
-              )
-
-          tmp = path.with_name(path.name + ".github-recovery.tmp")
-          tmp.write_text(repaired.rstrip() + "\n", encoding="utf-8")
-          tmp.chmod(path.stat().st_mode)
-          tmp.replace(path)
-
-          print(f"REMOVED_RUNTIME_HARDENING_INCLUDES={count}")
-          PY
-
-          # Handle a non-symlink enabled copy without a nested heredoc.
-          if [[ -f "$ENABLED" && ! -L "$ENABLED" ]]; then
-            SITE_REAL="$(readlink -f "$SITE")"
-            ENABLED_REAL="$(readlink -f "$ENABLED")"
-
-            if [[ "$SITE_REAL" != "$ENABLED_REAL" ]]; then
-              cp -a "$ENABLED" "${ENABLED}.github-recovery-${STAMP}.bak"
-
-              ENABLED_COUNT="$(
-                python3 -c '
-          from pathlib import Path
-          import re
-          import sys
-
-          path = Path(sys.argv[1])
-          original = path.read_text(encoding="utf-8")
-          pattern = re.compile(
-              r"(?m)^[ \\t]*include[ \\t]+"
-              r"(?:/etc/nginx/)?snippets/"
-              r"mospochin-runtime-hardening\\.conf;"
-              r"[ \\t]*(?:\\n|$)"
-          )
-          repaired, count = pattern.subn("", original)
-
-          if count:
-              tmp = path.with_name(path.name + ".github-recovery.tmp")
-              tmp.write_text(repaired.rstrip() + "\\n", encoding="utf-8")
-              tmp.chmod(path.stat().st_mode)
-              tmp.replace(path)
-
-          print(count)
-          ' "$ENABLED"
-              )"
-
-              echo "REMOVED_ENABLED_COPY_INCLUDES=$ENABLED_COUNT"
-            fi
-          fi
-
-          if ! nginx -t; then
-            echo "ERROR: nginx remained invalid; restoring site config backup" >&2
-            cp -a "$BACKUP" "$SITE"
-            nginx -t 2>&1 || true
-            exit 64
-          fi
-
-          systemctl reload nginx
-          echo "NGINX_RECOVERY=VERIFIED_AND_RELOADED"
-          REMOTE_RECOVERY
-
-          chmod 700 /tmp/mospochin-emergency-nginx-recovery.sh
-          bash -n /tmp/mospochin-emergency-nginx-recovery.sh
-
-      - name: Repair stale Nginx include through GitHub
-        shell: bash
-        timeout-minutes: 3
         run: |
           set -euo pipefail
 
@@ -201,51 +71,133 @@ jobs:
 
           REMOTE="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
 
-          REMOTE_MODE="$(
-            ssh "${SSH_ARGS[@]}" "$REMOTE" '
-              if [ "$(id -u)" = "0" ]; then
-                echo ROOT
-              elif sudo -n bash -c true >/dev/null 2>&1; then
-                echo SUDO_BASH
-              elif [ -w /etc/nginx/sites-available/mospochin.conf ]; then
-                echo DIRECT_WRITE
-              else
-                echo BLOCKED
-              fi
-            '
-          )"
+          find_candidate() {
+            local sha="$1"
 
-          echo "REMOTE_RECOVERY_MODE=$REMOTE_MODE"
+            ssh "${SSH_ARGS[@]}" "$REMOTE" \
+              "find /var/www/mospochin-releases \
+                -mindepth 1 \
+                -maxdepth 1 \
+                -type d \
+                -name '${sha}-*' \
+                -printf '%T@|%p\n' 2>/dev/null \
+               | sort -t'|' -k1,1nr \
+               | head -n 1 \
+               | cut -d'|' -f2-"
+          }
 
-          case "$REMOTE_MODE" in
-            ROOT)
-              ssh "${SSH_ARGS[@]}" "$REMOTE" \
-                'bash -s' \
-                < /tmp/mospochin-emergency-nginx-recovery.sh
-              ;;
-            SUDO_BASH)
-              ssh "${SSH_ARGS[@]}" "$REMOTE" \
-                'sudo -n bash -s' \
-                < /tmp/mospochin-emergency-nginx-recovery.sh
-              ;;
-            DIRECT_WRITE)
-              ssh "${SSH_ARGS[@]}" "$REMOTE" \
-                'bash -s' \
-                < /tmp/mospochin-emergency-nginx-recovery.sh
-              ;;
+          CANDIDATE="$(find_candidate "$RECOVERY_RELEASE_SHA_PRIMARY")"
+
+          if [[ -z "$CANDIDATE" ]]; then
+            CANDIDATE="$(find_candidate "$RECOVERY_RELEASE_SHA_FALLBACK")"
+          fi
+
+          [[ -n "$CANDIDATE" ]] || {
+            echo "ERROR: no staged repaired release found" >&2
+
+            ssh "${SSH_ARGS[@]}" "$REMOTE" \
+              "find /var/www/mospochin-releases \
+                -mindepth 1 \
+                -maxdepth 1 \
+                -type d \
+                -printf '%TY-%Tm-%TdT%TH:%TM:%TS %p\n' 2>/dev/null \
+               | sort -r \
+               | head -n 30" \
+              >&2 || true
+
+            exit 71
+          }
+
+          case "$CANDIDATE" in
+            /var/www/mospochin-releases/*) ;;
             *)
-              echo "ERROR: GitHub deploy identity cannot perform controlled recovery." >&2
-              echo "Sudo contract:" >&2
-              ssh "${SSH_ARGS[@]}" "$REMOTE" \
-                'id; sudo -n -l 2>&1 || true; ls -l /etc/nginx/sites-available/mospochin.conf' \
-                >&2 || true
-              exit 77
+              echo "ERROR: unsafe candidate path: $CANDIDATE" >&2
+              exit 72
               ;;
           esac
 
-      - name: Deploy on VPS
+          echo "STAGED_RELEASE=$CANDIDATE"
+
+          ssh "${SSH_ARGS[@]}" "$REMOTE" \
+            "set -eu
+             test -d '$CANDIDATE'
+             test -x '$CANDIDATE/deploy/post-activate.sh'
+             test -f '$CANDIDATE/deploy/nginx/repair-managed-includes.py'
+             grep -Fq 'MOSPOCHIN_RUNTIME_INCLUDE_REPAIR_V4' \
+               '$CANDIDATE/deploy/post-activate.sh'
+             grep -Fq 'MOSPOCHIN_RUNTIME_INCLUDE_PRECHECK_V4' \
+               '$CANDIDATE/deploy/post-activate.sh'
+             grep -Fq 'repair_nginx_runtime_hardening_include' \
+               '$CANDIDATE/deploy/post-activate.sh'
+             printf 'STAGED_RELEASE_VALIDATION=PASS\n'"
+
+          printf 'release=%s\n' "$CANDIDATE" >> "$GITHUB_OUTPUT"
+
+      - name: Run approved deploy doctor before recovery
+        shell: bash
+        continue-on-error: true
+        run: |
+          set -o pipefail
+
+          ssh \
+            -i ~/.ssh/deploy_key \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "sudo -n /usr/local/sbin/mospochin-deploy-doctor"
+
+      - name: Activate staged repaired release
         shell: bash
         timeout-minutes: 8
+        run: |
+          set -euo pipefail
+
+          RELEASE="${{ steps.staged.outputs.release }}"
+
+          case "$RELEASE" in
+            /var/www/mospochin-releases/*) ;;
+            *)
+              echo "ERROR: unsafe release path: $RELEASE" >&2
+              exit 73
+              ;;
+          esac
+
+          echo "ACTIVATING_STAGED_RELEASE=$RELEASE"
+
+          ssh \
+            -i ~/.ssh/deploy_key \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=15 \
+            -o ServerAliveInterval=15 \
+            -o ServerAliveCountMax=3 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "sudo -n /usr/local/sbin/mospochin-activate-release '$RELEASE'"
+
+      - name: Approved healthcheck after staged activation
+        shell: bash
+        timeout-minutes: 4
+        run: |
+          set -euo pipefail
+
+          ssh \
+            -i ~/.ssh/deploy_key \
+            -p "${{ secrets.DEPLOY_PORT }}" \
+            -o IdentitiesOnly=yes \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=15 \
+            "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "sudo -n /usr/local/sbin/mospochin-healthcheck"
+
+      - name: Deploy current exact SHA
+        shell: bash
+        timeout-minutes: 10
         run: |
           set -euo pipefail
 
@@ -262,6 +214,8 @@ jobs:
             -o BatchMode=yes \
             -o StrictHostKeyChecking=yes \
             -o ConnectTimeout=15 \
+            -o ServerAliveInterval=15 \
+            -o ServerAliveCountMax=3 \
             "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
             "sudo -n /usr/local/sbin/mospochin-deploy-git \
               '${GITHUB_SHA}' \
@@ -269,7 +223,7 @@ jobs:
               '${GITHUB_RUN_NUMBER}' \
               '${CONTENT_HASH}'"
 
-      - name: Verify production commit
+      - name: Verify production exact SHA
         shell: bash
         timeout-minutes: 5
         run: |
@@ -314,7 +268,7 @@ jobs:
             sleep 5
           done
 
-          echo "ERROR: production version did not confirm exact SHA/run" >&2
+          echo "ERROR: production did not confirm exact SHA/run" >&2
           printf '%s\n' "$VERSION" >&2
           exit 1
 
@@ -365,11 +319,10 @@ jobs:
 
             echo "HTTP=$CODE SOURCE=$SOURCE LOCATION=${LOCATION:-none} EXPECTED=$TARGET"
 
-            if [[ "$CODE" == "301" && "$LOCATION_PATH" == "$TARGET" ]]; then
-              PASS=$((PASS + 1))
-            else
-              exit 1
-            fi
+            [[ "$CODE" == "301" ]]
+            [[ "$LOCATION_PATH" == "$TARGET" ]]
+
+            PASS=$((PASS + 1))
           done <<'REDIRECTS'
           /chto-proveryaet-inzhener-ventilyatsii.html|/diagnostika-ventilyatsii-restorana.html
           /kak-podgotovitsya-k-vyezdu-mastera-po-ventilyatsii.html|/diagnostika-ventilyatsii-restorana.html
@@ -431,11 +384,12 @@ jobs:
         shell: bash
         run: |
           {
-            echo "## MosPochin emergency GitHub-only recovery"
+            echo "## MosPochin staged-release recovery"
             echo
             echo "- Commit: \`${GITHUB_SHA}\`"
             echo "- Run: \`${GITHUB_RUN_ID}\`"
+            echo "- Recovery: approved \`mospochin-activate-release\`"
+            echo "- Deployment: approved \`mospochin-deploy-git\`"
+            echo "- Arbitrary sudo: **not used**"
             echo "- Local direct VPS access: **no**"
-            echo "- Recovery channel: **GitHub Actions**"
-            echo "- Deployment command: \`mospochin-deploy-git\`"
           } >> "$GITHUB_STEP_SUMMARY"
